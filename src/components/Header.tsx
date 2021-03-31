@@ -1,17 +1,20 @@
 import React from "react";
 import { HeaderStyles } from "./Header.styles";
 import { HeaderModal } from "./HeaderModal";
+import { HeaderOptions } from "./types";
 
-export interface HeaderProps {
-  linkUrl: string;
-}
+export interface HeaderProps extends HeaderOptions {}
 
 export const Header: React.FC<HeaderProps> = (props) => {
-  const { linkUrl = "https://the-guild.dev" } = props;
+  const {
+    linkUrl = "https://the-guild.dev",
+    navbarBackgroundColor = "var(--ifm-navbar-background-color)",
+    navbarLinkColor = "var(--ifm-navbar-link-color)",
+  } = props;
   const [modalOpen, setModalOpen] = React.useState(false);
 
   return (
-    <HeaderStyles>
+    <HeaderStyles {...props}>
       <div id="g-header-bar">
         <a href={linkUrl} title="The Guild - Open Source">
           <div className="g-header-logo"></div>
@@ -47,7 +50,9 @@ export const Header: React.FC<HeaderProps> = (props) => {
           </a>
         </div>
       </div>
-      {modalOpen && <HeaderModal onClose={() => setModalOpen(false)} />}
+      {modalOpen && (
+        <HeaderModal {...props} onClose={() => setModalOpen(false)} />
+      )}
     </HeaderStyles>
   );
 };

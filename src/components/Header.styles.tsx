@@ -1,9 +1,10 @@
-import styled from 'styled-components'
+import styled from "styled-components";
+import { HeaderOptions } from "./types";
 
-export const HeaderStyles = styled.div`
+export const HeaderStyles = styled.div<HeaderOptions>`
   #g-header-bar {
-    background-color: var(--ifm-navbar-background-color);
-    color: var(--ifm-navbar-link-color);
+    background-color: ${(props) => props.navbarBackgroundColor};
+    color: ${(props) => props.navbarLinkColor};
     width: 100%;
     height: 55px;
     padding-left: 16px;
@@ -16,8 +17,8 @@ export const HeaderStyles = styled.div`
   }
   .g-header-links {
     margin-right: 10px;
-    color: var(--ifm-navbar-link-color);
-    font-family: 'Montserrat', sans-serif;
+    color: ${(props) => props.navbarLinkColor};
+    font-family: "Montserrat", sans-serif;
     font-size: 12px;
   }
   /* The Modal (background) */
@@ -36,7 +37,7 @@ export const HeaderStyles = styled.div`
   }
   /* Modal Content */
   .g-modal-content {
-    background-color: var(--ifm-navbar-background-color);
+    background-color: ${(props) => props.navbarBackgroundColor};
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -74,11 +75,13 @@ export const HeaderStyles = styled.div`
     padding-left: 5px;
   }
   :root {
-    --logo-bg: url('https://the-guild.dev/static/white-logo.png') no-repeat;
-    --logo-bg: url('https://the-guild.dev/static/logo.svg') no-repeat;
+    --logo-bg: url("${(props) =>
+      props.linkUrl}/static/white-logo.png") no-repeat;
+    --logo-bg: url("${(props) => props.linkUrl}/static/logo.svg") no-repeat;
   }
-  [data-theme='dark'] {
-    --logo-bg: url('https://the-guild.dev/static/white-logo.png') no-repeat;
+  [data-theme="dark"] {
+    --logo-bg: url("${(props) =>
+      props.linkUrl}/static/white-logo.png") no-repeat;
   }
   .g-header-logo {
     height: 45px;
@@ -120,4 +123,4 @@ export const HeaderStyles = styled.div`
       width: 270px;
     }
   }
-`
+`;

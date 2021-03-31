@@ -1,16 +1,16 @@
 import React from "react";
 import { HeaderStyles } from "./Header.styles";
+import { HeaderOptions } from "./types";
 
-export interface HeaderModalProps {
-  linkUrl?: string;
+export interface HeaderModalProps extends HeaderOptions {
   onClose: () => void;
 }
 
 export const HeaderModal: React.FC<HeaderModalProps> = (props) => {
-  const { linkUrl = "https://the-guild.dev", onClose } = props;
+  const { linkUrl, onClose } = props;
 
   return (
-    <HeaderStyles>
+    <HeaderStyles {...props}>
       <div id="ossModal" className="g-modal">
         <div className="g-modal-content">
           <span className="g-close" onClick={onClose}>

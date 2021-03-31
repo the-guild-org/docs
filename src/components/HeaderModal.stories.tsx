@@ -15,4 +15,6 @@ const Template: Story<HeaderModalProps> = args => (
 export const Primary = Template.bind({})
 Primary.args = {
   linkUrl: 'https://the-guild.dev',
+  navbarBackgroundColor: "var(--ifm-navbar-background-color)",
+  navbarLinkColor: "var(--ifm-navbar-link-color)",
 }
