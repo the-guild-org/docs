@@ -22,6 +22,10 @@
     "build:js": "rollup -c",
     "build": "npm run build:types && npm run build:js"
   },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.13",
     "@babel/preset-env": "^7.12.13",
@@ -34,8 +38,6 @@
     "@types/react": "^17.0.1",
     "@types/styled-components": "^5.1.7",
     "babel-plugin-styled-components": "^1.12.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.2",
     "rollup": "^2.38.5",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
