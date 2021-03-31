@@ -2,6 +2,11 @@
   "name": "storybook-styled-components-typescript",
   "version": "1.0.0",
   "license": "MIT",
+  "module": "dist/components.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "babelMacros": {
     "twin": {
       "preset": "styled-components"
@@ -10,30 +15,39 @@
   "scripts": {
     "start": "npm run storybook",
     "storybook": "start-storybook -p 6008",
-    "build-storybook": "build-storybook"
-  },
-  "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "styled-components": "^5.2.1"
+    "build-storybook": "build-storybook",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build:types": "tsc",
+    "build:js": "rollup -c",
+    "build": "npm run build:types && npm run build:js"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "@babel/preset-env": "^7.13.9",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
     "@babel/preset-react": "^7.12.13",
-    "@babel/preset-typescript": "^7.13.0",
+    "@babel/preset-typescript": "^7.12.13",
     "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-links": "^6.1.21",
     "@storybook/react": "^6.1.21",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.1",
+    "@types/react": "^17.0.1",
     "@types/styled-components": "^5.1.7",
-    "autoprefixer": "^10.2.4",
     "babel-plugin-styled-components": "^1.12.0",
-    "postcss": "^8.2.7",
-    "tailwindcss": "2.0.3",
-    "twin.macro": "^2.3.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.38.5",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "styled-components": "5.1.0",
     "typescript": "^4.2.2"
+  },
+  "browserslist": "> 0.25%, not dead",
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "tailwindcss": "^2.0.3",
+    "twin.macro": "^2.2.3"
   }
 }

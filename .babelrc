@@ -2,7 +2,13 @@
   "presets": [
     "@babel/preset-react",
     "@babel/preset-typescript",
-    "@babel/preset-env"
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "corejs": "3"
+      }
+    ]
   ],
-  "plugins": ["babel-plugin-styled-components"]
+  "plugins": ["babel-plugin-macros", ["styled-components", { "ssr": true }]]
 }
