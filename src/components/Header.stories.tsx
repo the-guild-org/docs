@@ -16,4 +16,5 @@ Primary.args = {
   linkUrl: 'https://the-guild.dev',
   navbarBackgroundColor: "var(--ifm-navbar-background-color)",
   navbarLinkColor: "var(--ifm-navbar-link-color)",
+  navbarLinkHoverColor: "var(--ifm-link-hover-color)",
 }

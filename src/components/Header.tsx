@@ -6,11 +6,7 @@ import { HeaderOptions } from "./types";
 export interface HeaderProps extends HeaderOptions {}
 
 export const Header: React.FC<HeaderProps> = (props) => {
-  const {
-    linkUrl = "https://the-guild.dev",
-    navbarBackgroundColor = "var(--ifm-navbar-background-color)",
-    navbarLinkColor = "var(--ifm-navbar-link-color)",
-  } = props;
+  const { linkUrl } = props;
   const [modalOpen, setModalOpen] = React.useState(false);
 
   return (

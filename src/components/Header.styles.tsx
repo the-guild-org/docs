@@ -21,6 +21,9 @@ export const HeaderStyles = styled.div<HeaderOptions>`
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
   }
+  .g-header-links:hover {
+    color: ${props => props.navbarLinkHoverColor};
+  }
   /* The Modal (background) */
   .g-modal {
     /* display: none; Hidden by default */
