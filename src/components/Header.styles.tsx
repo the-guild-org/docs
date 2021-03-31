@@ -74,19 +74,16 @@ export const HeaderStyles = styled.div<HeaderOptions>`
     width: 325px;
     padding-left: 5px;
   }
-  :root {
-    --logo-bg: url("${(props) =>
-      props.linkUrl}/static/white-logo.png") no-repeat;
-    --logo-bg: url("${(props) => props.linkUrl}/static/logo.svg") no-repeat;
-  }
-  [data-theme="dark"] {
-    --logo-bg: url("${(props) =>
-      props.linkUrl}/static/white-logo.png") no-repeat;
-  }
   .g-header-logo {
     height: 45px;
-    background: var(--logo-bg);
+    background: url("${(props) => props.linkUrl}/static/logo.svg") no-repeat;
     width: 100px;
+  }
+  [data-theme="dark"] {
+    .g-header-logo {
+      background: url("${(props) =>
+        props.linkUrl}/static/white-logo.png") no-repeat;
+    }
   }
   .g-modal-content {
     width: 1000px;
