@@ -1,5 +1,4 @@
 import React from 'react'
-import './Header.css'
 import { HeaderModal } from './HeaderModal'
 
 export interface HeaderProps {

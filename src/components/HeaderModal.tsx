@@ -1,5 +1,4 @@
 import React from 'react'
-import './Header.css'
 
 export interface HeaderModalProps {
   linkUrl?: string
