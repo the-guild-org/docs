@@ -1,3 +1,8 @@
 :root {
   --ifm-navbar-background-color: #fff;
+  --logo-bg: url('https://the-guild.dev/static/white-logo.png') no-repeat;
+  --logo-bg: url('https://the-guild.dev/static/logo.svg') no-repeat;
+}
+[data-theme='dark'] {
+  --logo-bg: url('https://the-guild.dev/static/white-logo.png') no-repeat;
 }

@@ -1,16 +1,17 @@
-import React from 'react'
-import { HeaderModal } from './HeaderModal'
+import React from "react";
+import { HeaderStyles } from "./Header.styles";
+import { HeaderModal } from "./HeaderModal";
 
 export interface HeaderProps {
-  linkUrl: string
+  linkUrl: string;
 }
 
-export const Header: React.FC<HeaderProps> = props => {
-  const { linkUrl = 'https://the-guild.dev' } = props
-  const [modalOpen, setModalOpen] = React.useState(false)
+export const Header: React.FC<HeaderProps> = (props) => {
+  const { linkUrl = "https://the-guild.dev" } = props;
+  const [modalOpen, setModalOpen] = React.useState(false);
 
   return (
-    <>
+    <HeaderStyles>
       <div id="g-header-bar">
         <a href={linkUrl} title="The Guild - Open Source">
           <div className="g-header-logo"></div>
@@ -34,7 +35,7 @@ export const Header: React.FC<HeaderProps> = props => {
               src={`${linkUrl}/static/go-down.svg`}
               height="10"
               width="12"
-              style={{ color: 'black' }}
+              style={{ color: "black" }}
             />
           </a>
           {/* <!--<a href="${linkUrl}/open-source" className="g-header-links">Products</a>--> */}
@@ -47,6 +48,6 @@ export const Header: React.FC<HeaderProps> = props => {
         </div>
       </div>
       {modalOpen && <HeaderModal onClose={() => setModalOpen(false)} />}
-    </>
-  )
-}
+    </HeaderStyles>
+  );
+};
