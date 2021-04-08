@@ -1,126 +1,95 @@
-import styled from "styled-components";
-import { HeaderOptions } from "./types";
+import tw, { css, styled } from 'twin.macro';
+interface themeProps {
+  accentColor?: string
+  isDark?: boolean
+  isOpenMobile?: boolean
+  iconType?: 'close' | 'toggle'
+}
 
-export const HeaderStyles = styled.div<HeaderOptions>`
-  #g-header-bar {
-    background-color: ${(props) => props.navbarBackgroundColor};
-    color: ${(props) => props.navbarLinkColor};
-    width: 100%;
-    height: 55px;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 5px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .g-header-links {
-    margin-right: 10px;
-    color: ${(props) => props.navbarLinkColor};
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-  }
-  .g-header-links:hover {
-    color: ${props => props.navbarLinkHoverColor};
-  }
-  /* The Modal (background) */
-  .g-modal {
-    /* display: none; Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 10000; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  }
-  /* Modal Content */
-  .g-modal-content {
-    background-color: ${(props) => props.navbarBackgroundColor};
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-  }
-  /* The Close Button */
-  .g-close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  .g-close:hover,
-  .g-close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .productTable h4 {
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-  }
-  #oss-nav {
-    cursor: pointer;
-  }
-  .ossCells {
-    float: left;
-    padding: 11px;
-    margin-right: 5px;
-    background-color: white;
-  }
-  .ossContentCells {
-    float: left;
-    width: 325px;
-    padding-left: 5px;
-  }
-  .g-header-logo {
-    height: 45px;
-    background: url("${(props) => props.linkUrl}/static/logo.svg") no-repeat;
-    width: 100px;
-  }
-  [data-theme="dark"] {
-    .g-header-logo {
-      background: url("${(props) =>
-        props.linkUrl}/static/white-logo.png") no-repeat;
-    }
-  }
-  .g-modal-content {
-    width: 1000px;
-  }
-  .productTable {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    font-size: 15px;
-    text-align: left;
-    flex-wrap: wrap;
-  }
-  .flex-item-left {
-    box-sizing: border-box;
-    padding: 10px;
-    flex: 50%;
-  }
-  .flex-item-right {
-    box-sizing: border-box;
-    padding: 10px;
-    flex: 50%;
-  }
-  /* Responsive layout - makes a one column-layout instead of two-column layout */
-  @media (max-width: 800px) {
-    .g-modal-content {
-      max-width: 95vw;
-      margin: auto;
-    }
-    .flex-container {
-      box-sizing: border-box;
-      flex-direction: column;
-    }
-    .ossContentCells {
-      width: 270px;
-    }
-  }
+export const HeaderWrapper = styled.div(({ isDark }: themeProps) => [
+  tw`px-6 py-2 md:py-5 font-sans`,
+  isDark ? tw`bg-gray-900` : tw`bg-white`
+]);
+
+export const HeaderContainer = styled.div`
+  ${tw`container flex justify-between items-center mx-auto`}
 `;
+
+export const HeaderNav = styled.nav(({ isDark, isOpenMobile }: themeProps) => [
+  tw`static flex flex-row justify-end items-center`,
+  css`
+    @media screen and (max-width: 768px) {
+      ${[
+      tw`absolute inset-0 z-50 flex-col justify-center`,
+      tw`transition-all duration-300 ease-in-out`
+    ]}
+      ${!isOpenMobile && css`top: -100vh; bottom: 100vh;`}
+    }
+  `,
+  isDark ? tw`bg-gray-900` : tw`bg-white`,
+]);
+
+export const HeaderControls = styled.menu`
+  ${tw`flex m-0 p-0`}
+`;
+
+export const HeaderLogo = styled.div(() => [
+  css`
+    img {
+      &:first-of-type {
+        ${tw`hidden md:block`}
+      }
+      &:last-of-type {
+        ${tw`md:hidden`}
+      }
+    }
+  `,
+]);
+
+export const HeaderLink = styled.a(({ accentColor, isDark }: themeProps) => [
+  tw`inline-block mx-2.5 text-xs no-underline`,
+  tw`transition duration-200 ease-in-out`,
+  css`
+    img {
+      ${tw`pl-1 pb-0.5`}
+    }
+
+    @media screen and (max-width: 768px) {
+      ${tw`block mx-0 py-5 text-center text-xl`}
+    }
+
+    @media screen and (max-width: 640px) {
+      ${tw`py-3 text-lg`}
+    }
+  `,
+  accentColor && css`&:hover {
+    color: ${accentColor};
+  }`,
+  isDark ? tw`text-white` : tw`text-black`,
+]);
+
+export const HeaderIcon = styled.button(({ iconType }: themeProps) => [
+  tw`flex md:hidden justify-center items-center p-1.5`,
+  tw`bg-transparent border-0 outline-none cursor-pointer`,
+  tw`transition duration-200 ease-in-out`,
+  css`&:hover {
+    opacity: 0.7;
+  }`,
+  iconType === 'toggle' && tw`transform scale-125 mt-4 md:flex md:transform-none md:m-0`,
+  iconType === 'close' && tw`absolute top-6 right-6`,
+]);
+
+export const HeaderSearch = styled.button(({ accentColor, isDark }: themeProps) => [
+  tw`hidden md:flex items-center mx-3 pl-2 pr-8 py-2 border-2 border-transparent rounded-md`,
+  tw`font-sans font-medium text-xs outline-none cursor-pointer`,
+  tw`transition duration-200 ease-in-out`,
+  css`
+    img {
+      ${tw`mr-2`}
+    }
+  `,
+  accentColor && css`&:hover, &:focus {
+    border: 2px solid ${accentColor};
+  }`,
+  isDark ? tw`bg-gray-700 text-gray-200` : tw`bg-gray-100 text-gray-400`,
+]);

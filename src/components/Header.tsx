@@ -1,54 +1,103 @@
-import React from "react";
-import { HeaderStyles } from "./Header.styles";
-import { HeaderModal } from "./HeaderModal";
-import { HeaderOptions } from "./types";
+import React, { useState } from "react";
+import {
+  HeaderWrapper,
+  HeaderContainer,
+  HeaderNav,
+  HeaderLink,
+  HeaderIcon,
+  HeaderSearch,
+  HeaderControls,
+  HeaderLogo
+} from "./Header.styles";
+import { headerThemedIcons } from "./Header.assets";
 
-export interface HeaderProps extends HeaderOptions {}
+import { HeaderModal } from "./HeaderModal";
+import { HeaderProps } from "./types";
 
 export const Header: React.FC<HeaderProps> = (props) => {
-  const { linkUrl } = props;
-  const [modalOpen, setModalOpen] = React.useState(false);
+  const [darkTheme, setDarkTheme] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [osModalOpen, setOSModalOpen] = useState(false);
+
+  const renderLinkOptions = (href: string, sameSite: boolean, setModalOpen?: Function) => {
+    const rootURL = 'https://the-guild.dev';
+    return setModalOpen ? {
+      href: href,
+      onClick: (e: any) => {
+        e.preventDefault();
+        setModalOpen(true);
+      }
+    } : {
+      rel: !sameSite ? 'noopener noreferrer' : undefined,
+      target: !sameSite ? '_blank' : undefined,
+      href: sameSite ? href : `${rootURL}${href}`
+    };
+  }
+
+  const icons = headerThemedIcons(darkTheme);
+
+  const links = [{
+    label: 'Our Services',
+    title: 'View our services',
+    href: '/services',
+  }, {
+    label: 'Open Source',
+    title: 'View our open source projects',
+    href: '',
+    setModalOpen: setOSModalOpen,
+  }, {
+    label: 'Blog',
+    title: 'Read our blog',
+    href: '/blog',
+  }, {
+    label: 'Company',
+    title: 'Learn more about us',
+    href: '/about-us',
+  }];
 
   return (
-    <HeaderStyles {...props}>
-      <div id="g-header-bar">
-        <a href={linkUrl} title="The Guild - Open Source">
-          <div className="g-header-logo"></div>
-          {/* <!--<picture>
-            <source srcset="${linkUrl}/static/white-logo.png" media="(prefers-color-scheme: dark)" />
-            <source srcset="${linkUrl}/static/logo.svg" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
-            <img src="${linkUrl}/static/logo.svg" alt="The Guild Logo"/ />
-          </picture>--> */}
-        </a>
-        <div>
-          <a href={`${linkUrl}/services`} className="g-header-links">
-            Our Services
-          </a>
-          <a
-            id="oss-nav"
-            className="g-header-links"
-            onClick={() => setModalOpen(true)}
-          >
-            Open Source
-            <img
-              src={`${linkUrl}/static/go-down.svg`}
-              height="10"
-              width="12"
-              style={{ color: "black" }}
-            />
-          </a>
-          {/* <!--<a href="${linkUrl}/open-source" className="g-header-links">Products</a>--> */}
-          <a href={`${linkUrl}/blog`} className="g-header-links">
-            Blog
-          </a>
-          <a href={`${linkUrl}/about-us`} className="g-header-links">
-            Company
-          </a>
-        </div>
-      </div>
-      {modalOpen && (
-        <HeaderModal {...props} onClose={() => setModalOpen(false)} />
-      )}
-    </HeaderStyles>
+    <HeaderWrapper isDark={darkTheme}>
+      <HeaderContainer>
+        <HeaderIcon onClick={() => setMobileNavOpen(true)}>
+          <img src={icons.menu} height="24" width="24" alt="Search icon" />
+        </HeaderIcon>
+
+        <HeaderLogo {...renderLinkOptions('/', props.sameSite)} title="View our website">
+          <img src={icons.logoFull} height="30" alt="The Guild Logo" />
+          <img src={icons.logoMono} height="38" alt="The Guild Monogram" />
+        </HeaderLogo>
+
+        <HeaderNav isDark={darkTheme} isOpenMobile={mobileNavOpen}>
+          <HeaderIcon iconType="close" onClick={() => setMobileNavOpen(false)}>
+            <img src={icons.close} height="24" width="24" alt="Menu close icon" />
+          </HeaderIcon>
+          {links.map(link => (
+            <HeaderLink
+              key={link.label}
+              accentColor={props.accentColor}
+              isDark={darkTheme}
+              title={link.title}
+              {...renderLinkOptions(link.href, props.sameSite, link.setModalOpen)}
+            >
+              {link.label}
+              {link.setModalOpen && <img src={icons.caret} alt="Link icon" />}
+            </HeaderLink>
+          ))}
+          <HeaderControls>
+            <HeaderSearch accentColor={props.accentColor} isDark={darkTheme}>
+              <img src={icons.search} height="20" width="20" alt="Search icon" />
+              Search...
+            </HeaderSearch>
+            <HeaderIcon iconType="toggle" onClick={() => setDarkTheme(state => !state)}>
+              <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
+            </HeaderIcon>
+          </HeaderControls>
+        </HeaderNav>
+        <HeaderIcon>
+          <img src={icons.search} height="24" width="24" alt="Search icon" />
+        </HeaderIcon>
+      </HeaderContainer>
+      <HeaderModal darkTheme={darkTheme} modalOpen={osModalOpen} setModalOpen={setOSModalOpen} />
+    </HeaderWrapper>
   );
 };

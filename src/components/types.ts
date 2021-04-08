@@ -1,6 +1,10 @@
-export interface HeaderOptions {
-  linkUrl: string;
-  navbarBackgroundColor: string;
-  navbarLinkColor: string;
-  navbarLinkHoverColor: string;
+export interface HeaderProps {
+  accentColor: string;
+  sameSite: boolean;
+}
+
+export interface HeaderModalProps {
+  darkTheme: boolean,
+  modalOpen: boolean;
+  setModalOpen: Function;
 }
