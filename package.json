@@ -52,6 +52,7 @@
   },
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
+    "@rollup/plugin-image": "^2.0.6",
     "core-js": "^3.8.3",
     "tailwindcss": "^2.0.3",
     "twin.macro": "^2.2.3"

@@ -6,8 +6,9 @@ interface themeProps {
 }
 
 export const Modal = styled.div(({ isModalOpen }: themeProps) => [
-  tw`absolute inset-0 z-50 visible font-sans`,
+  tw`absolute inset-0 visible font-sans`,
   css`
+    z-index: 400;
     backdrop-filter: blur(2px);
     ${!isModalOpen && tw`invisible`}
   `
@@ -23,7 +24,7 @@ export const ModalOverlay = styled.div(({ isModalOpen }: themeProps) => [
 ]);
 
 export const ModalWrapper = styled.div(({ isDark, isModalOpen }: themeProps) => [
-  tw`absolute bottom-0 left-2/4 transform -translate-x-1/2 bottom-0 z-50`,
+  tw`absolute bottom-0 left-2/4 transform -translate-x-1/2 bottom-0`,
   tw`flex flex-col w-4/5 max-w-2xl opacity-100 rounded-t-md`,
   css`
     height: 85%;

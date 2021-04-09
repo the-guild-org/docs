@@ -19,8 +19,10 @@ export const HeaderNav = styled.nav(({ isDark, isModalOpen }: themeProps) => [
   tw`static flex flex-row justify-end items-center`,
   css`
     @media screen and (max-width: 768px) {
+      z-index: 300;
+
       ${[
-      tw`absolute inset-0 z-40 flex-col justify-center`,
+      tw`absolute inset-0 flex-col justify-center`,
       tw`transition-all duration-300 ease-in-out`
     ]}
       ${!isModalOpen && css`top: -100vh; bottom: 100vh;`}

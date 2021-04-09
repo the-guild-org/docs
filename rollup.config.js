@@ -2,9 +2,10 @@ import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "rollup-plugin-node-resolve";
-import svgr from '@svgr/rollup';
+import image from '@rollup/plugin-image';
 
 import pkg from "./package.json";
+
 
 const config = {
   name: "ComponentLibrary",
@@ -57,6 +58,6 @@ export default {
       exclude: "node_modules/**",
     }),
 
-    svgr()
+    image(),
   ],
 };
