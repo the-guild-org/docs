@@ -3,7 +3,8 @@
 ## Getting started
 
 This is an npm package hosted at: https://www.npmjs.com/package/the-guild-components.
-We also have a Storybook here: the-guild-components-frontwork.vercel.app.
+
+We also have a Storybook here: https://the-guild-components-frontwork.vercel.app.
 
 ## Links
 
