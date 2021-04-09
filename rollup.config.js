@@ -2,6 +2,8 @@ import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "rollup-plugin-node-resolve";
+import svgr from '@svgr/rollup';
+
 import pkg from "./package.json";
 
 const config = {
@@ -54,5 +56,7 @@ export default {
       include: ["src/**/*"],
       exclude: "node_modules/**",
     }),
+
+    svgr({ native: true })
   ],
 };

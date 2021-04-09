@@ -9,10 +9,10 @@ import caretIconLight from '../static/icons/caret-down-light.svg';
 import closeIconDark from '../static/icons/close-dark.svg';
 import closeIconLight from '../static/icons/close-light.svg';
 
-import logoFullDark from '../static/logos/theguild-full-dark.svg';
-import logoFullLight from '../static/logos/theguild-full-light.svg';
-import logoMonoDark from '../static/logos/theguild-mono-dark.svg';
-import logoMonoLight from '../static/logos/theguild-mono-light.svg';
+import logoFullDark from '../static/logos/guild-full-dark.svg';
+import logoFullLight from '../static/logos/guild-full-light.svg';
+import logoMonoDark from '../static/logos/guild-mono-dark.svg';
+import logoMonoLight from '../static/logos/guild-mono-light.svg';
 
 import productAngular from '../static/logos/products/angular.svg';
 import productCLI from '../static/logos/products/cli.svg';
