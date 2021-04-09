@@ -1,13 +1,9 @@
-# Storybook + styled-components (ts)
+# The Guild Component Library
 
 ## Getting started
 
-Either check out the setup in the attached repository or clone this repository with degit:
-
-```js
-npx degit https://github.com/ben-rogerson/twin.examples/storybook-styled-components-typescript folder-name
-```
-
+This is an npm package hosted at: https://www.npmjs.com/package/the-guild-components.
+We also have a Storybook here: the-guild-components-frontwork.vercel.app.
 
 ## Links
 
@@ -15,3 +11,9 @@ npx degit https://github.com/ben-rogerson/twin.examples/storybook-styled-compone
 - [StyledComponents](https://styled-components.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Twin](https://github.com/ben-rogerson/twin.macro)
+
+This project was based on:
+
+```js
+npx degit https://github.com/ben-rogerson/twin.examples/storybook-styled-components-typescript folder-name
+```
