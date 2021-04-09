@@ -14,4 +14,7 @@ const Template: Story<HeaderModalProps> = args => (
 )
 
 export const Primary = Template.bind({})
-Primary.args = {}
+Primary.args = {
+  darkTheme: false,
+  modalOpen: true
+}

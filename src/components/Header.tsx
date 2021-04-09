@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   HeaderWrapper,
   HeaderContainer,
@@ -18,6 +18,11 @@ export const Header: React.FC<HeaderProps> = (props) => {
   const [darkTheme, setDarkTheme] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [osModalOpen, setOSModalOpen] = useState(false);
+
+  useEffect(() => {
+    const theme = document.body.dataset.theme;
+    if (theme && theme === 'dark') setDarkTheme(true);
+  }, []);
 
   const renderLinkOptions = (href: string, sameSite: boolean, setModalOpen?: Function) => {
     const rootURL = 'https://the-guild.dev';
@@ -88,7 +93,10 @@ export const Header: React.FC<HeaderProps> = (props) => {
               <img src={icons.search} height="20" width="20" alt="Search icon" />
               Search...
             </HeaderSearch>
-            <HeaderIcon iconType="toggle" onClick={() => setDarkTheme(state => !state)}>
+            <HeaderIcon iconType="toggle" onClick={() => {
+              document.body.dataset.theme = darkTheme ? 'light' : 'dark';
+              setDarkTheme(state => !state);
+            }}>
               <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
             </HeaderIcon>
           </HeaderControls>

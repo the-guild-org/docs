@@ -20,7 +20,7 @@ export const HeaderNav = styled.nav(({ isDark, isOpenMobile }: themeProps) => [
   css`
     @media screen and (max-width: 768px) {
       ${[
-      tw`absolute inset-0 z-50 flex-col justify-center`,
+      tw`absolute inset-0 z-40 flex-col justify-center`,
       tw`transition-all duration-300 ease-in-out`
     ]}
       ${!isOpenMobile && css`top: -100vh; bottom: 100vh;`}
@@ -65,7 +65,7 @@ export const HeaderLink = styled.a(({ accentColor, isDark }: themeProps) => [
   accentColor && css`&:hover {
     color: ${accentColor};
   }`,
-  isDark ? tw`text-white` : tw`text-black`,
+  isDark ? tw`text-gray-100` : tw`text-black`,
 ]);
 
 export const HeaderIcon = styled.button(({ iconType }: themeProps) => [
