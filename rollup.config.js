@@ -57,6 +57,6 @@ export default {
       exclude: "node_modules/**",
     }),
 
-    svgr({ native: true })
+    svgr()
   ],
 };
