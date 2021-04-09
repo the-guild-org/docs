@@ -7,6 +7,22 @@ import { HeaderModalProps } from './types';
 export default {
   title: 'HeaderModal',
   component: HeaderModal,
+  argTypes: {
+    modalOpen: {
+      name: 'Active',
+      description: 'Toggles the component visibility.',
+    },
+    darkTheme: {
+      name: 'Dark Theme',
+      description: 'Toggles the component theme.',
+    },
+    setModalOpen: {
+      table: {
+        disable: true
+      },
+      control: false
+    }
+  },
 } as Meta
 
 const Template: Story<HeaderModalProps> = args => (
@@ -16,5 +32,5 @@ const Template: Story<HeaderModalProps> = args => (
 export const Primary = Template.bind({})
 Primary.args = {
   darkTheme: false,
-  modalOpen: true
+  modalOpen: true,
 }

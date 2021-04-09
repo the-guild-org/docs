@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { HeaderModalProps } from "./types";
 import { HeaderIcon } from './Header.styles';
-import { Modal, ModalContent, ModalHeader, ModalOverlay, ModalWrapper, ProductCategory, ProductList, ProductThumbnail } from "./HeaderModal.styles";
+import { Modal, ModalContent, ModalHeader, ModalOverlay, ModalWrapper, ProductCategory, ProductList, ProductThumbnail, ProductImage } from "./HeaderModal.styles";
 import { headerThemedIcons, productThemedIcons } from "./Header.assets";
 
 export const HeaderModal: React.FC<HeaderModalProps> = (props) => {
@@ -94,9 +94,9 @@ export const HeaderModal: React.FC<HeaderModalProps> = (props) => {
   });
 
   return (
-    <Modal isModalOpen={modalOpen}>
-      <ModalOverlay tabIndex={-1}></ModalOverlay>
-      <ModalWrapper isDark={darkTheme} role="dialog">
+    <Modal isModalOpen={modalOpen} role="dialog">
+      <ModalOverlay isModalOpen={modalOpen} tabIndex={-1}></ModalOverlay>
+      <ModalWrapper isModalOpen={modalOpen} isDark={darkTheme}>
         <ModalHeader isDark={darkTheme}>
           <h2>Products by The Guild</h2>
           <HeaderIcon iconType="close" onClick={() => setModalOpen(false)}>
@@ -109,8 +109,17 @@ export const HeaderModal: React.FC<HeaderModalProps> = (props) => {
               <h3>{category.title}</h3>
               <ProductList>
                 {category.items.map(product => (
-                  <ProductThumbnail key={product.title} href={product.link} isDark={darkTheme}>
-                    <img src={product.image} alt={`${product.title} logo`} />
+                  <ProductThumbnail
+                    key={product.title}
+                    isDark={darkTheme}
+                    href={product.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ProductImage>
+                      <img src={product.image} alt={`${product.title} logo`} />
+                      <img src={product.image} alt={`${product.title} blurred logo`} />
+                    </ProductImage>
                     <span>
                       <h4>{product.title}</h4>
                       <p>{product.description}</p>

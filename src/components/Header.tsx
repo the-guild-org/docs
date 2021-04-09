@@ -72,7 +72,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
           <img src={icons.logoMono} height="38" alt="The Guild Monogram" />
         </HeaderLogo>
 
-        <HeaderNav isDark={darkTheme} isOpenMobile={mobileNavOpen}>
+        <HeaderNav isDark={darkTheme} isModalOpen={mobileNavOpen}>
           <HeaderIcon iconType="close" onClick={() => setMobileNavOpen(false)}>
             <img src={icons.close} height="24" width="24" alt="Menu close icon" />
           </HeaderIcon>

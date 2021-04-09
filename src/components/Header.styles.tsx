@@ -2,7 +2,7 @@ import tw, { css, styled } from 'twin.macro';
 interface themeProps {
   accentColor?: string
   isDark?: boolean
-  isOpenMobile?: boolean
+  isModalOpen?: boolean
   iconType?: 'close' | 'toggle'
 }
 
@@ -15,7 +15,7 @@ export const HeaderContainer = styled.div`
   ${tw`container flex justify-between items-center mx-auto`}
 `;
 
-export const HeaderNav = styled.nav(({ isDark, isOpenMobile }: themeProps) => [
+export const HeaderNav = styled.nav(({ isDark, isModalOpen }: themeProps) => [
   tw`static flex flex-row justify-end items-center`,
   css`
     @media screen and (max-width: 768px) {
@@ -23,7 +23,7 @@ export const HeaderNav = styled.nav(({ isDark, isOpenMobile }: themeProps) => [
       tw`absolute inset-0 z-40 flex-col justify-center`,
       tw`transition-all duration-300 ease-in-out`
     ]}
-      ${!isOpenMobile && css`top: -100vh; bottom: 100vh;`}
+      ${!isModalOpen && css`top: -100vh; bottom: 100vh;`}
     }
   `,
   isDark ? tw`bg-gray-900` : tw`bg-white`,
@@ -58,7 +58,7 @@ export const HeaderLink = styled.a(({ accentColor, isDark }: themeProps) => [
       ${tw`block mx-0 py-5 text-center text-xl`}
     }
 
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 360px) {
       ${tw`py-3 text-lg`}
     }
   `,

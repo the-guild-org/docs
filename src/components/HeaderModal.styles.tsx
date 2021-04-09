@@ -6,25 +6,35 @@ interface themeProps {
 }
 
 export const Modal = styled.div(({ isModalOpen }: themeProps) => [
-  tw`hidden`,
-  tw`absolute inset-0 font-sans`,
-  isModalOpen && tw`block`,
+  tw`absolute inset-0 z-50 visible font-sans`,
+  css`
+    backdrop-filter: blur(2px);
+    ${!isModalOpen && tw`invisible`}
+  `
 ]);
 
-export const ModalOverlay = styled.div(() => [
+export const ModalOverlay = styled.div(({ isModalOpen }: themeProps) => [
   tw`absolute inset-0`,
-  tw`w-full h-full bg-gray-900 opacity-40`
+  tw`w-full h-full bg-gray-900 invisible opacity-0`,
+  tw`transition-all duration-150 ease-in-out`,
+  css`
+    ${isModalOpen && tw`visible opacity-40`}
+  `
 ]);
 
-export const ModalWrapper = styled.div(({ isDark }: themeProps) => [
-  tw`absolute left-2/4 transform -translate-x-1/2 bottom-0 z-50`,
-  tw`flex flex-col w-4/5 max-w-2xl rounded-t-md`,
+export const ModalWrapper = styled.div(({ isDark, isModalOpen }: themeProps) => [
+  tw`absolute bottom-0 left-2/4 transform -translate-x-1/2 bottom-0 z-50`,
+  tw`flex flex-col w-4/5 max-w-2xl opacity-100 rounded-t-md`,
   css`
     height: 85%;
     
     @media screen and (max-width: 768px) {
       ${tw`inset-0 transform-none h-full w-full max-w-none rounded-none`}
     }
+  `,
+  tw`transition-all duration-300 ease-in-out`,
+  css`
+      ${!isModalOpen && tw`opacity-0`}
   `,
   isDark ? tw`bg-gray-900` : tw`bg-white`,
 ]);
@@ -77,29 +87,50 @@ export const ProductCategory = styled.div(({ isDark }: themeProps) => [
 
 export const ProductList = styled.div(() => [
   tw`flex flex-wrap`,
+  css`
+    &:hover > a {
+      &:not(a:hover) {
+        filter: grayscale(100%);
+        opacity: 0.2;
+
+        img {
+          filter: brightness(0);
+        }
+      }
+
+      &:hover {
+        img:nth-child(2) {
+          position: absolute;
+          top: 4px;
+          display: block;
+          filter: blur(3px);
+          opacity: 0.45;
+        }
+      }
+    }
+  `,
+]);
+
+export const ProductImage = styled.div(() => [
+  tw`relative mr-3`,
+  css`
+    img {
+      vertical-align: bottom;
+
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  `
 ]);
 
 export const ProductThumbnail = styled.a(({ isDark }: themeProps) => [
-  tw`flex py-2 px-1 rounded-lg no-underline`,
-  tw`transition duration-200`,
+  tw`flex py-3 px-2 rounded-lg no-underline`,
   css`
-    width: calc(50% - 0.8rem);
-    margin: 0.25rem 0;
-
-    &:nth-child(odd) {
-      margin-right: 0.25rem;
-    }
-
-    &:nth-child(even) {
-      margin-left: 0.25rem;
-    }
+    width: calc(50% - 1rem);
 
     &:hover {
       ${isDark ? tw`bg-gray-800` : tw`bg-gray-100`}
-    }
-
-    img {
-      ${tw`mr-3`}
     }
     
     span {

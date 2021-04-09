@@ -7,7 +7,19 @@ import { HeaderProps } from './types';
 export default {
   title: 'Header',
   component: Header,
-  argTypes: {},
+  argTypes: {
+    accentColor: {
+      name: 'Accent Color',
+      description: 'Used in the hover effect on the navigation.',
+      control: {
+        type: 'color'
+      }
+    },
+    sameSite: {
+      name: 'Same Site',
+      description: 'When enabled, links will open in the same tab, using the existing domain.',
+    }
+  },
   parameters: {
     backgrounds: {
       default: 'dark',
