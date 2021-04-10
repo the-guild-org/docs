@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   HeaderGlobalStyles,
   HeaderWrapper,
@@ -9,11 +9,11 @@ import {
   HeaderControls,
   HeaderSide,
   HeaderLogo
-} from "./Header.styles";
-import { headerThemedIcons } from "./Header.assets";
+} from './Header.styles';
+import { headerThemedIcons } from './Header.assets';
 
-import { HeaderModal } from "./HeaderModal";
-import { HeaderProps } from "./types";
+import { HeaderModal } from './HeaderModal';
+import { HeaderProps } from './types';
 
 export const Header: React.FC<HeaderProps> = (props) => {
   const [darkTheme, setDarkTheme] = useState(false);

@@ -26,9 +26,9 @@ export const HeaderNav = styled.nav(({ isDark, isModalOpen }: themeProps) => [
 
       ${[
       tw`absolute inset-0 flex-col justify-center`,
-      tw`transition-all duration-300 ease-in-out`
+      tw`transition-all duration-300 ease-in-out`,
+      !isModalOpen && css`top: -100vh; bottom: 100vh;`
     ]}
-      ${!isModalOpen && css`top: -100vh; bottom: 100vh;`}
     }
   `,
   isDark ? tw`bg-gray-900` : tw`bg-white`,
@@ -38,7 +38,7 @@ export const HeaderControls = styled.menu(() => [
   tw`flex m-0 p-0`,
   css`
     @media screen and (max-width: 768px) {
-      button:first-of-type {
+      button:first-child:not(:only-child) {
         ${tw`hidden`}
       }
     }
@@ -46,16 +46,9 @@ export const HeaderControls = styled.menu(() => [
 ]);
 
 export const HeaderLogo = styled.a(() => [
-  css`
-    img {
-      &:first-of-type {
-        ${tw`hidden md:block`}
-      }
-      &:last-of-type {
-        ${tw`md:hidden`}
-      }
-    }
-  `,
+  css`img {
+    ${tw`first:(hidden md:block) last:(md:hidden)`}
+  }`,
 ]);
 
 export const HeaderLink = styled.a(({ accentColor, isDark, isModal }: themeProps) => [
@@ -85,18 +78,15 @@ export const HeaderLink = styled.a(({ accentColor, isDark, isModal }: themeProps
 
 export const HeaderIcon = styled.button(({ iconType }: themeProps) => [
   tw`flex md:hidden justify-center items-center p-1.5`,
-  tw`bg-transparent border-0 outline-none cursor-pointer`,
+  tw`bg-transparent border-0 outline-none cursor-pointer hover:opacity-70`,
   tw`transition duration-200 ease-in-out`,
-  css`&:hover {
-    opacity: 0.7;
-  }`,
-  iconType === 'toggle' && tw`transform scale-125 mt-4 md:flex md:transform-none md:m-0`,
+  iconType === 'toggle' && tw`transform scale-125 mt-4 md:(flex transform-none m-0)`,
   iconType === 'close' && tw`absolute top-6 right-6`,
 ]);
 
 export const HeaderSide = styled.div(() => [
   tw`flex md:hidden`,
-  css`min-width: 24px;`
+  css`min-width: 3.25rem;`
 ]);
 
 export const HeaderSearch = styled.button(({ accentColor, isDark }: themeProps) => [
@@ -104,14 +94,14 @@ export const HeaderSearch = styled.button(({ accentColor, isDark }: themeProps) 
   tw`font-sans font-medium text-xs outline-none cursor-pointer`,
   tw`transition duration-200 ease-in-out`,
   css`
+      img { 
+      ${tw`mr-1`} 
+    }
+
     &:hover {
       img { 
         ${tw`opacity-70`} 
       }
-    }
-
-    img { 
-      ${tw`mr-1`} 
     }
 
     @media screen and (max-width: 768px) {

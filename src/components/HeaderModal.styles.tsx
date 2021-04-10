@@ -118,17 +118,14 @@ export const ProductImage = styled.div(() => [
   tw`relative mr-3`,
   css`
     img {
-      vertical-align: bottom;
-
-      &:nth-child(2) {
-        display: none;
-      }
+      ${tw`align-bottom last:hidden`}
     }
   `
 ]);
 
 export const ProductThumbnail = styled.a(({ isDark }: themeProps) => [
   tw`flex py-3 px-2 rounded-lg no-underline!`,
+  tw`transition-all duration-200 ease-in-out`,
   css`
     width: calc(50% - 1rem);
 
@@ -144,23 +141,17 @@ export const ProductThumbnail = styled.a(({ isDark }: themeProps) => [
       }
 
       h4 {
-        ${tw`font-semibold text-base`}
-        ${isDark ? tw`text-gray-400` : tw`text-black`}
+        ${[tw`font-semibold text-base`, isDark ? tw`text-gray-400` : tw`text-black`]}
       }
 
       p {
-        ${tw`font-medium text-xs`}
-        ${isDark ? tw`text-gray-500` : tw`text-gray-400`}
+        ${[tw`font-medium text-xs`, isDark ? tw`text-gray-500` : tw`text-gray-400`]}
       }
     }
 
     @media screen and (max-width: 640px) {
+      ${tw`w-full my-1`}
       width: 100%;
-      
-      &:nth-child(odd),
-      &:nth-child(even) {
-        margin: 0.25rem 0;
-      }
     }
   `
 ]);
