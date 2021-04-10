@@ -88,49 +88,46 @@ export const HeaderModal: React.FC<HeaderModalProps> = (props) => {
     }]
   }]
 
-  useEffect(() => {
-    document.body.classList.toggle('blurred', modalOpen);
-    return () => { document.body.classList.toggle('blurred', false); }
-  });
-
   return (
-    <Modal isModalOpen={modalOpen} role="dialog">
-      <ModalOverlay isModalOpen={modalOpen} tabIndex={-1}></ModalOverlay>
-      <ModalWrapper isModalOpen={modalOpen} isDark={darkTheme}>
-        <ModalHeader isDark={darkTheme}>
-          <h2>Products by The Guild</h2>
-          <HeaderIcon iconType="close" onClick={() => setModalOpen(false)}>
-            <img src={icons.close} height="24" width="24" alt="Menu close icon" />
-          </HeaderIcon>
-        </ModalHeader>
-        <ModalContent isDark={darkTheme}>
-          {productCategories.map((category, index) => (
-            <ProductCategory key={index} isDark={darkTheme}>
-              <h3>{category.title}</h3>
-              <ProductList>
-                {category.items.map(product => (
-                  <ProductThumbnail
-                    key={product.title}
-                    isDark={darkTheme}
-                    href={product.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ProductImage>
-                      <img src={product.image} alt={`${product.title} logo`} />
-                      <img src={product.image} alt={`${product.title} blurred logo`} />
-                    </ProductImage>
-                    <span>
-                      <h4>{product.title}</h4>
-                      <p>{product.description}</p>
-                    </span>
-                  </ProductThumbnail>
-                ))}
-              </ProductList>
-            </ProductCategory>
-          ))}
-        </ModalContent>
-      </ModalWrapper>
-    </Modal>
+    <>
+      <Modal isModalOpen={modalOpen} role="dialog">
+        <ModalOverlay isModalOpen={modalOpen} tabIndex={-1}></ModalOverlay>
+        <ModalWrapper isModalOpen={modalOpen} isDark={darkTheme}>
+          <ModalHeader isDark={darkTheme}>
+            <h2>Products by The Guild</h2>
+            <HeaderIcon iconType="close" onClick={() => setModalOpen(false)}>
+              <img src={icons.close} height="24" width="24" alt="Menu close icon" />
+            </HeaderIcon>
+          </ModalHeader>
+          <ModalContent isDark={darkTheme}>
+            {productCategories.map((category, index) => (
+              <ProductCategory key={index} isDark={darkTheme}>
+                <h3>{category.title}</h3>
+                <ProductList>
+                  {category.items.map(product => (
+                    <ProductThumbnail
+                      key={product.title}
+                      isDark={darkTheme}
+                      href={product.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ProductImage>
+                        <img src={product.image} alt={`${product.title} logo`} />
+                        <img src={product.image} alt={`${product.title} blurred logo`} />
+                      </ProductImage>
+                      <span>
+                        <h4>{product.title}</h4>
+                        <p>{product.description}</p>
+                      </span>
+                    </ProductThumbnail>
+                  ))}
+                </ProductList>
+              </ProductCategory>
+            ))}
+          </ModalContent>
+        </ModalWrapper>
+      </Modal>
+    </>
   );
 };

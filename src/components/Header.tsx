@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  HeaderGlobalStyles,
   HeaderWrapper,
   HeaderContainer,
   HeaderNav,
@@ -24,7 +25,10 @@ export const Header: React.FC<HeaderProps> = (props) => {
       const theme = document.documentElement.dataset.theme;
       if (theme && theme === 'dark') setDarkTheme(true);
     }
-  }, []);
+
+    document.body.classList.toggle('tg-modal-open', osModalOpen);
+    return () => { document.body.classList.toggle('tg-modal-open', false); }
+  });
 
   const renderLinkOptions = (href: string, sameSite: boolean, setModalOpen?: Function) => {
     const rootURL = 'https://the-guild.dev';
@@ -67,56 +71,59 @@ export const Header: React.FC<HeaderProps> = (props) => {
   }];
 
   return (
-    <HeaderWrapper isDark={darkTheme}>
-      <HeaderContainer>
-        <HeaderSide>
-          <HeaderIcon onClick={() => setMobileNavOpen(true)}>
-            <img src={icons.menu} height="24" width="24" alt="Search icon" />
-          </HeaderIcon>
-        </HeaderSide>
+    <>
+      <HeaderGlobalStyles />
+      <HeaderWrapper isDark={darkTheme}>
+        <HeaderContainer>
+          <HeaderSide>
+            <HeaderIcon onClick={() => setMobileNavOpen(true)}>
+              <img src={icons.menu} height="24" width="24" alt="Search icon" />
+            </HeaderIcon>
+          </HeaderSide>
 
-        <HeaderLogo {...renderLinkOptions('/', props.sameSite)} title="View our website">
-          <img src={icons.logoFull} height="30" alt="The Guild Logo" />
-          <img src={icons.logoMono} height="38" alt="The Guild Monogram" />
-        </HeaderLogo>
+          <HeaderLogo {...renderLinkOptions('/', props.sameSite)} title="View our website">
+            <img src={icons.logoFull} height="30" alt="The Guild Logo" />
+            <img src={icons.logoMono} height="38" alt="The Guild Monogram" />
+          </HeaderLogo>
 
-        <HeaderNav isDark={darkTheme} isModalOpen={mobileNavOpen}>
-          <HeaderIcon iconType="close" onClick={() => setMobileNavOpen(false)}>
-            <img src={icons.close} height="24" width="24" alt="Menu close icon" />
-          </HeaderIcon>
-          {links.map(link => (
-            <HeaderLink
-              key={link.label}
-              accentColor={props.accentColor}
-              isModal={!!link.setModalOpen}
-              isDark={darkTheme}
-              title={link.title}
-              {...renderLinkOptions(link.href, props.sameSite, link.setModalOpen)}
-            >
-              {link.label}
-              {link.setModalOpen && <img src={icons.caret} alt="Link icon" />}
-            </HeaderLink>
-          ))}
-          <HeaderControls>
+          <HeaderNav isDark={darkTheme} isModalOpen={mobileNavOpen}>
+            <HeaderIcon iconType="close" onClick={() => setMobileNavOpen(false)}>
+              <img src={icons.close} height="24" width="24" alt="Menu close icon" />
+            </HeaderIcon>
+            {links.map(link => (
+              <HeaderLink
+                key={link.label}
+                accentColor={props.accentColor}
+                isModal={!!link.setModalOpen}
+                isDark={darkTheme}
+                title={link.title}
+                {...renderLinkOptions(link.href, props.sameSite, link.setModalOpen)}
+              >
+                {link.label}
+                {link.setModalOpen && <img src={icons.caret} alt="Link icon" />}
+              </HeaderLink>
+            ))}
+            <HeaderControls>
+              {props.searchComponent}
+              {
+                props.themeSwitch &&
+                <HeaderIcon
+                  iconType="toggle" onClick={() => {
+                    document.documentElement.dataset.theme = darkTheme ? 'light' : 'dark';
+                    setDarkTheme(state => !state);
+                  }}>
+                  <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
+                </HeaderIcon>
+              }
+            </HeaderControls>
+          </HeaderNav>
+
+          <HeaderSide>
             {props.searchComponent}
-            {
-              props.themeSwitch &&
-              <HeaderIcon
-                iconType="toggle" onClick={() => {
-                  document.documentElement.dataset.theme = darkTheme ? 'light' : 'dark';
-                  setDarkTheme(state => !state);
-                }}>
-                <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
-              </HeaderIcon>
-            }
-          </HeaderControls>
-        </HeaderNav>
-
-        <HeaderSide>
-          {props.searchComponent}
-        </HeaderSide>
-      </HeaderContainer>
-      <HeaderModal darkTheme={darkTheme} modalOpen={osModalOpen} setModalOpen={setOSModalOpen} />
-    </HeaderWrapper>
+          </HeaderSide>
+        </HeaderContainer>
+        <HeaderModal darkTheme={darkTheme} modalOpen={osModalOpen} setModalOpen={setOSModalOpen} />
+      </HeaderWrapper>
+    </>
   );
 };

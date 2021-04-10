@@ -1,4 +1,6 @@
 import tw, { css, styled } from 'twin.macro';
+export { HeaderGlobalStyles } from '../styles/GlobalStyles';
+
 interface themeProps {
   accentColor?: string
   isDark?: boolean

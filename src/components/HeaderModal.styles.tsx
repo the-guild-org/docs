@@ -58,7 +58,7 @@ export const ModalHeader = styled.div(({ isDark }: themeProps) => [
 export const ModalContent = styled.div(({ isDark }: themeProps) => [
   tw`block px-6 py-7 pb-0`,
   css`
-    max-height: calc(100% - 7rem);
+    max-height: calc(100% - 5.25rem);
     overflow: auto;
 
     ::-webkit-scrollbar-track {
