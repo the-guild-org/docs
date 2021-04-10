@@ -68,7 +68,7 @@ export const HeaderLink = styled.a(({ accentColor, isDark, isModal }: themeProps
     }
   `,
   accentColor && css`&:hover {
-    color: ${accentColor};
+    color: ${accentColor} !important;
   }`,
   isModal ?
     isDark ? tw`text-white` : tw`text-black` :
@@ -89,7 +89,7 @@ export const HeaderSide = styled.div(() => [
   css`min-width: 3.25rem;`
 ]);
 
-export const HeaderSearch = styled.button(({ accentColor, isDark }: themeProps) => [
+export const HeaderSearch = styled.button(() => [
   tw`flex items-center mx-3 pl-1 pr-8 py-1 border-2 border-transparent rounded-md`,
   tw`font-sans font-medium text-xs outline-none cursor-pointer`,
   tw`transition duration-200 ease-in-out`,
@@ -114,8 +114,5 @@ export const HeaderSearch = styled.button(({ accentColor, isDark }: themeProps) 
       }
     }
   `,
-  accentColor && css`&:hover, &:focus {
-    border: 2px solid ${accentColor};
-  }`,
-  isDark ? tw`bg-gray-700 text-gray-200` : tw`bg-gray-100 text-gray-400`,
+  // isDark ? tw`bg-gray-700 text-gray-200` : tw`bg-gray-100 text-gray-400`,
 ]);
