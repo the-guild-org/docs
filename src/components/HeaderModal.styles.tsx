@@ -6,9 +6,9 @@ interface themeProps {
 }
 
 export const Modal = styled.div(({ isModalOpen }: themeProps) => [
-  tw`absolute inset-0 visible font-sans`,
+  tw`fixed inset-0 visible font-sans`,
   css`
-    z-index: 400;
+    z-index: 400; //TODO: Used for Docusaurus, remove when no longer needed.
     backdrop-filter: blur(2px);
     ${!isModalOpen && tw`invisible`}
   `

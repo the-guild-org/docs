@@ -55,7 +55,7 @@ Enhanced.args = {
   accentColor: '#e15799',
   sameSite: false,
   searchComponent:
-    <HeaderSearch onClick={() => console.log('Open dialog')} ref={React.createRef()}>
+    <HeaderSearch onClick={() => console.log('Open Search')}>
       <img src={headerThemedIcons(false).search} height="18" width="18" alt="Search icon" />
       <span>Search...</span>
     </HeaderSearch>,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import {
   HeaderWrapper,
   HeaderContainer,
@@ -6,6 +6,7 @@ import {
   HeaderLink,
   HeaderIcon,
   HeaderControls,
+  HeaderSide,
   HeaderLogo
 } from "./Header.styles";
 import { headerThemedIcons } from "./Header.assets";
@@ -17,15 +18,6 @@ export const Header: React.FC<HeaderProps> = (props) => {
   const [darkTheme, setDarkTheme] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [osModalOpen, setOSModalOpen] = useState(false);
-  let HeaderSearch = null;
-
-  const searchComponentRef = useRef<HTMLButtonElement>(null);
-  if (props.searchComponent) {
-    HeaderSearch = React.cloneElement(
-      props.searchComponent,
-      { ref: searchComponentRef }
-    );
-  }
 
   useEffect(() => {
     if (props.themeSwitch) {
@@ -38,6 +30,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
     const rootURL = 'https://the-guild.dev';
     return setModalOpen ? {
       href: href,
+      linkType: 'modal',
       onClick: (e: any) => {
         e.preventDefault();
         setModalOpen(true);
@@ -61,6 +54,10 @@ export const Header: React.FC<HeaderProps> = (props) => {
     href: '',
     setModalOpen: setOSModalOpen,
   }, {
+    label: 'Products',
+    title: 'Discover our products',
+    href: '/open-source',
+  }, {
     label: 'Blog',
     title: 'Read our blog',
     href: '/blog',
@@ -73,9 +70,11 @@ export const Header: React.FC<HeaderProps> = (props) => {
   return (
     <HeaderWrapper isDark={darkTheme}>
       <HeaderContainer>
-        <HeaderIcon onClick={() => setMobileNavOpen(true)}>
-          <img src={icons.menu} height="24" width="24" alt="Search icon" />
-        </HeaderIcon>
+        <HeaderSide>
+          <HeaderIcon onClick={() => setMobileNavOpen(true)}>
+            <img src={icons.menu} height="24" width="24" alt="Search icon" />
+          </HeaderIcon>
+        </HeaderSide>
 
         <HeaderLogo {...renderLinkOptions('/', props.sameSite)} title="View our website">
           <img src={icons.logoFull} height="30" alt="The Guild Logo" />
@@ -99,7 +98,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
             </HeaderLink>
           ))}
           <HeaderControls>
-            {HeaderSearch}
+            {props.searchComponent}
             {
               props.themeSwitch &&
               <HeaderIcon
@@ -112,11 +111,10 @@ export const Header: React.FC<HeaderProps> = (props) => {
             }
           </HeaderControls>
         </HeaderNav>
-        {props.searchComponent ?
-          <HeaderIcon onClick={() => searchComponentRef.current?.click()}>
-            <img src={icons.search} height="24" width="24" alt="Search icon" />
-          </HeaderIcon> : <HeaderIcon />
-        }
+
+        <HeaderSide>
+          {props.searchComponent}
+        </HeaderSide>
       </HeaderContainer>
       <HeaderModal darkTheme={darkTheme} modalOpen={osModalOpen} setModalOpen={setOSModalOpen} />
     </HeaderWrapper>

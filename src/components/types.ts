@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 export interface HeaderProps {
   accentColor: string;
   sameSite: boolean;
-  themeSwitch: boolean;
+  themeSwitch?: boolean;
   searchComponent?: ReactElement;
 }
 
