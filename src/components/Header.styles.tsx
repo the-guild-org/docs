@@ -35,7 +35,7 @@ export const HeaderControls = styled.menu`
   ${tw`flex m-0 p-0`}
 `;
 
-export const HeaderLogo = styled.div(() => [
+export const HeaderLogo = styled.a(() => [
   css`
     img {
       &:first-of-type {
@@ -82,12 +82,12 @@ export const HeaderIcon = styled.button(({ iconType }: themeProps) => [
 ]);
 
 export const HeaderSearch = styled.button(({ accentColor, isDark }: themeProps) => [
-  tw`hidden md:flex items-center mx-3 pl-2 pr-8 py-2 border-2 border-transparent rounded-md`,
+  tw`hidden md:flex items-center mx-3 pl-1 pr-8 py-1 border-2 border-transparent rounded-md`,
   tw`font-sans font-medium text-xs outline-none cursor-pointer`,
   tw`transition duration-200 ease-in-out`,
   css`
     img {
-      ${tw`mr-2`}
+      ${tw`mr-1`}
     }
   `,
   accentColor && css`&:hover, &:focus {

@@ -89,23 +89,25 @@ export const ProductCategory = styled.div(({ isDark }: themeProps) => [
 export const ProductList = styled.div(() => [
   tw`flex flex-wrap`,
   css`
-    &:hover > a {
-      &:not(a:hover) {
-        filter: grayscale(100%);
-        opacity: 0.2;
+    @media screen and (min-width: 769px) {
+      &:hover > a {
+        &:not(a:hover) {
+          filter: grayscale(100%);
+          opacity: 0.2;
 
-        img {
-          filter: brightness(0);
+          img {
+            filter: brightness(0);
+          }
         }
-      }
 
-      &:hover {
-        img:nth-child(2) {
-          position: absolute;
-          top: 4px;
-          display: block;
-          filter: blur(3px);
-          opacity: 0.45;
+        &:hover {
+          img:nth-child(2) {
+            position: absolute;
+            top: 4px;
+            display: block;
+            filter: blur(3px);
+            opacity: 0.45;
+          }
         }
       }
     }
@@ -126,7 +128,7 @@ export const ProductImage = styled.div(() => [
 ]);
 
 export const ProductThumbnail = styled.a(({ isDark }: themeProps) => [
-  tw`flex py-3 px-2 rounded-lg no-underline`,
+  tw`flex py-3 px-2 rounded-lg no-underline!`,
   css`
     width: calc(50% - 1rem);
 
@@ -135,7 +137,7 @@ export const ProductThumbnail = styled.a(({ isDark }: themeProps) => [
     }
     
     span {
-      ${tw`flex flex-col justify-center `}
+      ${tw`flex flex-col justify-center`}
 
       h4, p {
         ${tw`m-0`}

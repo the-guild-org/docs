@@ -6,7 +6,6 @@ import image from '@rollup/plugin-image';
 
 import pkg from "./package.json";
 
-
 const config = {
   name: "ComponentLibrary",
   extensions: [".ts", ".tsx"],

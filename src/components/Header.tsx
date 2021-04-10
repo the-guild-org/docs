@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
   HeaderWrapper,
   HeaderContainer,
   HeaderNav,
   HeaderLink,
   HeaderIcon,
-  HeaderSearch,
   HeaderControls,
   HeaderLogo
 } from "./Header.styles";
@@ -18,10 +17,21 @@ export const Header: React.FC<HeaderProps> = (props) => {
   const [darkTheme, setDarkTheme] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [osModalOpen, setOSModalOpen] = useState(false);
+  let HeaderSearch = null;
+
+  const searchComponentRef = useRef<HTMLButtonElement>(null);
+  if (props.searchComponent) {
+    HeaderSearch = React.cloneElement(
+      props.searchComponent,
+      { ref: searchComponentRef }
+    );
+  }
 
   useEffect(() => {
-    const theme = document.body.dataset.theme;
-    if (theme && theme === 'dark') setDarkTheme(true);
+    if (props.themeSwitch) {
+      const theme = document.documentElement.dataset.theme;
+      if (theme && theme === 'dark') setDarkTheme(true);
+    }
   }, []);
 
   const renderLinkOptions = (href: string, sameSite: boolean, setModalOpen?: Function) => {
@@ -89,21 +99,24 @@ export const Header: React.FC<HeaderProps> = (props) => {
             </HeaderLink>
           ))}
           <HeaderControls>
-            <HeaderSearch accentColor={props.accentColor} isDark={darkTheme}>
-              <img src={icons.search} height="20" width="20" alt="Search icon" />
-              Search...
-            </HeaderSearch>
-            <HeaderIcon iconType="toggle" onClick={() => {
-              document.body.dataset.theme = darkTheme ? 'light' : 'dark';
-              setDarkTheme(state => !state);
-            }}>
-              <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
-            </HeaderIcon>
+            {HeaderSearch}
+            {
+              props.themeSwitch &&
+              <HeaderIcon
+                iconType="toggle" onClick={() => {
+                  document.documentElement.dataset.theme = darkTheme ? 'light' : 'dark';
+                  setDarkTheme(state => !state);
+                }}>
+                <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
+              </HeaderIcon>
+            }
           </HeaderControls>
         </HeaderNav>
-        <HeaderIcon>
-          <img src={icons.search} height="24" width="24" alt="Search icon" />
-        </HeaderIcon>
+        {props.searchComponent ?
+          <HeaderIcon onClick={() => searchComponentRef.current?.click()}>
+            <img src={icons.search} height="24" width="24" alt="Search icon" />
+          </HeaderIcon> : <HeaderIcon />
+        }
       </HeaderContainer>
       <HeaderModal darkTheme={darkTheme} modalOpen={osModalOpen} setModalOpen={setOSModalOpen} />
     </HeaderWrapper>
