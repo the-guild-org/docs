@@ -30,7 +30,6 @@ export const Header: React.FC<HeaderProps> = (props) => {
     const rootURL = 'https://the-guild.dev';
     return setModalOpen ? {
       href: href,
-      linkType: 'modal',
       onClick: (e: any) => {
         e.preventDefault();
         setModalOpen(true);
@@ -89,6 +88,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
             <HeaderLink
               key={link.label}
               accentColor={props.accentColor}
+              isModal={!!link.setModalOpen}
               isDark={darkTheme}
               title={link.title}
               {...renderLinkOptions(link.href, props.sameSite, link.setModalOpen)}

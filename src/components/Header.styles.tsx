@@ -2,9 +2,9 @@ import tw, { css, styled } from 'twin.macro';
 interface themeProps {
   accentColor?: string
   isDark?: boolean
+  isModal?: boolean,
   isModalOpen?: boolean
   iconType?: 'close' | 'toggle'
-  linkType?: 'modal'
 }
 
 export const HeaderWrapper = styled.div(({ isDark }: themeProps) => [
@@ -56,7 +56,7 @@ export const HeaderLogo = styled.a(() => [
   `,
 ]);
 
-export const HeaderLink = styled.a(({ accentColor, linkType, isDark }: themeProps) => [
+export const HeaderLink = styled.a(({ accentColor, isDark, isModal }: themeProps) => [
   tw`inline-block mx-2.5 font-medium text-xs no-underline`,
   tw`transition duration-200 ease-in-out`,
   css`
@@ -75,11 +75,10 @@ export const HeaderLink = styled.a(({ accentColor, linkType, isDark }: themeProp
   accentColor && css`&:hover {
     color: ${accentColor};
   }`,
-  linkType === 'modal' ? (
-    isDark ? tw`text-white` : tw`text-black`
-  ) : (
+  isModal ?
+    isDark ? tw`text-white` : tw`text-black` :
     isDark ? tw`text-gray-100` : tw`text-gray-500`
-  ),
+  ,
 ]);
 
 export const HeaderIcon = styled.button(({ iconType }: themeProps) => [
