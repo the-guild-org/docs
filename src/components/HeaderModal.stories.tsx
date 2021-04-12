@@ -1,36 +1,35 @@
 import React from 'react'
+import { HeaderModal } from './HeaderModal';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0'
-import { HeaderModal } from './HeaderModal';
-import { HeaderModalProps } from './types';
+import { IHeaderModalProps } from './types';
 
 export default {
-  title: 'HeaderModal',
+  title: 'Header Modal',
   component: HeaderModal,
   argTypes: {
     modalOpen: {
       name: 'Active',
       description: 'Toggles the component visibility.',
     },
-    darkTheme: {
-      name: 'Dark Theme',
-      description: 'Toggles the component theme.',
-    },
-    setModalOpen: {
+    toggleModal: {
       table: {
         disable: true
       },
       control: false
+    },
+    sbTheme: {
+      name: 'StoryBook Dark Theme',
+      description: 'Only use in SB'
     }
   },
 } as Meta
 
-const Template: Story<HeaderModalProps> = args => (
+const Template: Story<IHeaderModalProps> = args => (
   <HeaderModal {...args} />
 )
 
 export const Primary = Template.bind({})
 Primary.args = {
-  darkTheme: false,
   modalOpen: true,
 }

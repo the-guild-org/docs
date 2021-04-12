@@ -3,44 +3,38 @@ export { HeaderGlobalStyles } from '../styles/GlobalStyles';
 
 interface themeProps {
   accentColor?: string
-  isDark?: boolean
-  isModal?: boolean,
+  hasModal?: boolean
   isModalOpen?: boolean
   iconType?: 'close' | 'toggle'
 }
 
-export const HeaderWrapper = styled.div(({ isDark }: themeProps) => [
+export const HeaderWrapper = styled.div(() => [
   tw`px-6 py-2 md:py-5 font-sans`,
-  isDark ? tw`bg-gray-900` : tw`bg-white`
+  tw`dark:bg-gray-900 bg-white`
 ]);
 
 export const HeaderContainer = styled.div`
   ${tw`container flex justify-between items-center mx-auto`}
 `;
 
-export const HeaderNav = styled.nav(({ isDark, isModalOpen }: themeProps) => [
-  tw`static flex flex-row justify-end items-center`,
+export const HeaderNav = styled.nav(({ isModalOpen }: themeProps) => [
+  tw`absolute inset-0 flex flex-col justify-center`,
+  tw`transition-all duration-300 ease-in-out`,
+  tw`md:(static flex-row justify-end items-center transition-none)`,
   css`
+    z-index: 300; //TODO: Used for Docusaurus, remove when no longer needed.
     @media screen and (max-width: 768px) {
-      z-index: 300; //TODO: Used for Docusaurus, remove when no longer needed.
-
-      ${[
-      tw`absolute inset-0 flex-col justify-center`,
-      tw`transition-all duration-300 ease-in-out`,
-      !isModalOpen && css`top: -100vh; bottom: 100vh;`
-    ]}
+      ${!isModalOpen && css`top: -100vh; bottom: 100vh;`}
     }
   `,
-  isDark ? tw`bg-gray-900` : tw`bg-white`,
+  tw`dark:bg-gray-900 bg-white`
 ]);
 
 export const HeaderControls = styled.menu(() => [
-  tw`flex m-0 p-0`,
+  tw`flex justify-center m-0 p-0`,
   css`
-    @media screen and (max-width: 768px) {
-      button:first-child:not(:only-child) {
-        ${tw`hidden`}
-      }
+    button:first-child:not(:only-child) {
+      ${tw`hidden md:flex`}
     }
   `
 ]);
@@ -51,29 +45,22 @@ export const HeaderLogo = styled.a(() => [
   }`,
 ]);
 
-export const HeaderLink = styled.a(({ accentColor, isDark, isModal }: themeProps) => [
-  tw`inline-block mx-2.5 font-medium text-xs no-underline`,
+export const HeaderLink = styled.a(({ accentColor, hasModal }: themeProps) => [
+  tw`block mx-0 py-3 font-medium text-sm text-center no-underline`,
+  tw`sm:(text-lg py-5)`,
+  tw`md:(inline-block mx-2.5 py-0 text-xs text-left)`,
   tw`transition duration-200 ease-in-out`,
   css`
     img {
       ${tw`pl-1 pb-0.5`}
     }
-
-    @media screen and (max-width: 768px) {
-      ${tw`block mx-0 py-5 text-center text-xl`}
-    }
-
-    @media screen and (max-width: 360px) {
-      ${tw`py-3 text-lg`}
-    }
   `,
   accentColor && css`&:hover {
     color: ${accentColor} !important;
   }`,
-  isModal ?
-    isDark ? tw`text-white` : tw`text-black` :
-    isDark ? tw`text-gray-100` : tw`text-gray-500`
-  ,
+  hasModal ?
+    tw`dark:text-white text-black` :
+    tw`dark:text-gray-300 text-gray-500`
 ]);
 
 export const HeaderIcon = styled.button(({ iconType }: themeProps) => [
@@ -85,17 +72,20 @@ export const HeaderIcon = styled.button(({ iconType }: themeProps) => [
 ]);
 
 export const HeaderSide = styled.div(() => [
-  tw`flex md:hidden`,
+  tw`flex first:justify-start last:justify-end md:hidden`,
   css`min-width: 3.25rem;`
 ]);
 
+// Dummy component 
+// Docusaurus' Algolia SearchBar is being rendered on the websites instead of this
 export const HeaderSearch = styled.button(() => [
-  tw`flex items-center mx-3 pl-1 pr-8 py-1 border-2 border-transparent rounded-md`,
-  tw`font-sans font-medium text-xs outline-none cursor-pointer`,
+  tw`flex items-center p-0 font-sans font-medium text-xs text-gray-500 bg-transparent border-transparent outline-none cursor-pointer`,
+  tw`md:(mx-3 pl-1 pr-8 py-1 border-2 bg-gray-100 rounded-md)`,
+  tw`md:dark:(bg-gray-800 text-gray-300)`,
   tw`transition duration-200 ease-in-out`,
   css`
-      img { 
-      ${tw`mr-1`} 
+    img { 
+      ${tw`h-6 w-6 m-0 md:(h-4.5 w-4.5 mr-1)`} 
     }
 
     &:hover {
@@ -104,15 +94,8 @@ export const HeaderSearch = styled.button(() => [
       }
     }
 
-    @media screen and (max-width: 768px) {
-      ${tw`p-0 bg-transparent`}
-      span { 
-        ${tw`hidden`} 
-      }
-      img { 
-        ${tw`m-0 w-6 h-6`} 
-      }
+    span { 
+      ${tw`hidden md:block`} 
     }
   `,
-  // isDark ? tw`bg-gray-700 text-gray-200` : tw`bg-gray-100 text-gray-400`,
 ]);

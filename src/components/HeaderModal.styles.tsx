@@ -1,7 +1,6 @@
 import tw, { css, styled } from 'twin.macro';
 
 interface themeProps {
-  isDark?: boolean
   isModalOpen?: boolean
 }
 
@@ -23,31 +22,22 @@ export const ModalOverlay = styled.div(({ isModalOpen }: themeProps) => [
   `
 ]);
 
-export const ModalWrapper = styled.div(({ isDark, isModalOpen }: themeProps) => [
-  tw`absolute bottom-0 left-2/4 transform -translate-x-1/2 bottom-0`,
-  tw`flex flex-col w-4/5 max-w-2xl opacity-100 rounded-t-md`,
-  css`
-    height: 85%;
-    
-    @media screen and (max-width: 768px) {
-      ${tw`inset-0 transform-none h-full w-full max-w-none rounded-none`}
-    }
-  `,
+export const ModalWrapper = styled.div(({ isModalOpen }: themeProps) => [
+  tw`absolute inset-0 flex flex-col opacity-100 transform-none h-full w-full max-w-none rounded-none`,
+  tw`md:(top-auto left-2/4 bottom-0 transform -translate-x-1/2 h-4/5 w-4/5 max-w-2xl rounded-t-md)`,
   tw`transition-all duration-300 ease-in-out`,
+  tw`dark:bg-gray-900 bg-white`,
   css`
       ${!isModalOpen && tw`opacity-0`}
   `,
-  isDark ? tw`bg-gray-900` : tw`bg-white`,
 ]);
 
-export const ModalHeader = styled.div(({ isDark }: themeProps) => [
+export const ModalHeader = styled.div(() => [
   tw`px-6 py-7 border-solid border-0 border-b`,
+  tw`dark:border-gray-700 border-gray-200`,
   css`
-    ${isDark ? tw` border-gray-700` : tw` border-gray-200`},
-
     h2 {
-      ${tw`m-0 font-semibold text-lg`}
-      ${isDark ? tw`text-gray-100` : tw`text-black`}
+      ${tw`m-0 font-semibold text-lg dark:text-gray-100 text-black`}
     }
 
     button {
@@ -55,33 +45,30 @@ export const ModalHeader = styled.div(({ isDark }: themeProps) => [
     }
   `,
 ]);
-export const ModalContent = styled.div(({ isDark }: themeProps) => [
-  tw`block px-6 py-7 pb-0`,
+export const ModalContent = styled.div(() => [
+  tw`block px-6 py-7 pb-0 overflow-y-auto`,
   css`
     max-height: calc(100% - 5.25rem);
-    overflow: auto;
 
     ::-webkit-scrollbar-track {
-      ${isDark ? tw`text-gray-800` : tw`bg-gray-100`}
+      ${tw`dark:bg-gray-800 bg-gray-100`}
     }
 
     ::-webkit-scrollbar {
-      ${tw`w-1.5`}
-      ${isDark ? tw`bg-gray-800` : tw`bg-gray-100`}
+      ${tw`w-1.5 dark:bg-gray-800 bg-gray-100`}
     }
 
     ::-webkit-scrollbar-thumb {
-      ${isDark ? tw`bg-gray-600` : tw`bg-gray-300`}
+      ${tw`dark:bg-gray-700 bg-gray-300`}
     }
   `
 ]);
 
-export const ProductCategory = styled.div(({ isDark }: themeProps) => [
+export const ProductCategory = styled.div(() => [
+  tw`mb-6`,
   css`
-  ${tw`mb-6`}
     h3 {
-      ${tw`w-full mt-0 mb-3 font-normal text-base text-gray-600`}
-      ${isDark ? tw`text-gray-400` : tw`text-black`}
+      ${tw`w-full mt-0 mb-3 font-normal text-base text-gray-600 dark:text-gray-400 text-black`}
     }
   `
 ]);
@@ -89,7 +76,7 @@ export const ProductCategory = styled.div(({ isDark }: themeProps) => [
 export const ProductList = styled.div(() => [
   tw`flex flex-wrap`,
   css`
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 768px) {
       &:hover > a {
         &:not(a:hover) {
           filter: grayscale(100%);
@@ -123,16 +110,10 @@ export const ProductImage = styled.div(() => [
   `
 ]);
 
-export const ProductThumbnail = styled.a(({ isDark }: themeProps) => [
-  tw`flex py-3 px-2 rounded-lg no-underline!`,
-  tw`transition-all duration-200 ease-in-out`,
+export const ProductThumbnail = styled.a(() => [
+  tw`flex w-full my-1 md:(m-0) py-3 px-2 rounded-lg no-underline!`,
+  tw`dark:hover:bg-gray-800 hover:bg-gray-100`,
   css`
-    width: calc(50% - 1rem);
-
-    &:hover {
-      ${isDark ? tw`bg-gray-800` : tw`bg-gray-100`}
-    }
-    
     span {
       ${tw`flex flex-col justify-center`}
 
@@ -141,17 +122,16 @@ export const ProductThumbnail = styled.a(({ isDark }: themeProps) => [
       }
 
       h4 {
-        ${[tw`font-semibold text-base`, isDark ? tw`text-gray-400` : tw`text-black`]}
+        ${tw`font-semibold text-base dark:text-gray-400 text-black`}
       }
 
       p {
-        ${[tw`font-medium text-xs`, isDark ? tw`text-gray-500` : tw`text-gray-400`]}
+        ${tw`font-medium text-xs dark:text-gray-500 text-gray-400`}
       }
     }
 
-    @media screen and (max-width: 640px) {
-      ${tw`w-full my-1`}
-      width: 100%;
+    @media screen and (min-width: 768px) {
+      width: calc(50% - 1rem);
     }
   `
 ]);

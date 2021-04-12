@@ -1,3 +1,4 @@
+import React from 'react';
 import { createGlobalStyle } from 'styled-components'
 import { GlobalStyles as BaseStyles } from 'twin.macro'
 
@@ -8,7 +9,7 @@ export const HeaderGlobalStyles = createGlobalStyle`
   }
 `
 
-export const GlobalStyles = () => (
+export const GlobalStyles: React.FC = () => (
   <>
     <BaseStyles />
   </>

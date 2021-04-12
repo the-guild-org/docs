@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+
+import { HeaderModal } from './HeaderModal';
 import {
   HeaderGlobalStyles,
   HeaderWrapper,
@@ -11,32 +13,33 @@ import {
   HeaderLogo
 } from './Header.styles';
 import { headerThemedIcons } from './Header.assets';
+import { IHeaderProps } from './types';
+import { useDarkTheme } from '../helpers/theme';
+import { toggleBodyModalClass } from '../helpers/modals';
 
-import { HeaderModal } from './HeaderModal';
-import { HeaderProps } from './types';
-
-export const Header: React.FC<HeaderProps> = (props) => {
-  const [darkTheme, setDarkTheme] = useState(false);
+export const Header: React.FC<IHeaderProps> = (props) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [osModalOpen, setOSModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const { darkTheme, setDarkTheme } = useDarkTheme();
 
-  useEffect(() => {
-    if (props.themeSwitch) {
-      const theme = document.documentElement.dataset.theme;
-      if (theme && theme === 'dark') setDarkTheme(true);
-    }
+  const toggleModal = (state: boolean) => {
+    !mobileNavOpen && toggleBodyModalClass(state);
+    setModalOpen(state);
+  }
 
-    document.body.classList.toggle('tg-modal-open', osModalOpen);
-    return () => { document.body.classList.toggle('tg-modal-open', false); }
-  });
+  const toggleMobileNavigation = (state: boolean) => {
+    toggleBodyModalClass(state);
+    setMobileNavOpen(state);
+  }
 
-  const renderLinkOptions = (href: string, sameSite: boolean, setModalOpen?: Function) => {
+  const renderLinkOptions = (href: string, sameSite: boolean, toggleModal?: React.Dispatch<React.SetStateAction<boolean>>) => {
     const rootURL = 'https://the-guild.dev';
-    return setModalOpen ? {
+    return toggleModal ? {
       href: href,
-      onClick: (e: any) => {
+      hasModal: true,
+      onClick: (e: React.SyntheticEvent) => {
         e.preventDefault();
-        setModalOpen(true);
+        toggleModal(true);
       }
     } : {
       rel: !sameSite ? 'noopener noreferrer' : undefined,
@@ -47,6 +50,11 @@ export const Header: React.FC<HeaderProps> = (props) => {
 
   const icons = headerThemedIcons(darkTheme);
 
+  // TODO: Investigate a better way to handle SB's theme change
+  useEffect(() => {
+    if (props.sbTheme !== undefined) setDarkTheme(props.sbTheme);
+  }, [props.sbTheme]);
+
   const links = [{
     label: 'Our Services',
     title: 'View our services',
@@ -55,7 +63,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
     label: 'Open Source',
     title: 'View our open source projects',
     href: '',
-    setModalOpen: setOSModalOpen,
+    toggleModal: toggleModal,
   }, {
     label: 'Products',
     title: 'Discover our products',
@@ -73,10 +81,10 @@ export const Header: React.FC<HeaderProps> = (props) => {
   return (
     <>
       <HeaderGlobalStyles />
-      <HeaderWrapper isDark={darkTheme}>
+      <HeaderWrapper>
         <HeaderContainer>
           <HeaderSide>
-            <HeaderIcon onClick={() => setMobileNavOpen(true)}>
+            <HeaderIcon onClick={() => toggleMobileNavigation(true)}>
               <img src={icons.menu} height="24" width="24" alt="Search icon" />
             </HeaderIcon>
           </HeaderSide>
@@ -86,21 +94,19 @@ export const Header: React.FC<HeaderProps> = (props) => {
             <img src={icons.logoMono} height="38" alt="The Guild Monogram" />
           </HeaderLogo>
 
-          <HeaderNav isDark={darkTheme} isModalOpen={mobileNavOpen}>
-            <HeaderIcon iconType="close" onClick={() => setMobileNavOpen(false)}>
+          <HeaderNav isModalOpen={mobileNavOpen}>
+            <HeaderIcon iconType="close" onClick={() => toggleMobileNavigation(false)}>
               <img src={icons.close} height="24" width="24" alt="Menu close icon" />
             </HeaderIcon>
             {links.map(link => (
               <HeaderLink
                 key={link.label}
-                accentColor={props.accentColor}
-                isModal={!!link.setModalOpen}
-                isDark={darkTheme}
                 title={link.title}
-                {...renderLinkOptions(link.href, props.sameSite, link.setModalOpen)}
+                accentColor={props.accentColor}
+                {...renderLinkOptions(link.href, props.sameSite, link.toggleModal)}
               >
                 {link.label}
-                {link.setModalOpen && <img src={icons.caret} alt="Link icon" />}
+                {link.toggleModal && <img src={icons.caret} alt="Link icon" />}
               </HeaderLink>
             ))}
             <HeaderControls>
@@ -108,10 +114,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
               {
                 props.themeSwitch &&
                 <HeaderIcon
-                  iconType="toggle" onClick={() => {
-                    document.documentElement.dataset.theme = darkTheme ? 'light' : 'dark';
-                    setDarkTheme(state => !state);
-                  }}>
+                  iconType="toggle" onClick={() => setDarkTheme(!darkTheme)}>
                   <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
                 </HeaderIcon>
               }
@@ -122,7 +125,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
             {props.searchComponent}
           </HeaderSide>
         </HeaderContainer>
-        <HeaderModal darkTheme={darkTheme} modalOpen={osModalOpen} setModalOpen={setOSModalOpen} />
+        <HeaderModal modalOpen={modalOpen} toggleModal={toggleModal} />
       </HeaderWrapper>
     </>
   );
