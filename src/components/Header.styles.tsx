@@ -18,13 +18,16 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderNav = styled.nav(({ isModalOpen }: themeProps) => [
-  tw`absolute inset-0 flex flex-col justify-center`,
+  tw`absolute flex flex-col justify-center`,
   tw`transition-all duration-300 ease-in-out`,
   tw`md:(static flex-row justify-end items-center transition-none)`,
   css`
     z-index: 300; //TODO: Used for Docusaurus, remove when no longer needed.
-    @media screen and (max-width: 768px) {
-      ${!isModalOpen && css`top: -100vh; bottom: 100vh;`}
+    @media screen and (max-width: 767px) {
+      ${[
+      tw`inset-0`,
+      !isModalOpen && css`top: -100vh; bottom: 100vh;`
+    ]}
     }
   `,
   tw`dark:bg-gray-900 bg-white`
@@ -46,7 +49,7 @@ export const HeaderLogo = styled.a(() => [
 ]);
 
 export const HeaderLink = styled.a(({ accentColor, hasModal }: themeProps) => [
-  tw`block mx-0 py-3 font-medium text-sm text-center no-underline`,
+  tw`block mx-0 py-3 font-medium text-base text-center no-underline`,
   tw`sm:(text-lg py-5)`,
   tw`md:(inline-block mx-2.5 py-0 text-xs text-left)`,
   tw`transition duration-200 ease-in-out`,
@@ -60,7 +63,7 @@ export const HeaderLink = styled.a(({ accentColor, hasModal }: themeProps) => [
   }`,
   hasModal ?
     tw`dark:text-white text-black` :
-    tw`dark:text-gray-300 text-gray-500`
+    tw`dark:text-gray-400 text-gray-500`
 ]);
 
 export const HeaderIcon = styled.button(({ iconType }: themeProps) => [
