@@ -11,7 +11,7 @@ export interface IHeaderProps {
 
 export interface IHeaderModalProps {
   modalOpen: boolean
-  toggleModal: React.Dispatch<React.SetStateAction<boolean>>
+  toggleModal: Function
   // SB Only
   sbTheme?:boolean
 }

@@ -32,7 +32,7 @@ export const Header: React.FC<IHeaderProps> = (props) => {
     setMobileNavOpen(state);
   }
 
-  const renderLinkOptions = (href: string, sameSite: boolean, toggleModal?: React.Dispatch<React.SetStateAction<boolean>>) => {
+  const renderLinkOptions = (href: string, sameSite: boolean, toggleModal?: Function) => {
     const rootURL = 'https://the-guild.dev';
     return toggleModal ? {
       href: href,
