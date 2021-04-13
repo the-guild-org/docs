@@ -8,14 +8,14 @@ interface themeProps {
   iconType?: 'close' | 'toggle'
 }
 
-export const HeaderWrapper = styled.div(() => [
+export const HeaderWrapper = styled.header(() => [
   tw`px-6 py-2 md:py-5 font-sans`,
   tw`dark:bg-gray-900 bg-white`
 ]);
 
-export const HeaderContainer = styled.div`
-  ${tw`container flex justify-between items-center mx-auto`}
-`;
+export const HeaderContainer = styled.div(() => [
+  tw`container flex justify-between items-center mx-auto`
+]);
 
 export const HeaderNav = styled.nav(({ isModalOpen }: themeProps) => [
   tw`absolute flex flex-col justify-center`,
@@ -49,7 +49,7 @@ export const HeaderLogo = styled.a(() => [
 ]);
 
 export const HeaderLink = styled.a(({ accentColor, hasModal }: themeProps) => [
-  tw`block mx-0 py-3 font-medium text-base text-center no-underline`,
+  tw`block mx-auto py-3 w-max font-medium text-base text-center no-underline`,
   tw`sm:(text-lg py-5)`,
   tw`md:(inline-block mx-2.5 py-0 text-xs text-left)`,
   tw`transition duration-200 ease-in-out`,
@@ -62,7 +62,15 @@ export const HeaderLink = styled.a(({ accentColor, hasModal }: themeProps) => [
     color: ${accentColor} !important;
   }`,
   hasModal ?
-    tw`dark:text-white text-black` :
+    [
+      tw`dark:text-white text-black relative`,
+      css`
+      :after { 
+        content:""; 
+        ${tw`absolute left-0 bottom-0 sm:bottom-2.5 md:-bottom-3 h-0.5 w-full dark:bg-white bg-black rounded`}
+      }
+      `
+    ] :
     tw`dark:text-gray-400 text-gray-500`
 ]);
 

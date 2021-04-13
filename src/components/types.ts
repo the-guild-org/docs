@@ -1,17 +1,19 @@
-import { ReactElement } from "react";
+import React from "react";
 
 export interface IHeaderProps {
   accentColor: string
   sameSite: boolean
   themeSwitch?: boolean
-  searchComponent?: ReactElement
+  searchComponent?: React.ReactElement
+
   // SB Only
   sbTheme?:boolean
 }
 
 export interface IHeaderModalProps {
   modalOpen: boolean
-  toggleModal: Function
+  toggleModal: (state: boolean) => void
+
   // SB Only
   sbTheme?:boolean
 }

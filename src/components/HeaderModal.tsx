@@ -61,7 +61,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = (props) => {
     }]
   },
   {
-    title: 'Category Name or tags or poplarity',
+    title: 'Category Name or tags or popularity',
     items: [{
       title: 'Mesh',
       description: 'Modern GraphQL Framework',

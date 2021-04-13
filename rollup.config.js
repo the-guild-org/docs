@@ -2,6 +2,7 @@ import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "rollup-plugin-node-resolve";
+import typescript from "rollup-plugin-typescript2";
 import image from '@rollup/plugin-image';
 
 import pkg from "./package.json";
@@ -51,12 +52,14 @@ export default {
       },
     }),
 
+    typescript(),
+
     babel({
       extensions: config.extensions,
       include: ["src/**/*"],
       exclude: "node_modules/**",
     }),
-
+    
     image(),
   ],
 };
