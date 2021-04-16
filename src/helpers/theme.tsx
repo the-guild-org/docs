@@ -1,23 +1,58 @@
-import React, { useEffect } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
-// Real DOM manipulation is needed for toggling
-// Tailwind's dark theme, using the class mode
-export const useDarkTheme = () => {
-  const [darkTheme, setDarkTheme] = React.useState(false);
+const getDarkTheme = () => {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const storedPref = localStorage.getItem('theme');
+    if (typeof storedPref === 'string') {
+      return (storedPref === 'dark');
+    }
 
-  const setDOMTheme = (isDarkTheme: boolean) => {
+    const userMedia = window.matchMedia("(prefers-color-scheme: dark)")
+    if (userMedia.matches) {
+      return true;
+    }
+
     const html = window.document.documentElement;
-    html.classList.toggle('dark', isDarkTheme);
+    return html.dataset.theme === 'dark' || html.classList.contains('dark');
+  } else {
+    return false;
+  }
+}
+interface IThemeProps {
+  isDarkTheme: boolean
+  setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-    //TODO: Used on Docusaurus. Remove when no longer needed & handle the logic needed for theme persistence
-    if (html.dataset.theme) {
-      html.dataset.theme = isDarkTheme ? 'dark' : 'light';
+const ThemeContext = createContext<Partial<IThemeProps>>({});
+
+const ThemeProvider = ({ children }: Element) => {
+  const [isDarkTheme, setDarkTheme] = useState(getDarkTheme);
+
+  const setDOMTheme = (isDark: boolean) => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const html = window.document.documentElement;
+      html.classList.toggle('dark', isDark);
+
+      //TODO: Used on Docusaurus. Remove when no longer needed & handle the logic needed for theme persistence
+      if (html.dataset.theme) {
+        html.dataset.theme = isDark ? 'dark' : 'light';
+      }
+
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
   }
 
-  useEffect(() => {
-    setDOMTheme(darkTheme);
-  }, [darkTheme]);
 
-  return { darkTheme, setDarkTheme };
+  useEffect(() => {
+    setDOMTheme(isDarkTheme);
+  }, [isDarkTheme]);
+
+
+  return (
+    <ThemeContext.Provider value={{ isDarkTheme, setDarkTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  )
 }
+
+export { ThemeContext, ThemeProvider }

@@ -1,19 +1,24 @@
-import React from "react";
-
 export interface IHeaderProps {
   accentColor: string
   sameSite: boolean
   themeSwitch?: boolean
-  searchComponent?: React.ReactElement
-
-  // SB Only
-  sbTheme?:boolean
 }
 
 export interface IHeaderModalProps {
+  title: string
   modalOpen: boolean
-  toggleModal: (state: boolean) => void
+  onCancelModal: (state?: boolean) => void
+}
 
-  // SB Only
-  sbTheme?:boolean
+export interface IModalProps {
+  title: string
+  visible: boolean
+  placement: 'top' | 'center' | 'bottom'
+  onCancel: (state?: boolean) => void
+}
+
+export interface ISearchBarProps {
+  accentColor: string
+  title: string
+  placeholder: string
 }

@@ -1,30 +1,22 @@
-import React, { useEffect } from 'react';
-import { IHeaderModalProps } from './types';
-import { HeaderIcon } from './Header.styles';
+import React from 'react';
+
+import { Modal } from './Modal';
+
 import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
-  ModalWrapper,
   ProductCategory,
   ProductList,
   ProductThumbnail,
   ProductImage
 } from './HeaderModal.styles';
-import { headerThemedIcons, productThemedIcons } from './Header.assets';
-import { useDarkTheme } from '../helpers/theme';
 
-export const HeaderModal: React.FC<IHeaderModalProps> = (props) => {
-  const { darkTheme, setDarkTheme } = useDarkTheme();
-  const { modalOpen, toggleModal } = props;
-  const icons = headerThemedIcons(darkTheme);
-  const productIcons = productThemedIcons();
 
-  // TODO: Investigate a better way to handle SB's theme change
-  useEffect(() => {
-    if (props.sbTheme !== undefined) setDarkTheme(props.sbTheme);
-  }, [props.sbTheme]);
+import { IHeaderModalProps } from './types';
+import { productThemedIcons } from '../helpers/assets';
+import { ThemeContext } from '../helpers/theme';
+
+export const HeaderModal: React.FC<IHeaderModalProps> = ({ title, modalOpen, onCancelModal }) => {
+  const { isDarkTheme } = React.useContext(ThemeContext);
+  const productIcons = productThemedIcons(isDarkTheme || false);
 
   const productCategories = [{
     title: 'Category Name or tags or popularity',
@@ -103,45 +95,39 @@ export const HeaderModal: React.FC<IHeaderModalProps> = (props) => {
       link: '#',
       image: productIcons.stencil
     }]
-  }]
+  }];
 
   return (
-    <Modal isModalOpen={modalOpen} role="dialog">
-      <ModalOverlay isModalOpen={modalOpen} tabIndex={-1} onClick={() => toggleModal && toggleModal(false)}></ModalOverlay>
-      <ModalWrapper isModalOpen={modalOpen}>
-        <ModalHeader>
-          <h2>Products by The Guild</h2>
-          <HeaderIcon iconType="close" onClick={() => toggleModal && toggleModal(false)}>
-            <img src={icons.close} height="24" width="24" alt="Menu close icon" />
-          </HeaderIcon>
-        </ModalHeader>
-        <ModalContent>
-          {productCategories.map((category, index) => (
-            <ProductCategory key={index}>
-              <h3>{category.title}</h3>
-              <ProductList>
-                {category.items.map(product => (
-                  <ProductThumbnail
-                    key={product.title}
-                    href={product.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ProductImage>
-                      <img src={product.image} alt={`${product.title} logo`} />
-                      <img src={product.image} alt={`${product.title} blurred logo`} />
-                    </ProductImage>
-                    <span>
-                      <h4>{product.title}</h4>
-                      <p>{product.description}</p>
-                    </span>
-                  </ProductThumbnail>
-                ))}
-              </ProductList>
-            </ProductCategory>
-          ))}
-        </ModalContent>
-      </ModalWrapper>
+    <Modal
+      title={title}
+      placement="bottom"
+      visible={modalOpen}
+      onCancel={() => onCancelModal()}
+    >
+      {productCategories.map((category, index) => (
+        <ProductCategory key={index}>
+          <h3>{category.title}</h3>
+          <ProductList>
+            {category.items.map(product => (
+              <ProductThumbnail
+                key={product.title}
+                href={product.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ProductImage>
+                  <img src={product.image} alt={`${product.title} logo`} />
+                  <img src={product.image} alt={`${product.title} blurred logo`} />
+                </ProductImage>
+                <span>
+                  <h4>{product.title}</h4>
+                  <p>{product.description}</p>
+                </span>
+              </ProductThumbnail>
+            ))}
+          </ProductList>
+        </ProductCategory>
+      ))}
     </Modal>
   );
 };

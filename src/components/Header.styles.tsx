@@ -1,7 +1,5 @@
 import tw, { css, styled } from 'twin.macro';
-export { HeaderGlobalStyles } from '../styles/GlobalStyles';
-
-interface themeProps {
+interface IStyleProps {
   accentColor?: string
   hasModal?: boolean
   isModalOpen?: boolean
@@ -17,7 +15,7 @@ export const HeaderContainer = styled.div(() => [
   tw`container flex justify-between items-center mx-auto`
 ]);
 
-export const HeaderNav = styled.nav(({ isModalOpen }: themeProps) => [
+export const HeaderNav = styled.nav(({ isModalOpen }: IStyleProps) => [
   tw`absolute flex flex-col justify-center`,
   tw`transition-all duration-300 ease-in-out`,
   tw`md:(static flex-row justify-end items-center transition-none)`,
@@ -48,7 +46,7 @@ export const HeaderLogo = styled.a(() => [
   }`,
 ]);
 
-export const HeaderLink = styled.a(({ accentColor, hasModal }: themeProps) => [
+export const HeaderLink = styled.a(({ accentColor, hasModal }: IStyleProps) => [
   tw`block mx-auto py-3 w-max font-medium text-base text-center no-underline`,
   tw`sm:(text-lg py-5)`,
   tw`md:(inline-block mx-2.5 py-0 text-xs text-left)`,
@@ -74,7 +72,7 @@ export const HeaderLink = styled.a(({ accentColor, hasModal }: themeProps) => [
     tw`dark:text-gray-400 text-gray-500`
 ]);
 
-export const HeaderIcon = styled.button(({ iconType }: themeProps) => [
+export const HeaderIcon = styled.button(({ iconType }: IStyleProps) => [
   tw`flex md:hidden justify-center items-center p-1.5`,
   tw`bg-transparent border-0 outline-none cursor-pointer hover:opacity-70`,
   tw`transition duration-200 ease-in-out`,
@@ -85,28 +83,4 @@ export const HeaderIcon = styled.button(({ iconType }: themeProps) => [
 export const HeaderSide = styled.div(() => [
   tw`flex first:justify-start last:justify-end md:hidden`,
   css`min-width: 3.25rem;`
-]);
-
-// Dummy component 
-// Docusaurus' Algolia SearchBar is being rendered on the websites instead of this
-export const HeaderSearch = styled.button(() => [
-  tw`flex items-center p-0 font-sans font-medium text-xs text-gray-500 bg-transparent border-transparent outline-none cursor-pointer`,
-  tw`md:(mx-3 pl-1 pr-8 py-1 border-2 bg-gray-100 rounded-md)`,
-  tw`md:dark:(bg-gray-800 text-gray-300)`,
-  tw`transition duration-200 ease-in-out`,
-  css`
-    img { 
-      ${tw`h-6 w-6 m-0 md:(h-4.5 w-4.5 mr-1)`} 
-    }
-
-    &:hover {
-      img { 
-        ${tw`opacity-70`} 
-      }
-    }
-
-    span { 
-      ${tw`hidden md:block`} 
-    }
-  `,
 ]);

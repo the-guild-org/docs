@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { HeaderModal } from './HeaderModal';
+import { SearchBar } from './SearchBar';
+
 import {
-  HeaderGlobalStyles,
   HeaderWrapper,
   HeaderContainer,
   HeaderNav,
@@ -12,34 +13,36 @@ import {
   HeaderSide,
   HeaderLogo
 } from './Header.styles';
-import { headerThemedIcons } from './Header.assets';
-import { IHeaderProps } from './types';
-import { useDarkTheme } from '../helpers/theme';
-import { toggleBodyModalClass } from '../helpers/modals';
 
-export const Header: React.FC<IHeaderProps> = (props) => {
+import { IHeaderProps } from './types';
+import { ThemeContext } from '../helpers/theme';
+import { headerThemedIcons } from '../helpers/assets';
+import { toggleLockBodyScroll } from '../helpers/modals';
+
+export const Header: React.FC<IHeaderProps> = ({ accentColor, sameSite, themeSwitch }) => {
+  const { isDarkTheme, setDarkTheme } = React.useContext(ThemeContext);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const { darkTheme, setDarkTheme } = useDarkTheme();
+  const icons = headerThemedIcons(isDarkTheme || false);
 
-  const toggleModal = (state: boolean) => {
-    !mobileNavOpen && toggleBodyModalClass(state);
+  const handleModal = (state: boolean) => {
+    !mobileNavOpen && toggleLockBodyScroll(state);
     setModalOpen(state);
   }
 
-  const toggleMobileNavigation = (state: boolean) => {
-    toggleBodyModalClass(state);
+  const handleNav = (state: boolean) => {
+    toggleLockBodyScroll(state);
     setMobileNavOpen(state);
   }
 
-  const renderLinkOptions = (href: string, sameSite: boolean, toggleModal?: (state: boolean) => void) => {
+  const renderLinkOptions = (href: string, sameSite: boolean, clickEvent?: () => void) => {
     const rootURL = 'https://the-guild.dev';
-    return toggleModal ? {
+    return clickEvent ? {
       href: href,
       hasModal: true,
       onClick: (e: React.SyntheticEvent) => {
         e.preventDefault();
-        toggleModal(true);
+        clickEvent();
       }
     } : {
       rel: !sameSite ? 'noopener noreferrer' : undefined,
@@ -47,13 +50,6 @@ export const Header: React.FC<IHeaderProps> = (props) => {
       href: sameSite ? href : `${rootURL}${href}`
     };
   }
-
-  const icons = headerThemedIcons(darkTheme);
-
-  // TODO: Investigate a better way to handle SB's theme change
-  useEffect(() => {
-    if (props.sbTheme !== undefined) setDarkTheme(props.sbTheme);
-  }, [props.sbTheme]);
 
   const links = [{
     label: 'Our Services',
@@ -63,7 +59,7 @@ export const Header: React.FC<IHeaderProps> = (props) => {
     label: 'Open Source',
     title: 'View our open source projects',
     href: '',
-    toggleModal: toggleModal,
+    clickEvent: () => handleModal(true),
   }, {
     label: 'Products',
     title: 'Discover our products',
@@ -79,54 +75,50 @@ export const Header: React.FC<IHeaderProps> = (props) => {
   }];
 
   return (
-    <>
-      <HeaderGlobalStyles />
-      <HeaderWrapper>
-        <HeaderContainer>
-          <HeaderSide>
-            <HeaderIcon onClick={() => toggleMobileNavigation(true)}>
-              <img src={icons.menu} height="24" width="24" alt="Search icon" />
-            </HeaderIcon>
-          </HeaderSide>
+    <HeaderWrapper>
+      <HeaderContainer>
+        <HeaderSide>
+          <HeaderIcon onClick={() => handleNav(true)}>
+            <img src={icons.menu} height="24" width="24" alt="Search icon" />
+          </HeaderIcon>
+        </HeaderSide>
 
-          <HeaderLogo {...renderLinkOptions('/', props.sameSite)} title="View our website">
-            <img src={icons.logoFull} height="30" alt="The Guild Logo" />
-            <img src={icons.logoMono} height="38" alt="The Guild Monogram" />
-          </HeaderLogo>
+        <HeaderLogo {...renderLinkOptions('/', sameSite)} title="View our website">
+          <img src={icons.logoFull} height="30" alt="The Guild Logo" />
+          <img src={icons.logoMono} height="38" alt="The Guild Monogram" />
+        </HeaderLogo>
 
-          <HeaderNav isModalOpen={mobileNavOpen}>
-            <HeaderIcon iconType="close" onClick={() => toggleMobileNavigation(false)}>
-              <img src={icons.close} height="24" width="24" alt="Menu close icon" />
-            </HeaderIcon>
-            {links.map(link => (
-              <HeaderLink
-                key={link.label}
-                title={link.title}
-                accentColor={props.accentColor}
-                {...renderLinkOptions(link.href, props.sameSite, link.toggleModal)}
-              >
-                {link.label}
-                {link.toggleModal && <img src={icons.caret} alt="Link icon" />}
-              </HeaderLink>
-            ))}
-            <HeaderControls>
-              {props.searchComponent}
-              {
-                props.themeSwitch &&
-                <HeaderIcon
-                  iconType="toggle" onClick={() => setDarkTheme(!darkTheme)}>
-                  <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
-                </HeaderIcon>
-              }
-            </HeaderControls>
-          </HeaderNav>
+        <HeaderNav isModalOpen={mobileNavOpen}>
+          <HeaderIcon iconType="close" onClick={() => handleNav(false)}>
+            <img src={icons.close} height="24" width="24" alt="Menu close icon" />
+          </HeaderIcon>
+          {links.map(link => (
+            <HeaderLink
+              key={link.label}
+              title={link.title}
+              accentColor={accentColor}
+              {...renderLinkOptions(link.href, sameSite, link.clickEvent)}
+            >
+              {link.label}
+              {link.clickEvent && <img src={icons.caret} alt="Link icon" />}
+            </HeaderLink>
+          ))}
+          <HeaderControls>
+            <SearchBar accentColor={accentColor} title="Search docs" placeholder="Search..." />
+            {themeSwitch && setDarkTheme && (
+              <HeaderIcon
+                iconType="toggle" onClick={() => setDarkTheme((state: boolean) => !state)}>
+                <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
+              </HeaderIcon>
+            )}
+          </HeaderControls>
+        </HeaderNav>
 
-          <HeaderSide>
-            {props.searchComponent}
-          </HeaderSide>
-        </HeaderContainer>
-        <HeaderModal modalOpen={modalOpen} toggleModal={toggleModal} />
-      </HeaderWrapper>
-    </>
+        <HeaderSide>
+          <SearchBar accentColor={accentColor} title="Search docs" placeholder="Search..." />
+        </HeaderSide>
+      </HeaderContainer>
+      <HeaderModal title="Products by The Guild" modalOpen={modalOpen} onCancelModal={() => handleModal(false)} />
+    </HeaderWrapper >
   );
 };

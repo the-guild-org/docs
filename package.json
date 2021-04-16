@@ -1,6 +1,6 @@
 {
   "name": "the-guild-components",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "license": "MIT",
   "module": "dist/components.esm.js",
   "types": "dist/components/index.d.ts",
@@ -39,6 +39,8 @@
     "@storybook/addon-links": "^6.1.21",
     "@storybook/react": "^6.1.21",
     "@types/react": "^17.0.1",
+    "@types/react-instantsearch-core": "^6.10.2",
+    "@types/react-instantsearch-dom": "^6.10.0",
     "@types/styled-components": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
@@ -58,8 +60,10 @@
   },
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
+    "algoliasearch": "^4.9.0",
     "core-js": "^3.8.3",
     "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.2.3"
+    "twin.macro": "^2.2.3",
+    "react-instantsearch-dom": "^6.10.3"
   }
 }
