@@ -18,14 +18,18 @@ const getDarkTheme = () => {
     return false;
   }
 }
-interface IThemeProps {
+interface IContextProps {
   isDarkTheme: boolean
   setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const ThemeContext = createContext<Partial<IThemeProps>>({});
+interface IProviderProps {
+  children: React.ReactNode
+}
 
-const ThemeProvider = ({ children }: Element) => {
+const ThemeContext = createContext<Partial<IContextProps>>({});
+
+const ThemeProvider: React.FC<IProviderProps> = ({ children }) => {
   const [isDarkTheme, setDarkTheme] = useState(getDarkTheme);
 
   const setDOMTheme = (isDark: boolean) => {
@@ -42,11 +46,9 @@ const ThemeProvider = ({ children }: Element) => {
     }
   }
 
-
   useEffect(() => {
     setDOMTheme(isDarkTheme);
   }, [isDarkTheme]);
-
 
   return (
     <ThemeContext.Provider value={{ isDarkTheme, setDarkTheme }}>

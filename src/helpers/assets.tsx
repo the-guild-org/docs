@@ -17,6 +17,7 @@ import productCLI from '../static/logos/products/cli.svg';
 import productCodeGenerator from '../static/logos/products/code-generator.svg';
 import productConfig from '../static/logos/products/config.svg';
 import productEnvelop from '../static/logos/products/envelop.svg';
+import productESLint from '../static/logos/products/eslint.svg';
 import productHive from '../static/logos/products/hive.svg';
 import productInspector from '../static/logos/products/inspector.svg';
 import productMesh from '../static/logos/products/mesh.svg';
@@ -49,6 +50,7 @@ export const productThemedIcons = (isDark: boolean) => ({
   codeGen: isDark ? productCodeGenerator : productCodeGenerator,
   config: isDark ? productConfig : productConfig,
   envelop: isDark ? productEnvelop : productEnvelop,
+  eslint: isDark ? productESLint : productESLint,
   hive: isDark ? productHive : productHive,
   inspector: isDark ? productInspector : productInspector,
   mesh: isDark ? productMesh : productMesh,

@@ -30,18 +30,20 @@ import {
   StateResultsProvided,
 } from 'react-instantsearch-core';
 
+const searchClient = algoliaSearch(
+  'ANRJKXZTRW',
+  '811d453fc7f80306044dd5cc4b87e064',
+  {
+    hosts: [{ url: 'the-guild.dev/api/algolia' }]
+  }
+);
+
+const searchIndexName = 'theguild';
+
 export const SearchBar: React.FC<ISearchBarProps> = ({ accentColor, title, placeholder }) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
   const [modalOpen, setModalOpen] = useState(false);
   const icons = searchBarThemedIcons(isDarkTheme || false);
-
-  const searchClient = algoliaSearch(
-    'ANRJKXZTRW',
-    '811d453fc7f80306044dd5cc4b87e064',
-    {
-      hosts: [{ url: 'the-guild.dev/api/algolia' }]
-    }
-  );
 
   const SearchBox: React.FC<SearchBoxProvided> = ({ currentRefinement, refine }) => (
     <SearchBarForm accentColor={accentColor}>
@@ -70,15 +72,16 @@ export const SearchBar: React.FC<ISearchBarProps> = ({ accentColor, title, place
   );
 
   const StateResults: React.FC<StateResultsProvided> = ({ searchState, searchResults, children }) => {
-    let content = '';
-    if (searchResults && !searchResults.nbHits) {
-      content = `No results for ${<strong>{searchState.query}</strong>}`
+    let content;
+
+    if (searchState && searchResults && !searchResults.nbHits) {
+      content = <span>No results for <strong>&quot;{searchState.query}&quot;</strong>.</span>
     }
 
-    return <SearchBarResults>{children || content}</SearchBarResults>;
+    return <SearchBarResults>{content || children}</SearchBarResults>;
   }
 
-  const Hits: React.FC<{ hits: Hit<{}>[] }> = ({ hits }) => {
+  const Hits: React.FC<{ hits: Hit<any>[] }> = ({ hits }) => {
     const transformItems = (items: Hit<any>[]) => {
       const groupBy = items.reduce((acc, item) => {
         const list = acc[item.hierarchy.lvl0] || [];
@@ -142,8 +145,8 @@ export const SearchBar: React.FC<ISearchBarProps> = ({ accentColor, title, place
         <img src={icons.search} height="18" width="18" alt="Search icon" />
         <span>{placeholder}</span>
       </SearchBarButton>
-      <Modal title={title} visible={modalOpen} placement="center" onCancel={() => handleModal(false)}>
-        <InstantSearch indexName="theguild" searchClient={searchClient}>
+      <Modal title={title} visible={modalOpen} placement="top" onCancel={() => handleModal(false)}>
+        <InstantSearch indexName={searchIndexName} searchClient={searchClient}>
           <CustomSearchBox />
           <CustomStateResults>
             <CustomHits />

@@ -19,7 +19,7 @@ import { ThemeContext } from '../helpers/theme';
 import { headerThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
 
-export const Header: React.FC<IHeaderProps> = ({ accentColor, sameSite, themeSwitch }) => {
+export const Header: React.FC<IHeaderProps> = ({ accentColor, activeLink, sameSite, themeSwitch }) => {
   const { isDarkTheme, setDarkTheme } = React.useContext(ThemeContext);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -35,12 +35,13 @@ export const Header: React.FC<IHeaderProps> = ({ accentColor, sameSite, themeSwi
     setMobileNavOpen(state);
   }
 
-  const renderLinkOptions = (href: string, sameSite: boolean, clickEvent?: () => void) => {
+  const renderLinkOptions = (href: string, sameSite?: boolean, clickEvent?: () => void) => {
     const rootURL = 'https://the-guild.dev';
     return clickEvent ? {
-      href: href,
-      hasModal: true,
+      href: !sameSite ? '' : href,
       onClick: (e: React.SyntheticEvent) => {
+        if (sameSite) return;
+
         e.preventDefault();
         clickEvent();
       }
@@ -55,24 +56,26 @@ export const Header: React.FC<IHeaderProps> = ({ accentColor, sameSite, themeSwi
     label: 'Our Services',
     title: 'View our services',
     href: '/services',
+    active: false,
   }, {
-    label: 'Open Source',
-    title: 'View our open source projects',
-    href: '',
-    clickEvent: () => handleModal(true),
-  }, {
-    label: 'Products',
-    title: 'Discover our products',
+    label: 'Platform',
+    title: 'View our projects',
     href: '/open-source',
+    active: false,
+    clickEvent: () => handleModal(true),
   }, {
     label: 'Blog',
     title: 'Read our blog',
     href: '/blog',
+    active: false,
   }, {
-    label: 'Company',
+    label: 'About Us',
     title: 'Learn more about us',
     href: '/about-us',
+    active: false,
   }];
+
+  links.map(link => link.active = activeLink === link.href);
 
   return (
     <HeaderWrapper>
@@ -97,6 +100,7 @@ export const Header: React.FC<IHeaderProps> = ({ accentColor, sameSite, themeSwi
               key={link.label}
               title={link.title}
               accentColor={accentColor}
+              isActiveLink={link.active}
               {...renderLinkOptions(link.href, sameSite, link.clickEvent)}
             >
               {link.label}
@@ -107,7 +111,7 @@ export const Header: React.FC<IHeaderProps> = ({ accentColor, sameSite, themeSwi
             <SearchBar accentColor={accentColor} title="Search docs" placeholder="Search..." />
             {themeSwitch && setDarkTheme && (
               <HeaderIcon
-                iconType="toggle" onClick={() => setDarkTheme((state: boolean) => !state)}>
+                iconType="theme" onClick={() => setDarkTheme((state: boolean) => !state)}>
                 <img src={icons.themeToggle} height="16" width="16" alt="Theme toggle icon" />
               </HeaderIcon>
             )}

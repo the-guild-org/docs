@@ -1,6 +1,7 @@
 export interface IHeaderProps {
   accentColor: string
-  sameSite: boolean
+  activeLink: string
+  sameSite?: boolean
   themeSwitch?: boolean
 }
 

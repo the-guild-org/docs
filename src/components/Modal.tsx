@@ -18,9 +18,9 @@ export const Modal: React.FC<IModalProps> = ({ title, children, visible, placeme
   const icons = modalThemedIcons(isDarkTheme || false);
 
   return (
-    <ModalContainer visible={visible}>
-      <ModalOverlay visible={visible} onClick={() => onCancel()} tabIndex={-1} />
-      <ModalWrapper visible={visible} placement={placement}>
+    <ModalContainer isModalOpen={visible}>
+      <ModalOverlay isModalOpen={visible} onClick={() => onCancel()} tabIndex={-1} />
+      <ModalWrapper isModalOpen={visible} placement={placement}>
         <ModalHeader>
           <h2>{title}</h2>
           <ModalClose onClick={() => onCancel()}>

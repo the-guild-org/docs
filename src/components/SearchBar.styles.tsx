@@ -5,7 +5,7 @@ interface IStyleProps {
 
 export const SearchBarButton = styled.button(({ accentColor }: IStyleProps) => [
   tw`flex items-center p-0 font-sans font-medium text-xs text-gray-500 bg-transparent border-transparent outline-none cursor-pointer`,
-  tw`md:(mx-3 pl-1 pr-8 py-1 border-2 bg-gray-100 rounded-md)`,
+  tw`md:(ml-3 pl-1 pr-8 py-1 border-2 bg-gray-100 rounded-md)`,
   tw`md:dark:(bg-gray-800 text-gray-300)`,
   tw`transition duration-200 ease-in-out`,
   css`

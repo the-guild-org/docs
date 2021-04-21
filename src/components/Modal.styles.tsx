@@ -1,47 +1,48 @@
 import tw, { css, styled } from 'twin.macro';
 
 interface IStyleProps {
-  visible?: boolean
+  isModalOpen?: boolean
   placement?: 'top' | 'center' | 'bottom'
 }
 
-export const ModalContainer = styled.div(({ visible }: IStyleProps) => [
+export const ModalContainer = styled.div(({ isModalOpen }: IStyleProps) => [
   tw`fixed inset-0 visible font-sans`,
   css`
     z-index: 400; //TODO: Used for Docusaurus, remove when no longer needed.
     backdrop-filter: blur(2px);
-    ${!visible && tw`invisible`}
+    ${!isModalOpen && tw`invisible`}
   `
 ]);
 
-export const ModalOverlay = styled.div(({ visible }: IStyleProps) => [
+export const ModalOverlay = styled.div(({ isModalOpen }: IStyleProps) => [
   tw`absolute inset-0`,
   tw`w-full h-full bg-gray-900 invisible opacity-0`,
   tw`transition-all duration-150 ease-in-out`,
   css`
-    ${visible && tw`visible opacity-40`}
+    ${isModalOpen && tw`visible opacity-40`}
   `
 ]);
 
-export const ModalWrapper = styled.div(({ visible, placement }: IStyleProps) => [
+export const ModalWrapper = styled.div(({ isModalOpen, placement }: IStyleProps) => [
   tw`absolute inset-0 flex flex-col opacity-100 transform-none h-full w-full max-w-none rounded-none`,
   tw`transition-all duration-300 ease-in-out`,
   tw`dark:bg-gray-900 bg-white`,
+  tw`md:(transform -translate-x-1/2)`,
   css`
-      ${!visible && tw`opacity-0`}
+      ${!isModalOpen && tw`opacity-0`}
   `,
   (placement === 'top' || placement === 'center') && [
-    tw`md:(left-2/4 right-auto bottom-auto transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-2xl rounded-md)`,
+    tw`md:(left-2/4 right-auto bottom-auto h-auto max-w-2xl rounded-md)`,
     css`
       @media screen and (min-width: 768px) {
         max-height: 80%;
       }
     `,
   ],
-  placement === 'top' && tw`md:(top-1/4)`,
-  placement === 'center' && tw`md:(top-2/4)`,
+  placement === 'top' && tw`md:(top-10 -translate-y-0)`,
+  placement === 'center' && tw`md:(top-2/4 -translate-y-1/2)`,
   placement === 'bottom' && [
-    tw`md:(top-auto left-2/4 bottom-0 transform -translate-x-1/2 h-4/5 w-4/5 max-w-2xl rounded-t-md)`
+    tw`md:(top-auto left-2/4 bottom-0 h-4/5 w-4/5 max-w-2xl rounded-t-md)`
   ]
 ]);
 

@@ -1,9 +1,9 @@
 import tw, { css, styled } from 'twin.macro';
 interface IStyleProps {
   accentColor?: string
-  hasModal?: boolean
+  isActiveLink?: boolean
   isModalOpen?: boolean
-  iconType?: 'close' | 'toggle'
+  iconType?: 'close' | 'theme'
 }
 
 export const HeaderWrapper = styled.header(() => [
@@ -46,8 +46,8 @@ export const HeaderLogo = styled.a(() => [
   }`,
 ]);
 
-export const HeaderLink = styled.a(({ accentColor, hasModal }: IStyleProps) => [
-  tw`block mx-auto py-3 w-max font-medium text-base text-center no-underline`,
+export const HeaderLink = styled.a(({ accentColor, isActiveLink }: IStyleProps) => [
+  tw`block mx-auto py-3 w-max font-medium text-base text-center no-underline!`,
   tw`sm:(text-lg py-5)`,
   tw`md:(inline-block mx-2.5 py-0 text-xs text-left)`,
   tw`transition duration-200 ease-in-out`,
@@ -59,25 +59,24 @@ export const HeaderLink = styled.a(({ accentColor, hasModal }: IStyleProps) => [
   accentColor && css`&:hover {
     color: ${accentColor} !important;
   }`,
-  hasModal ?
+  isActiveLink ?
     [
       tw`dark:text-white text-black relative`,
       css`
       :after { 
         content:""; 
-        ${tw`absolute left-0 bottom-0 sm:bottom-2.5 md:-bottom-3 h-0.5 w-full dark:bg-white bg-black rounded`}
+        ${tw`absolute left-0 bottom-0 sm:bottom-2.5 md:-bottom-2 h-0.5 w-full dark:bg-white bg-black rounded`}
       }
-      `
-    ] :
-    tw`dark:text-gray-400 text-gray-500`
+      `,
+    ] : tw`dark:text-gray-400 text-gray-500`
 ]);
 
 export const HeaderIcon = styled.button(({ iconType }: IStyleProps) => [
   tw`flex md:hidden justify-center items-center p-1.5`,
   tw`bg-transparent border-0 outline-none cursor-pointer hover:opacity-70`,
   tw`transition duration-200 ease-in-out`,
-  iconType === 'toggle' && tw`transform scale-125 mt-4 md:(flex transform-none m-0)`,
   iconType === 'close' && tw`absolute top-6 right-6`,
+  iconType === 'theme' && tw`transform scale-125 mt-4 md:(flex transform-none mt-0 ml-3)`,
 ]);
 
 export const HeaderSide = styled.div(() => [

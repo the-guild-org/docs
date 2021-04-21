@@ -15,6 +15,14 @@ export default {
         type: 'color'
       }
     },
+    activeLink: {
+      name: 'Active Link',
+      description: 'Used ',
+      control: {
+        type: 'radio',
+        options: ['/services', '/open-source', '/blog', '/about-us']
+      }
+    },
     sameSite: {
       name: 'Same Site',
       description: 'Use this to force links to open in the same tab, using the root domain.',
@@ -38,6 +46,7 @@ const Template: Story<IHeaderProps> = args => (
 export const Default = Template.bind({})
 Default.args = {
   accentColor: '#03a6a6',
-  sameSite: true,
+  activeLink: '/open-source',
+  sameSite: false,
   themeSwitch: true,
 }

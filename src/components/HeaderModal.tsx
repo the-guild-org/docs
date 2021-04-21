@@ -19,80 +19,84 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({ title, modalOpen, onC
   const productIcons = productThemedIcons(isDarkTheme || false);
 
   const productCategories = [{
-    title: 'Category Name or tags or popularity',
+    title: 'Products',
+    items: [{
+      title: 'Hive',
+      description: 'Modern GraphQL Framework',
+      link: 'https://graphql-hive.com/',
+      image: productIcons.hive
+    }],
+  }, {
+    title: 'Open Source',
     items: [{
       title: 'Envelop',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://github.com/dotansimha/envelop',
       image: productIcons.envelop
-    }, {
-      title: 'Hive',
-      description: 'Modern GraphQL Framework',
-      link: '#',
-      image: productIcons.hive
     }, {
       title: 'Inspector',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://graphql-inspector.com/',
       image: productIcons.inspector
     }, {
       title: 'Code Generator',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://www.graphql-code-generator.com/',
       image: productIcons.codeGen
     }, {
       title: 'CLI',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://github.com/Urigo/graphql-cli',
       image: productIcons.cli
+    }, {
+      title: 'ESLint',
+      description: 'Modern GraphQL Framework',
+      link: 'https://github.com/dotansimha/graphql-eslint/',
+      image: productIcons.eslint
     }, {
       title: 'Scalars',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://www.graphql-scalars.dev/',
       image: productIcons.scalars
-    }]
-  },
-  {
-    title: 'Category Name or tags or popularity',
-    items: [{
+    }, {
       title: 'Mesh',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://www.graphql-mesh.com/',
       image: productIcons.mesh
     }, {
       title: 'Modules',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://graphql-modules.com/',
       image: productIcons.modules
     }, {
       title: 'Tools',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://www.graphql-tools.com/',
       image: productIcons.tools
     }, {
       title: 'Sofa',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://www.sofa-api.com/',
       image: productIcons.sofa
     }, {
       title: 'Angular',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://apollo-angular.com/',
       image: productIcons.angular
     }, {
       title: 'Config',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://graphql-config.com/introduction',
       image: productIcons.config
     }, {
-      title: 'Whatsapp',
+      title: 'WhatsApp',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://github.com/Urigo/WhatsApp-Clone-Tutorial',
       image: productIcons.whatsapp
     }, {
       title: 'Stencil',
       description: 'Modern GraphQL Framework',
-      link: '#',
+      link: 'https://github.com/ardatan/stencil-apollo',
       image: productIcons.stencil
     }]
   }];
