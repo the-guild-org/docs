@@ -38,10 +38,8 @@ export const Header: React.FC<IHeaderProps> = ({ accentColor, activeLink, sameSi
   const renderLinkOptions = (href: string, sameSite?: boolean, clickEvent?: () => void) => {
     const rootURL = 'https://the-guild.dev';
     return clickEvent ? {
-      href: !sameSite ? '' : href,
+      href: '',
       onClick: (e: React.SyntheticEvent) => {
-        if (sameSite) return;
-
         e.preventDefault();
         clickEvent();
       }
