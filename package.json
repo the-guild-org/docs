@@ -1,6 +1,6 @@
 {
   "name": "the-guild-components",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "license": "MIT",
   "module": "dist/components.esm.js",
   "types": "dist/components/index.d.ts",
@@ -26,7 +26,8 @@
   },
   "peerDependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "styled-components": "5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
