@@ -1,19 +1,4 @@
-import React, { useState } from 'react';
-
-import { Modal } from './Modal';
-
-import {
-  SearchBarButton,
-  SearchBarForm,
-  SearchBarResults,
-  SearchBarHit,
-} from './SearchBar.styles';
-
-import { ISearchBarProps } from './types';
-import { searchBarThemedIcons } from '../helpers/assets';
-import { toggleLockBodyScroll } from '../helpers/modals';
-import { ThemeContext } from '../helpers/theme';
-
+import React, { useEffect, useState, useRef } from 'react';
 import algoliaSearch from 'algoliasearch/lite';
 
 import {
@@ -30,23 +15,49 @@ import {
   StateResultsProvided,
 } from 'react-instantsearch-core';
 
-const searchClient = algoliaSearch(
-  'ANRJKXZTRW',
-  '811d453fc7f80306044dd5cc4b87e064',
-  {
-    hosts: [{ url: 'the-guild.dev/api/algolia' }]
-  }
-);
+import { Modal } from './Modal';
 
-const searchIndexName = 'theguild';
+import {
+  SearchBarButton,
+  SearchBarForm,
+  SearchBarResults,
+  SearchBarHit,
+} from './SearchBar.styles';
+
+import { ISearchBarProps } from './types';
+import { searchBarThemedIcons } from '../helpers/assets';
+import { toggleLockBodyScroll } from '../helpers/modals';
+import { useKeyPress } from '../helpers/hooks';
+import { ThemeContext } from '../helpers/theme';
+import { algoliaConfig } from '../../configs.json';
+
 
 export const SearchBar: React.FC<ISearchBarProps> = ({ accentColor, title, placeholder }) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
   const [modalOpen, setModalOpen] = useState(false);
+  const searchRef = useRef<HTMLInputElement>(null);
+  const escapePress = useKeyPress("Escape");
+
   const icons = searchBarThemedIcons(isDarkTheme || false);
 
+  const searchClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
+    hosts: algoliaConfig.hosts
+  });
+
+  const handleModal = (state: boolean) => {
+    toggleLockBodyScroll(state);
+    setModalOpen(state);
+  }
+
+  useEffect(() => {
+    if (modalOpen) {
+      escapePress && handleModal(false);
+      searchRef.current && searchRef.current.focus();
+    }
+  }, [modalOpen, escapePress]);
+
   const SearchBox: React.FC<SearchBoxProvided> = ({ currentRefinement, refine }) => (
-    <SearchBarForm accentColor={accentColor}>
+    <SearchBarForm accentColor={accentColor} >
       <form noValidate action="" role="search">
         <img src={icons.search} height="24" width="24" alt="Search icon" />
         <input
@@ -59,6 +70,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({ accentColor, title, place
           placeholder={placeholder}
           maxLength={64}
           type="search"
+          ref={searchRef}
           value={currentRefinement}
           onChange={event => refine(event.currentTarget.value)}
         ></input>
@@ -134,11 +146,6 @@ export const SearchBar: React.FC<ISearchBarProps> = ({ accentColor, title, place
   const CustomStateResults = connectStateResults(StateResults);
   const CustomHits = connectHits(Hits);
 
-  const handleModal = (state: boolean) => {
-    toggleLockBodyScroll(state);
-    setModalOpen(state);
-  }
-
   return (
     <>
       <SearchBarButton accentColor={accentColor} onClick={() => handleModal(true)}>
@@ -146,7 +153,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({ accentColor, title, place
         <span>{placeholder}</span>
       </SearchBarButton>
       <Modal title={title} visible={modalOpen} placement="top" onCancel={() => handleModal(false)}>
-        <InstantSearch indexName={searchIndexName} searchClient={searchClient}>
+        <InstantSearch indexName={algoliaConfig.searchIndex} searchClient={searchClient}>
           <CustomSearchBox />
           <CustomStateResults>
             <CustomHits />
@@ -156,5 +163,3 @@ export const SearchBar: React.FC<ISearchBarProps> = ({ accentColor, title, place
     </>
   );
 };
-
-

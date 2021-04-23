@@ -73,7 +73,7 @@ export const Header: React.FC<IHeaderProps> = ({ accentColor, activeLink, sameSi
     active: false,
   }];
 
-  links.map(link => link.active = activeLink === link.href);
+  links.map(link => link.active = activeLink.includes(link.href));
 
   return (
     <HeaderWrapper>

@@ -16,8 +16,8 @@ export const ModalContainer = styled.div(({ isModalOpen }: IStyleProps) => [
 
 export const ModalOverlay = styled.div(({ isModalOpen }: IStyleProps) => [
   tw`absolute inset-0`,
-  tw`w-full h-full bg-gray-900 invisible opacity-0`,
-  tw`transition-all duration-150 ease-in-out`,
+  tw`w-full h-full dark:bg-gray-500 bg-gray-900 invisible opacity-0`,
+  tw`transition-all duration-200 ease-in-out`,
   css`
     ${isModalOpen && tw`visible opacity-40`}
   `
@@ -25,7 +25,6 @@ export const ModalOverlay = styled.div(({ isModalOpen }: IStyleProps) => [
 
 export const ModalWrapper = styled.div(({ isModalOpen, placement }: IStyleProps) => [
   tw`absolute inset-0 flex flex-col opacity-100 transform-none h-full w-full max-w-none rounded-none`,
-  tw`transition-all duration-300 ease-in-out`,
   tw`dark:bg-gray-900 bg-white`,
   tw`md:(transform -translate-x-1/2)`,
   css`
@@ -82,6 +81,6 @@ export const ModalContent = styled.div(() => [
 
 export const ModalClose = styled.button(() => [
   tw`absolute top-6 right-6 flex md:hidden justify-center items-center p-1.5`,
-  tw`bg-transparent border-0 outline-none cursor-pointer hover:opacity-70`,
+  tw`bg-transparent border-0 outline-none cursor-pointer hocus:opacity-70`,
   tw`transition duration-200 ease-in-out`,
 ]);
