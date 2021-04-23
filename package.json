@@ -1,6 +1,6 @@
 {
   "name": "the-guild-components",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "license": "MIT",
   "module": "dist/components.esm.js",
   "types": "dist/components/index.d.ts",
