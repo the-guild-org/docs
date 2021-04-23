@@ -1,6 +1,6 @@
 {
   "name": "the-guild-components",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "license": "MIT",
   "module": "dist/components.esm.js",
   "types": "dist/components/index.d.ts",
@@ -61,10 +61,11 @@
   },
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
+    "@rollup/plugin-json": "^4.1.0",
     "algoliasearch": "^4.9.0",
     "core-js": "^3.8.3",
+    "react-instantsearch-dom": "^6.10.3",
     "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.2.3",
-    "react-instantsearch-dom": "^6.10.3"
+    "twin.macro": "^2.2.3"
   }
 }

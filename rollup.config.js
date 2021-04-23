@@ -4,6 +4,7 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "rollup-plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
 import image from '@rollup/plugin-image';
+import json from '@rollup/plugin-json';
 
 import pkg from "./package.json";
 
@@ -62,5 +63,6 @@ export default {
     }),
     
     image(),
+    json(),
   ],
 };
