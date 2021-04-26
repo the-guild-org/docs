@@ -26,7 +26,7 @@ export const ProductList = styled.div(() => [
         &:hover {
           img:nth-child(2) {
             position: absolute;
-            transform: translateY(4px);
+            top: 4px;
             display: block;
             filter: blur(3px);
             opacity: 0.45;
@@ -38,9 +38,10 @@ export const ProductList = styled.div(() => [
 ]);
 
 export const ProductImage = styled.div(() => [
-  tw`relative flex items-center mr-3`,
+  tw`relative mr-3`,
   css`
     img {
+      min-width: 3.375rem;
       ${tw`align-bottom last:hidden`}
     }
   `
