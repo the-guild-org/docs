@@ -36,7 +36,7 @@ export const ModalWrapper = styled.div(({ isModalOpen, placement }: IStyleProps)
       ${!isModalOpen && tw`opacity-0`}
   `,
   (placement === 'top' || placement === 'center') && [
-    tw`md:(left-2/4 right-auto bottom-auto h-auto max-w-2xl rounded-md)`,
+    tw`md:(left-2/4 right-auto bottom-auto h-auto max-w-3xl rounded-md)`,
     css`
       @media screen and (min-width: 768px) {
         max-height: 80%;
@@ -46,7 +46,7 @@ export const ModalWrapper = styled.div(({ isModalOpen, placement }: IStyleProps)
   placement === 'top' && tw`md:(top-10 -translate-y-0)`,
   placement === 'center' && tw`md:(top-2/4 -translate-y-1/2)`,
   placement === 'bottom' && [
-    tw`md:(top-auto left-2/4 bottom-0 h-4/5 w-4/5 max-w-2xl rounded-t-md)`
+    tw`md:(top-auto left-2/4 bottom-0 h-5/6 w-4/5 max-w-3xl rounded-t-md)`
   ]
 ]);
 

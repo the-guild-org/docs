@@ -26,7 +26,7 @@ export const ProductList = styled.div(() => [
         &:hover {
           img:nth-child(2) {
             position: absolute;
-            top: 4px;
+            transform: translateY(4px);
             display: block;
             filter: blur(3px);
             opacity: 0.45;
@@ -38,7 +38,7 @@ export const ProductList = styled.div(() => [
 ]);
 
 export const ProductImage = styled.div(() => [
-  tw`relative mr-3`,
+  tw`relative flex items-center mr-3`,
   css`
     img {
       ${tw`align-bottom last:hidden`}
@@ -47,7 +47,7 @@ export const ProductImage = styled.div(() => [
 ]);
 
 export const ProductThumbnail = styled.a(() => [
-  tw`flex w-full my-1 md:(m-0) py-3 px-2 rounded-lg outline-none no-underline!`,
+  tw`flex w-full my-1 md:(m-0) py-4 px-3 rounded-lg outline-none no-underline!`,
   tw`dark:hocus:bg-gray-800 hocus:bg-gray-100`,
   css`
     span {
@@ -67,7 +67,7 @@ export const ProductThumbnail = styled.a(() => [
     }
 
     @media screen and (min-width: 640px) {
-      width: calc(50% - 1rem);
+      width: calc(50% - 1.5rem);
     }
   `
 ]);

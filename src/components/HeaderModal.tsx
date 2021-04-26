@@ -22,7 +22,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({ title, modalOpen, onC
     title: 'Products',
     items: [{
       title: 'Hive',
-      description: 'Modern GraphQL Framework',
+      description: 'Schema Registry for your GraphQL Workflows',
       link: 'https://graphql-hive.com/',
       image: productIcons.hive
     }],
@@ -31,71 +31,71 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({ title, modalOpen, onC
     items: [{
       title: 'Envelop',
       description: 'Modern GraphQL Framework',
-      link: 'https://github.com/dotansimha/envelop',
+      link: 'https://github.com/dotansimha/envelop/',
       image: productIcons.envelop
     }, {
       title: 'Inspector',
-      description: 'Modern GraphQL Framework',
+      description: 'Schema management tool',
       link: 'https://graphql-inspector.com/',
       image: productIcons.inspector
     }, {
       title: 'Code Generator',
-      description: 'Modern GraphQL Framework',
-      link: 'https://www.graphql-code-generator.com/',
+      description: 'Generate anything from GraphQL',
+      link: 'https://graphql-code-generator.com/',
       image: productIcons.codeGen
     }, {
       title: 'CLI',
-      description: 'Modern GraphQL Framework',
+      description: 'Command line tool for common GraphQL workflows',
       link: 'https://github.com/Urigo/graphql-cli',
       image: productIcons.cli
     }, {
       title: 'ESLint',
-      description: 'Modern GraphQL Framework',
+      description: 'Customisable ESLint parser, plugin and set rules for GraphQL',
       link: 'https://github.com/dotansimha/graphql-eslint/',
       image: productIcons.eslint
     }, {
       title: 'Scalars',
-      description: 'Modern GraphQL Framework',
-      link: 'https://www.graphql-scalars.dev/',
+      description: 'Common custom GraphQL Scalars for precise type-safe GraphQL schemas',
+      link: 'https://graphql-scalars.dev/',
       image: productIcons.scalars
     }, {
       title: 'Mesh',
-      description: 'Modern GraphQL Framework',
-      link: 'https://www.graphql-mesh.com/',
+      description: 'Query anything, run anywhere',
+      link: 'https://graphql-mesh.com/',
       image: productIcons.mesh
     }, {
       title: 'Modules',
-      description: 'Modern GraphQL Framework',
+      description: 'Enterprise Grade Tooling For Your GraphQL Server',
       link: 'https://graphql-modules.com/',
       image: productIcons.modules
     }, {
       title: 'Tools',
-      description: 'Modern GraphQL Framework',
-      link: 'https://www.graphql-tools.com/',
+      description: 'A set of utilities for faster GraphQL development',
+      link: 'https://graphql-tools.com/',
       image: productIcons.tools
     }, {
-      title: 'Sofa',
-      description: 'Modern GraphQL Framework',
-      link: 'https://www.sofa-api.com/',
+      title: 'SOFA',
+      description: 'Generate RESTful APIs from your GraphQL Server',
+      link: 'https://sofa-api.com/',
       image: productIcons.sofa
     }, {
       title: 'Angular',
-      description: 'Modern GraphQL Framework',
+      description: 'A fully-featured, production ready caching GraphQL client for Angular and every GraphQL server',
       link: 'https://apollo-angular.com/',
       image: productIcons.angular
     }, {
       title: 'Config',
-      description: 'Modern GraphQL Framework',
+      description: 'One configuration for all your GraphQL tools',
       link: 'https://graphql-config.com/introduction',
       image: productIcons.config
     }, {
       title: 'WhatsApp',
-      description: 'Modern GraphQL Framework',
+      description: 'Full Stack, open source tutorial',
       link: 'https://github.com/Urigo/WhatsApp-Clone-Tutorial',
       image: productIcons.whatsapp
     }, {
       title: 'Stencil',
-      description: 'Modern GraphQL Framework',
+      description: 'A fully-featured, production ready caching GraphQL client for Stencil and every GraphQL server',
       link: 'https://github.com/ardatan/stencil-apollo',
       image: productIcons.stencil
     }]
