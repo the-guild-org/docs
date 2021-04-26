@@ -4,7 +4,7 @@ interface IStyleProps {
 }
 
 export const SearchBarButton = styled.button(({ accentColor }: IStyleProps) => [
-  tw`flex items-center p-0 font-sans font-medium text-xs text-gray-500 bg-transparent border-transparent outline-none cursor-pointer`,
+  tw`flex items-center p-0 font-sans font-medium text-xs text-gray-500 bg-transparent border-transparent cursor-pointer`,
   tw`md:(ml-3 pl-1 pr-8 py-1 border-2 bg-gray-100 rounded-md)`,
   tw`md:dark:(bg-gray-800 text-gray-300)`,
   tw`transition duration-200 ease-in-out`,
@@ -62,7 +62,7 @@ export const SearchBarForm = styled.div(({ accentColor }: IStyleProps) => [
 
     button {
       ${[
-      tw`p-0 bg-transparent border-0 outline-none cursor-pointer`,
+      tw`p-0 bg-transparent border-0 cursor-pointer`,
       tw`transition duration-200 ease-in-out`,
       tw`hover:(opacity-70)`
     ]}
@@ -95,6 +95,7 @@ export const SearchBarHit = styled.article(({ accentColor }: IStyleProps) => [
       tw`flex items-center mb-2 px-5 py-3 rounded-md break-all no-underline`,
       tw`dark:bg-gray-800 bg-gray-100`
     ]}
+      
       &:hover, &:focus {
         outline: none;
         background-color: ${accentColor};

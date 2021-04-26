@@ -27,7 +27,6 @@ import {
 import { ISearchBarProps } from './types';
 import { searchBarThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
-import { useKeyPress } from '../helpers/hooks';
 import { ThemeContext } from '../helpers/theme';
 import { algoliaConfig } from '../../configs.json';
 
@@ -36,7 +35,6 @@ export const SearchBar: React.FC<ISearchBarProps> = ({ accentColor, title, place
   const { isDarkTheme } = React.useContext(ThemeContext);
   const [modalOpen, setModalOpen] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
-  const escapePress = useKeyPress("Escape");
 
   const icons = searchBarThemedIcons(isDarkTheme || false);
 
@@ -50,16 +48,15 @@ export const SearchBar: React.FC<ISearchBarProps> = ({ accentColor, title, place
   }
 
   useEffect(() => {
-    if (modalOpen) {
-      escapePress && handleModal(false);
-      searchRef.current && searchRef.current.focus();
+    if (modalOpen && searchRef.current) {
+      searchRef.current.focus();
     }
-  }, [modalOpen, escapePress]);
+  }, [modalOpen]);
 
   const SearchBox: React.FC<SearchBoxProvided> = ({ currentRefinement, refine }) => (
     <SearchBarForm accentColor={accentColor} >
       <form noValidate action="" role="search">
-        <img src={icons.search} height="24" width="24" alt="Search icon" />
+        <img src={icons.search} height="30" width="30" alt="Search icon" />
         <input
           aria-autocomplete="both"
           autoComplete="off"
@@ -76,7 +73,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({ accentColor, title, place
         ></input>
         {currentRefinement && (
           <button type="button" onClick={() => refine('')}>
-            <img src={icons.close} height="24" width="24" alt="Clear icon" />
+            <img src={icons.close} height="34" width="34" alt="Clear icon" />
           </button>
         )}
       </form>

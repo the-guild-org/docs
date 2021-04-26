@@ -47,8 +47,8 @@ export const ProductImage = styled.div(() => [
 ]);
 
 export const ProductThumbnail = styled.a(() => [
-  tw`flex w-full my-1 md:(m-0) py-3 px-2 rounded-lg no-underline!`,
-  tw`dark:hover:bg-gray-800 hover:bg-gray-100`,
+  tw`flex w-full my-1 md:(m-0) py-3 px-2 rounded-lg outline-none no-underline!`,
+  tw`dark:hocus:bg-gray-800 hocus:bg-gray-100`,
   css`
     span {
       ${tw`flex flex-col justify-center`}

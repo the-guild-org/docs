@@ -8,7 +8,12 @@ interface IStyleProps {
 
 export const HeaderWrapper = styled.header(() => [
   tw`px-6 py-2 md:py-5 font-sans`,
-  tw`dark:bg-gray-900 bg-white`
+  tw`dark:bg-gray-900 bg-white`,
+  css`
+    button:focus:not(:focus-visible) {
+      ${tw`outline-none!`}
+    }
+  `,
 ]);
 
 export const HeaderContainer = styled.div(() => [
@@ -47,9 +52,9 @@ export const HeaderLogo = styled.a(() => [
 ]);
 
 export const HeaderLink = styled.a(({ accentColor, isActiveLink }: IStyleProps) => [
-  tw`block mx-auto py-3 w-max font-medium text-base text-center no-underline!`,
+  tw`flex mx-auto py-3 w-max font-medium text-base text-center no-underline!`,
   tw`sm:(text-lg py-5)`,
-  tw`md:(inline-block mx-2.5 py-0 text-xs text-left)`,
+  tw`md:(mx-2.5 py-0 text-xs text-left)`,
   tw`transition duration-200 ease-in-out`,
   css`
     img {
@@ -73,7 +78,7 @@ export const HeaderLink = styled.a(({ accentColor, isActiveLink }: IStyleProps) 
 
 export const HeaderIcon = styled.button(({ iconType }: IStyleProps) => [
   tw`flex md:hidden justify-center items-center p-1.5`,
-  tw`bg-transparent border-0 outline-none cursor-pointer hover:opacity-70`,
+  tw`bg-transparent border-0 cursor-pointer hover:opacity-70`,
   tw`transition duration-200 ease-in-out`,
   iconType === 'close' && tw`absolute top-6 right-6`,
   iconType === 'theme' && tw`transform scale-125 mt-4 md:(flex transform-none mt-0 ml-3)`,

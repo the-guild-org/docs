@@ -10,6 +10,11 @@ export const ModalContainer = styled.div(({ isModalOpen }: IStyleProps) => [
   css`
     z-index: 400; //TODO: Used for Docusaurus, remove when no longer needed.
     backdrop-filter: blur(2px);
+
+    button:focus:not(:focus-visible) {
+      ${tw`outline-none!`}
+    }
+
     ${!isModalOpen && tw`invisible`}
   `
 ]);
@@ -81,6 +86,6 @@ export const ModalContent = styled.div(() => [
 
 export const ModalClose = styled.button(() => [
   tw`absolute top-6 right-6 flex md:hidden justify-center items-center p-1.5`,
-  tw`bg-transparent border-0 outline-none cursor-pointer hocus:opacity-70`,
+  tw`bg-transparent border-0 cursor-pointer hocus:opacity-70`,
   tw`transition duration-200 ease-in-out`,
 ]);
