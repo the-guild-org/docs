@@ -1,126 +1,90 @@
-import styled from "styled-components";
-import { HeaderOptions } from "./types";
+import tw, { css, styled } from 'twin.macro';
+interface IStyleProps {
+  accentColor?: string
+  isActiveLink?: boolean
+  isModalOpen?: boolean
+  iconType?: 'close' | 'theme'
+}
 
-export const HeaderStyles = styled.div<HeaderOptions>`
-  #g-header-bar {
-    background-color: ${(props) => props.navbarBackgroundColor};
-    color: ${(props) => props.navbarLinkColor};
-    width: 100%;
-    height: 55px;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 5px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .g-header-links {
-    margin-right: 10px;
-    color: ${(props) => props.navbarLinkColor};
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-  }
-  .g-header-links:hover {
-    color: ${props => props.navbarLinkHoverColor};
-  }
-  /* The Modal (background) */
-  .g-modal {
-    /* display: none; Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 10000; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  }
-  /* Modal Content */
-  .g-modal-content {
-    background-color: ${(props) => props.navbarBackgroundColor};
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-  }
-  /* The Close Button */
-  .g-close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  .g-close:hover,
-  .g-close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .productTable h4 {
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-  }
-  #oss-nav {
-    cursor: pointer;
-  }
-  .ossCells {
-    float: left;
-    padding: 11px;
-    margin-right: 5px;
-    background-color: white;
-  }
-  .ossContentCells {
-    float: left;
-    width: 325px;
-    padding-left: 5px;
-  }
-  .g-header-logo {
-    height: 45px;
-    background: url("${(props) => props.linkUrl}/static/logo.svg") no-repeat;
-    width: 100px;
-  }
-  [data-theme="dark"] {
-    .g-header-logo {
-      background: url("${(props) =>
-        props.linkUrl}/static/white-logo.png") no-repeat;
+export const HeaderWrapper = styled.header(() => [
+  tw`px-6 py-2 md:py-5 font-sans`,
+  tw`dark:bg-gray-900 bg-white`,
+  css`
+    button:focus:not(:focus-visible) {
+      ${tw`outline-none!`}
     }
-  }
-  .g-modal-content {
-    width: 1000px;
-  }
-  .productTable {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    font-size: 15px;
-    text-align: left;
-    flex-wrap: wrap;
-  }
-  .flex-item-left {
-    box-sizing: border-box;
-    padding: 10px;
-    flex: 50%;
-  }
-  .flex-item-right {
-    box-sizing: border-box;
-    padding: 10px;
-    flex: 50%;
-  }
-  /* Responsive layout - makes a one column-layout instead of two-column layout */
-  @media (max-width: 800px) {
-    .g-modal-content {
-      max-width: 95vw;
-      margin: auto;
+  `,
+]);
+
+export const HeaderContainer = styled.div(() => [
+  tw`container flex justify-between items-center mx-auto`
+]);
+
+export const HeaderNav = styled.nav(({ isModalOpen }: IStyleProps) => [
+  tw`absolute flex flex-col justify-center`,
+  tw`transition-all duration-300 ease-in-out`,
+  tw`md:(static flex-row justify-end items-center transition-none)`,
+  css`
+    z-index: 300; //TODO: Used for Docusaurus, remove when no longer needed.
+    @media screen and (max-width: 767px) {
+      ${[
+      tw`inset-0`,
+      !isModalOpen && css`top: -100vh; bottom: 100vh;`
+    ]}
     }
-    .flex-container {
-      box-sizing: border-box;
-      flex-direction: column;
+  `,
+  tw`dark:bg-gray-900 bg-white`
+]);
+
+export const HeaderControls = styled.menu(() => [
+  tw`flex justify-center m-0 p-0`,
+  css`
+    button:first-child:not(:only-child) {
+      ${tw`hidden md:flex`}
     }
-    .ossContentCells {
-      width: 270px;
+  `
+]);
+
+export const HeaderLogo = styled.a(() => [
+  css`img {
+    ${tw`first:(hidden md:block) last:(md:hidden)`}
+  }`,
+]);
+
+export const HeaderLink = styled.a(({ accentColor, isActiveLink }: IStyleProps) => [
+  tw`flex mx-auto py-3 w-max font-medium text-base text-center no-underline!`,
+  tw`sm:(text-lg py-5)`,
+  tw`md:(mx-2.5 py-0 text-xs text-left)`,
+  tw`transition duration-200 ease-in-out`,
+  css`
+    img {
+      ${tw`pl-1 pb-0.5`}
     }
-  }
-`;
+  `,
+  accentColor && css`&:hover {
+    color: ${accentColor} !important;
+  }`,
+  isActiveLink ?
+    [
+      tw`dark:text-white text-black relative`,
+      css`
+      :after { 
+        content:""; 
+        ${tw`absolute left-0 bottom-0 sm:bottom-2.5 md:-bottom-2 h-0.5 w-full dark:bg-white bg-black rounded`}
+      }
+      `,
+    ] : tw`dark:text-gray-400 text-gray-500`
+]);
+
+export const HeaderIcon = styled.button(({ iconType }: IStyleProps) => [
+  tw`flex md:hidden justify-center items-center p-1.5`,
+  tw`bg-transparent border-0 cursor-pointer hover:opacity-70`,
+  tw`transition duration-200 ease-in-out`,
+  iconType === 'close' && tw`absolute top-6 right-6`,
+  iconType === 'theme' && tw`transform scale-125 mt-4 md:(flex transform-none mt-0 ml-3)`,
+]);
+
+export const HeaderSide = styled.div(() => [
+  tw`flex first:justify-start last:justify-end md:hidden`,
+  css`min-width: 3.25rem;`
+]);

@@ -1,4 +1,4 @@
-export { Button } from "./Button";
-export { Logo } from "./Logo";
 export { Header } from "./Header";
-export { HeaderModal } from "./HeaderModal";
+export { Modal } from "./Modal";
+export { SearchBar } from "./SearchBar";
+export { ThemeProvider } from "../helpers/theme";

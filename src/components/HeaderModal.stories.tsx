@@ -1,21 +1,42 @@
 import React from 'react'
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0'
-import { HeaderModal, HeaderModalProps } from './HeaderModal'
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { IHeaderModalProps } from './types';
+
+import { HeaderModal } from './HeaderModal';
 
 export default {
-  title: 'HeaderModal',
+  title: 'Header Modal',
   component: HeaderModal,
+  argTypes: {
+    title: {
+      name: 'Title',
+      description: 'Property displayed in modal\'s header',
+    },
+    modalOpen: {
+      name: 'Visible',
+      description: 'Toggles the component visibility.',
+    },
+    visible: {
+      table: {
+        disable: true
+      },
+      control: false
+    },
+    onCancelModal: {
+      table: {
+        disable: true
+      },
+      control: false
+    },
+  },
 } as Meta
 
-const Template: Story<HeaderModalProps> = args => (
-  <HeaderModal {...args}>HeaderModal</HeaderModal>
+const Template: Story<IHeaderModalProps> = args => (
+  <HeaderModal {...args} />
 )
 
-export const Primary = Template.bind({})
-Primary.args = {
-  linkUrl: 'https://the-guild.dev',
-  navbarBackgroundColor: "var(--ifm-navbar-background-color)",
-  navbarLinkColor: "var(--ifm-navbar-link-color)",
-  navbarLinkHoverColor: "var(--ifm-link-hover-color)",
+export const Default = Template.bind({})
+Default.args = {
+  title: 'Products by The Guild',
+  modalOpen: true,
 }

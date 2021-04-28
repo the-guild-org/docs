@@ -1,20 +1,52 @@
 import React from 'react'
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0'
-import { Header, HeaderProps } from './Header'
+import { IHeaderProps } from './types';
+
+import { Header } from './Header';
 
 export default {
   title: 'Header',
   component: Header,
-  argTypes: {},
+  argTypes: {
+    accentColor: {
+      name: 'Accent Color',
+      description: 'Used in the hover effect on the navigation.',
+      control: {
+        type: 'color'
+      }
+    },
+    activeLink: {
+      name: 'Active Link',
+      description: 'Used ',
+      control: {
+        type: 'radio',
+        options: ['/services', '/open-source', '/blog', '/about-us']
+      }
+    },
+    sameSite: {
+      name: 'Same Site',
+      description: 'Use this to force links to open in the same tab, using the root domain.',
+    },
+    themeSwitch: {
+      name: 'Theme Switch',
+      description: 'Use this to add a theme switch button (only use on sites with existing theme support).'
+    },
+  },
+  parameters: {
+    backgrounds: {
+      default: 'light',
+    }
+  }
 } as Meta
 
-const Template: Story<HeaderProps> = args => <Header {...args}>Header</Header>
+const Template: Story<IHeaderProps> = args => (
+  <Header {...args} />
+)
 
-export const Primary = Template.bind({})
-Primary.args = {
-  linkUrl: 'https://the-guild.dev',
-  navbarBackgroundColor: "var(--ifm-navbar-background-color)",
-  navbarLinkColor: "var(--ifm-navbar-link-color)",
-  navbarLinkHoverColor: "var(--ifm-link-hover-color)",
+export const Default = Template.bind({})
+Default.args = {
+  accentColor: '#03a6a6',
+  activeLink: '/open-source',
+  sameSite: false,
+  themeSwitch: true,
 }
