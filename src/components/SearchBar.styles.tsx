@@ -1,6 +1,6 @@
 import tw, { css, styled } from 'twin.macro';
 interface IStyleProps {
-  accentColor?: string
+  accentColor?: string;
 }
 
 export const SearchBarButton = styled.button(({ accentColor }: IStyleProps) => [
@@ -9,19 +9,20 @@ export const SearchBarButton = styled.button(({ accentColor }: IStyleProps) => [
   tw`md:dark:(bg-gray-800 text-gray-300)`,
   tw`transition duration-200 ease-in-out`,
   css`
-    img { 
+    img {
       ${[
-      tw`h-6 w-6 m-0 md:(h-4.5 w-4.5 mr-1) hover:opacity-70`,
-      tw`transition duration-200 ease-in-out`,
-    ]} 
+        tw`h-6 w-6 m-0 md:(h-4.5 w-4.5 mr-1) hover:opacity-70`,
+        tw`transition duration-200 ease-in-out`,
+      ]}
     }
 
-    span { 
-      ${tw`hidden md:block`} 
+    span {
+      ${tw`hidden md:block`}
     }
 
     @media screen and (min-width: 768px) {
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         border: 2px solid ${accentColor};
       }
     }
@@ -33,10 +34,7 @@ export const SearchBarForm = styled.div(({ accentColor }: IStyleProps) => [
   tw`dark:bg-gray-900 bg-white`,
   css`
     form {
-      ${[
-      tw`flex items-center p-2 rounded-lg`,
-      tw`dark:bg-gray-800 bg-gray-50`
-    ]}
+      ${[tw`flex items-center p-2 rounded-lg`, tw`dark:bg-gray-800 bg-gray-50`]}
 
       border: 2px solid ${accentColor};
     }
@@ -47,41 +45,40 @@ export const SearchBarForm = styled.div(({ accentColor }: IStyleProps) => [
 
     input {
       ${[
-      tw`w-full mx-2 text-lg border-0 outline-none`,
-      tw`dark:(bg-gray-800 text-gray-300 placeholder-gray-300) bg-gray-50 text-gray-500 placeholder-gray-500`,
-      css`
-        &::-webkit-search-decoration,
-        &::-webkit-search-cancel-button,
-        &::-webkit-search-results-button,
-        &::-webkit-search-results-decoration {
-            -webkit-appearance:none;
+        tw`w-full mx-2 text-lg border-0 outline-none`,
+        tw`dark:(bg-gray-800 text-gray-300 placeholder-gray-300) bg-gray-50 text-gray-500 placeholder-gray-500`,
+        css`
+          &::-webkit-search-decoration,
+          &::-webkit-search-cancel-button,
+          &::-webkit-search-results-button,
+          &::-webkit-search-results-decoration {
+            -webkit-appearance: none;
           }
-        `
-    ]}
+        `,
+      ]}
     }
 
     button {
       ${[
-      tw`p-0 bg-transparent border-0 cursor-pointer`,
-      tw`transition duration-200 ease-in-out`,
-      tw`hover:(opacity-70)`
-    ]}
+        tw`p-0 bg-transparent border-0 cursor-pointer`,
+        tw`transition duration-200 ease-in-out`,
+        tw`hover:(opacity-70)`,
+      ]}
     }
-  `
+  `,
 ]);
 
-export const SearchBarResults = styled.section(() => [
-  tw`mt-9`,
-]);
+export const SearchBarResults = styled.section(() => [tw`mt-9`]);
 
 export const SearchBarHit = styled.article(({ accentColor }: IStyleProps) => [
   css`
     h2 {
       ${[
-      tw`text-base font-semibold`,
-      css`
-        color: ${accentColor};
-      `]}
+        tw`text-base font-semibold`,
+        css`
+          color: ${accentColor};
+        `,
+      ]}
     }
 
     &:last-child {
@@ -92,10 +89,10 @@ export const SearchBarHit = styled.article(({ accentColor }: IStyleProps) => [
 
     a {
       ${[
-      tw`flex items-center mb-2 px-5 py-3 rounded-md break-all no-underline`,
-      tw`dark:bg-gray-800 bg-gray-100`
-    ]}
-      
+        tw`flex items-center mb-2 px-5 py-3 rounded-md break-all no-underline`,
+        tw`dark:bg-gray-800 bg-gray-100`,
+      ]}
+
       &:hover, &:focus {
         outline: none;
         background-color: ${accentColor};
@@ -104,12 +101,12 @@ export const SearchBarHit = styled.article(({ accentColor }: IStyleProps) => [
           filter: brightness(0) invert(1);
         }
 
-        span { 
-          ${tw`text-white`} 
+        span {
+          ${tw`text-white`}
         }
 
-        p { 
-          ${tw`text-gray-200`} 
+        p {
+          ${tw`text-gray-200`}
         }
       }
 
@@ -117,7 +114,8 @@ export const SearchBarHit = styled.article(({ accentColor }: IStyleProps) => [
         ${tw`mr-4`}
       }
 
-      span, p {
+      span,
+      p {
         ${tw`m-0`}
       }
 
@@ -125,7 +123,7 @@ export const SearchBarHit = styled.article(({ accentColor }: IStyleProps) => [
         ${tw`dark:text-gray-300 text-gray-700`}
 
         em {
-          ${tw`underline`} 
+          ${tw`underline`}
         }
       }
 

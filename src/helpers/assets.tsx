@@ -41,8 +41,8 @@ export const headerThemedIcons = (isDark: boolean) => ({
   caret: isDark ? caretIconLight : caretIconDark,
   close: isDark ? closeIconLight : closeIconDark,
   logoFull: isDark ? logoFullLight : logoFullDark,
-  logoMono: isDark ? logoMonoLight : logoMonoDark
-})
+  logoMono: isDark ? logoMonoLight : logoMonoDark,
+});
 
 export const productThemedIcons = (isDark: boolean) => ({
   angular: isDark ? productAngular : productAngular,
@@ -60,7 +60,7 @@ export const productThemedIcons = (isDark: boolean) => ({
   stencil: isDark ? productStencil : productStencil,
   tools: isDark ? productTools : productTools,
   whatsapp: isDark ? productWhatsapp : productWhatsapp,
-})
+});
 
 export const searchBarThemedIcons = (isDark: boolean) => ({
   search: isDark ? searchIconLight : searchIconDark,
@@ -68,8 +68,8 @@ export const searchBarThemedIcons = (isDark: boolean) => ({
   page: isDark ? pageIconLight : pageIconDark,
   anchor: isDark ? linkIconLight : linkIconDark,
   content: isDark ? hamburgerIconLight : hamburgerIconDark,
-})
+});
 
 export const modalThemedIcons = (isDark: boolean) => ({
   close: isDark ? closeIconLight : closeIconDark,
-})
+});

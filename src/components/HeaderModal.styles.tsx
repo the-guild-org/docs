@@ -6,7 +6,7 @@ export const ProductCategory = styled.div(() => [
     h3 {
       ${tw`w-full mt-0 mb-3 font-normal text-base text-gray-600 dark:text-gray-400 text-black`}
     }
-  `
+  `,
 ]);
 
 export const ProductList = styled.div(() => [
@@ -44,7 +44,7 @@ export const ProductImage = styled.div(() => [
       min-width: 3.375rem;
       ${tw`align-bottom last:hidden`}
     }
-  `
+  `,
 ]);
 
 export const ProductThumbnail = styled.a(() => [
@@ -70,5 +70,5 @@ export const ProductThumbnail = styled.a(() => [
     @media screen and (min-width: 640px) {
       width: calc(50% - 1.5rem);
     }
-  `
+  `,
 ]);

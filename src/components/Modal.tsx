@@ -6,7 +6,7 @@ import {
   ModalWrapper,
   ModalHeader,
   ModalContent,
-  ModalClose
+  ModalClose,
 } from './Modal.styles';
 
 import { IModalProps } from './types';
@@ -14,9 +14,15 @@ import { modalThemedIcons } from '../helpers/assets';
 import { ThemeContext } from '../helpers/theme';
 import { useKeyPress } from '../helpers/hooks';
 
-export const Modal: React.FC<IModalProps> = ({ title, children, visible, placement, onCancel }) => {
+export const Modal: React.FC<IModalProps> = ({
+  title,
+  children,
+  visible,
+  placement,
+  onCancel,
+}) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
-  const escapePress = useKeyPress("Escape");
+  const escapePress = useKeyPress('Escape');
   const icons = modalThemedIcons(isDarkTheme || false);
 
   useEffect(() => {
@@ -27,20 +33,25 @@ export const Modal: React.FC<IModalProps> = ({ title, children, visible, placeme
 
   return (
     <ModalContainer isModalOpen={visible}>
-      <ModalOverlay isModalOpen={visible} onClick={() => onCancel()} tabIndex={-1} />
+      <ModalOverlay
+        isModalOpen={visible}
+        onClick={() => onCancel()}
+        tabIndex={-1}
+      />
       <ModalWrapper isModalOpen={visible} placement={placement}>
         <ModalHeader>
           <h2>{title}</h2>
           <ModalClose onClick={() => onCancel()}>
-            <img src={icons.close} height="24" width="24" alt="Modal close icon" />
+            <img
+              src={icons.close}
+              height="24"
+              width="24"
+              alt="Modal close icon"
+            />
           </ModalClose>
         </ModalHeader>
-        <ModalContent>
-          {children}
-        </ModalContent>
+        <ModalContent>{children}</ModalContent>
       </ModalWrapper>
     </ModalContainer>
   );
 };
-
-
