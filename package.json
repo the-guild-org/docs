@@ -1,39 +1,29 @@
 {
-  "name": "the-guild-components",
-  "version": "1.0.15",
-  "license": "MIT",
-  "module": "dist/components.esm.js",
-  "types": "dist/components/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "babelMacros": {
-    "twin": {
-      "preset": "styled-components"
-    }
-  },
+  "name": "the-guild-components-monorepo",
+  "private": true,
   "scripts": {
     "start": "npm run storybook --host 0.0.0.0",
     "storybook": "start-storybook -p 6008",
     "build-storybook": "build-storybook",
+    "lint-check": "eslint \"packages/*/src/**/*.{ts,tsx}\"",
+    "format": "prettier --write \"packages/*/src/**/*.{ts,tsx}\"",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "lint-check": "eslint src/**/*.tsx",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "build:types": "tsc",
     "build:js": "rollup -c",
-    "build": "npm run build:types && npm run build:js"
-  },
-  "peerDependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.2",
-    "styled-components": "5.1.0"
+    "build": "yarn build:js",
+    "prerelease": "yarn build",
+    "release": "changeset publish",
+    "release:canary": "(node scripts/canary-release.js && yarn build && yarn changeset publish --tag alpha) || echo Skipping Canary..."
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
     "@babel/preset-env": "^7.12.13",
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.13",
+    "@changesets/cli": "2.16.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-image": "^2.0.6",
     "@rollup/plugin-json": "^4.1.0",
     "@storybook/addon-actions": "^6.1.21",
@@ -55,23 +45,17 @@
     "pretty-quick": "^3.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.2",
-    "rollup": "^2.38.5",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup": "^2.49.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.30.0",
     "styled-components": "5.1.0",
     "typescript": "^4.2.2"
   },
-  "browserslist": "> 0.25%, not dead",
-  "dependencies": {
-    "algoliasearch": "^4.9.0",
-    "core-js": "^3.8.3",
-    "react-instantsearch-dom": "^6.10.3",
-    "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.2.3",
-    "use-debounce": "^6.0.1"
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
   },
   "prettier": {
     "semi": true,
@@ -83,7 +67,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
+    "packages/*/src/**/*.{ts,tsx}": [
       "pretty-quick --staged",
       "eslint"
     ]

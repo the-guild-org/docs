@@ -1,20 +1,21 @@
-import babel from "rollup-plugin-babel";
-import commonjs from "rollup-plugin-commonjs";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import resolve from "rollup-plugin-node-resolve";
-import typescript from "rollup-plugin-typescript2";
+import babel from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import resolve from 'rollup-plugin-node-resolve';
+import typescript from 'rollup-plugin-typescript2';
 import image from '@rollup/plugin-image';
 import json from '@rollup/plugin-json';
+import { join } from 'path';
 
-import pkg from "./package.json";
+import pkg from './packages/the-guild-components/package.json';
 
 const config = {
-  name: "ComponentLibrary",
-  extensions: [".ts", ".tsx"],
+  name: 'ComponentLibrary',
+  extensions: ['.ts', '.tsx'],
 };
 
 export default {
-  input: "src/components/index.tsx",
+  input: 'packages/the-guild-components/src/components/index.tsx',
   output: [
     {
       // ES Modules: Modern browser imports
@@ -28,8 +29,8 @@ export default {
       // js/tsx file usage:
       // import { func } from 'my-lib';
       // func();
-      file: pkg.module,
-      format: "es",
+      file: join(__dirname, 'packages/the-guild-components', pkg.module),
+      format: 'es',
       sourcemap: true,
     },
   ],
@@ -58,10 +59,11 @@ export default {
 
     babel({
       extensions: config.extensions,
-      include: ["src/**/*"],
-      exclude: "node_modules/**",
+      include: ['packages/the-guild-components/src/**/*'],
+      exclude: 'node_modules/**',
+      configFile: join(__dirname, '.babelrc'),
     }),
-    
+
     image(),
     json(),
   ],

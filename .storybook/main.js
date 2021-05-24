@@ -1,7 +1,7 @@
 module.exports = {
   stories: [
-    '../src/components/**/*.stories.mdx',
-    '../src/components/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/the-guild-components/src/components/**/*.stories.mdx',
+    '../packages/the-guild-components/src/components/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
-}
+};
