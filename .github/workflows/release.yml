@@ -2,12 +2,12 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Master
+      - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -16,12 +16,12 @@ jobs:
           git config --global user.email "theguild-bot@users.noreply.github.com"
           git config --global user.name "theguild-bot"
           echo "machine github.com login theguild-bot password ${{secrets.GH_API_TOKEN}}" > ~/.netrc
-      - name: Add origin remote and refetch master
+      - name: Add origin remote and refetch main
         run: |
           git remote rm origin
           git remote add origin "https://github.com/${{github.repository}}"
           git fetch
-          git checkout master
+          git checkout main
           git reset --hard
       - name: Use Node
         uses: actions/setup-node@v2
