@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { IModalProps } from './types';
 
@@ -10,7 +10,7 @@ export default {
   argTypes: {
     title: {
       name: 'Title',
-      description: 'Property displayed in modal\'s header',
+      description: "Property displayed in modal's header",
     },
     visible: {
       name: 'Visible',
@@ -21,8 +21,8 @@ export default {
       description: 'Sets the position of the component',
       control: {
         type: 'radio',
-        options: ['top', 'center', 'bottom']
-      }
+        options: ['top', 'center', 'bottom'],
+      },
     },
     onCancel: {
       table: {
@@ -31,20 +31,21 @@ export default {
       control: false,
     },
   },
-} as Meta
+} as Meta;
 
-const Template: Story<IModalProps> = args => (
+const Template: Story<IModalProps> = (args) => (
   <Modal {...args}>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum sed mi sed sollicitudin.
-      Duis vehicula et dolor at suscipit. Integer congue magna vel orci bibendum, eu vestibulum leo venenatis.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum sed
+      mi sed sollicitudin. Duis vehicula et dolor at suscipit. Integer congue
+      magna vel orci bibendum, eu vestibulum leo venenatis.
     </p>
   </Modal>
-)
+);
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
 Default.args = {
   title: 'Example Title',
   placement: 'center',
   visible: true,
-}
+};

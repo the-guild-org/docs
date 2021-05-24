@@ -6,4 +6,4 @@ export const GlobalStyles: React.FC = () => (
   <>
     <BaseStyles />
   </>
-)
+);

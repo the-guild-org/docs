@@ -1,13 +1,13 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from 'react';
 
 const getDarkTheme = () => {
   if (typeof window !== 'undefined' && window.localStorage) {
     const storedPref = localStorage.getItem('theme');
     if (typeof storedPref === 'string') {
-      return (storedPref === 'dark');
+      return storedPref === 'dark';
     }
 
-    const userMedia = window.matchMedia("(prefers-color-scheme: dark)")
+    const userMedia = window.matchMedia('(prefers-color-scheme: dark)');
     if (userMedia.matches) {
       return true;
     }
@@ -17,14 +17,14 @@ const getDarkTheme = () => {
   } else {
     return false;
   }
-}
+};
 interface IContextProps {
-  isDarkTheme: boolean
-  setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>
+  isDarkTheme: boolean;
+  setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface IProviderProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const ThemeContext = createContext<Partial<IContextProps>>({});
@@ -44,7 +44,7 @@ const ThemeProvider: React.FC<IProviderProps> = ({ children }) => {
 
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
-  }
+  };
 
   useEffect(() => {
     setDOMTheme(isDarkTheme);
@@ -54,7 +54,7 @@ const ThemeProvider: React.FC<IProviderProps> = ({ children }) => {
     <ThemeContext.Provider value={{ isDarkTheme, setDarkTheme }}>
       {children}
     </ThemeContext.Provider>
-  )
-}
+  );
+};
 
-export { ThemeContext, ThemeProvider }
+export { ThemeContext, ThemeProvider };

@@ -1,9 +1,9 @@
-import tw, { styled, css, theme } from 'twin.macro'
+import tw, { styled, css, theme } from 'twin.macro';
 
 // Export interface for Button.stories.tsx
 export interface ButtonProps {
-  variant?: 'primary' | 'secondary'
-  isSmall?: boolean
+  variant?: 'primary' | 'secondary';
+  isSmall?: boolean;
 }
 
 export const Button = styled.button(({ variant, isSmall }: ButtonProps) => [
@@ -31,4 +31,4 @@ export const Button = styled.button(({ variant, isSmall }: ButtonProps) => [
   css`
     color: ${theme`colors.white`};
   `,
-])
+]);

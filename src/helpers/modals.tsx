@@ -4,7 +4,7 @@ export const toggleLockBodyScroll = (state: boolean) => {
     const body = window.document.body;
 
     if (body) {
-      body.style.overflow = state ? "hidden" : "visible"
+      body.style.overflow = state ? 'hidden' : 'visible';
     }
   }
-}
+};

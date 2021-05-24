@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
-import algoliaSearch from "algoliasearch/lite";
+import React, { useEffect, useState, useRef, useCallback } from 'react';
+import algoliaSearch from 'algoliasearch/lite';
 
 import {
   InstantSearch,
@@ -7,36 +7,36 @@ import {
   connectHits,
   connectSearchBox,
   connectStateResults,
-} from "react-instantsearch-dom";
+} from 'react-instantsearch-dom';
 
 import {
   Hit,
   SearchBoxProvided,
   StateResultsProvided,
-} from "react-instantsearch-core";
+} from 'react-instantsearch-core';
 
-import { useDebouncedCallback } from "use-debounce";
+import { useDebouncedCallback } from 'use-debounce';
 
-import { Modal } from "./Modal";
+import { Modal } from './Modal';
 
 import {
   SearchBarButton,
   SearchBarForm,
   SearchBarResults,
   SearchBarHit,
-} from "./SearchBar.styles";
+} from './SearchBar.styles';
 
-import { ISearchBarProps } from "./types";
-import { searchBarThemedIcons } from "../helpers/assets";
-import { toggleLockBodyScroll } from "../helpers/modals";
-import { ThemeContext } from "../helpers/theme";
-import { algoliaConfig } from "../../configs.json";
+import { ISearchBarProps } from './types';
+import { searchBarThemedIcons } from '../helpers/assets';
+import { toggleLockBodyScroll } from '../helpers/modals';
+import { ThemeContext } from '../helpers/theme';
+import { algoliaConfig } from '../../configs.json';
 
 const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
   hosts: algoliaConfig.hosts,
 });
 
-const searchClient: Pick<typeof algoliaClient, "search"> = {
+const searchClient: Pick<typeof algoliaClient, 'search'> = {
   search(requests) {
     // In case of empty queries
     if (
@@ -52,9 +52,10 @@ const searchClient: Pick<typeof algoliaClient, "search"> = {
           nbHits: 0,
           nbPages: 0,
           page: 0,
-          params: "query=&highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&facets=%5B%5D",
+          params:
+            'query=&highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&facets=%5B%5D',
           processingTimeMS: 0,
-          query: "",
+          query: '',
         })),
       });
     }
@@ -115,7 +116,7 @@ const SearchBox: React.FC<
           onChange={onChange}
         ></input>
         {currentRefinement && (
-          <button type="button" onClick={() => refine("")}>
+          <button type="button" onClick={() => refine('')}>
             <img src={icons.close} height="34" width="34" alt="Clear icon" />
           </button>
         )}
