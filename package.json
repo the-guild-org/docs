@@ -66,6 +66,7 @@
     "core-js": "^3.8.3",
     "react-instantsearch-dom": "^6.10.3",
     "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.2.3"
+    "twin.macro": "^2.2.3",
+    "use-debounce": "^6.0.1"
   }
 }

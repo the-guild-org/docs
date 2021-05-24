@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export const useKeyPress = (targetKey: string) => {
   // State for keeping track of whether key is pressed
@@ -26,4 +26,4 @@ export const useKeyPress = (targetKey: string) => {
     };
   }, []); // Empty array ensures that effect is only run on mount and unmount
   return keyPressed;
-}
+};
