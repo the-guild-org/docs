@@ -22,8 +22,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "build:types": "tsc",
     "build:js": "rollup -c",
-    "build": "npm run build:types && npm run build:js",
-    "prepare": "yarn run build"
+    "build": "npm run build:types && npm run build:js"
   },
   "peerDependencies": {
     "react": "^17.0.1",

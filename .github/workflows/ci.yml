@@ -25,8 +25,8 @@ jobs:
       - name: Install
         run: yarn
 
-      - name: Type Check
-        run: yarn type-check
+      - name: Build
+        run: yarn build
 
       - name: Lint Check
         run: yarn lint-check
