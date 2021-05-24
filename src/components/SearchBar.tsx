@@ -32,6 +32,36 @@ import { toggleLockBodyScroll } from "../helpers/modals";
 import { ThemeContext } from "../helpers/theme";
 import { algoliaConfig } from "../../configs.json";
 
+const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
+  hosts: algoliaConfig.hosts,
+});
+
+const searchClient: Pick<typeof algoliaClient, "search"> = {
+  search(requests) {
+    // In case of empty queries
+    if (
+      !requests.length ||
+      requests.every((req) => req.params?.query?.length === 0)
+    ) {
+      // return an empty result
+      return Promise.resolve({
+        results: requests.map(() => ({
+          hits: [],
+          exhaustiveNbHits: true,
+          hitsPerPage: 20,
+          nbHits: 0,
+          nbPages: 0,
+          page: 0,
+          params: "query=&highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&facets=%5B%5D",
+          processingTimeMS: 0,
+          query: "",
+        })),
+      });
+    }
+    return algoliaClient.search(requests);
+  },
+};
+
 function useIcons() {
   const { isDarkTheme } = React.useContext(ThemeContext);
   return searchBarThemedIcons(isDarkTheme || false);
@@ -102,11 +132,11 @@ const StateResults: React.FC<StateResultsProvided> = ({
   let content;
 
   if (searchState && searchResults && !searchResults.nbHits) {
-    content = (
+    content = searchResults.query.length ? (
       <span>
         No results for <strong>&quot;{searchState.query}&quot;</strong>.
       </span>
-    );
+    ) : null;
   }
 
   return <SearchBarResults>{content || children}</SearchBarResults>;
@@ -186,14 +216,6 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const icons = useIcons();
-
-  const searchClient = algoliaSearch(
-    algoliaConfig.appID,
-    algoliaConfig.apiKey,
-    {
-      hosts: algoliaConfig.hosts,
-    }
-  );
 
   const handleModal = (state: boolean) => {
     toggleLockBodyScroll(state);
