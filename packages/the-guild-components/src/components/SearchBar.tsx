@@ -30,7 +30,7 @@ import { ISearchBarProps } from './types';
 import { searchBarThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import { ThemeContext } from '../helpers/theme';
-import { algoliaConfig } from '../../configs.json';
+import { algoliaConfig } from '../configs';
 
 const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
   hosts: algoliaConfig.hosts,
