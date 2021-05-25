@@ -20,13 +20,13 @@ import { useDebouncedCallback } from 'use-debounce';
 import { Modal } from './Modal';
 
 import {
-  SearchBarButton,
-  SearchBarForm,
-  SearchBarResults,
-  SearchBarHit,
+  SearchButton,
+  SearchForm,
+  SearchResults,
+  SearchHit,
 } from './SearchBar.styles';
 
-import { ISearchBarProps } from './types';
+import { ISearchBarProps } from '../types/components';
 import { searchBarThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import { ThemeContext } from '../helpers/theme';
@@ -98,7 +98,7 @@ const SearchBox: React.FC<
   }, [isModalOpen]);
 
   return (
-    <SearchBarForm accentColor={accentColor}>
+    <SearchForm accentColor={accentColor}>
       <form noValidate action="" role="search">
         <img src={icons.search} height="30" width="30" alt="Search icon" />
         <input
@@ -121,7 +121,7 @@ const SearchBox: React.FC<
           </button>
         )}
       </form>
-    </SearchBarForm>
+    </SearchForm>
   );
 };
 
@@ -140,7 +140,7 @@ const StateResults: React.FC<StateResultsProvided> = ({
     ) : null;
   }
 
-  return <SearchBarResults>{content || children}</SearchBarResults>;
+  return <SearchResults>{content || children}</SearchResults>;
 };
 
 const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
@@ -180,7 +180,7 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
   return (
     <>
       {groupedHits.map((hit) => (
-        <SearchBarHit key={hit.level} accentColor={accentColor}>
+        <SearchHit key={hit.level} accentColor={accentColor}>
           <h2>{hit.level}</h2>
           {hit.items.map((subHit: Hit) => (
             <a
@@ -204,7 +204,7 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
               </div>
             </a>
           ))}
-        </SearchBarHit>
+        </SearchHit>
       ))}
     </>
   );
@@ -214,6 +214,8 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
   accentColor,
   title,
   placeholder,
+  isFull,
+  onHandleModal,
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const icons = useIcons();
@@ -221,6 +223,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
   const handleModal = (state: boolean) => {
     toggleLockBodyScroll(state);
     setModalOpen(state);
+    onHandleModal && onHandleModal(state);
   };
 
   const CustomSearchBox = connectSearchBox(SearchBox);
@@ -229,13 +232,14 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
 
   return (
     <>
-      <SearchBarButton
+      <SearchButton
         accentColor={accentColor}
+        isFull={isFull || false}
         onClick={() => handleModal(true)}
       >
         <img src={icons.search} height="18" width="18" alt="Search icon" />
         <span>{placeholder}</span>
-      </SearchBarButton>
+      </SearchButton>
       <Modal
         title={title}
         visible={modalOpen}

@@ -18,8 +18,6 @@
     // Ensure that Babel can safely transpile files in the TypeScript project
     "isolatedModules": true
   },
-  "include": [
-    "packages/the-guild-components/src",
-    "packages/the-guild-components/types"
-  ]
+  "include": ["./packages/the-guild-components/src"],
+  "exclude": ["**/*.stories.tsx", "**/*.styles.tsx"]
 }

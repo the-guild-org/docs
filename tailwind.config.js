@@ -1,29 +1,59 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   darkMode: 'class',
   theme: {
-    container: {
-      screens: {
-        'xl': '1200px',
-        '2xl': '1200px',
-     }
-    },
-    fontFamily: {
-      'sans': ['Poppins', 'sans-serif'],
-    },
     extend: {
+      colors: {
+        'light-blue': '#1CC8EE',
+      },
       screens: {
-        'xs': '360px',
+        xs: '360px',
+      },
+      zIndex: {
+        1: 1,
       },
       height: {
-        '4.5': '1.125rem',
+        4.5: '1.125rem',
       },
       width: {
-        '4.5': '1.125rem',
+        4.5: '1.125rem',
+        fit: 'fit-content',
+      },
+      maxWidth: {
+        '1/4': '25%',
+        '2/4': '50%',
+        '3/4': '75%',
       },
       borderWidth: {
-        '3': '3px',
+        3: '3px',
       },
     },
   },
-  plugins: [],
-}
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const containerProps = {
+        width: '100%',
+        paddingLeft: '1.5rem',
+        paddingRight: '1.5rem',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        boxSizing: 'border-box',
+      };
+
+      const newUtilities = {
+        '.container-max': {
+          ...containerProps,
+          maxWidth: '1200px',
+        },
+
+        '.container-min': {
+          ...containerProps,
+          maxWidth: '1024px',
+        },
+      };
+
+      addUtilities(newUtilities);
+    }),
+  ],
+};

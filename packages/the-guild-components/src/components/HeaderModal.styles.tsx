@@ -48,7 +48,7 @@ export const ProductImage = styled.div(() => [
 ]);
 
 export const ProductThumbnail = styled.a(() => [
-  tw`flex w-full my-1 md:(m-0) py-4 px-3 rounded-lg outline-none no-underline!`,
+  tw`box-border flex w-full my-1 md:(w-1/2 m-0) py-4 px-3 rounded-lg outline-none no-underline!`,
   tw`dark:hocus:bg-gray-800 hocus:bg-gray-100`,
   css`
     span {
@@ -65,10 +65,6 @@ export const ProductThumbnail = styled.a(() => [
       p {
         ${tw`font-medium text-xs dark:text-gray-500 text-gray-400`}
       }
-    }
-
-    @media screen and (min-width: 640px) {
-      width: calc(50% - 1.5rem);
     }
   `,
 ]);

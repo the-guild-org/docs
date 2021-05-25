@@ -1,11 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { ISearchBarProps } from './types';
+import { ISearchBarProps } from '../types/components';
 
 import { SearchBar } from './SearchBar';
 
 export default {
-  title: 'Search Bar',
+  title: 'Components/Search Bar',
   component: SearchBar,
   argTypes: {
     accentColor: {
@@ -16,12 +16,21 @@ export default {
       },
     },
     placeholder: {
-      name: 'Placeholder',
+      name: 'Input Placeholder',
       description: "Property displayed in component's input",
     },
     title: {
-      name: 'Title',
+      name: 'Modal Title',
       description: "Property displayed in component's modal header",
+    },
+    isFull: {
+      name: 'Full Width',
+    },
+    onHandleModal: {
+      table: {
+        disable: true,
+      },
+      control: false,
     },
   },
 } as Meta;
@@ -33,4 +42,6 @@ Default.args = {
   accentColor: '#03a6a6',
   title: 'Search the docs',
   placeholder: 'Search...',
+  isFull: true,
+  onHandleModal: (state: boolean) => alert(`The modal state is: ${state}`),
 };

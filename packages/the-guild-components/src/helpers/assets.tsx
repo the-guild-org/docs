@@ -4,15 +4,18 @@ import hamburgerIconDark from '../static/icons/hamburger-dark.svg';
 import hamburgerIconLight from '../static/icons/hamburger-light.svg';
 import caretIconDark from '../static/icons/caret-down-dark.svg';
 import caretIconLight from '../static/icons/caret-down-light.svg';
+import caretSlimIconDark from '../static/icons/caret-down-slim-dark.svg';
+import caretSlimIconLight from '../static/icons/caret-down-slim-light.svg';
 import closeIconDark from '../static/icons/close-dark.svg';
 import closeIconLight from '../static/icons/close-light.svg';
-
+import externalLinkIconLight from '../static/icons/external-link-light.svg';
+import externalLinkIconDark from '../static/icons/external-link-dark.svg';
 import searchIconDark from '../static/icons/search-dark.svg';
 import searchIconLight from '../static/icons/search-light.svg';
 import pageIconDark from '../static/icons/page-dark.svg';
 import pageIconLight from '../static/icons/page-light.svg';
-import linkIconDark from '../static/icons/link-dark.svg';
-import linkIconLight from '../static/icons/link-light.svg';
+import hashtagIconDark from '../static/icons/hashtag-dark.svg';
+import hashtagIconLight from '../static/icons/hashtag-light.svg';
 
 const cdn = 'https://the-guild.dev/static';
 
@@ -37,14 +40,17 @@ const productStencil = `${cdn}/shared-logos/products/stencil.svg`;
 const productTools = `${cdn}/shared-logos/products/tools.svg`;
 const productWhatsapp = `${cdn}/shared-logos/products/whatsapp.svg`;
 
-export const headerThemedIcons = (isDark: boolean) => ({
+export const headerThemedIcons = (isDark: boolean): any => ({
   themeToggle: isDark ? moonIconLight : moonIconDark,
   menu: isDark ? hamburgerIconLight : hamburgerIconDark,
   caret: isDark ? caretIconLight : caretIconDark,
+  caretSlim: isDark ? caretSlimIconLight : caretSlimIconDark,
   close: isDark ? closeIconLight : closeIconDark,
+  logoFull: isDark ? logoFullLight : logoFullDark,
+  logoMono: isDark ? logoMonoLight : logoMonoDark,
 });
 
-export const logoThemedIcons = (isDark: boolean) => ({
+export const logoThemedIcons = (isDark: boolean): any => ({
   logoFull: isDark ? logoFullLight : logoFullDark,
   logoMono: isDark ? logoMonoLight : logoMonoDark,
   angular: isDark ? productAngular : productAngular,
@@ -64,14 +70,20 @@ export const logoThemedIcons = (isDark: boolean) => ({
   whatsapp: isDark ? productWhatsapp : productWhatsapp,
 });
 
-export const searchBarThemedIcons = (isDark: boolean) => ({
+export const searchBarThemedIcons = (isDark: boolean): any => ({
   search: isDark ? searchIconLight : searchIconDark,
   close: isDark ? closeIconLight : closeIconDark,
   page: isDark ? pageIconLight : pageIconDark,
-  anchor: isDark ? linkIconLight : linkIconDark,
+  hashtag: isDark ? hashtagIconLight : hashtagIconDark,
   content: isDark ? hamburgerIconLight : hamburgerIconDark,
 });
 
-export const modalThemedIcons = (isDark: boolean) => ({
+export const modalThemedIcons = (isDark: boolean): any => ({
   close: isDark ? closeIconLight : closeIconDark,
+  externalLink: isDark ? externalLinkIconLight : externalLinkIconDark,
+});
+
+export const marketplaceThemedAssets = (isDark: boolean): any => ({
+  caret: isDark ? caretSlimIconLight : caretSlimIconDark,
+  search: isDark ? searchIconLight : searchIconDark,
 });

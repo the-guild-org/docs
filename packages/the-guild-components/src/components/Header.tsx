@@ -4,17 +4,17 @@ import { HeaderModal } from './HeaderModal';
 import { SearchBar } from './SearchBar';
 
 import {
-  HeaderWrapper,
-  HeaderContainer,
-  HeaderNav,
-  HeaderLink,
-  HeaderIcon,
-  HeaderControls,
-  HeaderSide,
-  HeaderLogo,
+  Wrapper,
+  Container,
+  Navigation,
+  Link,
+  Icon,
+  Controls,
+  Side,
+  Logo,
 } from './Header.styles';
 
-import { IHeaderProps } from './types';
+import { IHeaderProps } from '../types/components';
 import { ThemeContext } from '../helpers/theme';
 import { headerThemedIcons, logoThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
@@ -93,33 +93,30 @@ export const Header: React.FC<IHeaderProps> = ({
   links.map((link) => (link.active = activeLink.includes(link.href)));
 
   return (
-    <HeaderWrapper>
-      <HeaderContainer>
-        <HeaderSide>
-          <HeaderIcon onClick={() => handleNav(true)}>
+    <Wrapper>
+      <Container>
+        <Side>
+          <Icon onClick={() => handleNav(true)}>
             <img src={icons.menu} height="24" width="24" alt="Search icon" />
-          </HeaderIcon>
-        </HeaderSide>
+          </Icon>
+        </Side>
 
-        <HeaderLogo
-          {...renderLinkOptions('/', sameSite)}
-          title="View our website"
-        >
+        <Logo {...renderLinkOptions('/', sameSite)} title="View our website">
           <img src={logos.logoFull} height="30" alt="The Guild Logo" />
           <img src={logos.logoMono} height="38" alt="The Guild Monogram" />
-        </HeaderLogo>
+        </Logo>
 
-        <HeaderNav isModalOpen={mobileNavOpen}>
-          <HeaderIcon iconType="close" onClick={() => handleNav(false)}>
+        <Navigation isModalOpen={mobileNavOpen}>
+          <Icon iconType="close" onClick={() => handleNav(false)}>
             <img
               src={icons.close}
-              height="24"
-              width="24"
+              height="22"
+              width="22"
               alt="Menu close icon"
             />
-          </HeaderIcon>
+          </Icon>
           {links.map((link) => (
-            <HeaderLink
+            <Link
               key={link.label}
               title={link.title}
               accentColor={accentColor}
@@ -128,16 +125,16 @@ export const Header: React.FC<IHeaderProps> = ({
             >
               {link.label}
               {link.clickEvent && <img src={icons.caret} alt="Link icon" />}
-            </HeaderLink>
+            </Link>
           ))}
-          <HeaderControls>
+          <Controls>
             <SearchBar
               accentColor={accentColor}
               title="Search docs"
               placeholder="Search..."
             />
             {themeSwitch && setDarkTheme && (
-              <HeaderIcon
+              <Icon
                 iconType="theme"
                 onClick={() => setDarkTheme((state: boolean) => !state)}
               >
@@ -147,24 +144,24 @@ export const Header: React.FC<IHeaderProps> = ({
                   width="16"
                   alt="Theme toggle icon"
                 />
-              </HeaderIcon>
+              </Icon>
             )}
-          </HeaderControls>
-        </HeaderNav>
+          </Controls>
+        </Navigation>
 
-        <HeaderSide>
+        <Side>
           <SearchBar
             accentColor={accentColor}
             title="Search docs"
             placeholder="Search..."
           />
-        </HeaderSide>
-      </HeaderContainer>
+        </Side>
+      </Container>
       <HeaderModal
         title="Products by The Guild"
         modalOpen={modalOpen}
         onCancelModal={() => handleModal(false)}
       />
-    </HeaderWrapper>
+    </Wrapper>
   );
 };
