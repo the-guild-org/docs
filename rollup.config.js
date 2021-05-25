@@ -4,7 +4,7 @@ import autoExternal from 'rollup-plugin-auto-external';
 import image from '@rollup/plugin-image';
 import bundleSize from 'rollup-plugin-bundle-size';
 import copy from 'rollup-plugin-copy';
-import { join } from 'path';
+import { join, normalize } from 'path';
 import fs from 'fs';
 import glob from 'glob';
 
@@ -43,7 +43,7 @@ function bundle(packageDir) {
       copy({
         targets: [
           {
-            src: join(__dirname, 'dist', packageDir, '/src/**/*'),
+            src: join(__dirname, 'dist', packageDir, normalize('/src/**/*')),
             dest: join(__dirname, packageDir, 'dist'),
           },
         ],
