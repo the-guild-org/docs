@@ -1,22 +1,25 @@
 {
   "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    "baseUrl": ".",
     "declaration": true,
-    "rootDir": "packages",
-    "baseUrl": "./",
+    "emitDeclarationOnly": true,
+    
+    "jsx": "preserve",
+    "target": "es2018",
+    "module": "esnext",
     "allowSyntheticDefaultImports": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "jsx": "preserve",
-    "target": "ESNext",
-    "module": "ESNext",
-    "strict": true,
-    "skipLibCheck": true,
-    "noEmit": true,
     "isolatedModules": true,
+
+    "strict": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
     "paths": {
+      "the-guild-components": ["packages/the-guild-components/src/index.ts"],
       "@theguild/components": ["packages/components/src/index.tsx"]
     }
   },
