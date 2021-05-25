@@ -47,5 +47,5 @@ Default.args = {
 export const Simple = Template.bind({});
 Simple.args = {
   ...dummyHeroGradient,
-  image: null,
+  image: undefined,
 };

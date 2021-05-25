@@ -1,0 +1,32 @@
+{
+  "name": "@theguild/components",
+  "version": "1.1.0",
+  "license": "MIT",
+  "module": "dist/index.esm.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.2",
+    "styled-components": "5.1.0"
+  },
+  "dependencies": {
+    "algoliasearch": "^4.9.0",
+    "core-js": "^3.8.3",
+    "focus-trap-react": "^8.5.0",
+    "polished": "^4.1.2",
+    "react-instantsearch-dom": "^6.10.3",
+    "react-paginate": "^7.1.2",
+    "react-player": "^2.9.0",
+    "tailwindcss": "^2.0.3",
+    "twin.macro": "^2.2.3",
+    "use-debounce": "^6.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

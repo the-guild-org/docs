@@ -1,51 +1,65 @@
 import babel from '@rollup/plugin-babel';
-import commonjs from '@rollup/plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
-import typescript from 'rollup-plugin-typescript2';
+import autoExternal from 'rollup-plugin-auto-external';
 import image from '@rollup/plugin-image';
 import bundleSize from 'rollup-plugin-bundle-size';
+import copy from 'rollup-plugin-copy';
 
-import pkg from './packages/the-guild-components/package.json';
+import { join } from 'path';
+import fs from 'fs';
+import glob from 'glob';
 
-const external = Object.keys(pkg.dependencies)
-  .concat(Object.keys(pkg.peerDependencies))
-  .concat(['algoliasearch/lite', 'react-player/lazy', 'object-assign']);
+const packageDirs = glob.sync('packages/*', {
+  cwd: process.cwd(),
+  absolute: false,
+});
 
-const config = {
-  name: 'ComponentLibrary',
-  extensions: ['.ts', '.tsx'],
-};
+function bundle(packageDir) {
+  const tsxFile = `${packageDir}/src/index.tsx`;
+  const tsFile = `${packageDir}/src/index.ts`;
+  const isTsx = fs.existsSync(join(__dirname, tsxFile));
 
-export default {
-  input: './packages/the-guild-components/src/index.tsx',
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      sourcemap: 'inline',
-    },
-    {
-      file: pkg.module,
-      format: 'esm',
-      sourcemap: 'inline',
-    },
-  ],
-  external,
-  plugins: [
-    resolve({ extensions: config.extensions }),
-    commonjs({
-      ignoreGlobal: true,
-      include: /\/node_modules\//,
-    }),
-    typescript(),
-    babel({
-      extensions: config.extensions,
-      include: ['./packages/the-guild-components/src/**/*'],
-      exclude: 'node_modules/**',
-      configFile: './.babelrc',
-    }),
+  console.log(join(__dirname, packageDir, 'dist'));
 
-    image(),
-    bundleSize(),
-  ],
-};
+  return {
+    input: isTsx ? tsxFile : tsFile,
+    output: [
+      {
+        file: join(__dirname, packageDir, 'dist/index.esm.js'),
+        format: 'es',
+        sourcemap: true,
+      },
+      {
+        file: join(__dirname, packageDir, 'dist/index.js'),
+        format: 'cjs',
+        sourcemap: true,
+      },
+    ],
+    external: ['react-player/lazy', 'algoliasearch/lite'],
+    plugins: [
+      resolve({ extensions: ['.ts', '.tsx'] }),
+      autoExternal({
+        packagePath: join(packageDir, 'package.json'),
+        builtins: true,
+        dependencies: true,
+        peerDependencies: true,
+      }),
+      babel({
+        extensions: ['.tsx', '.ts'],
+        configFile: join(__dirname, '.babelrc'),
+      }),
+      image(),
+      copy({
+        targets: [
+          {
+            src: `./dist/${packageDir}/src/*`,
+            dest: `./${packageDir}/dist`,
+          },
+        ],
+      }),
+      bundleSize(),
+    ],
+  };
+}
+
+export default packageDirs.map(bundle);
