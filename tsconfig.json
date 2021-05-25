@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "./packages/the-guild-components/dist",
-    "rootDir": "packages/the-guild-components/src",
+    "rootDir": "packages",
+    "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -15,11 +15,10 @@
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
-    // Ensure that Babel can safely transpile files in the TypeScript project
-    "isolatedModules": true
+    "isolatedModules": true,
+    "paths": {
+      "@theguild/components": ["packages/components/src/index.tsx"]
+    }
   },
-  "include": [
-    "packages/the-guild-components/src",
-    "packages/the-guild-components/types"
-  ]
+  "include": ["packages"]
 }

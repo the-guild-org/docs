@@ -1,4 +1,4 @@
-# the-guild-components
+# @theguild/components
 
 ## 1.1.0
 
