@@ -30,7 +30,7 @@ interface IProviderProps {
 const ThemeContext = createContext<Partial<IContextProps>>({});
 
 const ThemeProvider: React.FC<IProviderProps> = ({ children }) => {
-  const [isDarkTheme, setDarkTheme] = useState(getDarkTheme);
+  const [isDarkTheme, setDarkTheme] = useState(false);
 
   const setDOMTheme = (isDark: boolean) => {
     if (typeof window !== 'undefined' && window.localStorage) {
@@ -45,6 +45,10 @@ const ThemeProvider: React.FC<IProviderProps> = ({ children }) => {
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
   };
+
+  useEffect(() => {
+    setDarkTheme(getDarkTheme());
+  }, []);
 
   useEffect(() => {
     setDOMTheme(isDarkTheme);

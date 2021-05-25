@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "declaration": true,
     "emitDeclarationOnly": true,
-    
+
     "jsx": "preserve",
     "target": "es2018",
     "module": "esnext",
@@ -13,7 +13,7 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "isolatedModules": true,
-
+    "preserveWatchOutput": true,
     "strict": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
