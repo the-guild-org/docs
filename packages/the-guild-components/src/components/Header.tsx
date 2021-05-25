@@ -16,7 +16,7 @@ import {
 
 import { IHeaderProps } from './types';
 import { ThemeContext } from '../helpers/theme';
-import { headerThemedIcons } from '../helpers/assets';
+import { headerThemedIcons, logoThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
 
 export const Header: React.FC<IHeaderProps> = ({
@@ -29,6 +29,7 @@ export const Header: React.FC<IHeaderProps> = ({
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const icons = headerThemedIcons(isDarkTheme || false);
+  const logos = logoThemedIcons(isDarkTheme || false);
 
   const handleModal = (state: boolean) => {
     !mobileNavOpen && toggleLockBodyScroll(state);
@@ -104,8 +105,8 @@ export const Header: React.FC<IHeaderProps> = ({
           {...renderLinkOptions('/', sameSite)}
           title="View our website"
         >
-          <img src={icons.logoFull} height="30" alt="The Guild Logo" />
-          <img src={icons.logoMono} height="38" alt="The Guild Monogram" />
+          <img src={logos.logoFull} height="30" alt="The Guild Logo" />
+          <img src={logos.logoMono} height="38" alt="The Guild Monogram" />
         </HeaderLogo>
 
         <HeaderNav isModalOpen={mobileNavOpen}>
