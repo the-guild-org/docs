@@ -3,7 +3,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import autoExternal from 'rollup-plugin-auto-external';
 import image from '@rollup/plugin-image';
 import bundleSize from 'rollup-plugin-bundle-size';
-import copy from 'rollup-plugin-copy'
+import copy from 'rollup-plugin-copy';
 import { join } from 'path';
 import fs from 'fs';
 import glob from 'glob';
@@ -13,11 +13,9 @@ const packageDirs = glob.sync('packages/*', {
   absolute: false,
 });
 
-function bundle(
-  packageDir
-) {
+function bundle(packageDir) {
   const tsxFile = `${packageDir}/src/index.tsx`;
-  const tsFile = `${packageDir}/src/index.ts`
+  const tsFile = `${packageDir}/src/index.ts`;
   const isTsx = fs.existsSync(join(__dirname, tsxFile));
 
   return {
@@ -45,14 +43,14 @@ function bundle(
       copy({
         targets: [
           {
-            src: `${join(__dirname, 'dist', packageDir)}/src/**/*`,
-            dest: join(__dirname, packageDir, 'dist') }
-        ]
+            src: join(__dirname, 'dist', packageDir, '/src/**/*'),
+            dest: join(__dirname, packageDir, 'dist'),
+          },
+        ],
       }),
       bundleSize(),
-    ]
+    ],
   };
 }
 
-
-export default packageDirs.map(bundle)
+export default packageDirs.map(bundle);
