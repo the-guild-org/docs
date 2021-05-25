@@ -19,7 +19,10 @@
     "preserveWatchOutput": true,
     "paths": {
       "the-guild-components": ["packages/the-guild-components/src/index.tsx"],
-      "@theguild/components": ["packages/components/src/index.tsx"]
+      "@theguild/components": ["packages/components/src/index.tsx"],
+      "@theguild/monaco-graphql-editor": [
+        "packages/monaco-graphql-editor/src/index.tsx"
+      ]
     }
   },
   "include": ["packages"],
