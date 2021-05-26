@@ -1,4 +1,5 @@
-import tw, { css, styled } from 'twin.macro';
+import tw, { css, styled, theme } from 'twin.macro';
+import { rgba } from 'polished';
 
 interface IStyleProps {
   isActiveLink?: boolean;
@@ -78,12 +79,13 @@ export const CTA = styled.a(() => [
   tw`md:(mx-0 px-5)`,
   tw`transition duration-200 ease-in-out`,
   css`
-    &:hover, &:focus {
-        box-shadow: 3px 5px 14px rgba(28, 200, 238, 0.4);
-      }
-    }
+    &:hover,
     &:focus {
-      background-color: #15AFD0;
+      box-shadow: 3px 5px 14px ${rgba(theme`colors.light-blue`, 0.4)};
+    }
+
+    &:focus {
+      background-color: ${theme`colors.dark-blue`};
     }
   `,
 ]);

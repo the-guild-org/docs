@@ -1,4 +1,5 @@
-import tw, { css, styled } from 'twin.macro';
+import tw, { css, styled, theme } from 'twin.macro';
+import { rgba } from 'polished';
 
 interface IStyleProps {
   flipped?: boolean;
@@ -35,8 +36,8 @@ export const Info = styled.div(() => [
       ]}
 
       &:hover, &:focus {
-        color: #15afd0;
-        text-shadow: 3px 5px 14px rgba(28, 200, 238, 0.4);
+        color: ${theme`colors.dark-blue`};
+        text-shadow: 3px 5px 14px ${rgba(theme`colors.light-blue`, 0.4)};
       }
     }
   `,

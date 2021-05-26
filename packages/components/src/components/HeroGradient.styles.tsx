@@ -1,4 +1,4 @@
-import tw, { css, styled } from 'twin.macro';
+import tw, { css, styled, theme } from 'twin.macro';
 
 interface IStyleProps {
   colors?: string[];
@@ -31,7 +31,7 @@ export const CTA = styled.div(() => [
       }
 
       &:focus {
-        background-color: #15afd0;
+        background-color: ${theme`colors.dark-blue`};
       }
     }
 
