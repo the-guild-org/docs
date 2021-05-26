@@ -167,7 +167,7 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
 
   const transformIcon = (item: Hit) => {
     if (item.anchor) {
-      return icons.anchor;
+      return icons.hashtag;
     } else if (item.content) {
       return icons.content;
     } else {
