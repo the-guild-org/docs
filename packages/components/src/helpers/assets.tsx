@@ -46,8 +46,6 @@ export const headerThemedIcons = (isDark: boolean): any => ({
   caret: isDark ? caretIconLight : caretIconDark,
   caretSlim: isDark ? caretSlimIconLight : caretSlimIconDark,
   close: isDark ? closeIconLight : closeIconDark,
-  logoFull: isDark ? logoFullLight : logoFullDark,
-  logoMono: isDark ? logoMonoLight : logoMonoDark,
 });
 
 export const logoThemedIcons = (isDark: boolean): any => ({
