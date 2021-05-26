@@ -5,7 +5,6 @@
     "baseUrl": ".",
     "declaration": true,
     "emitDeclarationOnly": true,
-
     "jsx": "preserve",
     "target": "es2018",
     "module": "esnext",

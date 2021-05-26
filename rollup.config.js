@@ -19,8 +19,6 @@ function bundle(packageDir) {
   const tsFile = `${packageDir}/src/index.ts`;
   const isTsx = fs.existsSync(join(__dirname, tsxFile));
 
-  console.log(join(__dirname, packageDir, 'dist'));
-
   return {
     input: isTsx ? tsxFile : tsFile,
     output: [
