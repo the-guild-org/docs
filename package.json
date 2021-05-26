@@ -7,7 +7,7 @@
     "build-storybook": "build-storybook",
     "lint-check": "eslint \"packages/*/src/**/*.{ts,tsx}\"",
     "format": "prettier --write \"packages/*/src/**/*.{ts,tsx}\"",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc",
     "type-check:watch": "npm run type-check -- --watch",
     "build": "tsc && rollup -c",
     "prerelease": "yarn build",

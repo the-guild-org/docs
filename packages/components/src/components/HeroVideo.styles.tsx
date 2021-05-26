@@ -36,7 +36,7 @@ export const Info = styled.div(() => [
       ]}
 
       &:hover, &:focus {
-        color: ${theme`colors.dark-blue`};
+        color: ${`${theme`colors.dark-blue`}`};
         text-shadow: 3px 5px 14px ${rgba(theme`colors.light-blue`, 0.4)};
       }
     }

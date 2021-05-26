@@ -26,12 +26,9 @@ export const CTA = styled.div(() => [
         tw`transition duration-300 ease-in-out`,
       ]}
 
-      &:hover, &:focus {
-        box-shadow: 3px 5px 14px rgba(255, 255, 255, 0.4);
-      }
-
+      &:hover,
       &:focus {
-        background-color: ${theme`colors.dark-blue`};
+        box-shadow: 3px 5px 14px rgba(255, 255, 255, 0.4);
       }
     }
 

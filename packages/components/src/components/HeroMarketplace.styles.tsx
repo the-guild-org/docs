@@ -22,12 +22,13 @@ export const CTA = styled.div(() => [
         tw`transition duration-300 ease-in-out`,
       ]}
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         box-shadow: 3px 5px 14px ${rgba(theme`colors.light-blue`, 0.4)};
       }
 
       &:focus {
-        background-color: ${theme`colors.dark-blue`};
+        background-color: ${`${theme`colors.dark-blue`}`};
       }
     }
 
