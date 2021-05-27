@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import { MarketplaceList } from './MarketplaceList';
-import { dummyMarketplaceList } from '../helpers/dummy';
 
 import {
   Container,
@@ -21,6 +20,9 @@ import { ThemeContext } from '../helpers/theme';
 export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   title,
   placeholder,
+  primaryList,
+  secondaryList,
+  queryList,
 }) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
@@ -32,10 +34,26 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
     setQuery(query.value);
   };
 
+  const renderQueryPlaceholder = (
+    placeholder: string | React.ReactElement,
+    query: string | undefined
+  ) => {
+    if (!query || React.isValidElement(placeholder)) {
+      return placeholder;
+    }
+
+    const subStrings = placeholder.split('{query}');
+    return (
+      <p>
+        {subStrings[0]} <strong>{`"${query}"`}</strong> {subStrings[1]}
+      </p>
+    );
+  };
+
   useEffect(() => {
     let results = null;
     if (query) {
-      results = dummyMarketplaceList.items.filter((item) =>
+      results = queryList.items.filter((item) =>
         item.title.toLowerCase().includes(query.toLowerCase())
       );
     }
@@ -64,30 +82,16 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
         {items ? (
           <Results>
             <MarketplaceList
-              title="Query results"
-              placeholder={
-                <p>
-                  No results for <strong>{`"${query}"`}</strong>.
-                </p>
-              }
-              pagination={6}
+              title={queryList.title}
               items={items}
+              placeholder={renderQueryPlaceholder(queryList.placeholder, query)}
+              pagination={queryList.pagination}
             />
           </Results>
         ) : (
           <Results>
-            <MarketplaceList
-              title="Trending & Last Update"
-              placeholder="No products available..."
-              pagination={5}
-              items={dummyMarketplaceList.items.slice(0, 7)}
-            />
-            <MarketplaceList
-              title="New Release"
-              placeholder="No products available..."
-              pagination={5}
-              items={[]}
-            />
+            <MarketplaceList {...primaryList} />
+            <MarketplaceList {...secondaryList} />
           </Results>
         )}
       </Container>

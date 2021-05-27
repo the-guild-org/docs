@@ -1,5 +1,3 @@
-import React from 'react';
-
 import featureListImage1 from '../static/dummy/envelop/features-plugable.png';
 import featureListImage2 from '../static/dummy/envelop/features-performant.png';
 import featureListImage3 from '../static/dummy/envelop/features-modern.png';
@@ -209,11 +207,6 @@ export const dummyCardsColorful = {
       color: '#0B0D11',
     },
   ],
-};
-
-export const dummyMarketplaceSearch = {
-  title: 'Explore Marketplace',
-  placeholder: 'Search...',
 };
 
 export const dummyMarketplaceList = {
@@ -504,259 +497,25 @@ export const dummyMarketplaceList = {
   ],
 };
 
-export const dummyDocsLegend = {
-  items: [
-    ['focus-1', 0, 'Focus 1'],
-    ['focus-2', 1, 'Focus 2'],
-    ['focus-3', 2, 'Focus 3'],
-    ['focus-4', 0, 'Focus 4'],
-  ],
-  prev: {
-    href: '#',
-    name: 'Article 1',
+export const dummyMarketplaceSearch = {
+  title: 'Explore Marketplace',
+  placeholder: 'Search...',
+  primaryList: {
+    title: 'Trending & Last Update',
+    items: dummyMarketplaceList.items.slice(0, 7),
+    placeholder: 'No products available...',
+    pagination: 5,
   },
-  current: {
-    href: '#',
-    name: 'TypeScript GraphQL Files Modules Example',
+  secondaryList: {
+    title: 'New Release',
+    items: [],
+    placeholder: 'No products available...',
+    pagination: 5,
   },
-  next: {
-    href: '#',
-    name: 'Article 3',
+  queryList: {
+    title: 'Query Results',
+    items: dummyMarketplaceList.items,
+    placeholder: 'No results for {query}',
+    pagination: 8,
   },
 };
-
-export const dummyDocsNavigation = {
-  items: [
-    {
-      name: 'Getting Started',
-      href: '',
-      isPage: false,
-      isCategory: true,
-      paths: [
-        {
-          name: 'First steps',
-          href: 'docs',
-          isPage: true,
-          isCategory: false,
-        },
-        {
-          name: 'Know How',
-          href: 'know-how',
-          isPage: true,
-          isCategory: false,
-        },
-      ],
-    },
-    {
-      name: 'Typescript',
-      href: '',
-      isPage: false,
-      isCategory: true,
-      paths: [
-        {
-          name: 'Types',
-          href: 'types',
-          isPage: false,
-          isCategory: false,
-          paths: [
-            {
-              name: 'Typescript One',
-              href: 'ts-one',
-              isPage: false,
-              paths: [
-                {
-                  name: 'Version A',
-                  href: 'ts-a',
-                  isPage: true,
-                },
-                {
-                  name: 'Version B',
-                  href: 'ts-b',
-                  isPage: true,
-                },
-              ],
-            },
-            {
-              name: 'Typescript Two',
-              href: 'ts-two',
-              isPage: true,
-            },
-          ],
-        },
-        {
-          name: 'Interfaces',
-          href: 'interfaces',
-          isPage: true,
-        },
-      ],
-    },
-    {
-      name: 'Advanced',
-      href: '',
-      isPage: false,
-      isCategory: true,
-      paths: [
-        {
-          name: 'Examples',
-          href: 'examples',
-          isPage: true,
-        },
-      ],
-    },
-  ],
-};
-
-export const dummyDocsContent = (
-  <>
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <a href="#">This is a link</a>
-    <hr />
-    <h1 id="focus-1">Focus 1</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <hr />
-    <h2>API Reference</h2>
-    <h3>
-      <code>useTypeImports</code>
-    </h3>
-    <p
-      dangerouslySetInnerHTML={{
-        __html: `
-          Will use <code>import type { }</code> rather than 
-          <code>import { }</code> when importing only types. 
-          This gives compatibility with TypeScript's 
-          "importsNotUsedAsValues": "error" option
-        `,
-      }}
-    />
-    <img
-      src="https://www.apollographql.com/blog/static/1_4If-QCJPmB6SJV9EyNTsmw-bcd013c4bd08d09d2a2ac86f5e01a9e4.png"
-      alt="GraphQL Schema"
-    />
-    <blockquote
-      dangerouslySetInnerHTML={{
-        __html: `
-          <strong>Note:</strong> this plugin generates code that intended for 
-          <code>apollo-client</code> @ <code>&gt; v3</code> only.
-          `,
-      }}
-    />
-    <hr />
-    <h2 id="focus-2">Focus 2</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <h3 id="focus-3">Focus 3</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <h2 id="focus-4">Focus 4</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, erat
-      non mattis feugiat, nisi sem commodo lacus, in vehicula nibh quam vitae
-      metus.
-    </p>
-  </>
-);
