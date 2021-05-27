@@ -15,24 +15,32 @@ import { IFooterProps } from '../types/components';
 
 const links = [
   {
-    label: 'Twitter',
+    children: 'Twitter',
     title: 'Visit our Twitter',
     href: 'https://twitter.com/TheGuildDev',
+    target: '_blank',
+    rel: 'noopener noreferrer',
   },
   {
-    label: 'LinkedIn',
+    children: 'LinkedIn',
     title: 'Visit our LinkedIn',
     href: 'https://www.linkedin.com/company/the-guild-software/',
+    target: '_blank',
+    rel: 'noopener noreferrer',
   },
   {
-    label: 'Github',
+    children: 'Github',
     title: 'See our Github profile',
     href: 'https://github.com/the-guild-org',
+    target: '_blank',
+    rel: 'noopener noreferrer',
   },
   {
-    label: 'Medium',
+    children: 'Medium',
     title: 'Read our Medium posts',
     href: 'https://medium.com/the-guild',
+    target: '_blank',
+    rel: 'noopener noreferrer',
   },
 ];
 
@@ -60,15 +68,8 @@ export const Footer: React.FC<IFooterProps> = ({ sameSite }) => {
         </Logo>
         <Links>
           {links.map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                title={link.title}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.label}
-              </a>
+            <li key={link.href}>
+              <a {...link} />
             </li>
           ))}
         </Links>

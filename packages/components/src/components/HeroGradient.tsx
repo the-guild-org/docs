@@ -34,11 +34,7 @@ export const HeroGradient: React.FC<IHeroGradientProps> = ({
           <p>{description}</p>
         </Info>
         <CTA>
-          {link && (
-            <a href={link.href} title={link.title}>
-              {link.label}
-            </a>
-          )}
+          {link && <a {...link} />}
           {version && <span>{version}</span>}
         </CTA>
         {image && <Image src={image.src} alt={image.alt} />}

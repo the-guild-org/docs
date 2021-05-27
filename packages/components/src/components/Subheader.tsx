@@ -21,7 +21,6 @@ export const Subheader: React.FC<ISubheaderProps> = ({
   activeLink,
   links,
   cta,
-  router,
 }) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -47,23 +46,7 @@ export const Subheader: React.FC<ISubheaderProps> = ({
         <img src={icons.close} height="22" width="22" alt="Menu close icon" />
       </Icon>
       {links.map((link) => (
-        <Link
-          key={link.label}
-          title={link.title}
-          isActiveLink={link.active}
-          href={link.href}
-          onClick={(e) => {
-            if (!router || !router.push) {
-              return;
-            }
-
-            e.preventDefault();
-            handleNav(false);
-            router.push(link.href);
-          }}
-        >
-          {link.label}
-        </Link>
+        <Link key={link.href} isActiveLink={link.active} {...link} />
       ))}
     </Navigation>
   );
@@ -72,7 +55,11 @@ export const Subheader: React.FC<ISubheaderProps> = ({
     <>
       <Wrapper>
         <Container>
-          <Logo href="/" title={`${product.title} - ${product.description}`}>
+          <Logo
+            href="/"
+            onClick={product.onClick}
+            title={`${product.title} - ${product.description}`}
+          >
             <img src={product.image.src} alt={product.image.alt} />
             <span>
               <p>{product.title}</p>
@@ -81,11 +68,7 @@ export const Subheader: React.FC<ISubheaderProps> = ({
           </Logo>
           {renderNavigation}
           <Controls>
-            {cta && (
-              <CTA href={cta.href} title={cta.title}>
-                {cta.label}
-              </CTA>
-            )}
+            {cta && <CTA {...cta} />}
             <Icon iconType="open" onClick={() => handleNav(true)}>
               <img
                 src={icons.caretSlim}

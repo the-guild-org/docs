@@ -8,14 +8,7 @@ export const CardsColorful: React.FC<ICardsColorfulProps> = ({ cards }) => (
   <Wrapper>
     <Container>
       {cards.map((card) => (
-        <Card
-          key={card.title}
-          href={card.link.href}
-          title={card.link.title}
-          color={card.color}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Card key={card.title} color={card.color} {...card.link}>
           <CardInfo>
             <h2>{card.category}</h2>
             <h3>{card.title}</h3>

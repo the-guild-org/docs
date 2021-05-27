@@ -62,7 +62,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
           <TableItem key={item.title}>
             <td>
               <TableItemInfo>
-                <a href={item.link.href} title={item.link.title}>
+                <a {...item.link}>
                   <img src={item.image.src} alt={item.image.alt} />
                   <span>
                     <h3>{item.title}</h3>

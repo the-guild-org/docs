@@ -37,8 +37,8 @@ export const Modal: React.FC<IModalProps> = ({
 
     if (typeof description === 'object') {
       return (
-        <a href={description.href} title={description.title}>
-          <p>{description.label}</p>
+        <a {...description}>
+          <p>{description.children}</p>
           <img src={icons.externalLink} height="15" width="15" alt="External" />
         </a>
       );

@@ -1,10 +1,13 @@
 import React from 'react';
 
 interface ILink {
-  active?: boolean;
-  href: string;
-  label?: string;
   title: string;
+  href: string;
+  children?: string | React.ReactElement;
+  rel?: string;
+  target?: string;
+  active?: boolean;
+  onClick?: React.MouseEventHandler;
 }
 
 interface IImage {
@@ -35,11 +38,11 @@ export interface ISubheaderProps {
     title: string;
     description: string;
     image: IImage;
+    onClick?: React.MouseEventHandler;
   };
   activeLink: string;
   links: ILink[];
   cta: ILink;
-  router?: any;
 }
 
 export interface IHeaderModalProps {
@@ -142,7 +145,7 @@ export interface IMarketplaceItemProps {
 
 export interface IMarketplaceItemsProps {
   icon: string;
-  items: IMarketplaceItemProps[] | null;
+  items: IMarketplaceItemProps[];
   setCurrentItem: (state: IMarketplaceItemProps) => void;
   handleModal: (state: boolean) => void;
 }
@@ -151,10 +154,13 @@ export interface IMarketplaceListProps {
   title?: string;
   placeholder: string | React.ReactElement;
   pagination: number;
-  items: IMarketplaceItemProps[] | null;
+  items: IMarketplaceItemProps[];
 }
 
 export interface IMarketplaceSearchProps {
   title: string;
   placeholder: string;
+  primaryList: IMarketplaceListProps;
+  secondaryList: IMarketplaceListProps;
+  queryList: IMarketplaceListProps;
 }

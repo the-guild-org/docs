@@ -1,4 +1,4 @@
-import featureListImage1 from '../static/dummy/envelop/features-plugable.png';
+import featureListImage1 from '../static/dummy/envelop/features-pluggable.png';
 import featureListImage2 from '../static/dummy/envelop/features-performant.png';
 import featureListImage3 from '../static/dummy/envelop/features-modern.png';
 import heroGradientImage from '../static/dummy/envelop/hero.png';
@@ -46,9 +46,9 @@ export const dummyInfoList = {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
       link: {
-        label: 'Documentation',
+        children: 'Documentation',
         title: 'Read the documentation',
-        href: '/docs',
+        href: '#',
       },
     },
     {
@@ -56,9 +56,11 @@ export const dummyInfoList = {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
       link: {
-        label: 'Github',
+        children: 'Github',
         title: 'View the code',
         href: 'https://github.com/dotansimha/envelop/',
+        target: '_blank',
+        rel: 'noopener noreferrer',
       },
     },
     {
@@ -66,7 +68,7 @@ export const dummyInfoList = {
       description:
         'We want to hear from you, our community of fellow engineers.',
       link: {
-        label: 'envelop@theguild.dev',
+        children: 'envelop@theguild.dev',
         title: 'Reach us out',
         href: 'mailto:envelop@theguild.dev',
       },
@@ -79,9 +81,9 @@ export const dummyHeroVideo = {
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque mauris imperdiet nulla vehicula, vitae porttitor massa consequat. Proin semper bibendum aliquam.',
   link: {
-    label: 'Documentation',
+    children: 'Documentation',
     title: 'Read the documentation',
-    href: '/docs',
+    href: '#',
   },
   video: {
     src: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
@@ -96,9 +98,9 @@ export const dummyHeroIllustration = {
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque mauris imperdiet nulla vehicula, vitae porttitor massa consequat. Proin semper bibendum aliquam.',
   link: {
-    label: 'Documentation',
+    children: 'Documentation',
     title: 'Read the documentation',
-    href: '/docs',
+    href: '#',
   },
   image: {
     src: heroIllustrationImage,
@@ -112,9 +114,9 @@ export const dummyHeroGradient = {
   description:
     'Use any Node framework and any GraphQL feature, with the easiest plugins system - A new framework by The Guild',
   link: {
-    label: 'Get Started',
+    children: 'Get Started',
     title: 'Learn more about GraphQL Envelop',
-    href: '/get-started',
+    href: '#',
   },
   version: '1.0.7',
   colors: ['#FF34AE', '#1CC8EE'],
@@ -129,9 +131,9 @@ export const dummyHeroMarketplace = {
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec sem ex. Aenean semper vehicula nibh non luctus. In rutrum nisl vitae ligula mollis feugiat.',
   link: {
-    label: 'Get Started',
+    children: 'Get Started',
     title: 'Learn more about the ',
-    href: '/marketplace',
+    href: '#',
   },
 };
 
@@ -143,44 +145,45 @@ export const dummySubheader = {
       src: subheaderImage,
       alt: 'Envelop',
     },
+    onClick: (e) => {
+      e.preventDefault();
+      alert('hey me');
+    },
   },
   activeLink: '/',
   links: [
     {
-      label: 'Home',
+      children: 'Home',
       title: 'Visit our Homepage',
       href: '/',
-      active: false,
     },
     {
-      label: 'Marketplace',
+      children: 'Marketplace',
       title: 'Browse the marketplace',
       href: '/marketplace',
-      active: false,
     },
     {
-      label: 'Features',
+      children: 'Features',
       title: "Discover Envelop's features",
       href: '/features',
-      active: false,
     },
     {
-      label: 'API & Doc',
+      children: 'API & Doc',
       title: 'Learn more about Envelop',
       href: '/docs',
-      active: false,
     },
     {
-      label: 'Github',
+      children: 'Github',
       title: 'See our Github profile',
       href: 'https://github.com/dotansimha/envelop',
-      active: false,
+      target: '_blank',
+      rel: 'noopener noreferrer',
     },
   ],
   cta: {
-    label: 'Get Started',
+    children: 'Get Started',
     title: 'Learn more about Envelop',
-    href: '/get-started',
+    href: '#',
   },
 };
 
@@ -192,7 +195,7 @@ export const dummyCardsColorful = {
       category: 'New release by the guild',
       link: {
         title: 'Learn more',
-        href: '/',
+        href: '#',
       },
       color: '#3547E5',
     },
@@ -202,7 +205,7 @@ export const dummyCardsColorful = {
       category: 'Pro tip',
       link: {
         title: 'Learn more',
-        href: '/',
+        href: '#',
       },
       color: '#0B0D11',
     },
@@ -224,9 +227,11 @@ export const dummyMarketplaceList = {
             alt: 'GraphQL Jit Logo',
           },
           description: {
-            label: 'Apr 20, 2021 - Latest Update',
-            href: 'https://google.com',
+            href: '#',
+            children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
           },
         },
         content: 'Lipsum 1',
@@ -238,8 +243,10 @@ export const dummyMarketplaceList = {
         alt: 'GraphQL Modules Logo',
       },
       link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
         title: 'Learn more about GraphQL Jit',
-        href: '/',
       },
     },
     {
@@ -252,9 +259,11 @@ export const dummyMarketplaceList = {
             alt: 'GraphQL Jit Logo',
           },
           description: {
-            label: 'Apr 20, 2021 - Latest Update',
-            href: 'https://google.com',
+            href: '#',
+            children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
           },
         },
         content: 'Lipsum 2',
@@ -266,8 +275,10 @@ export const dummyMarketplaceList = {
         alt: 'GraphQL Modules Logo',
       },
       link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
         title: 'Learn more about GraphQL Jit',
-        href: '/',
       },
     },
     {
@@ -280,9 +291,11 @@ export const dummyMarketplaceList = {
             alt: 'GraphQL Jit Logo',
           },
           description: {
-            label: 'Apr 20, 2021 - Latest Update',
-            href: 'https://google.com',
+            href: '#',
+            children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
           },
         },
         content: 'Lipsum 3',
@@ -294,8 +307,10 @@ export const dummyMarketplaceList = {
         alt: 'GraphQL Modules Logo',
       },
       link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
         title: 'Learn more about GraphQL Jit',
-        href: '/',
       },
     },
     {
@@ -308,9 +323,11 @@ export const dummyMarketplaceList = {
             alt: 'GraphQL Jit Logo',
           },
           description: {
-            label: 'Apr 20, 2021 - Latest Update',
-            href: 'https://google.com',
+            href: '#',
+            children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
           },
         },
         content: 'Lipsum 4',
@@ -322,8 +339,10 @@ export const dummyMarketplaceList = {
         alt: 'GraphQL Modules Logo',
       },
       link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
         title: 'Learn more about GraphQL Jit',
-        href: '/',
       },
     },
     {
@@ -336,9 +355,11 @@ export const dummyMarketplaceList = {
             alt: 'GraphQL Jit Logo',
           },
           description: {
-            label: 'Apr 20, 2021 - Latest Update',
-            href: 'https://google.com',
+            href: '#',
+            children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
           },
         },
         content: 'Lipsum 5',
@@ -350,8 +371,10 @@ export const dummyMarketplaceList = {
         alt: 'GraphQL Modules Logo',
       },
       link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
         title: 'Learn more about GraphQL Jit',
-        href: '/',
       },
     },
     {
@@ -364,9 +387,11 @@ export const dummyMarketplaceList = {
             alt: 'GraphQL Jit Logo',
           },
           description: {
-            label: 'Apr 20, 2021 - Latest Update',
-            href: 'https://google.com',
+            href: '#',
+            children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
           },
         },
         content: 'Lipsum 6',
@@ -378,8 +403,10 @@ export const dummyMarketplaceList = {
         alt: 'GraphQL Modules Logo',
       },
       link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
         title: 'Learn more about GraphQL Jit',
-        href: '/',
       },
     },
     {
@@ -392,9 +419,11 @@ export const dummyMarketplaceList = {
             alt: 'GraphQL Jit Logo',
           },
           description: {
-            label: 'Apr 20, 2021 - Latest Update',
-            href: 'https://google.com',
+            href: '#',
+            children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
           },
         },
         content: 'Lipsum 7',
@@ -406,8 +435,10 @@ export const dummyMarketplaceList = {
         alt: 'GraphQL Modules Logo',
       },
       link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
         title: 'Learn more about GraphQL Jit',
-        href: '/',
       },
     },
     {
@@ -420,9 +451,11 @@ export const dummyMarketplaceList = {
             alt: 'GraphQL Jit Logo',
           },
           description: {
-            label: 'Apr 20, 2021 - Latest Update',
-            href: 'https://google.com',
+            href: '#',
+            children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
           },
         },
         content: 'Lipsum 8',
@@ -434,8 +467,10 @@ export const dummyMarketplaceList = {
         alt: 'GraphQL Modules Logo',
       },
       link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
         title: 'Learn more about GraphQL Jit',
-        href: '/',
       },
     },
     {
@@ -448,9 +483,11 @@ export const dummyMarketplaceList = {
             alt: 'GraphQL Jit Logo',
           },
           description: {
-            label: 'Apr 20, 2021 - Latest Update',
-            href: 'https://google.com',
+            href: '#',
+            children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
           },
         },
         content: 'Lipsum 9',
@@ -462,8 +499,10 @@ export const dummyMarketplaceList = {
         alt: 'GraphQL Modules Logo',
       },
       link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
         title: 'Learn more about GraphQL Jit',
-        href: '/',
       },
     },
     {
@@ -476,9 +515,11 @@ export const dummyMarketplaceList = {
             alt: 'GraphQL Jit Logo',
           },
           description: {
-            label: 'Apr 20, 2021 - Latest Update',
-            href: 'https://google.com',
+            href: '#',
+            children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
+            target: '_blank',
+            rel: 'noopener noreferrer',
           },
         },
         content: 'Lipsum 10',
@@ -490,8 +531,10 @@ export const dummyMarketplaceList = {
         alt: 'GraphQL Modules Logo',
       },
       link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
         title: 'Learn more about GraphQL Jit',
-        href: '/',
       },
     },
   ],

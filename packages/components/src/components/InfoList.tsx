@@ -13,11 +13,7 @@ export const InfoList: React.FC<IInfoListProps> = ({ title, items }) => (
           <Item key={item.title}>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
-            {item.link && (
-              <a href={item.link.href} title={item.link.title}>
-                {item.link.label}
-              </a>
-            )}
+            {item.link && <a {...item.link} />}
           </Item>
         ))}
       </Items>
