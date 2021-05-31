@@ -43,6 +43,7 @@ function bundle(packageDir) {
         peerDependencies: true,
       }),
       babel({
+        babelHelpers: 'bundled',
         extensions: ['.tsx', '.ts'],
         configFile: join(__dirname, '.babelrc'),
       }),

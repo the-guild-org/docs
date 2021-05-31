@@ -16,4 +16,17 @@ module.exports = {
       },
     },
   ],
+  babel: async (options) => {
+    const { plugins = [] } = options
+    return {
+      ...options,
+      plugins: [
+        ...plugins,
+        [
+          require.resolve('@babel/plugin-proposal-private-property-in-object'),
+          { loose: true },
+        ],
+      ]
+    }
+  },
 };
