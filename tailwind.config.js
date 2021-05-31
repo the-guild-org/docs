@@ -1,8 +1,16 @@
 const plugin = require('tailwindcss/plugin');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   darkMode: 'class',
   theme: {
+    colors: {
+      transparent: 'transparent',
+      current: '#ff0000',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.trueGray,
+    },
     extend: {
       colors: {
         'dark-blue': '#15AFD0',

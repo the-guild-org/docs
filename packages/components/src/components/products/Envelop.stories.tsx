@@ -61,7 +61,7 @@ const Template: Story = ({ page }) => {
   return (
     <>
       <GlobalStyles />
-      <Header accentColor="#ED2E7E" activeLink="/open-source" />
+      <Header accentColor="#ED2E7E" activeLink="/open-source" themeSwitch />
       <Subheader {...dummySubheader} activeLink={page} />
       {pages[page]}
       <Footer />

@@ -5,7 +5,9 @@ interface IStyleProps {
   colors?: string[];
 }
 
-export const Wrapper = styled.section(() => [tw`overflow-hidden`]);
+export const Wrapper = styled.section(() => [
+  tw`overflow-hidden bg-white dark:bg-gray-900`,
+]);
 
 export const Container = styled.div(() => [tw`relative`]);
 
@@ -31,10 +33,6 @@ export const CTA = styled.div(() => [
         background-color: ${`${theme`colors.dark-blue`}`};
       }
     }
-
-    span {
-      ${tw`text-white opacity-60`}
-    }
   `,
 ]);
 
@@ -57,7 +55,7 @@ export const Info = styled.div(() => [
 
     h2 {
       ${[
-        tw`max-w-lg mb-2.5 font-bold text-white text-2xl md:text-3xl`,
+        tw`max-w-lg mb-2.5 font-bold text-white dark:text-gray-50 text-2xl md:text-3xl`,
         css`
           line-height: 2.5rem !important;
         `,
@@ -118,7 +116,7 @@ export const Cubes = styled.div(() => [
 ]);
 
 export const Gradient = styled.div(({ colors }: IStyleProps) => [
-  tw`absolute inset-0 bg-black overflow-hidden`,
+  tw`absolute inset-0 bg-black dark:bg-gray-900 overflow-hidden`,
   css`
     span {
       ${tw`absolute transform -translate-x-1/2 -translate-y-1/2`}

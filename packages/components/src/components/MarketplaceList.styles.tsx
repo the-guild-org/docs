@@ -1,15 +1,17 @@
 import tw, { css, styled } from 'twin.macro';
 
-export const Wrapper = styled.section(() => [tw`w-full bg-white`]);
+export const Wrapper = styled.section(() => [
+  tw`w-full bg-white dark:bg-gray-900`,
+]);
 
 export const Container = styled.div(() => [tw`container-max py-6`]);
 
 export const Title = styled.h2(() => [
-  tw`mt-0 mb-4 font-bold text-xl md:text-2xl`,
+  tw`mt-0 mb-4 font-bold text-black dark:text-gray-50 text-xl md:text-2xl`,
 ]);
 
 export const Placeholder = styled.div(() => [
-  tw`flex items-center justify-center h-24 w-full bg-gray-100 rounded-lg`,
+  tw`flex items-center justify-center h-24 w-full text-black bg-gray-100 dark:(text-gray-300 bg-gray-700) rounded-lg`,
 ]);
 
 export const Table = styled.table(() => [tw`w-full border-collapse`]);
@@ -17,7 +19,7 @@ export const Table = styled.table(() => [tw`w-full border-collapse`]);
 export const TableHeader = styled.thead(() => [
   css`
     th {
-      ${tw`px-2 font-semibold text-left text-xs text-gray-300 uppercase whitespace-nowrap`}
+      ${tw`px-2 font-semibold text-left text-xs text-gray-300 dark:text-gray-600 uppercase whitespace-nowrap`}
     }
   `,
 ]);
@@ -34,12 +36,12 @@ export const TablePagination = styled.div(() => [
 
     li {
       ${[
-        tw`inline-block mx-1 text-sm bg-gray-200 rounded-lg select-none`,
+        tw`inline-block mx-1 text-sm bg-gray-200 dark:(text-gray-300 bg-gray-700) rounded-lg select-none`,
         tw`hover:opacity-70 transition duration-200 ease-in-out`,
       ]}
 
       &.selected {
-        ${tw`text-white bg-black`}
+        ${tw`text-white bg-black dark:(text-gray-900 bg-gray-100)`}
       }
 
       &.next,
@@ -55,7 +57,7 @@ export const TablePagination = styled.div(() => [
 ]);
 
 export const TableItem = styled.tr(() => [
-  tw`font-medium text-xs text-gray-500 border-0 border-b border-solid border-gray-300 last:border-0`,
+  tw`font-medium text-xs text-gray-500 dark:text-gray-400 border-0 border-b border-solid border-gray-300 dark:border-gray-800 last:border-0`,
   css`
     td {
       ${tw`px-2`}
@@ -74,7 +76,7 @@ export const TableItem = styled.tr(() => [
       }
 
       h3 {
-        ${tw`m-0 font-bold text-lg text-black`}
+        ${tw`m-0 font-bold text-lg text-black dark:text-white`}
       }
 
       p {
@@ -83,7 +85,7 @@ export const TableItem = styled.tr(() => [
 
       button {
         ${[
-          tw`flex justify-center items-center h-10 w-10 bg-gray-200 hocus:bg-black border-0 rounded-lg cursor-pointer outline-none`,
+          tw`flex justify-center items-center h-10 w-10 bg-gray-200 hocus:bg-black dark:(bg-gray-700 hocus:bg-white) border-0 rounded-lg cursor-pointer outline-none`,
           tw`transition duration-150 ease-in-out`,
         ]}
 

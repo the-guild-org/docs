@@ -1,12 +1,12 @@
 import tw, { css, styled, theme } from 'twin.macro';
 import { rgba } from 'polished';
 
-export const Wrapper = styled.section(() => [tw`bg-white`]);
+export const Wrapper = styled.section(() => [tw`bg-white dark:bg-gray-900`]);
 
 export const Container = styled.div(() => [tw`container-min py-12`]);
 
 export const Title = styled.h2(() => [
-  tw`mt-0 mb-4 font-bold text-2xl md:text-3xl`,
+  tw`mt-0 mb-4 font-bold text-2xl text-black dark:text-gray-50 md:text-3xl`,
 ]);
 
 export const Items = styled.div(() => [tw`flex flex-wrap`]);
@@ -17,11 +17,11 @@ export const Item = styled.article(() => [
 
   css`
     h3 {
-      ${tw`m-0 font-semibold text-base text-black`}
+      ${tw`m-0 font-semibold text-base text-black dark:text-gray-50`}
     }
 
     p {
-      ${tw`flex-grow mt-2 mb-4 text-sm text-gray-500`}
+      ${tw`flex-grow mt-2 mb-4 text-sm text-gray-500 dark:text-gray-400`}
     }
 
     a {

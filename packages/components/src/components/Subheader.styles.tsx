@@ -8,7 +8,7 @@ interface IStyleProps {
 }
 
 export const Wrapper = styled.header(() => [
-  tw`sticky top-0 z-10 py-5 bg-white`,
+  tw`sticky top-0 z-10 py-5 bg-white dark:bg-gray-900`,
   css`
     box-shadow: 0px 16px 20px rgba(0, 0, 0, 0.04);
     button:focus:not(:focus-visible) {
@@ -22,7 +22,7 @@ export const Container = styled.div(() => [
 ]);
 
 export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
-  tw`fixed flex flex-col justify-center bg-white`,
+  tw`fixed flex flex-col justify-center bg-white dark:bg-gray-900`,
   tw`transition-all duration-300 ease-in-out`,
   tw`md:(static flex-row flex-1 justify-end items-center transition-none)`,
   css`
@@ -56,18 +56,20 @@ export const Logo = styled.a(() => [
         -webkit-box-orient: vertical;
         overflow: hidden;
 
-        ${tw`m-0 first:(text-black font-semibold) last:(text-xs text-gray-500)`}
+        ${tw`m-0 first:(text-black dark:text-white font-semibold) last:(text-xs text-gray-500 dark:text-gray-300)`}
       }
     }
   `,
 ]);
 
 export const Link = styled.a(({ isActiveLink }: IStyleProps) => [
-  tw`w-max mx-auto py-3 font-medium text-base text-center no-underline! hover:text-black`,
+  tw`w-max mx-auto py-3 font-medium text-base text-center no-underline! hover:(text-black dark:text-gray-100)`,
   tw`sm:(text-lg py-5)`,
   tw`md:(mx-2.5 last:mr-5 py-0 text-xs text-left)`,
   tw`transition duration-200 ease-in-out`,
-  isActiveLink ? tw`text-black` : tw`text-gray-500`,
+  isActiveLink
+    ? tw`text-black dark:text-white`
+    : tw`text-gray-500 dark:text-gray-400`,
 ]);
 
 export const Controls = styled.div(() => [

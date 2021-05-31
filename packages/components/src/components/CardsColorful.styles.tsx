@@ -5,7 +5,9 @@ interface IStyleProps {
   color?: string;
 }
 
-export const Wrapper = styled.section(() => [tw`bg-white py-8`]);
+export const Wrapper = styled.section(() => [
+  tw`bg-white dark:bg-gray-900 py-8`,
+]);
 
 export const Container = styled.div(() => [
   tw`container-max flex flex-wrap space-y-6 md:(flex-nowrap space-x-8 space-y-0)`,

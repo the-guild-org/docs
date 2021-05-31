@@ -1,17 +1,19 @@
 import tw, { css, styled } from 'twin.macro';
 
-export const Wrapper = styled.footer(() => [tw`bg-white text-xs`]);
+export const Wrapper = styled.footer(() => [
+  tw`bg-white dark:bg-gray-900 text-xs`,
+]);
 
 export const Container = styled.div(() => [
   tw`container-max flex flex-col flex-wrap md:flex-row justify-between items-center pb-4 md:pb-5`,
 ]);
 
 export const Line = styled.hr(() => [
-  tw`w-full border-0 border-t border-solid border-gray-300 m-0 mb-4 md:mb-5`,
+  tw`w-full border-0 border-t border-solid border-gray-300 dark:border-gray-800 m-0 mb-4 md:mb-5`,
 ]);
 
 export const Copyright = styled.p(() => [
-  tw`flex-1 hidden md:block text-xs text-gray-500`,
+  tw`flex-1 hidden md:block text-xs text-gray-500 dark:text-gray-400`,
 ]);
 
 export const Logo = styled.a(() => [
@@ -41,7 +43,7 @@ export const Links = styled.ul(() => [
 
     a {
       ${[
-        tw`inline-block text-xs text-gray-500 no-underline hover:text-black`,
+        tw`inline-block text-xs text-gray-500 dark:text-gray-400 no-underline hover:(text-black dark:text-gray-100)`,
         tw`transition duration-200 ease-in-out`,
       ]}
     }
