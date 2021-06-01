@@ -1,3 +1,5 @@
 node_modules
+.next
 dist
-storybook-static
+dist-storybook
+packages/components/theguild-components-*.tgz

@@ -16,6 +16,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "skipLibCheck": true,
+    "preserveWatchOutput": true,
     "paths": {
       "the-guild-components": ["packages/the-guild-components/src/index.tsx"],
       "@theguild/components": ["packages/components/src/index.tsx"]
