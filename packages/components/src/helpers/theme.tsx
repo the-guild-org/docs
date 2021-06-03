@@ -25,18 +25,18 @@ interface IContextProps {
 
 interface IProviderProps {
   children: React.ReactNode;
+  isDarkTheme?: boolean;
+  setDarkTheme?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ThemeContext = createContext<Partial<IContextProps>>({});
 
-const ThemeProvider: React.FC<IProviderProps> = ({ children }) => {
-  const [isDarkTheme, setDarkTheme] = useState(false);
+const setDOMTheme = (isDark: boolean, defaultThemeLogic?: boolean) => {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const html = window.document.documentElement;
+    html.classList.toggle('dark', isDark);
 
-  const setDOMTheme = (isDark: boolean) => {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const html = window.document.documentElement;
-      html.classList.toggle('dark', isDark);
-
+    if (defaultThemeLogic) {
       //TODO: Used on Docusaurus. Remove when no longer needed & handle the logic needed for theme persistence
       if (html.dataset.theme) {
         html.dataset.theme = isDark ? 'dark' : 'light';
@@ -44,18 +44,33 @@ const ThemeProvider: React.FC<IProviderProps> = ({ children }) => {
 
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
-  };
+  }
+};
+
+const ThemeProvider: React.FC<IProviderProps> = ({
+  children,
+  isDarkTheme,
+  setDarkTheme,
+}) => {
+  const [isDarkThemeState, setDarkThemeState] = useState(false);
 
   useEffect(() => {
-    setDarkTheme(getDarkTheme());
-  }, []);
-
-  useEffect(() => {
-    setDOMTheme(isDarkTheme);
+    if (isDarkTheme === undefined) {
+      setDarkThemeState(getDarkTheme());
+    }
   }, [isDarkTheme]);
 
+  useEffect(() => {
+    setDOMTheme(isDarkTheme ?? isDarkThemeState, isDarkTheme === undefined);
+  }, [isDarkTheme, isDarkThemeState]);
+
   return (
-    <ThemeContext.Provider value={{ isDarkTheme, setDarkTheme }}>
+    <ThemeContext.Provider
+      value={{
+        isDarkTheme: isDarkTheme ?? isDarkThemeState,
+        setDarkTheme: setDarkTheme ?? setDarkThemeState,
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );
