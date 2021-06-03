@@ -139,7 +139,7 @@ export const Header: React.FC<IHeaderProps> = ({
                 iconType="theme"
                 onClick={() => {
                   setDarkTheme((state: boolean) => !state);
-                  onThemeSwitch();
+                  onThemeSwitch && onThemeSwitch();
                 }}
               >
                 <img
