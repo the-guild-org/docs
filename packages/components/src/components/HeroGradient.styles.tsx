@@ -76,50 +76,50 @@ export const Gradient = styled.div(({ colors }: IStyleProps) => [
       border-radius: 500px;
       filter: blur(60px);
 
-      &:nth-child(1),
-      &:nth-child(2) {
+      &:nth-of-type(1),
+      &:nth-of-type(2) {
         background-color: ${(colors && colors[0]) || 'black'};
       }
 
-      &:nth-child(3),
-      &:nth-child(4) {
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
         background-color: ${(colors && colors[1]) || 'black'};
       }
 
-      &:nth-child(1) {
+      &:nth-of-type(1) {
         top: -100px;
         left: -40px;
       }
 
-      &:nth-child(2) {
+      &:nth-of-type(2) {
         ${tw`hidden md:block`}
         top: -20px;
         right: -450px;
       }
 
-      &:nth-child(3) {
+      &:nth-of-type(3) {
         right: -350px;
         bottom: -500px;
         filter: blur(70px);
       }
 
-      &:nth-child(4) {
+      &:nth-of-type(4) {
         left: -50px;
         bottom: -600px;
       }
 
       @media screen and (max-width: 767px) {
-        &:nth-child(1) {
+        &:nth-of-type(1) {
           top: -115px;
           left: -15px;
         }
 
-        &:nth-child(3) {
+        &:nth-of-type(3) {
           right: -700px;
           bottom: -450px;
         }
 
-        &:nth-child(4) {
+        &:nth-of-type(4) {
           left: -10px;
           bottom: -475px;
         }

@@ -24,7 +24,7 @@ export const ProductList = styled.div(() => [
         }
 
         &:hover {
-          img:nth-child(2) {
+          img:nth-of-type(2) {
             position: absolute;
             top: 4px;
             display: block;

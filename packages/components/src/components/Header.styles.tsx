@@ -46,7 +46,7 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
 export const Controls = styled.menu(() => [
   tw`flex justify-center m-0 p-0 md:ml-2.5`,
   css`
-    button:first-child:not(:only-child) {
+    button:first-of-type:not(:only-child) {
       ${tw`hidden md:flex`}
     }
   `,

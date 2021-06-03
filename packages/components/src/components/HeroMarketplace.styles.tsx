@@ -73,38 +73,38 @@ export const Cubes = styled.div(() => [
     img {
       ${tw`absolute transform -translate-x-1/2 -translate-y-1/2`}
 
-      &:nth-child(2),
-      &:nth-child(3) {
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
         ${tw`hidden md:block`}
       }
 
-      &:nth-child(1) {
+      &:nth-of-type(1) {
         top: 26px;
         left: 40px;
       }
 
-      &:nth-child(2) {
+      &:nth-of-type(2) {
         top: 75px;
         right: -210px;
       }
 
-      &:nth-child(3) {
+      &:nth-of-type(3) {
         bottom: -130px;
         right: -75px;
       }
 
-      &:nth-child(4) {
+      &:nth-of-type(4) {
         bottom: -155px;
         left: 42px;
       }
 
       @media screen and (max-width: 767px) {
-        &:nth-child(1) {
+        &:nth-of-type(1) {
           top: -10px;
           left: 25px;
         }
 
-        &:nth-child(4) {
+        &:nth-of-type(4) {
           bottom: -110px;
           right: -60px;
           left: auto;
@@ -127,38 +127,38 @@ export const Gradient = styled.div(({ colors }: IStyleProps) => [
       filter: blur(70px);
       opacity: 40%;
 
-      &:nth-child(1),
-      &:nth-child(2) {
+      &:nth-of-type(1),
+      &:nth-of-type(2) {
         background-color: ${(colors && colors[0]) || 'black'};
       }
 
-      &:nth-child(3) {
+      &:nth-of-type(3) {
         background-color: ${(colors && colors[1]) || 'black'};
       }
 
-      &:nth-child(1) {
+      &:nth-of-type(1) {
         top: -150px;
         left: -60px;
       }
 
-      &:nth-child(2) {
+      &:nth-of-type(2) {
         ${tw`hidden md:block`}
         right: -700px;
         bottom: -800px;
       }
 
-      &:nth-child(3) {
+      &:nth-of-type(3) {
         left: 20px;
         bottom: -700px;
       }
 
       @media screen and (max-width: 767px) {
-        &:nth-child(1) {
+        &:nth-of-type(1) {
           top: -175px;
           left: -30px;
         }
 
-        &:nth-child(3) {
+        &:nth-of-type(3) {
           left: -30px;
           bottom: -600px;
         }

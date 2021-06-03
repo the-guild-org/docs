@@ -62,8 +62,8 @@ export const TableItem = styled.tr(() => [
     td {
       ${tw`px-2`}
 
-      &:nth-child(2),
-      &:nth-child(3) {
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
         ${tw`whitespace-nowrap`}
       }
 
