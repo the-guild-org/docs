@@ -31,7 +31,6 @@ export interface IHeaderProps {
   activeLink: string;
   sameSite?: boolean;
   themeSwitch?: boolean;
-  onThemeSwitch?: () => void;
 }
 
 export interface ISubheaderProps {

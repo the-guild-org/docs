@@ -24,7 +24,6 @@ export const Header: React.FC<IHeaderProps> = ({
   activeLink,
   sameSite,
   themeSwitch,
-  onThemeSwitch,
 }) => {
   const { isDarkTheme, setDarkTheme } = React.useContext(ThemeContext);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -137,10 +136,7 @@ export const Header: React.FC<IHeaderProps> = ({
             {themeSwitch && setDarkTheme && (
               <Icon
                 iconType="theme"
-                onClick={() => {
-                  setDarkTheme((state: boolean) => !state);
-                  onThemeSwitch && onThemeSwitch();
-                }}
+                onClick={() => setDarkTheme((state: boolean) => !state)}
               >
                 <img
                   src={icons.themeToggle}
