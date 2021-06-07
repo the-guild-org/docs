@@ -9,7 +9,7 @@ We also have a Storybook here: https://theguildcomponents.netlify.app/
 ## Links
 
 - [Storybook](https://storybook.js.org/)
-- [Styled Components](https://styled-components.com/)
+- [Emotion](https://emotion.sh/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Twin Macro](https://github.com/ben-rogerson/twin.macro)
 
