@@ -1,11 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { IHeaderProps } from './types';
+import { IHeaderProps } from '../types/components';
 
 import { Header } from './Header';
 
 export default {
-  title: 'Header',
+  title: 'Components/Headers',
   component: Header,
   argTypes: {
     accentColor: {

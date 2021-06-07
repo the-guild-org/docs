@@ -5,7 +5,6 @@
     "baseUrl": ".",
     "declaration": true,
     "emitDeclarationOnly": true,
-    
     "jsx": "preserve",
     "target": "es2018",
     "module": "esnext",
@@ -13,15 +12,16 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "isolatedModules": true,
-
     "strict": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "skipLibCheck": true,
+    "preserveWatchOutput": true,
     "paths": {
-      "the-guild-components": ["packages/the-guild-components/src/index.ts"],
+      "the-guild-components": ["packages/the-guild-components/src/index.tsx"],
       "@theguild/components": ["packages/components/src/index.tsx"]
     }
   },
-  "include": ["packages"]
+  "include": ["packages"],
+  "exclude": ["packages/**/*.stories.tsx", "**/*.styles.tsx"]
 }

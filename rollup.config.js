@@ -1,9 +1,10 @@
 import babel from '@rollup/plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import autoExternal from 'rollup-plugin-auto-external';
 import image from '@rollup/plugin-image';
 import bundleSize from 'rollup-plugin-bundle-size';
 import copy from 'rollup-plugin-copy';
+
 import { join } from 'path';
 import fs from 'fs';
 import glob from 'glob';
@@ -26,9 +27,15 @@ function bundle(packageDir) {
         format: 'es',
         sourcemap: true,
       },
+      {
+        file: join(__dirname, packageDir, 'dist/index.js'),
+        format: 'cjs',
+        sourcemap: true,
+      },
     ],
+    external: ['react-player/lazy', 'algoliasearch/lite'],
     plugins: [
-      resolve({ extensions: ['.ts', '.tsx'] }),
+      nodeResolve({ extensions: ['.ts', '.tsx'] }),
       autoExternal({
         packagePath: join(packageDir, 'package.json'),
         builtins: true,
@@ -36,6 +43,7 @@ function bundle(packageDir) {
         peerDependencies: true,
       }),
       babel({
+        babelHelpers: 'bundled',
         extensions: ['.tsx', '.ts'],
         configFile: join(__dirname, '.babelrc'),
       }),

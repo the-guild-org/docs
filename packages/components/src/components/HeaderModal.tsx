@@ -9,7 +9,7 @@ import {
   ProductImage,
 } from './HeaderModal.styles';
 
-import { IHeaderModalProps } from './types';
+import { IHeaderModalProps } from '../types/components';
 import { logoThemedIcons } from '../helpers/assets';
 import { ThemeContext } from '../helpers/theme';
 

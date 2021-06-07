@@ -1,15 +1,24 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { IModalProps } from './types';
+import { IModalProps } from '../types/components';
+import { dummyMarketplaceList } from '../helpers/dummy';
 
 import { Modal } from './Modal';
 
 export default {
-  title: 'Modal',
+  title: 'Components/Modals',
   component: Modal,
   argTypes: {
     title: {
       name: 'Title',
+      description: "Property displayed in modal's header",
+    },
+    description: {
+      name: 'Description',
+      description: "Property displayed in modal's header",
+    },
+    image: {
+      name: 'Image',
       description: "Property displayed in modal's header",
     },
     visible: {
@@ -31,6 +40,11 @@ export default {
       control: false,
     },
   },
+  parameters: {
+    backgrounds: {
+      default: 'light',
+    },
+  },
 } as Meta;
 
 const Template: Story<IModalProps> = (args) => (
@@ -46,6 +60,15 @@ const Template: Story<IModalProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   title: 'Example Title',
+  description: '',
   placement: 'center',
+  visible: true,
+};
+
+export const Marketplace = Template.bind({});
+Marketplace.args = {
+  ...dummyMarketplaceList.items[0].modal.header,
+  title: dummyMarketplaceList.items[0].title,
+  placement: 'bottom',
   visible: true,
 };

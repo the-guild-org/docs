@@ -1,11 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { IHeaderModalProps } from './types';
+import { IHeaderModalProps } from '../types/components';
 
 import { HeaderModal } from './HeaderModal';
 
 export default {
-  title: 'Header Modal',
+  title: 'Components/Modals/Header',
   component: HeaderModal,
   argTypes: {
     title: {
@@ -27,6 +27,11 @@ export default {
         disable: true,
       },
       control: false,
+    },
+  },
+  parameters: {
+    backgrounds: {
+      default: 'light',
     },
   },
 } as Meta;
