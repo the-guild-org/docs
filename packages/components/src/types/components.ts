@@ -55,9 +55,9 @@ export interface IFooterProps {
 }
 
 export interface IFooterExtendedProps {
-  onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
   sameSite?: boolean;
   resources?: ILink[];
+  onNewsletterSubmit?: (e: React.FormEvent, value: string) => void;
 }
 
 export interface IModalProps {

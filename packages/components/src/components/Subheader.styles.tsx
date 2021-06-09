@@ -65,7 +65,7 @@ export const Logo = styled.a(() => [
 export const Link = styled.a(({ isActiveLink }: IStyleProps) => [
   tw`w-max mx-auto py-3 font-medium text-base text-center no-underline! hover:(text-black dark:text-gray-100)`,
   tw`sm:(text-lg py-5)`,
-  tw`md:(mx-2.5 last:mr-5 py-0 text-xs text-left)`,
+  tw`md:(mx-2.5 mr-1 py-0 text-xs text-left)`,
   tw`transition duration-200 ease-in-out`,
   isActiveLink
     ? tw`text-black dark:text-white`
@@ -78,7 +78,7 @@ export const Controls = styled.div(() => [
 
 export const CTA = styled.a(() => [
   tw`flex-none mx-1 px-3 py-3 bg-light-blue font-medium text-xs text-center text-white rounded-md no-underline!`,
-  tw`md:(mx-0 px-5)`,
+  tw`md:(mx-0 ml-3 px-5)`,
   tw`transition duration-200 ease-in-out`,
   css`
     &:hover,

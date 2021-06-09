@@ -233,11 +233,15 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
           <Column>
             <Title>COMMUNITY</Title>
             <Links>{renderLinks(community)}</Links>
-            <Title>NEWSLETTER</Title>
-            <Description>
-              Stay up to date with the latest features and changes
-            </Description>
-            <Newsletter onNewsletterSubmit={onNewsletterSubmit} />
+            {onNewsletterSubmit && (
+              <>
+                <Title>NEWSLETTER</Title>
+                <Description>
+                  Stay up to date with the latest features and changes
+                </Description>
+                <Newsletter onNewsletterSubmit={onNewsletterSubmit} />
+              </>
+            )}
           </Column>
         </Row>
       </Container>

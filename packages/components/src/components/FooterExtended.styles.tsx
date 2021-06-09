@@ -4,13 +4,15 @@ export const Wrapper = styled.footer(() => [
   tw`bg-white dark:bg-gray-900 text-xs`,
 ]);
 
-export const Container = styled.div(() => [tw`container-max pb-4 md:pb-5`]);
+export const Container = styled.div(() => [tw`container-max`]);
 
-export const Row = styled.div(() => [tw`flex flex-wrap lg:flex-nowrap`]);
+export const Row = styled.div(() => [
+  tw`flex flex-wrap lg:flex-nowrap pt-2 pb-4 md:(pt-4 pb-8)`,
+]);
 
 export const Column = styled.div(() => [
   tw`w-full first:w-full xs:(first:w-full w-1/2) lg:(first:w-1/4! w-1/4!)`,
-  tw`mb-6 last:mb-0 lg:(mb-1)`,
+  tw`mb-6 last:mb-0 lg:(mb-0)`,
 ]);
 
 export const Line = styled.hr(() => [
