@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.2.4
+
+### Patch Changes
+
+- c256e07: Fix issues and remove json manipulation over the data
+
 ## 1.2.3
 
 ### Patch Changes
