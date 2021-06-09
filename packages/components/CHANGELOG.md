@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.2.2
+
+### Patch Changes
+
+- d2257c4: make marketplace props more dynamic
+
 ## 1.2.1
 
 ### Patch Changes
