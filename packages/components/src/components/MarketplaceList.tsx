@@ -103,7 +103,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [pages, setPages] = useState([[]]);
+  const [pages, setPages] = useState<IMarketplaceItemProps[][]>([[]]);
   const [currentPage, setCurrentPage] = useState(0);
   const [currentItem, setCurrentItem] = useState<IMarketplaceItemProps>();
 
@@ -116,7 +116,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
   };
 
   useEffect(() => {
-    const itemsCopy = JSON.parse(JSON.stringify(items));
+    const itemsCopy = [...items];
     const pagesData = [];
 
     while (itemsCopy.length) {
