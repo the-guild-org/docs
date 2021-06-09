@@ -50,11 +50,6 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
     return `${months[date.getMonth()]} ${date.getDay()}, ${date.getFullYear()}`;
   };
 
-  const formatStars = (value: number) => {
-    const stars = (value / 1000).toFixed(2);
-    return `${stars} k`;
-  };
-
   return (
     <>
       {items &&
@@ -62,7 +57,11 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
           <TableItem key={item.title}>
             <td>
               <TableItemInfo>
-                <a {...item.link}>
+                <a
+                  {...(item.link
+                    ? item.link
+                    : { onClick: () => handleModal(true) })}
+                >
                   <img src={item.image.src} alt={item.image.alt} />
                   <span>
                     <h3>{item.title}</h3>
@@ -72,7 +71,6 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
               </TableItemInfo>
             </td>
             <td>{formateDate(item.update)}</td>
-            <td>{formatStars(item.stars)}</td>
             <td>
               <button
                 type="button"
@@ -136,7 +134,6 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
                 <tr>
                   <th>Name</th>
                   <th>Last Update</th>
-                  <th>Star</th>
                   <th></th>
                 </tr>
               </TableHeader>

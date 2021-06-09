@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.2.1
+
+### Patch Changes
+
+- 1a94a7a: Remove stars from marketplace
+
 ## 1.2.0
 
 ### Minor Changes
