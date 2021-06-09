@@ -55,6 +55,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
       {items &&
         items.map((item) => (
           <TableItem key={item.title}>
+            <td>{item.image ? <img {...item.image} /> : null}</td>
             <td>
               <TableItemInfo>
                 <a
@@ -62,7 +63,6 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
                     ? item.link
                     : { onClick: () => handleModal(true) })}
                 >
-                  {item.image ? <img {...item.image} /> : null}
                   <span>
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
@@ -132,6 +132,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
             <Table>
               <TableHeader>
                 <tr>
+                  <th></th>
                   <th>Name</th>
                   <th>Last Update</th>
                   <th></th>

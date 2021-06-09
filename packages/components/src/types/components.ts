@@ -126,7 +126,7 @@ export interface ICardsColorfulProps {
 
 export interface IMarketplaceItemProps {
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   modal: {
     header: {
       image?: IImage;
