@@ -1,5 +1,12 @@
 # @theguild/components
 
+## 1.2.3
+
+### Patch Changes
+
+- b68016b: flexible marketplace modal content
+- 9c5cd85: ui fixes for marketplace
+
 ## 1.2.2
 
 ### Patch Changes
