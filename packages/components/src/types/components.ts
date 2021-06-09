@@ -157,6 +157,6 @@ export interface IMarketplaceSearchProps {
   title: string;
   placeholder: string;
   primaryList: IMarketplaceListProps;
-  secondaryList: IMarketplaceListProps;
-  queryList: IMarketplaceListProps;
+  secondaryList?: IMarketplaceListProps;
+  queryList?: IMarketplaceListProps;
 }
