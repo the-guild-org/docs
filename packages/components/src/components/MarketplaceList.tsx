@@ -57,7 +57,11 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
           <TableItem key={item.title}>
             <td>
               <TableItemInfo>
-                <a {...item.link}>
+                <a
+                  {...(item.link
+                    ? item.link
+                    : { onClick: () => handleModal(true) })}
+                >
                   <img src={item.image.src} alt={item.image.alt} />
                   <span>
                     <h3>{item.title}</h3>
