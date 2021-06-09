@@ -174,7 +174,11 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
                 visible={modalOpen}
                 onCancel={() => handleModal(false)}
               >
-                {currentItem.modal.content}
+                {typeof currentItem.modal.content === 'string'
+                  ? currentItem.modal.content
+                  : typeof currentItem.modal.content === 'function'
+                  ? currentItem.modal.content()
+                  : currentItem.modal.content || null}
               </Modal>
             )}
           </>

@@ -132,7 +132,7 @@ export interface IMarketplaceItemProps {
       image?: IImage;
       description?: string | ILink;
     };
-    content: string | React.ReactNode;
+    content: string | (() => React.ReactNode) | React.ReactNode;
   };
   update: string;
   image?: IImage;
