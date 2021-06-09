@@ -2,7 +2,7 @@ import tw, { css, styled } from 'twin.macro';
 
 interface IStyleProps {
   isModalOpen?: boolean;
-  placement?: 'top' | 'center' | 'bottom';
+  placement?: 'top' | 'center' | 'bottom' | 'bottom-wide';
 }
 
 export const Container = styled.div(({ isModalOpen }: IStyleProps) => [
@@ -47,6 +47,9 @@ export const Wrapper = styled.div(({ isModalOpen, placement }: IStyleProps) => [
   placement === 'center' && tw`md:(top-2/4 -translate-y-1/2)`,
   placement === 'bottom' && [
     tw`md:(top-auto left-2/4 bottom-0 h-5/6 w-4/5 max-w-3xl rounded-t-md)`,
+  ],
+  placement === 'bottom-wide' && [
+    tw`md:(top-auto left-2/4 bottom-0 h-5/6 w-4/5 max-w-7xl rounded-t-md)`,
   ],
 ]);
 

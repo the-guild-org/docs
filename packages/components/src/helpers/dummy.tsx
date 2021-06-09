@@ -216,7 +216,8 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
   items: [
     {
       title: 'GraphQL Modules 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       modal: {
         header: {
           image: {
@@ -237,6 +238,12 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
       image: {
         src: marketplaceListImage,
         alt: 'GraphQL Modules Logo',
+      },
+      link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        title: 'Learn more about GraphQL Jit',
       },
     },
     {
@@ -303,7 +310,8 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
     },
     {
       title: 'GraphQL Modules 4',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       modal: {
         header: {
           image: {
@@ -334,7 +342,8 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
     },
     {
       title: 'GraphQL Modules 5',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       modal: {
         header: {
           image: {
@@ -532,7 +541,7 @@ export const dummyMarketplaceSearch = {
   },
   secondaryList: {
     title: 'New Release',
-    items: [],
+    items: dummyMarketplaceList.items.slice(4, 14),
     placeholder: 'No products available...',
     pagination: 5,
   },

@@ -91,7 +91,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
         ) : (
           <Results>
             <MarketplaceList {...primaryList} />
-            {secondaryList ? <MarketplaceList {...secondaryList} /> : null}
+            {secondaryList && <MarketplaceList {...secondaryList} />}
           </Results>
         )}
       </Container>

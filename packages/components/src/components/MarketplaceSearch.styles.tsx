@@ -31,5 +31,5 @@ export const Search = styled.div(() => [
 ]);
 
 export const Results = styled.div(() => [
-  tw`flex flex-wrap xl:flex-nowrap -mx-6`,
+  tw`flex flex-wrap lg:flex-nowrap -mx-6`,
 ]);

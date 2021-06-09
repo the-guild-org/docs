@@ -11,6 +11,9 @@ import {
   TableBody,
   TableHeader,
   TableItem,
+  TableItemButton,
+  TableItemDate,
+  TableItemImage,
   TableItemInfo,
   TablePagination,
   Wrapper,
@@ -55,7 +58,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
       {items &&
         items.map((item) => (
           <TableItem key={item.title}>
-            <td>{item.image ? <img {...item.image} /> : null}</td>
+            <td>{item.image && <TableItemImage {...item.image} />}</td>
             <td>
               <TableItemInfo>
                 <a
@@ -75,9 +78,11 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
                 </a>
               </TableItemInfo>
             </td>
-            <td>{formateDate(item.update)}</td>
             <td>
-              <button
+              <TableItemDate>{formateDate(item.update)}</TableItemDate>
+            </td>
+            <td>
+              <TableItemButton
                 type="button"
                 onClick={() => {
                   handleModal(true);
@@ -85,7 +90,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
                 }}
               >
                 <img src={icon} alt=">" />
-              </button>
+              </TableItemButton>
             </td>
           </TableItem>
         ))}
@@ -170,7 +175,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
               <Modal
                 {...currentItem.modal.header}
                 title={currentItem.title}
-                placement="bottom"
+                placement="bottom-wide"
                 visible={modalOpen}
                 onCancel={() => handleModal(false)}
               >
