@@ -61,7 +61,12 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
                 <a
                   {...(item.link
                     ? item.link
-                    : { onClick: () => handleModal(true) })}
+                    : {
+                        onClick: () => {
+                          setCurrentItem(item);
+                          handleModal(true);
+                        },
+                      })}
                 >
                   <span>
                     <h3>{item.title}</h3>
