@@ -20,6 +20,13 @@ import { IFooterExtendedProps, ILink } from '../types/components';
 
 const products = [
   {
+    children: 'Hive',
+    title: 'Schema Registry for your GraphQL Workflows',
+    href: 'https://graphql-hive.com/',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
+  {
     children: 'Envelop',
     title: 'Modern GraphQL Framework',
     href: 'https://github.com/dotansimha/envelop/',
