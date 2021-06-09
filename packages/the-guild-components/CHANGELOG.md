@@ -1,6 +1,14 @@
 # the-guild-components
 
+## 1.2.1
+
+### Patch Changes
+
+- Updated dependencies [1a94a7a]
+  - @theguild/components@1.2.1
+
 ## 1.2.0
+
 ### Minor Changes
 
 - aecc55f: included envelop components & fixes for ssr
