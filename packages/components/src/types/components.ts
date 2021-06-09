@@ -10,10 +10,7 @@ interface ILink {
   onClick?: React.MouseEventHandler;
 }
 
-interface IImage {
-  alt: string;
-  src: string;
-}
+type IImage = React.ImgHTMLAttributes<unknown>;
 
 interface IVideo {
   src: string;
@@ -132,16 +129,14 @@ export interface IMarketplaceItemProps {
   description: string;
   modal: {
     header: {
-      image: IImage;
-      description: string | ILink;
+      image?: IImage;
+      description?: string | ILink;
     };
-    content: string;
+    content: string | React.ReactNode;
   };
   update: string;
-  image: IImage;
+  image?: IImage;
   link?: ILink;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data?: any;
 }
 
 export interface IMarketplaceItemsProps {

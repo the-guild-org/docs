@@ -62,7 +62,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
                     ? item.link
                     : { onClick: () => handleModal(true) })}
                 >
-                  <img src={item.image.src} alt={item.image.alt} />
+                  {item.image ? <img {...item.image} /> : null}
                   <span>
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>

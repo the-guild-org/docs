@@ -70,7 +70,7 @@ export const Modal: React.FC<IModalProps> = ({
           placement={placement}
         >
           <Header>
-            {image && <HeaderImage src={image.src} alt={image.alt} />}
+            {image && <HeaderImage {...image} />}
             <HeaderInfo>
               <h2>{title}</h2>
               {renderDescription()}
