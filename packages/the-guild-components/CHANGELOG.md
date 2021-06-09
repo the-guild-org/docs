@@ -1,5 +1,13 @@
 # the-guild-components
 
+## 1.2.3
+
+### Patch Changes
+
+- Updated dependencies [b68016b]
+- Updated dependencies [9c5cd85]
+  - @theguild/components@1.2.3
+
 ## 1.2.2
 
 ### Patch Changes
