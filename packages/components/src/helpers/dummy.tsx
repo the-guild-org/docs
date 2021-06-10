@@ -248,7 +248,8 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
     },
     {
       title: 'GraphQL Modules 2',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       modal: {
         header: {
           image: {
@@ -541,7 +542,7 @@ export const dummyMarketplaceSearch = {
   },
   secondaryList: {
     title: 'New Release',
-    items: dummyMarketplaceList.items.slice(4, 14),
+    items: dummyMarketplaceList.items.slice(4, 10),
     placeholder: 'No products available...',
     pagination: 5,
   },

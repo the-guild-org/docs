@@ -66,8 +66,12 @@ export const TableItem = styled.tr(() => [
     td {
       ${tw`px-2 py-4`}
 
-      &:nth-of-type(1) {
-        ${tw`w-14 md:w-24`}
+      &:first-of-type {
+        ${tw`w-14 md:w-24 pl-0`}
+      }
+
+      &:last-of-type {
+        ${tw`pr-0`}
       }
 
       &:nth-of-type(3) {
@@ -83,6 +87,7 @@ export const TableItemInfo = styled.div(() => [
   tw`flex items-center`,
   css`
     min-height: 5rem;
+
     a {
       ${tw`flex items-center hocus:opacity-75 transition duration-150 ease-in-out`}
     }
