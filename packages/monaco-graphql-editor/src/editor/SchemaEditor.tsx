@@ -17,6 +17,7 @@ export type SchemaEditorProps = {
   diagnosticsProviders?: DiagnosticsSource[];
   decorationsProviders?: DecorationsSource[];
   actions?: EditorAction[];
+  sharedLanguageService?: EnrichedLanguageService;
   keyboardShortcuts?: (
     editorInstance: monaco.editor.IStandaloneCodeEditor,
     monacoInstance: typeof monaco
@@ -34,6 +35,7 @@ export const SchemaEditor: React.FC<SchemaEditorProps> = ({
   decorationsProviders = [],
   actions = [],
   keyboardShortcuts,
+  sharedLanguageService,
   ...rest
 }) => {
   const [editorRef, setEditor] =
@@ -42,6 +44,7 @@ export const SchemaEditor: React.FC<SchemaEditorProps> = ({
 
   const languageService = React.useMemo(
     () =>
+      sharedLanguageService ||
       new EnrichedLanguageService({
         schemaString: schema,
         schemaConfig: {
@@ -51,7 +54,7 @@ export const SchemaEditor: React.FC<SchemaEditorProps> = ({
           },
         },
       }),
-    []
+    [sharedLanguageService]
   );
 
   React.useEffect(() => {
