@@ -57,7 +57,7 @@ export interface IModalProps {
   description?: string | ILink;
   image?: IImage;
   visible: boolean;
-  placement: 'top' | 'center' | 'bottom';
+  placement: 'top' | 'center' | 'bottom' | 'bottom-wide';
   onCancel: (state?: boolean) => void;
 }
 
