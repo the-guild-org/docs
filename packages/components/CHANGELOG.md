@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 1.3.0
+
+### Minor Changes
+
+- 13b1df6: extended footer component + storybook deprecation fixes
+
+### Patch Changes
+
+- 2aa293d: marketplace styling fixes
+
 ## 1.2.4
 
 ### Patch Changes
