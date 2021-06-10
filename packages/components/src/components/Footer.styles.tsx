@@ -19,7 +19,7 @@ export const Copyright = styled.p(() => [
 export const Logo = styled.a(() => [
   css`
     img {
-      ${tw`mb-3 md:mb-0 opacity-30 transition duration-200 ease-in-out`}
+      ${tw`mb-3 md:mb-0 opacity-50 transition duration-200 ease-in-out`}
     }
     &:hover {
       img {

@@ -20,10 +20,9 @@ export default {
     },
     activeLink: {
       name: 'Active Link',
-      description: 'Used ',
+      options: ['/', '/marketplace', '/features', '/docs'],
       control: {
         type: 'radio',
-        options: ['/', '/marketplace', '/features', '/docs'],
       },
     },
   },

@@ -8,6 +8,7 @@ import { FeatureList } from '../FeatureList';
 import { Header } from '../Header';
 import { HeroIllustration } from '../HeroIllustration';
 import { HeroGradient } from '../HeroGradient';
+import { HeroMarketplace } from '../HeroMarketplace';
 import { HeroVideo } from '../HeroVideo';
 import { InfoList } from '../InfoList';
 import { MarketplaceSearch } from '../MarketplaceSearch';
@@ -24,7 +25,6 @@ import {
   dummyMarketplaceSearch,
   dummySubheader,
 } from '../../helpers/dummy';
-import { HeroMarketplace } from '../HeroMarketplace';
 
 export default {
   title: 'Products/Envelop',

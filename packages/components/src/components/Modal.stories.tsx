@@ -28,9 +28,9 @@ export default {
     placement: {
       name: 'Placement',
       description: 'Sets the position of the component',
+      options: ['top', 'center', 'bottom'],
       control: {
         type: 'radio',
-        options: ['top', 'center', 'bottom'],
       },
     },
     onCancel: {

@@ -1,6 +1,13 @@
 import React from 'react';
 
-interface ILink {
+type IImage = React.ImgHTMLAttributes<unknown>;
+
+interface IVideo {
+  src: string;
+  placeholder: string;
+}
+
+export interface ILink {
   title: string;
   href: string;
   children?: string | React.ReactElement;
@@ -8,13 +15,6 @@ interface ILink {
   target?: string;
   active?: boolean;
   onClick?: React.MouseEventHandler;
-}
-
-type IImage = React.ImgHTMLAttributes<unknown>;
-
-interface IVideo {
-  src: string;
-  placeholder: string;
 }
 
 export interface IButtonProps {
@@ -50,6 +50,12 @@ export interface IHeaderModalProps {
 
 export interface IFooterProps {
   sameSite?: boolean;
+}
+
+export interface IFooterExtendedProps {
+  sameSite?: boolean;
+  resources?: ILink[];
+  onNewsletterSubmit?: (e: React.FormEvent, value: string) => void;
 }
 
 export interface IModalProps {
@@ -159,4 +165,8 @@ export interface IMarketplaceSearchProps {
   primaryList: IMarketplaceListProps;
   secondaryList?: IMarketplaceListProps;
   queryList?: IMarketplaceListProps;
+}
+
+export interface INewsletterProps {
+  onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
 }

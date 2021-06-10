@@ -16,6 +16,10 @@ import pageIconDark from '../static/icons/page-dark.svg';
 import pageIconLight from '../static/icons/page-light.svg';
 import hashtagIconDark from '../static/icons/hashtag-dark.svg';
 import hashtagIconLight from '../static/icons/hashtag-light.svg';
+import mailIconDark from '../static/icons/mail-dark.svg';
+import mailIconLight from '../static/icons/mail-light.svg';
+import arrowUpRightIconDark from '../static/icons/arrow-up-right-dark.svg';
+import arrowUpRightIconLight from '../static/icons/arrow-up-right-light.svg';
 
 const cdn = 'https://the-guild.dev/static';
 
@@ -84,4 +88,9 @@ export const modalThemedIcons = (isDark: boolean): any => ({
 export const marketplaceThemedAssets = (isDark: boolean): any => ({
   caret: isDark ? caretSlimIconLight : caretSlimIconDark,
   search: isDark ? searchIconLight : searchIconDark,
+});
+
+export const newsletterThemedIcons = (isDark: boolean): any => ({
+  mail: isDark ? mailIconLight : mailIconDark,
+  arrow: isDark ? arrowUpRightIconLight : arrowUpRightIconDark,
 });

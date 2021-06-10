@@ -35,6 +35,7 @@
     "@types/react-instantsearch-core": "6.10.2",
     "@types/react-instantsearch-dom": "6.10.0",
     "@types/react-paginate": "7.1.0",
+    "@types/validator": "13.1.4",
     "@typescript-eslint/eslint-plugin": "4.26.0",
     "@typescript-eslint/parser": "4.26.0",
     "eslint": "7.28.0",
@@ -50,7 +51,8 @@
     "rollup-plugin-auto-external": "2.0.0",
     "rollup-plugin-bundle-size": "1.0.3",
     "rollup-plugin-copy": "3.4.0",
-    "typescript": "4.2.2"
+    "typescript": "4.2.2",
+    "validator": "^13.6.0"
   },
   "workspaces": {
     "packages": [

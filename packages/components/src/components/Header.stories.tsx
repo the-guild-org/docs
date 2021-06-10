@@ -17,10 +17,10 @@ export default {
     },
     activeLink: {
       name: 'Active Link',
-      description: 'Used ',
+      description: 'Used to highlight the active navigation item',
+      options: ['/services', '/open-source', '/blog', '/about-us'],
       control: {
         type: 'radio',
-        options: ['/services', '/open-source', '/blog', '/about-us'],
       },
     },
     sameSite: {
