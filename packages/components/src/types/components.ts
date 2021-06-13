@@ -106,10 +106,10 @@ export interface IHeroIllustrationProps {
   image: IImage;
 }
 export interface IHeroGradientProps {
-  title: string;
-  description: string;
+  title: string | React.ReactNode;
+  description: string | React.ReactNode;
   colors?: string[];
-  version?: string;
+  version?: string | React.ReactNode;
   link?: ILink;
   image?: IImage;
 }
