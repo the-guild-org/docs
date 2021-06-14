@@ -130,6 +130,12 @@ function BaseSchemaEditor(
   }, [languageService, onLanguageServiceReady]);
 
   React.useEffect(() => {
+    if (languageService && onLanguageServiceReady) {
+      onLanguageServiceReady(languageService);
+    }
+  }, [languageService, onLanguageServiceReady]);
+
+  React.useEffect(() => {
     if (monacoRef && editorRef) {
       if (keyboardShortcuts) {
         for (const action of keyboardShortcuts(editorRef, monacoRef)) {
