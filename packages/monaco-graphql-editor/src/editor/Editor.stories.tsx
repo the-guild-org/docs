@@ -42,6 +42,24 @@ type Profile {
 }
 `,
   hoverProviders: [debugHoverSource],
+  onChange: (value, event) => {
+    console.log('onChange', { value, event });
+  },
+  onMount: (editor, monaco) => {
+    console.log('onMount', { editor, monaco });
+  },
+  beforeMount: (monaco) => {
+    console.log('beforeMount', { monaco });
+  },
+  onBlur: (value) => {
+    console.log('onBlur', { value });
+  },
+  onLanguageServiceReady: (languageService) => {
+    console.log('onLanguageServiceReady', { languageService });
+  },
+  onSchemaChange: (schema, sdl) => {
+    console.log('onSchemaChange', { schema, sdl });
+  },
   actions: [
     {
       id: 'dotan.test.click',
@@ -60,4 +78,4 @@ type Profile {
       },
     },
   ],
-};
+} as SchemaEditorProps;
