@@ -9,7 +9,17 @@ import {
   EditorAction,
   HoverSource,
 } from './utils';
-import { GraphQLError, GraphQLSchema } from 'graphql';
+import {
+  GraphQLError,
+  GraphQLSchema,
+  isInterfaceType,
+  isObjectType,
+} from 'graphql';
+
+export type EditorApi = {
+  jumpToType(typeName: string): void;
+  jumpToField(typeName: string, fieldName: string): void;
+};
 
 export type SchemaEditorProps = {
   schema?: string;
@@ -33,21 +43,24 @@ export type SchemaEditorProps = {
   ) => monaco.editor.IActionDescriptor[];
 } & Omit<EditorProps, 'language'>;
 
-export const SchemaEditor: React.FC<SchemaEditorProps> = ({
-  schema,
-  hoverProviders = [],
-  definitionProviders = [],
-  diagnosticsProviders = [],
-  decorationsProviders = [],
-  actions = [],
-  keyboardShortcuts,
-  sharedLanguageService,
-  onBlur,
-  onLanguageServiceReady,
-  onSchemaChange,
-  onSchemaError,
-  ...rest
-}) => {
+function BaseSchemaEditor(
+  {
+    schema,
+    hoverProviders = [],
+    definitionProviders = [],
+    diagnosticsProviders = [],
+    decorationsProviders = [],
+    actions = [],
+    keyboardShortcuts,
+    sharedLanguageService,
+    onBlur,
+    onLanguageServiceReady,
+    onSchemaChange,
+    onSchemaError,
+    ...rest
+  }: SchemaEditorProps,
+  ref: React.ForwardedRef<EditorApi>
+) {
   const [editorRef, setEditor] =
     React.useState<monaco.editor.IStandaloneCodeEditor | null>(null);
   const [monacoRef, setMonaco] = React.useState<typeof monaco | null>(null);
@@ -65,6 +78,49 @@ export const SchemaEditor: React.FC<SchemaEditorProps> = ({
         },
       }),
     [sharedLanguageService]
+  );
+
+  React.useImperativeHandle(
+    ref,
+    () => ({
+      jumpToType: (typeName) => {
+        languageService.getSchema().then((schema) => {
+          if (schema) {
+            const type = schema.getType(typeName);
+
+            if (type?.astNode?.loc) {
+              editorRef?.setSelection({
+                startLineNumber: type.astNode.loc.startToken.line,
+                startColumn: type.astNode.loc.startToken.column,
+                endLineNumber: type.astNode.loc.endToken.line + 1,
+                endColumn: type.astNode.loc.endToken.column,
+              });
+            }
+          }
+        });
+      },
+      jumpToField: (typeName, fieldName) => {
+        languageService.getSchema().then((schema) => {
+          if (schema) {
+            const type = schema.getType(typeName);
+
+            if (type && (isObjectType(type) || isInterfaceType(type))) {
+              const field = type.getFields()[fieldName];
+
+              if (field?.astNode?.loc) {
+                editorRef?.setSelection({
+                  startLineNumber: field.astNode.loc.startToken.line,
+                  startColumn: field.astNode.loc.startToken.column,
+                  endLineNumber: field.astNode.loc.endToken.line + 1,
+                  endColumn: field.astNode.loc.endToken.column,
+                });
+              }
+            }
+          }
+        });
+      },
+    }),
+    [editorRef, languageService]
   );
 
   React.useEffect(() => {
@@ -209,4 +265,6 @@ export const SchemaEditor: React.FC<SchemaEditorProps> = ({
       />
     </>
   );
-};
+}
+
+export const SchemaEditor = React.forwardRef(BaseSchemaEditor);
