@@ -12,6 +12,8 @@ import {
 import type * as monaco from 'monaco-editor';
 import type { EnrichedLanguageService } from './EnrichedLanguageService';
 
+export { getRange };
+
 export function removeFalsey<T>(obj: T | null): obj is T {
   return !!obj;
 }

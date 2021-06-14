@@ -9,6 +9,7 @@ import {
   EditorAction,
   HoverSource,
 } from './utils';
+import { GraphQLError, GraphQLSchema } from 'graphql';
 
 export type SchemaEditorProps = {
   schema?: string;
@@ -17,15 +18,20 @@ export type SchemaEditorProps = {
   diagnosticsProviders?: DiagnosticsSource[];
   decorationsProviders?: DecorationsSource[];
   actions?: EditorAction[];
+  onBlur?: (value: string) => void;
+  onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;
+  onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;
+  onSchemaError?: (
+    errors: [GraphQLError],
+    sdl: string,
+    languageService: EnrichedLanguageService
+  ) => void;
   sharedLanguageService?: EnrichedLanguageService;
   keyboardShortcuts?: (
     editorInstance: monaco.editor.IStandaloneCodeEditor,
     monacoInstance: typeof monaco
   ) => monaco.editor.IActionDescriptor[];
-} & Omit<
-  EditorProps,
-  'onMount' | 'beforeMount' | 'onChange' | 'defaultValue' | 'language'
->;
+} & Omit<EditorProps, 'language'>;
 
 export const SchemaEditor: React.FC<SchemaEditorProps> = ({
   schema,
@@ -36,6 +42,10 @@ export const SchemaEditor: React.FC<SchemaEditorProps> = ({
   actions = [],
   keyboardShortcuts,
   sharedLanguageService,
+  onBlur,
+  onLanguageServiceReady,
+  onSchemaChange,
+  onSchemaError,
   ...rest
 }) => {
   const [editorRef, setEditor] =
@@ -56,6 +66,12 @@ export const SchemaEditor: React.FC<SchemaEditorProps> = ({
       }),
     [sharedLanguageService]
   );
+
+  React.useEffect(() => {
+    if (languageService && onLanguageServiceReady) {
+      onLanguageServiceReady(languageService);
+    }
+  }, [languageService, onLanguageServiceReady]);
 
   React.useEffect(() => {
     if (monacoRef && editorRef) {
@@ -124,17 +140,72 @@ export const SchemaEditor: React.FC<SchemaEditorProps> = ({
     return () => {};
   }, [editorRef, monacoRef]);
 
+  const [onBlurHandler, setOnBlurSubscription] =
+    React.useState<monaco.IDisposable>();
+
+  React.useEffect(() => {
+    if (editorRef && onBlur) {
+      onBlurHandler?.dispose();
+
+      const subscription = editorRef.onDidBlurEditorText(() => {
+        onBlur(editorRef.getValue() || '');
+      });
+
+      setOnBlurSubscription(subscription);
+    }
+  }, [onBlur, editorRef]);
+
   return (
     <>
       <MonacoEditor
         height={'70vh'}
         {...rest}
-        beforeMount={(monaco) => setMonaco(monaco)}
-        onMount={(editor) => setEditor(editor)}
-        onChange={(newValue) => newValue && languageService.trySchema(newValue)}
+        beforeMount={(monaco) => {
+          rest.beforeMount && rest.beforeMount(monaco);
+          setMonaco(monaco);
+        }}
+        onMount={(editor, monaco) => {
+          rest.onMount && rest.onMount(editor, monaco);
+          setEditor(editor);
+        }}
+        onChange={(newValue, ev) => {
+          rest.onChange && rest.onChange(newValue, ev);
+
+          if (newValue) {
+            languageService
+              .trySchema(newValue)
+              .then((schema) => {
+                if (schema) {
+                  onSchemaChange && onSchemaChange(schema, newValue);
+                }
+              })
+              .catch((e: Error | GraphQLError) => {
+                if (onSchemaError) {
+                  if (e instanceof GraphQLError) {
+                    onSchemaError([e], newValue, languageService);
+                  } else {
+                    onSchemaError(
+                      [
+                        new GraphQLError(
+                          e.message,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          e
+                        ),
+                      ],
+                      newValue,
+                      languageService
+                    );
+                  }
+                }
+              });
+          }
+        }}
         options={{ glyphMargin: true, ...(rest.options || {}) }}
         language="graphql"
-        defaultValue={schema}
+        defaultValue={rest.defaultValue || schema}
       />
     </>
   );
