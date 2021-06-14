@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { SchemaEditor, SchemaEditorProps } from './SchemaEditor';
+import { EditorApi, SchemaEditor, SchemaEditorProps } from './SchemaEditor';
 import { debugHoverSource, showWidgetInPosition } from './utils';
 
 export default {
@@ -15,7 +15,54 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SchemaEditorProps> = (args) => <SchemaEditor {...args} />;
+const Template: Story<SchemaEditorProps> = (args) => {
+  const ref = React.useRef<EditorApi>(null);
+
+  return (
+    <div>
+      <button
+        style={{
+          margin: 10,
+          padding: 5,
+          background: 'lightgray',
+          borderRadius: 10,
+        }}
+        onClick={() => {
+          if (ref.current) {
+            const identifier = prompt(
+              'What type are you looking for?',
+              'Query'
+            );
+            ref.current.jumpToType(identifier);
+          }
+        }}
+      >
+        Jump To Type
+      </button>
+      <button
+        style={{
+          margin: 10,
+          padding: 5,
+          background: 'lightgray',
+          borderRadius: 10,
+        }}
+        onClick={() => {
+          if (ref.current) {
+            const identifier = prompt(
+              'What type+field are you looking for?',
+              'Query.me'
+            );
+            const [typeName, fieldName] = identifier.split('.');
+            ref.current.jumpToField(typeName, fieldName);
+          }
+        }}
+      >
+        Jump To Field
+      </button>
+      <SchemaEditor ref={ref} {...args} />
+    </div>
+  );
+};
 
 export const Default = Template.bind({});
 
