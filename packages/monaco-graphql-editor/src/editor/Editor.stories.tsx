@@ -20,21 +20,32 @@ const Template: Story<SchemaEditorProps> = (args) => <SchemaEditor {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
+  height: '100vh',
   schema: `type Query {
   ping: Boolean
   me: User!
 }
 
+" represents a valid email "
+scalar Email
+
 """ Represents a simple user """
 type User {
   id: ID!
-  name: String!
-}`,
+  email: Email!
+  profile: Profile!
+}
+
+type Profile {
+  name: String
+  age: Int
+}
+`,
   hoverProviders: [debugHoverSource],
   actions: [
     {
       id: 'dotan.test.click',
-      label: 'Inspect with Hive',
+      label: 'My Custom Aaction',
       onRun: ({ editor, bridge }) => {
         if (
           ['NamedType', 'ObjectTypeDef'].includes(
