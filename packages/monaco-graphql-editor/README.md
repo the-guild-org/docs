@@ -17,8 +17,10 @@ Import and use it as a component:
 ```tsx
 import { SchemaEditor } from '@theguild/editor';
 
+const initialSchema = `type Query { foo: String }`
+
 const MyEditor: React.FC = () => {
-  return <SchemaEditor />
+  return <SchemaEditor schema={initialSchema} />
 }
 ```
 
@@ -38,9 +40,10 @@ const MyEditor: React.FC = () => {
 
 You can listen to the following events, on top of the Monaco editor:
 
-* `onBlur?: (value: string) => void`
-* `onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;`
-* `onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;`
+* `onBlur?: (value: string) => void` - triggered when the editor is being blurred.
+* `onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;` - triggered when the language service is ready.
+* `onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;` - triggered when a valid schema is present in the editor.
+* `onSchemaError?: (errors: GraphQLError[], sdl: string, languageService: EnrichedLanguageService) => void;` - triggered when an invalid schema is present in the editor.
 
 ### Extending the editor
 
@@ -126,5 +129,31 @@ const MyEditor: React.FC = () => {
 }
 ```
 
+#### Custom Editor Actions
 
+You can add custom editor actions (context menu and keyboard shortbuts) through `actions` API:
+
+```tsx
+import { SchemaEditor, showWidgetInPosition } from '@theguild/editor';
+
+const MyEditor: React.FC = () => {
+  return <SchemaEditor actions={[{
+      id: 'my.custom.action',
+      label: 'My Custom Action',
+      onRun: ({ editor, bridge }) => {
+        // You can use the bridge here to know exactly what was clicked in terms of GQL identifiers
+        if (
+          ['NamedType', 'ObjectTypeDef'].includes(
+            bridge.token.state.kind as string
+          )
+        ) {
+          const domNode = document.createElement('div');
+          domNode.innerHTML = `You Selected: <strong>${bridge.token.state.kind} / ${bridge.token.state.name}</strong><br />You can show here any html that you wish!`;
+          domNode.style.background = 'orange';
+          showWidgetInPosition(editor, bridge.position, domNode);
+        }
+      },
+    }]} />
+}
+```
 

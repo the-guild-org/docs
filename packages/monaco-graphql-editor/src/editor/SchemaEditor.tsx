@@ -9,7 +9,7 @@ import {
   EditorAction,
   HoverSource,
 } from './utils';
-import { GraphQLSchema } from 'graphql';
+import { GraphQLError, GraphQLSchema } from 'graphql';
 
 export type SchemaEditorProps = {
   schema?: string;
@@ -21,6 +21,11 @@ export type SchemaEditorProps = {
   onBlur?: (value: string) => void;
   onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;
   onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;
+  onSchemaError?: (
+    errors: [GraphQLError],
+    sdl: string,
+    languageService: EnrichedLanguageService
+  ) => void;
   sharedLanguageService?: EnrichedLanguageService;
   keyboardShortcuts?: (
     editorInstance: monaco.editor.IStandaloneCodeEditor,
@@ -40,6 +45,7 @@ export const SchemaEditor: React.FC<SchemaEditorProps> = ({
   onBlur,
   onLanguageServiceReady,
   onSchemaChange,
+  onSchemaError,
   ...rest
 }) => {
   const [editorRef, setEditor] =
@@ -166,11 +172,35 @@ export const SchemaEditor: React.FC<SchemaEditorProps> = ({
           rest.onChange && rest.onChange(newValue, ev);
 
           if (newValue) {
-            languageService.trySchema(newValue).then((schema) => {
-              if (schema) {
-                onSchemaChange && onSchemaChange(schema, newValue);
-              }
-            });
+            languageService
+              .trySchema(newValue)
+              .then((schema) => {
+                if (schema) {
+                  onSchemaChange && onSchemaChange(schema, newValue);
+                }
+              })
+              .catch((e: Error | GraphQLError) => {
+                if (onSchemaError) {
+                  if (e instanceof GraphQLError) {
+                    onSchemaError([e], newValue, languageService);
+                  } else {
+                    onSchemaError(
+                      [
+                        new GraphQLError(
+                          e.message,
+                          undefined,
+                          undefined,
+                          undefined,
+                          undefined,
+                          e
+                        ),
+                      ],
+                      newValue,
+                      languageService
+                    );
+                  }
+                }
+              });
           }
         }}
         options={{ glyphMargin: true, ...(rest.options || {}) }}

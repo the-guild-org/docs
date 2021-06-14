@@ -60,6 +60,9 @@ type Profile {
   onSchemaChange: (schema, sdl) => {
     console.log('onSchemaChange', { schema, sdl });
   },
+  onSchemaError: (errors, sdl) => {
+    console.log('onSchemaError', { errors, sdl });
+  },
   actions: [
     {
       id: 'dotan.test.click',
