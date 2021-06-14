@@ -1,5 +1,14 @@
 # @theguild/editor
 
+## 0.3.0
+
+### Minor Changes
+
+- 711097a: Expose onChange, onMount, beforeMount and onBlur for the editor
+- 711097a: Added `onSchemaError`
+- 711097a: Added support for exposing `ref` from the editor, with api for `jumpToType` and `jumpToField`
+- 711097a: Added `onSchemaChange` and `onLanguageServiceReady`
+
 ## 0.2.0
 
 ### Minor Changes
