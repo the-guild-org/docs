@@ -89,12 +89,19 @@ function BaseSchemaEditor(
             const type = schema.getType(typeName);
 
             if (type?.astNode?.loc) {
+              const startLineNumber = type.astNode.loc.startToken.line;
+
               editorRef?.setSelection({
-                startLineNumber: type.astNode.loc.startToken.line,
+                startLineNumber,
                 startColumn: type.astNode.loc.startToken.column,
                 endLineNumber: type.astNode.loc.endToken.line + 1,
                 endColumn: type.astNode.loc.endToken.column,
               });
+              
+              editorRef?.revealPositionInCenter(
+                { column: 0, lineNumber: startLineNumber },
+                0,
+              );
             }
           }
         });
