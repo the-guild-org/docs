@@ -9,8 +9,8 @@ export const InfoList: React.FC<IInfoListProps> = ({ title, items }) => (
     <Container>
       {title && <Title>{title}</Title>}
       <Items>
-        {items.map((item) => (
-          <Item key={item.title}>
+        {items.map((item, index) => (
+          <Item key={`info-${index}`}>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
             {item.link && <a {...item.link} />}

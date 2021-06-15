@@ -11,6 +11,7 @@
     "lint-check": "eslint \"packages/*/src/**/*.{ts,tsx}\"",
     "type-check": "tsc",
     "type-check:watch": "npm run type-check -- --watch",
+    "prepare": "npx husky install",
     "prerelease": "yarn build",
     "release": "changeset publish",
     "release:canary": "(node scripts/canary-release.js && yarn build && yarn changeset publish --tag alpha) || echo Skipping Canary...",

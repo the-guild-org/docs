@@ -9,8 +9,8 @@ export const FeatureList: React.FC<IFeatureListProps> = ({ title, items }) => (
     <Container>
       {title && <Title>{title}</Title>}
       <Items>
-        {items.map((item) => (
-          <Item key={item.title}>
+        {items.map((item, index) => (
+          <Item key={`feature-${index}`}>
             <img src={item.image.src} alt={item.image.alt} />
             <h3>{item.title}</h3>
             <p>{item.description}</p>

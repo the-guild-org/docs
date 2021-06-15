@@ -10,7 +10,7 @@ interface IVideo {
 export interface ILink {
   title: string;
   href: string;
-  children?: string | React.ReactElement;
+  children?: string | React.ReactNode;
   rel?: string;
   target?: string;
   active?: boolean;
@@ -19,7 +19,7 @@ export interface ILink {
 
 export interface IButtonProps {
   href: string;
-  title: string;
+  title: string | React.ReactNode;
   variant?: string;
 }
 
@@ -32,8 +32,8 @@ export interface IHeaderProps {
 
 export interface ISubheaderProps {
   product: {
-    title: string;
-    description: string;
+    title: string | React.ReactNode;
+    description: string | React.ReactNode;
     image: IImage;
     onClick?: React.MouseEventHandler;
   };
@@ -43,7 +43,7 @@ export interface ISubheaderProps {
 }
 
 export interface IHeaderModalProps {
-  title: string;
+  title: string | React.ReactNode;
   modalOpen: boolean;
   onCancelModal: (state?: boolean) => void;
 }
@@ -59,7 +59,7 @@ export interface IFooterExtendedProps {
 }
 
 export interface IModalProps {
-  title: string;
+  title: string | React.ReactNode;
   description?: string | ILink;
   image?: IImage;
   visible: boolean;
@@ -76,31 +76,31 @@ export interface ISearchBarProps {
 }
 
 export interface IFeatureListProps {
-  title?: string;
+  title?: string | React.ReactNode;
   items: {
-    title: string;
-    description: string;
+    title: string | React.ReactNode;
+    description: string | React.ReactNode;
     image: IImage;
   }[];
 }
 export interface IInfoListProps {
-  title?: string;
+  title?: string | React.ReactNode;
   items: {
-    title: string;
-    description: string;
+    title: string | React.ReactNode;
+    description: string | React.ReactNode;
     link?: ILink;
   }[];
 }
 export interface IHeroVideoProps {
-  title: string;
-  description: string;
+  title: string | React.ReactNode;
+  description: string | React.ReactNode;
   flipped?: boolean;
   link?: ILink;
   video: IVideo;
 }
 export interface IHeroIllustrationProps {
-  title: string;
-  description: string;
+  title: string | React.ReactNode;
+  description: string | React.ReactNode;
   flipped?: boolean;
   link?: ILink;
   image: IImage;
@@ -115,8 +115,8 @@ export interface IHeroGradientProps {
 }
 
 export interface IHeroMarketplaceProps {
-  title: string;
-  description: string;
+  title: string | React.ReactNode;
+  description: string | React.ReactNode;
   link: ILink;
 }
 
@@ -160,15 +160,11 @@ export interface IMarketplaceListProps {
 }
 
 export interface IMarketplaceSearchProps {
-  title: string;
+  title: string | React.ReactNode;
   placeholder: string;
   primaryList: IMarketplaceListProps;
   secondaryList?: IMarketplaceListProps;
   queryList?: IMarketplaceListProps;
-}
-
-export interface INewsletterProps {
-  onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
 }
 
 export interface INewsletterProps {
