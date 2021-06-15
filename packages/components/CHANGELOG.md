@@ -1,5 +1,46 @@
 # @theguild/components
 
+## 1.3.1
+
+### Patch Changes
+
+- 1a290f0: Flexible HeroGradient items
+
+## 1.3.0
+
+### Minor Changes
+
+- 13b1df6: extended footer component + storybook deprecation fixes
+
+### Patch Changes
+
+- 2aa293d: marketplace styling fixes
+
+## 1.2.4
+
+### Patch Changes
+
+- c256e07: Fix issues and remove json manipulation over the data
+
+## 1.2.3
+
+### Patch Changes
+
+- b68016b: flexible marketplace modal content
+- 9c5cd85: ui fixes for marketplace
+
+## 1.2.2
+
+### Patch Changes
+
+- d2257c4: make marketplace props more dynamic
+
+## 1.2.1
+
+### Patch Changes
+
+- 1a94a7a: Remove stars from marketplace
+
 ## 1.2.0
 
 ### Minor Changes

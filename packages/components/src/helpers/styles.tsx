@@ -141,7 +141,6 @@ const customStyles = css`
   }
 
   * {
-    font-family: 'Poppins', 'sans-serif';
   }
 
   body {

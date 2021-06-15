@@ -11,6 +11,9 @@ import {
   TableBody,
   TableHeader,
   TableItem,
+  TableItemButton,
+  TableItemDate,
+  TableItemImage,
   TableItemInfo,
   TablePagination,
   Wrapper,
@@ -50,20 +53,24 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
     return `${months[date.getMonth()]} ${date.getDay()}, ${date.getFullYear()}`;
   };
 
-  const formatStars = (value: number) => {
-    const stars = (value / 1000).toFixed(2);
-    return `${stars} k`;
-  };
-
   return (
     <>
       {items &&
         items.map((item) => (
           <TableItem key={item.title}>
+            <td>{item.image && <TableItemImage {...item.image} />}</td>
             <td>
               <TableItemInfo>
-                <a {...item.link}>
-                  <img src={item.image.src} alt={item.image.alt} />
+                <a
+                  {...(item.link
+                    ? item.link
+                    : {
+                        onClick: () => {
+                          setCurrentItem(item);
+                          handleModal(true);
+                        },
+                      })}
+                >
                   <span>
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
@@ -71,10 +78,11 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
                 </a>
               </TableItemInfo>
             </td>
-            <td>{formateDate(item.update)}</td>
-            <td>{formatStars(item.stars)}</td>
             <td>
-              <button
+              <TableItemDate>{formateDate(item.update)}</TableItemDate>
+            </td>
+            <td>
+              <TableItemButton
                 type="button"
                 onClick={() => {
                   handleModal(true);
@@ -82,7 +90,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
                 }}
               >
                 <img src={icon} alt=">" />
-              </button>
+              </TableItemButton>
             </td>
           </TableItem>
         ))}
@@ -100,7 +108,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [pages, setPages] = useState([[]]);
+  const [pages, setPages] = useState<IMarketplaceItemProps[][]>([[]]);
   const [currentPage, setCurrentPage] = useState(0);
   const [currentItem, setCurrentItem] = useState<IMarketplaceItemProps>();
 
@@ -113,7 +121,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
   };
 
   useEffect(() => {
-    const itemsCopy = JSON.parse(JSON.stringify(items));
+    const itemsCopy = [...items];
     const pagesData = [];
 
     while (itemsCopy.length) {
@@ -134,9 +142,9 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
             <Table>
               <TableHeader>
                 <tr>
+                  <th></th>
                   <th>Name</th>
                   <th>Last Update</th>
-                  <th>Star</th>
                   <th></th>
                 </tr>
               </TableHeader>
@@ -167,11 +175,15 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
               <Modal
                 {...currentItem.modal.header}
                 title={currentItem.title}
-                placement="bottom"
+                placement="bottom-wide"
                 visible={modalOpen}
                 onCancel={() => handleModal(false)}
               >
-                {currentItem.modal.content}
+                {typeof currentItem.modal.content === 'string'
+                  ? currentItem.modal.content
+                  : typeof currentItem.modal.content === 'function'
+                  ? currentItem.modal.content()
+                  : currentItem.modal.content || null}
               </Modal>
             )}
           </>

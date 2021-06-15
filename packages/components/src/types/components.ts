@@ -1,8 +1,6 @@
 import React from 'react';
-interface IImage {
-  alt: string;
-  src: string;
-}
+
+type IImage = React.ImgHTMLAttributes<unknown>;
 
 interface IVideo {
   src: string;
@@ -65,7 +63,7 @@ export interface IModalProps {
   description?: string | ILink;
   image?: IImage;
   visible: boolean;
-  placement: 'top' | 'center' | 'bottom';
+  placement: 'top' | 'center' | 'bottom' | 'bottom-wide';
   onCancel: (state?: boolean) => void;
 }
 
@@ -108,10 +106,10 @@ export interface IHeroIllustrationProps {
   image: IImage;
 }
 export interface IHeroGradientProps {
-  title: string;
-  description: string;
+  title: string | React.ReactNode;
+  description: string | React.ReactNode;
   colors?: string[];
-  version?: string;
+  version?: string | React.ReactNode;
   link?: ILink;
   image?: IImage;
 }
@@ -134,18 +132,17 @@ export interface ICardsColorfulProps {
 
 export interface IMarketplaceItemProps {
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   modal: {
     header: {
-      image: IImage;
-      description: string | ILink;
+      image?: IImage;
+      description?: string | ILink;
     };
-    content: string;
+    content: string | (() => React.ReactNode) | React.ReactNode;
   };
   update: string;
-  stars: number;
-  image: IImage;
-  link: ILink;
+  image?: IImage;
+  link?: ILink;
 }
 
 export interface IMarketplaceItemsProps {
@@ -166,8 +163,12 @@ export interface IMarketplaceSearchProps {
   title: string;
   placeholder: string;
   primaryList: IMarketplaceListProps;
-  secondaryList: IMarketplaceListProps;
-  queryList: IMarketplaceListProps;
+  secondaryList?: IMarketplaceListProps;
+  queryList?: IMarketplaceListProps;
+}
+
+export interface INewsletterProps {
+  onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
 }
 
 export interface INewsletterProps {

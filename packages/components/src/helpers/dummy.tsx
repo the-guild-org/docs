@@ -4,6 +4,7 @@ import featureListImage3 from '../static/dummy/envelop/features-modern.png';
 import heroGradientImage from '../static/dummy/envelop/hero.png';
 import heroIllustrationImage from '../static/dummy/envelop/communication.png';
 import marketplaceListImage from '../static/dummy/marketplace/logo-modules.svg';
+import { IMarketplaceListProps } from '../types/components';
 
 const subheaderImage =
   'https://the-guild.dev/static/shared-logos/products/envelop.svg';
@@ -208,14 +209,15 @@ export const dummyCardsColorful = {
   ],
 };
 
-export const dummyMarketplaceList = {
+export const dummyMarketplaceList: IMarketplaceListProps = {
   title: 'Trending & Last Update',
   placeholder: 'There are no items available...',
   pagination: 4,
   items: [
     {
       title: 'GraphQL Modules 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       modal: {
         header: {
           image: {
@@ -233,7 +235,6 @@ export const dummyMarketplaceList = {
         content: 'Lipsum 1',
       },
       update: '2021-05-07T10:14:55.884Z',
-      stars: 10394,
       image: {
         src: marketplaceListImage,
         alt: 'GraphQL Modules Logo',
@@ -247,7 +248,8 @@ export const dummyMarketplaceList = {
     },
     {
       title: 'GraphQL Modules 2',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       modal: {
         header: {
           image: {
@@ -265,7 +267,6 @@ export const dummyMarketplaceList = {
         content: 'Lipsum 2',
       },
       update: '2021-05-07T10:14:55.884Z',
-      stars: 10394,
       image: {
         src: marketplaceListImage,
         alt: 'GraphQL Modules Logo',
@@ -297,7 +298,6 @@ export const dummyMarketplaceList = {
         content: 'Lipsum 3',
       },
       update: '2021-05-07T10:14:55.884Z',
-      stars: 10394,
       image: {
         src: marketplaceListImage,
         alt: 'GraphQL Modules Logo',
@@ -311,7 +311,8 @@ export const dummyMarketplaceList = {
     },
     {
       title: 'GraphQL Modules 4',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       modal: {
         header: {
           image: {
@@ -329,7 +330,6 @@ export const dummyMarketplaceList = {
         content: 'Lipsum 4',
       },
       update: '2021-05-07T10:14:55.884Z',
-      stars: 10394,
       image: {
         src: marketplaceListImage,
         alt: 'GraphQL Modules Logo',
@@ -343,7 +343,8 @@ export const dummyMarketplaceList = {
     },
     {
       title: 'GraphQL Modules 5',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       modal: {
         header: {
           image: {
@@ -361,7 +362,6 @@ export const dummyMarketplaceList = {
         content: 'Lipsum 5',
       },
       update: '2021-05-07T10:14:55.884Z',
-      stars: 10394,
       image: {
         src: marketplaceListImage,
         alt: 'GraphQL Modules Logo',
@@ -393,7 +393,6 @@ export const dummyMarketplaceList = {
         content: 'Lipsum 6',
       },
       update: '2021-05-07T10:14:55.884Z',
-      stars: 10394,
       image: {
         src: marketplaceListImage,
         alt: 'GraphQL Modules Logo',
@@ -425,7 +424,6 @@ export const dummyMarketplaceList = {
         content: 'Lipsum 7',
       },
       update: '2021-05-07T10:14:55.884Z',
-      stars: 10394,
       image: {
         src: marketplaceListImage,
         alt: 'GraphQL Modules Logo',
@@ -457,7 +455,6 @@ export const dummyMarketplaceList = {
         content: 'Lipsum 8',
       },
       update: '2021-05-07T10:14:55.884Z',
-      stars: 10394,
       image: {
         src: marketplaceListImage,
         alt: 'GraphQL Modules Logo',
@@ -489,7 +486,6 @@ export const dummyMarketplaceList = {
         content: 'Lipsum 9',
       },
       update: '2021-05-07T10:14:55.884Z',
-      stars: 10394,
       image: {
         src: marketplaceListImage,
         alt: 'GraphQL Modules Logo',
@@ -521,7 +517,6 @@ export const dummyMarketplaceList = {
         content: 'Lipsum 10',
       },
       update: '2021-05-07T10:14:55.884Z',
-      stars: 10394,
       image: {
         src: marketplaceListImage,
         alt: 'GraphQL Modules Logo',
@@ -547,7 +542,7 @@ export const dummyMarketplaceSearch = {
   },
   secondaryList: {
     title: 'New Release',
-    items: [],
+    items: dummyMarketplaceList.items.slice(4, 10),
     placeholder: 'No products available...',
     pagination: 5,
   },

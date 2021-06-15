@@ -52,7 +52,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
 
   useEffect(() => {
     let results = null;
-    if (query) {
+    if (query && queryList) {
       results = queryList.items.filter((item) =>
         item.title.toLowerCase().includes(query.toLowerCase())
       );
@@ -79,7 +79,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
           />
         </Search>
 
-        {items ? (
+        {items && queryList ? (
           <Results>
             <MarketplaceList
               title={queryList.title}
@@ -91,7 +91,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
         ) : (
           <Results>
             <MarketplaceList {...primaryList} />
-            <MarketplaceList {...secondaryList} />
+            {secondaryList && <MarketplaceList {...secondaryList} />}
           </Results>
         )}
       </Container>

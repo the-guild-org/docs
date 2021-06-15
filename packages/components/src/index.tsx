@@ -9,6 +9,7 @@ export { HeroMarketplace } from './components/HeroMarketplace';
 export { HeroVideo } from './components/HeroVideo';
 export { InfoList } from './components/InfoList';
 export { MarketplaceSearch } from './components/MarketplaceSearch';
+export { MarketplaceList } from './components/MarketplaceList';
 export { Modal } from './components/Modal';
 export { Newsletter } from './components/Newsletter';
 export { SearchBar } from './components/SearchBar';

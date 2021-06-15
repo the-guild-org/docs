@@ -1,7 +1,7 @@
 module.exports = {
   stories: [
-    '../packages/components/src/components/**/*.stories.mdx',
-    '../packages/components/src/components/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/*/src/**/*.stories.mdx',
+    '../packages/*/src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-links',
@@ -16,8 +16,11 @@ module.exports = {
       },
     },
   ],
+  typescript: {
+    reactDocgen: 'none',
+  },
   babel: async (options) => {
-    const { plugins = [] } = options
+    const { plugins = [] } = options;
     return {
       ...options,
       plugins: [
@@ -26,7 +29,7 @@ module.exports = {
           require.resolve('@babel/plugin-proposal-private-property-in-object'),
           { loose: true },
         ],
-      ]
-    }
+      ],
+    };
   },
 };

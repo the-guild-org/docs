@@ -1,6 +1,12 @@
 name: CI
 
-on: [pull_request, push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -21,7 +27,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      
+
       - name: Install
         run: yarn
 
@@ -30,6 +36,6 @@ jobs:
 
       - name: Lint Check
         run: yarn lint-check
-    
+
       - name: Build Storybook
         run: yarn build-storybook
