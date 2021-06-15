@@ -8,6 +8,7 @@ import {
   DiagnosticsSource,
   EditorAction,
   HoverSource,
+  locToRange,
 } from './utils';
 import {
   GraphQLError,
@@ -89,18 +90,11 @@ function BaseSchemaEditor(
             const type = schema.getType(typeName);
 
             if (type?.astNode?.loc) {
-              const startLineNumber = type.astNode.loc.startToken.line;
-
-              editorRef?.setSelection({
-                startLineNumber,
-                startColumn: type.astNode.loc.startToken.column,
-                endLineNumber: type.astNode.loc.endToken.line + 1,
-                endColumn: type.astNode.loc.endToken.column,
-              });
-              
+              const range = locToRange(type.astNode.loc);
+              editorRef?.setSelection(range);
               editorRef?.revealPositionInCenter(
-                { column: 0, lineNumber: startLineNumber },
-                0,
+                { column: 0, lineNumber: range.startLineNumber },
+                0
               );
             }
           }
@@ -115,12 +109,12 @@ function BaseSchemaEditor(
               const field = type.getFields()[fieldName];
 
               if (field?.astNode?.loc) {
-                editorRef?.setSelection({
-                  startLineNumber: field.astNode.loc.startToken.line,
-                  startColumn: field.astNode.loc.startToken.column,
-                  endLineNumber: field.astNode.loc.endToken.line + 1,
-                  endColumn: field.astNode.loc.endToken.column,
-                });
+                const range = locToRange(field.astNode.loc);
+                editorRef?.setSelection(range);
+                editorRef?.revealPositionInCenter(
+                  { column: 0, lineNumber: range.startLineNumber },
+                  0
+                );
               }
             }
           }

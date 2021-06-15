@@ -1,4 +1,4 @@
-import { GraphQLSchema } from 'graphql';
+import { GraphQLSchema, Location } from 'graphql';
 import {
   Position,
   IRange as GraphQLRange,
@@ -16,6 +16,15 @@ export { getRange };
 
 export function removeFalsey<T>(obj: T | null): obj is T {
   return !!obj;
+}
+
+export function locToRange(loc: Location): monaco.IRange {
+  return {
+    startLineNumber: loc.startToken.line,
+    startColumn: loc.startToken.column,
+    endLineNumber: loc.endToken.line + 1, // Because GraphQL starts with 0, and Monaco starts with 1
+    endColumn: loc.endToken.column,
+  };
 }
 
 export type BridgeOptions = {
