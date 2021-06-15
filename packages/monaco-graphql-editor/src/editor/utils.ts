@@ -27,6 +27,13 @@ export function locToRange(loc: Location): monaco.IRange {
   };
 }
 
+export const emptyLocation: monaco.IRange = {
+  startLineNumber: 0,
+  startColumn: 0,
+  endLineNumber: 0,
+  endColumn: 0,
+};
+
 export type BridgeOptions = {
   schema: GraphQLSchema;
   document: string;

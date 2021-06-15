@@ -7,6 +7,7 @@ import {
   DefinitionSource,
   DiagnosticsSource,
   EditorAction,
+  emptyLocation,
   HoverSource,
   locToRange,
 } from './utils';
@@ -20,6 +21,7 @@ import {
 export type EditorApi = {
   jumpToType(typeName: string): void;
   jumpToField(typeName: string, fieldName: string): void;
+  deselect(): void;
 };
 
 export type SchemaEditorProps = {
@@ -120,6 +122,7 @@ function BaseSchemaEditor(
           }
         });
       },
+      deselect: () => editorRef?.setSelection(emptyLocation),
     }),
     [editorRef, languageService]
   );
