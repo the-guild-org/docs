@@ -1,5 +1,11 @@
 # @theguild/editor
 
+## 0.3.1
+
+### Patch Changes
+
+- a73bc58: Fixes for jumpToType/jumpToField
+
 ## 0.3.0
 
 ### Minor Changes
