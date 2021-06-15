@@ -11,11 +11,12 @@
     "lint-check": "eslint \"packages/*/src/**/*.{ts,tsx}\"",
     "type-check": "tsc",
     "type-check:watch": "npm run type-check -- --watch",
-    "prepare": "npx husky install",
     "prerelease": "yarn build",
     "release": "changeset publish",
     "release:canary": "(node scripts/canary-release.js && yarn build && yarn changeset publish --tag alpha) || echo Skipping Canary...",
-    "zip": "yarn build && yarn --cwd packages/components pack"
+    "zip": "yarn build && yarn --cwd packages/components pack",
+    "prepare": "npx husky install",
+    "postinstall": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks"
   },
   "devDependencies": {
     "@babel/core": "7.14.6",
