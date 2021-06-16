@@ -15,16 +15,17 @@ export const HeroIllustration: React.FC<IHeroIllustrationProps> = ({
   link,
   image,
   flipped,
+  ...restProps
 }) => (
-  <Wrapper>
-    <Container flipped={flipped}>
+  <Wrapper {...restProps.wrapperProps}>
+    <Container flipped={flipped} {...restProps.containerProps}>
       <Illustration flipped={flipped}>
-        <img src={image.src} alt={image.alt} />
+        <img src={image.src} alt={image.alt} {...restProps.imageProps}/>
       </Illustration>
       <Info>
-        <h2>{title}</h2>
-        <p>{description}</p>
-        {link && <a {...link} />}
+        <h2 {...restProps.titleProps}>{title}</h2>
+        <p {...restProps.descriptionProps}>{description}</p>
+        {link && <a {...link} {...restProps.linkProps}/>}
       </Info>
     </Container>
   </Wrapper>

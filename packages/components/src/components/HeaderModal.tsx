@@ -17,6 +17,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
   title,
   modalOpen,
   onCancelModal,
+  ...restProps
 }) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
   const logoIcons = logoThemedIcons(isDarkTheme || false);
@@ -134,10 +135,11 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
       placement="bottom"
       visible={modalOpen}
       onCancel={() => onCancelModal()}
+      {...restProps.modalProps}
     >
       {productCategories.map((category, index) => (
         <ProductCategory key={index}>
-          <h3>{category.title}</h3>
+          <h3 {...restProps.categoryTitleProps}>{category.title}</h3>
           <ProductList>
             {category.items.map((product) => (
               <ProductThumbnail
@@ -145,17 +147,23 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
                 href={product.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                {...restProps.linkProps}
               >
                 <ProductImage>
-                  <img src={product.image} alt={`${product.title} logo`} />
+                  <img 
+                    src={product.image} 
+                    alt={`${product.title} logo`} 
+                    {...restProps.imageProps}
+                  />
                   <img
                     src={product.image}
                     alt={`${product.title} blurred logo`}
+                    {...restProps.imageProps}
                   />
                 </ProductImage>
                 <span>
-                  <h4>{product.title}</h4>
-                  <p>{product.description}</p>
+                  <h4 {...restProps.titleProps}>{product.title}</h4>
+                  <p {...restProps.descriptionProps}>{product.description}</p>
                 </span>
               </ProductThumbnail>
             ))}

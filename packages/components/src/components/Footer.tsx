@@ -44,7 +44,7 @@ const links = [
   },
 ];
 
-export const Footer: React.FC<IFooterProps> = ({ sameSite }) => {
+export const Footer: React.FC<IFooterProps> = ({ sameSite, ...restProps }) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
   const logos = logoThemedIcons(isDarkTheme || false);
 
@@ -59,17 +59,17 @@ export const Footer: React.FC<IFooterProps> = ({ sameSite }) => {
       };
 
   return (
-    <Wrapper>
-      <Container>
-        <Line />
-        <Copyright>Belong anywhere. © The Guild, Inc.</Copyright>
-        <Logo {...logoOptions}>
+    <Wrapper {...restProps.wrapperProps}>
+      <Container {...restProps.containerProps}>
+        <Line {...restProps.lineProps}/>
+        <Copyright {...restProps.copyrightProps}>Belong anywhere. © The Guild, Inc.</Copyright>
+        <Logo {...logoOptions} {...restProps.logoProps}>
           <img src={logos.logoMono} alt="The Guild" />
         </Logo>
         <Links>
           {links.map((link) => (
             <li key={link.href}>
-              <a {...link} />
+              <a {...link} {...restProps.linkProps}/>
             </li>
           ))}
         </Links>
