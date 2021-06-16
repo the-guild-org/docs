@@ -95,9 +95,9 @@ export const dummyHeroVideo = {
 };
 
 export const dummyHeroIllustration = {
-  title: <a href="https://google.com">Google</a>,
+  title: 'Direct communication with your server',
   description:
-  <a href="https://google.com">Google</a>,
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque mauris imperdiet nulla vehicula, vitae porttitor massa consequat. Proin semper bibendum aliquam.',
   link: {
     children: 'Documentation',
     title: 'Read the documentation',
