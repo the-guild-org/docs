@@ -21,6 +21,7 @@ export const Subheader: React.FC<ISubheaderProps> = ({
   activeLink,
   links,
   cta,
+  ...restProps
 }) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -41,45 +42,44 @@ export const Subheader: React.FC<ISubheaderProps> = ({
   });
 
   const renderNavigation = (
-    <Navigation isModalOpen={mobileNavOpen}>
-      <Icon iconType="close" onClick={() => handleNav(false)}>
+    <Navigation isModalOpen={mobileNavOpen} {...restProps.navigationProps}>
+      <Icon iconType="close" onClick={() => handleNav(false)} {...restProps.navCloseButtonProps}>
         <img src={icons.close} height="22" width="22" alt="Menu close icon" />
       </Icon>
       {links.map((link) => (
-        <Link key={link.href} isActiveLink={link.active} {...link} />
+        <Link key={link.href} isActiveLink={link.active} {...link} {...restProps.linkProps}/>
       ))}
     </Navigation>
   );
 
   return (
-    <>
-      <Wrapper>
-        <Container>
-          <Logo
-            href="/"
-            onClick={product.onClick}
-            title={`${product.title} - ${product.description}`}
-          >
-            <img src={product.image.src} alt={product.image.alt} />
-            <span>
-              <p>{product.title}</p>
-              <p>{product.description}</p>
-            </span>
-          </Logo>
-          {renderNavigation}
-          <Controls>
-            {cta && <CTA {...cta} />}
-            <Icon iconType="open" onClick={() => handleNav(true)}>
-              <img
-                src={icons.caretSlim}
-                height="24"
-                width="24"
-                alt="Menu open icon"
-              />
-            </Icon>
-          </Controls>
-        </Container>
-      </Wrapper>
-    </>
+    <Wrapper {...restProps.wrapperProps}>
+      <Container {...restProps.containerProps}>
+        <Logo
+          href="/"
+          onClick={product.onClick}
+          title={`${product.title} - ${product.description}`}
+          {...restProps.logoProps}
+        >
+          <img src={product.image.src} alt={product.image.alt} />
+          <span>
+            <p>{product.title}</p>
+            <p>{product.description}</p>
+          </span>
+        </Logo>
+        {renderNavigation}
+        <Controls>
+          {cta && <CTA {...cta} {...restProps.ctaProps}/>}
+          <Icon iconType="open" onClick={() => handleNav(true)} {...restProps.navOpenButtonProps}>
+            <img
+              src={icons.caretSlim}
+              height="24"
+              width="24"
+              alt="Menu open icon"
+            />
+          </Icon>
+        </Controls>
+      </Container>
+    </Wrapper>
   );
 };

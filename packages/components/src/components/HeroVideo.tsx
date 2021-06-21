@@ -11,13 +11,14 @@ export const HeroVideo: React.FC<IHeroVideoProps> = ({
   link,
   video,
   flipped,
+  ...restProps
 }) => (
-  <Wrapper>
-    <Container flipped={flipped}>
+  <Wrapper {...restProps.wrapperProps}>
+    <Container flipped={flipped} {...restProps.containerProps}>
       <Info>
-        <h2>{title}</h2>
-        <p>{description}</p>
-        {link && <a {...link} />}
+        <h2 {...restProps.titleProps}>{title}</h2>
+        <p {...restProps.descriptionProps}>{description}</p>
+        {link && <a {...link} {...restProps.linkProps}/>}
       </Info>
       <Video flipped={flipped}>
         <ReactPlayer
@@ -33,6 +34,7 @@ export const HeroVideo: React.FC<IHeroVideoProps> = ({
               },
             },
           }}
+          {...restProps.videoProps}
         />
       </Video>
     </Container>

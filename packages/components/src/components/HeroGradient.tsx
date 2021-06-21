@@ -19,10 +19,11 @@ export const HeroGradient: React.FC<IHeroGradientProps> = ({
   version,
   colors,
   image,
+  ...restProps
 }) => (
-  <Wrapper>
-    <Container>
-      <Gradient colors={colors}>
+  <Wrapper {...restProps.wrapperProps}>
+    <Container {...restProps.containerProps}>
+      <Gradient colors={colors} {...restProps.gradientProps}>
         <span></span>
         <span></span>
         <span></span>
@@ -30,14 +31,14 @@ export const HeroGradient: React.FC<IHeroGradientProps> = ({
       </Gradient>
       <Content hasImage={!!image}>
         <Info>
-          <h1>{title}</h1>
-          <p>{description}</p>
+          <h1 {...restProps.titleProps}>{title}</h1>
+          <p {...restProps.descriptionProps}>{description}</p>
         </Info>
         <CTA>
-          {link && <a {...link} />}
-          {version && <span>{version}</span>}
+          {link && <a {...link} {...restProps.linkProps}/>}
+          {version && <span {...restProps.versionProps}>{version}</span>}
         </CTA>
-        {image && <Image src={image.src} alt={image.alt} />}
+        {image && <Image src={image.src} alt={image.alt} {...restProps.imageProps}/>}
       </Content>
     </Container>
   </Wrapper>

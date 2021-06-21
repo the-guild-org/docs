@@ -24,9 +24,10 @@ export const HeroMarketplace: React.FC<IHeroMarketplaceProps> = ({
   title,
   description,
   link,
+  ...restProps
 }) => (
-  <Wrapper>
-    <Container>
+  <Wrapper {...restProps.wrapperProps}>
+    <Container {...restProps.containerProps}>
       <Gradient colors={['#FF34AE', '#1CC8EE']}>
         <span></span>
         <span></span>
@@ -39,14 +40,14 @@ export const HeroMarketplace: React.FC<IHeroMarketplaceProps> = ({
         <img src={CubeBL} alt="Cube" />
       </Cubes>
       <Content>
-        <Image>
+        <Image {...restProps.imageProps}>
           <source media="(min-width:768px)" srcSet={IllustrationDesktop} />
           <img src={IllustrationMobile} alt="Products List" />
         </Image>
         <Info>
-          <h2>{title}</h2>
-          <p>{description}</p>
-          <CTA>{link && <a {...link} />}</CTA>
+          <h2 {...restProps.titleProps}>{title}</h2>
+          <p {...restProps.descriptionProps}>{description}</p>
+          {link && <CTA><a {...link} {...restProps.linkProps}/></CTA>}
         </Info>
       </Content>
     </Container>

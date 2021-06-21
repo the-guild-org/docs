@@ -4,16 +4,16 @@ import { Container, Title, Item, Items, Wrapper } from './InfoList.styles';
 
 import { IInfoListProps } from '../types/components';
 
-export const InfoList: React.FC<IInfoListProps> = ({ title, items }) => (
-  <Wrapper>
-    <Container>
-      {title && <Title>{title}</Title>}
+export const InfoList: React.FC<IInfoListProps> = ({ title, items, ...restProps }) => (
+  <Wrapper {...restProps.wrapperProps}>
+    <Container {...restProps.containerProps}>
+      {title && <Title {...restProps.titleProps}>{title}</Title>}
       <Items>
-        {items.map((item) => (
-          <Item key={item.title}>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            {item.link && <a {...item.link} />}
+        {items.map((item, index) => (
+          <Item key={`info-${index}`}>
+            <h3 {...restProps.itemTitleProps}>{item.title}</h3>
+            <p {...restProps.itemDescriptionProps}>{item.description}</p>
+            {item.link && <a {...item.link} {...restProps.itemLinkProps}/>}
           </Item>
         ))}
       </Items>

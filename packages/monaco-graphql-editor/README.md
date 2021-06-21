@@ -1,4 +1,4 @@
-## `@theguild/editor` 
+## `@theguild/editor`
 
 A monaco editor with built-in support for GraphQL Language Service, with features like online parser, syntax highligh, schema-building validations, hover and much more. The integration between Monaco editor and the GraphQL language service is exposed through a simple props/events based interface, with the awareness of the GraphQL schema.
 
@@ -17,11 +17,11 @@ Import and use it as a component:
 ```tsx
 import { SchemaEditor } from '@theguild/editor';
 
-const initialSchema = `type Query { foo: String }`
+const initialSchema = `type Query { foo: String }`;
 
 const MyEditor: React.FC = () => {
-  return <SchemaEditor schema={initialSchema} />
-}
+  return <SchemaEditor schema={initialSchema} />;
+};
 ```
 
 ### Debugging
@@ -32,18 +32,18 @@ If you wish to get all information about specific tokens in your GraphQL editor,
 import { SchemaEditor, debugHoverSource } from '@theguild/editor';
 
 const MyEditor: React.FC = () => {
-  return <SchemaEditor hoverProviders={[debugHoverSource]} />
-}
+  return <SchemaEditor hoverProviders={[debugHoverSource]} />;
+};
 ```
 
 ### Editor Events
 
 You can listen to the following events, on top of the Monaco editor:
 
-* `onBlur?: (value: string) => void` - triggered when the editor is being blurred.
-* `onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;` - triggered when the language service is ready.
-* `onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;` - triggered when a valid schema is present in the editor.
-* `onSchemaError?: (errors: GraphQLError[], sdl: string, languageService: EnrichedLanguageService) => void;` - triggered when an invalid schema is present in the editor.
+- `onBlur?: (value: string) => void` - triggered when the editor is being blurred.
+- `onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;` - triggered when the language service is ready.
+- `onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;` - triggered when a valid schema is present in the editor.
+- `onSchemaError?: (errors: GraphQLError[], sdl: string, languageService: EnrichedLanguageService) => void;` - triggered when an invalid schema is present in the editor.
 
 ### Extending the editor
 
@@ -61,8 +61,8 @@ export const myHoverProvider: HoverSource = {
 };
 
 const MyEditor: React.FC = () => {
-  return <SchemaEditor hoverProviders={[myHoverProvider]} />
-}
+  return <SchemaEditor hoverProviders={[myHoverProvider]} />;
+};
 ```
 
 #### Custom Definition
@@ -98,8 +98,8 @@ export const myDefinitionSource: DefinitionSource = {
 };
 
 const MyEditor: React.FC = () => {
-  return <SchemaEditor definitionProviders={[myDefinitionSource]} />
-}
+  return <SchemaEditor definitionProviders={[myDefinitionSource]} />;
+};
 ```
 
 #### Custom Diagnostics
@@ -107,26 +107,31 @@ const MyEditor: React.FC = () => {
 To mark custom errors on GraphQL based nodes, you can implement a custom diagnostics provider.
 
 ```tsx
-import { SchemaEditor, DiagnosticsSource, toMarkerData, getRange } from '@theguild/editor';
+import {
+  SchemaEditor,
+  DiagnosticsSource,
+  toMarkerData,
+  getRange,
+} from '@theguild/editor';
 
 export const myDiagnosticsSoruce: DiagnosticsSource = {
- async forDocument({ model, document, languageService }) {
-   // Here you can validate and check whatever you need regarding the document.
-   // You can either return an empty array for valid doc, or an array with positions.
-   return [
-     toMarkerData({
+  async forDocument({ model, document, languageService }) {
+    // Here you can validate and check whatever you need regarding the document.
+    // You can either return an empty array for valid doc, or an array with positions.
+    return [
+      toMarkerData({
         severity: DIAGNOSTIC_SEVERITY.Error,
         message: e.message,
         source: 'GraphQL: Syntax',
         range: getRange(e.locations![0], document),
-      })
+      }),
     ];
- }
+  },
 };
 
 const MyEditor: React.FC = () => {
-  return <SchemaEditor diagnosticsProviders={[myDiagnosticsSoruce]} />
-}
+  return <SchemaEditor diagnosticsProviders={[myDiagnosticsSoruce]} />;
+};
 ```
 
 #### Custom Editor Actions
@@ -137,23 +142,28 @@ You can add custom editor actions (context menu and keyboard shortbuts) through 
 import { SchemaEditor, showWidgetInPosition } from '@theguild/editor';
 
 const MyEditor: React.FC = () => {
-  return <SchemaEditor actions={[{
-      id: 'my.custom.action',
-      label: 'My Custom Action',
-      onRun: ({ editor, bridge }) => {
-        // You can use the bridge here to know exactly what was clicked in terms of GQL identifiers
-        if (
-          ['NamedType', 'ObjectTypeDef'].includes(
-            bridge.token.state.kind as string
-          )
-        ) {
-          const domNode = document.createElement('div');
-          domNode.innerHTML = `You Selected: <strong>${bridge.token.state.kind} / ${bridge.token.state.name}</strong><br />You can show here any html that you wish!`;
-          domNode.style.background = 'orange';
-          showWidgetInPosition(editor, bridge.position, domNode);
-        }
-      },
-    }]} />
-}
+  return (
+    <SchemaEditor
+      actions={[
+        {
+          id: 'my.custom.action',
+          label: 'My Custom Action',
+          onRun: ({ editor, bridge }) => {
+            // You can use the bridge here to know exactly what was clicked in terms of GQL identifiers
+            if (
+              ['NamedType', 'ObjectTypeDef'].includes(
+                bridge.token.state.kind as string
+              )
+            ) {
+              const domNode = document.createElement('div');
+              domNode.innerHTML = `You Selected: <strong>${bridge.token.state.kind} / ${bridge.token.state.name}</strong><br />You can show here any html that you wish!`;
+              domNode.style.background = 'orange';
+              showWidgetInPosition(editor, bridge.position, domNode);
+            }
+          },
+        },
+      ]}
+    />
+  );
+};
 ```
-

@@ -33,6 +33,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
   items,
   handleModal,
   setCurrentItem,
+  ...restProps
 }) => {
   const formateDate = (value: string) => {
     const months = [
@@ -58,7 +59,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
       {items &&
         items.map((item) => (
           <TableItem key={item.title}>
-            <td>{item.image && <TableItemImage {...item.image} />}</td>
+            <td>{item.image && <TableItemImage {...item.image} {...restProps.imageProps}/>}</td>
             <td>
               <TableItemInfo>
                 <a
@@ -70,16 +71,17 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
                           handleModal(true);
                         },
                       })}
+                  {...restProps.linkProps}
                 >
                   <span>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <h3 {...restProps.titleProps}>{item.title}</h3>
+                    <p {...restProps.descriptionProps}>{item.description}</p>
                   </span>
                 </a>
               </TableItemInfo>
             </td>
             <td>
-              <TableItemDate>{formateDate(item.update)}</TableItemDate>
+              <TableItemDate {...restProps.dateProps}>{formateDate(item.update)}</TableItemDate>
             </td>
             <td>
               <TableItemButton
@@ -103,6 +105,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
   placeholder,
   items,
   pagination,
+  ...restProps
 }) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
@@ -132,11 +135,11 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
   }, [items]);
 
   return (
-    <Wrapper>
-      <Container>
-        {title && <Title>{title}</Title>}
+    <Wrapper {...restProps.wrapperProps}>
+      <Container {...restProps.containerProps}>
+        {title && <Title {...restProps.titleProps}>{title}</Title>}
         {!pages[currentPage] || !pages[currentPage].length ? (
-          <Placeholder>{placeholder}</Placeholder>
+          <Placeholder {...restProps.placeholderProps}>{placeholder}</Placeholder>
         ) : (
           <>
             <Table>
@@ -154,6 +157,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
                   icon={marketplaceAssets.caret}
                   setCurrentItem={setCurrentItem}
                   handleModal={handleModal}
+                  {...restProps.itemProps}
                 />
               </TableBody>
             </Table>

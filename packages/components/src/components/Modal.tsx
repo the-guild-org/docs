@@ -25,6 +25,7 @@ export const Modal: React.FC<IModalProps> = ({
   visible,
   placement,
   onCancel,
+  ...restProps
 }) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
   const escapePress = useKeyPress('Escape');
@@ -37,13 +38,13 @@ export const Modal: React.FC<IModalProps> = ({
 
     if (typeof description === 'object') {
       return (
-        <a {...description}>
+        <a {...description} {...restProps.headerLinkProps}>
           <p>{description.children}</p>
           <img src={icons.externalLink} height="15" width="15" alt="External" />
         </a>
       );
     } else {
-      return <p>{description}</p>;
+      return <p {...restProps.headerDescriptionProps}>{description}</p>;
     }
   };
 
@@ -54,8 +55,8 @@ export const Modal: React.FC<IModalProps> = ({
   }, [visible, escapePress]);
 
   return (
-    <Container isModalOpen={visible}>
-      <Overlay isModalOpen={visible} onClick={() => onCancel()} tabIndex={-1} />
+    <Container isModalOpen={visible} {...restProps.containerProps}>
+      <Overlay isModalOpen={visible} onClick={() => onCancel()} tabIndex={-1} {...restProps.overlayProps}/>
       <FocusTrap
         active={visible}
         focusTrapOptions={{
@@ -68,11 +69,12 @@ export const Modal: React.FC<IModalProps> = ({
           tabIndex={-1}
           isModalOpen={visible}
           placement={placement}
+          {...restProps.wrapperProps}
         >
           <Header>
-            {image && <HeaderImage {...image} />}
+            {image && <HeaderImage {...image} {...restProps.headerImageProps}/>}
             <HeaderInfo>
-              <h2>{title}</h2>
+              <h2 {...restProps.headerTitleProps}>{title}</h2>
               {renderDescription()}
             </HeaderInfo>
             <CloseButton onClick={() => onCancel()}>
@@ -84,7 +86,7 @@ export const Modal: React.FC<IModalProps> = ({
               />
             </CloseButton>
           </Header>
-          <Body>{children}</Body>
+          <Body {...restProps.bodyProps}>{children}</Body>
         </Wrapper>
       </FocusTrap>
     </Container>

@@ -4,16 +4,16 @@ import { Container, Title, Item, Items, Wrapper } from './FeatureList.styles';
 
 import { IFeatureListProps } from '../types/components';
 
-export const FeatureList: React.FC<IFeatureListProps> = ({ title, items }) => (
-  <Wrapper>
-    <Container>
-      {title && <Title>{title}</Title>}
+export const FeatureList: React.FC<IFeatureListProps> = ({ title, items, ...restProps }) => (
+  <Wrapper {...restProps.wrapperProps}>
+    <Container {...restProps.containerProps}>
+      {title && <Title {...restProps.titleProps}>{title}</Title>}
       <Items>
-        {items.map((item) => (
-          <Item key={item.title}>
-            <img src={item.image.src} alt={item.image.alt} />
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
+        {items.map((item, index) => (
+          <Item key={`feature-${index}`}>
+            <img src={item.image.src} alt={item.image.alt}  {...restProps.itemImageProps}/>
+            <h3  {...restProps.itemTitleProps}>{item.title}</h3>
+            <p  {...restProps.itemDescriptionProps}>{item.description}</p>
           </Item>
         ))}
       </Items>

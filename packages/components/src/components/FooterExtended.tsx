@@ -188,6 +188,7 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
   sameSite,
   resources,
   onNewsletterSubmit,
+  ...restProps
 }) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
   const logos = logoThemedIcons(isDarkTheme || false);
@@ -206,47 +207,47 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
     <Links>
       {list.map((link, index) => (
         <li key={link.href + index}>
-          <a {...link} />
+          <a {...link} {...restProps.linkProps}/>
         </li>
       ))}
     </Links>
   );
 
   return (
-    <Wrapper>
-      <Container>
-        <Line />
+    <Wrapper {...restProps.wrapperProps}>
+      <Container {...restProps.containerProps}>
+        <Line {...restProps.lineProps}/>
         <Row>
           <Column>
-            <Logo {...logoOptions}>
+            <Logo {...logoOptions} {...restProps.logoProps}>
               <img src={logos.logoFull} alt="The Guild" />
             </Logo>
-            <Copyright>Belong anywhere. © The Guild, Inc.</Copyright>
+            <Copyright {...restProps.copyrightProps}>Belong anywhere. © The Guild, Inc.</Copyright>
           </Column>
           <Column>
-            <Title>PRODUCTS</Title>
+            <Title {...restProps.titleProps}>PRODUCTS</Title>
             <Links>{renderLinks(products)}</Links>
           </Column>
           <Column>
             {resources && (
               <>
-                <Title>RESOURCES</Title>
+                <Title {...restProps.titleProps}>RESOURCES</Title>
                 <Links>{renderLinks(resources)}</Links>
               </>
             )}
-            <Title>COMPANY</Title>
+            <Title {...restProps.titleProps}>COMPANY</Title>
             <Links>{renderLinks(company)}</Links>
           </Column>
           <Column>
-            <Title>COMMUNITY</Title>
+            <Title {...restProps.titleProps}>COMMUNITY</Title>
             <Links>{renderLinks(community)}</Links>
             {onNewsletterSubmit && (
               <>
-                <Title>NEWSLETTER</Title>
-                <Description>
+                <Title {...restProps.titleProps}>NEWSLETTER</Title>
+                <Description {...restProps.descriptionProps}>
                   Stay up to date with the latest features and changes
                 </Description>
-                <Newsletter onNewsletterSubmit={onNewsletterSubmit} />
+                <Newsletter onNewsletterSubmit={onNewsletterSubmit} {...restProps.newsletterProps} />
               </>
             )}
           </Column>

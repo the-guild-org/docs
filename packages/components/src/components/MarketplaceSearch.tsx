@@ -23,6 +23,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   primaryList,
   secondaryList,
   queryList,
+  ...restProps
 }) => {
   const { isDarkTheme } = React.useContext(ThemeContext);
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
@@ -62,9 +63,9 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   }, [query]);
 
   return (
-    <Wrapper>
-      <Container>
-        <Title>{title}</Title>
+    <Wrapper {...restProps.wrapperProps}>
+      <Container {...restProps.containerProps}>
+        <Title {...restProps.titleProps}>{title}</Title>
         <Search>
           <img
             src={marketplaceAssets.search}
@@ -76,6 +77,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
             type="search"
             placeholder={placeholder}
             onChange={handleChange}
+            {...restProps.searchProps}
           />
         </Search>
 
@@ -86,12 +88,13 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
               items={items}
               placeholder={renderQueryPlaceholder(queryList.placeholder, query)}
               pagination={queryList.pagination}
+              {...restProps.queryListProps}
             />
           </Results>
         ) : (
           <Results>
-            <MarketplaceList {...primaryList} />
-            {secondaryList && <MarketplaceList {...secondaryList} />}
+            <MarketplaceList {...primaryList} {...restProps.primaryListProps}/>
+            {secondaryList && <MarketplaceList {...secondaryList} {...restProps.secondaryListProps}/>}
           </Results>
         )}
       </Container>
