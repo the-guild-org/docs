@@ -1,0 +1,5 @@
+---
+'@theguild/editor': minor
+---
+
+DiffEditor

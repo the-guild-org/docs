@@ -27,6 +27,13 @@ export function locToRange(loc: Location): monaco.IRange {
   };
 }
 
+export const emptyLocation: monaco.IRange = {
+  startLineNumber: 0,
+  startColumn: 0,
+  endLineNumber: 0,
+  endColumn: 0,
+};
+
 export type BridgeOptions = {
   schema: GraphQLSchema;
   document: string;
@@ -78,7 +85,9 @@ export const coreDiagnosticsSource: DiagnosticsSource = {
 export type DecorationsSource = {
   forDocument(
     options: Pick<BridgeOptions, 'document' | 'languageService' | 'model'> & {
-      editor: monaco.editor.IStandaloneCodeEditor;
+      editor:
+        | monaco.editor.IStandaloneCodeEditor
+        | monaco.editor.IStandaloneDiffEditor;
       monaco: typeof monaco;
     }
   ): void | Promise<void>;
@@ -171,7 +180,9 @@ export type EditorAction = {
   contextMenuGroupId?: string;
   contextMenuOrder?: number;
   onRun: (options: {
-    editor: monaco.editor.IStandaloneCodeEditor;
+    editor:
+      | monaco.editor.IStandaloneCodeEditor
+      | monaco.editor.IStandaloneDiffEditor;
     monaco: typeof monaco;
     bridge: BridgeOptions;
   }) => void;
