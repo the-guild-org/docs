@@ -1,11 +1,34 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { EditorApi, SchemaEditor, SchemaEditorProps } from './SchemaEditor';
+import { SchemaEditor, SchemaEditorProps } from './SchemaEditor';
+import { SchemaDiffEditor, SchemaDiffEditorProps } from './SchemaDiffEditor';
 import { debugHoverSource, showWidgetInPosition } from './utils';
+import { SchemaEditorApi } from './use-schema-services';
+
+const TEST_SCHEMA = `type Query {
+  ping: Boolean
+  me: User!
+}
+
+" represents a valid email "
+scalar Email
+
+""" Represents a simple user """
+type User {
+  id: ID!
+  email: Email!
+  profile: Profile!
+}
+
+type Profile {
+  name: String
+  age: Int
+}
+`;
 
 export default {
-  title: 'SchemaViewer',
+  title: 'MonacoEditor',
   component: SchemaEditor,
   argTypes: {},
   parameters: {
@@ -15,8 +38,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SchemaEditorProps> = (args) => {
-  const ref = React.useRef<EditorApi>(null);
+const SchemaTemplate: Story<SchemaEditorProps> = (args) => {
+  const ref = React.useRef<SchemaEditorApi>(null);
 
   return (
     <div>
@@ -64,30 +87,24 @@ const Template: Story<SchemaEditorProps> = (args) => {
   );
 };
 
-export const Default = Template.bind({});
+const SchemaDiffTemplate: Story<SchemaDiffEditorProps> = (args) => {
+  return (
+    <SchemaDiffEditor {...args} />
+  );
+};
 
-Default.args = {
+
+export const BasicSchemaEditor = SchemaTemplate.bind({});
+export const BasicSchemaDiffEditor = SchemaDiffTemplate.bind({});
+
+BasicSchemaDiffEditor.args = {
+  original: TEST_SCHEMA,
+  modified: TEST_SCHEMA + `\ntype Test { id: ID! }`
+}
+
+BasicSchemaEditor.args = {
   height: '100vh',
-  schema: `type Query {
-  ping: Boolean
-  me: User!
-}
-
-" represents a valid email "
-scalar Email
-
-""" Represents a simple user """
-type User {
-  id: ID!
-  email: Email!
-  profile: Profile!
-}
-
-type Profile {
-  name: String
-  age: Int
-}
-`,
+  schema: TEST_SCHEMA,
   hoverProviders: [debugHoverSource],
   onChange: (value, event) => {
     console.log('onChange', { value, event });
@@ -123,7 +140,7 @@ type Profile {
           const domNode = document.createElement('div');
           domNode.innerHTML = `You Selected: <strong>${bridge.token.state.kind} / ${bridge.token.state.name}</strong><br />You can show here any html that you wish!`;
           domNode.style.background = 'orange';
-          showWidgetInPosition(editor, bridge.position, domNode);
+          showWidgetInPosition(editor as any, bridge.position, domNode);
         }
       },
     },

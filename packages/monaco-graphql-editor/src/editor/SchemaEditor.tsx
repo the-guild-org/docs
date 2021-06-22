@@ -2,35 +2,10 @@ import * as React from 'react';
 import MonacoEditor, { EditorProps } from '@monaco-editor/react';
 import type * as monaco from 'monaco-editor';
 import { EnrichedLanguageService } from './EnrichedLanguageService';
-import {
-  DecorationsSource,
-  DefinitionSource,
-  DiagnosticsSource,
-  EditorAction,
-  emptyLocation,
-  HoverSource,
-  locToRange,
-} from './utils';
-import {
-  GraphQLError,
-  GraphQLSchema,
-  isInterfaceType,
-  isObjectType,
-} from 'graphql';
+import { GraphQLError, GraphQLSchema } from 'graphql';
+import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
 
-export type EditorApi = {
-  jumpToType(typeName: string): void;
-  jumpToField(typeName: string, fieldName: string): void;
-  deselect(): void;
-};
-
-export type SchemaEditorProps = {
-  schema?: string;
-  hoverProviders?: HoverSource[];
-  definitionProviders?: DefinitionSource[];
-  diagnosticsProviders?: DiagnosticsSource[];
-  decorationsProviders?: DecorationsSource[];
-  actions?: EditorAction[];
+export type SchemaEditorProps = SchemaServicesOptions & {
   onBlur?: (value: string) => void;
   onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;
   onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;
@@ -39,241 +14,84 @@ export type SchemaEditorProps = {
     sdl: string,
     languageService: EnrichedLanguageService
   ) => void;
-  sharedLanguageService?: EnrichedLanguageService;
-  keyboardShortcuts?: (
-    editorInstance: monaco.editor.IStandaloneCodeEditor,
-    monacoInstance: typeof monaco
-  ) => monaco.editor.IActionDescriptor[];
 } & Omit<EditorProps, 'language'>;
 
 function BaseSchemaEditor(
-  {
-    schema,
-    hoverProviders = [],
-    definitionProviders = [],
-    diagnosticsProviders = [],
-    decorationsProviders = [],
-    actions = [],
-    keyboardShortcuts,
-    sharedLanguageService,
-    onBlur,
-    onLanguageServiceReady,
-    onSchemaChange,
-    onSchemaError,
-    ...rest
-  }: SchemaEditorProps,
-  ref: React.ForwardedRef<EditorApi>
-) {
-  const [editorRef, setEditor] =
-    React.useState<monaco.editor.IStandaloneCodeEditor | null>(null);
-  const [monacoRef, setMonaco] = React.useState<typeof monaco | null>(null);
-
-  const languageService = React.useMemo(
-    () =>
-      sharedLanguageService ||
-      new EnrichedLanguageService({
-        schemaString: schema,
-        schemaConfig: {
-          buildSchemaOptions: {
-            assumeValid: true,
-            assumeValidSDL: true,
-          },
-        },
-      }),
-    [sharedLanguageService]
-  );
-
-  React.useImperativeHandle(
-    ref,
-    () => ({
-      jumpToType: (typeName) => {
-        languageService.getSchema().then((schema) => {
-          if (schema) {
-            const type = schema.getType(typeName);
-
-            if (type?.astNode?.loc) {
-              const range = locToRange(type.astNode.loc);
-              editorRef?.setSelection(range);
-              editorRef?.revealPositionInCenter(
-                { column: 0, lineNumber: range.startLineNumber },
-                0
-              );
-            }
-          }
-        });
-      },
-      jumpToField: (typeName, fieldName) => {
-        languageService.getSchema().then((schema) => {
-          if (schema) {
-            const type = schema.getType(typeName);
-
-            if (type && (isObjectType(type) || isInterfaceType(type))) {
-              const field = type.getFields()[fieldName];
-
-              if (field?.astNode?.loc) {
-                const range = locToRange(field.astNode.loc);
-                editorRef?.setSelection(range);
-                editorRef?.revealPositionInCenter(
-                  { column: 0, lineNumber: range.startLineNumber },
-                  0
-                );
-              }
-            }
-          }
-        });
-      },
-      deselect: () => editorRef?.setSelection(emptyLocation),
-    }),
-    [editorRef, languageService]
-  );
+  props: SchemaEditorProps,
+  ref: React.ForwardedRef<SchemaEditorApi>
+) { 
+  const { languageService, setMonaco, setEditor, editorApi, editorRef, setSchema } = useSchemaServices(props);
+  React.useImperativeHandle(ref, () => editorApi, [editorRef, languageService]);
 
   React.useEffect(() => {
-    if (languageService && onLanguageServiceReady) {
-      onLanguageServiceReady(languageService);
+    if (languageService && props.onLanguageServiceReady) {
+      props.onLanguageServiceReady(languageService);
     }
-  }, [languageService, onLanguageServiceReady]);
+  }, [languageService, props.onLanguageServiceReady]);
+
+  const [onBlurHandler, setOnBlurSubscription] = React.useState<monaco.IDisposable>();
 
   React.useEffect(() => {
-    if (languageService && onLanguageServiceReady) {
-      onLanguageServiceReady(languageService);
-    }
-  }, [languageService, onLanguageServiceReady]);
-
-  React.useEffect(() => {
-    if (monacoRef && editorRef) {
-      if (keyboardShortcuts) {
-        for (const action of keyboardShortcuts(editorRef, monacoRef)) {
-          editorRef.addAction(action);
-        }
-      }
-
-      for (const action of actions) {
-        editorRef.addAction({
-          id: action.id,
-          label: action.label,
-          keybindings: action.keybindings,
-          contextMenuGroupId: action.contextMenuGroupId || 'navigation',
-          contextMenuOrder: action.contextMenuOrder,
-          run: async (editor) => {
-            const model = editor.getModel();
-            const position = editor.getPosition();
-
-            if (model && position) {
-              const bridge = await languageService.buildBridgeForProviders(
-                model,
-                position
-              );
-
-              if (bridge) {
-                action.onRun({ editor: editorRef, monaco: monacoRef, bridge });
-              }
-            }
-          },
-        });
-      }
-
-      const handler = languageService.getModelChangeHandler();
-      handler(editorRef, monacoRef, diagnosticsProviders, decorationsProviders);
-
-      const onChangeDisposable = editorRef.onDidChangeModelContent(() =>
-        handler(
-          editorRef,
-          monacoRef,
-          diagnosticsProviders,
-          decorationsProviders
-        )
-      );
-
-      const definitionProviderDisposable =
-        monacoRef.languages.registerDefinitionProvider(
-          'graphql',
-          languageService.getDefinitionProvider(definitionProviders)
-        );
-
-      const hoverDisposable = monacoRef.languages.registerHoverProvider(
-        'graphql',
-        languageService.getHoverProvider(hoverProviders)
-      );
-
-      return () => {
-        hoverDisposable && hoverDisposable.dispose();
-        definitionProviderDisposable && definitionProviderDisposable.dispose();
-        onChangeDisposable && onChangeDisposable.dispose();
-      };
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    return () => {};
-  }, [editorRef, monacoRef]);
-
-  const [onBlurHandler, setOnBlurSubscription] =
-    React.useState<monaco.IDisposable>();
-
-  React.useEffect(() => {
-    if (editorRef && onBlur) {
+    if (editorRef && props.onBlur) {
       onBlurHandler?.dispose();
 
       const subscription = editorRef.onDidBlurEditorText(() => {
-        onBlur(editorRef.getValue() || '');
+        props.onBlur && props.onBlur(editorRef.getValue() || '');
       });
 
       setOnBlurSubscription(subscription);
     }
-  }, [onBlur, editorRef]);
+  }, [props.onBlur, editorRef]);
 
   return (
-    <>
       <MonacoEditor
         height={'70vh'}
-        {...rest}
+        {...props}
         beforeMount={(monaco) => {
-          rest.beforeMount && rest.beforeMount(monaco);
           setMonaco(monaco);
+          props.beforeMount && props.beforeMount(monaco);
         }}
         onMount={(editor, monaco) => {
-          rest.onMount && rest.onMount(editor, monaco);
           setEditor(editor);
+          props.onMount && props.onMount(editor, monaco);
         }}
         onChange={(newValue, ev) => {
-          rest.onChange && rest.onChange(newValue, ev);
+          props.onChange && props.onChange(newValue, ev);
 
           if (newValue) {
-            languageService
-              .trySchema(newValue)
-              .then((schema) => {
-                if (schema) {
-                  onSchemaChange && onSchemaChange(schema, newValue);
+            setSchema(newValue).then((schema) => {
+              if (schema) {
+                props.onSchemaChange && props.onSchemaChange(schema, newValue);
+              }
+            })
+            .catch((e: Error | GraphQLError) => {
+              if (props.onSchemaError) {
+                if (e instanceof GraphQLError) {
+                  props.onSchemaError([e], newValue, languageService);
+                } else {
+                  props.onSchemaError(
+                    [
+                      new GraphQLError(
+                        e.message,
+                        undefined,
+                        undefined,
+                        undefined,
+                        undefined,
+                        e
+                      ),
+                    ],
+                    newValue,
+                    languageService
+                  );
                 }
-              })
-              .catch((e: Error | GraphQLError) => {
-                if (onSchemaError) {
-                  if (e instanceof GraphQLError) {
-                    onSchemaError([e], newValue, languageService);
-                  } else {
-                    onSchemaError(
-                      [
-                        new GraphQLError(
-                          e.message,
-                          undefined,
-                          undefined,
-                          undefined,
-                          undefined,
-                          e
-                        ),
-                      ],
-                      newValue,
-                      languageService
-                    );
-                  }
-                }
-              });
+              }
+            });
           }
         }}
-        options={{ glyphMargin: true, ...(rest.options || {}) }}
+        options={{ glyphMargin: true, ...(props.options || {}) }}
         language="graphql"
-        defaultValue={rest.defaultValue || schema}
+        defaultValue={props.defaultValue || props.schema}
       />
-    </>
   );
 }
 
