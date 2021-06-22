@@ -20,7 +20,7 @@
     "core-js": "3.14.0",
     "monaco-editor": "0.25.1",
     "graphql": "15.5.0",
-    "@monaco-editor/react": "4.2.0"
+    "@monaco-editor/react": "4.2.1"
   },
   "publishConfig": {
     "access": "public"
