@@ -45,7 +45,7 @@
     "lint-staged": "11.0.0",
     "postcss": "8.3.4",
     "prettier": "2.3.1",
-    "pretty-quick": "3.1.0",
+    "pretty-quick": "3.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "rollup": "2.52.2",
