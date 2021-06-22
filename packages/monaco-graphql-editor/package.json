@@ -17,7 +17,7 @@
     "graphql-language-service": "3.1.4"
   },
   "devDependencies": {
-    "core-js": "3.15.0",
+    "core-js": "3.15.1",
     "monaco-editor": "0.25.2",
     "graphql": "15.5.1",
     "@monaco-editor/react": "4.2.1"
