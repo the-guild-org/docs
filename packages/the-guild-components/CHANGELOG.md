@@ -1,5 +1,17 @@
 # the-guild-components
 
+## 1.4.0
+
+### Minor Changes
+
+- 8bbbc75: extended footer component + storybook deprecation fixes;
+  tools demo page + allow ReactNode as prop + allow rest props;
+
+### Patch Changes
+
+- Updated dependencies [8bbbc75]
+  - @theguild/components@1.4.0
+
 ## 1.3.1
 
 ### Patch Changes

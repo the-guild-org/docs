@@ -1,5 +1,15 @@
 # @theguild/editor
 
+## 0.4.0
+
+### Minor Changes
+
+- cac02c7: DiffEditor
+
+### Patch Changes
+
+- cac02c7: Added deselect to ref to allow deselecting all code in the editor
+
 ## 0.3.1
 
 ### Patch Changes
