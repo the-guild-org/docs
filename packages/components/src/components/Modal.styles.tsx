@@ -9,13 +9,13 @@ export const Container = styled.div(({ isModalOpen }: IStyleProps) => [
   tw`fixed inset-0 visible`,
   css`
     z-index: 400; //TODO: Used for Docusaurus, remove when no longer needed.
-    backdrop-filter: blur(2px);
-
     button:focus:not(:focus-visible) {
       ${tw`outline-none!`}
     }
 
-    ${!isModalOpen && tw`invisible`}
+    ${isModalOpen ? `
+      backdrop-filter: blur(2px);
+    ` : tw`invisible`}
   `,
 ]);
 
