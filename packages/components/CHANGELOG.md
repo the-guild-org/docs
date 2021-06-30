@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.4.1
+
+### Patch Changes
+
+- 3fecacf: Fixes for Firefox blur & missing Poppins font
+
 ## 1.4.0
 
 ### Minor Changes
