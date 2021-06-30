@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.4.2
+
+### Patch Changes
+
+- 73987fd: Added and exported useThemeContext
+
 ## 1.4.1
 
 ### Patch Changes
