@@ -12,7 +12,7 @@ import {
 } from './Subheader.styles';
 
 import { ISubheaderProps } from '../types/components';
-import { ThemeContext } from '../helpers/theme';
+import { useThemeContext } from '../helpers/theme';
 import { headerThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
 
@@ -23,7 +23,7 @@ export const Subheader: React.FC<ISubheaderProps> = ({
   cta,
   ...restProps
 }) => {
-  const { isDarkTheme } = React.useContext(ThemeContext);
+  const { isDarkTheme } = useThemeContext();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const icons = headerThemedIcons(isDarkTheme || false);

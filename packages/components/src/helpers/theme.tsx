@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const getDarkTheme = () => {
   if (typeof window !== 'undefined' && window.localStorage) {
@@ -76,4 +76,15 @@ const ThemeProvider: React.FC<IProviderProps> = ({
   );
 };
 
-export { ThemeContext, ThemeProvider };
+const useThemeContext = (): Partial<IContextProps> => {
+  const context = useContext(ThemeContext);
+  if (context == null) {
+    throw new Error(
+      '"useThemeContext" could not be used.',
+    );
+  }
+  return context;
+}
+
+export { ThemeContext, ThemeProvider, useThemeContext };
+

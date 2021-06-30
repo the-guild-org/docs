@@ -15,7 +15,7 @@ import {
 } from './Header.styles';
 
 import { IHeaderProps } from '../types/components';
-import { ThemeContext } from '../helpers/theme';
+import { useThemeContext } from '../helpers/theme';
 import { headerThemedIcons, logoThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
 
@@ -26,7 +26,7 @@ export const Header: React.FC<IHeaderProps> = ({
   themeSwitch,
   ...restProps
 }) => {
-  const { isDarkTheme, setDarkTheme } = React.useContext(ThemeContext);
+  const { isDarkTheme, setDarkTheme } = useThemeContext();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const icons = headerThemedIcons(isDarkTheme || false);

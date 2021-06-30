@@ -14,7 +14,7 @@ import {
   Wrapper,
 } from './FooterExtended.styles';
 
-import { ThemeContext } from '../helpers/theme';
+import { useThemeContext } from '../helpers/theme';
 import { logoThemedIcons } from '../helpers/assets';
 import { IFooterExtendedProps, ILink } from '../types/components';
 
@@ -190,7 +190,7 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
   onNewsletterSubmit,
   ...restProps
 }) => {
-  const { isDarkTheme } = React.useContext(ThemeContext);
+  const { isDarkTheme } = useThemeContext();
   const logos = logoThemedIcons(isDarkTheme || false);
 
   const logoOptions = sameSite

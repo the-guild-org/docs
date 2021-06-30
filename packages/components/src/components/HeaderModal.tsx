@@ -11,7 +11,7 @@ import {
 
 import { IHeaderModalProps } from '../types/components';
 import { logoThemedIcons } from '../helpers/assets';
-import { ThemeContext } from '../helpers/theme';
+import { useThemeContext } from '../helpers/theme';
 
 export const HeaderModal: React.FC<IHeaderModalProps> = ({
   title,
@@ -19,7 +19,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
   onCancelModal,
   ...restProps
 }) => {
-  const { isDarkTheme } = React.useContext(ThemeContext);
+  const { isDarkTheme } = useThemeContext();
   const logoIcons = logoThemedIcons(isDarkTheme || false);
 
   const productCategories = [
