@@ -1,6 +1,5 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { GlobalStyles } from '../../helpers/styles';
 
 import { FooterExtended } from '../FooterExtended';
 import { Header } from '../Header';
@@ -32,7 +31,6 @@ const Template: Story = ({ page }) => {
 
   return (
     <>
-      <GlobalStyles />
       <Header accentColor="#184BE6" activeLink="/open-source" themeSwitch />
       <Subheader {...subheaderData} activeLink={page} />
       {pages[page]}

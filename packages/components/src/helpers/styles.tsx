@@ -1,8 +1,16 @@
 import React from 'react';
 import { Global, css } from '@emotion/react';
 import { GlobalStyles as BaseStyles } from 'twin.macro';
+import { IGlobalStyle } from '../types/components';
 
 const customStyles = css`
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+`;
+
+const fontStyles = css`
   /* devanagari */
   @font-face {
     font-family: 'Poppins';
@@ -140,18 +148,14 @@ const customStyles = css`
       U+2215, U+FEFF, U+FFFD;
   }
 
-  * {
-  }
-
   body {
-    margin: 0 !important;
-    padding: 0 !important;
+    font-family: 'Poppins', 'sans-serif';
   }
-`;
+`
 
-export const GlobalStyles: React.FC = () => (
+export const GlobalStyles: React.FC<IGlobalStyle> = ({includeFonts}) => (
   <>
     <BaseStyles />
-    <Global styles={customStyles} />
+    <Global styles={includeFonts ? [customStyles, fontStyles] : customStyles} />
   </>
 );

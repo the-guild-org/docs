@@ -15,7 +15,7 @@ export default function App({
 }: AppProps): ReactElement {
   return (
     <>
-      <GlobalStyles />
+      <GlobalStyles includeFonts/>
       <ThemeProvider>
         <Header accentColor="#1cc8ee" activeLink="/open-source" themeSwitch />
         <Subheader
