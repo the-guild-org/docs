@@ -9,7 +9,7 @@ import {
   Wrapper,
 } from './Footer.styles';
 
-import { ThemeContext } from '../helpers/theme';
+import { useThemeContext } from '../helpers/theme';
 import { logoThemedIcons } from '../helpers/assets';
 import { IFooterProps } from '../types/components';
 
@@ -45,7 +45,7 @@ const links = [
 ];
 
 export const Footer: React.FC<IFooterProps> = ({ sameSite, ...restProps }) => {
-  const { isDarkTheme } = React.useContext(ThemeContext);
+  const { isDarkTheme } = useThemeContext();
   const logos = logoThemedIcons(isDarkTheme || false);
 
   const logoOptions = sameSite

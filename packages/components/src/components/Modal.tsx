@@ -14,7 +14,7 @@ import {
 
 import { IModalProps } from '../types/components';
 import { modalThemedIcons } from '../helpers/assets';
-import { ThemeContext } from '../helpers/theme';
+import { useThemeContext } from '../helpers/theme';
 import { useKeyPress } from '../helpers/hooks';
 
 export const Modal: React.FC<IModalProps> = ({
@@ -27,7 +27,7 @@ export const Modal: React.FC<IModalProps> = ({
   onCancel,
   ...restProps
 }) => {
-  const { isDarkTheme } = React.useContext(ThemeContext);
+  const { isDarkTheme } = useThemeContext();
   const escapePress = useKeyPress('Escape');
   const icons = modalThemedIcons(isDarkTheme || false);
 

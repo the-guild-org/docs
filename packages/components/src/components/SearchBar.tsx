@@ -29,7 +29,7 @@ import {
 import { ISearchBarProps } from '../types/components';
 import { searchBarThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
-import { ThemeContext } from '../helpers/theme';
+import { useThemeContext } from '../helpers/theme';
 import { algoliaConfig } from '../configs';
 
 const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
@@ -64,7 +64,7 @@ const searchClient: Pick<typeof algoliaClient, 'search'> = {
 };
 
 function useIcons() {
-  const { isDarkTheme } = React.useContext(ThemeContext);
+  const { isDarkTheme } = useThemeContext();
   return searchBarThemedIcons(isDarkTheme || false);
 }
 

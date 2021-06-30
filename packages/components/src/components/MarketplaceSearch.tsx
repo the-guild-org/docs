@@ -15,7 +15,7 @@ import {
   IMarketplaceItemProps,
 } from '../types/components';
 import { marketplaceThemedAssets } from '../helpers/assets';
-import { ThemeContext } from '../helpers/theme';
+import { useThemeContext } from '../helpers/theme';
 
 export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   title,
@@ -25,7 +25,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   queryList,
   ...restProps
 }) => {
-  const { isDarkTheme } = React.useContext(ThemeContext);
+  const { isDarkTheme } = useThemeContext();
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
   const [items, setItems] = useState<Array<IMarketplaceItemProps> | null>(null);
   const [query, setQuery] = useState<string>();

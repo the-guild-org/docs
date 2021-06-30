@@ -24,7 +24,7 @@ import {
   IMarketplaceItemsProps,
   IMarketplaceItemProps,
 } from '../types/components';
-import { ThemeContext } from '../helpers/theme';
+import { useThemeContext } from '../helpers/theme';
 import { marketplaceThemedAssets } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
 
@@ -107,7 +107,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
   pagination,
   ...restProps
 }) => {
-  const { isDarkTheme } = React.useContext(ThemeContext);
+  const { isDarkTheme } = useThemeContext();
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
 
   const [modalOpen, setModalOpen] = useState(false);

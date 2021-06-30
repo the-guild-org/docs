@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import validator from 'validator';
 
 import { Form } from './Newsletter.styles';
-import { ThemeContext } from '../helpers/theme';
+import { useThemeContext } from '../helpers/theme';
 import { newsletterThemedIcons } from '../helpers/assets';
 import { INewsletterProps } from '../types/components';
 
 export const Newsletter: React.FC<INewsletterProps> = ({
   onNewsletterSubmit,
 }) => {
-  const { isDarkTheme } = React.useContext(ThemeContext);
+  const { isDarkTheme } = useThemeContext();
   const [inputValue, setInputValue] = useState<string>('');
   const [inputError, setInputError] = useState<boolean>(false);
   const icons = newsletterThemedIcons(isDarkTheme || false);

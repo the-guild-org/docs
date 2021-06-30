@@ -16,4 +16,4 @@ export { SearchBar } from './components/SearchBar';
 export { Subheader } from './components/Subheader';
 
 export { GlobalStyles } from './helpers/styles';
-export { ThemeProvider } from './helpers/theme';
+export { ThemeContext, ThemeProvider, useThemeContext } from './helpers/theme';
