@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
 import { Modal } from './Modal';
@@ -123,7 +123,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
     setModalOpen(state);
   };
 
-  useEffect(() => {
+  useMemo(() => {
     const itemsCopy = [...items];
     const pagesData = [];
 
