@@ -8,6 +8,11 @@ import {
   ThemeProvider,
 } from '@theguild/components';
 
+// Overwrite font example:
+// 1. Import the font
+// 2. Remove `includeFonts` from `<GlobalStyles />`
+// import '../public/styles.css';
+
 export default function App({
   router,
   pageProps,
@@ -15,7 +20,7 @@ export default function App({
 }: AppProps): ReactElement {
   return (
     <>
-      <GlobalStyles includeFonts/>
+      <GlobalStyles includeBase includeFonts/>
       <ThemeProvider>
         <Header accentColor="#1cc8ee" activeLink="/open-source" themeSwitch />
         <Subheader

@@ -60,6 +60,10 @@ module.exports = {
           ...containerProps,
           maxWidth: '1024px',
         },
+
+        '.font-default': {
+          fontFamily: 'TGCFont, sans-serif'
+        }
       };
 
       addUtilities(newUtilities);

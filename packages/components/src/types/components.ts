@@ -9,7 +9,8 @@ interface IVideo {
 }
 
 export interface IGlobalStyle {
-  includeFonts?: boolean
+  includeFonts?: boolean;
+  includeBase?: boolean;
 }
 
 export interface ILink {

@@ -6,7 +6,7 @@ interface IStyleProps {
 }
 
 export const Wrapper = styled.section(() => [
-  tw`overflow-hidden bg-white dark:bg-gray-900`,
+  tw`overflow-hidden bg-white dark:bg-gray-900 font-default`,
 ]);
 
 export const Container = styled.div(() => [tw`relative`]);

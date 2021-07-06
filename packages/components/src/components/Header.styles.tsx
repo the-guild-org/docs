@@ -8,8 +8,7 @@ interface IStyleProps {
 }
 
 export const Wrapper = styled.header(() => [
-  tw`py-2 md:py-5`,
-  tw`bg-white dark:bg-gray-900`,
+  tw`py-2 md:py-5 bg-white dark:bg-gray-900 font-default`,
   css`
     button:focus:not(:focus-visible) {
       ${tw`outline-none!`}

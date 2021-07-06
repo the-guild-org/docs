@@ -6,7 +6,7 @@ interface IStyleProps {
 
 export const SearchButton = styled.button(
   ({ accentColor, isFull }: IStyleProps) => [
-    tw`flex items-center p-0 font-sans font-medium text-xs text-gray-500 bg-transparent border-transparent cursor-pointer`,
+    tw`flex items-center p-0 font-default font-medium text-xs text-gray-500 bg-transparent border-transparent cursor-pointer`,
     tw`md:(ml-3 pl-1 pr-8 py-1 border-2 bg-gray-100 rounded-md)`,
     tw`md:dark:(bg-gray-800 text-gray-300)`,
     tw`transition duration-200 ease-in-out`,
@@ -34,7 +34,7 @@ export const SearchButton = styled.button(
 );
 
 export const SearchForm = styled.div(({ accentColor }: IStyleProps) => [
-  tw`sticky -top-6 z-10 -m-6 p-6 bg-white shadow-sm`,
+  tw`sticky -top-6 z-10 -m-6 p-6 bg-white shadow-sm font-default`,
   tw`dark:bg-gray-900 bg-white`,
   css`
     form {

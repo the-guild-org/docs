@@ -14,7 +14,7 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <ThemeProvider>
-      <GlobalStyles includeFonts/>
+      <GlobalStyles includeFonts includeBase/>
       <Story />
     </ThemeProvider>
   ),

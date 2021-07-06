@@ -1,7 +1,7 @@
 import tw, { css, styled } from 'twin.macro';
 
 export const Wrapper = styled.section(() => [
-  tw`w-full bg-white dark:bg-gray-900`,
+  tw`w-full bg-white dark:bg-gray-900 font-default`,
 ]);
 
 export const Container = styled.div(() => [tw`container-max py-6`]);
@@ -89,7 +89,7 @@ export const TableItemInfo = styled.div(() => [
     min-height: 5rem;
 
     a {
-      ${tw`flex items-center hocus:opacity-75 transition duration-150 ease-in-out`}
+      ${tw`flex items-center text-gray-500 dark:text-gray-400 hocus:opacity-75 transition duration-150 ease-in-out no-underline`}
     }
 
     h3 {
