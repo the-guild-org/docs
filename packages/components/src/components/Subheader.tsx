@@ -33,11 +33,11 @@ export const Subheader: React.FC<ISubheaderProps> = ({
     setMobileNavOpen(state);
   };
 
-  links.map((link) => {
+  links.forEach((link) => {
     if (link.href === '/') {
       link.active = activeLink === link.href;
     } else {
-      link.active = activeLink.includes(link.href);
+      link.active = activeLink.startsWith(link.href);
     }
   });
 
