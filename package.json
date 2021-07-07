@@ -35,7 +35,7 @@
     "@types/react": "17.0.11",
     "@types/react-instantsearch-core": "6.10.2",
     "@types/react-instantsearch-dom": "6.10.1",
-    "@types/react-paginate": "7.1.0",
+    "@types/react-paginate": "7.1.1",
     "@types/validator": "13.1.4",
     "@typescript-eslint/eslint-plugin": "4.28.1",
     "@typescript-eslint/parser": "4.28.1",
