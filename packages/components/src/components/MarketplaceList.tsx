@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
 import { Modal } from './Modal';
@@ -111,7 +111,6 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
 
   const [modalOpen, setModalOpen] = useState(false);
-  const [pages, setPages] = useState<IMarketplaceItemProps[][]>([[]]);
   const [currentPage, setCurrentPage] = useState(0);
   const [currentItem, setCurrentItem] = useState<IMarketplaceItemProps>();
 
@@ -123,7 +122,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
     setModalOpen(state);
   };
 
-  useEffect(() => {
+  const pages = useMemo(() => {
     const itemsCopy = [...items];
     const pagesData = [];
 
@@ -131,7 +130,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
       pagesData.push(itemsCopy.splice(0, pageSize));
     }
 
-    setPages(pagesData);
+    return pagesData;
   }, [items]);
 
   return (

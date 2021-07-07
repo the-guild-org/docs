@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
 import { MarketplaceList } from './MarketplaceList';
 
@@ -11,8 +11,7 @@ import {
 } from './MarketplaceSearch.styles';
 
 import {
-  IMarketplaceSearchProps,
-  IMarketplaceItemProps,
+  IMarketplaceSearchProps
 } from '../types/components';
 import { marketplaceThemedAssets } from '../helpers/assets';
 import { useThemeContext } from '../helpers/theme';
@@ -27,7 +26,6 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
 }) => {
   const { isDarkTheme } = useThemeContext();
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
-  const [items, setItems] = useState<Array<IMarketplaceItemProps> | null>(null);
   const [query, setQuery] = useState<string>();
 
   const handleChange = (e: React.FormEvent<EventTarget>) => {
@@ -51,7 +49,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
     );
   };
 
-  useEffect(() => {
+  const items = useMemo(() => {
     let results = null;
     if (query && queryList) {
       results = queryList.items.filter((item) =>
@@ -59,7 +57,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
       );
     }
 
-    setItems(results);
+    return results;
   }, [query]);
 
   return (
