@@ -1,5 +1,12 @@
 # @theguild/components
 
+## 1.4.3
+
+### Patch Changes
+
+- 4803938: Changed MarketplaceList's useEffect to useMemo in order to avoid SSR issues
+- 0367398: Enhanced Global Styles to allow various configurations
+
 ## 1.4.2
 
 ### Patch Changes
