@@ -8,7 +8,7 @@ interface IStyleProps {
 }
 
 export const Wrapper = styled.header(() => [
-  tw`sticky top-0 z-10 py-5 bg-white dark:bg-gray-900`,
+  tw`sticky top-0 z-10 py-5 bg-white dark:bg-gray-900 font-default`,
   css`
     box-shadow: 0px 16px 20px rgba(0, 0, 0, 0.04);
     button:focus:not(:focus-visible) {

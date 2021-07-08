@@ -5,7 +5,7 @@ interface IStyleProps {
   flipped?: boolean;
 }
 
-export const Wrapper = styled.section(() => [tw`bg-gray-100 dark:bg-gray-800`]);
+export const Wrapper = styled.section(() => [tw`bg-gray-100 dark:bg-gray-800 font-default`]);
 
 export const Container = styled.div(({ flipped }: IStyleProps) => [
   tw`container-min flex flex-wrap py-8`,

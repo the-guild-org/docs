@@ -6,7 +6,7 @@ interface IStyleProps {
 }
 
 export const Container = styled.div(({ isModalOpen }: IStyleProps) => [
-  tw`fixed inset-0 visible`,
+  tw`fixed inset-0 visible font-default`,
   css`
     z-index: 400; //TODO: Used for Docusaurus, remove when no longer needed.
     button:focus:not(:focus-visible) {

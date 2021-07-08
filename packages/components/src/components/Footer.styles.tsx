@@ -1,7 +1,7 @@
 import tw, { css, styled } from 'twin.macro';
 
 export const Wrapper = styled.footer(() => [
-  tw`bg-white dark:bg-gray-900 text-xs`,
+  tw`bg-white dark:bg-gray-900 text-xs font-default`,
 ]);
 
 export const Container = styled.div(() => [

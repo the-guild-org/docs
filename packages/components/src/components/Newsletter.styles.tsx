@@ -5,7 +5,7 @@ interface IStyleProps {
 }
 
 export const Form = styled.form(({ hasError }: IStyleProps) => [
-  tw`flex items-center bg-gray-100 border-2 border-gray-100 rounded-md`,
+  tw`flex items-center bg-gray-100 border-2 border-gray-100 rounded-md font-default`,
   tw`dark:(bg-gray-800 border-gray-800)`,
   css`
     span {
