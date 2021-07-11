@@ -43,6 +43,8 @@ const productSofa = `${cdn}/shared-logos/products/sofa.svg`;
 const productStencil = `${cdn}/shared-logos/products/stencil.svg`;
 const productTools = `${cdn}/shared-logos/products/tools.svg`;
 const productWhatsapp = `${cdn}/shared-logos/products/whatsapp.svg`;
+const productGraphQLShield = `${cdn}/shared-logos/products/shield.svg`;
+const productSwiftGraphQL = `${cdn}/shared-logos/products/swift.svg`;
 
 export const headerThemedIcons = (isDark: boolean): any => ({
   themeToggle: isDark ? moonIconLight : moonIconDark,
@@ -70,6 +72,8 @@ export const logoThemedIcons = (isDark: boolean): any => ({
   stencil: isDark ? productStencil : productStencil,
   tools: isDark ? productTools : productTools,
   whatsapp: isDark ? productWhatsapp : productWhatsapp,
+  shield: productGraphQLShield,
+  swift: productSwiftGraphQL,
 });
 
 export const searchBarThemedIcons = (isDark: boolean): any => ({
