@@ -35,7 +35,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
   setCurrentItem,
   ...restProps
 }) => {
-  const formateDate = (value: string) => {
+  const formatDate = (value: string) => {
     const months = [
       'Jan',
       'Feb',
@@ -51,7 +51,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
       'Dec',
     ];
     const date = new Date(value);
-    return `${months[date.getMonth()]} ${date.getDay()}, ${date.getFullYear()}`;
+    return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
   };
 
   return (
@@ -81,7 +81,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
               </TableItemInfo>
             </td>
             <td>
-              <TableItemDate {...restProps.dateProps}>{formateDate(item.update)}</TableItemDate>
+              <TableItemDate {...restProps.dateProps}>{formatDate(item.update)}</TableItemDate>
             </td>
             <td>
               <TableItemButton
