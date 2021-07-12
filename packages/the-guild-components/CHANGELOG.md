@@ -1,5 +1,12 @@
 # the-guild-components
 
+## 1.4.5
+
+### Patch Changes
+
+- Updated dependencies [95025ed]
+  - @theguild/components@1.4.5
+
 ## 1.4.4
 
 ### Patch Changes
