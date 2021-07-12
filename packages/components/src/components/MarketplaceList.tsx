@@ -27,6 +27,7 @@ import {
 import { useThemeContext } from '../helpers/theme';
 import { marketplaceThemedAssets } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
+import { Tag, TagsContainer } from './Tag';
 
 const TableItems: React.FC<IMarketplaceItemsProps> = ({
   icon,
@@ -51,7 +52,9 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
       'Dec',
     ];
     const date = new Date(value);
-    return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    return `${
+      months[date.getMonth()]
+    } ${date.getDate()}, ${date.getFullYear()}`;
   };
 
   return (
@@ -59,7 +62,11 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
       {items &&
         items.map((item) => (
           <TableItem key={item.title}>
-            <td>{item.image && <TableItemImage {...item.image} {...restProps.imageProps}/>}</td>
+            <td>
+              {item.image && (
+                <TableItemImage {...item.image} {...restProps.imageProps} />
+              )}
+            </td>
             <td>
               <TableItemInfo>
                 <a
@@ -76,12 +83,21 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
                   <span>
                     <h3 {...restProps.titleProps}>{item.title}</h3>
                     <p {...restProps.descriptionProps}>{item.description}</p>
+                    {item.tags && item.tags.length > 0 ? (
+                      <TagsContainer>
+                        {item.tags.map((tagName) => (
+                          <Tag key={tagName}>{tagName}</Tag>
+                        ))}
+                      </TagsContainer>
+                    ) : null}
                   </span>
                 </a>
               </TableItemInfo>
             </td>
             <td>
-              <TableItemDate {...restProps.dateProps}>{formatDate(item.update)}</TableItemDate>
+              <TableItemDate {...restProps.dateProps}>
+                {formatDate(item.update)}
+              </TableItemDate>
             </td>
             <td>
               <TableItemButton
@@ -138,7 +154,9 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
       <Container {...restProps.containerProps}>
         {title && <Title {...restProps.titleProps}>{title}</Title>}
         {!pages[currentPage] || !pages[currentPage].length ? (
-          <Placeholder {...restProps.placeholderProps}>{placeholder}</Placeholder>
+          <Placeholder {...restProps.placeholderProps}>
+            {placeholder}
+          </Placeholder>
         ) : (
           <>
             <Table>
