@@ -216,6 +216,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
   items: [
     {
       title: 'GraphQL Modules 1',
+      tags: ['test'],
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       modal: {
@@ -248,6 +249,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
     },
     {
       title: 'GraphQL Modules 2',
+      tags: ['test', 'tag'],
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       modal: {
@@ -280,6 +282,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
     },
     {
       title: 'GraphQL Modules 3',
+      tags: ['tag'],
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       modal: {
         header: {
@@ -533,6 +536,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
 
 export const dummyMarketplaceSearch = {
   title: 'Explore Marketplace',
+  tagsFilter: ['test', 'tag'],
   placeholder: 'Search...',
   primaryList: {
     title: 'Trending & Last Update',
