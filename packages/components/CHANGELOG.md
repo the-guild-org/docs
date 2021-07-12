@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.4.4
+
+### Patch Changes
+
+- 62e6d4a: fix marketPlace formatDate
+
 ## 1.4.3
 
 ### Patch Changes
