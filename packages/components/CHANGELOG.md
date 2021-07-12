@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.4.5
+
+### Patch Changes
+
+- 95025ed: Added missing tags for marketplace
+
 ## 1.4.4
 
 ### Patch Changes
