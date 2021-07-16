@@ -3891,10 +3891,10 @@
     algoliasearch ">=4"
     algoliasearch-helper ">=3"
 
-"@types/react-instantsearch-dom@6.10.2":
-  version "6.10.2"
-  resolved "https://registry.yarnpkg.com/@types/react-instantsearch-dom/-/react-instantsearch-dom-6.10.2.tgz#437a3f4ca404ca0e3f9c21f5e80676a0f2b3fa42"
-  integrity sha512-UmBWBAJ4fQ8t/vFfX8brbQv+AxSqZ0bPYOUtUsGnLsJZQm0LrOdi0SF/E60JFwWAr3E8ioihWG28KPpQKo6xvQ==
+"@types/react-instantsearch-dom@6.12.0":
+  version "6.12.0"
+  resolved "https://registry.yarnpkg.com/@types/react-instantsearch-dom/-/react-instantsearch-dom-6.12.0.tgz#716be1b48193bbb65271205a9bd112a65d8a2661"
+  integrity sha512-O08H+ye4e4kEnYHmMrov9FPNRDJwfCWthNZf4aztqahpU8LSbAiuFQGVy84SHUvg/jfNcG4333SsVnAQLtbS7A==
   dependencies:
     "@types/react" "*"
     "@types/react-instantsearch-core" "*"
