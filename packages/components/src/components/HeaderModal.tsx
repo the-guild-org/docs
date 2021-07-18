@@ -125,6 +125,19 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
           link: 'https://github.com/ardatan/stencil-apollo',
           image: logoIcons.stencil,
         },
+        {
+          title: 'GraphQL Shield',
+          description:
+            'GraphQL Permissions Framework For Complex Authorisation Systems',
+          link: 'https://github.com/maticzav/graphql-shield',
+          image: logoIcons.shield,
+        },
+        {
+          title: 'Swift GraphQL',
+          description: 'A GraphQL client that lets you forget about GraphQL',
+          link: 'https://github.com/maticzav/swift-graphql',
+          image: logoIcons.swift,
+        },
       ],
     },
   ];
@@ -150,9 +163,9 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
                 {...restProps.linkProps}
               >
                 <ProductImage>
-                  <img 
-                    src={product.image} 
-                    alt={`${product.title} logo`} 
+                  <img
+                    src={product.image}
+                    alt={`${product.title} logo`}
                     {...restProps.imageProps}
                   />
                   <img
