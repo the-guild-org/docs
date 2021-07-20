@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.4.6
+
+### Patch Changes
+
+- ffe9bcc: Adds Swift GraphQL and GraphQL Shield to list of products
+
 ## 1.4.5
 
 ### Patch Changes
