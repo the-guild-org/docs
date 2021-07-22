@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.4.7
+
+### Patch Changes
+
+- 5c35a99: Update Envelop's links
+
 ## 1.4.6
 
 ### Patch Changes
