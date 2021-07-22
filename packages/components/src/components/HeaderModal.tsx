@@ -40,7 +40,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
         {
           title: 'Envelop',
           description: 'Modern GraphQL Framework',
-          link: 'https://github.com/dotansimha/envelop/',
+          link: 'https://www.envelop.dev/',
           image: logoIcons.envelop,
         },
         {

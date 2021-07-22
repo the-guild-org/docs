@@ -29,7 +29,7 @@ const products = [
   {
     children: 'Envelop',
     title: 'Modern GraphQL Framework',
-    href: 'https://github.com/dotansimha/envelop/',
+    href: 'https://www.envelop.dev/',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
@@ -195,19 +195,19 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
 
   const logoOptions = sameSite
     ? {
-        href: '/',
-      }
+      href: '/',
+    }
     : {
-        href: 'https://the-guild.dev',
-        rel: 'noopener noreferrer',
-        target: '_blank',
-      };
+      href: 'https://the-guild.dev',
+      rel: 'noopener noreferrer',
+      target: '_blank',
+    };
 
   const renderLinks = (list: ILink[]) => (
     <Links>
       {list.map((link, index) => (
         <li key={link.href + index}>
-          <a {...link} {...restProps.linkProps}/>
+          <a {...link} {...restProps.linkProps} />
         </li>
       ))}
     </Links>
@@ -216,7 +216,7 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
   return (
     <Wrapper {...restProps.wrapperProps}>
       <Container {...restProps.containerProps}>
-        <Line {...restProps.lineProps}/>
+        <Line {...restProps.lineProps} />
         <Row>
           <Column>
             <Logo {...logoOptions} {...restProps.logoProps}>
