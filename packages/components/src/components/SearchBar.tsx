@@ -1,9 +1,14 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  useCallback,
+  createElement,
+} from 'react';
 import algoliaSearch from 'algoliasearch/lite';
 
 import {
   InstantSearch,
-  Highlight,
   connectHits,
   connectSearchBox,
   connectStateResults,
@@ -36,6 +41,16 @@ const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
   hosts: algoliaConfig.hosts,
 });
 
+interface ResultDoc {
+  hierarchy: {
+    [level: string]: string | null;
+  };
+  anchor?: string;
+  content?: string;
+  url: string;
+  type: string;
+}
+
 const searchClient: Pick<typeof algoliaClient, 'search'> = {
   search(requests) {
     // In case of empty queries
@@ -67,6 +82,26 @@ function useIcons() {
   const { isDarkTheme } = useThemeContext();
   return searchBarThemedIcons(isDarkTheme || false);
 }
+
+function getPropertyByPath(obj: any, path: string): any {
+  const parts = path.split('.');
+
+  return parts.reduce((current, key) => current && current[key], obj);
+}
+
+const Snippet: React.FC<{
+  hit: Hit<ResultDoc>;
+  attribute: string;
+  tagName?: string;
+}> = ({ hit, attribute, tagName = 'span' }) => {
+  return createElement(tagName, {
+    dangerouslySetInnerHTML: {
+      __html:
+        getPropertyByPath(hit, `_snippetResult.${attribute}.value`) ||
+        getPropertyByPath(hit, attribute),
+    },
+  });
+};
 
 const SearchBox: React.FC<
   SearchBoxProvided & {
@@ -125,7 +160,7 @@ const SearchBox: React.FC<
   );
 };
 
-const StateResults: React.FC<StateResultsProvided> = ({
+const StateResults: React.FC<StateResultsProvided<ResultDoc>> = ({
   searchState,
   searchResults,
   children,
@@ -165,7 +200,7 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
     }));
   };
 
-  const transformIcon = (item: Hit) => {
+  const transformIcon = (item: Hit<ResultDoc>) => {
     if (item.anchor) {
       return icons.hashtag;
     } else if (item.content) {
@@ -182,28 +217,63 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
       {groupedHits.map((hit) => (
         <SearchHit key={hit.level} accentColor={accentColor}>
           <h2>{hit.level}</h2>
-          {hit.items.map((subHit: Hit) => (
-            <a
-              key={subHit.url}
-              href={subHit.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={transformIcon(subHit)}
-                height="26"
-                width="26"
-                alt="Result icon"
-              />
-              <div className="ais-content">
-                <Highlight
-                  attribute={`hierarchy.${subHit.type}`}
-                  hit={subHit}
+          {hit.items.map((subHit: Hit<ResultDoc>) => {
+            let content;
+
+            if (subHit.hierarchy[subHit.type] && subHit.type === 'lvl1') {
+              content = (
+                <>
+                  <Snippet hit={subHit} attribute="hierarchy.lvl1" />
+                  {subHit.content ? (
+                    <Snippet tagName="p" hit={subHit} attribute="content" />
+                  ) : (
+                    <Snippet tagName="p" hit={subHit} attribute="hierarchy.lvl1" />
+                  )}
+                </>
+              );
+            } else if (
+              subHit.hierarchy[subHit.type] &&
+              (subHit.type === 'lvl2' ||
+                subHit.type === 'lvl3' ||
+                subHit.type === 'lvl4' ||
+                subHit.type === 'lvl5' ||
+                subHit.type === 'lvl6')
+            ) {
+              content = (
+                <>
+                  <Snippet
+                    hit={subHit}
+                    attribute={`hierarchy.${subHit.type}`}
+                  />
+                  <Snippet tagName="p" hit={subHit} attribute="hierarchy.lvl1" />
+                </>
+              );
+            } else if (subHit.type === 'content') {
+              content = (
+                <>
+                  <Snippet hit={subHit} attribute="content" />
+                  <Snippet tagName="p" hit={subHit} attribute="hierarchy.lvl1" />
+                </>
+              );
+            }
+
+            return (
+              <a
+                key={subHit.url}
+                href={subHit.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={transformIcon(subHit)}
+                  height="26"
+                  width="26"
+                  alt="Result icon"
                 />
-                <p>{subHit.url}</p>
-              </div>
-            </a>
-          ))}
+                <div className="ais-content">{content}</div>
+              </a>
+            );
+          })}
         </SearchHit>
       ))}
     </>
