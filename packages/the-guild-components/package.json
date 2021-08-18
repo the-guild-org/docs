@@ -1,6 +1,6 @@
 {
   "name": "the-guild-components",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "license": "MIT",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   ],
   "peerDependencies": {},
   "dependencies": {
-    "@theguild/components": "1.4.7"
+    "@theguild/components": "1.4.8"
   },
   "publishConfig": {
     "access": "public"

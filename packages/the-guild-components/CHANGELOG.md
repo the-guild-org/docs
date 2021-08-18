@@ -1,5 +1,12 @@
 # the-guild-components
 
+## 1.4.8
+
+### Patch Changes
+
+- Updated dependencies [e333073]
+  - @theguild/components@1.4.8
+
 ## 1.4.7
 
 ### Patch Changes
