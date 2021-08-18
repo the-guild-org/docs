@@ -58,7 +58,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
         {
           title: 'CLI',
           description: 'Command line tool for common GraphQL workflows',
-          link: 'https://github.com/Urigo/graphql-cli',
+          link: 'https://www.graphql-cli.com/',
           image: logoIcons.cli,
         },
         {
@@ -94,6 +94,25 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
           image: logoIcons.tools,
         },
         {
+          title: 'Config',
+          description: 'One configuration for all your GraphQL tools',
+          link: 'https://graphql-config.com/introduction',
+          image: logoIcons.config,
+        },
+        {
+          title: 'GraphQL Shield',
+          description:
+            'GraphQL Permissions Framework For Complex Authorisation Systems',
+          link: 'https://www.graphql-shield.com/',
+          image: logoIcons.shield,
+        },
+        {
+          title: 'Swift GraphQL',
+          description: 'A GraphQL client that lets you forget about GraphQL',
+          link: 'https://www.swift-graphql.com/',
+          image: logoIcons.swift,
+        },
+        {
           title: 'SOFA',
           description: 'Generate RESTful APIs from your GraphQL Server',
           link: 'https://sofa-api.com/',
@@ -105,13 +124,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
             'A fully-featured, production ready caching GraphQL client for Angular and every GraphQL server',
           link: 'https://apollo-angular.com/',
           image: logoIcons.angular,
-        },
-        {
-          title: 'Config',
-          description: 'One configuration for all your GraphQL tools',
-          link: 'https://graphql-config.com/introduction',
-          image: logoIcons.config,
-        },
+        },        
         {
           title: 'WhatsApp',
           description: 'Full Stack, open source tutorial',
@@ -124,19 +137,6 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
             'A fully-featured, production ready caching GraphQL client for Stencil and every GraphQL server',
           link: 'https://github.com/ardatan/stencil-apollo',
           image: logoIcons.stencil,
-        },
-        {
-          title: 'GraphQL Shield',
-          description:
-            'GraphQL Permissions Framework For Complex Authorisation Systems',
-          link: 'https://github.com/maticzav/graphql-shield',
-          image: logoIcons.shield,
-        },
-        {
-          title: 'Swift GraphQL',
-          description: 'A GraphQL client that lets you forget about GraphQL',
-          link: 'https://github.com/maticzav/swift-graphql',
-          image: logoIcons.swift,
         },
       ],
     },
