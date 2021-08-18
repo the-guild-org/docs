@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.4.8
+
+### Patch Changes
+
+- e333073: Better search results
+
 ## 1.4.7
 
 ### Patch Changes
