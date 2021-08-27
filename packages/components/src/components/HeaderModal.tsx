@@ -100,14 +100,14 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
           image: logoIcons.config,
         },
         {
-          title: 'GraphQL Shield',
+          title: 'Shield',
           description:
             'GraphQL Permissions Framework For Complex Authorisation Systems',
           link: 'https://www.graphql-shield.com/',
           image: logoIcons.shield,
         },
         {
-          title: 'Swift GraphQL',
+          title: 'Swift',
           description: 'A GraphQL client that lets you forget about GraphQL',
           link: 'https://www.swift-graphql.com/',
           image: logoIcons.swift,
