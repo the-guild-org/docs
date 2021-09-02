@@ -309,13 +309,3 @@ export interface IMarketplaceSearchProps {
 export interface INewsletterProps {
   onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
 }
-
-export interface IBasicHeader {
-  icon: string;
-  text: string;
-}
-
-export interface IBasicTable {
-  header: string | IBasicHeader;
-  basicTable: boolean;
-}
