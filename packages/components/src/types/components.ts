@@ -138,6 +138,8 @@ export interface ISearchBarProps {
 
 export interface IFeatureListProps {
   title?: string | React.ReactNode;
+  titleDescription?: string | React.ReactNode;
+  link?: ILink;
   items: {
     title: string | React.ReactNode;
     description: string | React.ReactNode;
@@ -147,6 +149,8 @@ export interface IFeatureListProps {
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
+  titleDescriptionProps?: React.ComponentProps<'p'>;
+  linkProps?: React.ComponentProps<'a'>;
   itemTitleProps?: React.ComponentProps<'h3'>;
   itemDescriptionProps?: React.ComponentProps<'p'>;
   itemImageProps?: React.ComponentProps<'img'>;
@@ -304,4 +308,14 @@ export interface IMarketplaceSearchProps {
 
 export interface INewsletterProps {
   onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
+}
+
+export interface IBasicHeader {
+  icon: string;
+  text: string;
+}
+
+export interface IBasicTable {
+  header: string | IBasicHeader;
+  basicTable: boolean;
 }
