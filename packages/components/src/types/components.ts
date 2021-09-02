@@ -275,6 +275,7 @@ export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
   items: IMarketplaceItemProps[];
   setCurrentItem: (state: IMarketplaceItemProps) => void;
   handleModal: (state: boolean) => void;
+  isDefault: boolean;
 }
 
 export interface IMarketplaceListProps {
