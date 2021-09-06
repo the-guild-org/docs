@@ -18,7 +18,7 @@ export const HeroVideo: React.FC<IHeroVideoProps> = ({
       <Info>
         <h2 {...restProps.titleProps}>{title}</h2>
         <p {...restProps.descriptionProps}>{description}</p>
-        {link && <a {...link} {...restProps.linkProps}/>}
+        {link && <a {...link} {...restProps.linkProps} />}
       </Info>
       <Video flipped={flipped}>
         <ReactPlayer

@@ -82,28 +82,28 @@ const products = [
     href: 'https://graphql-scalars.dev/',
     target: '_blank',
     rel: 'noopener noreferrer',
-  },  
+  },
   {
     children: 'Config',
     title: 'One configuration for all your GraphQL tools',
     href: 'https://graphql-config.com/introduction',
     target: '_blank',
     rel: 'noopener noreferrer',
-  },  
+  },
   {
     children: 'Shield',
     title: 'GraphQL Permissions Framework For Complex Authorisation Systems',
     href: 'https://www.graphql-shield.com/',
     target: '_blank',
     rel: 'noopener noreferrer',
-  },  
+  },
   {
     children: 'Swift',
     title: 'A GraphQL client that lets you forget about GraphQL',
     href: 'https://www.swift-graphql.com/',
     target: '_blank',
     rel: 'noopener noreferrer',
-  },    
+  },
   {
     children: 'CLI',
     title: 'Command line tool for common GraphQL workflows',
@@ -209,13 +209,13 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
 
   const logoOptions = sameSite
     ? {
-      href: '/',
-    }
+        href: '/',
+      }
     : {
-      href: 'https://the-guild.dev',
-      rel: 'noopener noreferrer',
-      target: '_blank',
-    };
+        href: 'https://the-guild.dev',
+        rel: 'noopener noreferrer',
+        target: '_blank',
+      };
 
   const renderLinks = (list: ILink[]) => (
     <Links>
@@ -236,7 +236,9 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
             <Logo {...logoOptions} {...restProps.logoProps}>
               <img src={logos.logoFull} alt="The Guild" />
             </Logo>
-            <Copyright {...restProps.copyrightProps}>Belong anywhere. © The Guild, Inc.</Copyright>
+            <Copyright {...restProps.copyrightProps}>
+              Belong anywhere. © The Guild, Inc.
+            </Copyright>
           </Column>
           <Column>
             <Title {...restProps.titleProps}>PRODUCTS</Title>
@@ -261,7 +263,10 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
                 <Description {...restProps.descriptionProps}>
                   Stay up to date with the latest features and changes
                 </Description>
-                <Newsletter onNewsletterSubmit={onNewsletterSubmit} {...restProps.newsletterProps} />
+                <Newsletter
+                  onNewsletterSubmit={onNewsletterSubmit}
+                  {...restProps.newsletterProps}
+                />
               </>
             )}
           </Column>

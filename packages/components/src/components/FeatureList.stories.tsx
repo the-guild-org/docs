@@ -33,5 +33,6 @@ Default.args = {
 export const withTitleDescription = Template.bind({});
 withTitleDescription.args = {
   ...dummyFeatureList,
-  titleDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  titleDescription:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 };

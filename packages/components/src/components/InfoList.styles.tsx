@@ -1,7 +1,9 @@
 import tw, { css, styled, theme } from 'twin.macro';
 import { rgba } from 'polished';
 
-export const Wrapper = styled.section(() => [tw`bg-white dark:bg-gray-900 font-default`]);
+export const Wrapper = styled.section(() => [
+  tw`bg-white dark:bg-gray-900 font-default`,
+]);
 
 export const Container = styled.div(() => [tw`container-min py-12`]);
 
