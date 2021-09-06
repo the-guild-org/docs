@@ -1,16 +1,12 @@
 import React, { useMemo, useState } from 'react';
-import ReactPaginate from 'react-paginate';
 
 import { Modal } from './Modal';
+import Table from "./Table";
 
 import {
   Container,
   Placeholder,
   Title,
-  Table,
-  TableBody,
-  TableHeader,
-  TablePagination,
   Wrapper,
 } from './MarketplaceList.styles';
 
@@ -21,7 +17,6 @@ import {
 import { useThemeContext } from '../helpers/theme';
 import { marketplaceThemedAssets } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
-import TableItems from './TableItems';
 
 export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
   title,
@@ -56,6 +51,15 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
     return pagesData;
   }, [items]);
 
+  const TableHeader = () => (
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Last Update</th>
+      <th></th>
+    </tr>
+  );
+
   return (
     <Wrapper {...restProps.wrapperProps}>
       <Container {...restProps.containerProps}>
@@ -66,38 +70,16 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
           </Placeholder>
         ) : (
           <>
-            <Table>
-              <TableHeader>
-                <tr>
-                  <th></th>
-                  <th>Name</th>
-                  <th>Last Update</th>
-                  <th></th>
-                </tr>
-              </TableHeader>
-              <TableBody>
-                <TableItems
-                  items={pages[currentPage]}
-                  icon={marketplaceAssets.caret}
-                  setCurrentItem={setCurrentItem}
-                  handleModal={handleModal}
-                  {...restProps.itemProps}
-                />
-              </TableBody>
-            </Table>
-
-            {pageCount > 1 && (
-              <TablePagination>
-                <ReactPaginate
-                  {...{
-                    pageCount: pageCount,
-                    pageRangeDisplayed: 3,
-                    marginPagesDisplayed: 1,
-                    onPageChange: (page) => setCurrentPage(page.selected),
-                  }}
-                />
-              </TablePagination>
-            )}
+            <Table
+              tableHeader={<TableHeader />}
+              items={pages[currentPage]}
+              icon={marketplaceAssets.caret}
+              setCurrentItem={setCurrentItem}
+              handleModal={handleModal}
+              pageCount={pageCount}
+              setCurrentPage={(page) => setCurrentPage(page.selected)}
+              {...restProps.itemProps}
+            />
 
             {currentItem && (
               <Modal
