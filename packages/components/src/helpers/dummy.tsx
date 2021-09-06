@@ -4,6 +4,7 @@ import featureListImage3 from '../static/dummy/envelop/features-modern.png';
 import heroGradientImage from '../static/dummy/envelop/hero.png';
 import heroIllustrationImage from '../static/dummy/envelop/communication.png';
 import marketplaceListImage from '../static/dummy/marketplace/logo-modules.svg';
+import typescriptImage from "../static/typescript.svg";
 import { IMarketplaceListProps } from '../types/components';
 
 const subheaderImage =
@@ -556,4 +557,108 @@ export const dummyMarketplaceSearch = {
     placeholder: 'No results for {query}',
     pagination: 8,
   },
+};
+
+export const dummyExampleList = {
+  title: 'Choose Live Example',
+  items: [
+    {
+      header: {
+        image: typescriptImage,
+        text: 'Typescript',
+      },
+      list: [
+          {
+          title: 'GraphQL Modules 1',
+          tags: ['test'],
+          description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          link: {
+              href: '#',
+              target: '_blank',
+              rel: 'noopener noreferrer',
+              title: 'Learn more about GraphQL Jit',
+          },
+          },
+          {
+          title: 'GraphQL Modules 1',
+          tags: ['test'],
+          description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          link: {
+              href: '#',
+              target: '_blank',
+              rel: 'noopener noreferrer',
+              title: 'Learn more about GraphQL Jit',
+          },
+          },
+      ],
+    },
+    {
+    header: {
+        image: typescriptImage,
+        text: '.NET',
+    },
+    list: [
+        {
+        title: 'GraphQL Modules 1',
+        tags: ['test'],
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        link: {
+            href: '#',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            title: 'Learn more about GraphQL Jit',
+        },
+        },
+        {
+        title: 'GraphQL Modules 1',
+        tags: ['test'],
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        link: {
+            href: '#',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            title: 'Learn more about GraphQL Jit',
+        },
+        },
+    ],
+    },
+    {
+    header: {
+        image: typescriptImage,
+        text: 'Java',
+    },
+    list: [
+        {
+        title: 'GraphQL Modules 1',
+        tags: ['test'],
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        link: {
+            href: '#',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            title: 'Learn more about GraphQL Jit',
+        },
+        },
+        {
+        title: 'GraphQL Modules 1',
+        tags: ['test'],
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        link: {
+            href: '#',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            title: 'Learn more about GraphQL Jit',
+        },
+        },
+    ],
+    },
+  ],
+  tagsFilter: ['test', 'tag'],
+  placeholder: 'Search...'
 };

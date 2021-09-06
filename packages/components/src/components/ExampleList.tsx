@@ -1,228 +1,69 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import TableItems from "./TableItems";
+import { useThemeContext } from '../helpers/theme';
+import { marketplaceThemedAssets } from '../helpers/assets';
 
-import typescriptLogo from "../static/icons/typescript.svg";
+import Table from "./Table";
+import TableSearch from './TableSearch';
 
-import { Examples } from './ExampleList.styles';
+import { IExampleListHeader, IExampleListProps } from '../types/components';
 
-const ExampleList = () => {
+import { Wrapper, Container, Title, Examples } from './ExampleList.styles';
+
+const TableHeader: React.FC<IExampleListHeader> = ({ image, text }) => (
+  <tr>
+    <td>
+      <img src={image} alt='logo' />
+      <p>{text}</p>
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+)
+
+const ExampleList: React.FC<IExampleListProps> = ({ title, items, tagsFilter, placeholder, ...restProps }) => {
+  const { isDarkTheme } = useThemeContext();
+  const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
+  const [query, setQuery] = useState<string>();
+
+  const handleChange = (e: React.FormEvent<EventTarget>) => {
+    const query = e.target as HTMLInputElement;
+    setQuery(query.value);
+  };
+
   return (
-    <Examples>
-      <TableItems isDefault={false} {...dummyData} />
-      <TableItems isDefault={false} {...dummyData} />
-    </Examples>
+    <Wrapper>
+      <Container>
+        <Title>{title}</Title>
+        <TableSearch
+          tagsFilter={tagsFilter}
+          handleTagClick={setQuery}
+          searchIcon={marketplaceAssets.search}
+          query={query}
+          placeholder={placeholder}
+          handleInputChange={handleChange}
+          {...restProps.searchProps}
+        />
+        <Examples>
+          {
+            items && items.map((item) => {
+              return (
+                <Table
+                  key={item.header.text}
+                  tableHeader={<TableHeader
+                    image={item.header.image}
+                    text={item.header.text}
+                  />}
+                  items={item.list}
+                  icon={marketplaceAssets.caret}
+                />
+              )
+            })
+          }
+        </Examples>
+      </Container>
+    </Wrapper>
   );
-};
-
-const dummyData = {
-  header: {
-    icon: typescriptLogo,
-    text: 'Typescript'
-  },
-  pagination: 0,
-  items: [
-    {
-      title: 'GraphQL Modules 1',
-      tags: ['test'],
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      modal: {
-        header: {
-          description: {
-            href: '#',
-            children: 'Apr 20, 2021 - Latest Update',
-            title: 'Example Link Title',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          },
-        },
-        content: 'Lipsum 1',
-      },
-      update: '2021-05-07T10:14:55.884Z',
-      link: {
-        href: '#',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        title: 'Learn more about GraphQL Jit',
-      },
-    },
-    {
-      title: 'GraphQL Modules 1',
-      tags: ['test'],
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      modal: {
-        header: {
-          description: {
-            href: '#',
-            children: 'Apr 20, 2021 - Latest Update',
-            title: 'Example Link Title',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          },
-        },
-        content: 'Lipsum 1',
-      },
-      update: '2021-05-07T10:14:55.884Z',
-      link: {
-        href: '#',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        title: 'Learn more about GraphQL Jit',
-      },
-    },
-    {
-      title: 'GraphQL Modules 1',
-      tags: ['test'],
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      modal: {
-        header: {
-          description: {
-            href: '#',
-            children: 'Apr 20, 2021 - Latest Update',
-            title: 'Example Link Title',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          },
-        },
-        content: 'Lipsum 1',
-      },
-      update: '2021-05-07T10:14:55.884Z',
-      link: {
-        href: '#',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        title: 'Learn more about GraphQL Jit',
-      },
-    },
-    {
-      title: 'GraphQL Modules 1',
-      tags: ['test'],
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      modal: {
-        header: {
-          description: {
-            href: '#',
-            children: 'Apr 20, 2021 - Latest Update',
-            title: 'Example Link Title',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          },
-        },
-        content: 'Lipsum 1',
-      },
-      update: '2021-05-07T10:14:55.884Z',
-      link: {
-        href: '#',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        title: 'Learn more about GraphQL Jit',
-      },
-    },
-    {
-      title: 'GraphQL Modules 1',
-      tags: ['test'],
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      modal: {
-        header: {
-          description: {
-            href: '#',
-            children: 'Apr 20, 2021 - Latest Update',
-            title: 'Example Link Title',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          },
-        },
-        content: 'Lipsum 1',
-      },
-      update: '2021-05-07T10:14:55.884Z',
-      link: {
-        href: '#',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        title: 'Learn more about GraphQL Jit',
-      },
-    },
-    {
-      title: 'GraphQL Modules 1',
-      tags: ['test'],
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      modal: {
-        header: {
-          description: {
-            href: '#',
-            children: 'Apr 20, 2021 - Latest Update',
-            title: 'Example Link Title',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          },
-        },
-        content: 'Lipsum 1',
-      },
-      update: '2021-05-07T10:14:55.884Z',
-      link: {
-        href: '#',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        title: 'Learn more about GraphQL Jit',
-      },
-    },
-    {
-      title: 'GraphQL Modules 1',
-      tags: ['test'],
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      modal: {
-        header: {
-          description: {
-            href: '#',
-            children: 'Apr 20, 2021 - Latest Update',
-            title: 'Example Link Title',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          },
-        },
-        content: 'Lipsum 1',
-      },
-      update: '2021-05-07T10:14:55.884Z',
-      link: {
-        href: '#',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        title: 'Learn more about GraphQL Jit',
-      },
-    },
-    {
-      title: 'GraphQL Modules 2',
-      tags: ['test', 'tag'],
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      modal: {
-        header: {
-          description: {
-            href: '#',
-            children: 'Apr 20, 2021 - Latest Update',
-            title: 'Example Link Title',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          },
-        },
-        content: 'Lipsum 2',
-      },
-      update: '2021-05-07T10:14:55.884Z',
-      link: {
-        href: '#',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        title: 'Learn more about GraphQL Jit',
-      },
-    },
-  ]
 };
 
 export default ExampleList;

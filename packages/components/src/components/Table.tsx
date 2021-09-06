@@ -51,8 +51,8 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
                     ? item.link
                     : {
                         onClick: () => {
-                          setCurrentItem(item);
-                          handleModal(true);
+                          setCurrentItem && setCurrentItem(item);
+                          handleModal && handleModal(true);
                         },
                       })}
                   {...restProps.linkProps}
@@ -82,8 +82,8 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
               <TableItemButton
                 type="button"
                 onClick={() => {
-                  handleModal(true);
-                  setCurrentItem(item);
+                  setCurrentItem && setCurrentItem(item);
+                  handleModal && handleModal(true);
                 }}
               >
                 <img src={icon} alt=">" />
