@@ -1,6 +1,7 @@
 import React from 'react';
+import ReactPaginate from 'react-paginate';
 
-import { TableItem, TableItemImage, TableItemInfo, TableItemDate, TableItemButton } from "./TableItems.styles";
+import { Table, TableBody, TableHeader, TableItem, TableItemImage, TableItemInfo, TableItemDate, TableItemButton, TablePagination } from "./Table.styles";
 
 import { IMarketplaceItemsProps } from '../types/components'; 
 import { Tag, TagsContainer } from "./Tag";
@@ -10,7 +11,6 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
   items,
   handleModal,
   setCurrentItem,
-  isDefault = true,
   ...restProps
 }) => {
   const formatDate = (value: string) => {
@@ -71,7 +71,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
                 </a>
               </TableItemInfo>
             </td>
-            {isDefault && (
+            {item.update && (
               <td>
                 <TableItemDate {...restProps.dateProps}>
                   {formatDate(item.update)}
@@ -96,4 +96,30 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
   );
 };
 
-export default TableItems;
+const DefaultTable: React.FC<any> = ({ tableHeader, items, icon, setCurrentItem, handleModal, pageCount, setCurrentPage, ...restProps}) => {
+  return (
+    <>
+      <Table>
+        <TableHeader>{tableHeader}</TableHeader>
+        <TableBody>
+          <TableItems items={items} icon={icon} setCurrentItem={setCurrentItem} handleModal={handleModal} {...restProps} />
+        </TableBody>
+      </Table>
+
+      {pageCount > 1 && (
+        <TablePagination>
+          <ReactPaginate
+            {...{
+              pageCount: pageCount,
+              pageRangeDisplayed: 3,
+              marginPagesDisplayed: 1,
+              onPageChange: setCurrentPage,
+            }}
+          />
+        </TablePagination>
+      )}
+    </>
+  )
+}
+
+export default DefaultTable;
