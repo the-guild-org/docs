@@ -1,6 +1,7 @@
 import React from 'react';
 // import { Story, Meta } from '@storybook/react/types-6-0';
 
+import { dummyExampleList } from '../helpers/dummy';
 import ExampleList from './ExampleList';
 
 export default {
@@ -8,7 +9,9 @@ export default {
     component: ExampleList,
 }
 
-const Template = (args) => <ExampleList />;
-
+const Template = (args) => <ExampleList {...args} />;
+  
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  ...dummyExampleList
+};

@@ -5,7 +5,6 @@ import { MarketplaceList } from './MarketplaceList';
 import {
   Container,
   Results,
-  Search,
   Title,
   Wrapper,
 } from './MarketplaceSearch.styles';
@@ -13,7 +12,7 @@ import {
 import { IMarketplaceSearchProps } from '../types/components';
 import { marketplaceThemedAssets } from '../helpers/assets';
 import { useThemeContext } from '../helpers/theme';
-import { Tag, TagsContainer } from './Tag';
+import TableSearch from './TableSearch';
 
 export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   title,
@@ -83,30 +82,16 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
     <Wrapper {...restProps.wrapperProps}>
       <Container {...restProps.containerProps}>
         <Title {...restProps.titleProps}>{title}</Title>
-        {tagsFilter && (
-          <TagsContainer>
-            {tagsFilter.map((tagName) => (
-              <Tag onClick={() => setQuery(`#${tagName}`)} key={tagName}>
-                {tagName}
-              </Tag>
-            ))}
-          </TagsContainer>
-        )}
-        <Search>
-          <img
-            src={marketplaceAssets.search}
-            alt="Search"
-            height="24"
-            width="24"
-          />
-          <input
-            value={query}
-            type="search"
-            placeholder={placeholder}
-            onChange={handleChange}
-            {...restProps.searchProps}
-          />
-        </Search>
+        <TableSearch
+          tagsFilter={tagsFilter}
+          handleTagClick={setQuery}
+          searchIcon={marketplaceAssets.search}
+          query={query}
+          placeholder={placeholder}
+          handleInputChange={handleChange}
+          setItems={}
+          {...restProps.searchProps}
+        />
 
         {items && queryList ? (
           <Results>

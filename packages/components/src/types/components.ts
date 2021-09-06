@@ -258,7 +258,7 @@ export interface IMarketplaceItemProps {
     };
     content: string | (() => React.ReactNode) | React.ReactNode;
   };
-  update: string;
+  update?: string;
   image?: IImage;
   link?: ILink;
 }
@@ -273,9 +273,8 @@ interface IMarketplaceItemRestProps {
 export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
   icon: string;
   items: IMarketplaceItemProps[];
-  setCurrentItem: (state: IMarketplaceItemProps) => void;
-  handleModal: (state: boolean) => void;
-  isDefault: boolean;
+  setCurrentItem?: (state: IMarketplaceItemProps) => void;
+  handleModal?: (state: boolean) => void;
 }
 
 export interface IMarketplaceListProps {
@@ -310,4 +309,33 @@ export interface IMarketplaceSearchProps {
 
 export interface INewsletterProps {
   onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
+}
+
+export interface ITableSearchProps {
+  tagsFilter?: string[];
+  handleTagClick: (arg0: string) => void;
+  searchIcon: string;
+  query: string;
+  placeholder: string;
+  handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export interface IExampleListHeader {
+  image: string;
+  text: string;
+}
+
+export interface IExampleListItemProps {
+  title: string;
+  tags?: string[];
+  description: string;
+  link: ILink;
+}
+
+export interface IExampleListProps {
+  title: string;
+  items: {
+    header: IExampleListHeader;
+    list: IExampleListItemProps[];
+  };
 }
