@@ -56,7 +56,12 @@ export const Modal: React.FC<IModalProps> = ({
 
   return (
     <Container isModalOpen={visible} {...restProps.containerProps}>
-      <Overlay isModalOpen={visible} onClick={() => onCancel()} tabIndex={-1} {...restProps.overlayProps}/>
+      <Overlay
+        isModalOpen={visible}
+        onClick={() => onCancel()}
+        tabIndex={-1}
+        {...restProps.overlayProps}
+      />
       <FocusTrap
         active={visible}
         focusTrapOptions={{
@@ -72,7 +77,9 @@ export const Modal: React.FC<IModalProps> = ({
           {...restProps.wrapperProps}
         >
           <Header>
-            {image && <HeaderImage {...image} {...restProps.headerImageProps}/>}
+            {image && (
+              <HeaderImage {...image} {...restProps.headerImageProps} />
+            )}
             <HeaderInfo>
               <h2 {...restProps.headerTitleProps}>{title}</h2>
               {renderDescription()}

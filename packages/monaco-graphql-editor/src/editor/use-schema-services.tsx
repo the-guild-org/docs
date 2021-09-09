@@ -1,9 +1,20 @@
-import React from "react";
+import React from 'react';
 import type * as monaco from 'monaco-editor';
-import { DecorationsSource, DefinitionSource, DiagnosticsSource, EditorAction, HoverSource } from "./utils";
+import {
+  DecorationsSource,
+  DefinitionSource,
+  DiagnosticsSource,
+  EditorAction,
+  HoverSource,
+} from './utils';
 import { EnrichedLanguageService } from './EnrichedLanguageService';
-import { GraphQLError, GraphQLSchema, isInterfaceType, isObjectType } from "graphql";
-import { emptyLocation, locToRange } from "./utils";
+import {
+  GraphQLError,
+  GraphQLSchema,
+  isInterfaceType,
+  isObjectType,
+} from 'graphql';
+import { emptyLocation, locToRange } from './utils';
 
 export type SchemaEditorApi = {
   jumpToType(typeName: string): void;
@@ -39,7 +50,7 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
   const [monacoRef, setMonaco] = React.useState<typeof monaco | null>(null);
   const languageService = React.useMemo(
     () =>
-    options.sharedLanguageService ||
+      options.sharedLanguageService ||
       new EnrichedLanguageService({
         schemaString: options.schema,
         schemaConfig: {
@@ -86,7 +97,12 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
       }
 
       const handler = languageService.getModelChangeHandler();
-      handler(editorRef, monacoRef, options.diagnosticsProviders || [], options.decorationsProviders || []);
+      handler(
+        editorRef,
+        monacoRef,
+        options.diagnosticsProviders || [],
+        options.decorationsProviders || []
+      );
 
       const onChangeDisposable = editorRef.onDidChangeModelContent(() =>
         handler(
@@ -100,7 +116,9 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
       const definitionProviderDisposable =
         monacoRef.languages.registerDefinitionProvider(
           'graphql',
-          languageService.getDefinitionProvider(options.definitionProviders || [])
+          languageService.getDefinitionProvider(
+            options.definitionProviders || []
+          )
         );
 
       const hoverDisposable = monacoRef.languages.registerHoverProvider(
@@ -164,6 +182,6 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
         });
       },
       deselect: () => editorRef?.setSelection(emptyLocation),
-    } as SchemaEditorApi
+    } as SchemaEditorApi,
   };
-} 
+};

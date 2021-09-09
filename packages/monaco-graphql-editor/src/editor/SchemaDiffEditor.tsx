@@ -1,23 +1,37 @@
 import * as React from 'react';
 import { DiffEditor, DiffEditorProps } from '@monaco-editor/react';
-import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
+import {
+  SchemaEditorApi,
+  SchemaServicesOptions,
+  useSchemaServices,
+} from './use-schema-services';
 
-export type SchemaDiffEditorProps = SchemaServicesOptions & Omit<DiffEditorProps, 'language'>;
+export type SchemaDiffEditorProps = SchemaServicesOptions &
+  Omit<DiffEditorProps, 'language'>;
 
 function BaseSchemaDiffEditor(
   props: SchemaDiffEditorProps,
   ref: React.ForwardedRef<{
-    original: SchemaEditorApi,
-    modified: SchemaEditorApi,
+    original: SchemaEditorApi;
+    modified: SchemaEditorApi;
   }>
-) { 
+) {
   const originalSchemaService = useSchemaServices(props);
   const modifiedSchemaService = useSchemaServices(props);
 
-  React.useImperativeHandle(ref, () => ({
-    original: originalSchemaService.editorApi,
-    modified: originalSchemaService.editorApi,
-  }), [originalSchemaService.editorRef, modifiedSchemaService.editorRef, originalSchemaService.languageService, modifiedSchemaService.languageService]);
+  React.useImperativeHandle(
+    ref,
+    () => ({
+      original: originalSchemaService.editorApi,
+      modified: originalSchemaService.editorApi,
+    }),
+    [
+      originalSchemaService.editorRef,
+      modifiedSchemaService.editorRef,
+      originalSchemaService.languageService,
+      modifiedSchemaService.languageService,
+    ]
+  );
 
   return (
     <DiffEditor

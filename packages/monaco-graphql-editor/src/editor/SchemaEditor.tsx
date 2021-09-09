@@ -3,7 +3,11 @@ import MonacoEditor, { EditorProps } from '@monaco-editor/react';
 import type * as monaco from 'monaco-editor';
 import { EnrichedLanguageService } from './EnrichedLanguageService';
 import { GraphQLError, GraphQLSchema } from 'graphql';
-import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
+import {
+  SchemaEditorApi,
+  SchemaServicesOptions,
+  useSchemaServices,
+} from './use-schema-services';
 
 export type SchemaEditorProps = SchemaServicesOptions & {
   onBlur?: (value: string) => void;
@@ -19,8 +23,15 @@ export type SchemaEditorProps = SchemaServicesOptions & {
 function BaseSchemaEditor(
   props: SchemaEditorProps,
   ref: React.ForwardedRef<SchemaEditorApi>
-) { 
-  const { languageService, setMonaco, setEditor, editorApi, editorRef, setSchema } = useSchemaServices(props);
+) {
+  const {
+    languageService,
+    setMonaco,
+    setEditor,
+    editorApi,
+    editorRef,
+    setSchema,
+  } = useSchemaServices(props);
   React.useImperativeHandle(ref, () => editorApi, [editorRef, languageService]);
 
   React.useEffect(() => {
@@ -29,7 +40,8 @@ function BaseSchemaEditor(
     }
   }, [languageService, props.onLanguageServiceReady]);
 
-  const [onBlurHandler, setOnBlurSubscription] = React.useState<monaco.IDisposable>();
+  const [onBlurHandler, setOnBlurSubscription] =
+    React.useState<monaco.IDisposable>();
 
   React.useEffect(() => {
     if (editorRef && props.onBlur) {
@@ -44,22 +56,23 @@ function BaseSchemaEditor(
   }, [props.onBlur, editorRef]);
 
   return (
-      <MonacoEditor
-        height={'70vh'}
-        {...props}
-        beforeMount={(monaco) => {
-          setMonaco(monaco);
-          props.beforeMount && props.beforeMount(monaco);
-        }}
-        onMount={(editor, monaco) => {
-          setEditor(editor);
-          props.onMount && props.onMount(editor, monaco);
-        }}
-        onChange={(newValue, ev) => {
-          props.onChange && props.onChange(newValue, ev);
+    <MonacoEditor
+      height={'70vh'}
+      {...props}
+      beforeMount={(monaco) => {
+        setMonaco(monaco);
+        props.beforeMount && props.beforeMount(monaco);
+      }}
+      onMount={(editor, monaco) => {
+        setEditor(editor);
+        props.onMount && props.onMount(editor, monaco);
+      }}
+      onChange={(newValue, ev) => {
+        props.onChange && props.onChange(newValue, ev);
 
-          if (newValue) {
-            setSchema(newValue).then((schema) => {
+        if (newValue) {
+          setSchema(newValue)
+            .then((schema) => {
               if (schema) {
                 props.onSchemaChange && props.onSchemaChange(schema, newValue);
               }
@@ -86,12 +99,12 @@ function BaseSchemaEditor(
                 }
               }
             });
-          }
-        }}
-        options={{ glyphMargin: true, ...(props.options || {}) }}
-        language="graphql"
-        defaultValue={props.defaultValue || props.schema}
-      />
+        }
+      }}
+      options={{ glyphMargin: true, ...(props.options || {}) }}
+      language="graphql"
+      defaultValue={props.defaultValue || props.schema}
+    />
   );
 }
 

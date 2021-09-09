@@ -97,18 +97,29 @@ export const Header: React.FC<IHeaderProps> = ({
     <Wrapper {...restProps.wrapperProps}>
       <Container {...restProps.containerProps}>
         <Side>
-          <Icon onClick={() => handleNav(true)} {...restProps.navOpenButtonProps}>
+          <Icon
+            onClick={() => handleNav(true)}
+            {...restProps.navOpenButtonProps}
+          >
             <img src={icons.menu} height="24" width="24" alt="Search icon" />
           </Icon>
         </Side>
 
-        <Logo {...renderLinkOptions('/', sameSite)} title="View our website" {...restProps.logoProps}>
+        <Logo
+          {...renderLinkOptions('/', sameSite)}
+          title="View our website"
+          {...restProps.logoProps}
+        >
           <img src={logos.logoFull} height="30" alt="The Guild Logo" />
           <img src={logos.logoMono} height="38" alt="The Guild Monogram" />
         </Logo>
 
         <Navigation isModalOpen={mobileNavOpen} {...restProps.navigationProps}>
-          <Icon iconType="close" onClick={() => handleNav(false)} {...restProps.navCloseButtonProps}>
+          <Icon
+            iconType="close"
+            onClick={() => handleNav(false)}
+            {...restProps.navCloseButtonProps}
+          >
             <img
               src={icons.close}
               height="22"

@@ -124,7 +124,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
             'A fully-featured, production ready caching GraphQL client for Angular and every GraphQL server',
           link: 'https://apollo-angular.com/',
           image: logoIcons.angular,
-        },        
+        },
         {
           title: 'WhatsApp',
           description: 'Full Stack, open source tutorial',

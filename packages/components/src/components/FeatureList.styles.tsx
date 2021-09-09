@@ -1,7 +1,9 @@
 import tw, { css, styled, theme } from 'twin.macro';
 import { rgba } from 'polished';
 
-export const Wrapper = styled.section(() => [tw`bg-white dark:bg-gray-900 font-default`]);
+export const Wrapper = styled.section(() => [
+  tw`bg-white dark:bg-gray-900 font-default`,
+]);
 
 export const Container = styled.div(() => [tw`container-min py-14`]);
 
@@ -27,7 +29,7 @@ export const Title = styled.div(() => [
         text-shadow: 3px 5px 14px ${rgba(theme`colors.light-blue`, 0.4)};
       }
     }
-  `
+  `,
 ]);
 
 export const Items = styled.div(() => [tw`flex flex-wrap justify-center`]);

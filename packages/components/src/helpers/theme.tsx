@@ -79,12 +79,9 @@ const ThemeProvider: React.FC<IProviderProps> = ({
 const useThemeContext = (): Partial<IContextProps> => {
   const context = useContext(ThemeContext);
   if (context == null) {
-    throw new Error(
-      '"useThemeContext" could not be used.',
-    );
+    throw new Error('"useThemeContext" could not be used.');
   }
   return context;
-}
+};
 
 export { ThemeContext, ThemeProvider, useThemeContext };
-

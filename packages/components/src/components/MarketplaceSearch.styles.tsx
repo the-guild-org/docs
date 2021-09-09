@@ -1,6 +1,8 @@
 import tw, { css, styled } from 'twin.macro';
 
-export const Wrapper = styled.section(() => [tw`bg-white dark:bg-gray-900 font-default`]);
+export const Wrapper = styled.section(() => [
+  tw`bg-white dark:bg-gray-900 font-default`,
+]);
 
 export const Container = styled.div(() => [tw`container-max py-12`]);
 

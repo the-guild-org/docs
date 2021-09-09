@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { isValidElement } from 'react';
 
 import {
   Container,
@@ -35,10 +35,16 @@ export const HeroGradient: React.FC<IHeroGradientProps> = ({
           <p {...restProps.descriptionProps}>{description}</p>
         </Info>
         <CTA>
-          {link && <a {...link} {...restProps.linkProps}/>}
-          {version && <span {...restProps.versionProps}>{version}</span>}
+          {link && <a {...link} {...restProps.linkProps} />}
+          {version && isValidElement(version) ? (
+            version
+          ) : (
+            <span {...restProps.versionProps}>{version}</span>
+          )}
         </CTA>
-        {image && <Image src={image.src} alt={image.alt} {...restProps.imageProps}/>}
+        {image && (
+          <Image src={image.src} alt={image.alt} {...restProps.imageProps} />
+        )}
       </Content>
     </Container>
   </Wrapper>

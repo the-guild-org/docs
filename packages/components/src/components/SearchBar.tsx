@@ -227,7 +227,11 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
                   {subHit.content ? (
                     <Snippet tagName="p" hit={subHit} attribute="content" />
                   ) : (
-                    <Snippet tagName="p" hit={subHit} attribute="hierarchy.lvl1" />
+                    <Snippet
+                      tagName="p"
+                      hit={subHit}
+                      attribute="hierarchy.lvl1"
+                    />
                   )}
                 </>
               );
@@ -245,14 +249,22 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
                     hit={subHit}
                     attribute={`hierarchy.${subHit.type}`}
                   />
-                  <Snippet tagName="p" hit={subHit} attribute="hierarchy.lvl1" />
+                  <Snippet
+                    tagName="p"
+                    hit={subHit}
+                    attribute="hierarchy.lvl1"
+                  />
                 </>
               );
             } else if (subHit.type === 'content') {
               content = (
                 <>
                   <Snippet hit={subHit} attribute="content" />
-                  <Snippet tagName="p" hit={subHit} attribute="hierarchy.lvl1" />
+                  <Snippet
+                    tagName="p"
+                    hit={subHit}
+                    attribute="hierarchy.lvl1"
+                  />
                 </>
               );
             }

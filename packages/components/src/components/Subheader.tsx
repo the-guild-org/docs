@@ -43,11 +43,20 @@ export const Subheader: React.FC<ISubheaderProps> = ({
 
   const renderNavigation = (
     <Navigation isModalOpen={mobileNavOpen} {...restProps.navigationProps}>
-      <Icon iconType="close" onClick={() => handleNav(false)} {...restProps.navCloseButtonProps}>
+      <Icon
+        iconType="close"
+        onClick={() => handleNav(false)}
+        {...restProps.navCloseButtonProps}
+      >
         <img src={icons.close} height="22" width="22" alt="Menu close icon" />
       </Icon>
       {links.map((link) => (
-        <Link key={link.href} isActiveLink={link.active} {...link} {...restProps.linkProps}/>
+        <Link
+          key={link.href}
+          isActiveLink={link.active}
+          {...link}
+          {...restProps.linkProps}
+        />
       ))}
     </Navigation>
   );
@@ -69,8 +78,12 @@ export const Subheader: React.FC<ISubheaderProps> = ({
         </Logo>
         {renderNavigation}
         <Controls>
-          {cta && <CTA {...cta} {...restProps.ctaProps}/>}
-          <Icon iconType="open" onClick={() => handleNav(true)} {...restProps.navOpenButtonProps}>
+          {cta && <CTA {...cta} {...restProps.ctaProps} />}
+          <Icon
+            iconType="open"
+            onClick={() => handleNav(true)}
+            {...restProps.navOpenButtonProps}
+          >
             <img
               src={icons.caretSlim}
               height="24"
