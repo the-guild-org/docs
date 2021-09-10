@@ -318,6 +318,8 @@ export interface ITableSearchProps {
   query: string;
   placeholder: string;
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  queryList?: IMarketplaceListProps;
+  children(props: IMarketplaceSearchProps & IExampleListProps): JSX.Element;
 }
 
 export interface IExampleListHeader {

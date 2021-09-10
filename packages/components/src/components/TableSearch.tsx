@@ -1,7 +1,7 @@
 import React, { useMemo, useState} from 'react';
 
 import { ITableSearchProps } from '../types/components'
-import { Search } from './TableSearch.styles';
+import { Wrapper, Container, Title, Search } from './TableSearch.styles';
 
 import { useThemeContext } from '../helpers/theme';
 import { marketplaceThemedAssets } from '../helpers/assets';
@@ -15,6 +15,8 @@ const TableSearch: React.FC<ITableSearchProps> = ({
     // query,
     placeholder,
     // handleInputChange,
+    children,
+    queryList,
     ...restProps
 }) => {
     const { isDarkTheme } = useThemeContext();
@@ -73,32 +75,39 @@ const TableSearch: React.FC<ITableSearchProps> = ({
     }, [query]);
 
     return (
-    <>
-      {tagsFilter && (
-        <TagsContainer>
-          {tagsFilter.map((tagName) => (
-            <Tag onClick={() => setQuery(`#${tagName}`)} key={tagName}>
-            {tagName}
-            </Tag>
-          ))}
-        </TagsContainer>
-      )}
-      <Search>
-        <img
-          src={searchIcon}
-          alt="Search"
-          height="24"
-          width="24"
-        />
-        <input
-          value={query}
-          type="search"
-          placeholder={placeholder}
-          onChange={handleChange}
-          {...restProps}
-        />
-      </Search>
-    </>
+    <Wrapper>
+      <Container>
+        <Title>Title text</Title>
+        {tagsFilter && (
+          <TagsContainer>
+            {tagsFilter.map((tagName) => (
+              <Tag onClick={() => setQuery(`#${tagName}`)} key={tagName}>
+              {tagName}
+              </Tag>
+            ))}
+          </TagsContainer>
+        )}
+        <Search>
+          <img
+            src={searchIcon}
+            alt="Search"
+            height="24"
+            width="24"
+          />
+          <input
+            value={query}
+            type="search"
+            placeholder={placeholder}
+            onChange={handleChange}
+            {...restProps}
+          />
+        </Search>
+        {children({
+          items: items,
+          queryList: queryList
+        })}
+      </Container>
+    </Wrapper>
   );
 };
 
