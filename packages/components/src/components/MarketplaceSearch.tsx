@@ -82,7 +82,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
     <Wrapper {...restProps.wrapperProps}>
       <Container {...restProps.containerProps}>
         <Title {...restProps.titleProps}>{title}</Title>
-        <TableSearch
+        {/*<TableSearch
           tagsFilter={tagsFilter}
           handleTagClick={setQuery}
           searchIcon={marketplaceAssets.search}
@@ -91,7 +91,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
           handleInputChange={handleChange}
           setItems={}
           {...restProps.searchProps}
-        />
+        />*/}
 
         {items && queryList ? (
           <Results>
