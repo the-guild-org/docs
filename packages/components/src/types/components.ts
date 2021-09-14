@@ -251,7 +251,7 @@ export interface IMarketplaceItemProps {
   title: string;
   description: string | React.ReactNode;
   tags?: string[];
-  modal: {
+  modal?: {
     header: {
       image?: IImage;
       description?: string | ILink;
@@ -290,19 +290,23 @@ export interface IMarketplaceListProps {
   itemProps?: IMarketplaceItemRestProps;
 }
 
-export interface IMarketplaceSearchProps {
+export interface ISearchProps {
   title: string | React.ReactNode;
   placeholder: string;
-  primaryList: IMarketplaceListProps;
-  secondaryList?: IMarketplaceListProps;
-  queryList?: IMarketplaceListProps;
   tagsFilter?: string[];
+  queryList?: IMarketplaceListProps;
 
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
   searchProps?: React.ComponentProps<'input'>;
   queryListProps?: IMarketplaceItemRestProps;
+}
+
+export interface IMarketplaceSearchProps extends ISearchProps {
+  primaryList: IMarketplaceListProps;
+  secondaryList?: IMarketplaceListProps;
+
   primaryListProps?: IMarketplaceItemRestProps;
   secondaryListProps?: IMarketplaceItemRestProps;
 }
@@ -311,33 +315,20 @@ export interface INewsletterProps {
   onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
 }
 
-export interface ITableSearchProps {
-  tagsFilter?: string[];
-  handleTagClick: (arg0: string) => void;
-  searchIcon: string;
-  query: string;
-  placeholder: string;
-  handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  queryList?: IMarketplaceListProps;
-  children(props: IMarketplaceSearchProps & IExampleListProps): JSX.Element;
-}
-
-export interface IExampleListHeader {
-  image: string;
-  text: string;
-}
-
-export interface IExampleListItemProps {
-  title: string;
-  tags?: string[];
-  description: string;
-  link: ILink;
+export interface ITableSearchProps extends ISearchProps {
+  children(props: {
+    items: IMarketplaceItemProps[] | null;
+    placeholder: string | React.ReactElement | undefined;
+  }): JSX.Element;
 }
 
 export interface IExampleListProps {
   title: string;
   items: {
-    header: IExampleListHeader;
-    list: IExampleListItemProps[];
-  };
+    header?: {
+      image: string;
+      text: string;
+    };
+    list: IMarketplaceItemProps[];
+  }[];
 }

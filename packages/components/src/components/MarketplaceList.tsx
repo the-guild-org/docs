@@ -81,7 +81,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
               {...restProps.itemProps}
             />
 
-            {currentItem && (
+            {currentItem && currentItem.modal && (
               <Modal
                 {...currentItem.modal.header}
                 title={currentItem.title}
