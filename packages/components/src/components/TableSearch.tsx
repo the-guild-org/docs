@@ -9,19 +9,16 @@ import { marketplaceThemedAssets } from '../helpers/assets';
 import { Tag, TagsContainer } from './Tag';
 
 const TableSearch: React.FC<ITableSearchProps> = ({
+    title,
     tagsFilter,
-    // handleTagClick,
-    searchIcon,
-    // query,
     placeholder,
-    // handleInputChange,
-    children,
     queryList,
+    children,
     ...restProps
 }) => {
     const { isDarkTheme } = useThemeContext();
     const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
-    const [query, setQuery] = useState<string>();
+    const [query, setQuery] = useState<string>('');
     
     const handleChange = (e: React.FormEvent<EventTarget>) => {
       const query = e.target as HTMLInputElement;
@@ -75,9 +72,9 @@ const TableSearch: React.FC<ITableSearchProps> = ({
     }, [query]);
 
     return (
-    <Wrapper>
-      <Container>
-        <Title>Title text</Title>
+    <Wrapper {...restProps.wrapperProps}>
+      <Container {...restProps.containerProps}>
+        <Title {...restProps.titleProps}>{title}</Title>
         {tagsFilter && (
           <TagsContainer>
             {tagsFilter.map((tagName) => (
@@ -89,7 +86,7 @@ const TableSearch: React.FC<ITableSearchProps> = ({
         )}
         <Search>
           <img
-            src={searchIcon}
+            src={marketplaceAssets.search}
             alt="Search"
             height="24"
             width="24"
@@ -104,7 +101,7 @@ const TableSearch: React.FC<ITableSearchProps> = ({
         </Search>
         {children({
           items: items,
-          queryList: queryList
+          placeholder: queryList && renderQueryPlaceholder(queryList.placeholder, query)
         })}
       </Container>
     </Wrapper>
