@@ -561,11 +561,48 @@ export const dummyMarketplaceSearch = {
 
 export const dummyExampleList = {
   title: 'Choose Live Example',
-  items: [
-    {
+  tagsFilter: ['test', 'tag'],
+  placeholder:'Search...',
+  queryList: {
+    placeholder: 'No results for {query}',
+    pagination: 8,
+    items: [
+      {
+        header: {
+          image: typescriptImage,
+          text: 'Typescript',
+        },
+        list: [
+            {
+            title: 'GraphQL Modules 1',
+            tags: ['test'],
+            description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            link: {
+                href: '#',
+                target: '_blank',
+                rel: 'noopener noreferrer',
+                title: 'Learn more about GraphQL Jit',
+            },
+            },
+            {
+            title: 'GraphQL Modules 1',
+            tags: ['test'],
+            description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            link: {
+                href: '#',
+                target: '_blank',
+                rel: 'noopener noreferrer',
+                title: 'Learn more about GraphQL Jit',
+            },
+            },
+        ],
+      },
+      {
       header: {
-        image: typescriptImage,
-        text: 'Typescript',
+          image: typescriptImage,
+          text: '.NET',
       },
       list: [
           {
@@ -593,72 +630,39 @@ export const dummyExampleList = {
           },
           },
       ],
-    },
-    {
-    header: {
-        image: typescriptImage,
-        text: '.NET',
-    },
-    list: [
-        {
-        title: 'GraphQL Modules 1',
-        tags: ['test'],
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        link: {
-            href: '#',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-            title: 'Learn more about GraphQL Jit',
-        },
-        },
-        {
-        title: 'GraphQL Modules 1',
-        tags: ['test'],
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        link: {
-            href: '#',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-            title: 'Learn more about GraphQL Jit',
-        },
-        },
+      },
+      {
+      header: {
+          image: typescriptImage,
+          text: 'Java',
+      },
+      list: [
+          {
+          title: 'GraphQL Modules 1',
+          tags: ['test'],
+          description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          link: {
+              href: '#',
+              target: '_blank',
+              rel: 'noopener noreferrer',
+              title: 'Learn more about GraphQL Jit',
+          },
+          },
+          {
+          title: 'GraphQL Modules 1',
+          tags: ['test'],
+          description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          link: {
+              href: '#',
+              target: '_blank',
+              rel: 'noopener noreferrer',
+              title: 'Learn more about GraphQL Jit',
+          },
+          },
+      ],
+      },
     ],
-    },
-    {
-    header: {
-        image: typescriptImage,
-        text: 'Java',
-    },
-    list: [
-        {
-        title: 'GraphQL Modules 1',
-        tags: ['test'],
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        link: {
-            href: '#',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-            title: 'Learn more about GraphQL Jit',
-        },
-        },
-        {
-        title: 'GraphQL Modules 1',
-        tags: ['test'],
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        link: {
-            href: '#',
-            target: '_blank',
-            rel: 'noopener noreferrer',
-            title: 'Learn more about GraphQL Jit',
-        },
-        },
-    ],
-    },
-  ],
-  tagsFilter: ['test', 'tag'],
-  placeholder: 'Search...'
+  },
 };
