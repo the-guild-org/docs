@@ -272,7 +272,13 @@ interface IMarketplaceItemRestProps {
 }
 export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
   icon: string;
-  items: IMarketplaceItemProps[];
+  items: IMarketplaceItemProps[] | {
+    header?: {
+      image: string;
+      text: string;
+    };
+    list: IMarketplaceItemProps[];
+  }[];
   setCurrentItem?: (state: IMarketplaceItemProps) => void;
   handleModal?: (state: boolean) => void;
 }
@@ -317,18 +323,7 @@ export interface INewsletterProps {
 
 export interface ITableSearchProps extends ISearchProps {
   children(props: {
-    items: IMarketplaceItemProps[] | null;
+    items: IMarketplaceItemsProps[];
     placeholder: string | React.ReactElement | undefined;
   }): JSX.Element;
-}
-
-export interface IExampleListProps {
-  title: string;
-  items: {
-    header?: {
-      image: string;
-      text: string;
-    };
-    list: IMarketplaceItemProps[];
-  }[];
 }

@@ -19,7 +19,13 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   ...restProps
 }) => {
   return (
-    <TableSearch title={title} tagsFilter={tagsFilter} placeholder={placeholder} queryList={queryList}>
+    <TableSearch
+      title={title}
+      tagsFilter={tagsFilter}
+      placeholder={placeholder}
+      queryList={queryList}
+      {...restProps}
+    >
       {({ items, placeholder }) => (
         <>
           {items && queryList ? (
