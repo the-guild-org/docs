@@ -326,3 +326,41 @@ export interface ITableSearchProps extends ISearchProps {
     placeholder: string | React.ReactElement | undefined;
   }): JSX.Element;
 }
+
+export interface ISchemaTypeProps {
+  name: string;
+  description: string;
+  tags?: string[];
+  config: string;
+  schema: string;
+  documents?: string;
+  link: ILink;
+}
+
+export interface ISchemaItemsProps {
+  [index: string]: ISchemaTypeProps[];
+}
+
+// Use Exclude here?
+export interface IExampleListProps {
+  title?: string;
+  placeholder: string | React.ReactElement;
+  pagination: number;
+  items: ISchemaItemsProps;
+  tableHeader?: React.ReactNode;
+
+  wrapperProps?: React.ComponentProps<'section'>;
+  containerProps?: React.ComponentProps<'div'>;
+  titleProps?: React.ComponentProps<'h2'>;
+  placeholderProps?: React.ComponentProps<'div'>;
+  itemProps?: IMarketplaceItemRestProps;
+}
+
+export interface IExampleListSearchProps {
+  title: string | React.ReactNode;
+  placeholder: string;
+  primaryList: IExampleListProps;
+  secondaryList?: IExampleListProps;
+  queryList?: IExampleListProps;
+  tagsFilter?: string[];
+}

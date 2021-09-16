@@ -40,18 +40,18 @@ const TableSearch: React.FC<ITableSearchProps> = ({
         </p>
       );
     };
-
+    
     const items = useMemo(() => {
       let results = null;
       if (query && queryList) {
         const tagsFilter = (query || '')
+          .toLowerCase()
           .split(' ')
           .filter((t) => t.trim().length > 1 && t.startsWith('#'));
         const queryWithoutTags =
           tagsFilter.length > 0
-            ? query.replace(/#\w\w+\s?/g, '').toLowerCase()
-            : query.toLowerCase();
-  
+            ? query.replace(/#[.]?\w\w+\s?/g, '').toLowerCase()
+            : query.toLowerCase(); 
         results = queryList.items.filter((item) => {
           const matchesContent = item.title
             .toLowerCase()
@@ -61,8 +61,7 @@ const TableSearch: React.FC<ITableSearchProps> = ({
             return matchesContent;
           } else {
             return (
-              item.tags?.some((tag) => tagsFilter.includes(`#${tag}`)) &&
-              matchesContent
+              item.tags?.some((tag) => tagsFilter.includes(`#${tag}`)) && matchesContent
             );
           }
         });

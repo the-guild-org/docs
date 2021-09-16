@@ -559,110 +559,154 @@ export const dummyMarketplaceSearch = {
   },
 };
 
+const dummyExampleListItems = {
+  'TypeScript': [
+    {
+      title: 'Schema types 1',
+      description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
+      tags: ['typescript', 'frontend', 'backend'],
+      config: '',
+      schema: '',
+      documents: '',
+      link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        title: 'Schema type 1',
+      },
+    },
+    {
+      title: 'Schema types 2',
+      description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
+      tags: ['typescript', 'frontend', 'backend'],
+      config: '',
+      schema: '',
+      documents: '',
+      link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        title: 'Learn more about GraphQL Jit',
+      },
+    },
+    {
+      title: 'Schema types 3',
+      description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
+      tags: ['typescript', 'frontend', 'backend'],
+      config: '',
+      schema: '',
+      documents: '',
+      link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        title: 'Learn more about GraphQL Jit',
+      },
+    },
+  ],
+  '.NET': [
+    {
+      title: 'Schema types 1',
+      description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
+      tags: ['.net', 'backend'],
+      config: '',
+      schema: '',
+      documents: '',
+      link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        title: 'Learn more about GraphQL Jit',
+      },
+    },
+    {
+      title: 'Schema types 2',
+      description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
+      tags: ['.net'],
+      config: '',
+      schema: '',
+      documents: '',
+      link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        title: 'Learn more about GraphQL Jit',
+      },
+    },
+    {
+      title: 'Schema types 3',
+      description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
+      tags: ['.net'],
+      config: '',
+      schema: '',
+      documents: '',
+      link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        title: 'Learn more about GraphQL Jit',
+      },
+    },
+  ],
+  'Java': [
+    {
+      title: 'Schema types 1',
+      description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
+      tags: ['java'],
+      config: '',
+      schema: '',
+      documents: '',
+      link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        title: 'Learn more about GraphQL Jit',
+      },
+    },
+    {
+      title: 'Schema types 2',
+      description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
+      tags: ['java'],
+      config: '',
+      schema: '',
+      documents: '',
+      link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        title: 'Learn more about GraphQL Jit',
+      },
+    },
+    {
+      title: 'Schema types 3',
+      description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
+      tags: ['java'],
+      config: '',
+      schema: '',
+      documents: '',
+      link: {
+        href: '#',
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        title: 'Learn more about GraphQL Jit',
+      },
+    },
+  ],
+};
+
 export const dummyExampleList = {
   title: 'Choose Live Example',
-  tagsFilter: ['test', 'tag'],
+  tagsFilter: ['All', 'TypeScript', '.NET', 'Java', 'Flow'],
   placeholder:'Search...',
+  primaryList: {
+    items: dummyExampleListItems,
+    placeholder: 'No examples available...',
+    pagination: 8
+  },
   queryList: {
+    title: 'Query Results',
+    items: dummyExampleListItems,
     placeholder: 'No results for {query}',
     pagination: 8,
-    items: [
-      {
-        header: {
-          image: typescriptImage,
-          text: 'Typescript',
-        },
-        list: [
-            {
-            title: 'GraphQL Modules 1',
-            tags: ['test'],
-            description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            link: {
-                href: '#',
-                target: '_blank',
-                rel: 'noopener noreferrer',
-                title: 'Learn more about GraphQL Jit',
-            },
-            },
-            {
-            title: 'GraphQL Modules 1',
-            tags: ['test'],
-            description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            link: {
-                href: '#',
-                target: '_blank',
-                rel: 'noopener noreferrer',
-                title: 'Learn more about GraphQL Jit',
-            },
-            },
-        ],
-      },
-      {
-      header: {
-          image: typescriptImage,
-          text: '.NET',
-      },
-      list: [
-          {
-          title: 'GraphQL Modules 1',
-          tags: ['test'],
-          description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          link: {
-              href: '#',
-              target: '_blank',
-              rel: 'noopener noreferrer',
-              title: 'Learn more about GraphQL Jit',
-          },
-          },
-          {
-          title: 'GraphQL Modules 1',
-          tags: ['test'],
-          description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          link: {
-              href: '#',
-              target: '_blank',
-              rel: 'noopener noreferrer',
-              title: 'Learn more about GraphQL Jit',
-          },
-          },
-      ],
-      },
-      {
-      header: {
-          image: typescriptImage,
-          text: 'Java',
-      },
-      list: [
-          {
-          title: 'GraphQL Modules 1',
-          tags: ['test'],
-          description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          link: {
-              href: '#',
-              target: '_blank',
-              rel: 'noopener noreferrer',
-              title: 'Learn more about GraphQL Jit',
-          },
-          },
-          {
-          title: 'GraphQL Modules 1',
-          tags: ['test'],
-          description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-          link: {
-              href: '#',
-              target: '_blank',
-              rel: 'noopener noreferrer',
-              title: 'Learn more about GraphQL Jit',
-          },
-          },
-      ],
-      },
-    ],
   },
 };

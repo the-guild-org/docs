@@ -7,7 +7,7 @@ import Table from "./Table";
 import TableSearch from './TableSearch';
 import {MarketplaceList} from './MarketplaceList';
 
-import { ISearchProps } from '../types/components';
+import { IExampleListSearchProps } from '../types/components';
 
 import { Examples } from './ExampleList.styles';
 
@@ -22,17 +22,29 @@ const TableHeader = ({ image, text }: { image: string, text: string}) => (
   </tr>
 )
 
-const ExampleList: React.FC<ISearchProps> = ({ title, tagsFilter, placeholder, queryList, ...restProps }) => {
+const flattenObj = (obj, keyToFlatten) => {
+  const objCopy = Object.assign({}, obj);
+  objCopy[keyToFlatten] = Object.values(obj[keyToFlatten]).flat();
+  return objCopy;
+};
+
+// use marketplacesearch props
+export const ExampleList: React.FC<IExampleListSearchProps> = ({ title, tagsFilter, placeholder, queryList, primaryList, ...restProps }) => {
   const { isDarkTheme } = useThemeContext();
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
   
   return (
-    <TableSearch title={title} tagsFilter={tagsFilter} placeholder={placeholder} queryList={queryList} {...restProps}>
+    <TableSearch
+      title={title}
+      tagsFilter={tagsFilter}
+      placeholder={placeholder}
+      queryList={flattenObj(queryList, 'items')}
+      {...restProps}
+    >
       {({ items, placeholder }) => (
-          console.log('items ---', items, 'qL-', queryList),
         <>
           {items && queryList ? (
-            <MarketplaceList
+            <MarketplaceList 
               title={queryList.title}
               items={items}
               placeholder={placeholder}
@@ -42,15 +54,15 @@ const ExampleList: React.FC<ISearchProps> = ({ title, tagsFilter, placeholder, q
           ) : (
           <Examples>
             {
-              items && items.map((item) => {
+              Object.keys(primaryList.items).map((key) => {
                 return (
                   <Table
-                    key={item.header.text}
+                    key={key}
                     tableHeader={<TableHeader
-                      image={item.header.image}
-                      text={item.header.text}
+                      image={''}
+                      text={key}
                     />}
-                    items={item.list}
+                    items={primaryList.items[key]}
                     icon={marketplaceAssets.caret}
                   />
                 )
@@ -62,5 +74,3 @@ const ExampleList: React.FC<ISearchProps> = ({ title, tagsFilter, placeholder, q
     </TableSearch>   
   );
 };
-
-export default ExampleList;
