@@ -322,6 +322,7 @@ export interface INewsletterProps {
 }
 
 export interface ITableSearchProps extends ISearchProps {
+  isInline?: boolean;
   children(props: {
     items: IMarketplaceItemsProps[];
     placeholder: string | React.ReactElement | undefined;

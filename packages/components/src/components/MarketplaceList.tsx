@@ -23,6 +23,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
   placeholder,
   items,
   pagination,
+  tableHeader,
   ...restProps
 }) => {
   const { isDarkTheme } = useThemeContext();
@@ -71,7 +72,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
         ) : (
           <>
             <Table
-              tableHeader={<TableHeader />}
+              tableHeader={tableHeader ? tableHeader : <TableHeader />}
               items={pages[currentPage]}
               icon={marketplaceAssets.caret}
               setCurrentItem={setCurrentItem}

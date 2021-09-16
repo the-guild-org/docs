@@ -8,7 +8,7 @@ import { marketplaceThemedAssets } from '../helpers/assets';
 
 import { Tag, TagsContainer } from './Tag';
 
-const TableSearch: React.FC<ITableSearchProps> = ({
+export const TableSearch: React.FC<ITableSearchProps> = ({
     title,
     tagsFilter,
     placeholder,
@@ -76,8 +76,9 @@ const TableSearch: React.FC<ITableSearchProps> = ({
     }, [query]);
 
     return (
-      <Wrapper {...restProps.wrapperProps}>
-        <Container {...restProps.containerProps}>
+      <>
+      {/*<Wrapper {...restProps.wrapperProps}>
+    <Container {...restProps.containerProps}>*/}
           <Title {...restProps.titleProps}>{title}</Title>
           {tagsFilter && (
             <TagsContainer>
@@ -89,27 +90,27 @@ const TableSearch: React.FC<ITableSearchProps> = ({
             </TagsContainer>
           )}
           <Search>
-          <img
-            src={marketplaceAssets.search}
-            alt="Search"
-            height="24"
-            width="24"
-          />
-          <input
-            value={query}
-            type="search"
-            placeholder={placeholder}
-            onChange={handleChange}
-            {...restProps}
-          />
-        </Search>
+            <img
+              src={marketplaceAssets.search}
+              alt="Search"
+              height="24"
+              width="24"
+            />
+            <input
+              value={query}
+              type="search"
+              placeholder={placeholder}
+              onChange={handleChange}
+              {...restProps}
+            />
+          </Search>
           {children({
             items: items,
-            placeholder: queryList && renderQueryPlaceholder(queryList.placeholder, query)
+            placeholder: queryList && renderQueryPlaceholder(queryList.placeholder, query),
+            query: query,
           })}
-        </Container>
-      </Wrapper>
+        {/*</Container>
+      </Wrapper>*/}
+      </>
     );
 };
-
-export default TableSearch;
