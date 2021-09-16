@@ -52,38 +52,43 @@ const TableSearch: React.FC<ITableSearchProps> = ({
           tagsFilter.length > 0
             ? query.replace(/#[.]?\w\w+\s?/g, '').toLowerCase()
             : query.toLowerCase(); 
-        results = queryList.items.filter((item) => {
-          const matchesContent = item.title
-            .toLowerCase()
-            .includes(queryWithoutTags);
-  
-          if (tagsFilter.length === 0) {
-            return matchesContent;
-          } else {
-            return (
-              item.tags?.some((tag) => tagsFilter.includes(`#${tag}`)) && matchesContent
-            );
-          }
-        });
+        
+        if (tagsFilter.length > 0 && tagsFilter.includes(`#all`)) {
+          results = queryList.items;
+        } else {
+          results = queryList.items.filter((item) => {
+            const matchesContent = item.title
+              .toLowerCase()
+              .includes(queryWithoutTags);
+    
+            if (tagsFilter.length === 0) {
+              return matchesContent;
+            } else {
+              return (
+                item.tags?.some((tag) => tagsFilter.includes(`#${tag}`)) && matchesContent
+              );
+            }
+          });
+        }
       }
   
       return results;
     }, [query]);
 
     return (
-    <Wrapper {...restProps.wrapperProps}>
-      <Container {...restProps.containerProps}>
-        <Title {...restProps.titleProps}>{title}</Title>
-        {tagsFilter && (
-          <TagsContainer>
-            {tagsFilter.map((tagName) => (
-              <Tag onClick={() => setQuery(`#${tagName}`)} key={tagName}>
-              {tagName}
-              </Tag>
-            ))}
-          </TagsContainer>
-        )}
-        <Search>
+      <Wrapper {...restProps.wrapperProps}>
+        <Container {...restProps.containerProps}>
+          <Title {...restProps.titleProps}>{title}</Title>
+          {tagsFilter && (
+            <TagsContainer>
+              {tagsFilter.map((tagName) => (
+                <Tag onClick={() => setQuery(`#${tagName}`)} key={tagName}>
+                {tagName}
+                </Tag>
+              ))}
+            </TagsContainer>
+          )}
+          <Search>
           <img
             src={marketplaceAssets.search}
             alt="Search"
@@ -98,13 +103,13 @@ const TableSearch: React.FC<ITableSearchProps> = ({
             {...restProps}
           />
         </Search>
-        {children({
-          items: items,
-          placeholder: queryList && renderQueryPlaceholder(queryList.placeholder, query)
-        })}
-      </Container>
-    </Wrapper>
-  );
+          {children({
+            items: items,
+            placeholder: queryList && renderQueryPlaceholder(queryList.placeholder, query)
+          })}
+        </Container>
+      </Wrapper>
+    );
 };
 
 export default TableSearch;
