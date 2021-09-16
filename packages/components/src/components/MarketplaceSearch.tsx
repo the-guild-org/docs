@@ -7,7 +7,7 @@ import {
 } from './MarketplaceSearch.styles';
 
 import { IMarketplaceSearchProps } from '../types/components';
-import TableSearch from './TableSearch';
+import {TableSearch} from './TableSearch';
 
 export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   title,

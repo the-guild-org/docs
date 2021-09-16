@@ -3,23 +3,24 @@ import React, { useState } from 'react';
 import { useThemeContext } from '../helpers/theme';
 import { marketplaceThemedAssets } from '../helpers/assets';
 
-import Table from "./Table";
-import TableSearch from './TableSearch';
+// import Table from "./Table";
+import {TableSearch} from './TableSearch';
 import {MarketplaceList} from './MarketplaceList';
 
 import { IExampleListSearchProps } from '../types/components';
 
-import { Examples } from './ExampleList.styles';
+import { Header, Examples } from './ExampleList.styles';
+import { Wrapper, Container } from './TableSearch.styles';
 
 const TableHeader = ({ image, text }: { image: string, text: string}) => (
-  <tr>
+  <Header>
     <td>
       <img src={image} alt='logo' />
       <p>{text}</p>
     </td>
     <td></td>
     <td></td>
-  </tr>
+  </Header>
 )
 
 const flattenObj = (obj, keyToFlatten) => {
@@ -34,35 +35,45 @@ export const ExampleList: React.FC<IExampleListSearchProps> = ({ title, tagsFilt
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
   
   return (
-    <TableSearch
+    <Wrapper>
+        <Container>
+            <TableSearch
       title={title}
       tagsFilter={tagsFilter}
       placeholder={placeholder}
       queryList={flattenObj(queryList, 'items')}
       {...restProps}
     >
-      {({ items, placeholder }) => (
+      {({ items, placeholder, query }) => (
         <>
           {items && queryList ? (
-            <MarketplaceList 
-              title={queryList.title}
-              items={items}
-              placeholder={placeholder}
-              pagination={queryList.pagination}
-              {...restProps.queryListProps}
-            />
+            <Examples>
+                <MarketplaceList 
+                title={queryList.title}
+                tableHeader={<TableHeader
+                    image={''}
+                    text={query}
+                />}
+                items={items}
+                placeholder={placeholder}
+                pagination={queryList.pagination}
+                {...restProps.queryListProps}
+                />
+            </Examples>
           ) : (
           <Examples>
             {
               Object.keys(primaryList.items).map((key) => {
                 return (
-                  <Table
+                  <MarketplaceList
                     key={key}
                     tableHeader={<TableHeader
-                      image={''}
-                      text={key}
+                        image={''}
+                        text={key}
                     />}
                     items={primaryList.items[key]}
+                    placeholder={placeholder}
+                    pagination={queryList.pagination}
                     icon={marketplaceAssets.caret}
                   />
                 )
@@ -71,6 +82,8 @@ export const ExampleList: React.FC<IExampleListSearchProps> = ({ title, tagsFilt
           </Examples>)}
         </>
       )}
-    </TableSearch>   
+    </TableSearch>
+        </Container>
+    </Wrapper> 
   );
 };
