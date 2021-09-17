@@ -309,3 +309,8 @@ export interface IMarketplaceSearchProps {
 export interface INewsletterProps {
   onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
 }
+
+export interface ISchemaPageProps {
+  schemaName: string;
+  tags: string[];
+}
