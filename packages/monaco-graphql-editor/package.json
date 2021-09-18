@@ -19,7 +19,7 @@
   "devDependencies": {
     "core-js": "3.17.3",
     "monaco-editor": "0.27.0",
-    "graphql": "15.5.1",
+    "graphql": "15.5.3",
     "@monaco-editor/react": "4.2.2"
   },
   "publishConfig": {
