@@ -27,11 +27,45 @@ export const Button = styled.button(() => [
   css`
     &:hover,
     &:focus {
-        img {
-            filter: invert(1);
-        }
+      img {
+        filter: invert(1);
+      }
     }
-  `
+
+    img {
+        ${[tw`w-5 m-0 ml-0.5`]},
+    }
+  `,
 ]);
 
-export const EditorWrapper = styled.div(() => []);
+export const EditorGroupWrapper = styled.div(() => []);
+
+export const EditorWrapper = styled.div(() => [
+    css`
+      border-right: 1px solid gray;
+    `
+]);
+
+export const EditorHeader = styled.div(() => [
+    tw`p-3.5 flex justify-between bg-gray-100`,
+    css`
+      border-bottom: 1px solid gray;
+      div {
+        ${[tw`flex gap-2.5`]}
+        
+        img {
+            ${[tw`w-14 h-14 rounded-md`]}
+        }
+
+        span {
+            ${[tw`text-sm`]}
+            p {
+               color: #0B0D11;
+            }
+            span {
+                color: #7F818C; 
+            }
+        }
+      }      
+    `
+]);

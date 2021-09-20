@@ -313,4 +313,5 @@ export interface INewsletterProps {
 export interface ISchemaPageProps {
   schemaName: string;
   tags: string[];
+  schema: string;
 }
