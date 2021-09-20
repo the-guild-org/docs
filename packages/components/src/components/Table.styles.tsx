@@ -22,15 +22,15 @@ export const TableItem = styled.tr(() => [
     td {
       ${tw`px-2 py-4`}
 
-      &:first-of-type {
+      &#td-image {
         ${tw`w-14 md:w-24 pl-0`}
       }
 
-      &:last-of-type {
+      &#td-icon-button {
         ${tw`pr-0`}
       }
 
-      &:nth-of-type(3) {
+      &#td-date {
         ${tw`hidden md:table-cell`}
       }
     }
