@@ -40,7 +40,7 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
         items.map((item) => (
           <TableItem key={item.title}>
             {item.image && (
-              <td>
+              <td id="td-image">
                 <TableItemImage {...item.image} {...restProps.imageProps} />
               </td>
             )}
@@ -72,13 +72,13 @@ const TableItems: React.FC<IMarketplaceItemsProps> = ({
               </TableItemInfo>
             </td>
             {item.update && (
-              <td>
+              <td id="td-date">
                 <TableItemDate {...restProps.dateProps}>
                   {formatDate(item.update)}
                 </TableItemDate>
               </td>
             )}
-            <td>
+            <td id="td-icon-button">
               <TableItemButton
                 type="button"
                 onClick={() => {

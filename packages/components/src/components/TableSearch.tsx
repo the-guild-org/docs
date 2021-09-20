@@ -77,8 +77,8 @@ export const TableSearch: React.FC<ITableSearchProps> = ({
 
     return (
       <>
-      {/*<Wrapper {...restProps.wrapperProps}>
-    <Container {...restProps.containerProps}>*/}
+        <Wrapper {...restProps.wrapperProps}>
+        <Container {...restProps.containerProps}>
           <Title {...restProps.titleProps}>{title}</Title>
           {tagsFilter && (
             <TagsContainer>
@@ -109,8 +109,8 @@ export const TableSearch: React.FC<ITableSearchProps> = ({
             placeholder: queryList && renderQueryPlaceholder(queryList.placeholder, query),
             query: query,
           })}
-        {/*</Container>
-      </Wrapper>*/}
+        </Container>
+      </Wrapper>
       </>
     );
 };
