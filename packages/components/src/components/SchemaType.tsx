@@ -3,9 +3,36 @@ import React from 'react';
 import { ISchemaPageProps } from '../types/components';
 import { useThemeContext } from '../helpers/theme';
 import { marketplaceThemedAssets } from '../helpers/assets';
-import { Wrapper, Container, Header, Title, ButtonWrapper, Button, EditorGroupWrapper, EditorWrapper, EditorHeader } from './SchemaTypes.styles';
+import { Wrapper, Container, Header, Title, ButtonWrapper, Button, EditorGroupWrapper, EditorWrapper, EditorHeader, Frameworks } from './SchemaTypes.styles';
 import { Tag, TagsContainer } from './Tag';
 import { SchemaEditor } from '../../../monaco-graphql-editor/src/editor/SchemaEditor';
+
+const FrameworkList = ({ options }) => {
+    const list = options.reduce((prev : string, curr : string) => [prev, <span key={prev}></span>, curr]);
+
+    return <Frameworks>{list}</Frameworks>
+};
+
+const Editor = ({ title, frameworks, schema, icon, image }) => (
+    <EditorWrapper className='wrapper'>
+        <EditorHeader>
+            <div>
+                <img src={image} alt="logo" />
+                <span>
+                    <p>{title}</p>
+                    <FrameworkList options={frameworks} />
+                </span>
+            </div>
+            <Button
+                type="button"
+                onClick={() => console.log('clicked')}
+            >
+                <img src={icon} alt=">" />
+            </Button>
+        </EditorHeader>
+        <SchemaEditor schema={schema} />
+    </EditorWrapper>
+);
 
 export const SchemaType: React.FC<ISchemaPageProps> = ({ schemaName, tags, schema }) => {
   const { isDarkTheme } = useThemeContext();
@@ -38,33 +65,10 @@ export const SchemaType: React.FC<ISchemaPageProps> = ({ schemaName, tags, schem
                 </ButtonWrapper>
             </Container>
             <EditorGroupWrapper>
-                <EditorWrapper>
-                    <EditorHeader>
-                        <div>
-                            <img src="" alt="schema.graphql" />
-                            <span>
-                                <p>schema.graphql</p>
-                                <p>TS . React . Frontend</p>
-                            </span>
-                        </div>
-                        <Button
-                            type="button"
-                            onClick={() => console.log('clicked')}
-                        >
-                            <img src={marketplaceAssets.caret} alt=">" />
-                        </Button>
-                    </EditorHeader>
-                    <SchemaEditor schema={schema} />
-                </EditorWrapper>
-                <EditorWrapper>
-                    <SchemaEditor schema={schema} />
-                </EditorWrapper>
-                <EditorWrapper>
-                    <SchemaEditor schema={schema} />
-                </EditorWrapper>
-                <EditorWrapper>
-                    <SchemaEditor schema={schema} />
-                </EditorWrapper>
+                <Editor title="schema.graphql" frameworks={['TS', 'React', 'Frontend']} schema={schema} icon={marketplaceAssets.caret} />
+                <Editor title="operation.graphql" frameworks={['TS', 'React', 'Frontend']} schema={schema} icon={marketplaceAssets.caret} />
+                <Editor title="codegen.yml" frameworks={['TS', 'React', 'Frontend']} schema={schema} icon={marketplaceAssets.caret} />
+                <Editor title="schema.graphql" frameworks={['TS', 'React', 'Frontend']} schema={schema} icon={marketplaceAssets.caret} />
             </EditorGroupWrapper>
       </Wrapper>
   )
