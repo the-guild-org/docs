@@ -1,24 +1,20 @@
 import tw, { css, styled, theme } from 'twin.macro';
 
 export const Wrapper = styled.section(() => [
-    tw`w-full bg-white dark:bg-gray-900 font-default`,
+  tw`w-full bg-white dark:bg-gray-900 font-default`,
 ]);
 
 export const Container = styled.div(() => [
-    tw`container-max py-6 flex flex-col md:(flex-row gap-16)justify-between`
+  tw`container-max py-6 flex flex-col md:(flex-row gap-16)justify-between`,
 ]);
 
-export const Header = styled.span(() => [
-    tw`pb-6 md:pb-0`,
-]);
+export const Header = styled.span(() => [tw`pb-6 md:pb-0`]);
 
 export const Title = styled.h2(() => [
-    tw`mt-0 mb-4 font-bold text-black dark:text-gray-50 text-xl md:text-2xl`,
+  tw`mt-0 mb-4 font-bold text-black dark:text-gray-50 text-xl md:text-2xl`,
 ]);
 
-export const ButtonWrapper = styled.span(() => [
-    tw`flex gap-2.5`,
-]);
+export const ButtonWrapper = styled.span(() => [tw`flex gap-2.5`]);
 
 export const Button = styled.button(() => [
   tw`flex justify-center items-center h-10 w-10 border-0 rounded-md cursor-pointer outline-none box-border`,
@@ -45,10 +41,11 @@ export const EditorGroupWrapper = styled.div(() => [
   css`
     .wrapper {
       &:not(:last-child) {
-        border-right: 0.0625rem solid ${`${theme`colors.grayscale-placeholder`}`};
+        border-right: 0.0625rem solid
+          ${`${theme`colors.grayscale-placeholder`}`};
       }
     }
-  `
+  `,
 ]);
 
 export const EditorWrapper = styled.div(() => [
@@ -78,7 +75,7 @@ export const EditorHeader = styled.div(() => [
         }
       }
     }      
-  `
+  `,
 ]);
 
 export const Frameworks = styled.span(() => [
@@ -90,5 +87,5 @@ export const Frameworks = styled.span(() => [
       background-color: ${`${theme`colors.grayscale-placeholder`}`};
       border-radius: 50%;
     }
-  `
+  `,
 ]);

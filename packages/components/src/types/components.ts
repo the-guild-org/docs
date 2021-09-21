@@ -313,7 +313,7 @@ export interface INewsletterProps {
 export interface ISchemaPageProps {
   schemaName: string;
   tags?: string[];
-  editorData: string[] | React.ReactNode[]
+  editorData: string[] | React.ReactNode[];
 }
 
 export interface IEditorProps {

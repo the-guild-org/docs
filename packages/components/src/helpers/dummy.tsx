@@ -584,19 +584,19 @@ export const dummySchemaPage = {
   tags: ['typeScript', 'frontend', 'backend'],
   editorData: [
     {
-      title:"schema.graphql",
+      title: 'schema.graphql',
       frameworks: ['TS', 'React', 'Frontend'],
       schema: dummySchema,
       image: marketplaceListImage,
     },
     {
-      title:"operation.graphql",
+      title: 'operation.graphql',
       frameworks: [],
       schema: dummySchema,
       image: marketplaceListImage,
     },
     {
-      title:"codegen.yml",
+      title: 'codegen.yml',
       frameworks: [],
       schema: dummySchema,
       image: marketplaceListImage,
@@ -604,5 +604,5 @@ export const dummySchemaPage = {
     {
       schema: dummySchema,
     },
-  ]
+  ],
 };

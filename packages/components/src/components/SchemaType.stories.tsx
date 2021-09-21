@@ -7,18 +7,18 @@ import { dummySchemaPage } from '../helpers/dummy';
 import { SchemaPage } from './SchemaType';
 
 export default {
-    title: 'Components/Schema Type',
-    component: SchemaPage,
-    argTypes: {
-        schemaName: {
-            name: 'Title',
-        }
-    }
+  title: 'Components/Schema Type',
+  component: SchemaPage,
+  argTypes: {
+    schemaName: {
+      name: 'Title',
+    },
+  },
 } as Meta;
 
 const Template: Story<ISchemaPageProps> = (args) => <SchemaPage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-    ...dummySchemaPage,
+  ...dummySchemaPage,
 };
