@@ -56,35 +56,35 @@ export const EditorWrapper = styled.div(() => [
 ]);
 
 export const EditorHeader = styled.div(() => [
-    tw`p-3.5 flex justify-between bg-gray-100 items-center`,
-    css`
-      border-bottom: 0.0625rem solid ${`${theme`colors.grayscale-placeholder`}`};
-      box-shadow: 0rem 0.0625rem 0rem rgba(0, 0, 0, 0.1);
+  tw`p-3.5 flex justify-between bg-gray-100 dark:(bg-transparent) items-center`,
+  css`
+    border-bottom: 0.0625rem solid ${`${theme`colors.grayscale-placeholder`}`};
+    box-shadow: 0rem 0.0625rem 0rem rgba(0, 0, 0, 0.1);
+    min-height: 5.3125rem;
 
-      div {
-        ${[tw`flex gap-2.5 items-center`]}
-        
-        img {
-          background-color: ${`${theme`colors.grayscale-label`}`};
-          ${[tw`w-14 h-14 rounded-md bg-gray-600`]}
-        }
+    div {
+      ${[tw`flex gap-2.5 items-center`]}
+      
+      img {
+        background-color: ${`${theme`colors.grayscale-label`}`};
+        ${[tw`w-14 h-14 rounded-md bg-gray-600`]}
+      }
 
-        span {
-            ${[tw`text-sm`]}
-            p {
-              color: ${`${theme`colors.title-active`}`};
-            }
-            span {
-              color: ${`${theme`colors.grayscale-label`}`};
-            }
+      span > p {
+        ${[tw`text-sm dark:text-gray-50`]}
+        color: ${`${theme`colors.title-active`}`};
+        &.dark {
+          color: color: rgba(249, 250, 251, var(--tw-text-opacity));
         }
-      }      
-    `
+      }
+    }      
+  `
 ]);
 
 export const Frameworks = styled.span(() => [
-  tw`flex items-center gap-1.5`,
+  tw`flex items-center gap-1.5 text-sm dark:text-gray-50`,
   css`
+    color: ${`${theme`colors.grayscale-label`}`};
     span {
       ${[tw`w-1.25 h-1.25 inline-block`]}
       background-color: ${`${theme`colors.grayscale-placeholder`}`};

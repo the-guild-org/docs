@@ -1,26 +1,26 @@
 import React from 'react';
 
-import { ISchemaPageProps } from '../types/components';
+import { ISchemaPageProps, IEditorProps } from '../types/components';
 import { useThemeContext } from '../helpers/theme';
 import { marketplaceThemedAssets } from '../helpers/assets';
 import { Wrapper, Container, Header, Title, ButtonWrapper, Button, EditorGroupWrapper, EditorWrapper, EditorHeader, Frameworks } from './SchemaTypes.styles';
 import { Tag, TagsContainer } from './Tag';
 import { SchemaEditor } from '../../../monaco-graphql-editor/src/editor/SchemaEditor';
 
-const FrameworkList = ({ options }) => {
-    const list = options.reduce((prev : string, curr : string) => [prev, <span key={prev}></span>, curr]);
+const FrameworkList = ({ options }: { options: any}): JSX.Element => {
+    const list = options.reduce((prev: string, curr: string) => [prev, <span key={prev}></span>, curr]);
 
     return <Frameworks>{list}</Frameworks>
 };
 
-const Editor = ({ title, frameworks, schema, icon, image }) => (
+const Editor: React.FC<IEditorProps> = ({ title, frameworks, schema, icon, image }) => (
     <EditorWrapper className='wrapper'>
         <EditorHeader>
             <div>
-                <img src={image} alt="logo" />
+                {image && <img src={image} alt="logo" />}
                 <span>
-                    <p>{title}</p>
-                    <FrameworkList options={frameworks} />
+                    {title && <p>{title}</p>}
+                    {frameworks && frameworks.length > 0 && <FrameworkList options={frameworks} />}
                 </span>
             </div>
             <Button
@@ -34,7 +34,7 @@ const Editor = ({ title, frameworks, schema, icon, image }) => (
     </EditorWrapper>
 );
 
-export const SchemaType: React.FC<ISchemaPageProps> = ({ schemaName, tags, schema }) => {
+export const SchemaPage: React.FC<ISchemaPageProps> = ({ schemaName, tags, editorData }) => {
   const { isDarkTheme } = useThemeContext();
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
 
@@ -44,7 +44,7 @@ export const SchemaType: React.FC<ISchemaPageProps> = ({ schemaName, tags, schem
                 <Header>
                     <Title>{schemaName}</Title>
                     <TagsContainer>
-                        {tags.length > 0 && tags.map((tagName) => (
+                        {tags && tags.length > 0 && tags.map((tagName) => (
                             <Tag key={tagName}>{tagName}</Tag>
                         ))}
                     </TagsContainer>
@@ -65,10 +65,9 @@ export const SchemaType: React.FC<ISchemaPageProps> = ({ schemaName, tags, schem
                 </ButtonWrapper>
             </Container>
             <EditorGroupWrapper>
-                <Editor title="schema.graphql" frameworks={['TS', 'React', 'Frontend']} schema={schema} icon={marketplaceAssets.caret} />
-                <Editor title="operation.graphql" frameworks={['TS', 'React', 'Frontend']} schema={schema} icon={marketplaceAssets.caret} />
-                <Editor title="codegen.yml" frameworks={['TS', 'React', 'Frontend']} schema={schema} icon={marketplaceAssets.caret} />
-                <Editor title="schema.graphql" frameworks={['TS', 'React', 'Frontend']} schema={schema} icon={marketplaceAssets.caret} />
+                {editorData.map((data, index) => (
+                <Editor key={index} title={data.title} frameworks={data.frameworks} schema={data.schema} image={data.image} icon={marketplaceAssets.caret} />))
+                }
             </EditorGroupWrapper>
       </Wrapper>
   )

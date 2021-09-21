@@ -557,3 +557,52 @@ export const dummyMarketplaceSearch = {
     pagination: 8,
   },
 };
+
+const dummySchema = `type Query {
+  ping: Boolean
+  me: User!
+}
+
+" represents a valid email "
+scalar Email
+
+""" Represents a simple user """
+type User {
+  id: ID!
+  email: Email!
+  profile: Profile!
+}
+
+type Profile {
+  name: String
+  age: Int
+}
+`;
+
+export const dummySchemaPage = {
+  schemaName: 'Schema Type 1',
+  tags: ['typeScript', 'frontend', 'backend'],
+  editorData: [
+    {
+      title:"schema.graphql",
+      frameworks: ['TS', 'React', 'Frontend'],
+      schema: dummySchema,
+      image: marketplaceListImage,
+    },
+    {
+      title:"operation.graphql",
+      frameworks: [],
+      schema: dummySchema,
+      image: marketplaceListImage,
+    },
+    {
+      title:"codegen.yml",
+      frameworks: [],
+      schema: dummySchema,
+      image: marketplaceListImage,
+    },
+    {
+      schema: dummySchema,
+    },
+  ]
+};

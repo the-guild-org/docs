@@ -2,12 +2,13 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
 import { ISchemaPageProps } from '../types/components';
+import { dummySchemaPage } from '../helpers/dummy';
 
-import { SchemaType } from './SchemaType';
+import { SchemaPage } from './SchemaType';
 
 export default {
     title: 'Components/Schema Type',
-    component: SchemaType,
+    component: SchemaPage,
     argTypes: {
         schemaName: {
             name: 'Title',
@@ -15,10 +16,9 @@ export default {
     }
 } as Meta;
 
-const Template: Story<ISchemaPageProps> = (args) => <SchemaType {...args} />;
+const Template: Story<ISchemaPageProps> = (args) => <SchemaPage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-    schemaName: 'Schema Type 1 Schema Type Schema Type Schema Type Schema Type Schema Type Schema Type Schema Type Schema Type',
-    tags: ['typeScript', 'frontend', 'backend'],
+    ...dummySchemaPage,
 };
