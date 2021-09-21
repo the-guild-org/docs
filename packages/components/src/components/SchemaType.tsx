@@ -83,9 +83,9 @@ export const SchemaPage: React.FC<ISchemaPageProps> = ({
         </ButtonWrapper>
       </Container>
       <EditorGroupWrapper>
-        {editorData.map((data, index) => (
+        {(editorData as Array<IEditorProps>).map((data) => (
           <Editor
-            key={index}
+            key={data.title || 'output'}
             title={data.title}
             frameworks={data.frameworks}
             schema={data.schema}
