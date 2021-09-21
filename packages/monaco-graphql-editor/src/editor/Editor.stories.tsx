@@ -88,19 +88,16 @@ const SchemaTemplate: Story<SchemaEditorProps> = (args) => {
 };
 
 const SchemaDiffTemplate: Story<SchemaDiffEditorProps> = (args) => {
-  return (
-    <SchemaDiffEditor {...args} />
-  );
+  return <SchemaDiffEditor {...args} />;
 };
-
 
 export const BasicSchemaEditor = SchemaTemplate.bind({});
 export const BasicSchemaDiffEditor = SchemaDiffTemplate.bind({});
 
 BasicSchemaDiffEditor.args = {
   original: TEST_SCHEMA,
-  modified: TEST_SCHEMA + `\ntype Test { id: ID! }`
-}
+  modified: TEST_SCHEMA + `\ntype Test { id: ID! }`,
+};
 
 BasicSchemaEditor.args = {
   height: '100vh',

@@ -61,15 +61,17 @@ export const Footer: React.FC<IFooterProps> = ({ sameSite, ...restProps }) => {
   return (
     <Wrapper {...restProps.wrapperProps}>
       <Container {...restProps.containerProps}>
-        <Line {...restProps.lineProps}/>
-        <Copyright {...restProps.copyrightProps}>Belong anywhere. © The Guild, Inc.</Copyright>
+        <Line {...restProps.lineProps} />
+        <Copyright {...restProps.copyrightProps}>
+          Belong anywhere. © The Guild, Inc.
+        </Copyright>
         <Logo {...logoOptions} {...restProps.logoProps}>
           <img src={logos.logoMono} alt="The Guild" />
         </Logo>
         <Links>
           {links.map((link) => (
             <li key={link.href}>
-              <a {...link} {...restProps.linkProps}/>
+              <a {...link} {...restProps.linkProps} />
             </li>
           ))}
         </Links>

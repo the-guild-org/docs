@@ -47,7 +47,11 @@ export const HeroMarketplace: React.FC<IHeroMarketplaceProps> = ({
         <Info>
           <h2 {...restProps.titleProps}>{title}</h2>
           <p {...restProps.descriptionProps}>{description}</p>
-          {link && <CTA><a {...link} {...restProps.linkProps}/></CTA>}
+          {link && (
+            <CTA>
+              <a {...link} {...restProps.linkProps} />
+            </CTA>
+          )}
         </Info>
       </Content>
     </Container>

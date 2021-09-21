@@ -147,11 +147,16 @@ const defaultFontFace = css`
       U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
       U+2215, U+FEFF, U+FFFD;
   }
-`
+`;
 
-export const GlobalStyles: React.FC<IGlobalStyle> = ({includeFonts, includeBase}) => (
+export const GlobalStyles: React.FC<IGlobalStyle> = ({
+  includeFonts,
+  includeBase,
+}) => (
   <>
     {includeBase && <BaseStyles />}
-    <Global styles={includeFonts ? [customStyles, defaultFontFace] : customStyles} />
+    <Global
+      styles={includeFonts ? [customStyles, defaultFontFace] : customStyles}
+    />
   </>
 );

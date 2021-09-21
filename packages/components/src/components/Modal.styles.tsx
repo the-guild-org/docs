@@ -13,9 +13,11 @@ export const Container = styled.div(({ isModalOpen }: IStyleProps) => [
       ${tw`outline-none!`}
     }
 
-    ${isModalOpen ? `
+    ${isModalOpen
+      ? `
       backdrop-filter: blur(2px);
-    ` : tw`invisible`}
+    `
+      : tw`invisible`}
   `,
 ]);
 
