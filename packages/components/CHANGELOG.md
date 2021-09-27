@@ -1,5 +1,16 @@
 # @theguild/components
 
+## 1.5.0
+
+### Minor Changes
+
+- a328391: Added optional titleDescription prop to FeatureList component.
+
+### Patch Changes
+
+- c9e0437: Fix: pin focus-trap-react@8.7.1
+- 32fe84c: fix: npm badge on hero
+
 ## 1.4.8
 
 ### Patch Changes
