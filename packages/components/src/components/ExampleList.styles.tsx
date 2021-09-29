@@ -14,3 +14,7 @@ export const Header = styled.tr(() => [
 export const Examples = styled.div(() => [
   tw`flex flex-wrap lg:flex-nowrap -mx-6`,
 ]);
+
+export const Examples2 = styled.table(() => [
+  tw`flex flex-wrap lg:flex-nowrap -mx-6`,
+]);

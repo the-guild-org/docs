@@ -6,7 +6,7 @@ import { Table, TableBody, TableHeader, TableItem, TableItemImage, TableItemInfo
 import { IMarketplaceItemsProps } from '../types/components'; 
 import { Tag, TagsContainer } from "./Tag";
 
-const TableItems: React.FC<IMarketplaceItemsProps> = ({
+export const TableItems: React.FC<IMarketplaceItemsProps> = ({
   icon,
   items,
   handleModal,
