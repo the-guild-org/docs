@@ -13,7 +13,7 @@ export const TableHeader = styled.thead(() => [
     &:n-th-of-type(3) {
       ${tw`hidden md:table-cell`}
     }
-  `
+  `,
 ]);
 
 export const TableItem = styled.tr(() => [

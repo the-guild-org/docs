@@ -271,13 +271,15 @@ interface IMarketplaceItemRestProps {
 }
 export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
   icon: string;
-  items: IMarketplaceItemProps[] | {
-    header?: {
-      image: string;
-      text: string;
-    };
-    list: IMarketplaceItemProps[];
-  }[];
+  items:
+    | IMarketplaceItemProps[]
+    | {
+        header?: {
+          image: string;
+          text: string;
+        };
+        list: IMarketplaceItemProps[];
+      }[];
   setCurrentItem?: (state: IMarketplaceItemProps) => void;
   handleModal?: (state: boolean) => void;
 }

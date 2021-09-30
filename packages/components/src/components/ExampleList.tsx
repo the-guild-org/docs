@@ -1,9 +1,12 @@
 import React, { Fragment, useState, useMemo } from 'react';
 
 import { useThemeContext } from '../helpers/theme';
-import { marketplaceThemedAssets, marketplaceLanguages } from '../helpers/assets';
+import {
+  marketplaceThemedAssets,
+  marketplaceLanguages,
+} from '../helpers/assets';
 
-import { TableItems } from "./Table";
+import { TableItems } from './Table';
 import { TableSearch } from './TableSearch';
 import { MarketplaceList } from './MarketplaceList';
 
@@ -14,7 +17,7 @@ import { TablePagination } from './Table.styles';
 
 import ReactPaginate from 'react-paginate';
 
-const TableHeader = ({ text }: { text: string}) => (
+const TableHeader = ({ text }: { text: string }) => (
   <Header>
     <td>
       {marketplaceLanguages(text.toLowerCase())}
@@ -25,21 +28,21 @@ const TableHeader = ({ text }: { text: string}) => (
   </Header>
 );
 
-const Table = ({ tableItems, icon }: { tableItems: string[] | ISchemaTypeProps[], icon: string }) => (
+const Table = ({
+  tableItems,
+  icon,
+}: {
+  tableItems: string[] | ISchemaTypeProps[];
+  icon: string;
+}) => (
   <TableBody>
     {(tableItems as Array<string | ISchemaTypeProps>).map((item, index) => {
       return (
         <Fragment key={index}>
-          {typeof item === 'string' && 
-            <TableHeader
-            text={item}
-          />}
-          {item.title && <TableItems
-            icon={icon}
-            items={[item]}
-          />}
+          {typeof item === 'string' && <TableHeader text={item} />}
+          {item.title && <TableItems icon={icon} items={[item]} />}
         </Fragment>
-      )
+      );
     })}
   </TableBody>
 );
@@ -52,27 +55,26 @@ const flattenObj = (obj, keyToFlatten = '') => {
 
 const arrify = (items) => {
   let list = [];
-  Object.keys(items).forEach((key) =>
-    list.push(key, ...items[key]));
+  Object.keys(items).forEach((key) => list.push(key, ...items[key]));
   return list;
 };
 
 export const ExampleList: React.FC<IExampleListSearchProps> = ({
-  title, 
-  tagsFilter, 
-  placeholder, 
-  queryList, 
-  list, 
-  pagination, 
-  ...restProps 
+  title,
+  tagsFilter,
+  placeholder,
+  queryList,
+  list,
+  pagination,
+  ...restProps
 }) => {
   const { isDarkTheme } = useThemeContext();
   const [currentPage, setCurrentPage] = useState(0);
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
-  
+
   const itemsList = flattenObj(queryList, 'items').items;
   const pageSize = pagination * 2 || 16;
-  const pageCount = itemsList ? Math.ceil(itemsList.length / pageSize): 1;
+  const pageCount = itemsList ? Math.ceil(itemsList.length / pageSize) : 1;
 
   const pages = useMemo(() => {
     const itemsCopy = [...arrify(list)];
@@ -82,7 +84,7 @@ export const ExampleList: React.FC<IExampleListSearchProps> = ({
       pagesData.push(itemsCopy.splice(0, pageSize));
     }
     return pagesData;
-  }, [arrify(list)])
+  }, [arrify(list)]);
 
   return (
     <TableSearch
@@ -95,42 +97,43 @@ export const ExampleList: React.FC<IExampleListSearchProps> = ({
       {({ items, placeholder, query }) => (
         <>
           {items && queryList ? (
-              <MarketplaceList 
-                title={queryList.title}
-                tableHeader={<TableHeader
-                  text={query.replace('#', '')}
-              />}
+            <MarketplaceList
+              title={queryList.title}
+              tableHeader={<TableHeader text={query.replace('#', '')} />}
               items={items}
               placeholder={placeholder}
               pagination={queryList.pagination}
               {...restProps}
-              />
+            />
           ) : (
-          <>
-            <Examples>
-              <Table
-                tableItems={pages[currentPage].slice(0, pagination)}
-                icon={marketplaceAssets.caret}
-              />
-              <Table
-                tableItems={pages[currentPage].slice(pagination, pages[currentPage].length)}
-                icon={marketplaceAssets.caret}
-              />
-            </Examples>
-            {pageCount > 1 && (
-              <TablePagination>
-                <ReactPaginate
-                  {...{
-                    pageCount: pageCount,
-                    pageRangeDisplayed: 3,
-                    marginPagesDisplayed: 1,
-                    onPageChange: (page) => setCurrentPage(page.selected),
-                  }}
+            <>
+              <Examples>
+                <Table
+                  tableItems={pages[currentPage].slice(0, pagination)}
+                  icon={marketplaceAssets.caret}
                 />
-              </TablePagination>
-            )}
-          </>
-        )}
+                <Table
+                  tableItems={pages[currentPage].slice(
+                    pagination,
+                    pages[currentPage].length
+                  )}
+                  icon={marketplaceAssets.caret}
+                />
+              </Examples>
+              {pageCount > 1 && (
+                <TablePagination>
+                  <ReactPaginate
+                    {...{
+                      pageCount: pageCount,
+                      pageRangeDisplayed: 3,
+                      marginPagesDisplayed: 1,
+                      onPageChange: (page) => setCurrentPage(page.selected),
+                    }}
+                  />
+                </TablePagination>
+              )}
+            </>
+          )}
         </>
       )}
     </TableSearch>

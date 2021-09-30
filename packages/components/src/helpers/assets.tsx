@@ -102,13 +102,13 @@ export const marketplaceThemedAssets = (isDark: boolean): any => ({
 export const marketplaceLanguages = (lang: string): any => {
   switch (lang) {
     case 'typescript':
-      return <img alt={lang} src={typescript} />
+      return <img alt={lang} src={typescript} />;
     case 'java':
-      return <img alt={lang} src={java} />
+      return <img alt={lang} src={java} />;
     case 'flow':
-      return <img alt={lang} src={flow} />
+      return <img alt={lang} src={flow} />;
   }
-}
+};
 
 export const newsletterThemedIcons = (isDark: boolean): any => ({
   mail: isDark ? mailIconLight : mailIconDark,
