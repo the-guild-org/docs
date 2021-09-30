@@ -40,3 +40,9 @@ export const Default = Template.bind({});
 Default.args = {
   ...dummyHeroIllustration,
 };
+
+export const WithButton = Template.bind({});
+WithButton.args = {
+  ...dummyHeroIllustration,
+  renderButton: true,
+};

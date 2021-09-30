@@ -4,6 +4,7 @@ import {
   Container,
   Illustration,
   Info,
+  CTA,
   Wrapper,
 } from './HeroIllustration.styles';
 
@@ -15,6 +16,7 @@ export const HeroIllustration: React.FC<IHeroIllustrationProps> = ({
   link,
   image,
   flipped,
+  renderButton,
   ...restProps
 }) => (
   <Wrapper {...restProps.wrapperProps}>
@@ -25,7 +27,11 @@ export const HeroIllustration: React.FC<IHeroIllustrationProps> = ({
       <Info>
         <h2 {...restProps.titleProps}>{title}</h2>
         <p {...restProps.descriptionProps}>{description}</p>
-        {link && <a {...link} {...restProps.linkProps} />}
+        {renderButton ? 
+          <CTA>
+            <a {...link} {...restProps.linkProps} />
+          </CTA> : link && <a {...link} {...restProps.linkProps} />}
+        
       </Info>
     </Container>
   </Wrapper>
