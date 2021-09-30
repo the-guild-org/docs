@@ -4,7 +4,7 @@ import featureListImage3 from '../static/dummy/envelop/features-modern.png';
 import heroGradientImage from '../static/dummy/envelop/hero.png';
 import heroIllustrationImage from '../static/dummy/envelop/communication.png';
 import marketplaceListImage from '../static/dummy/marketplace/logo-modules.svg';
-import typescriptImage from "../static/typescript.svg";
+import typescriptImage from '../static/typescript.svg';
 import { IMarketplaceListProps } from '../types/components';
 
 const subheaderImage =
@@ -567,7 +567,7 @@ export const dummyMarketplaceSearch = {
 };
 
 const dummyExampleListItems = {
-  'TypeScript': [
+  TypeScript: [
     {
       title: 'Schema types 1',
       description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
@@ -795,7 +795,7 @@ const dummyExampleListItems = {
       },
     },
   ],
-  'Java': [
+  Java: [
     {
       title: 'Schema types 1',
       description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
@@ -844,7 +844,7 @@ const dummyExampleListItems = {
 export const dummyExampleList = {
   title: 'Choose Live Example',
   tagsFilter: ['All', 'TypeScript', '.NET', 'Java', 'Flow'],
-  placeholder:'Search...',
+  placeholder: 'Search...',
   list: dummyExampleListItems,
   pagination: 8,
   queryList: {

@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 
 import { Modal } from './Modal';
-import Table from "./Table";
+import Table from './Table';
 
 import {
   Container,

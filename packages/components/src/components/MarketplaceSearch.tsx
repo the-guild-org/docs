@@ -2,12 +2,10 @@ import React from 'react';
 
 import { MarketplaceList } from './MarketplaceList';
 
-import {
-  Results,
-} from './MarketplaceSearch.styles';
+import { Results } from './MarketplaceSearch.styles';
 
 import { IMarketplaceSearchProps } from '../types/components';
-import {TableSearch} from './TableSearch';
+import { TableSearch } from './TableSearch';
 
 export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   title,
@@ -40,7 +38,10 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
             </Results>
           ) : (
             <Results>
-              <MarketplaceList {...primaryList} {...restProps.primaryListProps} />
+              <MarketplaceList
+                {...primaryList}
+                {...restProps.primaryListProps}
+              />
               {secondaryList && (
                 <MarketplaceList
                   {...secondaryList}

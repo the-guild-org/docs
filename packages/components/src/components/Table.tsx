@@ -1,10 +1,20 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 
-import { Table, TableBody, TableHeader, TableItem, TableItemImage, TableItemInfo, TableItemDate, TableItemButton, TablePagination } from "./Table.styles";
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableItem,
+  TableItemImage,
+  TableItemInfo,
+  TableItemDate,
+  TableItemButton,
+  TablePagination,
+} from './Table.styles';
 
-import { IMarketplaceItemsProps } from '../types/components'; 
-import { Tag, TagsContainer } from "./Tag";
+import { IMarketplaceItemsProps } from '../types/components';
+import { Tag, TagsContainer } from './Tag';
 
 export const TableItems: React.FC<IMarketplaceItemsProps> = ({
   icon,
@@ -30,8 +40,8 @@ export const TableItems: React.FC<IMarketplaceItemsProps> = ({
     ];
     const date = new Date(value);
     return `${
-        months[date.getMonth()]
-    } ${date.getDate()}, ${date.getFullYear()}`
+      months[date.getMonth()]
+    } ${date.getDate()}, ${date.getFullYear()}`;
   };
 
   return (
@@ -90,19 +100,33 @@ export const TableItems: React.FC<IMarketplaceItemsProps> = ({
               </TableItemButton>
             </td>
           </TableItem>
-        ))
-      }
+        ))}
     </>
   );
 };
 
-const DefaultTable: React.FC<any> = ({ tableHeader, items, icon, setCurrentItem, handleModal, pageCount, setCurrentPage, ...restProps}) => {
+const DefaultTable: React.FC<any> = ({
+  tableHeader,
+  items,
+  icon,
+  setCurrentItem,
+  handleModal,
+  pageCount,
+  setCurrentPage,
+  ...restProps
+}) => {
   return (
     <>
       <Table>
         <TableHeader>{tableHeader}</TableHeader>
         <TableBody>
-          <TableItems items={items} icon={icon} setCurrentItem={setCurrentItem} handleModal={handleModal} {...restProps} />
+          <TableItems
+            items={items}
+            icon={icon}
+            setCurrentItem={setCurrentItem}
+            handleModal={handleModal}
+            {...restProps}
+          />
         </TableBody>
       </Table>
 
@@ -119,7 +143,7 @@ const DefaultTable: React.FC<any> = ({ tableHeader, items, icon, setCurrentItem,
         </TablePagination>
       )}
     </>
-  )
-}
+  );
+};
 
 export default DefaultTable;

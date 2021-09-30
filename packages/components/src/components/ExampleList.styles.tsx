@@ -13,7 +13,7 @@ export const Header = styled.tr(() => [
     img {
       ${[tw`h-6 w-6`]}
     }
-  `
+  `,
 ]);
 
 export const TableBody = styled.tbody(() => [tw`min-w-2/4`]);
