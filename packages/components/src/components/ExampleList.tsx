@@ -10,7 +10,7 @@ import { TableItems } from './Table';
 import { TableSearch } from './TableSearch';
 import { MarketplaceList } from './MarketplaceList';
 
-import { IExampleListSearchProps, ISchemaTypeProps } from '../types/components';
+import { IExampleListProps, IExampleListSearchProps, ISchemaTypeProps } from '../types/components';
 
 import { Header, TableBody, Examples } from './ExampleList.styles';
 import { TablePagination } from './Table.styles';
@@ -32,29 +32,29 @@ const Table = ({
   tableItems,
   icon,
 }: {
-  tableItems: string[] | ISchemaTypeProps[];
+  tableItems: ISchemaTypeProps[];
   icon: string;
 }) => (
   <TableBody>
     {(tableItems as Array<string | ISchemaTypeProps>).map((item, index) => {
       return (
         <Fragment key={index}>
-          {typeof item === 'string' && <TableHeader text={item} />}
-          {item.title && <TableItems icon={icon} items={[item]} />}
+          {typeof item === 'string' ? <TableHeader text={item} /> :
+          <TableItems icon={icon} items={[item]} />}
         </Fragment>
       );
     })}
   </TableBody>
 );
 
-const flattenObj = (obj, keyToFlatten = '') => {
+const flattenObj = (obj: IExampleListProps, keyToFlatten: keyof IExampleListProps) => {
   const objCopy = Object.assign({}, obj);
   objCopy[keyToFlatten] = Object.values(obj[keyToFlatten]).flat();
   return objCopy;
 };
 
-const arrify = (items) => {
-  let list = [];
+const arrify = (items: IExampleListProps) => {
+  const list: any = [];
   Object.keys(items).forEach((key) => list.push(key, ...items[key]));
   return list;
 };
@@ -72,9 +72,10 @@ export const ExampleList: React.FC<IExampleListSearchProps> = ({
   const [currentPage, setCurrentPage] = useState(0);
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
 
-  const itemsList = flattenObj(queryList, 'items').items;
+  const itemsList = flattenObj(queryList, 'items');
+  const itemsListLength = itemsList.items.length;
   const pageSize = pagination * 2 || 16;
-  const pageCount = itemsList ? Math.ceil(itemsList.length / pageSize) : 1;
+  const pageCount = itemsList ? Math.ceil(itemsListLength / pageSize) : 1;
 
   const pages = useMemo(() => {
     const itemsCopy = [...arrify(list)];
@@ -91,7 +92,7 @@ export const ExampleList: React.FC<IExampleListSearchProps> = ({
       title={title}
       tagsFilter={tagsFilter}
       placeholder={placeholder}
-      queryList={flattenObj(queryList, 'items')}
+      queryList={itemsList}
       {...restProps}
     >
       {({ items, placeholder, query }) => (

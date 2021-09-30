@@ -191,6 +191,7 @@ export interface IHeroIllustrationProps {
   flipped?: boolean;
   link?: ILink;
   image: IImage;
+  renderButton?: boolean;
 
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
@@ -272,15 +273,7 @@ interface IMarketplaceItemRestProps {
 }
 export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
   icon: string;
-  items:
-    | IMarketplaceItemProps[]
-    | {
-        header?: {
-          image: string;
-          text: string;
-        };
-        list: IMarketplaceItemProps[];
-      }[];
+  items: IMarketplaceItemProps[];
   setCurrentItem?: (state: IMarketplaceItemProps) => void;
   handleModal?: (state: boolean) => void;
 }
@@ -290,6 +283,7 @@ export interface IMarketplaceListProps {
   placeholder: string | React.ReactElement;
   pagination: number;
   items: IMarketplaceItemProps[];
+  tableHeader?: React.ReactNode;
 
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
@@ -324,10 +318,10 @@ export interface INewsletterProps {
 }
 
 export interface ITableSearchProps extends ISearchProps {
-  isInline?: boolean;
   children(props: {
-    items: IMarketplaceItemsProps[];
-    placeholder: string | React.ReactElement | undefined;
+    items: IMarketplaceItemProps[] | null;
+    placeholder: string | React.ReactElement;
+    query: string;
   }): JSX.Element;
 }
 
@@ -345,13 +339,11 @@ export interface ISchemaItemsProps {
   [index: string]: ISchemaTypeProps[];
 }
 
-// Use Exclude here?
 export interface IExampleListProps {
   title?: string;
   placeholder: string | React.ReactElement;
   pagination: number;
   items: ISchemaItemsProps;
-  tableHeader?: React.ReactNode;
 
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
@@ -364,7 +356,7 @@ export interface IExampleListSearchProps {
   title: string | React.ReactNode;
   tagsFilter?: string[];
   placeholder: string;
-  queryList?: IExampleListProps;
+  queryList: IExampleListProps;
   list: IExampleListProps;
   pagination: number;
 }

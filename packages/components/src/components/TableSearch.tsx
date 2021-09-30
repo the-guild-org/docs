@@ -107,7 +107,7 @@ export const TableSearch: React.FC<ITableSearchProps> = ({
         {children({
           items: items,
           placeholder:
-            queryList && renderQueryPlaceholder(queryList.placeholder, query),
+            queryList ? renderQueryPlaceholder(queryList.placeholder, query) : '',
           query: query,
         })}
       </Container>
