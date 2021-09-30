@@ -50,3 +50,25 @@ export const Info = styled.div(() => [
     }
   `,
 ]);
+
+export const CTA = styled.div(() => [
+  tw`relative z-1 hidden mt-4 md:(flex items-center mt-9) text-xs`,
+  css`
+    a {
+      ${[
+        tw`block w-32 mr-4 px-1.5 py-3 font-medium text-xs text-center text-white bg-light-blue rounded-md no-underline`,
+        tw`transition duration-300 ease-in-out`,
+      ]}
+
+      &:hover,
+      &:focus {
+        box-shadow: 3px 5px 14px ${rgba(theme`colors.light-blue`, 0.4)};
+      }
+
+      &:focus {
+        background-color: ${`${theme`colors.dark-blue`}`};
+      }
+    }
+  `,
+]);
+

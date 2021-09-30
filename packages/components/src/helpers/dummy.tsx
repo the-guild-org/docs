@@ -116,6 +116,7 @@ export const dummyHeroIllustration = {
     alt: 'Illustration',
   },
   flipped: true,
+  renderButton: false,
 };
 
 export const dummyHeroGradient = {
