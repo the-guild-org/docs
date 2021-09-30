@@ -76,7 +76,6 @@ export const TableSearch: React.FC<ITableSearchProps> = ({
     }, [query]);
 
     return (
-      <>
         <Wrapper {...restProps.wrapperProps}>
         <Container {...restProps.containerProps}>
           <Title {...restProps.titleProps}>{title}</Title>
@@ -111,6 +110,5 @@ export const TableSearch: React.FC<ITableSearchProps> = ({
           })}
         </Container>
       </Wrapper>
-      </>
     );
 };

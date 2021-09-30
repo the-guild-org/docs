@@ -1,3 +1,4 @@
+import React from 'react';
 import moonIconDark from '../static/icons/moon-dark.svg';
 import moonIconLight from '../static/icons/moon-light.svg';
 import hamburgerIconDark from '../static/icons/hamburger-dark.svg';
@@ -20,6 +21,10 @@ import mailIconDark from '../static/icons/mail-dark.svg';
 import mailIconLight from '../static/icons/mail-light.svg';
 import arrowUpRightIconDark from '../static/icons/arrow-up-right-dark.svg';
 import arrowUpRightIconLight from '../static/icons/arrow-up-right-light.svg';
+
+import typescript from '../static/icons/languages/typescript.svg';
+import flow from '../static/icons/languages/flow.svg';
+import java from '../static/icons/languages/java.svg';
 
 const cdn = 'https://the-guild.dev/static';
 
@@ -93,6 +98,17 @@ export const marketplaceThemedAssets = (isDark: boolean): any => ({
   caret: isDark ? caretSlimIconLight : caretSlimIconDark,
   search: isDark ? searchIconLight : searchIconDark,
 });
+
+export const marketplaceLanguages = (lang: string): any => {
+  switch (lang) {
+    case 'typescript':
+      return <img alt={lang} src={typescript} />
+    case 'java':
+      return <img alt={lang} src={java} />
+    case 'flow':
+      return <img alt={lang} src={flow} />
+  }
+}
 
 export const newsletterThemedIcons = (isDark: boolean): any => ({
   mail: isDark ? mailIconLight : mailIconDark,

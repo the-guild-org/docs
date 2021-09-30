@@ -329,7 +329,7 @@ export interface ITableSearchProps extends ISearchProps {
 }
 
 export interface ISchemaTypeProps {
-  name: string;
+  title: string;
   description: string;
   tags?: string[];
   config: string;
@@ -359,9 +359,9 @@ export interface IExampleListProps {
 
 export interface IExampleListSearchProps {
   title: string | React.ReactNode;
-  placeholder: string;
-  primaryList: IExampleListProps;
-  secondaryList?: IExampleListProps;
-  queryList?: IExampleListProps;
   tagsFilter?: string[];
+  placeholder: string;
+  queryList?: IExampleListProps;
+  list: IExampleListProps;
+  pagination: number;
 }

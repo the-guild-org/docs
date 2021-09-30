@@ -29,6 +29,9 @@ module.exports = {
         4.5: '1.125rem',
         fit: 'fit-content',
       },
+      minWidth: {
+        '2/4': '50%',
+      },
       maxWidth: {
         '1/4': '25%',
         '2/4': '50%',
@@ -62,8 +65,8 @@ module.exports = {
         },
 
         '.font-default': {
-          fontFamily: 'TGCFont, sans-serif'
-        }
+          fontFamily: 'TGCFont, sans-serif',
+        },
       };
 
       addUtilities(newUtilities);
