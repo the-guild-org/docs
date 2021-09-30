@@ -695,7 +695,7 @@ const dummyExampleListItems = {
       },
     },
     {
-      title: 'Schema types 4',
+      title: 'Schema types 10',
       description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
       tags: ['typescript', 'frontend', 'backend'],
       config: '',
@@ -709,7 +709,7 @@ const dummyExampleListItems = {
       },
     },
     {
-      title: 'Schema types 5',
+      title: 'Schema types 11',
       description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
       tags: ['typescript', 'frontend', 'backend'],
       config: '',
@@ -723,7 +723,7 @@ const dummyExampleListItems = {
       },
     },
     {
-      title: 'Schema types 6',
+      title: 'Schema types 12',
       description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
       tags: ['typescript', 'frontend', 'backend'],
       config: '',
@@ -737,7 +737,7 @@ const dummyExampleListItems = {
       },
     },
     {
-      title: 'Schema types 7',
+      title: 'Schema types 13',
       description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
       tags: ['typescript', 'frontend', 'backend'],
       config: '',
@@ -748,34 +748,6 @@ const dummyExampleListItems = {
         target: '_blank',
         rel: 'noopener noreferrer',
         title: 'Schema type 1',
-      },
-    },
-    {
-      title: 'Schema types 8',
-      description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
-      tags: ['typescript', 'frontend', 'backend'],
-      config: '',
-      schema: '',
-      documents: '',
-      link: {
-        href: '#',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        title: 'Learn more about GraphQL Jit',
-      },
-    },
-    {
-      title: 'Schema types 9',
-      description: `This is the simplest example of generating output based on a GraphQL Schema. Codegen will generate the compatible base type, based on your schema. These type declarations are 1:1 to your schema, and it will be used as base types for other Codegen plugins (such as \`typescript-operations\`), while combined into the same file.`,
-      tags: ['typescript', 'frontend', 'backend'],
-      config: '',
-      schema: '',
-      documents: '',
-      link: {
-        href: '#',
-        target: '_blank',
-        rel: 'noopener noreferrer',
-        title: 'Learn more about GraphQL Jit',
       },
     },
   ],
@@ -872,9 +844,8 @@ const dummyExampleListItems = {
 export const dummyExampleList = {
   title: 'Choose Live Example',
   tagsFilter: ['All', 'TypeScript', '.NET', 'Java', 'Flow'],
-  searchPlaceholder:'Search...',
+  placeholder:'Search...',
   list: dummyExampleListItems,
-  tablePlaceholder: 'No examples available...',
   pagination: 8,
   queryList: {
     title: 'Query Results',
