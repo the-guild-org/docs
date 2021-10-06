@@ -2,6 +2,10 @@
 
 A monaco editor with built-in support for GraphQL Language Service, with features like online parser, syntax highligh, schema-building validations, hover and much more. The integration between Monaco editor and the GraphQL language service is exposed through a simple props/events based interface, with the awareness of the GraphQL schema.
 
+#### Acknowledgment
+
+This library was developed as part of the [Schema Prototyper Grant](https://forum.thegraph.com/t/schema-prototyper/1732) given by [The Graph Foundation](https://thegraph.com/).
+
 ### Getting Started
 
 Start by installing the package from NPM:
