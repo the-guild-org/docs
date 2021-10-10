@@ -19,6 +19,13 @@ export const dummyFeatureList = {
       },
       title: 'Pluggable',
       description: 'Powerful plugin system',
+      link: {
+        children: 'Github',
+        title: 'Learn more',
+        target: '_blank',
+        rel: 'noopener norefereer',
+        href: 'https://github.com/the-guild-org'
+      }
     },
     {
       image: {

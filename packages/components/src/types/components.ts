@@ -144,6 +144,7 @@ export interface IFeatureListProps {
     title: string | React.ReactNode;
     description: string | React.ReactNode;
     image: IImage;
+    link?: ILink;
   }[];
 
   wrapperProps?: React.ComponentProps<'section'>;
