@@ -1,5 +1,14 @@
 # the-guild-components
 
+## 1.5.1
+
+### Patch Changes
+
+- 055f4e6: Feature list item now have link property
+- Updated dependencies [14702df]
+- Updated dependencies [055f4e6]
+  - @theguild/components@1.6.0
+
 ## 1.5.0
 
 ### Minor Changes

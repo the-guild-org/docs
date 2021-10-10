@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 1.6.0
+
+### Minor Changes
+
+- 14702df: Open search results from the same website in the same window
+
+### Patch Changes
+
+- 055f4e6: Feature list item now have link property
+
 ## 1.5.0
 
 ### Minor Changes
