@@ -50,5 +50,17 @@ export const Item = styled.article(() => [
     p {
       ${tw`m-0 text-sm text-gray-500 dark:text-gray-400`}
     }
+
+    a {
+      ${[
+        tw`w-max mt-auto pt-2 text-sm text-light-blue no-underline`,
+        tw`transition-all duration-300 ease-in-out`,
+      ]}
+
+      &:hover, &:focus {
+        color: ${`${theme`colors.dark-blue`}`};
+        text-shadow: 3px 5px 14px ${rgba(theme`colors.light-blue`, 0.4)};
+      }
+    }
   `,
 ]);

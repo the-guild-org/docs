@@ -32,6 +32,7 @@ export const FeatureList: React.FC<IFeatureListProps> = ({
             />
             <h3 {...restProps.itemTitleProps}>{item.title}</h3>
             <p {...restProps.itemDescriptionProps}>{item.description}</p>
+            {item.link && <a {...item.link} {...restProps.linkProps} />}
           </Item>
         ))}
       </Items>
