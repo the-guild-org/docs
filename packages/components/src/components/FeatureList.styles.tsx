@@ -53,7 +53,7 @@ export const Item = styled.article(() => [
 
     a {
       ${[
-        tw`w-max mt-auto text-sm text-light-blue no-underline`,
+        tw`w-max mt-auto pt-2 text-sm text-light-blue no-underline`,
         tw`transition-all duration-300 ease-in-out`,
       ]}
 
