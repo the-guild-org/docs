@@ -41,7 +41,7 @@
     "@typescript-eslint/parser": "4.33.0",
     "eslint": "7.32.0",
     "eslint-plugin-react": "7.26.1",
-    "husky": "7.0.2",
+    "husky": "7.0.4",
     "lint-staged": "11.2.2",
     "postcss": "8.3.9",
     "prettier": "2.4.1",
