@@ -317,6 +317,20 @@ export interface INewsletterProps {
   onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
 }
 
+export interface ISchemaPageProps {
+  schemaName: string;
+  tags?: string[];
+  editorData: string[] | React.ReactNode[];
+}
+
+export interface IEditorProps {
+  title?: string;
+  frameworks?: string[];
+  schema: string;
+  icon: string;
+  image?: string;
+}
+
 export interface ITableSearchProps extends ISearchProps {
   children(props: {
     items: IMarketplaceItemProps[] | null;
