@@ -42,6 +42,13 @@ const links = [
     target: '_blank',
     rel: 'noopener noreferrer',
   },
+  {
+    children: 'YouTube',
+    title: 'Our Videos',
+    href: 'https://www.youtube.com/watch?v=d_GBgH-L5c4&list=PLhCf3AUOg4PgQoY_A6xWDQ70yaNtPYtZd',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
 ];
 
 export const Footer: React.FC<IFooterProps> = ({ sameSite, ...restProps }) => {
