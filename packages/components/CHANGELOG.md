@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.7.0
+
+### Minor Changes
+
+- 46610c5: Create SchemaPage component.
+
 ## 1.6.0
 
 ### Minor Changes
