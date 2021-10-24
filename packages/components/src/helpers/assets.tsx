@@ -47,6 +47,7 @@ const productTools = `${cdn}/shared-logos/products/tools.svg`;
 const productWhatsapp = `${cdn}/shared-logos/products/whatsapp.svg`;
 const productGraphQLShield = `${cdn}/shared-logos/products/shield.svg`;
 const productSwiftGraphQL = `${cdn}/shared-logos/products/swift.svg`;
+const productHelix = `${cdn}/shared-logos/products/helix.svg`;
 
 export const headerThemedIcons = (isDark: boolean): any => ({
   themeToggle: isDark ? moonIconLight : moonIconDark,
