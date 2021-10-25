@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 
-import { ITableSearchProps } from '../types/components';
+import {IMarketplaceItemProps, ITableSearchProps } from '../types/components';
 import { Wrapper, Container, Title, Search } from './TableSearch.styles';
 
 import { useThemeContext } from '../helpers/theme';
@@ -56,7 +56,7 @@ export const TableSearch: React.FC<ITableSearchProps> = ({
       if (tagsFilter.length > 0 && tagsFilter.includes(`#all`)) {
         results = queryList.items;
       } else {
-        results = queryList.items.filter((item) => {
+        results = (queryList.items as IMarketplaceItemProps[]).filter((item: IMarketplaceItemProps) => {
           const matchesContent = item.title
             .toLowerCase()
             .includes(queryWithoutTags);
@@ -76,6 +76,7 @@ export const TableSearch: React.FC<ITableSearchProps> = ({
     return results;
   }, [query]);
 
+  // @ts-ignore
   return (
     <Wrapper {...restProps.wrapperProps}>
       <Container {...restProps.containerProps}>

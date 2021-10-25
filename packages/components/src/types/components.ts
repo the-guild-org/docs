@@ -333,7 +333,7 @@ export interface IEditorProps {
 
 export interface ITableSearchProps extends ISearchProps {
   children(props: {
-    items: IMarketplaceItemProps[] | null;
+    items: IMarketplaceItemProps[] | ISchemaItemsProps[] | null;
     placeholder: string | React.ReactElement;
     query: string;
   }): JSX.Element;
