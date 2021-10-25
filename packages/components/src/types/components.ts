@@ -282,7 +282,7 @@ export interface IMarketplaceListProps {
   title?: string;
   placeholder: string | React.ReactElement;
   pagination: number;
-  items: IMarketplaceItemProps[] | ISchemaItemsProps[];
+  items: IMarketplaceItemProps[] | ISchemaTypeProps[];
   tableHeader?: React.ReactNode;
 
   wrapperProps?: React.ComponentProps<'section'>;
@@ -333,7 +333,7 @@ export interface IEditorProps {
 
 export interface ITableSearchProps extends ISearchProps {
   children(props: {
-    items: IMarketplaceItemProps[] | ISchemaItemsProps;
+    items: IMarketplaceItemProps[] | ISchemaTypeProps[];
     placeholder: string | React.ReactElement;
     query: string;
   }): JSX.Element;
@@ -349,15 +349,11 @@ export interface ISchemaTypeProps {
   link: ILink;
 }
 
-export interface ISchemaItemsProps {
-  [index: string]: ISchemaTypeProps[];
-}
-
 export interface IExampleListProps {
   title?: string;
   placeholder: string | React.ReactElement;
   pagination: number;
-  items: ISchemaItemsProps;
+  items: ISchemaTypeProps[];
 
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
