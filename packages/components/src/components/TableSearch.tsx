@@ -76,7 +76,6 @@ export const TableSearch: React.FC<ITableSearchProps> = ({
     return results;
   }, [query]);
 
-  // @ts-ignore
   return (
     <Wrapper {...restProps.wrapperProps}>
       <Container {...restProps.containerProps}>
