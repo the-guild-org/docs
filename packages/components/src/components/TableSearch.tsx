@@ -42,7 +42,7 @@ export const TableSearch: React.FC<ITableSearchProps> = ({
   };
 
   const items = useMemo(() => {
-    let results = null;
+    let results: any[] = [];
     if (query && queryList) {
       const tagsFilter = (query || '')
         .toLowerCase()
