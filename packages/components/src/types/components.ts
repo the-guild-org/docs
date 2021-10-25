@@ -296,7 +296,7 @@ export interface ISearchProps {
   title: string | React.ReactNode;
   placeholder: string;
   tagsFilter?: string[];
-  queryList?: IMarketplaceListProps;
+  queryList?: IMarketplaceListProps | IExampleListProps;
 
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;

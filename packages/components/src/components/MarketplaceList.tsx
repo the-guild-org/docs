@@ -78,7 +78,7 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
               setCurrentItem={setCurrentItem}
               handleModal={handleModal}
               pageCount={pageCount}
-              setCurrentPage={(page) => setCurrentPage(page.selected)}
+              setCurrentPage={(page: { selected: React.SetStateAction<number>; }) => setCurrentPage(page.selected)}
               {...restProps.itemProps}
             />
 

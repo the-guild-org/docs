@@ -47,14 +47,16 @@ const Table = ({
   </TableBody>
 );
 
-const flattenObj = (obj: IExampleListProps, keyToFlatten: keyof IExampleListProps) => {
+const flattenItems = (obj: IExampleListProps) => {
   const objCopy = Object.assign({}, obj);
-  objCopy[keyToFlatten] = Object.values(obj[keyToFlatten]).flat();
+  // @ts-ignore
+  objCopy.items = Object.values(objCopy.items).flat();
   return objCopy;
 };
 
 const arrify = (items: IExampleListProps) => {
   const list: any = [];
+  // @ts-ignore
   Object.keys(items).forEach((key) => list.push(key, ...items[key]));
   return list;
 };
@@ -72,9 +74,10 @@ export const ExampleList: React.FC<IExampleListSearchProps> = ({
   const [currentPage, setCurrentPage] = useState(0);
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
 
-  const itemsList = flattenObj(queryList, 'items');
+  const itemsList = flattenItems(queryList);
   const itemsListLength = itemsList.items.length;
   const pageSize = pagination * 2 || 16;
+  // @ts-ignore
   const pageCount = itemsList ? Math.ceil(itemsListLength / pageSize) : 1;
 
   const pages = useMemo(() => {
@@ -87,6 +90,7 @@ export const ExampleList: React.FC<IExampleListSearchProps> = ({
     return pagesData;
   }, [arrify(list)]);
 
+  // @ts-ignore
   return (
     <TableSearch
       title={title}
