@@ -90,7 +90,6 @@ export const ExampleList: React.FC<IExampleListSearchProps> = ({
     return pagesData;
   }, [arrify(list)]);
 
-  // @ts-ignore
   return (
     <TableSearch
       title={title}

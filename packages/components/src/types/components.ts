@@ -282,7 +282,7 @@ export interface IMarketplaceListProps {
   title?: string;
   placeholder: string | React.ReactElement;
   pagination: number;
-  items: IMarketplaceItemProps[];
+  items: IMarketplaceItemProps[] | ISchemaItemsProps[];
   tableHeader?: React.ReactNode;
 
   wrapperProps?: React.ComponentProps<'section'>;
@@ -333,7 +333,7 @@ export interface IEditorProps {
 
 export interface ITableSearchProps extends ISearchProps {
   children(props: {
-    items: IMarketplaceItemProps[] | ISchemaItemsProps[] | null;
+    items: IMarketplaceItemProps[] | ISchemaItemsProps;
     placeholder: string | React.ReactElement;
     query: string;
   }): JSX.Element;
