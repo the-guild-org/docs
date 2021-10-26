@@ -367,6 +367,5 @@ export interface IExampleListSearchProps {
   tagsFilter?: string[];
   placeholder: string;
   queryList: IExampleListProps;
-  list: IExampleListProps;
   pagination: number;
 }
