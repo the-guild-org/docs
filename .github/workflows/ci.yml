@@ -39,3 +39,6 @@ jobs:
 
       - name: Build Storybook
         run: yarn build-storybook
+
+      - name: Build Next.js
+        run: cd examples/nextjs && yarn build
