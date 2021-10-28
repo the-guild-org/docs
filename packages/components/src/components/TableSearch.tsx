@@ -52,7 +52,9 @@ export const TableSearch: React.FC<ITableSearchProps> = ({
         tagsFilter.length > 0
           ? query.replace(/#\w\w+\s?/g, '').toLowerCase()
           : query.toLowerCase();
-
+      console.log({tagsFilter, query});
+      console.log({ queryList });
+      console.log({ bb: queryList.items });
       results = (queryList.items as IBaseItemProps[]).filter((item: IBaseItemProps) => {
         const matchesContent = item.title
           .toLowerCase()
@@ -105,12 +107,14 @@ export const TableSearch: React.FC<ITableSearchProps> = ({
             {...restProps}
           />
         </Search>
-        {children({
-          items: items,
-          placeholder:
-            queryList ? renderQueryPlaceholder(queryList.placeholder, query) : '',
-          query: query
-        })}
+        {
+          children({
+            items: items,
+            placeholder:
+              queryList ? renderQueryPlaceholder(queryList.placeholder, query) : '',
+            query: query
+          })
+        }
       </Container>
     </Wrapper>
   );
