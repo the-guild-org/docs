@@ -248,10 +248,14 @@ export interface ICardsColorfulProps {
   cardDescriptionProps?: React.ComponentProps<'p'>;
 }
 
-export interface IMarketplaceItemProps {
+export interface IBaseItemProps {
   title: string;
   description: string | React.ReactNode;
   tags?: string[];
+  link?: ILink;
+}
+
+export interface IMarketplaceItemProps extends IBaseItemProps {
   modal?: {
     header: {
       image?: IImage;
@@ -261,7 +265,6 @@ export interface IMarketplaceItemProps {
   };
   update?: string;
   image?: IImage;
-  link?: ILink;
 }
 
 interface IMarketplaceItemRestProps {
@@ -296,8 +299,7 @@ export interface ISearchProps {
   title: string | React.ReactNode;
   placeholder: string;
   tagsFilter?: string[];
-  queryList?: IMarketplaceListProps | IExampleListProps;
-
+  queryList?: IMarketplaceListProps;
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
@@ -308,7 +310,6 @@ export interface ISearchProps {
 export interface IMarketplaceSearchProps extends ISearchProps {
   primaryList: IMarketplaceListProps;
   secondaryList?: IMarketplaceListProps;
-
   primaryListProps?: IMarketplaceItemRestProps;
   secondaryListProps?: IMarketplaceItemRestProps;
 }
@@ -339,33 +340,8 @@ export interface ITableSearchProps extends ISearchProps {
   }): JSX.Element;
 }
 
-export interface ISchemaTypeProps {
-  title: string;
-  description: string;
-  tags?: string[];
+export interface ISchemaTypeProps extends IBaseItemProps{
   config: string;
   schema: string;
   documents?: string;
-  link: ILink;
-}
-
-export interface IExampleListProps {
-  title?: string;
-  placeholder: string | React.ReactElement;
-  pagination: number;
-  items: ISchemaTypeProps[];
-
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  placeholderProps?: React.ComponentProps<'div'>;
-  itemProps?: IMarketplaceItemRestProps;
-}
-
-export interface IExampleListSearchProps {
-  title: string | React.ReactNode;
-  tagsFilter?: string[];
-  placeholder: string;
-  queryList: IExampleListProps;
-  pagination: number;
 }
