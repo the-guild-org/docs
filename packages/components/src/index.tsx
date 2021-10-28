@@ -14,6 +14,6 @@ export { Modal } from './components/Modal';
 export { Newsletter } from './components/Newsletter';
 export { SearchBar } from './components/SearchBar';
 export { Subheader } from './components/Subheader';
-
+export {ExampleList} from './components/ExampleList'
 export { GlobalStyles } from './helpers/styles';
 export { ThemeContext, ThemeProvider, useThemeContext } from './helpers/theme';

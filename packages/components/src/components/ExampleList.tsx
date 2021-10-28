@@ -60,7 +60,6 @@ export const ExampleList: React.FC<IExampleListSearchProps> =
      tagsFilter,
      placeholder,
      queryList,
-     list,
      pagination,
      ...restProps
    }) => {
@@ -74,7 +73,7 @@ export const ExampleList: React.FC<IExampleListSearchProps> =
     const pageCount = itemsList ? Math.ceil(itemsListLength / pageSize) : 1;
 
     const pages = useMemo(() => {
-      const itemsCopy = [...arrify(list)];
+      const itemsCopy = [...arrify(queryList)];
       console.log({ itemsCopy });
       const pagesData = [];
 
@@ -82,7 +81,7 @@ export const ExampleList: React.FC<IExampleListSearchProps> =
         pagesData.push(itemsCopy.splice(0, pageSize));
       }
       return pagesData;
-    }, [arrify(list)]);
+    }, [arrify(queryList)]);
 
     return (
       <TableSearch title={title}
