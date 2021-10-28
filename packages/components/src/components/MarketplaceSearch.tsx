@@ -25,7 +25,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> =
                    {...restProps}>
         {({ items, placeholder, query }) => (
           <>
-            {query.length === 0 && items && queryList ? (
+            {query.length > 0 && items && queryList ? (
               <Results>
                 <MarketplaceList
                   title={queryList.title}
