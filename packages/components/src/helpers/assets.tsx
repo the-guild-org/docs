@@ -66,6 +66,7 @@ export const logoThemedIcons = (isDark: boolean): any => ({
   config: isDark ? productConfig : productConfig,
   envelop: isDark ? productEnvelop : productEnvelop,
   eslint: isDark ? productESLint : productESLint,
+  helix: isDark ? productHelix : productHelix,
   hive: isDark ? productHive : productHive,
   inspector: isDark ? productInspector : productInspector,
   mesh: isDark ? productMesh : productMesh,
