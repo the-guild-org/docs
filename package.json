@@ -83,5 +83,8 @@
   },
   "engines": {
     "node": ">=12"
+  },
+  "resolutions": {
+    "@emotion/react": "^11.4.0"
   }
 }
