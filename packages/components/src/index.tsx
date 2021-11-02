@@ -15,4 +15,5 @@ export { Newsletter } from './components/Newsletter';
 export { SearchBar } from './components/SearchBar';
 export { Subheader } from './components/Subheader';
 export { GlobalStyles } from './helpers/styles';
+export { SchemaPage} from './components/SchemaPage'
 export { ThemeContext, ThemeProvider, useThemeContext } from './helpers/theme';

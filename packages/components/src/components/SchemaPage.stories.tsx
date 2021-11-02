@@ -3,8 +3,8 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 
 import { ISchemaPageProps } from '../types/components';
 import { dummySchemaPage } from '../helpers/dummy';
+import { SchemaPage } from './SchemaPage';
 
-import { SchemaPage } from './SchemaType';
 
 export default {
   title: 'Components/Schema Type',
