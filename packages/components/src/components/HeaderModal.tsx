@@ -56,11 +56,23 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
           image: logoIcons.codeGen,
         },
         {
-          title: 'CLI',
-          description: 'Command line tool for common GraphQL workflows',
-          link: 'https://www.graphql-cli.com/',
-          image: logoIcons.cli,
+          title: 'Mesh',
+          description: 'Query anything, run anywhere',
+          link: 'https://graphql-mesh.com/',
+          image: logoIcons.mesh,
         },
+        {
+          title: 'Tools',
+          description: 'A set of utilities for faster GraphQL development',
+          link: 'https://graphql-tools.com/',
+          image: logoIcons.tools,
+        },
+        {
+          title: 'Helix',
+          description: 'A highly evolved GraphQL HTTP Server',
+          link: 'https://graphql-helix.com/',
+          image: logoIcons.helix,
+        },        
         {
           title: 'ESLint',
           description:
@@ -76,22 +88,10 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
           image: logoIcons.scalars,
         },
         {
-          title: 'Mesh',
-          description: 'Query anything, run anywhere',
-          link: 'https://graphql-mesh.com/',
-          image: logoIcons.mesh,
-        },
-        {
           title: 'Modules',
           description: 'Enterprise Grade Tooling For Your GraphQL Server',
           link: 'https://graphql-modules.com/',
           image: logoIcons.modules,
-        },
-        {
-          title: 'Tools',
-          description: 'A set of utilities for faster GraphQL development',
-          link: 'https://graphql-tools.com/',
-          image: logoIcons.tools,
         },
         {
           title: 'Config',
@@ -118,6 +118,12 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
           link: 'https://sofa-api.com/',
           image: logoIcons.sofa,
         },
+        {
+          title: 'CLI',
+          description: 'Command line tool for common GraphQL workflows',
+          link: 'https://www.graphql-cli.com/',
+          image: logoIcons.cli,
+        },        
         {
           title: 'Angular',
           description:
