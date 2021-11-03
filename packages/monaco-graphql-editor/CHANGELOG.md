@@ -1,5 +1,11 @@
 # @theguild/editor
 
+## 0.4.1
+
+### Patch Changes
+
+- ffa1b14: Fixed missing "main" field in package.json
+
 ## 0.4.0
 
 ### Minor Changes
