@@ -16,7 +16,7 @@ import {
   Wrapper
 } from './SchemaPage.styles';
 import { Tag, TagsContainer } from './Tag';
-import { SchemaEditor } from '@theguild/monaco-graphql-editor';
+import { SchemaEditor } from '@theguild/editor';
 
 const FrameworkList = ({ options }: { options: any }): JSX.Element => {
   const list = options.reduce((prev: string, curr: string) => [

@@ -21,7 +21,7 @@
     "paths": {
       "the-guild-components": ["packages/the-guild-components/src/index.tsx"],
       "@theguild/components": ["packages/components/src/index.tsx"],
-      "@theguild/monaco-graphql-editor": [
+      "@theguild/editor": [
         "packages/monaco-graphql-editor/src/index.tsx"
       ]
     }
