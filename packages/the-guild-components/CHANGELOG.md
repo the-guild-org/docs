@@ -1,5 +1,13 @@
 # the-guild-components
 
+## 1.5.3
+
+### Patch Changes
+
+- fb7cc99: Fix react-paginate dependency
+- Updated dependencies [fb7cc99]
+  - @theguild/components@1.7.1
+
 ## 1.5.2
 
 ### Patch Changes
