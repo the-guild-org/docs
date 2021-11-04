@@ -7,7 +7,7 @@ import {
   EditorAction,
   HoverSource,
 } from './utils';
-import { EnrichedLanguageService } from './EnrichedLanguageService';
+import { EnrichedLanguageService } from '@theguild/editor';
 import {
   GraphQLError,
   GraphQLSchema,

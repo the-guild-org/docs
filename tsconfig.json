@@ -1,31 +1,44 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": ".",
-    "baseUrl": ".",
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "jsx": "preserve",
-    "target": "es2018",
-    "module": "esnext",
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "strict": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "skipLibCheck": true,
-    "preserveWatchOutput": true,
-    "lib": ["DOM", "ES2019", "ScriptHost", ],
-    "paths": {
-      "the-guild-components": ["packages/the-guild-components/src/index.tsx"],
-      "@theguild/components": ["packages/components/src/index.tsx"],
-      "@theguild/editor": [
-        "packages/monaco-graphql-editor/src/index.tsx"
-      ]
-    }
+	"outDir": "dist",
+	"rootDir": ".",
+	"baseUrl": ".",
+	"declaration": true,
+	"emitDeclarationOnly": true,
+	"jsx": "preserve",
+	"target": "es2018",
+	"module": "esnext",
+	"allowSyntheticDefaultImports": true,
+	"moduleResolution": "node",
+	"esModuleInterop": true,
+	"isolatedModules": true,
+	"strict": true,
+	"noUnusedParameters": true,
+	"noImplicitReturns": true,
+	"skipLibCheck": true,
+	"preserveWatchOutput": true,
+	"lib": [
+	  "DOM",
+	  "ES2019",
+	  "ScriptHost"
+	],
+	"paths": {
+	  "the-guild-components": [
+		"packages/the-guild-components/src/index.tsx"
+	  ],
+	  "@theguild/components": [
+		"packages/components/src/index.tsx"
+	  ],
+	  "@theguild/editor": [
+		"packages/monaco-graphql-editor/src/index.tsx"
+	  ]
+	}
   },
-  "include": ["packages"],
-  "exclude": ["packages/**/*.stories.tsx", "**/*.styles.tsx"]
+  "include": [
+	"packages"
+  ],
+  "exclude": [
+	"packages/**/*.stories.tsx",
+	"**/*.styles.tsx"
+  ]
 }
