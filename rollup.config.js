@@ -43,7 +43,7 @@ function bundle(packageDir) {
         peerDependencies: true,
       }),
       babel({
-        babelHelpers: 'runtime',
+        babelHelpers: 'inline',
         extensions: ['.tsx', '.ts'],
         configFile: join(__dirname, '.babelrc'),
       }),
