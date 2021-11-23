@@ -273,8 +273,6 @@ interface IMarketplaceItemRestProps {
 export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
   icon: string;
   items: IMarketplaceItemProps[];
-  setCurrentItem: (state: IMarketplaceItemProps) => void;
-  handleModal: (state: boolean) => void;
 }
 
 export interface IMarketplaceListProps {

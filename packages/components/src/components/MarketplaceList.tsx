@@ -1,7 +1,5 @@
-import React, { useMemo, useState } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import ReactPaginate from 'react-paginate';
-
-import { Modal } from './Modal';
 
 import {
   Container,
@@ -22,101 +20,78 @@ import {
 import {
   IMarketplaceListProps,
   IMarketplaceItemsProps,
-  IMarketplaceItemProps,
 } from '../types/components';
 import { useThemeContext } from '../helpers/theme';
 import { marketplaceThemedAssets } from '../helpers/assets';
-import { toggleLockBodyScroll } from '../helpers/modals';
 import { Tag, TagsContainer } from './Tag';
 
-const TableItems: React.FC<IMarketplaceItemsProps> = ({
+const formatDate = (value: string): string => {
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+  const date = new Date(value);
+  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+};
+
+const TableItems: FC<IMarketplaceItemsProps> = ({
   icon,
-  items,
-  handleModal,
-  setCurrentItem,
+  items = [],
   ...restProps
 }) => {
-  const formatDate = (value: string) => {
-    const months = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-    ];
-    const date = new Date(value);
-    return `${
-      months[date.getMonth()]
-    } ${date.getDate()}, ${date.getFullYear()}`;
-  };
-
   return (
     <>
-      {items &&
-        items.map((item) => (
-          <TableItem key={item.title}>
-            <td>
-              {item.image && (
-                <TableItemImage {...item.image} {...restProps.imageProps} />
-              )}
-            </td>
-            <td>
-              <TableItemInfo>
-                <a
-                  {...(item.link
-                    ? item.link
-                    : {
-                        onClick: () => {
-                          setCurrentItem(item);
-                          handleModal(true);
-                        },
-                      })}
-                  {...restProps.linkProps}
-                >
-                  <span>
-                    <h3 {...restProps.titleProps}>{item.title}</h3>
-                    <p {...restProps.descriptionProps}>{item.description}</p>
-                    {item.tags && item.tags.length > 0 ? (
-                      <TagsContainer>
-                        {item.tags.map((tagName) => (
-                          <Tag key={tagName}>{tagName}</Tag>
-                        ))}
-                      </TagsContainer>
-                    ) : null}
-                  </span>
-                </a>
-              </TableItemInfo>
-            </td>
-            <td>
-              <TableItemDate {...restProps.dateProps}>
-                {formatDate(item.update)}
-              </TableItemDate>
-            </td>
-            <td>
-              <TableItemButton
-                type="button"
-                onClick={() => {
-                  handleModal(true);
-                  setCurrentItem(item);
-                }}
-              >
-                <img src={icon} alt=">" />
-              </TableItemButton>
-            </td>
-          </TableItem>
-        ))}
+      {items.map((item) => (
+        <TableItem key={item.title}>
+          <td>
+            {item.image && (
+              <TableItemImage {...item.image} {...restProps.imageProps} />
+            )}
+          </td>
+          <td>
+            <TableItemInfo>
+              <a {...item.link} {...restProps.linkProps}>
+                <span>
+                  <h3 {...restProps.titleProps}>{item.title}</h3>
+                  <p {...restProps.descriptionProps}>{item.description}</p>
+                  {item.tags && item.tags.length > 0 ? (
+                    <TagsContainer>
+                      {item.tags.map((tagName) => (
+                        <Tag key={tagName}>{tagName}</Tag>
+                      ))}
+                    </TagsContainer>
+                  ) : null}
+                </span>
+              </a>
+            </TableItemInfo>
+          </td>
+          <td>
+            <TableItemDate {...restProps.dateProps}>
+              {formatDate(item.update)}
+            </TableItemDate>
+          </td>
+          <td>
+            <TableItemButton {...item.link} {...restProps.linkProps}>
+              <img src={icon} alt=">" />
+            </TableItemButton>
+          </td>
+        </TableItem>
+      ))}
     </>
   );
 };
 
-export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
+export const MarketplaceList: FC<IMarketplaceListProps> = ({
   title,
   placeholder,
   items,
@@ -126,17 +101,10 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
   const { isDarkTheme } = useThemeContext();
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
 
-  const [modalOpen, setModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
-  const [currentItem, setCurrentItem] = useState<IMarketplaceItemProps>();
 
   const pageSize = pagination || 5;
   const pageCount = items ? Math.ceil(items.length / pageSize) : 1;
-
-  const handleModal = (state: boolean) => {
-    toggleLockBodyScroll(state);
-    setModalOpen(state);
-  };
 
   const pages = useMemo(() => {
     const itemsCopy = [...items];
@@ -172,8 +140,6 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
                 <TableItems
                   items={pages[currentPage]}
                   icon={marketplaceAssets.caret}
-                  setCurrentItem={setCurrentItem}
-                  handleModal={handleModal}
                   {...restProps.itemProps}
                 />
               </TableBody>
@@ -190,22 +156,6 @@ export const MarketplaceList: React.FC<IMarketplaceListProps> = ({
                   }}
                 />
               </TablePagination>
-            )}
-
-            {currentItem && (
-              <Modal
-                {...currentItem.modal.header}
-                title={currentItem.title}
-                placement="bottom-wide"
-                visible={modalOpen}
-                onCancel={() => handleModal(false)}
-              >
-                {typeof currentItem.modal.content === 'string'
-                  ? currentItem.modal.content
-                  : typeof currentItem.modal.content === 'function'
-                  ? currentItem.modal.content()
-                  : currentItem.modal.content || null}
-              </Modal>
             )}
           </>
         )}
