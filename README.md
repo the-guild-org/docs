@@ -2,7 +2,7 @@
 
 ## Getting started
 
-This is a npm package hosted at: https://www.npmjs.com/package/the-guild-components.
+This is a npm package hosted at: https://www.npmjs.com/package/@theguild/components 
 
 We also have a Storybook here: https://theguildcomponents.netlify.app/
 
