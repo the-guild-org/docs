@@ -543,7 +543,28 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
 
 export const dummyMarketplaceSearch = {
   title: 'Explore Marketplace',
-  tagsFilter: ['test', 'tag'],
+  tagsFilter: [
+    'typescript',
+    'csharp',
+    'flow',
+    'java',
+    'utilities',
+    'mongodb',
+    'angular',
+    'react',
+    'svelte',
+    'next',
+    'apollo',
+    'urql',
+    'vue',
+    'kotlin',
+    'android',
+    'reason',
+    'relay',
+    'jsdoc',
+    'plugin',
+    'preset'
+  ],
   placeholder: 'Search...',
   primaryList: {
     title: 'Trending & Last Update',

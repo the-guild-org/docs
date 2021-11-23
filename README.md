@@ -2,7 +2,7 @@
 
 ## Getting started
 
-This is an npm package hosted at: https://www.npmjs.com/package/the-guild-components.
+This is a npm package hosted at: https://www.npmjs.com/package/the-guild-components.
 
 We also have a Storybook here: https://theguildcomponents.netlify.app/
 
@@ -15,6 +15,6 @@ We also have a Storybook here: https://theguildcomponents.netlify.app/
 
 This project was based on:
 
-```js
+```sh
 npx degit https://github.com/ben-rogerson/twin.examples/storybook-styled-components-typescript folder-name
 ```
