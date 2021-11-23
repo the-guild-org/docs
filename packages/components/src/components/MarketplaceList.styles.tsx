@@ -112,7 +112,7 @@ export const TableItemInfo = styled.div(() => [
   `,
 ]);
 
-export const TableItemButton = styled.button(() => [
+export const TableItemButton = styled.a(() => [
   tw`flex justify-center items-center h-8 w-8 md:(h-10 w-10) bg-gray-200 border-0 rounded-lg cursor-pointer outline-none`,
   tw`hocus:bg-black dark:(bg-gray-700 hocus:bg-white)`,
   tw`transition duration-150 ease-in-out`,

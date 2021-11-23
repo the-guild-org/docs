@@ -1,4 +1,5 @@
 {
+  "reportUnusedDisableDirectives": true,
   "env": {
     "browser": true,
     "es2021": true
@@ -16,8 +17,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "react/prop-types": 0
+    "react/prop-types": "off"
   }
 }
