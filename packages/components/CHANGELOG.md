@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 1.8.0
+
+### Minor Changes
+
+- 25c19c3: remove modal from MarketplaceList
+
+### Patch Changes
+
+- 8cfa565: fix TagsContainer when there are many tags
+
 ## 1.7.1
 
 ### Patch Changes
