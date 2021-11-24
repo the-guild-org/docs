@@ -57,10 +57,10 @@ const products = [
   {
     children: 'Helix',
     title: 'A highly evolved GraphQL HTTP Server',
-    href: 'https://graphql-helix.com/',
+    href: 'https://github.com/contra/graphql-helix',
     target: '_blank',
     rel: 'noopener noreferrer',
-  },  
+  },
   {
     children: 'ESLint',
     title: 'Customisable ESLint parser, plugin and set rules for GraphQL',
@@ -209,7 +209,7 @@ const community = [
     href: 'https://www.youtube.com/watch?v=d_GBgH-L5c4&list=PLhCf3AUOg4PgQoY_A6xWDQ70yaNtPYtZd',
     target: '_blank',
     rel: 'noopener noreferrer',
-  },  
+  },
 ];
 
 export const FooterExtended: React.FC<IFooterExtendedProps> = ({
