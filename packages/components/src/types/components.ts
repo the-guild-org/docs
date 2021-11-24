@@ -251,7 +251,7 @@ export interface IMarketplaceItemProps {
   title: string;
   description: string | React.ReactNode;
   tags?: string[];
-  modal: {
+  modal?: {
     header: {
       image?: IImage;
       description?: string | ILink;
