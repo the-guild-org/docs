@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.8.1
+
+### Patch Changes
+
+- 1bb3a66: make modal non-required
+
 ## 1.8.0
 
 ### Minor Changes
