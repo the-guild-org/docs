@@ -70,9 +70,9 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
         {
           title: 'Helix',
           description: 'A highly evolved GraphQL HTTP Server',
-          link: 'https://graphql-helix.com/',
+          link: 'https://github.com/contra/graphql-helix',
           image: logoIcons.helix,
-        },        
+        },
         {
           title: 'ESLint',
           description:
@@ -123,7 +123,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
           description: 'Command line tool for common GraphQL workflows',
           link: 'https://www.graphql-cli.com/',
           image: logoIcons.cli,
-        },        
+        },
         {
           title: 'Angular',
           description:
