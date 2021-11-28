@@ -84,5 +84,8 @@
   },
   "engines": {
     "node": ">=12"
+  },
+  "resolutions": {
+    "stylis": "4.0.10"
   }
 }

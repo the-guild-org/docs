@@ -19,7 +19,7 @@ module.exports = {
   typescript: {
     reactDocgen: 'none',
   },
-  babel: async (options) => {
+  babel(options) {
     const { plugins = [] } = options;
     return {
       ...options,
