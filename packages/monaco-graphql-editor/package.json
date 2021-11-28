@@ -15,7 +15,7 @@
     "monaco-editor": "^0.24.0 || ^0.25.0 || ^0.26.0 || ^0.27.0 || ^0.28.0 || ^0.29.0 || ^0.30.0"
   },
   "dependencies": {
-    "graphql-language-service": "3.2.1"
+    "graphql-language-service": "3.2.4"
   },
   "devDependencies": {
     "core-js": "3.19.1",
