@@ -57,7 +57,7 @@ const products = [
   {
     children: 'Helix',
     title: 'A highly evolved GraphQL HTTP Server',
-    href: 'https://github.com/contra/graphql-helix',
+    href: 'https://graphql-helix.com',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
