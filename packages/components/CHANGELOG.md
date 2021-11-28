@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.8.2
+
+### Patch Changes
+
+- a738f9f: fix: point helix to github repo
+
 ## 1.8.1
 
 ### Patch Changes
