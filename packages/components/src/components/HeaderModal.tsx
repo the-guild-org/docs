@@ -70,7 +70,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
         {
           title: 'Helix',
           description: 'A highly evolved GraphQL HTTP Server',
-          link: 'https://github.com/contra/graphql-helix',
+          link: 'https://graphql-helix.com',
           image: logoIcons.helix,
         },
         {
