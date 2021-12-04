@@ -1,4 +1,5 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, isValidElement } from 'react';
+import type { FC, FormEvent, ReactElement } from 'react';
 
 import { MarketplaceList } from './MarketplaceList';
 
@@ -15,7 +16,7 @@ import { marketplaceThemedAssets } from '../helpers/assets';
 import { useThemeContext } from '../helpers/theme';
 import { Tag, TagsContainer } from './Tag';
 
-export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
+export const MarketplaceSearch: FC<IMarketplaceSearchProps> = ({
   title,
   tagsFilter,
   placeholder,
@@ -26,33 +27,31 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
 }) => {
   const { isDarkTheme } = useThemeContext();
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
-  const [query, setQuery] = useState<string>();
+  const [query, setQuery] = useState('');
 
-  const handleChange = (e: React.FormEvent<EventTarget>) => {
-    const query = e.target as HTMLInputElement;
-    setQuery(query.value);
+  const handleChange = (e: FormEvent<HTMLInputElement>) => {
+    setQuery(e.currentTarget.value);
   };
 
   const renderQueryPlaceholder = (
-    placeholder: string | React.ReactElement,
-    query: string | undefined
+    placeholder: string | ReactElement,
+    query: string
   ) => {
-    if (!query || React.isValidElement(placeholder)) {
+    if (!query || isValidElement(placeholder)) {
       return placeholder;
     }
-
     const subStrings = placeholder.split('{query}');
     return (
-      <p>
-        {subStrings[0]} <strong>{`"${query}"`}</strong> {subStrings[1]}
-      </p>
+      <>
+        {subStrings[0]} <strong>&quot;{query}&quot;</strong> {subStrings[1]}
+      </>
     );
   };
 
   const items = useMemo(() => {
     let results = null;
     if (query && queryList) {
-      const tagsFilter = (query || '')
+      const tagsFilter = query
         .split(' ')
         .filter((t) => t.trim().length > 1 && t.startsWith('#'));
       const queryWithoutTags =
@@ -67,15 +66,13 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
 
         if (tagsFilter.length === 0) {
           return matchesContent;
-        } else {
-          return (
-            item.tags?.some((tag) => tagsFilter.includes(`#${tag}`)) &&
-            matchesContent
-          );
         }
+        return (
+          item.tags?.some((tag) => tagsFilter.includes(`#${tag}`)) &&
+          matchesContent
+        );
       });
     }
-
     return results;
   }, [query]);
 
@@ -96,8 +93,8 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
           <img
             src={marketplaceAssets.search}
             alt="Search"
-            height="24"
-            width="24"
+            height={24}
+            width={24}
           />
           <input
             value={query}

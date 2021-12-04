@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from 'react';
+import React, { FC, useEffect, useMemo, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
 import {
@@ -106,11 +106,16 @@ export const MarketplaceList: FC<IMarketplaceListProps> = ({
   const pageSize = pagination || 5;
   const pageCount = items ? Math.ceil(items.length / pageSize) : 1;
 
+  useEffect(() => {
+    // items change when search query is changed, so we need to reset currentPage to 0
+    setCurrentPage(0);
+  }, [items]);
+
   const pages = useMemo(() => {
     const itemsCopy = [...items];
     const pagesData = [];
 
-    while (itemsCopy.length) {
+    while (itemsCopy.length > 0) {
       pagesData.push(itemsCopy.splice(0, pageSize));
     }
 
@@ -130,10 +135,10 @@ export const MarketplaceList: FC<IMarketplaceListProps> = ({
             <Table>
               <TableHeader>
                 <tr>
-                  <th></th>
+                  <th />
                   <th>Name</th>
                   <th>Last Update</th>
-                  <th></th>
+                  <th />
                 </tr>
               </TableHeader>
               <TableBody>
@@ -148,12 +153,12 @@ export const MarketplaceList: FC<IMarketplaceListProps> = ({
             {pageCount > 1 && (
               <TablePagination>
                 <ReactPaginate
-                  {...{
-                    pageCount: pageCount,
-                    pageRangeDisplayed: 3,
-                    marginPagesDisplayed: 1,
-                    onPageChange: (page) => setCurrentPage(page.selected),
-                  }}
+                  pageCount={pageCount}
+                  // control selected page
+                  forcePage={currentPage}
+                  pageRangeDisplayed={3}
+                  marginPagesDisplayed={1}
+                  onPageChange={(page) => setCurrentPage(page.selected)}
                 />
               </TablePagination>
             )}
