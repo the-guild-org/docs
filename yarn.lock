@@ -12300,10 +12300,10 @@ tty-table@^2.8.10:
     wcwidth "^1.0.1"
     yargs "^15.1.0"
 
-twin.macro@2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-2.8.0.tgz#eabd894cb00cc9251856ba093a057199be922bf1"
-  integrity sha512-iORyfVXFlWcVebDF3i0iQS9Ek+9ybsiotTjDBPFg1iG4gWJe4sbudd8iC0gysSep/OWVBcKZ6dKzo3kmVKMqXQ==
+twin.macro@2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-2.8.2.tgz#7f1344b4b1c3811da93a62fa204fe08999df7a75"
+  integrity sha512-2Vg09mp+nA70AWUedJ8WRgB2me3buq7JGbOnjHnFnNaBzomVu5k7lJ9YGpByIlre+UYr7QRhtlj7+IUKxvCrUA==
   dependencies:
     "@babel/parser" "^7.12.5"
     "@babel/template" "^7.14.5"
