@@ -1,6 +1,12 @@
-import * as React from 'react';
+import React, {
+  ForwardedRef,
+  useImperativeHandle,
+  useEffect,
+  useState,
+  forwardRef,
+} from 'react';
 import MonacoEditor, { EditorProps } from '@monaco-editor/react';
-import type * as monaco from 'monaco-editor';
+import type { IDisposable } from 'monaco-editor';
 import { EnrichedLanguageService } from './EnrichedLanguageService';
 import { GraphQLError, GraphQLSchema } from 'graphql';
 import {
@@ -22,7 +28,7 @@ export type SchemaEditorProps = SchemaServicesOptions & {
 
 function BaseSchemaEditor(
   props: SchemaEditorProps,
-  ref: React.ForwardedRef<SchemaEditorApi>
+  ref: ForwardedRef<SchemaEditorApi>
 ) {
   const {
     languageService,
@@ -32,23 +38,22 @@ function BaseSchemaEditor(
     editorRef,
     setSchema,
   } = useSchemaServices(props);
-  React.useImperativeHandle(ref, () => editorApi, [editorRef, languageService]);
+  useImperativeHandle(ref, () => editorApi, [editorRef, languageService]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (languageService && props.onLanguageServiceReady) {
       props.onLanguageServiceReady(languageService);
     }
   }, [languageService, props.onLanguageServiceReady]);
 
-  const [onBlurHandler, setOnBlurSubscription] =
-    React.useState<monaco.IDisposable>();
+  const [onBlurHandler, setOnBlurSubscription] = useState<IDisposable>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (editorRef && props.onBlur) {
       onBlurHandler?.dispose();
 
       const subscription = editorRef.onDidBlurEditorText(() => {
-        props.onBlur && props.onBlur(editorRef.getValue() || '');
+        props.onBlur?.(editorRef.getValue() || '');
       });
 
       setOnBlurSubscription(subscription);
@@ -57,55 +62,50 @@ function BaseSchemaEditor(
 
   return (
     <MonacoEditor
-      height={'70vh'}
+      height="70vh"
       {...props}
       beforeMount={(monaco) => {
         setMonaco(monaco);
-        props.beforeMount && props.beforeMount(monaco);
+        props.beforeMount?.(monaco);
       }}
       onMount={(editor, monaco) => {
         setEditor(editor);
-        props.onMount && props.onMount(editor, monaco);
+        props.onMount?.(editor, monaco);
       }}
-      onChange={(newValue, ev) => {
-        props.onChange && props.onChange(newValue, ev);
+      onChange={async (newValue, ev) => {
+        props.onChange?.(newValue, ev);
 
-        if (newValue) {
-          setSchema(newValue)
-            .then((schema) => {
-              if (schema) {
-                props.onSchemaChange && props.onSchemaChange(schema, newValue);
-              }
-            })
-            .catch((e: Error | GraphQLError) => {
-              if (props.onSchemaError) {
-                if (e instanceof GraphQLError) {
-                  props.onSchemaError([e], newValue, languageService);
-                } else {
-                  props.onSchemaError(
-                    [
-                      new GraphQLError(
-                        e.message,
-                        undefined,
-                        undefined,
-                        undefined,
-                        undefined,
-                        e
-                      ),
-                    ],
-                    newValue,
-                    languageService
-                  );
-                }
-              }
-            });
+        if (!newValue) {
+          return;
+        }
+        try {
+          const schema = await setSchema(newValue);
+          if (schema) {
+            props.onSchemaChange?.(schema, newValue);
+          }
+        } catch (e) {
+          if (!props.onSchemaError) {
+            return;
+          }
+          const error =
+            e instanceof GraphQLError
+              ? e
+              : new GraphQLError(
+                  (e as Error).message,
+                  undefined,
+                  undefined,
+                  undefined,
+                  undefined,
+                  e as Error
+                );
+          props.onSchemaError([error], newValue, languageService);
         }
       }}
-      options={{ glyphMargin: true, ...(props.options || {}) }}
+      options={{ glyphMargin: true, ...props.options }}
       language="graphql"
       defaultValue={props.defaultValue || props.schema}
     />
   );
 }
 
-export const SchemaEditor = React.forwardRef(BaseSchemaEditor);
+export const SchemaEditor = forwardRef(BaseSchemaEditor);

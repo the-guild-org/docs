@@ -311,7 +311,12 @@ export interface INewsletterProps {
 export interface ISchemaPageProps {
   schemaName: string;
   tags?: string[];
-  editorData: string[] | React.ReactNode[];
+  editorData: {
+    title?: string,
+    frameworks?: string[]
+    schema: string
+    image?: string,
+  }[];
 }
 
 export interface IEditorProps {
