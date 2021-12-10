@@ -75,6 +75,7 @@ interface IHeaderModalRestProps {
   categoryTitleProps?: React.ComponentProps<'h3'>;
   modalProps?: IModalRestProps;
 }
+
 export interface IHeaderModalProps extends IHeaderModalRestProps {
   title: string | React.ReactNode;
   modalOpen: boolean;
@@ -118,6 +119,7 @@ interface IModalRestProps {
   headerLinkProps?: React.ComponentProps<'a'>;
   headerImageProps?: React.ComponentProps<'img'>;
 }
+
 export interface IModalProps extends IModalRestProps {
   title: string | React.ReactNode;
   description?: string | ILink;
@@ -155,6 +157,7 @@ export interface IFeatureListProps {
   itemDescriptionProps?: React.ComponentProps<'p'>;
   itemImageProps?: React.ComponentProps<'img'>;
 }
+
 export interface IInfoListProps {
   title?: string | React.ReactNode;
   items: {
@@ -170,6 +173,7 @@ export interface IInfoListProps {
   itemDescriptionProps?: React.ComponentProps<'p'>;
   itemLinkProps?: React.ComponentProps<'a'>;
 }
+
 export interface IHeroVideoProps {
   title: string | React.ReactNode;
   description: string | React.ReactNode;
@@ -184,6 +188,7 @@ export interface IHeroVideoProps {
   linkProps?: React.ComponentProps<'a'>;
   videoProps?: ReactPlayerProps;
 }
+
 export interface IHeroIllustrationProps {
   title: string | React.ReactNode;
   description: string | React.ReactNode;
@@ -198,6 +203,7 @@ export interface IHeroIllustrationProps {
   linkProps?: React.ComponentProps<'a'>;
   imageProps?: React.ComponentProps<'img'>;
 }
+
 export interface IHeroGradientProps {
   title: string | React.ReactNode;
   description: string | React.ReactNode;
@@ -269,6 +275,7 @@ interface IMarketplaceItemRestProps {
   dateProps?: React.ComponentProps<'span'>;
   linkProps?: React.ComponentProps<'a'>;
 }
+
 export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
   icon: string;
   items: IMarketplaceItemProps[];
