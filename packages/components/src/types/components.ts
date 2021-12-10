@@ -318,18 +318,14 @@ export interface INewsletterProps {
 export interface ISchemaPageProps {
   schemaName: string;
   tags?: string[];
-  editorData: {
-    title?: string,
-    frameworks?: string[]
-    schema: string
-    image?: string,
-  }[];
+  editorData: Omit<IEditorProps, 'icon'>[];
 }
 
 export interface IEditorProps {
   title?: string;
   frameworks?: string[];
-  schema: string;
+  schema?: string;
   icon: string;
   image?: string;
+  operations?: string
 }

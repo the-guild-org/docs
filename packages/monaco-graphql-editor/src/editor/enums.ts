@@ -36,7 +36,7 @@ export enum CompletionItemKind {
   TypeParameter = 24,
   User = 25,
   Issue = 26,
-  Snippet = 27
+  Snippet = 27,
 }
 
 export enum CompletionItemInsertTextRule {
@@ -48,5 +48,5 @@ export enum CompletionItemInsertTextRule {
   /**
    * `insertText` is a snippet.
    */
-  InsertAsSnippet = 4
+  InsertAsSnippet = 4,
 }

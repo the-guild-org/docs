@@ -642,7 +642,7 @@ export const dummySchemaPage = {
     {
       title: 'operation.graphql',
       frameworks: [],
-      schema: dummyOperations,
+      operations: dummyOperations,
       image: marketplaceListImage,
     },
     {

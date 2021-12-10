@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { FC, useState } from 'react';
+import { buildSchema } from 'graphql';
 
 import { ISchemaPageProps, IEditorProps } from '../types/components';
 import { useThemeContext } from '../helpers/theme';
@@ -17,23 +18,24 @@ import {
 } from './SchemaTypes.styles';
 import { Tag, TagsContainer } from './Tag';
 import { SchemaEditor } from '../../../monaco-graphql-editor/src/editor/SchemaEditor';
+import { OperationsEditor } from '../../../monaco-graphql-editor/src/editor/OperationsEditor';
 
-const FrameworkList = ({ options }: { options: any }): JSX.Element => {
+const FrameworkList = ({ options }: { options: any[] }): JSX.Element => {
   const list = options.reduce((prev: string, curr: string) => [
     prev,
-    <span key={prev}></span>,
+    <span key={prev} />,
     curr,
   ]);
 
   return <Frameworks>{list}</Frameworks>;
 };
 
-const Editor: React.FC<IEditorProps> = ({
+const Editor: FC<Omit<IEditorProps, 'schema' | 'operations'>> = ({
   title,
-  frameworks,
-  schema,
+  frameworks = [],
   icon,
   image,
+  children,
 }) => (
   <EditorWrapper className="wrapper">
     <EditorHeader>
@@ -41,26 +43,27 @@ const Editor: React.FC<IEditorProps> = ({
         {image && <img src={image} alt="logo" />}
         <span>
           {title && <p>{title}</p>}
-          {frameworks && frameworks.length > 0 && (
-            <FrameworkList options={frameworks} />
-          )}
+          {frameworks.length > 0 && <FrameworkList options={frameworks} />}
         </span>
       </div>
       <Button type="button" onClick={() => console.log('clicked')}>
         <img src={icon} alt=">" />
       </Button>
     </EditorHeader>
-    <SchemaEditor schema={schema} />
+    {children}
   </EditorWrapper>
 );
 
-export const SchemaPage: React.FC<ISchemaPageProps> = ({
+export const SchemaPage: FC<ISchemaPageProps> = ({
   schemaName,
-  tags,
+  tags = [],
   editorData,
 }) => {
   const { isDarkTheme } = useThemeContext();
   const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
+  const [schemaObj, setSchemaObj] = useState(() =>
+    buildSchema(editorData[0].schema!)
+  );
 
   return (
     <Wrapper>
@@ -68,9 +71,9 @@ export const SchemaPage: React.FC<ISchemaPageProps> = ({
         <Header>
           <Title>{schemaName}</Title>
           <TagsContainer>
-            {tags &&
-              tags.length > 0 &&
-              tags.map((tagName) => <Tag key={tagName}>{tagName}</Tag>)}
+            {tags.map((tagName) => (
+              <Tag key={tagName}>{tagName}</Tag>
+            ))}
           </TagsContainer>
         </Header>
         <ButtonWrapper>
@@ -83,13 +86,26 @@ export const SchemaPage: React.FC<ISchemaPageProps> = ({
         </ButtonWrapper>
       </Container>
       <EditorGroupWrapper>
-        {(editorData as Array<IEditorProps>).map((data) => (
+        <Editor {...editorData[0]} icon={marketplaceAssets.caret}>
+          <SchemaEditor
+            schema={editorData[0].schema}
+            onSchemaChange={(newSchemaObject) => {
+              setSchemaObj(newSchemaObject);
+            }}
+          />
+        </Editor>
+
+        <Editor {...editorData[1]} icon={marketplaceAssets.caret}>
+          <OperationsEditor
+            schema={schemaObj}
+            operations={editorData[1].operations!}
+          />
+        </Editor>
+
+        {editorData.slice(2).map((data) => (
           <Editor
+            {...data}
             key={data.title || 'output'}
-            title={data.title}
-            frameworks={data.frameworks}
-            schema={data.schema}
-            image={data.image}
             icon={marketplaceAssets.caret}
           />
         ))}

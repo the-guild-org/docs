@@ -1,16 +1,43 @@
-import React, { FC, useEffect } from 'react';
-import { buildSchema, GraphQLSchema } from 'graphql';
+import React, { FC, useEffect, useRef } from 'react';
 import MonacoEditor, { useMonaco } from '@monaco-editor/react';
 import {
   getAutocompleteSuggestions,
-  CompletionItemKind as lsCIK,
+  // CompletionItemKind as lsCIK,
 } from 'graphql-language-service';
-
+import type { GraphQLSchema } from 'graphql';
 import type * as monaco from 'monaco-editor';
 import type { IRange, CompletionItem } from 'graphql-language-service';
-
 import * as languages from './enums';
 import { toGraphQLPosition, toMonacoRange } from './utils';
+
+// This enum `CompletionItemKind` exist on graphql-language-service v4
+enum lsCIK {
+  Text = 1,
+  Method = 2,
+  Function = 3,
+  Constructor = 4,
+  Field = 5,
+  Variable = 6,
+  Class = 7,
+  Interface = 8,
+  Module = 9,
+  Property = 10,
+  Unit = 11,
+  Value = 12,
+  Enum = 13,
+  Keyword = 14,
+  Snippet = 15,
+  Color = 16,
+  File = 17,
+  Reference = 18,
+  Folder = 19,
+  EnumMember = 20,
+  Constant = 21,
+  Struct = 22,
+  Event = 23,
+  Operator = 24,
+  TypeParameter = 25,
+}
 
 type GraphQLWorkerCompletionItem = CompletionItem & {
   range?: monaco.IRange;
@@ -112,37 +139,42 @@ class GraphQLWorker {
   }
 }
 
-export const OperationsEditor: FC<{ schema: string; operations?: string }> = ({
-  schema,
-  ...props
-}) => {
+export const OperationsEditor: FC<{
+  schema: GraphQLSchema;
+  operations: string;
+}> = ({ schema, ...props }) => {
   const monaco = useMonaco();
+  const completionProviderRef = useRef<monaco.IDisposable | null>(null);
 
   useEffect(() => {
-    if (!monaco) {
+    if (!monaco || !schema) {
       return;
     }
-    monaco.languages.registerCompletionItemProvider('graphql', {
-      triggerCharacters: [':', '$', '\n', ' ', '(', '@'],
-      provideCompletionItems(
-        model: monaco.editor.IReadOnlyModel,
-        position: monaco.Position
-      ): monaco.languages.CompletionList {
-        try {
-          const schemaObj = buildSchema(schema);
-          const worker = new GraphQLWorker();
-          const completionItems = worker.doComplete(model, position, schemaObj);
-          return {
-            incomplete: true,
-            suggestions: completionItems.map((item) => toCompletion(item)),
-          };
-        } catch (err) {
-          console.error('Error fetching completion items', err);
-          return { suggestions: [] };
-        }
-      },
-    });
-  }, [monaco]);
+    if (completionProviderRef.current) {
+      // dispose instance to prevent having duplicated field
+      completionProviderRef.current.dispose();
+    }
+    completionProviderRef.current =
+      monaco.languages.registerCompletionItemProvider('graphql', {
+        triggerCharacters: [':', '$', '\n', ' ', '(', '@'],
+        provideCompletionItems(
+          model: monaco.editor.IReadOnlyModel,
+          position: monaco.Position
+        ): monaco.languages.CompletionList {
+          try {
+            const worker = new GraphQLWorker();
+            const completionItems = worker.doComplete(model, position, schema);
+            return {
+              incomplete: true,
+              suggestions: completionItems.map((item) => toCompletion(item)),
+            };
+          } catch (err) {
+            console.error('Error fetching completion items', err);
+            return { suggestions: [] };
+          }
+        },
+      });
+  }, [monaco, schema]);
 
   return (
     <MonacoEditor
