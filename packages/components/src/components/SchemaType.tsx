@@ -107,7 +107,9 @@ export const SchemaPage: FC<ISchemaPageProps> = ({
             {...data}
             key={data.title || 'output'}
             icon={marketplaceAssets.caret}
-          />
+          >
+            <SchemaEditor schema={data.schema} />
+          </Editor>
         ))}
       </EditorGroupWrapper>
     </Wrapper>
