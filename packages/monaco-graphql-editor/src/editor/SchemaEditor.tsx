@@ -4,11 +4,17 @@ import React, {
   useEffect,
   useState,
   forwardRef,
+  useCallback,
 } from 'react';
-import MonacoEditor, { EditorProps } from '@monaco-editor/react';
+import MonacoEditor, {
+  EditorProps,
+  BeforeMount,
+  OnMount,
+  OnChange,
+} from '@monaco-editor/react';
 import type { IDisposable } from 'monaco-editor';
-import { EnrichedLanguageService } from './EnrichedLanguageService';
 import { GraphQLError, GraphQLSchema } from 'graphql';
+import type { EnrichedLanguageService } from './EnrichedLanguageService';
 import {
   SchemaEditorApi,
   SchemaServicesOptions,
@@ -60,47 +66,62 @@ function BaseSchemaEditor(
     }
   }, [props.onBlur, editorRef]);
 
+  const handleBeforeMount = useCallback<BeforeMount>(
+    (monaco) => {
+      setMonaco(monaco);
+      props.beforeMount?.(monaco);
+    },
+    [props.beforeMount]
+  );
+
+  const handleMount = useCallback<OnMount>(
+    (editor, monaco) => {
+      setEditor(editor);
+      props.onMount?.(editor, monaco);
+    },
+    [props.onMount]
+  );
+
+  const handleChange = useCallback<OnChange>(
+    async (newValue, ev) => {
+      props.onChange?.(newValue, ev);
+      if (!newValue) {
+        return;
+      }
+
+      try {
+        const schema = await setSchema(newValue);
+        if (schema) {
+          props.onSchemaChange?.(schema, newValue);
+        }
+      } catch (e) {
+        if (!props.onSchemaError) {
+          return;
+        }
+        const error =
+          e instanceof GraphQLError
+            ? e
+            : new GraphQLError(
+                (e as Error).message,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                e as Error
+              );
+        props.onSchemaError([error], newValue, languageService);
+      }
+    },
+    [props.onChange, props.onSchemaChange, props.onSchemaError]
+  );
+
   return (
     <MonacoEditor
       height="70vh"
       {...props}
-      beforeMount={(monaco) => {
-        setMonaco(monaco);
-        props.beforeMount?.(monaco);
-      }}
-      onMount={(editor, monaco) => {
-        setEditor(editor);
-        props.onMount?.(editor, monaco);
-      }}
-      onChange={async (newValue, ev) => {
-        props.onChange?.(newValue, ev);
-
-        if (!newValue) {
-          return;
-        }
-        try {
-          const schema = await setSchema(newValue);
-          if (schema) {
-            props.onSchemaChange?.(schema, newValue);
-          }
-        } catch (e) {
-          if (!props.onSchemaError) {
-            return;
-          }
-          const error =
-            e instanceof GraphQLError
-              ? e
-              : new GraphQLError(
-                  (e as Error).message,
-                  undefined,
-                  undefined,
-                  undefined,
-                  undefined,
-                  e as Error
-                );
-          props.onSchemaError([error], newValue, languageService);
-        }
-      }}
+      beforeMount={handleBeforeMount}
+      onMount={handleMount}
+      onChange={handleChange}
       options={{ glyphMargin: true, ...props.options }}
       language="graphql"
       defaultValue={props.defaultValue || props.schema}
