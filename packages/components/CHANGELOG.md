@@ -1,5 +1,12 @@
 # @theguild/components
 
+## 1.8.3
+
+### Patch Changes
+
+- 1da241f: fix: make works marketplace search when pagination is selected
+- 5678150: feat: point to helix website instead git repo
+
 ## 1.8.2
 
 ### Patch Changes
