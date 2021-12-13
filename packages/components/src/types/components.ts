@@ -329,3 +329,9 @@ export interface IEditorProps {
   image?: string;
   operations?: string
 }
+
+export interface IBannerProps {
+  children?: string | React.ReactNode;
+  color?: React.CSSProperties['color'];
+  backgroundColor?: React.CSSProperties['color'];
+}
