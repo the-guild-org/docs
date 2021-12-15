@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.8.6
+
+### Patch Changes
+
+- 287a1aa: Ok, use in-house email validation
+
 ## 1.8.5
 
 ### Patch Changes
