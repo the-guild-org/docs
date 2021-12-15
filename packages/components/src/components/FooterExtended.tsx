@@ -1,8 +1,10 @@
 import React from 'react';
 
+import tw, { styled } from 'twin.macro';
 import { Newsletter } from './Newsletter';
 import {
   Column,
+  WideColumn,
   Container,
   Copyright,
   Description,
@@ -212,6 +214,10 @@ const community = [
   },
 ];
 
+const BasicRow = styled.div(() => [tw`flex`]);
+
+const BasicColumn = styled.div(() => [tw`w-1/2`]);
+
 export const FooterExtended: React.FC<IFooterExtendedProps> = ({
   sameSite,
   resources,
@@ -231,33 +237,64 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
         target: '_blank',
       };
 
-  const renderLinks = (list: ILink[]) => (
-    <Links>
-      {list.map((link, index) => (
-        <li key={link.href + index}>
-          <a {...link} {...restProps.linkProps} />
-        </li>
-      ))}
-    </Links>
-  );
+  const renderLinks = (
+    list: ILink[],
+    slice?: {
+      limit?: number;
+      after: number;
+    }
+  ) => {
+    return (
+      <Links>
+        {list
+          .filter((_, index) => {
+            if (slice) {
+              if (index >= slice.after) {
+                return slice.limit ? index - slice.after < slice.limit : true;
+              } else {
+                return false;
+              }
+            }
+
+            return true;
+          })
+          .map((link, index) => (
+            <li key={link.href + index}>
+              <a {...link} {...restProps.linkProps} />
+            </li>
+          ))}
+      </Links>
+    );
+  };
+
+  const limitProductsTo = Math.floor(products.length / 2);
 
   return (
     <Wrapper {...restProps.wrapperProps}>
       <Container {...restProps.containerProps}>
         <Line {...restProps.lineProps} />
         <Row>
-          <Column>
-            <Logo {...logoOptions} {...restProps.logoProps}>
-              <img src={logos.logoFull} alt="The Guild" />
-            </Logo>
-            <Copyright {...restProps.copyrightProps}>
-              Belong anywhere. © The Guild, Inc.
-            </Copyright>
-          </Column>
-          <Column>
+          <WideColumn>
             <Title {...restProps.titleProps}>PRODUCTS</Title>
-            <Links>{renderLinks(products)}</Links>
-          </Column>
+            <BasicRow>
+              <BasicColumn>
+                <Links>
+                  {renderLinks(products, {
+                    limit: limitProductsTo,
+                    after: 0,
+                  })}
+                </Links>
+              </BasicColumn>
+              <BasicColumn>
+                <Links>
+                  {renderLinks(products, {
+                    limit: limitProductsTo,
+                    after: limitProductsTo,
+                  })}
+                </Links>
+              </BasicColumn>
+            </BasicRow>
+          </WideColumn>
           <Column>
             {resources && (
               <>
@@ -284,6 +321,25 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
               </>
             )}
           </Column>
+        </Row>
+        <Row
+          equalPadding
+          style={{
+            alignItems: 'center',
+            borderTop: '1px solid #262626'
+          }}
+        >
+          <Logo {...logoOptions} {...restProps.logoProps}>
+            <img src={logos.logoFull} alt="The Guild" />
+          </Logo>
+          <Copyright
+            style={{
+              marginLeft: 25,
+            }}
+            {...restProps.copyrightProps}
+          >
+            Belong anywhere. © The Guild, Inc.
+          </Copyright>
         </Row>
       </Container>
     </Wrapper>
