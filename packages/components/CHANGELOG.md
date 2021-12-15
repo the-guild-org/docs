@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.8.5
+
+### Patch Changes
+
+- d2293d2: Use smaller library to validate email
+
 ## 1.8.4
 
 ### Patch Changes
