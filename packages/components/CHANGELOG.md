@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.8.4
+
+### Patch Changes
+
+- 90c90b9: Turn Products list into two column
+
 ## 1.8.3
 
 ### Patch Changes
