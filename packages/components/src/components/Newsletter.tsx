@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import isEmailLike from 'is-email-like';
 
 import { Form } from './Newsletter.styles';
 import { useThemeContext } from '../helpers/theme';
 import { newsletterThemedIcons } from '../helpers/assets';
+import { isEmail } from '../helpers/email';
 import { INewsletterProps } from '../types/components';
 
 export const Newsletter: React.FC<INewsletterProps> = ({
@@ -19,7 +19,7 @@ export const Newsletter: React.FC<INewsletterProps> = ({
       onSubmit={(e) => {
         e.preventDefault();
 
-        if (!isEmailLike(inputValue)) {
+        if (!isEmail(inputValue)) {
           setInputError(true);
           return;
         }

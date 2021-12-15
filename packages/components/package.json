@@ -24,8 +24,7 @@
     "twin.macro": "2.8.2",
     "use-debounce": "7.0.1",
     "@emotion/react": "11.7.0",
-    "@emotion/styled": "11.6.0",
-    "is-email-like": "2.0.0"
+    "@emotion/styled": "11.6.0"
   },
   "publishConfig": {
     "access": "public"
