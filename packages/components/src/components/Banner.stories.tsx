@@ -22,7 +22,7 @@ export default {
         type: 'color',
       },
     },
-  }
+  },
 } as Meta;
 
 const Template: Story<IBannerProps> = (args) => <Banner {...args} />;
