@@ -4,7 +4,7 @@ export const algoliaConfig = {
   searchIndex: 'theguild',
   hosts: [
     {
-      url: 'the-guild.dev/api/algolia',
+      url: 'www.the-guild.dev/api/algolia',
     },
   ],
 };
