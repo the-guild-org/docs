@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.8.7
+
+### Patch Changes
+
+- 3e1d33a: fix(components): algolia host should not contain redirect (www.)
+
 ## 1.8.6
 
 ### Patch Changes
