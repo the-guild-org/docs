@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useRef } from 'react';
-import MonacoEditor, { useMonaco } from '@monaco-editor/react';
+import React, { FC, useEffect, useRef, useState } from 'react';
+import MonacoEditor, { useMonaco, EditorProps } from '@monaco-editor/react';
 import {
   getAutocompleteSuggestions,
   // CompletionItemKind as lsCIK,
@@ -139,49 +139,55 @@ class GraphQLWorker {
   }
 }
 
-export const OperationsEditor: FC<{
-  schema: GraphQLSchema;
-  operations: string;
-}> = ({ schema, ...props }) => {
+export const OperationsEditor: FC<
+  { schema: GraphQLSchema } & Omit<EditorProps, 'language'>
+> = ({ schema, ...editorProps }) => {
   const monaco = useMonaco();
-  const completionProviderRef = useRef<monaco.IDisposable | null>(null);
+  const [completionProvider, setCompletionProvider] =
+    useState<monaco.IDisposable | null>(null);
+  const editorUriRef = useRef<monaco.Uri>();
 
   useEffect(() => {
     if (!monaco || !schema) {
       return;
     }
-    if (completionProviderRef.current) {
+    if (completionProvider) {
       // dispose instance to prevent having duplicated field
-      completionProviderRef.current.dispose();
+      completionProvider.dispose();
     }
-    completionProviderRef.current =
-      monaco.languages.registerCompletionItemProvider('graphql', {
+
+    const newProvider = monaco.languages.registerCompletionItemProvider(
+      'graphql',
+      {
         triggerCharacters: [':', '$', '\n', ' ', '(', '@'],
         provideCompletionItems(
           model: monaco.editor.IReadOnlyModel,
           position: monaco.Position
         ): monaco.languages.CompletionList {
-          try {
-            const worker = new GraphQLWorker();
-            const completionItems = worker.doComplete(model, position, schema);
-            return {
-              incomplete: true,
-              suggestions: completionItems.map((item) => toCompletion(item)),
-            };
-          } catch (err) {
-            console.error('Error fetching completion items', err);
+          const isUriEquals = model.uri.path === editorUriRef.current!.path
+          if (!isUriEquals) {
             return { suggestions: [] };
           }
+          const worker = new GraphQLWorker();
+          const completionItems = worker.doComplete(model, position, schema);
+          return {
+            incomplete: true,
+            suggestions: completionItems.map((item) => toCompletion(item)),
+          };
         },
-      });
+      }
+    );
+    setCompletionProvider(newProvider);
   }, [monaco, schema]);
 
   return (
     <MonacoEditor
       height="70vh"
-      {...props}
+      {...editorProps}
       language="graphql"
-      defaultValue={props.operations}
+      onMount={(editor) => {
+        editorUriRef.current = editor.getModel()!.uri;
+      }}
     />
   );
 };
