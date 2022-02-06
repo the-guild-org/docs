@@ -23,11 +23,6 @@ export default {
         type: 'radio',
       },
     },
-    sameSite: {
-      name: 'Same Site',
-      description:
-        'Use this to force links to open in the same tab, using the root domain.',
-    },
     themeSwitch: {
       name: 'Theme Switch',
       description:
