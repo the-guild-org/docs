@@ -40,8 +40,8 @@ export default function App({
               href: '/',
             },
             {
-              children: 'Github',
-              title: 'View on Github',
+              children: 'GitHub',
+              title: 'View on GitHub',
               href: 'https://github.com/the-guild-org/the-guild-components',
               target: '_blank',
               rel: 'noopener noreferrer',

@@ -29,8 +29,8 @@ const links = [
     rel: 'noopener noreferrer',
   },
   {
-    children: 'Github',
-    title: 'See our Github profile',
+    children: 'GitHub',
+    title: 'See our GitHub profile',
     href: 'https://github.com/the-guild-org',
     target: '_blank',
     rel: 'noopener noreferrer',

@@ -168,8 +168,8 @@ const company = [
     rel: 'noopener noreferrer',
   },
   {
-    children: 'Github',
-    title: 'Check our Github profile',
+    children: 'GitHub',
+    title: 'Check our GitHub profile',
     href: 'https://github.com/the-guild-org',
     target: '_blank',
     rel: 'noopener noreferrer',

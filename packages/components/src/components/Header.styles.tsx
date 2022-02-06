@@ -29,7 +29,7 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
       ${[
         tw`inset-0`,
         css`
-          z-index: 300; //TODO: Used for Docusaurus, remove when no longer needed.
+          z-index: 300; // TODO: Used for Docusaurus, remove when no longer needed.
         `,
         !isModalOpen &&
           css`
@@ -39,7 +39,6 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
       ]}
     }
   `,
-  tw`dark:bg-gray-900 bg-white`,
 ]);
 
 export const Controls = styled.menu(() => [

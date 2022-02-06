@@ -20,7 +20,7 @@ export const dummyFeatureList = {
       title: 'Pluggable',
       description: 'Powerful plugin system',
       link: {
-        children: 'Github',
+        children: 'GitHub',
         title: 'Learn more',
         target: '_blank',
         rel: 'noopener norefereer',
@@ -60,11 +60,11 @@ export const dummyInfoList = {
       },
     },
     {
-      title: 'Github integration',
+      title: 'GitHub integration',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
       link: {
-        children: 'Github',
+        children: 'GitHub',
         title: 'View the code',
         href: 'https://github.com/dotansimha/envelop/',
         target: '_blank',
@@ -177,8 +177,8 @@ export const dummySubheader = {
       href: '/docs',
     },
     {
-      children: 'Github',
-      title: 'See our Github profile',
+      children: 'GitHub',
+      title: 'See our GitHub profile',
       href: 'https://github.com/dotansimha/envelop',
       target: '_blank',
       rel: 'noopener noreferrer',

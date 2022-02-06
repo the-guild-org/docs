@@ -22,7 +22,6 @@ import { toggleLockBodyScroll } from '../helpers/modals';
 export const Header: React.FC<IHeaderProps> = ({
   accentColor,
   activeLink,
-  sameSite,
   themeSwitch,
   ...restProps
 }) => {
@@ -44,23 +43,23 @@ export const Header: React.FC<IHeaderProps> = ({
 
   const renderLinkOptions = (
     href: string,
-    sameSite?: boolean,
-    clickEvent?: () => void
+    onClick?: React.MouseEventHandler<HTMLAnchorElement>
   ) => {
+    if (onClick) {
+      return {
+        href,
+        onClick(e: React.MouseEvent<HTMLAnchorElement>) {
+          e.preventDefault();
+          onClick(e);
+        },
+      };
+    }
     const rootURL = 'https://the-guild.dev';
-    return clickEvent
-      ? {
-          href: '',
-          onClick: (e: React.SyntheticEvent) => {
-            e.preventDefault();
-            clickEvent();
-          },
-        }
-      : {
-          rel: !sameSite ? 'noopener noreferrer' : undefined,
-          target: !sameSite ? '_blank' : undefined,
-          href: sameSite ? href : `${rootURL}${href}`,
-        };
+    return {
+      rel: 'noopener noreferrer',
+      target: '_blank',
+      href: `${rootURL}${href}`,
+    };
   };
 
   const links = [
@@ -68,30 +67,26 @@ export const Header: React.FC<IHeaderProps> = ({
       label: 'Our Services',
       title: 'View our services',
       href: '/services',
-      active: false,
     },
     {
       label: 'Platform',
       title: 'View our projects',
       href: '/open-source',
-      active: false,
-      clickEvent: () => handleModal(true),
+      onClick: () => handleModal(true),
     },
     {
       label: 'Blog',
       title: 'Read our blog',
       href: '/blog',
-      active: false,
     },
     {
       label: 'About Us',
       title: 'Learn more about us',
       href: '/about-us',
-      active: false,
     },
   ];
 
-  links.map((link) => (link.active = activeLink.includes(link.href)));
+  const onLinkClick = restProps.linkProps?.onClick;
 
   return (
     <Wrapper {...restProps.wrapperProps}>
@@ -106,7 +101,7 @@ export const Header: React.FC<IHeaderProps> = ({
         </Side>
 
         <Logo
-          {...renderLinkOptions('/', sameSite)}
+          {...renderLinkOptions('/', onLinkClick)}
           title="View our website"
           {...restProps.logoProps}
         >
@@ -132,12 +127,12 @@ export const Header: React.FC<IHeaderProps> = ({
               key={link.label}
               title={link.title}
               accentColor={accentColor}
-              isActiveLink={link.active}
-              {...renderLinkOptions(link.href, sameSite, link.clickEvent)}
+              isActiveLink={activeLink?.includes(link.href)}
               {...restProps.linkProps}
+              {...renderLinkOptions(link.href, link.onClick || onLinkClick)}
             >
               {link.label}
-              {link.clickEvent && <img src={icons.caret} alt="Link icon" />}
+              {link.onClick && <img src={icons.caret} alt="Link icon" />}
             </Link>
           ))}
           <Controls>
@@ -155,8 +150,8 @@ export const Header: React.FC<IHeaderProps> = ({
               >
                 <img
                   src={icons.themeToggle}
-                  height="16"
-                  width="16"
+                  height={16}
+                  width={16}
                   alt="Theme toggle icon"
                 />
               </Icon>

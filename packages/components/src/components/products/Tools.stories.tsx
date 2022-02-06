@@ -66,8 +66,8 @@ const subheaderData = {
       href: '/docs',
     },
     {
-      children: 'Github',
-      title: 'See our Github profile',
+      children: 'GitHub',
+      title: 'See our GitHub profile',
       href: 'https://github.com/ardatan/graphql-tools',
       target: '_blank',
       rel: 'noopener noreferrer',

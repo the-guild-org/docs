@@ -32,7 +32,6 @@ export interface IButtonProps {
 export interface IHeaderProps {
   accentColor: string;
   activeLink: string;
-  sameSite?: boolean;
   themeSwitch?: boolean;
 
   wrapperProps?: React.ComponentProps<'header'>;
