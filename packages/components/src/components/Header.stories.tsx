@@ -23,11 +23,6 @@ export default {
         type: 'radio',
       },
     },
-    sameSite: {
-      name: 'Same Site',
-      description:
-        'Use this to force links to open in the same tab, using the root domain.',
-    },
     themeSwitch: {
       name: 'Theme Switch',
       description:
@@ -47,6 +42,5 @@ export const Default = Template.bind({});
 Default.args = {
   accentColor: '#03a6a6',
   activeLink: '/open-source',
-  sameSite: false,
   themeSwitch: true,
 };

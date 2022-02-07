@@ -24,12 +24,13 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
   tw`fixed flex flex-col justify-center`,
   tw`transition-all duration-300 ease-in-out`,
   tw`md:(static flex-row justify-end items-center transition-none)`,
+  tw`dark:bg-gray-900 bg-white`,
   css`
     @media screen and (max-width: 768px) {
       ${[
         tw`inset-0`,
         css`
-          z-index: 300; //TODO: Used for Docusaurus, remove when no longer needed.
+          z-index: 300; // TODO: Used for Docusaurus, remove when no longer needed.
         `,
         !isModalOpen &&
           css`
@@ -39,7 +40,6 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
       ]}
     }
   `,
-  tw`dark:bg-gray-900 bg-white`,
 ]);
 
 export const Controls = styled.menu(() => [
