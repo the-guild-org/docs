@@ -30,7 +30,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/dedent": "^0.7.0",
+    "@types/dedent": "0.7.0",
     "dedent": "0.7.0"
   }
 }
