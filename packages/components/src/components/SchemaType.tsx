@@ -17,7 +17,7 @@ import {
   Frameworks,
 } from './SchemaTypes.styles';
 import { Tag, TagsContainer } from './Tag';
-import { SchemaEditor, OperationsEditor } from '../../../monaco-graphql-editor/src';
+import { SchemaEditor, ExecutableDocumentEditor } from '../../../monaco-graphql-editor/src';
 
 const FrameworkList = ({ options }: { options: any[] }): JSX.Element => {
   const list = options.reduce((prev: string, curr: string) => [
@@ -95,7 +95,7 @@ export const SchemaPage: FC<ISchemaPageProps> = ({
         </Editor>
 
         <Editor {...editorData[1]} icon={marketplaceAssets.caret}>
-          <OperationsEditor
+          <ExecutableDocumentEditor
             schema={schemaObj}
             defaultValue={editorData[1].operations!}
           />

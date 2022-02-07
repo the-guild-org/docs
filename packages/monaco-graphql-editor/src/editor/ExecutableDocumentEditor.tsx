@@ -139,7 +139,7 @@ class GraphQLWorker {
   }
 }
 
-export const OperationsEditor: FC<
+export const ExecutableDocumentEditor: FC<
   { schema: GraphQLSchema } & Omit<EditorProps, 'language'>
 > = ({ schema, ...editorProps }) => {
   const monaco = useMonaco();
