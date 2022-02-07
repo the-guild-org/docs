@@ -1,6 +1,6 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { IBannerProps } from '../types/components';
+import type { Story, Meta } from '@storybook/react/types-6-0';
+import type { IBannerProps } from '../types/components';
 
 import { Banner } from './Banner';
 
@@ -8,15 +8,15 @@ export default {
   title: 'Components/Headers/Banner',
   component: Banner,
   argTypes: {
-    backgroundColor: {
-      name: 'Background Color',
+    bgColor: {
+      name: 'Background color',
       description: 'Used as the background for the banner.',
       control: {
         type: 'color',
       },
     },
     color: {
-      name: 'Text Color',
+      name: 'Text color',
       description: 'Used as color for the text.',
       control: {
         type: 'color',
@@ -29,5 +29,10 @@ const Template: Story<IBannerProps> = (args) => <Banner {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: <div>This is an important announcement.</div>,
+  children: (
+    <>
+      <b>Important:</b> This documentation covers GraphQL Config v3. For the 2.x
+      doc, check: graphql-config.com/legacy.
+    </>
+  ),
 };

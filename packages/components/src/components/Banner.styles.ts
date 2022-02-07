@@ -1,18 +1,14 @@
 import tw, { css, styled, theme } from 'twin.macro';
+import type { IBannerProps } from '../types/components';
 
-interface IStyleProps {
-  color?: string;
-  backgroundColor?: string;
-  animation?: React.CSSProperties['animation'];
-}
-
-export const Wrapper = styled.div(
-  ({ color, backgroundColor, animation }: IStyleProps) => [
-    tw`w-full sticky top-0`,
+export const Wrapper = styled.div<IBannerProps>(
+  ({ color, bgColor, animation }) => [
+    tw`w-full sticky top-0 text-center py-4 px-6`,
     css`
-      padding: 15px 25px;
       color: ${color || theme`colors.grayscale-line`};
-      background-color: ${backgroundColor || theme`colors.grayscale-label`};
+      background: ${bgColor ||
+      'linear-gradient(-45deg, #5f6184, #a7a8d7, #5f6184, #a7a8d7)'};
+      background-size: 400% 200%;
       animation: ${animation || 'gradient 15s ease infinite'};
       @keyframes gradient {
         0% {

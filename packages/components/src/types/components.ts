@@ -333,6 +333,6 @@ export interface IEditorProps {
 export interface IBannerProps {
   children?: string | React.ReactNode;
   color?: React.CSSProperties['color'];
-  backgroundColor?: React.CSSProperties['color'];
+  bgColor?: React.CSSProperties['color'];
   animation?: React.CSSProperties['animation'];
 }

@@ -2,4 +2,4 @@
 '@theguild/components': minor
 ---
 
-add Banner component
+add `<Banner />` component
