@@ -1,5 +1,12 @@
 # @theguild/components
 
+## 1.9.0
+
+### Minor Changes
+
+- b60a9ce: add `<Banner />` component
+- 6123c09: fix <Header /> remove `sameSite` in favor `linkProps.onClick`
+
 ## 1.8.7
 
 ### Patch Changes

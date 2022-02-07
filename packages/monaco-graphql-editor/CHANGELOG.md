@@ -1,5 +1,11 @@
 # @theguild/editor
 
+## 0.5.0
+
+### Minor Changes
+
+- c2be92c: feat: :tada: add `<ExecutableDocumentEditor />` component
+
 ## 0.4.1
 
 ### Patch Changes
