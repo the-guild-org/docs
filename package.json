@@ -33,7 +33,7 @@
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/react": "6.4.9",
     "@types/react": "17.0.39",
-    "@types/react-instantsearch-core": "6.10.5",
+    "@types/react-instantsearch-core": "6.10.7",
     "@types/react-instantsearch-dom": "6.12.1",
     "@types/react-paginate": "7.1.1",
     "@types/validator": "13.7.0",
