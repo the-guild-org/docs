@@ -1,3 +1,4 @@
+import dedent from 'dedent';
 import featureListImage1 from '../static/dummy/envelop/features-pluggable.png';
 import featureListImage2 from '../static/dummy/envelop/features-performant.png';
 import featureListImage3 from '../static/dummy/envelop/features-modern.png';
@@ -24,8 +25,8 @@ export const dummyFeatureList = {
         title: 'Learn more',
         target: '_blank',
         rel: 'noopener norefereer',
-        href: 'https://github.com/the-guild-org'
-      }
+        href: 'https://github.com/the-guild-org',
+      },
     },
     {
       image: {
@@ -127,7 +128,7 @@ export const dummyHeroGradient = {
     href: '#',
   },
   version: '1.0.7',
-  colors: ['#FF34AE', '#1CC8EE'],
+  colors: ['#ff34ae', '#1cc8ee'],
   image: {
     src: heroGradientImage,
     alt: 'Illustration',
@@ -201,7 +202,7 @@ export const dummyCardsColorful = {
         title: 'Learn more',
         href: '#',
       },
-      color: '#3547E5',
+      color: '#3547e5',
     },
     {
       title: 'Clean up your code!',
@@ -211,7 +212,7 @@ export const dummyCardsColorful = {
         title: 'Learn more',
         href: '#',
       },
-      color: '#0B0D11',
+      color: '#0b0d11',
     },
   ],
 };
@@ -563,7 +564,7 @@ export const dummyMarketplaceSearch = {
     'relay',
     'jsdoc',
     'plugin',
-    'preset'
+    'preset',
   ],
   placeholder: 'Search...',
   primaryList: {
@@ -586,26 +587,47 @@ export const dummyMarketplaceSearch = {
   },
 };
 
-const dummySchema = `type Query {
-  ping: Boolean
-  me: User!
-}
+const dummySchema = dedent(/* GraphQL */ `
+  type Query {
+    ping: Boolean
+    me: User!
+  }
 
-" represents a valid email "
-scalar Email
+  " represents a valid email "
+  scalar Email
 
-""" Represents a simple user """
-type User {
-  id: ID!
-  email: Email!
-  profile: Profile!
-}
+  """
+  Represents a simple user
+  """
+  type User {
+    id: ID!
+    email: Email!
+    profile: Profile!
+  }
 
-type Profile {
-  name: String
-  age: Int
-}
-`;
+  type Profile {
+    name: String
+    age: Int
+  }
+`);
+
+const dummyOperations = dedent(/* GraphQL */ `
+  query Me {
+    me {
+      id
+      profile {
+        name
+      }
+    }
+    ping
+  }
+
+  fragment UserFields on User {
+    profile {
+      name
+    }
+  }
+`);
 
 export const dummySchemaPage = {
   schemaName: 'Schema Type 1',
@@ -620,7 +642,7 @@ export const dummySchemaPage = {
     {
       title: 'operation.graphql',
       frameworks: [],
-      schema: dummySchema,
+      operations: dummyOperations,
       image: marketplaceListImage,
     },
     {
