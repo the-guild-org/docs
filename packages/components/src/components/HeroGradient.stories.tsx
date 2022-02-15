@@ -49,3 +49,20 @@ Simple.args = {
   ...dummyHeroGradient,
   image: undefined,
 };
+
+export const MultiLinks = Template.bind({});
+MultiLinks.args = {
+  ...dummyHeroGradient,
+  link: [
+    {
+      children: 'Start Learning',
+      title: 'Start Learning',
+      href: '#',
+    },
+    {
+      children: 'Documentation',
+      title: 'Documentation',
+      href: '#',
+    },
+  ],
+};

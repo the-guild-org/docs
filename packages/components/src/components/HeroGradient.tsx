@@ -35,7 +35,14 @@ export const HeroGradient: React.FC<IHeroGradientProps> = ({
           <p {...restProps.descriptionProps}>{description}</p>
         </Info>
         <CTA>
-          {link && <a {...link} {...restProps.linkProps} />}
+          {link &&
+            toArray(link).map((link) => (
+              <a
+                key={`${link.href}${link.title}`}
+                {...link}
+                {...restProps.linkProps}
+              />
+            ))}
           {version && isValidElement(version) ? (
             version
           ) : (
@@ -49,3 +56,7 @@ export const HeroGradient: React.FC<IHeroGradientProps> = ({
     </Container>
   </Wrapper>
 );
+
+function toArray<T>(input: T | T[]) {
+  return Array.isArray(input) ? input : [input];
+}
