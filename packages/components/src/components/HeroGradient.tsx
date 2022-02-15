@@ -38,7 +38,7 @@ export const HeroGradient: React.FC<IHeroGradientProps> = ({
           {link &&
             toArray(link).map((link) => (
               <a
-                key={`${link.href}${link.title}`}
+                key={`${link.href}${link.children}`}
                 {...link}
                 {...restProps.linkProps}
               />
