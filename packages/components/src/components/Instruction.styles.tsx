@@ -13,19 +13,25 @@ export const Content = styled.div(
     position: relative;
     flex-grow: 1;
     padding-left: 15px;
+    top: -5px;
 
     font-size: 16px;
     color: ${theme`colors.dark-blue`};
+    padding-bottom: 10px;
 
     &::before {
-      top: 15px;
+      top: 20px;
       position: absolute;
       content: '';
       left: -7px;
       border-radius: 2px;
       width: 4px;
       background-color: ${theme`colors.dark-blue`};
-      height: 100%;
+      height: calc(100% - 20px);
+    }
+
+    > :first-child {
+      margin-top: 0;
     }
   `
 );
