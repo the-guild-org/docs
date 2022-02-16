@@ -14,7 +14,7 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "algoliasearch": "4.11.0",
+    "algoliasearch": "4.12.1",
     "focus-trap-react": "8.9.2",
     "polished": "4.1.4",
     "react-instantsearch-dom": "6.17.0",
