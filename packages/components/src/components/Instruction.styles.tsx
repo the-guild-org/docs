@@ -59,6 +59,7 @@ export const SingleDot = styled.div(
     height: 10px;
     position: relative;
     width: 10px;
+    flex-shrink: 0;
 
     &::before {
       position: absolute;
