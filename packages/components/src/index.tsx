@@ -15,5 +15,6 @@ export { Newsletter } from './components/Newsletter';
 export { SearchBar } from './components/SearchBar';
 export { Subheader } from './components/Subheader';
 export { Banner } from './components/Banner';
+export { Instruction } from './components/Instruction';
 export { GlobalStyles } from './helpers/styles';
 export { ThemeContext, ThemeProvider, useThemeContext } from './helpers/theme';
