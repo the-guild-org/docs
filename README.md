@@ -4,7 +4,9 @@
 
 This is a npm package hosted at: https://www.npmjs.com/package/@theguild/components
 
-We also have a Storybook here: https://theguildcomponents.netlify.app/
+Storybook: https://the-guild-components-storybook.vercel.app/
+
+Example page: https://the-guild-components.vercel.app/
 
 ## Developing
 
