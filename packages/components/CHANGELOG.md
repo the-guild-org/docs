@@ -1,5 +1,12 @@
 # @theguild/components
 
+## 1.10.0
+
+### Minor Changes
+
+- d612069: allow multiple links within HeroGradient
+- a269271: add Instruction component
+
 ## 1.9.0
 
 ### Minor Changes
