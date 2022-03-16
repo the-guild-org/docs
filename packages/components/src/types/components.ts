@@ -18,6 +18,7 @@ export interface ILink {
   href: string;
   children?: string | React.ReactNode;
   rel?: string;
+  style?: React.CSSProperties;
   target?: string;
   active?: boolean;
   onClick?: React.MouseEventHandler;
