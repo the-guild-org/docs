@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.10.1
+
+### Patch Changes
+
+- c0c2760: Add style prop to ILink
+
 ## 1.10.0
 
 ### Minor Changes
