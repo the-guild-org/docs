@@ -49,6 +49,11 @@ Simple.args = {
   ...dummyHeroGradient,
   image: undefined,
 };
+export const CustomImage = Template.bind({});
+CustomImage.args = {
+  ...dummyHeroGradient,
+  image: <div>Tuval</div>,
+};
 
 export const MultiLinks = Template.bind({});
 MultiLinks.args = {
