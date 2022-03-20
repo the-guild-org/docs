@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.10.2
+
+### Patch Changes
+
+- 557d6c3: Allowd custom image in Hero component
+
 ## 1.10.1
 
 ### Patch Changes
