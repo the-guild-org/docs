@@ -211,7 +211,7 @@ export interface IHeroGradientProps {
   colors?: string[];
   version?: string | React.ReactNode;
   link?: ILink | ILink[];
-  image?: IImage;
+  image?: IImage | React.ReactElement;
 
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;

@@ -50,7 +50,8 @@ export const HeroGradient: React.FC<IHeroGradientProps> = ({
           )}
         </CTA>
         {image && (
-          <Image src={image.src} alt={image.alt} {...restProps.imageProps} />
+          React.isValidElement(image) ?
+            image : <Image src={image.src} alt={image.alt} {...restProps.imageProps} />
         )}
       </Content>
     </Container>
