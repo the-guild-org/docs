@@ -38,28 +38,136 @@ export const headerThemedIcons = (isDark: boolean) => ({
   close: isDark ? closeIconLight : closeIconDark,
 });
 
+export const PRODUCTS: {
+  children: string;
+  title: string;
+  href: `https://${string}`;
+  logo: `${string}.svg`;
+}[] = [
+  {
+    children: 'Hive',
+    title: 'Schema Registry for your GraphQL Workflows',
+    href: 'https://graphql-hive.com',
+    logo: `${CDN}products/hive.svg`,
+  },
+  {
+    children: 'Yoga',
+    title:
+      'A fully-featured, simple to set up, performant and extendable server',
+    href: 'https://graphql-yoga.com',
+    logo: `${CDN}products/yoga.svg`,
+  },
+  {
+    children: 'Envelop',
+    title: 'Modern GraphQL Framework',
+    href: 'https://envelop.dev',
+    logo: `${CDN}products/envelop.svg`,
+  },
+  {
+    children: 'Inspector',
+    title: 'Schema management tool',
+    href: 'https://graphql-inspector.com',
+    logo: `${CDN}products/inspector.svg`,
+  },
+  {
+    children: 'Code Generator',
+    title: 'Generate anything from GraphQL',
+    href: 'https://graphql-code-generator.com',
+    logo: `${CDN}products/code-generator.svg`,
+  },
+  {
+    children: 'Mesh',
+    title: 'Query anything, run anywhere',
+    href: 'https://graphql-mesh.com',
+    logo: `${CDN}products/mesh.svg`,
+  },
+  {
+    children: 'Tools',
+    title: 'A set of utilities for faster GraphQL development',
+    href: 'https://graphql-tools.com',
+    logo: `${CDN}products/tools.svg`,
+  },
+  {
+    children: 'Modules',
+    title: 'Enterprise Grade Tooling For Your GraphQL Server',
+    href: 'https://graphql-modules.com',
+    logo: `${CDN}products/modules.svg`,
+  },
+  {
+    children: 'ESLint',
+    title: 'Customisable ESLint parser, plugin and set rules for GraphQL',
+    href: 'https://github.com/B2o5T/graphql-eslint',
+    logo: `${CDN}products/eslint.svg`,
+  },
+  {
+    children: 'Config',
+    title: 'One configuration for all your GraphQL tools',
+    href: 'https://graphql-config.com',
+    logo: `${CDN}products/config.svg`,
+  },
+  {
+    children: 'Scalars',
+    title:
+      'Common custom GraphQL Scalars for precise type-safe GraphQL schemas',
+    href: 'https://graphql-scalars.dev',
+    logo: `${CDN}products/scalars.svg`,
+  },
+  {
+    children: 'Helix',
+    title: 'A highly evolved GraphQL HTTP Server',
+    href: 'https://graphql-helix.com',
+    logo: `${CDN}products/helix.svg`,
+  },
+  {
+    children: 'Shield',
+    title:
+      'GraphQL Permissions Framework For Complex Authorisation Systems',
+    href: 'https://graphql-shield.com',
+    logo: `${CDN}products/shield.svg`,
+  },
+  {
+    children: 'Swift',
+    title: 'A GraphQL client that lets you forget about GraphQL',
+    href: 'https://swift-graphql.com',
+    logo: `${CDN}products/swift.svg`,
+  },
+  {
+    children: 'CLI',
+    title: 'Command line tool for common GraphQL workflows',
+    href: 'https://github.com/Urigo/graphql-cli',
+    logo: `${CDN}products/cli.svg`,
+  },
+  {
+    children: 'SOFA',
+    title: 'Generate RESTful APIs from your GraphQL Server',
+    href: 'https://sofa-api.com',
+    logo: `${CDN}products/sofa.svg`,
+  },
+  {
+    children: 'Stencil',
+    title:
+      'A fully-featured, production ready caching GraphQL client for Stencil and every GraphQL server',
+    href: 'https://github.com/ardatan/stencil-apollo',
+    logo: `${CDN}products/stencil.svg`,
+  },
+  {
+    children: 'Angular',
+    title:
+      'A fully-featured, production ready caching GraphQL client for Angular and every GraphQL server',
+    href: 'https://apollo-angular.com',
+    logo: `${CDN}products/angular.svg`,
+  },
+  {
+    children: 'WhatsApp',
+    title: 'Full Stack, open source tutorial',
+    href: 'https://github.com/Urigo/WhatsApp-Clone-Tutorial',
+    logo: `${CDN}products/whatsapp.svg`,
+  },
+];
+
 export const logoThemedIcons = (isDark = false) => ({
   logoFull: isDark ? logoFullLight : logoFullDark,
   logoMono: isDark ? logoMonoLight : logoMonoDark,
-  angular: `${CDN}products/angular.svg`,
-  cli: `${CDN}products/cli.svg`,
-  codeGen: `${CDN}products/code-generator.svg`,
-  config: `${CDN}products/config.svg`,
-  envelop: `${CDN}products/envelop.svg`,
-  eslint: `${CDN}products/eslint.svg`,
-  helix: `${CDN}products/helix.svg`,
-  hive: `${CDN}products/hive.svg`,
-  inspector: `${CDN}products/inspector.svg`,
-  mesh: `${CDN}products/mesh.svg`,
-  modules: `${CDN}products/modules.svg`,
-  scalars: `${CDN}products/scalars.svg`,
-  sofa: `${CDN}products/sofa.svg`,
-  stencil: `${CDN}products/stencil.svg`,
-  tools: `${CDN}products/tools.svg`,
-  whatsapp: `${CDN}products/whatsapp.svg`,
-  yoga: `${CDN}products/yoga.svg`,
-  shield: `${CDN}products/shield.svg`,
-  swift: `${CDN}products/swift.svg`,
 });
 
 export const searchBarThemedIcons = (isDark: boolean) => ({

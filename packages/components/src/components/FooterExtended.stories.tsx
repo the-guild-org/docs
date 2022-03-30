@@ -42,8 +42,8 @@ Default.args = {
     {
       children: 'Documentation',
       title: 'Read the Docs',
-      href: '/docs',
-      onClick: (e) => {
+      href: '/docs1',
+      onClick(e) {
         e.preventDefault();
         alert('Internal link handler');
       },
@@ -51,8 +51,8 @@ Default.args = {
     {
       children: 'Quick start',
       title: 'Learn first steps',
-      href: '/docs',
-      onClick: (e) => {
+      href: '/docs2',
+      onClick(e) {
         e.preventDefault();
         alert('Internal link handler');
       },

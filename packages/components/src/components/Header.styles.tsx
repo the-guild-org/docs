@@ -54,7 +54,7 @@ export const Controls = styled.menu(() => [
 export const Logo = styled.a(() => [
   css`
     img {
-      ${tw`first:(hidden md:block) last:(md:hidden)`}
+      ${tw`first-of-type:(hidden md:block) last:(md:hidden)`}
     }
   `,
 ]);
@@ -99,7 +99,7 @@ export const Icon = styled.button(({ iconType }: IStyleProps) => [
 ]);
 
 export const Side = styled.div(() => [
-  tw`flex first:justify-start last:justify-end md:hidden`,
+  tw`flex first-of-type:justify-start last:justify-end md:hidden`,
   css`
     min-width: 3.25rem;
   `,

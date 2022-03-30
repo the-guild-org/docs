@@ -36,7 +36,7 @@ export const Links = styled.ul(() => [
       &:not(:first-of-type) {
         &:before {
           content: '';
-          ${tw`first:hidden inline-block align-middle mx-2 h-1 w-1 rounded bg-gray-500`}
+          ${tw`first-of-type:hidden inline-block align-middle mx-2 h-1 w-1 rounded bg-gray-500`}
         }
       }
     }
