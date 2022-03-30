@@ -2,7 +2,7 @@
 
 ## Getting started
 
-This is a npm package hosted at: https://www.npmjs.com/package/@theguild/components
+This is a npm package hosted at: https://npmjs.com/package/@theguild/components
 
 Storybook: https://the-guild-components-storybook.vercel.app/
 

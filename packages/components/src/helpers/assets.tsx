@@ -23,33 +23,14 @@ import arrowUpRightIconLight from '../static/icons/arrow-up-right-light.svg';
 import shareDark from '../static/icons/share-dark.svg';
 import moreVerticalDark from '../static/icons/more-vertical-dark.svg';
 
-const cdn = 'https://the-guild.dev/static';
+const CDN = 'https://the-guild.dev/static/shared-logos/';
 
-const logoFullDark = `${cdn}/shared-logos/guild-full-dark.svg`;
-const logoFullLight = `${cdn}/shared-logos/guild-full-light.svg`;
-const logoMonoDark = `${cdn}/shared-logos/guild-mono-dark.svg`;
-const logoMonoLight = `${cdn}/shared-logos/guild-mono-light.svg`;
+const logoFullDark = `${CDN}guild-full-dark.svg`;
+const logoFullLight = `${CDN}guild-full-light.svg`;
+const logoMonoDark = `${CDN}guild-mono-dark.svg`;
+const logoMonoLight = `${CDN}guild-mono-light.svg`;
 
-const productAngular = `${cdn}/shared-logos/products/angular.svg`;
-const productCLI = `${cdn}/shared-logos/products/cli.svg`;
-const productCodeGenerator = `${cdn}/shared-logos/products/code-generator.svg`;
-const productConfig = `${cdn}/shared-logos/products/config.svg`;
-const productEnvelop = `${cdn}/shared-logos/products/envelop.svg`;
-const productESLint = `${cdn}/shared-logos/products/eslint.svg`;
-const productHive = `${cdn}/shared-logos/products/hive.svg`;
-const productInspector = `${cdn}/shared-logos/products/inspector.svg`;
-const productMesh = `${cdn}/shared-logos/products/mesh.svg`;
-const productModules = `${cdn}/shared-logos/products/modules.svg`;
-const productScalars = `${cdn}/shared-logos/products/scalars.svg`;
-const productSofa = `${cdn}/shared-logos/products/sofa.svg`;
-const productStencil = `${cdn}/shared-logos/products/stencil.svg`;
-const productTools = `${cdn}/shared-logos/products/tools.svg`;
-const productWhatsapp = `${cdn}/shared-logos/products/whatsapp.svg`;
-const productGraphQLShield = `${cdn}/shared-logos/products/shield.svg`;
-const productSwiftGraphQL = `${cdn}/shared-logos/products/swift.svg`;
-const productHelix = `${cdn}/shared-logos/products/helix.svg`;
-
-export const headerThemedIcons = (isDark: boolean): any => ({
+export const headerThemedIcons = (isDark: boolean) => ({
   themeToggle: isDark ? moonIconLight : moonIconDark,
   menu: isDark ? hamburgerIconLight : hamburgerIconDark,
   caret: isDark ? caretIconLight : caretIconDark,
@@ -57,30 +38,31 @@ export const headerThemedIcons = (isDark: boolean): any => ({
   close: isDark ? closeIconLight : closeIconDark,
 });
 
-export const logoThemedIcons = (isDark: boolean): any => ({
+export const logoThemedIcons = (isDark = false) => ({
   logoFull: isDark ? logoFullLight : logoFullDark,
   logoMono: isDark ? logoMonoLight : logoMonoDark,
-  angular: isDark ? productAngular : productAngular,
-  cli: isDark ? productCLI : productCLI,
-  codeGen: isDark ? productCodeGenerator : productCodeGenerator,
-  config: isDark ? productConfig : productConfig,
-  envelop: isDark ? productEnvelop : productEnvelop,
-  eslint: isDark ? productESLint : productESLint,
-  helix: isDark ? productHelix : productHelix,
-  hive: isDark ? productHive : productHive,
-  inspector: isDark ? productInspector : productInspector,
-  mesh: isDark ? productMesh : productMesh,
-  modules: isDark ? productModules : productModules,
-  scalars: isDark ? productScalars : productScalars,
-  sofa: isDark ? productSofa : productSofa,
-  stencil: isDark ? productStencil : productStencil,
-  tools: isDark ? productTools : productTools,
-  whatsapp: isDark ? productWhatsapp : productWhatsapp,
-  shield: productGraphQLShield,
-  swift: productSwiftGraphQL,
+  angular: `${CDN}products/angular.svg`,
+  cli: `${CDN}products/cli.svg`,
+  codeGen: `${CDN}products/code-generator.svg`,
+  config: `${CDN}products/config.svg`,
+  envelop: `${CDN}products/envelop.svg`,
+  eslint: `${CDN}products/eslint.svg`,
+  helix: `${CDN}products/helix.svg`,
+  hive: `${CDN}products/hive.svg`,
+  inspector: `${CDN}products/inspector.svg`,
+  mesh: `${CDN}products/mesh.svg`,
+  modules: `${CDN}products/modules.svg`,
+  scalars: `${CDN}products/scalars.svg`,
+  sofa: `${CDN}products/sofa.svg`,
+  stencil: `${CDN}products/stencil.svg`,
+  tools: `${CDN}products/tools.svg`,
+  whatsapp: `${CDN}products/whatsapp.svg`,
+  yoga: `${CDN}products/yoga.svg`,
+  shield: `${CDN}products/shield.svg`,
+  swift: `${CDN}products/swift.svg`,
 });
 
-export const searchBarThemedIcons = (isDark: boolean): any => ({
+export const searchBarThemedIcons = (isDark: boolean) => ({
   search: isDark ? searchIconLight : searchIconDark,
   close: isDark ? closeIconLight : closeIconDark,
   page: isDark ? pageIconLight : pageIconDark,
@@ -88,19 +70,19 @@ export const searchBarThemedIcons = (isDark: boolean): any => ({
   content: isDark ? hamburgerIconLight : hamburgerIconDark,
 });
 
-export const modalThemedIcons = (isDark: boolean): any => ({
+export const modalThemedIcons = (isDark: boolean) => ({
   close: isDark ? closeIconLight : closeIconDark,
   externalLink: isDark ? externalLinkIconLight : externalLinkIconDark,
 });
 
-export const marketplaceThemedAssets = (isDark: boolean): any => ({
+export const marketplaceThemedAssets = (isDark: boolean) => ({
   caret: isDark ? caretSlimIconLight : caretSlimIconDark,
   search: isDark ? searchIconLight : searchIconDark,
-  share: isDark ? shareDark : shareDark,
-  moreVertical: isDark ? moreVerticalDark : moreVerticalDark,
+  share: shareDark,
+  moreVertical: moreVerticalDark,
 });
 
-export const newsletterThemedIcons = (isDark: boolean): any => ({
+export const newsletterThemedIcons = (isDark: boolean) => ({
   mail: isDark ? mailIconLight : mailIconDark,
   arrow: isDark ? arrowUpRightIconLight : arrowUpRightIconDark,
 });

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import tw, { styled } from 'twin.macro';
 import { Newsletter } from './Newsletter';
 import {
@@ -15,44 +14,43 @@ import {
   Row,
   Wrapper,
 } from './FooterExtended.styles';
-
 import { useThemeContext } from '../helpers/theme';
 import { logoThemedIcons } from '../helpers/assets';
-import { IFooterExtendedProps, ILink } from '../types/components';
+import type { IFooterExtendedProps, ILink } from '../types/components';
 
 const products = [
   {
     children: 'Hive',
     title: 'Schema Registry for your GraphQL Workflows',
-    href: 'https://graphql-hive.com/',
+    href: 'https://graphql-hive.com',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
   {
     children: 'Envelop',
     title: 'Modern GraphQL Framework',
-    href: 'https://www.envelop.dev/',
+    href: 'https://envelop.dev',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
   {
     children: 'Inspector',
     title: 'Schema management tool',
-    href: 'https://graphql-inspector.com/',
+    href: 'https://graphql-inspector.com',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
   {
     children: 'Code Generator',
     title: 'Generate anything from GraphQL',
-    href: 'https://graphql-code-generator.com/',
+    href: 'https://graphql-code-generator.com',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
   {
     children: 'Mesh',
     title: 'Query anything, run anywhere',
-    href: 'https://graphql-mesh.com/',
+    href: 'https://graphql-mesh.com',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
@@ -66,21 +64,21 @@ const products = [
   {
     children: 'ESLint',
     title: 'Customisable ESLint parser, plugin and set rules for GraphQL',
-    href: 'https://github.com/dotansimha/graphql-eslint/',
+    href: 'https://github.com/B2o5T/graphql-eslint',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
   {
     children: 'Modules',
     title: 'Enterprise Grade Tooling For Your GraphQL Server',
-    href: 'https://graphql-modules.com/',
+    href: 'https://graphql-modules.com',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
   {
     children: 'Tools',
     title: 'A set of utilities for faster GraphQL development',
-    href: 'https://graphql-tools.com/',
+    href: 'https://graphql-tools.com',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
@@ -88,7 +86,7 @@ const products = [
     children: 'Scalars',
     title:
       'Common custom GraphQL Scalars for precise type-safe GraphQL schemas',
-    href: 'https://graphql-scalars.dev/',
+    href: 'https://graphql-scalars.dev',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
@@ -102,14 +100,14 @@ const products = [
   {
     children: 'Shield',
     title: 'GraphQL Permissions Framework For Complex Authorisation Systems',
-    href: 'https://www.graphql-shield.com/',
+    href: 'https://graphql-shield.com',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
   {
     children: 'Swift',
     title: 'A GraphQL client that lets you forget about GraphQL',
-    href: 'https://www.swift-graphql.com/',
+    href: 'https://swift-graphql.com',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
@@ -123,7 +121,7 @@ const products = [
   {
     children: 'SOFA',
     title: 'Generate RESTful APIs from your GraphQL Server',
-    href: 'https://sofa-api.com/',
+    href: 'https://sofa-api.com',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
@@ -131,7 +129,7 @@ const products = [
     children: 'Angular',
     title:
       'A fully-featured, production ready caching GraphQL client for Angular and every GraphQL server',
-    href: 'https://apollo-angular.com/',
+    href: 'https://apollo-angular.com',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
@@ -187,7 +185,7 @@ const community = [
   {
     children: 'LinkedIn',
     title: 'Visit our LinkedIn',
-    href: 'https://www.linkedin.com/company/the-guild-software/',
+    href: 'https://linkedin.com/company/the-guild-software',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
@@ -208,15 +206,15 @@ const community = [
   {
     children: 'YouTube',
     title: 'Watch Our Videos',
-    href: 'https://www.youtube.com/watch?v=d_GBgH-L5c4&list=PLhCf3AUOg4PgQoY_A6xWDQ70yaNtPYtZd',
+    href: 'https://youtube.com/watch?v=d_GBgH-L5c4&list=PLhCf3AUOg4PgQoY_A6xWDQ70yaNtPYtZd',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
 ];
 
-const BasicRow = styled.div(() => [tw`flex`]);
+const BasicRow = styled.div(() => tw`flex`);
 
-const BasicColumn = styled.div(() => [tw`w-1/2`]);
+const BasicColumn = styled.div(() => tw`w-1/2`);
 
 export const FooterExtended: React.FC<IFooterExtendedProps> = ({
   sameSite,
@@ -326,18 +324,13 @@ export const FooterExtended: React.FC<IFooterExtendedProps> = ({
           equalPadding
           style={{
             alignItems: 'center',
-            borderTop: '1px solid #262626'
+            borderTop: '1px solid #262626',
           }}
         >
           <Logo {...logoOptions} {...restProps.logoProps}>
             <img src={logos.logoFull} alt="The Guild" />
           </Logo>
-          <Copyright
-            style={{
-              marginLeft: 25,
-            }}
-            {...restProps.copyrightProps}
-          >
+          <Copyright style={{ marginLeft: 25 }} {...restProps.copyrightProps}>
             Belong anywhere. © The Guild, Inc.
           </Copyright>
         </Row>

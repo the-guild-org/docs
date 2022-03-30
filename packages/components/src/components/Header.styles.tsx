@@ -34,8 +34,8 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
         `,
         !isModalOpen &&
           css`
-            top: -100vh;
-            bottom: 100vh;
+            top: -100%;
+            bottom: 100%;
           `,
       ]}
     }

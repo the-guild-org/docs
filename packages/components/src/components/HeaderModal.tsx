@@ -1,15 +1,12 @@
 import React from 'react';
-
 import { Modal } from './Modal';
-
 import {
   ProductCategory,
   ProductList,
   ProductThumbnail,
   ProductImage,
 } from './HeaderModal.styles';
-
-import { IHeaderModalProps } from '../types/components';
+import type { IHeaderModalProps } from '../types/components';
 import { logoThemedIcons } from '../helpers/assets';
 import { useThemeContext } from '../helpers/theme';
 
@@ -20,7 +17,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
   ...restProps
 }) => {
   const { isDarkTheme } = useThemeContext();
-  const logoIcons = logoThemedIcons(isDarkTheme || false);
+  const logoIcons = logoThemedIcons(isDarkTheme);
 
   const productCategories = [
     {
@@ -29,7 +26,7 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
         {
           title: 'Hive',
           description: 'Schema Registry for your GraphQL Workflows',
-          link: 'https://graphql-hive.com/',
+          link: 'https://graphql-hive.com',
           image: logoIcons.hive,
         },
       ],
@@ -38,33 +35,40 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
       title: 'Open Source',
       items: [
         {
+          title: 'Yoga',
+          description:
+            'A fully-featured, simple to set up, performant and extendable server',
+          link: 'https://graphql-yoga.com',
+          image: logoIcons.yoga,
+        },
+        {
           title: 'Envelop',
           description: 'Modern GraphQL Framework',
-          link: 'https://www.envelop.dev/',
+          link: 'https://envelop.dev',
           image: logoIcons.envelop,
         },
         {
           title: 'Inspector',
           description: 'Schema management tool',
-          link: 'https://graphql-inspector.com/',
+          link: 'https://graphql-inspector.com',
           image: logoIcons.inspector,
         },
         {
           title: 'Code Generator',
           description: 'Generate anything from GraphQL',
-          link: 'https://graphql-code-generator.com/',
+          link: 'https://graphql-code-generator.com',
           image: logoIcons.codeGen,
         },
         {
           title: 'Mesh',
           description: 'Query anything, run anywhere',
-          link: 'https://graphql-mesh.com/',
+          link: 'https://graphql-mesh.com',
           image: logoIcons.mesh,
         },
         {
           title: 'Tools',
           description: 'A set of utilities for faster GraphQL development',
-          link: 'https://graphql-tools.com/',
+          link: 'https://graphql-tools.com',
           image: logoIcons.tools,
         },
         {
@@ -77,20 +81,20 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
           title: 'ESLint',
           description:
             'Customisable ESLint parser, plugin and set rules for GraphQL',
-          link: 'https://github.com/dotansimha/graphql-eslint/',
+          link: 'https://github.com/B2o5T/graphql-eslint',
           image: logoIcons.eslint,
         },
         {
           title: 'Scalars',
           description:
             'Common custom GraphQL Scalars for precise type-safe GraphQL schemas',
-          link: 'https://graphql-scalars.dev/',
+          link: 'https://graphql-scalars.dev',
           image: logoIcons.scalars,
         },
         {
           title: 'Modules',
           description: 'Enterprise Grade Tooling For Your GraphQL Server',
-          link: 'https://graphql-modules.com/',
+          link: 'https://graphql-modules.com',
           image: logoIcons.modules,
         },
         {
@@ -103,32 +107,32 @@ export const HeaderModal: React.FC<IHeaderModalProps> = ({
           title: 'Shield',
           description:
             'GraphQL Permissions Framework For Complex Authorisation Systems',
-          link: 'https://www.graphql-shield.com/',
+          link: 'https://graphql-shield.com',
           image: logoIcons.shield,
         },
         {
           title: 'Swift',
           description: 'A GraphQL client that lets you forget about GraphQL',
-          link: 'https://www.swift-graphql.com/',
+          link: 'https://swift-graphql.com',
           image: logoIcons.swift,
         },
         {
           title: 'SOFA',
           description: 'Generate RESTful APIs from your GraphQL Server',
-          link: 'https://sofa-api.com/',
+          link: 'https://sofa-api.com',
           image: logoIcons.sofa,
         },
         {
           title: 'CLI',
           description: 'Command line tool for common GraphQL workflows',
-          link: 'https://www.graphql-cli.com/',
+          link: 'https://graphql-cli.com',
           image: logoIcons.cli,
         },
         {
           title: 'Angular',
           description:
             'A fully-featured, production ready caching GraphQL client for Angular and every GraphQL server',
-          link: 'https://apollo-angular.com/',
+          link: 'https://apollo-angular.com',
           image: logoIcons.angular,
         },
         {

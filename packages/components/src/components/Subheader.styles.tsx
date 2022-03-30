@@ -32,8 +32,8 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
         tw`inset-0`,
         !isModalOpen &&
           css`
-            top: -100vh;
-            bottom: 100vh;
+            top: -100%;
+            bottom: 100%;
           `,
       ]}
     }

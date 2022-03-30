@@ -24,7 +24,7 @@ const links = [
   {
     children: 'LinkedIn',
     title: 'Visit our LinkedIn',
-    href: 'https://www.linkedin.com/company/the-guild-software/',
+    href: 'https://linkedin.com/company/the-guild-software',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
@@ -45,7 +45,7 @@ const links = [
   {
     children: 'YouTube',
     title: 'Our Videos',
-    href: 'https://www.youtube.com/watch?v=d_GBgH-L5c4&list=PLhCf3AUOg4PgQoY_A6xWDQ70yaNtPYtZd',
+    href: 'https://youtube.com/watch?v=d_GBgH-L5c4&list=PLhCf3AUOg4PgQoY_A6xWDQ70yaNtPYtZd',
     target: '_blank',
     rel: 'noopener noreferrer',
   },
