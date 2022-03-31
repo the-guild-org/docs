@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.10.3
+
+### Patch Changes
+
+- ff2ed54: add yoga in header and footer
+
 ## 1.10.2
 
 ### Patch Changes
