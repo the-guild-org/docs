@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import MonacoEditor, { useMonaco, EditorProps } from '@monaco-editor/react';
 import {
   getAutocompleteSuggestions,

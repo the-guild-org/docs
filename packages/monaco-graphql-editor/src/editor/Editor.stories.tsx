@@ -1,6 +1,5 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-
+import { useRef } from 'react';
+import type { Story, Meta } from '@storybook/react/types-6-0';
 import { SchemaEditor, SchemaEditorProps } from './SchemaEditor';
 import { SchemaDiffEditor, SchemaDiffEditorProps } from './SchemaDiffEditor';
 import { debugHoverSource, showWidgetInPosition } from './utils';
@@ -39,7 +38,7 @@ export default {
 } as Meta;
 
 const SchemaTemplate: Story<SchemaEditorProps> = (args) => {
-  const ref = React.useRef<SchemaEditorApi>(null);
+  const ref = useRef<SchemaEditorApi>(null);
 
   return (
     <div>
@@ -103,32 +102,32 @@ BasicSchemaEditor.args = {
   height: '100vh',
   schema: TEST_SCHEMA,
   hoverProviders: [debugHoverSource],
-  onChange: (value, event) => {
+  onChange(value, event) {
     console.log('onChange', { value, event });
   },
-  onMount: (editor, monaco) => {
+  onMount(editor, monaco) {
     console.log('onMount', { editor, monaco });
   },
-  beforeMount: (monaco) => {
+  beforeMount(monaco) {
     console.log('beforeMount', { monaco });
   },
-  onBlur: (value) => {
+  onBlur(value) {
     console.log('onBlur', { value });
   },
-  onLanguageServiceReady: (languageService) => {
+  onLanguageServiceReady(languageService) {
     console.log('onLanguageServiceReady', { languageService });
   },
-  onSchemaChange: (schema, sdl) => {
+  onSchemaChange(schema, sdl) {
     console.log('onSchemaChange', { schema, sdl });
   },
-  onSchemaError: (errors, sdl) => {
+  onSchemaError(errors, sdl) {
     console.log('onSchemaError', { errors, sdl });
   },
   actions: [
     {
       id: 'dotan.test.click',
       label: 'My Custom Aaction',
-      onRun: ({ editor, bridge }) => {
+      onRun({ editor, bridge }) {
         if (
           ['NamedType', 'ObjectTypeDef'].includes(
             bridge.token.state.kind as string

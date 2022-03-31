@@ -1,7 +1,18 @@
-import tw, { styled } from 'twin.macro';
+import { FC } from 'react';
 
-export const Tag = styled.div(() => [
-  tw`bg-gray-200 inline border-0 rounded-md cursor-pointer outline-none font-default text-xs text-gray-500 px-2 py-1 mr-2 mb-2`,
-]);
+export const Tag: FC<{
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}> = ({ children, onClick }) => {
+  return (
+    <button
+      className="mr-2 mb-2 inline cursor-pointer rounded-md border-0 bg-gray-200 px-2 py-1 text-xs text-gray-500 outline-none font-default"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
 
-export const TagsContainer = styled.div(() => [tw`py-2 flex flex-wrap`]);
+export const TagsContainer: FC = ({ children }) => {
+  return <div className="flex flex-wrap py-2">{children}</div>;
+};

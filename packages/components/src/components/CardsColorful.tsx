@@ -1,29 +1,78 @@
-import React from 'react';
-
-import { Card, CardInfo, Container, Wrapper } from './CardsColorful.styles';
-
+import { FC } from 'react';
 import { ICardsColorfulProps } from '../types/components';
 
-export const CardsColorful: React.FC<ICardsColorfulProps> = ({
+export const CardsColorful: FC<ICardsColorfulProps> = ({
   cards,
   ...restProps
 }) => (
-  <Wrapper {...restProps.wrapperProps}>
-    <Container {...restProps.containerProps}>
+  <section
+    className="bg-white py-8 font-default dark:bg-gray-900"
+    {...restProps.wrapperProps}
+  >
+    <div
+      className="
+        flex
+        flex-wrap
+        space-y-6
+        container-max
+        md:flex-nowrap
+        md:space-x-8
+        md:space-y-0
+    "
+      {...restProps.containerProps}
+    >
       {cards.map((card) => (
-        <Card
+        <a
           key={card.title}
-          color={card.color}
+          className="
+            relative
+            min-h-[200px]
+            w-full rounded-3xl
+            p-8
+            text-white
+            no-underline
+            transition
+            [background:var(--color)]
+            after:absolute
+            after:top-0
+            after:right-0
+            after:h-full
+            after:w-[calc(30%-1rem)]
+            after:rounded-3xl
+            after:bg-white/10
+            after:content-['']
+            md:h-72
+            md:w-1/2
+            md:hover:scale-105
+            md:hover:shadow-xl
+            lg:after:w-[calc(50%-1rem)]
+          "
+          style={{ '--color': card.color }}
           {...card.link}
           {...restProps.cardProps}
         >
-          <CardInfo>
-            <h2 {...restProps.cardCategoryProps}>{card.category}</h2>
-            <h3 {...restProps.cardTitleProps}>{card.title}</h3>
-            <p {...restProps.cardDescriptionProps}>{card.description}</p>
-          </CardInfo>
-        </Card>
+          <div className="w-3/4 lg:w-1/2">
+            <h2
+              className="pb-1.5 text-xs font-semibold uppercase opacity-60"
+              {...restProps.cardCategoryProps}
+            >
+              {card.category}
+            </h2>
+            <h3
+              className="pb-2.5 text-2xl font-bold md:text-3xl"
+              {...restProps.cardTitleProps}
+            >
+              {card.title}
+            </h3>
+            <p
+              className="text-xs font-medium opacity-60"
+              {...restProps.cardDescriptionProps}
+            >
+              {card.description}
+            </p>
+          </div>
+        </a>
       ))}
-    </Container>
-  </Wrapper>
+    </div>
+  </section>
 );

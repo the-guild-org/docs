@@ -19,13 +19,13 @@ yarn add monaco-editor @monaco-editor/react @theguild/editor
 Import and use it as a component:
 
 ```tsx
-import { SchemaEditor } from '@theguild/editor';
+import { SchemaEditor } from '@theguild/editor'
 
-const initialSchema = `type Query { foo: String }`;
+const initialSchema = `type Query { foo: String }`
 
 const MyEditor: React.FC = () => {
-  return <SchemaEditor schema={initialSchema} />;
-};
+  return <SchemaEditor schema={initialSchema} />
+}
 ```
 
 ### Debugging
@@ -33,11 +33,11 @@ const MyEditor: React.FC = () => {
 If you wish to get all information about specific tokens in your GraphQL editor, you can add the debug hover provider:
 
 ```tsx
-import { SchemaEditor, debugHoverSource } from '@theguild/editor';
+import { SchemaEditor, debugHoverSource } from '@theguild/editor'
 
 const MyEditor: React.FC = () => {
-  return <SchemaEditor hoverProviders={[debugHoverSource]} />;
-};
+  return <SchemaEditor hoverProviders={[debugHoverSource]} />
+}
 ```
 
 ### Editor Events
@@ -56,17 +56,17 @@ You can listen to the following events, on top of the Monaco editor:
 To create a custom hover provider, you can pass the following prop:
 
 ```tsx
-import { SchemaEditor, HoverSource } from '@theguild/editor';
+import { SchemaEditor, HoverSource } from '@theguild/editor'
 
 export const myHoverProvider: HoverSource = {
   forNode: ({ token }) => ({
-    value: `You hovered on ${token.state.name}`,
-  }),
-};
+    value: `You hovered on ${token.state.name}`
+  })
+}
 
 const MyEditor: React.FC = () => {
-  return <SchemaEditor hoverProviders={[myHoverProvider]} />;
-};
+  return <SchemaEditor hoverProviders={[myHoverProvider]} />
+}
 ```
 
 #### Custom Definition
@@ -74,13 +74,13 @@ const MyEditor: React.FC = () => {
 To create a custom `Jump to definition` source provider, you can pass the following prop:
 
 ```tsx
-import { SchemaEditor, DefinitionSource } from '@theguild/editor';
+import { SchemaEditor, DefinitionSource } from '@theguild/editor'
 
 export const myDefinitionSource: DefinitionSource = {
   forNode: ({ schema, model, token }) => {
     // You can access the actual GQL type / schema and everything you need.
     if (token.state && token.state.kind === 'NamedType' && token.state.name) {
-      const type = schema.getType(token.state.name);
+      const type = schema.getType(token.state.name)
 
       if (type && type.astNode && type.astNode.loc) {
         return [
@@ -89,21 +89,21 @@ export const myDefinitionSource: DefinitionSource = {
               startLineNumber: type.astNode.loc.startToken.line,
               startColumn: type.astNode.loc.startToken.column,
               endLineNumber: type.astNode.loc.endToken.line + 1,
-              endColumn: type.astNode.loc.endToken.column,
+              endColumn: type.astNode.loc.endToken.column
             },
-            uri: model.uri,
-          },
-        ];
+            uri: model.uri
+          }
+        ]
       }
     }
 
-    return [];
-  },
-};
+    return []
+  }
+}
 
 const MyEditor: React.FC = () => {
-  return <SchemaEditor definitionProviders={[myDefinitionSource]} />;
-};
+  return <SchemaEditor definitionProviders={[myDefinitionSource]} />
+}
 ```
 
 #### Custom Diagnostics
@@ -115,8 +115,8 @@ import {
   SchemaEditor,
   DiagnosticsSource,
   toMarkerData,
-  getRange,
-} from '@theguild/editor';
+  getRange
+} from '@theguild/editor'
 
 export const myDiagnosticsSoruce: DiagnosticsSource = {
   async forDocument({ model, document, languageService }) {
@@ -127,23 +127,23 @@ export const myDiagnosticsSoruce: DiagnosticsSource = {
         severity: DIAGNOSTIC_SEVERITY.Error,
         message: e.message,
         source: 'GraphQL: Syntax',
-        range: getRange(e.locations![0], document),
-      }),
-    ];
-  },
-};
+        range: getRange(e.locations![0], document)
+      })
+    ]
+  }
+}
 
 const MyEditor: React.FC = () => {
-  return <SchemaEditor diagnosticsProviders={[myDiagnosticsSoruce]} />;
-};
+  return <SchemaEditor diagnosticsProviders={[myDiagnosticsSoruce]} />
+}
 ```
 
 #### Custom Editor Actions
 
-You can add custom editor actions (context menu and keyboard shortbuts) through `actions` API:
+You can add custom editor actions (context menu and keyboard shortcuts) through `actions` API:
 
 ```tsx
-import { SchemaEditor, showWidgetInPosition } from '@theguild/editor';
+import { SchemaEditor, showWidgetInPosition } from '@theguild/editor'
 
 const MyEditor: React.FC = () => {
   return (
@@ -159,15 +159,15 @@ const MyEditor: React.FC = () => {
                 bridge.token.state.kind as string
               )
             ) {
-              const domNode = document.createElement('div');
-              domNode.innerHTML = `You Selected: <strong>${bridge.token.state.kind} / ${bridge.token.state.name}</strong><br />You can show here any html that you wish!`;
-              domNode.style.background = 'orange';
-              showWidgetInPosition(editor, bridge.position, domNode);
+              const domNode = document.createElement('div')
+              domNode.innerHTML = `You Selected: <strong>${bridge.token.state.kind} / ${bridge.token.state.name}</strong><br />You can show here any html that you wish!`
+              domNode.style.background = 'orange'
+              showWidgetInPosition(editor, bridge.position, domNode)
             }
-          },
-        },
+          }
+        }
       ]}
     />
-  );
-};
+  )
+}
 ```

@@ -8,11 +8,6 @@ interface IVideo {
   placeholder: string;
 }
 
-export interface IGlobalStyle {
-  includeFonts?: boolean;
-  includeBase?: boolean;
-}
-
 export interface ILink {
   title: string;
   href: string;
@@ -54,7 +49,6 @@ export interface IHeaderProps {
   disableSearch?: boolean;
   themeButtonProps?: React.ComponentProps<'button'>;
   navOpenButtonProps?: React.ComponentProps<'button'>;
-  navCloseButtonProps?: React.ComponentProps<'button'>;
   headerModalProps?: IHeaderModalRestProps;
 }
 
@@ -76,7 +70,6 @@ export interface ISubheaderProps {
   linkProps?: React.ComponentProps<'a'>;
   ctaProps?: React.ComponentProps<'a'>;
   navOpenButtonProps?: React.ComponentProps<'button'>;
-  navCloseButtonProps?: React.ComponentProps<'button'>;
 }
 
 interface IHeaderModalRestProps {
@@ -96,10 +89,8 @@ export interface IHeaderModalProps extends IHeaderModalRestProps {
 
 export interface IFooterProps {
   sameSite?: boolean;
-
   wrapperProps?: React.ComponentProps<'footer'>;
   containerProps?: React.ComponentProps<'div'>;
-  lineProps?: React.ComponentProps<'hr'>;
   linkProps?: React.ComponentProps<'a'>;
   logoProps?: React.ComponentProps<'a'>;
   copyrightProps?: React.ComponentProps<'p'>;
@@ -109,10 +100,8 @@ export interface IFooterExtendedProps {
   sameSite?: boolean;
   resources?: ILink[];
   onNewsletterSubmit?: (e: React.FormEvent, value: string) => void;
-
   wrapperProps?: React.ComponentProps<'footer'>;
   containerProps?: React.ComponentProps<'div'>;
-  lineProps?: React.ComponentProps<'hr'>;
   linkProps?: React.ComponentProps<'a'>;
   logoProps?: React.ComponentProps<'a'>;
   titleProps?: React.ComponentProps<'p'>;
@@ -137,7 +126,7 @@ export interface IModalProps extends IModalRestProps {
   description?: string | ILink;
   image?: IImage;
   visible: boolean;
-  placement: 'top' | 'center' | 'bottom' | 'bottom-wide';
+  placement: 'top' | 'center' | 'bottom';
   onCancel: (state?: boolean) => void;
 }
 
@@ -153,6 +142,7 @@ export interface ISearchBarProps {
   placeholder: string;
   isFull?: boolean;
   onHandleModal?: (state: boolean) => void;
+  className?: string;
 }
 
 export interface IFeatureListProps {
@@ -290,12 +280,11 @@ interface IMarketplaceItemRestProps {
   imageProps?: React.ComponentProps<'img'>;
   titleProps?: React.ComponentProps<'h3'>;
   descriptionProps?: React.ComponentProps<'p'>;
-  dateProps?: React.ComponentProps<'span'>;
+  dateProps?: React.ComponentProps<'td'>;
   linkProps?: React.ComponentProps<'a'>;
 }
 
 export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
-  icon: string;
   items: IMarketplaceItemProps[];
 }
 
@@ -343,7 +332,6 @@ export interface IEditorProps {
   title?: string;
   frameworks?: string[];
   schema?: string;
-  icon: string;
   image?: string;
   operations?: string;
 }

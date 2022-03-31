@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import type * as monaco from 'monaco-editor';
 import {
   DecorationsSource,
@@ -46,9 +46,9 @@ export type SchemaServicesOptions = {
 
 export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
   const [editorRef, setEditor] =
-    React.useState<monaco.editor.IStandaloneCodeEditor | null>(null);
-  const [monacoRef, setMonaco] = React.useState<typeof monaco | null>(null);
-  const languageService = React.useMemo(
+    useState<monaco.editor.IStandaloneCodeEditor | null>(null);
+  const [monacoRef, setMonaco] = useState<typeof monaco | null>(null);
+  const languageService = useMemo(
     () =>
       options.sharedLanguageService ||
       new EnrichedLanguageService({
@@ -63,7 +63,7 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
     [options.sharedLanguageService]
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (monacoRef && editorRef) {
       if (options.keyboardShortcuts) {
         for (const action of options.keyboardShortcuts(editorRef, monacoRef)) {
@@ -78,7 +78,7 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
           keybindings: action.keybindings,
           contextMenuGroupId: action.contextMenuGroupId || 'navigation',
           contextMenuOrder: action.contextMenuOrder,
-          run: async (editor) => {
+          async run(editor) {
             const model = editor.getModel();
             const position = editor.getPosition();
 
@@ -127,9 +127,9 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
       );
 
       return () => {
-        hoverDisposable && hoverDisposable.dispose();
-        definitionProviderDisposable && definitionProviderDisposable.dispose();
-        onChangeDisposable && onChangeDisposable.dispose();
+        hoverDisposable?.dispose();
+        definitionProviderDisposable?.dispose();
+        onChangeDisposable?.dispose();
       };
     }
 
@@ -161,7 +161,7 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
           }
         });
       },
-      jumpToField: (typeName: string, fieldName: string) => {
+      jumpToField(typeName: string, fieldName: string) {
         languageService.getSchema().then((schema) => {
           if (schema) {
             const type = schema.getType(typeName);

@@ -216,7 +216,6 @@ export class EnrichedLanguageService extends LanguageService {
   trySchema(sdl: string): Promise<GraphQLSchema | null> {
     // XX-DOTAN: In case of an issue with the schema parsing, we'll get the error through
     // the Marker, and we can safely ignore it here.
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     return this.setSchema(sdl).then(() => this.getSchema());
   }
 }

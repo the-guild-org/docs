@@ -1,8 +1,6 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { IMarketplaceSearchProps } from '../types/components';
+import type { Story, Meta } from '@storybook/react/types-6-0';
+import type { IMarketplaceSearchProps } from '../types/components';
 import { dummyMarketplaceSearch } from '../helpers/dummy';
-
 import { MarketplaceSearch } from './MarketplaceSearch';
 
 export default {
@@ -16,11 +14,6 @@ export default {
       name: 'Input Placeholder',
     },
   },
-  parameters: {
-    backgrounds: {
-      default: 'light',
-    },
-  },
 } as Meta;
 
 const Template: Story<IMarketplaceSearchProps> = (args) => (
@@ -28,6 +21,4 @@ const Template: Story<IMarketplaceSearchProps> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  ...dummyMarketplaceSearch,
-};
+Default.args = dummyMarketplaceSearch;

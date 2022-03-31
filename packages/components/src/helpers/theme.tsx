@@ -1,77 +1,65 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const getDarkTheme = () => {
-  if (typeof window !== 'undefined' && window.localStorage) {
-    const storedPref = localStorage.getItem('theme');
-    if (typeof storedPref === 'string') {
-      return storedPref === 'dark';
-    }
-
-    const userMedia = window.matchMedia('(prefers-color-scheme: dark)');
-    if (userMedia.matches) {
-      return true;
-    }
-
-    const html = window.document.documentElement;
-    return html.dataset.theme === 'dark' || html.classList.contains('dark');
-  } else {
+  if (typeof window === 'undefined' || !window.localStorage) {
     return false;
   }
+  const storedPref = localStorage.getItem('theme');
+
+  if (typeof storedPref === 'string') {
+    return storedPref === 'dark';
+  }
+
+  const userMedia = window.matchMedia('(prefers-color-scheme: dark)');
+  if (userMedia.matches) {
+    return true;
+  }
+
+  const html = window.document.documentElement;
+  return html.dataset.theme === 'dark' || html.classList.contains('dark');
 };
+
 interface IContextProps {
   isDarkTheme: boolean;
   setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-interface IProviderProps {
-  children: React.ReactNode;
-  isDarkTheme?: boolean;
-  setDarkTheme?: React.Dispatch<React.SetStateAction<boolean>>;
-}
+const ThemeContext = createContext<IContextProps>({
+  isDarkTheme: false,
+  setDarkTheme: () => undefined,
+});
 
-const ThemeContext = createContext<Partial<IContextProps>>({});
-
-const setDOMTheme = (isDark: boolean, defaultThemeLogic?: boolean) => {
+const setDOMTheme = (isDark: boolean) => {
   if (typeof window !== 'undefined' && window.localStorage) {
     const html = window.document.documentElement;
     html.classList.toggle('dark', isDark);
     // Algolia Autocomplete theming support
     const { body } = window.document;
     body.classList.toggle('dark', isDark);
-
-    if (defaultThemeLogic) {
-      //TODO: Used on Docusaurus. Remove when no longer needed & handle the logic needed for theme persistence
-      if (html.dataset.theme) {
-        html.dataset.theme = isDark ? 'dark' : 'light';
-      }
-
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    }
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
 };
 
-const ThemeProvider: React.FC<IProviderProps> = ({
+export const ThemeProvider: React.FC<Partial<IContextProps>> = ({
   children,
   isDarkTheme,
   setDarkTheme,
 }) => {
-  const [isDarkThemeState, setDarkThemeState] = useState(false);
+  const [isDark, setDark] = useState(false);
 
   useEffect(() => {
-    if (isDarkTheme === undefined) {
-      setDarkThemeState(getDarkTheme());
-    }
+    setDark(isDarkTheme ?? getDarkTheme());
   }, [isDarkTheme]);
 
   useEffect(() => {
-    setDOMTheme(isDarkTheme ?? isDarkThemeState, isDarkTheme === undefined);
-  }, [isDarkTheme, isDarkThemeState]);
+    setDOMTheme(isDark);
+  }, [isDark]);
 
   return (
     <ThemeContext.Provider
       value={{
-        isDarkTheme: isDarkTheme ?? isDarkThemeState,
-        setDarkTheme: setDarkTheme ?? setDarkThemeState,
+        isDarkTheme: isDarkTheme ?? isDark,
+        setDarkTheme: setDarkTheme ?? setDark,
       }}
     >
       {children}
@@ -79,12 +67,4 @@ const ThemeProvider: React.FC<IProviderProps> = ({
   );
 };
 
-const useThemeContext = (): Partial<IContextProps> => {
-  const context = useContext(ThemeContext);
-  if (context == null) {
-    throw new Error('"useThemeContext" could not be used.');
-  }
-  return context;
-};
-
-export { ThemeContext, ThemeProvider, useThemeContext };
+export const useThemeContext = () => useContext(ThemeContext);

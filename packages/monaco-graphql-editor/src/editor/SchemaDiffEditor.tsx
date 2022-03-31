@@ -40,12 +40,12 @@ function BaseSchemaDiffEditor(
       beforeMount={(monaco) => {
         originalSchemaService.setMonaco(monaco);
         modifiedSchemaService.setMonaco(monaco);
-        props.beforeMount && props.beforeMount(monaco);
+        props.beforeMount?.(monaco);
       }}
       onMount={(editor, monaco) => {
         originalSchemaService.setEditor(editor.getOriginalEditor());
         modifiedSchemaService.setEditor(editor.getModifiedEditor());
-        props.onMount && props.onMount(editor, monaco);
+        props.onMount?.(editor, monaco);
       }}
       options={{ glyphMargin: true, ...(props.options || {}) }}
       language="graphql"

@@ -9,6 +9,5 @@
         "corejs": "3"
       }
     ]
-  ],
-  "plugins": ["babel-plugin-macros"]
+  ]
 }

@@ -32,10 +32,10 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Format Check
-        run: yarn format
+      - name: Lint Prettier
+        run: yarn lint:prettier
 
-      - name: Lint Check
+      - name: Lint ESLint
         run: yarn lint
 
       - name: Build Storybook

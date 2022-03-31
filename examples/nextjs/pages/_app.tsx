@@ -1,20 +1,15 @@
 import React, { ReactElement } from 'react';
 import { AppProps } from 'next/app';
-import {
-  Footer,
-  Header,
-  GlobalStyles,
-  Subheader,
-  ThemeProvider,
-} from '@theguild/components';
-
-// Overwrite font example:
-// 1. Import the font
-// 2. Remove `includeFonts` from `<GlobalStyles />`
-// import '../public/styles.css';
-
+import { Footer, Header, Subheader, ThemeProvider } from '@theguild/components';
+import '@theguild/components/dist/index.css';
+import '@theguild/components/dist/fonts.css';
 import '@algolia/autocomplete-theme-classic';
 import '../../../packages/components/src/static/css/SearchBarV2.css';
+
+// Overwrite font example:
+// 1. Remove import fonts.css
+// 2. import '../public/styles.css'
+
 
 export default function App({
   router,
@@ -23,7 +18,6 @@ export default function App({
 }: AppProps): ReactElement {
   return (
     <>
-      <GlobalStyles includeBase includeFonts />
       <ThemeProvider>
         <Header
           accentColor="#1cc8ee"
@@ -52,7 +46,7 @@ export default function App({
               title: 'View on GitHub',
               href: 'https://github.com/the-guild-org/the-guild-components',
               target: '_blank',
-              rel: 'noopener noreferrer',
+              rel: 'noreferrer',
             },
           ]}
           cta={{
@@ -60,7 +54,7 @@ export default function App({
             title: 'Learn more about TGC',
             href: 'https://github.com/the-guild-org/the-guild-components',
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: 'noreferrer',
           }}
         />
         <Component {...pageProps} />
@@ -68,4 +62,4 @@ export default function App({
       </ThemeProvider>
     </>
   );
-}
+};

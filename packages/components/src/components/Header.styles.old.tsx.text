@@ -28,16 +28,16 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
   css`
     @media (max-width: 768px) {
       ${[
-        tw`inset-0`,
-        css`
+    tw`inset-0`,
+    css`
           z-index: 300; // TODO: Used for Docusaurus, remove when no longer needed.
         `,
-        !isModalOpen &&
-          css`
+    !isModalOpen &&
+    css`
             top: -100%;
             bottom: 100%;
           `,
-      ]}
+  ]}
     }
   `,
 ]);
@@ -78,21 +78,21 @@ export const Link = styled.a(({ accentColor, isActiveLink }: IStyleProps) => [
     }
   `,
   accentColor &&
-    css`
+  css`
       &:hover {
         color: ${accentColor} !important;
       }
     `,
   isActiveLink
     ? [
-        tw`dark:text-gray-50 text-black relative`,
-        css`
+      tw`dark:text-gray-50 text-black relative`,
+      css`
           :after {
             content: '';
             ${tw`absolute left-0 bottom-0 sm:bottom-2.5 md:-bottom-2 h-0.5 w-full dark:bg-white bg-black rounded`}
           }
         `,
-      ]
+    ]
     : tw`dark:text-gray-400 text-gray-500`,
 ]);
 
@@ -101,9 +101,9 @@ export const Icon = styled.button(({ iconType }: IStyleProps) => [
   tw`bg-transparent border-0 cursor-pointer outline-none hover:opacity-70`,
   tw`transition duration-200 ease-in-out`,
   iconType === 'close' &&
-    tw`absolute top-6 right-6 dark:bg-gray-700 bg-gray-200 rounded-lg`,
+  tw`absolute top-6 right-6 dark:bg-gray-700 bg-gray-200 rounded-lg`,
   iconType === 'theme' &&
-    tw`transform scale-125 mt-4 md:(flex transform-none mt-0 ml-3)`,
+  tw`transform scale-125 mt-4 md:(flex transform-none mt-0 ml-3)`,
 ]);
 
 export const Side = styled.div(() => [

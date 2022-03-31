@@ -1,7 +1,5 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { IHeaderProps } from '../types/components';
-
+import type { Story, Meta } from '@storybook/react/types-6-0';
+import type { IHeaderProps } from '../types/components';
 import { Header } from './Header';
 
 export default {

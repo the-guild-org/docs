@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-
-import { Form } from './Newsletter.styles';
-import { useThemeContext } from '../helpers/theme';
-import { newsletterThemedIcons } from '../helpers/assets';
+import { FC, useState } from 'react';
+import clsx from 'clsx';
 import { isEmail } from '../helpers/email';
 import { INewsletterProps } from '../types/components';
+import { ArrowUpRightIcon, MailIcon } from './Icon';
 
-export const Newsletter: React.FC<INewsletterProps> = ({
-  onNewsletterSubmit,
-}) => {
-  const { isDarkTheme } = useThemeContext();
-  const [inputValue, setInputValue] = useState<string>('');
-  const [inputError, setInputError] = useState<boolean>(false);
-  const icons = newsletterThemedIcons(isDarkTheme || false);
+export const Newsletter: FC<INewsletterProps> = ({ onNewsletterSubmit }) => {
+  const [inputValue, setInputValue] = useState('');
+  const [inputError, setInputError] = useState(false);
 
   return (
-    <Form
+    <form
+      className={clsx(
+        'flex items-center gap-x-3 rounded-md border-2 bg-gray-100 px-3 py-2 font-default dark:bg-gray-800',
+        inputError
+          ? 'border-red-500 text-red-500 dark:border-red-400 dark:text-red-400'
+          : 'border-gray-100 text-black dark:border-gray-800 dark:text-gray-200'
+      )}
       onSubmit={(e) => {
         e.preventDefault();
 
@@ -24,26 +24,43 @@ export const Newsletter: React.FC<INewsletterProps> = ({
           return;
         }
 
-        inputError && setInputError(false);
+        if (inputError) {
+          setInputError(false);
+        }
         onNewsletterSubmit(e, inputValue);
       }}
-      hasError={inputError}
     >
-      <span>
-        <img src={icons.mail} alt="mail icon" height="20" width="20" />
-      </span>
+      <MailIcon className="w-5 text-gray-500 dark:text-gray-100" />
       <input
         required
         type="email"
         placeholder="your@email.com"
+        className="w-full bg-transparent text-xs outline-none placeholder:text-gray-400"
         onChange={(e) => {
-          setInputValue(e.target.value);
-          e.target.value === '' && setInputError(false);
+          const { value } = e.target;
+          setInputValue(value);
+          if (value === '') {
+            setInputError(false);
+          }
         }}
       />
-      <button type="submit">
-        <img src={icons.arrow} alt="arrow icon" height="20" width="20" />
+      <button
+        type="submit"
+        className="
+          flex-none
+          rounded-md
+          bg-gray-300
+          py-0.5
+          px-1
+          transition
+          hocus:outline-none
+          hocus:invert
+          dark:bg-gray-700
+          lg:p-2
+        "
+      >
+        <ArrowUpRightIcon className="w-5" />
       </button>
-    </Form>
+    </form>
   );
 };

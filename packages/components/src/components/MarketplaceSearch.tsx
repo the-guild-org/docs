@@ -1,22 +1,25 @@
-import React, { useMemo, useState, isValidElement } from 'react';
-import type { FC, FormEvent, ReactElement } from 'react';
-
+import React, { useMemo, useState, isValidElement, useCallback } from 'react';
 import { MarketplaceList } from './MarketplaceList';
-
-import {
-  Container,
-  Results,
-  Search,
-  Title,
-  Wrapper,
-} from './MarketplaceSearch.styles';
-
 import { IMarketplaceSearchProps } from '../types/components';
-import { marketplaceThemedAssets } from '../helpers/assets';
-import { useThemeContext } from '../helpers/theme';
 import { Tag, TagsContainer } from './Tag';
+import { SearchIcon } from './Icon';
 
-export const MarketplaceSearch: FC<IMarketplaceSearchProps> = ({
+const renderQueryPlaceholder = (
+  placeholder: string | React.ReactElement,
+  query: string
+) => {
+  if (!query || isValidElement(placeholder)) {
+    return placeholder;
+  }
+  const subStrings = placeholder.split('{query}');
+  return (
+    <>
+      {subStrings[0]} <strong>"{query}"</strong> {subStrings[1]}
+    </>
+  );
+};
+
+export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   title,
   tagsFilter,
   placeholder,
@@ -25,28 +28,11 @@ export const MarketplaceSearch: FC<IMarketplaceSearchProps> = ({
   queryList,
   ...restProps
 }) => {
-  const { isDarkTheme } = useThemeContext();
-  const marketplaceAssets = marketplaceThemedAssets(isDarkTheme || false);
   const [query, setQuery] = useState('');
 
-  const handleChange = (e: FormEvent<HTMLInputElement>) => {
+  const handleChange = useCallback((e: React.FormEvent<HTMLInputElement>) => {
     setQuery(e.currentTarget.value);
-  };
-
-  const renderQueryPlaceholder = (
-    placeholder: string | ReactElement,
-    query: string
-  ) => {
-    if (!query || isValidElement(placeholder)) {
-      return placeholder;
-    }
-    const subStrings = placeholder.split('{query}');
-    return (
-      <>
-        {subStrings[0]} <strong>"{query}"</strong> {subStrings[1]}
-      </>
-    );
-  };
+  }, []);
 
   const items = useMemo(() => {
     let results = null;
@@ -77,36 +63,40 @@ export const MarketplaceSearch: FC<IMarketplaceSearchProps> = ({
   }, [query]);
 
   return (
-    <Wrapper {...restProps.wrapperProps}>
-      <Container {...restProps.containerProps}>
-        <Title {...restProps.titleProps}>{title}</Title>
+    <section
+      className="bg-white font-default dark:bg-gray-900"
+      {...restProps.wrapperProps}
+    >
+      <div className="py-12 container-max" {...restProps.containerProps}>
+        <h2
+          className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl"
+          {...restProps.titleProps}
+        >
+          {title}
+        </h2>
         {tagsFilter && (
           <TagsContainer>
             {tagsFilter.map((tagName) => (
-              <Tag onClick={() => setQuery(`#${tagName}`)} key={tagName}>
+              <Tag key={tagName} onClick={() => setQuery(`#${tagName}`)}>
                 {tagName}
               </Tag>
             ))}
           </TagsContainer>
         )}
-        <Search>
-          <img
-            src={marketplaceAssets.search}
-            alt="Search"
-            height={24}
-            width={24}
-          />
+        <div className="flex border-0 border-b border-solid border-gray-300 pb-3 dark:border-gray-800">
+          <SearchIcon className="text-gray-500 dark:text-white" />
           <input
             value={query}
             type="search"
             placeholder={placeholder}
             onChange={handleChange}
+            className="ml-1.5 mt-0.5 w-full border-0 bg-white text-sm font-medium text-black outline-none dark:bg-gray-900 dark:text-gray-50"
             {...restProps.searchProps}
           />
-        </Search>
+        </div>
 
-        {items && queryList ? (
-          <Results>
+        <div className="-mx-6 flex flex-wrap lg:flex-nowrap">
+          {items && queryList ? (
             <MarketplaceList
               title={queryList.title}
               items={items}
@@ -114,19 +104,22 @@ export const MarketplaceSearch: FC<IMarketplaceSearchProps> = ({
               pagination={queryList.pagination}
               {...restProps.queryListProps}
             />
-          </Results>
-        ) : (
-          <Results>
-            <MarketplaceList {...primaryList} {...restProps.primaryListProps} />
-            {secondaryList && (
+          ) : (
+            <>
               <MarketplaceList
-                {...secondaryList}
-                {...restProps.secondaryListProps}
+                {...primaryList}
+                {...restProps.primaryListProps}
               />
-            )}
-          </Results>
-        )}
-      </Container>
-    </Wrapper>
+              {secondaryList && (
+                <MarketplaceList
+                  {...secondaryList}
+                  {...restProps.secondaryListProps}
+                />
+              )}
+            </>
+          )}
+        </div>
+      </div>
+    </section>
   );
 };

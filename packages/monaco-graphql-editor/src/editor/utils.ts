@@ -70,7 +70,7 @@ export const coreDiagnosticsSource: DiagnosticsSource = {
               severity: DIAGNOSTIC_SEVERITY.Error,
               message: e.message,
               source: 'GraphQL: Syntax',
-              range: getRange(e.locations![0], document),
+              range: getRange(e.locations[0], document),
             }),
           ];
         } else {

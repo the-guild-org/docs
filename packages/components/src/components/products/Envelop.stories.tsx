@@ -1,6 +1,4 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-
+import type { Story, Meta } from '@storybook/react/types-6-0';
 import { CardsColorful } from '../CardsColorful';
 import { Footer } from '../Footer';
 import { FeatureList } from '../FeatureList';

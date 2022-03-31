@@ -7,13 +7,13 @@ Run the following commands from the root folder of the library.
 
 Development:
 
-```
+```sh
 yarn next:dev
 ```
 
 Production:
 
-```
+```sh
 yarn next:build
 ```
 

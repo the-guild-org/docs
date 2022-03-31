@@ -1,59 +1,124 @@
-import React from 'react';
-
+import { FC } from 'react';
+import clsx from 'clsx';
 import IllustrationDesktop from '../static/illustrations/marketplace-desktop.png';
 import IllustrationMobile from '../static/illustrations/marketplace-mobile.png';
 import CubeTL from '../static/illustrations/marketplace-cube-tl.png';
 import CubeTR from '../static/illustrations/marketplace-cube-tr.png';
 import CubeBL from '../static/illustrations/marketplace-cube-bl.png';
 import CubeBR from '../static/illustrations/marketplace-cube-br.png';
-
-import {
-  Container,
-  Content,
-  CTA,
-  Cubes,
-  Image,
-  Info,
-  Wrapper,
-  Gradient,
-} from './HeroMarketplace.styles';
-
 import { IHeroMarketplaceProps } from '../types/components';
+import { Button } from './Button';
 
-export const HeroMarketplace: React.FC<IHeroMarketplaceProps> = ({
+const Shadow: FC<{ className: string }> = ({ className }) => {
+  return (
+    <span
+      className={clsx(
+        `absolute
+        h-[750px]
+        w-[750px]
+        -translate-x-1/2
+        -translate-y-1/2
+        rounded-full
+        opacity-40
+        blur-3xl`,
+        className
+      )}
+    />
+  );
+};
+
+const Cube: FC<{ className: string; src: string }> = ({ className, src }) => {
+  return (
+    <img
+      className={clsx(`absolute -translate-x-1/2 -translate-y-1/2`, className)}
+      src={src}
+      alt="Cube"
+    />
+  );
+};
+
+export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({
   title,
   description,
   link,
   ...restProps
 }) => (
-  <Wrapper {...restProps.wrapperProps}>
-    <Container {...restProps.containerProps}>
-      <Gradient colors={['#FF34AE', '#1CC8EE']}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </Gradient>
-      <Cubes>
-        <img src={CubeTL} alt="Cube" />
-        <img src={CubeTR} alt="Cube" />
-        <img src={CubeBR} alt="Cube" />
-        <img src={CubeBL} alt="Cube" />
-      </Cubes>
-      <Content>
-        <Image {...restProps.imageProps}>
+  <section
+    className="overflow-hidden bg-white font-default dark:bg-gray-900"
+    {...restProps.wrapperProps}
+  >
+    <div className="relative" {...restProps.containerProps}>
+      <div
+        className="
+         absolute
+         inset-0
+         overflow-hidden
+         bg-black
+         dark:bg-gray-900
+        "
+        style={{ '--colorA': '#ff34ae', '--colorB': '#1cc8ee' }}
+      >
+        <Shadow className="top-[-175px] left-[-30px] [background:var(--colorA)] md:top-[-150px] md:left-[-60px]" />
+        <Shadow className="right-[-700px] bottom-[-800px] hidden [background:var(--colorA)] md:block" />
+        <Shadow className="left-[-30px] bottom-[-600px] [background:var(--colorB)] md:left-5 md:bottom-[-700px]" />
+      </div>
+      <div>
+        <Cube src={CubeTL} className="-top-2.5 left-6 md:top-6 md:left-10" />
+        <Cube
+          src={CubeTR}
+          className="-bottom-60 -right-52 [top:auto] md:top-20 md:[bottom:auto]"
+        />
+        <Cube src={CubeBR} className="-right-20 -bottom-32 hidden md:block" />
+        <Cube src={CubeBL} className="-bottom-40 left-10 hidden md:block" />
+      </div>
+      <div className="mt-16 mb-28 flex flex-wrap items-center pt-20 pb-1 container-min md:mt-7 md:mb-20 md:flex-nowrap md:pt-0">
+        <picture
+          className="
+            z-1
+            order-last
+            -ml-8
+            -mb-20
+            mt-5
+            w-full
+            max-w-md
+            md:order-first
+            md:-ml-12
+            md:-mb-24
+            md:mt-0
+            md:w-auto
+            md:max-w-none
+            lg:-ml-14
+            lg:w-2/3
+          "
+          {...restProps.imageProps}
+        >
           <source media="(min-width:768px)" srcSet={IllustrationDesktop} />
-          <img src={IllustrationMobile} alt="Products List" />
-        </Image>
-        <Info>
-          <h2 {...restProps.titleProps}>{title}</h2>
-          <p {...restProps.descriptionProps}>{description}</p>
+          <img
+            className="w-full"
+            src={IllustrationMobile}
+            alt="Products List"
+          />
+        </picture>
+        <div className="relative z-1">
+          <h2
+            className="mb-2.5 max-w-lg text-2xl font-bold text-white dark:text-gray-50 md:text-3xl"
+            {...restProps.titleProps}
+          >
+            {title}
+          </h2>
+          <p
+            className="max-w-lg text-base text-gray-300 opacity-70"
+            {...restProps.descriptionProps}
+          >
+            {description}
+          </p>
           {link && (
-            <CTA>
-              <a {...link} {...restProps.linkProps} />
-            </CTA>
+            <div className="relative z-1 mt-4 hidden items-center text-xs md:mt-9 md:flex">
+              <Button {...link} {...restProps.linkProps} />
+            </div>
           )}
-        </Info>
-      </Content>
-    </Container>
-  </Wrapper>
+        </div>
+      </div>
+    </div>
+  </section>
 );

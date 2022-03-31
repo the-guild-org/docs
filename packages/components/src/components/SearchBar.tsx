@@ -1,4 +1,6 @@
 import React, {
+  FC,
+  ChangeEvent,
   useEffect,
   useState,
   useRef,
@@ -6,36 +8,30 @@ import React, {
   createElement,
 } from 'react';
 import algoliaSearch from 'algoliasearch/lite';
-
 import {
   InstantSearch,
   connectHits,
   connectSearchBox,
   connectStateResults,
 } from 'react-instantsearch-dom';
-
 import {
   Hit,
   SearchBoxProvided,
   StateResultsProvided,
 } from 'react-instantsearch-core';
-
+import clsx from 'clsx';
 import { useDebouncedCallback } from 'use-debounce';
-
 import { Modal } from './Modal';
-
-import {
-  SearchButton,
-  SearchForm,
-  SearchResults,
-  SearchHit,
-} from './SearchBar.styles';
-
 import { ISearchBarProps } from '../types/components';
-import { searchBarThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
-import { useThemeContext } from '../helpers/theme';
 import { algoliaConfig } from '../configs';
+import {
+  CloseIcon,
+  HamburgerIcon,
+  HashTagIcon,
+  PageIcon,
+  SearchIcon,
+} from './Icon';
 import { SearchBarV2 } from './SearchBarV2';
 
 const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
@@ -79,32 +75,35 @@ const searchClient: Pick<typeof algoliaClient, 'search'> = {
   },
 };
 
-function useIcons() {
-  const { isDarkTheme } = useThemeContext();
-  return searchBarThemedIcons(isDarkTheme || false);
-}
-
-function getPropertyByPath(obj: any, path: string): any {
+function getPropertyByPath(obj: any, path: string) {
   const parts = path.split('.');
 
   return parts.reduce((current, key) => current && current[key], obj);
 }
 
-const Snippet: React.FC<{
+const Snippet: FC<{
   hit: Hit<ResultDoc>;
   attribute: string;
   tagName?: string;
 }> = ({ hit, attribute, tagName = 'span' }) => {
+  let html =
+    getPropertyByPath(hit, `_snippetResult.${attribute}.value`) ||
+    getPropertyByPath(hit, attribute);
+  if (html) {
+    // some query results contains `.css-` selectors, so we strips them out
+    html = html.replace(/\s+\.css-.*/, '');
+  }
+
   return createElement(tagName, {
-    dangerouslySetInnerHTML: {
-      __html:
-        getPropertyByPath(hit, `_snippetResult.${attribute}.value`) ||
-        getPropertyByPath(hit, attribute),
-    },
+    dangerouslySetInnerHTML: { __html: html },
+    className:
+      tagName === 'span'
+        ? 'dark:text-gray-300 text-gray-700'
+        : 'text-xs text-gray-400',
   });
 };
 
-const SearchBox: React.FC<
+const SearchBox: FC<
   SearchBoxProvided & {
     accentColor: string;
     placeholder: string;
@@ -113,12 +112,13 @@ const SearchBox: React.FC<
 > = ({ currentRefinement, refine, accentColor, placeholder, isModalOpen }) => {
   const searchRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState(currentRefinement);
-  const icons = useIcons();
+
   const debouncedRefine = useDebouncedCallback((value: string) => {
     refine(value);
   }, 500);
+
   const onChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
+    (event: ChangeEvent<HTMLInputElement>) => {
       const value = event.currentTarget.value;
 
       setQuery(value);
@@ -128,15 +128,47 @@ const SearchBox: React.FC<
   );
 
   useEffect(() => {
-    if (isModalOpen && searchRef.current) {
-      searchRef.current.focus();
+    if (isModalOpen) {
+      searchRef.current?.focus();
     }
   }, [isModalOpen]);
 
   return (
-    <SearchForm accentColor={accentColor}>
-      <form noValidate action="" role="search">
-        <img src={icons.search} height="30" width="30" alt="Search icon" />
+    <form
+      noValidate
+      action=""
+      role="search"
+      className="
+        sticky
+        -top-6
+        z-10
+        -m-6
+        bg-white
+        p-6
+        shadow-sm
+        font-default
+        dark:bg-gray-900
+      "
+    >
+      <div
+        className="
+          flex
+          w-full
+          items-center
+          gap-x-1
+          rounded-lg
+          border-2
+          bg-gray-50
+          p-2.5
+          text-lg
+          text-gray-500
+          [border-color:var(--accentColor)]
+          dark:bg-gray-800
+          dark:text-gray-300
+        "
+        style={{ '--accentColor': accentColor }}
+      >
+        <SearchIcon />
         <input
           aria-autocomplete="both"
           autoComplete="off"
@@ -150,41 +182,60 @@ const SearchBox: React.FC<
           ref={searchRef}
           value={query}
           onChange={onChange}
-        ></input>
+          className="
+            mx-2
+            grow
+            border-0
+            bg-transparent
+            outline-none
+            placeholder:text-gray-500
+            dark:placeholder:text-gray-300
+          "
+        />
         {currentRefinement && (
-          <button type="button" onClick={() => refine('')}>
-            <img src={icons.close} height="34" width="34" alt="Clear icon" />
+          <button
+            type="button"
+            onClick={() => refine('')}
+            className="
+              border-0
+              bg-transparent
+              p-0
+              outline-none
+              transition
+              hover:opacity-70
+              focus:ring
+              rounded-sm
+            "
+          >
+            <CloseIcon />
           </button>
         )}
-      </form>
-    </SearchForm>
+      </div>
+    </form>
   );
 };
 
-const StateResults: React.FC<StateResultsProvided<ResultDoc>> = ({
+const StateResults: FC<StateResultsProvided<ResultDoc>> = ({
   searchState,
   searchResults,
   children,
 }) => {
-  let content;
-
-  if (searchState && searchResults && !searchResults.nbHits) {
-    content = searchResults.query.length ? (
+  const content = searchState &&
+    searchResults &&
+    !searchResults.nbHits &&
+    searchResults.query.length > 0 && (
       <span>
         No results for <strong>"{searchState.query}"</strong>.
       </span>
-    ) : null;
-  }
+    );
 
-  return <SearchResults>{content || children}</SearchResults>;
+  return <div className="mt-9">{content || children}</div>;
 };
 
-const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
+const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({
   hits,
   accentColor,
 }) => {
-  const icons = useIcons();
-
   const transformItems = (items: Hit<any>[]) => {
     const groupBy = items.reduce((acc, item) => {
       const list = acc[item.hierarchy.lvl0] || [];
@@ -203,12 +254,18 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
 
   const transformIcon = (item: Hit<ResultDoc>) => {
     if (item.anchor) {
-      return icons.hashtag;
-    } else if (item.content) {
-      return icons.content;
-    } else {
-      return icons.page;
+      return (
+        <HashTagIcon className="text-gray-500 hocus:text-white dark:text-white" />
+      );
     }
+    if (item.content) {
+      return (
+        <HamburgerIcon className="text-gray-500 hocus:text-white dark:text-white" />
+      );
+    }
+    return (
+      <PageIcon className="text-gray-500 hocus:text-white dark:text-white" />
+    );
   };
 
   const groupedHits = transformItems(hits);
@@ -216,8 +273,10 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
   return (
     <>
       {groupedHits.map((hit) => (
-        <SearchHit key={hit.level} accentColor={accentColor}>
-          <h2>{hit.level}</h2>
+        <article key={hit.level} style={{ '--color': accentColor }}>
+          <h2 className="mb-4 mt-8 text-base font-semibold [color:var(--color)]">
+            {hit.level}
+          </h2>
           {hit.items.map((subHit: Hit<ResultDoc>) => {
             let content;
 
@@ -238,11 +297,7 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
               );
             } else if (
               subHit.hierarchy[subHit.type] &&
-              (subHit.type === 'lvl2' ||
-                subHit.type === 'lvl3' ||
-                subHit.type === 'lvl4' ||
-                subHit.type === 'lvl5' ||
-                subHit.type === 'lvl6')
+              ['lvl2', 'lvl3', 'lvl4', 'lvl5', 'lvl6'].includes(subHit.type)
             ) {
               content = (
                 <>
@@ -279,19 +334,31 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
                 key={subHit.url}
                 href={subHit.url}
                 target={isSameWebsite ? '_self' : '_blank'}
+                className="
+                  mb-2
+                  flex
+                  items-center
+                  gap-x-3
+                  break-all
+                  rounded-md
+                  bg-gray-100
+                  px-5
+                  py-3
+                  no-underline
+                  outline-none
+                  last:mb-0
+                  focus:ring
+                  hocus:![background:var(--color)]
+                  dark:bg-gray-800
+                "
                 rel="noreferrer"
               >
-                <img
-                  src={transformIcon(subHit)}
-                  height="26"
-                  width="26"
-                  alt="Result icon"
-                />
-                <div className="ais-content">{content}</div>
+                {transformIcon(subHit)}
+                <div>{content}</div>
               </a>
             );
           })}
-        </SearchHit>
+        </article>
       ))}
     </>
   );
@@ -313,9 +380,9 @@ export const SearchBarComponent: React.FC<ISearchBarProps> = ({
   placeholder,
   isFull,
   onHandleModal,
+  className,
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
-  const icons = useIcons();
 
   const handleModal = useCallback(
     (state: boolean) => {
@@ -332,14 +399,42 @@ export const SearchBarComponent: React.FC<ISearchBarProps> = ({
 
   return (
     <>
-      <SearchButton
-        accentColor={accentColor}
-        isFull={isFull || false}
+      <button
+        className={clsx(
+          `
+        flex
+        items-center
+        border-transparent
+        bg-transparent
+        p-0
+        text-xs
+        font-medium
+        text-gray-500
+        font-default
+        outline-none
+        focus:ring
+        transition
+        md:ml-3
+        md:rounded-md
+        md:border-2
+        md:bg-gray-100
+        md:py-1
+        md:pl-1
+        md:pr-8
+        md:hocus:[border-color:var(--accentColor)]
+        md:dark:bg-gray-800
+        md:dark:text-gray-300
+        `,
+          isFull && '!md:p-2 !m-0 w-full',
+          className
+        )}
+        style={{ '--accentColor': accentColor }}
         onClick={() => handleModal(true)}
       >
-        <img src={icons.search} height="18" width="18" alt="Search icon" />
-        <span>{placeholder}</span>
-      </SearchButton>
+        <SearchIcon className="h-6 w-6 md:mr-1 md:h-4.5 md:w-4.5" />
+        <span className="hidden md:block">{placeholder}</span>
+      </button>
+
       <Modal
         title={title}
         visible={modalOpen}

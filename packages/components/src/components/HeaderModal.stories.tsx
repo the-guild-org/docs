@@ -1,6 +1,4 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-
 import { EcosystemList } from './EcosystemList';
 
 export default {
@@ -26,11 +24,6 @@ export default {
         disable: true,
       },
       control: false,
-    },
-  },
-  parameters: {
-    backgrounds: {
-      default: 'light',
     },
   },
 } as Meta;

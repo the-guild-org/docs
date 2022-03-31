@@ -1,12 +1,11 @@
+import { join } from 'path';
+import fs from 'fs';
 import babel from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import autoExternal from 'rollup-plugin-auto-external';
 import image from '@rollup/plugin-image';
 import bundleSize from 'rollup-plugin-bundle-size';
 import copy from 'rollup-plugin-copy';
-
-import { join } from 'path';
-import fs from 'fs';
 import glob from 'glob';
 
 const packageDirs = glob.sync('packages/*', {
@@ -46,6 +45,8 @@ function bundle(packageDir) {
         babelHelpers: 'bundled',
         extensions: ['.tsx', '.ts'],
         configFile: join(__dirname, '.babelrc'),
+        // Fixes ReferenceError: React is not defined
+        presets: [['@babel/preset-react', { runtime: 'automatic' }]],
       }),
       image(),
       copy({

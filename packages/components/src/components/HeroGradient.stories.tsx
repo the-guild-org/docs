@@ -1,8 +1,6 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { IHeroGradientProps } from '../types/components';
+import type { Story, Meta } from '@storybook/react/types-6-0';
+import type { IHeroGradientProps } from '../types/components';
 import { dummyHeroGradient } from '../helpers/dummy';
-
 import { HeroGradient } from './HeroGradient';
 
 export default {
@@ -28,11 +26,6 @@ export default {
       name: 'Background Glow Colors',
     },
   },
-  parameters: {
-    backgrounds: {
-      default: 'light',
-    },
-  },
 } as Meta;
 
 const Template: Story<IHeroGradientProps> = (args) => (
@@ -40,9 +33,7 @@ const Template: Story<IHeroGradientProps> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  ...dummyHeroGradient,
-};
+Default.args = dummyHeroGradient;
 
 export const Simple = Template.bind({});
 Simple.args = {
