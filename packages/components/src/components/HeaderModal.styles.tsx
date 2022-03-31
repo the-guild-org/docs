@@ -37,23 +37,21 @@ export const ProductList = styled.div(() => [
   `,
 ]);
 
-export const ProductImage = styled.div(() => [
-  tw`relative mr-3`,
-  css`
+export const ProductImage = styled.div(
+  () => css`
+    ${tw`relative mr-3`}
     img {
-      min-width: 3.375rem;
-      ${tw`align-bottom last:hidden`}
+      ${tw`max-w-[54px] align-bottom last:hidden`}
     }
-  `,
-]);
+  `
+);
 
 export const ProductThumbnail = styled.a(() => [
-  tw`box-border flex w-full my-1 md:(w-1/2 m-0) py-4 px-3 rounded-lg outline-none no-underline!`,
+  tw`box-border flex items-center w-full my-1 md:(w-1/2 m-0) py-4 px-3 rounded-lg outline-none no-underline!`,
   tw`dark:hocus:bg-gray-800 hocus:bg-gray-100`,
   css`
     span {
       ${tw`flex flex-col justify-center`}
-
       h4, p {
         ${tw`m-0`}
       }

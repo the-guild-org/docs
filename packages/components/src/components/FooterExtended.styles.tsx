@@ -14,12 +14,12 @@ export const Row = styled.div(
 );
 
 export const Column = styled.div(() => [
-  tw`w-full first:w-full xs:(first:w-full w-1/2) lg:(first:w-1/4! w-1/4!)`,
+  tw`w-full first-of-type:w-full xs:(first-of-type:w-full w-1/2) lg:(first-of-type:w-1/4! w-1/4!)`,
   tw`mb-6 last:mb-0 lg:(mb-0)`,
 ]);
 
 export const WideColumn = styled(Column)(() => [
-  tw`w-full first:w-full xs:(first:w-full w-full) lg:(first:w-2/4! w-2/4!)`,
+  tw`w-full first-of-type:w-full xs:(first-of-type:w-full w-full) lg:(first-of-type:w-2/4! w-2/4!)`,
 ]);
 
 export const Line = styled.hr(() => [

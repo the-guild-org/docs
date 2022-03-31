@@ -276,7 +276,7 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
                 key={subHit.url}
                 href={subHit.url}
                 target={isSameWebsite ? "_self" : "_blank"}
-                rel="noopener noreferrer"
+                rel="noreferrer"
               >
                 <img
                   src={transformIcon(subHit)}

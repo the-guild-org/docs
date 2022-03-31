@@ -67,7 +67,7 @@ export const dummyInfoList = {
       link: {
         children: 'GitHub',
         title: 'View the code',
-        href: 'https://github.com/dotansimha/envelop/',
+        href: 'https://github.com/dotansimha/envelop',
         target: '_blank',
         rel: 'noopener noreferrer',
       },
@@ -95,7 +95,7 @@ export const dummyHeroVideo = {
     href: '#',
   },
   video: {
-    src: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    src: 'https://youtube.com/watch?v=dQw4w9WgXcQ',
     placeholder:
       'https://ak.picdn.net/shutterstock/videos/1033186691/thumb/1.jpg',
   },

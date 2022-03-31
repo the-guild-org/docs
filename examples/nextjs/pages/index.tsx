@@ -37,7 +37,7 @@ export default function Index(): ReactElement {
         title="Simple Video"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ante at ex interdum tincidunt vitae quis justo."
         video={{
-          src: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+          src: 'https://youtube.com/watch?v=dQw4w9WgXcQ',
           placeholder: '/video-placeholder.webp',
         }}
       />

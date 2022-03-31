@@ -32,8 +32,8 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
         tw`inset-0`,
         !isModalOpen &&
           css`
-            top: -100vh;
-            bottom: 100vh;
+            top: -100%;
+            bottom: 100%;
           `,
       ]}
     }
@@ -56,7 +56,7 @@ export const Logo = styled.a(() => [
         -webkit-box-orient: vertical;
         overflow: hidden;
 
-        ${tw`m-0 first:(text-black dark:text-white font-semibold) last:(text-xs text-gray-500 dark:text-gray-300)`}
+        ${tw`m-0 first-of-type:(text-black dark:text-white font-semibold) last:(text-xs text-gray-500 dark:text-gray-300)`}
       }
     }
   `,
