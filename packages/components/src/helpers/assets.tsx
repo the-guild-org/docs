@@ -120,8 +120,7 @@ export const PRODUCTS: {
   },
   {
     children: 'Shield',
-    title:
-      'GraphQL Permissions Framework For Complex Authorisation Systems',
+    title: 'GraphQL Permissions Framework For Complex Authorisation Systems',
     href: 'https://graphql-shield.com',
     logo: `${CDN}products/shield.svg`,
   },

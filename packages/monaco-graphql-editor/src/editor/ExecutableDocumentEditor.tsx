@@ -164,7 +164,7 @@ export const ExecutableDocumentEditor: FC<
           model: monaco.editor.IReadOnlyModel,
           position: monaco.Position
         ): monaco.languages.CompletionList {
-          const isUriEquals = model.uri.path === editorUriRef.current!.path
+          const isUriEquals = model.uri.path === editorUriRef.current!.path;
           if (!isUriEquals) {
             return { suggestions: [] };
           }

@@ -9,7 +9,7 @@ export const Container = styled.div(() => [tw`container-max`]);
 export const Row = styled.div(
   ({ equalPadding }: { equalPadding?: boolean }) => [
     tw`flex flex-wrap lg:flex-nowrap`,
-    equalPadding ? tw`py-4 md:(py-8)` : tw`pt-2 pb-4 md:(pt-4 pb-8)`
+    equalPadding ? tw`py-4 md:(py-8)` : tw`pt-2 pb-4 md:(pt-4 pb-8)`,
   ]
 );
 
