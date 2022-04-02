@@ -269,13 +269,15 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
               );
             }
 
-            const isSameWebsite = typeof window === 'object' && subHit.url.startsWith(window.location.origin);
+            const isSameWebsite =
+              typeof window === 'object' &&
+              subHit.url.startsWith(window.location.origin);
 
             return (
               <a
                 key={subHit.url}
                 href={subHit.url}
-                target={isSameWebsite ? "_self" : "_blank"}
+                target={isSameWebsite ? '_self' : '_blank'}
                 rel="noreferrer"
               >
                 <img

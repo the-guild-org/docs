@@ -17,7 +17,10 @@ import {
   Frameworks,
 } from './SchemaTypes.styles';
 import { Tag, TagsContainer } from './Tag';
-import { SchemaEditor, ExecutableDocumentEditor } from '../../../monaco-graphql-editor/src';
+import {
+  SchemaEditor,
+  ExecutableDocumentEditor,
+} from '../../../monaco-graphql-editor/src';
 
 const FrameworkList = ({ options }: { options: any[] }): JSX.Element => {
   const list = options.reduce((prev: string, curr: string) => [

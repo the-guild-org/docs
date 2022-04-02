@@ -328,7 +328,7 @@ export interface IEditorProps {
   schema?: string;
   icon: string;
   image?: string;
-  operations?: string
+  operations?: string;
 }
 
 export interface IBannerProps {

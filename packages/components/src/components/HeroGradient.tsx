@@ -49,10 +49,12 @@ export const HeroGradient: React.FC<IHeroGradientProps> = ({
             <span {...restProps.versionProps}>{version}</span>
           )}
         </CTA>
-        {image && (
-          React.isValidElement(image) ?
-            image : <Image src={image.src} alt={image.alt} {...restProps.imageProps} />
-        )}
+        {image &&
+          (React.isValidElement(image) ? (
+            image
+          ) : (
+            <Image src={image.src} alt={image.alt} {...restProps.imageProps} />
+          ))}
       </Content>
     </Container>
   </Wrapper>
