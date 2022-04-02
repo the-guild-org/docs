@@ -48,10 +48,10 @@ export const Wrapper = styled.div(({ isModalOpen, placement }: IStyleProps) => [
   placement === 'top' && tw`md:(top-10 -translate-y-0)`,
   placement === 'center' && tw`md:(top-2/4 -translate-y-1/2)`,
   placement === 'bottom' && [
-    tw`md:(top-auto left-2/4 bottom-0 h-5/6 w-4/5 max-w-3xl rounded-t-md)`,
+    tw`md:(top-2/4 -translate-x-2/4 -translate-y-2/4 left-2/4 bottom-0 h-5/6 w-4/5 max-w-3xl rounded-md)`,
   ],
   placement === 'bottom-wide' && [
-    tw`md:(top-auto left-2/4 bottom-0 h-5/6 w-4/5 max-w-7xl rounded-t-md)`,
+    tw`md:(top-2/4 -translate-x-2/4 -translate-y-2/4 left-2/4 bottom-0 h-5/6 w-4/5 max-w-7xl rounded-md)`,
   ],
 ]);
 
