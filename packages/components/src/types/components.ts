@@ -30,10 +30,19 @@ export interface IButtonProps {
   variant?: string;
 }
 
+export interface IHeaderLink {
+  label: string;
+  title: string;
+  href: string;
+  onClick?: () => void;
+}
+
 export interface IHeaderProps {
   accentColor: string;
   activeLink: string;
   themeSwitch?: boolean;
+
+  transformLinks?: (links: IHeaderLink[]) => IHeaderLink[];
 
   wrapperProps?: React.ComponentProps<'header'>;
   containerProps?: React.ComponentProps<'div'>;

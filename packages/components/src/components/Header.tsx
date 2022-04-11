@@ -23,6 +23,7 @@ export const Header: React.FC<IHeaderProps> = ({
   accentColor,
   activeLink,
   themeSwitch,
+  transformLinks = (links) => links,
   ...restProps
 }) => {
   const { isDarkTheme, setDarkTheme } = useThemeContext();
@@ -62,7 +63,7 @@ export const Header: React.FC<IHeaderProps> = ({
     };
   };
 
-  const links = [
+  const links = transformLinks([
     {
       label: 'Our Services',
       title: 'View our services',
@@ -84,7 +85,7 @@ export const Header: React.FC<IHeaderProps> = ({
       title: 'Learn more about us',
       href: '/about-us',
     },
-  ];
+  ]);
 
   const onLinkClick = restProps.linkProps?.onClick;
 
