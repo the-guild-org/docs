@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 1.11.0
+
+### Minor Changes
+
+- 0527185: Allow to transform links of Header component
+
+### Patch Changes
+
+- 8092aaf: Center modal
+
 ## 1.10.3
 
 ### Patch Changes
