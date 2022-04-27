@@ -28,7 +28,7 @@ import {
   ViewportPosition,
 } from './HeaderNavigationMenu';
 import { useWindowSize } from '../helpers/hooks';
-// import { SolutionsMenu } from './SolutionsMenu';
+import { SolutionsMenu } from './SolutionsMenu';
 
 export const Header: React.FC<IHeaderProps> = ({
   accentColor,
@@ -80,12 +80,12 @@ export const Header: React.FC<IHeaderProps> = ({
   };
 
   const links = transformLinks([
-    // {
-    //   label: 'Solutions',
-    //   title: '',
-    //   href: '/solutions',
-    //   menu: <SolutionsMenu />,
-    // },
+    {
+      label: 'Solutions',
+      title: '',
+      href: '/solutions',
+      menu: <SolutionsMenu />,
+    },
     {
       label: 'Ecosystem',
       title: 'View our projects',
@@ -112,7 +112,7 @@ export const Header: React.FC<IHeaderProps> = ({
   const onLinkClick = restProps.linkProps?.onClick;
 
   return (
-    <NavigationMenuRoot defaultValue="Ecosystem">
+    <NavigationMenuRoot>
       <Wrapper {...restProps.wrapperProps}>
         <Container {...restProps.containerProps}>
           <Side>
