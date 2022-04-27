@@ -4,7 +4,7 @@ export const ProductCategory = styled.div(() => [
   tw`mb-6 last:mb-0`,
   css`
     h3 {
-      ${tw`w-full mt-0 mb-3 font-normal text-sm text-gray-600 dark:text-gray-400 text-black`}
+      ${tw`w-full mt-0 mb-3 font-medium text-sm text-gray-500 dark:text-gray-400`}
     }
   `,
 ]);

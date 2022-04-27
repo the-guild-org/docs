@@ -27,6 +27,7 @@ import {
   NavigationMenuViewport,
 } from './HeaderNavigationMenu';
 import { useWindowSize } from '../helpers/hooks';
+// import { SolutionsMenu } from './SolutionsMenu';
 
 export const Header: React.FC<IHeaderProps> = ({
   accentColor,
@@ -78,11 +79,12 @@ export const Header: React.FC<IHeaderProps> = ({
   };
 
   const links = transformLinks([
-    {
-      label: 'Our Services',
-      title: 'View our services',
-      href: '/services',
-    },
+    // {
+    //   label: 'Solutions',
+    //   title: '',
+    //   href: '/solutions',
+    //   menu: <SolutionsMenu />,
+    // },
     {
       label: 'Ecosystem',
       title: 'View our projects',
@@ -93,6 +95,11 @@ export const Header: React.FC<IHeaderProps> = ({
       label: 'Blog',
       title: 'Read our blog',
       href: '/blog',
+    },
+    {
+      label: 'Our Services',
+      title: 'View our services',
+      href: '/services',
     },
     {
       label: 'About Us',
