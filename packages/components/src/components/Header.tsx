@@ -124,7 +124,7 @@ export const Header: React.FC<IHeaderProps> = ({
           <img src={logos.logoMono} height="38" alt="The Guild Monogram" />
         </Logo>
 
-        <NavigationMenuRoot defaultValue={'Ecosystem'}>
+        <NavigationMenuRoot>
           <NavigationMenuList>
             <Navigation
               isModalOpen={mobileNavOpen}
