@@ -13,15 +13,15 @@ const categories: { title: string; items: { title: string; url: string }[] }[] =
       title: 'Guides',
       items: [
         {
-          title: 'GraphQL Error handling',
+          title: 'GraphQL error handling',
           url: 'https://www.the-guild.dev/blog/graphql-error-handling-with-fp',
         },
         {
-          title: 'GraphQL Authentication',
+          title: 'GraphQL authentication',
           url: 'https://www.the-guild.dev/blog/graphql-authentication-with-envelop-and-auth0',
         },
         {
-          title: 'GraphQL Caching',
+          title: 'GraphQL caching',
           url: 'https://www.the-guild.dev/blog/graphql-response-caching-with-envelop',
         },
         {
@@ -58,7 +58,7 @@ const categories: { title: string; items: { title: string; url: string }[] }[] =
           url: 'https://www.the-guild.dev/blog/a-new-year-for-schema-stitching',
         },
         {
-          title: 'Manage your Schemas',
+          title: 'Manage your schemas',
           url: 'https://www.the-guild.dev/blog/graphql-hive-preview',
         },
         {
