@@ -44,6 +44,9 @@ export const ProductThumbnail = styled.a(() => [
 export const Container = styled.div([
   tw`dark:bg-gray-800 bg-white`,
   {
+    maxHeight: 'calc(100vh - 70px)',
+    overflowY: 'scroll',
+    minHeight: '300px',
     padding: '10px',
     width: '800px',
     borderRadius: 6,

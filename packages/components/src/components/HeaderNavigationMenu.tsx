@@ -7,7 +7,7 @@ const StyledMenu = styled(NavigationMenu.Root)({
   position: 'relative',
   // display: 'flex',
   // justifyContent: 'center',
-  width: '40vw',
+  width: '100vw',
   zIndex: 50,
 });
 
@@ -61,14 +61,12 @@ const StyledIndicatorWithArrow = React.forwardRef((props, forwardedRef) => (
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StyledViewport = styled(NavigationMenu.Viewport as any)([
   {
-    position: 'absolute',
+    position: 'relative',
     transformOrigin: 'top center',
-    marginTop: 10,
-    width: '100%',
+    marginTop: '-11px',
     height: 'var(--radix-navigation-menu-viewport-height)',
   },
 ]);
-
 // Exports
 export const NavigationMenuRoot = StyledMenu;
 export const NavigationMenuList = NavigationMenu.List;
@@ -78,3 +76,12 @@ export const NavigationMenuLink = NavigationMenu.Link;
 export const NavigationMenuContent = NavigationMenu.Content;
 export const NavigationMenuViewport = StyledViewport;
 export const NavigationMenuIndicator = StyledIndicatorWithArrow;
+export const ViewportPosition = styled.div({
+  position: 'absolute',
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%',
+  top: '100%',
+  left: 0,
+  perspective: '2000px',
+});
