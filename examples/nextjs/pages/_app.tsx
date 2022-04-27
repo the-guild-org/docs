@@ -20,9 +20,9 @@ export default function App({
 }: AppProps): ReactElement {
   return (
     <>
-      <GlobalStyles includeBase includeFonts/>
+      <GlobalStyles includeBase includeFonts />
       <ThemeProvider>
-        <Header accentColor="#1cc8ee" activeLink="/open-source" themeSwitch />
+        <Header accentColor="#1cc8ee" themeSwitch />
         <Subheader
           product={{
             title: 'Components',

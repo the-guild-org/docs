@@ -144,15 +144,13 @@ export const PRODUCTS: {
   },
   {
     children: 'Stencil',
-    title:
-      'A fully-featured, production ready caching GraphQL client for Stencil and every GraphQL server',
+    title: 'A fully-featured, production ready caching GraphQL client.',
     href: 'https://github.com/ardatan/stencil-apollo',
     logo: `${CDN}products/stencil.svg`,
   },
   {
     children: 'Angular',
-    title:
-      'A fully-featured, production ready caching GraphQL client for Angular and every GraphQL server',
+    title: 'A fully-featured GraphQL client for Angular.',
     href: 'https://apollo-angular.com',
     logo: `${CDN}products/angular.svg`,
   },

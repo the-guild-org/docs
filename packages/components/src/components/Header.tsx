@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
-
-import { HeaderModal } from './HeaderModal';
-import { SearchBar } from './SearchBar';
+import React, { useMemo, useState } from 'react';
 
 import {
   Wrapper,
@@ -13,11 +10,23 @@ import {
   Side,
   Logo,
 } from './Header.styles';
-
+import { EcosystemList } from './EcosystemList';
+import { SearchBar } from './SearchBar';
 import { IHeaderProps } from '../types/components';
 import { useThemeContext } from '../helpers/theme';
 import { headerThemedIcons, logoThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
+import {
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuRoot,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from './HeaderNavigationMenu';
+import { useWindowSize } from '../helpers/hooks';
 
 export const Header: React.FC<IHeaderProps> = ({
   accentColor,
@@ -28,14 +37,19 @@ export const Header: React.FC<IHeaderProps> = ({
 }) => {
   const { isDarkTheme, setDarkTheme } = useThemeContext();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
   const icons = headerThemedIcons(isDarkTheme || false);
   const logos = logoThemedIcons(isDarkTheme || false);
+  const { height: windowHeight, width: windowWidth } = useWindowSize();
 
-  const handleModal = (state: boolean) => {
-    !mobileNavOpen && toggleLockBodyScroll(state);
-    setModalOpen(state);
-  };
+  const shouldUseMenu = useMemo(
+    () =>
+      windowWidth &&
+      windowWidth &&
+      windowHeight &&
+      windowHeight > 400 &&
+      windowWidth > 800,
+    [windowHeight, windowWidth]
+  );
 
   const handleNav = (state: boolean) => {
     toggleLockBodyScroll(state);
@@ -70,10 +84,10 @@ export const Header: React.FC<IHeaderProps> = ({
       href: '/services',
     },
     {
-      label: 'Platform',
+      label: 'Ecosystem',
       title: 'View our projects',
       href: '/open-source',
-      onClick: () => handleModal(true),
+      menu: <EcosystemList />,
     },
     {
       label: 'Blog',
@@ -110,55 +124,91 @@ export const Header: React.FC<IHeaderProps> = ({
           <img src={logos.logoMono} height="38" alt="The Guild Monogram" />
         </Logo>
 
-        <Navigation isModalOpen={mobileNavOpen} {...restProps.navigationProps}>
-          <Icon
-            iconType="close"
-            onClick={() => handleNav(false)}
-            {...restProps.navCloseButtonProps}
-          >
-            <img
-              src={icons.close}
-              height="22"
-              width="22"
-              alt="Menu close icon"
-            />
-          </Icon>
-          {links.map((link) => (
-            <Link
-              key={link.label}
-              title={link.title}
-              accentColor={accentColor}
-              isActiveLink={activeLink?.includes(link.href)}
-              {...restProps.linkProps}
-              {...renderLinkOptions(link.href, link.onClick || onLinkClick)}
+        <NavigationMenuRoot defaultValue={'Ecosystem'}>
+          <NavigationMenuList>
+            <Navigation
+              isModalOpen={mobileNavOpen}
+              {...restProps.navigationProps}
             >
-              {link.label}
-              {link.onClick && <img src={icons.caret} alt="Link icon" />}
-            </Link>
-          ))}
-          <Controls>
-            <SearchBar
-              accentColor={accentColor}
-              title="Search docs"
-              placeholder="Search..."
-              {...restProps.searchBarProps}
-            />
-            {themeSwitch && setDarkTheme && (
               <Icon
-                iconType="theme"
-                onClick={() => setDarkTheme((state: boolean) => !state)}
-                {...restProps.themeButtonProps}
+                iconType="close"
+                onClick={() => handleNav(false)}
+                {...restProps.navCloseButtonProps}
               >
                 <img
-                  src={icons.themeToggle}
-                  height={16}
-                  width={16}
-                  alt="Theme toggle icon"
+                  src={icons.close}
+                  height="22"
+                  width="22"
+                  alt="Menu close icon"
                 />
               </Icon>
-            )}
-          </Controls>
-        </Navigation>
+
+              {links.map((link) =>
+                link.menu && shouldUseMenu ? (
+                  <NavigationMenuItem key={link.label} value={link.label}>
+                    <NavigationMenuTrigger accentColor={accentColor}>
+                      <Link
+                        title={link.title}
+                        accentColor={accentColor}
+                        isActiveLink={activeLink?.includes(link.href)}
+                        {...restProps.linkProps}
+                        {...renderLinkOptions(
+                          link.href,
+                          link.onClick || onLinkClick
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>{link.menu}</NavigationMenuContent>
+                  </NavigationMenuItem>
+                ) : (
+                  <NavigationMenuItem key={link.label}>
+                    <NavigationMenuLink>
+                      <Link
+                        title={link.title}
+                        accentColor={accentColor}
+                        isActiveLink={activeLink?.includes(link.href)}
+                        {...restProps.linkProps}
+                        {...renderLinkOptions(
+                          link.href,
+                          link.onClick || onLinkClick
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                )
+              )}
+
+              <Controls>
+                <SearchBar
+                  accentColor={accentColor}
+                  title="Search docs"
+                  placeholder="Search..."
+                  {...restProps.searchBarProps}
+                />
+                {themeSwitch && setDarkTheme && (
+                  <Icon
+                    iconType="theme"
+                    onClick={() => setDarkTheme((state: boolean) => !state)}
+                    {...restProps.themeButtonProps}
+                  >
+                    <img
+                      src={icons.themeToggle}
+                      height={16}
+                      width={16}
+                      alt="Theme toggle icon"
+                    />
+                  </Icon>
+                )}
+              </Controls>
+            </Navigation>
+          </NavigationMenuList>
+          <NavigationMenuIndicator />
+          <NavigationMenuViewport />
+        </NavigationMenuRoot>
 
         <Side>
           <SearchBar
@@ -169,12 +219,6 @@ export const Header: React.FC<IHeaderProps> = ({
           />
         </Side>
       </Container>
-      <HeaderModal
-        title="Products by The Guild"
-        modalOpen={modalOpen}
-        onCancelModal={() => handleModal(false)}
-        {...restProps.headerModalProps}
-      />
     </Wrapper>
   );
 };
