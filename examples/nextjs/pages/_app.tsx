@@ -22,7 +22,7 @@ export default function App({
     <>
       <GlobalStyles includeBase includeFonts />
       <ThemeProvider>
-        <Header accentColor="#1cc8ee" themeSwitch />
+        <Header accentColor="#1cc8ee" activeLink="" themeSwitch />
         <Subheader
           product={{
             title: 'Components',
