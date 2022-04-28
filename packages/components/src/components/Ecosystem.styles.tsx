@@ -53,7 +53,7 @@ export const Container = styled.div([
   tw`dark:bg-gray-800 bg-white`,
   {
     maxHeight: 'calc(100vh - 70px)',
-    overflowY: 'scroll',
+    overflowY: 'auto',
     padding: '20px',
     minHeight: '300px',
     width: '800px',
