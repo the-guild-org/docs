@@ -1,12 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { IHeaderModalProps } from '../types/components';
 
-import { HeaderModal } from './HeaderModal';
+import { EcosystemList } from './EcosystemList';
 
 export default {
-  title: 'Components/Modals/Header',
-  component: HeaderModal,
+  title: 'Components/EcosystemList',
+  component: EcosystemList,
   argTypes: {
     title: {
       name: 'Title',
@@ -36,10 +35,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IHeaderModalProps> = (args) => <HeaderModal {...args} />;
+const Template: Story = (args) => <EcosystemList {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-  title: 'Products by The Guild',
-  modalOpen: true,
-};
+Default.args = {};

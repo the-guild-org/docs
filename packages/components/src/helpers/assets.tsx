@@ -59,7 +59,8 @@ export const PRODUCTS: {
   },
   {
     children: 'Envelop',
-    title: 'Modern GraphQL Framework',
+    title:
+      'Develop and share plugins that are usable with any GraphQL server framework or schema',
     href: 'https://envelop.dev',
     logo: `${CDN}products/envelop.svg`,
   },
@@ -71,13 +72,14 @@ export const PRODUCTS: {
   },
   {
     children: 'Code Generator',
-    title: 'Generate anything from GraphQL',
+    title:
+      'Generation of Typed Queries, Mutations, Subscriptions and Typed GraphQL resolvers',
     href: 'https://graphql-code-generator.com',
     logo: `${CDN}products/code-generator.svg`,
   },
   {
     children: 'Mesh',
-    title: 'Query anything, run anywhere',
+    title: 'A fully-featured GraphQL Gateway framework',
     href: 'https://graphql-mesh.com',
     logo: `${CDN}products/mesh.svg`,
   },
@@ -101,7 +103,7 @@ export const PRODUCTS: {
   },
   {
     children: 'Config',
-    title: 'One configuration for all your GraphQL tools',
+    title: 'One configuration for all your GraphQL projects',
     href: 'https://graphql-config.com',
     logo: `${CDN}products/config.svg`,
   },
@@ -144,15 +146,13 @@ export const PRODUCTS: {
   },
   {
     children: 'Stencil',
-    title:
-      'A fully-featured, production ready caching GraphQL client for Stencil and every GraphQL server',
+    title: 'A fully-featured, production ready caching GraphQL client',
     href: 'https://github.com/ardatan/stencil-apollo',
     logo: `${CDN}products/stencil.svg`,
   },
   {
     children: 'Angular',
-    title:
-      'A fully-featured, production ready caching GraphQL client for Angular and every GraphQL server',
+    title: 'A fully-featured GraphQL client for Angular',
     href: 'https://apollo-angular.com',
     logo: `${CDN}products/angular.svg`,
   },

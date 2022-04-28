@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { ReactPlayerProps } from 'react-player';
 
 type IImage = React.ImgHTMLAttributes<unknown>;
@@ -34,6 +34,7 @@ export interface IHeaderLink {
   label: string;
   title: string;
   href: string;
+  menu?: ReactNode;
   onClick?: () => void;
 }
 
