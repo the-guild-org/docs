@@ -45,11 +45,7 @@ export const Header: React.FC<IHeaderProps> = ({
 
   const shouldUseMenus = useMemo(
     () =>
-      windowWidth &&
-      windowWidth &&
-      windowHeight &&
-      windowHeight > 400 &&
-      windowWidth > 800,
+      windowWidth && windowHeight && windowHeight > 400 && windowWidth > 800,
     [windowHeight, windowWidth]
   );
 

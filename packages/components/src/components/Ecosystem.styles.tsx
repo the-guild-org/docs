@@ -21,9 +21,17 @@ export const ProductImage = styled.div(
 );
 
 export const ProductThumbnail = styled.a(() => [
-  tw`box-border flex items-center w-full my-1 md:(w-1/2 m-0) py-2 px-2 rounded-lg outline-none no-underline!`,
+  tw`box-border flex items-center w-full my-1 md:(w-1/2 m-0) p-2 rounded-lg outline-none no-underline!`,
   tw`dark:hocus:bg-gray-700 hocus:bg-gray-100`,
   css`
+    &:hover {
+      h4 {
+        ${tw`text-black dark:text-white`}
+      }
+      p {
+        ${tw`dark:text-gray-300 text-gray-500`}
+      }
+    }
     span {
       ${tw`flex flex-col justify-center`}
       h4, p {
