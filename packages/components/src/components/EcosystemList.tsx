@@ -10,7 +10,7 @@ import { PRODUCTS } from '../helpers/assets';
 
 const productCategories = [
   {
-    title: 'Build GraphQL Servers',
+    title: 'Build GraphQL servers',
     items: PRODUCTS.filter((p) =>
       [
         'Yoga',
