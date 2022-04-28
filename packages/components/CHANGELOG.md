@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.11.1
+
+### Patch Changes
+
+- d97dbcf: feat(nav): Ecosystem + Solutions navigation menu
+
 ## 1.11.0
 
 ### Minor Changes
