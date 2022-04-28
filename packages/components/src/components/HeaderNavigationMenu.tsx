@@ -5,9 +5,6 @@ import React from 'react';
 
 const StyledMenu = styled(NavigationMenu.Root)({
   position: 'relative',
-  // display: 'flex',
-  // justifyContent: 'center',
-  width: '100vw',
   zIndex: 50,
 });
 
