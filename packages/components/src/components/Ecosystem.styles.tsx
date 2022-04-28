@@ -4,7 +4,7 @@ export const ProductCategory = styled.div(() => [
   tw`mb-6 last:mb-0`,
   css`
     h3 {
-      ${tw`w-full mt-0 mb-3 font-normal text-sm text-gray-600 dark:text-gray-400 text-black`}
+      ${tw`w-full mt-1 mb-5 font-normal text-base text-gray-600 dark:text-gray-400 text-black`}
     }
   `,
 ]);
@@ -46,8 +46,8 @@ export const Container = styled.div([
   {
     maxHeight: 'calc(100vh - 70px)',
     overflowY: 'scroll',
+    padding: '20px',
     minHeight: '300px',
-    padding: '10px',
     width: '800px',
     borderRadius: 6,
     boxShadow:

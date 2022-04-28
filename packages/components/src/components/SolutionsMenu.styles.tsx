@@ -4,7 +4,7 @@ export const Category = styled.div(() => [
   tw`mb-6 last:mb-0`,
   css`
     h3 {
-      ${tw`w-full mt-0 mb-3 font-normal text-sm text-gray-600 dark:text-gray-400 text-black`}
+      ${tw`w-full mt-1 mb-5 font-normal text-base text-gray-600 dark:text-gray-400 text-black`}
     }
   `,
 ]);
@@ -15,6 +15,11 @@ export const Item = styled.a(() => [
   tw`box-border flex items-center w-full my-1 md:(w-1/2 m-0) py-2 px-2 rounded-lg outline-none no-underline!`,
   tw`dark:hocus:bg-gray-700 hocus:bg-gray-100`,
   css`
+    &:hover {
+      h4 {
+        ${tw`text-black dark:text-white`}
+      }
+    }
     span {
       ${tw`flex flex-col justify-center`}
       h4 {
@@ -42,7 +47,7 @@ export const Callout = styled.div(() => [
 export const Container = styled.div([
   tw`dark:bg-gray-800 bg-white`,
   {
-    padding: '10px',
+    padding: '20px',
     width: '600px',
     borderRadius: 6,
     boxShadow:

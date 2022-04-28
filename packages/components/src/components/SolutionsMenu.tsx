@@ -13,7 +13,7 @@ const categories: { title: string; items: { title: string; url: string }[] }[] =
       title: 'Guides',
       items: [
         {
-          title: 'GraphQL Error handling',
+          title: 'GraphQL Error Handling',
           url: 'https://www.the-guild.dev/blog/graphql-error-handling-with-fp',
         },
         {
