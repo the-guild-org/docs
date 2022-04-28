@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.11.2
+
+### Patch Changes
+
+- 55e2949: fix(header/navigation): breaking layout fix
+
 ## 1.11.1
 
 ### Patch Changes
