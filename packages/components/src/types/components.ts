@@ -50,7 +50,7 @@ export interface IHeaderProps {
   logoProps?: React.ComponentProps<'a'>;
   navigationProps?: React.ComponentProps<'nav'>;
   linkProps?: React.ComponentProps<'a'>;
-  searchBarProps?: ISearchBarProps;
+  searchBarProps?: Partial<ISearchBarProps>;
   themeButtonProps?: React.ComponentProps<'button'>;
   navOpenButtonProps?: React.ComponentProps<'button'>;
   navCloseButtonProps?: React.ComponentProps<'button'>;
