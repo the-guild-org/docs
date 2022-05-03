@@ -1,6 +1,5 @@
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import tw, { styled, theme } from 'twin.macro';
-import { rgba } from 'polished';
+import tw, { styled } from 'twin.macro';
 import React from 'react';
 
 const StyledMenu = styled(NavigationMenu.Root)({

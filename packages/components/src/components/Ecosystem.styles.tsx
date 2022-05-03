@@ -15,7 +15,7 @@ export const ProductImage = styled.div(
   () => css`
     ${tw`relative mr-3`}
     img {
-      ${tw`max-w-[25px] align-bottom last:hidden`}
+      ${tw`max-w-[25px] align-bottom`}
     }
   `
 );

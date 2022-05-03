@@ -36,6 +36,7 @@ import { searchBarThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import { useThemeContext } from '../helpers/theme';
 import { algoliaConfig } from '../configs';
+import { SearchBarV2 } from './SearchBarV2';
 
 const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
   hosts: algoliaConfig.hosts,
@@ -297,6 +298,16 @@ const Hits: React.FC<{ hits: Hit<any>[]; accentColor: string }> = ({
 };
 
 export const SearchBar: React.FC<ISearchBarProps> = ({
+  version = 'v1',
+  ...restProps
+}) =>
+  version === 'v1' ? (
+    <SearchBarComponent {...restProps} />
+  ) : (
+    <SearchBarV2 {...restProps} />
+  );
+
+export const SearchBarComponent: React.FC<ISearchBarProps> = ({
   accentColor,
   title,
   placeholder,
