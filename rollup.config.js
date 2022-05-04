@@ -51,6 +51,10 @@ function bundle(packageDir) {
       copy({
         targets: [
           {
+            src: join(__dirname, packageDir, 'src/static/*'),
+            dest: `./dist/${packageDir}/static/`,
+          },
+          {
             src: `./dist/${packageDir}/src/*`,
             dest: `./${packageDir}/dist`,
           },

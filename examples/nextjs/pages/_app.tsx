@@ -14,7 +14,7 @@ import {
 // import '../public/styles.css';
 
 import '@algolia/autocomplete-theme-classic';
-import '@theguild/components/src/components/SearchBarV2/root.css';
+import '../../../packages/components/src/static/css/SearchBarV2.css';
 
 export default function App({
   router,
