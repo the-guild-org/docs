@@ -12,7 +12,7 @@ export const templates: SourceTemplates<AlgoliaSearchItem> = {
               <components.Highlight hit={hit} attribute="title" />
             </div>
             <div className="aa-ItemContentSubtitle">
-              {hit.hierarchy.slice(1).join(' > ')}
+              <em>{hit.type}</em>
             </div>
           </div>
         </div>

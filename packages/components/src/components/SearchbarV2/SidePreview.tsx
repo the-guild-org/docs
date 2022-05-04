@@ -3,17 +3,24 @@ import React from 'react';
 import tw, { styled, css } from 'twin.macro';
 import { PRODUCTS } from '../../helpers/assets';
 import { AlgoliaSearchItem } from '../../types/algolia';
+import { hex } from 'color-convert';
 
 const PreviewContainer = styled.div(
-  [tw`flex flex-col`],
-  css`
-    padding-top: var(--aa-spacing-half);
-    padding-bottom: var(--aa-spacing-half);
-    padding-left: 40px;
-    padding-right: 40px;
-    max-height: var(--aa-detached-modal-max-height);
-    overflow-y: auto;
-  `
+  ({ accentColor }: { accentColor: string }) => [
+    [tw`flex flex-col`],
+    css`
+      padding-top: var(--aa-spacing-half);
+      padding-bottom: var(--aa-spacing-half);
+      padding-left: 40px;
+      padding-right: 40px;
+      max-height: var(--aa-detached-modal-max-height);
+      overflow-y: auto;
+
+      & mark {
+        background-color: rgba(${hex.rgb(accentColor).join(', ')}, 0.3);
+      }
+    `,
+  ]
 );
 
 export const PreviewProjectImage = styled.div(
@@ -65,29 +72,29 @@ const Cta = styled.p(({ accentColor }: { accentColor: string }) => [
   `,
 ]);
 
-// const TocTitle = styled.h4(
-//   tw`w-full mt-6 mb-1 font-light text-lg text-gray-600 dark:text-gray-400 text-black`
-// );
+const TocTitle = styled.h4(
+  tw`w-full mt-10 mb-1 font-light text-lg text-gray-600 dark:text-gray-400`
+);
 
-// const TocContent = styled.ol(
-//   tw`text-left font-light`,
-//   css`
-//     list-style-position: inside !important;
-//     list-style: upper-roman;
-//     & ol {
-//       list-style: decimal;
-//       padding-left: 5px;
-//     }
-//   `
-// );
+const TocContent = styled.ol(
+  tw`text-left font-light text-base text-gray-600 dark:text-gray-400`,
+  css`
+    list-style-position: inside !important;
+    list-style: upper-roman;
+    & ol {
+      list-style: decimal;
+      padding-left: 5px;
+    }
+  `
+);
 
-// const TOC = ({ toc }: Pick<AlgoliaSearchItem, 'toc'>) => (
-//   <TocContent>
-//     {toc.map((tocItem) => (
-//       <li key={tocItem.title}>{tocItem.title}</li>
-//     ))}
-//   </TocContent>
-// );
+const TOC = ({ toc }: Pick<AlgoliaSearchItem, 'toc'>) => (
+  <TocContent>
+    {toc.map((tocItem) => (
+      <li key={tocItem.title}>{tocItem.title}</li>
+    ))}
+  </TocContent>
+);
 
 export const SidePreview = ({
   item,
@@ -101,7 +108,7 @@ export const SidePreview = ({
   const project = PRODUCTS.find((p) => p.children === item.source);
   return (
     item && (
-      <PreviewContainer>
+      <PreviewContainer accentColor={accentColor}>
         {project && (
           <PreviewProject
             key={project.children}
@@ -124,12 +131,12 @@ export const SidePreview = ({
         <ContentSnippet>
           <components.Snippet hit={item} attribute="content" />
         </ContentSnippet>
-        {/* {item.toc.length > 1 && (
-        <>
-          <TocTitle>Table of content:</TocTitle>
-          <TOC toc={item.toc} />
-        </>
-      )} */}
+        {item.toc.length > 1 && (
+          <>
+            <TocTitle>Table of content:</TocTitle>
+            <TOC toc={item.toc} />
+          </>
+        )}
         <Cta
           accentColor={accentColor}
         >{`Press "Enter" to open ${item.type} →`}</Cta>

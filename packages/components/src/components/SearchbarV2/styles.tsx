@@ -15,7 +15,7 @@ export const ResultsContainer = styled.div([
 ]);
 
 export const NoResultsContainer = styled.div([
-  tw`mt-0 mb-6 w-full font-light text-center text-xl text-gray-600 dark:text-gray-400`,
+  tw`mt-0 mt-20 mb-20 w-full font-light text-center text-xl text-gray-600 dark:text-gray-400`,
 ]);
 
 export const SearchBy = styled.a(
