@@ -1,16 +1,14 @@
 import tw, { css, styled } from 'twin.macro';
 
-export const PreviewContainer = styled.div([
+export const Container = styled.div([
   tw`flex flex-row`,
   css`
     padding: var(--aa-spacing-half);
-    max-height: var(--aa-detached-modal-max-height);
+    height: 500px;
   `,
 ]);
 
-export const ResultsContainer = styled.div([
-  tw`min-w-[400px]`,
-]);
+export const ResultsContainer = styled.div([tw`min-w-[400px]`]);
 
 export const NoResultsContainer = styled.div([
   tw`mt-0 mt-20 mb-20 w-full font-light text-center text-xl text-gray-600 dark:text-gray-400`,

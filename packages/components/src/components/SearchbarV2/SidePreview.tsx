@@ -11,7 +11,7 @@ const PreviewContainer = styled.div(
     css`
       padding-top: var(--aa-spacing-half);
       padding-bottom: var(--aa-spacing-half);
-      max-height: var(--aa-detached-modal-max-height);
+      height: 500px;
 
       & mark {
         background-color: rgba(${hex.rgb(accentColor).join(', ')}, 0.3);
@@ -107,11 +107,7 @@ export const SidePreview = ({
     item && (
       <PreviewContainer accentColor={accentColor}>
         {project && (
-          <PreviewProject
-            href={project.href}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <PreviewProject href={project.href} target="_blank" rel="noreferrer">
             <PreviewProjectImage>
               <img src={project.logo} alt={`${project.children} logo`} />
             </PreviewProjectImage>

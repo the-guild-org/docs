@@ -25,7 +25,7 @@ import { debounced } from './SearchbarV2/utils';
 import { templates } from './SearchbarV2/templates';
 import {
   NoResultsContainer,
-  PreviewContainer,
+  Container,
   ResultsContainer,
   SearchBy,
 } from './SearchbarV2/styles';
@@ -80,21 +80,19 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
           );
         }
       },
-      render({ children, state, Fragment, components, sections }, root) {
+      render({ children, state, Fragment, components }, root) {
         const { preview } = state.context;
-
-        console.log(sections);
 
         render(
           <Fragment>
-            <PreviewContainer>
+            <Container>
               <ResultsContainer>{children}</ResultsContainer>
               <SidePreview
                 accentColor={accentColor}
                 item={preview}
                 components={components}
               />
-            </PreviewContainer>
+            </Container>
             <SearchBy
               href={`https://www.algolia.com/`}
               target="_blank"
