@@ -5,7 +5,7 @@ export function debouncePromise<I, O>(
   fn: (args: I[]) => O,
   time: number
 ): (args: I[]) => Promise<O> {
-  let timerId: number | undefined = undefined;
+  let timerId: number | undefined;
 
   return function debounced(args: I[]) {
     if (timerId) {

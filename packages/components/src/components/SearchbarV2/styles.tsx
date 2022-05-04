@@ -9,9 +9,7 @@ export const PreviewContainer = styled.div([
 ]);
 
 export const ResultsContainer = styled.div([
-  css`
-    min-width: 400px;
-  `,
+  tw`min-w-[400px]`,
 ]);
 
 export const NoResultsContainer = styled.div([

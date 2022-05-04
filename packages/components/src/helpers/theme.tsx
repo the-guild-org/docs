@@ -36,7 +36,7 @@ const setDOMTheme = (isDark: boolean, defaultThemeLogic?: boolean) => {
     const html = window.document.documentElement;
     html.classList.toggle('dark', isDark);
     // Algolia Autocomplete theming support
-    const body = window.document.body;
+    const { body } = window.document;
     body.classList.toggle('dark', isDark);
 
     if (defaultThemeLogic) {

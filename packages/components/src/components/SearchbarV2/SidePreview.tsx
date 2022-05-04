@@ -7,14 +7,11 @@ import { hex } from 'color-convert';
 
 const PreviewContainer = styled.div(
   ({ accentColor }: { accentColor: string }) => [
-    [tw`flex flex-col`],
+    [tw`flex flex-col px-10 overflow-y-auto`],
     css`
       padding-top: var(--aa-spacing-half);
       padding-bottom: var(--aa-spacing-half);
-      padding-left: 40px;
-      padding-right: 40px;
       max-height: var(--aa-detached-modal-max-height);
-      overflow-y: auto;
 
       & mark {
         background-color: rgba(${hex.rgb(accentColor).join(', ')}, 0.3);
@@ -111,7 +108,6 @@ export const SidePreview = ({
       <PreviewContainer accentColor={accentColor}>
         {project && (
           <PreviewProject
-            key={project.children}
             href={project.href}
             target="_blank"
             rel="noreferrer"
