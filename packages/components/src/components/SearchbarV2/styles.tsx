@@ -4,7 +4,7 @@ export const Container = styled.div([
   tw`flex flex-row`,
   css`
     padding: var(--aa-spacing-half);
-    height: 500px;
+    height: 600px;
   `,
 ]);
 

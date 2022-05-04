@@ -120,6 +120,9 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
                     {
                       indexName,
                       query,
+                      params: {
+                        hitsPerPage: 50,
+                      },
                     },
                   ],
                 });

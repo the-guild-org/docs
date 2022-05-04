@@ -11,7 +11,7 @@ const PreviewContainer = styled.div(
     css`
       padding-top: var(--aa-spacing-half);
       padding-bottom: var(--aa-spacing-half);
-      height: 500px;
+      height: 600px;
 
       & mark {
         background-color: rgba(${hex.rgb(accentColor).join(', ')}, 0.3);
