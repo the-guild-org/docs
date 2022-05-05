@@ -186,7 +186,9 @@ export const Header: React.FC<IHeaderProps> = ({
                 )
               )}
 
-              <Controls>
+              <Controls
+                searchVersion={restProps.searchBarProps?.version || 'v1'}
+              >
                 <SearchBar
                   accentColor={accentColor}
                   title="Search docs"

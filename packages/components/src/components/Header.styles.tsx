@@ -42,14 +42,22 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
   `,
 ]);
 
-export const Controls = styled.menu(() => [
-  tw`flex justify-center m-0 p-0 md:ml-2.5`,
-  css`
-    button:first-of-type:not(:only-child) {
-      ${tw`hidden md:flex`}
-    }
-  `,
-]);
+export const Controls = styled.menu(
+  ({ searchVersion }: { searchVersion: string }) => [
+    tw`flex justify-center m-0 p-0 md:ml-2.5`,
+    searchVersion === 'v1'
+      ? css`
+          button:first-of-type:not(:only-child) {
+            ${tw`hidden md:flex`}
+          }
+        `
+      : css`
+          div:first-of-type:not(:only-child) {
+            ${tw`hidden md:flex`}
+          }
+        `,
+  ]
+);
 
 export const Logo = styled.a(() => [
   css`
