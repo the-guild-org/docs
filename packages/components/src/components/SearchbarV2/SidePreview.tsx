@@ -7,7 +7,7 @@ import { hex } from 'color-convert';
 
 const PreviewContainer = styled.div(
   ({ accentColor }: { accentColor: string }) => [
-    [tw`flex flex-col px-10 overflow-y-auto`],
+    [tw`flex flex-col px-10 overflow-y-auto select-text`],
     css`
       padding-top: var(--aa-spacing-half);
       padding-bottom: var(--aa-spacing-half);
@@ -29,15 +29,9 @@ export const PreviewProjectImage = styled.div(
   `
 );
 
-export const PreviewProject = styled.a(() => [
-  tw`box-border flex items-center justify-center w-full my-1 outline-none no-underline! mb-4`,
-  tw`dark:hocus:bg-gray-700 hocus:bg-gray-100`,
+export const PreviewProject = styled.div(() => [
+  tw`box-border flex select-none items-center justify-center w-full my-1 outline-none no-underline! mb-4`,
   css`
-    &:hover {
-      h4 {
-        ${tw`text-black dark:text-white`}
-      }
-    }
     span {
       ${tw`flex flex-col justify-center`}
       h4 {
@@ -107,7 +101,7 @@ export const SidePreview = ({
     item && (
       <PreviewContainer accentColor={accentColor}>
         {project && (
-          <PreviewProject href={project.href} target="_blank" rel="noreferrer">
+          <PreviewProject>
             <PreviewProjectImage>
               <img src={project.logo} alt={`${project.children} logo`} />
             </PreviewProjectImage>
