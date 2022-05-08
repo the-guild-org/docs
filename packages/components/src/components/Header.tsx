@@ -69,7 +69,7 @@ export const Header: React.FC<IHeaderProps> = ({
     }
     const rootURL = 'https://the-guild.dev';
     return {
-      rel: 'noopener noreferrer',
+      rel: 'noreferrer',
       target: '_blank',
       href: `${rootURL}${href}`,
     };
@@ -108,7 +108,7 @@ export const Header: React.FC<IHeaderProps> = ({
   const onLinkClick = restProps.linkProps?.onClick;
 
   return (
-    <NavigationMenuRoot>
+    <NavigationMenuRoot asChild>
       <Wrapper {...restProps.wrapperProps}>
         <Container {...restProps.containerProps}>
           <Side>
@@ -168,7 +168,7 @@ export const Header: React.FC<IHeaderProps> = ({
                   </NavigationMenuItem>
                 ) : (
                   <NavigationMenuItem key={link.label}>
-                    <NavigationMenuLink>
+                    <NavigationMenuLink asChild>
                       <Link
                         title={link.title}
                         accentColor={accentColor}
@@ -198,13 +198,13 @@ export const Header: React.FC<IHeaderProps> = ({
                 {themeSwitch && setDarkTheme && (
                   <Icon
                     iconType="theme"
-                    onClick={() => setDarkTheme((state: boolean) => !state)}
+                    onClick={() => setDarkTheme((state) => !state)}
                     {...restProps.themeButtonProps}
                   >
                     <img
                       src={icons.themeToggle}
-                      height={16}
-                      width={16}
+                      height="16"
+                      width="16"
                       alt="Theme toggle icon"
                     />
                   </Icon>

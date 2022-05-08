@@ -1,3 +1,6 @@
+const path = require('node:path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
 module.exports = {
   stories: [
     '../packages/*/src/**/*.stories.mdx',
@@ -6,7 +9,6 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-postcss',
     {
       name: '@storybook/addon-postcss',
       options: {
@@ -17,19 +19,23 @@ module.exports = {
     },
   ],
   typescript: {
-    reactDocgen: 'none',
+    reactDocgen: false,
   },
-  babel(options) {
-    const { plugins = [] } = options;
+  env(config) {
     return {
-      ...options,
-      plugins: [
-        ...plugins,
-        [
-          require.resolve('@babel/plugin-proposal-private-property-in-object'),
-          { loose: true },
-        ],
-      ],
+      ...config,
+      NEXT_PUBLIC_ALGOLIA_APP_ID: 'ANRJKXZTRW',
+      NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY: 'a5522203ca95675199cc21edf09e6d75',
+      NEXT_PUBLIC_ALGOLIA_INDEX_NAME: 'searchv2_main',
     };
+  },
+  async webpackFinal(config) {
+    config.resolve.plugins.push(
+      new TsconfigPathsPlugin({
+        configFile: path.join(process.cwd(), 'tsconfig.json'),
+      })
+    );
+
+    return config;
   },
 };

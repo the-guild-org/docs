@@ -171,7 +171,7 @@ const StateResults: React.FC<StateResultsProvided<ResultDoc>> = ({
   if (searchState && searchResults && !searchResults.nbHits) {
     content = searchResults.query.length ? (
       <span>
-        No results for <strong>&quot;{searchState.query}&quot;</strong>.
+        No results for <strong>"{searchState.query}"</strong>.
       </span>
     ) : null;
   }
@@ -317,11 +317,14 @@ export const SearchBarComponent: React.FC<ISearchBarProps> = ({
   const [modalOpen, setModalOpen] = useState(false);
   const icons = useIcons();
 
-  const handleModal = (state: boolean) => {
-    toggleLockBodyScroll(state);
-    setModalOpen(state);
-    onHandleModal && onHandleModal(state);
-  };
+  const handleModal = useCallback(
+    (state: boolean) => {
+      toggleLockBodyScroll(state);
+      setModalOpen(state);
+      onHandleModal?.(state);
+    },
+    [onHandleModal]
+  );
 
   const CustomSearchBox = connectSearchBox(SearchBox);
   const CustomStateResults = connectStateResults(StateResults);

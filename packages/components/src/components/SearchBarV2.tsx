@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-explicit-any */
 import { ISearchBarProps } from '../types/components';
 import {
   autocomplete,
@@ -7,14 +6,8 @@ import {
 } from '@algolia/autocomplete-js';
 // @ts-expect-error typings
 import { render } from 'react-dom';
-import React, {
-  createElement,
-  Fragment,
-  useCallback,
-  useEffect,
-  useRef,
-} from 'react';
-import algoliasearch from 'algoliasearch/lite';
+import React, { createElement, Fragment, useEffect, useRef } from 'react';
+import algoliaSearch from 'algoliasearch/lite';
 import { createAlgoliaInsightsPlugin } from '@algolia/autocomplete-plugin-algolia-insights';
 import insightsClient from 'search-insights';
 import tinykeys from 'tinykeys';
@@ -40,21 +33,21 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
 
   useEffect(() => {
     if (!containerRef.current) {
-      return undefined;
+      return;
     }
 
-    const appId = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID!;
-    const searchApiKey = process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY!;
-    const indexName = process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME!;
+    const appId = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
+    const searchApiKey = process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY;
+    const indexName = process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME;
 
     if (!appId || !searchApiKey || !indexName) {
-      console.warn('Algolia environments variables missing');
+      console.error('Algolia environments variables missing');
       return;
     }
 
     insightsClient('init', { appId, apiKey: searchApiKey });
 
-    const searchClient = algoliasearch(appId, searchApiKey);
+    const searchClient = algoliaSearch(appId, searchApiKey);
     const algoliaInsightsPlugin = createAlgoliaInsightsPlugin({
       insightsClient,
     });
@@ -72,33 +65,29 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
         } else {
           render(
             <Fragment>
-              <NoResultsContainer>
-                No results for {`"${query}"`}
-              </NoResultsContainer>
+              <NoResultsContainer>No results for "{query}"</NoResultsContainer>
             </Fragment>,
             root
           );
         }
       },
       render({ children, state, Fragment, components }, root) {
-        const { preview } = state.context;
-
         render(
           <Fragment>
             <Container>
               <ResultsContainer>{children}</ResultsContainer>
               <SidePreview
                 accentColor={accentColor}
-                item={preview}
+                item={state.context.preview}
                 components={components}
               />
             </Container>
             <SearchBy
-              href={`https://www.algolia.com/`}
+              href="https://algolia.com"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noreferrer"
             >
-              <span>Search by &nbsp;</span>
+              Search by&nbsp;
               <AlgoliaLogo />
             </SearchBy>
           </Fragment>,
@@ -106,37 +95,33 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
         );
       },
       openOnFocus: true,
-      getSources: ({ query }) => {
+      getSources({ query }) {
         if (!query) {
           return [];
-        } else {
-          return debounced([
-            {
-              sourceId: 'algoliaIndex',
-              getItems() {
-                return getAlgoliaResults({
-                  searchClient,
-                  queries: [
-                    {
-                      indexName,
-                      query,
-                      params: {
-                        hitsPerPage: 20,
-                      },
-                    },
-                  ],
-                });
-              },
-              onActive({ item, setContext }) {
-                setContext({ preview: item });
-              },
-              getItemUrl({ item }) {
-                return item.url;
-              },
-              templates,
-            },
-          ]);
         }
+        return debounced([
+          {
+            sourceId: 'algoliaIndex',
+            getItems: () =>
+              getAlgoliaResults({
+                searchClient,
+                queries: [
+                  {
+                    indexName,
+                    query,
+                    params: {
+                      hitsPerPage: 20,
+                    },
+                  },
+                ],
+              }),
+            onActive({ item, setContext }) {
+              setContext({ preview: item });
+            },
+            getItemUrl: ({ item }) => item.url,
+            templates,
+          },
+        ]);
       },
       reshape({ sourcesBySourceId, sources }) {
         if (sources.length === 0) {
@@ -152,19 +137,20 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
           .sort((a) => (a.domain.startsWith(window.location.origin) ? 1 : -1))
           .map((item) => item.source);
 
-        const sourcesPerSite: Record<string, any> = itemsSources.reduce(
-          (acc, source) => {
-            if (!acc[source]) {
-              acc[source] = {
+        const sourcesPerSite = itemsSources.reduce<Record<string, any>>(
+          (acc, sourceId) => {
+            if (!acc[sourceId]) {
+              acc[sourceId] = {
                 ...algoliaIndex,
-                sourceId: source,
-                getItems: () => items.filter((item) => item.source === source),
+                sourceId,
+                getItems: () =>
+                  items.filter((item) => item.source === sourceId),
                 templates,
               };
             }
             return acc;
           },
-          {} as Record<string, any>
+          {}
         );
 
         return Object.values({ ...sourcesPerSite, ...restSources });
@@ -175,23 +161,25 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
     return () => {
       s.destroy();
     };
-  }, []);
-
-  const onKeyTrigger = useCallback(() => {
-    if (search.current) {
-      search.current.setIsOpen(true);
-    }
-  }, [search]);
+  }, [accentColor, placeholder]);
 
   // listen for CTRL+K
   useEffect(() => {
+    const onKeyTrigger = () => {
+      if (search.current) {
+        const isOpen = !document.querySelector('.aa-DetachedOverlay');
+        search.current.setIsOpen(isOpen);
+      }
+    };
+
     const unsubscribe = tinykeys(window, {
       '$mod+K': onKeyTrigger,
     });
+
     return () => {
       unsubscribe();
     };
-  }, [onKeyTrigger]);
+  }, [search]);
 
   return <div ref={containerRef} />;
 };

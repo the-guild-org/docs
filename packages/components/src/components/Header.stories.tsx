@@ -29,18 +29,17 @@ export default {
         'Use this to add a theme switch button (only use on sites with existing theme support).',
     },
   },
-  parameters: {
-    backgrounds: {
-      default: 'light',
-    },
-  },
 } as Meta;
 
 const Template: Story<IHeaderProps> = (args) => <Header {...args} />;
 
 export const Default = Template.bind({});
+
 Default.args = {
   accentColor: '#03a6a6',
   activeLink: '/open-source',
   themeSwitch: true,
+  searchBarProps: {
+    version: 'v2',
+  },
 };
