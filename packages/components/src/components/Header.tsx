@@ -22,6 +22,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuListWrapper,
   NavigationMenuRoot,
   NavigationMenuTrigger,
   NavigationMenuViewport,
@@ -129,6 +130,7 @@ export const Header: React.FC<IHeaderProps> = ({
             <img src={logos.logoMono} height="38" alt="The Guild Monogram" />
           </Logo>
 
+        <NavigationMenuListWrapper>
           <NavigationMenuList>
             <Navigation
               isModalOpen={mobileNavOpen}
@@ -212,6 +214,7 @@ export const Header: React.FC<IHeaderProps> = ({
               </Controls>
             </Navigation>
           </NavigationMenuList>
+          </NavigationMenuListWrapper>
           <NavigationMenuIndicator />
           <ViewportPosition>
             <NavigationMenuViewport />
