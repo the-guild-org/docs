@@ -13,6 +13,9 @@ import {
 // 2. Remove `includeFonts` from `<GlobalStyles />`
 // import '../public/styles.css';
 
+import '@algolia/autocomplete-theme-classic';
+import '../../../packages/components/src/static/css/SearchBarV2.css';
+
 export default function App({
   router,
   pageProps,
@@ -22,7 +25,12 @@ export default function App({
     <>
       <GlobalStyles includeBase includeFonts />
       <ThemeProvider>
-        <Header accentColor="#1cc8ee" activeLink="" themeSwitch />
+        <Header
+          accentColor="#1cc8ee"
+          activeLink=""
+          themeSwitch
+          searchBarProps={{ version: 'v2' }}
+        />
         <Subheader
           product={{
             title: 'Components',

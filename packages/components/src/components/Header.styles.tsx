@@ -17,7 +17,7 @@ export const Wrapper = styled.header(() => [
 ]);
 
 export const Container = styled.div(() => [
-  tw`container-max flex justify-between`,
+  tw`container-max flex justify-between items-center`,
 ]);
 
 export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
@@ -26,7 +26,7 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
   tw`md:(static flex-row justify-end items-center transition-none)`,
   tw`dark:bg-gray-900 bg-white`,
   css`
-    @media screen and (max-width: 768px) {
+    @media (max-width: 768px) {
       ${[
         tw`inset-0`,
         css`
@@ -42,14 +42,22 @@ export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [
   `,
 ]);
 
-export const Controls = styled.menu(() => [
-  tw`flex justify-center m-0 p-0 md:ml-2.5`,
-  css`
-    button:first-of-type:not(:only-child) {
-      ${tw`hidden md:flex`}
-    }
-  `,
-]);
+export const Controls = styled.menu(
+  ({ searchVersion }: { searchVersion: string }) => [
+    tw`flex justify-center m-0 p-0 md:ml-2.5`,
+    searchVersion === 'v1'
+      ? css`
+          button:first-of-type:not(:only-child) {
+            ${tw`hidden md:flex`}
+          }
+        `
+      : css`
+          div:first-of-type:not(:only-child) {
+            ${tw`hidden md:flex`}
+          }
+        `,
+  ]
+);
 
 export const Logo = styled.a(() => [
   css`
@@ -100,7 +108,4 @@ export const Icon = styled.button(({ iconType }: IStyleProps) => [
 
 export const Side = styled.div(() => [
   tw`flex first-of-type:justify-start last:justify-end md:hidden`,
-  css`
-    min-width: 3.25rem;
-  `,
 ]);

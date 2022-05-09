@@ -43,7 +43,7 @@ export const MarketplaceSearch: FC<IMarketplaceSearchProps> = ({
     const subStrings = placeholder.split('{query}');
     return (
       <>
-        {subStrings[0]} <strong>&quot;{query}&quot;</strong> {subStrings[1]}
+        {subStrings[0]} <strong>"{query}"</strong> {subStrings[1]}
       </>
     );
   };

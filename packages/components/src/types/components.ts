@@ -50,7 +50,7 @@ export interface IHeaderProps {
   logoProps?: React.ComponentProps<'a'>;
   navigationProps?: React.ComponentProps<'nav'>;
   linkProps?: React.ComponentProps<'a'>;
-  searchBarProps?: React.ComponentProps<'button'>;
+  searchBarProps?: Partial<ISearchBarProps>;
   themeButtonProps?: React.ComponentProps<'button'>;
   navOpenButtonProps?: React.ComponentProps<'button'>;
   navCloseButtonProps?: React.ComponentProps<'button'>;
@@ -141,6 +141,7 @@ export interface IModalProps extends IModalRestProps {
 }
 
 export interface ISearchBarProps {
+  version?: 'v1' | 'v2';
   accentColor: string;
   title: string;
   placeholder: string;

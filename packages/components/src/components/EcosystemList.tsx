@@ -66,10 +66,6 @@ export const EcosystemList: React.FC = () => {
               >
                 <ProductImage>
                   <img src={product.logo} alt={`${product.children} logo`} />
-                  <img
-                    src={product.logo}
-                    alt={`${product.children} blurred logo`}
-                  />
                 </ProductImage>
                 <span>
                   <h4>{product.children}</h4>

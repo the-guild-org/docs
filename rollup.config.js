@@ -54,6 +54,10 @@ function bundle(packageDir) {
             src: `./dist/${packageDir}/src/*`,
             dest: `./${packageDir}/dist`,
           },
+          {
+            src: join(__dirname, packageDir, 'src/static/*'),
+            dest: `./${packageDir}/dist/static`,
+          },
         ],
       }),
       bundleSize(),

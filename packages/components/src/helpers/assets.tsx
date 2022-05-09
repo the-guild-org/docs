@@ -22,6 +22,7 @@ import arrowUpRightIconDark from '../static/icons/arrow-up-right-dark.svg';
 import arrowUpRightIconLight from '../static/icons/arrow-up-right-light.svg';
 import shareDark from '../static/icons/share-dark.svg';
 import moreVerticalDark from '../static/icons/more-vertical-dark.svg';
+import type { AlgoliaRecordSource } from '@guild-docs/algolia';
 
 const CDN = 'https://the-guild.dev/static/shared-logos/';
 
@@ -39,7 +40,7 @@ export const headerThemedIcons = (isDark: boolean) => ({
 });
 
 export const PRODUCTS: {
-  children: string;
+  children: AlgoliaRecordSource;
   title: string;
   href: `https://${string}`;
   logo: `${string}.svg`;

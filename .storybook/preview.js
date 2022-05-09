@@ -1,5 +1,8 @@
-import { ThemeProvider } from '../packages/components/src/helpers/theme';
-import { GlobalStyles } from '../packages/components/src/helpers/styles';
+import { ThemeProvider } from '@theguild/components/src/helpers/theme';
+import { GlobalStyles } from '@theguild/components/src/helpers/styles';
+
+import '@algolia/autocomplete-theme-classic';
+import '@theguild/components/src/static/css/SearchBarV2.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -14,7 +17,7 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <ThemeProvider>
-      <GlobalStyles includeFonts includeBase/>
+      <GlobalStyles includeFonts includeBase />
       <Story />
     </ThemeProvider>
   ),

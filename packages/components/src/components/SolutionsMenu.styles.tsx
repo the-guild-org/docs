@@ -34,8 +34,7 @@ export const Item = styled.a(() => [
 ]);
 
 export const Callout = styled.div(() => [
-  tw`mt-10 p-2`,
-  tw`mt-10 p-2 flex justify-end`,
+  tw`p-2 flex justify-end`,
   css`
     a {
       ${tw`font-medium text-xs dark:text-white text-black`}
