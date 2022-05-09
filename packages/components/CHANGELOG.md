@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.11.3
+
+### Patch Changes
+
+- 345101c: feat(search): search v2 with `@algolia/autocomplete-js`
+
 ## 1.11.2
 
 ### Patch Changes

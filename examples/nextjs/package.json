@@ -1,6 +1,6 @@
 {
   "name": "nextjs-example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@theguild/components": "^1.7.0",
+    "@theguild/components": "^1.11.3",
     "next": "^12.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
