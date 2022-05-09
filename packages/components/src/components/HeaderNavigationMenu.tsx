@@ -39,7 +39,7 @@ const StyledTrigger = ({
   );
 };
 
-const StyledIndicator = styled(Indicator)(tw`flex justify-center h-2.5`);
+const StyledIndicator = styled(Indicator)(tw`flex justify-center h-2.5 z-10`);
 
 const StyledArrow = tw.div`dark:bg-gray-800 bg-white relative w-3 h-3 top-2/3 rotate-45`;
 
@@ -69,4 +69,4 @@ export const NavigationMenuLink = Link;
 export const NavigationMenuContent = Content;
 export const NavigationMenuViewport = StyledViewport;
 export const NavigationMenuIndicator = StyledIndicatorWithArrow;
-export const ViewportPosition = tw.div`absolute top-full w-full flex justify-center`;
+export const ViewportPosition = tw.div`absolute top-full left-0 w-full flex justify-center`;
