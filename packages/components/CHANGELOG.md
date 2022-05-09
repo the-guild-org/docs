@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.11.4
+
+### Patch Changes
+
+- dfd880a: fix(components/search): search v2 results sorting
+
 ## 1.11.3
 
 ### Patch Changes
