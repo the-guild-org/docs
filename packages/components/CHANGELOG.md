@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.11.6
+
+### Patch Changes
+
+- bdcaad9: fix: nav menu arrow on light mode, position on wide screens
+
 ## 1.11.5
 
 ### Patch Changes
