@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.11.5
+
+### Patch Changes
+
+- 54bae6b: Fixes v1.11.4
+
 ## 1.11.4
 
 ### Patch Changes
