@@ -134,7 +134,7 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
         const itemsSources = items
           .slice()
           // put current website's section on top
-          .sort((a) => (a.domain.startsWith(window.location.origin) ? 1 : -1))
+          .sort((a) => (a.domain.startsWith(window.location.origin) ? -1 : 0))
           .map((item) => item.source);
 
         const sourcesPerSite = itemsSources.reduce<Record<string, any>>(
