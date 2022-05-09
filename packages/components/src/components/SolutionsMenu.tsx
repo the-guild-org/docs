@@ -35,7 +35,7 @@ const categories: {
         url: 'https://the-guild.dev/blog/graphql-over-websockets',
       },
       {
-        title: 'GraphQL over SEE',
+        title: 'GraphQL over SSE',
         url: 'https://the-guild.dev/blog/graphql-over-sse',
       },
       {
