@@ -1,5 +1,12 @@
 # @theguild/components
 
+## 1.11.7
+
+### Patch Changes
+
+- 5764d2c: fix: opened subheader menu covered by header
+- 29f2e62: fix the position of the guild header logo
+
 ## 1.11.6
 
 ### Patch Changes
