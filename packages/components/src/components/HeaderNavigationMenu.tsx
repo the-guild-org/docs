@@ -62,6 +62,13 @@ const StyledViewport = styled(Viewport)([
 
 // Exports
 export const NavigationMenuRoot = StyledMenu;
+export const NavigationMenuContainer = styled.div([
+  {
+    "@media (max-width: 767px)": {
+      position: 'absolute'
+    }
+  }
+])
 export const NavigationMenuList = List;
 export const NavigationMenuItem = Item;
 export const NavigationMenuTrigger = StyledTrigger;
