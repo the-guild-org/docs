@@ -17,6 +17,7 @@ import { useThemeContext } from '../helpers/theme';
 import { headerThemedIcons, logoThemedIcons } from '../helpers/assets';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import {
+  NavigationMenuContainer,
   NavigationMenuContent,
   NavigationMenuIndicator,
   NavigationMenuItem,
@@ -129,89 +130,91 @@ export const Header: React.FC<IHeaderProps> = ({
             <img src={logos.logoMono} height="38" alt="The Guild Monogram" />
           </Logo>
 
-          <NavigationMenuList>
-            <Navigation
-              isModalOpen={mobileNavOpen}
-              {...restProps.navigationProps}
-            >
-              <Icon
-                iconType="close"
-                onClick={() => handleNav(false)}
-                {...restProps.navCloseButtonProps}
+          <NavigationMenuContainer>
+            <NavigationMenuList>
+              <Navigation
+                isModalOpen={mobileNavOpen}
+                {...restProps.navigationProps}
               >
-                <img
-                  src={icons.close}
-                  height="22"
-                  width="22"
-                  alt="Menu close icon"
-                />
-              </Icon>
+                <Icon
+                  iconType="close"
+                  onClick={() => handleNav(false)}
+                  {...restProps.navCloseButtonProps}
+                >
+                  <img
+                    src={icons.close}
+                    height="22"
+                    width="22"
+                    alt="Menu close icon"
+                  />
+                </Icon>
 
-              {links.map((link) =>
-                link.menu && shouldUseMenus ? (
-                  <NavigationMenuItem key={link.label} value={link.label}>
-                    <NavigationMenuTrigger accentColor={accentColor}>
-                      <Link
-                        title={link.title}
-                        accentColor={accentColor}
-                        isActiveLink={activeLink?.includes(link.href)}
-                        {...restProps.linkProps}
-                        {...renderLinkOptions(
-                          link.href,
-                          link.onClick || onLinkClick
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>{link.menu}</NavigationMenuContent>
-                  </NavigationMenuItem>
-                ) : (
-                  <NavigationMenuItem key={link.label}>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        title={link.title}
-                        accentColor={accentColor}
-                        isActiveLink={activeLink?.includes(link.href)}
-                        {...restProps.linkProps}
-                        {...renderLinkOptions(
-                          link.href,
-                          link.onClick || onLinkClick
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                )
-              )}
-
-              <Controls
-                searchVersion={restProps.searchBarProps?.version || 'v1'}
-              >
-                <SearchBar
-                  accentColor={accentColor}
-                  title="Search docs"
-                  placeholder="Search..."
-                  {...restProps.searchBarProps}
-                />
-                {themeSwitch && setDarkTheme && (
-                  <Icon
-                    iconType="theme"
-                    onClick={() => setDarkTheme((state) => !state)}
-                    {...restProps.themeButtonProps}
-                  >
-                    <img
-                      src={icons.themeToggle}
-                      height="16"
-                      width="16"
-                      alt="Theme toggle icon"
-                    />
-                  </Icon>
+                {links.map((link) =>
+                  link.menu && shouldUseMenus ? (
+                    <NavigationMenuItem key={link.label} value={link.label}>
+                      <NavigationMenuTrigger accentColor={accentColor}>
+                        <Link
+                          title={link.title}
+                          accentColor={accentColor}
+                          isActiveLink={activeLink?.includes(link.href)}
+                          {...restProps.linkProps}
+                          {...renderLinkOptions(
+                            link.href,
+                            link.onClick || onLinkClick
+                          )}
+                        >
+                          {link.label}
+                        </Link>
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>{link.menu}</NavigationMenuContent>
+                    </NavigationMenuItem>
+                  ) : (
+                    <NavigationMenuItem key={link.label}>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          title={link.title}
+                          accentColor={accentColor}
+                          isActiveLink={activeLink?.includes(link.href)}
+                          {...restProps.linkProps}
+                          {...renderLinkOptions(
+                            link.href,
+                            link.onClick || onLinkClick
+                          )}
+                        >
+                          {link.label}
+                        </Link>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  )
                 )}
-              </Controls>
-            </Navigation>
-          </NavigationMenuList>
+
+                <Controls
+                  searchVersion={restProps.searchBarProps?.version || 'v1'}
+                >
+                  <SearchBar
+                    accentColor={accentColor}
+                    title="Search docs"
+                    placeholder="Search..."
+                    {...restProps.searchBarProps}
+                  />
+                  {themeSwitch && setDarkTheme && (
+                    <Icon
+                      iconType="theme"
+                      onClick={() => setDarkTheme((state) => !state)}
+                      {...restProps.themeButtonProps}
+                    >
+                      <img
+                        src={icons.themeToggle}
+                        height="16"
+                        width="16"
+                        alt="Theme toggle icon"
+                      />
+                    </Icon>
+                  )}
+                </Controls>
+              </Navigation>
+            </NavigationMenuList>
+          </NavigationMenuContainer>
           <NavigationMenuIndicator />
           <ViewportPosition>
             <NavigationMenuViewport />
