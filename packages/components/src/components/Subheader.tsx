@@ -62,7 +62,7 @@ export const Subheader: React.FC<ISubheaderProps> = ({
   );
 
   return (
-    <Wrapper {...restProps.wrapperProps}>
+    <Wrapper {...restProps.wrapperProps} isModalOpen={mobileNavOpen}>
       <Container {...restProps.containerProps}>
         <Logo
           href="/"

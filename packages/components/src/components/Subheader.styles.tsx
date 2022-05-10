@@ -7,10 +7,11 @@ interface IStyleProps {
   iconType?: 'open' | 'close';
 }
 
-export const Wrapper = styled.header(() => [
-  tw`sticky top-0 z-10 py-5 bg-white dark:bg-gray-900 font-default`,
+export const Wrapper = styled.header<{ isModalOpen: boolean }>(({ isModalOpen }) => [
+  !isModalOpen && tw`sticky top-0 z-10`,
+  tw`py-5 bg-white dark:bg-gray-900 font-default`,
   css`
-    box-shadow: 0px 16px 20px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.04);
     button:focus:not(:focus-visible) {
       ${tw`outline-none!`}
     }
