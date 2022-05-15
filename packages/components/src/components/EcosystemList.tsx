@@ -45,7 +45,7 @@ const productCategories = [
   {
     title: 'Build great user experience',
     items: PRODUCTS.filter((p) =>
-      ['Swift', 'Angular', 'Stencil'].includes(p.children)
+      ['Swift', 'Angular', 'Stencil', 'KitQL'].includes(p.children)
     ),
   },
 ];
