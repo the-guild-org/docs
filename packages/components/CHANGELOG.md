@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 1.11.8
+
+### Patch Changes
+
+- ce6e64e: adding kitql in the list of ecosystem
+
 ## 1.11.7
 
 ### Patch Changes
