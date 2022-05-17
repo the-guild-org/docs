@@ -165,7 +165,7 @@ export const PRODUCTS: {
   },
   {
     children: 'KitQL',
-    title: 'A set of tools, helping you building efficient apps in a fast way. >> SvelteKit & GraphQL <<',
+    title: 'A set of tools, helping you building efficient apps in a fast way.',
     href: 'https://www.kitql.dev/',
     logo: `${CDN}products/kitql.svg`,
   },
