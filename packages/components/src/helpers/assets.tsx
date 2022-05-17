@@ -163,6 +163,12 @@ export const PRODUCTS: {
     href: 'https://github.com/Urigo/WhatsApp-Clone-Tutorial',
     logo: `${CDN}products/whatsapp.svg`,
   },
+  {
+    children: 'KitQL',
+    title: 'A set of tools, helping you building efficient apps in a fast way.',
+    href: 'https://www.kitql.dev/',
+    logo: `${CDN}products/kitql.svg`,
+  },
 ];
 
 export const logoThemedIcons = (isDark = false) => ({

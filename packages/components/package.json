@@ -36,7 +36,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@guild-docs/algolia": "0.0.2-alpha-b736bdc.0",
+    "@guild-docs/algolia": "0.0.5",
     "@types/dedent": "0.7.0",
     "dedent": "0.7.0"
   }
