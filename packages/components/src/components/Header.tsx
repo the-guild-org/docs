@@ -36,6 +36,7 @@ export const Header: React.FC<IHeaderProps> = ({
   activeLink,
   themeSwitch,
   transformLinks = (links) => links,
+  disableSearch = true,
   ...restProps
 }) => {
   const { isDarkTheme, setDarkTheme } = useThemeContext();
@@ -188,30 +189,32 @@ export const Header: React.FC<IHeaderProps> = ({
                   )
                 )}
 
-                <Controls
-                  searchVersion={restProps.searchBarProps?.version || 'v1'}
-                >
-                  <SearchBar
-                    accentColor={accentColor}
-                    title="Search docs"
-                    placeholder="Search..."
-                    {...restProps.searchBarProps}
-                  />
-                  {themeSwitch && setDarkTheme && (
-                    <Icon
-                      iconType="theme"
-                      onClick={() => setDarkTheme((state) => !state)}
-                      {...restProps.themeButtonProps}
-                    >
-                      <img
-                        src={icons.themeToggle}
-                        height="16"
-                        width="16"
-                        alt="Theme toggle icon"
-                      />
-                    </Icon>
-                  )}
-                </Controls>
+                {!disableSearch && (
+                  <Controls
+                    searchVersion={restProps.searchBarProps?.version || 'v1'}
+                  >
+                    <SearchBar
+                      accentColor={accentColor}
+                      title="Search docs"
+                      placeholder="Search..."
+                      {...restProps.searchBarProps}
+                    />
+                    {themeSwitch && setDarkTheme && (
+                      <Icon
+                        iconType="theme"
+                        onClick={() => setDarkTheme((state) => !state)}
+                        {...restProps.themeButtonProps}
+                      >
+                        <img
+                          src={icons.themeToggle}
+                          height="16"
+                          width="16"
+                          alt="Theme toggle icon"
+                        />
+                      </Icon>
+                    )}
+                  </Controls>
+                )}
               </Navigation>
             </NavigationMenuList>
           </NavigationMenuContainer>
@@ -221,12 +224,14 @@ export const Header: React.FC<IHeaderProps> = ({
           </ViewportPosition>
 
           <Side>
-            <SearchBar
-              accentColor={accentColor}
-              title="Search docs"
-              placeholder="Search..."
-              {...restProps.searchBarProps}
-            />
+            {!disableSearch && (
+              <SearchBar
+                accentColor={accentColor}
+                title="Search docs"
+                placeholder="Search..."
+                {...restProps.searchBarProps}
+              />
+            )}
           </Side>
         </Container>
       </Wrapper>

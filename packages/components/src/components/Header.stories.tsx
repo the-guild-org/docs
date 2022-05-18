@@ -39,6 +39,7 @@ Default.args = {
   accentColor: '#03a6a6',
   activeLink: '/open-source',
   themeSwitch: true,
+  disableSearch: false,
   searchBarProps: {
     version: 'v2',
   },
