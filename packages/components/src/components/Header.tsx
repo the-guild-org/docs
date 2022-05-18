@@ -36,7 +36,7 @@ export const Header: React.FC<IHeaderProps> = ({
   activeLink,
   themeSwitch,
   transformLinks = (links) => links,
-  disableSearch = true,
+  disableSearch = false,
   ...restProps
 }) => {
   const { isDarkTheme, setDarkTheme } = useThemeContext();
