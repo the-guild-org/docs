@@ -142,6 +142,11 @@ export interface IModalProps extends IModalRestProps {
 
 export interface ISearchBarProps {
   version?: 'v1' | 'v2';
+  algolia?: {
+    appId: string;
+    searchApiKey: string;
+    indexName: string;
+  };
   accentColor: string;
   title: string;
   placeholder: string;
