@@ -51,6 +51,7 @@ export interface IHeaderProps {
   navigationProps?: React.ComponentProps<'nav'>;
   linkProps?: React.ComponentProps<'a'>;
   searchBarProps?: Partial<ISearchBarProps>;
+  disableSearch?: boolean;
   themeButtonProps?: React.ComponentProps<'button'>;
   navOpenButtonProps?: React.ComponentProps<'button'>;
   navCloseButtonProps?: React.ComponentProps<'button'>;
