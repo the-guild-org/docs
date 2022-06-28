@@ -1,7 +1,6 @@
-import React from 'react';
-import { Callout, Category, Container, Item, List } from './SolutionsMenu.styles';
+import { ReactElement } from 'react';
 
-const categories: {
+const CATEGORIES: {
   title: string;
   items: { title: string; url: `https://${string}` }[];
 }[] = [
@@ -65,28 +64,56 @@ const categories: {
   },
 ];
 
-export const SolutionsMenu: React.FC = () => {
+export const SolutionsMenu = (): ReactElement => {
   return (
-    <Container>
-      {categories.map((category, index) => (
-        <Category key={index}>
-          <h3>{category.title}</h3>
-          <List>
+    <div
+      className="w-[600px] rounded-md bg-white p-5 dark:bg-gray-800"
+      style={{
+        boxShadow: 'hsl(206 22% 7% / 35%) 0 10px 38px -10px, hsl(206 22% 7% / 20%) 0 10px 20px -15px',
+      }}
+    >
+      {CATEGORIES.map(category => (
+        <div key={category.title} className="mb-6 last:mb-0">
+          <h3 className="mt-1 mb-5 w-full text-base font-normal text-black dark:text-gray-400">{category.title}</h3>
+          <div className="flex flex-wrap">
             {category.items.map(item => (
-              <Item key={item.title} href={item.url} target="_blank" rel="noreferrer">
-                <span>
-                  <h4>{item.title}</h4>
-                </span>
-              </Item>
+              <a
+                key={item.title}
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  flex
+                  w-full
+                  items-center
+                  gap-3
+                  rounded-lg
+                  p-2
+                  !no-underline
+                  opacity-60
+                  outline-none
+                  hover:bg-gray-100
+                  hover:opacity-100
+                  dark:hover:bg-gray-700
+                  md:w-1/2
+                "
+              >
+                <h4 className="m-0 text-xs text-black dark:text-gray-300">{item.title}</h4>
+              </a>
             ))}
-          </List>
-        </Category>
+          </div>
+        </div>
       ))}
-      <Callout>
-        <a href="https://graphql-yoga.com/tutorial/basic/00-introduction" target="_blank" rel="noreferrer">
+      <div className="text-right">
+        <a
+          href="https://graphql-yoga.com/tutorial/basic/00-introduction"
+          target="_blank"
+          rel="noreferrer"
+          className="text-xs text-black dark:text-white"
+        >
           Write your first GraphQL API →
         </a>
-      </Callout>
-    </Container>
+      </div>
+    </div>
   );
 };
