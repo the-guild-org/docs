@@ -54,7 +54,7 @@ export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({ title, description,
         <Cube src={CubeBR} className="-right-20 -bottom-32 hidden md:block" />
         <Cube src={CubeBL} className="-bottom-40 left-10 hidden md:block" />
       </div>
-      <div className="mt-16 mb-28 flex flex-wrap items-center pt-20 pb-1 container-min md:mt-7 md:mb-20 md:flex-nowrap md:pt-0">
+      <div className="mt-16 mb-28 flex flex-wrap items-center pt-20 pb-1 container md:mt-7 md:mb-20 md:flex-nowrap md:pt-0">
         <picture
           className="
             z-1

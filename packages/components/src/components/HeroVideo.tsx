@@ -11,7 +11,7 @@ export const HeroVideo: FC<IHeroVideoProps> = ({ title, description, link, video
       flex
       flex-wrap
       py-8
-      container-min
+      container
       md:flex-nowrap
       md:items-center
       md:justify-center

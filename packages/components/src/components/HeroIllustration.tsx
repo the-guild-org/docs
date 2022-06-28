@@ -19,7 +19,7 @@ export const HeroIllustration: FC<IHeroIllustrationProps> = ({
       items-center
       justify-center
       py-8
-      container-min
+      container
       md:flex-nowrap
       md:justify-between
     `,

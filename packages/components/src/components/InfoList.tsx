@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import { ReactElement } from 'react';
 import { IInfoListProps } from '../types/components';
 
-export const InfoList: FC<IInfoListProps> = ({ title, items, ...restProps }) => (
+export const InfoList = ({ title, items, ...restProps }: IInfoListProps): ReactElement => (
   <section className="bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
-    <div className="py-12 container-min" {...restProps.containerProps}>
+    <div className="py-12 container" {...restProps.containerProps}>
       {title && (
         <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl" {...restProps.titleProps}>
           {title}
