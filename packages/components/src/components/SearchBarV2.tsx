@@ -1,6 +1,5 @@
 import { ISearchBarProps } from '../types/components';
 import { autocomplete, AutocompleteApi, getAlgoliaResults } from '@algolia/autocomplete-js';
-// @ts-expect-error typings
 import { render } from 'react-dom';
 import React, { createElement, Fragment, useEffect, useRef } from 'react';
 import algoliaSearch from 'algoliasearch/lite';
@@ -18,6 +17,7 @@ import { AlgoliaLogo } from './SearchbarV2/AlgoliaLogo';
 export const SearchBarV2: React.FC<ISearchBarProps> = ({
   accentColor,
   placeholder = 'Search our documentations',
+  className,
   algolia,
 }) => {
   const containerRef = useRef(null);
@@ -162,5 +162,5 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
     };
   }, [search]);
 
-  return <div ref={containerRef} />;
+  return <div ref={containerRef} className={className} />;
 };
