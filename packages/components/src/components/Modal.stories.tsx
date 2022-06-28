@@ -1,5 +1,5 @@
-import type { Story, Meta } from '@storybook/react/types-6-0';
-import type { IModalProps } from '../types/components';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { IModalProps } from '../types/components';
 import { dummyMarketplaceList } from '../helpers/dummy';
 import { Modal } from './Modal';
 

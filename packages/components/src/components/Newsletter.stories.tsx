@@ -1,6 +1,6 @@
 import { FormEvent } from 'react';
-import type { Story, Meta } from '@storybook/react/types-6-0';
-import type { INewsletterProps } from '../types/components';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { INewsletterProps } from '../types/components';
 import { Newsletter } from './Newsletter';
 
 export default {

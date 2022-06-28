@@ -1,6 +1,6 @@
-import type { FormEvent } from 'react';
-import type { Story, Meta } from '@storybook/react/types-6-0';
-import type { IFooterExtendedProps } from '../types/components';
+import { FormEvent } from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { IFooterExtendedProps } from '../types/components';
 import { FooterExtended } from './FooterExtended';
 
 export default {

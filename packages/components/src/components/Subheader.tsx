@@ -1,6 +1,6 @@
 import { FC, useCallback, useState } from 'react';
 import clsx from 'clsx';
-import type { ISubheaderProps } from '../types/components';
+import { ISubheaderProps } from '../types/components';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import { CaretSlimIcon } from './Icon';
 import { Nav } from './Nav';

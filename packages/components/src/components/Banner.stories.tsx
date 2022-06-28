@@ -1,5 +1,5 @@
-import type { Story, Meta } from '@storybook/react/types-6-0';
-import type { IBannerProps } from '../types/components';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { IBannerProps } from '../types/components';
 import { Banner } from './Banner';
 
 export default {

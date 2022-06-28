@@ -1,5 +1,5 @@
-import type { Story, Meta } from '@storybook/react/types-6-0';
-import type { IInfoListProps } from '../types/components';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { IInfoListProps } from '../types/components';
 import { dummyInfoList } from '../helpers/dummy';
 import { InfoList } from './InfoList';
 

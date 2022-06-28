@@ -12,9 +12,9 @@ import MonacoEditor, {
   OnMount,
   OnChange,
 } from '@monaco-editor/react';
-import type { IDisposable } from 'monaco-editor';
+import { IDisposable } from 'monaco-editor';
 import { GraphQLError, GraphQLSchema } from 'graphql';
-import type { EnrichedLanguageService } from './EnrichedLanguageService';
+import { EnrichedLanguageService } from './EnrichedLanguageService';
 import {
   SchemaEditorApi,
   SchemaServicesOptions,

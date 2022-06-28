@@ -1,5 +1,5 @@
-import type { FC } from 'react';
-import type { IFooterProps, ILink } from '../types/components';
+import { FC } from 'react';
+import { IFooterProps, ILink } from '../types/components';
 import { GuildLogo } from './Icon';
 
 const links: ILink[] = [

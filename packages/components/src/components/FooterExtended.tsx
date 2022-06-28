@@ -1,7 +1,7 @@
 import { FC, useCallback } from 'react';
 import { Newsletter } from './Newsletter';
 import { PRODUCTS } from '../helpers/products';
-import type { IFooterExtendedProps, ILink } from '../types/components';
+import { IFooterExtendedProps, ILink } from '../types/components';
 import { GuildLogo, TheGuild } from './Icon';
 
 const COMPANY: ILink[] = [

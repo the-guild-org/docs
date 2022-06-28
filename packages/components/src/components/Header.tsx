@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import clsx from 'clsx';
 import { SearchBar } from './SearchBar';
-import type { IHeaderProps } from '../types/components';
+import { IHeaderProps } from '../types/components';
 import { useThemeContext } from '../helpers/theme';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import {

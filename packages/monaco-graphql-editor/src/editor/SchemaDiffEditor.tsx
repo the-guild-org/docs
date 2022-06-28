@@ -35,7 +35,7 @@ function BaseSchemaDiffEditor(
 
   return (
     <DiffEditor
-      height={'70vh'}
+      height="70vh"
       {...props}
       beforeMount={(monaco) => {
         originalSchemaService.setMonaco(monaco);

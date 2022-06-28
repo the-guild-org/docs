@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import type { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react/types-6-0';
 import { SchemaEditor, SchemaEditorProps } from './SchemaEditor';
 import { SchemaDiffEditor, SchemaDiffEditorProps } from './SchemaDiffEditor';
 import { debugHoverSource, showWidgetInPosition } from './utils';
@@ -95,7 +95,7 @@ export const BasicSchemaDiffEditor = SchemaDiffTemplate.bind({});
 
 BasicSchemaDiffEditor.args = {
   original: TEST_SCHEMA,
-  modified: TEST_SCHEMA + `\ntype Test { id: ID! }`,
+  modified: `${TEST_SCHEMA}\ntype Test { id: ID! }`,
 };
 
 BasicSchemaEditor.args = {

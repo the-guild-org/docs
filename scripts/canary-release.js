@@ -14,7 +14,7 @@ function getNewVersion(version, type) {
     .stdout.toString()
     .trim();
 
-  return semver.inc(version, `pre${type}`, true, 'alpha-' + gitHash);
+  return semver.inc(version, `pre${type}`, true, `alpha-${gitHash}`);
 }
 
 function getRelevantChangesets(baseBranch) {

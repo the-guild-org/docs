@@ -32,7 +32,17 @@ module.exports = {
     'no-unused-expressions': 'error',
     'react/self-closing-comp': 'error',
     'no-implicit-coercion': 'error',
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    'no-var': 'error',
+    'object-shorthand': ['error', 'always'],
+    'prefer-const': 'error',
+    'prefer-destructuring': ['error', { object: true }],
+    'prefer-template': 'error',
+    'react/jsx-boolean-value': ['error', 'never'],
+    'react/jsx-curly-brace-presence': ['error', 'never'],
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
+    '@typescript-eslint/array-type': ['error', { readonly: 'generic' }],
+    '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
   },
   settings: {
     tailwindcss: {

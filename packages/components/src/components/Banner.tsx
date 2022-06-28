@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import type { IBannerProps } from '../types/components';
+import { IBannerProps } from '../types/components';
 import clsx from 'clsx';
 
 export const Banner: FC<IBannerProps> = ({

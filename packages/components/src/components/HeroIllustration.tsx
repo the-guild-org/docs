@@ -1,5 +1,5 @@
-import type { FC } from 'react';
-import type { IHeroIllustrationProps } from '../types/components';
+import { FC } from 'react';
+import { IHeroIllustrationProps } from '../types/components';
 import clsx from 'clsx';
 
 export const HeroIllustration: FC<IHeroIllustrationProps> = ({

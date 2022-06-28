@@ -119,7 +119,7 @@ const SearchBox: FC<
 
   const onChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
-      const value = event.currentTarget.value;
+      const { value } = event.currentTarget;
 
       setQuery(value);
       debouncedRefine(value);

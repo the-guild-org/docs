@@ -1,7 +1,7 @@
-import type { FC } from 'react';
+import { FC } from 'react';
 import ReactPlayer from 'react-player/lazy';
 import clsx from 'clsx';
-import type { IHeroVideoProps } from '../types/components';
+import { IHeroVideoProps } from '../types/components';
 
 export const HeroVideo: FC<IHeroVideoProps> = ({
   title,

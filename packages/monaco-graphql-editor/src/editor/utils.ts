@@ -15,7 +15,7 @@ import type { EnrichedLanguageService } from './EnrichedLanguageService';
 export { getRange };
 
 export function removeFalsey<T>(obj: T | null): obj is T {
-  return !!obj;
+  return Boolean(obj);
 }
 
 export function locToRange(loc: Location): monaco.IRange {
@@ -134,7 +134,7 @@ export const coreHoverSource: HoverSource = {
 
 export const debugHoverSource: HoverSource = {
   forNode: ({ token }) => ({
-    value: '```json\n' + JSON.stringify(token.state, null, 2) + '\n```',
+    value: `\`\`\`json\n${  JSON.stringify(token.state, null, 2)  }\n\`\`\``,
   }),
 };
 

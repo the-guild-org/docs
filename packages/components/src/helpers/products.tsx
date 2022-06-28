@@ -1,6 +1,6 @@
 const CDN = 'https://the-guild.dev/static/shared-logos/products/';
 
-import type { AlgoliaRecordSource } from '@guild-docs/algolia';
+import { AlgoliaRecordSource } from '@guild-docs/algolia';
 
 export const PRODUCTS: {
   children: AlgoliaRecordSource;
