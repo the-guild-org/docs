@@ -1,77 +1,11 @@
 import { AutocompleteComponents } from '@algolia/autocomplete-js';
-import React, { ReactElement } from 'react';
-import tw, { styled, css } from 'twin.macro';
+import { ReactElement } from 'react';
 import { PRODUCTS } from '../../helpers/products';
 import { AlgoliaSearchItem } from '../../types/algolia';
 
-const PreviewContainer = styled.div<{ accentColor: string }>(({ accentColor }) => [
-  tw`flex flex-col px-10 overflow-y-auto select-text h-[600px]`,
-  css`
-    padding-top: var(--aa-spacing-half);
-    padding-bottom: var(--aa-spacing-half);
-
-    mark {
-      background: ${accentColor};
-    }
-  `,
-]);
-
-export const PreviewProjectImage = styled.div(
-  () => css`
-    ${tw`relative mr-3`}
-    img {
-      ${tw`max-w-[25px] align-bottom`}
-    }
-  `
-);
-
-export const PreviewProject = styled.div(() => [
-  tw`box-border flex select-none items-center justify-center w-full my-1 outline-none no-underline! mb-4`,
-  css`
-    span {
-      ${tw`flex flex-col justify-center`}
-      h4 {
-        ${tw`m-0`}
-      }
-
-      h4 {
-        ${tw`font-semibold text-sm dark:text-gray-400 text-black`}
-      }
-    }
-  `,
-]);
-
-const PreviewTitle = tw.h3`mt-0 mb-3 w-full font-light text-center text-2xl text-black dark:text-gray-400`;
-const PreviewSubTitle = tw.p`mt-0 mb-6 w-full font-light text-center text-base text-gray-600 dark:text-gray-400`;
-const ContentSnippet = tw.p`text-center font-light text-center text-sm text-black dark:text-gray-400`;
-
-const Cta = styled.p<{ accentColor: string }>(({ accentColor }) => [
-  tw`mb-5 mt-8 text-center font-light text-center text-lg text-black dark:text-gray-400`,
-  css`
-    cursor: pointer;
-    color: ${accentColor};
-  `,
-]);
-
-const TocTitle = tw.h4`w-full mt-10 mb-1 font-light text-lg text-gray-600 dark:text-gray-400`;
-
-const TocContent = styled.ol(
-  tw`text-left font-light text-base text-gray-600 dark:text-gray-400`,
-  css`
-    list-style-position: inside !important;
-    list-style: upper-roman;
-
-    & ol {
-      list-style: decimal;
-      padding-left: 5px;
-    }
-  `
-);
-
 export const SidePreview = ({
   item,
-  components,
-  accentColor,
+  components: { Highlight, Snippet },
 }: {
   item: AlgoliaSearchItem;
   components: AutocompleteComponents;
@@ -82,35 +16,37 @@ export const SidePreview = ({
   }
   const project = PRODUCTS.find(p => p.children === item.source);
   return (
-    <PreviewContainer accentColor={accentColor}>
+    <div className="flex h-[600px] select-text flex-col overflow-y-auto p-10">
       {project && (
-        <PreviewProject>
-          <PreviewProjectImage>
-            <img src={project.logo} alt={`${project.children} logo`} />
-          </PreviewProjectImage>
-          <span>
-            <h4>{project.children}</h4>
+        <div className="my-1 mb-4 box-border flex w-full select-none items-center justify-center outline-none">
+          <project.logo className="mr-3 h-9 w-9" />
+          <span className="flex flex-col justify-center">
+            <h4 className="m-0 text-sm font-semibold text-black dark:text-gray-400">{project.children}</h4>
           </span>
-        </PreviewProject>
+        </div>
       )}
-      <PreviewTitle>
-        <components.Highlight hit={item} attribute="title" />
-      </PreviewTitle>
-      <PreviewSubTitle>{item.hierarchy.slice(1).join(' > ')}</PreviewSubTitle>
-      <ContentSnippet>
-        <components.Snippet hit={item} attribute="content" />
-      </ContentSnippet>
+      <h3 className="mt-0 mb-3 w-full text-center text-2xl font-light text-black dark:text-gray-400">
+        <Highlight hit={item} attribute="title" />
+      </h3>
+      <p className="mt-0 mb-6 w-full text-center text-base font-light text-gray-600 dark:text-gray-400">
+        {item.hierarchy.slice(1).join(' > ')}
+      </p>
+      <p className="text-center text-center text-sm font-light text-black dark:text-gray-400">
+        <Snippet hit={item} attribute="content" />
+      </p>
       {item.toc.length > 1 && (
         <>
-          <TocTitle>Table of content:</TocTitle>
-          <TocContent>
+          <h4 className="mt-10 mb-1 w-full text-lg font-light text-gray-600 dark:text-gray-400">Table of content:</h4>
+          <ol className="text-left text-base font-light text-gray-600 dark:text-gray-400">
             {item.toc.map(tocItem => (
               <li key={tocItem.title}>{tocItem.title}</li>
             ))}
-          </TocContent>
+          </ol>
         </>
       )}
-      <Cta accentColor={accentColor}>Press "Enter" to open {item.type} →</Cta>
-    </PreviewContainer>
+      <button className="mb-5 mt-8 text-center text-center text-lg font-light text-black dark:text-gray-400">
+        Press "Enter" to open {item.type} →
+      </button>
+    </div>
   );
 };
