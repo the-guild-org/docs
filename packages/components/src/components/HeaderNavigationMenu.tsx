@@ -1,13 +1,4 @@
-import {
-  Root,
-  Trigger,
-  Indicator,
-  Viewport,
-  List,
-  Item,
-  Link,
-  Content,
-} from '@radix-ui/react-navigation-menu';
+import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
 import tw, { styled, css } from 'twin.macro';
 import React, { ReactElement, ReactNode } from 'react';
 
@@ -21,10 +12,7 @@ interface IStyledTriggerProps {
   children: ReactNode;
 }
 
-const StyledTrigger = ({
-  accentColor,
-  children,
-}: IStyledTriggerProps): ReactElement => {
+const StyledTrigger = ({ accentColor, children }: IStyledTriggerProps): ReactElement => {
   return (
     <Trigger
       css={css({
@@ -64,11 +52,11 @@ const StyledViewport = styled(Viewport)([
 export const NavigationMenuRoot = StyledMenu;
 export const NavigationMenuContainer = styled.div([
   {
-    "@media (max-width: 767px)": {
-      position: 'absolute'
-    }
-  }
-])
+    '@media (max-width: 767px)': {
+      position: 'absolute',
+    },
+  },
+]);
 export const NavigationMenuList = List;
 export const NavigationMenuItem = Item;
 export const NavigationMenuTrigger = StyledTrigger;

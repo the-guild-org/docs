@@ -8,7 +8,7 @@ export default {
   parameters: {},
 } as Meta;
 
-const Template: Story<any> = (args) => <Instruction {...args} />;
+const Template: Story<any> = args => <Instruction {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -16,9 +16,8 @@ Default.args = {
     <>
       I like turtles
       <br />
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-      voluptua.
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua.
     </>
   ),
 };

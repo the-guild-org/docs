@@ -1,45 +1,24 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 import ReactPaginate from 'react-paginate';
-import {
-  IMarketplaceListProps,
-  IMarketplaceItemsProps,
-} from '../types/components';
+import { IMarketplaceListProps, IMarketplaceItemsProps } from '../types/components';
 import { Tag, TagsContainer } from './Tag';
 import { CaretSlimIcon } from './Icon';
 
 const formatDate = (value: string): string => {
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const date = new Date(value);
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 };
 
-const TableItems: FC<IMarketplaceItemsProps> = ({
-  items = [],
-  ...restProps
-}) => {
+const TableItems: FC<IMarketplaceItemsProps> = ({ items = [], ...restProps }) => {
   return (
     <>
-      {items.map((item) => (
+      {items.map(item => (
         <tr
           className="border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 last:border-0 dark:border-gray-800 dark:text-gray-400"
           key={item.title}
         >
-          <td className="w-14 py-4 pr-2 md:w-24">
-            {item.image && <img {...item.image} {...restProps.imageProps} />}
-          </td>
+          <td className="w-14 py-4 pr-2 md:w-24">{item.image && <img {...item.image} {...restProps.imageProps} />}</td>
           <td className="py-4 px-2">
             <a
               className="text-gray-500 no-underline transition duration-150 ease-in-out hocus:opacity-75 dark:text-gray-400"
@@ -57,17 +36,14 @@ const TableItems: FC<IMarketplaceItemsProps> = ({
               </p>
               {item.tags && item.tags.length > 0 && (
                 <TagsContainer>
-                  {item.tags.map((tagName) => (
+                  {item.tags.map(tagName => (
                     <Tag key={tagName}>{tagName}</Tag>
                   ))}
                 </TagsContainer>
               )}
             </a>
           </td>
-          <td
-            className="hidden py-4 px-2 md:table-cell"
-            {...restProps.dateProps}
-          >
+          <td className="hidden py-4 px-2 md:table-cell" {...restProps.dateProps}>
             {formatDate(item.update)}
           </td>
           <td className="py-4 pl-2">
@@ -96,13 +72,7 @@ const TableItems: FC<IMarketplaceItemsProps> = ({
   );
 };
 
-export const MarketplaceList: FC<IMarketplaceListProps> = ({
-  title,
-  placeholder,
-  items,
-  pagination,
-  ...restProps
-}) => {
+export const MarketplaceList: FC<IMarketplaceListProps> = ({ title, placeholder, items, pagination, ...restProps }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const pageSize = pagination || 5;
@@ -125,10 +95,7 @@ export const MarketplaceList: FC<IMarketplaceListProps> = ({
   }, [items]);
 
   return (
-    <section
-      className="w-full bg-white font-default dark:bg-gray-900"
-      {...restProps.wrapperProps}
-    >
+    <section className="w-full bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
       <div className="py-6 container-max" {...restProps.containerProps}>
         {title && (
           <h2
@@ -157,10 +124,7 @@ export const MarketplaceList: FC<IMarketplaceListProps> = ({
                 </tr>
               </thead>
               <tbody>
-                <TableItems
-                  items={pages[currentPage]}
-                  {...restProps.itemProps}
-                />
+                <TableItems items={pages[currentPage]} {...restProps.itemProps} />
               </tbody>
             </table>
 
@@ -171,7 +135,7 @@ export const MarketplaceList: FC<IMarketplaceListProps> = ({
                 forcePage={currentPage}
                 pageRangeDisplayed={3}
                 marginPagesDisplayed={1}
-                onPageChange={(page) => setCurrentPage(page.selected)}
+                onPageChange={page => setCurrentPage(page.selected)}
                 containerClassName="flex justify-center gap-x-2"
                 previousClassName="hidden"
                 nextClassName="hidden"

@@ -13,9 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ICardsColorfulProps> = (args) => (
-  <CardsColorful {...args} />
-);
+const Template: Story<ICardsColorfulProps> = args => <CardsColorful {...args} />;
 
 export const Default = Template.bind({});
 

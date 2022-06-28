@@ -1,21 +1,11 @@
 import { FC } from 'react';
 import { IInfoListProps } from '../types/components';
 
-export const InfoList: FC<IInfoListProps> = ({
-  title,
-  items,
-  ...restProps
-}) => (
-  <section
-    className="bg-white font-default dark:bg-gray-900"
-    {...restProps.wrapperProps}
-  >
+export const InfoList: FC<IInfoListProps> = ({ title, items, ...restProps }) => (
+  <section className="bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
     <div className="py-12 container-min" {...restProps.containerProps}>
       {title && (
-        <h2
-          className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl"
-          {...restProps.titleProps}
-        >
+        <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl" {...restProps.titleProps}>
           {title}
         </h2>
       )}
@@ -37,16 +27,10 @@ export const InfoList: FC<IInfoListProps> = ({
           "
             key={`info-${index}`}
           >
-            <h3
-              className="m-0 text-base font-semibold text-black dark:text-gray-50"
-              {...restProps.itemTitleProps}
-            >
+            <h3 className="m-0 text-base font-semibold text-black dark:text-gray-50" {...restProps.itemTitleProps}>
               {item.title}
             </h3>
-            <p
-              className="mt-2 mb-4 grow text-sm text-gray-500 dark:text-gray-400"
-              {...restProps.itemDescriptionProps}
-            >
+            <p className="mt-2 mb-4 grow text-sm text-gray-500 dark:text-gray-400" {...restProps.itemDescriptionProps}>
               {item.description}
             </p>
             {item.link && (

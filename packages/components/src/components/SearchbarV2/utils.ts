@@ -1,10 +1,7 @@
 import { AutocompleteSource } from '@algolia/autocomplete-js';
 import { AlgoliaSearchItem } from '../../types/algolia';
 
-export function debouncePromise<I, O>(
-  fn: (args: I[]) => O,
-  time: number
-): (args: I[]) => Promise<O> {
+export function debouncePromise<I, O>(fn: (args: I[]) => O, time: number): (args: I[]) => Promise<O> {
   let timerId: number | undefined;
 
   return function debounced(args: I[]) {
@@ -12,13 +9,10 @@ export function debouncePromise<I, O>(
       clearTimeout(timerId);
     }
 
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       timerId = setTimeout(() => resolve(fn(args)), time) as unknown as number;
     });
   };
 }
 
-export const debounced = debouncePromise(
-  (items: AutocompleteSource<AlgoliaSearchItem>[]) => items,
-  300
-);
+export const debounced = debouncePromise((items: AutocompleteSource<AlgoliaSearchItem>[]) => items, 300);

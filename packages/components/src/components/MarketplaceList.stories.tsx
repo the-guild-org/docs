@@ -22,9 +22,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IMarketplaceListProps> = (args) => (
-  <MarketplaceList {...args} />
-);
+const Template: Story<IMarketplaceListProps> = args => <MarketplaceList {...args} />;
 
 export const Default = Template.bind({});
 Default.args = dummyMarketplaceList;

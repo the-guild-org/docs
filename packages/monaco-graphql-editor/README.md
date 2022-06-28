@@ -111,12 +111,7 @@ const MyEditor: React.FC = () => {
 To mark custom errors on GraphQL based nodes, you can implement a custom diagnostics provider.
 
 ```tsx
-import {
-  SchemaEditor,
-  DiagnosticsSource,
-  toMarkerData,
-  getRange
-} from '@theguild/editor'
+import { SchemaEditor, DiagnosticsSource, toMarkerData, getRange } from '@theguild/editor'
 
 export const myDiagnosticsSoruce: DiagnosticsSource = {
   async forDocument({ model, document, languageService }) {
@@ -154,11 +149,7 @@ const MyEditor: React.FC = () => {
           label: 'My Custom Action',
           onRun: ({ editor, bridge }) => {
             // You can use the bridge here to know exactly what was clicked in terms of GQL identifiers
-            if (
-              ['NamedType', 'ObjectTypeDef'].includes(
-                bridge.token.state.kind as string
-              )
-            ) {
+            if (['NamedType', 'ObjectTypeDef'].includes(bridge.token.state.kind as string)) {
               const domNode = document.createElement('div')
               domNode.innerHTML = `You Selected: <strong>${bridge.token.state.kind} / ${bridge.token.state.name}</strong><br />You can show here any html that you wish!`
               domNode.style.background = 'orange'

@@ -28,9 +28,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IHeroGradientProps> = (args) => (
-  <HeroGradient {...args} />
-);
+const Template: Story<IHeroGradientProps> = args => <HeroGradient {...args} />;
 
 export const Default = Template.bind({});
 Default.args = dummyHeroGradient;

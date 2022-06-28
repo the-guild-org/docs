@@ -2301,18 +2301,6 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@pkgr/utils@^2.1.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-2.2.0.tgz#ccbf06cd010684b477dde40ec833a28f0c2136c4"
-  integrity sha512-/+EeY/T/NLCfF4rvgUetl7ERNwoPz5q/p+8CYeAIFblsKSQbVJjmMccs/Y7CsOPv47hXcBrhk5IqOf9AqRNfhg==
-  dependencies:
-    cross-spawn "^7.0.3"
-    is-glob "^4.0.3"
-    open "^8.4.0"
-    picocolors "^1.0.0"
-    tiny-glob "^0.2.9"
-    tslib "^2.4.0"
-
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.1":
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.3.tgz#b8f0e035f6df71b5c4126cb98de29f65188b9e7b"
@@ -3387,6 +3375,13 @@
   resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.3.1.tgz#4d8441b509b87ece84e94f28a4aa9998413ab849"
   integrity sha512-pNr0T8LAc3TUx/gxCfQZRe9NB2dPEo/cedPHzUGIPxqDMhgjwNm6jYxww4W5l0zAsAddxr+XfZcqttGiFDgrGg==
 
+"@theguild/prettier-config@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@theguild/prettier-config/-/prettier-config-0.0.1.tgz#de22b4543b1f2541dd6b938717e2fb877b9915df"
+  integrity sha512-h3IavJZWTjk6vbYpA11aelnHZcTWLrfMTj0fsSYyVC3v5npG4L2Q1S8az31P7/AZMuDrTjleXygAJ12np5nS/A==
+  dependencies:
+    prettier-plugin-sh "^0.11.0"
+
 "@types/color-convert@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/color-convert/-/color-convert-2.0.0.tgz#8f5ee6b9e863dcbee5703f5a517ffb13d3ea4e22"
@@ -3474,7 +3469,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/json-schema@^7.0.4", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.6", "@types/json-schema@^7.0.9":
+"@types/json-schema@7.0.9", "@types/json-schema@^7.0.4", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.6", "@types/json-schema@^7.0.9":
   version "7.0.9"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
   integrity sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==
@@ -5863,11 +5858,6 @@ defaults@^1.0.3:
   dependencies:
     clone "^1.0.2"
 
-define-lazy-prop@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/define-lazy-prop/-/define-lazy-prop-2.0.0.tgz#3f7ae421129bcaaac9bc74905c98a0009ec9ee7f"
-  integrity sha512-Ds09qNh8yw3khSjiJjiUInaGX9xlqZDY7JVryGxdxV7NPeuqQfplOpQ66yJFZut3jLa5zOwkXw1g9EI2uKh4Og==
-
 define-properties@^1.1.2, define-properties@^1.1.3, define-properties@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.1.4.tgz#0b14d7bd7fbeb2f3572c3a7eda80ea5d57fb05b1"
@@ -7335,11 +7325,6 @@ globalthis@^1.0.0:
   dependencies:
     define-properties "^1.1.3"
 
-globalyzer@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/globalyzer/-/globalyzer-0.1.0.tgz#cb76da79555669a1519d5a8edf093afaa0bf1465"
-  integrity sha512-40oNTM9UfG6aBmuKxk/giHn5nQ8RVz/SS4Ir6zgzOv9/qC3kKZ9v4etGTcJbEl/NyVQH7FGU7d+X1egr57Md2Q==
-
 globby@10.0.1:
   version "10.0.1"
   resolved "https://registry.yarnpkg.com/globby/-/globby-10.0.1.tgz#4782c34cb75dd683351335c5829cc3420e606b22"
@@ -7392,11 +7377,6 @@ globby@^9.2.0:
     pify "^4.0.1"
     slash "^2.0.0"
 
-globrex@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/globrex/-/globrex-0.1.2.tgz#dd5d9ec826232730cd6793a5e33a9302985e6098"
-  integrity sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
-
 good-listener@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
@@ -7431,15 +7411,15 @@ graphql-config@^4.1.0:
     minimatch "3.0.4"
     string-env-interpolation "1.0.1"
 
-graphql-language-service-interface@^2.9.4:
-  version "2.9.4"
-  resolved "https://registry.yarnpkg.com/graphql-language-service-interface/-/graphql-language-service-interface-2.9.4.tgz#abdadf67cdb24df9c7acf17335caaa853d3728d6"
-  integrity sha512-AVzes7j0Q5fHfqzZ2JcAUaIGn2PimxwZpPv6ag1xtmGrKl/FNTi8y5Z3QuL/576NvQxaNzVmlUKMzZDIvoFNxg==
+graphql-language-service-interface@^2.9.5:
+  version "2.10.2"
+  resolved "https://registry.yarnpkg.com/graphql-language-service-interface/-/graphql-language-service-interface-2.10.2.tgz#de9386f699e446320256175e215cdc10ccf9f9b7"
+  integrity sha512-RKIEBPhRMWdXY3fxRs99XysTDnEgAvNbu8ov/5iOlnkZsWQNzitjtd0O0l1CutQOQt3iXoHde7w8uhCnKL4tcg==
   dependencies:
     graphql-config "^4.1.0"
-    graphql-language-service-parser "^1.10.3"
-    graphql-language-service-types "^1.8.6"
-    graphql-language-service-utils "^2.6.3"
+    graphql-language-service-parser "^1.10.4"
+    graphql-language-service-types "^1.8.7"
+    graphql-language-service-utils "^2.7.1"
     vscode-languageserver-types "^3.15.1"
 
 graphql-language-service-parser@^1.10.3:
@@ -7449,12 +7429,27 @@ graphql-language-service-parser@^1.10.3:
   dependencies:
     graphql-language-service-types "^1.8.6"
 
+graphql-language-service-parser@^1.10.4:
+  version "1.10.4"
+  resolved "https://registry.yarnpkg.com/graphql-language-service-parser/-/graphql-language-service-parser-1.10.4.tgz#b2979deefc5c0df571dacd409b2d5fbf1cdf7a9d"
+  integrity sha512-duDE+0aeKLFVrb9Kf28U84ZEHhHcvTjWIT6dJbIAQJWBaDoht0D4BK9EIhd94I3DtKRc1JCJb2+70y1lvP/hiA==
+  dependencies:
+    graphql-language-service-types "^1.8.7"
+
 graphql-language-service-types@^1.8.6:
   version "1.8.6"
   resolved "https://registry.yarnpkg.com/graphql-language-service-types/-/graphql-language-service-types-1.8.6.tgz#a95ce09328f50e027e664cdcbe6a24018407b871"
   integrity sha512-1xH2kqkgKjvfsc/+fyDnzP21aSSofbVYfzyH8QcNCsxVF0zEvUij+3qyO/dHmQljIyc+Ss62J2udlnZEZM0hcA==
   dependencies:
     graphql-config "^4.1.0"
+
+graphql-language-service-types@^1.8.7:
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/graphql-language-service-types/-/graphql-language-service-types-1.8.7.tgz#f5e909e6d9334ea2d8d1f7281b695b6f5602c07f"
+  integrity sha512-LP/Mx0nFBshYEyD0Ny6EVGfacJAGVx+qXtlJP4hLzUdBNOGimfDNtMVIdZANBXHXcM41MDgMHTnyEx2g6/Ttbw==
+  dependencies:
+    graphql-config "^4.1.0"
+    vscode-languageserver-types "^3.15.1"
 
 graphql-language-service-utils@^2.6.3:
   version "2.6.3"
@@ -7464,12 +7459,21 @@ graphql-language-service-utils@^2.6.3:
     graphql-language-service-types "^1.8.6"
     nullthrows "^1.0.0"
 
-graphql-language-service@3.2.4:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/graphql-language-service/-/graphql-language-service-3.2.4.tgz#e507fc984a0b58533ed07174c6193ae34c6b0e03"
-  integrity sha512-s8WZnfem09gRJm/CmX8laT8O0V7eAcD9DaTZ4/OEAl6wnX4PrYfYC0Y7UxoXaQJDsuFfoQBSH59Kv4Fmf4dgZw==
+graphql-language-service-utils@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/graphql-language-service-utils/-/graphql-language-service-utils-2.7.1.tgz#c97c8d744a761480aba7e03e4a42adf28b6fce39"
+  integrity sha512-Wci5MbrQj+6d7rfvbORrA9uDlfMysBWYaG49ST5TKylNaXYFf3ixFOa74iM1KtM9eidosUbI3E1JlWi0JaidJA==
   dependencies:
-    graphql-language-service-interface "^2.9.4"
+    "@types/json-schema" "7.0.9"
+    graphql-language-service-types "^1.8.7"
+    nullthrows "^1.0.0"
+
+graphql-language-service@^3.2.4:
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/graphql-language-service/-/graphql-language-service-3.2.5.tgz#aa73884fced898e8efeaa5a13188e00a9c1b4552"
+  integrity sha512-utkQ8GfYrR310E7AWk2dGE9QRidIEtAJPJ5j0THHlA+h12s4loZmmGosaHpjzbKy6WCNKNw8aKkqt3eEBxJJRg==
+  dependencies:
+    graphql-language-service-interface "^2.9.5"
     graphql-language-service-parser "^1.10.3"
     graphql-language-service-types "^1.8.6"
     graphql-language-service-utils "^2.6.3"
@@ -8173,7 +8177,7 @@ is-descriptor@^1.0.0, is-descriptor@^1.0.2:
     is-data-descriptor "^1.0.0"
     kind-of "^6.0.2"
 
-is-docker@^2.0.0, is-docker@^2.1.1:
+is-docker@^2.0.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/is-docker/-/is-docker-2.2.1.tgz#33eeabe23cfe86f14bde4408a02c0cfb853acdaa"
   integrity sha512-F+i2BKsFrH66iaUFc0woD8sLy8getkwTwtOBjvs56Cx4CgJDeKQeqfz8wAYiSb8JOprWhHH5p77PbmYCvvUuXQ==
@@ -8399,7 +8403,7 @@ is-wsl@^1.1.0:
   resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-1.1.0.tgz#1f16e4aa22b04d1336b66188a66af3c600c3a66d"
   integrity sha1-HxbkqiKwTRM2tmGIpmrzxgDDpm0=
 
-is-wsl@^2.1.1, is-wsl@^2.2.0:
+is-wsl@^2.1.1:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-2.2.0.tgz#74a4c76e77ca9fd3f932f290c17ea326cd157271"
   integrity sha512-fKzAra0rGJUUBwGBgNkHZuToZcn+TtXHpeCgmkMJMMYx1sQDYaCSyjJBSCa2nH1DGm7s3n1oBnohoVTBaN7Lww==
@@ -9393,6 +9397,11 @@ multimatch@^4.0.0:
     arrify "^2.0.1"
     minimatch "^3.0.4"
 
+mvdan-sh@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/mvdan-sh/-/mvdan-sh-0.10.1.tgz#5b3a4462a89cf20739b12d851589342c875f4d1f"
+  integrity sha512-kMbrH0EObaKmK3nVRKUIIya1dpASHIEusM13S4V1ViHFuxuNxCo+arxoa6j/dbV22YBGjl7UKJm9QQKJ2Crzhg==
+
 nan@^2.12.1:
   version "2.14.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
@@ -9778,15 +9787,6 @@ open@^7.0.3:
   dependencies:
     is-docker "^2.0.0"
     is-wsl "^2.1.1"
-
-open@^8.4.0:
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/open/-/open-8.4.0.tgz#345321ae18f8138f82565a910fdc6b39e8c244f8"
-  integrity sha512-XgFPPM+B28FtCCgSb9I+s9szOC1vZRSwgWsRUA5ylIxRTgKozqjOCrVOqGsYABPYK5qnfqClxZTFBa8PKt2v6Q==
-  dependencies:
-    define-lazy-prop "^2.0.0"
-    is-docker "^2.1.1"
-    is-wsl "^2.2.0"
 
 optionator@^0.8.1:
   version "0.8.3"
@@ -10353,13 +10353,12 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-prettier-plugin-sh@0.12.3:
-  version "0.12.3"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-sh/-/prettier-plugin-sh-0.12.3.tgz#8125cce8aa2217366b69b360d90c3fc2c5abbc54"
-  integrity sha512-nRTzt4YynoqzRyv/gEk/UbnDNwoTFwqTMlK7gCIY5v/p9/oW0wgy/4MT5y9SQqXGidgAE+G4ECMS5fPIr81T5A==
+prettier-plugin-sh@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-sh/-/prettier-plugin-sh-0.11.0.tgz#b65974d49d93d7f303c3513e218741f2d4820e98"
+  integrity sha512-YwuWGYuf6UiF80BZ3Lrby2yot0zRcktcBl+VD/xSLoPrmiH/yXcopz3RBtNMNcBeP13ALim9N/LtlTCmvUziVQ==
   dependencies:
-    sh-syntax "^0.3.4"
-    synckit "^0.7.1"
+    mvdan-sh "^0.10.1"
 
 prettier-plugin-tailwindcss@0.1.11:
   version "0.1.11"
@@ -11509,13 +11508,6 @@ setprototypeof@1.1.1:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.1.tgz#7e95acb24aa92f5885e0abef5ba131330d4ae683"
   integrity sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEbHMOxEZ1lqVRYP2OAw==
 
-sh-syntax@^0.3.4:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/sh-syntax/-/sh-syntax-0.3.5.tgz#3b62145a282b2522f565a3f0f46fd1578ae36642"
-  integrity sha512-odzwu2qclgBD+OkZK+alGP7E62LHlfgr3lJowXckd6Tq3UJLG4wsYX23sGOXevqRyZdJoINfyl55Q6bYyNC8NA==
-  dependencies:
-    tslib "^2.4.0"
-
 sha.js@^2.4.0, sha.js@^2.4.8:
   version "2.4.11"
   resolved "https://registry.yarnpkg.com/sha.js/-/sha.js-2.4.11.tgz#37a5cf0b81ecbc6943de109ba2960d1b26584ae7"
@@ -12175,14 +12167,6 @@ synchronous-promise@^2.0.15:
   resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.15.tgz#07ca1822b9de0001f5ff73595f3d08c4f720eb8e"
   integrity sha512-k8uzYIkIVwmT+TcglpdN50pS2y1BDcUnBPK9iJeGu0Pl1lOI8pD6wtzgw91Pjpe+RxtTncw32tLxs/R0yNL2Mg==
 
-synckit@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/synckit/-/synckit-0.7.1.tgz#9aa3a6c81f534ef940ad22fa9a3bae116850ead8"
-  integrity sha512-Cvv0Nzgs4Z0V6761qp4CU2+C15HRmnHaDd+sAtisbOnzIZ5wgl3ne076k28cHo+oY6eN/w0RNzRrf7CJz8dWJg==
-  dependencies:
-    "@pkgr/utils" "^2.1.0"
-    tslib "^2.4.0"
-
 tabbable@^5.3.3:
   version "5.3.3"
   resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-5.3.3.tgz#aac0ff88c73b22d6c3c5a50b1586310006b47fbf"
@@ -12392,14 +12376,6 @@ tiny-emitter@^2.0.0:
   resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
   integrity sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
 
-tiny-glob@^0.2.9:
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/tiny-glob/-/tiny-glob-0.2.9.tgz#2212d441ac17928033b110f8b3640683129d31e2"
-  integrity sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==
-  dependencies:
-    globalyzer "0.1.0"
-    globrex "^0.1.2"
-
 tinykeys@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/tinykeys/-/tinykeys-1.4.0.tgz#c2986cd0184c86e943a6b17acc0352e42b542dff"
@@ -12561,11 +12537,6 @@ tslib@^2, tslib@^2.0.0, tslib@^2.0.1, tslib@^2.0.3, tslib@^2.1.0, tslib@~2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
-
-tslib@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
-  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
 
 tsutils@^3.21.0:
   version "3.21.0"

@@ -6,33 +6,20 @@ import { CaretSlimIcon } from './Icon';
 import { Nav } from './Nav';
 import { Button } from './Button';
 
-export const Subheader: FC<ISubheaderProps> = ({
-  product,
-  activeLink,
-  links,
-  cta,
-  ...restProps
-}) => {
+export const Subheader: FC<ISubheaderProps> = ({ product, activeLink, links, cta, ...restProps }) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const handleNav = useCallback(() => {
-    setMobileNavOpen((prev) => {
+    setMobileNavOpen(prev => {
       toggleLockBodyScroll(!prev);
       return !prev;
     });
   }, []);
 
   const nav = (
-    <Nav
-      isOpen={mobileNavOpen}
-      setOpen={setMobileNavOpen}
-      {...restProps.navigationProps}
-    >
-      {links.map((link) => {
-        const isActiveLink =
-          link.href === '/'
-            ? activeLink === link.href
-            : activeLink?.startsWith(link.href);
+    <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} {...restProps.navigationProps}>
+      {links.map(link => {
+        const isActiveLink = link.href === '/' ? activeLink === link.href : activeLink?.startsWith(link.href);
 
         return (
           <a
@@ -57,9 +44,7 @@ export const Subheader: FC<ISubheaderProps> = ({
               md:text-left
               md:text-xs
             `,
-              isActiveLink
-                ? 'text-black dark:text-white'
-                : 'text-gray-500 dark:text-gray-400'
+              isActiveLink ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-400'
             )}
             {...link}
             {...restProps.linkProps}
@@ -84,10 +69,7 @@ export const Subheader: FC<ISubheaderProps> = ({
       "
       {...restProps.wrapperProps}
     >
-      <div
-        className="flex items-center container-max md:justify-end"
-        {...restProps.containerProps}
-      >
+      <div className="flex items-center container-max md:justify-end" {...restProps.containerProps}>
         <a
           href="/"
           onClick={product.onClick}
@@ -95,33 +77,15 @@ export const Subheader: FC<ISubheaderProps> = ({
           className="flex grow no-underline"
           {...restProps.logoProps}
         >
-          <img
-            src={product.image.src}
-            alt={product.image.alt}
-            className="w-12"
-          />
+          <img src={product.image.src} alt={product.image.alt} className="w-12" />
           <span className="ml-2 -mt-1 flex flex-col justify-center">
-            <p className="font-semibold text-black dark:text-white">
-              {product.title}
-            </p>
-            <p className="text-xs text-gray-500 dark:text-gray-300">
-              {product.description}
-            </p>
+            <p className="font-semibold text-black dark:text-white">{product.title}</p>
+            <p className="text-xs text-gray-500 dark:text-gray-300">{product.description}</p>
           </span>
         </a>
         {nav}
-        {cta && (
-          <Button
-            className="mx-1 md:mr-0 md:ml-3"
-            {...cta}
-            {...restProps.ctaProps}
-          />
-        )}
-        <button
-          onClick={handleNav}
-          className="mx-2.5 dark:text-white md:hidden"
-          {...restProps.navOpenButtonProps}
-        >
+        {cta && <Button className="mx-1 md:mr-0 md:ml-3" {...cta} {...restProps.ctaProps} />}
+        <button onClick={handleNav} className="mx-2.5 dark:text-white md:hidden" {...restProps.navOpenButtonProps}>
           <CaretSlimIcon />
         </button>
       </div>

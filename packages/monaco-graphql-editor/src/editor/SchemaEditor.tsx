@@ -1,49 +1,19 @@
-import React, {
-  ForwardedRef,
-  useImperativeHandle,
-  useEffect,
-  useState,
-  forwardRef,
-  useCallback,
-} from 'react';
-import MonacoEditor, {
-  EditorProps,
-  BeforeMount,
-  OnMount,
-  OnChange,
-} from '@monaco-editor/react';
+import React, { ForwardedRef, useImperativeHandle, useEffect, useState, forwardRef, useCallback } from 'react';
+import MonacoEditor, { EditorProps, BeforeMount, OnMount, OnChange } from '@monaco-editor/react';
 import { IDisposable } from 'monaco-editor';
 import { GraphQLError, GraphQLSchema } from 'graphql';
 import { EnrichedLanguageService } from './EnrichedLanguageService';
-import {
-  SchemaEditorApi,
-  SchemaServicesOptions,
-  useSchemaServices,
-} from './use-schema-services';
+import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
 
 export type SchemaEditorProps = SchemaServicesOptions & {
   onBlur?: (value: string) => void;
   onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;
   onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;
-  onSchemaError?: (
-    errors: [GraphQLError],
-    sdl: string,
-    languageService: EnrichedLanguageService
-  ) => void;
+  onSchemaError?: (errors: [GraphQLError], sdl: string, languageService: EnrichedLanguageService) => void;
 } & Omit<EditorProps, 'language'>;
 
-function BaseSchemaEditor(
-  props: SchemaEditorProps,
-  ref: ForwardedRef<SchemaEditorApi>
-) {
-  const {
-    languageService,
-    setMonaco,
-    setEditor,
-    editorApi,
-    editorRef,
-    setSchema,
-  } = useSchemaServices(props);
+function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEditorApi>) {
+  const { languageService, setMonaco, setEditor, editorApi, editorRef, setSchema } = useSchemaServices(props);
   useImperativeHandle(ref, () => editorApi, [editorRef, languageService]);
 
   useEffect(() => {
@@ -67,7 +37,7 @@ function BaseSchemaEditor(
   }, [props.onBlur, editorRef]);
 
   const handleBeforeMount = useCallback<BeforeMount>(
-    (monaco) => {
+    monaco => {
       setMonaco(monaco);
       props.beforeMount?.(monaco);
     },
@@ -101,14 +71,7 @@ function BaseSchemaEditor(
         const error =
           e instanceof GraphQLError
             ? e
-            : new GraphQLError(
-                (e as Error).message,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                e as Error
-              );
+            : new GraphQLError((e as Error).message, undefined, undefined, undefined, undefined, e as Error);
         props.onSchemaError([error], newValue, languageService);
       }
     },

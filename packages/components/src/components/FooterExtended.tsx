@@ -56,21 +56,13 @@ const PRODUCTS_COLUMN_2 = PRODUCTS.slice(limitProductsTo);
 
 const Title: FC = ({ children, ...props }) => {
   return (
-    <p
-      className="mb-3 text-xs font-semibold text-gray-900 dark:text-gray-100"
-      {...props}
-    >
+    <p className="mb-3 text-xs font-semibold text-gray-900 dark:text-gray-100" {...props}>
       {children}
     </p>
   );
 };
 
-export const FooterExtended: FC<IFooterExtendedProps> = ({
-  sameSite,
-  resources,
-  onNewsletterSubmit,
-  ...restProps
-}) => {
+export const FooterExtended: FC<IFooterExtendedProps> = ({ sameSite, resources, onNewsletterSubmit, ...restProps }) => {
   const logoOptions = sameSite
     ? { href: '/' }
     : {
@@ -82,7 +74,7 @@ export const FooterExtended: FC<IFooterExtendedProps> = ({
   const renderLinks = useCallback(
     (list: ILink[]) => (
       <ul className="m-0 mb-8 list-none p-0 last:mb-0">
-        {list.map((link) => (
+        {list.map(link => (
           <li key={link.href} className="mb-3 last:mb-0">
             <a
               className="
@@ -108,14 +100,8 @@ export const FooterExtended: FC<IFooterExtendedProps> = ({
   );
 
   return (
-    <footer
-      className="bg-white text-xs font-default dark:bg-gray-900"
-      {...restProps.wrapperProps}
-    >
-      <div
-        className="border-t border-gray-300 container-max dark:border-gray-800"
-        {...restProps.containerProps}
-      >
+    <footer className="bg-white text-xs font-default dark:bg-gray-900" {...restProps.wrapperProps}>
+      <div className="border-t border-gray-300 container-max dark:border-gray-800" {...restProps.containerProps}>
         <div className="my-8 flex flex-col gap-6 pt-2 pb-4 lg:flex-row">
           <div className="lg:w-full">
             <Title {...restProps.titleProps}>PRODUCTS</Title>
@@ -141,16 +127,10 @@ export const FooterExtended: FC<IFooterExtendedProps> = ({
               {onNewsletterSubmit && (
                 <>
                   <Title {...restProps.titleProps}>NEWSLETTER</Title>
-                  <p
-                    className="mb-3 text-sm text-gray-500 dark:text-gray-400"
-                    {...restProps.descriptionProps}
-                  >
+                  <p className="mb-3 text-sm text-gray-500 dark:text-gray-400" {...restProps.descriptionProps}>
                     Stay up to date with the latest features and changes
                   </p>
-                  <Newsletter
-                    onNewsletterSubmit={onNewsletterSubmit}
-                    {...restProps.newsletterProps}
-                  />
+                  <Newsletter onNewsletterSubmit={onNewsletterSubmit} {...restProps.newsletterProps} />
                 </>
               )}
             </div>
@@ -176,10 +156,7 @@ export const FooterExtended: FC<IFooterExtendedProps> = ({
           >
             <GuildLogo className="w-7" />
             <TheGuild className="w-10" />
-            <p
-              className="ml-6 text-xs text-gray-500 dark:text-gray-400"
-              {...restProps.copyrightProps}
-            >
+            <p className="ml-6 text-xs text-gray-500 dark:text-gray-400" {...restProps.copyrightProps}>
               Belong anywhere. © The Guild, Inc.
             </p>
           </a>

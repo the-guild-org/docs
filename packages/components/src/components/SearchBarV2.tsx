@@ -1,9 +1,5 @@
 import { ISearchBarProps } from '../types/components';
-import {
-  autocomplete,
-  AutocompleteApi,
-  getAlgoliaResults,
-} from '@algolia/autocomplete-js';
+import { autocomplete, AutocompleteApi, getAlgoliaResults } from '@algolia/autocomplete-js';
 // @ts-expect-error typings
 import { render } from 'react-dom';
 import React, { createElement, Fragment, useEffect, useRef } from 'react';
@@ -16,12 +12,7 @@ import { AlgoliaSearchItem } from '../types/algolia';
 import { SidePreview } from './SearchbarV2/SidePreview';
 import { debounced } from './SearchbarV2/utils';
 import { templates } from './SearchbarV2/templates';
-import {
-  NoResultsContainer,
-  Container,
-  ResultsContainer,
-  SearchBy,
-} from './SearchbarV2/styles';
+import { NoResultsContainer, Container, ResultsContainer, SearchBy } from './SearchbarV2/styles';
 import { AlgoliaLogo } from './SearchbarV2/AlgoliaLogo';
 
 export const SearchBarV2: React.FC<ISearchBarProps> = ({
@@ -39,8 +30,7 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
 
     const env = window.process?.env || {};
     const appId = algolia?.appId || env.NEXT_PUBLIC_ALGOLIA_APP_ID;
-    const searchApiKey =
-      algolia?.searchApiKey || env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY;
+    const searchApiKey = algolia?.searchApiKey || env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY;
     const indexName = algolia?.indexName || env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME;
 
     if (!appId || !searchApiKey || !indexName) {
@@ -79,17 +69,9 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
           <Fragment>
             <Container>
               <ResultsContainer>{children}</ResultsContainer>
-              <SidePreview
-                accentColor={accentColor}
-                item={state.context.preview}
-                components={components}
-              />
+              <SidePreview accentColor={accentColor} item={state.context.preview} components={components} />
             </Container>
-            <SearchBy
-              href="https://algolia.com"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <SearchBy href="https://algolia.com" target="_blank" rel="noreferrer">
               Search by&nbsp;
               <AlgoliaLogo />
             </SearchBy>
@@ -137,24 +119,20 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
         const itemsSources = items
           .slice()
           // put current website's section on top
-          .sort((a) => (a.domain.startsWith(window.location.origin) ? -1 : 0))
-          .map((item) => item.source);
+          .sort(a => (a.domain.startsWith(window.location.origin) ? -1 : 0))
+          .map(item => item.source);
 
-        const sourcesPerSite = itemsSources.reduce<Record<string, any>>(
-          (acc, sourceId) => {
-            if (!acc[sourceId]) {
-              acc[sourceId] = {
-                ...algoliaIndex,
-                sourceId,
-                getItems: () =>
-                  items.filter((item) => item.source === sourceId),
-                templates,
-              };
-            }
-            return acc;
-          },
-          {}
-        );
+        const sourcesPerSite = itemsSources.reduce<Record<string, any>>((acc, sourceId) => {
+          if (!acc[sourceId]) {
+            acc[sourceId] = {
+              ...algoliaIndex,
+              sourceId,
+              getItems: () => items.filter(item => item.source === sourceId),
+              templates,
+            };
+          }
+          return acc;
+        }, {});
 
         return Object.values({ ...sourcesPerSite, ...restSources });
       },

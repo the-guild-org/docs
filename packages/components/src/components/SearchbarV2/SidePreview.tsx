@@ -4,19 +4,17 @@ import tw, { styled, css } from 'twin.macro';
 import { PRODUCTS } from '../../helpers/assets';
 import { AlgoliaSearchItem } from '../../types/algolia';
 
-const PreviewContainer = styled.div<{ accentColor: string }>(
-  ({ accentColor }) => [
-    tw`flex flex-col px-10 overflow-y-auto select-text h-[600px]`,
-    css`
-      padding-top: var(--aa-spacing-half);
-      padding-bottom: var(--aa-spacing-half);
+const PreviewContainer = styled.div<{ accentColor: string }>(({ accentColor }) => [
+  tw`flex flex-col px-10 overflow-y-auto select-text h-[600px]`,
+  css`
+    padding-top: var(--aa-spacing-half);
+    padding-bottom: var(--aa-spacing-half);
 
-      mark {
-        background: ${accentColor};
-      }
-    `,
-  ]
-);
+    mark {
+      background: ${accentColor};
+    }
+  `,
+]);
 
 export const PreviewProjectImage = styled.div(
   () => css`
@@ -72,7 +70,7 @@ const TocContent = styled.ol(
 
 const TOC = ({ toc }: Pick<AlgoliaSearchItem, 'toc'>) => (
   <TocContent>
-    {toc.map((tocItem) => (
+    {toc.map(tocItem => (
       <li key={tocItem.title}>{tocItem.title}</li>
     ))}
   </TocContent>
@@ -90,7 +88,7 @@ export const SidePreview = ({
   if (!item) {
     return null;
   }
-  const project = PRODUCTS.find((p) => p.children === item.source);
+  const project = PRODUCTS.find(p => p.children === item.source);
   return (
     <PreviewContainer accentColor={accentColor}>
       {project && (

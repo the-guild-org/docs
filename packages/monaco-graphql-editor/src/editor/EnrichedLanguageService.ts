@@ -50,11 +50,7 @@ export class EnrichedLanguageService extends LanguageService {
       return null;
     }
 
-    const tokenAtPosition = await this.getNodeAtPosition(
-      schema,
-      document,
-      graphQLPosition
-    );
+    const tokenAtPosition = await this.getNodeAtPosition(schema, document, graphQLPosition);
 
     if (!tokenAtPosition) {
       return null;
@@ -70,9 +66,7 @@ export class EnrichedLanguageService extends LanguageService {
     };
   }
 
-  getDefinitionProvider(
-    rawSources: DefinitionSource[]
-  ): monaco.languages.DefinitionProvider {
+  getDefinitionProvider(rawSources: DefinitionSource[]): monaco.languages.DefinitionProvider {
     const sources = [...rawSources, coreDefinitionSource];
 
     return {
@@ -83,13 +77,11 @@ export class EnrichedLanguageService extends LanguageService {
           return [];
         }
 
-        const nestedArrays = (
-          await Promise.all(sources.map((source) => source.forNode(bridge)))
-        ).filter(Boolean) as any as monaco.languages.Location[][];
+        const nestedArrays = (await Promise.all(sources.map(source => source.forNode(bridge)))).filter(
+          Boolean
+        ) as any as monaco.languages.Location[][];
 
-        const items = ([] as monaco.languages.Location[]).concat(
-          ...nestedArrays
-        );
+        const items = ([] as monaco.languages.Location[]).concat(...nestedArrays);
 
         return items;
       },
@@ -108,7 +100,7 @@ export class EnrichedLanguageService extends LanguageService {
         }
 
         const contents = await Promise.all(
-          sources.map(async (source) => {
+          sources.map(async source => {
             try {
               return await source.forNode(info);
             } catch (e) {
@@ -155,14 +147,11 @@ export class EnrichedLanguageService extends LanguageService {
     model: monaco.editor.ITextModel,
     monacoInstance: typeof monaco
   ): Promise<void> {
-    const diagnosticsSources = [
-      ...rawDiagnosticsSources,
-      coreDiagnosticsSource,
-    ];
+    const diagnosticsSources = [...rawDiagnosticsSources, coreDiagnosticsSource];
 
     const nestedArrays = (
       await Promise.all(
-        diagnosticsSources.map(async (source) => {
+        diagnosticsSources.map(async source => {
           try {
             return await source.forDocument({
               languageService: this,
@@ -176,9 +165,7 @@ export class EnrichedLanguageService extends LanguageService {
       )
     ).filter(removeFalsey);
 
-    const markerData = ([] as monaco.editor.IMarkerData[]).concat(
-      ...nestedArrays
-    );
+    const markerData = ([] as monaco.editor.IMarkerData[]).concat(...nestedArrays);
 
     monacoInstance.editor.setModelMarkers(model, 'graphql', markerData);
   }
@@ -189,12 +176,7 @@ export class EnrichedLanguageService extends LanguageService {
     diagnosticsSources: DiagnosticsSource[],
     decorationsSources: DecorationsSource[]
   ) => void {
-    return async (
-      editorInstance,
-      monacoInstance,
-      diagnosticsSources,
-      decorationsSources
-    ) => {
+    return async (editorInstance, monacoInstance, diagnosticsSources, decorationsSources) => {
       const model = editorInstance.getModel();
 
       if (!model) {
@@ -203,12 +185,7 @@ export class EnrichedLanguageService extends LanguageService {
 
       await Promise.all([
         this.handleDiagnostics(diagnosticsSources, model, monacoInstance),
-        this.handleDecorations(
-          decorationsSources,
-          model,
-          monacoInstance,
-          editorInstance
-        ),
+        this.handleDecorations(decorationsSources, model, monacoInstance, editorInstance),
       ]);
     };
   }

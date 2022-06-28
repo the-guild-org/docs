@@ -16,7 +16,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<INewsletterProps> = (args) => <Newsletter {...args} />;
+const Template: Story<INewsletterProps> = args => <Newsletter {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

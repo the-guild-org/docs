@@ -1,37 +1,14 @@
-import React, {
-  FC,
-  ChangeEvent,
-  useEffect,
-  useState,
-  useRef,
-  useCallback,
-  createElement,
-} from 'react';
+import React, { FC, ChangeEvent, useEffect, useState, useRef, useCallback, createElement } from 'react';
 import algoliaSearch from 'algoliasearch/lite';
-import {
-  InstantSearch,
-  connectHits,
-  connectSearchBox,
-  connectStateResults,
-} from 'react-instantsearch-dom';
-import {
-  Hit,
-  SearchBoxProvided,
-  StateResultsProvided,
-} from 'react-instantsearch-core';
+import { InstantSearch, connectHits, connectSearchBox, connectStateResults } from 'react-instantsearch-dom';
+import { Hit, SearchBoxProvided, StateResultsProvided } from 'react-instantsearch-core';
 import clsx from 'clsx';
 import { useDebouncedCallback } from 'use-debounce';
 import { Modal } from './Modal';
 import { ISearchBarProps } from '../types/components';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import { algoliaConfig } from '../configs';
-import {
-  CloseIcon,
-  HamburgerIcon,
-  HashTagIcon,
-  PageIcon,
-  SearchIcon,
-} from './Icon';
+import { CloseIcon, HamburgerIcon, HashTagIcon, PageIcon, SearchIcon } from './Icon';
 import { SearchBarV2 } from './SearchBarV2';
 
 const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
@@ -51,10 +28,7 @@ interface ResultDoc {
 const searchClient: Pick<typeof algoliaClient, 'search'> = {
   search(requests) {
     // In case of empty queries
-    if (
-      !requests.length ||
-      requests.every((req) => req.params?.query?.length === 0)
-    ) {
+    if (!requests.length || requests.every(req => req.params?.query?.length === 0)) {
       // return an empty result
       return Promise.resolve({
         results: requests.map(() => ({
@@ -86,9 +60,7 @@ const Snippet: FC<{
   attribute: string;
   tagName?: string;
 }> = ({ hit, attribute, tagName = 'span' }) => {
-  let html =
-    getPropertyByPath(hit, `_snippetResult.${attribute}.value`) ||
-    getPropertyByPath(hit, attribute);
+  let html = getPropertyByPath(hit, `_snippetResult.${attribute}.value`) || getPropertyByPath(hit, attribute);
   if (html) {
     // some query results contains `.css-` selectors, so we strips them out
     html = html.replace(/\s+\.css-.*/, '');
@@ -96,10 +68,7 @@ const Snippet: FC<{
 
   return createElement(tagName, {
     dangerouslySetInnerHTML: { __html: html },
-    className:
-      tagName === 'span'
-        ? 'dark:text-gray-300 text-gray-700'
-        : 'text-xs text-gray-400',
+    className: tagName === 'span' ? 'dark:text-gray-300 text-gray-700' : 'text-xs text-gray-400',
   });
 };
 
@@ -197,6 +166,7 @@ const SearchBox: FC<
             type="button"
             onClick={() => refine('')}
             className="
+              rounded-sm
               border-0
               bg-transparent
               p-0
@@ -204,7 +174,6 @@ const SearchBox: FC<
               transition
               hover:opacity-70
               focus:ring
-              rounded-sm
             "
           >
             <CloseIcon />
@@ -215,27 +184,17 @@ const SearchBox: FC<
   );
 };
 
-const StateResults: FC<StateResultsProvided<ResultDoc>> = ({
-  searchState,
-  searchResults,
-  children,
-}) => {
-  const content = searchState &&
-    searchResults &&
-    !searchResults.nbHits &&
-    searchResults.query.length > 0 && (
-      <span>
-        No results for <strong>"{searchState.query}"</strong>.
-      </span>
-    );
+const StateResults: FC<StateResultsProvided<ResultDoc>> = ({ searchState, searchResults, children }) => {
+  const content = searchState && searchResults && !searchResults.nbHits && searchResults.query.length > 0 && (
+    <span>
+      No results for <strong>"{searchState.query}"</strong>.
+    </span>
+  );
 
   return <div className="mt-9">{content || children}</div>;
 };
 
-const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({
-  hits,
-  accentColor,
-}) => {
+const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({ hits, accentColor }) => {
   const transformItems = (items: Hit<any>[]) => {
     const groupBy = items.reduce((acc, item) => {
       const list = acc[item.hierarchy.lvl0] || [];
@@ -246,7 +205,7 @@ const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({
       };
     }, {});
 
-    return Object.keys(groupBy).map((level) => ({
+    return Object.keys(groupBy).map(level => ({
       items: groupBy[level],
       level,
     }));
@@ -254,29 +213,21 @@ const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({
 
   const transformIcon = (item: Hit<ResultDoc>) => {
     if (item.anchor) {
-      return (
-        <HashTagIcon className="text-gray-500 hocus:text-white dark:text-white" />
-      );
+      return <HashTagIcon className="text-gray-500 hocus:text-white dark:text-white" />;
     }
     if (item.content) {
-      return (
-        <HamburgerIcon className="text-gray-500 hocus:text-white dark:text-white" />
-      );
+      return <HamburgerIcon className="text-gray-500 hocus:text-white dark:text-white" />;
     }
-    return (
-      <PageIcon className="text-gray-500 hocus:text-white dark:text-white" />
-    );
+    return <PageIcon className="text-gray-500 hocus:text-white dark:text-white" />;
   };
 
   const groupedHits = transformItems(hits);
 
   return (
     <>
-      {groupedHits.map((hit) => (
+      {groupedHits.map(hit => (
         <article key={hit.level} style={{ '--color': accentColor }}>
-          <h2 className="mb-4 mt-8 text-base font-semibold [color:var(--color)]">
-            {hit.level}
-          </h2>
+          <h2 className="mb-4 mt-8 text-base font-semibold [color:var(--color)]">{hit.level}</h2>
           {hit.items.map((subHit: Hit<ResultDoc>) => {
             let content;
 
@@ -287,11 +238,7 @@ const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({
                   {subHit.content ? (
                     <Snippet tagName="p" hit={subHit} attribute="content" />
                   ) : (
-                    <Snippet
-                      tagName="p"
-                      hit={subHit}
-                      attribute="hierarchy.lvl1"
-                    />
+                    <Snippet tagName="p" hit={subHit} attribute="hierarchy.lvl1" />
                   )}
                 </>
               );
@@ -301,33 +248,20 @@ const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({
             ) {
               content = (
                 <>
-                  <Snippet
-                    hit={subHit}
-                    attribute={`hierarchy.${subHit.type}`}
-                  />
-                  <Snippet
-                    tagName="p"
-                    hit={subHit}
-                    attribute="hierarchy.lvl1"
-                  />
+                  <Snippet hit={subHit} attribute={`hierarchy.${subHit.type}`} />
+                  <Snippet tagName="p" hit={subHit} attribute="hierarchy.lvl1" />
                 </>
               );
             } else if (subHit.type === 'content') {
               content = (
                 <>
                   <Snippet hit={subHit} attribute="content" />
-                  <Snippet
-                    tagName="p"
-                    hit={subHit}
-                    attribute="hierarchy.lvl1"
-                  />
+                  <Snippet tagName="p" hit={subHit} attribute="hierarchy.lvl1" />
                 </>
               );
             }
 
-            const isSameWebsite =
-              typeof window === 'object' &&
-              subHit.url.startsWith(window.location.origin);
+            const isSameWebsite = typeof window === 'object' && subHit.url.startsWith(window.location.origin);
 
             return (
               <a
@@ -364,15 +298,8 @@ const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({
   );
 };
 
-export const SearchBar: React.FC<ISearchBarProps> = ({
-  version = 'v1',
-  ...restProps
-}) =>
-  version === 'v1' ? (
-    <SearchBarComponent {...restProps} />
-  ) : (
-    <SearchBarV2 {...restProps} />
-  );
+export const SearchBar: React.FC<ISearchBarProps> = ({ version = 'v1', ...restProps }) =>
+  version === 'v1' ? <SearchBarComponent {...restProps} /> : <SearchBarV2 {...restProps} />;
 
 export const SearchBarComponent: React.FC<ISearchBarProps> = ({
   accentColor,
@@ -410,10 +337,10 @@ export const SearchBarComponent: React.FC<ISearchBarProps> = ({
         text-xs
         font-medium
         text-gray-500
-        font-default
         outline-none
-        focus:ring
         transition
+        font-default
+        focus:ring
         md:ml-3
         md:rounded-md
         md:border-2
@@ -435,22 +362,9 @@ export const SearchBarComponent: React.FC<ISearchBarProps> = ({
         <span className="hidden md:block">{placeholder}</span>
       </button>
 
-      <Modal
-        title={title}
-        visible={modalOpen}
-        placement="top"
-        onCancel={() => handleModal(false)}
-      >
-        <InstantSearch
-          indexName={algoliaConfig.searchIndex}
-          searchClient={searchClient}
-          stalledSearchDelay={500}
-        >
-          <CustomSearchBox
-            accentColor={accentColor}
-            placeholder={placeholder}
-            isModalOpen={modalOpen}
-          />
+      <Modal title={title} visible={modalOpen} placement="top" onCancel={() => handleModal(false)}>
+        <InstantSearch indexName={algoliaConfig.searchIndex} searchClient={searchClient} stalledSearchDelay={500}>
+          <CustomSearchBox accentColor={accentColor} placeholder={placeholder} isModalOpen={modalOpen} />
           <CustomStateResults>
             <CustomHits accentColor={accentColor} />
           </CustomStateResults>

@@ -68,7 +68,7 @@ export const Footer: FC<IFooterProps> = ({ sameSite, ...restProps }) => {
           <GuildLogo className="mx-auto mb-3 transition hover:text-gray-900 dark:hover:text-gray-100 md:mb-0" />
         </a>
         <ul className="m-0 flex list-none flex-wrap p-0">
-          {links.map((link) => (
+          {links.map(link => (
             <li
               key={link.href}
               className="

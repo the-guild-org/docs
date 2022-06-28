@@ -28,7 +28,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => <EcosystemList {...args} />;
+const Template: Story = args => <EcosystemList {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

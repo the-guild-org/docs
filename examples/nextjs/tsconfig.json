@@ -16,9 +16,7 @@
     "incremental": true,
     "paths": {
       "@theguild/components": ["../packages/components/src/index.tsx"],
-      "@theguild/monaco-graphql-editor": [
-        "../packages/monaco-graphql-editor/src/index.tsx"
-      ]
+      "@theguild/monaco-graphql-editor": ["../packages/monaco-graphql-editor/src/index.tsx"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

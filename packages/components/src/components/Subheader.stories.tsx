@@ -26,7 +26,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ISubheaderProps> = (args) => <Subheader {...args} />;
+const Template: Story<ISubheaderProps> = args => <Subheader {...args} />;
 
 export const Default = Template.bind({});
 Default.args = dummySubheader;

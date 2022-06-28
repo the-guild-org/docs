@@ -28,25 +28,11 @@ const Shadow: FC<{ className: string }> = ({ className }) => {
 };
 
 const Cube: FC<{ className: string; src: string }> = ({ className, src }) => {
-  return (
-    <img
-      className={clsx(`absolute -translate-x-1/2 -translate-y-1/2`, className)}
-      src={src}
-      alt="Cube"
-    />
-  );
+  return <img className={clsx(`absolute -translate-x-1/2 -translate-y-1/2`, className)} src={src} alt="Cube" />;
 };
 
-export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({
-  title,
-  description,
-  link,
-  ...restProps
-}) => (
-  <section
-    className="overflow-hidden bg-white font-default dark:bg-gray-900"
-    {...restProps.wrapperProps}
-  >
+export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({ title, description, link, ...restProps }) => (
+  <section className="overflow-hidden bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
     <div className="relative" {...restProps.containerProps}>
       <div
         className="
@@ -64,10 +50,7 @@ export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({
       </div>
       <div>
         <Cube src={CubeTL} className="-top-2.5 left-6 md:top-6 md:left-10" />
-        <Cube
-          src={CubeTR}
-          className="-bottom-60 -right-52 [top:auto] md:top-20 md:[bottom:auto]"
-        />
+        <Cube src={CubeTR} className="-bottom-60 -right-52 [top:auto] md:top-20 md:[bottom:auto]" />
         <Cube src={CubeBR} className="-right-20 -bottom-32 hidden md:block" />
         <Cube src={CubeBL} className="-bottom-40 left-10 hidden md:block" />
       </div>
@@ -93,11 +76,7 @@ export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({
           {...restProps.imageProps}
         >
           <source media="(min-width:768px)" srcSet={IllustrationDesktop} />
-          <img
-            className="w-full"
-            src={IllustrationMobile}
-            alt="Products List"
-          />
+          <img className="w-full" src={IllustrationMobile} alt="Products List" />
         </picture>
         <div className="relative z-1">
           <h2
@@ -106,10 +85,7 @@ export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({
           >
             {title}
           </h2>
-          <p
-            className="max-w-lg text-base text-gray-300 opacity-70"
-            {...restProps.descriptionProps}
-          >
+          <p className="max-w-lg text-base text-gray-300 opacity-70" {...restProps.descriptionProps}>
             {description}
           </p>
           {link && (

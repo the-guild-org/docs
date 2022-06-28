@@ -4,19 +4,10 @@ import { SearchBar } from './SearchBar';
 import { IHeaderProps } from '../types/components';
 import { useThemeContext } from '../helpers/theme';
 import { toggleLockBodyScroll } from '../helpers/modals';
-import {
-  CaretIcon,
-  GuildLogo,
-  HamburgerIcon,
-  MoonIcon,
-  TheGuild,
-} from './Icon';
+import { CaretIcon, GuildLogo, HamburgerIcon, MoonIcon, TheGuild } from './Icon';
 import { Nav } from './Nav';
 
-const renderLinkOptions = (
-  href: string,
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>
-) => {
+const renderLinkOptions = (href: string, onClick?: React.MouseEventHandler<HTMLAnchorElement>) => {
   if (onClick) {
     return {
       href,
@@ -34,18 +25,13 @@ const renderLinkOptions = (
   };
 };
 
-export const Header: React.FC<IHeaderProps> = ({
-  accentColor,
-  activeLink,
-  themeSwitch,
-  ...restProps
-}) => {
+export const Header: React.FC<IHeaderProps> = ({ accentColor, activeLink, themeSwitch, ...restProps }) => {
   const { setDarkTheme } = useThemeContext();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleModal = useCallback(() => {
-    setModalOpen((prev) => {
+    setModalOpen(prev => {
       if (!mobileNavOpen) {
         toggleLockBodyScroll(!prev);
       }
@@ -76,16 +62,10 @@ export const Header: React.FC<IHeaderProps> = ({
   const onLinkClick = restProps.linkProps?.onClick;
 
   return (
-    <header
-      className="bg-white py-2.5 px-3 font-default dark:bg-gray-900 md:py-4"
-      {...restProps.wrapperProps}
-    >
-      <div
-        className="flex justify-between container-max"
-        {...restProps.containerProps}
-      >
+    <header className="bg-white py-2.5 px-3 font-default dark:bg-gray-900 md:py-4" {...restProps.wrapperProps}>
+      <div className="flex justify-between container-max" {...restProps.containerProps}>
         <button
-          className="text-gray-500 transition hover:text-gray-400 dark:text-gray-200 dark:hover:text-gray-400 md:hidden outline-none focus:ring rounded-sm"
+          className="rounded-sm text-gray-500 outline-none transition hover:text-gray-400 focus:ring dark:text-gray-200 dark:hover:text-gray-400 md:hidden"
           onClick={() => handleNav(true)}
           {...restProps.navOpenButtonProps}
         >
@@ -94,7 +74,7 @@ export const Header: React.FC<IHeaderProps> = ({
 
         <a
           title="View our website"
-          className="flex items-center gap-x-1.5 dark:text-gray-100 outline-none focus:ring rounded-sm"
+          className="flex items-center gap-x-1.5 rounded-sm outline-none focus:ring dark:text-gray-100"
           {...renderLinkOptions('/', onLinkClick)}
           {...restProps.logoProps}
         >
@@ -102,12 +82,8 @@ export const Header: React.FC<IHeaderProps> = ({
           <TheGuild className="hidden w-11 md:block" />
         </a>
 
-        <Nav
-          isOpen={mobileNavOpen}
-          setOpen={setMobileNavOpen}
-          {...restProps.navigationProps}
-        >
-          {links.map((link) => (
+        <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} {...restProps.navigationProps}>
+          {links.map(link => (
             <a
               key={link.label}
               title={link.title}
@@ -116,16 +92,16 @@ export const Header: React.FC<IHeaderProps> = ({
                  flex
                  w-max
                  items-center
+                 rounded-sm
                  py-3
                  text-center
                  text-base
                  font-medium
                  no-underline
+                 outline-none
                  transition
                  hover:[color:var(--accentColor)]
-                 outline-none
                  focus:ring
-                 rounded-sm
                  sm:py-5
                  sm:text-lg
                  md:mx-2.5
@@ -166,8 +142,8 @@ export const Header: React.FC<IHeaderProps> = ({
           />
           {themeSwitch && setDarkTheme && (
             <button
-              onClick={() => setDarkTheme((prev) => !prev)}
-              className="self-center md:ml-5 outline-none focus:ring rounded-sm"
+              onClick={() => setDarkTheme(prev => !prev)}
+              className="self-center rounded-sm outline-none focus:ring md:ml-5"
               {...restProps.themeButtonProps}
             >
               <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />

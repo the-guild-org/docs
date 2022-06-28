@@ -4,10 +4,7 @@ import { IMarketplaceSearchProps } from '../types/components';
 import { Tag, TagsContainer } from './Tag';
 import { SearchIcon } from './Icon';
 
-const renderQueryPlaceholder = (
-  placeholder: string | React.ReactElement,
-  query: string
-) => {
+const renderQueryPlaceholder = (placeholder: string | React.ReactElement, query: string) => {
   if (!query || isValidElement(placeholder)) {
     return placeholder;
   }
@@ -37,46 +34,31 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   const items = useMemo(() => {
     let results = null;
     if (query && queryList) {
-      const tagsFilter = query
-        .split(' ')
-        .filter((t) => t.trim().length > 1 && t.startsWith('#'));
+      const tagsFilter = query.split(' ').filter(t => t.trim().length > 1 && t.startsWith('#'));
       const queryWithoutTags =
-        tagsFilter.length > 0
-          ? query.replace(/#\w\w+\s?/g, '').toLowerCase()
-          : query.toLowerCase();
+        tagsFilter.length > 0 ? query.replace(/#\w\w+\s?/g, '').toLowerCase() : query.toLowerCase();
 
-      results = queryList.items.filter((item) => {
-        const matchesContent = item.title
-          .toLowerCase()
-          .includes(queryWithoutTags);
+      results = queryList.items.filter(item => {
+        const matchesContent = item.title.toLowerCase().includes(queryWithoutTags);
 
         if (tagsFilter.length === 0) {
           return matchesContent;
         }
-        return (
-          item.tags?.some((tag) => tagsFilter.includes(`#${tag}`)) &&
-          matchesContent
-        );
+        return item.tags?.some(tag => tagsFilter.includes(`#${tag}`)) && matchesContent;
       });
     }
     return results;
   }, [query]);
 
   return (
-    <section
-      className="bg-white font-default dark:bg-gray-900"
-      {...restProps.wrapperProps}
-    >
+    <section className="bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
       <div className="py-12 container-max" {...restProps.containerProps}>
-        <h2
-          className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl"
-          {...restProps.titleProps}
-        >
+        <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl" {...restProps.titleProps}>
           {title}
         </h2>
         {tagsFilter && (
           <TagsContainer>
-            {tagsFilter.map((tagName) => (
+            {tagsFilter.map(tagName => (
               <Tag key={tagName} onClick={() => setQuery(`#${tagName}`)}>
                 {tagName}
               </Tag>
@@ -106,16 +88,8 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
             />
           ) : (
             <>
-              <MarketplaceList
-                {...primaryList}
-                {...restProps.primaryListProps}
-              />
-              {secondaryList && (
-                <MarketplaceList
-                  {...secondaryList}
-                  {...restProps.secondaryListProps}
-                />
-              )}
+              <MarketplaceList {...primaryList} {...restProps.primaryListProps} />
+              {secondaryList && <MarketplaceList {...secondaryList} {...restProps.secondaryListProps} />}
             </>
           )}
         </div>

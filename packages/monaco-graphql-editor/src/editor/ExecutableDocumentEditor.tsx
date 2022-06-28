@@ -76,17 +76,13 @@ const toCompletionItemKind = (kind: lsCIK): languages.CompletionItemKind => {
   return map[kind] || CIK.Text;
 };
 
-const toCompletion = (
-  entry: GraphQLWorkerCompletionItem
-): monaco.languages.CompletionItem => {
+const toCompletion = (entry: GraphQLWorkerCompletionItem): monaco.languages.CompletionItem => {
   return {
     range: entry.range as monaco.IRange,
     kind: toCompletionItemKind(entry.kind as lsCIK),
     label: entry.label,
     insertText: entry.insertText ?? (entry.label as string),
-    insertTextRules: entry.insertText
-      ? languages.CompletionItemInsertTextRule.InsertAsSnippet
-      : undefined,
+    insertTextRules: entry.insertText ? languages.CompletionItemInsertTextRule.InsertAsSnippet : undefined,
     sortText: entry.sortText,
     filterText: entry.filterText,
     documentation: entry.documentation,
@@ -110,18 +106,11 @@ class GraphQLWorker {
       console.log('no schema');
     }
     const graphQLPosition = toGraphQLPosition(position);
-    const suggestions = getAutocompleteSuggestions(
-      schema,
-      document,
-      graphQLPosition
-    );
-    return suggestions.map((suggestion) => this.toCompletion(suggestion));
+    const suggestions = getAutocompleteSuggestions(schema, document, graphQLPosition);
+    return suggestions.map(suggestion => this.toCompletion(suggestion));
   }
 
-  toCompletion(
-    entry: CompletionItem,
-    range?: IRange
-  ): GraphQLWorkerCompletionItem {
+  toCompletion(entry: CompletionItem, range?: IRange): GraphQLWorkerCompletionItem {
     return {
       label: entry.label,
       insertText: entry.insertText,
@@ -132,19 +121,17 @@ class GraphQLWorker {
       detail: entry.detail,
       range: range ? toMonacoRange(range) : undefined,
       kind: entry.kind,
-      command: entry.command
-        ? { ...entry.command, id: entry.command.command }
-        : undefined,
+      command: entry.command ? { ...entry.command, id: entry.command.command } : undefined,
     };
   }
 }
 
-export const ExecutableDocumentEditor: FC<
-  { schema: GraphQLSchema } & Omit<EditorProps, 'language'>
-> = ({ schema, ...editorProps }) => {
+export const ExecutableDocumentEditor: FC<{ schema: GraphQLSchema } & Omit<EditorProps, 'language'>> = ({
+  schema,
+  ...editorProps
+}) => {
   const monaco = useMonaco();
-  const [completionProvider, setCompletionProvider] =
-    useState<monaco.IDisposable | null>(null);
+  const [completionProvider, setCompletionProvider] = useState<monaco.IDisposable | null>(null);
   const editorUriRef = useRef<monaco.Uri>();
 
   useEffect(() => {
@@ -156,27 +143,24 @@ export const ExecutableDocumentEditor: FC<
       completionProvider.dispose();
     }
 
-    const newProvider = monaco.languages.registerCompletionItemProvider(
-      'graphql',
-      {
-        triggerCharacters: [':', '$', '\n', ' ', '(', '@'],
-        provideCompletionItems(
-          model: monaco.editor.IReadOnlyModel,
-          position: monaco.Position
-        ): monaco.languages.CompletionList {
-          const isUriEquals = model.uri.path === editorUriRef.current!.path;
-          if (!isUriEquals) {
-            return { suggestions: [] };
-          }
-          const worker = new GraphQLWorker();
-          const completionItems = worker.doComplete(model, position, schema);
-          return {
-            incomplete: true,
-            suggestions: completionItems.map((item) => toCompletion(item)),
-          };
-        },
-      }
-    );
+    const newProvider = monaco.languages.registerCompletionItemProvider('graphql', {
+      triggerCharacters: [':', '$', '\n', ' ', '(', '@'],
+      provideCompletionItems(
+        model: monaco.editor.IReadOnlyModel,
+        position: monaco.Position
+      ): monaco.languages.CompletionList {
+        const isUriEquals = model.uri.path === editorUriRef.current!.path;
+        if (!isUriEquals) {
+          return { suggestions: [] };
+        }
+        const worker = new GraphQLWorker();
+        const completionItems = worker.doComplete(model, position, schema);
+        return {
+          incomplete: true,
+          suggestions: completionItems.map(item => toCompletion(item)),
+        };
+      },
+    });
     setCompletionProvider(newProvider);
   }, [monaco, schema]);
 
@@ -185,7 +169,7 @@ export const ExecutableDocumentEditor: FC<
       height="70vh"
       {...editorProps}
       language="graphql"
-      onMount={(editor) => {
+      onMount={editor => {
         editorUriRef.current = editor.getModel()!.uri;
       }}
     />

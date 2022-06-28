@@ -1,5 +1,4 @@
-const regex =
-  '[^\\.\\s@:](?:[^\\s@:]*[^\\s@:\\.])?@[^\\.\\s@]+(?:\\.[^\\.\\s@]+)*';
+const regex = '[^\\.\\s@:](?:[^\\s@:]*[^\\s@:\\.])?@[^\\.\\s@]+(?:\\.[^\\.\\s@]+)*';
 
 function emailRegex({ exact }: { exact: boolean }) {
   return exact ? new RegExp(`^${regex}$`) : new RegExp(regex, 'g');

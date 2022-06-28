@@ -8,13 +8,12 @@ export default {
   argTypes: {
     sameSite: {
       name: 'Same Site',
-      description:
-        'Use this to force links to open in the same tab, using the root domain.',
+      description: 'Use this to force links to open in the same tab, using the root domain.',
     },
   },
 } as Meta;
 
-const Template: Story<IFooterProps> = (args) => <Footer {...args} />;
+const Template: Story<IFooterProps> = args => <Footer {...args} />;
 
 export const Default = Template.bind({});
 

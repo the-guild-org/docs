@@ -19,9 +19,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IHeroMarketplaceProps> = (args) => (
-  <HeroMarketplace {...args} />
-);
+const Template: Story<IHeroMarketplaceProps> = args => <HeroMarketplace {...args} />;
 
 export const Default = Template.bind({});
 Default.args = dummyHeroMarketplace;

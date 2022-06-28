@@ -10,21 +10,11 @@ import '../../../packages/components/src/static/css/SearchBarV2.css';
 // 1. Remove import fonts.css
 // 2. import '../public/styles.css'
 
-
-export default function App({
-  router,
-  pageProps,
-  Component,
-}: AppProps): ReactElement {
+export default function App({ router, pageProps, Component }: AppProps): ReactElement {
   return (
     <>
       <ThemeProvider>
-        <Header
-          accentColor="#1cc8ee"
-          activeLink=""
-          themeSwitch
-          searchBarProps={{ version: 'v2' }}
-        />
+        <Header accentColor="#1cc8ee" activeLink="" themeSwitch searchBarProps={{ version: 'v2' }} />
         <Subheader
           product={{
             title: 'Components',

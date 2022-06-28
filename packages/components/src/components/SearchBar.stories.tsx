@@ -33,7 +33,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ISearchBarProps> = (args) => <SearchBar {...args} />;
+const Template: Story<ISearchBarProps> = args => <SearchBar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

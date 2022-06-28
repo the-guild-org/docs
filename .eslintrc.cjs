@@ -32,7 +32,7 @@ module.exports = {
     'no-unused-expressions': 'error',
     'react/self-closing-comp': 'error',
     'no-implicit-coercion': 'error',
-    "react/no-unescaped-entities": "off",
+    'react/no-unescaped-entities': 'off',
     'no-var': 'error',
     'object-shorthand': ['error', 'always'],
     'prefer-const': 'error',
@@ -55,11 +55,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: [
-        'postcss.config.js',
-        'rollup.config.js',
-        'scripts/canary-release.js',
-      ],
+      files: ['postcss.config.js', 'rollup.config.js', 'scripts/canary-release.js'],
       env: {
         node: true,
       },

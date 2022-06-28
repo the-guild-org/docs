@@ -16,9 +16,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IMarketplaceSearchProps> = (args) => (
-  <MarketplaceSearch {...args} />
-);
+const Template: Story<IMarketplaceSearchProps> = args => <MarketplaceSearch {...args} />;
 
 export const Default = Template.bind({});
 Default.args = dummyMarketplaceSearch;

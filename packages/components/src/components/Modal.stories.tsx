@@ -40,12 +40,11 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IModalProps> = (args) => (
+const Template: Story<IModalProps> = args => (
   <Modal {...args}>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum sed
-      mi sed sollicitudin. Duis vehicula et dolor at suscipit. Integer congue
-      magna vel orci bibendum, eu vestibulum leo venenatis.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum sed mi sed sollicitudin. Duis vehicula et
+      dolor at suscipit. Integer congue magna vel orci bibendum, eu vestibulum leo venenatis.
     </p>
   </Modal>
 );

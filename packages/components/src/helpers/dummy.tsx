@@ -7,8 +7,7 @@ import heroIllustrationImage from '../static/dummy/envelop/communication.png';
 import marketplaceListImage from '../static/dummy/marketplace/logo-modules.svg';
 import { IMarketplaceListProps } from '../types/components';
 
-const subheaderImage =
-  'https://the-guild.dev/static/shared-logos/products/envelop.svg';
+const subheaderImage = 'https://the-guild.dev/static/shared-logos/products/envelop.svg';
 
 export const dummyFeatureList = {
   title: 'The best and simple features',
@@ -52,8 +51,7 @@ export const dummyInfoList = {
   items: [
     {
       title: 'Install GraphQL Envelop',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
       link: {
         children: 'Documentation',
         title: 'Read the documentation',
@@ -62,8 +60,7 @@ export const dummyInfoList = {
     },
     {
       title: 'GitHub integration',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
       link: {
         children: 'GitHub',
         title: 'View the code',
@@ -74,8 +71,7 @@ export const dummyInfoList = {
     },
     {
       title: "Let's work together",
-      description:
-        'We want to hear from you, our community of fellow engineers.',
+      description: 'We want to hear from you, our community of fellow engineers.',
       link: {
         children: 'envelop@theguild.dev',
         title: 'Reach us out',
@@ -96,8 +92,7 @@ export const dummyHeroVideo = {
   },
   video: {
     src: 'https://youtube.com/watch?v=dQw4w9WgXcQ',
-    placeholder:
-      'https://ak.picdn.net/shutterstock/videos/1033186691/thumb/1.jpg',
+    placeholder: 'https://ak.picdn.net/shutterstock/videos/1033186691/thumb/1.jpg',
   },
   flipped: true,
 };

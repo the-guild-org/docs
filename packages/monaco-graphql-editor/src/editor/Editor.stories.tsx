@@ -37,7 +37,7 @@ export default {
   },
 } as Meta;
 
-const SchemaTemplate: Story<SchemaEditorProps> = (args) => {
+const SchemaTemplate: Story<SchemaEditorProps> = args => {
   const ref = useRef<SchemaEditorApi>(null);
 
   return (
@@ -51,10 +51,7 @@ const SchemaTemplate: Story<SchemaEditorProps> = (args) => {
         }}
         onClick={() => {
           if (ref.current) {
-            const identifier = prompt(
-              'What type are you looking for?',
-              'Query'
-            );
+            const identifier = prompt('What type are you looking for?', 'Query');
             ref.current.jumpToType(identifier);
           }
         }}
@@ -70,10 +67,7 @@ const SchemaTemplate: Story<SchemaEditorProps> = (args) => {
         }}
         onClick={() => {
           if (ref.current) {
-            const identifier = prompt(
-              'What type+field are you looking for?',
-              'Query.me'
-            );
+            const identifier = prompt('What type+field are you looking for?', 'Query.me');
             const [typeName, fieldName] = identifier.split('.');
             ref.current.jumpToField(typeName, fieldName);
           }
@@ -86,7 +80,7 @@ const SchemaTemplate: Story<SchemaEditorProps> = (args) => {
   );
 };
 
-const SchemaDiffTemplate: Story<SchemaDiffEditorProps> = (args) => {
+const SchemaDiffTemplate: Story<SchemaDiffEditorProps> = args => {
   return <SchemaDiffEditor {...args} />;
 };
 
@@ -128,11 +122,7 @@ BasicSchemaEditor.args = {
       id: 'dotan.test.click',
       label: 'My Custom Aaction',
       onRun({ editor, bridge }) {
-        if (
-          ['NamedType', 'ObjectTypeDef'].includes(
-            bridge.token.state.kind as string
-          )
-        ) {
+        if (['NamedType', 'ObjectTypeDef'].includes(bridge.token.state.kind as string)) {
           const domNode = document.createElement('div');
           domNode.innerHTML = `You Selected: <strong>${bridge.token.state.kind} / ${bridge.token.state.name}</strong><br />You can show here any html that you wish!`;
           domNode.style.background = 'orange';

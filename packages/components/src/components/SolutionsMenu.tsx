@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Callout,
-  Category,
-  Container,
-  Item,
-  List,
-} from './SolutionsMenu.styles';
+import { Callout, Category, Container, Item, List } from './SolutionsMenu.styles';
 
 const categories: {
   title: string;
@@ -78,13 +72,8 @@ export const SolutionsMenu: React.FC = () => {
         <Category key={index}>
           <h3>{category.title}</h3>
           <List>
-            {category.items.map((item) => (
-              <Item
-                key={item.title}
-                href={item.url}
-                target="_blank"
-                rel="noreferrer"
-              >
+            {category.items.map(item => (
+              <Item key={item.title} href={item.url} target="_blank" rel="noreferrer">
                 <span>
                   <h4>{item.title}</h4>
                 </span>
@@ -94,11 +83,7 @@ export const SolutionsMenu: React.FC = () => {
         </Category>
       ))}
       <Callout>
-        <a
-          href="https://graphql-yoga.com/tutorial/basic/00-introduction"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://graphql-yoga.com/tutorial/basic/00-introduction" target="_blank" rel="noreferrer">
           Write your first GraphQL API →
         </a>
       </Callout>

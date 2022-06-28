@@ -16,7 +16,7 @@ export const Newsletter: FC<INewsletterProps> = ({ onNewsletterSubmit }) => {
           ? 'border-red-500 text-red-500 dark:border-red-400 dark:text-red-400'
           : 'border-gray-100 text-black dark:border-gray-800 dark:text-gray-200'
       )}
-      onSubmit={(e) => {
+      onSubmit={e => {
         e.preventDefault();
 
         if (!isEmail(inputValue)) {
@@ -36,7 +36,7 @@ export const Newsletter: FC<INewsletterProps> = ({ onNewsletterSubmit }) => {
         type="email"
         placeholder="your@email.com"
         className="w-full bg-transparent text-xs outline-none placeholder:text-gray-400"
-        onChange={(e) => {
+        onChange={e => {
           const { value } = e.target;
           setInputValue(value);
           if (value === '') {

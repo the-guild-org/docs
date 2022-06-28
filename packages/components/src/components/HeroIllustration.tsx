@@ -10,10 +10,7 @@ export const HeroIllustration: FC<IHeroIllustrationProps> = ({
   flipped,
   ...restProps
 }) => (
-  <section
-    className="bg-white font-default dark:bg-gray-900"
-    {...restProps.wrapperProps}
-  >
+  <section className="bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
     <div
       className={clsx(
         `
@@ -31,10 +28,7 @@ export const HeroIllustration: FC<IHeroIllustrationProps> = ({
       {...restProps.containerProps}
     >
       <img
-        className={clsx(
-          'mb-6 flex w-full max-w-md md:mb-0 md:w-2/5',
-          flipped ? 'md:ml-8' : 'md:mr-8'
-        )}
+        className={clsx('mb-6 flex w-full max-w-md md:mb-0 md:w-2/5', flipped ? 'md:ml-8' : 'md:mr-8')}
         src={image.src}
         alt={image.alt}
         {...restProps.imageProps}
@@ -46,10 +40,7 @@ export const HeroIllustration: FC<IHeroIllustrationProps> = ({
         >
           {title}
         </h2>
-        <p
-          className="mt-1 mb-3 max-w-md text-base text-gray-500 dark:text-gray-400"
-          {...restProps.descriptionProps}
-        >
+        <p className="mt-1 mb-3 max-w-md text-base text-gray-500 dark:text-gray-400" {...restProps.descriptionProps}>
           {description}
         </p>
         {link && (

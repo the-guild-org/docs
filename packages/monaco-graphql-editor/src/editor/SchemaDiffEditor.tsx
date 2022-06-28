@@ -1,13 +1,8 @@
 import * as React from 'react';
 import { DiffEditor, DiffEditorProps } from '@monaco-editor/react';
-import {
-  SchemaEditorApi,
-  SchemaServicesOptions,
-  useSchemaServices,
-} from './use-schema-services';
+import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
 
-export type SchemaDiffEditorProps = SchemaServicesOptions &
-  Omit<DiffEditorProps, 'language'>;
+export type SchemaDiffEditorProps = SchemaServicesOptions & Omit<DiffEditorProps, 'language'>;
 
 function BaseSchemaDiffEditor(
   props: SchemaDiffEditorProps,
@@ -37,7 +32,7 @@ function BaseSchemaDiffEditor(
     <DiffEditor
       height="70vh"
       {...props}
-      beforeMount={(monaco) => {
+      beforeMount={monaco => {
         originalSchemaService.setMonaco(monaco);
         modifiedSchemaService.setMonaco(monaco);
         props.beforeMount?.(monaco);

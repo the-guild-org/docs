@@ -1,23 +1,11 @@
 import { FC } from 'react';
 import { IFeatureListProps } from '../types/components';
 
-export const FeatureList: FC<IFeatureListProps> = ({
-  title,
-  titleDescription,
-  items,
-  link,
-  ...restProps
-}) => (
-  <section
-    className="bg-white font-default dark:bg-gray-900"
-    {...restProps.wrapperProps}
-  >
+export const FeatureList: FC<IFeatureListProps> = ({ title, titleDescription, items, link, ...restProps }) => (
+  <section className="bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
     <div className="py-14 container-min" {...restProps.containerProps}>
       {title && (
-        <div
-          className="mb-6 flex flex-wrap justify-center px-24"
-          {...restProps.titleProps}
-        >
+        <div className="mb-6 flex flex-wrap justify-center px-24" {...restProps.titleProps}>
           <h2 className="mt-0 mb-1.5 text-center text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">
             {title}
           </h2>
@@ -44,22 +32,11 @@ export const FeatureList: FC<IFeatureListProps> = ({
             className="mx-5 mb-1 flex w-56 flex-col items-center text-center last:mb-0 md:mb-0"
             key={`feature-${index}`}
           >
-            <img
-              src={item.image.src}
-              alt={item.image.alt}
-              className="w-28"
-              {...restProps.itemImageProps}
-            />
-            <h3
-              className="m-0 text-lg font-bold text-black dark:text-gray-50"
-              {...restProps.itemTitleProps}
-            >
+            <img src={item.image.src} alt={item.image.alt} className="w-28" {...restProps.itemImageProps} />
+            <h3 className="m-0 text-lg font-bold text-black dark:text-gray-50" {...restProps.itemTitleProps}>
               {item.title}
             </h3>
-            <p
-              className="m-0 text-sm text-gray-500 dark:text-gray-400"
-              {...restProps.itemDescriptionProps}
-            >
+            <p className="m-0 text-sm text-gray-500 dark:text-gray-400" {...restProps.itemDescriptionProps}>
               {item.description}
             </p>
             {item.link && (

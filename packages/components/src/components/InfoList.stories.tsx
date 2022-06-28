@@ -16,7 +16,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IInfoListProps> = (args) => <InfoList {...args} />;
+const Template: Story<IInfoListProps> = args => <InfoList {...args} />;
 
 export const Default = Template.bind({});
 Default.args = dummyInfoList;

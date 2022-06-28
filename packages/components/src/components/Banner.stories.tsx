@@ -23,15 +23,14 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IBannerProps> = (args) => <Banner {...args} />;
+const Template: Story<IBannerProps> = args => <Banner {...args} />;
 
 export const Default = Template.bind({});
 
 Default.args = {
   children: (
     <>
-      <b>Important:</b> This documentation covers GraphQL Config v3. For the 2.x
-      doc, check: graphql-config.com/legacy.
+      <b>Important:</b> This documentation covers GraphQL Config v3. For the 2.x doc, check: graphql-config.com/legacy.
     </>
   ),
 };

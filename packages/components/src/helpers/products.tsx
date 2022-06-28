@@ -16,15 +16,13 @@ export const PRODUCTS: {
   },
   {
     children: 'Yoga',
-    title:
-      'A fully-featured, simple to set up, performant and extendable server',
+    title: 'A fully-featured, simple to set up, performant and extendable server',
     href: 'https://graphql-yoga.com',
     logo: `${CDN}yoga.svg`,
   },
   {
     children: 'Envelop',
-    title:
-      'Develop and share plugins that are usable with any GraphQL server framework or schema',
+    title: 'Develop and share plugins that are usable with any GraphQL server framework or schema',
     href: 'https://envelop.dev',
     logo: `${CDN}envelop.svg`,
   },
@@ -36,8 +34,7 @@ export const PRODUCTS: {
   },
   {
     children: 'Code Generator',
-    title:
-      'Generation of Typed Queries, Mutations, Subscriptions and Typed GraphQL resolvers',
+    title: 'Generation of Typed Queries, Mutations, Subscriptions and Typed GraphQL resolvers',
     href: 'https://graphql-code-generator.com',
     logo: `${CDN}code-generator.svg`,
   },
@@ -73,8 +70,7 @@ export const PRODUCTS: {
   },
   {
     children: 'Scalars',
-    title:
-      'Common custom GraphQL Scalars for precise type-safe GraphQL schemas',
+    title: 'Common custom GraphQL Scalars for precise type-safe GraphQL schemas',
     href: 'https://graphql-scalars.dev',
     logo: `${CDN}scalars.svg`,
   },

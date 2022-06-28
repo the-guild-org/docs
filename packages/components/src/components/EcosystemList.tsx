@@ -1,41 +1,18 @@
 import React from 'react';
-import {
-  Container,
-  ProductCategory,
-  ProductList,
-  ProductThumbnail,
-  ProductImage,
-} from './Ecosystem.styles';
+import { Container, ProductCategory, ProductList, ProductThumbnail, ProductImage } from './Ecosystem.styles';
 import { PRODUCTS } from '../helpers/assets';
 
 const productCategories = [
   {
     title: 'Build GraphQL servers',
-    items: PRODUCTS.filter((p) =>
-      [
-        'Yoga',
-        'Modules',
-        'Envelop',
-        'Mesh',
-        'Dataloader',
-        'LiveQuery',
-        'Scalars',
-        'SOFA',
-      ].includes(p.children)
+    items: PRODUCTS.filter(p =>
+      ['Yoga', 'Modules', 'Envelop', 'Mesh', 'Dataloader', 'LiveQuery', 'Scalars', 'SOFA'].includes(p.children)
     ),
   },
   {
     title: 'Supercharge your workflow',
-    items: PRODUCTS.filter((p) =>
-      [
-        'Code Generator',
-        'Tools',
-        'Hive',
-        'Inspector',
-        'ESLint',
-        'Config',
-        'CLI',
-      ].includes(p.children)
+    items: PRODUCTS.filter(p =>
+      ['Code Generator', 'Tools', 'Hive', 'Inspector', 'ESLint', 'Config', 'CLI'].includes(p.children)
     ),
   },
   // {
@@ -44,9 +21,7 @@ const productCategories = [
   // },
   {
     title: 'Build great user experience',
-    items: PRODUCTS.filter((p) =>
-      ['Swift', 'Angular', 'Stencil', 'KitQL'].includes(p.children)
-    ),
+    items: PRODUCTS.filter(p => ['Swift', 'Angular', 'Stencil', 'KitQL'].includes(p.children)),
   },
 ];
 
@@ -57,13 +32,8 @@ export const EcosystemList: React.FC = () => {
         <ProductCategory key={index}>
           <h3>{category.title}</h3>
           <ProductList>
-            {category.items.map((product) => (
-              <ProductThumbnail
-                key={product.children}
-                href={product.href}
-                target="_blank"
-                rel="noreferrer"
-              >
+            {category.items.map(product => (
+              <ProductThumbnail key={product.children} href={product.href} target="_blank" rel="noreferrer">
                 <ProductImage>
                   <img src={product.logo} alt={`${product.children} logo`} />
                 </ProductImage>

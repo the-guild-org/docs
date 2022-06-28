@@ -3,18 +3,8 @@ import ReactPlayer from 'react-player/lazy';
 import clsx from 'clsx';
 import { IHeroVideoProps } from '../types/components';
 
-export const HeroVideo: FC<IHeroVideoProps> = ({
-  title,
-  description,
-  link,
-  video,
-  flipped,
-  ...restProps
-}) => (
-  <section
-    className="bg-gray-100 font-default dark:bg-gray-800"
-    {...restProps.wrapperProps}
-  >
+export const HeroVideo: FC<IHeroVideoProps> = ({ title, description, link, video, flipped, ...restProps }) => (
+  <section className="bg-gray-100 font-default dark:bg-gray-800" {...restProps.wrapperProps}>
     <div
       className={clsx(
         `
@@ -37,10 +27,7 @@ export const HeroVideo: FC<IHeroVideoProps> = ({
         >
           {title}
         </h2>
-        <p
-          className="mt-1 mb-3 max-w-md text-base text-gray-500 dark:text-gray-400"
-          {...restProps.descriptionProps}
-        >
+        <p className="mt-1 mb-3 max-w-md text-base text-gray-500 dark:text-gray-400" {...restProps.descriptionProps}>
           {description}
         </p>
         {link && (

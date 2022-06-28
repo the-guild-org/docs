@@ -13,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ISchemaPageProps> = (args) => <SchemaPage {...args} />;
+const Template: Story<ISchemaPageProps> = args => <SchemaPage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = dummySchemaPage;

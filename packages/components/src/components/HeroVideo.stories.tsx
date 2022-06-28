@@ -25,7 +25,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IHeroVideoProps> = (args) => <HeroVideo {...args} />;
+const Template: Story<IHeroVideoProps> = args => <HeroVideo {...args} />;
 
 export const Default = Template.bind({});
 

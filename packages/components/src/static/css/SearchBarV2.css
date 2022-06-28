@@ -52,7 +52,7 @@ html.dark .aa-DetachedSearchButtonPlaceholder {
 
 @media (max-width: 768px) {
   .aa-DetachedSearchButtonPlaceholder {
-    display: none
+    display: none;
   }
   .aa-DetachedSearchButton {
     background: transparent !important;

@@ -1,14 +1,8 @@
 import { FC } from 'react';
 import { ICardsColorfulProps } from '../types/components';
 
-export const CardsColorful: FC<ICardsColorfulProps> = ({
-  cards,
-  ...restProps
-}) => (
-  <section
-    className="bg-white py-8 font-default dark:bg-gray-900"
-    {...restProps.wrapperProps}
-  >
+export const CardsColorful: FC<ICardsColorfulProps> = ({ cards, ...restProps }) => (
+  <section className="bg-white py-8 font-default dark:bg-gray-900" {...restProps.wrapperProps}>
     <div
       className="
         flex
@@ -21,7 +15,7 @@ export const CardsColorful: FC<ICardsColorfulProps> = ({
     "
       {...restProps.containerProps}
     >
-      {cards.map((card) => (
+      {cards.map(card => (
         <a
           key={card.title}
           className="
@@ -52,22 +46,13 @@ export const CardsColorful: FC<ICardsColorfulProps> = ({
           {...restProps.cardProps}
         >
           <div className="w-3/4 lg:w-1/2">
-            <h2
-              className="pb-1.5 text-xs font-semibold uppercase opacity-60"
-              {...restProps.cardCategoryProps}
-            >
+            <h2 className="pb-1.5 text-xs font-semibold uppercase opacity-60" {...restProps.cardCategoryProps}>
               {card.category}
             </h2>
-            <h3
-              className="pb-2.5 text-2xl font-bold md:text-3xl"
-              {...restProps.cardTitleProps}
-            >
+            <h3 className="pb-2.5 text-2xl font-bold md:text-3xl" {...restProps.cardTitleProps}>
               {card.title}
             </h3>
-            <p
-              className="text-xs font-medium opacity-60"
-              {...restProps.cardDescriptionProps}
-            >
+            <p className="text-xs font-medium opacity-60" {...restProps.cardDescriptionProps}>
               {card.description}
             </p>
           </div>

@@ -16,7 +16,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IFeatureListProps> = (args) => <FeatureList {...args} />;
+const Template: Story<IFeatureListProps> = args => <FeatureList {...args} />;
 
 export const Default = Template.bind({});
 

@@ -40,11 +40,7 @@ const setDOMTheme = (isDark: boolean) => {
   }
 };
 
-export const ThemeProvider: React.FC<Partial<IContextProps>> = ({
-  children,
-  isDarkTheme,
-  setDarkTheme,
-}) => {
+export const ThemeProvider: React.FC<Partial<IContextProps>> = ({ children, isDarkTheme, setDarkTheme }) => {
   const [isDark, setDark] = useState(false);
 
   useEffect(() => {

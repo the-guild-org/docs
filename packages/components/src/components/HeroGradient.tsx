@@ -23,10 +23,7 @@ export const HeroGradient: FC<IHeroGradientProps> = ({
   image,
   ...restProps
 }) => (
-  <section
-    className="overflow-hidden bg-white font-default dark:bg-gray-900 md:pt-14"
-    {...restProps.wrapperProps}
-  >
+  <section className="overflow-hidden bg-white font-default dark:bg-gray-900 md:pt-14" {...restProps.wrapperProps}>
     <div className="relative container-min" {...restProps.containerProps}>
       <div
         className="absolute inset-0 overflow-hidden bg-black dark:bg-gray-900 md:mx-6 md:rounded-3xl"
@@ -38,29 +35,18 @@ export const HeroGradient: FC<IHeroGradientProps> = ({
         <Shadow className="right-[-350px] bottom-[-500px] [background:var(--colorB)]" />
         <Shadow className="-left-12 bottom-[-600px] [background:var(--colorB)]" />
       </div>
-      <div
-        className={clsx(
-          'md:px-10 md:pt-24 md:pb-14',
-          image ? 'mb-32 pt-8 pb-72 md:mb-4' : 'py-20'
-        )}
-      >
+      <div className={clsx('md:px-10 md:pt-24 md:pb-14', image ? 'mb-32 pt-8 pb-72 md:mb-4' : 'py-20')}>
         <div className="relative z-1">
-          <h1
-            className="mb-2.5 max-w-lg text-2xl font-bold text-white md:text-3xl"
-            {...restProps.titleProps}
-          >
+          <h1 className="mb-2.5 max-w-lg text-2xl font-bold text-white md:text-3xl" {...restProps.titleProps}>
             {title}
           </h1>
-          <p
-            className="max-w-md text-base text-white opacity-70 md:text-lg"
-            {...restProps.descriptionProps}
-          >
+          <p className="max-w-md text-base text-white opacity-70 md:text-lg" {...restProps.descriptionProps}>
             {description}
           </p>
         </div>
         <div className="relative z-1 mt-4 flex items-center gap-x-3 text-xs md:mt-9">
           {link &&
-            toArray(link).map((link) => (
+            toArray(link).map(link => (
               <Button
                 className="!px-8"
                 variant="secondary"
@@ -72,10 +58,7 @@ export const HeroGradient: FC<IHeroGradientProps> = ({
           {version && isValidElement(version) ? (
             version
           ) : (
-            <span
-              className="text-gray-50 opacity-60"
-              {...restProps.versionProps}
-            >
+            <span className="text-gray-50 opacity-60" {...restProps.versionProps}>
               {version}
             </span>
           )}

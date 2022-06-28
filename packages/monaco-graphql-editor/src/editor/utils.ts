@@ -44,26 +44,21 @@ export type BridgeOptions = {
 };
 
 export type HoverSource = {
-  forNode(
-    options: BridgeOptions
-  ): monaco.IMarkdownString | null | Promise<monaco.IMarkdownString | null>;
+  forNode(options: BridgeOptions): monaco.IMarkdownString | null | Promise<monaco.IMarkdownString | null>;
 };
 
 export type DiagnosticsSource = {
   forDocument(
     options: Pick<BridgeOptions, 'document' | 'languageService' | 'model'>
-  ):
-    | monaco.editor.IMarkerData[]
-    | null
-    | Promise<monaco.editor.IMarkerData[] | null>;
+  ): monaco.editor.IMarkerData[] | null | Promise<monaco.editor.IMarkerData[] | null>;
 };
 
 export const coreDiagnosticsSource: DiagnosticsSource = {
   async forDocument({ model, document, languageService }) {
     return languageService
       .getDiagnostics(model.uri.toString(), document)
-      .then((diag) => diag.map(toMarkerData))
-      .catch((e) => {
+      .then(diag => diag.map(toMarkerData))
+      .catch(e => {
         if ('message' in e && 'locations' in e) {
           return [
             toMarkerData({
@@ -85,21 +80,14 @@ export const coreDiagnosticsSource: DiagnosticsSource = {
 export type DecorationsSource = {
   forDocument(
     options: Pick<BridgeOptions, 'document' | 'languageService' | 'model'> & {
-      editor:
-        | monaco.editor.IStandaloneCodeEditor
-        | monaco.editor.IStandaloneDiffEditor;
+      editor: monaco.editor.IStandaloneCodeEditor | monaco.editor.IStandaloneDiffEditor;
       monaco: typeof monaco;
     }
   ): void | Promise<void>;
 };
 
 export type DefinitionSource = {
-  forNode(
-    options: BridgeOptions
-  ):
-    | monaco.languages.Definition[]
-    | null
-    | Promise<monaco.languages.Definition[] | null>;
+  forNode(options: BridgeOptions): monaco.languages.Definition[] | null | Promise<monaco.languages.Definition[] | null>;
 };
 
 export const coreDefinitionSource: DefinitionSource = {
@@ -134,7 +122,7 @@ export const coreHoverSource: HoverSource = {
 
 export const debugHoverSource: HoverSource = {
   forNode: ({ token }) => ({
-    value: `\`\`\`json\n${  JSON.stringify(token.state, null, 2)  }\n\`\`\``,
+    value: `\`\`\`json\n${JSON.stringify(token.state, null, 2)}\n\`\`\``,
   }),
 };
 
@@ -142,9 +130,7 @@ export function toGraphQLPosition(position: monaco.Position): GraphQLPosition {
   return new Position(position.lineNumber - 1, position.column - 1);
 }
 
-export function toMarkerData(
-  diagnostic: Diagnostic
-): monaco.editor.IMarkerData {
+export function toMarkerData(diagnostic: Diagnostic): monaco.editor.IMarkerData {
   return {
     startLineNumber: diagnostic.range.start.line + 1,
     endLineNumber: diagnostic.range.end.line + 1,
@@ -180,9 +166,7 @@ export type EditorAction = {
   contextMenuGroupId?: string;
   contextMenuOrder?: number;
   onRun: (options: {
-    editor:
-      | monaco.editor.IStandaloneCodeEditor
-      | monaco.editor.IStandaloneDiffEditor;
+    editor: monaco.editor.IStandaloneCodeEditor | monaco.editor.IStandaloneDiffEditor;
     monaco: typeof monaco;
     bridge: BridgeOptions;
   }) => void;

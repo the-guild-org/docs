@@ -1,19 +1,8 @@
 import { useState, useMemo, useEffect } from 'react';
 import type * as monaco from 'monaco-editor';
-import {
-  DecorationsSource,
-  DefinitionSource,
-  DiagnosticsSource,
-  EditorAction,
-  HoverSource,
-} from './utils';
+import { DecorationsSource, DefinitionSource, DiagnosticsSource, EditorAction, HoverSource } from './utils';
 import { EnrichedLanguageService } from './EnrichedLanguageService';
-import {
-  GraphQLError,
-  GraphQLSchema,
-  isInterfaceType,
-  isObjectType,
-} from 'graphql';
+import { GraphQLError, GraphQLSchema, isInterfaceType, isObjectType } from 'graphql';
 import { emptyLocation, locToRange } from './utils';
 
 export type SchemaEditorApi = {
@@ -32,11 +21,7 @@ export type SchemaServicesOptions = {
   onBlur?: (value: string) => void;
   onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;
   onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;
-  onSchemaError?: (
-    errors: [GraphQLError],
-    sdl: string,
-    languageService: EnrichedLanguageService
-  ) => void;
+  onSchemaError?: (errors: [GraphQLError], sdl: string, languageService: EnrichedLanguageService) => void;
   sharedLanguageService?: EnrichedLanguageService;
   keyboardShortcuts?: (
     editorInstance: monaco.editor.IStandaloneCodeEditor,
@@ -45,8 +30,7 @@ export type SchemaServicesOptions = {
 };
 
 export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
-  const [editorRef, setEditor] =
-    useState<monaco.editor.IStandaloneCodeEditor | null>(null);
+  const [editorRef, setEditor] = useState<monaco.editor.IStandaloneCodeEditor | null>(null);
   const [monacoRef, setMonaco] = useState<typeof monaco | null>(null);
   const languageService = useMemo(
     () =>
@@ -83,10 +67,7 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
             const position = editor.getPosition();
 
             if (model && position) {
-              const bridge = await languageService.buildBridgeForProviders(
-                model,
-                position
-              );
+              const bridge = await languageService.buildBridgeForProviders(model, position);
 
               if (bridge) {
                 action.onRun({ editor: editorRef, monaco: monacoRef, bridge });
@@ -97,29 +78,16 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
       }
 
       const handler = languageService.getModelChangeHandler();
-      handler(
-        editorRef,
-        monacoRef,
-        options.diagnosticsProviders || [],
-        options.decorationsProviders || []
-      );
+      handler(editorRef, monacoRef, options.diagnosticsProviders || [], options.decorationsProviders || []);
 
       const onChangeDisposable = editorRef.onDidChangeModelContent(() =>
-        handler(
-          editorRef,
-          monacoRef,
-          options.diagnosticsProviders || [],
-          options.decorationsProviders || []
-        )
+        handler(editorRef, monacoRef, options.diagnosticsProviders || [], options.decorationsProviders || [])
       );
 
-      const definitionProviderDisposable =
-        monacoRef.languages.registerDefinitionProvider(
-          'graphql',
-          languageService.getDefinitionProvider(
-            options.definitionProviders || []
-          )
-        );
+      const definitionProviderDisposable = monacoRef.languages.registerDefinitionProvider(
+        'graphql',
+        languageService.getDefinitionProvider(options.definitionProviders || [])
+      );
 
       const hoverDisposable = monacoRef.languages.registerHoverProvider(
         'graphql',
@@ -146,23 +114,20 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
     setSchema: (newValue: string) => languageService.trySchema(newValue),
     editorApi: {
       jumpToType: (typeName: string) => {
-        languageService.getSchema().then((schema) => {
+        languageService.getSchema().then(schema => {
           if (schema) {
             const type = schema.getType(typeName);
 
             if (type?.astNode?.loc) {
               const range = locToRange(type.astNode.loc);
               editorRef?.setSelection(range);
-              editorRef?.revealPositionInCenter(
-                { column: 0, lineNumber: range.startLineNumber },
-                0
-              );
+              editorRef?.revealPositionInCenter({ column: 0, lineNumber: range.startLineNumber }, 0);
             }
           }
         });
       },
       jumpToField(typeName: string, fieldName: string) {
-        languageService.getSchema().then((schema) => {
+        languageService.getSchema().then(schema => {
           if (schema) {
             const type = schema.getType(typeName);
 
@@ -172,10 +137,7 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
               if (field?.astNode?.loc) {
                 const range = locToRange(field.astNode.loc);
                 editorRef?.setSelection(range);
-                editorRef?.revealPositionInCenter(
-                  { column: 0, lineNumber: range.startLineNumber },
-                  0
-                );
+                editorRef?.revealPositionInCenter({ column: 0, lineNumber: range.startLineNumber }, 0);
               }
             }
           }

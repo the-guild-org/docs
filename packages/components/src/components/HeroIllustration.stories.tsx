@@ -25,9 +25,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IHeroIllustrationProps> = (args) => (
-  <HeroIllustration {...args} />
-);
+const Template: Story<IHeroIllustrationProps> = args => <HeroIllustration {...args} />;
 
 export const Default = Template.bind({});
 
