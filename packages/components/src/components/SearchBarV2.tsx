@@ -27,6 +27,7 @@ import { AlgoliaLogo } from './SearchbarV2/AlgoliaLogo';
 export const SearchBarV2: React.FC<ISearchBarProps> = ({
   accentColor,
   placeholder = 'Search our documentations',
+  algolia,
 }) => {
   const containerRef = useRef(null);
   const search = useRef<AutocompleteApi<AlgoliaSearchItem>>();
@@ -36,9 +37,11 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
       return;
     }
 
-    const appId = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
-    const searchApiKey = process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY;
-    const indexName = process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME;
+    const env = window.process?.env || {};
+    const appId = algolia?.appId || env.NEXT_PUBLIC_ALGOLIA_APP_ID;
+    const searchApiKey =
+      algolia?.searchApiKey || env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY;
+    const indexName = algolia?.indexName || env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME;
 
     if (!appId || !searchApiKey || !indexName) {
       console.error('Algolia environments variables missing');
@@ -161,7 +164,7 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
     return () => {
       s.destroy();
     };
-  }, [accentColor, placeholder]);
+  }, [accentColor, placeholder, algolia]);
 
   // listen for CTRL+K
   useEffect(() => {
