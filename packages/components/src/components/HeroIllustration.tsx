@@ -45,7 +45,7 @@ export const HeroIllustration: FC<IHeroIllustrationProps> = ({
         </p>
         {link && (
           <a
-            className="mt-auto w-max text-sm text-cyan-400 no-underline transition hocus:text-cyan-300"
+            className="mt-auto w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300"
             {...link}
             {...restProps.linkProps}
           />

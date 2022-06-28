@@ -39,7 +39,7 @@ export const HeroVideo: FC<IHeroVideoProps> = ({ title, description, link, video
               text-cyan-400
               no-underline
               transition
-              hocus:text-cyan-300
+              hover:text-cyan-300
             "
             {...link}
             {...restProps.linkProps}

@@ -19,7 +19,7 @@ export const FeatureList: FC<IFeatureListProps> = ({ title, titleDescription, it
           )}
           {link && (
             <a
-              className="mt-auto w-max text-sm text-cyan-400 no-underline transition hocus:text-cyan-300"
+              className="mt-auto w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300"
               {...link}
               {...restProps.linkProps}
             />
@@ -41,7 +41,7 @@ export const FeatureList: FC<IFeatureListProps> = ({ title, titleDescription, it
             </p>
             {item.link && (
               <a
-                className="mt-auto w-max pt-2 text-sm text-cyan-400 no-underline transition hocus:text-cyan-300"
+                className="mt-auto w-max pt-2 text-sm text-cyan-400 no-underline transition hover:text-cyan-300"
                 {...item.link}
                 {...restProps.linkProps}
               />

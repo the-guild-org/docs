@@ -63,7 +63,7 @@ export const Header: React.FC<IHeaderProps> = ({ accentColor, activeLink, themeS
 
   return (
     <header className="bg-white py-2.5 px-3 font-default dark:bg-gray-900 md:py-4" {...restProps.wrapperProps}>
-      <div className="flex justify-between container-max" {...restProps.containerProps}>
+      <div className="flex justify-between container" {...restProps.containerProps}>
         <button
           className="rounded-sm text-gray-500 outline-none transition hover:text-gray-400 focus:ring dark:text-gray-200 dark:hover:text-gray-400 md:hidden"
           onClick={() => handleNav(true)}

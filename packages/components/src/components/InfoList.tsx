@@ -42,7 +42,7 @@ export const InfoList: FC<IInfoListProps> = ({ title, items, ...restProps }) => 
                   text-cyan-400
                   no-underline
                   transition
-                  hocus:text-cyan-300
+                  hover:text-cyan-300
                 "
                 {...item.link}
                 {...restProps.itemLinkProps}

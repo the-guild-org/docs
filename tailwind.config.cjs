@@ -66,35 +66,11 @@ module.exports = {
   },
   plugins: [
     plugin(({ addUtilities, addVariant }) => {
-      const containerProps = {
-        width: '100%',
-        paddingLeft: '0.75rem',
-        paddingRight: '0.75rem',
-        '@media (min-width: 768px)': {
-          paddingLeft: '1.5rem',
-          paddingRight: '1.5rem',
-        },
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        boxSizing: 'border-box',
-      };
-
       addUtilities({
-        '.container-max': {
-          ...containerProps,
-          maxWidth: 1200,
-        },
-
-        '.container-min': {
-          ...containerProps,
-          maxWidth: 1024,
-        },
-
         '.font-default': {
-          fontFamily: 'TGCFont, sans-serif',
+          fontFamily: 'ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
         },
       });
-      addVariant('hocus', ['&:hover', '&:focus']);
     }),
     require('@tailwindcss/line-clamp'),
   ],

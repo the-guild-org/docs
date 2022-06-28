@@ -19,12 +19,12 @@ export const Button: FC<
         no-underline
         transition
         focus:bg-cyan-500
-        hocus:shadow-lg
+        hover:shadow-lg
         md:px-5
       `,
         variant === 'primary'
-          ? 'bg-cyan-400 text-white hocus:shadow-cyan-400/40'
-          : 'bg-white text-black hocus:shadow-white/40',
+          ? 'bg-cyan-400 text-white hover:shadow-cyan-400/40'
+          : 'bg-white text-black hover:shadow-white/40',
         className
       )}
       {...props}

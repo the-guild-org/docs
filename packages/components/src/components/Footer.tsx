@@ -54,7 +54,7 @@ export const Footer: FC<IFooterProps> = ({ sameSite, ...restProps }) => {
           border-t
           border-gray-300
           py-4
-          container-max
+          container
           dark:border-gray-800
           md:flex-row
           md:py-5

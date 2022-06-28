@@ -23,7 +23,7 @@ export const Modal: FC<IModalProps> = ({
     }
 
     return typeof description === 'object' ? (
-      <a className="inline-flex gap-x-1.5 transition hocus:opacity-60" {...description} {...restProps.headerLinkProps}>
+      <a className="inline-flex gap-x-1.5 transition hover:opacity-60" {...description} {...restProps.headerLinkProps}>
         <p className="line-clamp-1">{description.children}</p>
         <ExternalLinkIcon className="h-4 w-4 shrink-0" />
       </a>
@@ -75,9 +75,11 @@ export const Modal: FC<IModalProps> = ({
           `,
             (placement === 'top' || placement === 'center') &&
               'md:left-1/2 md:right-auto md:bottom-auto md:h-auto md:max-w-3xl',
-            placement === 'top' && 'md:top-10 md:-translate-y-0',
-            placement === 'center' && 'md:top-1/2 md:-translate-y-1/2',
-            placement === 'bottom' && 'md:top-1/2 md:left-1/2 md:bottom-0 md:h-5/6 md:max-w-3xl md:-translate-y-1/2'
+            {
+              top: 'md:top-10 md:-translate-y-0',
+              center: 'md:top-1/2 md:-translate-y-1/2',
+              bottom: 'md:top-1/2 md:left-1/2 md:bottom-0 md:h-5/6 md:max-w-3xl md:-translate-y-1/2',
+            }[placement]
           )}
           id="tgc-modal"
           {...restProps.wrapperProps}
@@ -117,8 +119,8 @@ export const Modal: FC<IModalProps> = ({
                 text-gray-500
                 outline-none
                 transition
+                hover:border-gray-500
                 focus:ring
-                hocus:border-gray-500
                 dark:bg-gray-700
                 dark:text-gray-200
               "

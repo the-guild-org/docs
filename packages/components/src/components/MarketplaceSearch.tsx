@@ -52,7 +52,7 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
 
   return (
     <section className="bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
-      <div className="py-12 container-max" {...restProps.containerProps}>
+      <div className="py-12 container" {...restProps.containerProps}>
         <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl" {...restProps.titleProps}>
           {title}
         </h2>

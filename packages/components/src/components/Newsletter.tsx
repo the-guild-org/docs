@@ -53,8 +53,8 @@ export const Newsletter: FC<INewsletterProps> = ({ onNewsletterSubmit }) => {
           py-0.5
           px-1
           transition
-          hocus:outline-none
-          hocus:invert
+          hover:outline-none
+          hover:invert
           dark:bg-gray-700
           lg:p-2
         "

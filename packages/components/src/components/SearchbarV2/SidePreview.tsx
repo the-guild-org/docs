@@ -1,5 +1,5 @@
 import { AutocompleteComponents } from '@algolia/autocomplete-js';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import tw, { styled, css } from 'twin.macro';
 import { PRODUCTS } from '../../helpers/products';
 import { AlgoliaSearchItem } from '../../types/algolia';
@@ -68,14 +68,6 @@ const TocContent = styled.ol(
   `
 );
 
-const TOC = ({ toc }: Pick<AlgoliaSearchItem, 'toc'>) => (
-  <TocContent>
-    {toc.map(tocItem => (
-      <li key={tocItem.title}>{tocItem.title}</li>
-    ))}
-  </TocContent>
-);
-
 export const SidePreview = ({
   item,
   components,
@@ -84,7 +76,7 @@ export const SidePreview = ({
   item: AlgoliaSearchItem;
   components: AutocompleteComponents;
   accentColor: string;
-}) => {
+}): ReactElement | null => {
   if (!item) {
     return null;
   }
@@ -111,7 +103,11 @@ export const SidePreview = ({
       {item.toc.length > 1 && (
         <>
           <TocTitle>Table of content:</TocTitle>
-          <TOC toc={item.toc} />
+          <TocContent>
+            {item.toc.map(tocItem => (
+              <li key={tocItem.title}>{tocItem.title}</li>
+            ))}
+          </TocContent>
         </>
       )}
       <Cta accentColor={accentColor}>Press "Enter" to open {item.type} →</Cta>

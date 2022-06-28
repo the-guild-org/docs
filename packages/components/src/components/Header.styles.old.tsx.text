@@ -17,7 +17,7 @@ export const Wrapper = styled.header(() => [
 ]);
 
 export const Container = styled.div(() => [
-  tw`container-max flex justify-between items-center`,
+  tw`container flex justify-between items-center`,
 ]);
 
 export const Navigation = styled.nav(({ isModalOpen }: IStyleProps) => [

@@ -213,12 +213,12 @@ const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({ hits, accentColor
 
   const transformIcon = (item: Hit<ResultDoc>) => {
     if (item.anchor) {
-      return <HashTagIcon className="text-gray-500 hocus:text-white dark:text-white" />;
+      return <HashTagIcon className="text-gray-500 hover:text-white dark:text-white" />;
     }
     if (item.content) {
-      return <HamburgerIcon className="text-gray-500 hocus:text-white dark:text-white" />;
+      return <HamburgerIcon className="text-gray-500 hover:text-white dark:text-white" />;
     }
-    return <PageIcon className="text-gray-500 hocus:text-white dark:text-white" />;
+    return <PageIcon className="text-gray-500 hover:text-white dark:text-white" />;
   };
 
   const groupedHits = transformItems(hits);
@@ -282,7 +282,7 @@ const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({ hits, accentColor
                   outline-none
                   last:mb-0
                   focus:ring
-                  hocus:![background:var(--color)]
+                  hover:![background:var(--color)]
                   dark:bg-gray-800
                 "
                 rel="noreferrer"
@@ -348,7 +348,7 @@ export const SearchBarComponent: React.FC<ISearchBarProps> = ({
         md:py-1
         md:pl-1
         md:pr-8
-        md:hocus:[border-color:var(--accentColor)]
+        md:hover:[border-color:var(--accentColor)]
         md:dark:bg-gray-800
         md:dark:text-gray-300
         `,

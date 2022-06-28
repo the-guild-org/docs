@@ -8,7 +8,7 @@ export const CardsColorful: FC<ICardsColorfulProps> = ({ cards, ...restProps }) 
         flex
         flex-wrap
         space-y-6
-        container-max
+        container
         md:flex-nowrap
         md:space-x-8
         md:space-y-0

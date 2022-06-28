@@ -21,7 +21,7 @@ const TableItems: FC<IMarketplaceItemsProps> = ({ items = [], ...restProps }) =>
           <td className="w-14 py-4 pr-2 md:w-24">{item.image && <img {...item.image} {...restProps.imageProps} />}</td>
           <td className="py-4 px-2">
             <a
-              className="text-gray-500 no-underline transition duration-150 ease-in-out hocus:opacity-75 dark:text-gray-400"
+              className="text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400"
               {...item.link}
               {...restProps.linkProps}
             >
@@ -55,7 +55,7 @@ const TableItems: FC<IMarketplaceItemsProps> = ({ items = [], ...restProps }) =>
                 p-1.5
                 text-gray-800
                 transition
-                hocus:invert
+                hover:invert
                 dark:bg-gray-700
                 dark:text-white
                 md:p-2.5
@@ -96,7 +96,7 @@ export const MarketplaceList: FC<IMarketplaceListProps> = ({ title, placeholder,
 
   return (
     <section className="w-full bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
-      <div className="py-6 container-max" {...restProps.containerProps}>
+      <div className="py-6 container" {...restProps.containerProps}>
         {title && (
           <h2
             className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl"
