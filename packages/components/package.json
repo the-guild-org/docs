@@ -18,7 +18,7 @@
     "@emotion/styled": "^11.6.0",
     "@radix-ui/react-navigation-menu": "^0.1.2",
     "algoliasearch": "^4.13.0",
-    "focus-trap-react": "^8.9.2",
+    "focus-trap-react": "^9.0.0",
     "polished": "^4.1.4",
     "react-instantsearch-dom": "6.17.0",
     "@algolia/autocomplete-js": "^1.6.2",
