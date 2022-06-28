@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { AppProps } from 'next/app';
 import { Footer, Header, Subheader, ThemeProvider } from '@theguild/components';
 import '@theguild/components/dist/index.css';

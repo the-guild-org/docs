@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import { ReactElement } from 'react';
 import { InfoList, HeroGradient, HeroVideo } from '@theguild/components';
 
-const IndexPage: FC = () => {
+export default function IndexPage(): ReactElement {
   return (
     <>
       <HeroGradient
@@ -61,6 +61,4 @@ const IndexPage: FC = () => {
       />
     </>
   );
-};
-
-export default IndexPage;
+}
