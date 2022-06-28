@@ -6,6 +6,7 @@ import { AlgoliaSearchItem } from '../../types/algolia';
 export const SidePreview = ({
   item,
   components: { Highlight, Snippet },
+  accentColor,
 }: {
   item: AlgoliaSearchItem;
   components: AutocompleteComponents;
@@ -16,7 +17,7 @@ export const SidePreview = ({
   }
   const project = PRODUCTS.find(p => p.children === item.source);
   return (
-    <div className="flex h-[600px] select-text flex-col overflow-y-auto p-10">
+    <div className="flex h-[600px] select-text flex-col overflow-y-auto p-10" style={{ '--accentColor': accentColor }}>
       {project && (
         <div className="my-1 mb-4 box-border flex w-full select-none items-center justify-center outline-none">
           <project.logo className="mr-3 h-9 w-9" />
@@ -25,7 +26,21 @@ export const SidePreview = ({
           </span>
         </div>
       )}
-      <h3 className="mt-0 mb-3 w-full text-center text-2xl font-light text-black dark:text-gray-400">
+      <h3
+        className="
+          mt-0
+          mb-3
+          w-full
+          text-center
+          text-2xl
+          font-light
+          text-black
+          dark:text-gray-400
+          [&>mark]:bg-transparent
+          [&>mark]:font-semibold
+          [&>mark]:[color:var(--accentColor)]
+        "
+      >
         <Highlight hit={item} attribute="title" />
       </h3>
       <p className="mt-0 mb-6 w-full text-center text-base font-light text-gray-600 dark:text-gray-400">
