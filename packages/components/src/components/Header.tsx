@@ -1,4 +1,4 @@
-import React, { useState, useMemo, ReactElement } from 'react';
+import { useState, useMemo, ReactElement, MouseEventHandler, MouseEvent } from 'react';
 import clsx from 'clsx';
 import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
 import { SearchBar } from './SearchBar';
@@ -11,11 +11,11 @@ import { SolutionsMenu } from './SolutionsMenu';
 import { EcosystemList } from './EcosystemList';
 import { useWindowSize } from '../helpers/hooks';
 
-const renderLinkOptions = (href: string, onClick?: React.MouseEventHandler<HTMLAnchorElement>) => {
+const renderLinkOptions = (href: string, onClick?: MouseEventHandler<HTMLAnchorElement>) => {
   if (onClick) {
     return {
       href,
-      onClick(e: React.MouseEvent<HTMLAnchorElement>) {
+      onClick(e: MouseEvent<HTMLAnchorElement>) {
         e.preventDefault();
         onClick(e);
       },

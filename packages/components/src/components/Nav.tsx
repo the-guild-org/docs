@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, SetStateAction, useCallback } from 'react';
+import { Dispatch, FC, SetStateAction, useCallback } from 'react';
 import clsx from 'clsx';
 import { CloseIcon } from './Icon';
 

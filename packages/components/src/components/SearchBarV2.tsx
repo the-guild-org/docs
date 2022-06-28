@@ -1,7 +1,7 @@
 import { ISearchBarProps } from '../types/components';
 import { autocomplete, AutocompleteApi, getAlgoliaResults } from '@algolia/autocomplete-js';
 import { render } from 'react-dom';
-import React, { createElement, Fragment, useEffect, useRef } from 'react';
+import { createElement, Fragment, ReactElement, useEffect, useRef } from 'react';
 import algoliaSearch from 'algoliasearch/lite';
 import { createAlgoliaInsightsPlugin } from '@algolia/autocomplete-plugin-algolia-insights';
 import insightsClient from 'search-insights';
@@ -14,12 +14,12 @@ import { templates } from './SearchbarV2/templates';
 import { NoResultsContainer, Container, ResultsContainer, SearchBy } from './SearchbarV2/styles';
 import { AlgoliaLogo } from './SearchbarV2/AlgoliaLogo';
 
-export const SearchBarV2: React.FC<ISearchBarProps> = ({
+export const SearchBarV2 = ({
   accentColor,
   placeholder = 'Search our documentations',
   className,
   algolia,
-}) => {
+}: ISearchBarProps): ReactElement => {
   const containerRef = useRef(null);
   const search = useRef<AutocompleteApi<AlgoliaSearchItem>>();
 
@@ -51,6 +51,7 @@ export const SearchBarV2: React.FC<ISearchBarProps> = ({
       defaultActiveItemId: 0,
       placeholder,
       plugins: [algoliaInsightsPlugin],
+      // @ts-ignore -- TODO: Don't know if it's a real error
       renderer: { createElement, Fragment, render },
       renderNoResults({ Fragment, state: { query, status } }, root) {
         if (!query || status === 'loading') {

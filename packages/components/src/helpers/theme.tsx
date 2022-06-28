@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
 
 const getDarkTheme = () => {
   if (typeof window === 'undefined' || !window.localStorage) {
@@ -21,7 +21,7 @@ const getDarkTheme = () => {
 
 interface IContextProps {
   isDarkTheme: boolean;
-  setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>;
+  setDarkTheme: Dispatch<SetStateAction<boolean>>;
 }
 
 const ThemeContext = createContext<IContextProps>({

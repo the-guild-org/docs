@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { buildSchema } from 'graphql';
 import { ISchemaPageProps, IEditorProps } from '../types/components';
 import { Tag, TagsContainer } from './Tag';

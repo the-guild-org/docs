@@ -1,10 +1,17 @@
-import React, { useMemo, useState, isValidElement, useCallback } from 'react';
+import {
+  useMemo,
+  useState,
+  isValidElement,
+  useCallback,
+  ReactElement,
+  FormEvent
+} from 'react';
 import { MarketplaceList } from './MarketplaceList';
 import { IMarketplaceSearchProps } from '../types/components';
 import { Tag, TagsContainer } from './Tag';
 import { SearchIcon } from './Icon';
 
-const renderQueryPlaceholder = (placeholder: string | React.ReactElement, query: string) => {
+const renderQueryPlaceholder = (placeholder: string | ReactElement, query: string) => {
   if (!query || isValidElement(placeholder)) {
     return placeholder;
   }
@@ -16,7 +23,7 @@ const renderQueryPlaceholder = (placeholder: string | React.ReactElement, query:
   );
 };
 
-export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
+export const MarketplaceSearch = ({
   title,
   tagsFilter,
   placeholder,
@@ -24,10 +31,10 @@ export const MarketplaceSearch: React.FC<IMarketplaceSearchProps> = ({
   secondaryList,
   queryList,
   ...restProps
-}) => {
+}: IMarketplaceSearchProps): ReactElement => {
   const [query, setQuery] = useState('');
 
-  const handleChange = useCallback((e: React.FormEvent<HTMLInputElement>) => {
+  const handleChange = useCallback((e: FormEvent<HTMLInputElement>) => {
     setQuery(e.currentTarget.value);
   }, []);
 

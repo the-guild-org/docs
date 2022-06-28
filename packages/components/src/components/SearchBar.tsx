@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent, useEffect, useState, useRef, useCallback, createElement } from 'react';
+import { ChangeEvent, useEffect, useState, useRef, useCallback, createElement, ReactElement, ReactNode } from 'react';
 import algoliaSearch from 'algoliasearch/lite';
 import { InstantSearch, connectHits, connectSearchBox, connectStateResults } from 'react-instantsearch-dom';
 import { Hit, SearchBoxProvided, StateResultsProvided } from 'react-instantsearch-core';
@@ -55,11 +55,15 @@ function getPropertyByPath(obj: any, path: string) {
   return parts.reduce((current, key) => current && current[key], obj);
 }
 
-const Snippet: FC<{
+const Snippet = ({
+  hit,
+  attribute,
+  tagName = 'span',
+}: {
   hit: Hit<ResultDoc>;
   attribute: string;
   tagName?: string;
-}> = ({ hit, attribute, tagName = 'span' }) => {
+}): ReactElement => {
   let html = getPropertyByPath(hit, `_snippetResult.${attribute}.value`) || getPropertyByPath(hit, attribute);
   if (html) {
     // some query results contains `.css-` selectors, so we strips them out
@@ -72,13 +76,17 @@ const Snippet: FC<{
   });
 };
 
-const SearchBox: FC<
-  SearchBoxProvided & {
-    accentColor: string;
-    placeholder: string;
-    isModalOpen: boolean;
-  }
-> = ({ currentRefinement, refine, accentColor, placeholder, isModalOpen }) => {
+const SearchBox = ({
+  currentRefinement,
+  refine,
+  accentColor,
+  placeholder,
+  isModalOpen,
+}: SearchBoxProvided & {
+  accentColor: string;
+  placeholder: string;
+  isModalOpen: boolean;
+}): ReactElement => {
   const searchRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState(currentRefinement);
 
@@ -184,7 +192,11 @@ const SearchBox: FC<
   );
 };
 
-const StateResults: FC<StateResultsProvided<ResultDoc>> = ({ searchState, searchResults, children }) => {
+const StateResults = ({
+  searchState,
+  searchResults,
+  children,
+}: StateResultsProvided<ResultDoc> & { children: ReactNode }): ReactElement => {
   const content = searchState && searchResults && !searchResults.nbHits && searchResults.query.length > 0 && (
     <span>
       No results for <strong>"{searchState.query}"</strong>.
@@ -194,7 +206,7 @@ const StateResults: FC<StateResultsProvided<ResultDoc>> = ({ searchState, search
   return <div className="mt-9">{content || children}</div>;
 };
 
-const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({ hits, accentColor }) => {
+const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }): ReactElement => {
   const transformItems = (items: Hit<any>[]) => {
     const groupBy = items.reduce((acc, item) => {
       const list = acc[item.hierarchy.lvl0] || [];
@@ -281,8 +293,8 @@ const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({ hits, accentColor
                   no-underline
                   outline-none
                   last:mb-0
-                  focus:ring
                   hover:![background:var(--color)]
+                  focus:ring
                   dark:bg-gray-800
                 "
                 rel="noreferrer"
@@ -298,17 +310,17 @@ const Hits: FC<{ hits: Hit<any>[]; accentColor: string }> = ({ hits, accentColor
   );
 };
 
-export const SearchBar: React.FC<ISearchBarProps> = ({ version = 'v1', ...restProps }) =>
+export const SearchBar = ({ version = 'v1', ...restProps }: ISearchBarProps): ReactElement =>
   version === 'v1' ? <SearchBarComponent {...restProps} /> : <SearchBarV2 {...restProps} />;
 
-export const SearchBarComponent: React.FC<ISearchBarProps> = ({
+export const SearchBarComponent = ({
   accentColor,
   title,
   placeholder,
   isFull,
   onHandleModal,
   className,
-}) => {
+}: ISearchBarProps): ReactElement => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleModal = useCallback(

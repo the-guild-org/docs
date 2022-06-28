@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 export const AlgoliaLogo = (): ReactElement => (
   <svg width="77" height="19" aria-label="Algolia" role="img">

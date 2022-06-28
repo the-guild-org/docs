@@ -1,4 +1,3 @@
-import React from 'react';
 import { SourceTemplates } from '@algolia/autocomplete-js';
 import { AlgoliaSearchItem } from '../../types/algolia';
 
