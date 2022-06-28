@@ -1,4 +1,4 @@
-// import type { StorybookConfig } from '@storybook/core-common';
+// import { StorybookConfig } from '@storybook/core-common';
 const path = require('node:path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 

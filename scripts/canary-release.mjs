@@ -1,11 +1,11 @@
-const semver = require('semver');
-const cp = require('child_process');
-const { basename } = require('path');
-const { read: readConfig } = require('@changesets/config');
-const readChangesets = require('@changesets/read').default;
-const assembleReleasePlan = require('@changesets/assemble-release-plan').default;
-const applyReleasePlan = require('@changesets/apply-release-plan').default;
-const { getPackages } = require('@manypkg/get-packages');
+import cp from 'node:child_process';
+import path from 'node:path';
+import semver from 'semver';
+import { read as readConfig } from '@changesets/config';
+import readChangesets from '@changesets/read';
+import assembleReleasePlan from '@changesets/assemble-release-plan';
+import applyReleasePlan from '@changesets/apply-release-plan';
+import { getPackages } from '@manypkg/get-packages';
 
 function getNewVersion(version, type) {
   const gitHash = cp.spawnSync('git', ['rev-parse', '--short', 'HEAD']).stdout.toString().trim();
@@ -24,7 +24,7 @@ function getRelevantChangesets(baseBranch) {
     .trim()
     .split('\n');
 
-  return listModifiedFiles.filter(f => f.startsWith('.changeset')).map(f => basename(f, '.md'));
+  return listModifiedFiles.filter(f => f.startsWith('.changeset')).map(f => path.basename(f, '.md'));
 }
 
 async function updateVersions() {

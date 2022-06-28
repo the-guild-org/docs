@@ -9,8 +9,8 @@ import {
   getRange,
   DIAGNOSTIC_SEVERITY,
 } from 'graphql-language-service';
-import type * as monaco from 'monaco-editor';
-import type { EnrichedLanguageService } from './EnrichedLanguageService';
+import * as monaco from 'monaco-editor';
+import { EnrichedLanguageService } from './EnrichedLanguageService';
 
 export { getRange };
 

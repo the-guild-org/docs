@@ -26,7 +26,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off', // import of react no longer required
     'tailwindcss/classnames-order': 'off', // conflicts with official prettier-plugin-tailwindcss and tailwind v3
     // set more strict to highlight in editor
-    'tailwindcss/no-custom-classname': 'error',
     'tailwindcss/enforces-shorthand': 'error',
     'tailwindcss/migration-from-tailwind-2': 'error',
     'no-unused-expressions': 'error',
@@ -43,6 +42,8 @@ module.exports = {
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
     '@typescript-eslint/array-type': ['error', { readonly: 'generic' }],
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
+    'tailwindcss/no-custom-classname': 'warn',
+    '@typescript-eslint/ban-ts-comment': 'warn',
   },
   settings: {
     tailwindcss: {

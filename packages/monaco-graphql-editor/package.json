@@ -2,7 +2,7 @@
   "name": "@theguild/editor",
   "version": "0.5.0",
   "license": "MIT",
-  "main": "dist/index.js",
+  "type": "module",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [

@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import type * as monaco from 'monaco-editor';
+import * as monaco from 'monaco-editor';
 import { DecorationsSource, DefinitionSource, DiagnosticsSource, EditorAction, HoverSource } from './utils';
 import { EnrichedLanguageService } from './EnrichedLanguageService';
 import { GraphQLError, GraphQLSchema, isInterfaceType, isObjectType } from 'graphql';

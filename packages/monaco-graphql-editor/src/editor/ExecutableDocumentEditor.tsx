@@ -4,9 +4,9 @@ import {
   getAutocompleteSuggestions,
   // CompletionItemKind as lsCIK,
 } from 'graphql-language-service';
-import type { GraphQLSchema } from 'graphql';
-import type * as monaco from 'monaco-editor';
-import type { IRange, CompletionItem } from 'graphql-language-service';
+import { GraphQLSchema } from 'graphql';
+import * as monaco from 'monaco-editor';
+import { IRange, CompletionItem } from 'graphql-language-service';
 import * as languages from './enums';
 import { toGraphQLPosition, toMonacoRange } from './utils';
 
