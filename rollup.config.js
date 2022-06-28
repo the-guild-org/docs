@@ -1,5 +1,5 @@
-import { join } from 'path';
-import fs from 'fs';
+import { join } from 'node:path';
+import fs from 'node:fs';
 import babel from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import autoExternal from 'rollup-plugin-auto-external';
@@ -8,29 +8,26 @@ import bundleSize from 'rollup-plugin-bundle-size';
 import copy from 'rollup-plugin-copy';
 import glob from 'glob';
 
+const CWD = process.cwd()
+
 const packageDirs = glob.sync('packages/*', {
-  cwd: process.cwd(),
+  cwd: CWD,
   absolute: false,
 });
 
 function bundle(packageDir) {
   const tsxFile = `${packageDir}/src/index.tsx`;
   const tsFile = `${packageDir}/src/index.ts`;
-  const isTsx = fs.existsSync(join(__dirname, tsxFile));
+  const isTsx = fs.existsSync(join(CWD, tsxFile));
 
   return {
     input: isTsx ? tsxFile : tsFile,
     output: [
       {
-        file: join(__dirname, packageDir, 'dist/index.esm.js'),
+        file: join(CWD, packageDir, 'dist/index.esm.js'),
         format: 'es',
         sourcemap: true,
-      },
-      {
-        file: join(__dirname, packageDir, 'dist/index.js'),
-        format: 'cjs',
-        sourcemap: true,
-      },
+      }
     ],
     external: ['react-player/lazy', 'algoliasearch/lite'],
     plugins: [
@@ -44,7 +41,7 @@ function bundle(packageDir) {
       babel({
         babelHelpers: 'bundled',
         extensions: ['.tsx', '.ts'],
-        configFile: join(__dirname, '.babelrc'),
+        configFile: join(CWD, '.babelrc'),
         // Fixes ReferenceError: React is not defined
         presets: [['@babel/preset-react', { runtime: 'automatic' }]],
       }),
@@ -56,7 +53,7 @@ function bundle(packageDir) {
             dest: `./${packageDir}/dist`,
           },
           {
-            src: join(__dirname, packageDir, 'src/static/*'),
+            src: join(CWD, packageDir, 'src/static/*'),
             dest: `./${packageDir}/dist/static`,
           },
         ],
