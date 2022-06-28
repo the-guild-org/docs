@@ -149,7 +149,7 @@ export const MarketplaceList: FC<IMarketplaceListProps> = ({ title, placeholder,
                   hover:opacity-70
                   transition
                   px-3.5
-                  py-1.5
+                  py-2
                 "
                 activeLinkClassName="invert"
               />

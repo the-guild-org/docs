@@ -18,10 +18,10 @@
     "skipLibCheck": true,
     "preserveWatchOutput": true,
     "paths": {
-      "@theguild/components": ["packages/components/src/index.tsx"],
-      "@theguild/monaco-graphql-editor": ["packages/monaco-graphql-editor/src/index.tsx"]
+      "@theguild/components": ["packages/components/src/index.ts"],
+      "@theguild/monaco-graphql-editor": ["packages/monaco-graphql-editor/src/index.ts"]
     }
   },
   "include": ["packages"],
-  "exclude": ["packages/**/*.stories.tsx", "**/*.styles.tsx", "node_modules"]
+  "exclude": ["packages/**/*.stories.tsx", "node_modules"]
 }

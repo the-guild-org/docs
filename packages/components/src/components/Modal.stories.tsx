@@ -59,7 +59,7 @@ Default.args = {
 
 export const Marketplace = Template.bind({});
 Marketplace.args = {
-  ...dummyMarketplaceList.items[0].modal.header,
+  ...dummyMarketplaceList.items[0].modal?.header,
   title: dummyMarketplaceList.items[0].title,
   placement: 'bottom',
   visible: true,

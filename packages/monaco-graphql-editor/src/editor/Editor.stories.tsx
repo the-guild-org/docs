@@ -52,7 +52,9 @@ const SchemaTemplate: Story<SchemaEditorProps> = args => {
         onClick={() => {
           if (ref.current) {
             const identifier = prompt('What type are you looking for?', 'Query');
-            ref.current.jumpToType(identifier);
+            if (identifier) {
+              ref.current.jumpToType(identifier);
+            }
           }
         }}
       >
@@ -68,7 +70,7 @@ const SchemaTemplate: Story<SchemaEditorProps> = args => {
         onClick={() => {
           if (ref.current) {
             const identifier = prompt('What type+field are you looking for?', 'Query.me');
-            const [typeName, fieldName] = identifier.split('.');
+            const [typeName, fieldName] = identifier?.split('.') || [];
             ref.current.jumpToField(typeName, fieldName);
           }
         }}

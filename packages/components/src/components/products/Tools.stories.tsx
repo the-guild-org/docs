@@ -4,6 +4,7 @@ import { Header } from '../Header';
 import { HeroGradient } from '../HeroGradient';
 import { InfoList } from '../InfoList';
 import { Subheader } from '../Subheader';
+import { ILink } from '../../types/components';
 
 export default {
   title: 'Products/Tools',
@@ -112,7 +113,7 @@ const infoListData = {
   ],
 };
 
-const footerData = {
+const footerData: { resources: ILink[] } = {
   resources: [
     {
       children: 'Documentation',
