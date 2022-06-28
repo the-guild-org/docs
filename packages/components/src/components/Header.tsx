@@ -86,7 +86,7 @@ export const Header = ({
   return (
     <Root asChild className="relative z-50">
       <header className="bg-white py-2.5 px-3 font-default dark:bg-gray-900 md:py-4" {...restProps.wrapperProps}>
-        <div className="container flex justify-between" {...restProps.containerProps}>
+        <div className="container flex justify-between items-center" {...restProps.containerProps}>
           <button
             className="rounded-sm text-gray-500 outline-none transition hover:text-gray-400 focus:ring dark:text-gray-200 dark:hover:text-gray-400 md:hidden"
             onClick={() => handleNav(true)}
@@ -193,12 +193,12 @@ export const Header = ({
             </Nav>
           </List>
 
-          <Indicator className="absolute z-10 flex h-2.5 justify-center">
-            <div className="relative top-2/3 h-3 w-3 rotate-45 bg-white dark:bg-gray-800" />
+          <Indicator className="mt-2 absolute z-10 flex h-2.5 justify-center">
+            <div className="h-3 w-3 rotate-45 bg-white dark:bg-gray-800" />
           </Indicator>
 
           <div className="absolute top-full left-0 flex w-full justify-center">
-            <Viewport className="-mt-3" />
+            <Viewport className="-mt-1" />
           </div>
 
           {!disableSearch && (
