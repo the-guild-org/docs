@@ -46,6 +46,7 @@ export const Footer: FC<IFooterProps> = ({ sameSite, ...restProps }) => {
     >
       <div
         className="
+          container
           flex
           flex-col
           flex-wrap
@@ -54,7 +55,6 @@ export const Footer: FC<IFooterProps> = ({ sameSite, ...restProps }) => {
           border-t
           border-gray-300
           py-4
-          container
           dark:border-gray-800
           md:flex-row
           md:py-5

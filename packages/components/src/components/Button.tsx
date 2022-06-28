@@ -18,8 +18,8 @@ export const Button: FC<
         font-medium
         no-underline
         transition
-        focus:bg-cyan-500
         hover:shadow-lg
+        focus:bg-cyan-500
         md:px-5
       `,
         variant === 'primary'

@@ -96,7 +96,7 @@ export const MarketplaceList: FC<IMarketplaceListProps> = ({ title, placeholder,
 
   return (
     <section className="w-full bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
-      <div className="py-6 container" {...restProps.containerProps}>
+      <div className="container py-6" {...restProps.containerProps}>
         {title && (
           <h2
             className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl"

@@ -1,11 +1,4 @@
-import {
-  useMemo,
-  useState,
-  isValidElement,
-  useCallback,
-  ReactElement,
-  FormEvent
-} from 'react';
+import { useMemo, useState, isValidElement, useCallback, ReactElement, FormEvent } from 'react';
 import { MarketplaceList } from './MarketplaceList';
 import { IMarketplaceSearchProps } from '../types/components';
 import { Tag, TagsContainer } from './Tag';
@@ -59,7 +52,7 @@ export const MarketplaceSearch = ({
 
   return (
     <section className="bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
-      <div className="py-12 container" {...restProps.containerProps}>
+      <div className="container py-12" {...restProps.containerProps}>
         <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl" {...restProps.titleProps}>
           {title}
         </h2>

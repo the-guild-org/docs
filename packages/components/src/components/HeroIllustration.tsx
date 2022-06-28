@@ -14,12 +14,12 @@ export const HeroIllustration: FC<IHeroIllustrationProps> = ({
     <div
       className={clsx(
         `
+      container
       flex
       flex-wrap
       items-center
       justify-center
       py-8
-      container
       md:flex-nowrap
       md:justify-between
     `,

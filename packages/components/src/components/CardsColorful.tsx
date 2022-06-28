@@ -5,10 +5,10 @@ export const CardsColorful: FC<ICardsColorfulProps> = ({ cards, ...restProps }) 
   <section className="bg-white py-8 font-default dark:bg-gray-900" {...restProps.wrapperProps}>
     <div
       className="
+        container
         flex
         flex-wrap
         space-y-6
-        container
         md:flex-nowrap
         md:space-x-8
         md:space-y-0

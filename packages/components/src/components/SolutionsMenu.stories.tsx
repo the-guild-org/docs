@@ -4,9 +4,7 @@ import { SolutionsMenu } from './SolutionsMenu';
 export default {
   title: 'Components/SolutionsMenu',
   component: SolutionsMenu,
-  argTypes: {
-
-  },
+  argTypes: {},
 } as Meta;
 
 const Template: Story = args => <SolutionsMenu {...args} />;

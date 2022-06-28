@@ -101,7 +101,7 @@ export const FooterExtended: FC<IFooterExtendedProps> = ({ sameSite, resources, 
 
   return (
     <footer className="bg-white text-xs font-default dark:bg-gray-900" {...restProps.wrapperProps}>
-      <div className="border-t border-gray-300 container dark:border-gray-800" {...restProps.containerProps}>
+      <div className="container border-t border-gray-300 dark:border-gray-800" {...restProps.containerProps}>
         <div className="my-8 flex flex-col gap-6 pt-2 pb-4 lg:flex-row">
           <div className="lg:w-full">
             <Title {...restProps.titleProps}>PRODUCTS</Title>

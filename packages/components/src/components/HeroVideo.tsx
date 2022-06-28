@@ -8,10 +8,10 @@ export const HeroVideo: FC<IHeroVideoProps> = ({ title, description, link, video
     <div
       className={clsx(
         `
+      container
       flex
       flex-wrap
       py-8
-      container
       md:flex-nowrap
       md:items-center
       md:justify-center

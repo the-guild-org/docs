@@ -8,7 +8,7 @@ import bundleSize from 'rollup-plugin-bundle-size';
 import copy from 'rollup-plugin-copy';
 import glob from 'glob';
 
-const CWD = process.cwd()
+const CWD = process.cwd();
 
 const packageDirs = glob.sync('packages/*', {
   cwd: CWD,
@@ -27,7 +27,7 @@ function bundle(packageDir) {
         file: join(CWD, packageDir, 'dist/index.esm.js'),
         format: 'es',
         sourcemap: true,
-      }
+      },
     ],
     external: ['react-player/lazy', 'algoliasearch/lite'],
     plugins: [

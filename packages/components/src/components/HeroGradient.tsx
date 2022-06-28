@@ -24,7 +24,7 @@ export const HeroGradient: FC<IHeroGradientProps> = ({
   ...restProps
 }) => (
   <section className="overflow-hidden bg-white font-default dark:bg-gray-900 md:pt-14" {...restProps.wrapperProps}>
-    <div className="relative container" {...restProps.containerProps}>
+    <div className="container relative" {...restProps.containerProps}>
       <div
         className="absolute inset-0 overflow-hidden bg-black dark:bg-gray-900 md:mx-6 md:rounded-3xl"
         style={{ '--colorA': colors[0], '--colorB': colors[1] }}

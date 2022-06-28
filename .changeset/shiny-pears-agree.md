@@ -1,5 +1,5 @@
 ---
-"@theguild/components": major
+'@theguild/components': major
 ---
 
 feat: use virgin TailwindCSS 3
