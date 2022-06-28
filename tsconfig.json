@@ -23,5 +23,5 @@
     }
   },
   "include": ["packages"],
-  "exclude": ["packages/**/*.stories.tsx", "**/*.styles.tsx"]
+  "exclude": ["packages/**/*.stories.tsx", "**/*.styles.tsx", "node_modules"]
 }

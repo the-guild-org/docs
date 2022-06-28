@@ -1,7 +1,7 @@
 import { AutocompleteComponents } from '@algolia/autocomplete-js';
 import React from 'react';
 import tw, { styled, css } from 'twin.macro';
-import { PRODUCTS } from '../../helpers/assets';
+import { PRODUCTS } from '../../helpers/products';
 import { AlgoliaSearchItem } from '../../types/algolia';
 
 const PreviewContainer = styled.div<{ accentColor: string }>(({ accentColor }) => [

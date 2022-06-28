@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, ProductCategory, ProductList, ProductThumbnail, ProductImage } from './Ecosystem.styles';
-import { PRODUCTS } from '../helpers/assets';
+import { PRODUCTS } from '../helpers/products';
 
 const productCategories = [
   {
