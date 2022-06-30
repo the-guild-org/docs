@@ -100,7 +100,7 @@ export const FooterExtended: FC<IFooterExtendedProps> = ({ sameSite, resources, 
   );
 
   return (
-    <footer className="bg-white text-xs dark:bg-gray-900" {...restProps.wrapperProps}>
+    <footer className="bg-white text-xs dark:bg-[#111]" {...restProps.wrapperProps}>
       <div
         className="container max-w-[90rem] border-t border-gray-300 dark:border-gray-800"
         {...restProps.containerProps}
@@ -159,9 +159,9 @@ export const FooterExtended: FC<IFooterExtendedProps> = ({ sameSite, resources, 
           >
             <GuildLogo className="w-7" />
             <TheGuild className="w-10" />
-            <p className="ml-6 text-xs text-gray-500 dark:text-gray-400" {...restProps.copyrightProps}>
+            <span className="ml-6 text-xs text-gray-500 dark:text-gray-400" {...restProps.copyrightProps}>
               Belong anywhere. © The Guild, Inc.
-            </p>
+            </span>
           </a>
         </div>
       </div>

@@ -19,7 +19,7 @@ export type CardsColorfulProps = {
 };
 
 export const CardsColorful = ({ cards, ...restProps }: CardsColorfulProps): ReactElement => (
-  <section className="bg-white py-8 dark:bg-gray-900" {...restProps.wrapperProps}>
+  <section className="bg-white py-8 dark:bg-[#111]" {...restProps.wrapperProps}>
     <div
       className="
         container

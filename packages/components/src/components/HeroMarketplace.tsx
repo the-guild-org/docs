@@ -32,7 +32,7 @@ const Cube: FC<{ className: string; src: string }> = ({ className, src }) => {
 };
 
 export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({ title, description, link, ...restProps }) => (
-  <section className="overflow-hidden bg-white dark:bg-gray-900" {...restProps.wrapperProps}>
+  <section className="overflow-hidden bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
     <div className="relative" {...restProps.containerProps}>
       <div
         className="
@@ -40,7 +40,7 @@ export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({ title, description,
          inset-0
          overflow-hidden
          bg-black
-         dark:bg-gray-900
+         dark:bg-[#111]
         "
         style={{ '--colorA': '#ff34ae', '--colorB': '#1cc8ee' }}
       >

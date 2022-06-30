@@ -85,7 +85,7 @@ export const Header = ({
   const onLinkClick = restProps.linkProps?.onClick;
 
   return (
-    <header className="bg-white py-2.5 px-3 dark:bg-gray-900 md:py-4" {...restProps.wrapperProps}>
+    <header className="bg-white py-2.5 px-3 dark:bg-[#111] md:py-4" {...restProps.wrapperProps}>
       <div
         className="
           container
@@ -111,7 +111,7 @@ export const Header = ({
 
         <a
           title="View our website"
-          className="flex items-center gap-x-1.5 rounded-sm outline-none focus:ring dark:text-gray-100 hover:opacity-75"
+          className="flex items-center gap-x-1.5 rounded-sm outline-none hover:opacity-75 focus:ring dark:text-gray-100"
           {...renderLinkOptions('/', onLinkClick)}
           {...restProps.logoProps}
         >
@@ -139,9 +139,8 @@ export const Header = ({
                         text-base
                         no-underline
                         outline-none
-                        transition
-                        focus:ring
                         hover:text-gray-800
+                        focus:ring
                         dark:hover:text-gray-200
                         sm:py-5
                         sm:text-lg
@@ -153,7 +152,6 @@ export const Header = ({
                         relative
                         font-medium
                         text-black
-                        dark:text-[#f3f4f6]
                         after:absolute
                         after:bottom-0
                         after:h-0.5
@@ -161,6 +159,7 @@ export const Header = ({
                         after:rounded
                         after:bg-black
                         after:content-['']
+                        dark:text-[#f3f4f6]
                         after:dark:bg-white
                         after:sm:bottom-2.5
                         after:md:-bottom-2`

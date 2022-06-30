@@ -40,7 +40,7 @@ export const Footer: FC<IFooterProps> = ({ sameSite, ...restProps }) => {
       };
 
   return (
-    <footer className="bg-white text-xs text-gray-500 dark:bg-gray-900 dark:text-gray-400" {...restProps.wrapperProps}>
+    <footer className="bg-white text-xs text-gray-500 dark:bg-[#111] dark:text-gray-400" {...restProps.wrapperProps}>
       <div
         className="
           container

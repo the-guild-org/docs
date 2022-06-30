@@ -123,7 +123,7 @@ const SearchBox = ({
         bg-white
         p-6
         shadow-sm
-        dark:bg-gray-900
+        dark:bg-[#111]
       "
     >
       <div

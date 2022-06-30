@@ -31,7 +31,7 @@ export const Nav = ({
         bg-white
         transition-all
         duration-300
-        dark:bg-gray-900
+        dark:bg-[#111]
         md:static
         md:flex-row
         md:items-center

@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { IInfoListProps } from '../types/components';
 
 export const InfoList = ({ title, items, ...restProps }: IInfoListProps): ReactElement => (
-  <section className="bg-white dark:bg-gray-900" {...restProps.wrapperProps}>
+  <section className="bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
     <div className="container max-w-[90rem] py-12" {...restProps.containerProps}>
       {title && (
         <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl" {...restProps.titleProps}>

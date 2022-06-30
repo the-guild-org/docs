@@ -64,7 +64,7 @@ export const Subheader: FC<ISubheaderProps> = ({ product, activeLink, links, cta
         py-5
         shadow-xl
         shadow-gray-400/10
-        dark:bg-gray-900
+        dark:bg-[#111]
       "
       {...restProps.wrapperProps}
     >
