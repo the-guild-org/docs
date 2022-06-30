@@ -1,11 +1,11 @@
-import { AnchorHTMLAttributes, FC } from 'react';
+import { AnchorHTMLAttributes, ReactElement } from 'react';
 import clsx from 'clsx';
 
-export const Button: FC<
-  AnchorHTMLAttributes<HTMLAnchorElement> & {
-    variant?: 'primary' | 'secondary';
-  }
-> = ({ children, className, variant = 'primary', ...props }) => {
+export type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+  variant?: 'primary' | 'secondary';
+};
+
+export const Button = ({ children, className, variant = 'primary', ...props }: ButtonProps): ReactElement => {
   return (
     <a
       className={clsx(

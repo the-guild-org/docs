@@ -3,7 +3,7 @@ import FocusTrap from 'focus-trap-react';
 import clsx from 'clsx';
 import { IModalProps } from '../types/components';
 import { useKeyPress } from '../helpers/hooks';
-import { CloseIcon, ExternalLinkIcon } from './Icon';
+import { CloseIcon, ExternalLinkIcon } from './icons';
 
 export const Modal: FC<IModalProps> = ({
   image,

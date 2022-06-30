@@ -1,10 +1,13 @@
-import { FC, useState } from 'react';
+import { ReactElement, useState, FormEvent } from 'react';
 import clsx from 'clsx';
 import { isEmail } from '../helpers/email';
-import { INewsletterProps } from '../types/components';
-import { ArrowUpRightIcon, MailIcon } from './Icon';
+import { ArrowUpRightIcon, MailIcon } from './icons';
 
-export const Newsletter: FC<INewsletterProps> = ({ onNewsletterSubmit }) => {
+export type NewsletterProps = {
+  onNewsletterSubmit: (e: FormEvent, value: string) => void;
+}
+
+export const Newsletter = ({ onNewsletterSubmit }: NewsletterProps): ReactElement => {
   const [inputValue, setInputValue] = useState('');
   const [inputError, setInputError] = useState(false);
 

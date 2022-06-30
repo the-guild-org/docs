@@ -1,7 +1,24 @@
-import { FC } from 'react';
-import { ICardsColorfulProps } from '../types/components';
+import { ReactElement, ComponentProps } from 'react';
+import { ILink } from '../types/components';
 
-export const CardsColorful: FC<ICardsColorfulProps> = ({ cards, ...restProps }) => (
+export type CardsColorfulProps = {
+  cards: {
+    title: string;
+    description: string;
+    category: string;
+    color: string;
+    link: ILink;
+  }[];
+
+  wrapperProps?: ComponentProps<'section'>;
+  containerProps?: ComponentProps<'div'>;
+  cardProps?: ComponentProps<'a'>;
+  cardCategoryProps?: ComponentProps<'h2'>;
+  cardTitleProps?: ComponentProps<'h3'>;
+  cardDescriptionProps?: ComponentProps<'p'>;
+}
+
+export const CardsColorful = ({ cards, ...restProps }: CardsColorfulProps): ReactElement => (
   <section className="bg-white py-8 font-default dark:bg-gray-900" {...restProps.wrapperProps}>
     <div
       className="

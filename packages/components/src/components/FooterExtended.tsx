@@ -2,7 +2,7 @@ import { FC, useCallback } from 'react';
 import { Newsletter } from './Newsletter';
 import { PRODUCTS } from '../helpers/products';
 import { IFooterExtendedProps, ILink } from '../types/components';
-import { GuildLogo, TheGuild } from './Icon';
+import { GuildLogo, TheGuild } from './logos';
 
 const COMPANY: ILink[] = [
   {

@@ -2,7 +2,7 @@ import { FC, useEffect, useMemo, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { IMarketplaceListProps, IMarketplaceItemsProps } from '../types/components';
 import { Tag, TagsContainer } from './Tag';
-import { CaretSlimIcon } from './Icon';
+import { CaretSlimIcon } from './icons';
 
 const formatDate = (value: string): string => {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

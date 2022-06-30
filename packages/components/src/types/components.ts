@@ -19,12 +19,6 @@ export interface ILink {
   onClick?: React.MouseEventHandler;
 }
 
-export interface IButtonProps {
-  href: string;
-  title: string | React.ReactNode;
-  variant?: string;
-}
-
 export interface IHeaderLink {
   label: string;
   title: string;
@@ -37,9 +31,7 @@ export interface IHeaderProps {
   accentColor: string;
   activeLink: string;
   themeSwitch?: boolean;
-
   transformLinks?: (links: IHeaderLink[]) => IHeaderLink[];
-
   wrapperProps?: React.ComponentProps<'header'>;
   containerProps?: React.ComponentProps<'div'>;
   logoProps?: React.ComponentProps<'a'>;
@@ -79,12 +71,6 @@ interface IHeaderModalRestProps {
   imageProps?: React.ComponentProps<'img'>;
   categoryTitleProps?: React.ComponentProps<'h3'>;
   modalProps?: IModalRestProps;
-}
-
-export interface IHeaderModalProps extends IHeaderModalRestProps {
-  title: string | React.ReactNode;
-  modalOpen: boolean;
-  onCancelModal: (state?: boolean) => void;
 }
 
 export interface IFooterProps {
@@ -243,23 +229,6 @@ export interface IHeroMarketplaceProps {
   imageProps?: React.ComponentProps<'img'>;
 }
 
-export interface ICardsColorfulProps {
-  cards: {
-    title: string;
-    description: string;
-    category: string;
-    color: string;
-    link: ILink;
-  }[];
-
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  cardProps?: React.ComponentProps<'a'>;
-  cardCategoryProps?: React.ComponentProps<'h2'>;
-  cardTitleProps?: React.ComponentProps<'h3'>;
-  cardDescriptionProps?: React.ComponentProps<'p'>;
-}
-
 export interface IMarketplaceItemProps {
   title: string;
   description: string | React.ReactNode;
@@ -308,7 +277,6 @@ export interface IMarketplaceSearchProps {
   secondaryList?: IMarketplaceListProps;
   queryList?: IMarketplaceListProps;
   tagsFilter?: string[];
-
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
@@ -316,10 +284,6 @@ export interface IMarketplaceSearchProps {
   queryListProps?: IMarketplaceItemRestProps;
   primaryListProps?: IMarketplaceItemRestProps;
   secondaryListProps?: IMarketplaceItemRestProps;
-}
-
-export interface INewsletterProps {
-  onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
 }
 
 export interface ISchemaPageProps {
@@ -334,11 +298,4 @@ export interface IEditorProps {
   schema?: string;
   image?: string;
   operations?: string;
-}
-
-export interface IBannerProps {
-  children?: string | React.ReactNode;
-  color?: React.CSSProperties['color'];
-  bgColor?: React.CSSProperties['color'];
-  animation?: React.CSSProperties['animation'];
 }

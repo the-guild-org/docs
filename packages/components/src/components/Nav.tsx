@@ -1,6 +1,6 @@
 import { Dispatch, FC, SetStateAction, useCallback } from 'react';
 import clsx from 'clsx';
-import { CloseIcon } from './Icon';
+import { CloseIcon } from './icons';
 
 export const Nav: FC<{
   isOpen: boolean;

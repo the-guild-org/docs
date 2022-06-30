@@ -4,6 +4,7 @@ export * from './code-generator';
 export * from './config';
 export * from './envelop';
 export * from './eslint';
+export * from './guild';
 export * from './helix';
 export * from './hive';
 export * from './inspector';

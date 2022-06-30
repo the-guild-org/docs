@@ -2,7 +2,7 @@ import { useMemo, useState, isValidElement, useCallback, ReactElement, FormEvent
 import { MarketplaceList } from './MarketplaceList';
 import { IMarketplaceSearchProps } from '../types/components';
 import { Tag, TagsContainer } from './Tag';
-import { SearchIcon } from './Icon';
+import { SearchIcon } from './icons';
 
 const renderQueryPlaceholder = (placeholder: string | ReactElement, query: string) => {
   if (!query || isValidElement(placeholder)) {

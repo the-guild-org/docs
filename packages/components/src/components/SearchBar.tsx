@@ -8,7 +8,7 @@ import { Modal } from './Modal';
 import { ISearchBarProps } from '../types/components';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import { algoliaConfig } from '../configs';
-import { CloseIcon, HamburgerIcon, HashTagIcon, PageIcon, SearchIcon } from './Icon';
+import { CloseIcon, HamburgerIcon, HashTagIcon, PageIcon, SearchIcon } from './icons';
 import { SearchBarV2 } from './SearchBarV2';
 
 const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {

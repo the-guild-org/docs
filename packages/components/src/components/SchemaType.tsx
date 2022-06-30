@@ -1,9 +1,9 @@
-import { FC, useState } from 'react';
+import { FC, ReactElement, useState } from 'react';
 import { buildSchema } from 'graphql';
 import { ISchemaPageProps, IEditorProps } from '../types/components';
 import { Tag, TagsContainer } from './Tag';
 import { SchemaEditor, ExecutableDocumentEditor } from '@theguild/monaco-graphql-editor';
-import { CaretSlimIcon, MoreIcon, ShareIcon } from './Icon';
+import { CaretSlimIcon, MoreIcon, ShareIcon } from './icons';
 
 const Editor: FC<Omit<IEditorProps, 'schema' | 'operations'>> = ({ title, frameworks = [], image, children }) => (
   <div className="min-w-full max-w-full pr-px lg:min-w-1/4 lg:max-w-1/4">
@@ -60,7 +60,7 @@ const Button: FC = ({ children }) => {
   );
 };
 
-export const SchemaPage: FC<ISchemaPageProps> = ({ schemaName, tags = [], editorData }) => {
+export const SchemaPage = ({ schemaName, tags = [], editorData }: ISchemaPageProps): ReactElement => {
   const [schemaObj, setSchemaObj] = useState(() => buildSchema(editorData[0].schema!));
 
   return (
