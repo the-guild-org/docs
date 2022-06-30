@@ -14,13 +14,13 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
   <tbody>
     {items.map(item => (
       <tr
-        className="border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 last:border-0 dark:border-gray-800 dark:text-gray-400"
+        className="border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 [all:unset] last:border-0 dark:border-gray-800 dark:text-gray-400"
         key={item.title}
       >
-        <td className="w-14 py-4 pr-2 align-top md:w-20">
+        <td className="w-14 py-4 pr-2 align-top [all:unset] md:w-20">
           {item.image && <img {...item.image} {...restProps.imageProps} />}
         </td>
-        <td className="py-4 px-2">
+        <td className="py-4 px-2 [all:unset]">
           <a
             className="text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400"
             {...item.link}
@@ -44,10 +44,10 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
             )}
           </a>
         </td>
-        <td className="hidden py-4 px-2 md:table-cell" {...restProps.dateProps}>
+        <td className="hidden py-4 px-2 [all:unset] md:table-cell" {...restProps.dateProps}>
           {formatDate(item.update)}
         </td>
-        <td className="py-4 pl-2">
+        <td className="py-4 pl-2 [all:unset]">
           <a
             className="
               block
@@ -120,13 +120,13 @@ export const MarketplaceList = ({
           </div>
         ) : (
           <>
-            <table className="w-full border-collapse">
+            <table className="w-full border-collapse [all:unset]">
               <thead className="whitespace-nowrap px-2 text-left text-xs font-semibold uppercase text-gray-300 dark:text-gray-600">
-                <tr>
-                  <th className="px-2" />
-                  <th className="px-2">Name</th>
-                  <th className="hidden px-2 md:table-cell">Last Update</th>
-                  <th className="px-2" />
+                <tr className="[all:unset]">
+                  <th className="px-2 [all:unset]" />
+                  <th className="px-2 [all:unset]">Name</th>
+                  <th className="hidden px-2 [all:unset] md:table-cell">Last Update</th>
+                  <th className="px-2 [all:unset]" />
                 </tr>
               </thead>
               <TableBody items={pages[currentPage]} {...restProps.itemProps} />

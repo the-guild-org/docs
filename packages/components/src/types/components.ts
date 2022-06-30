@@ -276,7 +276,7 @@ export interface IMarketplaceSearchProps {
   primaryList: IMarketplaceListProps;
   secondaryList?: IMarketplaceListProps;
   queryList?: IMarketplaceListProps;
-  tagsFilter?: string[];
+  tagsFilter?: string[] | ReadonlyArray<string>;
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
