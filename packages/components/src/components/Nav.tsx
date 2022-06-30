@@ -1,11 +1,19 @@
-import { Dispatch, FC, SetStateAction, useCallback } from 'react';
+import { Dispatch, ReactElement, ReactNode, SetStateAction, useCallback } from 'react';
 import clsx from 'clsx';
 import { CloseIcon } from './icons';
 
-export const Nav: FC<{
+export const Nav = ({
+  children,
+  isOpen,
+  setOpen,
+  className,
+  ...props
+}: {
   isOpen: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
-}> = ({ children, isOpen, setOpen, ...props }) => {
+  className?: string;
+  children: ReactNode;
+}): ReactElement => {
   const handleOpen = useCallback(() => {
     setOpen((prev: boolean) => !prev);
   }, [setOpen]);
@@ -29,7 +37,8 @@ export const Nav: FC<{
         md:items-center
         md:justify-end
         md:transition-none`,
-        !isOpen && '-top-full bottom-full'
+        !isOpen && '-top-full bottom-full',
+        className
       )}
       {...props}
     >

@@ -33,6 +33,7 @@ html.dark .aa-DetachedSearchButton {
 
 .aa-DetachedSearchButtonPlaceholder {
   padding-right: 1.75rem;
+  font-size: 14px;
 }
 
 html.dark .aa-DetachedSearchButtonIcon,

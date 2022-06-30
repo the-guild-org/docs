@@ -115,14 +115,14 @@ export const Header = ({
           {...renderLinkOptions('/', onLinkClick)}
           {...restProps.logoProps}
         >
-          <GuildLogo className="md:w-7" />
+          <GuildLogo className="h-9 w-9" />
           <TheGuild className="hidden w-11 md:block" />
         </a>
 
         <Root asChild>
           <List>
             <Viewport className="absolute top-10 right-0 z-50" />
-            <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} {...restProps.navigationProps}>
+            <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} className="md:gap-4" {...restProps.navigationProps}>
               {links.map(link => {
                 const linkEl = (
                   <a
@@ -137,7 +137,6 @@ export const Header = ({
                         py-3
                         text-center
                         text-base
-                        font-medium
                         no-underline
                         outline-none
                         transition
@@ -145,13 +144,13 @@ export const Header = ({
                         focus:ring
                         sm:py-5
                         sm:text-lg
-                        md:mx-2.5
                         md:py-0
                         md:text-left
-                        md:text-xs`,
+                        md:text-sm`,
                       activeLink?.includes(link.href)
                         ? `
                         relative
+                        font-medium
                         text-black
                         after:absolute
                         after:bottom-0
@@ -174,7 +173,7 @@ export const Header = ({
                     {(link.onClick || link.menu) && (
                       <CaretIcon
                         className="
-                          ml-1
+                          ml-2
                           transition-transform
                           duration-200
                           [[data-state=open]_>_&]:rotate-180
@@ -203,16 +202,18 @@ export const Header = ({
                 className="hidden md:flex"
                 {...restProps.searchBarProps}
               />
+
               {themeSwitch && setDarkTheme && (
                 <button
                   onClick={() => setDarkTheme(prev => !prev)}
-                  className="self-center rounded-sm outline-none focus:ring p-2"
+                  className="mr-1 self-center rounded-sm p-2 outline-none focus:ring"
                   {...restProps.themeButtonProps}
                 >
                   <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
                 </button>
               )}
             </Nav>
+
             <Indicator className="absolute top-9 z-50 flex h-2.5 justify-center">
               <div className="h-3 w-3 rotate-45 rounded-t-sm bg-white dark:bg-gray-800" />
             </Indicator>
