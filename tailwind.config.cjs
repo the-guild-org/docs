@@ -17,39 +17,6 @@ module.exports = {
       cyan: colors.cyan,
     },
     extend: {
-      colors: {
-        'dark-blue': '#15afd0',
-        'light-blue': '#1cc8ee',
-        'grayscale-line': '#e7e7e7',
-        'grayscale-label': '#7f818c',
-        'grayscale-placeholder': '#c4c4c4',
-        'title-active': '#0b0d11',
-      },
-      zIndex: {
-        1: 1,
-      },
-      height: {
-        1.25: '0.3125rem',
-        4.5: '1.125rem',
-      },
-      width: {
-        1.25: '0.3125rem',
-        4.5: '1.125rem',
-        fit: 'fit-content',
-      },
-      minWidth: {
-        '1/4': '25%',
-        '2/4': '50%',
-        '3/4': '75%',
-      },
-      maxWidth: {
-        '1/4': '25%',
-        '2/4': '50%',
-        '3/4': '75%',
-      },
-      borderWidth: {
-        3: 3,
-      },
       animation: {
         gradient: 'gradient 15s ease infinite',
       },

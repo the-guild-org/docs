@@ -36,7 +36,7 @@ export const HeroGradient: FC<IHeroGradientProps> = ({
         <Shadow className="-left-12 bottom-[-600px] [background:var(--colorB)]" />
       </div>
       <div className={clsx('md:px-10 md:pt-24 md:pb-14', image ? 'mb-32 pt-8 pb-72 md:mb-4' : 'py-20')}>
-        <div className="relative z-1">
+        <div className="relative z-[1]">
           <h1 className="mb-2.5 max-w-lg text-2xl font-bold text-white md:text-3xl" {...restProps.titleProps}>
             {title}
           </h1>
@@ -44,7 +44,7 @@ export const HeroGradient: FC<IHeroGradientProps> = ({
             {description}
           </p>
         </div>
-        <div className="relative z-1 mt-4 flex items-center gap-x-3 text-xs md:mt-9">
+        <div className="relative z-[1] mt-4 flex items-center gap-x-3 text-xs md:mt-9">
           {link &&
             toArray(link).map(link => (
               <Button

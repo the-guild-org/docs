@@ -57,7 +57,7 @@ export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({ title, description,
       <div className="container mt-16 mb-28 flex flex-wrap items-center pt-20 pb-1 md:mt-7 md:mb-20 md:flex-nowrap md:pt-0">
         <picture
           className="
-            z-1
+            z-[1]
             order-last
             -ml-8
             -mb-20
@@ -78,7 +78,7 @@ export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({ title, description,
           <source media="(min-width:768px)" srcSet={IllustrationDesktop} />
           <img className="w-full" src={IllustrationMobile} alt="Products List" />
         </picture>
-        <div className="relative z-1">
+        <div className="relative z-[1]">
           <h2
             className="mb-2.5 max-w-lg text-2xl font-bold text-white dark:text-gray-50 md:text-3xl"
             {...restProps.titleProps}
@@ -89,7 +89,7 @@ export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({ title, description,
             {description}
           </p>
           {link && (
-            <div className="relative z-1 mt-4 hidden items-center text-xs md:mt-9 md:flex">
+            <div className="relative z-[1] mt-4 hidden items-center text-xs md:mt-9 md:flex">
               <Button {...link} {...restProps.linkProps} />
             </div>
           )}

@@ -370,7 +370,7 @@ export const SearchBarComponent = ({
         style={{ '--accentColor': accentColor }}
         onClick={() => handleModal(true)}
       >
-        <SearchIcon className="h-6 w-6 md:mr-1 md:h-4.5 md:w-4.5" />
+        <SearchIcon className="h-6 w-6 md:mr-1 md:h-[18px] md:w-[18px]" />
         <span className="hidden md:block">{placeholder}</span>
       </button>
 

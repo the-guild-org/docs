@@ -6,7 +6,7 @@ import { SchemaEditor, ExecutableDocumentEditor } from '@theguild/monaco-graphql
 import { CaretSlimIcon, MoreIcon, ShareIcon } from './icons';
 
 const Editor: FC<Omit<IEditorProps, 'schema' | 'operations'>> = ({ title, frameworks = [], image, children }) => (
-  <div className="min-w-full max-w-full pr-px lg:min-w-1/4 lg:max-w-1/4">
+  <div className="min-w-full max-w-full pr-px lg:min-w-[25%] lg:max-w-[25%]">
     <div
       className="
         flex

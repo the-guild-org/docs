@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { FooterExtended } from '../FooterExtended';
 import { Header } from '../Header';
@@ -18,8 +19,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story = ({ page }) => {
-  const pages: any = {
+const Template: Story = ({ page }): ReactElement => {
+  const pages: Record<string, ReactElement> = {
     '/': (
       <>
         <HeroGradient {...heroGradientData} />

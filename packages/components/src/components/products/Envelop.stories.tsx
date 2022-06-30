@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { CardsColorful } from '../CardsColorful';
 import { Footer } from '../Footer';
@@ -10,7 +11,6 @@ import { HeroVideo } from '../HeroVideo';
 import { InfoList } from '../InfoList';
 import { MarketplaceSearch } from '../MarketplaceSearch';
 import { Subheader } from '../Subheader';
-
 import {
   dummyCardsColorful,
   dummyFeatureList,
@@ -35,8 +35,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story = ({ page }) => {
-  const pages: any = {
+const Template: Story = ({ page }): ReactElement => {
+  const pages: Record<string, ReactElement> = {
     '/': (
       <>
         <HeroGradient {...dummyHeroGradient} />
