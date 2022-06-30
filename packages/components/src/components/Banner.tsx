@@ -6,7 +6,7 @@ export type BannerProps = {
   color?: CSSProperties['color'];
   bgColor?: CSSProperties['color'];
   animation?: CSSProperties['animation'];
-}
+};
 
 export const Banner = ({
   children,

@@ -5,7 +5,7 @@ import { ArrowUpRightIcon, MailIcon } from './icons';
 
 export type NewsletterProps = {
   onNewsletterSubmit: (e: FormEvent, value: string) => void;
-}
+};
 
 export const Newsletter = ({ onNewsletterSubmit }: NewsletterProps): ReactElement => {
   const [inputValue, setInputValue] = useState('');

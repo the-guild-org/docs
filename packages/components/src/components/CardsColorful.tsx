@@ -16,7 +16,7 @@ export type CardsColorfulProps = {
   cardCategoryProps?: ComponentProps<'h2'>;
   cardTitleProps?: ComponentProps<'h3'>;
   cardDescriptionProps?: ComponentProps<'p'>;
-}
+};
 
 export const CardsColorful = ({ cards, ...restProps }: CardsColorfulProps): ReactElement => (
   <section className="bg-white py-8 font-default dark:bg-gray-900" {...restProps.wrapperProps}>

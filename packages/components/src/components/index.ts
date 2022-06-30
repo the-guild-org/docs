@@ -9,8 +9,8 @@ export { HeroGradient } from './HeroGradient';
 export { HeroIllustration } from './HeroIllustration';
 export { HeroMarketplace } from './HeroMarketplace';
 export { HeroVideo } from './HeroVideo';
-export * from './icons'
-export * from './logos'
+export * from './icons';
+export * from './logos';
 export { InfoList } from './InfoList';
 export { Instruction } from './Instruction';
 export { MarketplaceList } from './MarketplaceList';
