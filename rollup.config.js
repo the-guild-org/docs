@@ -28,6 +28,11 @@ function bundle(packageDir) {
         format: 'es',
         sourcemap: true,
       },
+      {
+        file: join(CWD, packageDir, 'dist/index.js'),
+        format: 'cjs',
+        sourcemap: true,
+      },
     ],
     external: ['react-player/lazy', 'algoliasearch/lite'],
     plugins: [
@@ -42,8 +47,6 @@ function bundle(packageDir) {
         babelHelpers: 'bundled',
         extensions: ['.tsx', '.ts'],
         configFile: join(CWD, '.babelrc'),
-        // Fixes ReferenceError: React is not defined
-        presets: [['@babel/preset-react', { runtime: 'automatic' }]],
       }),
       image(),
       copy({

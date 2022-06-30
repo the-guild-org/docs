@@ -84,31 +84,32 @@ export const Header = ({
   const onLinkClick = restProps.linkProps?.onClick;
 
   return (
-    <Root asChild className="relative z-50">
-      <header className="bg-white py-2.5 px-3 font-default dark:bg-gray-900 md:py-4" {...restProps.wrapperProps}>
-        <div className="container flex items-center justify-between" {...restProps.containerProps}>
-          <button
-            className="rounded-sm text-gray-500 outline-none transition hover:text-gray-400 focus:ring dark:text-gray-200 dark:hover:text-gray-400 md:hidden"
-            onClick={() => handleNav(true)}
-            {...restProps.navOpenButtonProps}
-          >
-            <HamburgerIcon />
-          </button>
+    <header className="bg-white py-2.5 px-3 font-default dark:bg-gray-900 md:py-4" {...restProps.wrapperProps}>
+      <div className="container flex items-center justify-between" {...restProps.containerProps}>
+        <button
+          className="rounded-sm text-gray-500 outline-none transition hover:text-gray-400 focus:ring dark:text-gray-200 dark:hover:text-gray-400 md:hidden"
+          onClick={() => handleNav(true)}
+          {...restProps.navOpenButtonProps}
+        >
+          <HamburgerIcon />
+        </button>
 
-          {/* TODO: find a way to remove this tag otherwise header not centered on mobile */}
-          <div className="md:absolute" />
+        {/* TODO: find a way to remove this tag otherwise header not centered on mobile */}
+        <div className="md:absolute" />
 
-          <a
-            title="View our website"
-            className="flex items-center gap-x-1.5 rounded-sm outline-none focus:ring dark:text-gray-100"
-            {...renderLinkOptions('/', onLinkClick)}
-            {...restProps.logoProps}
-          >
-            <GuildLogo className="md:w-7" />
-            <TheGuild className="hidden w-11 md:block" />
-          </a>
+        <a
+          title="View our website"
+          className="flex items-center gap-x-1.5 rounded-sm outline-none focus:ring dark:text-gray-100"
+          {...renderLinkOptions('/', onLinkClick)}
+          {...restProps.logoProps}
+        >
+          <GuildLogo className="md:w-7" />
+          <TheGuild className="hidden w-11 md:block" />
+        </a>
 
+        <Root asChild>
           <List>
+            <Viewport className="absolute top-10 right-0 z-50" />
             <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} {...restProps.navigationProps}>
               {links.map(link => {
                 const linkEl = (
@@ -158,14 +159,23 @@ export const Header = ({
                     {...renderLinkOptions(link.href, link.onClick || onLinkClick)}
                   >
                     {link.label}
-                    {link.onClick && <CaretIcon className="ml-1" />}
+                    {(link.onClick || link.menu) && (
+                      <CaretIcon
+                        className="
+                          ml-1
+                          transition-transform
+                          duration-200
+                          [[data-state=open]_>_&]:rotate-180
+                        "
+                      />
+                    )}
                   </a>
                 );
 
                 return link.menu && shouldUseMenus ? (
                   <Item key={link.label} value={link.label}>
-                    <Trigger>{linkEl}</Trigger>
-                    <Content>{link.menu}</Content>
+                    <Trigger asChild>{linkEl}</Trigger>
+                    <Content asChild>{link.menu}</Content>
                   </Item>
                 ) : (
                   <Item key={link.label}>
@@ -177,7 +187,7 @@ export const Header = ({
               <SearchBar
                 accentColor={accentColor}
                 title="Search docs"
-                placeholder="Search..."
+                placeholder="Search…"
                 className="hidden md:flex"
                 {...restProps.searchBarProps}
               />
@@ -191,27 +201,22 @@ export const Header = ({
                 </button>
               )}
             </Nav>
+            <Indicator className="absolute top-9 z-50 flex h-2.5 justify-center">
+              <div className="h-3 w-3 rotate-45 rounded-t-sm bg-white dark:bg-gray-800" />
+            </Indicator>
           </List>
+        </Root>
 
-          <Indicator className="absolute z-10 mt-2 flex h-2.5 justify-center">
-            <div className="h-3 w-3 rotate-45 bg-white dark:bg-gray-800" />
-          </Indicator>
-
-          <div className="absolute top-full left-0 flex w-full justify-center">
-            <Viewport className="-mt-1" />
-          </div>
-
-          {!disableSearch && (
-            <SearchBar
-              accentColor={accentColor}
-              title="Search docs"
-              placeholder="Search..."
-              className="md:hidden"
-              {...restProps.searchBarProps}
-            />
-          )}
-        </div>
-      </header>
-    </Root>
+        {!disableSearch && (
+          <SearchBar
+            accentColor={accentColor}
+            title="Search docs"
+            placeholder="Search…"
+            className="md:hidden"
+            {...restProps.searchBarProps}
+          />
+        )}
+      </div>
+    </header>
   );
 };

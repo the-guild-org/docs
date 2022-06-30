@@ -1,9 +1,16 @@
-import { FC } from 'react';
+import { ReactElement } from 'react';
 import ReactPlayer from 'react-player/lazy';
 import clsx from 'clsx';
 import { IHeroVideoProps } from '../types/components';
 
-export const HeroVideo: FC<IHeroVideoProps> = ({ title, description, link, video, flipped, ...restProps }) => (
+export const HeroVideo = ({
+  title,
+  description,
+  link,
+  video,
+  flipped,
+  ...restProps
+}: IHeroVideoProps): ReactElement => (
   <section className="bg-gray-100 font-default dark:bg-gray-800" {...restProps.wrapperProps}>
     <div
       className={clsx(
