@@ -10,7 +10,7 @@ export const HeroIllustration: FC<IHeroIllustrationProps> = ({
   flipped,
   ...restProps
 }) => (
-  <section className="bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
+  <section className="bg-white dark:bg-gray-900" {...restProps.wrapperProps}>
     <div
       className={clsx(
         `

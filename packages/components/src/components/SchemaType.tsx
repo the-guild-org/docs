@@ -64,7 +64,7 @@ export const SchemaPage = ({ schemaName, tags = [], editorData }: ISchemaPagePro
   const [schemaObj, setSchemaObj] = useState(() => buildSchema(editorData[0].schema!));
 
   return (
-    <section className="w-full bg-white font-default dark:bg-gray-900">
+    <section className="w-full bg-white dark:bg-gray-900">
       <div className="container flex max-w-[90rem] flex-col justify-between py-6 md:flex-row md:gap-16">
         <span className="pb-6 md:pb-0">
           <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">{schemaName}</h2>

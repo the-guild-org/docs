@@ -2,7 +2,6 @@ import { ReactElement } from 'react';
 import { AppProps } from 'next/app';
 import { Footer, Header, Subheader, ThemeProvider } from '@theguild/components';
 import '@theguild/components/dist/index.css';
-import '@theguild/components/dist/fonts.css';
 import '@algolia/autocomplete-theme-classic';
 import '../../../packages/components/src/static/css/SearchBarV2.css';
 

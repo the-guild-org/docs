@@ -2,7 +2,6 @@ import { useDarkMode } from 'storybook-dark-mode';
 import { themes } from '@storybook/theming';
 import { ThemeProvider } from '@theguild/components/src';
 import '@theguild/components/src/static/styles.css';
-import '@theguild/components/src/static/fonts.css';
 
 import '@algolia/autocomplete-theme-classic';
 import '@theguild/components/src/static/css/SearchBarV2.css';

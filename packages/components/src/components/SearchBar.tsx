@@ -123,7 +123,6 @@ const SearchBox = ({
         bg-white
         p-6
         shadow-sm
-        font-default
         dark:bg-gray-900
       "
     >
@@ -351,7 +350,6 @@ export const SearchBarComponent = ({
         text-gray-500
         outline-none
         transition
-        font-default
         focus:ring
         md:ml-3
         md:rounded-md

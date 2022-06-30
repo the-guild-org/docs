@@ -23,7 +23,7 @@ export const HeroGradient = ({
   image,
   ...restProps
 }: IHeroGradientProps): ReactElement => (
-  <section className="overflow-hidden bg-white font-default dark:bg-gray-900 md:pt-14" {...restProps.wrapperProps}>
+  <section className="overflow-hidden bg-white dark:bg-gray-900 md:pt-14" {...restProps.wrapperProps}>
     <div className="container relative max-w-[90rem]" {...restProps.containerProps}>
       <div
         className="absolute inset-0 overflow-hidden bg-black dark:bg-gray-900 md:mx-6 md:rounded-3xl"

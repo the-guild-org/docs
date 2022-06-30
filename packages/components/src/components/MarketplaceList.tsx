@@ -101,7 +101,7 @@ export const MarketplaceList = ({
   }, [items, pageSize]);
 
   return (
-    <section className="w-full bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
+    <section className="w-full bg-white dark:bg-gray-900" {...restProps.wrapperProps}>
       <div className="container max-w-[90rem] py-6" {...restProps.containerProps}>
         {title && (
           <h2

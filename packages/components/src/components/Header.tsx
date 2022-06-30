@@ -85,7 +85,7 @@ export const Header = ({
   const onLinkClick = restProps.linkProps?.onClick;
 
   return (
-    <header className="bg-white py-2.5 px-3 font-default dark:bg-gray-900 md:py-4" {...restProps.wrapperProps}>
+    <header className="bg-white py-2.5 px-3 dark:bg-gray-900 md:py-4" {...restProps.wrapperProps}>
       <div
         className="
           container

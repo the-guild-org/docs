@@ -41,10 +41,7 @@ export const Modal: FC<IModalProps> = ({
   }, [visible, escapePress, onCancel]);
 
   return (
-    <div
-      className={clsx('fixed inset-0 z-[50] backdrop-blur-sm font-default', !visible && 'hidden')}
-      {...restProps.containerProps}
-    >
+    <div className={clsx('fixed inset-0 z-[50] backdrop-blur-sm', !visible && 'hidden')} {...restProps.containerProps}>
       <div
         className="h-full w-full bg-gray-900 opacity-40 dark:bg-gray-500"
         onClick={() => onCancel()}

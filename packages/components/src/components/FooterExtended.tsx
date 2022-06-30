@@ -100,7 +100,7 @@ export const FooterExtended: FC<IFooterExtendedProps> = ({ sameSite, resources, 
   );
 
   return (
-    <footer className="bg-white text-xs font-default dark:bg-gray-900" {...restProps.wrapperProps}>
+    <footer className="bg-white text-xs dark:bg-gray-900" {...restProps.wrapperProps}>
       <div
         className="container max-w-[90rem] border-t border-gray-300 dark:border-gray-800"
         {...restProps.containerProps}

@@ -11,7 +11,7 @@ export const HeroVideo = ({
   flipped,
   ...restProps
 }: IHeroVideoProps): ReactElement => (
-  <section className="bg-gray-100 font-default dark:bg-gray-800" {...restProps.wrapperProps}>
+  <section className="bg-gray-100 dark:bg-gray-800" {...restProps.wrapperProps}>
     <div
       className={clsx(
         `
