@@ -1,9 +1,9 @@
-import { FC, isValidElement } from 'react';
+import { isValidElement, ReactElement } from 'react';
 import clsx from 'clsx';
 import { IHeroGradientProps } from '../types/components';
 import { Button } from './Button';
 
-const Shadow: FC<{ className: string }> = ({ className }) => {
+const Shadow = ({ className }: { className: string }): ReactElement => {
   return (
     <span
       className={clsx(
@@ -14,7 +14,7 @@ const Shadow: FC<{ className: string }> = ({ className }) => {
   );
 };
 
-export const HeroGradient: FC<IHeroGradientProps> = ({
+export const HeroGradient = ({
   title,
   description,
   link,
@@ -22,7 +22,7 @@ export const HeroGradient: FC<IHeroGradientProps> = ({
   colors = [],
   image,
   ...restProps
-}) => (
+}: IHeroGradientProps): ReactElement => (
   <section className="overflow-hidden bg-white font-default dark:bg-gray-900 md:pt-14" {...restProps.wrapperProps}>
     <div className="container relative" {...restProps.containerProps}>
       <div
@@ -35,7 +35,7 @@ export const HeroGradient: FC<IHeroGradientProps> = ({
         <Shadow className="right-[-350px] bottom-[-500px] [background:var(--colorB)]" />
         <Shadow className="-left-12 bottom-[-600px] [background:var(--colorB)]" />
       </div>
-      <div className={clsx('md:px-10 md:pt-24 md:pb-14', image ? 'mb-32 pt-8 pb-72 md:mb-4' : 'py-20')}>
+      <div className={clsx('px-6 md:px-14 md:pt-24 md:pb-14', image ? 'mb-32 pt-8 pb-72 md:mb-4' : 'py-20')}>
         <div className="relative z-[1]">
           <h1 className="mb-2.5 max-w-lg text-2xl font-bold text-white md:text-3xl" {...restProps.titleProps}>
             {title}
@@ -77,7 +77,8 @@ export const HeroGradient: FC<IHeroGradientProps> = ({
                 w-full
                 max-w-sm
                 sm:max-w-md
-                md:-top-14 md:-right-16
+                md:-top-14
+                md:-right-16
               "
               {...restProps.imageProps}
             />

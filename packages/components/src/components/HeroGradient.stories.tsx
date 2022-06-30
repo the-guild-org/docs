@@ -54,8 +54,8 @@ MultiLinks.args = {
       href: '#',
     },
     {
-      children: 'Documentation',
-      title: 'Documentation',
+      children: 'Docs',
+      title: 'Docs',
       href: '#',
     },
   ],
