@@ -52,7 +52,7 @@ const StyledMenu = styled(Root, {
   zIndex: 1,
 });
 
-const StyledList = styled(List, {
+const NavigationMenuList = styled(List, {
   all: 'unset',
   display: 'flex',
   justifyContent: 'center',
@@ -95,14 +95,14 @@ const StyledCaret = styled(CaretDownIcon, {
   },
 });
 
-const StyledTriggerWithCaret = forwardRef(({ children, ...props }, forwardedRef) => (
+const NavigationMenuTrigger = forwardRef(({ children, ...props }, forwardedRef) => (
   <StyledTrigger {...props} ref={forwardedRef}>
     {children}
     <StyledCaret aria-hidden />
   </StyledTrigger>
 ));
 
-const StyledLink = styled(Link, {
+const NavigationMenuLink = styled(Link, {
   ...itemStyles,
   display: 'block',
   textDecoration: 'none',
@@ -110,7 +110,7 @@ const StyledLink = styled(Link, {
   lineHeight: 1,
 });
 
-const StyledContent = styled(Content, {
+const NavigationMenuContent = styled(Content, {
   position: 'absolute',
   top: 0,
   left: 0,
@@ -142,23 +142,7 @@ const StyledIndicator = styled(Indicator, {
   },
 });
 
-const StyledArrow = styled('div', {
-  position: 'relative',
-  top: '70%',
-  backgroundColor: 'white',
-  width: 10,
-  height: 10,
-  transform: 'rotate(45deg)',
-  borderTopLeftRadius: 2,
-});
-
-const StyledIndicatorWithArrow = forwardRef((props, forwardedRef) => (
-  <StyledIndicator {...props} ref={forwardedRef}>
-    <StyledArrow />
-  </StyledIndicator>
-));
-
-const StyledViewport = styled(Viewport, {
+const NavigationMenuViewport = styled(Viewport, {
   position: 'relative',
   transformOrigin: 'top center',
   marginTop: 10,
@@ -178,15 +162,6 @@ const StyledViewport = styled(Viewport, {
     '&[data-state="closed"]': { animation: `${scaleOut} 200ms ease` },
   },
 });
-
-// Exports
-const NavigationMenuList = StyledList;
-const NavigationMenuItem = Item;
-const NavigationMenuTrigger = StyledTriggerWithCaret;
-const NavigationMenuLink = StyledLink;
-const NavigationMenuContent = StyledContent;
-const NavigationMenuViewport = StyledViewport;
-const NavigationMenuIndicator = StyledIndicatorWithArrow;
 
 // Your app...
 const ContentList = styled('ul', {
@@ -260,7 +235,7 @@ export const NavigationMenu = () => {
   return (
     <StyledMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
+        <Item>
           <NavigationMenuTrigger>Learn</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ContentList layout="one">
@@ -275,9 +250,9 @@ export const NavigationMenu = () => {
               </ContentListItem>
             </ContentList>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </Item>
 
-        <NavigationMenuItem>
+        <Item>
           <NavigationMenuTrigger>Overview</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ContentList layout="two">
@@ -301,13 +276,15 @@ export const NavigationMenu = () => {
               </ContentListItem>
             </ContentList>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </Item>
 
-        <NavigationMenuItem>
+        <Item>
           <NavigationMenuLink href="https://github.com/radix-ui">GitHub</NavigationMenuLink>
-        </NavigationMenuItem>
+        </Item>
 
-        <NavigationMenuIndicator />
+        <StyledIndicator>
+          <div className='relative w-2.5 h-2.5 bg-white rotate-45 rounded-t-sm top-[70%]' />
+        </StyledIndicator>
       </NavigationMenuList>
 
       <ViewportPosition>

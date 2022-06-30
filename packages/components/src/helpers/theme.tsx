@@ -1,6 +1,15 @@
-import { createContext, Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  Dispatch,
+  ReactElement,
+  ReactNode,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
-const getDarkTheme = () => {
+const getDarkTheme = (): boolean => {
   if (typeof window === 'undefined' || !window.localStorage) {
     return false;
   }
@@ -29,7 +38,7 @@ const ThemeContext = createContext<IContextProps>({
   setDarkTheme: () => undefined,
 });
 
-const setDOMTheme = (isDark: boolean) => {
+const setDOMTheme = (isDark: boolean): void => {
   if (typeof window !== 'undefined' && window.localStorage) {
     const html = window.document.documentElement;
     html.classList.toggle('dark', isDark);
@@ -40,7 +49,11 @@ const setDOMTheme = (isDark: boolean) => {
   }
 };
 
-export const ThemeProvider: React.FC<Partial<IContextProps>> = ({ children, isDarkTheme, setDarkTheme }) => {
+export const ThemeProvider = ({
+  children,
+  isDarkTheme,
+  setDarkTheme,
+}: Partial<IContextProps> & { children: ReactNode }): ReactElement => {
   const [isDark, setDark] = useState(false);
 
   useEffect(() => {
