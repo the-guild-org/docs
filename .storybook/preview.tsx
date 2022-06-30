@@ -21,6 +21,7 @@ export const parameters = {
     // Override the default light theme
     light: { ...themes.normal, appBg: 'white' },
   },
+  // Remove padding from storybook in mobile
   layout: 'fullscreen',
 };
 

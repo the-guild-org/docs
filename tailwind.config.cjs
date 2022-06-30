@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   darkMode: 'class',
-  content: ['./packages/**/*.{html,ts,tsx}'],
+  content: ['./packages/components/**/*.{html,ts,tsx}'],
   theme: {
     container: {
       center: true,
@@ -29,7 +29,7 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(({ addUtilities, addVariant }) => {
+    plugin(({ addUtilities }) => {
       addUtilities({
         '.font-default': {
           fontFamily:
