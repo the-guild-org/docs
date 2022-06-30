@@ -130,7 +130,7 @@ export const MarketplaceList = ({
               "
             >
               <thead className="whitespace-nowrap px-2 text-left text-xs font-semibold uppercase text-gray-300 dark:text-gray-600">
-                <tr>
+                <tr className="border-0">
                   <th className="px-2" />
                   <th className="px-2">Name</th>
                   <th className="hidden px-2 md:table-cell">Last Update</th>

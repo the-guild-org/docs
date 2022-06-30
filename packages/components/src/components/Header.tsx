@@ -206,7 +206,7 @@ export const Header = ({
               {themeSwitch && setDarkTheme && (
                 <button
                   onClick={() => setDarkTheme(prev => !prev)}
-                  className="self-center rounded-sm outline-none focus:ring md:ml-5"
+                  className="self-center rounded-sm outline-none focus:ring p-2"
                   {...restProps.themeButtonProps}
                 >
                   <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
