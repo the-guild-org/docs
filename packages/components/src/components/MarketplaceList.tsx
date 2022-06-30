@@ -14,7 +14,7 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
   <tbody>
     {items.map(item => (
       <tr
-        className="!border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 last:border-0 dark:border-gray-800 dark:text-gray-400"
+        className="border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 last:border-0 dark:border-gray-800 dark:text-gray-400"
         key={item.title}
       >
         <td className="w-14 py-4 pr-2 align-top md:w-20">
@@ -120,7 +120,15 @@ export const MarketplaceList = ({
           </div>
         ) : (
           <>
-            <table className="w-full border-collapse">
+            <table
+              className="
+                w-full
+                border-collapse
+                [&_th]:!border-0
+                [&_td]:!border-0
+                [&_tr]:!bg-transparent
+              "
+            >
               <thead className="whitespace-nowrap px-2 text-left text-xs font-semibold uppercase text-gray-300 dark:text-gray-600">
                 <tr>
                   <th className="px-2" />

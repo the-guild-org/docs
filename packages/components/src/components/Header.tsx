@@ -86,7 +86,18 @@ export const Header = ({
 
   return (
     <header className="bg-white py-2.5 px-3 font-default dark:bg-gray-900 md:py-4" {...restProps.wrapperProps}>
-      <div className="container flex max-w-[90rem] items-center justify-between" {...restProps.containerProps}>
+      <div
+        className="
+          container
+          flex
+          max-w-[90rem]
+          items-center
+          justify-between
+          pl-[max(env(safe-area-inset-left),1.5rem)]
+          pr-[max(env(safe-area-inset-right),1.5rem)]
+        "
+        {...restProps.containerProps}
+      >
         <button
           className="rounded-sm text-gray-500 outline-none transition hover:text-gray-400 focus:ring dark:text-gray-200 dark:hover:text-gray-400 md:hidden"
           onClick={() => handleNav(true)}
