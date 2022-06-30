@@ -3,7 +3,7 @@ import { IFeatureListProps } from '../types/components';
 
 export const FeatureList: FC<IFeatureListProps> = ({ title, titleDescription, items, link, ...restProps }) => (
   <section className="bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
-    <div className="container py-14" {...restProps.containerProps}>
+    <div className="container max-w-[90rem] py-14" {...restProps.containerProps}>
       {title && (
         <div className="mb-6 flex flex-wrap justify-center px-24" {...restProps.titleProps}>
           <h2 className="mt-0 mb-1.5 text-center text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">

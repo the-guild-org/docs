@@ -69,7 +69,7 @@ export const Subheader: FC<ISubheaderProps> = ({ product, activeLink, links, cta
       "
       {...restProps.wrapperProps}
     >
-      <div className="container flex items-center md:justify-end" {...restProps.containerProps}>
+      <div className="container flex max-w-[90rem] items-center md:justify-end" {...restProps.containerProps}>
         <a
           href="/"
           onClick={product.onClick}
