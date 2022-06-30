@@ -41,6 +41,7 @@
     "@types/react-instantsearch-core": "6.10.8",
     "@types/react-instantsearch-dom": "6.12.3",
     "@types/react-paginate": "7.1.1",
+    "@types/rollup-plugin-auto-external": "2.0.2",
     "@types/validator": "13.7.3",
     "@typescript-eslint/eslint-plugin": "5.30.0",
     "@typescript-eslint/parser": "5.30.0",

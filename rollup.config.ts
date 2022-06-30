@@ -1,5 +1,6 @@
 import { join } from 'node:path';
 import fs from 'node:fs';
+import { RollupOptions } from 'rollup';
 import babel from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import autoExternal from 'rollup-plugin-auto-external';
@@ -15,7 +16,7 @@ const packageDirs = glob.sync('packages/*', {
   absolute: false,
 });
 
-function bundle(packageDir) {
+function bundle(packageDir: string): RollupOptions {
   const tsxFile = `${packageDir}/src/index.tsx`;
   const tsFile = `${packageDir}/src/index.ts`;
   const isTsx = fs.existsSync(join(CWD, tsxFile));

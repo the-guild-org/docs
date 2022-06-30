@@ -3236,6 +3236,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/rollup-plugin-auto-external@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/rollup-plugin-auto-external/-/rollup-plugin-auto-external-2.0.2.tgz#d1c9697c2445db956df5215d68c35b5fe794b99c"
+  integrity sha512-1Xtl9S4yQapD+A4mX1sqYVXm3UmVA9oIEf2YKEhRTCUNxlAM3DoKK1HPxrGMemDJNfhe6Yl3w0JsAGvIN5j/ow==
+  dependencies:
+    rollup ">=2.0.0"
+
 "@types/scheduler@*":
   version "0.16.1"
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.1.tgz#18845205e86ff0038517aab7a18a62a6b9f71275"
@@ -10697,7 +10704,7 @@ rollup-plugin-copy@3.4.0:
     globby "10.0.1"
     is-plain-object "^3.0.0"
 
-rollup@2.75.7:
+rollup@2.75.7, rollup@>=2.0.0:
   version "2.75.7"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.75.7.tgz#221ff11887ae271e37dcc649ba32ce1590aaa0b9"
   integrity sha512-VSE1iy0eaAYNCxEXaleThdFXqZJ42qDBatAwrfnPlENEZ8erQ+0LYX4JXOLPceWfZpV1VtZwZ3dFCuOZiSyFtQ==
