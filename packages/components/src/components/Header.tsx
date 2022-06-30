@@ -111,7 +111,7 @@ export const Header = ({
 
         <a
           title="View our website"
-          className="flex items-center gap-x-1.5 rounded-sm outline-none focus:ring dark:text-gray-100"
+          className="flex items-center gap-x-1.5 rounded-sm outline-none focus:ring dark:text-gray-100 hover:opacity-75"
           {...renderLinkOptions('/', onLinkClick)}
           {...restProps.logoProps}
         >
@@ -140,8 +140,9 @@ export const Header = ({
                         no-underline
                         outline-none
                         transition
-                        hover:[color:var(--accentColor)]
                         focus:ring
+                        hover:text-gray-800
+                        dark:hover:text-gray-200
                         sm:py-5
                         sm:text-lg
                         md:py-0
@@ -152,6 +153,7 @@ export const Header = ({
                         relative
                         font-medium
                         text-black
+                        dark:text-[#f3f4f6]
                         after:absolute
                         after:bottom-0
                         after:h-0.5
@@ -159,11 +161,10 @@ export const Header = ({
                         after:rounded
                         after:bg-black
                         after:content-['']
-                        dark:text-gray-50
                         after:dark:bg-white
                         after:sm:bottom-2.5
                         after:md:-bottom-2`
-                        : 'text-gray-500 dark:text-gray-400'
+                        : 'text-gray-600 dark:text-gray-400'
                     )}
                     style={{ '--accentColor': accentColor }}
                     {...restProps.linkProps}

@@ -62,7 +62,7 @@ export const EcosystemList = (): ReactElement => {
                 <product.logo className="h-9 w-9 shrink-0" />
                 <span className="flex flex-col justify-center">
                   <h4 className="m-0 text-sm font-semibold text-black dark:text-gray-300">{product.children}</h4>
-                  <p className="mt-0 text-xs font-medium text-gray-900 dark:text-gray-400">{product.title}</p>
+                  <p className="!mt-0 text-xs font-medium text-gray-900 dark:text-gray-400">{product.title}</p>
                 </span>
               </a>
             ))}
