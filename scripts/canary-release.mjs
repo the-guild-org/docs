@@ -2,10 +2,14 @@ import cp from 'node:child_process';
 import path from 'node:path';
 import semver from 'semver';
 import { read as readConfig } from '@changesets/config';
-import { default as readChangesets } from '@changesets/read';
-import assembleReleasePlan from '@changesets/assemble-release-plan';
-import applyReleasePlan from '@changesets/apply-release-plan';
+import _getChangesets from '@changesets/read';
+import _assembleReleasePlan from '@changesets/assemble-release-plan';
+import _applyReleasePlan from '@changesets/apply-release-plan';
 import { getPackages } from '@manypkg/get-packages';
+
+const getChangesets = _getChangesets.default;
+const assembleReleasePlan = _assembleReleasePlan.default;
+const applyReleasePlan = _applyReleasePlan.default;
 
 function getNewVersion(version, type) {
   const gitHash = cp.spawnSync('git', ['rev-parse', '--short', 'HEAD']).stdout.toString().trim();
@@ -32,7 +36,7 @@ async function updateVersions() {
   const packages = await getPackages(cwd);
   const config = await readConfig(cwd, packages);
   const modifiedChangesets = getRelevantChangesets(config.baseBranch);
-  const changesets = (await readChangesets(cwd)).filter(change => modifiedChangesets.includes(change.id));
+  const changesets = (await getChangesets(cwd)).filter(change => modifiedChangesets.includes(change.id));
 
   if (changesets.length === 0) {
     throw new Error('Unable to find any relevant package for canary publishing. Please make sure changesets exists!');
