@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useImperativeHandle, forwardRef, ForwardedRef } from 'react';
 import { DiffEditor, DiffEditorProps } from '@monaco-editor/react';
 import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
 
@@ -6,7 +6,7 @@ export type SchemaDiffEditorProps = SchemaServicesOptions & Omit<DiffEditorProps
 
 function BaseSchemaDiffEditor(
   props: SchemaDiffEditorProps,
-  ref: React.ForwardedRef<{
+  forwardedRef: ForwardedRef<{
     original: SchemaEditorApi;
     modified: SchemaEditorApi;
   }>
@@ -14,8 +14,8 @@ function BaseSchemaDiffEditor(
   const originalSchemaService = useSchemaServices(props);
   const modifiedSchemaService = useSchemaServices(props);
 
-  React.useImperativeHandle(
-    ref,
+  useImperativeHandle(
+    forwardedRef,
     () => ({
       original: originalSchemaService.editorApi,
       modified: originalSchemaService.editorApi,
@@ -42,10 +42,10 @@ function BaseSchemaDiffEditor(
         modifiedSchemaService.setEditor(editor.getModifiedEditor());
         props.onMount?.(editor, monaco);
       }}
-      options={{ glyphMargin: true, ...(props.options || {}) }}
+      options={{ glyphMargin: true, ...props.options }}
       language="graphql"
     />
   );
 }
 
-export const SchemaDiffEditor = React.forwardRef(BaseSchemaDiffEditor);
+export const SchemaDiffEditor = forwardRef(BaseSchemaDiffEditor);

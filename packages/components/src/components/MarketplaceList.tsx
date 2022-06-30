@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useState } from 'react';
+import { ReactElement, useEffect, useMemo, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { IMarketplaceListProps, IMarketplaceItemsProps } from '../types/components';
 import { Tag, TagsContainer } from './Tag';
@@ -10,69 +10,75 @@ const formatDate = (value: string): string => {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 };
 
-const TableItems: FC<IMarketplaceItemsProps> = ({ items = [], ...restProps }) => {
-  return (
-    <>
-      {items.map(item => (
-        <tr
-          className="border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 last:border-0 dark:border-gray-800 dark:text-gray-400"
-          key={item.title}
-        >
-          <td className="w-14 py-4 pr-2 md:w-24">{item.image && <img {...item.image} {...restProps.imageProps} />}</td>
-          <td className="py-4 px-2">
-            <a
-              className="text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400"
-              {...item.link}
-              {...restProps.linkProps}
+const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactElement => (
+  <tbody>
+    {items.map(item => (
+      <tr
+        className="border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 last:border-0 dark:border-gray-800 dark:text-gray-400"
+        key={item.title}
+      >
+        <td className="w-14 py-4 pr-2 align-top md:w-20">
+          {item.image && <img {...item.image} {...restProps.imageProps} />}
+        </td>
+        <td className="py-4 px-2">
+          <a
+            className="text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400"
+            {...item.link}
+            {...restProps.linkProps}
+          >
+            <h3
+              className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg"
+              {...restProps.titleProps}
             >
-              <h3
-                className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg"
-                {...restProps.titleProps}
-              >
-                {item.title}
-              </h3>
-              <p className="line-clamp-3" {...restProps.descriptionProps}>
-                {item.description}
-              </p>
-              {item.tags && item.tags.length > 0 && (
-                <TagsContainer>
-                  {item.tags.map(tagName => (
-                    <Tag key={tagName}>{tagName}</Tag>
-                  ))}
-                </TagsContainer>
-              )}
-            </a>
-          </td>
-          <td className="hidden py-4 px-2 md:table-cell" {...restProps.dateProps}>
-            {formatDate(item.update)}
-          </td>
-          <td className="py-4 pl-2">
-            <a
-              className="
-                block
-                rounded-lg
-                bg-gray-200
-                p-1.5
-                text-gray-800
-                transition
-                hover:invert
-                dark:bg-gray-700
-                dark:text-white
-                md:p-2.5
-              "
-              {...item.link}
-              {...restProps.linkProps}
-            >
-              <CaretSlimIcon className="h-5 w-5 -rotate-90" />
-            </a>
-          </td>
-        </tr>
-      ))}
-    </>
-  );
-};
+              {item.title}
+            </h3>
+            <p className="line-clamp-3" {...restProps.descriptionProps}>
+              {item.description}
+            </p>
+            {item.tags && item.tags.length > 0 && (
+              <TagsContainer>
+                {item.tags.map(tagName => (
+                  <Tag key={tagName}>{tagName}</Tag>
+                ))}
+              </TagsContainer>
+            )}
+          </a>
+        </td>
+        <td className="hidden py-4 px-2 md:table-cell" {...restProps.dateProps}>
+          {formatDate(item.update)}
+        </td>
+        <td className="py-4 pl-2">
+          <a
+            className="
+              block
+              rounded-lg
+              bg-gray-200
+              p-1.5
+              text-gray-800
+              transition
+              hover:invert
+              dark:bg-gray-700
+              dark:text-white
+              md:p-2.5
+            "
+            {...item.link}
+            {...restProps.linkProps}
+          >
+            <CaretSlimIcon className="h-5 w-5 -rotate-90" />
+          </a>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+);
 
-export const MarketplaceList: FC<IMarketplaceListProps> = ({ title, placeholder, items, pagination, ...restProps }) => {
+export const MarketplaceList = ({
+  title,
+  placeholder,
+  items,
+  pagination,
+  ...restProps
+}: IMarketplaceListProps): ReactElement => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const pageSize = pagination || 5;
@@ -92,7 +98,7 @@ export const MarketplaceList: FC<IMarketplaceListProps> = ({ title, placeholder,
     }
 
     return pagesData;
-  }, [items]);
+  }, [items, pageSize]);
 
   return (
     <section className="w-full bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
@@ -123,9 +129,7 @@ export const MarketplaceList: FC<IMarketplaceListProps> = ({ title, placeholder,
                   <th className="px-2" />
                 </tr>
               </thead>
-              <tbody>
-                <TableItems items={pages[currentPage]} {...restProps.itemProps} />
-              </tbody>
+              <TableBody items={pages[currentPage]} {...restProps.itemProps} />
             </table>
 
             {pageCount > 1 && (

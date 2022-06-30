@@ -48,7 +48,15 @@ module.exports = {
   settings: {
     tailwindcss: {
       config: 'tailwind.config.cjs',
-      whitelist: ['font-default', 'container-max', 'container-min'],
+      whitelist: [
+        'aa-ItemLink',
+        'aa-ItemContent',
+        'aa-ItemContentBody',
+        'aa-ItemContentTitle',
+        'aa-ItemContentSubtitle',
+        'aa-SourceHeader',
+        'aa-SourceHeaderTitle',
+      ],
     },
     react: {
       version: 'detect',

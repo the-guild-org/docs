@@ -25,9 +25,6 @@ module.exports = {
         'grayscale-placeholder': '#c4c4c4',
         'title-active': '#0b0d11',
       },
-      screens: {
-        xs: '360px',
-      },
       zIndex: {
         1: 1,
       },

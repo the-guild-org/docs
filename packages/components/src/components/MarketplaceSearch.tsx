@@ -48,7 +48,7 @@ export const MarketplaceSearch = ({
       });
     }
     return results;
-  }, [query]);
+  }, [query, queryList]);
 
   return (
     <section className="bg-white font-default dark:bg-gray-900" {...restProps.wrapperProps}>
@@ -77,7 +77,7 @@ export const MarketplaceSearch = ({
           />
         </div>
 
-        <div className="-mx-6 flex flex-wrap lg:flex-nowrap">
+        <div className="flex flex-wrap lg:flex-nowrap gap-10">
           {items && queryList ? (
             <MarketplaceList
               title={queryList.title}
