@@ -32,9 +32,9 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
             >
               {item.title}
             </h3>
-            <p className="line-clamp-3" {...restProps.descriptionProps}>
+            <div className="line-clamp-3 [&>p]:!m-0" {...restProps.descriptionProps}>
               {item.description}
-            </p>
+            </div>
             {item.tags && item.tags.length > 0 && (
               <TagsContainer>
                 {item.tags.map(tagName => (
@@ -118,12 +118,12 @@ export const MarketplaceList = ({
         <>
           <table
             className="
-                w-full
-                border-collapse
-                [&_th]:!border-0
-                [&_td]:!border-0
-                [&_tr]:!bg-transparent
-              "
+              w-full
+              border-collapse
+              [&_th]:!border-0
+              [&_td]:!border-0
+              [&_tr]:!bg-transparent
+            "
           >
             <thead className="whitespace-nowrap px-2 text-left text-xs font-semibold uppercase text-gray-300 dark:text-gray-600">
               <tr className="border-0">
