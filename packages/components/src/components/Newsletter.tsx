@@ -1,5 +1,5 @@
 import { ReactElement, useState, FormEvent } from 'react';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { isEmail } from '../helpers/email';
 import { ArrowUpRightIcon, MailIcon } from './icons';
 

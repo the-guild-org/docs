@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IHeroIllustrationProps } from '../types/components';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 export const HeroIllustration: FC<IHeroIllustrationProps> = ({
   title,

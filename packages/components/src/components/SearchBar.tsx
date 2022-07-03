@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState, useRef, useCallback, createElement, R
 import algoliaSearch from 'algoliasearch/lite';
 import { InstantSearch, connectHits, connectSearchBox, connectStateResults } from 'react-instantsearch-dom';
 import { Hit, SearchBoxProvided, StateResultsProvided } from 'react-instantsearch-core';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { useDebouncedCallback } from 'use-debounce';
 import { Modal } from './Modal';
 import { ISearchBarProps } from '../types/components';

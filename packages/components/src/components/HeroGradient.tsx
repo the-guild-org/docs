@@ -1,5 +1,5 @@
 import { isValidElement, ReactElement } from 'react';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { IHeroGradientProps } from '../types/components';
 import { Button } from './Button';
 

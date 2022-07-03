@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import ReactPlayer from 'react-player/lazy';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { IHeroVideoProps } from '../types/components';
 
 export const HeroVideo = ({

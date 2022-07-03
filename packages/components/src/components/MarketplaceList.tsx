@@ -102,73 +102,68 @@ export const MarketplaceList = ({
 
   return (
     <section className="w-full bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
-      <div className="container max-w-[90rem] py-6" {...restProps.containerProps}>
-        {title && (
-          <h2
-            className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl"
-            {...restProps.titleProps}
-          >
-            {title}
-          </h2>
-        )}
-        {!pages[currentPage] || !pages[currentPage].length ? (
-          <div
-            className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300"
-            {...restProps.placeholderProps}
-          >
-            {placeholder}
-          </div>
-        ) : (
-          <>
-            <table
-              className="
+      {title && (
+        <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl" {...restProps.titleProps}>
+          {title}
+        </h2>
+      )}
+      {!pages[currentPage] || !pages[currentPage].length ? (
+        <div
+          className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300"
+          {...restProps.placeholderProps}
+        >
+          {placeholder}
+        </div>
+      ) : (
+        <>
+          <table
+            className="
                 w-full
                 border-collapse
                 [&_th]:!border-0
                 [&_td]:!border-0
                 [&_tr]:!bg-transparent
               "
-            >
-              <thead className="whitespace-nowrap px-2 text-left text-xs font-semibold uppercase text-gray-300 dark:text-gray-600">
-                <tr className="border-0">
-                  <th className="px-2" />
-                  <th className="px-2">Name</th>
-                  <th className="hidden px-2 md:table-cell">Last Update</th>
-                  <th className="px-2" />
-                </tr>
-              </thead>
-              <TableBody items={pages[currentPage]} {...restProps.itemProps} />
-            </table>
+          >
+            <thead className="whitespace-nowrap px-2 text-left text-xs font-semibold uppercase text-gray-300 dark:text-gray-600">
+              <tr className="border-0">
+                <th className="px-2" />
+                <th className="px-2">Name</th>
+                <th className="hidden px-2 md:table-cell">Last Update</th>
+                <th className="px-2" />
+              </tr>
+            </thead>
+            <TableBody items={pages[currentPage]} {...restProps.itemProps} />
+          </table>
 
-            {pageCount > 1 && (
-              <ReactPaginate
-                pageCount={pageCount}
-                // control selected page
-                forcePage={currentPage}
-                pageRangeDisplayed={3}
-                marginPagesDisplayed={1}
-                onPageChange={page => setCurrentPage(page.selected)}
-                containerClassName="flex justify-center gap-x-2"
-                previousClassName="hidden"
-                nextClassName="hidden"
-                pageLinkClassName="
-                  text-sm
-                  bg-gray-200
-                  dark:text-gray-300
-                  dark:bg-gray-700
-                  rounded-lg
-                  select-none
-                  hover:opacity-70
-                  transition
-                  px-3.5
-                  py-2
-                "
-                activeLinkClassName="invert"
-              />
-            )}
-          </>
-        )}
-      </div>
+          {pageCount > 1 && (
+            <ReactPaginate
+              pageCount={pageCount}
+              // control selected page
+              forcePage={currentPage}
+              pageRangeDisplayed={3}
+              marginPagesDisplayed={1}
+              onPageChange={page => setCurrentPage(page.selected)}
+              containerClassName="flex justify-center gap-x-2"
+              previousClassName="hidden"
+              nextClassName="hidden"
+              pageLinkClassName="
+                text-sm
+                bg-gray-200
+                dark:text-gray-300
+                dark:bg-gray-700
+                rounded-lg
+                select-none
+                hover:opacity-70
+                transition
+                px-3.5
+                py-2
+              "
+              activeLinkClassName="invert"
+            />
+          )}
+        </>
+      )}
     </section>
   );
 };

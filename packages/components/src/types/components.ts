@@ -108,7 +108,8 @@ interface IModalRestProps {
 }
 
 export interface IModalProps extends IModalRestProps {
-  title: string | React.ReactNode;
+  children: ReactNode;
+  title: string | ReactNode;
   description?: string | ILink;
   image?: IImage;
   visible: boolean;
@@ -262,9 +263,7 @@ export interface IMarketplaceListProps {
   placeholder: string | React.ReactElement;
   pagination: number;
   items: IMarketplaceItemProps[];
-
   wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
   placeholderProps?: React.ComponentProps<'div'>;
   itemProps?: IMarketplaceItemRestProps;
@@ -293,6 +292,7 @@ export interface ISchemaPageProps {
 }
 
 export interface IEditorProps {
+  children: ReactNode
   title?: string;
   frameworks?: string[];
   schema?: string;

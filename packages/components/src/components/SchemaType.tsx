@@ -1,11 +1,11 @@
-import { FC, ReactElement, useState } from 'react';
+import { ReactElement, ReactNode, useState } from 'react';
 import { buildSchema } from 'graphql';
 import { ISchemaPageProps, IEditorProps } from '../types/components';
 import { Tag, TagsContainer } from './Tag';
 import { SchemaEditor, ExecutableDocumentEditor } from '@theguild/monaco-graphql-editor';
 import { CaretSlimIcon, MoreIcon, ShareIcon } from './icons';
 
-const Editor: FC<Omit<IEditorProps, 'schema' | 'operations'>> = ({ title, frameworks = [], image, children }) => (
+const Editor = ({ title, frameworks = [], image, children }: Omit<IEditorProps, 'schema' | 'operations'>) => (
   <div className="min-w-full max-w-full pr-px lg:min-w-[25%] lg:max-w-[25%]">
     <div
       className="
@@ -41,7 +41,7 @@ const Editor: FC<Omit<IEditorProps, 'schema' | 'operations'>> = ({ title, framew
   </div>
 );
 
-const Button: FC = ({ children }) => {
+const Button = ({ children }: { children: ReactNode }): ReactElement => {
   return (
     <button
       type="button"

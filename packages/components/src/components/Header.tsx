@@ -1,5 +1,5 @@
 import { useState, useMemo, ReactElement, MouseEventHandler, MouseEvent } from 'react';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
 import { SearchBar } from './SearchBar';
 import { IHeaderProps } from '../types/components';
@@ -85,7 +85,7 @@ export const Header = ({
   const onLinkClick = restProps.linkProps?.onClick;
 
   return (
-    <header className="bg-white py-2.5 px-3 dark:bg-[#111] md:py-4" {...restProps.wrapperProps}>
+    <header className="bg-white py-2.5 dark:bg-[#111] md:py-3.5" {...restProps.wrapperProps}>
       <div
         className="
           container

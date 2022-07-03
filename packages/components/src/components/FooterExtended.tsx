@@ -1,4 +1,4 @@
-import { FC, useCallback } from 'react';
+import { ReactElement, ReactNode, useCallback } from 'react';
 import { Newsletter } from './Newsletter';
 import { PRODUCTS } from '../helpers/products';
 import { IFooterExtendedProps, ILink } from '../types/components';
@@ -54,7 +54,7 @@ const limitProductsTo = Math.ceil(PRODUCTS.length / 2);
 const PRODUCTS_COLUMN_1 = PRODUCTS.slice(0, limitProductsTo);
 const PRODUCTS_COLUMN_2 = PRODUCTS.slice(limitProductsTo);
 
-const Title: FC = ({ children, ...props }) => {
+const Title = ({ children, ...props }: { children: ReactNode }): ReactElement => {
   return (
     <p className="mb-3 text-xs font-semibold text-gray-900 dark:text-gray-100" {...props}>
       {children}
@@ -62,7 +62,7 @@ const Title: FC = ({ children, ...props }) => {
   );
 };
 
-export const FooterExtended: FC<IFooterExtendedProps> = ({ sameSite, resources, onNewsletterSubmit, ...restProps }) => {
+export const FooterExtended = ({ sameSite, resources, onNewsletterSubmit, ...restProps }: IFooterExtendedProps): ReactElement => {
   const logoOptions = sameSite
     ? { href: '/' }
     : {

@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
-export const Instruction: FC = ({ children }) => {
+export const Instruction = ({ children }: { children: ReactNode }): ReactElement => {
   return (
     <div>
       <div

@@ -1,11 +1,11 @@
-import { FC, useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
 import FocusTrap from 'focus-trap-react';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { IModalProps } from '../types/components';
 import { useKeyPress } from '../helpers/hooks';
 import { CloseIcon, ExternalLinkIcon } from './icons';
 
-export const Modal: FC<IModalProps> = ({
+export const Modal = ({
   image,
   title,
   description,
@@ -14,7 +14,7 @@ export const Modal: FC<IModalProps> = ({
   placement,
   onCancel,
   ...restProps
-}) => {
+}: IModalProps): ReactElement => {
   const escapePress = useKeyPress('Escape');
 
   const renderDescription = () => {

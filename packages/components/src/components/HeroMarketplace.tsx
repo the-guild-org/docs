@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import IllustrationDesktop from '../static/illustrations/marketplace-desktop.png';
 import IllustrationMobile from '../static/illustrations/marketplace-mobile.png';
 import CubeTL from '../static/illustrations/marketplace-cube-tl.png';
