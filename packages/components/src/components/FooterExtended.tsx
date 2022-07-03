@@ -62,7 +62,12 @@ const Title = ({ children, ...props }: { children: ReactNode }): ReactElement =>
   );
 };
 
-export const FooterExtended = ({ sameSite, resources, onNewsletterSubmit, ...restProps }: IFooterExtendedProps): ReactElement => {
+export const FooterExtended = ({
+  sameSite,
+  resources,
+  onNewsletterSubmit,
+  ...restProps
+}: IFooterExtendedProps): ReactElement => {
   const logoOptions = sameSite
     ? { href: '/' }
     : {

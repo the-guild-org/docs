@@ -1,12 +1,12 @@
-import { FC, useCallback, useState } from 'react';
-import { clsx } from 'clsx';
+import { ReactElement, useCallback, useState } from 'react';
+import clsx from 'clsx';
 import { ISubheaderProps } from '../types/components';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import { CaretSlimIcon } from './icons';
 import { Nav } from './Nav';
 import { Button } from './Button';
 
-export const Subheader: FC<ISubheaderProps> = ({ product, activeLink, links, cta, ...restProps }) => {
+export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISubheaderProps): ReactElement => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const handleNav = useCallback(() => {

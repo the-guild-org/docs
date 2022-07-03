@@ -1,5 +1,5 @@
 import { useState, useMemo, ReactElement, MouseEventHandler, MouseEvent } from 'react';
-import { clsx } from 'clsx';
+import clsx from 'clsx';
 import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
 import { SearchBar } from './SearchBar';
 import { IHeaderProps } from '../types/components';

@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { clsx } from 'clsx';
+import { ReactElement } from 'react';
+import clsx from 'clsx';
 import IllustrationDesktop from '../static/illustrations/marketplace-desktop.png';
 import IllustrationMobile from '../static/illustrations/marketplace-mobile.png';
 import CubeTL from '../static/illustrations/marketplace-cube-tl.png';
@@ -9,7 +9,7 @@ import CubeBR from '../static/illustrations/marketplace-cube-br.png';
 import { IHeroMarketplaceProps } from '../types/components';
 import { Button } from './Button';
 
-const Shadow: FC<{ className: string }> = ({ className }) => {
+const Shadow = ({ className }: { className: string }): ReactElement => {
   return (
     <span
       className={clsx(
@@ -27,11 +27,11 @@ const Shadow: FC<{ className: string }> = ({ className }) => {
   );
 };
 
-const Cube: FC<{ className: string; src: string }> = ({ className, src }) => {
+const Cube = ({ className, src }: { className: string; src: string }): ReactElement => {
   return <img className={clsx(`absolute -translate-x-1/2 -translate-y-1/2`, className)} src={src} alt="Cube" />;
 };
 
-export const HeroMarketplace: FC<IHeroMarketplaceProps> = ({ title, description, link, ...restProps }) => (
+export const HeroMarketplace = ({ title, description, link, ...restProps }: IHeroMarketplaceProps): ReactElement => (
   <section className="overflow-hidden bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
     <div className="relative" {...restProps.containerProps}>
       <div

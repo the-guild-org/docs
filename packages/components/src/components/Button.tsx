@@ -1,5 +1,5 @@
 import { AnchorHTMLAttributes, ReactElement } from 'react';
-import { clsx } from 'clsx';
+import clsx from 'clsx';
 
 export type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   variant?: 'primary' | 'secondary';

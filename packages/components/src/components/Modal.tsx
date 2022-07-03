@@ -1,6 +1,6 @@
 import { ReactElement, useEffect } from 'react';
 import FocusTrap from 'focus-trap-react';
-import { clsx } from 'clsx';
+import clsx from 'clsx';
 import { IModalProps } from '../types/components';
 import { useKeyPress } from '../helpers/hooks';
 import { CloseIcon, ExternalLinkIcon } from './icons';

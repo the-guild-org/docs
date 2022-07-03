@@ -23,7 +23,7 @@ import { SchemaEditor } from '@theguild/editor'
 
 const initialSchema = `type Query { foo: String }`
 
-const MyEditor: React.FC = () => {
+const MyEditor = (): React.ReactElement => {
   return <SchemaEditor schema={initialSchema} />
 }
 ```
@@ -35,7 +35,7 @@ If you wish to get all information about specific tokens in your GraphQL editor,
 ```tsx
 import { SchemaEditor, debugHoverSource } from '@theguild/editor'
 
-const MyEditor: React.FC = () => {
+const MyEditor = (): React.ReactElement => {
   return <SchemaEditor hoverProviders={[debugHoverSource]} />
 }
 ```
@@ -64,7 +64,7 @@ export const myHoverProvider: HoverSource = {
   })
 }
 
-const MyEditor: React.FC = () => {
+const MyEditor = (): React.ReactElement => {
   return <SchemaEditor hoverProviders={[myHoverProvider]} />
 }
 ```
@@ -77,7 +77,7 @@ To create a custom `Jump to definition` source provider, you can pass the follow
 import { SchemaEditor, DefinitionSource } from '@theguild/editor'
 
 export const myDefinitionSource: DefinitionSource = {
-  forNode: ({ schema, model, token }) => {
+  forNode({ schema, model, token }) {
     // You can access the actual GQL type / schema and everything you need.
     if (token.state && token.state.kind === 'NamedType' && token.state.name) {
       const type = schema.getType(token.state.name)
@@ -101,7 +101,7 @@ export const myDefinitionSource: DefinitionSource = {
   }
 }
 
-const MyEditor: React.FC = () => {
+const MyEditor = (): React.ReactElement => {
   return <SchemaEditor definitionProviders={[myDefinitionSource]} />
 }
 ```
@@ -114,7 +114,7 @@ To mark custom errors on GraphQL based nodes, you can implement a custom diagnos
 import { SchemaEditor, DiagnosticsSource, toMarkerData, getRange } from '@theguild/editor'
 
 export const myDiagnosticsSoruce: DiagnosticsSource = {
-  async forDocument({ model, document, languageService }) {
+  forDocument({ model, document, languageService }) {
     // Here you can validate and check whatever you need regarding the document.
     // You can either return an empty array for valid doc, or an array with positions.
     return [
@@ -128,7 +128,7 @@ export const myDiagnosticsSoruce: DiagnosticsSource = {
   }
 }
 
-const MyEditor: React.FC = () => {
+const MyEditor = (): React.ReactElement => {
   return <SchemaEditor diagnosticsProviders={[myDiagnosticsSoruce]} />
 }
 ```
@@ -140,14 +140,14 @@ You can add custom editor actions (context menu and keyboard shortcuts) through 
 ```tsx
 import { SchemaEditor, showWidgetInPosition } from '@theguild/editor'
 
-const MyEditor: React.FC = () => {
+const MyEditor = (): React.ReactElement => {
   return (
     <SchemaEditor
       actions={[
         {
           id: 'my.custom.action',
           label: 'My Custom Action',
-          onRun: ({ editor, bridge }) => {
+          onRun({ editor, bridge }) {
             // You can use the bridge here to know exactly what was clicked in terms of GQL identifiers
             if (['NamedType', 'ObjectTypeDef'].includes(bridge.token.state.kind as string)) {
               const domNode = document.createElement('div')

@@ -292,7 +292,7 @@ export interface ISchemaPageProps {
 }
 
 export interface IEditorProps {
-  children: ReactNode
+  children: ReactNode;
   title?: string;
   frameworks?: string[];
   schema?: string;

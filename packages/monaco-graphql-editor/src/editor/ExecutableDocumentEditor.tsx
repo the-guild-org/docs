@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 import MonacoEditor, { useMonaco, EditorProps } from '@monaco-editor/react';
 import {
   getAutocompleteSuggestions,
@@ -126,10 +126,10 @@ class GraphQLWorker {
   }
 }
 
-export const ExecutableDocumentEditor: FC<{ schema: GraphQLSchema } & Omit<EditorProps, 'language'>> = ({
+export const ExecutableDocumentEditor = ({
   schema,
   ...editorProps
-}) => {
+}: { schema: GraphQLSchema } & Omit<EditorProps, 'language'>): ReactElement => {
   const monaco = useMonaco();
   const [completionProvider, setCompletionProvider] = useState<monaco.IDisposable | null>(null);
   const editorUriRef = useRef<monaco.Uri>();

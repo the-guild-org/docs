@@ -77,7 +77,7 @@ export const MarketplaceSearch = ({
           />
         </div>
 
-        <div className="flex flex-wrap gap-10 lg:flex-nowrap py-6">
+        <div className="flex flex-wrap gap-10 py-6 lg:flex-nowrap">
           {items && queryList ? (
             <MarketplaceList
               title={queryList.title}

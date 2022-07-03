@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ReactElement } from 'react';
 import { IFooterProps, ILink } from '../types/components';
 import { GuildLogo } from './logos';
 
@@ -30,7 +30,7 @@ const links: ILink[] = [
   },
 ];
 
-export const Footer: FC<IFooterProps> = ({ sameSite, ...restProps }) => {
+export const Footer = ({ sameSite, ...restProps }: IFooterProps): ReactElement => {
   const logoOptions = sameSite
     ? { href: '/' }
     : {

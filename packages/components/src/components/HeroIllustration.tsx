@@ -1,15 +1,15 @@
-import { FC } from 'react';
+import { ReactElement } from 'react';
 import { IHeroIllustrationProps } from '../types/components';
-import { clsx } from 'clsx';
+import clsx from 'clsx';
 
-export const HeroIllustration: FC<IHeroIllustrationProps> = ({
+export const HeroIllustration = ({
   title,
   description,
   link,
   image,
   flipped,
   ...restProps
-}) => (
+}: IHeroIllustrationProps): ReactElement => (
   <section className="bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
     <div
       className={clsx(

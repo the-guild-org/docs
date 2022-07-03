@@ -1,7 +1,13 @@
-import { FC } from 'react';
+import { ReactElement } from 'react';
 import { IFeatureListProps } from '../types/components';
 
-export const FeatureList: FC<IFeatureListProps> = ({ title, titleDescription, items, link, ...restProps }) => (
+export const FeatureList = ({
+  title,
+  titleDescription,
+  items,
+  link,
+  ...restProps
+}: IFeatureListProps): ReactElement => (
   <section className="bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
     <div className="container max-w-[90rem] py-14" {...restProps.containerProps}>
       {title && (

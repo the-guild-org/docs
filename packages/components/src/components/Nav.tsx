@@ -1,5 +1,5 @@
 import { Dispatch, ReactElement, ReactNode, SetStateAction, useCallback } from 'react';
-import { clsx } from 'clsx';
+import clsx from 'clsx';
 import { CloseIcon } from './icons';
 
 export const Nav = ({
