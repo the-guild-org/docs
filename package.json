@@ -32,7 +32,7 @@
     "@storybook/addon-links": "6.4.22",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/react": "6.4.22",
-    "@types/react": "17.0.39",
+    "@types/react": "18.0.15",
     "@types/react-instantsearch-core": "6.10.8",
     "@types/react-instantsearch-dom": "6.12.3",
     "@types/react-paginate": "7.1.1",
