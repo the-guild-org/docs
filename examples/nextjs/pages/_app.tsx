@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { AppProps } from 'next/app';
-import { Footer, Header, Subheader, ThemeProvider } from '@theguild/components';
+import { ThemeProvider } from 'next-themes';
+import { Footer, Header, Subheader } from '@theguild/components';
 import '@theguild/components/dist/index.css';
 import '@algolia/autocomplete-theme-classic';
 import '../../../packages/components/src/static/css/SearchBarV2.css';
@@ -12,7 +13,7 @@ import '../../../packages/components/src/static/css/SearchBarV2.css';
 export default function App({ router, pageProps, Component }: AppProps): ReactElement {
   return (
     <>
-      <ThemeProvider>
+      <ThemeProvider attribute="class">
         <Header accentColor="#1cc8ee" activeLink="" themeSwitch searchBarProps={{ version: 'v2' }} />
         <Subheader
           product={{

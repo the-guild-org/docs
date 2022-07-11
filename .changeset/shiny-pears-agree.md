@@ -2,4 +2,4 @@
 '@theguild/components': major
 ---
 
-feat: use virgin TailwindCSS 3
+feat: use virgin TailwindCSS 3 
