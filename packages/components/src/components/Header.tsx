@@ -1,9 +1,9 @@
 import { useState, useMemo, ReactElement, MouseEventHandler, MouseEvent } from 'react';
 import clsx from 'clsx';
 import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
+import { useTheme } from 'next-themes';
 import { SearchBar } from './SearchBar';
 import { IHeaderProps } from '../types/components';
-import { useThemeContext } from '../helpers/theme';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
 import { GuildLogo, TheGuild } from './logos';
@@ -38,7 +38,7 @@ export const Header = ({
   disableSearch = false,
   ...restProps
 }: IHeaderProps): ReactElement => {
-  const { setDarkTheme } = useThemeContext();
+  const { theme, setTheme } = useTheme();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const { height: windowHeight, width: windowWidth } = useWindowSize();
 
@@ -111,7 +111,7 @@ export const Header = ({
 
         <a
           title="View our website"
-          className="flex items-center gap-x-1.5 rounded-sm outline-none hover:opacity-75 focus:ring dark:text-gray-100"
+          className="flex items-center gap-x-1.5 rounded-sm text-black outline-none hover:opacity-75 focus:ring dark:text-gray-100"
           {...renderLinkOptions('/', onLinkClick)}
           {...restProps.logoProps}
         >
@@ -203,9 +203,9 @@ export const Header = ({
                 {...restProps.searchBarProps}
               />
 
-              {themeSwitch && setDarkTheme && (
+              {themeSwitch && (
                 <button
-                  onClick={() => setDarkTheme(prev => !prev)}
+                  onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                   className="mr-1 self-center rounded-sm p-2 outline-none focus:ring"
                   {...restProps.themeButtonProps}
                 >

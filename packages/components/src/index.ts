@@ -1,5 +1,4 @@
 export * from './components';
-export { ThemeProvider, useThemeContext } from './helpers/theme';
 export { PRODUCTS } from './helpers/products';
 
 declare module 'react' {
