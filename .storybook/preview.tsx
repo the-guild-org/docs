@@ -1,6 +1,6 @@
 import { useDarkMode } from 'storybook-dark-mode';
 import { themes } from '@storybook/theming';
-import { ThemeProvider } from 'next-themes';
+import { ThemeProvider } from '@theguild/components/src';
 import '@theguild/components/src/static/styles.css';
 
 import '@algolia/autocomplete-theme-classic';
@@ -26,7 +26,7 @@ export const parameters = {
 
 export const decorators = [
   Story => (
-    <ThemeProvider attribute="class" forcedTheme={useDarkMode() ? 'dark' : 'light'}>
+    <ThemeProvider forcedTheme={useDarkMode() ? 'dark' : 'light'}>
       <Story />
     </ThemeProvider>
   ),

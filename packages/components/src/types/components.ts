@@ -29,7 +29,7 @@ export interface IHeaderLink {
 
 export interface IHeaderProps {
   accentColor: string;
-  activeLink: string;
+  activeLink?: string;
   themeSwitch?: boolean;
   transformLinks?: (links: IHeaderLink[]) => IHeaderLink[];
   wrapperProps?: React.ComponentProps<'header'>;

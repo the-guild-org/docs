@@ -18,5 +18,7 @@ export { MarketplaceSearch } from './MarketplaceSearch';
 export { Modal } from './Modal';
 export { Nav } from './Nav';
 export { Newsletter } from './Newsletter';
+export { NPMBadge } from './npm-badge';
 export { SearchBar } from './SearchBar';
 export { Subheader } from './Subheader';
+export { ThemeProvider, useTheme } from './theme-provider';
