@@ -12,7 +12,7 @@ import '../../../packages/components/src/static/css/SearchBarV2.css';
 export default function App({ router, pageProps, Component }: AppProps): ReactElement {
   return (
     <ThemeProvider>
-      <Header accentColor="#1cc8ee" activeLink="" themeSwitch searchBarProps={{ version: 'v2' }} />
+      <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
       <Subheader
         product={{
           title: 'Components',
