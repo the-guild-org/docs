@@ -28,11 +28,6 @@ function bundle(packageDir) {
         format: 'es',
         sourcemap: true,
       },
-      {
-        file: join(CWD, packageDir, 'dist/index.js'),
-        format: 'cjs',
-        sourcemap: true,
-      },
     ],
     external: ['react-player/lazy', 'algoliasearch/lite'],
     plugins: [
