@@ -1,5 +1,4 @@
 // import { StorybookConfig } from '@storybook/core-common';
-const path = require('node:path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
@@ -28,13 +27,16 @@ module.exports = {
       NEXT_PUBLIC_ALGOLIA_INDEX_NAME: 'searchv2_main',
     };
   },
-  async webpackFinal(config) {
-    config.resolve.plugins.push(
+  webpackFinal(config) {
+    config.resolve.plugins = [
+      ...(config.resolve.plugins || []),
       new TsconfigPathsPlugin({
-        configFile: path.join(process.cwd(), 'tsconfig.json'),
-      })
-    );
-
+        extensions: config.resolve.extensions,
+      }),
+    ];
     return config;
+  },
+  features: {
+    previewMdx2: true,
   },
 };

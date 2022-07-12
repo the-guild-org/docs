@@ -26,10 +26,9 @@ export const SearchBarV2 = ({
       return;
     }
 
-    const env = window.process?.env || {};
-    const appId = algolia?.appId || env.NEXT_PUBLIC_ALGOLIA_APP_ID;
-    const searchApiKey = algolia?.searchApiKey || env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY;
-    const indexName = algolia?.indexName || env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME;
+    const appId = algolia?.appId || process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
+    const searchApiKey = algolia?.searchApiKey || process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY;
+    const indexName = algolia?.indexName || process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME;
 
     if (!appId || !searchApiKey || !indexName) {
       console.error('Algolia environments variables missing');

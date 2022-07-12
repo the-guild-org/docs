@@ -1,5 +1,14 @@
 const colors = require('tailwindcss/colors');
 
+const makePrimaryColor =
+  l =>
+  ({ opacityValue }) => {
+    if (opacityValue === undefined) {
+      return `hsl(var(--nextra-primary-hue) 100% ${l}%)`;
+    }
+    return `hsl(var(--nextra-primary-hue) 100% ${l}% / ${opacityValue})`;
+  };
+
 module.exports = {
   darkMode: 'class',
   content: ['./packages/components/**/*.{html,ts,tsx}'],
@@ -21,6 +30,21 @@ module.exports = {
       gray: colors.neutral,
       red: colors.red,
       cyan: colors.cyan,
+      neutral: colors.neutral,
+      primary: {
+        50: makePrimaryColor(97),
+        100: makePrimaryColor(94),
+        200: makePrimaryColor(86),
+        300: makePrimaryColor(77),
+        400: makePrimaryColor(66),
+        500: makePrimaryColor(50),
+        600: makePrimaryColor(45),
+        700: makePrimaryColor(39),
+        750: makePrimaryColor(35),
+        800: makePrimaryColor(32),
+        900: makePrimaryColor(24),
+        1000: makePrimaryColor(12),
+      },
     },
     extend: {
       animation: {

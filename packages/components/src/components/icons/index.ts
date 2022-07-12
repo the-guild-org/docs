@@ -1,6 +1,7 @@
 export * from './arrow-up-right';
 export * from './caret';
 export * from './caret-slim';
+export * from './check';
 export * from './close';
 export * from './external-link';
 export * from './hamburger';

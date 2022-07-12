@@ -1,7 +1,6 @@
-import { ReactElement } from 'react';
 import { ThemeProvider as Provider, useTheme } from 'next-themes';
 
-const ThemeProvider: typeof Provider = ({ children, ...props }): ReactElement => {
+const ThemeProvider: typeof Provider = ({ children, ...props }) => {
   return (
     <Provider attribute="class" {...props}>
       {children}
@@ -9,4 +8,4 @@ const ThemeProvider: typeof Provider = ({ children, ...props }): ReactElement =>
   );
 };
 
-export { ThemeProvider, useTheme }
+export { ThemeProvider, useTheme };
