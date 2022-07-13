@@ -1,8 +1,11 @@
 import { ReactElement, useEffect, useMemo, useState } from 'react';
-import ReactPaginate from 'react-paginate';
+import ReactPaginatePackage from 'react-paginate';
 import { IMarketplaceListProps, IMarketplaceItemsProps } from '../types/components';
 import { Tag, TagsContainer } from './Tag';
 import { CaretSlimIcon } from './icons';
+import { getDefault } from '../helpers/utils';
+
+const ReactPaginate = getDefault(ReactPaginatePackage);
 
 const formatDate = (value: string): string => {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
