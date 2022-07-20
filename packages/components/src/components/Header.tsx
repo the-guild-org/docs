@@ -189,32 +189,32 @@ export const Header: React.FC<IHeaderProps> = ({
                   )
                 )}
 
-                {!disableSearch && (
-                  <Controls
-                    searchVersion={restProps.searchBarProps?.version || 'v1'}
-                  >
+                <Controls
+                  searchVersion={restProps.searchBarProps?.version || 'v1'}
+                >
+                  {!disableSearch ? (
                     <SearchBar
                       accentColor={accentColor}
                       title="Search docs"
                       placeholder="Search..."
                       {...restProps.searchBarProps}
                     />
-                    {themeSwitch && setDarkTheme && (
-                      <Icon
-                        iconType="theme"
-                        onClick={() => setDarkTheme((state) => !state)}
-                        {...restProps.themeButtonProps}
-                      >
-                        <img
-                          src={icons.themeToggle}
-                          height="16"
-                          width="16"
-                          alt="Theme toggle icon"
-                        />
-                      </Icon>
-                    )}
-                  </Controls>
-                )}
+                  ) : null}
+                  {themeSwitch && setDarkTheme && (
+                    <Icon
+                      iconType="theme"
+                      onClick={() => setDarkTheme((state) => !state)}
+                      {...restProps.themeButtonProps}
+                    >
+                      <img
+                        src={icons.themeToggle}
+                        height="16"
+                        width="16"
+                        alt="Theme toggle icon"
+                      />
+                    </Icon>
+                  )}
+                </Controls>
               </Navigation>
             </NavigationMenuList>
           </NavigationMenuContainer>
