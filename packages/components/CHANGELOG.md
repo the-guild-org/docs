@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 1.12.0
+
+### Minor Changes
+
+- c73c76c: Add `disableSearch` prop to header
+
+### Patch Changes
+
+- 359fd8c: fix(searchbarv2): docusaurus support
+
 ## 1.11.8
 
 ### Patch Changes
