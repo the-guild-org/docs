@@ -1,7 +1,10 @@
 import { ReactElement } from 'react';
-import ReactPlayer from 'react-player/lazy';
+import ReactPlayerImport from 'react-player/lazy';
 import clsx from 'clsx';
 import { IHeroVideoProps } from '../types/components';
+import { getDefault } from '../helpers/utils';
+
+const ReactPlayer = getDefault(ReactPlayerImport);
 
 export const HeroVideo = ({
   title,

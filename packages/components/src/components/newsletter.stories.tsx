@@ -1,7 +1,6 @@
 import { FormEvent } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { INewsletterProps } from '../types/components';
-import { Newsletter } from './newsletter';
+import { Newsletter, NewsletterProps } from './newsletter';
 
 export default {
   title: 'Components/Newsletter',
@@ -16,7 +15,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<INewsletterProps> = args => <Newsletter {...args} />;
+const Template: Story<NewsletterProps> = args => <Newsletter {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

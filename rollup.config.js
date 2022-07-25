@@ -29,7 +29,7 @@ function bundle(packageDir) {
         sourcemap: true,
       },
     ],
-    external: ['react-player/lazy', 'algoliasearch/lite', 'classnames'],
+    external: ['react-player/lazy', 'algoliasearch/lite', 'classnames', 'react/jsx-runtime'],
     plugins: [
       nodeResolve({ extensions: ['.ts', '.tsx'] }),
       autoExternal({
@@ -51,8 +51,8 @@ function bundle(packageDir) {
             dest: `./${packageDir}/dist`,
           },
           {
-            src: join(CWD, packageDir, 'src/static/*'),
-            dest: `./${packageDir}/dist/static`,
+            src: join(CWD, packageDir, 'src/static/css/*'),
+            dest: `./${packageDir}/dist`,
           },
         ],
       }),

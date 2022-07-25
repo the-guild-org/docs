@@ -1,17 +1,19 @@
 import { ReactElement } from 'react';
 import { AppProps } from 'next/app';
+import Head from 'next/head';
 import { Footer, Header, Subheader, ThemeProvider } from '@theguild/components';
-import '@theguild/components/dist/index.css';
-import '@algolia/autocomplete-theme-classic';
-import '../../../packages/components/src/static/css/search-bar-v2.css';
-
-// Overwrite font example:
-// 1. Remove import fonts.css
-// 2. import '../public/styles.css'
+// import '@algolia/autocomplete-theme-classic';
+// import '@theguild/components/style.css';
+// import '@theguild/components/search-bar-v2.css';
 
 export default function App({ router, pageProps, Component }: AppProps): ReactElement {
   return (
     <ThemeProvider>
+      <Head>
+        <link rel="shortcut icon" href="/fav.ico" />
+        <meta name="apple-mobile-web-app-title" content="The Guild Components Example" />
+        <meta name="application-name" content="The Guild Components Example" />
+      </Head>
       <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
       <Subheader
         product={{

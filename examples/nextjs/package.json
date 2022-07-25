@@ -2,13 +2,14 @@
   "name": "nextjs-example",
   "version": "0.0.2",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "start": "next start"
   },
   "dependencies": {
-    "@theguild/components": "^1.11.8",
+    "@theguild/components": "^1.12.0",
     "next": "^12.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
