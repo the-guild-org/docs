@@ -11,7 +11,7 @@ const makePrimaryColor =
 
 module.exports = {
   darkMode: 'class',
-  content: ['./src/**/*.{ts,tsx}'],
+  content: ['./packages/components/src/**/*.{ts,tsx}'],
   theme: {
     container: {
       center: true,

@@ -14,9 +14,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "scripts": {
-    "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output dist/style.css"
-  },
   "dependencies": {
     "@algolia/autocomplete-js": "^1.7.1",
     "@algolia/autocomplete-plugin-algolia-insights": "^1.7.1",
