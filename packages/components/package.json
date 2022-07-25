@@ -3,7 +3,7 @@
   "version": "1.12.0",
   "license": "MIT",
   "type": "module",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -13,6 +13,9 @@
     "next-themes": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output dist/style.css"
   },
   "dependencies": {
     "@algolia/autocomplete-js": "^1.7.1",

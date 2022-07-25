@@ -3,8 +3,7 @@
   "private": true,
   "scripts": {
     "start": "start-storybook -p 6008",
-    "build": "rimraf dist packages/*/dist && tsc && rollup -c && yarn build:css",
-    "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/dist/style.css",
+    "build": "rimraf dist packages/*/dist && tsc && rollup -c && yarn workspace @theguild/components build:css",
     "storybook": "build-storybook -o dist-storybook",
     "next:dev": "concurrently -r \"tsc --watch\" \"rollup -c --watch\" \"yarn --cwd examples/nextjs dev\" \"yarn build:css\" \"yarn copy-fonts\"",
     "next:build": "cd examples/nextjs && yarn build && yarn start",

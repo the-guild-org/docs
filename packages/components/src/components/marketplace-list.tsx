@@ -30,7 +30,7 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
             {...restProps.linkProps}
           >
             <h3
-              className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg"
+              className="line-clamp-2 m-0 text-base font-bold text-black dark:text-white md:text-lg"
               {...restProps.titleProps}
             >
               {item.title}

@@ -24,7 +24,7 @@ function bundle(packageDir) {
     input: isTsx ? tsxFile : tsFile,
     output: [
       {
-        file: join(CWD, packageDir, 'dist/index.esm.js'),
+        file: join(CWD, packageDir, 'dist/index.mjs'),
         format: 'es',
         sourcemap: true,
       },

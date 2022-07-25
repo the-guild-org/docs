@@ -2,9 +2,9 @@ import { ReactElement } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Footer, Header, Subheader, ThemeProvider } from '@theguild/components';
-// import '@algolia/autocomplete-theme-classic';
-// import '@theguild/components/style.css';
-// import '@theguild/components/search-bar-v2.css';
+import '@algolia/autocomplete-theme-classic';
+import '@theguild/components/dist/style.css';
+import '@theguild/components/dist/search-bar-v2.css';
 
 export default function App({ router, pageProps, Component }: AppProps): ReactElement {
   return (
