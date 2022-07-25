@@ -1,5 +1,11 @@
 # @theguild/editor
 
+## 1.0.0
+
+### Major Changes
+
+- bd4f82d: feat: use virgin TailwindCSS 3
+
 ## 0.5.0
 
 ### Minor Changes
