@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 2.0.0
+
+### Major Changes
+
+- bd4f82d: feat: use virgin TailwindCSS 3
+
+### Patch Changes
+
+- 6d9685d: fix: disableSearch hides theme switcher
+
 ## 1.12.0
 
 ### Minor Changes
