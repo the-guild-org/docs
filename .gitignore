@@ -6,3 +6,4 @@ packages/components/theguild-components-*.tgz
 .idea/
 .husky/_/
 *.log
+storybook-static/

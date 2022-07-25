@@ -4,7 +4,7 @@ import { ThemeProvider } from '@theguild/components/src';
 import '@theguild/components/src/static/styles.css';
 
 import '@algolia/autocomplete-theme-classic';
-import '@theguild/components/src/static/css/SearchBarV2.css';
+import '@theguild/components/src/static/css/search-bar-v2.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
