@@ -63,6 +63,7 @@ export const PackageCmd = ({ packages }: { packages: (string | Command)[] }) => 
   );
 
   return (
+    // @ts-expect-error -- remove after https://github.com/shuding/nextra/pull/586 be merged
     <Tabs items={PACKAGE_MANAGERS}>
       {PACKAGE_MANAGERS.map(pkgManager => (
         <CodeTab key={pkgManager}>
