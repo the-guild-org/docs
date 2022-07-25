@@ -1,4 +1,4 @@
-export * from './editor/SchemaEditor';
-export * from './editor/ExecutableDocumentEditor';
+export * from './editor/schema-editor';
+export * from './editor/executable-document-editor';
 export * from './editor/utils';
-export * from './editor/EnrichedLanguageService';
+export * from './editor/enriched-language-service';
