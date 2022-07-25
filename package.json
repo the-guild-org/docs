@@ -1,7 +1,6 @@
 {
   "name": "the-guild-components-monorepo",
   "private": true,
-  "type": "module",
   "scripts": {
     "start": "start-storybook -p 6008",
     "build": "rimraf dist packages/*/dist && tsc && rollup -c && yarn build:css",
@@ -33,6 +32,8 @@
     "@storybook/addon-essentials": "6.5.9",
     "@storybook/addon-links": "6.5.9",
     "@storybook/addon-postcss": "2.0.0",
+    "@storybook/builder-webpack5": "6.5.9",
+    "@storybook/manager-webpack5": "6.5.9",
     "@storybook/mdx2-csf": "0.0.3",
     "@storybook/react": "6.5.9",
     "@tailwindcss/line-clamp": "0.4.0",

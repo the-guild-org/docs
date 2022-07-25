@@ -28,15 +28,18 @@ module.exports = {
     };
   },
   webpackFinal(config) {
-    config.resolve.plugins = [
-      ...(config.resolve.plugins || []),
+    config.resolve.plugins ||= [];
+    config.resolve.plugins.push(
       new TsconfigPathsPlugin({
         extensions: config.resolve.extensions,
-      }),
-    ];
+      })
+    );
     return config;
   },
   features: {
     previewMdx2: true,
+  },
+  core: {
+    builder: 'webpack5',
   },
 };
