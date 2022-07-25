@@ -34,7 +34,7 @@ export const FeatureList = ({
       )}
       <div className="flex flex-wrap justify-center">
         {items.map((item, index) => (
-          <article
+          <section
             className="mx-5 mb-1 flex w-56 flex-col items-center text-center last:mb-0 md:mb-0"
             key={`feature-${index}`}
           >
@@ -52,7 +52,7 @@ export const FeatureList = ({
                 {...restProps.linkProps}
               />
             )}
-          </article>
+          </section>
         ))}
       </div>
     </div>

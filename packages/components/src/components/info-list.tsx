@@ -11,7 +11,7 @@ export const InfoList = ({ title, items, ...restProps }: IInfoListProps): ReactE
       )}
       <div className="flex flex-wrap">
         {items.map((item, index) => (
-          <article
+          <section
             className="
               mb-9
               box-border
@@ -48,7 +48,7 @@ export const InfoList = ({ title, items, ...restProps }: IInfoListProps): ReactE
                 {...restProps.itemLinkProps}
               />
             )}
-          </article>
+          </section>
         ))}
       </div>
     </div>

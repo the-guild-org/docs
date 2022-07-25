@@ -237,7 +237,7 @@ const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }):
   return (
     <>
       {groupedHits.map(hit => (
-        <article key={hit.level} style={{ '--color': accentColor }}>
+        <section key={hit.level} style={{ '--color': accentColor }}>
           <h2 className="mb-4 mt-8 text-base font-semibold [color:var(--color)]">{hit.level}</h2>
           {hit.items.map((subHit: Hit<ResultDoc>) => {
             let content;
@@ -303,7 +303,7 @@ const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }):
               </a>
             );
           })}
-        </article>
+        </section>
       ))}
     </>
   );
