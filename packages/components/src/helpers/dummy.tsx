@@ -7,8 +7,7 @@ import heroIllustrationImage from '../static/dummy/envelop/communication.png';
 import marketplaceListImage from '../static/dummy/marketplace/logo-modules.svg';
 import { IMarketplaceListProps } from '../types/components';
 
-const subheaderImage =
-  'https://the-guild.dev/static/shared-logos/products/envelop.svg';
+const subheaderImage = 'https://the-guild.dev/static/shared-logos/products/envelop.svg';
 
 export const dummyFeatureList = {
   title: 'The best and simple features',
@@ -24,7 +23,7 @@ export const dummyFeatureList = {
         children: 'GitHub',
         title: 'Learn more',
         target: '_blank',
-        rel: 'noopener norefereer',
+        rel: 'norefereer',
         href: 'https://github.com/the-guild-org',
       },
     },
@@ -52,8 +51,7 @@ export const dummyInfoList = {
   items: [
     {
       title: 'Install GraphQL Envelop',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
       link: {
         children: 'Documentation',
         title: 'Read the documentation',
@@ -62,20 +60,18 @@ export const dummyInfoList = {
     },
     {
       title: 'GitHub integration',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
       link: {
         children: 'GitHub',
         title: 'View the code',
         href: 'https://github.com/dotansimha/envelop',
         target: '_blank',
-        rel: 'noopener noreferrer',
+        rel: 'noreferrer',
       },
     },
     {
       title: "Let's work together",
-      description:
-        'We want to hear from you, our community of fellow engineers.',
+      description: 'We want to hear from you, our community of fellow engineers.',
       link: {
         children: 'envelop@theguild.dev',
         title: 'Reach us out',
@@ -96,8 +92,7 @@ export const dummyHeroVideo = {
   },
   video: {
     src: 'https://youtube.com/watch?v=dQw4w9WgXcQ',
-    placeholder:
-      'https://ak.picdn.net/shutterstock/videos/1033186691/thumb/1.jpg',
+    placeholder: 'https://ak.picdn.net/shutterstock/videos/1033186691/thumb/1.jpg',
   },
   flipped: true,
 };
@@ -182,7 +177,7 @@ export const dummySubheader = {
       title: 'See our GitHub profile',
       href: 'https://github.com/dotansimha/envelop',
       target: '_blank',
-      rel: 'noopener noreferrer',
+      rel: 'noreferrer',
     },
   ],
   cta: {
@@ -238,7 +233,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
             children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: 'noreferrer',
           },
         },
         content: 'Lipsum 1',
@@ -251,7 +246,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
       link: {
         href: '#',
         target: '_blank',
-        rel: 'noopener noreferrer',
+        rel: 'noreferrer',
         title: 'Learn more about GraphQL Jit',
       },
     },
@@ -271,7 +266,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
             children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: 'noreferrer',
           },
         },
         content: 'Lipsum 2',
@@ -284,7 +279,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
       link: {
         href: '#',
         target: '_blank',
-        rel: 'noopener noreferrer',
+        rel: 'noreferrer',
         title: 'Learn more about GraphQL Jit',
       },
     },
@@ -303,7 +298,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
             children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: 'noreferrer',
           },
         },
         content: 'Lipsum 3',
@@ -316,7 +311,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
       link: {
         href: '#',
         target: '_blank',
-        rel: 'noopener noreferrer',
+        rel: 'noreferrer',
         title: 'Learn more about GraphQL Jit',
       },
     },
@@ -335,7 +330,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
             children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: 'noreferrer',
           },
         },
         content: 'Lipsum 4',
@@ -348,7 +343,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
       link: {
         href: '#',
         target: '_blank',
-        rel: 'noopener noreferrer',
+        rel: 'noreferrer',
         title: 'Learn more about GraphQL Jit',
       },
     },
@@ -367,7 +362,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
             children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: 'noreferrer',
           },
         },
         content: 'Lipsum 5',
@@ -380,7 +375,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
       link: {
         href: '#',
         target: '_blank',
-        rel: 'noopener noreferrer',
+        rel: 'noreferrer',
         title: 'Learn more about GraphQL Jit',
       },
     },
@@ -398,7 +393,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
             children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: 'noreferrer',
           },
         },
         content: 'Lipsum 6',
@@ -411,7 +406,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
       link: {
         href: '#',
         target: '_blank',
-        rel: 'noopener noreferrer',
+        rel: 'noreferrer',
         title: 'Learn more about GraphQL Jit',
       },
     },
@@ -429,7 +424,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
             children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: 'noreferrer',
           },
         },
         content: 'Lipsum 7',
@@ -442,7 +437,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
       link: {
         href: '#',
         target: '_blank',
-        rel: 'noopener noreferrer',
+        rel: 'noreferrer',
         title: 'Learn more about GraphQL Jit',
       },
     },
@@ -460,7 +455,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
             children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: 'noreferrer',
           },
         },
         content: 'Lipsum 8',
@@ -473,7 +468,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
       link: {
         href: '#',
         target: '_blank',
-        rel: 'noopener noreferrer',
+        rel: 'noreferrer',
         title: 'Learn more about GraphQL Jit',
       },
     },
@@ -491,7 +486,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
             children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: 'noreferrer',
           },
         },
         content: 'Lipsum 9',
@@ -504,7 +499,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
       link: {
         href: '#',
         target: '_blank',
-        rel: 'noopener noreferrer',
+        rel: 'noreferrer',
         title: 'Learn more about GraphQL Jit',
       },
     },
@@ -522,7 +517,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
             children: 'Apr 20, 2021 - Latest Update',
             title: 'Example Link Title',
             target: '_blank',
-            rel: 'noopener noreferrer',
+            rel: 'noreferrer',
           },
         },
         content: 'Lipsum 10',
@@ -535,7 +530,7 @@ export const dummyMarketplaceList: IMarketplaceListProps = {
       link: {
         href: '#',
         target: '_blank',
-        rel: 'noopener noreferrer',
+        rel: 'noreferrer',
         title: 'Learn more about GraphQL Jit',
       },
     },
@@ -631,7 +626,7 @@ const dummyOperations = dedent(/* GraphQL */ `
 
 export const dummySchemaPage = {
   schemaName: 'Schema Type 1',
-  tags: ['typeScript', 'frontend', 'backend'],
+  tags: ['TypeScript', 'Frontend', 'Backend'],
   editorData: [
     {
       title: 'schema.graphql',

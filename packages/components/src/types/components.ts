@@ -8,11 +8,6 @@ interface IVideo {
   placeholder: string;
 }
 
-export interface IGlobalStyle {
-  includeFonts?: boolean;
-  includeBase?: boolean;
-}
-
 export interface ILink {
   title: string;
   href: string;
@@ -22,12 +17,6 @@ export interface ILink {
   target?: string;
   active?: boolean;
   onClick?: React.MouseEventHandler;
-}
-
-export interface IButtonProps {
-  href: string;
-  title: string | React.ReactNode;
-  variant?: string;
 }
 
 export interface IHeaderLink {
@@ -40,11 +29,9 @@ export interface IHeaderLink {
 
 export interface IHeaderProps {
   accentColor: string;
-  activeLink: string;
+  activeLink?: string;
   themeSwitch?: boolean;
-
   transformLinks?: (links: IHeaderLink[]) => IHeaderLink[];
-
   wrapperProps?: React.ComponentProps<'header'>;
   containerProps?: React.ComponentProps<'div'>;
   logoProps?: React.ComponentProps<'a'>;
@@ -54,7 +41,6 @@ export interface IHeaderProps {
   disableSearch?: boolean;
   themeButtonProps?: React.ComponentProps<'button'>;
   navOpenButtonProps?: React.ComponentProps<'button'>;
-  navCloseButtonProps?: React.ComponentProps<'button'>;
   headerModalProps?: IHeaderModalRestProps;
 }
 
@@ -76,7 +62,6 @@ export interface ISubheaderProps {
   linkProps?: React.ComponentProps<'a'>;
   ctaProps?: React.ComponentProps<'a'>;
   navOpenButtonProps?: React.ComponentProps<'button'>;
-  navCloseButtonProps?: React.ComponentProps<'button'>;
 }
 
 interface IHeaderModalRestProps {
@@ -88,18 +73,10 @@ interface IHeaderModalRestProps {
   modalProps?: IModalRestProps;
 }
 
-export interface IHeaderModalProps extends IHeaderModalRestProps {
-  title: string | React.ReactNode;
-  modalOpen: boolean;
-  onCancelModal: (state?: boolean) => void;
-}
-
 export interface IFooterProps {
   sameSite?: boolean;
-
   wrapperProps?: React.ComponentProps<'footer'>;
   containerProps?: React.ComponentProps<'div'>;
-  lineProps?: React.ComponentProps<'hr'>;
   linkProps?: React.ComponentProps<'a'>;
   logoProps?: React.ComponentProps<'a'>;
   copyrightProps?: React.ComponentProps<'p'>;
@@ -109,10 +86,8 @@ export interface IFooterExtendedProps {
   sameSite?: boolean;
   resources?: ILink[];
   onNewsletterSubmit?: (e: React.FormEvent, value: string) => void;
-
   wrapperProps?: React.ComponentProps<'footer'>;
   containerProps?: React.ComponentProps<'div'>;
-  lineProps?: React.ComponentProps<'hr'>;
   linkProps?: React.ComponentProps<'a'>;
   logoProps?: React.ComponentProps<'a'>;
   titleProps?: React.ComponentProps<'p'>;
@@ -133,11 +108,12 @@ interface IModalRestProps {
 }
 
 export interface IModalProps extends IModalRestProps {
-  title: string | React.ReactNode;
+  children: ReactNode;
+  title: string | ReactNode;
   description?: string | ILink;
   image?: IImage;
   visible: boolean;
-  placement: 'top' | 'center' | 'bottom' | 'bottom-wide';
+  placement: 'top' | 'center' | 'bottom';
   onCancel: (state?: boolean) => void;
 }
 
@@ -153,6 +129,7 @@ export interface ISearchBarProps {
   placeholder: string;
   isFull?: boolean;
   onHandleModal?: (state: boolean) => void;
+  className?: string;
 }
 
 export interface IFeatureListProps {
@@ -253,23 +230,6 @@ export interface IHeroMarketplaceProps {
   imageProps?: React.ComponentProps<'img'>;
 }
 
-export interface ICardsColorfulProps {
-  cards: {
-    title: string;
-    description: string;
-    category: string;
-    color: string;
-    link: ILink;
-  }[];
-
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  cardProps?: React.ComponentProps<'a'>;
-  cardCategoryProps?: React.ComponentProps<'h2'>;
-  cardTitleProps?: React.ComponentProps<'h3'>;
-  cardDescriptionProps?: React.ComponentProps<'p'>;
-}
-
 export interface IMarketplaceItemProps {
   title: string;
   description: string | React.ReactNode;
@@ -290,12 +250,11 @@ interface IMarketplaceItemRestProps {
   imageProps?: React.ComponentProps<'img'>;
   titleProps?: React.ComponentProps<'h3'>;
   descriptionProps?: React.ComponentProps<'p'>;
-  dateProps?: React.ComponentProps<'span'>;
+  dateProps?: React.ComponentProps<'td'>;
   linkProps?: React.ComponentProps<'a'>;
 }
 
 export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
-  icon: string;
   items: IMarketplaceItemProps[];
 }
 
@@ -304,9 +263,7 @@ export interface IMarketplaceListProps {
   placeholder: string | React.ReactElement;
   pagination: number;
   items: IMarketplaceItemProps[];
-
   wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
   placeholderProps?: React.ComponentProps<'div'>;
   itemProps?: IMarketplaceItemRestProps;
@@ -318,8 +275,7 @@ export interface IMarketplaceSearchProps {
   primaryList: IMarketplaceListProps;
   secondaryList?: IMarketplaceListProps;
   queryList?: IMarketplaceListProps;
-  tagsFilter?: string[];
-
+  tagsFilter?: string[] | ReadonlyArray<string>;
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
@@ -329,10 +285,6 @@ export interface IMarketplaceSearchProps {
   secondaryListProps?: IMarketplaceItemRestProps;
 }
 
-export interface INewsletterProps {
-  onNewsletterSubmit: (e: React.FormEvent, value: string) => void;
-}
-
 export interface ISchemaPageProps {
   schemaName: string;
   tags?: string[];
@@ -340,17 +292,10 @@ export interface ISchemaPageProps {
 }
 
 export interface IEditorProps {
+  children: ReactNode;
   title?: string;
   frameworks?: string[];
   schema?: string;
-  icon: string;
   image?: string;
   operations?: string;
-}
-
-export interface IBannerProps {
-  children?: string | React.ReactNode;
-  color?: React.CSSProperties['color'];
-  bgColor?: React.CSSProperties['color'];
-  animation?: React.CSSProperties['animation'];
 }

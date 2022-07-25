@@ -3,57 +3,70 @@
   "private": true,
   "scripts": {
     "start": "start-storybook -p 6008",
-    "build": "tsc && rollup -c",
+    "build": "rimraf dist packages/*/dist && tsc && rollup -c && yarn build:css",
+    "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/dist/style.css",
     "storybook": "build-storybook -o dist-storybook",
-    "next:dev": "concurrently -r \"tsc --watch\" \"rollup -c --watch\" \"yarn --cwd examples/nextjs dev\"",
+    "next:dev": "concurrently -r \"tsc --watch\" \"rollup -c --watch\" \"yarn --cwd examples/nextjs dev\" \"yarn build:css\" \"yarn copy-fonts\"",
     "next:build": "cd examples/nextjs && yarn build && yarn start",
-    "format": "prettier --write \"packages/*/src/**/*.{ts,tsx}\"",
-    "lint": "eslint --ignore-path .gitignore --ext jsx,ts,tsx,cjs,mjs .",
+    "prettier": "prettier --ignore-path .gitignore --write --list-different .",
+    "lint:prettier": "prettier --ignore-path .gitignore --check .",
+    "lint": "eslint --ignore-path .gitignore .",
     "type-check": "tsc",
-    "type-check:watch": "npm run type-check -- --watch",
+    "type-check:watch": "tsc --watch",
     "prepare": "husky install",
     "prerelease": "yarn build",
     "release": "changeset publish",
-    "release:canary": "(node scripts/canary-release.js && yarn build && yarn changeset publish --tag alpha) || echo Skipping Canary...",
+    "release:canary": "(node scripts/canary-release.mjs && yarn build && yarn changeset publish --tag alpha) || echo Skipping Canary...",
     "zip": "yarn build && yarn --cwd packages/components pack"
   },
   "devDependencies": {
-    "@babel/core": "7.17.4",
-    "@babel/preset-env": "7.16.11",
-    "@babel/preset-react": "7.16.7",
-    "@babel/preset-typescript": "7.16.7",
-    "@changesets/cli": "2.24.0",
-    "@emotion/babel-plugin-jsx-pragmatic": "0.1.5",
-    "@rollup/plugin-babel": "5.3.0",
+    "@babel/core": "7.18.9",
+    "@babel/preset-env": "7.18.9",
+    "@babel/preset-react": "7.18.6",
+    "@babel/preset-typescript": "7.18.6",
+    "@changesets/cli": "2.24.1",
+    "@rollup/plugin-babel": "5.3.1",
     "@rollup/plugin-image": "2.1.1",
-    "@rollup/plugin-node-resolve": "13.1.3",
-    "@storybook/addon-actions": "6.4.22",
-    "@storybook/addon-essentials": "6.4.22",
-    "@storybook/addon-links": "6.4.22",
+    "@rollup/plugin-node-resolve": "13.3.0",
+    "@storybook/addon-actions": "6.5.9",
+    "@storybook/addon-essentials": "6.5.9",
+    "@storybook/addon-links": "6.5.9",
     "@storybook/addon-postcss": "2.0.0",
-    "@storybook/react": "6.4.22",
-    "@types/react": "17.0.39",
-    "@types/react-instantsearch-core": "6.10.8",
+    "@storybook/builder-webpack5": "6.5.9",
+    "@storybook/manager-webpack5": "6.5.9",
+    "@storybook/mdx2-csf": "0.0.3",
+    "@storybook/react": "6.5.9",
+    "@tailwindcss/line-clamp": "0.4.0",
+    "@theguild/prettier-config": "0.0.2",
+    "@types/react": "18.0.15",
+    "@types/react-instantsearch-core": "6.26.2",
     "@types/react-instantsearch-dom": "6.12.3",
     "@types/react-paginate": "7.1.1",
-    "@types/validator": "13.7.1",
-    "@typescript-eslint/eslint-plugin": "5.10.2",
-    "@typescript-eslint/parser": "5.10.2",
-    "concurrently": "7.0.0",
-    "eslint": "8.8.0",
-    "eslint-plugin-react": "7.28.0",
-    "eslint-plugin-react-hooks": "4.5.0",
+    "@types/validator": "13.7.4",
+    "@typescript-eslint/eslint-plugin": "5.30.7",
+    "@typescript-eslint/parser": "5.30.7",
+    "autoprefixer": "10.4.7",
+    "concurrently": "7.3.0",
+    "cssnano": "5.1.12",
+    "eslint": "8.20.0",
+    "eslint-plugin-react": "7.30.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-storybook": "0.6.1",
+    "eslint-plugin-tailwindcss": "3.6.0",
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
-    "postcss": "8.4.6",
-    "prettier": "2.5.1",
+    "postcss": "8.4.14",
+    "prettier": "2.7.1",
+    "prettier-plugin-tailwindcss": "0.1.12",
     "pretty-quick": "3.1.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "rollup": "2.61.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rollup": "2.77.0",
     "rollup-plugin-auto-external": "2.0.0",
     "rollup-plugin-bundle-size": "1.0.3",
     "rollup-plugin-copy": "3.4.0",
+    "storybook-dark-mode": "1.1.0",
+    "tailwindcss": "3.1.6",
     "tsconfig-paths-webpack-plugin": "3.5.2",
     "typescript": "4.7.4"
   },
@@ -63,28 +76,24 @@
       "examples/*"
     ]
   },
-  "babelMacros": {
-    "twin": {
-      "preset": "emotion"
-    }
-  },
-  "browserslist": "> 0.25%, not dead",
-  "prettier": {
-    "semi": true,
-    "singleQuote": true
-  },
+  "browserslist": [
+    "> 1%"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "packages/*/src/**/*.{ts,tsx}": [
+    "*.{js,mjs,cjs,ts,tsx,md,mdx,json,yml,yaml}": [
       "pretty-quick --staged",
       "eslint"
+    ],
+    "yarn.lock": [
+      "npx yarn-deduplicate"
     ]
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   }
 }

@@ -3,43 +3,38 @@ import { useState, useEffect } from 'react';
 export const useKeyPress = (targetKey: string): boolean => {
   // State for keeping track of whether key is pressed
   const [keyPressed, setKeyPressed] = useState(false);
-  // If pressed key is our target key then set to true
-  const downHandler = ({ key }: KeyboardEvent) => {
-    if (key === targetKey) {
-      setKeyPressed(true);
-    }
-  };
-  // If released key is our target key then set to false
-  const upHandler = ({ key }: KeyboardEvent) => {
-    if (key === targetKey) {
-      setKeyPressed(false);
-    }
-  };
+
   // Add event listeners
   useEffect(() => {
-    window.addEventListener('keydown', downHandler);
-    window.addEventListener('keyup', upHandler);
+    const keyHandler = (event: KeyboardEvent) => {
+      if (event.key === targetKey) {
+        // If pressed key is our target key then set to true
+        setKeyPressed(event.type === 'keydown');
+      }
+    };
+
+    window.addEventListener('keydown', keyHandler);
+    window.addEventListener('keyup', keyHandler);
+
     // Remove event listeners on cleanup
     return () => {
-      window.removeEventListener('keydown', downHandler);
-      window.removeEventListener('keyup', upHandler);
+      window.removeEventListener('keydown', keyHandler);
+      window.removeEventListener('keyup', keyHandler);
     };
-  }, []); // Empty array ensures that effect is only run on mount and unmount
+  }, [targetKey]);
+
   return keyPressed;
 };
 
 interface ISize {
-  width: number | undefined;
-  height: number | undefined;
+  width?: number;
+  height?: number;
 }
 
 export const useWindowSize = (): ISize => {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-  const [windowSize, setWindowSize] = useState<ISize>({
-    width: undefined,
-    height: undefined,
-  });
+  const [windowSize, setWindowSize] = useState<ISize>({});
   useEffect(() => {
     // Handler to call on window resize
     const handleResize = () => {
@@ -57,5 +52,6 @@ export const useWindowSize = (): ISize => {
     // Remove event listener on cleanup
     return () => window.removeEventListener('resize', handleResize);
   }, []); // Empty array ensures that effect is only run on mount
+
   return windowSize;
 };

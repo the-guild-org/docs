@@ -79,7 +79,7 @@
 
 ### Patch Changes
 
-- 557d6c3: Allowd custom image in Hero component
+- 557d6c3: Allow custom image in Hero component
 
 ## 1.10.1
 
@@ -136,7 +136,7 @@
 
 ### Patch Changes
 
-- a738f9f: fix: point helix to github repo
+- a738f9f: fix: point helix to GitHub repo
 
 ## 1.8.1
 

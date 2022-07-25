@@ -13,10 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js 14
+      - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
 
       - uses: actions/cache@v3
         name: Cache node_modules
@@ -32,10 +32,10 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Format Check
-        run: yarn format
+      - name: Lint Prettier
+        run: yarn lint:prettier
 
-      - name: Lint Check
+      - name: Lint ESLint
         run: yarn lint
 
       - name: Build Storybook

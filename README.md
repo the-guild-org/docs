@@ -2,28 +2,26 @@
 
 ## Getting started
 
-This is a npm package hosted at: https://npmjs.com/package/@theguild/components
+This is a npm package hosted at: <https://npmjs.com/package/@theguild/components>
 
-Storybook: https://the-guild-components-storybook.vercel.app/
+Storybook: <https://the-guild-components-storybook.vercel.app>
 
-Example page: https://the-guild-components.vercel.app/
+Example page: <https://the-guild-components.vercel.app>
 
 ## Developing
 
 We recommend running storybook for developing the components.
 
-```bash
+```sh
 yarn start
 ```
 
-Visit http://localhost:6008/
+Visit <http://localhost:6008>
 
 ## Links
 
-- [Storybook](https://storybook.js.org/)
-- [Emotion](https://emotion.sh/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Twin Macro](https://github.com/ben-rogerson/twin.macro)
+- [Storybook](https://storybook.js.org)
+- [Tailwind CSS](https://tailwindcss.com)
 
 This project was based on:
 
