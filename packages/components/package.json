@@ -38,6 +38,7 @@
   "devDependencies": {
     "@guild-docs/algolia": "0.0.6",
     "@types/dedent": "0.7.0",
+    "@types/react-dom": "18.0.6",
     "dedent": "0.7.0",
     "next-themes": "^0.2.0"
   }
