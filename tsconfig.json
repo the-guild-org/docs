@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "declaration": true,
     "emitDeclarationOnly": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "target": "es2018",
     "module": "esnext",
     "allowSyntheticDefaultImports": true,

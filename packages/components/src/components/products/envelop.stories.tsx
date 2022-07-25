@@ -1,16 +1,16 @@
 import { ReactElement } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { CardsColorful } from '../CardsColorful';
-import { Footer } from '../Footer';
-import { FeatureList } from '../FeatureList';
-import { Header } from '../Header';
-import { HeroIllustration } from '../HeroIllustration';
-import { HeroGradient } from '../HeroGradient';
-import { HeroMarketplace } from '../HeroMarketplace';
-import { HeroVideo } from '../HeroVideo';
-import { InfoList } from '../InfoList';
-import { MarketplaceSearch } from '../MarketplaceSearch';
-import { Subheader } from '../Subheader';
+import { CardsColorful } from '../cards-colorful';
+import { Footer } from '../footer';
+import { FeatureList } from '../feature-list';
+import { Header } from '../header';
+import { HeroIllustration } from '../hero-illustration';
+import { HeroGradient } from '../hero-gradient';
+import { HeroMarketplace } from '../hero-marketplace';
+import { HeroVideo } from '../hero-video';
+import { InfoList } from '../info-list';
+import { MarketplaceSearch } from '../marketplace-search';
+import { Subheader } from '../subheader';
 import {
   dummyCardsColorful,
   dummyFeatureList,

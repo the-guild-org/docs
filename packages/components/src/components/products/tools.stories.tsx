@@ -1,10 +1,10 @@
 import { ReactElement } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { FooterExtended } from '../FooterExtended';
-import { Header } from '../Header';
-import { HeroGradient } from '../HeroGradient';
-import { InfoList } from '../InfoList';
-import { Subheader } from '../Subheader';
+import { FooterExtended } from '../footer-extended';
+import { Header } from '../header';
+import { HeroGradient } from '../hero-gradient';
+import { InfoList } from '../info-list';
+import { Subheader } from '../subheader';
 import { ILink } from '../../types/components';
 
 export default {
