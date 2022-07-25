@@ -20,7 +20,7 @@
     "@algolia/autocomplete-plugin-query-suggestions": "^1.7.1",
     "@algolia/autocomplete-theme-classic": "^1.7.1",
     "@headlessui/react": "^1.6.6",
-    "@radix-ui/react-navigation-menu": "^0.1.2",
+    "@radix-ui/react-navigation-menu": "1.0.0",
     "algoliasearch": "^4.14.1",
     "clsx": "^1.2.1",
     "focus-trap-react": "^9.0.2",
