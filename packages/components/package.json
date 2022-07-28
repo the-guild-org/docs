@@ -2,7 +2,7 @@
   "name": "@theguild/components",
   "version": "2.0.0",
   "license": "MIT",
-  "type": "module",
+  "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
@@ -10,7 +10,6 @@
   ],
   "sideEffects": false,
   "peerDependencies": {
-    "next-themes": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

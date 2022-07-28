@@ -28,7 +28,12 @@ function bundle(packageDir) {
         format: 'es',
         sourcemap: true,
       },
-    ],
+      packageDir.includes('packages/components') && {
+        file: join(__dirname, packageDir, 'dist/index.js'),
+        format: 'cjs',
+        sourcemap: true,
+      },
+    ].filter(Boolean),
     external: ['react-player/lazy', 'algoliasearch/lite', 'classnames', 'react/jsx-runtime'],
     plugins: [
       nodeResolve({ extensions: ['.ts', '.tsx'] }),
