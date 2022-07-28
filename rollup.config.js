@@ -28,6 +28,11 @@ function bundle(packageDir) {
         format: 'es',
         sourcemap: true,
       },
+      // Components must to be bundled to cjs as on mesh website with next 12.2.3
+      // I Got error while running `next build`
+      // > Build error occurred
+      // Error [ERR_MODULE_NOT_FOUND]: Cannot find package '/Users/dimitri/Desktop/GUILD/graphql-mesh/node_modules/@theguild/components/'
+      // imported from /Users/dimitri/Desktop/GUILD/graphql-mesh/node_modules/guild-docs/esm/mermaid.js
       packageDir.includes('packages/components') && {
         file: join(__dirname, packageDir, 'dist/index.js'),
         format: 'cjs',
