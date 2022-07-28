@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 2.0.1
+
+### Patch Changes
+
+- dd22595: feat: bundle components to `cjs` also
+
 ## 2.0.0
 
 ### Major Changes
