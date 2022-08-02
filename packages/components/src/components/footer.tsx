@@ -58,9 +58,6 @@ export const Footer = ({ sameSite, ...restProps }: IFooterProps): ReactElement =
         "
         {...restProps.containerProps}
       >
-        <p className="hidden md:block" {...restProps.copyrightProps}>
-          Belong anywhere. © The Guild, Inc.
-        </p>
         <a className="grow" {...logoOptions} {...restProps.logoProps}>
           <GuildLogo className="mx-auto mb-3 transition hover:text-gray-900 dark:hover:text-gray-100 md:mb-0" />
         </a>

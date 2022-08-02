@@ -164,9 +164,6 @@ export const FooterExtended = ({
           >
             <GuildLogo className="w-7" />
             <TheGuild className="w-10" />
-            <span className="ml-6 text-xs text-gray-500 dark:text-gray-400" {...restProps.copyrightProps}>
-              Belong anywhere. © The Guild, Inc.
-            </span>
           </a>
         </div>
       </div>
