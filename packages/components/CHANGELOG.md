@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 2.0.3
+
+### Patch Changes
+
+- e35c1ad: export `withLayout` as default export from `nextra-theme-docs`
+
 ## 2.0.2
 
 ### Patch Changes
