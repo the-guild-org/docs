@@ -82,7 +82,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,mjs,cjs,ts,tsx,md,mdx,json,yml,yaml}": [
+    "*.{js,mjs,cjs,ts,tsx,md,json,yml,yaml}": [
       "pretty-quick --staged",
       "eslint"
     ],
