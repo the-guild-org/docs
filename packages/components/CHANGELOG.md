@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 2.0.2
+
+### Patch Changes
+
+- fd841f4: bump nextra
+
 ## 2.0.1
 
 ### Patch Changes
