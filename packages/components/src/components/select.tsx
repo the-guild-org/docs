@@ -31,8 +31,8 @@ export function Select({ options, selected, onChange }: SelectProps): ReactEleme
             className={clsx(
               'relative h-7 w-full cursor-default rounded-md px-2 text-left text-xs font-medium text-gray-600 transition-colors focus:outline-none dark:text-gray-400',
               open
-                ? 'bg-gray-200 text-gray-900 dark:bg-primary-100/10 dark:text-gray-50'
-                : 'hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-primary-100/5 dark:hover:text-gray-50'
+                ? 'dark:bg-primary-100/10 bg-gray-200 text-gray-900 dark:text-gray-50'
+                : 'dark:hover:bg-primary-100/5 hover:bg-gray-100 hover:text-gray-900 dark:hover:text-gray-50'
             )}
           >
             {value.name}

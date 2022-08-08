@@ -1,4 +1,4 @@
-const config = require('@theguild/tailwind-config')
+const config = require('@theguild/tailwind-config');
 
 module.exports = {
   ...config,
