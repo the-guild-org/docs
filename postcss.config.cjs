@@ -1,8 +1,1 @@
-// ❗ Even empty, this file is required for tailwindcss
-module.exports = {
-  plugins: {
-    autoprefixer: {},
-    tailwindcss: {},
-    ...(process.env.NODE_ENV === 'production' && { cssnano: {} }),
-  },
-};
+module.exports = require('@theguild/tailwind-config/postcss.config');
