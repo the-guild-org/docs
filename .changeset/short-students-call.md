@@ -1,5 +1,5 @@
 ---
-"@theguild/components": patch
+'@theguild/components': patch
 ---
 
 temp
