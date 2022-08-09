@@ -1,10 +1,17 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@1.6.0/schema.json",
-  "changelog": "@changesets/cli/changelog",
+  "$schema": "https://unpkg.com/@changesets/config@2.1.0/schema.json",
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "the-guild-org/the-guild-components" }
+  ],
   "commit": false,
   "linked": [],
-  "access": "restricted",
+  "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["nextjs-example"]
+  "ignore": ["nextjs-example"],
+  "snapshot": {
+    "useCalculatedVersion": true,
+    "prereleaseTemplate": "{tag}-{datetime}-{commit}"
+  }
 }
