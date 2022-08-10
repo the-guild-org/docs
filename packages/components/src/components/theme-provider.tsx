@@ -1,11 +1,9 @@
-import { ThemeProvider as Provider, useTheme } from 'next-themes';
+import { ThemeProvider as Provider } from 'next-themes';
 
-const ThemeProvider: typeof Provider = ({ children, ...props }) => {
+export const ThemeProvider: typeof Provider = ({ children, ...props }) => {
   return (
     <Provider attribute="class" {...props}>
       {children}
     </Provider>
   );
 };
-
-export { ThemeProvider, useTheme };

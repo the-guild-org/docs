@@ -11,6 +11,11 @@ const subheaderImage = 'https://the-guild.dev/static/shared-logos/products/envel
 
 export const dummyFeatureList = {
   title: 'The best and simple features',
+  description: 'Powerful plugin system learn more learn more',
+  linkProps: {
+    href: '/wow',
+    children: 'Hello world',
+  },
   items: [
     {
       image: {
@@ -19,7 +24,7 @@ export const dummyFeatureList = {
       },
       title: 'Pluggable',
       description: 'Powerful plugin system',
-      link: {
+      linkProps: {
         children: 'GitHub',
         title: 'Learn more',
         target: '_blank',

@@ -133,20 +133,19 @@ export interface ISearchBarProps {
 }
 
 export interface IFeatureListProps {
-  title?: string | React.ReactNode;
-  titleDescription?: string | React.ReactNode;
-  link?: ILink;
+  title?: string;
+  description?: string;
   items: {
-    title: string | React.ReactNode;
-    description: string | React.ReactNode;
+    title: string;
+    description: string;
     image: IImage;
-    link?: ILink;
+    linkProps?: React.ComponentProps<'a'>;
   }[];
 
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
-  titleDescriptionProps?: React.ComponentProps<'p'>;
+  descriptionProps?: React.ComponentProps<'p'>;
   linkProps?: React.ComponentProps<'a'>;
   itemTitleProps?: React.ComponentProps<'h3'>;
   itemDescriptionProps?: React.ComponentProps<'p'>;
