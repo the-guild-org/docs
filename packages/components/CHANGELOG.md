@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 2.0.5
+
+### Patch Changes
+
+- [#411](https://github.com/the-guild-org/the-guild-components/pull/411) [`40b07fe`](https://github.com/the-guild-org/the-guild-components/commit/40b07fe74157fcdd3744076eb84603703ea27a6b) Thanks [@B2o5T](https://github.com/B2o5T)! - fix toggle themes, use useTheme from next-themes
+
 ## 2.0.4
 
 ### Patch Changes
