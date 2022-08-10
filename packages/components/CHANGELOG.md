@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 2.0.4
+
+### Patch Changes
+
+- [#409](https://github.com/the-guild-org/the-guild-components/pull/409) [`a9ed933`](https://github.com/the-guild-org/the-guild-components/commit/a9ed933bea4deda92c05b3597b89efa38df3ee3c) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`nextra-theme-docs@2.0.0-beta.17` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0-beta.17) (was `2.0.0-beta.15`, in `dependencies`)
+
+* [#409](https://github.com/the-guild-org/the-guild-components/pull/409) [`a9ed933`](https://github.com/the-guild-org/the-guild-components/commit/a9ed933bea4deda92c05b3597b89efa38df3ee3c) Thanks [@B2o5T](https://github.com/B2o5T)! - fix, add isGlobal to `PackageCmd/>`, fix <FeatureList/> styles
+
 ## 2.0.3
 
 ### Patch Changes
