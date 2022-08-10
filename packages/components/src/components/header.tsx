@@ -1,7 +1,7 @@
 import { useState, useMemo, ReactElement, MouseEventHandler, MouseEvent } from 'react';
 import clsx from 'clsx';
 import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
-import { useTheme } from 'next-themes';
+import { useTheme } from 'nextra-theme-docs';
 import { SearchBar } from './search-bar';
 import { IHeaderProps } from '../types/components';
 import { toggleLockBodyScroll } from '../helpers/modals';

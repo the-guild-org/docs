@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode } from 'react';
-import { Tab, Tabs } from 'nextra-theme-docs/tabs';
+import { Tab, Tabs } from 'nextra-theme-docs';
 
 const CodeTab = ({ children }: { children: ReactNode }): ReactElement => {
   return (
