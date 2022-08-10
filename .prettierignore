@@ -1,0 +1,6 @@
+dist/
+dist-storybook/
+storybook-static/
+.next/
+.husky/_/
+.changeset/*.md
