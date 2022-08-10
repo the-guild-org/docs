@@ -16,7 +16,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "graphql-language-service": "3.2.4"
+    "graphql-language-service": "5.0.6"
   },
   "devDependencies": {
     "@monaco-editor/react": "4.3.1",
