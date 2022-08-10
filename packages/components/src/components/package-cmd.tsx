@@ -46,10 +46,17 @@ const Init: PackageMap = {
   pnpm: 'pnpm init',
 };
 
+const Global: PackageMap = {
+  yarn: 'yarn global add',
+  npm: 'npm install --global',
+  pnpm: 'pnpm add --global',
+};
+
 type Command = {
   name: string;
   cmd: 'add' | 'run' | 'install' | 'init';
   isNpx?: boolean;
+  isGlobal?: boolean;
 };
 
 export const PackageCmd = ({ packages }: { packages: (string | Command)[] }) => {
@@ -76,7 +83,7 @@ export const PackageCmd = ({ packages }: { packages: (string | Command)[] }) => 
                 case 'init':
                   return Init[pkgManager];
                 default:
-                  return `${Add[pkgManager]} ${pkg.name}`;
+                  return `${pkg.isGlobal ? Global[pkgManager] : Add[pkgManager]} ${pkg.name}`;
               }
             })
             .join('\n')}
