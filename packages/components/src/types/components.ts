@@ -59,12 +59,8 @@ export interface IFooterExtendedProps {
   logo?: ILink;
 }
 
-interface IModalRestProps {
+export interface IModalProps {
   className?: string;
-  headerLinkProps?: ILink;
-}
-
-export interface IModalProps extends IModalRestProps {
   children: ReactNode;
   title: string | ReactNode;
   description?: string | ILink;
@@ -146,7 +142,7 @@ export interface IHeroMarketplaceProps {
   title: string | ReactNode;
   description: string | ReactNode;
   link: ILink;
-  imageProps?: IImage;
+  image?: IImage;
 }
 
 export interface IMarketplaceItemProps {

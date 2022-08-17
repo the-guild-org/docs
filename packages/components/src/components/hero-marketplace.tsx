@@ -37,7 +37,7 @@ export const HeroMarketplace = ({
   description,
   link,
   className,
-  imageProps,
+  image,
 }: IHeroMarketplaceProps): ReactElement => (
   <section className={clsx('overflow-hidden bg-white dark:bg-[#111]', className)}>
     <div className="relative">
@@ -80,7 +80,7 @@ export const HeroMarketplace = ({
             lg:-ml-14
             lg:w-2/3
           "
-          {...imageProps}
+          {...image}
         >
           <source media="(min-width:768px)" srcSet={IllustrationDesktop} />
           <NextImage className="w-full" src={IllustrationMobile} alt="Products List" />

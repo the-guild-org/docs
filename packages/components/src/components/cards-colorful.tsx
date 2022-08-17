@@ -1,25 +1,20 @@
-import { ReactElement, ComponentProps } from 'react';
+import { ReactElement } from 'react';
 import { ILink } from '../types/components';
+import clsx from 'clsx';
 
 export type CardsColorfulProps = {
+  className?: string;
   cards: {
     title: string;
     description: string;
     category: string;
     color: string;
-    link: ILink;
+    link: Omit<ILink, 'children'>;
   }[];
-
-  wrapperProps?: ComponentProps<'section'>;
-  containerProps?: ComponentProps<'div'>;
-  cardProps?: ComponentProps<'a'>;
-  cardCategoryProps?: ComponentProps<'h2'>;
-  cardTitleProps?: ComponentProps<'h3'>;
-  cardDescriptionProps?: ComponentProps<'p'>;
 };
 
-export const CardsColorful = ({ cards, ...restProps }: CardsColorfulProps): ReactElement => (
-  <section className="bg-white py-8 dark:bg-[#111]" {...restProps.wrapperProps}>
+export const CardsColorful = ({ cards, className }: CardsColorfulProps): ReactElement => (
+  <section className={clsx('bg-white py-8 dark:bg-[#111]', className)}>
     <div
       className="
         container
@@ -30,7 +25,6 @@ export const CardsColorful = ({ cards, ...restProps }: CardsColorfulProps): Reac
         md:space-x-8
         md:space-y-0
     "
-      {...restProps.containerProps}
     >
       {cards.map(card => (
         <a
@@ -60,18 +54,11 @@ export const CardsColorful = ({ cards, ...restProps }: CardsColorfulProps): Reac
           "
           style={{ '--color': card.color }}
           {...card.link}
-          {...restProps.cardProps}
         >
           <div className="w-3/4 lg:w-1/2">
-            <h2 className="pb-1.5 text-xs font-semibold uppercase opacity-60" {...restProps.cardCategoryProps}>
-              {card.category}
-            </h2>
-            <h3 className="pb-2.5 text-2xl font-bold md:text-3xl" {...restProps.cardTitleProps}>
-              {card.title}
-            </h3>
-            <p className="text-xs font-medium opacity-60" {...restProps.cardDescriptionProps}>
-              {card.description}
-            </p>
+            <h2 className="pb-1.5 text-xs font-semibold uppercase opacity-60">{card.category}</h2>
+            <h3 className="pb-2.5 text-2xl font-bold md:text-3xl">{card.title}</h3>
+            <p className="text-xs font-medium opacity-60">{card.description}</p>
           </div>
         </a>
       ))}
