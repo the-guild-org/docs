@@ -1,4 +1,5 @@
 import { ReactElement, useEffect, useMemo, useState } from 'react';
+import NextImage from 'next/future/image';
 import ReactPaginatePackage from 'react-paginate';
 import { IMarketplaceListProps, IMarketplaceItemsProps } from '../types/components';
 import { Tag, TagsContainer } from './tag';
@@ -20,9 +21,7 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
         className="border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 last:border-0 dark:border-gray-800 dark:text-gray-400"
         key={item.title}
       >
-        <td className="w-14 py-4 pr-2 align-top md:w-20">
-          {item.image && <img {...item.image} {...restProps.imageProps} />}
-        </td>
+        <td className="w-14 py-4 pr-2 align-top md:w-20">{item.image && <NextImage {...item.image} />}</td>
         <td className="py-4 px-2">
           <a
             className="text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400"

@@ -1,4 +1,5 @@
 import { ReactElement, useCallback, useState } from 'react';
+import NextImage from 'next/future/image';
 import clsx from 'clsx';
 import { ISubheaderProps } from '../types/components';
 import { toggleLockBodyScroll } from '../helpers/modals';
@@ -76,7 +77,7 @@ export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISu
           className="flex grow no-underline"
           {...restProps.logoProps}
         >
-          <img src={product.image.src} alt={product.image.alt} className="w-12" />
+          <NextImage {...product.image} className={clsx('w-12', product.image.className)} />
           <span className="ml-2 -mt-1 flex flex-col justify-center">
             <p className="font-semibold text-black dark:text-white">{product.title}</p>
             <p className="text-xs text-gray-500 dark:text-gray-300">{product.description}</p>

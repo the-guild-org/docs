@@ -232,10 +232,9 @@ export interface IMarketplaceItemProps {
 }
 
 interface IMarketplaceItemRestProps {
-  imageProps?: React.ComponentProps<'img'>;
-  titleProps?: React.ComponentProps<'h3'>;
-  descriptionProps?: React.ComponentProps<'p'>;
-  dateProps?: React.ComponentProps<'td'>;
+  titleProps?: ComponentProps<'h3'>;
+  descriptionProps?: ComponentProps<'p'>;
+  dateProps?: ComponentProps<'td'>;
   linkProps?: ILink;
 }
 
