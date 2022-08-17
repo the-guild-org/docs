@@ -2,9 +2,8 @@ import { useState, useMemo, ReactElement, MouseEventHandler, MouseEvent, forward
 import clsx from 'clsx';
 import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
 import { useTheme } from 'next-themes';
-import NextLink from 'next/link';
 import { SearchBar } from './search-bar';
-import { IHeaderProps, ILink } from '../types/components';
+import { IHeaderProps } from '../types/components';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
 import { GuildLogo, TheGuild } from './logos';
@@ -12,12 +11,7 @@ import { Nav } from './nav';
 import { SolutionsMenu } from './solutions-menu';
 import { EcosystemList } from './ecosystem-list';
 import { useWindowSize } from '../helpers/hooks';
-
-const ForwardedLink = forwardRef<HTMLAnchorElement, ILink>(({ children, ...props }, forwardedRef) => (
-  <NextLink {...props} ref={forwardedRef}>
-    {children}
-  </NextLink>
-));
+import { Anchor } from './anchor';
 
 const renderLinkOptions = (href: string, onClick?: MouseEventHandler<HTMLAnchorElement>) => {
   if (onClick) {
@@ -128,7 +122,7 @@ export const Header = ({
             <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} className="md:gap-4">
               {links.map(link => {
                 const linkEl = (
-                  <ForwardedLink
+                  <Anchor
                     key={link.label}
                     title={link.title}
                     className={clsx(
@@ -182,7 +176,7 @@ export const Header = ({
                         "
                       />
                     )}
-                  </ForwardedLink>
+                  </Anchor>
                 );
 
                 return link.menu && shouldUseMenus ? (

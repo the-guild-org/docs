@@ -1,10 +1,10 @@
 import { ReactElement, ReactNode, useCallback } from 'react';
-import NextLink from 'next/link';
 import { Newsletter } from './newsletter';
 import { PRODUCTS } from '../helpers/products';
 import { IFooterExtendedProps, ILink } from '../types/components';
 import { GuildLogo, TheGuild } from './logos';
 import clsx from 'clsx';
+import { Anchor } from './anchor';
 
 const COMPANY: ILink[] = [
   {
@@ -84,7 +84,7 @@ export const FooterExtended = ({
       <ul className="m-0 mb-8 list-none p-0 last:mb-0">
         {list.map(link => (
           <li key={link.href} className="mb-3 last:mb-0">
-            <a
+            <Anchor
               className="
                 inline-block
                 text-sm
@@ -97,8 +97,7 @@ export const FooterExtended = ({
                 hover:dark:text-gray-100
               "
               {...link}
-              rel="noreferrer"
-              target="_blank"
+              newWindow
             />
           </li>
         ))}
@@ -157,14 +156,14 @@ export const FooterExtended = ({
             lg:flex-nowrap
           "
         >
-          <NextLink
+          <Anchor
             className="flex items-center gap-x-1.5 text-gray-500 transition hover:text-black hover:dark:text-gray-100"
             {...logoOptions}
             {...logo}
           >
             <GuildLogo className="w-7" />
             <TheGuild className="w-10" />
-          </NextLink>
+          </Anchor>
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 import { ComponentProps, ReactElement } from 'react';
 import clsx from 'clsx';
-import NextLink from 'next/link';
+import { Anchor } from './anchor';
 
 export type ButtonProps = Omit<ComponentProps<'a'>, 'href' | 'ref'> & {
   variant?: 'primary' | 'secondary';
@@ -9,7 +9,7 @@ export type ButtonProps = Omit<ComponentProps<'a'>, 'href' | 'ref'> & {
 
 export const Button = ({ children, className, variant = 'primary', ...props }: ButtonProps): ReactElement => {
   return (
-    <NextLink
+    <Anchor
       className={clsx(
         `
         flex-none
@@ -32,6 +32,6 @@ export const Button = ({ children, className, variant = 'primary', ...props }: B
       {...props}
     >
       {children}
-    </NextLink>
+    </Anchor>
   );
 };

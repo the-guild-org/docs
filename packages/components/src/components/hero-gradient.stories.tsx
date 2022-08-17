@@ -33,12 +33,6 @@ const Template: Story<IHeroGradientProps> = args => <HeroGradient {...args} />;
 export const Default = Template.bind({});
 Default.args = dummyHeroGradient;
 
-export const Simple = Template.bind({});
-Simple.args = dummyHeroGradient;
-
-export const CustomImage = Template.bind({});
-CustomImage.args = dummyHeroGradient;
-
 export const MultiLinks = Template.bind({});
 MultiLinks.args = {
   ...dummyHeroGradient,

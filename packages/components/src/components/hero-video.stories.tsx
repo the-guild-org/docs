@@ -28,5 +28,4 @@ export default {
 const Template: Story<IHeroVideoProps> = args => <HeroVideo {...args} />;
 
 export const Default = Template.bind({});
-
 Default.args = dummyHeroVideo;
