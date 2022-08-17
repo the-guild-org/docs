@@ -54,7 +54,9 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
         </td>
         <td className="py-4 pl-2">
           <a
-            className="
+            {...item.link}
+            className={clsx(
+              `
               inline-block
               rounded-lg
               bg-gray-200
@@ -64,10 +66,9 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
               hover:invert
               dark:bg-gray-700
               dark:text-white
-              md:p-2.5
-            "
-            {...item.link}
-            {...restProps.linkProps}
+              md:p-2.5`,
+              item.link.className
+            )}
           >
             <CaretSlimIcon className="h-5 w-5 -rotate-90" />
           </a>

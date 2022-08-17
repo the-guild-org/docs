@@ -131,14 +131,14 @@ export interface IFeatureListProps {
     title: string;
     description: string;
     image: IImage;
-    linkProps?: ILink;
+    link?: ILink;
   }[];
 
   wrapperProps?: ComponentProps<'section'>;
   containerProps?: ComponentProps<'div'>;
   titleProps?: ComponentProps<'h2'>;
   descriptionProps?: ComponentProps<'p'>;
-  linkProps?: ILink;
+  link?: ILink;
   itemTitleProps?: ComponentProps<'h3'>;
   itemDescriptionProps?: ComponentProps<'p'>;
 }

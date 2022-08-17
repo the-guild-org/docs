@@ -3,13 +3,7 @@ import NextImage from 'next/future/image';
 import clsx from 'clsx';
 import { IFeatureListProps } from '../types/components';
 
-export const FeatureList = ({
-  title,
-  description,
-  items,
-  linkProps,
-  ...restProps
-}: IFeatureListProps): ReactElement => (
+export const FeatureList = ({ title, description, items, link, ...restProps }: IFeatureListProps): ReactElement => (
   <section className="bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
     <div className="container py-14" {...restProps.containerProps}>
       {title && (
@@ -28,8 +22,14 @@ export const FeatureList = ({
               {description}
             </div>
           )}
-          {linkProps && (
-            <a className="w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300" {...linkProps} />
+          {link && (
+            <a
+              {...link}
+              className={clsx(
+                'w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300',
+                link.className
+              )}
+            />
           )}
         </div>
       )}
@@ -43,10 +43,13 @@ export const FeatureList = ({
             <div className="text-center text-sm text-gray-500 dark:text-gray-400" {...restProps.itemDescriptionProps}>
               {item.description}
             </div>
-            {item.linkProps && (
+            {item.link && (
               <a
-                className="mt-auto w-max pt-2 text-sm text-cyan-400 no-underline transition hover:text-cyan-300"
-                {...item.linkProps}
+                {...item.link}
+                className={clsx(
+                  'mt-auto w-max pt-2 text-sm text-cyan-400 no-underline transition hover:text-cyan-300',
+                  item.link.className
+                )}
               />
             )}
           </div>
