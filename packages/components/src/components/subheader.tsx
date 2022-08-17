@@ -7,7 +7,7 @@ import { CaretSlimIcon } from './icons';
 import { Nav } from './nav';
 import { Button } from './button';
 
-export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISubheaderProps): ReactElement => {
+export const Subheader = ({ product, activeLink, links, cta, className }: ISubheaderProps): ReactElement => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const handleNav = useCallback(() => {
@@ -18,7 +18,7 @@ export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISu
   }, []);
 
   const nav = (
-    <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} {...restProps.navigationProps}>
+    <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen}>
       {links.map(link => {
         const isActiveLink = link.href === '/' ? activeLink === link.href : activeLink?.startsWith(link.href);
 
@@ -57,7 +57,8 @@ export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISu
 
   return (
     <header
-      className="
+      className={clsx(
+        `
         sticky
         top-0
         z-10
@@ -65,17 +66,16 @@ export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISu
         py-5
         shadow-xl
         shadow-gray-400/10
-        dark:bg-[#111]
-      "
-      {...restProps.wrapperProps}
+        dark:bg-[#111]`,
+        className
+      )}
     >
-      <div className="container flex max-w-[90rem] items-center md:justify-end" {...restProps.containerProps}>
+      <div className="container flex max-w-[90rem] items-center md:justify-end">
         <a
           href="/"
           onClick={product.onClick}
           title={`${product.title} - ${product.description}`}
           className="flex grow no-underline"
-          {...restProps.logoProps}
         >
           <NextImage {...product.image} className={clsx('w-12', product.image.className)} />
           <span className="ml-2 -mt-1 flex flex-col justify-center">
@@ -84,8 +84,8 @@ export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISu
           </span>
         </a>
         {nav}
-        {cta && <Button className="mx-1 md:mr-0 md:ml-3" {...cta} {...restProps.ctaProps} />}
-        <button onClick={handleNav} className="mx-2.5 dark:text-white md:hidden" {...restProps.navOpenButtonProps}>
+        {cta && <Button className="mx-1 md:mr-0 md:ml-3" {...cta} />}
+        <button onClick={handleNav} className="mx-2.5 dark:text-white md:hidden">
           <CaretSlimIcon />
         </button>
       </div>

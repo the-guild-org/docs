@@ -34,6 +34,7 @@ export interface IHeaderProps {
 }
 
 export interface ISubheaderProps {
+  className?: string
   product: {
     title: string | ReactNode;
     description: string | ReactNode;
@@ -43,13 +44,6 @@ export interface ISubheaderProps {
   activeLink: string;
   links: ILink[];
   cta: ILink;
-
-  wrapperProps?: ComponentProps<'header'>;
-  containerProps?: ComponentProps<'div'>;
-  logoProps?: ILink;
-  navigationProps?: ComponentProps<'nav'>;
-  ctaProps?: ILink;
-  navOpenButtonProps?: ComponentProps<'button'>;
 }
 
 interface IHeaderModalRestProps {
