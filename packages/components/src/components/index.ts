@@ -1,3 +1,4 @@
+export { Anchor } from './anchor';
 export { Banner } from './banner';
 export { Button } from './button';
 export { CardsColorful } from './cards-colorful';
@@ -9,6 +10,7 @@ export { HeroGradient } from './hero-gradient';
 export { HeroIllustration } from './hero-illustration';
 export { HeroMarketplace } from './hero-marketplace';
 export { HeroVideo } from './hero-video';
+export { Image } from './image';
 export * from './icons';
 export * from './logos';
 export { InfoList } from './info-list';

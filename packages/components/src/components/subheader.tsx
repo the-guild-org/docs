@@ -1,12 +1,11 @@
 import { ReactElement, useCallback, useState } from 'react';
-import NextImage from 'next/future/image';
-import NextLink from 'next/link';
 import clsx from 'clsx';
 import { ISubheaderProps } from '../types/components';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import { CaretSlimIcon } from './icons';
 import { Nav } from './nav';
 import { Button } from './button';
+import { Anchor } from './anchor';
 
 export const Subheader = ({ product, activeLink, links, cta, className }: ISubheaderProps): ReactElement => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -24,7 +23,7 @@ export const Subheader = ({ product, activeLink, links, cta, className }: ISubhe
         const isActiveLink = link.href === '/' ? activeLink === link.href : activeLink?.startsWith(link.href);
 
         return (
-          <NextLink
+          <Anchor
             key={link.href}
             {...link}
             className={clsx(

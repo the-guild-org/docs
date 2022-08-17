@@ -1,11 +1,11 @@
 import { ReactElement, useEffect } from 'react';
-import NextLink from 'next/link';
-import NextImage from 'next/future/image';
 import FocusTrap from 'focus-trap-react';
 import clsx from 'clsx';
 import { IModalProps } from '../types/components';
 import { useKeyPress } from '../helpers/hooks';
 import { CloseIcon, ExternalLinkIcon } from './icons';
+import { Anchor } from './anchor';
+import { Image } from './image';
 
 export const Modal = ({
   image,
@@ -25,10 +25,10 @@ export const Modal = ({
     }
 
     return typeof description === 'object' ? (
-      <NextLink className="inline-flex gap-x-1.5 transition hover:opacity-60" {...description}>
+      <Anchor className="inline-flex gap-x-1.5 transition hover:opacity-60" {...description}>
         <p className="line-clamp-1">{description.children}</p>
         <ExternalLinkIcon className="h-4 w-4 shrink-0" />
-      </NextLink>
+      </Anchor>
     ) : (
       <p className="line-clamp-1">{description}</p>
     );
@@ -88,7 +88,7 @@ export const Modal = ({
               md:gap-x-4
             "
           >
-            {image && <NextImage {...image} className={clsx('w-10 md:w-16', image.className)} />}
+            {image && <Image {...image} className={clsx('w-10 md:w-16', image.className)} />}
             <div>
               <h2 className="m-0 text-lg font-semibold text-black dark:text-gray-100 md:text-xl">{title}</h2>
               <p className="m-0 text-xs text-gray-500 dark:text-gray-100">{renderDescription()}</p>
