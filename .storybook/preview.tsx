@@ -1,10 +1,12 @@
 import { useDarkMode } from 'storybook-dark-mode';
 import { themes } from '@storybook/theming';
 import { ThemeProvider } from '@theguild/components/src';
-import '@theguild/components/src/static/styles.css';
+import NextImage, { ImageProps } from 'next/image';
+import NextLink, { LinkProps } from 'next/link';
 
 import '@algolia/autocomplete-theme-classic';
-import '@theguild/components/src/static/css/search-bar-v2.css';
+import '../styles/global.css';
+import '../styles/search-bar-v2.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

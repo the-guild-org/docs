@@ -1,22 +1,14 @@
 import React, { ComponentProps, ReactNode } from 'react';
 import { ReactPlayerProps } from 'react-player';
 import { ImageProps } from 'next/future/image';
+import { LinkProps } from 'next/link';
 
 interface IVideo {
   src: string;
   placeholder: string;
 }
 
-export interface ILink {
-  title: string;
-  href: string;
-  children?: string | React.ReactNode;
-  rel?: string;
-  style?: React.CSSProperties;
-  target?: string;
-  active?: boolean;
-  onClick?: React.MouseEventHandler;
-}
+export type ILink = LinkProps;
 
 export interface IHeaderLink {
   label: string;
@@ -33,9 +25,9 @@ export interface IHeaderProps {
   transformLinks?: (links: IHeaderLink[]) => IHeaderLink[];
   wrapperProps?: React.ComponentProps<'header'>;
   containerProps?: React.ComponentProps<'div'>;
-  logoProps?: React.ComponentProps<'a'>;
+  logoProps?: ILink;
   navigationProps?: React.ComponentProps<'nav'>;
-  linkProps?: React.ComponentProps<'a'>;
+  linkProps?: ILink;
   searchBarProps?: Partial<ISearchBarProps>;
   disableSearch?: boolean;
   themeButtonProps?: React.ComponentProps<'button'>;
@@ -56,18 +48,18 @@ export interface ISubheaderProps {
 
   wrapperProps?: React.ComponentProps<'header'>;
   containerProps?: React.ComponentProps<'div'>;
-  logoProps?: React.ComponentProps<'a'>;
+  logoProps?: ILink;
   navigationProps?: React.ComponentProps<'nav'>;
-  linkProps?: React.ComponentProps<'a'>;
-  ctaProps?: React.ComponentProps<'a'>;
+  linkProps?: ILink;
+  ctaProps?: ILink;
   navOpenButtonProps?: React.ComponentProps<'button'>;
 }
 
 interface IHeaderModalRestProps {
   titleProps?: React.ComponentProps<'h4'>;
   descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
-  imageProps?: React.ComponentProps<'img'>;
+  linkProps?: ILink;
+  imageProps?: ImageProps;
   categoryTitleProps?: React.ComponentProps<'h3'>;
   modalProps?: IModalRestProps;
 }
@@ -76,8 +68,8 @@ export interface IFooterProps {
   sameSite?: boolean;
   wrapperProps?: React.ComponentProps<'footer'>;
   containerProps?: React.ComponentProps<'div'>;
-  linkProps?: React.ComponentProps<'a'>;
-  logoProps?: React.ComponentProps<'a'>;
+  linkProps?: ILink;
+  logoProps?: ILink;
   copyrightProps?: React.ComponentProps<'p'>;
 }
 
@@ -87,8 +79,8 @@ export interface IFooterExtendedProps {
   onNewsletterSubmit?: (e: React.FormEvent, value: string) => void;
   wrapperProps?: React.ComponentProps<'footer'>;
   containerProps?: React.ComponentProps<'div'>;
-  linkProps?: React.ComponentProps<'a'>;
-  logoProps?: React.ComponentProps<'a'>;
+  linkProps?: ILink;
+  logoProps?: ILink;
   titleProps?: React.ComponentProps<'p'>;
   descriptionProps?: React.ComponentProps<'p'>;
   copyrightProps?: React.ComponentProps<'p'>;
@@ -138,14 +130,14 @@ export interface IFeatureListProps {
     title: string;
     description: string;
     image: ImageProps;
-    linkProps?: React.ComponentProps<'a'>;
+    linkProps?: ILink;
   }[];
 
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
   descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
+  linkProps?: ILink;
   itemTitleProps?: React.ComponentProps<'h3'>;
   itemDescriptionProps?: React.ComponentProps<'p'>;
   itemImageProps?: React.ComponentProps<'img'>;
@@ -164,7 +156,7 @@ export interface IInfoListProps {
   titleProps?: React.ComponentProps<'h2'>;
   itemTitleProps?: React.ComponentProps<'h3'>;
   itemDescriptionProps?: React.ComponentProps<'p'>;
-  itemLinkProps?: React.ComponentProps<'a'>;
+  itemLinkProps?: ILink;
 }
 
 export interface IHeroVideoProps {
@@ -178,7 +170,7 @@ export interface IHeroVideoProps {
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
   descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
+  linkProps?: ILink;
   videoProps?: ReactPlayerProps;
 }
 
@@ -193,7 +185,7 @@ export interface IHeroIllustrationProps {
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
   descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
+  linkProps?: ILink;
 }
 
 export interface IHeroGradientProps {
@@ -208,7 +200,7 @@ export interface IHeroGradientProps {
   gradientProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h1'>;
   descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
+  linkProps?: ILink;
   versionProps?: React.ComponentProps<'span'>;
 }
 
@@ -221,8 +213,8 @@ export interface IHeroMarketplaceProps {
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
   descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
-  imageProps?: React.ComponentProps<'img'>;
+  linkProps?: ILink;
+  imageProps?: ImageProps;
 }
 
 export interface IMarketplaceItemProps {
@@ -246,7 +238,7 @@ interface IMarketplaceItemRestProps {
   titleProps?: React.ComponentProps<'h3'>;
   descriptionProps?: React.ComponentProps<'p'>;
   dateProps?: React.ComponentProps<'td'>;
-  linkProps?: React.ComponentProps<'a'>;
+  linkProps?: ILink;
 }
 
 export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
