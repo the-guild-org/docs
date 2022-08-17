@@ -25,6 +25,7 @@ export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISu
         return (
           <a
             key={link.href}
+            {...link}
             className={clsx(
               `
               mx-auto
@@ -45,10 +46,9 @@ export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISu
               md:text-left
               md:text-xs
             `,
-              isActiveLink ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-400'
+              isActiveLink ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-400',
+              link.className
             )}
-            {...link}
-            {...restProps.linkProps}
           />
         );
       })}

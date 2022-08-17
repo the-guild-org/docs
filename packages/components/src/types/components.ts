@@ -9,7 +9,7 @@ interface IVideo {
 }
 
 export type ILink = Omit<LinkProps, 'href'> &
-  Pick<ComponentProps<'a'>, 'target' | 'rel' | 'title'> & {
+  Pick<ComponentProps<'a'>, 'target' | 'rel' | 'title' | 'className'> & {
     href: string;
   };
 
@@ -53,7 +53,6 @@ export interface ISubheaderProps {
   containerProps?: ComponentProps<'div'>;
   logoProps?: ILink;
   navigationProps?: ComponentProps<'nav'>;
-  linkProps?: ILink;
   ctaProps?: ILink;
   navOpenButtonProps?: ComponentProps<'button'>;
 }
@@ -186,7 +185,6 @@ export interface IHeroIllustrationProps {
   containerProps?: ComponentProps<'div'>;
   titleProps?: ComponentProps<'h2'>;
   descriptionProps?: ComponentProps<'p'>;
-  linkProps?: ILink;
 }
 
 export interface IHeroGradientProps {

@@ -44,9 +44,11 @@ export const HeroIllustration = ({
         </p>
         {link && (
           <a
-            className="mt-auto w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300"
             {...link}
-            {...restProps.linkProps}
+            className={clsx(
+              'mt-auto w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300',
+              link.className
+            )}
           />
         )}
       </div>
