@@ -34,15 +34,10 @@ export const Default = Template.bind({});
 Default.args = dummyHeroGradient;
 
 export const Simple = Template.bind({});
-Simple.args = {
-  ...dummyHeroGradient,
-  image: undefined,
-};
+Simple.args = dummyHeroGradient;
+
 export const CustomImage = Template.bind({});
-CustomImage.args = {
-  ...dummyHeroGradient,
-  image: <div>Tuval</div>,
-};
+CustomImage.args = dummyHeroGradient;
 
 export const MultiLinks = Template.bind({});
 MultiLinks.args = {
@@ -56,7 +51,7 @@ MultiLinks.args = {
     {
       children: 'Docs',
       title: 'Docs',
-      href: '#',
+      href: '#2',
     },
   ],
 };

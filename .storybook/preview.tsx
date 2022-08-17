@@ -24,6 +24,20 @@ export const parameters = {
   layout: 'fullscreen',
 };
 
+const OriginalNextImage = NextImage;
+const OriginalNextLink = NextLink;
+
+// https://storybook.js.org/blog/get-started-with-storybook-and-next-js/
+Object.defineProperty(NextImage, 'default', {
+  configurable: true,
+  value: (props: ImageProps) => <OriginalNextImage {...props} unoptimized />,
+});
+
+Object.defineProperty(NextLink, 'default', {
+  configurable: true,
+  value: (props: LinkProps) => <OriginalNextLink {...props} legacyBehavior={false} />,
+});
+
 export const decorators = [
   Story => (
     <ThemeProvider forcedTheme={useDarkMode() ? 'dark' : 'light'}>

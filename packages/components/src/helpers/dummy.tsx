@@ -125,13 +125,14 @@ export const dummyHeroGradient = {
   link: {
     children: 'Get Started',
     title: 'Learn more about GraphQL Envelop',
-    href: '#',
+    href: '/docs',
   },
   version: '1.0.7',
   colors: ['#ff34ae', '#1cc8ee'],
   image: {
     src: heroGradientImage,
     alt: 'Illustration',
+    loading: 'eager' as const,
   },
 };
 

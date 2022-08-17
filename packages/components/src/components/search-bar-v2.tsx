@@ -1,6 +1,6 @@
 import { ISearchBarProps } from '../types/components';
 import { autocomplete, AutocompleteApi, getAlgoliaResults } from '@algolia/autocomplete-js';
-import { render } from 'react-dom';
+import { createRoot, Root } from 'react-dom/client';
 import { createElement, Fragment, ReactElement, useEffect, useRef } from 'react';
 import algoliaSearch from 'algoliasearch/lite';
 import { createAlgoliaInsightsPlugin } from '@algolia/autocomplete-plugin-algolia-insights';
@@ -20,6 +20,8 @@ export const SearchBarV2 = ({
 }: ISearchBarProps): ReactElement => {
   const containerRef = useRef(null);
   const search = useRef<AutocompleteApi<AlgoliaSearchItem>>();
+  const panelRootRef = useRef<Root | null>(null);
+  const rootRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) {
@@ -48,24 +50,40 @@ export const SearchBarV2 = ({
       defaultActiveItemId: 0,
       placeholder,
       plugins: [algoliaInsightsPlugin],
-      // @ts-ignore -- TODO: Don't know if it's a real error
-      renderer: { createElement, Fragment, render },
+      renderer: {
+        createElement,
+        Fragment,
+        render: () => {},
+      },
       renderNoResults({ Fragment, state: { query, status } }, root) {
+        if (!panelRootRef.current || rootRef.current !== root) {
+          rootRef.current = root;
+
+          panelRootRef.current?.unmount();
+          panelRootRef.current = createRoot(root);
+        }
+
         if (!query || status === 'loading') {
-          render(<Fragment />, root);
+          panelRootRef.current.render(<Fragment />);
         } else {
-          render(
+          panelRootRef.current.render(
             <Fragment>
               <div className="my-20 w-full text-center text-xl font-light text-gray-600 dark:text-gray-400">
                 No results for "{query}"
               </div>
-            </Fragment>,
-            root
+            </Fragment>
           );
         }
       },
       render({ children, state, Fragment, components }, root) {
-        render(
+        if (!panelRootRef.current || rootRef.current !== root) {
+          rootRef.current = root;
+
+          panelRootRef.current?.unmount();
+          panelRootRef.current = createRoot(root);
+        }
+
+        panelRootRef.current.render(
           <Fragment>
             <div className="flex h-[600px] flex-row">
               <div className="min-w-[400px]">{children}</div>
@@ -86,8 +104,7 @@ export const SearchBarV2 = ({
                 />
               </svg>
             </a>
-          </Fragment>,
-          root
+          </Fragment>
         );
       },
       openOnFocus: true,

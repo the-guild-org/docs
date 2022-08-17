@@ -1,7 +1,6 @@
-import React, { ReactNode } from 'react';
+import React, { ComponentProps, ReactNode } from 'react';
 import { ReactPlayerProps } from 'react-player';
-
-type IImage = React.ImgHTMLAttributes<unknown>;
+import { ImageProps } from 'next/future/image';
 
 interface IVideo {
   src: string;
@@ -48,7 +47,7 @@ export interface ISubheaderProps {
   product: {
     title: string | React.ReactNode;
     description: string | React.ReactNode;
-    image: IImage;
+    image: ImageProps;
     onClick?: React.MouseEventHandler;
   };
   activeLink: string;
@@ -111,7 +110,7 @@ export interface IModalProps extends IModalRestProps {
   children: ReactNode;
   title: string | ReactNode;
   description?: string | ILink;
-  image?: IImage;
+  image?: ImageProps;
   visible: boolean;
   placement: 'top' | 'center' | 'bottom';
   onCancel: (state?: boolean) => void;
@@ -138,7 +137,7 @@ export interface IFeatureListProps {
   items: {
     title: string;
     description: string;
-    image: IImage;
+    image: ImageProps;
     linkProps?: React.ComponentProps<'a'>;
   }[];
 
@@ -188,14 +187,13 @@ export interface IHeroIllustrationProps {
   description: string | React.ReactNode;
   flipped?: boolean;
   link?: ILink;
-  image: IImage;
+  image: ImageProps;
 
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
   titleProps?: React.ComponentProps<'h2'>;
   descriptionProps?: React.ComponentProps<'p'>;
   linkProps?: React.ComponentProps<'a'>;
-  imageProps?: React.ComponentProps<'img'>;
 }
 
 export interface IHeroGradientProps {
@@ -203,9 +201,8 @@ export interface IHeroGradientProps {
   description: string | React.ReactNode;
   colors?: string[];
   version?: string | React.ReactNode;
-  link?: ILink | ILink[];
-  image?: IImage | React.ReactElement;
-
+  link?: ComponentProps<'a'> | ComponentProps<'a'>[];
+  image?: ImageProps;
   wrapperProps?: React.ComponentProps<'section'>;
   containerProps?: React.ComponentProps<'div'>;
   gradientProps?: React.ComponentProps<'div'>;
@@ -213,7 +210,6 @@ export interface IHeroGradientProps {
   descriptionProps?: React.ComponentProps<'p'>;
   linkProps?: React.ComponentProps<'a'>;
   versionProps?: React.ComponentProps<'span'>;
-  imageProps?: React.ComponentProps<'img'>;
 }
 
 export interface IHeroMarketplaceProps {
@@ -235,13 +231,13 @@ export interface IMarketplaceItemProps {
   tags?: string[];
   modal?: {
     header: {
-      image?: IImage;
+      image?: ImageProps;
       description?: string | ILink;
     };
     content: string | (() => React.ReactNode) | React.ReactNode;
   };
   update: string;
-  image?: IImage;
+  image?: ImageProps;
   link?: ILink;
 }
 
