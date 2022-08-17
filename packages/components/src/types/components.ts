@@ -119,19 +119,13 @@ export interface IFeatureListProps {
 }
 
 export interface IInfoListProps {
+  className?: string
   title?: string | ReactNode;
   items: {
     title: string | ReactNode;
     description: string | ReactNode;
     link?: ILink;
   }[];
-
-  wrapperProps?: ComponentProps<'section'>;
-  containerProps?: ComponentProps<'div'>;
-  titleProps?: ComponentProps<'h2'>;
-  itemTitleProps?: ComponentProps<'h3'>;
-  itemDescriptionProps?: ComponentProps<'p'>;
-  itemLinkProps?: ILink;
 }
 
 export interface IHeroVideoProps {

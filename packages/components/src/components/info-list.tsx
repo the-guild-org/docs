@@ -1,14 +1,11 @@
 import { ReactElement } from 'react';
 import { IInfoListProps } from '../types/components';
+import clsx from 'clsx';
 
-export const InfoList = ({ title, items, ...restProps }: IInfoListProps): ReactElement => (
-  <section className="bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
-    <div className="container max-w-[90rem] py-12" {...restProps.containerProps}>
-      {title && (
-        <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl" {...restProps.titleProps}>
-          {title}
-        </h2>
-      )}
+export const InfoList = ({ title, items, className }: IInfoListProps): ReactElement => (
+  <section className={clsx('bg-white dark:bg-[#111]', className)}>
+    <div className="container max-w-[90rem] py-12">
+      {title && <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">{title}</h2>}
       <div className="flex flex-wrap">
         {items.map((item, index) => (
           <section
@@ -27,12 +24,8 @@ export const InfoList = ({ title, items, ...restProps }: IInfoListProps): ReactE
           "
             key={`info-${index}`}
           >
-            <h3 className="m-0 text-base font-semibold text-black dark:text-gray-50" {...restProps.itemTitleProps}>
-              {item.title}
-            </h3>
-            <p className="mt-2 mb-4 grow text-sm text-gray-500 dark:text-gray-400" {...restProps.itemDescriptionProps}>
-              {item.description}
-            </p>
+            <h3 className="m-0 text-base font-semibold text-black dark:text-gray-50">{item.title}</h3>
+            <p className="mt-2 mb-4 grow text-sm text-gray-500 dark:text-gray-400">{item.description}</p>
             {item.link && (
               <a
                 className="
@@ -45,7 +38,6 @@ export const InfoList = ({ title, items, ...restProps }: IInfoListProps): ReactE
                   hover:text-cyan-300
                 "
                 {...item.link}
-                {...restProps.itemLinkProps}
               />
             )}
           </section>
