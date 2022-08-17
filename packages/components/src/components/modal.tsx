@@ -1,6 +1,7 @@
 import { ReactElement, useEffect } from 'react';
 import FocusTrap from 'focus-trap-react';
 import clsx from 'clsx';
+import NextImage from 'next/future/image';
 import { IModalProps } from '../types/components';
 import { useKeyPress } from '../helpers/hooks';
 import { CloseIcon, ExternalLinkIcon } from './icons';
@@ -93,7 +94,7 @@ export const Modal = ({
               md:gap-x-4
             "
           >
-            {image && <img className="w-10 md:w-16" {...image} {...restProps.headerImageProps} />}
+            {image && <NextImage {...image} className={clsx("w-10 md:w-16", image.className)} />}
             <div>
               <h2
                 className="m-0 text-lg font-semibold text-black dark:text-gray-100 md:text-xl"

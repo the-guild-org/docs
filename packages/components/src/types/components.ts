@@ -88,14 +88,13 @@ export interface IFooterExtendedProps {
 }
 
 interface IModalRestProps {
-  wrapperProps?: React.ComponentProps<'div'>;
-  containerProps?: React.ComponentProps<'div'>;
-  overlayProps?: React.ComponentProps<'div'>;
-  bodyProps?: React.ComponentProps<'div'>;
-  headerTitleProps?: React.ComponentProps<'h2'>;
-  headerDescriptionProps?: React.ComponentProps<'p'>;
-  headerLinkProps?: React.ComponentProps<'a'>;
-  headerImageProps?: React.ComponentProps<'img'>;
+  wrapperProps?: ComponentProps<'div'>;
+  containerProps?: ComponentProps<'div'>;
+  overlayProps?: ComponentProps<'div'>;
+  bodyProps?: ComponentProps<'div'>;
+  headerTitleProps?: ComponentProps<'h2'>;
+  headerDescriptionProps?: ComponentProps<'p'>;
+  headerLinkProps?: ILink;
 }
 
 export interface IModalProps extends IModalRestProps {
