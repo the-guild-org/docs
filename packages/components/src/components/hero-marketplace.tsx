@@ -91,7 +91,7 @@ export const HeroMarketplace = ({ title, description, link, ...restProps }: IHer
           </p>
           {link && (
             <div className="relative z-[1] mt-4 hidden items-center text-xs md:mt-9 md:flex">
-              <Button {...link} {...restProps.linkProps} />
+              <Button {...link} />
             </div>
           )}
         </div>

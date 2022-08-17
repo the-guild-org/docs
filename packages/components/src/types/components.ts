@@ -170,7 +170,6 @@ export interface IHeroVideoProps {
   containerProps?: ComponentProps<'div'>;
   titleProps?: ComponentProps<'h2'>;
   descriptionProps?: ComponentProps<'p'>;
-  linkProps?: ILink;
   videoProps?: ReactPlayerProps;
 }
 
@@ -199,7 +198,6 @@ export interface IHeroGradientProps {
   gradientProps?: ComponentProps<'div'>;
   titleProps?: ComponentProps<'h1'>;
   descriptionProps?: ComponentProps<'p'>;
-  linkProps?: ILink;
   versionProps?: ComponentProps<'span'>;
 }
 
@@ -207,12 +205,10 @@ export interface IHeroMarketplaceProps {
   title: string | ReactNode;
   description: string | ReactNode;
   link: ILink;
-
   wrapperProps?: ComponentProps<'section'>;
   containerProps?: ComponentProps<'div'>;
   titleProps?: ComponentProps<'h2'>;
   descriptionProps?: ComponentProps<'p'>;
-  linkProps?: ILink;
   imageProps?: IImage;
 }
 

@@ -42,17 +42,18 @@ export const HeroVideo = ({
         </p>
         {link && (
           <a
-            className="
+            {...link}
+            className={clsx(
+              `
               mt-auto
               w-max
               text-sm
               text-cyan-400
               no-underline
               transition
-              hover:text-cyan-300
-            "
-            {...link}
-            {...restProps.linkProps}
+              hover:text-cyan-300`,
+              link.className
+            )}
           />
         )}
       </div>

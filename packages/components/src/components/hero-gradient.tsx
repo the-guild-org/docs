@@ -2,6 +2,7 @@ import { isValidElement, ReactElement } from 'react';
 import clsx from 'clsx';
 import { IHeroGradientProps } from '../types/components';
 import { Button } from './button';
+import NextImage from 'next/future/image';
 
 const Shadow = ({ className }: { className: string }): ReactElement => {
   return (
@@ -22,7 +23,8 @@ export const HeroGradient = ({
   colors = [],
   image,
   ...restProps
-}: IHeroGradientProps): ReactElement => (
+}: IHeroGradientProps): ReactElement => {
+  return (
   <section className="overflow-hidden bg-white dark:bg-[#111] md:pt-14" {...restProps.wrapperProps}>
     <div className="container relative max-w-[90rem]" {...restProps.containerProps}>
       <div
@@ -46,15 +48,7 @@ export const HeroGradient = ({
         </div>
         <div className="relative z-[1] mt-4 flex items-center gap-x-3 text-xs md:mt-9">
           {link &&
-            toArray(link).map(link => (
-              <Button
-                className="!px-8"
-                variant="secondary"
-                key={`${link.href}${link.children}`}
-                {...link}
-                {...restProps.linkProps}
-              />
-            ))}
+            toArray(link).map(link => <Button key={link.href} variant="secondary" {...link} className={clsx("!px-8", link.className)} />)}
           {version && isValidElement(version) ? (
             version
           ) : (
@@ -86,7 +80,8 @@ export const HeroGradient = ({
       </div>
     </div>
   </section>
-);
+  );
+};
 
 function toArray<T>(input: T | T[]) {
   return Array.isArray(input) ? input : [input];
