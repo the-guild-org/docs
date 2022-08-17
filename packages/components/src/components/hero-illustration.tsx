@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { IHeroIllustrationProps } from '../types/components';
 import clsx from 'clsx';
+import NextImage from 'next/image';
 
 export const HeroIllustration = ({
   title,
@@ -27,11 +28,9 @@ export const HeroIllustration = ({
       )}
       {...restProps.containerProps}
     >
-      <img
-        className={clsx('mb-6 flex w-full max-w-md md:mb-0 md:w-2/5', flipped ? 'md:ml-8' : 'md:mr-8')}
-        src={image.src}
-        alt={image.alt}
-        {...restProps.imageProps}
+      <NextImage
+        {...image}
+        className={clsx('mb-6 flex w-full max-w-md md:mb-0 md:w-2/5', flipped ? 'md:ml-8' : 'md:mr-8', image.className)}
       />
       <div className="mb-6 md:mb-0">
         <h2

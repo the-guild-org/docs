@@ -8,7 +8,10 @@ interface IVideo {
   placeholder: string;
 }
 
-export type ILink = LinkProps;
+export type ILink = Omit<LinkProps, 'href'> &
+  Pick<ComponentProps<'a'>, 'target' | 'rel' | 'title'> & {
+    href: string;
+  };
 
 export interface IHeaderLink {
   label: string;
