@@ -642,7 +642,9 @@ const dummyOperations = dedent(/* GraphQL */ `
   }
 `);
 
-export const dummySchemaPage: ISchemaPageProps = {
+export const dummySchemaPage: Omit<ISchemaPageProps, 'editorData'> & {
+  editorData: Omit<ISchemaPageProps['editorData'][number], 'children'>[];
+} = {
   schemaName: 'Schema Type 1',
   tags: ['TypeScript', 'Frontend', 'Backend'],
   editorData: [
@@ -665,6 +667,7 @@ export const dummySchemaPage: ISchemaPageProps = {
       image: marketplaceListImage,
     },
     {
+      title: '',
       schema: dummySchema,
     },
   ],
