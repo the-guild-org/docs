@@ -107,14 +107,14 @@ export const Header = ({
         {/* TODO: find a way to remove this tag otherwise header not centered on mobile */}
         <div className="md:absolute" />
 
-        <a
+        <Anchor
           title="View our website"
           className="flex items-center gap-x-1.5 rounded-sm text-black outline-none hover:opacity-75 focus:ring dark:text-gray-100"
           {...renderLinkOptions('/')}
         >
           <GuildLogo className="h-9 w-9" />
           <TheGuild className="hidden w-11 md:block" />
-        </a>
+        </Anchor>
 
         <Root asChild>
           <List>

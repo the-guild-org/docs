@@ -1,4 +1,5 @@
 import { forwardRef, ReactElement } from 'react';
+import { Anchor } from '@theguild/components';
 
 const CATEGORIES: {
   title: string;
@@ -78,11 +79,10 @@ export const SolutionsMenu = forwardRef<HTMLDivElement>((_, forwardedRef): React
           <h3 className="mt-1 mb-5 w-full text-base font-normal text-black dark:text-gray-400">{category.title}</h3>
           <div className="flex flex-wrap">
             {category.items.map(item => (
-              <a
+              <Anchor
                 key={item.title}
                 href={item.url}
-                target="_blank"
-                rel="noreferrer"
+                newWindow
                 className="
                   flex
                   w-full
@@ -100,20 +100,19 @@ export const SolutionsMenu = forwardRef<HTMLDivElement>((_, forwardedRef): React
                 "
               >
                 <h4 className="m-0 text-xs text-black dark:text-gray-300">{item.title}</h4>
-              </a>
+              </Anchor>
             ))}
           </div>
         </div>
       ))}
       <div className="text-right">
-        <a
+        <Anchor
           href="https://graphql-yoga.com/tutorial/basic/00-introduction"
-          target="_blank"
-          rel="noreferrer"
+          newWindow
           className="text-xs text-black dark:text-white"
         >
           Write your first GraphQL API →
-        </a>
+        </Anchor>
       </div>
     </div>
   );

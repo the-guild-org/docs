@@ -11,6 +11,7 @@ import { AlgoliaSearchItem } from '../types/algolia';
 import { SidePreview } from './search-bar-v2/side-preview';
 import { debounced } from './search-bar-v2/utils';
 import { templates } from './search-bar-v2/templates';
+import { Anchor } from '@theguild/components';
 
 export const SearchBarV2 = ({
   accentColor,
@@ -85,10 +86,9 @@ export const SearchBarV2 = ({
               <div className="min-w-[400px]">{children}</div>
               <SidePreview accentColor={accentColor} item={state.context.preview} components={components} />
             </div>
-            <a
+            <Anchor
               href="https://algolia.com"
-              target="_blank"
-              rel="noreferrer"
+              newWindow
               className="mt-5 flex w-full flex-row items-center justify-end p-2 text-xs font-light text-black dark:text-white"
             >
               Search by&nbsp;
@@ -99,7 +99,7 @@ export const SearchBarV2 = ({
                   fillRule="evenodd"
                 />
               </svg>
-            </a>
+            </Anchor>
           </Fragment>
         );
       },

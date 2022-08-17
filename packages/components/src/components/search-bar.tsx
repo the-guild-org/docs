@@ -10,6 +10,7 @@ import { toggleLockBodyScroll } from '../helpers/modals';
 import { algoliaConfig } from '../configs';
 import { CloseIcon, HamburgerIcon, HashTagIcon, PageIcon, SearchIcon } from './icons';
 import { SearchBarV2 } from './search-bar-v2';
+import { Anchor } from './anchor';
 
 const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
   hosts: algoliaConfig.hosts,
@@ -275,10 +276,9 @@ const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }):
             const isSameWebsite = typeof window === 'object' && subHit.url.startsWith(window.location.origin);
 
             return (
-              <a
+              <Anchor
                 key={subHit.url}
                 href={subHit.url}
-                target={isSameWebsite ? '_self' : '_blank'}
                 className="
                   mb-2
                   flex
@@ -296,11 +296,10 @@ const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }):
                   focus:ring
                   dark:bg-neutral-800
                 "
-                rel="noreferrer"
               >
                 {transformIcon(subHit)}
                 <div>{content}</div>
-              </a>
+              </Anchor>
             );
           })}
         </section>

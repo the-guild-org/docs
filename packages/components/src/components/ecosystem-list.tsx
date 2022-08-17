@@ -1,5 +1,6 @@
 import { forwardRef, ReactElement } from 'react';
 import { PRODUCTS } from '../helpers/products';
+import { Anchor } from '@theguild/components';
 
 const productCategories = [
   {
@@ -38,11 +39,10 @@ export const EcosystemList = forwardRef<HTMLDivElement>((_, forwardedRef): React
           <h3 className="mt-1 mb-5 w-full text-base font-normal text-gray-600 dark:text-gray-400">{category.title}</h3>
           <div className="flex flex-wrap">
             {category.items.map(product => (
-              <a
+              <Anchor
                 key={product.children}
                 href={product.href}
-                target="_blank"
-                rel="noreferrer"
+                newWindow
                 className="
                   flex
                   h-[70px]
@@ -65,7 +65,7 @@ export const EcosystemList = forwardRef<HTMLDivElement>((_, forwardedRef): React
                   <h4 className="m-0 text-sm font-semibold text-black dark:text-gray-300">{product.children}</h4>
                   <p className="!mt-0 text-xs font-medium text-gray-900 dark:text-gray-400">{product.title}</p>
                 </span>
-              </a>
+              </Anchor>
             ))}
           </div>
         </div>

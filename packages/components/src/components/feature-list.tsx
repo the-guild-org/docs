@@ -33,7 +33,7 @@ export const FeatureList = ({ title, description, items, link, className }: IFea
             <h3 className="m-0 text-lg font-bold text-black dark:text-gray-50">{item.title}</h3>
             <div className="text-center text-sm text-gray-500 dark:text-gray-400">{item.description}</div>
             {item.link && (
-              <a
+              <Anchor
                 {...item.link}
                 className={clsx(
                   'mt-auto w-max pt-2 text-sm text-cyan-400 no-underline transition hover:text-cyan-300',

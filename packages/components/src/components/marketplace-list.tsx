@@ -45,7 +45,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
         </td>
         <td className="hidden py-4 px-2 md:table-cell">{formatDate(item.update)}</td>
         <td className="py-4 pl-2">
-          <a
+          <Anchor
             {...item.link}
             className={clsx(
               `
@@ -63,7 +63,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
             )}
           >
             <CaretSlimIcon className="h-5 w-5 -rotate-90" />
-          </a>
+          </Anchor>
         </td>
       </tr>
     ))}

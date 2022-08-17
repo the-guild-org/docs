@@ -6,6 +6,7 @@ import { CaretSlimIcon } from './icons';
 import { Nav } from './nav';
 import { Button } from './button';
 import { Anchor } from './anchor';
+import { Image } from './image';
 
 export const Subheader = ({ product, activeLink, links, cta, className }: ISubheaderProps): ReactElement => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -71,18 +72,18 @@ export const Subheader = ({ product, activeLink, links, cta, className }: ISubhe
       )}
     >
       <div className="container flex max-w-[90rem] items-center md:justify-end">
-        <a
+        <Anchor
           href="/"
           onClick={product.onClick}
           title={`${product.title} - ${product.description}`}
           className="flex grow no-underline"
         >
-          <NextImage {...product.image} className={clsx('w-12', product.image.className)} />
+          <Image {...product.image} className={clsx('w-12', product.image.className)} />
           <span className="ml-2 -mt-1 flex flex-col justify-center">
             <p className="font-semibold text-black dark:text-white">{product.title}</p>
             <p className="text-xs text-gray-500 dark:text-gray-300">{product.description}</p>
           </span>
-        </a>
+        </Anchor>
         {nav}
         {cta && <Button className="mx-1 md:mr-0 md:ml-3" {...cta} />}
         <button onClick={handleNav} className="mx-2.5 dark:text-white md:hidden">
