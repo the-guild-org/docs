@@ -70,12 +70,7 @@ export interface IFooterExtendedProps {
 }
 
 interface IModalRestProps {
-  wrapperProps?: ComponentProps<'div'>;
-  containerProps?: ComponentProps<'div'>;
-  overlayProps?: ComponentProps<'div'>;
-  bodyProps?: ComponentProps<'div'>;
-  headerTitleProps?: ComponentProps<'h2'>;
-  headerDescriptionProps?: ComponentProps<'p'>;
+  className?: string;
   headerLinkProps?: ILink;
 }
 

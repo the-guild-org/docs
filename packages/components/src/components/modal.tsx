@@ -14,7 +14,7 @@ export const Modal = ({
   visible,
   placement,
   onCancel,
-  ...restProps
+  className,
 }: IModalProps): ReactElement => {
   const escapePress = useKeyPress('Escape');
 
@@ -24,14 +24,12 @@ export const Modal = ({
     }
 
     return typeof description === 'object' ? (
-      <a className="inline-flex gap-x-1.5 transition hover:opacity-60" {...description} {...restProps.headerLinkProps}>
+      <a className="inline-flex gap-x-1.5 transition hover:opacity-60" {...description}>
         <p className="line-clamp-1">{description.children}</p>
         <ExternalLinkIcon className="h-4 w-4 shrink-0" />
       </a>
     ) : (
-      <p className="line-clamp-1" {...restProps.headerDescriptionProps}>
-        {description}
-      </p>
+      <p className="line-clamp-1">{description}</p>
     );
   };
 
@@ -42,12 +40,8 @@ export const Modal = ({
   }, [visible, escapePress, onCancel]);
 
   return (
-    <div className={clsx('fixed inset-0 z-[50] backdrop-blur-sm', !visible && 'hidden')} {...restProps.containerProps}>
-      <div
-        className="h-full w-full bg-gray-900 opacity-40 dark:bg-gray-500"
-        onClick={() => onCancel()}
-        {...restProps.overlayProps}
-      />
+    <div className={clsx('fixed inset-0 z-[50] backdrop-blur-sm', !visible && 'hidden', className)}>
+      <div className="h-full w-full bg-gray-900 opacity-40 dark:bg-gray-500" onClick={() => onCancel()} />
       <FocusTrap
         active={visible}
         focusTrapOptions={{
@@ -80,7 +74,6 @@ export const Modal = ({
             }[placement]
           )}
           id="tgc-modal"
-          {...restProps.wrapperProps}
         >
           <div
             className="
@@ -94,14 +87,9 @@ export const Modal = ({
               md:gap-x-4
             "
           >
-            {image && <NextImage {...image} className={clsx("w-10 md:w-16", image.className)} />}
+            {image && <NextImage {...image} className={clsx('w-10 md:w-16', image.className)} />}
             <div>
-              <h2
-                className="m-0 text-lg font-semibold text-black dark:text-gray-100 md:text-xl"
-                {...restProps.headerTitleProps}
-              >
-                {title}
-              </h2>
+              <h2 className="m-0 text-lg font-semibold text-black dark:text-gray-100 md:text-xl">{title}</h2>
               <p className="m-0 text-xs text-gray-500 dark:text-gray-100">{renderDescription()}</p>
             </div>
             <button
@@ -126,9 +114,7 @@ export const Modal = ({
               <CloseIcon />
             </button>
           </div>
-          <div className="overflow-y-scroll p-6 text-black dark:text-gray-300" {...restProps.bodyProps}>
-            {children}
-          </div>
+          <div className="overflow-y-scroll p-6 text-black dark:text-gray-300">{children}</div>
         </div>
       </FocusTrap>
     </div>
