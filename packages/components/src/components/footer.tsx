@@ -33,14 +33,6 @@ const links: ILink[] = [
 ];
 
 export const Footer = ({ sameSite, className, logo }: IFooterProps): ReactElement => {
-  const logoOptions = sameSite
-    ? { href: '/' }
-    : {
-        href: 'https://the-guild.dev',
-        rel: 'noreferrer',
-        target: '_blank',
-      };
-
   return (
     <footer className={clsx('bg-white text-xs text-gray-500 dark:bg-[#111] dark:text-gray-400', className)}>
       <div
@@ -59,7 +51,7 @@ export const Footer = ({ sameSite, className, logo }: IFooterProps): ReactElemen
           md:py-5
         "
       >
-        <Anchor className="grow" {...logoOptions} {...logo}>
+        <Anchor className="grow" href="https://the-guild.dev" sameSite={sameSite} {...logo}>
           <GuildLogo className="mx-auto mb-3 transition hover:text-gray-900 dark:hover:text-gray-100 md:mb-0" />
         </Anchor>
         <ul className="m-0 flex list-none flex-wrap p-0">

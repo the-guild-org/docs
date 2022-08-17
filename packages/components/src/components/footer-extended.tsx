@@ -71,14 +71,6 @@ export const FooterExtended = ({
   onNewsletterSubmit,
   logo,
 }: IFooterExtendedProps): ReactElement => {
-  const logoOptions = sameSite
-    ? { href: '/' }
-    : {
-        href: 'https://the-guild.dev',
-        rel: 'noreferrer',
-        target: '_blank',
-      };
-
   const renderLinks = useCallback(
     (list: ILink[]) => (
       <ul className="m-0 mb-8 list-none p-0 last:mb-0">
@@ -158,7 +150,8 @@ export const FooterExtended = ({
         >
           <Anchor
             className="flex items-center gap-x-1.5 text-gray-500 transition hover:text-black hover:dark:text-gray-100"
-            {...logoOptions}
+            href="https://the-guild.dev"
+            sameSite={sameSite}
             {...logo}
           >
             <GuildLogo className="w-7" />

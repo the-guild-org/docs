@@ -13,24 +13,23 @@ export type ILink = Omit<LinkProps, 'href'> &
     href: string;
     children: ReactNode;
     newWindow?: boolean;
+    sameSite?: boolean;
   };
 
-export interface IHeaderLink {
+export type IHeaderLink = ILink & {
   label: string;
-  title: string;
-  href: string;
   menu?: ReactNode;
-  onClick?: () => void;
-}
+};
 
 export interface IHeaderProps {
   className?: string;
   accentColor: string;
   activeLink?: string;
   themeSwitch?: boolean;
-  transformLinks?: (links: IHeaderLink[]) => IHeaderLink[];
+  transformLinks?: (links: Omit<IHeaderLink, 'children'>[]) => Omit<IHeaderLink, 'children'>[];
   searchBarProps?: Partial<ISearchBarProps>;
   disableSearch?: boolean;
+  sameSite?: boolean;
 }
 
 export interface ISubheaderProps {

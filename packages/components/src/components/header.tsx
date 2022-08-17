@@ -13,24 +13,6 @@ import { EcosystemList } from './ecosystem-list';
 import { useWindowSize } from '../helpers/hooks';
 import { Anchor } from './anchor';
 
-const renderLinkOptions = (href: string, onClick?: MouseEventHandler<HTMLAnchorElement>) => {
-  if (onClick) {
-    return {
-      href,
-      onClick(e: MouseEvent<HTMLAnchorElement>) {
-        e.preventDefault();
-        onClick(e);
-      },
-    };
-  }
-
-  return {
-    href: `https://the-guild.dev${href}`,
-    target: '_blank',
-    rel: 'noreferrer',
-  };
-};
-
 export const Header = ({
   accentColor,
   activeLink,
@@ -38,6 +20,7 @@ export const Header = ({
   transformLinks = links => links,
   disableSearch = false,
   className,
+  sameSite,
   searchBarProps,
 }: IHeaderProps): ReactElement => {
   const { theme, setTheme } = useTheme();
@@ -58,29 +41,29 @@ export const Header = ({
     {
       label: 'Solutions',
       title: '',
-      href: '/solutions',
+      href: 'https://the-guild.dev/solutions',
       menu: <SolutionsMenu />,
     },
     {
       label: 'Ecosystem',
       title: 'View our projects',
-      href: '/open-source',
+      href: 'https://the-guild.dev/open-source',
       menu: <EcosystemList />,
     },
     {
       label: 'Blog',
       title: 'Read our blog',
-      href: '/blog',
+      href: 'https://the-guild.dev/blog',
     },
     {
       label: 'Our Services',
       title: 'View our services',
-      href: '/services',
+      href: 'https://the-guild.dev/services',
     },
     {
       label: 'About Us',
       title: 'Learn more about us',
-      href: '/about-us',
+      href: 'https://the-guild.dev/about-us',
     },
   ]);
 
@@ -110,7 +93,8 @@ export const Header = ({
         <Anchor
           title="View our website"
           className="flex items-center gap-x-1.5 rounded-sm text-black outline-none hover:opacity-75 focus:ring dark:text-gray-100"
-          {...renderLinkOptions('/')}
+          href="https://the-guild.dev"
+          sameSite={sameSite}
         >
           <GuildLogo className="h-9 w-9" />
           <TheGuild className="hidden w-11 md:block" />
@@ -120,11 +104,10 @@ export const Header = ({
           <List>
             <Viewport className="absolute top-10 right-0 z-50" />
             <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} className="md:gap-4">
-              {links.map(link => {
+              {links.map(({ label, menu, ...link }) => {
                 const linkEl = (
                   <Anchor
-                    key={link.label}
-                    title={link.title}
+                    {...link}
                     className={clsx(
                       `mx-auto
                         flex
@@ -163,10 +146,10 @@ export const Header = ({
                         : 'text-gray-600 dark:text-gray-400'
                     )}
                     style={{ '--accentColor': accentColor }}
-                    {...renderLinkOptions(link.href, link.onClick)}
+                    sameSite={sameSite}
                   >
-                    {link.label}
-                    {(link.onClick || link.menu) && (
+                    {label}
+                    {(link.onClick || menu) && (
                       <CaretIcon
                         className="
                           ml-2
@@ -179,13 +162,13 @@ export const Header = ({
                   </Anchor>
                 );
 
-                return link.menu && shouldUseMenus ? (
-                  <Item key={link.label} value={link.label}>
+                return menu && shouldUseMenus ? (
+                  <Item key={label} value={label}>
                     <Trigger asChild>{linkEl}</Trigger>
-                    <Content asChild>{link.menu}</Content>
+                    <Content asChild>{menu}</Content>
                   </Item>
                 ) : (
-                  <Item key={link.label}>
+                  <Item key={label}>
                     <Link asChild>{linkEl}</Link>
                   </Item>
                 );
