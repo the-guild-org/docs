@@ -1,6 +1,6 @@
-import React, { ComponentProps, ReactNode } from 'react';
+import { ComponentProps, ReactNode, ReactElement, FormEvent, MouseEventHandler } from 'react';
 import { ReactPlayerProps } from 'react-player';
-import { ImageProps } from 'next/future/image';
+import { ImageProps as IImage } from 'next/future/image';
 import { LinkProps } from 'next/link';
 
 interface IVideo {
@@ -23,68 +23,68 @@ export interface IHeaderProps {
   activeLink?: string;
   themeSwitch?: boolean;
   transformLinks?: (links: IHeaderLink[]) => IHeaderLink[];
-  wrapperProps?: React.ComponentProps<'header'>;
-  containerProps?: React.ComponentProps<'div'>;
+  wrapperProps?: ComponentProps<'header'>;
+  containerProps?: ComponentProps<'div'>;
   logoProps?: ILink;
-  navigationProps?: React.ComponentProps<'nav'>;
+  navigationProps?: ComponentProps<'nav'>;
   linkProps?: ILink;
   searchBarProps?: Partial<ISearchBarProps>;
   disableSearch?: boolean;
-  themeButtonProps?: React.ComponentProps<'button'>;
-  navOpenButtonProps?: React.ComponentProps<'button'>;
+  themeButtonProps?: ComponentProps<'button'>;
+  navOpenButtonProps?: ComponentProps<'button'>;
   headerModalProps?: IHeaderModalRestProps;
 }
 
 export interface ISubheaderProps {
   product: {
-    title: string | React.ReactNode;
-    description: string | React.ReactNode;
-    image: ImageProps;
-    onClick?: React.MouseEventHandler;
+    title: string | ReactNode;
+    description: string | ReactNode;
+    image: IImage;
+    onClick?: MouseEventHandler;
   };
   activeLink: string;
   links: ILink[];
   cta: ILink;
 
-  wrapperProps?: React.ComponentProps<'header'>;
-  containerProps?: React.ComponentProps<'div'>;
+  wrapperProps?: ComponentProps<'header'>;
+  containerProps?: ComponentProps<'div'>;
   logoProps?: ILink;
-  navigationProps?: React.ComponentProps<'nav'>;
+  navigationProps?: ComponentProps<'nav'>;
   linkProps?: ILink;
   ctaProps?: ILink;
-  navOpenButtonProps?: React.ComponentProps<'button'>;
+  navOpenButtonProps?: ComponentProps<'button'>;
 }
 
 interface IHeaderModalRestProps {
-  titleProps?: React.ComponentProps<'h4'>;
-  descriptionProps?: React.ComponentProps<'p'>;
+  titleProps?: ComponentProps<'h4'>;
+  descriptionProps?: ComponentProps<'p'>;
   linkProps?: ILink;
-  imageProps?: ImageProps;
-  categoryTitleProps?: React.ComponentProps<'h3'>;
+  imageProps?: IImage;
+  categoryTitleProps?: ComponentProps<'h3'>;
   modalProps?: IModalRestProps;
 }
 
 export interface IFooterProps {
   sameSite?: boolean;
-  wrapperProps?: React.ComponentProps<'footer'>;
-  containerProps?: React.ComponentProps<'div'>;
+  wrapperProps?: ComponentProps<'footer'>;
+  containerProps?: ComponentProps<'div'>;
   linkProps?: ILink;
   logoProps?: ILink;
-  copyrightProps?: React.ComponentProps<'p'>;
+  copyrightProps?: ComponentProps<'p'>;
 }
 
 export interface IFooterExtendedProps {
   sameSite?: boolean;
   resources?: ILink[];
-  onNewsletterSubmit?: (e: React.FormEvent, value: string) => void;
-  wrapperProps?: React.ComponentProps<'footer'>;
-  containerProps?: React.ComponentProps<'div'>;
+  onNewsletterSubmit?: (e: FormEvent, value: string) => void;
+  wrapperProps?: ComponentProps<'footer'>;
+  containerProps?: ComponentProps<'div'>;
   linkProps?: ILink;
   logoProps?: ILink;
-  titleProps?: React.ComponentProps<'p'>;
-  descriptionProps?: React.ComponentProps<'p'>;
-  copyrightProps?: React.ComponentProps<'p'>;
-  newsletterProps?: React.ComponentProps<'form'>;
+  titleProps?: ComponentProps<'p'>;
+  descriptionProps?: ComponentProps<'p'>;
+  copyrightProps?: ComponentProps<'p'>;
+  newsletterProps?: ComponentProps<'form'>;
 }
 
 interface IModalRestProps {
@@ -102,7 +102,7 @@ export interface IModalProps extends IModalRestProps {
   children: ReactNode;
   title: string | ReactNode;
   description?: string | ILink;
-  image?: ImageProps;
+  image?: IImage;
   visible: boolean;
   placement: 'top' | 'center' | 'bottom';
   onCancel: (state?: boolean) => void;
@@ -129,14 +129,14 @@ export interface IFeatureListProps {
   items: {
     title: string;
     description: string;
-    image: ImageProps;
+    image: IImage;
     linkProps?: ILink;
   }[];
 
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  descriptionProps?: React.ComponentProps<'p'>;
+  wrapperProps?: ComponentProps<'section'>;
+  containerProps?: ComponentProps<'div'>;
+  titleProps?: ComponentProps<'h2'>;
+  descriptionProps?: ComponentProps<'p'>;
   linkProps?: ILink;
   itemTitleProps?: React.ComponentProps<'h3'>;
   itemDescriptionProps?: React.ComponentProps<'p'>;
@@ -144,92 +144,92 @@ export interface IFeatureListProps {
 }
 
 export interface IInfoListProps {
-  title?: string | React.ReactNode;
+  title?: string | ReactNode;
   items: {
-    title: string | React.ReactNode;
-    description: string | React.ReactNode;
+    title: string | ReactNode;
+    description: string | ReactNode;
     link?: ILink;
   }[];
 
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  itemTitleProps?: React.ComponentProps<'h3'>;
-  itemDescriptionProps?: React.ComponentProps<'p'>;
+  wrapperProps?: ComponentProps<'section'>;
+  containerProps?: ComponentProps<'div'>;
+  titleProps?: ComponentProps<'h2'>;
+  itemTitleProps?: ComponentProps<'h3'>;
+  itemDescriptionProps?: ComponentProps<'p'>;
   itemLinkProps?: ILink;
 }
 
 export interface IHeroVideoProps {
-  title: string | React.ReactNode;
-  description: string | React.ReactNode;
+  title: string | ReactNode;
+  description: string | ReactNode;
   flipped?: boolean;
   link?: ILink;
   video: IVideo;
 
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  descriptionProps?: React.ComponentProps<'p'>;
+  wrapperProps?: ComponentProps<'section'>;
+  containerProps?: ComponentProps<'div'>;
+  titleProps?: ComponentProps<'h2'>;
+  descriptionProps?: ComponentProps<'p'>;
   linkProps?: ILink;
   videoProps?: ReactPlayerProps;
 }
 
 export interface IHeroIllustrationProps {
-  title: string | React.ReactNode;
-  description: string | React.ReactNode;
+  title: string | ReactNode;
+  description: string | ReactNode;
   flipped?: boolean;
   link?: ILink;
-  image: ImageProps;
+  image: IImage;
 
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  descriptionProps?: React.ComponentProps<'p'>;
+  wrapperProps?: ComponentProps<'section'>;
+  containerProps?: ComponentProps<'div'>;
+  titleProps?: ComponentProps<'h2'>;
+  descriptionProps?: ComponentProps<'p'>;
   linkProps?: ILink;
 }
 
 export interface IHeroGradientProps {
-  title: string | React.ReactNode;
-  description: string | React.ReactNode;
+  title: string | ReactNode;
+  description: string | ReactNode;
   colors?: string[];
-  version?: string | React.ReactNode;
-  link?: ComponentProps<'a'> | ComponentProps<'a'>[];
-  image?: ImageProps;
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  gradientProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h1'>;
-  descriptionProps?: React.ComponentProps<'p'>;
+  version?: string | ReactNode;
+  link?: ILink | ILink[];
+  image?: IImage;
+  wrapperProps?: ComponentProps<'section'>;
+  containerProps?: ComponentProps<'div'>;
+  gradientProps?: ComponentProps<'div'>;
+  titleProps?: ComponentProps<'h1'>;
+  descriptionProps?: ComponentProps<'p'>;
   linkProps?: ILink;
-  versionProps?: React.ComponentProps<'span'>;
+  versionProps?: ComponentProps<'span'>;
 }
 
 export interface IHeroMarketplaceProps {
-  title: string | React.ReactNode;
-  description: string | React.ReactNode;
+  title: string | ReactNode;
+  description: string | ReactNode;
   link: ILink;
 
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  descriptionProps?: React.ComponentProps<'p'>;
+  wrapperProps?: ComponentProps<'section'>;
+  containerProps?: ComponentProps<'div'>;
+  titleProps?: ComponentProps<'h2'>;
+  descriptionProps?: ComponentProps<'p'>;
   linkProps?: ILink;
-  imageProps?: ImageProps;
+  imageProps?: IImage;
 }
 
 export interface IMarketplaceItemProps {
   title: string;
-  description: string | React.ReactNode;
+  description: string | ReactNode;
   tags?: string[];
   modal?: {
     header: {
-      image?: ImageProps;
+      image?: IImage;
       description?: string | ILink;
     };
-    content: string | (() => React.ReactNode) | React.ReactNode;
+    content: string | (() => ReactNode) | ReactNode;
   };
   update: string;
-  image?: ImageProps;
+  image?: IImage;
   link?: ILink;
 }
 
@@ -247,26 +247,26 @@ export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
 
 export interface IMarketplaceListProps {
   title?: string;
-  placeholder: string | React.ReactElement;
+  placeholder: string | ReactElement;
   pagination: number;
   items: IMarketplaceItemProps[];
-  wrapperProps?: React.ComponentProps<'section'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  placeholderProps?: React.ComponentProps<'div'>;
+  wrapperProps?: ComponentProps<'section'>;
+  titleProps?: ComponentProps<'h2'>;
+  placeholderProps?: ComponentProps<'div'>;
   itemProps?: IMarketplaceItemRestProps;
 }
 
 export interface IMarketplaceSearchProps {
-  title: string | React.ReactNode;
+  title: string | ReactNode;
   placeholder: string;
   primaryList: IMarketplaceListProps;
   secondaryList?: IMarketplaceListProps;
   queryList?: IMarketplaceListProps;
   tagsFilter?: string[] | ReadonlyArray<string>;
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  searchProps?: React.ComponentProps<'input'>;
+  wrapperProps?: ComponentProps<'section'>;
+  containerProps?: ComponentProps<'div'>;
+  titleProps?: ComponentProps<'h2'>;
+  searchProps?: ComponentProps<'input'>;
   queryListProps?: IMarketplaceItemRestProps;
   primaryListProps?: IMarketplaceItemRestProps;
   secondaryListProps?: IMarketplaceItemRestProps;
