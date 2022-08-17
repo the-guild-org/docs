@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { IHeroIllustrationProps } from '../types/components';
 import clsx from 'clsx';
-import NextImage from 'next/image';
+import NextImage from 'next/future/image';
 
 export const HeroIllustration = ({
   title,

@@ -4,6 +4,7 @@ import { ISchemaPageProps, IEditorProps } from '../types/components';
 import { Tag, TagsContainer } from './tag';
 import { SchemaEditor, ExecutableDocumentEditor } from '@theguild/monaco-graphql-editor';
 import { CaretSlimIcon, MoreIcon, ShareIcon } from './icons';
+import NextImage from 'next/future/image';
 
 const Editor = ({ title, frameworks = [], image, children }: Omit<IEditorProps, 'schema' | 'operations'>) => (
   <div className="min-w-full max-w-full pr-px lg:min-w-[25%] lg:max-w-[25%]">
@@ -19,7 +20,7 @@ const Editor = ({ title, frameworks = [], image, children }: Omit<IEditorProps, 
       "
     >
       <div className="flex items-center gap-2.5">
-        {image && <img src={image} alt="logo" className="h-14 w-14" />}
+        {image && <NextImage src={image} alt="logo" className="h-14 w-14" />}
         <span>
           {title && <p className="text-sm dark:text-gray-50">{title}</p>}
           {frameworks.length > 0 && (
