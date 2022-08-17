@@ -64,7 +64,7 @@ export const SearchBarV2 = ({
       renderer: {
         createElement,
         Fragment,
-        render: () => {},
+        render: () => null,
       },
       renderNoResults({ Fragment, state: { query, status } }, root) {
         const render = getRender(root);

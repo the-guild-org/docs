@@ -65,7 +65,7 @@ const CATEGORIES: {
   },
 ];
 
-export const SolutionsMenu = forwardRef<HTMLDivElement>((_, forwardedRef): ReactElement => {
+export const SolutionsMenu = forwardRef<HTMLDivElement>(function SolutionsMenu(_, forwardedRef): ReactElement {
   return (
     <div
       className="w-[600px] rounded-lg bg-white p-5 dark:bg-neutral-800"

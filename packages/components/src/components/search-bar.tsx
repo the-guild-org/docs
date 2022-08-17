@@ -273,12 +273,11 @@ const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }):
               );
             }
 
-            const isSameWebsite = typeof window === 'object' && subHit.url.startsWith(window.location.origin);
-
             return (
               <Anchor
                 key={subHit.url}
                 href={subHit.url}
+                sameSite={typeof window === 'object' && subHit.url.startsWith(window.location.origin)}
                 className="
                   mb-2
                   flex

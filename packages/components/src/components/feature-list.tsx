@@ -5,7 +5,7 @@ import { Anchor } from './anchor';
 import { Image } from './image';
 
 export const FeatureList = ({ title, description, items, link, className }: IFeatureListProps): ReactElement => (
-  <section className={clsx("bg-white dark:bg-[#111]", className)}>
+  <section className={clsx('bg-white dark:bg-[#111]', className)}>
     <div className="container py-14">
       {title && (
         <div className="mb-6 flex flex-col items-center">
