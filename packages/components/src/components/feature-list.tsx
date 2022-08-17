@@ -1,4 +1,6 @@
 import { ReactElement } from 'react';
+import NextImage from 'next/future/image';
+import clsx from 'clsx';
 import { IFeatureListProps } from '../types/components';
 
 export const FeatureList = ({
@@ -34,7 +36,7 @@ export const FeatureList = ({
       <div className="flex flex-wrap justify-center gap-12">
         {items.map(item => (
           <div className="flex w-56 flex-col items-center" key={title}>
-            <img src={item.image.src} alt={item.image.alt} className="w-28" {...restProps.itemImageProps} />
+            <NextImage {...item.image} className={clsx('w-28', item.image.className)} />
             <h3 className="m-0 text-lg font-bold text-black dark:text-gray-50" {...restProps.itemTitleProps}>
               {item.title}
             </h3>

@@ -138,9 +138,8 @@ export interface IFeatureListProps {
   titleProps?: ComponentProps<'h2'>;
   descriptionProps?: ComponentProps<'p'>;
   linkProps?: ILink;
-  itemTitleProps?: React.ComponentProps<'h3'>;
-  itemDescriptionProps?: React.ComponentProps<'p'>;
-  itemImageProps?: React.ComponentProps<'img'>;
+  itemTitleProps?: ComponentProps<'h3'>;
+  itemDescriptionProps?: ComponentProps<'p'>;
 }
 
 export interface IInfoListProps {
