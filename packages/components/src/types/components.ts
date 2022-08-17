@@ -129,16 +129,12 @@ export interface IInfoListProps {
 }
 
 export interface IHeroVideoProps {
+  className?: string;
   title: string | ReactNode;
   description: string | ReactNode;
   flipped?: boolean;
   link?: ILink;
   video: IVideo;
-
-  wrapperProps?: ComponentProps<'section'>;
-  containerProps?: ComponentProps<'div'>;
-  titleProps?: ComponentProps<'h2'>;
-  descriptionProps?: ComponentProps<'p'>;
   videoProps?: ReactPlayerProps;
 }
 
