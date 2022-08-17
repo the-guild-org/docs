@@ -76,7 +76,6 @@ export const Footer = ({ sameSite, ...restProps }: IFooterProps): ReactElement =
                 rel="noreferrer"
                 className="inline-block no-underline transition hover:text-black hover:dark:text-gray-100"
                 {...link}
-                {...restProps.linkProps}
               />
             </li>
           ))}

@@ -11,6 +11,7 @@ interface IVideo {
 export type ILink = Omit<LinkProps, 'href'> &
   Pick<ComponentProps<'a'>, 'target' | 'rel' | 'title' | 'className'> & {
     href: string;
+    children: ReactNode
   };
 
 export interface IHeaderLink {
@@ -70,7 +71,6 @@ export interface IFooterProps {
   sameSite?: boolean;
   wrapperProps?: ComponentProps<'footer'>;
   containerProps?: ComponentProps<'div'>;
-  linkProps?: ILink;
   logoProps?: ILink;
   copyrightProps?: ComponentProps<'p'>;
 }
@@ -81,7 +81,6 @@ export interface IFooterExtendedProps {
   onNewsletterSubmit?: (e: FormEvent, value: string) => void;
   wrapperProps?: ComponentProps<'footer'>;
   containerProps?: ComponentProps<'div'>;
-  linkProps?: ILink;
   logoProps?: ILink;
   titleProps?: ComponentProps<'p'>;
   descriptionProps?: ComponentProps<'p'>;
