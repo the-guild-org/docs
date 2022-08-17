@@ -11,7 +11,7 @@ interface IVideo {
 export type ILink = Omit<LinkProps, 'href'> &
   Pick<ComponentProps<'a'>, 'target' | 'rel' | 'title' | 'className'> & {
     href: string;
-    children: ReactNode
+    children: ReactNode;
   };
 
 export interface IHeaderLink {
@@ -23,19 +23,13 @@ export interface IHeaderLink {
 }
 
 export interface IHeaderProps {
+  className?: string
   accentColor: string;
   activeLink?: string;
   themeSwitch?: boolean;
   transformLinks?: (links: IHeaderLink[]) => IHeaderLink[];
-  wrapperProps?: ComponentProps<'header'>;
-  containerProps?: ComponentProps<'div'>;
-  logoProps?: ILink;
-  navigationProps?: ComponentProps<'nav'>;
-  linkProps?: ILink;
   searchBarProps?: Partial<ISearchBarProps>;
   disableSearch?: boolean;
-  themeButtonProps?: ComponentProps<'button'>;
-  navOpenButtonProps?: ComponentProps<'button'>;
   headerModalProps?: IHeaderModalRestProps;
 }
 
