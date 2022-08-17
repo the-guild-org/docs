@@ -8,7 +8,7 @@ import CubeBL from '../static/illustrations/marketplace-cube-bl.png';
 import CubeBR from '../static/illustrations/marketplace-cube-br.png';
 import { IHeroMarketplaceProps } from '../types/components';
 import { Button } from './button';
-import NextImage from 'next/future/image';
+import { Image } from './image';
 
 const Shadow = ({ className }: { className: string }): ReactElement => {
   return (
@@ -29,7 +29,7 @@ const Shadow = ({ className }: { className: string }): ReactElement => {
 };
 
 const Cube = ({ className, src }: { className: string; src: string }): ReactElement => {
-  return <NextImage className={clsx(`absolute -translate-x-1/2 -translate-y-1/2`, className)} src={src} alt="Cube" />;
+  return <Image className={clsx(`absolute -translate-x-1/2 -translate-y-1/2`, className)} src={src} alt="Cube" />;
 };
 
 export const HeroMarketplace = ({
@@ -83,7 +83,7 @@ export const HeroMarketplace = ({
           {...image}
         >
           <source media="(min-width:768px)" srcSet={IllustrationDesktop} />
-          <NextImage className="w-full" src={IllustrationMobile} alt="Products List" />
+          <Image className="w-full" src={IllustrationMobile} alt="Products List" />
         </picture>
         <div className="relative z-[1]">
           <h2 className="mb-2.5 max-w-lg text-2xl font-bold text-white dark:text-gray-50 md:text-3xl">{title}</h2>

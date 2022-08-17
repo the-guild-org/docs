@@ -2,7 +2,7 @@ import { isValidElement, ReactElement } from 'react';
 import clsx from 'clsx';
 import { IHeroGradientProps } from '../types/components';
 import { Button } from './button';
-import NextImage from 'next/future/image';
+import { Image } from './image';
 
 const Shadow = ({ className }: { className: string }): ReactElement => {
   return (
@@ -49,7 +49,7 @@ export const HeroGradient = ({
             {version && isValidElement(version) ? version : <span className="text-gray-50 opacity-60">{version}</span>}
           </div>
           {image && (
-            <NextImage
+            <Image
               {...image}
               className={clsx(
                 `

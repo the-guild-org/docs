@@ -1,5 +1,4 @@
 import { ReactElement, useEffect, useMemo, useState } from 'react';
-import NextImage from 'next/future/image';
 import ReactPaginatePackage from 'react-paginate';
 import { IMarketplaceListProps, IMarketplaceItemsProps } from '../types/components';
 import { Tag, TagsContainer } from './tag';
@@ -7,6 +6,7 @@ import { CaretSlimIcon } from './icons';
 import { getDefault } from '../helpers/utils';
 import clsx from 'clsx';
 import { Anchor } from './anchor';
+import { Image } from './image';
 
 const ReactPaginate = getDefault(ReactPaginatePackage);
 
@@ -23,7 +23,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
         className="border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 last:border-0 dark:border-gray-800 dark:text-gray-400"
         key={item.title}
       >
-        <td className="w-14 py-4 pr-2 align-top md:w-20">{item.image && <NextImage {...item.image} />}</td>
+        <td className="w-14 py-4 pr-2 align-top md:w-20">{item.image && <Image {...item.image} />}</td>
         <td className="py-4 px-2">
           <Anchor
             {...item.link}
