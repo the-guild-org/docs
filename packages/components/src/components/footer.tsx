@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { IFooterProps, ILink } from '../types/components';
 import { GuildLogo } from './logos';
+import clsx from 'clsx';
 
 const links: ILink[] = [
   {
@@ -30,7 +31,7 @@ const links: ILink[] = [
   },
 ];
 
-export const Footer = ({ sameSite, ...restProps }: IFooterProps): ReactElement => {
+export const Footer = ({ sameSite, className, logo }: IFooterProps): ReactElement => {
   const logoOptions = sameSite
     ? { href: '/' }
     : {
@@ -40,7 +41,7 @@ export const Footer = ({ sameSite, ...restProps }: IFooterProps): ReactElement =
       };
 
   return (
-    <footer className="bg-white text-xs text-gray-500 dark:bg-[#111] dark:text-gray-400" {...restProps.wrapperProps}>
+    <footer className={clsx('bg-white text-xs text-gray-500 dark:bg-[#111] dark:text-gray-400', className)}>
       <div
         className="
           container
@@ -56,9 +57,8 @@ export const Footer = ({ sameSite, ...restProps }: IFooterProps): ReactElement =
           md:flex-row
           md:py-5
         "
-        {...restProps.containerProps}
       >
-        <a className="grow" {...logoOptions} {...restProps.logoProps}>
+        <a className="grow" {...logoOptions} {...logo}>
           <GuildLogo className="mx-auto mb-3 transition hover:text-gray-900 dark:hover:text-gray-100 md:mb-0" />
         </a>
         <ul className="m-0 flex list-none flex-wrap p-0">

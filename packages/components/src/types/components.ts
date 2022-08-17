@@ -23,7 +23,7 @@ export interface IHeaderLink {
 }
 
 export interface IHeaderProps {
-  className?: string
+  className?: string;
   accentColor: string;
   activeLink?: string;
   themeSwitch?: boolean;
@@ -62,24 +62,17 @@ interface IHeaderModalRestProps {
 }
 
 export interface IFooterProps {
+  className?: string;
   sameSite?: boolean;
-  wrapperProps?: ComponentProps<'footer'>;
-  containerProps?: ComponentProps<'div'>;
-  logoProps?: ILink;
-  copyrightProps?: ComponentProps<'p'>;
+  logo?: ILink;
 }
 
 export interface IFooterExtendedProps {
+  className?: string;
   sameSite?: boolean;
   resources?: ILink[];
   onNewsletterSubmit?: (e: FormEvent, value: string) => void;
-  wrapperProps?: ComponentProps<'footer'>;
-  containerProps?: ComponentProps<'div'>;
-  logoProps?: ILink;
-  titleProps?: ComponentProps<'p'>;
-  descriptionProps?: ComponentProps<'p'>;
-  copyrightProps?: ComponentProps<'p'>;
-  newsletterProps?: ComponentProps<'form'>;
+  logo?: ILink;
 }
 
 interface IModalRestProps {
