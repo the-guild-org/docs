@@ -90,9 +90,6 @@
       "npx yarn-deduplicate"
     ]
   },
-  "resolutions": {
-    "postcss": "8.4.16"
-  },
   "engines": {
     "node": ">=16"
   }
