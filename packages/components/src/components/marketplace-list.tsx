@@ -15,7 +15,7 @@ const formatDate = (value: string): string => {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 };
 
-const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactElement => (
+const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
   <tbody>
     {items.map(item => (
       <tr
@@ -31,15 +31,8 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
               item.link.className
             )}
           >
-            <h3
-              className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg"
-              {...restProps.titleProps}
-            >
-              {item.title}
-            </h3>
-            <div className="line-clamp-3 [&>p]:!m-0" {...restProps.descriptionProps}>
-              {item.description}
-            </div>
+            <h3 className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg">{item.title}</h3>
+            <div className="line-clamp-3 [&>p]:!m-0">{item.description}</div>
             {item.tags && item.tags.length > 0 && (
               <TagsContainer>
                 {item.tags.map(tagName => (
@@ -49,9 +42,7 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
             )}
           </a>
         </td>
-        <td className="hidden py-4 px-2 md:table-cell" {...restProps.dateProps}>
-          {formatDate(item.update)}
-        </td>
+        <td className="hidden py-4 px-2 md:table-cell">{formatDate(item.update)}</td>
         <td className="py-4 pl-2">
           <a
             {...item.link}
@@ -83,7 +74,7 @@ export const MarketplaceList = ({
   placeholder,
   items,
   pagination,
-  className
+  className,
 }: IMarketplaceListProps): ReactElement => {
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -107,12 +98,8 @@ export const MarketplaceList = ({
   }, [items, pageSize]);
 
   return (
-    <section className={clsx("w-full bg-white dark:bg-[#111]", className)}>
-      {title && (
-        <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">
-          {title}
-        </h2>
-      )}
+    <section className={clsx('w-full bg-white dark:bg-[#111]', className)}>
+      {title && <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">{title}</h2>}
       {!pages[currentPage] || !pages[currentPage].length ? (
         <div className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300">
           {placeholder}
