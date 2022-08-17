@@ -1,4 +1,5 @@
 import { ReactElement, ReactNode, useCallback } from 'react';
+import NextLink from 'next/link';
 import { Newsletter } from './newsletter';
 import { PRODUCTS } from '../helpers/products';
 import { IFooterExtendedProps, ILink } from '../types/components';
@@ -156,14 +157,14 @@ export const FooterExtended = ({
             lg:flex-nowrap
           "
         >
-          <a
+          <NextLink
             className="flex items-center gap-x-1.5 text-gray-500 transition hover:text-black hover:dark:text-gray-100"
             {...logoOptions}
             {...logo}
           >
             <GuildLogo className="w-7" />
             <TheGuild className="w-10" />
-          </a>
+          </NextLink>
         </div>
       </div>
     </footer>

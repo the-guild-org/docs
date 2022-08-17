@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import NextImage from 'next/future/image';
+import NextLink from 'next/link';
 import clsx from 'clsx';
 import { IFeatureListProps } from '../types/components';
 
@@ -15,7 +16,7 @@ export const FeatureList = ({ title, description, items, link, className }: IFea
             <div className="mt-1 mb-1.5 text-center text-base text-gray-500 dark:text-gray-400">{description}</div>
           )}
           {link && (
-            <a
+            <NextLink
               {...link}
               className={clsx(
                 'w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300',

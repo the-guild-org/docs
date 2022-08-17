@@ -3,6 +3,7 @@ import ReactPlayerImport from 'react-player/lazy';
 import clsx from 'clsx';
 import { IHeroVideoProps } from '../types/components';
 import { getDefault } from '../helpers/utils';
+import NextLink from 'next/link';
 
 const ReactPlayer = getDefault(ReactPlayerImport);
 
@@ -34,7 +35,7 @@ export const HeroVideo = ({
         <h2 className="m-0 max-w-sm text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">{title}</h2>
         <p className="mt-1 mb-3 max-w-md text-base text-gray-500 dark:text-gray-400">{description}</p>
         {link && (
-          <a
+          <NextLink
             {...link}
             className={clsx(
               `

@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { ILink } from '../types/components';
 import clsx from 'clsx';
+import NextLink from 'next/link';
 
 export type CardsColorfulProps = {
   className?: string;
@@ -27,7 +28,7 @@ export const CardsColorful = ({ cards, className }: CardsColorfulProps): ReactEl
     "
     >
       {cards.map(card => (
-        <a
+        <NextLink
           key={card.title}
           className="
             relative
@@ -60,7 +61,7 @@ export const CardsColorful = ({ cards, className }: CardsColorfulProps): ReactEl
             <h3 className="pb-2.5 text-2xl font-bold md:text-3xl">{card.title}</h3>
             <p className="text-xs font-medium opacity-60">{card.description}</p>
           </div>
-        </a>
+        </NextLink>
       ))}
     </div>
   </section>

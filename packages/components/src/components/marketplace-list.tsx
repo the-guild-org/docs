@@ -6,6 +6,7 @@ import { Tag, TagsContainer } from './tag';
 import { CaretSlimIcon } from './icons';
 import { getDefault } from '../helpers/utils';
 import clsx from 'clsx';
+import NextLink from 'next/link';
 
 const ReactPaginate = getDefault(ReactPaginatePackage);
 
@@ -24,7 +25,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
       >
         <td className="w-14 py-4 pr-2 align-top md:w-20">{item.image && <NextImage {...item.image} />}</td>
         <td className="py-4 px-2">
-          <a
+          <NextLink
             {...item.link}
             className={clsx(
               'text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400',
@@ -40,7 +41,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
                 ))}
               </TagsContainer>
             )}
-          </a>
+          </NextLink>
         </td>
         <td className="hidden py-4 px-2 md:table-cell">{formatDate(item.update)}</td>
         <td className="py-4 pl-2">

@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { IInfoListProps } from '../types/components';
 import clsx from 'clsx';
+import NextLink from 'next/link';
 
 export const InfoList = ({ title, items, className }: IInfoListProps): ReactElement => (
   <section className={clsx('bg-white dark:bg-[#111]', className)}>
@@ -27,7 +28,7 @@ export const InfoList = ({ title, items, className }: IInfoListProps): ReactElem
             <h3 className="m-0 text-base font-semibold text-black dark:text-gray-50">{item.title}</h3>
             <p className="mt-2 mb-4 grow text-sm text-gray-500 dark:text-gray-400">{item.description}</p>
             {item.link && (
-              <a
+              <NextLink
                 className="
                   mt-auto
                   w-max

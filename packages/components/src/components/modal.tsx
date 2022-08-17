@@ -1,7 +1,8 @@
 import { ReactElement, useEffect } from 'react';
+import NextLink from 'next/link';
+import NextImage from 'next/future/image';
 import FocusTrap from 'focus-trap-react';
 import clsx from 'clsx';
-import NextImage from 'next/future/image';
 import { IModalProps } from '../types/components';
 import { useKeyPress } from '../helpers/hooks';
 import { CloseIcon, ExternalLinkIcon } from './icons';
@@ -24,10 +25,10 @@ export const Modal = ({
     }
 
     return typeof description === 'object' ? (
-      <a className="inline-flex gap-x-1.5 transition hover:opacity-60" {...description}>
+      <NextLink className="inline-flex gap-x-1.5 transition hover:opacity-60" {...description}>
         <p className="line-clamp-1">{description.children}</p>
         <ExternalLinkIcon className="h-4 w-4 shrink-0" />
-      </a>
+      </NextLink>
     ) : (
       <p className="line-clamp-1">{description}</p>
     );

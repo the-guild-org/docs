@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { IFooterProps, ILink } from '../types/components';
 import { GuildLogo } from './logos';
 import clsx from 'clsx';
+import NextLink from 'next/link';
 
 const links: ILink[] = [
   {
@@ -58,9 +59,9 @@ export const Footer = ({ sameSite, className, logo }: IFooterProps): ReactElemen
           md:py-5
         "
       >
-        <a className="grow" {...logoOptions} {...logo}>
+        <NextLink className="grow" {...logoOptions} {...logo}>
           <GuildLogo className="mx-auto mb-3 transition hover:text-gray-900 dark:hover:text-gray-100 md:mb-0" />
-        </a>
+        </NextLink>
         <ul className="m-0 flex list-none flex-wrap p-0">
           {links.map(link => (
             <li
