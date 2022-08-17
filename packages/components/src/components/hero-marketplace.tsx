@@ -32,9 +32,15 @@ const Cube = ({ className, src }: { className: string; src: string }): ReactElem
   return <NextImage className={clsx(`absolute -translate-x-1/2 -translate-y-1/2`, className)} src={src} alt="Cube" />;
 };
 
-export const HeroMarketplace = ({ title, description, link, ...restProps }: IHeroMarketplaceProps): ReactElement => (
-  <section className="overflow-hidden bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
-    <div className="relative" {...restProps.containerProps}>
+export const HeroMarketplace = ({
+  title,
+  description,
+  link,
+  className,
+  imageProps,
+}: IHeroMarketplaceProps): ReactElement => (
+  <section className={clsx('overflow-hidden bg-white dark:bg-[#111]', className)}>
+    <div className="relative">
       <div
         className="
          absolute
@@ -74,21 +80,14 @@ export const HeroMarketplace = ({ title, description, link, ...restProps }: IHer
             lg:-ml-14
             lg:w-2/3
           "
-          {...restProps.imageProps}
+          {...imageProps}
         >
           <source media="(min-width:768px)" srcSet={IllustrationDesktop} />
           <NextImage className="w-full" src={IllustrationMobile} alt="Products List" />
         </picture>
         <div className="relative z-[1]">
-          <h2
-            className="mb-2.5 max-w-lg text-2xl font-bold text-white dark:text-gray-50 md:text-3xl"
-            {...restProps.titleProps}
-          >
-            {title}
-          </h2>
-          <p className="max-w-lg text-base text-gray-300 opacity-70" {...restProps.descriptionProps}>
-            {description}
-          </p>
+          <h2 className="mb-2.5 max-w-lg text-2xl font-bold text-white dark:text-gray-50 md:text-3xl">{title}</h2>
+          <p className="max-w-lg text-base text-gray-300 opacity-70">{description}</p>
           {link && (
             <div className="relative z-[1] mt-4 hidden items-center text-xs md:mt-9 md:flex">
               <Button {...link} />

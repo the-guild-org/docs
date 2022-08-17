@@ -167,13 +167,10 @@ export interface IHeroGradientProps {
 }
 
 export interface IHeroMarketplaceProps {
+  className?: string
   title: string | ReactNode;
   description: string | ReactNode;
   link: ILink;
-  wrapperProps?: ComponentProps<'section'>;
-  containerProps?: ComponentProps<'div'>;
-  titleProps?: ComponentProps<'h2'>;
-  descriptionProps?: ComponentProps<'p'>;
   imageProps?: IImage;
 }
 
