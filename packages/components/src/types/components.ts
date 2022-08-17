@@ -9,7 +9,7 @@ interface IVideo {
 }
 
 export type ILink = Omit<LinkProps, 'href'> &
-  Pick<ComponentProps<'a'>, 'target' | 'rel' | 'title' | 'className'> & {
+  Pick<ComponentProps<'a'>, 'target' | 'rel' | 'title' | 'className' | 'style'> & {
     href: string;
     children: ReactNode;
   };

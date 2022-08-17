@@ -15,7 +15,7 @@ export const HeroVideo = ({
   className,
   videoProps,
 }: IHeroVideoProps): ReactElement => (
-  <section className={clsx('bg-gray-100 dark:bg-gray-800', className)}>
+  <section className={clsx('bg-gray-100 dark:bg-neutral-800', className)}>
     <div
       className={clsx(
         `

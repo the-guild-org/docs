@@ -139,7 +139,7 @@ const SearchBox = ({
           text-lg
           text-gray-500
           [border-color:var(--accentColor)]
-          dark:bg-gray-800
+          dark:bg-neutral-800
           dark:text-gray-300
         "
         style={{ '--accentColor': accentColor }}
@@ -294,7 +294,7 @@ const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }):
                   last:mb-0
                   hover:![background:var(--color)]
                   focus:ring
-                  dark:bg-gray-800
+                  dark:bg-neutral-800
                 "
                 rel="noreferrer"
               >
@@ -359,7 +359,7 @@ export const SearchBarComponent = ({
         md:pl-1
         md:pr-8
         md:hover:[border-color:var(--accentColor)]
-        md:dark:bg-gray-800
+        md:dark:bg-neutral-800
         md:dark:text-gray-300
         `,
           isFull && '!md:p-2 !m-0 w-full',

@@ -1,9 +1,10 @@
-import { useState, useMemo, ReactElement, MouseEventHandler, MouseEvent } from 'react';
+import { useState, useMemo, ReactElement, MouseEventHandler, MouseEvent, forwardRef } from 'react';
 import clsx from 'clsx';
 import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
 import { useTheme } from 'next-themes';
+import NextLink from 'next/link';
 import { SearchBar } from './search-bar';
-import { IHeaderProps } from '../types/components';
+import { IHeaderProps, ILink } from '../types/components';
 import { toggleLockBodyScroll } from '../helpers/modals';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
 import { GuildLogo, TheGuild } from './logos';
@@ -11,6 +12,12 @@ import { Nav } from './nav';
 import { SolutionsMenu } from './solutions-menu';
 import { EcosystemList } from './ecosystem-list';
 import { useWindowSize } from '../helpers/hooks';
+
+const ForwardedLink = forwardRef<HTMLAnchorElement, ILink>(({ children, ...props }, forwardedRef) => (
+  <a {...props} ref={forwardedRef}>
+    {children}
+  </a>
+));
 
 const renderLinkOptions = (href: string, onClick?: MouseEventHandler<HTMLAnchorElement>) => {
   if (onClick) {
@@ -121,7 +128,7 @@ export const Header = ({
             <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} className="md:gap-4">
               {links.map(link => {
                 const linkEl = (
-                  <a
+                  <ForwardedLink
                     key={link.label}
                     title={link.title}
                     className={clsx(
@@ -175,7 +182,7 @@ export const Header = ({
                         "
                       />
                     )}
-                  </a>
+                  </ForwardedLink>
                 );
 
                 return link.menu && shouldUseMenus ? (
@@ -209,7 +216,7 @@ export const Header = ({
             </Nav>
 
             <Indicator className="absolute top-9 z-50 flex h-2.5 justify-center">
-              <div className="h-3 w-3 rotate-45 rounded-t-sm bg-white dark:bg-gray-800" />
+              <div className="h-3 w-3 rotate-45 rounded-t-sm bg-white dark:bg-neutral-800" />
             </Indicator>
           </List>
         </Root>
