@@ -148,18 +148,13 @@ export interface IHeroIllustrationProps {
 }
 
 export interface IHeroGradientProps {
+  className?: string;
   title: string | ReactNode;
   description: string | ReactNode;
   colors?: string[];
   version?: string | ReactNode;
   link?: ILink | ILink[];
   image?: IImage;
-  wrapperProps?: ComponentProps<'section'>;
-  containerProps?: ComponentProps<'div'>;
-  gradientProps?: ComponentProps<'div'>;
-  titleProps?: ComponentProps<'h1'>;
-  descriptionProps?: ComponentProps<'p'>;
-  versionProps?: ComponentProps<'span'>;
 }
 
 export interface IHeroMarketplaceProps {
