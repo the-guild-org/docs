@@ -67,7 +67,7 @@ const CATEGORIES: {
 export const SolutionsMenu = (): ReactElement => {
   return (
     <div
-      className="w-[600px] rounded-lg bg-white p-5 dark:bg-gray-800"
+      className="w-[600px] rounded-lg bg-white p-5 dark:bg-neutral-800"
       style={{
         boxShadow: 'hsl(206 22% 7% / 35%) 0 10px 38px -10px, hsl(206 22% 7% / 20%) 0 10px 20px -15px',
       }}

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { IHeroVideoProps } from '../types/components';
 import { dummyHeroVideo } from '../helpers/dummy';
 import { HeroVideo } from './hero-video';

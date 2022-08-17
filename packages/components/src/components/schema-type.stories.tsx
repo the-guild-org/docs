@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { ISchemaPageProps } from '../types/components';
 import { dummySchemaPage } from '../helpers/dummy';
 import { SchemaPage } from './schema-type';

@@ -30,11 +30,10 @@ export interface IHeaderProps {
   transformLinks?: (links: IHeaderLink[]) => IHeaderLink[];
   searchBarProps?: Partial<ISearchBarProps>;
   disableSearch?: boolean;
-  headerModalProps?: IHeaderModalRestProps;
 }
 
 export interface ISubheaderProps {
-  className?: string
+  className?: string;
   product: {
     title: string | ReactNode;
     description: string | ReactNode;
@@ -44,15 +43,6 @@ export interface ISubheaderProps {
   activeLink: string;
   links: ILink[];
   cta: ILink;
-}
-
-interface IHeaderModalRestProps {
-  titleProps?: ComponentProps<'h4'>;
-  descriptionProps?: ComponentProps<'p'>;
-  linkProps?: ILink;
-  imageProps?: IImage;
-  categoryTitleProps?: ComponentProps<'h3'>;
-  modalProps?: IModalRestProps;
 }
 
 export interface IFooterProps {

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { SolutionsMenu } from './solutions-menu';
 
 export default {
@@ -7,7 +7,4 @@ export default {
   argTypes: {},
 } as Meta;
 
-const Template: Story = args => <SolutionsMenu {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = () => <SolutionsMenu />;

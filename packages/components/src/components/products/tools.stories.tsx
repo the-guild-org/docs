@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { FooterExtended } from '../footer-extended';
 import { Header } from '../header';
 import { HeroGradient } from '../hero-gradient';

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { IHeroGradientProps } from '../types/components';
 import { dummyHeroGradient } from '../helpers/dummy';
 import { HeroGradient } from './hero-gradient';
