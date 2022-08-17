@@ -225,19 +225,13 @@ export interface IMarketplaceListProps {
 }
 
 export interface IMarketplaceSearchProps {
+  className?: string;
   title: string | ReactNode;
   placeholder: string;
   primaryList: IMarketplaceListProps;
   secondaryList?: IMarketplaceListProps;
   queryList?: IMarketplaceListProps;
   tagsFilter?: string[] | ReadonlyArray<string>;
-  wrapperProps?: ComponentProps<'section'>;
-  containerProps?: ComponentProps<'div'>;
-  titleProps?: ComponentProps<'h2'>;
-  searchProps?: ComponentProps<'input'>;
-  queryListProps?: IMarketplaceItemRestProps;
-  primaryListProps?: IMarketplaceItemRestProps;
-  secondaryListProps?: IMarketplaceItemRestProps;
 }
 
 export interface ISchemaPageProps {

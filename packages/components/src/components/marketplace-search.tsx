@@ -1,4 +1,5 @@
 import { useMemo, useState, isValidElement, useCallback, ReactElement, FormEvent } from 'react';
+import clsx from 'clsx';
 import { MarketplaceList } from './marketplace-list';
 import { IMarketplaceSearchProps } from '../types/components';
 import { Tag, TagsContainer } from './tag';
@@ -23,7 +24,7 @@ export const MarketplaceSearch = ({
   primaryList,
   secondaryList,
   queryList,
-  ...restProps
+  className
 }: IMarketplaceSearchProps): ReactElement => {
   const [query, setQuery] = useState('');
 
@@ -51,9 +52,9 @@ export const MarketplaceSearch = ({
   }, [query, queryList]);
 
   return (
-    <section className="bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
-      <div className="container max-w-[90rem] py-12" {...restProps.containerProps}>
-        <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl" {...restProps.titleProps}>
+    <section className={clsx('bg-white dark:bg-[#111]', className)}>
+      <div className="container max-w-[90rem] py-12">
+        <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">
           {title}
         </h2>
         {tagsFilter && (
@@ -73,7 +74,6 @@ export const MarketplaceSearch = ({
             placeholder={placeholder}
             onChange={handleChange}
             className="ml-1.5 mt-0.5 w-full border-0 bg-white text-sm font-medium text-black outline-none dark:bg-[#111] dark:text-gray-50"
-            {...restProps.searchProps}
           />
         </div>
 
@@ -84,12 +84,11 @@ export const MarketplaceSearch = ({
               items={items}
               placeholder={renderQueryPlaceholder(queryList.placeholder, query)}
               pagination={queryList.pagination}
-              {...restProps.queryListProps}
             />
           ) : (
             <>
-              <MarketplaceList {...primaryList} {...restProps.primaryListProps} />
-              {secondaryList && <MarketplaceList {...secondaryList} {...restProps.secondaryListProps} />}
+              <MarketplaceList {...primaryList} />
+              {secondaryList && <MarketplaceList {...secondaryList} />}
             </>
           )}
         </div>
