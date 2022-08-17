@@ -32,8 +32,6 @@
     "@storybook/addon-essentials": "7.0.0-alpha.21",
     "@storybook/addon-links": "7.0.0-alpha.21",
     "@storybook/addon-postcss": "3.0.0-alpha.1",
-    "@storybook/builder-webpack5": "7.0.0-alpha.21",
-    "@storybook/manager-webpack5": "7.0.0-alpha.10",
     "@storybook/mdx2-csf": "0.0.3",
     "@storybook/react-webpack5": "7.0.0-alpha.21",
     "@tailwindcss/line-clamp": "0.4.0",

@@ -1,8 +1,9 @@
-// import { StorybookConfig } from '@storybook/core-common';
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const path = require('path');
+import path from 'node:path';
+import { StorybookConfig } from '@storybook/core-common';
+import { Configuration } from 'webpack';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
-module.exports = {
+const config: StorybookConfig = {
   stories: ['../packages/*/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
     '@storybook/addon-essentials',
@@ -26,7 +27,7 @@ module.exports = {
   typescript: {
     reactDocgen: false,
   },
-  env(config) {
+  env(config: Record<string, unknown>) {
     return {
       ...config,
       NEXT_PUBLIC_ALGOLIA_APP_ID: 'ANRJKXZTRW',
@@ -40,7 +41,8 @@ module.exports = {
       },
     };
   },
-  webpackFinal(config) {
+  webpackFinal(config: Configuration) {
+    config.resolve ||= {};
     config.resolve.plugins ||= [];
     config.resolve.plugins.push(
       new TsconfigPathsPlugin({
@@ -61,3 +63,5 @@ module.exports = {
     options: { fastRefresh: true },
   },
 };
+
+export default config;

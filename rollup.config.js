@@ -41,7 +41,7 @@ function bundle(packageDir) {
       babel({
         babelHelpers: 'bundled',
         extensions: ['.tsx', '.ts'],
-        configFile: join(CWD, '.babelrc'),
+        configFile: join(CWD, 'babel.config.cjs'),
       }),
       image(),
       copy({
