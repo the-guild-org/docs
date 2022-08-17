@@ -211,7 +211,7 @@ export interface IMarketplaceItemProps {
   };
   update: string;
   image: IImage;
-  link: ILink;
+  link: Omit<ILink, 'children'>;
 }
 
 interface IMarketplaceItemRestProps {

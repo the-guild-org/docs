@@ -29,7 +29,7 @@ function bundle(packageDir) {
         sourcemap: true,
       },
     ],
-    external: ['react-player/lazy', 'algoliasearch/lite', 'classnames', 'react/jsx-runtime'],
+    external: ['react-player/lazy', 'algoliasearch/lite', 'react/jsx-runtime', 'react-dom/client'],
     plugins: [
       nodeResolve({ extensions: ['.ts', '.tsx'] }),
       autoExternal({
