@@ -139,16 +139,12 @@ export interface IHeroVideoProps {
 }
 
 export interface IHeroIllustrationProps {
+  className?: string;
   title: string | ReactNode;
   description: string | ReactNode;
   flipped?: boolean;
   link?: ILink;
   image: IImage;
-
-  wrapperProps?: ComponentProps<'section'>;
-  containerProps?: ComponentProps<'div'>;
-  titleProps?: ComponentProps<'h2'>;
-  descriptionProps?: ComponentProps<'p'>;
 }
 
 export interface IHeroGradientProps {
