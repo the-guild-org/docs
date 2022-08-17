@@ -224,15 +224,14 @@ export interface IMarketplaceItemProps {
     content: string | (() => ReactNode) | ReactNode;
   };
   update: string;
-  image?: IImage;
-  link?: ILink;
+  image: IImage;
+  link: ILink;
 }
 
 interface IMarketplaceItemRestProps {
   titleProps?: ComponentProps<'h3'>;
   descriptionProps?: ComponentProps<'p'>;
   dateProps?: ComponentProps<'td'>;
-  linkProps?: ILink;
 }
 
 export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {

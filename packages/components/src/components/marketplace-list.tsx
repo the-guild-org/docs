@@ -5,6 +5,7 @@ import { IMarketplaceListProps, IMarketplaceItemsProps } from '../types/componen
 import { Tag, TagsContainer } from './tag';
 import { CaretSlimIcon } from './icons';
 import { getDefault } from '../helpers/utils';
+import clsx from 'clsx';
 
 const ReactPaginate = getDefault(ReactPaginatePackage);
 
@@ -24,9 +25,11 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
         <td className="w-14 py-4 pr-2 align-top md:w-20">{item.image && <NextImage {...item.image} />}</td>
         <td className="py-4 px-2">
           <a
-            className="text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400"
             {...item.link}
-            {...restProps.linkProps}
+            className={clsx(
+              'text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400',
+              item.link.className
+            )}
           >
             <h3
               className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg"
