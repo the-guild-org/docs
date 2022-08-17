@@ -5,9 +5,8 @@ const path = require('path');
 module.exports = {
   stories: ['../packages/*/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
-    '@storybook/addon-links',
     '@storybook/addon-essentials',
-    'storybook-dark-mode', // addon to have toolbar for dark/light mode
+    '@storybook/addon-links',
     {
       name: '@storybook/addon-postcss',
       options: {
@@ -22,6 +21,7 @@ module.exports = {
         nextConfigPath: path.resolve(__dirname, 'next.config.cjs'),
       },
     },
+    'storybook-dark-mode', // addon to have toolbar for dark/light mode
   ],
   typescript: {
     reactDocgen: false,
@@ -55,9 +55,6 @@ module.exports = {
   },
   features: {
     previewMdx2: true,
-  },
-  core: {
-    builder: 'webpack5',
   },
   framework: {
     name: '@storybook/react-webpack5',
