@@ -44,6 +44,16 @@ export const SearchBarV2 = ({
       insightsClient,
     });
 
+    const getRender = (root: HTMLElement) => {
+      if (!panelRootRef.current || rootRef.current !== root) {
+        rootRef.current = root;
+
+        panelRootRef.current?.unmount();
+        panelRootRef.current = createRoot(root);
+      }
+      return panelRootRef.current.render.bind(panelRootRef.current);
+    };
+
     const s = autocomplete<AlgoliaSearchItem>({
       container: containerRef.current,
       detachedMediaQuery: '',
@@ -56,34 +66,20 @@ export const SearchBarV2 = ({
         render: () => {},
       },
       renderNoResults({ Fragment, state: { query, status } }, root) {
-        if (!panelRootRef.current || rootRef.current !== root) {
-          rootRef.current = root;
-
-          panelRootRef.current?.unmount();
-          panelRootRef.current = createRoot(root);
-        }
-
-        if (!query || status === 'loading') {
-          panelRootRef.current.render(<Fragment />);
-        } else {
-          panelRootRef.current.render(
-            <Fragment>
-              <div className="my-20 w-full text-center text-xl font-light text-gray-600 dark:text-gray-400">
-                No results for "{query}"
-              </div>
-            </Fragment>
-          );
-        }
+        const render = getRender(root);
+        render(
+          !query || status === 'loading' ? (
+            <Fragment />
+          ) : (
+            <div className="my-20 w-full text-center text-xl font-light text-gray-600 dark:text-gray-400">
+              No results for "{query}"
+            </div>
+          )
+        );
       },
       render({ children, state, Fragment, components }, root) {
-        if (!panelRootRef.current || rootRef.current !== root) {
-          rootRef.current = root;
-
-          panelRootRef.current?.unmount();
-          panelRootRef.current = createRoot(root);
-        }
-
-        panelRootRef.current.render(
+        const render = getRender(root);
+        render(
           <Fragment>
             <div className="flex h-[600px] flex-row">
               <div className="min-w-[400px]">{children}</div>

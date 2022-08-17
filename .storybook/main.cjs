@@ -19,9 +19,9 @@ module.exports = {
     {
       name: 'storybook-addon-next',
       options: {
-        nextConfigPath: path.resolve(__dirname, 'next.config.cjs')
-      }
-    }
+        nextConfigPath: path.resolve(__dirname, 'next.config.cjs'),
+      },
+    },
   ],
   typescript: {
     reactDocgen: false,
@@ -47,6 +47,10 @@ module.exports = {
         extensions: config.resolve.extensions,
       })
     );
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      url: false,
+    };
     return config;
   },
   features: {
@@ -54,5 +58,9 @@ module.exports = {
   },
   core: {
     builder: 'webpack5',
+  },
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: { fastRefresh: true },
   },
 };
