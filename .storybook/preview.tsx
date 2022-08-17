@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { themes } from '@storybook/theming';
 import { ThemeProvider } from '@theguild/components/src';
@@ -37,7 +38,10 @@ Object.defineProperty(NextImage, 'default', {
 
 Object.defineProperty(NextLink, 'default', {
   configurable: true,
-  value: (props: LinkProps) => <OriginalNextLink {...props} legacyBehavior={false} />,
+  // forwardedRef is needed in header
+  value: forwardRef<HTMLAnchorElement, LinkProps>((props, forwardedRef) => (
+    <OriginalNextLink {...props} legacyBehavior={false} ref={forwardedRef} />
+  )),
 });
 
 export const decorators = [

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { forwardRef, ReactElement } from 'react';
 import { PRODUCTS } from '../helpers/products';
 
 const productCategories = [
@@ -24,13 +24,14 @@ const productCategories = [
   },
 ];
 
-export const EcosystemList = (): ReactElement => {
+export const EcosystemList = forwardRef<HTMLDivElement>((_, forwardedRef): ReactElement => {
   return (
     <div
       className="max-h-[calc(100vh-70px)] min-h-[300px] w-[800px] overflow-y-auto rounded-lg bg-white p-5 dark:bg-neutral-800"
       style={{
         boxShadow: 'hsl(206 22% 7% / 35%) 0 10px 38px -10px, hsl(206 22% 7% / 20%) 0 10px 20px -15px',
       }}
+      ref={forwardedRef}
     >
       {productCategories.map(category => (
         <div key={category.title} className="mb-6 last:mb-0">
@@ -71,4 +72,4 @@ export const EcosystemList = (): ReactElement => {
       ))}
     </div>
   );
-};
+});

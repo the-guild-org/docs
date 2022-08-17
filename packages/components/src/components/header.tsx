@@ -14,9 +14,9 @@ import { EcosystemList } from './ecosystem-list';
 import { useWindowSize } from '../helpers/hooks';
 
 const ForwardedLink = forwardRef<HTMLAnchorElement, ILink>(({ children, ...props }, forwardedRef) => (
-  <a {...props} ref={forwardedRef}>
+  <NextLink {...props} ref={forwardedRef}>
     {children}
-  </a>
+  </NextLink>
 ));
 
 const renderLinkOptions = (href: string, onClick?: MouseEventHandler<HTMLAnchorElement>) => {

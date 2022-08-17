@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { forwardRef, ReactElement } from 'react';
 
 const CATEGORIES: {
   title: string;
@@ -64,13 +64,14 @@ const CATEGORIES: {
   },
 ];
 
-export const SolutionsMenu = (): ReactElement => {
+export const SolutionsMenu = forwardRef<HTMLDivElement>((_, forwardedRef): ReactElement => {
   return (
     <div
       className="w-[600px] rounded-lg bg-white p-5 dark:bg-neutral-800"
       style={{
         boxShadow: 'hsl(206 22% 7% / 35%) 0 10px 38px -10px, hsl(206 22% 7% / 20%) 0 10px 20px -15px',
       }}
+      ref={forwardedRef}
     >
       {CATEGORIES.map(category => (
         <div key={category.title} className="mb-6 last:mb-0">
@@ -116,4 +117,4 @@ export const SolutionsMenu = (): ReactElement => {
       </div>
     </div>
   );
-};
+});
