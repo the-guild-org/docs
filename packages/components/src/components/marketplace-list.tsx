@@ -83,7 +83,7 @@ export const MarketplaceList = ({
   placeholder,
   items,
   pagination,
-  ...restProps
+  className
 }: IMarketplaceListProps): ReactElement => {
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -107,17 +107,14 @@ export const MarketplaceList = ({
   }, [items, pageSize]);
 
   return (
-    <section className="w-full bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
+    <section className={clsx("w-full bg-white dark:bg-[#111]", className)}>
       {title && (
-        <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl" {...restProps.titleProps}>
+        <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">
           {title}
         </h2>
       )}
       {!pages[currentPage] || !pages[currentPage].length ? (
-        <div
-          className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300"
-          {...restProps.placeholderProps}
-        >
+        <div className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300">
           {placeholder}
         </div>
       ) : (
@@ -139,7 +136,7 @@ export const MarketplaceList = ({
                 <th className="px-2" />
               </tr>
             </thead>
-            <TableBody items={pages[currentPage]} {...restProps.itemProps} />
+            <TableBody items={pages[currentPage]} />
           </table>
 
           {pageCount > 1 && (

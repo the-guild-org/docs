@@ -100,7 +100,7 @@ export interface ISearchBarProps {
 }
 
 export interface IFeatureListProps {
-  className?: string
+  className?: string;
   title?: string;
   description?: string;
   items: {
@@ -113,7 +113,7 @@ export interface IFeatureListProps {
 }
 
 export interface IInfoListProps {
-  className?: string
+  className?: string;
   title?: string | ReactNode;
   items: {
     title: string | ReactNode;
@@ -152,7 +152,7 @@ export interface IHeroGradientProps {
 }
 
 export interface IHeroMarketplaceProps {
-  className?: string
+  className?: string;
   title: string | ReactNode;
   description: string | ReactNode;
   link: ILink;
@@ -175,25 +175,16 @@ export interface IMarketplaceItemProps {
   link: Omit<ILink, 'children'>;
 }
 
-interface IMarketplaceItemRestProps {
-  titleProps?: ComponentProps<'h3'>;
-  descriptionProps?: ComponentProps<'p'>;
-  dateProps?: ComponentProps<'td'>;
-}
-
-export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
+export interface IMarketplaceItemsProps {
   items: IMarketplaceItemProps[];
 }
 
 export interface IMarketplaceListProps {
+  className?: string;
   title?: string;
   placeholder: string | ReactElement;
   pagination: number;
   items: IMarketplaceItemProps[];
-  wrapperProps?: ComponentProps<'section'>;
-  titleProps?: ComponentProps<'h2'>;
-  placeholderProps?: ComponentProps<'div'>;
-  itemProps?: IMarketplaceItemRestProps;
 }
 
 export interface IMarketplaceSearchProps {
