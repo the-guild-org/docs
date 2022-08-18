@@ -8,13 +8,13 @@ Run the following commands from the root folder of the library.
 Development:
 
 ```sh
-yarn next:dev
+yarn dev
 ```
 
 Production:
 
 ```sh
-yarn next:build
+yarn build
 ```
 
 You can now access the example on <http://localhost:3000>.

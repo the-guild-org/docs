@@ -10,7 +10,7 @@ export const Anchor = forwardRef<HTMLAnchorElement, ILink>(function Anchor(
     const url = new URL(href);
     href = url.pathname + url.search + url.hash;
   }
-  if (newWindow || /https?:\/\//.test(href)) {
+  if (newWindow || /^https?:\/\//.test(href)) {
     return (
       <a ref={forwardedRef} href={href} target="_blank" rel="noreferrer" {...props}>
         {children}
@@ -20,7 +20,8 @@ export const Anchor = forwardRef<HTMLAnchorElement, ILink>(function Anchor(
 
   return (
     <NextLink ref={forwardedRef} href={href} {...props}>
-      {children}
+      {/* Fragment needed to fix Error: React.Children.only expected to receive a single React element child */}
+      <>{children}</>
     </NextLink>
   );
 });

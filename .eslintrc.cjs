@@ -64,7 +64,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['postcss.config.js', 'rollup.config.js', 'scripts/canary-release.js'],
+      files: ['postcss.config.cjs', 'rollup.config.js'],
       env: {
         node: true,
       },

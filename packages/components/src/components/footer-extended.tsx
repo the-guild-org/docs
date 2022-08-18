@@ -74,7 +74,8 @@ export const FooterExtended = ({
   const renderLinks = useCallback(
     (list: ILink[]) => (
       <ul className="m-0 mb-8 list-none p-0 last:mb-0">
-        {list.map(link => (
+        {/* @ts-expect-error -- Property 'logo' does not exist on type 'ILink' */}
+        {list.map(({ logo, ...link }) => (
           <li key={link.href} className="mb-3 last:mb-0">
             <Anchor
               className="

@@ -76,7 +76,7 @@ export const Subheader = ({ product, activeLink, links, cta, className }: ISubhe
           href="/"
           onClick={product.onClick}
           title={`${product.title} - ${product.description}`}
-          className="flex grow no-underline"
+          className="mr-auto flex"
         >
           <Image {...product.image} className={clsx('w-12', product.image.className)} />
           <span className="ml-2 -mt-1 flex flex-col justify-center">

@@ -2,6 +2,8 @@ import { ReactElement } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Footer, Header, Subheader, ThemeProvider } from '@theguild/components';
+import logo from '../public/subheader-logo.svg';
+
 import '@algolia/autocomplete-theme-classic';
 import '@theguild/components/dist/style.css';
 import '@theguild/components/dist/search-bar-v2.css';
@@ -20,7 +22,8 @@ export default function App({ router, pageProps, Component }: AppProps): ReactEl
           title: 'Components',
           description: 'by The Guild',
           image: {
-            src: '/subheader-logo.svg',
+            ...logo,
+            placeholder: 'none',
             alt: 'TGC',
           },
         }}
@@ -35,16 +38,12 @@ export default function App({ router, pageProps, Component }: AppProps): ReactEl
             children: 'GitHub',
             title: 'View on GitHub',
             href: 'https://github.com/the-guild-org/the-guild-components',
-            target: '_blank',
-            rel: 'noreferrer',
           },
         ]}
         cta={{
           children: 'Get Started',
           title: 'Learn more about TGC',
           href: 'https://github.com/the-guild-org/the-guild-components',
-          target: '_blank',
-          rel: 'noreferrer',
         }}
       />
       <Component {...pageProps} />
