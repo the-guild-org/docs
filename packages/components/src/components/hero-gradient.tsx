@@ -36,7 +36,7 @@ export const HeroGradient = ({
           <Shadow className="right-[-22rem] bottom-[-31rem] [background:var(--colorB)]" />
           <Shadow className="-left-12 bottom-[-37rem] hidden [background:var(--colorB)] md:block" />
         </div>
-        <div className={clsx('px-6 md:px-14', image ? 'mb-32 pt-8 md:mb-4 md:pb-52' : 'py-20 md:pt-24 md:pb-14')}>
+        <div className={clsx('px-6 md:px-14', image ? 'mb-32 pt-8 md:mb-4 md:pb-36' : 'py-20 md:pt-24 md:pb-14')}>
           <div className="relative z-[1]">
             <h1 className="mb-2.5 max-w-lg text-2xl font-bold text-white md:text-3xl">{title}</h1>
             <p className="max-w-md text-base text-white opacity-70 md:text-lg">{description}</p>
