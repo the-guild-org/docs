@@ -183,7 +183,7 @@ export const dummySubheader: ISubheaderProps = {
     {
       children: 'GitHub',
       title: 'See our GitHub profile',
-      href: 'https://github.com/dotansimha/envelop'
+      href: 'https://github.com/dotansimha/envelop',
     },
   ],
   cta: {

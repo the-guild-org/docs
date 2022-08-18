@@ -25,4 +25,4 @@ export { PackageCmd } from './package-cmd';
 export { SearchBar } from './search-bar';
 export { Select } from './select';
 export { Subheader } from './subheader';
-export { ThemeProvider } from './theme-provider';
+export { ThemeProvider, useTheme } from './theme-provider';
