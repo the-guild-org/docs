@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import clsx from 'clsx';
 import { IHeroIllustrationProps } from '../types/components';
-import { Anchor } from './anchor';
+import { Button } from './button';
 import { Image } from './image';
 
 export const HeroIllustration = ({
@@ -34,15 +34,7 @@ export const HeroIllustration = ({
       <div className="mb-6 md:mb-0">
         <h2 className="m-0 max-w-sm text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">{title}</h2>
         <p className="mt-1 mb-3 max-w-md text-base text-gray-500 dark:text-gray-400">{description}</p>
-        {link && (
-          <Anchor
-            {...link}
-            className={clsx(
-              'mt-auto w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300',
-              link.className
-            )}
-          />
-        )}
+        {link && <Button {...link} />}
       </div>
     </div>
   </section>
