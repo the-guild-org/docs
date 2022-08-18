@@ -37,7 +37,7 @@ export interface ISubheaderProps {
   product: {
     title: string | ReactNode;
     description: string | ReactNode;
-    image: IImage;
+    image?: IImage;
     onClick?: MouseEventHandler;
   };
   activeLink: string;

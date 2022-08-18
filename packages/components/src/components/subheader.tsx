@@ -78,7 +78,7 @@ export const Subheader = ({ product, activeLink, links, cta, className }: ISubhe
           title={`${product.title} - ${product.description}`}
           className="mr-auto flex"
         >
-          <Image {...product.image} className={clsx('w-12', product.image.className)} />
+          {product.image && <Image {...product.image} className={clsx('w-12', product.image.className)} />}
           <span className="ml-2 -mt-1 flex flex-col justify-center">
             <p className="font-semibold text-black dark:text-white">{product.title}</p>
             <p className="text-xs text-gray-500 dark:text-gray-300">{product.description}</p>

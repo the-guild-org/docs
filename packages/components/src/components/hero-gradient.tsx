@@ -61,7 +61,7 @@ export const HeroGradient = ({
                   max-w-sm
                   select-none
                   sm:max-w-md
-                  md:top-0
+                  md:top-8
                   md:-right-16
                   md:block`,
                 image.className
