@@ -24,7 +24,7 @@ export const HeroIllustration = ({
       gap-8
       py-8
       md:flex-nowrap
-      md:justify-between`,
+      md:justify-around`,
         flipped && 'md:flex-row-reverse'
       )}
     >

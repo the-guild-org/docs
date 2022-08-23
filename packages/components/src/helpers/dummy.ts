@@ -5,6 +5,7 @@ import featureListImage3 from '../static/dummy/envelop/features-modern.png';
 import heroGradientImage from '../static/dummy/envelop/hero.png';
 import heroIllustrationImage from '../static/dummy/envelop/communication.png';
 import marketplaceListImage from '../static/dummy/marketplace/logo-modules.svg';
+import yogaImage from '../static/illustrations/yoga.svg';
 import {
   IFeatureListProps,
   IHeroGradientProps,
@@ -136,7 +137,7 @@ export const dummyHeroGradient: IHeroGradientProps = {
   version: '1.0.7',
   colors: ['#ff34ae', '#1cc8ee'],
   image: {
-    src: heroGradientImage,
+    src: yogaImage,
     alt: 'Illustration',
     loading: 'eager' as const,
   },

@@ -9,6 +9,7 @@ import CubeBR from '../static/illustrations/marketplace-cube-br.png';
 import { IHeroMarketplaceProps } from '../types/components';
 import { Button } from './button';
 import { Image } from './image';
+import { StaticImageData } from 'next/image';
 
 const Shadow = ({ className }: { className: string }): ReactElement => {
   return (
@@ -28,7 +29,7 @@ const Shadow = ({ className }: { className: string }): ReactElement => {
   );
 };
 
-const Cube = ({ className, src }: { className: string; src: string }): ReactElement => {
+const Cube = ({ className, src }: { className: string; src: StaticImageData }): ReactElement => {
   return <Image className={clsx(`absolute -translate-x-1/2 -translate-y-1/2`, className)} src={src} alt="Cube" />;
 };
 
