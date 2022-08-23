@@ -52,16 +52,7 @@ export const HeroGradient = ({
         {image && (
           <Image
             {...image}
-            className={clsx(
-              `
-                  hidden
-                  w-full
-                  max-w-sm
-                  select-none
-                  sm:max-w-md
-                  md:block`,
-              image.className
-            )}
+            className={clsx('hidden w-full max-w-sm select-none sm:max-w-md md:block', image.className)}
           />
         )}
       </div>

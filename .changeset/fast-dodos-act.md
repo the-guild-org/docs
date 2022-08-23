@@ -1,5 +1,5 @@
 ---
-"@theguild/components": minor
+"@theguild/components": major
 "@theguild/editor": minor
 ---
 
