@@ -20,7 +20,6 @@ export const HeroIllustration = ({
       flex
       flex-wrap
       items-center
-      justify-center
       gap-8
       py-8
       md:flex-nowrap
