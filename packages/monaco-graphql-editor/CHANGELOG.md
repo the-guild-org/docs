@@ -1,5 +1,11 @@
 # @theguild/editor
 
+## 1.1.0
+
+### Minor Changes
+
+- [#415](https://github.com/the-guild-org/the-guild-components/pull/415) [`56574ef`](https://github.com/the-guild-org/the-guild-components/commit/56574ef06687a9cc70b7a46029a47be4ac447f68) Thanks [@B2o5T](https://github.com/B2o5T)! - use `next/link` and `next/future/image` everywhere
+
 ## 1.0.0
 
 ### Major Changes
