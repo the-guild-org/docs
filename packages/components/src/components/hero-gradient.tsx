@@ -27,7 +27,10 @@ export const HeroGradient = ({
   return (
     <section className={clsx('bg-white dark:bg-[#111] md:py-14', className)}>
       <div
-        className={clsx('container relative z-0 flex max-w-[90rem] items-center gap-6 px-14', image ? 'py-6' : 'py-14')}
+        className={clsx(
+          'container relative z-0 flex max-w-[90rem] items-center gap-6 px-6 md:px-14',
+          image ? 'py-6' : 'py-14'
+        )}
       >
         <div
           className="absolute inset-0 z-[-1] overflow-hidden bg-black dark:bg-[#111] md:mx-6 md:rounded-3xl"
@@ -38,7 +41,7 @@ export const HeroGradient = ({
           <Shadow className="right-[-22rem] bottom-[-31rem] [background:var(--colorB)]" />
           <Shadow className="-left-12 bottom-[-37rem] hidden [background:var(--colorB)] md:block" />
         </div>
-        <div className={clsx('grow pl-6')}>
+        <div className={clsx('grow md:pl-6')}>
           <h1 className="max-w-lg text-2xl font-bold text-white md:text-3xl">{title}</h1>
           <p className="mt-2.5 mb-4 max-w-md text-base text-white opacity-70 md:text-lg">{description}</p>
           <div className="flex items-center gap-x-3 text-xs md:mt-9">
