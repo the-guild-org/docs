@@ -1,5 +1,18 @@
 # @theguild/components
 
+## 3.0.0
+
+### Major Changes
+
+- [#415](https://github.com/the-guild-org/the-guild-components/pull/415) [`56574ef`](https://github.com/the-guild-org/the-guild-components/commit/56574ef06687a9cc70b7a46029a47be4ac447f68) Thanks [@B2o5T](https://github.com/B2o5T)! - use `next/link` and `next/future/image` everywhere
+
+### Patch Changes
+
+- [#415](https://github.com/the-guild-org/the-guild-components/pull/415) [`56574ef`](https://github.com/the-guild-org/the-guild-components/commit/56574ef06687a9cc70b7a46029a47be4ac447f68) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`algoliasearch@4.14.2` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.14.2) (from `4.14.1`, in `dependencies`)
+  - Updated dependency [`nextra-theme-docs@2.0.0-beta.18` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0-beta.18) (from `2.0.0-beta.17`, in `dependencies`)
+
 ## 2.0.5
 
 ### Patch Changes
