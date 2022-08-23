@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { ISubheaderProps } from '../types/components';
 import { dummySubheader } from '../helpers/dummy';
 import { Subheader } from './subheader';

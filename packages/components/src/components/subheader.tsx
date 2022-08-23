@@ -5,8 +5,10 @@ import { toggleLockBodyScroll } from '../helpers/modals';
 import { CaretSlimIcon } from './icons';
 import { Nav } from './nav';
 import { Button } from './button';
+import { Anchor } from './anchor';
+import { Image } from './image';
 
-export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISubheaderProps): ReactElement => {
+export const Subheader = ({ product, activeLink, links, cta, className }: ISubheaderProps): ReactElement => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const handleNav = useCallback(() => {
@@ -17,13 +19,14 @@ export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISu
   }, []);
 
   const nav = (
-    <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} {...restProps.navigationProps}>
+    <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen}>
       {links.map(link => {
         const isActiveLink = link.href === '/' ? activeLink === link.href : activeLink?.startsWith(link.href);
 
         return (
-          <a
+          <Anchor
             key={link.href}
+            {...link}
             className={clsx(
               `
               mx-auto
@@ -44,10 +47,9 @@ export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISu
               md:text-left
               md:text-xs
             `,
-              isActiveLink ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-400'
+              isActiveLink ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-400',
+              link.className
             )}
-            {...link}
-            {...restProps.linkProps}
           />
         );
       })}
@@ -56,7 +58,8 @@ export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISu
 
   return (
     <header
-      className="
+      className={clsx(
+        `
         sticky
         top-0
         z-10
@@ -64,27 +67,26 @@ export const Subheader = ({ product, activeLink, links, cta, ...restProps }: ISu
         py-5
         shadow-xl
         shadow-gray-400/10
-        dark:bg-[#111]
-      "
-      {...restProps.wrapperProps}
+        dark:bg-[#111]`,
+        className
+      )}
     >
-      <div className="container flex max-w-[90rem] items-center md:justify-end" {...restProps.containerProps}>
-        <a
+      <div className="container flex max-w-[90rem] items-center md:justify-end">
+        <Anchor
           href="/"
           onClick={product.onClick}
           title={`${product.title} - ${product.description}`}
-          className="flex grow no-underline"
-          {...restProps.logoProps}
+          className="mr-auto flex"
         >
-          <img src={product.image.src} alt={product.image.alt} className="w-12" />
+          {product.image && <Image {...product.image} className={clsx('w-12', product.image.className)} />}
           <span className="ml-2 -mt-1 flex flex-col justify-center">
             <p className="font-semibold text-black dark:text-white">{product.title}</p>
             <p className="text-xs text-gray-500 dark:text-gray-300">{product.description}</p>
           </span>
-        </a>
+        </Anchor>
         {nav}
-        {cta && <Button className="mx-1 md:mr-0 md:ml-3" {...cta} {...restProps.ctaProps} />}
-        <button onClick={handleNav} className="mx-2.5 dark:text-white md:hidden" {...restProps.navOpenButtonProps}>
+        {cta && <Button className="mx-1 md:mr-0 md:ml-3" {...cta} />}
+        <button onClick={handleNav} className="mx-2.5 dark:text-white md:hidden">
           <CaretSlimIcon />
         </button>
       </div>

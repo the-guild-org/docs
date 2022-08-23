@@ -29,7 +29,7 @@ function bundle(packageDir) {
         sourcemap: true,
       },
     ],
-    external: ['react-player/lazy', 'algoliasearch/lite', 'classnames', 'react/jsx-runtime'],
+    external: ['react-player/lazy', 'algoliasearch/lite', 'react/jsx-runtime', 'react-dom/client'],
     plugins: [
       nodeResolve({ extensions: ['.ts', '.tsx'] }),
       autoExternal({
@@ -41,17 +41,13 @@ function bundle(packageDir) {
       babel({
         babelHelpers: 'bundled',
         extensions: ['.tsx', '.ts'],
-        configFile: join(CWD, '.babelrc'),
+        configFile: join(CWD, 'babel.config.cjs'),
       }),
       image(),
       copy({
         targets: [
           {
             src: `./dist/${packageDir}/src/*`,
-            dest: `./${packageDir}/dist`,
-          },
-          {
-            src: join(CWD, packageDir, 'src/static/css/*'),
             dest: `./${packageDir}/dist`,
           },
         ],

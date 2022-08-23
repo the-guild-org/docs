@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { dummyCardsColorful } from '../helpers/dummy';
 import { CardsColorful, CardsColorfulProps } from './cards-colorful';
 

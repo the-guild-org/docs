@@ -9,6 +9,7 @@ import * as monaco from 'monaco-editor';
 import { IRange, CompletionItem } from 'graphql-language-service';
 import * as languages from './enums';
 import { toGraphQLPosition, toMonacoRange } from './utils';
+import { useTheme } from 'next-themes';
 
 // This enum `CompletionItemKind` exist on graphql-language-service v4
 enum lsCIK {
@@ -130,6 +131,7 @@ export const ExecutableDocumentEditor = ({
   schema,
   ...editorProps
 }: { schema: GraphQLSchema } & Omit<EditorProps, 'language'>): ReactElement => {
+  const { theme } = useTheme();
   const monaco = useMonaco();
   const [completionProvider, setCompletionProvider] = useState<monaco.IDisposable | null>(null);
   const editorUriRef = useRef<monaco.Uri>();
@@ -167,6 +169,7 @@ export const ExecutableDocumentEditor = ({
   return (
     <MonacoEditor
       height="70vh"
+      theme={theme === 'dark' ? 'vs-dark' : 'light'}
       {...editorProps}
       language="graphql"
       onMount={editor => {

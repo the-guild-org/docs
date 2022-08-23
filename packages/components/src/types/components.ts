@@ -1,113 +1,66 @@
-import React, { ReactNode } from 'react';
+import { ComponentProps, ReactNode, ReactElement, FormEvent, MouseEventHandler } from 'react';
 import { ReactPlayerProps } from 'react-player';
-
-type IImage = React.ImgHTMLAttributes<unknown>;
+import { ImageProps as IImage } from 'next/future/image';
+import { LinkProps } from 'next/link';
 
 interface IVideo {
   src: string;
   placeholder: string;
 }
 
-export interface ILink {
-  title: string;
-  href: string;
-  children?: string | React.ReactNode;
-  rel?: string;
-  style?: React.CSSProperties;
-  target?: string;
-  active?: boolean;
-  onClick?: React.MouseEventHandler;
-}
+export type ILink = Omit<LinkProps, 'href'> &
+  Pick<ComponentProps<'a'>, 'target' | 'rel' | 'title' | 'className' | 'style'> & {
+    href: string;
+    children: ReactNode;
+    newWindow?: boolean;
+    sameSite?: boolean;
+  };
 
-export interface IHeaderLink {
+export type IHeaderLink = ILink & {
   label: string;
-  title: string;
-  href: string;
   menu?: ReactNode;
-  onClick?: () => void;
-}
+};
 
 export interface IHeaderProps {
+  className?: string;
   accentColor: string;
   activeLink?: string;
   themeSwitch?: boolean;
-  transformLinks?: (links: IHeaderLink[]) => IHeaderLink[];
-  wrapperProps?: React.ComponentProps<'header'>;
-  containerProps?: React.ComponentProps<'div'>;
-  logoProps?: React.ComponentProps<'a'>;
-  navigationProps?: React.ComponentProps<'nav'>;
-  linkProps?: React.ComponentProps<'a'>;
+  transformLinks?: (links: Omit<IHeaderLink, 'children'>[]) => Omit<IHeaderLink, 'children'>[];
   searchBarProps?: Partial<ISearchBarProps>;
   disableSearch?: boolean;
-  themeButtonProps?: React.ComponentProps<'button'>;
-  navOpenButtonProps?: React.ComponentProps<'button'>;
-  headerModalProps?: IHeaderModalRestProps;
+  sameSite?: boolean;
 }
 
 export interface ISubheaderProps {
+  className?: string;
   product: {
-    title: string | React.ReactNode;
-    description: string | React.ReactNode;
-    image: IImage;
-    onClick?: React.MouseEventHandler;
+    title: string | ReactNode;
+    description: string | ReactNode;
+    image?: IImage;
+    onClick?: MouseEventHandler;
   };
   activeLink: string;
   links: ILink[];
   cta: ILink;
-
-  wrapperProps?: React.ComponentProps<'header'>;
-  containerProps?: React.ComponentProps<'div'>;
-  logoProps?: React.ComponentProps<'a'>;
-  navigationProps?: React.ComponentProps<'nav'>;
-  linkProps?: React.ComponentProps<'a'>;
-  ctaProps?: React.ComponentProps<'a'>;
-  navOpenButtonProps?: React.ComponentProps<'button'>;
-}
-
-interface IHeaderModalRestProps {
-  titleProps?: React.ComponentProps<'h4'>;
-  descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
-  imageProps?: React.ComponentProps<'img'>;
-  categoryTitleProps?: React.ComponentProps<'h3'>;
-  modalProps?: IModalRestProps;
 }
 
 export interface IFooterProps {
+  className?: string;
   sameSite?: boolean;
-  wrapperProps?: React.ComponentProps<'footer'>;
-  containerProps?: React.ComponentProps<'div'>;
-  linkProps?: React.ComponentProps<'a'>;
-  logoProps?: React.ComponentProps<'a'>;
-  copyrightProps?: React.ComponentProps<'p'>;
+  logo?: ILink;
 }
 
 export interface IFooterExtendedProps {
+  className?: string;
   sameSite?: boolean;
   resources?: ILink[];
-  onNewsletterSubmit?: (e: React.FormEvent, value: string) => void;
-  wrapperProps?: React.ComponentProps<'footer'>;
-  containerProps?: React.ComponentProps<'div'>;
-  linkProps?: React.ComponentProps<'a'>;
-  logoProps?: React.ComponentProps<'a'>;
-  titleProps?: React.ComponentProps<'p'>;
-  descriptionProps?: React.ComponentProps<'p'>;
-  copyrightProps?: React.ComponentProps<'p'>;
-  newsletterProps?: React.ComponentProps<'form'>;
+  onNewsletterSubmit?: (e: FormEvent, value: string) => void;
+  logo?: ILink;
 }
 
-interface IModalRestProps {
-  wrapperProps?: React.ComponentProps<'div'>;
-  containerProps?: React.ComponentProps<'div'>;
-  overlayProps?: React.ComponentProps<'div'>;
-  bodyProps?: React.ComponentProps<'div'>;
-  headerTitleProps?: React.ComponentProps<'h2'>;
-  headerDescriptionProps?: React.ComponentProps<'p'>;
-  headerLinkProps?: React.ComponentProps<'a'>;
-  headerImageProps?: React.ComponentProps<'img'>;
-}
-
-export interface IModalProps extends IModalRestProps {
+export interface IModalProps {
+  className?: string;
   children: ReactNode;
   title: string | ReactNode;
   description?: string | ILink;
@@ -133,155 +86,101 @@ export interface ISearchBarProps {
 }
 
 export interface IFeatureListProps {
+  className?: string;
   title?: string;
   description?: string;
   items: {
     title: string;
     description: string;
     image: IImage;
-    linkProps?: React.ComponentProps<'a'>;
+    link?: ILink;
   }[];
-
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
-  itemTitleProps?: React.ComponentProps<'h3'>;
-  itemDescriptionProps?: React.ComponentProps<'p'>;
-  itemImageProps?: React.ComponentProps<'img'>;
+  link?: ILink;
 }
 
 export interface IInfoListProps {
-  title?: string | React.ReactNode;
+  className?: string;
+  title?: string | ReactNode;
   items: {
-    title: string | React.ReactNode;
-    description: string | React.ReactNode;
+    title: string | ReactNode;
+    description: string | ReactNode;
     link?: ILink;
   }[];
-
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  itemTitleProps?: React.ComponentProps<'h3'>;
-  itemDescriptionProps?: React.ComponentProps<'p'>;
-  itemLinkProps?: React.ComponentProps<'a'>;
 }
 
 export interface IHeroVideoProps {
-  title: string | React.ReactNode;
-  description: string | React.ReactNode;
+  className?: string;
+  title: string | ReactNode;
+  description: string | ReactNode;
   flipped?: boolean;
   link?: ILink;
   video: IVideo;
-
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
   videoProps?: ReactPlayerProps;
 }
 
 export interface IHeroIllustrationProps {
-  title: string | React.ReactNode;
-  description: string | React.ReactNode;
+  className?: string;
+  title: string | ReactNode;
+  description: string | ReactNode;
   flipped?: boolean;
   link?: ILink;
   image: IImage;
-
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
-  imageProps?: React.ComponentProps<'img'>;
 }
 
 export interface IHeroGradientProps {
-  title: string | React.ReactNode;
-  description: string | React.ReactNode;
+  className?: string;
+  title: string | ReactNode;
+  description: string | ReactNode;
   colors?: string[];
-  version?: string | React.ReactNode;
+  version?: string | ReactNode;
   link?: ILink | ILink[];
-  image?: IImage | React.ReactElement;
-
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  gradientProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h1'>;
-  descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
-  versionProps?: React.ComponentProps<'span'>;
-  imageProps?: React.ComponentProps<'img'>;
+  image?: IImage;
 }
 
 export interface IHeroMarketplaceProps {
-  title: string | React.ReactNode;
-  description: string | React.ReactNode;
+  className?: string;
+  title: string | ReactNode;
+  description: string | ReactNode;
   link: ILink;
-
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  descriptionProps?: React.ComponentProps<'p'>;
-  linkProps?: React.ComponentProps<'a'>;
-  imageProps?: React.ComponentProps<'img'>;
+  image?: IImage;
 }
 
 export interface IMarketplaceItemProps {
   title: string;
-  description: string | React.ReactNode;
+  description: string | ReactNode;
   tags?: string[];
   modal?: {
     header: {
       image?: IImage;
       description?: string | ILink;
     };
-    content: string | (() => React.ReactNode) | React.ReactNode;
+    content: string | (() => ReactNode) | ReactNode;
   };
   update: string;
-  image?: IImage;
-  link?: ILink;
+  image: IImage;
+  link: Omit<ILink, 'children'>;
 }
 
-interface IMarketplaceItemRestProps {
-  imageProps?: React.ComponentProps<'img'>;
-  titleProps?: React.ComponentProps<'h3'>;
-  descriptionProps?: React.ComponentProps<'p'>;
-  dateProps?: React.ComponentProps<'td'>;
-  linkProps?: React.ComponentProps<'a'>;
-}
-
-export interface IMarketplaceItemsProps extends IMarketplaceItemRestProps {
+export interface IMarketplaceItemsProps {
   items: IMarketplaceItemProps[];
 }
 
 export interface IMarketplaceListProps {
+  className?: string;
   title?: string;
-  placeholder: string | React.ReactElement;
+  placeholder: string | ReactElement;
   pagination: number;
   items: IMarketplaceItemProps[];
-  wrapperProps?: React.ComponentProps<'section'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  placeholderProps?: React.ComponentProps<'div'>;
-  itemProps?: IMarketplaceItemRestProps;
 }
 
 export interface IMarketplaceSearchProps {
-  title: string | React.ReactNode;
+  className?: string;
+  title: string | ReactNode;
   placeholder: string;
   primaryList: IMarketplaceListProps;
   secondaryList?: IMarketplaceListProps;
   queryList?: IMarketplaceListProps;
   tagsFilter?: string[] | ReadonlyArray<string>;
-  wrapperProps?: React.ComponentProps<'section'>;
-  containerProps?: React.ComponentProps<'div'>;
-  titleProps?: React.ComponentProps<'h2'>;
-  searchProps?: React.ComponentProps<'input'>;
-  queryListProps?: IMarketplaceItemRestProps;
-  primaryListProps?: IMarketplaceItemRestProps;
-  secondaryListProps?: IMarketplaceItemRestProps;
 }
 
 export interface ISchemaPageProps {
@@ -292,7 +191,7 @@ export interface ISchemaPageProps {
 
 export interface IEditorProps {
   children: ReactNode;
-  title?: string;
+  title: string;
   frameworks?: string[];
   schema?: string;
   image?: string;

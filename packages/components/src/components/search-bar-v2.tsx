@@ -1,6 +1,6 @@
 import { ISearchBarProps } from '../types/components';
 import { autocomplete, AutocompleteApi, getAlgoliaResults } from '@algolia/autocomplete-js';
-import { render } from 'react-dom';
+import { createRoot, Root } from 'react-dom/client';
 import { createElement, Fragment, ReactElement, useEffect, useRef } from 'react';
 import algoliaSearch from 'algoliasearch/lite';
 import { createAlgoliaInsightsPlugin } from '@algolia/autocomplete-plugin-algolia-insights';
@@ -11,6 +11,7 @@ import { AlgoliaSearchItem } from '../types/algolia';
 import { SidePreview } from './search-bar-v2/side-preview';
 import { debounced } from './search-bar-v2/utils';
 import { templates } from './search-bar-v2/templates';
+import { Anchor } from '@theguild/components';
 
 export const SearchBarV2 = ({
   accentColor,
@@ -20,6 +21,8 @@ export const SearchBarV2 = ({
 }: ISearchBarProps): ReactElement => {
   const containerRef = useRef(null);
   const search = useRef<AutocompleteApi<AlgoliaSearchItem>>();
+  const panelRootRef = useRef<Root | null>(null);
+  const rootRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) {
@@ -42,39 +45,50 @@ export const SearchBarV2 = ({
       insightsClient,
     });
 
+    const getRender = (root: HTMLElement) => {
+      if (!panelRootRef.current || rootRef.current !== root) {
+        rootRef.current = root;
+
+        panelRootRef.current?.unmount();
+        panelRootRef.current = createRoot(root);
+      }
+      return panelRootRef.current.render.bind(panelRootRef.current);
+    };
+
     const s = autocomplete<AlgoliaSearchItem>({
       container: containerRef.current,
       detachedMediaQuery: '',
       defaultActiveItemId: 0,
       placeholder,
       plugins: [algoliaInsightsPlugin],
-      // @ts-ignore -- TODO: Don't know if it's a real error
-      renderer: { createElement, Fragment, render },
+      renderer: {
+        createElement,
+        Fragment,
+        render: () => null,
+      },
       renderNoResults({ Fragment, state: { query, status } }, root) {
-        if (!query || status === 'loading') {
-          render(<Fragment />, root);
-        } else {
-          render(
-            <Fragment>
-              <div className="my-20 w-full text-center text-xl font-light text-gray-600 dark:text-gray-400">
-                No results for "{query}"
-              </div>
-            </Fragment>,
-            root
-          );
-        }
+        const render = getRender(root);
+        render(
+          !query || status === 'loading' ? (
+            <Fragment />
+          ) : (
+            <div className="my-20 w-full text-center text-xl font-light text-gray-600 dark:text-gray-400">
+              No results for "{query}"
+            </div>
+          )
+        );
       },
       render({ children, state, Fragment, components }, root) {
+        const render = getRender(root);
         render(
           <Fragment>
             <div className="flex h-[600px] flex-row">
               <div className="min-w-[400px]">{children}</div>
               <SidePreview accentColor={accentColor} item={state.context.preview} components={components} />
             </div>
-            <a
+            <Anchor
               href="https://algolia.com"
-              target="_blank"
-              rel="noreferrer"
+              newWindow
               className="mt-5 flex w-full flex-row items-center justify-end p-2 text-xs font-light text-black dark:text-white"
             >
               Search by&nbsp;
@@ -85,9 +99,8 @@ export const SearchBarV2 = ({
                   fillRule="evenodd"
                 />
               </svg>
-            </a>
-          </Fragment>,
-          root
+            </Anchor>
+          </Fragment>
         );
       },
       openOnFocus: true,

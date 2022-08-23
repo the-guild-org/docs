@@ -1,4 +1,5 @@
-import { ReactElement } from 'react';
+import { forwardRef, ReactElement } from 'react';
+import { Anchor } from '@theguild/components';
 
 const CATEGORIES: {
   title: string;
@@ -64,24 +65,24 @@ const CATEGORIES: {
   },
 ];
 
-export const SolutionsMenu = (): ReactElement => {
+export const SolutionsMenu = forwardRef<HTMLDivElement>(function SolutionsMenu(_, forwardedRef): ReactElement {
   return (
     <div
-      className="w-[600px] rounded-lg bg-white p-5 dark:bg-gray-800"
+      className="w-[600px] rounded-lg bg-white p-5 dark:bg-neutral-800"
       style={{
         boxShadow: 'hsl(206 22% 7% / 35%) 0 10px 38px -10px, hsl(206 22% 7% / 20%) 0 10px 20px -15px',
       }}
+      ref={forwardedRef}
     >
       {CATEGORIES.map(category => (
         <div key={category.title} className="mb-6 last:mb-0">
           <h3 className="mt-1 mb-5 w-full text-base font-normal text-black dark:text-gray-400">{category.title}</h3>
           <div className="flex flex-wrap">
             {category.items.map(item => (
-              <a
+              <Anchor
                 key={item.title}
                 href={item.url}
-                target="_blank"
-                rel="noreferrer"
+                newWindow
                 className="
                   flex
                   w-full
@@ -99,21 +100,20 @@ export const SolutionsMenu = (): ReactElement => {
                 "
               >
                 <h4 className="m-0 text-xs text-black dark:text-gray-300">{item.title}</h4>
-              </a>
+              </Anchor>
             ))}
           </div>
         </div>
       ))}
       <div className="text-right">
-        <a
+        <Anchor
           href="https://graphql-yoga.com/tutorial/basic/00-introduction"
-          target="_blank"
-          rel="noreferrer"
+          newWindow
           className="text-xs text-black dark:text-white"
         >
           Write your first GraphQL API →
-        </a>
+        </Anchor>
       </div>
     </div>
   );
-};
+});

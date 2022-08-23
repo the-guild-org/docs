@@ -3,6 +3,8 @@ import { Newsletter } from './newsletter';
 import { PRODUCTS } from '../helpers/products';
 import { IFooterExtendedProps, ILink } from '../types/components';
 import { GuildLogo, TheGuild } from './logos';
+import clsx from 'clsx';
+import { Anchor } from './anchor';
 
 const COMPANY: ILink[] = [
   {
@@ -63,25 +65,19 @@ const Title = ({ children, ...props }: { children: ReactNode }): ReactElement =>
 };
 
 export const FooterExtended = ({
+  className,
   sameSite,
   resources,
   onNewsletterSubmit,
-  ...restProps
+  logo,
 }: IFooterExtendedProps): ReactElement => {
-  const logoOptions = sameSite
-    ? { href: '/' }
-    : {
-        href: 'https://the-guild.dev',
-        rel: 'noreferrer',
-        target: '_blank',
-      };
-
   const renderLinks = useCallback(
     (list: ILink[]) => (
       <ul className="m-0 mb-8 list-none p-0 last:mb-0">
-        {list.map(link => (
+        {/* @ts-expect-error -- Property 'logo' does not exist on type 'ILink' */}
+        {list.map(({ logo, ...link }) => (
           <li key={link.href} className="mb-3 last:mb-0">
-            <a
+            <Anchor
               className="
                 inline-block
                 text-sm
@@ -94,8 +90,7 @@ export const FooterExtended = ({
                 hover:dark:text-gray-100
               "
               {...link}
-              rel="noreferrer"
-              target="_blank"
+              newWindow
             />
           </li>
         ))}
@@ -105,14 +100,11 @@ export const FooterExtended = ({
   );
 
   return (
-    <footer className="bg-white text-xs dark:bg-[#111]" {...restProps.wrapperProps}>
-      <div
-        className="container max-w-[90rem] border-t border-gray-300 dark:border-gray-800"
-        {...restProps.containerProps}
-      >
+    <footer className={clsx('bg-white text-xs dark:bg-[#111]', className)}>
+      <div className="container max-w-[90rem] border-t border-gray-300 dark:border-gray-800">
         <div className="my-8 flex flex-col gap-6 pt-2 pb-4 lg:flex-row">
           <div className="lg:w-full">
-            <Title {...restProps.titleProps}>PRODUCTS</Title>
+            <Title>PRODUCTS</Title>
             <div className="flex gap-6">
               <div className="w-1/2">{renderLinks(PRODUCTS_COLUMN_1)}</div>
               <div className="w-1/2">{renderLinks(PRODUCTS_COLUMN_2)}</div>
@@ -122,23 +114,23 @@ export const FooterExtended = ({
             <div className="sm:w-1/2">
               {resources && (
                 <>
-                  <Title {...restProps.titleProps}>RESOURCES</Title>
+                  <Title>RESOURCES</Title>
                   {renderLinks(resources)}
                 </>
               )}
-              <Title {...restProps.titleProps}>COMPANY</Title>
+              <Title>COMPANY</Title>
               {renderLinks(COMPANY)}
             </div>
             <div className="sm:w-1/2">
-              <Title {...restProps.titleProps}>COMMUNITY</Title>
+              <Title>COMMUNITY</Title>
               {renderLinks(COMMUNITY)}
               {onNewsletterSubmit && (
                 <>
-                  <Title {...restProps.titleProps}>NEWSLETTER</Title>
-                  <p className="mb-3 text-sm text-gray-500 dark:text-gray-400" {...restProps.descriptionProps}>
+                  <Title>NEWSLETTER</Title>
+                  <p className="mb-3 text-sm text-gray-500 dark:text-gray-400">
                     Stay up to date with the latest features and changes
                   </p>
-                  <Newsletter onNewsletterSubmit={onNewsletterSubmit} {...restProps.newsletterProps} />
+                  <Newsletter onNewsletterSubmit={onNewsletterSubmit} />
                 </>
               )}
             </div>
@@ -157,14 +149,15 @@ export const FooterExtended = ({
             lg:flex-nowrap
           "
         >
-          <a
+          <Anchor
             className="flex items-center gap-x-1.5 text-gray-500 transition hover:text-black hover:dark:text-gray-100"
-            {...logoOptions}
-            {...restProps.logoProps}
+            href="https://the-guild.dev"
+            sameSite={sameSite}
+            {...logo}
           >
             <GuildLogo className="w-7" />
             <TheGuild className="w-10" />
-          </a>
+          </Anchor>
         </div>
       </div>
     </footer>

@@ -1,50 +1,44 @@
 import { ReactElement } from 'react';
+import clsx from 'clsx';
 import { IFeatureListProps } from '../types/components';
+import { Anchor } from './anchor';
+import { Image } from './image';
 
-export const FeatureList = ({
-  title,
-  description,
-  items,
-  linkProps,
-  ...restProps
-}: IFeatureListProps): ReactElement => (
-  <section className="bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
-    <div className="container py-14" {...restProps.containerProps}>
+export const FeatureList = ({ title, description, items, link, className }: IFeatureListProps): ReactElement => (
+  <section className={clsx('bg-white dark:bg-[#111]', className)}>
+    <div className="container py-14">
       {title && (
         <div className="mb-6 flex flex-col items-center">
-          <h2
-            className="mt-0 mb-1.5 text-center text-2xl font-bold text-black dark:text-gray-50 md:text-3xl"
-            {...restProps.titleProps}
-          >
+          <h2 className="mt-0 mb-1.5 text-center text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">
             {title}
           </h2>
           {description && (
-            <div
-              className="mt-1 mb-1.5 text-center text-base text-gray-500 dark:text-gray-400"
-              {...restProps.descriptionProps}
-            >
-              {description}
-            </div>
+            <div className="mt-1 mb-1.5 text-center text-base text-gray-500 dark:text-gray-400">{description}</div>
           )}
-          {linkProps && (
-            <a className="w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300" {...linkProps} />
+          {link && (
+            <Anchor
+              {...link}
+              className={clsx(
+                'w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300',
+                link.className
+              )}
+            />
           )}
         </div>
       )}
       <div className="flex flex-wrap justify-center gap-12">
         {items.map(item => (
           <div className="flex w-56 flex-col items-center" key={title}>
-            <img src={item.image.src} alt={item.image.alt} className="w-28" {...restProps.itemImageProps} />
-            <h3 className="m-0 text-lg font-bold text-black dark:text-gray-50" {...restProps.itemTitleProps}>
-              {item.title}
-            </h3>
-            <div className="text-center text-sm text-gray-500 dark:text-gray-400" {...restProps.itemDescriptionProps}>
-              {item.description}
-            </div>
-            {item.linkProps && (
-              <a
-                className="mt-auto w-max pt-2 text-sm text-cyan-400 no-underline transition hover:text-cyan-300"
-                {...item.linkProps}
+            <Image {...item.image} className={clsx('w-28', item.image.className)} />
+            <h3 className="m-0 text-lg font-bold text-black dark:text-gray-50">{item.title}</h3>
+            <div className="text-center text-sm text-gray-500 dark:text-gray-400">{item.description}</div>
+            {item.link && (
+              <Anchor
+                {...item.link}
+                className={clsx(
+                  'mt-auto w-max pt-2 text-sm text-cyan-400 no-underline transition hover:text-cyan-300',
+                  item.link.className
+                )}
               />
             )}
           </div>

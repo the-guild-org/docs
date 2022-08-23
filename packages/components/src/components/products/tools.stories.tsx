@@ -1,11 +1,11 @@
 import { ReactElement } from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { FooterExtended } from '../footer-extended';
 import { Header } from '../header';
 import { HeroGradient } from '../hero-gradient';
 import { InfoList } from '../info-list';
 import { Subheader } from '../subheader';
-import { ILink } from '../../types/components';
+import { ILink, ISubheaderProps } from '../../types/components';
 
 export default {
   title: 'Products/Tools',
@@ -44,14 +44,10 @@ Home.args = {
   page: '/',
 };
 
-const subheaderData = {
+const subheaderData: ISubheaderProps = {
   product: {
     title: 'GraphQL Tools',
     description: 'Modern GraphQL Framework',
-    image: {
-      src: 'https://the-guild.dev/static/shared-logos/products/tools.svg',
-      alt: 'Envelop',
-    },
   },
   activeLink: '/',
   links: [
@@ -69,8 +65,6 @@ const subheaderData = {
       children: 'GitHub',
       title: 'See our GitHub profile',
       href: 'https://github.com/ardatan/graphql-tools',
-      target: '_blank',
-      rel: 'noreferrer',
     },
   ],
   cta: {
@@ -120,37 +114,21 @@ const footerData: { resources: ILink[] } = {
       children: 'Documentation',
       title: 'Read the Docs',
       href: '/docs',
-      onClick(e) {
-        e.preventDefault();
-        alert('Internal link handler');
-      },
     },
     {
       children: 'Generate Schemas',
       title: 'Learn about generating schemas',
       href: '/docs/generate-schema',
-      onClick(e) {
-        e.preventDefault();
-        alert('Internal link handler');
-      },
     },
     {
       children: 'Mock APIs',
       title: 'Learn about mocking APIs',
       href: '/docs/mocking',
-      onClick(e) {
-        e.preventDefault();
-        alert('Internal link handler');
-      },
     },
     {
       children: 'Stitch Schemas',
       title: 'Learn about stitching schemas',
       href: '/docs/stitch-combining-schemas',
-      onClick(e) {
-        e.preventDefault();
-        alert('Internal link handler');
-      },
     },
   ],
 };

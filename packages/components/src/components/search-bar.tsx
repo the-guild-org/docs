@@ -10,6 +10,7 @@ import { toggleLockBodyScroll } from '../helpers/modals';
 import { algoliaConfig } from '../configs';
 import { CloseIcon, HamburgerIcon, HashTagIcon, PageIcon, SearchIcon } from './icons';
 import { SearchBarV2 } from './search-bar-v2';
+import { Anchor } from './anchor';
 
 const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
   hosts: algoliaConfig.hosts,
@@ -139,7 +140,7 @@ const SearchBox = ({
           text-lg
           text-gray-500
           [border-color:var(--accentColor)]
-          dark:bg-gray-800
+          dark:bg-neutral-800
           dark:text-gray-300
         "
         style={{ '--accentColor': accentColor }}
@@ -272,13 +273,11 @@ const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }):
               );
             }
 
-            const isSameWebsite = typeof window === 'object' && subHit.url.startsWith(window.location.origin);
-
             return (
-              <a
+              <Anchor
                 key={subHit.url}
                 href={subHit.url}
-                target={isSameWebsite ? '_self' : '_blank'}
+                sameSite={typeof window === 'object' && subHit.url.startsWith(window.location.origin)}
                 className="
                   mb-2
                   flex
@@ -294,13 +293,12 @@ const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }):
                   last:mb-0
                   hover:![background:var(--color)]
                   focus:ring
-                  dark:bg-gray-800
+                  dark:bg-neutral-800
                 "
-                rel="noreferrer"
               >
                 {transformIcon(subHit)}
                 <div>{content}</div>
-              </a>
+              </Anchor>
             );
           })}
         </section>
@@ -359,7 +357,7 @@ export const SearchBarComponent = ({
         md:pl-1
         md:pr-8
         md:hover:[border-color:var(--accentColor)]
-        md:dark:bg-gray-800
+        md:dark:bg-neutral-800
         md:dark:text-gray-300
         `,
           isFull && '!md:p-2 !m-0 w-full',

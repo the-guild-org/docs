@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { IFeatureListProps } from '../types/components';
 import { dummyFeatureList } from '../helpers/dummy';
 import { FeatureList } from './feature-list';

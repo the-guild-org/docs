@@ -4,42 +4,45 @@ import { ISchemaPageProps, IEditorProps } from '../types/components';
 import { Tag, TagsContainer } from './tag';
 import { SchemaEditor, ExecutableDocumentEditor } from '@theguild/monaco-graphql-editor';
 import { CaretSlimIcon, MoreIcon, ShareIcon } from './icons';
+import { Image } from './image';
 
-const Editor = ({ title, frameworks = [], image, children }: Omit<IEditorProps, 'schema' | 'operations'>) => (
-  <div className="min-w-full max-w-full pr-px lg:min-w-[25%] lg:max-w-[25%]">
-    <div
-      className="
-        flex
-        h-[85px]
-        items-center
-        justify-between
-        bg-gray-100
-        p-3.5
-        dark:bg-transparent
-      "
-    >
-      <div className="flex items-center gap-2.5">
-        {image && <img src={image} alt="logo" className="h-14 w-14" />}
-        <span>
-          {title && <p className="text-sm dark:text-gray-50">{title}</p>}
-          {frameworks.length > 0 && (
-            <span className="text-sm dark:text-gray-50">
-              {frameworks.map(name => (
-                <span key="name" className="before:mx-1.5 before:content-['•'] before:first-of-type:hidden">
-                  {name}
-                </span>
-              ))}
-            </span>
-          )}
-        </span>
+const Editor = ({ title, frameworks = [], image, children }: Omit<IEditorProps, 'schema' | 'operations'>) => {
+  return (
+    <div className="min-w-full max-w-full pr-px lg:min-w-[25%] lg:max-w-[25%]">
+      <div
+        className="
+          flex
+          h-[85px]
+          items-center
+          justify-between
+          bg-gray-100
+          p-3.5
+          dark:bg-transparent
+        "
+      >
+        <div className="flex items-center gap-2.5">
+          {image && <Image src={image} alt="logo" className="h-14 w-14" />}
+          <span>
+            {title && <p className="text-sm dark:text-gray-50">{title}</p>}
+            {frameworks.length > 0 && (
+              <span className="text-sm dark:text-gray-50">
+                {frameworks.map(name => (
+                  <span key={name} className="before:mx-1.5 before:content-['•'] before:first-of-type:hidden">
+                    {name}
+                  </span>
+                ))}
+              </span>
+            )}
+          </span>
+        </div>
+        <Button>
+          <CaretSlimIcon className="h-4 w-4" />
+        </Button>
       </div>
-      <Button>
-        <CaretSlimIcon className="h-4 w-4" />
-      </Button>
+      {children}
     </div>
-    {children}
-  </div>
-);
+  );
+};
 
 const Button = ({ children }: { children: ReactNode }): ReactElement => {
   return (
@@ -62,7 +65,6 @@ const Button = ({ children }: { children: ReactNode }): ReactElement => {
 
 export const SchemaPage = ({ schemaName, tags = [], editorData }: ISchemaPageProps): ReactElement => {
   const [schemaObj, setSchemaObj] = useState(() => buildSchema(editorData[0].schema!));
-
   return (
     <section className="w-full bg-white dark:bg-[#111]">
       <div className="container flex max-w-[90rem] flex-col justify-between py-6 md:flex-row md:gap-16">
@@ -98,7 +100,7 @@ export const SchemaPage = ({ schemaName, tags = [], editorData }: ISchemaPagePro
         </Editor>
 
         {editorData.slice(2).map(data => (
-          <Editor {...data} key={data.title || 'output'}>
+          <Editor {...data} key={data.title}>
             <SchemaEditor schema={data.schema} />
           </Editor>
         ))}

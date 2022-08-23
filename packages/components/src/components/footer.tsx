@@ -1,6 +1,8 @@
 import { ReactElement } from 'react';
 import { IFooterProps, ILink } from '../types/components';
 import { GuildLogo } from './logos';
+import clsx from 'clsx';
+import { Anchor } from './anchor';
 
 const links: ILink[] = [
   {
@@ -30,17 +32,9 @@ const links: ILink[] = [
   },
 ];
 
-export const Footer = ({ sameSite, ...restProps }: IFooterProps): ReactElement => {
-  const logoOptions = sameSite
-    ? { href: '/' }
-    : {
-        href: 'https://the-guild.dev',
-        rel: 'noreferrer',
-        target: '_blank',
-      };
-
+export const Footer = ({ sameSite, className, logo }: IFooterProps): ReactElement => {
   return (
-    <footer className="bg-white text-xs text-gray-500 dark:bg-[#111] dark:text-gray-400" {...restProps.wrapperProps}>
+    <footer className={clsx('bg-white text-xs text-gray-500 dark:bg-[#111] dark:text-gray-400', className)}>
       <div
         className="
           container
@@ -56,11 +50,10 @@ export const Footer = ({ sameSite, ...restProps }: IFooterProps): ReactElement =
           md:flex-row
           md:py-5
         "
-        {...restProps.containerProps}
       >
-        <a className="grow" {...logoOptions} {...restProps.logoProps}>
+        <Anchor className="grow" href="https://the-guild.dev" sameSite={sameSite} {...logo}>
           <GuildLogo className="mx-auto mb-3 transition hover:text-gray-900 dark:hover:text-gray-100 md:mb-0" />
-        </a>
+        </Anchor>
         <ul className="m-0 flex list-none flex-wrap p-0">
           {links.map(link => (
             <li
@@ -71,12 +64,10 @@ export const Footer = ({ sameSite, ...restProps }: IFooterProps): ReactElement =
                 md:before:content-['•']
               "
             >
-              <a
-                target="_blank"
-                rel="noreferrer"
+              <Anchor
+                newWindow
                 className="inline-block no-underline transition hover:text-black hover:dark:text-gray-100"
                 {...link}
-                {...restProps.linkProps}
               />
             </li>
           ))}

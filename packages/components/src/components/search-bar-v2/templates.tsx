@@ -1,10 +1,11 @@
 import { SourceTemplates } from '@algolia/autocomplete-js';
 import { AlgoliaSearchItem } from '../../types/algolia';
+import { Anchor } from '../anchor';
 
 export const templates: SourceTemplates<AlgoliaSearchItem> = {
   item({ item: hit, components }) {
     return (
-      <a href={hit.url} className="aa-ItemLink">
+      <Anchor href={hit.url} className="aa-ItemLink">
         <div className="aa-ItemContent">
           <div className="aa-ItemContentBody">
             <div className="aa-ItemContentTitle">
@@ -15,7 +16,7 @@ export const templates: SourceTemplates<AlgoliaSearchItem> = {
             </div>
           </div>
         </div>
-      </a>
+      </Anchor>
     );
   },
   header({ source }) {

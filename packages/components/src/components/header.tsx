@@ -1,4 +1,4 @@
-import { useState, useMemo, ReactElement, MouseEventHandler, MouseEvent } from 'react';
+import { useState, useMemo, ReactElement } from 'react';
 import clsx from 'clsx';
 import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
 import { useTheme } from 'next-themes';
@@ -11,24 +11,7 @@ import { Nav } from './nav';
 import { SolutionsMenu } from './solutions-menu';
 import { EcosystemList } from './ecosystem-list';
 import { useWindowSize } from '../helpers/hooks';
-
-const renderLinkOptions = (href: string, onClick?: MouseEventHandler<HTMLAnchorElement>) => {
-  if (onClick) {
-    return {
-      href,
-      onClick(e: MouseEvent<HTMLAnchorElement>) {
-        e.preventDefault();
-        onClick(e);
-      },
-    };
-  }
-
-  return {
-    href: `https://the-guild.dev${href}`,
-    target: '_blank',
-    rel: 'noreferrer',
-  };
-};
+import { Anchor } from './anchor';
 
 export const Header = ({
   accentColor,
@@ -36,7 +19,9 @@ export const Header = ({
   themeSwitch,
   transformLinks = links => links,
   disableSearch = false,
-  ...restProps
+  className,
+  sameSite,
+  searchBarProps,
 }: IHeaderProps): ReactElement => {
   const { theme, setTheme } = useTheme();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -56,36 +41,34 @@ export const Header = ({
     {
       label: 'Solutions',
       title: '',
-      href: '/solutions',
+      href: 'https://the-guild.dev/solutions',
       menu: <SolutionsMenu />,
     },
     {
       label: 'Ecosystem',
       title: 'View our projects',
-      href: '/open-source',
+      href: 'https://the-guild.dev/open-source',
       menu: <EcosystemList />,
     },
     {
       label: 'Blog',
       title: 'Read our blog',
-      href: '/blog',
+      href: 'https://the-guild.dev/blog',
     },
     {
       label: 'Our Services',
       title: 'View our services',
-      href: '/services',
+      href: 'https://the-guild.dev/services',
     },
     {
       label: 'About Us',
       title: 'Learn more about us',
-      href: '/about-us',
+      href: 'https://the-guild.dev/about-us',
     },
   ]);
 
-  const onLinkClick = restProps.linkProps?.onClick;
-
   return (
-    <header className="bg-white py-2.5 dark:bg-[#111] md:py-3.5" {...restProps.wrapperProps}>
+    <header className={clsx('bg-white py-2.5 dark:bg-[#111] md:py-3.5', className)}>
       <div
         className="
           container
@@ -96,12 +79,10 @@ export const Header = ({
           pl-[max(env(safe-area-inset-left),1.5rem)]
           pr-[max(env(safe-area-inset-right),1.5rem)]
         "
-        {...restProps.containerProps}
       >
         <button
           className="rounded-sm text-gray-500 outline-none transition hover:text-gray-400 focus:ring dark:text-gray-200 dark:hover:text-gray-400 md:hidden"
           onClick={() => handleNav(true)}
-          {...restProps.navOpenButtonProps}
         >
           <HamburgerIcon />
         </button>
@@ -109,25 +90,24 @@ export const Header = ({
         {/* TODO: find a way to remove this tag otherwise header not centered on mobile */}
         <div className="md:absolute" />
 
-        <a
+        <Anchor
           title="View our website"
           className="flex items-center gap-x-1.5 rounded-sm text-black outline-none hover:opacity-75 focus:ring dark:text-gray-100"
-          {...renderLinkOptions('/', onLinkClick)}
-          {...restProps.logoProps}
+          href="https://the-guild.dev"
+          sameSite={sameSite}
         >
           <GuildLogo className="h-9 w-9" />
           <TheGuild className="hidden w-11 md:block" />
-        </a>
+        </Anchor>
 
         <Root asChild>
           <List>
             <Viewport className="absolute top-10 right-0 z-50" />
-            <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} className="md:gap-4" {...restProps.navigationProps}>
-              {links.map(link => {
+            <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} className="md:gap-4">
+              {links.map(({ label, menu, ...link }) => {
                 const linkEl = (
-                  <a
-                    key={link.label}
-                    title={link.title}
+                  <Anchor
+                    {...link}
                     className={clsx(
                       `mx-auto
                         flex
@@ -166,11 +146,10 @@ export const Header = ({
                         : 'text-gray-600 dark:text-gray-400'
                     )}
                     style={{ '--accentColor': accentColor }}
-                    {...restProps.linkProps}
-                    {...renderLinkOptions(link.href, link.onClick || onLinkClick)}
+                    sameSite={sameSite}
                   >
-                    {link.label}
-                    {(link.onClick || link.menu) && (
+                    {label}
+                    {(link.onClick || menu) && (
                       <CaretIcon
                         className="
                           ml-2
@@ -180,16 +159,16 @@ export const Header = ({
                         "
                       />
                     )}
-                  </a>
+                  </Anchor>
                 );
 
-                return link.menu && shouldUseMenus ? (
-                  <Item key={link.label} value={link.label}>
+                return menu && shouldUseMenus ? (
+                  <Item key={label} value={label}>
                     <Trigger asChild>{linkEl}</Trigger>
-                    <Content asChild>{link.menu}</Content>
+                    <Content asChild>{menu}</Content>
                   </Item>
                 ) : (
-                  <Item key={link.label}>
+                  <Item key={label}>
                     <Link asChild>{linkEl}</Link>
                   </Item>
                 );
@@ -200,14 +179,13 @@ export const Header = ({
                 title="Search docs"
                 placeholder="Search…"
                 className="hidden md:flex"
-                {...restProps.searchBarProps}
+                {...searchBarProps}
               />
 
               {themeSwitch && (
                 <button
                   onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                   className="mr-1 self-center rounded-sm p-2 outline-none focus:ring"
-                  {...restProps.themeButtonProps}
                 >
                   <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
                 </button>
@@ -215,7 +193,7 @@ export const Header = ({
             </Nav>
 
             <Indicator className="absolute top-9 z-50 flex h-2.5 justify-center">
-              <div className="h-3 w-3 rotate-45 rounded-t-sm bg-white dark:bg-gray-800" />
+              <div className="h-3 w-3 rotate-45 rounded-t-sm bg-white dark:bg-neutral-800" />
             </Indicator>
           </List>
         </Root>
@@ -226,7 +204,7 @@ export const Header = ({
             title="Search docs"
             placeholder="Search…"
             className="md:hidden"
-            {...restProps.searchBarProps}
+            {...searchBarProps}
           />
         )}
       </div>

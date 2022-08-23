@@ -1,10 +1,13 @@
+import { forwardRef } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { themes } from '@storybook/theming';
 import { ThemeProvider } from '@theguild/components/src';
-import '@theguild/components/src/static/styles.css';
+import NextImage, { ImageProps } from 'next/image';
+import NextLink, { LinkProps } from 'next/link';
 
 import '@algolia/autocomplete-theme-classic';
-import '@theguild/components/src/static/css/search-bar-v2.css';
+import '../styles/global.css';
+import '../styles/search-bar-v2.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -23,6 +26,23 @@ export const parameters = {
   // Remove padding from storybook in mobile
   layout: 'fullscreen',
 };
+
+const OriginalNextImage = NextImage;
+const OriginalNextLink = NextLink;
+
+// https://storybook.js.org/blog/get-started-with-storybook-and-next-js/
+Object.defineProperty(NextImage, 'default', {
+  configurable: true,
+  value: (props: ImageProps) => <OriginalNextImage {...props} unoptimized />,
+});
+
+Object.defineProperty(NextLink, 'default', {
+  configurable: true,
+  // forwardedRef is needed in header
+  value: forwardRef<HTMLAnchorElement, LinkProps>((props, forwardedRef) => (
+    <OriginalNextLink {...props} legacyBehavior={false} ref={forwardedRef} />
+  )),
+});
 
 export const decorators = [
   Story => (

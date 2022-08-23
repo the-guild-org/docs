@@ -3,6 +3,7 @@ import ReactPlayerImport from 'react-player/lazy';
 import clsx from 'clsx';
 import { IHeroVideoProps } from '../types/components';
 import { getDefault } from '../helpers/utils';
+import { Anchor } from './anchor';
 
 const ReactPlayer = getDefault(ReactPlayerImport);
 
@@ -12,9 +13,10 @@ export const HeroVideo = ({
   link,
   video,
   flipped,
-  ...restProps
+  className,
+  videoProps,
 }: IHeroVideoProps): ReactElement => (
-  <section className="bg-gray-100 dark:bg-gray-800" {...restProps.wrapperProps}>
+  <section className={clsx('bg-gray-100 dark:bg-neutral-800', className)}>
     <div
       className={clsx(
         `
@@ -28,31 +30,24 @@ export const HeroVideo = ({
       `,
         flipped && 'md:flex-row-reverse'
       )}
-      {...restProps.containerProps}
     >
       <div className="mt-8 mb-16 md:my-0">
-        <h2
-          className="m-0 max-w-sm text-2xl font-bold text-black dark:text-gray-50 md:text-3xl"
-          {...restProps.titleProps}
-        >
-          {title}
-        </h2>
-        <p className="mt-1 mb-3 max-w-md text-base text-gray-500 dark:text-gray-400" {...restProps.descriptionProps}>
-          {description}
-        </p>
+        <h2 className="m-0 max-w-sm text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">{title}</h2>
+        <p className="mt-1 mb-3 max-w-md text-base text-gray-500 dark:text-gray-400">{description}</p>
         {link && (
-          <a
-            className="
+          <Anchor
+            {...link}
+            className={clsx(
+              `
               mt-auto
               w-max
               text-sm
               text-cyan-400
               no-underline
               transition
-              hover:text-cyan-300
-            "
-            {...link}
-            {...restProps.linkProps}
+              hover:text-cyan-300`,
+              link.className
+            )}
           />
         )}
       </div>
@@ -86,7 +81,7 @@ export const HeroVideo = ({
               },
             },
           }}
-          {...restProps.videoProps}
+          {...videoProps}
         />
       </div>
     </div>

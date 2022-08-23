@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { IHeroIllustrationProps } from '../types/components';
 import { dummyHeroIllustration } from '../helpers/dummy';
 import { HeroIllustration } from './hero-illustration';
@@ -25,8 +25,13 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IHeroIllustrationProps> = args => <HeroIllustration {...args} />;
+const Template: Story<IHeroIllustrationProps> = args => (
+  <>
+    <HeroIllustration {...args} />
+    <HeroIllustration {...args} flipped={false} />
+    <HeroIllustration {...args} />
+  </>
+);
 
 export const Default = Template.bind({});
-
 Default.args = dummyHeroIllustration;

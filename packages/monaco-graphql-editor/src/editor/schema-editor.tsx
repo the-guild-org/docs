@@ -2,6 +2,7 @@ import React, { ForwardedRef, useImperativeHandle, useEffect, useState, forwardR
 import MonacoEditor, { EditorProps, BeforeMount, OnMount, OnChange } from '@monaco-editor/react';
 import { IDisposable } from 'monaco-editor';
 import { GraphQLError, GraphQLSchema } from 'graphql';
+import { useTheme } from 'next-themes';
 import { EnrichedLanguageService } from './enriched-language-service';
 import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
 
@@ -13,6 +14,7 @@ export type SchemaEditorProps = SchemaServicesOptions & {
 } & Omit<EditorProps, 'language'>;
 
 function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEditorApi>) {
+  const { theme } = useTheme();
   const { languageService, setMonaco, setEditor, editorApi, editorRef, setSchema } = useSchemaServices(props);
   useImperativeHandle(ref, () => editorApi, [editorRef, languageService]);
 
@@ -81,6 +83,7 @@ function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEdit
   return (
     <MonacoEditor
       height="70vh"
+      theme={theme === 'dark' ? 'vs-dark' : 'light'}
       {...props}
       beforeMount={handleBeforeMount}
       onMount={handleMount}

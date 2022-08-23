@@ -1,5 +1,6 @@
 import { useImperativeHandle, forwardRef, ForwardedRef } from 'react';
 import { DiffEditor, DiffEditorProps } from '@monaco-editor/react';
+import { useTheme } from 'next-themes';
 import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
 
 export type SchemaDiffEditorProps = SchemaServicesOptions & Omit<DiffEditorProps, 'language'>;
@@ -11,6 +12,7 @@ function BaseSchemaDiffEditor(
     modified: SchemaEditorApi;
   }>
 ) {
+  const { theme } = useTheme();
   const originalSchemaService = useSchemaServices(props);
   const modifiedSchemaService = useSchemaServices(props);
 
@@ -31,6 +33,7 @@ function BaseSchemaDiffEditor(
   return (
     <DiffEditor
       height="70vh"
+      theme={theme === 'dark' ? 'vs-dark' : 'light'}
       {...props}
       beforeMount={monaco => {
         originalSchemaService.setMonaco(monaco);

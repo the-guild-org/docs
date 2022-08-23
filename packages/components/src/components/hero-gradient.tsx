@@ -2,6 +2,7 @@ import { isValidElement, ReactElement } from 'react';
 import clsx from 'clsx';
 import { IHeroGradientProps } from '../types/components';
 import { Button } from './button';
+import { Image } from './image';
 
 const Shadow = ({ className }: { className: string }): ReactElement => {
   return (
@@ -21,72 +22,46 @@ export const HeroGradient = ({
   version,
   colors = [],
   image,
-  ...restProps
-}: IHeroGradientProps): ReactElement => (
-  <section className="overflow-hidden bg-white dark:bg-[#111] md:pt-14" {...restProps.wrapperProps}>
-    <div className="container relative max-w-[90rem]" {...restProps.containerProps}>
+  className,
+}: IHeroGradientProps): ReactElement => {
+  return (
+    <section className={clsx('bg-white dark:bg-[#111] md:py-14', className)}>
       <div
-        className="absolute inset-0 overflow-hidden bg-black dark:bg-[#111] md:mx-6 md:rounded-3xl"
-        style={{ '--colorA': colors[0], '--colorB': colors[1] }}
-        {...restProps.gradientProps}
+        className={clsx(
+          'container relative z-0 flex max-w-[90rem] items-center gap-6 px-6 md:px-14',
+          image ? 'py-6' : 'py-14'
+        )}
       >
-        <Shadow className="-top-24 -left-10 [background:var(--colorA)]" />
-        <Shadow className="right-[-450px] -top-5 hidden [background:var(--colorA)] md:block" />
-        <Shadow className="right-[-350px] bottom-[-500px] [background:var(--colorB)]" />
-        <Shadow className="-left-12 bottom-[-600px] [background:var(--colorB)]" />
-      </div>
-      <div className={clsx('px-6 md:px-14 md:pt-24 md:pb-14', image ? 'mb-32 pt-8 pb-72 md:mb-4' : 'py-20')}>
-        <div className="relative z-[1]">
-          <h1 className="mb-2.5 max-w-lg text-2xl font-bold text-white md:text-3xl" {...restProps.titleProps}>
-            {title}
-          </h1>
-          <p className="max-w-md text-base text-white opacity-70 md:text-lg" {...restProps.descriptionProps}>
-            {description}
-          </p>
+        <div
+          className="absolute inset-0 z-[-1] overflow-hidden bg-black dark:bg-[#111] md:mx-6 md:rounded-3xl"
+          style={{ '--colorA': colors[0], '--colorB': colors[1] }}
+        >
+          <Shadow className="-top-24 -left-10 [background:var(--colorA)]" />
+          <Shadow className="-top-5 hidden [background:var(--colorA)] md:right-[-28rem] md:block" />
+          <Shadow className="right-[-22rem] bottom-[-31rem] [background:var(--colorB)]" />
+          <Shadow className="-left-12 bottom-[-37rem] hidden [background:var(--colorB)] md:block" />
         </div>
-        <div className="relative z-[1] mt-4 flex items-center gap-x-3 text-xs md:mt-9">
-          {link &&
-            toArray(link).map(link => (
-              <Button
-                className="!px-8"
-                variant="secondary"
-                key={`${link.href}${link.children}`}
-                {...link}
-                {...restProps.linkProps}
-              />
-            ))}
-          {version && isValidElement(version) ? (
-            version
-          ) : (
-            <span className="text-gray-50 opacity-60" {...restProps.versionProps}>
-              {version}
-            </span>
-          )}
+        <div className={clsx('grow md:pl-6')}>
+          <h1 className="max-w-lg text-2xl font-bold text-white md:text-3xl">{title}</h1>
+          <p className="mt-2.5 mb-4 max-w-md text-base text-white opacity-70 md:text-lg">{description}</p>
+          <div className="flex items-center gap-x-3 text-xs md:mt-9">
+            {link &&
+              toArray(link).map(link => (
+                <Button key={link.href} variant="secondary" {...link} className={clsx('!px-8', link.className)} />
+              ))}
+            {version && isValidElement(version) ? version : <span className="text-gray-50 opacity-60">{version}</span>}
+          </div>
         </div>
-        {image &&
-          (isValidElement(image) ? (
-            image
-          ) : (
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="
-                absolute
-                -bottom-36
-                -right-4
-                w-full
-                max-w-sm
-                sm:max-w-md
-                md:-top-14
-                md:-right-16
-              "
-              {...restProps.imageProps}
-            />
-          ))}
+        {image && (
+          <Image
+            {...image}
+            className={clsx('hidden w-full max-w-sm select-none sm:max-w-md md:block', image.className)}
+          />
+        )}
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 function toArray<T>(input: T | T[]) {
   return Array.isArray(input) ? input : [input];

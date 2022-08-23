@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import dynamic from 'next/dynamic';
 import { InfoList, HeroGradient } from '@theguild/components';
 
-// @ts-ignore -- fixes Hydration failed because the initial UI does not match what was rendered on the server
+// @ts-expect-error -- fixes Hydration failed because the initial UI does not match what was rendered on the server
 const HeroVideo = dynamic(() => import('@theguild/components').then(mod => mod.HeroVideo), { ssr: false }) as any;
 
 export default function IndexPage(): ReactElement {

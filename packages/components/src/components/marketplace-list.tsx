@@ -4,6 +4,9 @@ import { IMarketplaceListProps, IMarketplaceItemsProps } from '../types/componen
 import { Tag, TagsContainer } from './tag';
 import { CaretSlimIcon } from './icons';
 import { getDefault } from '../helpers/utils';
+import clsx from 'clsx';
+import { Anchor } from './anchor';
+import { Image } from './image';
 
 const ReactPaginate = getDefault(ReactPaginatePackage);
 
@@ -13,31 +16,24 @@ const formatDate = (value: string): string => {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 };
 
-const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactElement => (
+const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
   <tbody>
     {items.map(item => (
       <tr
         className="border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 last:border-0 dark:border-gray-800 dark:text-gray-400"
         key={item.title}
       >
-        <td className="w-14 py-4 pr-2 align-top md:w-20">
-          {item.image && <img {...item.image} {...restProps.imageProps} />}
-        </td>
+        <td className="w-14 py-4 pr-2 align-top md:w-20">{item.image && <Image {...item.image} />}</td>
         <td className="py-4 px-2">
-          <a
-            className="text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400"
+          <Anchor
             {...item.link}
-            {...restProps.linkProps}
+            className={clsx(
+              'text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400',
+              item.link.className
+            )}
           >
-            <h3
-              className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg"
-              {...restProps.titleProps}
-            >
-              {item.title}
-            </h3>
-            <div className="line-clamp-3 [&>p]:!m-0" {...restProps.descriptionProps}>
-              {item.description}
-            </div>
+            <h3 className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg">{item.title}</h3>
+            <div className="line-clamp-3 [&>p]:!m-0">{item.description}</div>
             {item.tags && item.tags.length > 0 && (
               <TagsContainer>
                 {item.tags.map(tagName => (
@@ -45,14 +41,14 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
                 ))}
               </TagsContainer>
             )}
-          </a>
+          </Anchor>
         </td>
-        <td className="hidden py-4 px-2 md:table-cell" {...restProps.dateProps}>
-          {formatDate(item.update)}
-        </td>
+        <td className="hidden py-4 px-2 md:table-cell">{formatDate(item.update)}</td>
         <td className="py-4 pl-2">
-          <a
-            className="
+          <Anchor
+            {...item.link}
+            className={clsx(
+              `
               inline-block
               rounded-lg
               bg-gray-200
@@ -62,13 +58,12 @@ const TableBody = ({ items = [], ...restProps }: IMarketplaceItemsProps): ReactE
               hover:invert
               dark:bg-gray-700
               dark:text-white
-              md:p-2.5
-            "
-            {...item.link}
-            {...restProps.linkProps}
+              md:p-2.5`,
+              item.link.className
+            )}
           >
             <CaretSlimIcon className="h-5 w-5 -rotate-90" />
-          </a>
+          </Anchor>
         </td>
       </tr>
     ))}
@@ -80,7 +75,7 @@ export const MarketplaceList = ({
   placeholder,
   items,
   pagination,
-  ...restProps
+  className,
 }: IMarketplaceListProps): ReactElement => {
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -104,17 +99,10 @@ export const MarketplaceList = ({
   }, [items, pageSize]);
 
   return (
-    <section className="w-full bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
-      {title && (
-        <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl" {...restProps.titleProps}>
-          {title}
-        </h2>
-      )}
+    <section className={clsx('w-full bg-white dark:bg-[#111]', className)}>
+      {title && <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">{title}</h2>}
       {!pages[currentPage] || !pages[currentPage].length ? (
-        <div
-          className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300"
-          {...restProps.placeholderProps}
-        >
+        <div className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300">
           {placeholder}
         </div>
       ) : (
@@ -136,7 +124,7 @@ export const MarketplaceList = ({
                 <th className="px-2" />
               </tr>
             </thead>
-            <TableBody items={pages[currentPage]} {...restProps.itemProps} />
+            <TableBody items={pages[currentPage]} />
           </table>
 
           {pageCount > 1 && (

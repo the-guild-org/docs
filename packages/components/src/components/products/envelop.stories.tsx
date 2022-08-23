@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { CardsColorful } from '../cards-colorful';
 import { Footer } from '../footer';
 import { FeatureList } from '../feature-list';

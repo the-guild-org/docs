@@ -1,6 +1,8 @@
 import { ReactElement } from 'react';
-import { IHeroIllustrationProps } from '../types/components';
 import clsx from 'clsx';
+import { IHeroIllustrationProps } from '../types/components';
+import { Button } from './button';
+import { Image } from './image';
 
 export const HeroIllustration = ({
   title,
@@ -8,9 +10,9 @@ export const HeroIllustration = ({
   link,
   image,
   flipped,
-  ...restProps
+  className,
 }: IHeroIllustrationProps): ReactElement => (
-  <section className="bg-white dark:bg-[#111]" {...restProps.wrapperProps}>
+  <section className={clsx('bg-white dark:bg-[#111]', className)}>
     <div
       className={clsx(
         `
@@ -18,38 +20,18 @@ export const HeroIllustration = ({
       flex
       flex-wrap
       items-center
-      justify-center
+      gap-8
       py-8
       md:flex-nowrap
-      md:justify-between
-    `,
+      md:justify-around`,
         flipped && 'md:flex-row-reverse'
       )}
-      {...restProps.containerProps}
     >
-      <img
-        className={clsx('mb-6 flex w-full max-w-md md:mb-0 md:w-2/5', flipped ? 'md:ml-8' : 'md:mr-8')}
-        src={image.src}
-        alt={image.alt}
-        {...restProps.imageProps}
-      />
-      <div className="mb-6 md:mb-0">
-        <h2
-          className="m-0 max-w-sm text-2xl font-bold text-black dark:text-gray-50 md:text-3xl"
-          {...restProps.titleProps}
-        >
-          {title}
-        </h2>
-        <p className="mt-1 mb-3 max-w-md text-base text-gray-500 dark:text-gray-400" {...restProps.descriptionProps}>
-          {description}
-        </p>
-        {link && (
-          <a
-            className="mt-auto w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300"
-            {...link}
-            {...restProps.linkProps}
-          />
-        )}
+      <Image {...image} className={clsx('w-full max-w-md md:w-2/5', image.className)} />
+      <div className="flex flex-col items-start gap-3">
+        <h2 className="max-w-sm text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">{title}</h2>
+        <p className="max-w-md text-base text-gray-500 dark:text-gray-400">{description}</p>
+        {link && <Button {...link} />}
       </div>
     </div>
   </section>

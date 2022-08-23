@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { IHeroGradientProps } from '../types/components';
 import { dummyHeroGradient } from '../helpers/dummy';
 import { HeroGradient } from './hero-gradient';
@@ -33,17 +33,6 @@ const Template: Story<IHeroGradientProps> = args => <HeroGradient {...args} />;
 export const Default = Template.bind({});
 Default.args = dummyHeroGradient;
 
-export const Simple = Template.bind({});
-Simple.args = {
-  ...dummyHeroGradient,
-  image: undefined,
-};
-export const CustomImage = Template.bind({});
-CustomImage.args = {
-  ...dummyHeroGradient,
-  image: <div>Tuval</div>,
-};
-
 export const MultiLinks = Template.bind({});
 MultiLinks.args = {
   ...dummyHeroGradient,
@@ -56,7 +45,7 @@ MultiLinks.args = {
     {
       children: 'Docs',
       title: 'Docs',
-      href: '#',
+      href: '#2',
     },
   ],
 };

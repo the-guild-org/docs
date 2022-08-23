@@ -13,7 +13,6 @@ export const Banner = ({
   animation,
   color = '#e7e7e7',
   bgColor = 'linear-gradient(-45deg, #5f6184, #a7a8d7, #5f6184, #a7a8d7)',
-  ...restProps
 }: BannerProps): ReactElement => {
   return (
     <div
@@ -27,7 +26,6 @@ export const Banner = ({
         // couldn't set with tailwindcss
         backgroundSize: '400% 200%',
       }}
-      {...restProps}
     >
       {children}
     </div>

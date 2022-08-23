@@ -1,13 +1,15 @@
-import { AnchorHTMLAttributes, ReactElement } from 'react';
+import { ComponentProps, ReactElement } from 'react';
 import clsx from 'clsx';
+import { Anchor } from './anchor';
 
-export type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+export type ButtonProps = Omit<ComponentProps<'a'>, 'href' | 'ref'> & {
   variant?: 'primary' | 'secondary';
+  href: string;
 };
 
 export const Button = ({ children, className, variant = 'primary', ...props }: ButtonProps): ReactElement => {
   return (
-    <a
+    <Anchor
       className={clsx(
         `
         flex-none
@@ -30,6 +32,6 @@ export const Button = ({ children, className, variant = 'primary', ...props }: B
       {...props}
     >
       {children}
-    </a>
+    </Anchor>
   );
 };
