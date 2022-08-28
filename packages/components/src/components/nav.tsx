@@ -1,22 +1,22 @@
-import { Dispatch, ReactElement, ReactNode, SetStateAction, useCallback } from 'react';
+import { Dispatch, ReactElement, ReactNode, SetStateAction, useEffect } from 'react';
 import clsx from 'clsx';
 import { CloseIcon } from './icons';
+import { toggleLockBodyScroll } from '../helpers/modals';
 
 export const Nav = ({
-  children,
   isOpen,
   setOpen,
+  children,
   className,
-  ...props
 }: {
   isOpen: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
   className?: string;
   children: ReactNode;
 }): ReactElement => {
-  const handleOpen = useCallback(() => {
-    setOpen((prev: boolean) => !prev);
-  }, [setOpen]);
+  useEffect(() => {
+    toggleLockBodyScroll(isOpen);
+  }, [isOpen]);
 
   return (
     <nav
@@ -40,10 +40,9 @@ export const Nav = ({
         !isOpen && '-top-full bottom-full',
         className
       )}
-      {...props}
     >
       <button
-        onClick={handleOpen}
+        onClick={() => setOpen(false)}
         className="
           absolute
           top-6

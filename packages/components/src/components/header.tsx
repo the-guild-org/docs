@@ -1,10 +1,9 @@
-import { useState, useMemo, ReactElement } from 'react';
+import { useState, useMemo, ReactElement, useCallback } from 'react';
 import clsx from 'clsx';
 import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
 import { useTheme } from 'next-themes';
 import { SearchBar } from './search-bar';
 import { IHeaderProps } from '../types/components';
-import { toggleLockBodyScroll } from '../helpers/modals';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
 import { GuildLogo, TheGuild } from './logos';
 import { Nav } from './nav';
@@ -32,10 +31,9 @@ export const Header = ({
     [windowHeight, windowWidth]
   );
 
-  const handleNav = (state: boolean) => {
-    toggleLockBodyScroll(state);
-    setMobileNavOpen(state);
-  };
+  const toggleNav = useCallback(() => {
+    setMobileNavOpen(prev => !prev);
+  }, []);
 
   const links = transformLinks([
     {
@@ -82,7 +80,7 @@ export const Header = ({
       >
         <button
           className="rounded-sm text-gray-500 outline-none transition hover:text-gray-400 focus:ring dark:text-gray-200 dark:hover:text-gray-400 md:hidden"
-          onClick={() => handleNav(true)}
+          onClick={toggleNav}
         >
           <HamburgerIcon />
         </button>
@@ -107,6 +105,7 @@ export const Header = ({
               {links.map(({ label, menu, ...link }) => {
                 const linkEl = (
                   <Anchor
+                    onClick={sameSite && mobileNavOpen ? toggleNav : undefined}
                     {...link}
                     className={clsx(
                       `mx-auto
@@ -149,7 +148,7 @@ export const Header = ({
                     sameSite={sameSite}
                   >
                     {label}
-                    {(link.onClick || menu) && (
+                    {menu && (
                       <CaretIcon
                         className="
                           ml-2
@@ -162,14 +161,16 @@ export const Header = ({
                   </Anchor>
                 );
 
-                return menu && shouldUseMenus ? (
+                return (
                   <Item key={label} value={label}>
-                    <Trigger asChild>{linkEl}</Trigger>
-                    <Content asChild>{menu}</Content>
-                  </Item>
-                ) : (
-                  <Item key={label}>
-                    <Link asChild>{linkEl}</Link>
+                    {menu && shouldUseMenus ? (
+                      <>
+                        <Trigger asChild>{linkEl}</Trigger>
+                        <Content asChild>{menu}</Content>
+                      </>
+                    ) : (
+                      <Link asChild>{linkEl}</Link>
+                    )}
                   </Item>
                 );
               })}

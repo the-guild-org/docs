@@ -1,7 +1,6 @@
-import { ReactElement, useCallback, useState } from 'react';
+import { ReactElement, useState } from 'react';
 import clsx from 'clsx';
 import { ISubheaderProps } from '../types/components';
-import { toggleLockBodyScroll } from '../helpers/modals';
 import { CaretSlimIcon } from './icons';
 import { Nav } from './nav';
 import { Button } from './button';
@@ -10,13 +9,6 @@ import { Image } from './image';
 
 export const Subheader = ({ product, activeLink, links, cta, className }: ISubheaderProps): ReactElement => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
-  const handleNav = useCallback(() => {
-    setMobileNavOpen(prev => {
-      toggleLockBodyScroll(!prev);
-      return !prev;
-    });
-  }, []);
 
   const nav = (
     <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen}>
@@ -86,7 +78,7 @@ export const Subheader = ({ product, activeLink, links, cta, className }: ISubhe
         </Anchor>
         {nav}
         {cta && <Button className="mx-1 md:mr-0 md:ml-3" {...cta} />}
-        <button onClick={handleNav} className="mx-2.5 dark:text-white md:hidden">
+        <button onClick={() => setMobileNavOpen(true)} className="mx-2.5 dark:text-white md:hidden">
           <CaretSlimIcon />
         </button>
       </div>
