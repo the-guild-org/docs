@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { themes } from '@storybook/theming';
-import { ThemeProvider } from '@theguild/components/src';
+import { ThemeProvider } from '@theguild/components';
 import NextImage, { ImageProps } from 'next/image';
 import NextLink, { LinkProps } from 'next/link';
 

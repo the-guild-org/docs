@@ -1,4 +1,4 @@
-import { DocsThemeConfig } from '@theguild/components';
+import { DocsThemeConfig, FooterExtended } from '@theguild/components';
 import { ReactElement } from 'react';
 
 const SITE_NAME = 'Guild docs';
@@ -37,7 +37,7 @@ const config: DocsThemeConfig = {
     component: null
   },
   footer: {
-    component: null
+    component: <FooterExtended />
   },
   editLink: {
     text:'Edit this page on GitHub'

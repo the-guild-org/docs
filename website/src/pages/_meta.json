@@ -22,13 +22,15 @@
   "404": {
     "type": "page",
     "theme": {
-      "layout": "full"
+      "timestamp": false,
+      "typesetting": "article"
     }
   },
   "500": {
     "type": "page",
     "theme": {
-      "layout": "full"
+      "timestamp": false,
+      "typesetting": "article"
     }
   }
 }

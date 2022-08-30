@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Header, Footer, ThemeProvider } from '@theguild/components';
+import { Header, ThemeProvider } from '@theguild/components';
 import '../../public/style.css';
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
@@ -14,7 +14,6 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
       </Head>
       <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
       <Component {...pageProps} />
-      <Footer />
     </ThemeProvider>
   );
 }
