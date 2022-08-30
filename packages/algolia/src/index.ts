@@ -167,15 +167,15 @@ async function routesToAlgoliaRecords(
   await Promise.all(
     map(routes._, async (topRoute, topPath) => {
       if (!topRoute) {
-        return
+        return;
       }
       if (isString(topRoute)) {
         console.warn(`ignored ${topRoute}`);
-        return
+        return;
       }
       if (isArray(topRoute)) {
         console.warn(`ignored ${topRoute}`);
-        return
+        return;
       }
       if (topRoute.$name && !topRoute.$routes) {
         return routeToAlgoliaRecords(undefined, undefined, topPath, topRoute.$name);

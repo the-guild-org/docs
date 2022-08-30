@@ -8,8 +8,8 @@ declare interface AlgoliaSearchItem extends BaseItem, AlgoliaRecord {
   type: string;
   hierarchy: string[];
   toc: { title: string }[];
-  source: string
-  domain: string
+  source: string;
+  domain: string;
 }
 
 declare module '@algolia/autocomplete-core' {

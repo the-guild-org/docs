@@ -18,7 +18,7 @@ export const getStaticProps = async () => {
   })
   const mdx = await compileMdx(packagesData[0].readme, {
     outputFormat: 'function-body',
-    jsx: false,
+    jsx: false
   })
   return {
     props: {

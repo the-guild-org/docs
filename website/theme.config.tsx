@@ -34,13 +34,13 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/the-guild-org/the-guild-docs/tree/main/website/src/pages', // base URL for the docs repository
   search: {
-    component: null
+    component: null,
   },
   footer: {
-    component: <FooterExtended />
+    component: <FooterExtended />,
   },
   editLink: {
-    text:'Edit this page on GitHub'
+    text: 'Edit this page on GitHub',
   },
   logo: (
     <>
@@ -58,13 +58,13 @@ const config: DocsThemeConfig = {
       <meta name="og:title" content={`${SITE_NAME}: documentation`} />
     </>
   ),
-  sidebar:{
-    defaultMenuCollapsed: true
+  sidebar: {
+    defaultMenuCollapsed: true,
   },
   feedback: {
     link: 'Question? Give us feedback →',
     labels: 'kind/docs',
-  }
+  },
 };
 
 export default config;

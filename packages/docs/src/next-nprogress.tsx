@@ -7,9 +7,9 @@ import React, { memo, useEffect, useMemo, useRef } from 'react';
 import { getDefault } from './utils.js';
 
 function useLatestRef<T>(value: T) {
-  const ref = useRef<T | null>(null)
-  ref.current = value
-  return ref as React.MutableRefObject<T>
+  const ref = useRef<T | null>(null);
+  ref.current = value;
+  return ref as React.MutableRefObject<T>;
 }
 
 const Router = getDefault(RouterImport);
