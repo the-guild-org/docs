@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Header, Footer, ThemeProvider } from '@theguild/components';
-import 'guild-docs/style.css';
+import '../../public/style.css';
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
   return (

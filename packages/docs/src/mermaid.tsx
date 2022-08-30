@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import mermaid from 'mermaid';
 import type mermaidAPI from 'mermaid/mermaidAPI';
 import { useTheme } from '@theguild/components';

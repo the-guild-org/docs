@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useMemo, useState } from 'react';
+import { ReactElement, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router.js';
 import Script from 'next/script.js';
 import { useTheme } from '@theguild/components';

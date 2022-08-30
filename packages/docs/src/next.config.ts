@@ -6,7 +6,7 @@ import { remarkMermaid } from './remark-mermaid.js';
 export const withGuildDocs = ({
   themeConfig = './theme.config.tsx',
   ...nextConfig
-}: NextConfig & { themeConfig: string }) => {
+}: NextConfig & { themeConfig?: string } = {}) => {
   const withBundleAnalyzer = nextBundleAnalyzer({
     enabled: process.env.ANALYZE === 'true',
   });

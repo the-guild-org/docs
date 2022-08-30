@@ -1,7 +1,7 @@
+import dynamic from 'next/dynamic';
 import { HeroGradient, InfoList, NPMBadge } from '@theguild/components';
 
-// @ts-expect-error -- fixes Hydration failed because the initial UI does not match what was rendered on the server
-const HeroVideo = dynamic(() => import('@theguild/components').then(mod => mod.HeroVideo), { ssr: false }) as any;
+const HeroVideo = dynamic(() => import('@theguild/components').then(mod => mod.HeroVideo), { ssr: false });
 
 export function IndexPage() {
   return (

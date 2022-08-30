@@ -5,6 +5,16 @@
   "type": "module",
   "bob": {
     "commonjs": false,
+    "build": {
+      "copy": [
+        "./src/static/illustrations/marketplace-desktop.png",
+        "./src/static/illustrations/marketplace-mobile.png",
+        "./src/static/illustrations/marketplace-cube-tl.png",
+        "./src/static/illustrations/marketplace-cube-tr.png",
+        "./src/static/illustrations/marketplace-cube-bl.png",
+        "./src/static/illustrations/marketplace-cube-br.png"
+      ]
+    },
     "check": false
   },
   "main": "dist/esm/index.js",
@@ -14,6 +24,8 @@
     "definition": "dist/typings/index.d.ts"
   },
   "exports": {
+    "./style.css": "./dist/style.css",
+    "./search-bar-v2.css": "./dist/search-bar-v2.css",
     ".": {
       "import": {
         "types": "./dist/typings/index.d.ts",
@@ -61,7 +73,7 @@
     "react-player": "2.10.1",
     "search-insights": "2.2.1",
     "tinykeys": "1.4.0",
-    "use-debounce": "8.0.3"
+    "use-debounce": "8.0.4"
   },
   "devDependencies": {
     "@guild-docs/algolia": "0.2.2",

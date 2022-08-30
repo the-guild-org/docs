@@ -4,7 +4,7 @@
   "scripts": {
     "start": "storybook dev -p 6008",
     "prebuild": "rimraf packages/*/dist .bob/ dist/",
-    "build": "bob build && yarn build:css && cp styles/search-bar-v2.css packages/components/dist/search-bar-v2.css",
+    "build": "bob build && yarn build:css && cp styles/search-bar-v2.css packages/components/dist/search-bar-v2.css && mv packages/components/dist/static packages/components/dist/esm",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/dist/style.css",
     "build-storybook": "storybook build -o dist-storybook",
     "next:dev": "concurrently -r \"tsc --watch\" \"yarn --cwd examples/nextjs dev\" \"yarn build:css\" \"yarn copy-fonts\"",
@@ -38,13 +38,13 @@
     "@types/react-instantsearch-core": "6.26.2",
     "@types/react-instantsearch-dom": "6.12.3",
     "@types/react-paginate": "7.1.1",
-    "@types/validator": "13.7.5",
-    "@typescript-eslint/eslint-plugin": "5.34.0",
-    "@typescript-eslint/parser": "5.34.0",
+    "@types/validator": "13.7.6",
+    "@typescript-eslint/eslint-plugin": "5.36.0",
+    "@typescript-eslint/parser": "5.36.0",
     "bob-the-bundler": "^4.0.0",
     "concurrently": "7.3.0",
-    "eslint": "8.22.0",
-    "eslint-plugin-react": "7.30.1",
+    "eslint": "8.23.0",
+    "eslint-plugin-react": "7.31.1",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-storybook": "0.6.4",
     "eslint-plugin-tailwindcss": "3.6.0",
@@ -59,7 +59,7 @@
     "storybook-addon-next": "1.6.7",
     "storybook-dark-mode": "1.1.0",
     "tsconfig-paths-webpack-plugin": "4.0.0",
-    "typescript": "4.7.4"
+    "typescript": "4.8.2"
   },
   "workspaces": {
     "packages": [
