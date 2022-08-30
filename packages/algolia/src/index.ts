@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion, no-else-return */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { readFile } from 'node:fs/promises';
 import { existsSync, writeFileSync, readFileSync, statSync } from 'node:fs';
 import sortBy from 'lodash/sortBy.js';
@@ -167,64 +167,61 @@ async function routesToAlgoliaRecords(
   await Promise.all(
     map(routes._, async (topRoute, topPath) => {
       if (!topRoute) {
-        return Promise.resolve();
+        return
       }
       if (isString(topRoute)) {
         console.warn(`ignored ${topRoute}`);
-        return Promise.resolve();
-      } else if (isArray(topRoute)) {
-        console.warn(`ignored ${topRoute}`);
-        return Promise.resolve();
-      } else {
-        if (topRoute.$name && !topRoute.$routes) {
-          return await routeToAlgoliaRecords(undefined, undefined, topPath, topRoute.$name);
-        } else {
-          return await Promise.all<void>(
-            map(topRoute.$routes, route => {
-              if (isArray(route)) {
-                // `route` is `['slug', 'title']`
-                return routeToAlgoliaRecords(topPath, topRoute.$name!, route[0], route[1]);
-              } else {
-                // `route` is `'slug'`
-                if (route.startsWith('$')) {
-                  const refName = route.substring(1);
-                  const refs = topRoute._ as {
-                    [k: string]: Record<string, IRoutes>;
-                  };
-                  const subRoutes = refs[refName];
-
-                  if (subRoutes) {
-                    return new Promise(resolve => {
-                      routesToAlgoliaRecords(
-                        {
-                          _: {
-                            [refName]: subRoutes,
-                          },
-                        },
-                        source,
-                        domain,
-                        mdx,
-                        new GithubSlugger().slug(`${source}-${refName}`),
-                        {
-                          $name: topRoute.$name!,
-                          path: topPath,
-                        }
-                      ).then(objs => {
-                        objects.push(...objs);
-                        resolve();
-                      });
-                    });
-                  } else {
-                    console.warn(`could not find routes for reference ${route}`);
-                  }
-                } else {
-                  return routeToAlgoliaRecords(topPath, topRoute.$name!, route);
-                }
-              }
-            })
-          );
-        }
+        return
       }
+      if (isArray(topRoute)) {
+        console.warn(`ignored ${topRoute}`);
+        return
+      }
+      if (topRoute.$name && !topRoute.$routes) {
+        return routeToAlgoliaRecords(undefined, undefined, topPath, topRoute.$name);
+      }
+      return Promise.all<void>(
+        map(topRoute.$routes, route => {
+          if (isArray(route)) {
+            // `route` is `['slug', 'title']`
+            return routeToAlgoliaRecords(topPath, topRoute.$name!, route[0], route[1]);
+          }
+          // `route` is `'slug'`
+          if (route.startsWith('$')) {
+            const refName = route.substring(1);
+            const refs = topRoute._ as {
+              [k: string]: Record<string, IRoutes>;
+            };
+            const subRoutes = refs[refName];
+
+            if (subRoutes) {
+              return new Promise(resolve => {
+                routesToAlgoliaRecords(
+                  {
+                    _: {
+                      [refName]: subRoutes,
+                    },
+                  },
+                  source,
+                  domain,
+                  mdx,
+                  new GithubSlugger().slug(`${source}-${refName}`),
+                  {
+                    $name: topRoute.$name!,
+                    path: topPath,
+                  }
+                ).then(objs => {
+                  objects.push(...objs);
+                  resolve();
+                });
+              });
+            }
+            console.warn(`could not find routes for reference ${route}`);
+            return;
+          }
+          return routeToAlgoliaRecords(topPath, topRoute.$name!, route);
+        })
+      );
     })
   );
 

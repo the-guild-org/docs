@@ -2,11 +2,44 @@
   "name": "@theguild/components",
   "version": "3.0.3",
   "license": "MIT",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "type": "module",
+  "bob": {
+    "commonjs": false,
+    "check": false
+  },
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/typings/index.d.ts",
+  "typescript": {
+    "definition": "dist/typings/index.d.ts"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/typings/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "default": {
+        "types": "./dist/typings/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    },
+    "./*": {
+      "import": {
+        "types": "./dist/typings/*.d.ts",
+        "default": "./dist/esm/*.js"
+      },
+      "default": {
+        "types": "./dist/typings/*.d.ts",
+        "default": "./dist/esm/*.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "access": "public"
+  },
   "sideEffects": false,
   "peerDependencies": {
     "react": "^18.2.0",
@@ -29,9 +62,6 @@
     "search-insights": "2.2.1",
     "tinykeys": "1.4.0",
     "use-debounce": "8.0.3"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "devDependencies": {
     "@guild-docs/algolia": "0.2.2",

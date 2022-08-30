@@ -3,10 +3,11 @@
   "private": true,
   "scripts": {
     "start": "storybook dev -p 6008",
-    "build": "rimraf dist packages/*/dist && tsc && rollup -c && yarn build:css && cp styles/search-bar-v2.css packages/components/dist/search-bar-v2.css",
+    "prebuild": "rimraf packages/*/dist .bob/ dist/",
+    "build": "bob build && yarn build:css && cp styles/search-bar-v2.css packages/components/dist/search-bar-v2.css",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/dist/style.css",
     "build-storybook": "storybook build -o dist-storybook",
-    "next:dev": "concurrently -r \"tsc --watch\" \"rollup -c --watch\" \"yarn --cwd examples/nextjs dev\" \"yarn build:css\" \"yarn copy-fonts\"",
+    "next:dev": "concurrently -r \"tsc --watch\" \"yarn --cwd examples/nextjs dev\" \"yarn build:css\" \"yarn copy-fonts\"",
     "next:build": "cd examples/nextjs && yarn build && yarn start",
     "prettier": "prettier --write --list-different .",
     "lint:prettier": "prettier --check .",
@@ -25,9 +26,6 @@
     "@babel/preset-typescript": "7.18.6",
     "@changesets/changelog-github": "0.4.6",
     "@changesets/cli": "2.24.4",
-    "@rollup/plugin-babel": "5.3.1",
-    "@rollup/plugin-image": "2.1.1",
-    "@rollup/plugin-node-resolve": "13.3.0",
     "@storybook/addon-essentials": "7.0.0-alpha.23",
     "@storybook/addon-links": "7.0.0-alpha.23",
     "@storybook/addon-postcss": "3.0.0-alpha.1",
@@ -43,6 +41,7 @@
     "@types/validator": "13.7.5",
     "@typescript-eslint/eslint-plugin": "5.34.0",
     "@typescript-eslint/parser": "5.34.0",
+    "bob-the-bundler": "^4.0.0",
     "concurrently": "7.3.0",
     "eslint": "8.22.0",
     "eslint-plugin-react": "7.30.1",
@@ -56,10 +55,6 @@
     "pretty-quick": "3.1.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "rollup": "2.78.1",
-    "rollup-plugin-auto-external": "2.0.0",
-    "rollup-plugin-bundle-size": "1.0.3",
-    "rollup-plugin-copy": "3.4.0",
     "storybook": "7.0.0-alpha.23",
     "storybook-addon-next": "1.6.7",
     "storybook-dark-mode": "1.1.0",
@@ -69,7 +64,7 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "examples/*"
+      "website"
     ]
   },
   "browserslist": [

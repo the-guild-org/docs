@@ -1,19 +1,23 @@
-import { ReactElement } from 'react';
-import dynamic from 'next/dynamic';
-import { InfoList, HeroGradient } from '@theguild/components';
+import { HeroGradient, InfoList, NPMBadge } from '@theguild/components';
 
 // @ts-expect-error -- fixes Hydration failed because the initial UI does not match what was rendered on the server
 const HeroVideo = dynamic(() => import('@theguild/components').then(mod => mod.HeroVideo), { ssr: false }) as any;
 
-export default function IndexPage(): ReactElement {
+export function IndexPage() {
   return (
     <>
       <HeroGradient
-        title="Easy Hero"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ante at ex interdum tincidunt vitae quis justo."
-        version="1.1.0"
-        colors={['#ff34ae', '#1cc8ee']}
+        title="The Guild Docs"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at gravida lacus"
+        link={{
+          href: '/docs',
+          children: 'Get Started',
+          title: 'Get started with The Guild Docs',
+        }}
+        version={<NPMBadge name="guild-docs" />}
+        colors={['#000', '#1cc8ee']}
       />
+
       <InfoList
         title="Short List"
         items={[
@@ -34,6 +38,7 @@ export default function IndexPage(): ReactElement {
           },
         ]}
       />
+
       <HeroVideo
         flipped
         title="Simple Video"
@@ -43,6 +48,7 @@ export default function IndexPage(): ReactElement {
           placeholder: '/video-placeholder.webp',
         }}
       />
+
       <InfoList
         title="Short List"
         items={[

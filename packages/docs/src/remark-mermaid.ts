@@ -1,4 +1,4 @@
-import { visit } from 'unist-util-visit';
+import visit from 'unist-util-visit';
 import type { Plugin } from 'unified';
 import type { Root } from 'mdast';
 
@@ -71,7 +71,7 @@ const getMermaidElementAST = (value: string) => ({
   ],
 });
 
-export const remarkMermaid: Plugin<[], Root> = () => (ast, file, done) => {
+export const remarkMermaid: Plugin<[], Root> = () => (ast, _file, done) => {
   const codeblocks: any[][] = [];
   visit(ast, { type: 'code', lang: 'mermaid' }, (node, index, parent) => {
     codeblocks.push([node, index, parent]);
@@ -81,7 +81,8 @@ export const remarkMermaid: Plugin<[], Root> = () => (ast, file, done) => {
     for (const [node, index, parent] of codeblocks) {
       parent.children.splice(index, 1, getMermaidElementAST(node.value));
     }
-    ast.children.unshift(MERMAID_IMPORT_AST as any);
+    // @ts-expect-error -- TODO: fix - is missing the following properties from type 'LinkReference': children, referenceType, identifier
+    ast.children.unshift(MERMAID_IMPORT_AST);
   }
 
   done();
