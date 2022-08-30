@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "packages",
+    "rootDir": "./packages",
     "baseUrl": ".",
     "declaration": true,
     "jsx": "react-jsx",
@@ -30,5 +30,5 @@
     "noUnusedLocals": true
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["packages/**/*.stories.tsx", "node_modules", "website"]
+  "exclude": ["packages/**/*.stories.tsx", "website"]
 }

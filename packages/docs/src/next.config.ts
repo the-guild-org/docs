@@ -14,6 +14,7 @@ export const withGuildDocs = ({
     themeConfig,
     theme: '@theguild/components',
     unstable_staticImage: true,
+    unstable_defaultShowCopyCode: true,
     mdxOptions: {
       remarkPlugins: [remarkMermaid],
     },
