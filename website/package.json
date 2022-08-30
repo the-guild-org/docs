@@ -1,0 +1,33 @@
+{
+  "name": "website",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "bob": false,
+  "scripts": {
+    "analyze": "cross-env ANALYZE=true next build",
+    "build": "next build",
+    "dev": "next dev",
+    "next": "next",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@theguild/components": "3.0.0",
+    "guild-docs": "4.0.0",
+    "markdown-to-jsx": "7.1.7",
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@theguild/tailwind-config": "0.0.2",
+    "@types/react": "18.0.17",
+    "cross-env": "7.0.3",
+    "typescript": "4.7.4"
+  },
+  "nextBundleAnalysis": {
+    "budget": null,
+    "budgetPercentIncreaseRed": 20,
+    "showDetails": true
+  }
+}

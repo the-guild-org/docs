@@ -1,0 +1,80 @@
+{
+  "name": "guild-docs",
+  "version": "4.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "dependencies": {
+    "@emotion/react": "11.10.0",
+    "@emotion/styled": "11.10.0",
+    "@next/bundle-analyzer": "^12.2.5",
+    "framer-motion": "7.2.1",
+    "mermaid": "^9.1.6",
+    "next-seo": "5.5.0",
+    "nextra": "2.0.0-beta.18",
+    "nprogress": "0.2.0",
+    "tiny-lru": "^8.0.2",
+    "undici": "5.9.1"
+  },
+  "devDependencies": {
+    "@theguild/components": "3.0.0",
+    "@types/mermaid": "^8.2.9",
+    "@types/nprogress": "0.2.0",
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "peerDependencies": {
+    "@theguild/components": "^3.0.0",
+    "next": ">=12.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "bob": {
+    "commonjs": false,
+    "build": {
+      "copy": [
+        "./src/style.css"
+      ]
+    },
+    "check": false
+  },
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/typings/index.d.ts",
+  "typescript": {
+    "definition": "dist/typings/index.d.ts"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/typings/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "default": {
+        "types": "./dist/typings/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    },
+    "./*": {
+      "import": {
+        "types": "./dist/typings/*.d.ts",
+        "default": "./dist/esm/*.js"
+      },
+      "default": {
+        "types": "./dist/typings/*.d.ts",
+        "default": "./dist/esm/*.js"
+      }
+    },
+    "./package.json": "./package.json",
+    "./style.css": "./dist/style.css"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "access": "public"
+  },
+  "type": "module"
+}

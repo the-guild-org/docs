@@ -1,0 +1,41 @@
+import { useSSG } from 'nextra/data'
+import Markdown from 'markdown-to-jsx'
+import { getPackagesData } from 'guild-docs/npm'
+import { PackageCmd } from '@theguild/components'
+
+export const getStaticProps = async () => {
+  const packagesData = await getPackagesData({
+    packageList: [
+      {
+        identifier: 'envelop',
+        npmPackage: '@envelop/core',
+        tags: [],
+        title: 'Envelop'
+      }
+    ]
+  })
+  return {
+    props: {
+      // We add an `ssg` field to the page props,
+      // which will be provided to the Nextra's `useSSG` hook.
+      ssg: packagesData[0]
+    },
+    // Revalidate at most once every 1 hour
+    revalidate: 60 * 60
+  }
+}
+
+export const PackageApiDocs = () => {
+  // Get the data from SSG, and render it as a component.
+  const packageData = useSSG()
+  return (
+    <>
+      <PackageCmd packages={[packageData.npmPackage]} />
+      <Markdown>{packageData.readme}</Markdown>
+    </>
+  )
+}
+
+# Remote MDX Support
+
+<PackageApiDocs />
