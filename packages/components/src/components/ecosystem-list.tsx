@@ -42,7 +42,6 @@ export const EcosystemList = forwardRef<HTMLDivElement>(function EcosystemList(_
               <Anchor
                 key={product.children}
                 href={product.href}
-                newWindow
                 className="
                   flex
                   h-[70px]

@@ -90,7 +90,6 @@ export const FooterExtended = ({
                 hover:dark:text-gray-100
               "
               {...link}
-              newWindow
             />
           </li>
         ))}
