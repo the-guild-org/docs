@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 3.0.1
+
+### Patch Changes
+
+- [#419](https://github.com/the-guild-org/the-guild-components/pull/419) [`75cd436`](https://github.com/the-guild-org/the-guild-components/commit/75cd436dc95a2154a218bc80947a44a7b2f58e53) Thanks [@B2o5T](https://github.com/B2o5T)! - fix locked scroll on mobile, close mobile nav for `sameSite: true`
+
+- [#424](https://github.com/the-guild-org/the-guild-components/pull/424) [`621b34f`](https://github.com/the-guild-org/the-guild-components/commit/621b34f9eba1b7b5294deefadb035966f3ad3e2b) Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - Cancel newTab for footer and header
+
 ## 3.0.0
 
 ### Major Changes
