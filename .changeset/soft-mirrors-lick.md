@@ -1,5 +1,5 @@
 ---
-'@theguild/components': minor
+'@theguild/components': patch
 ---
 
 Cancel newTab for footer and header
