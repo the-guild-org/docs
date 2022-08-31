@@ -42,4 +42,4 @@ jobs:
         run: yarn build-storybook
 
       - name: Build Next.js
-        run: cd examples/nextjs && yarn build
+        run: cd website && yarn build
