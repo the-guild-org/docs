@@ -65,7 +65,6 @@ export const Footer = ({ sameSite, className, logo }: IFooterProps): ReactElemen
               "
             >
               <Anchor
-                newWindow
                 className="inline-block no-underline transition hover:text-black hover:dark:text-gray-100"
                 {...link}
               />

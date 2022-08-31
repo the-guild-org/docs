@@ -56,7 +56,7 @@ export const PRODUCTS: {
   {
     children: 'Code Generator',
     title: 'Generation of Typed Queries, Mutations, Subscriptions and Typed GraphQL resolvers',
-    href: 'https://graphql-code-generator.com',
+    href: 'https://www.the-guild.dev/graphql/codegen',
     logo: CodeGeneratorLogo,
   },
   {
