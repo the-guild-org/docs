@@ -63,6 +63,11 @@ export const Header = ({
       title: 'Learn more about us',
       href: 'https://the-guild.dev/about-us',
     },
+    {
+      label: 'Contact Us',
+      title: 'Share your excitement with us',
+      href: 'https://www.the-guild.dev/contact',
+    },
   ]);
 
   return (
