@@ -38,19 +38,19 @@ export const PRODUCTS: {
   {
     children: 'Yoga',
     title: 'A fully-featured, simple to set up, performant and extendable server',
-    href: 'https://graphql-yoga.com',
+    href: 'https://www.the-guild.dev/graphql/yoga-server',
     logo: YogaLogo,
   },
   {
     children: 'Envelop',
     title: 'Develop and share plugins that are usable with any GraphQL server framework or schema',
-    href: 'https://envelop.dev',
+    href: 'https://www.the-guild.dev/graphql/envelop',
     logo: EnvelopLogo,
   },
   {
     children: 'Inspector',
     title: 'Schema management tool',
-    href: 'https://graphql-inspector.com',
+    href: 'https://www.the-guild.dev/graphql/inspector',
     logo: InspectorLogo,
   },
   {
@@ -62,19 +62,19 @@ export const PRODUCTS: {
   {
     children: 'Mesh',
     title: 'A fully-featured GraphQL Gateway framework',
-    href: 'https://graphql-mesh.com',
+    href: 'https://the-guild.dev/graphql/mesh',
     logo: MeshLogo,
   },
   {
     children: 'Tools',
     title: 'A set of utilities for faster GraphQL development',
-    href: 'https://graphql-tools.com',
+    href: 'https://the-guild.dev/graphql/tools',
     logo: ToolsLogo,
   },
   {
     children: 'Modules',
     title: 'Enterprise Grade Tooling For Your GraphQL Server',
-    href: 'https://graphql-modules.com',
+    href: 'https://the-guild.dev/graphql/modules',
     logo: ModulesLogo,
   },
   {
@@ -86,13 +86,13 @@ export const PRODUCTS: {
   {
     children: 'Config',
     title: 'One configuration for all your GraphQL projects',
-    href: 'https://graphql-config.com',
+    href: 'https://www.the-guild.dev/graphql/config',
     logo: ConfigLogo,
   },
   {
     children: 'Scalars',
     title: 'Common custom GraphQL Scalars for precise type-safe GraphQL schemas',
-    href: 'https://graphql-scalars.dev',
+    href: 'https://www.the-guild.dev/graphql/scalars',
     logo: ScalarsLogo,
   },
   {
@@ -122,7 +122,7 @@ export const PRODUCTS: {
   {
     children: 'SOFA',
     title: 'Generate RESTful APIs from your GraphQL Server',
-    href: 'https://sofa-api.com',
+    href: 'https://www.the-guild.dev/graphql/sofa-api',
     logo: SofaLogo,
   },
   {
@@ -134,7 +134,7 @@ export const PRODUCTS: {
   {
     children: 'Angular',
     title: 'A fully-featured GraphQL client for Angular',
-    href: 'https://apollo-angular.com',
+    href: 'https://www.the-guild.dev/graphql/apollo-angular',
     logo: AngularLogo,
   },
   {
