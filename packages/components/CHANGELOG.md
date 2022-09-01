@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 3.0.2
+
+### Patch Changes
+
+- [#425](https://github.com/the-guild-org/the-guild-components/pull/425) [`d4b872e`](https://github.com/the-guild-org/the-guild-components/commit/d4b872eb8c76518ea4b06f135bfccf6cea2f5220) Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - small fix to anchor components props
+
 ## 3.0.1
 
 ### Patch Changes
