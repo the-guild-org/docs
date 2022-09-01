@@ -82,7 +82,6 @@ export const SolutionsMenu = forwardRef<HTMLDivElement>(function SolutionsMenu(_
               <Anchor
                 key={item.title}
                 href={item.url}
-                newWindow
                 className="
                   flex
                   w-full
