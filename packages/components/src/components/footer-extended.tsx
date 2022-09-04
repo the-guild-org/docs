@@ -18,8 +18,23 @@ const COMPANY: ILink[] = [
     href: 'https://the-guild.dev/blog',
   },
   {
+    children: 'Newsletter',
+    title: 'Newsletter',
+    href: 'https://the-guild.dev/newsletter',
+  },
+  {
+    children: 'Open Source',
+    title: 'Open Source',
+    href: 'https://the-guild.dev/open-source',
+  },
+  {
+    children: 'Services',
+    title: 'services',
+    href: 'https://the-guild.dev/services',
+  },
+  {
     children: 'GitHub',
-    title: 'Check our GitHub profile',
+    title: 'Check our GitHub account',
     href: 'https://github.com/the-guild-org',
   },
 ];
@@ -71,6 +86,7 @@ export const FooterExtended = ({
   onNewsletterSubmit,
   logo,
 }: IFooterExtendedProps): ReactElement => {
+  const allResources: ILink[] = [{ children: 'Press Kit', title: 'Press Kit', href: '/logos' }, ...(resources || [])];
   const renderLinks = useCallback(
     (list: ILink[]) => (
       <ul className="m-0 mb-8 list-none p-0 last:mb-0">
@@ -111,12 +127,8 @@ export const FooterExtended = ({
           </div>
           <div className="flex flex-col gap-6 sm:w-full sm:flex-row">
             <div className="sm:w-1/2">
-              {resources && (
-                <>
-                  <Title>RESOURCES</Title>
-                  {renderLinks(resources)}
-                </>
-              )}
+              <Title>RESOURCES</Title>
+              {renderLinks(allResources)}
               <Title>COMPANY</Title>
               {renderLinks(COMPANY)}
             </div>
