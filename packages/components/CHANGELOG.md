@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 3.0.3
+
+### Patch Changes
+
+- [`d6003e5`](https://github.com/the-guild-org/the-guild-components/commit/d6003e54d0600111392327ac56ecc15ec3f068b1) Thanks [@dotansimha](https://github.com/dotansimha)! - Fixes for header and footer
+
 ## 3.0.2
 
 ### Patch Changes
