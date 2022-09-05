@@ -17,7 +17,6 @@
     "paths": {
       "@theguild/algolia": ["packages/algolia/src/index.ts"],
       "@theguild/components": ["packages/components/src/index.ts"],
-      "guild-docs": ["packages/docs/src/index.ts"],
       "@theguild/monaco-graphql-editor": ["packages/monaco-graphql-editor/src/index.ts"]
     },
     "strict": true /* Enable all strict type-checking options. */,

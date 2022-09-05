@@ -2,8 +2,8 @@
   "name": "@theguild/algolia",
   "version": "0.0.0",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/the-guild-org/the-guild-docs.git"
+    "url": "the-guild-org/the-guild-components",
+    "directory": "packages/algolia"
   },
   "license": "MIT",
   "sideEffects": false,

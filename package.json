@@ -4,10 +4,9 @@
   "scripts": {
     "start": "storybook dev -p 6008",
     "prebuild": "rimraf packages/*/dist/ .bob/ dist/",
-    "build": "bob build && yarn build:css && cp styles/search-bar-v2.css packages/components/dist/search-bar-v2.css && mv packages/components/dist/static packages/components/dist/esm",
+    "build": "bob build && cp styles/search-bar-v2.css packages/components/dist/search-bar-v2.css && mv packages/components/dist/static packages/components/dist/esm",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/dist/style.css",
     "build-storybook": "storybook build -o dist-storybook",
-    "next:dev": "concurrently -r \"tsc --watch\" \"yarn --cwd website dev\" \"yarn build:css\" \"yarn copy-fonts\"",
     "next:build": "cd website && yarn build && yarn start",
     "prettier": "prettier --write --list-different .",
     "lint:prettier": "prettier --check .",
@@ -16,8 +15,7 @@
     "type-check:watch": "tsc --watch",
     "prepare": "husky install",
     "prerelease": "yarn build",
-    "release": "changeset publish",
-    "zip": "yarn build && yarn --cwd packages/components pack"
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@babel/core": "7.18.13",

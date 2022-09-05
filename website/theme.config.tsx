@@ -30,9 +30,9 @@ const Logo = ({ className }: { className?: string }): ReactElement => {
 const config: DocsThemeConfig = {
   titleSuffix: ` – ${SITE_NAME}`,
   project: {
-    link: 'https://github.com/the-guild-org/the-guild-docs', // GitHub link in the navbar
+    link: 'https://github.com/the-guild-org/the-guild-components', // GitHub link in the navbar
   },
-  docsRepositoryBase: 'https://github.com/the-guild-org/the-guild-docs/tree/main/website/src/pages', // base URL for the docs repository
+  docsRepositoryBase: 'https://github.com/the-guild-org/the-guild-components/tree/main/website/src/pages', // base URL for the docs repository
   search: {
     component: null,
   },

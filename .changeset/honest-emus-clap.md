@@ -1,6 +1,6 @@
 ---
 '@theguild/algolia': patch
-'guild-docs': minor
+'@theguild/components': major
 ---
 
-bump nextra, move guild-docs and @theguild/algolia to guild-components monorepo
+bump nextra, move `guild-docs` to `@theguild/components` and `@theguild/algolia` to `guild-components` monorepo

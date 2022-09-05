@@ -2,7 +2,7 @@ import { PackageCmd } from '@theguild/components'
 
 # Installation
 
-<PackageCmd packages={['guild-docs @theguild/components', '-D @theguild/tailwind-config']} />
+<PackageCmd packages={['@theguild/components', '-D @theguild/tailwind-config']} />
 
 ## 1. Add dependencies
 
@@ -10,7 +10,6 @@ import { PackageCmd } from '@theguild/components'
 {
   "dependencies": {
 +   "@theguild/components": "3.0.3",
-+   "guild-docs": "4.1.0",
     "next": "12.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -47,7 +46,7 @@ export default config
 ## 5. Use `withGuildDocs` in your Next.js config
 
 ```js filename="next.config.mjs" /withGuildDocs/
-import { withGuildDocs } from 'guild-docs/next.config'
+import { withGuildDocs } from '@theguild/components/next.config'
 
 export default withGuildDocs({
   // Your next config options, for example:
@@ -63,7 +62,7 @@ export default withGuildDocs({
 import { ReactElement } from 'react'
 import { AppProps } from 'next/app'
 import { Header, FooterExtended, ThemeProvider } from '@theguild/components'
-import 'guild-docs/style.css'
+import '@theguild/components/style.css'
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
   return (

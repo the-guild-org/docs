@@ -1,3 +1,3 @@
-import { withGuildDocs } from 'guild-docs/next.config';
+import { withGuildDocs } from '@theguild/components/next.config';
 
 export default withGuildDocs();

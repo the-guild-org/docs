@@ -4,7 +4,7 @@ import { Root } from 'mdast';
 
 const MERMAID_IMPORT_AST = {
   type: 'mdxjsEsm',
-  value: 'import { Mermaid } from "guild-docs/mermaid"',
+  value: 'import { Mermaid } from "@theguild/components/mermaid"',
   data: {
     estree: {
       type: 'Program',
@@ -21,8 +21,8 @@ const MERMAID_IMPORT_AST = {
           ],
           source: {
             type: 'Literal',
-            value: 'guild-docs/mermaid',
-            raw: '"guild-docs/mermaid"',
+            value: '@theguild/components/mermaid',
+            raw: '"@theguild/components/mermaid"',
           },
         },
       ],

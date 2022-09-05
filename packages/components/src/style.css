@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import '@algolia/autocomplete-theme-classic';
-@import '@theguild/components/search-bar-v2.css';
+@import './search-bar-v2.css';
 
 /* quick fix for menu on mobile */
 div[class='hidden md:inline-block min-w-[200px]'] {
