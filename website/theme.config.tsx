@@ -1,5 +1,5 @@
-import { DocsThemeConfig, FooterExtended } from '@theguild/components';
 import { ReactElement } from 'react';
+import { DocsThemeConfig, FooterExtended, Header, Navbar } from '@theguild/components';
 
 const SITE_NAME = 'Guild docs';
 
@@ -36,6 +36,12 @@ const config: DocsThemeConfig = {
   search: {
     component: null,
   },
+  navbar: props => (
+    <>
+      <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
+      <Navbar {...props} />
+    </>
+  ),
   footer: {
     component: <FooterExtended />,
   },
@@ -56,6 +62,9 @@ const config: DocsThemeConfig = {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content={`${SITE_NAME}: documentation`} />
       <meta name="og:title" content={`${SITE_NAME}: documentation`} />
+      <link rel="shortcut icon" href="/fav.ico" />
+      <meta name="apple-mobile-web-app-title" content="The Guild Docs Example" />
+      <meta name="application-name" content="The Guild Docs Example" />
     </>
   ),
   sidebar: {
@@ -66,5 +75,15 @@ const config: DocsThemeConfig = {
     labels: 'kind/docs',
   },
 };
+
+// const defaultSeo: AppSeoProps = {
+//   title: 'Guild Docs',
+//   description: 'Guild Docs Example',
+//   logo: {
+//     url: 'https://the-guild-docs.vercel.app/assets/subheader-logo.png',
+//     width: 50,
+//     height: 54,
+//   },
+// };
 
 export default config;

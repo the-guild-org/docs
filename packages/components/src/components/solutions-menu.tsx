@@ -1,5 +1,5 @@
 import { forwardRef, ReactElement } from 'react';
-import { Anchor } from '@theguild/components';
+import { Anchor } from './anchor';
 
 const CATEGORIES: {
   title: string;

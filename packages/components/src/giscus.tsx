@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router.js';
 import Script from 'next/script.js';
-import { useTheme } from '@theguild/components';
+import { useTheme } from 'nextra-theme-docs';
 
 export interface GiscusProps {
   repo: string;

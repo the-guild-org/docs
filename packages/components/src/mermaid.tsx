@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useState } from 'react';
 import mermaid from 'mermaid';
 import mermaidAPI from 'mermaid/mermaidAPI';
-import { useTheme } from '@theguild/components';
+import { useTheme } from 'nextra-theme-docs';
 
 /**
  * Assign a unique ID to each mermaid svg as per requirements of `mermaid.render`.
