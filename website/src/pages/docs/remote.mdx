@@ -1,0 +1,52 @@
+import { useSSG } from 'nextra/data'
+import { getPackagesData } from '@theguild/components/npm'
+import { PackageCmd } from '@theguild/components'
+import { MDXRemote } from 'next-mdx-remote'
+import { compileMdx } from 'nextra/compile'
+import { getComponents } from 'nextra-theme-docs'
+
+export const getStaticProps = async () => {
+  const packagesData = await getPackagesData({
+    packageList: [
+      {
+        identifier: 'envelop',
+        npmPackage: '@envelop/core',
+        tags: [],
+        title: 'Envelop'
+      }
+    ]
+  })
+  const mdx = await compileMdx(packagesData[0].readme, {
+    outputFormat: 'function-body',
+    jsx: false
+  })
+  return {
+    props: {
+      // We add an `ssg` field to the page props,
+      // which will be provided to the Nextra's `useSSG` hook.
+      ssg: {
+        ...packagesData[0],
+        compiledSource: mdx.result
+      }
+    },
+    // Revalidate at most once every 1 hour
+    revalidate: 60 * 60
+  }
+}
+
+export const PackageApiDocs = () => {
+  // Get the data from SSG, and render it as a component.
+  const packageData = useSSG()
+  // const components = useMDXComponents()
+  const components = getComponents({})
+  return (
+    <>
+      <PackageCmd packages={[packageData.npmPackage]} />
+      <MDXRemote compiledSource={packageData.compiledSource} components={components} />
+    </>
+  )
+}
+
+# Remote MDX Support
+
+<PackageApiDocs />

@@ -1,22 +1,6 @@
-import { ReactElement, ReactNode } from 'react';
+import { ReactElement } from 'react';
 import { Tab, Tabs } from 'nextra-theme-docs';
-
-const CodeTab = ({ children }: { children: ReactNode }): ReactElement => {
-  return (
-    <Tab>
-      {/* Unfortunately Nextra doesn't support import `.mdx` files in `.mdx`, so I copied generated code
-       * and exported as React component
-       */}
-      <pre>
-        <code data-language="sh" data-theme="default">
-          <span className="line" style={{ color: 'var(--shiki-color-text)' }}>
-            {children}
-          </span>
-        </code>
-      </pre>
-    </Tab>
-  );
-};
+import { Pre } from 'nextra/components';
 
 const PACKAGE_MANAGERS = ['yarn', 'npm', 'pnpm'] as const;
 
@@ -59,7 +43,7 @@ type Command = {
   isGlobal?: boolean;
 };
 
-export const PackageCmd = ({ packages }: { packages: (string | Command)[] }) => {
+export const PackageCmd = ({ packages }: { packages: (string | Command)[] }): ReactElement => {
   const pkgs = packages.map(pkg =>
     typeof pkg === 'string'
       ? ({
@@ -72,22 +56,30 @@ export const PackageCmd = ({ packages }: { packages: (string | Command)[] }) => 
   return (
     <Tabs items={PACKAGE_MANAGERS}>
       {PACKAGE_MANAGERS.map(pkgManager => (
-        <CodeTab key={pkgManager}>
-          {pkgs
-            .map(pkg => {
-              switch (pkg.cmd) {
-                case 'run':
-                  return `${pkgManager === 'npm' && pkg.isNpx ? 'npx' : Run[pkgManager]} ${pkg.name}`;
-                case 'install':
-                  return `${Install[pkgManager]}${pkg.name ? ` ${pkg.name}` : ''}`;
-                case 'init':
-                  return Init[pkgManager];
-                default:
-                  return `${pkg.isGlobal ? Global[pkgManager] : Add[pkgManager]} ${pkg.name}`;
-              }
-            })
-            .join('\n')}
-        </CodeTab>
+        <Tab key={pkgManager}>
+          <div data-rehype-pretty-code-fragment>
+            <Pre data-nextra-copy="">
+              <code data-language="sh" data-theme="default">
+                <span className="line" style={{ color: 'var(--shiki-color-text)' }}>
+                  {pkgs
+                    .map(pkg => {
+                      switch (pkg.cmd) {
+                        case 'run':
+                          return `${pkgManager === 'npm' && pkg.isNpx ? 'npx' : Run[pkgManager]} ${pkg.name}`;
+                        case 'install':
+                          return `${Install[pkgManager]}${pkg.name ? ` ${pkg.name}` : ''}`;
+                        case 'init':
+                          return Init[pkgManager];
+                        default:
+                          return `${pkg.isGlobal ? Global[pkgManager] : Add[pkgManager]} ${pkg.name}`;
+                      }
+                    })
+                    .join('\n')}
+                </span>
+              </code>
+            </Pre>
+          </div>
+        </Tab>
       ))}
     </Tabs>
   );

@@ -1,0 +1,33 @@
+{
+  "name": "website",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "analyze": "cross-env ANALYZE=true next build",
+    "build": "next build",
+    "dev": "next dev",
+    "next": "next",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@theguild/components": "3.0.3",
+    "next": "12.2.5",
+    "next-mdx-remote": "4.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@theguild/tailwind-config": "0.0.2",
+    "@types/react": "18.0.17",
+    "critters": "0.0.16",
+    "cross-env": "7.0.3",
+    "typescript": "4.8.2"
+  },
+  "nextBundleAnalysis": {
+    "budget": null,
+    "budgetPercentIncreaseRed": 20,
+    "showDetails": true
+  }
+}

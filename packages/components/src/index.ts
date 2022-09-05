@@ -12,6 +12,7 @@ export {
   ServerSideErrorPage,
   getComponents,
   useConfig,
+  Navbar,
 } from 'nextra-theme-docs';
 
 declare module 'react' {

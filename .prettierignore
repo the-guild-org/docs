@@ -4,3 +4,4 @@ storybook-static/
 .next/
 .husky/_/
 .changeset/*.md
+.bob/

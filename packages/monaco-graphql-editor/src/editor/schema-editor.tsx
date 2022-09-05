@@ -1,4 +1,4 @@
-import React, { ForwardedRef, useImperativeHandle, useEffect, useState, forwardRef, useCallback } from 'react';
+import { ForwardedRef, useImperativeHandle, useEffect, useState, forwardRef, useCallback } from 'react';
 import MonacoEditor, { EditorProps, BeforeMount, OnMount, OnChange } from '@monaco-editor/react';
 import { IDisposable } from 'monaco-editor';
 import { GraphQLError, GraphQLSchema } from 'graphql';

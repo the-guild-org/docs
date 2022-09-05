@@ -1,6 +1,6 @@
 import { forwardRef, ReactElement } from 'react';
 import { PRODUCTS } from '../helpers/products';
-import { Anchor } from '@theguild/components';
+import { Anchor } from './anchor';
 
 const productCategories = [
   {

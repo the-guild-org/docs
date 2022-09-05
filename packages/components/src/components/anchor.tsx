@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactElement } from 'react';
+import { forwardRef, ReactElement } from 'react';
 import NextLink from 'next/link';
 import { ILink } from '../types/components';
 

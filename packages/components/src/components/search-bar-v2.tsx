@@ -11,7 +11,7 @@ import { AlgoliaSearchItem } from '../types/algolia';
 import { SidePreview } from './search-bar-v2/side-preview';
 import { debounced } from './search-bar-v2/utils';
 import { templates } from './search-bar-v2/templates';
-import { Anchor } from '@theguild/components';
+import { Anchor } from './anchor';
 
 export const SearchBarV2 = ({
   accentColor,
