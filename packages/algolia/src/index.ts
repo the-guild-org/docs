@@ -15,7 +15,7 @@ import matter from 'gray-matter';
 import glob from 'glob';
 import crypto from 'node:crypto';
 
-import type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource, IRoutes } from './types';
+import { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource, IRoutes } from './types';
 
 const extractToC = (content: string) => {
   const slugger = new GithubSlugger();

@@ -1,4 +1,4 @@
-import type { MouseEvent } from 'react';
+import { MouseEvent } from 'react';
 import RouterImport from 'next/router.js';
 
 export function withoutTrailingSlash(v: string) {
@@ -9,7 +9,7 @@ export function withoutTrailingSlash(v: string) {
 
 export function withStartingSlash(v: string) {
   if (v.startsWith('/')) return v;
-  return '/' + v;
+  return `/${v}`;
 }
 
 export function withoutStartingSlash(v: string) {

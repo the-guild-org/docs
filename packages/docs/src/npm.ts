@@ -176,7 +176,7 @@ export async function getPackagesData<Tags extends string = string>({
 
             return text;
           } catch (err) {
-            console.error('[GUILD-DOCS] ERROR | Error while trying to get README from GitHub ' + fetchPath);
+            console.error(`[GUILD-DOCS] ERROR | Error while trying to get README from GitHub ${fetchPath}`);
             console.error(err);
           }
         }
@@ -185,27 +185,21 @@ export async function getPackagesData<Tags extends string = string>({
         if (stats?.repositoryDirectory && stats.repositoryLink) {
           const path = withoutTrailingSlash(withStartingSlash(stats.repositoryDirectory));
 
-          const fetchPath = `${
-            withoutTrailingSlash(
-              stats.repositoryLink.replace('https://github.com', 'https://raw.githubusercontent.com')
-            ) + '/HEAD'
-          }${path}/README.md`;
+          const fetchPath = `${withoutTrailingSlash(
+            stats.repositoryLink.replace('https://github.com', 'https://raw.githubusercontent.com')
+          )}/HEAD${path}/README.md`;
 
           try {
-            const response = await request(fetchPath, {
-              method: 'GET',
-            });
+            const response = await request(fetchPath, { method: 'GET' });
 
             if (response.statusCode === 404) {
               console.error(`[GUILD-DOCS] ERROR | ${fetchPath} Not Found`);
               return;
             }
 
-            const text = await response.body.text();
-
-            return text;
+            return await response.body.text();
           } catch (err) {
-            console.error('[GUILD-DOCS] ERROR | Error while trying to get README from GitHub ' + fetchPath);
+            console.error(`[GUILD-DOCS] ERROR | Error while trying to get README from GitHub ${fetchPath}`);
             console.error(err);
           }
         }
@@ -239,7 +233,10 @@ export async function getPackagesData<Tags extends string = string>({
 }
 
 export const removeUndefineds = <T extends object>(v: T): T => {
-  for (const key in v) v[key] === undefined && delete v[key];
-
+  for (const key in v) {
+    if (v[key] === undefined) {
+      delete v[key];
+    }
+  }
   return v;
 };

@@ -1,4 +1,4 @@
-import type { NextConfig } from 'next';
+import { NextConfig } from 'next';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
 import nextra from 'nextra';
 import { remarkMermaid } from './remark-mermaid.js';

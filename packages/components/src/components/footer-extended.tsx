@@ -86,7 +86,14 @@ export const FooterExtended = ({
   onNewsletterSubmit,
   logo,
 }: IFooterExtendedProps): ReactElement => {
-  const allResources: ILink[] = [{ children: 'Press Kit', title: 'Press Kit', href: '/logos' }, ...(resources || [])];
+  const allResources: ILink[] = [
+    {
+      children: 'Press Kit',
+      title: 'Press Kit',
+      href: '/logos',
+    },
+    ...(resources || []),
+  ];
   const renderLinks = useCallback(
     (list: ILink[]) => (
       <ul className="m-0 mb-8 list-none p-0 last:mb-0">
