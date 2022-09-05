@@ -1,4 +1,4 @@
-# @guild-docs/algolia
+# @theguild/algolia
 
 ## 0.2.2
 
@@ -64,4 +64,4 @@
 
 ### Patch Changes
 
-- fb755f0: `@guild-docs/algolia`
+- fb755f0: `@theguild/algolia`

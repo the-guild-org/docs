@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { AlgoliaRecordSource } from '@guild-docs/algolia';
+import { AlgoliaRecordSource } from '@theguild/algolia';
 import {
   HiveLogo,
   YogaLogo,

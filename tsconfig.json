@@ -15,7 +15,7 @@
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "preserveWatchOutput": true,
     "paths": {
-      "@guild-docs/algolia": ["packages/algolia/src/index.ts"],
+      "@theguild/algolia": ["packages/algolia/src/index.ts"],
       "@theguild/components": ["packages/components/src/index.ts"],
       "guild-docs": ["packages/docs/src/index.ts"],
       "@theguild/monaco-graphql-editor": ["packages/monaco-graphql-editor/src/index.ts"]

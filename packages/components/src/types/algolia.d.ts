@@ -1,6 +1,6 @@
 import '@algolia/autocomplete-core';
 import { BaseItem } from '@algolia/autocomplete-core';
-import { AlgoliaRecord } from '@guild-docs/algolia';
+import { AlgoliaRecord } from '@theguild/algolia';
 
 // "hack" for `@algolia/autocomplete-core` that need an algolia record to extend `BaseItem`..
 declare interface AlgoliaSearchItem extends BaseItem, AlgoliaRecord {

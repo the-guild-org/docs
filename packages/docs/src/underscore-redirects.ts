@@ -18,7 +18,7 @@ export function applyUnderscoreRedirects(config: any, meta: any) {
       try {
         const redirects: any[] = meta.config.redirects
           ? Array.isArray(meta.config.redirects)
-            ? typeof meta.config.redirects
+            ? meta.config.redirects
             : await meta.config.redirects()
           : [];
 
