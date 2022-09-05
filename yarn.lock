@@ -10692,7 +10692,7 @@ next-seo@5.5.0:
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-5.5.0.tgz#12bdfce60a6ae098f49617357a166c2d44dbc29e"
   integrity sha512-5ouBHFtx8YrSDW44lj0qIEQ+oMcz6stgoITB+SqHUZbhgizoJsyLmq73gJ0lxtEKpcN8vG2QgRIJfdb8OAPChw==
 
-next-themes@0.2.0, next-themes@^0.2.0-beta.2:
+next-themes@^0.2.0, next-themes@^0.2.0-beta.2:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.2.0.tgz#fdc507f61e95b3ae513dee8d4783bcec8c02e3a3"
   integrity sha512-myhpDL4vadBD9YDSHiewqvzorGzB03N84e+3LxCwHRlM/hiBOaW+UsKsQojQAzC7fdcJA0l2ppveXcYaVV+hxQ==
@@ -10723,10 +10723,10 @@ next@12.2.5:
     "@next/swc-win32-ia32-msvc" "12.2.5"
     "@next/swc-win32-x64-msvc" "12.2.5"
 
-nextra-theme-docs@2.0.0-beta.21:
-  version "2.0.0-beta.21"
-  resolved "https://registry.yarnpkg.com/nextra-theme-docs/-/nextra-theme-docs-2.0.0-beta.21.tgz#efa4ce1928c2eeedfe31f219da4b5fd84f1e9c22"
-  integrity sha512-5aUZyBrEV1r+S8C/0VjZrCc9QwCMEakZUoFzxGoLESfjPYSfb8IqZUHoWC4Pvu3obXBtAxxnLs/KIfU/cNhIpw==
+nextra-theme-docs@2.0.0-beta.24:
+  version "2.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/nextra-theme-docs/-/nextra-theme-docs-2.0.0-beta.24.tgz#ceca10a25bb95a3cdd5239123fe9b6e63857ef44"
+  integrity sha512-GK8cEtxHoFl/FJGOB0I22HdwzVZA2PG4ovZ287kTODmIxT5ies06T6pznZJWmMzGdo/DTpzBr3L/CPiRcpU51w==
   dependencies:
     "@headlessui/react" "^1.6.5"
     "@mdx-js/react" "^2.1.2"
@@ -10742,10 +10742,10 @@ nextra-theme-docs@2.0.0-beta.21:
     scroll-into-view-if-needed "^2.2.29"
     title "^3.5.1"
 
-nextra@2.0.0-beta.21:
-  version "2.0.0-beta.21"
-  resolved "https://registry.yarnpkg.com/nextra/-/nextra-2.0.0-beta.21.tgz#465ed51dfa6539c2bb49d13a85e43e0519945699"
-  integrity sha512-st1tIJVoyCyaKYF+SH3ZlJhDhohTbuF5LU9wzpQMFQgMI03/86nSIctTeyk6dzn/TS3JyF78L+Mmmjm8p0n5eQ==
+nextra@2.0.0-beta.24:
+  version "2.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/nextra/-/nextra-2.0.0-beta.24.tgz#de269eafa0f3cf1d151e3a2a907b4bfc6f3e6df6"
+  integrity sha512-vGIHxc84yV0igLYwOvYTAZD5CkJkipMDU6Qm0mWfANb1QiI3WbAL/LRdHj5Jl1H9h3IZ/Hz3QAEmRhjR5cXQBA==
   dependencies:
     "@mdx-js/mdx" "^2.1.2"
     "@napi-rs/simple-git" "^0.1.8"

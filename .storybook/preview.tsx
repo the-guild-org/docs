@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { themes } from '@storybook/theming';
-import { ThemeProvider } from '@theguild/components';
+import { ThemeProvider } from 'next-themes';
 import NextImage, { ImageProps } from 'next/image';
 import NextLink, { LinkProps } from 'next/link';
 
@@ -46,7 +46,7 @@ Object.defineProperty(NextLink, 'default', {
 
 export const decorators = [
   Story => (
-    <ThemeProvider forcedTheme={useDarkMode() ? 'dark' : 'light'}>
+    <ThemeProvider attribute="class" forcedTheme={useDarkMode() ? 'dark' : 'light'}>
       <Story />
     </ThemeProvider>
   ),
