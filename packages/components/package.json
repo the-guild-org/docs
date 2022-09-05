@@ -3,6 +3,10 @@
   "version": "3.0.3",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "url": "the-guild-org/the-guild-components",
+    "directory": "packages/components"
+  },
   "bob": {
     "commonjs": false,
     "build": {
@@ -12,7 +16,8 @@
         "./src/static/illustrations/marketplace-cube-tl.png",
         "./src/static/illustrations/marketplace-cube-tr.png",
         "./src/static/illustrations/marketplace-cube-bl.png",
-        "./src/static/illustrations/marketplace-cube-br.png"
+        "./src/static/illustrations/marketplace-cube-br.png",
+        "./src/style.css"
       ]
     },
     "check": false
@@ -54,6 +59,7 @@
   },
   "sideEffects": false,
   "peerDependencies": {
+    "next": "^12.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -73,7 +79,17 @@
     "react-player": "2.10.1",
     "search-insights": "2.2.1",
     "tinykeys": "1.4.0",
-    "use-debounce": "8.0.4"
+    "use-debounce": "8.0.4",
+    "@emotion/react": "11.10.4",
+    "@emotion/styled": "11.10.4",
+    "@next/bundle-analyzer": "^12.2.5",
+    "framer-motion": "7.2.1",
+    "mermaid": "^9.1.6",
+    "next-seo": "5.5.0",
+    "nextra": "2.0.0-beta.21",
+    "nprogress": "0.2.0",
+    "tiny-lru": "^8.0.2",
+    "undici": "5.10.0"
   },
   "devDependencies": {
     "@theguild/algolia": "0.0.0",
@@ -81,6 +97,10 @@
     "@types/react-dom": "18.0.6",
     "dedent": "0.7.0",
     "next": "12.2.5",
-    "next-themes": "0.2.0"
+    "next-themes": "0.2.0",
+    "@types/mermaid": "8.2.9",
+    "@types/nprogress": "0.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
