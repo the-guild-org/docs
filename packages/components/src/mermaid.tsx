@@ -13,12 +13,15 @@ export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
   const [svg, setSVG] = useState('');
 
   useEffect(() => {
-    mermaid.initialize({ startOnLoad: true, theme: theme as mermaidAPI.Theme });
-    mermaid.render(`mermaid-svg-${id}`, chart, renderedSvg => {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: theme as mermaidAPI.Theme,
+      fontFamily: 'inherit',
+    });
+    mermaid.render(`mermaid-svg-${(id += 1)}`, chart, renderedSvg => {
       setSVG(renderedSvg);
     });
-    id++;
-  }, [theme, chart]);
+  }, [theme]);
 
-  return <div className="flex justify-center" dangerouslySetInnerHTML={{ __html: svg }} />;
+  return <div className="mt-6 flex justify-center" dangerouslySetInnerHTML={{ __html: svg }} />;
 };

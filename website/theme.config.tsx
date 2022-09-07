@@ -1,5 +1,6 @@
-import { ReactElement } from 'react';
+import { ComponentProps, ReactElement } from 'react';
 import { DocsThemeConfig, FooterExtended, Header, Navbar } from '@theguild/components';
+import clsx from 'clsx';
 
 const SITE_NAME = 'Guild docs';
 
@@ -73,6 +74,33 @@ const config: DocsThemeConfig = {
   feedback: {
     link: 'Question? Give us feedback →',
     labels: 'kind/docs',
+  },
+  components: {
+    source({ src, type, ...props }: ComponentProps<'source'>): ReactElement {
+      if (!src) {
+        throw new Error('Must provide `src` prop')
+      }
+      let ext = src.replace(/.*\./, '');
+      if (ext === 'mov') {
+        ext = 'quicktime';
+      }
+      return <source {...props} src={src} type={type || `video/${ext}`} />;
+    },
+    video: ({ className, children, ...props }: ComponentProps<'video'>) => (
+      <video className={clsx('mt-6 w-full', className)} autoPlay loop muted {...props}>
+        {children}
+        Your browser does not support HTML video.
+      </video>
+    ),
+    iframe: ({ className, ...props }: ComponentProps<'iframe'>) => (
+      <iframe
+        className={clsx('mt-6 h-96 w-full', className)}
+        title="YouTube Video Player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        {...props}
+      />
+    ),
   },
 };
 
