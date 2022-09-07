@@ -17,6 +17,7 @@ export { InfoList } from './info-list';
 export { Instruction } from './instruction';
 export { MarketplaceList } from './marketplace-list';
 export { MarketplaceSearch } from './marketplace-search';
+export { mdxComponents } from './mdx-components';
 export { Modal } from './modal';
 export { Nav } from './nav';
 export { Newsletter } from './newsletter';

@@ -21,7 +21,7 @@ export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
     mermaid.render(`mermaid-svg-${(id += 1)}`, chart, renderedSvg => {
       setSVG(renderedSvg);
     });
-  }, [theme]);
+  }, [theme, chart]);
 
   return <div className="mt-6 flex justify-center" dangerouslySetInnerHTML={{ __html: svg }} />;
 };
