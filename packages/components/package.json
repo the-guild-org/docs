@@ -85,6 +85,7 @@
     "tiny-lru": "^8.0.2",
     "tinykeys": "1.4.0",
     "undici": "5.10.0",
+    "unist-util-visit": "^4.1.1",
     "use-debounce": "8.0.4"
   },
   "devDependencies": {
