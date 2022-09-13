@@ -2,7 +2,7 @@ import visit from 'unist-util-visit';
 import { Plugin } from 'unified';
 import { Root } from 'mdast';
 
-const FILE_PATH = '@theguild/components/mermaid'
+const FILE_PATH = '@theguild/components/mermaid';
 
 const MERMAID_IMPORT_AST = {
   type: 'mdxjsEsm',

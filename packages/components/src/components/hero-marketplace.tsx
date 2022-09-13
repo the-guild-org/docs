@@ -58,7 +58,7 @@ export const HeroMarketplace = ({
       </div>
       <div>
         <Cube src={CubeTL} className="-top-2.5 left-6 md:top-6 md:left-10" />
-        <Cube src={CubeTR} className="-bottom-60 -right-52 [top:auto] md:top-20 md:[bottom:auto]" />
+        <Cube src={CubeTR} className="-bottom-60 -right-52 top-auto md:top-20 md:bottom-auto" />
         <Cube src={CubeBR} className="-right-20 -bottom-32 hidden md:block" />
         <Cube src={CubeBL} className="-bottom-40 left-10 hidden md:block" />
       </div>

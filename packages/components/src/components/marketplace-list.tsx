@@ -33,7 +33,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
             )}
           >
             <h3 className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg">{item.title}</h3>
-            <div className="line-clamp-3 [&>p]:!m-0">{item.description}</div>
+            <div className="line-clamp-3">{item.description}</div>
             {item.tags && item.tags.length > 0 && (
               <TagsContainer>
                 {item.tags.map(tagName => (
@@ -107,15 +107,7 @@ export const MarketplaceList = ({
         </div>
       ) : (
         <>
-          <table
-            className="
-              w-full
-              border-collapse
-              [&_th]:!border-0
-              [&_td]:!border-0
-              [&_tr]:!bg-transparent
-            "
-          >
+          <table className="w-full border-collapse">
             <thead className="whitespace-nowrap px-2 text-left text-xs font-semibold uppercase text-gray-300 dark:text-gray-600">
               <tr className="border-0">
                 <th className="px-2" />
