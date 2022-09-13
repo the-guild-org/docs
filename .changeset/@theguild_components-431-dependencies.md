@@ -10,6 +10,7 @@ dependencies updates:
 - Updated dependency [`nextra@2.0.0-beta.26` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0-beta.26) (from `2.0.0-beta.24`, in `dependencies`)
 - Added dependency [`next-videos@^1.5.0` ↗︎](https://www.npmjs.com/package/next-videos/v/null) (to `dependencies`)
 - Added dependency [`remark-mdx-disable-explicit-jsx@^0.1.0` ↗︎](https://www.npmjs.com/package/remark-mdx-disable-explicit-jsx/v/null) (to `dependencies`)
+- Added dependency [`unist-util-visit@^4.1.1` ↗︎](https://www.npmjs.com/package/unist-util-visit/v/null) (to `dependencies`)
 - Removed dependency [`@headlessui/react@1.6.6` ↗︎](https://www.npmjs.com/package/@headlessui/react/v/1.6.6) (from `dependencies`)
 - Removed dependency [`@emotion/react@11.10.4` ↗︎](https://www.npmjs.com/package/@emotion/react/v/11.10.4) (from `dependencies`)
 - Removed dependency [`@emotion/styled@11.10.4` ↗︎](https://www.npmjs.com/package/@emotion/styled/v/11.10.4) (from `dependencies`)
