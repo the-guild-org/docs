@@ -35,8 +35,8 @@ const config: DocsThemeConfig = {
     text: 'Edit this page on GitHub',
   },
   feedback: {
+    content: 'Question? Give us feedback →',
     labels: 'kind/docs',
-    link: 'Question? Give us feedback →',
   },
   footer: {
     component: <FooterExtended />,

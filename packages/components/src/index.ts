@@ -10,7 +10,7 @@ export {
   Collapse,
   NotFoundPage,
   ServerSideErrorPage,
-  getComponents,
+  useMDXComponents,
   useConfig,
   Navbar,
 } from 'nextra-theme-docs';

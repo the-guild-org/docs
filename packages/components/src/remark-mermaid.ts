@@ -2,9 +2,11 @@ import visit from 'unist-util-visit';
 import { Plugin } from 'unified';
 import { Root } from 'mdast';
 
+const FILE_PATH = '@theguild/components/mermaid'
+
 const MERMAID_IMPORT_AST = {
   type: 'mdxjsEsm',
-  value: 'import { Mermaid } from "@theguild/components/mermaid"',
+  value: `import { Mermaid } from "${FILE_PATH}"`,
   data: {
     estree: {
       type: 'Program',
@@ -21,8 +23,8 @@ const MERMAID_IMPORT_AST = {
           ],
           source: {
             type: 'Literal',
-            value: '@theguild/components/mermaid',
-            raw: '"@theguild/components/mermaid"',
+            value: FILE_PATH,
+            raw: `"${FILE_PATH}"`,
           },
         },
       ],

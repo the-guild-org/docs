@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useMemo } from 'react';
 import { Tab, Tabs } from 'nextra-theme-docs';
 import { Pre } from 'nextra/components';
 
@@ -44,41 +44,39 @@ type Command = {
 };
 
 export const PackageCmd = ({ packages }: { packages: (string | Command)[] }): ReactElement => {
-  const pkgs = packages.map(pkg =>
-    typeof pkg === 'string'
-      ? ({
-          name: pkg,
-          cmd: 'add',
-        } as Command)
-      : pkg
+  const commands = useMemo(
+    () =>
+      PACKAGE_MANAGERS.map(pkgManager =>
+        packages
+          .map(pkg => (typeof pkg === 'string' ? ({ name: pkg, cmd: 'add' } as Command) : pkg))
+          .map(pkg => {
+            switch (pkg.cmd) {
+              case 'run':
+                return `${pkgManager === 'npm' && pkg.isNpx ? 'npx' : Run[pkgManager]} ${pkg.name}`;
+              case 'install':
+                return `${Install[pkgManager]}${pkg.name ? ` ${pkg.name}` : ''}`;
+              case 'init':
+                return Init[pkgManager];
+              default:
+                return `${pkg.isGlobal ? Global[pkgManager] : Add[pkgManager]} ${pkg.name}`;
+            }
+          })
+          .join('\n')
+      ),
+    [packages]
   );
 
   return (
     <Tabs items={PACKAGE_MANAGERS}>
-      {PACKAGE_MANAGERS.map(pkgManager => (
-        <Tab key={pkgManager}>
-          <div data-rehype-pretty-code-fragment>
-            <Pre data-nextra-copy="">
-              <code data-language="sh" data-theme="default">
-                <span className="line" style={{ color: 'var(--shiki-color-text)' }}>
-                  {pkgs
-                    .map(pkg => {
-                      switch (pkg.cmd) {
-                        case 'run':
-                          return `${pkgManager === 'npm' && pkg.isNpx ? 'npx' : Run[pkgManager]} ${pkg.name}`;
-                        case 'install':
-                          return `${Install[pkgManager]}${pkg.name ? ` ${pkg.name}` : ''}`;
-                        case 'init':
-                          return Init[pkgManager];
-                        default:
-                          return `${pkg.isGlobal ? Global[pkgManager] : Add[pkgManager]} ${pkg.name}`;
-                      }
-                    })
-                    .join('\n')}
-                </span>
-              </code>
-            </Pre>
-          </div>
+      {PACKAGE_MANAGERS.map((pkgManager, index) => (
+        <Tab key={pkgManager} data-rehype-pretty-code-fragment>
+          <Pre value={JSON.stringify(commands[index])}>
+            <code data-language="sh" data-theme="default">
+              <span className="line" style={{ color: 'var(--shiki-color-text)' }}>
+                {commands[index]}
+              </span>
+            </code>
+          </Pre>
         </Tab>
       ))}
     </Tabs>
