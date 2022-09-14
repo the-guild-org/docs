@@ -8,6 +8,7 @@
     "directory": "packages/components"
   },
   "bob": {
+    "check": false,
     "commonjs": false,
     "build": {
       "copy": [
@@ -58,7 +59,7 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "next": "^12.2.5",
+    "next": "^12.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -72,7 +73,7 @@
     "algoliasearch": "4.14.2",
     "clsx": "1.2.1",
     "focus-trap-react": "9.0.2",
-    "mermaid": "^9.1.6",
+    "mermaid": "^9.1.7",
     "next-videos": "^1.5.0",
     "nextra": "2.0.0-beta.28",
     "nextra-theme-docs": "2.0.0-beta.28",
@@ -93,7 +94,7 @@
     "@types/mermaid": "8.2.9",
     "@types/react-dom": "18.0.6",
     "dedent": "0.7.0",
-    "next": "12.2.5",
+    "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
