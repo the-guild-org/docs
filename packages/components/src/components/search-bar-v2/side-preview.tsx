@@ -1,7 +1,7 @@
 import { AutocompleteComponents } from '@algolia/autocomplete-js';
 import { ReactElement } from 'react';
-import { PRODUCTS } from '../../helpers/products';
 import { AlgoliaSearchItem } from '../../types/algolia';
+import { PRODUCTS } from '../../helpers/products.js';
 
 export const SidePreview = ({
   item,

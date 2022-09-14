@@ -1,6 +1,6 @@
 import { SourceTemplates } from '@algolia/autocomplete-js';
 import { AlgoliaSearchItem } from '../../types/algolia';
-import { Anchor } from '../anchor';
+import { Anchor } from '../anchor.js';
 
 export const templates: SourceTemplates<AlgoliaSearchItem> = {
   item({ item: hit, components }) {

@@ -1,6 +1,6 @@
 import { useState, useMemo, ReactElement, useCallback } from 'react';
 import clsx from 'clsx';
-import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
+import radixNavigationMenu from '@radix-ui/react-navigation-menu';
 import { useTheme } from 'nextra-theme-docs';
 import { IHeaderProps } from '../types/components';
 import { SearchBar } from './search-bar.js';
@@ -11,6 +11,8 @@ import { SolutionsMenu } from './solutions-menu.js';
 import { EcosystemList } from './ecosystem-list.js';
 import { useWindowSize } from '../helpers/hooks.js';
 import { Anchor } from './anchor.js';
+
+const { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } = radixNavigationMenu
 
 export const Header = ({
   accentColor,

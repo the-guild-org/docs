@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { DEFAULT_PATH_PROPS } from '../../helpers/utils';
+import { DEFAULT_PATH_PROPS } from '../../helpers/utils.js';
 
 export const PageIcon = ({ className }: { className?: string }): ReactElement => {
   return (

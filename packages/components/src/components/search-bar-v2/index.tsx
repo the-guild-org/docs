@@ -1,17 +1,20 @@
-import { ISearchBarProps } from '../types/components';
-import { autocomplete, AutocompleteApi, getAlgoliaResults } from '@algolia/autocomplete-js';
+import algoliaAutocomplete, { AutocompleteApi } from '@algolia/autocomplete-js';
 import { createRoot, Root } from 'react-dom/client';
 import { createElement, Fragment, ReactElement, useEffect, useRef } from 'react';
-import algoliaSearch from 'algoliasearch/lite';
-import { createAlgoliaInsightsPlugin } from '@algolia/autocomplete-plugin-algolia-insights';
+import algoliaSearch from 'algoliasearch/lite.js';
+import algoliaAutocompletePlugin from '@algolia/autocomplete-plugin-algolia-insights';
 import insightsClient from 'search-insights';
 import tinykeys from 'tinykeys';
 
-import { AlgoliaSearchItem } from '../types/algolia';
-import { SidePreview } from './search-bar-v2/side-preview';
-import { debounced } from './search-bar-v2/utils';
-import { templates } from './search-bar-v2/templates';
-import { Anchor } from './anchor';
+import { ISearchBarProps } from '../../types/components';
+import { AlgoliaSearchItem } from '../../types/algolia';
+import { SidePreview } from './side-preview.js';
+import { debounced } from './utils.js';
+import { templates } from './templates.js';
+import { Anchor } from '../anchor.js';
+
+const { autocomplete, getAlgoliaResults } = algoliaAutocomplete
+const { createAlgoliaInsightsPlugin } = algoliaAutocompletePlugin
 
 export const SearchBarV2 = ({
   accentColor,
