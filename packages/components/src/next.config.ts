@@ -38,8 +38,10 @@ export const withGuildDocs = ({
         experimental: {
           optimizeCss: true,
           newNextLinkBehavior: true,
+          // @ts-expect-error -- TODO: check next version in Nextra and remove this
           images: {
             allowFutureImage: true, // next/future/image
+            // @ts-expect-error -- TODO: check next version in Nextra and remove this
             ...nextConfig.experimental?.images,
           },
           ...nextConfig.experimental,
