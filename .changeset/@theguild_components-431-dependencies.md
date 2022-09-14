@@ -4,10 +4,10 @@
 
 dependencies updates: 
 
-- Updated dependency [`nextra-theme-docs@2.0.0-beta.27` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0-beta.27) (from `2.0.0-beta.24`, in `dependencies`)
+- Updated dependency [`nextra-theme-docs@2.0.0-beta.28` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0-beta.28) (from `2.0.0-beta.24`, in `dependencies`)
 - Updated dependency [`react-instantsearch-dom@6.32.1` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.32.1) (from `6.31.1`, in `dependencies`)
 - Updated dependency [`@next/bundle-analyzer@^12.3.0` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/null) (from `^12.2.5`, in `dependencies`)
-- Updated dependency [`nextra@2.0.0-beta.27` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0-beta.27) (from `2.0.0-beta.24`, in `dependencies`)
+- Updated dependency [`nextra@2.0.0-beta.28` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0-beta.28) (from `2.0.0-beta.24`, in `dependencies`)
 - Added dependency [`next-videos@^1.5.0` ↗︎](https://www.npmjs.com/package/next-videos/v/null) (to `dependencies`)
 - Added dependency [`remark-mdx-disable-explicit-jsx@^0.1.0` ↗︎](https://www.npmjs.com/package/remark-mdx-disable-explicit-jsx/v/null) (to `dependencies`)
 - Added dependency [`unist-util-visit@^4.1.1` ↗︎](https://www.npmjs.com/package/unist-util-visit/v/null) (to `dependencies`)
