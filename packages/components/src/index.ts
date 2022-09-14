@@ -1,5 +1,5 @@
-export * from './components';
-export { PRODUCTS } from './helpers/products';
+export * from './components/index.js';
+export { PRODUCTS } from './helpers/products.js';
 export {
   type DocsThemeConfig,
   default,
@@ -14,6 +14,7 @@ export {
   useConfig,
   Navbar,
 } from 'nextra-theme-docs';
+export * from './types/components.js'
 
 declare module 'react' {
   interface CSSProperties {

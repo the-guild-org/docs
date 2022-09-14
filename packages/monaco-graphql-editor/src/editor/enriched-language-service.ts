@@ -19,7 +19,7 @@ import {
   toGraphQLPosition,
   toMonacoRange,
   removeFalsey,
-} from './utils';
+} from './utils.js';
 
 export class EnrichedLanguageService extends LanguageService {
   async getNodeAtPosition(

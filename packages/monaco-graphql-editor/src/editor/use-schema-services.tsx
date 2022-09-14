@@ -1,9 +1,16 @@
 import { useState, useMemo, useEffect } from 'react';
 import * as monaco from 'monaco-editor';
-import { DecorationsSource, DefinitionSource, DiagnosticsSource, EditorAction, HoverSource } from './utils';
-import { EnrichedLanguageService } from './enriched-language-service';
+import {
+  DecorationsSource,
+  DefinitionSource,
+  DiagnosticsSource,
+  EditorAction,
+  HoverSource,
+  emptyLocation,
+  locToRange
+} from './utils.js';
+import { EnrichedLanguageService } from './enriched-language-service.js';
 import { GraphQLError, GraphQLSchema, isInterfaceType, isObjectType } from 'graphql';
-import { emptyLocation, locToRange } from './utils';
 
 export type SchemaEditorApi = {
   jumpToType(typeName: string): void;

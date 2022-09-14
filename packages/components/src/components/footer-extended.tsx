@@ -1,10 +1,10 @@
 import { ReactElement, ReactNode, useCallback } from 'react';
-import { Newsletter } from './newsletter';
-import { PRODUCTS } from '../helpers/products';
-import { IFooterExtendedProps, ILink } from '../types/components';
-import { GuildLogo, TheGuild } from './logos';
 import clsx from 'clsx';
-import { Anchor } from './anchor';
+import { IFooterExtendedProps, ILink } from '../types/components';
+import { Newsletter } from './newsletter.js';
+import { PRODUCTS } from '../helpers/products.js';
+import { GuildLogo, TheGuild } from './logos/index.js';
+import { Anchor } from './anchor.js';
 
 const COMPANY: ILink[] = [
   {

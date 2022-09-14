@@ -52,8 +52,7 @@
     "./package.json": "./package.json"
   },
   "bob": {
-    "commonjs": false,
-    "check": false
+    "commonjs": false
   },
   "publishConfig": {
     "directory": "dist",

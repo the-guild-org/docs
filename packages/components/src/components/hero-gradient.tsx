@@ -1,8 +1,8 @@
 import { isValidElement, ReactElement } from 'react';
 import clsx from 'clsx';
 import { IHeroGradientProps } from '../types/components';
-import { Button } from './button';
-import { Image } from './image';
+import { Button } from './button.js';
+import { Image } from './image.js';
 
 const Shadow = ({ className }: { className: string }): ReactElement => {
   return (

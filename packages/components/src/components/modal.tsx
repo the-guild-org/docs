@@ -1,11 +1,11 @@
 import { ReactElement, useEffect } from 'react';
 import FocusTrap from 'focus-trap-react';
 import clsx from 'clsx';
-import { IModalProps } from '../types/components';
-import { useKeyPress } from '../helpers/hooks';
-import { CloseIcon, ExternalLinkIcon } from './icons';
-import { Anchor } from './anchor';
-import { Image } from './image';
+import { IModalProps } from '../types/components.js';
+import { useKeyPress } from '../helpers/hooks.js';
+import { CloseIcon, ExternalLinkIcon } from './icons/index.js';
+import { Anchor } from './anchor.js';
+import { Image } from './image.js';
 
 export const Modal = ({
   image,

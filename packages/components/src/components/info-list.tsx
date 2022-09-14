@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { IInfoListProps } from '../types/components';
 import clsx from 'clsx';
-import { Anchor } from './anchor';
+import { Anchor } from './anchor.js';
 
 export const InfoList = ({ title, items, className }: IInfoListProps): ReactElement => (
   <section className={clsx('bg-white dark:bg-[#111]', className)}>

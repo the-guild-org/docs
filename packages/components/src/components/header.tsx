@@ -2,15 +2,15 @@ import { useState, useMemo, ReactElement, useCallback } from 'react';
 import clsx from 'clsx';
 import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
 import { useTheme } from 'nextra-theme-docs';
-import { SearchBar } from './search-bar';
 import { IHeaderProps } from '../types/components';
-import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
-import { GuildLogo, TheGuild } from './logos';
-import { Nav } from './nav';
-import { SolutionsMenu } from './solutions-menu';
-import { EcosystemList } from './ecosystem-list';
-import { useWindowSize } from '../helpers/hooks';
-import { Anchor } from './anchor';
+import { SearchBar } from './search-bar.js';
+import { CaretIcon, HamburgerIcon, MoonIcon } from './icons/index.js';
+import { GuildLogo, TheGuild } from './logos/index.js';
+import { Nav } from './nav.js';
+import { SolutionsMenu } from './solutions-menu.js';
+import { EcosystemList } from './ecosystem-list.js';
+import { useWindowSize } from '../helpers/hooks.js';
+import { Anchor } from './anchor.js';
 
 export const Header = ({
   accentColor,

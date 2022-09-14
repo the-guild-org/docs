@@ -5,6 +5,7 @@
     "start": "storybook dev -p 6008",
     "prebuild": "rimraf packages/*/dist/ .bob/ dist/",
     "build": "bob build && cp styles/search-bar-v2.css packages/components/dist/search-bar-v2.css && mv packages/components/dist/static packages/components/dist/esm",
+    "postbuild": "bob check",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/dist/style.css",
     "build-storybook": "storybook build -o dist-storybook",
     "next:build": "cd website && yarn build && yarn start",

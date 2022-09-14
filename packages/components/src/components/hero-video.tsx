@@ -1,10 +1,10 @@
 import { ReactElement } from 'react';
-import ReactPlayerImport from 'react-player/lazy';
+import ReactPlayerImport from 'react-player/lazy/index.js';
 import clsx from 'clsx';
 import { IHeroVideoProps } from '../types/components';
-import { getDefault } from '../helpers/utils';
-import { Anchor } from './anchor';
-import { useRouter } from 'next/router';
+import { getDefault } from '../helpers/utils.js';
+import { Anchor } from './anchor.js';
+import { useRouter } from 'next/router.js';
 
 const ReactPlayer = getDefault(ReactPlayerImport);
 

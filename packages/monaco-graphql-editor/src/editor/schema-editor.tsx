@@ -4,7 +4,7 @@ import { IDisposable } from 'monaco-editor';
 import { GraphQLError, GraphQLSchema } from 'graphql';
 import { useTheme } from 'next-themes';
 import { EnrichedLanguageService } from './enriched-language-service';
-import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
+import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services.js';
 
 export type SchemaEditorProps = SchemaServicesOptions & {
   onBlur?: (value: string) => void;
@@ -19,8 +19,8 @@ function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEdit
   useImperativeHandle(ref, () => editorApi, [editorRef, languageService]);
 
   useEffect(() => {
-    if (languageService && props.onLanguageServiceReady) {
-      props.onLanguageServiceReady(languageService);
+    if (languageService) {
+      props.onLanguageServiceReady?.(languageService);
     }
   }, [languageService, props.onLanguageServiceReady]);
 
