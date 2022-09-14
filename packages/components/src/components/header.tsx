@@ -12,7 +12,7 @@ import { EcosystemList } from './ecosystem-list.js';
 import { useWindowSize } from '../helpers/hooks.js';
 import { Anchor } from './anchor.js';
 
-const { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } = radixNavigationMenu
+const { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } = radixNavigationMenu;
 
 export const Header = ({
   accentColor,

@@ -14,7 +14,7 @@ export {
   useConfig,
   Navbar,
 } from 'nextra-theme-docs';
-export * from './types/components.js'
+export * from './types/components.js';
 
 declare module 'react' {
   interface CSSProperties {

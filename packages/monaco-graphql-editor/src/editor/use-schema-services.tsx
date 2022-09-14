@@ -7,7 +7,7 @@ import {
   EditorAction,
   HoverSource,
   emptyLocation,
-  locToRange
+  locToRange,
 } from './utils.js';
 import { EnrichedLanguageService } from './enriched-language-service.js';
 import { GraphQLError, GraphQLSchema, isInterfaceType, isObjectType } from 'graphql';

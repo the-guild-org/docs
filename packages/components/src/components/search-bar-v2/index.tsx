@@ -13,8 +13,8 @@ import { debounced } from './utils.js';
 import { templates } from './templates.js';
 import { Anchor } from '../anchor.js';
 
-const { autocomplete, getAlgoliaResults } = algoliaAutocomplete
-const { createAlgoliaInsightsPlugin } = algoliaAutocompletePlugin
+const { autocomplete, getAlgoliaResults } = algoliaAutocomplete;
+const { createAlgoliaInsightsPlugin } = algoliaAutocompletePlugin;
 
 export const SearchBarV2 = ({
   accentColor,
