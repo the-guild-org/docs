@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Anchor } from './anchor';
+import { Anchor } from './anchor.js';
 
 export const NPMBadge = ({ name }: { name: string }): ReactElement => {
   const encodedPackage = encodeURIComponent(name);

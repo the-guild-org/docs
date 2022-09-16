@@ -1,6 +1,6 @@
 import { forwardRef, ReactElement } from 'react';
-import { PRODUCTS } from '../helpers/products';
-import { Anchor } from './anchor';
+import { PRODUCTS } from '../helpers/products.js';
+import { Anchor } from './anchor.js';
 
 const productCategories = [
   {

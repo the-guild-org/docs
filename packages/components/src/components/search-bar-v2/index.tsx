@@ -1,17 +1,20 @@
-import { ISearchBarProps } from '../types/components';
-import { autocomplete, AutocompleteApi, getAlgoliaResults } from '@algolia/autocomplete-js';
+import * as algoliaAutocomplete from '@algolia/autocomplete-js';
 import { createRoot, Root } from 'react-dom/client';
 import { createElement, Fragment, ReactElement, useEffect, useRef } from 'react';
-import algoliaSearch from 'algoliasearch/lite';
-import { createAlgoliaInsightsPlugin } from '@algolia/autocomplete-plugin-algolia-insights';
+import algoliaSearch from 'algoliasearch/lite.js';
+import * as algoliaAutocompletePlugin from '@algolia/autocomplete-plugin-algolia-insights';
 import insightsClient from 'search-insights';
-import tinykeys from 'tinykeys';
 
-import { AlgoliaSearchItem } from '../types/algolia';
-import { SidePreview } from './search-bar-v2/side-preview';
-import { debounced } from './search-bar-v2/utils';
-import { templates } from './search-bar-v2/templates';
-import { Anchor } from './anchor';
+import { ISearchBarProps } from '../../types/components';
+import { AlgoliaSearchItem } from '../../types/algolia';
+import { SidePreview } from './side-preview.js';
+import { debounced } from './utils.js';
+import { templates } from './templates.js';
+import { Anchor } from '../anchor.js';
+import { getDefault } from '../../helpers/utils.js';
+
+const { autocomplete, getAlgoliaResults } = getDefault(algoliaAutocomplete);
+const { createAlgoliaInsightsPlugin } = getDefault(algoliaAutocompletePlugin);
 
 export const SearchBarV2 = ({
   accentColor,
@@ -20,7 +23,7 @@ export const SearchBarV2 = ({
   algolia,
 }: ISearchBarProps): ReactElement => {
   const containerRef = useRef(null);
-  const search = useRef<AutocompleteApi<AlgoliaSearchItem>>();
+  const search = useRef<algoliaAutocomplete.AutocompleteApi<AlgoliaSearchItem>>();
   const panelRootRef = useRef<Root | null>(null);
   const rootRef = useRef<HTMLElement | null>(null);
 
@@ -170,21 +173,24 @@ export const SearchBarV2 = ({
 
   // listen for CTRL+K
   useEffect(() => {
-    const onKeyTrigger = () => {
-      if (search.current) {
+    const down = (e: globalThis.KeyboardEvent): void => {
+      if (!search.current) {
+        return;
+      }
+      if (e.key === '/' || (e.key === 'k' && e.metaKey)) {
+        e.preventDefault();
         const isOpen = !document.querySelector('.aa-DetachedOverlay');
         search.current.setIsOpen(isOpen);
+      } else if (e.key === 'Escape') {
+        search.current.setIsOpen(false);
       }
     };
 
-    const unsubscribe = tinykeys(window, {
-      '$mod+K': onKeyTrigger,
-    });
-
+    window.addEventListener('keydown', down);
     return () => {
-      unsubscribe();
+      window.removeEventListener('keydown', down);
     };
-  }, [search]);
+  }, []);
 
   return <div ref={containerRef} className={className} />;
 };

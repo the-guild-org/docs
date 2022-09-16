@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { readFile } from 'node:fs/promises';
 import { existsSync, writeFileSync, readFileSync, statSync } from 'node:fs';
+import crypto from 'node:crypto';
 import sortBy from 'lodash/sortBy.js';
 import isString from 'lodash/isString.js';
 import isArray from 'lodash/isArray.js';
@@ -8,17 +9,16 @@ import flatten from 'lodash/flatten.js';
 import compact from 'lodash/compact.js';
 import map from 'lodash/map.js';
 import identity from 'lodash/identity.js';
-import GithubSlugger from 'github-slugger';
+import GitHubSlugger from 'github-slugger';
 import removeMarkdown from 'remove-markdown';
-import algoliasearch from 'algoliasearch';
+import algoliaSearch from 'algoliasearch';
 import matter from 'gray-matter';
 import glob from 'glob';
-import crypto from 'node:crypto';
 
 import { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource, IRoutes } from './types';
 
 const extractToC = (content: string) => {
-  const slugger = new GithubSlugger();
+  const slugger = new GitHubSlugger();
 
   const lines = content.split('\n');
 
@@ -126,7 +126,7 @@ async function routesToAlgoliaRecords(
   source: AlgoliaRecordSource,
   domain: string,
   mdx = true,
-  objectsPrefix = new GithubSlugger().slug(source),
+  objectsPrefix = new GitHubSlugger().slug(source),
   parentRoute?: { $name: string; path: string }
 ) {
   const objects: AlgoliaRecord[] = [];
@@ -205,7 +205,7 @@ async function routesToAlgoliaRecords(
                   source,
                   domain,
                   mdx,
-                  new GithubSlugger().slug(`${source}-${refName}`),
+                  new GitHubSlugger().slug(`${source}-${refName}`),
                   {
                     $name: topRoute.$name!,
                     path: topPath,
@@ -233,10 +233,10 @@ async function pluginsToAlgoliaRecords(
   plugins: any[],
   source: AlgoliaRecordSource,
   domain: string,
-  objectsPrefix = new GithubSlugger().slug(source)
+  objectsPrefix = new GitHubSlugger().slug(source)
 ): Promise<AlgoliaRecord[]> {
   const objects: AlgoliaRecord[] = [];
-  const slugger = new GithubSlugger();
+  const slugger = new GitHubSlugger();
 
   plugins.forEach((plugin: any) => {
     const toc = extractToC(plugin.readme || '');
@@ -266,11 +266,11 @@ async function nextraToAlgoliaRecords(
   { docsBaseDir }: IndexToAlgoliaNextraOptions,
   source: AlgoliaRecordSource,
   domain: string,
-  objectsPrefix = new GithubSlugger().slug(source)
+  objectsPrefix = new GitHubSlugger().slug(source)
 ): Promise<AlgoliaRecord[]> {
   return new Promise((resolve, reject) => {
     const objects: AlgoliaRecord[] = [];
-    const slugger = new GithubSlugger();
+    const slugger = new GitHubSlugger();
 
     // cache for all needed `meta.json` files
     const metadataCache: { [k: string]: any } = {};
@@ -417,14 +417,12 @@ export const indexToAlgolia = async ({
         console.log('no lockfile detected, push all records');
       }
 
-      const client = algoliasearch(process.env.ALGOLIA_APP_ID!, process.env.ALGOLIA_ADMIN_API_KEY!);
+      const client = algoliaSearch(process.env.ALGOLIA_APP_ID!, process.env.ALGOLIA_ADMIN_API_KEY!);
       const index = client.initIndex(process.env.ALGOLIA_INDEX_NAME!);
       index
-        .deleteBy({
-          filters: `source: "${source}"`,
-        })
+        .deleteBy({ filters: `source: "${source}"` })
         .then(() => index.saveObjects(objects))
-        .then(({ objectIDs }: any) => {
+        .then(({ objectIDs }) => {
           console.log(objectIDs);
         })
         .catch(console.error);

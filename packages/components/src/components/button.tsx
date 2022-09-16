@@ -1,6 +1,6 @@
 import { ComponentProps, ReactElement } from 'react';
 import clsx from 'clsx';
-import { Anchor } from './anchor';
+import { Anchor } from './anchor.js';
 
 export type ButtonProps = Omit<ComponentProps<'a'>, 'href' | 'ref'> & {
   variant?: 'primary' | 'secondary';

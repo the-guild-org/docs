@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
 import clsx from 'clsx';
 import { IHeroIllustrationProps } from '../types/components';
-import { Button } from './button';
-import { Image } from './image';
+import { Button } from './button.js';
+import { Image } from './image.js';
 
 export const HeroIllustration = ({
   title,

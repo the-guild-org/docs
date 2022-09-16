@@ -1,5 +1,5 @@
 import { forwardRef, ReactElement } from 'react';
-import { Anchor } from './anchor';
+import { Anchor } from './anchor.js';
 
 const CATEGORIES: {
   title: string;

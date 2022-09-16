@@ -1,7 +1,7 @@
 import { Fragment, ReactElement, useState } from 'react';
 import clsx from 'clsx';
 import { Listbox, Transition } from '@headlessui/react';
-import { CheckIcon } from './icons';
+import { CheckIcon } from './icons/index.js';
 
 type SelectOption = {
   key: string;

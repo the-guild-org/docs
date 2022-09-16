@@ -1,5 +1,6 @@
+/* eslint sort-keys: error */
 import { ReactElement } from 'react';
-import { DocsThemeConfig, FooterExtended, Header, Navbar } from '@theguild/components';
+import { DocsThemeConfig, FooterExtended, Header, Navbar, mdxComponents } from '@theguild/components';
 
 const SITE_NAME = 'Guild docs';
 
@@ -28,35 +29,18 @@ const Logo = ({ className }: { className?: string }): ReactElement => {
 };
 
 const config: DocsThemeConfig = {
-  titleSuffix: ` – ${SITE_NAME}`,
-  project: {
-    link: 'https://github.com/the-guild-org/the-guild-components', // GitHub link in the navbar
-  },
+  components: mdxComponents,
   docsRepositoryBase: 'https://github.com/the-guild-org/the-guild-components/tree/main/website/src/pages', // base URL for the docs repository
-  search: {
-    component: null,
-  },
-  navbar: props => (
-    <>
-      <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
-      <Navbar {...props} />
-    </>
-  ),
-  footer: {
-    component: <FooterExtended />,
-  },
   editLink: {
     text: 'Edit this page on GitHub',
   },
-  logo: (
-    <>
-      <Logo className="mr-1.5 h-9 w-9" />
-      <div>
-        <h1 className="md:text-md text-sm font-medium">{SITE_NAME}</h1>
-        <h2 className="hidden text-xs sm:block">Just document it</h2>
-      </div>
-    </>
-  ),
+  feedback: {
+    content: 'Question? Give us feedback →',
+    labels: 'kind/docs',
+  },
+  footer: {
+    component: <FooterExtended />,
+  },
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -67,13 +51,31 @@ const config: DocsThemeConfig = {
       <meta name="application-name" content="The Guild Docs Example" />
     </>
   ),
+  logo: (
+    <>
+      <Logo className="mr-1.5 h-9 w-9" />
+      <div>
+        <h1 className="text-sm font-medium">{SITE_NAME}</h1>
+        <h2 className="text-xs">Just document it</h2>
+      </div>
+    </>
+  ),
+  navbar: props => (
+    <>
+      <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
+      <Navbar {...props} />
+    </>
+  ),
+  project: {
+    link: 'https://github.com/the-guild-org/the-guild-components', // GitHub link in the navbar
+  },
+  search: {
+    component: null,
+  },
   sidebar: {
     defaultMenuCollapsed: true,
   },
-  feedback: {
-    link: 'Question? Give us feedback →',
-    labels: 'kind/docs',
-  },
+  titleSuffix: ` – ${SITE_NAME}`,
 };
 
 // const defaultSeo: AppSeoProps = {

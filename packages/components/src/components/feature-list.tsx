@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
 import clsx from 'clsx';
 import { IFeatureListProps } from '../types/components';
-import { Anchor } from './anchor';
-import { Image } from './image';
+import { Anchor } from './anchor.js';
+import { Image } from './image.js';
 
 export const FeatureList = ({ title, description, items, link, className }: IFeatureListProps): ReactElement => (
   <section className={clsx('bg-white dark:bg-[#111]', className)}>

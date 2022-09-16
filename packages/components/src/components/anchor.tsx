@@ -1,5 +1,5 @@
 import { forwardRef, ReactElement } from 'react';
-import NextLink from 'next/link';
+import NextLink from 'next/link.js';
 import { ILink } from '../types/components';
 
 export const Anchor = forwardRef<HTMLAnchorElement, ILink>(function Anchor(
@@ -19,7 +19,7 @@ export const Anchor = forwardRef<HTMLAnchorElement, ILink>(function Anchor(
   }
 
   return (
-    <NextLink ref={forwardedRef} href={href} {...props}>
+    <NextLink ref={forwardedRef} href={href} {...props} legacyBehavior={false}>
       {/* Fragment needed to fix Error: React.Children.only expected to receive a single React element child */}
       <>{children}</>
     </NextLink>

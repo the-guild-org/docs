@@ -1,9 +1,8 @@
-import { useSSG } from 'nextra/data'
+import { useSSG } from 'nextra/ssg'
 import { getPackagesData } from '@theguild/components/npm'
 import { PackageCmd } from '@theguild/components'
 import { MDXRemote } from 'next-mdx-remote'
 import { compileMdx } from 'nextra/compile'
-import { getComponents } from 'nextra-theme-docs'
 
 export const getStaticProps = async () => {
   const packagesData = await getPackagesData({
@@ -17,8 +16,10 @@ export const getStaticProps = async () => {
     ]
   })
   const mdx = await compileMdx(packagesData[0].readme, {
-    outputFormat: 'function-body',
-    jsx: false
+    mdxOptions: {
+      outputFormat: 'function-body',
+      jsx: false
+    }
   })
   return {
     props: {
@@ -37,12 +38,10 @@ export const getStaticProps = async () => {
 export const PackageApiDocs = () => {
   // Get the data from SSG, and render it as a component.
   const packageData = useSSG()
-  // const components = useMDXComponents()
-  const components = getComponents({})
   return (
     <>
       <PackageCmd packages={[packageData.npmPackage]} />
-      <MDXRemote compiledSource={packageData.compiledSource} components={components} />
+      <MDXRemote compiledSource={packageData.compiledSource} />
     </>
   )
 }

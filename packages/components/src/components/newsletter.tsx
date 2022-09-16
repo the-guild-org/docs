@@ -1,7 +1,7 @@
 import { ReactElement, useState, FormEvent } from 'react';
 import clsx from 'clsx';
-import { isEmail } from '../helpers/email';
-import { ArrowUpRightIcon, MailIcon } from './icons';
+import { isEmail } from '../helpers/email.js';
+import { ArrowUpRightIcon, MailIcon } from './icons/index.js';
 
 export type NewsletterProps = {
   onNewsletterSubmit: (e: FormEvent, value: string) => void;

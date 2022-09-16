@@ -21,7 +21,7 @@ import {
   AngularLogo,
   WhatsUpLogo,
   KitQLLogo,
-} from '../components/logos';
+} from '../components/logos/index.js';
 
 export const PRODUCTS: {
   children: AlgoliaRecordSource;

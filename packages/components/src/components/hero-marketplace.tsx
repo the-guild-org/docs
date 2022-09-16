@@ -7,8 +7,8 @@ import CubeTR from '../static/illustrations/marketplace-cube-tr.png';
 import CubeBL from '../static/illustrations/marketplace-cube-bl.png';
 import CubeBR from '../static/illustrations/marketplace-cube-br.png';
 import { IHeroMarketplaceProps } from '../types/components';
-import { Button } from './button';
-import { Image } from './image';
+import { Button } from './button.js';
+import { Image } from './image.js';
 import { StaticImageData } from 'next/image';
 
 const Shadow = ({ className }: { className: string }): ReactElement => {
@@ -58,7 +58,7 @@ export const HeroMarketplace = ({
       </div>
       <div>
         <Cube src={CubeTL} className="-top-2.5 left-6 md:top-6 md:left-10" />
-        <Cube src={CubeTR} className="-bottom-60 -right-52 [top:auto] md:top-20 md:[bottom:auto]" />
+        <Cube src={CubeTR} className="-bottom-60 -right-52 top-auto md:top-20 md:bottom-auto" />
         <Cube src={CubeBR} className="-right-20 -bottom-32 hidden md:block" />
         <Cube src={CubeBL} className="-bottom-40 left-10 hidden md:block" />
       </div>
