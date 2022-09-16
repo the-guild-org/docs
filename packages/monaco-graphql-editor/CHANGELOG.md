@@ -1,5 +1,11 @@
 # @theguild/editor
 
+## 1.1.1
+
+### Patch Changes
+
+- [#423](https://github.com/the-guild-org/the-guild-components/pull/423) [`87f9420`](https://github.com/the-guild-org/the-guild-components/commit/87f942002cb37b6f082109e33b81d5e591b1a632) Thanks [@B2o5T](https://github.com/B2o5T)! - bump nextra-theme-docs
+
 ## 1.1.0
 
 ### Minor Changes

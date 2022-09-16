@@ -1,5 +1,11 @@
 # @theguild/algolia
 
+## 0.0.1
+
+### Patch Changes
+
+- [#423](https://github.com/the-guild-org/the-guild-components/pull/423) [`87f9420`](https://github.com/the-guild-org/the-guild-components/commit/87f942002cb37b6f082109e33b81d5e591b1a632) Thanks [@B2o5T](https://github.com/B2o5T)! - bump nextra, move `guild-docs` to `@theguild/components` and `@theguild/algolia` to `guild-components` monorepo
+
 ## 0.2.2
 
 ### Patch Changes

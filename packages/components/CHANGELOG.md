@@ -1,5 +1,53 @@
 # @theguild/components
 
+## 4.0.0
+
+### Major Changes
+
+- [#423](https://github.com/the-guild-org/the-guild-components/pull/423) [`87f9420`](https://github.com/the-guild-org/the-guild-components/commit/87f942002cb37b6f082109e33b81d5e591b1a632) Thanks [@B2o5T](https://github.com/B2o5T)! - bump nextra, move `guild-docs` to `@theguild/components` and `@theguild/algolia` to `guild-components` monorepo
+
+### Patch Changes
+
+- [#423](https://github.com/the-guild-org/the-guild-components/pull/423) [`87f9420`](https://github.com/the-guild-org/the-guild-components/commit/87f942002cb37b6f082109e33b81d5e591b1a632) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`nextra-theme-docs@2.0.0-beta.24` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0-beta.24) (from `2.0.0-beta.18`, in `dependencies`)
+  - Updated dependency [`use-debounce@8.0.4` ↗︎](https://www.npmjs.com/package/use-debounce/v/8.0.4) (from `8.0.3`, in `dependencies`)
+  - Added dependency [`@emotion/react@11.10.4` ↗︎](https://www.npmjs.com/package/@emotion/react/v/11.10.4) (to `dependencies`)
+  - Added dependency [`@emotion/styled@11.10.4` ↗︎](https://www.npmjs.com/package/@emotion/styled/v/11.10.4) (to `dependencies`)
+  - Added dependency [`@next/bundle-analyzer@^12.2.5` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/null) (to `dependencies`)
+  - Added dependency [`framer-motion@7.2.1` ↗︎](https://www.npmjs.com/package/framer-motion/v/7.2.1) (to `dependencies`)
+  - Added dependency [`mermaid@^9.1.6` ↗︎](https://www.npmjs.com/package/mermaid/v/null) (to `dependencies`)
+  - Added dependency [`next-seo@5.5.0` ↗︎](https://www.npmjs.com/package/next-seo/v/5.5.0) (to `dependencies`)
+  - Added dependency [`nextra@2.0.0-beta.24` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0-beta.24) (to `dependencies`)
+  - Added dependency [`nprogress@0.2.0` ↗︎](https://www.npmjs.com/package/nprogress/v/0.2.0) (to `dependencies`)
+  - Added dependency [`tiny-lru@^8.0.2` ↗︎](https://www.npmjs.com/package/tiny-lru/v/null) (to `dependencies`)
+  - Added dependency [`undici@5.10.0` ↗︎](https://www.npmjs.com/package/undici/v/5.10.0) (to `dependencies`)
+  - Added dependency [`next@^12.2.5` ↗︎](https://www.npmjs.com/package/next/v/null) (to `peerDependencies`)
+
+- [#431](https://github.com/the-guild-org/the-guild-components/pull/431) [`2f1c66f`](https://github.com/the-guild-org/the-guild-components/commit/2f1c66fbf1630f68157a55443e020cbe0c41f3f2) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`nextra-theme-docs@2.0.0-beta.28` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0-beta.28) (from `2.0.0-beta.24`, in `dependencies`)
+  - Updated dependency [`react-instantsearch-dom@6.32.1` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.32.1) (from `6.31.1`, in `dependencies`)
+  - Updated dependency [`@next/bundle-analyzer@^12.3.0` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/null) (from `^12.2.5`, in `dependencies`)
+  - Updated dependency [`mermaid@9.1.7` ↗︎](https://www.npmjs.com/package/mermaid/v/9.1.7) (from `^9.1.6`, in `dependencies`)
+  - Updated dependency [`nextra@2.0.0-beta.28` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0-beta.28) (from `2.0.0-beta.24`, in `dependencies`)
+  - Updated dependency [`tiny-lru@8.0.2` ↗︎](https://www.npmjs.com/package/tiny-lru/v/8.0.2) (from `^8.0.2`, in `dependencies`)
+  - Added dependency [`next-videos@1.5.0` ↗︎](https://www.npmjs.com/package/next-videos/v/1.5.0) (to `dependencies`)
+  - Added dependency [`remark-mdx-disable-explicit-jsx@0.1.0` ↗︎](https://www.npmjs.com/package/remark-mdx-disable-explicit-jsx/v/0.1.0) (to `dependencies`)
+  - Added dependency [`unist-util-visit@^4.1.1` ↗︎](https://www.npmjs.com/package/unist-util-visit/v/null) (to `dependencies`)
+  - Removed dependency [`@headlessui/react@1.6.6` ↗︎](https://www.npmjs.com/package/@headlessui/react/v/1.6.6) (from `dependencies`)
+  - Removed dependency [`tinykeys@1.4.0` ↗︎](https://www.npmjs.com/package/tinykeys/v/1.4.0) (from `dependencies`)
+  - Removed dependency [`@emotion/react@11.10.4` ↗︎](https://www.npmjs.com/package/@emotion/react/v/11.10.4) (from `dependencies`)
+  - Removed dependency [`@emotion/styled@11.10.4` ↗︎](https://www.npmjs.com/package/@emotion/styled/v/11.10.4) (from `dependencies`)
+  - Removed dependency [`framer-motion@7.2.1` ↗︎](https://www.npmjs.com/package/framer-motion/v/7.2.1) (from `dependencies`)
+  - Removed dependency [`next-seo@5.5.0` ↗︎](https://www.npmjs.com/package/next-seo/v/5.5.0) (from `dependencies`)
+  - Removed dependency [`nprogress@0.2.0` ↗︎](https://www.npmjs.com/package/nprogress/v/0.2.0) (from `dependencies`)
+  - Updated dependency [`next@^12.3.0` ↗︎](https://www.npmjs.com/package/next/v/null) (from `^12.2.5`, in `peerDependencies`)
+
+- [#423](https://github.com/the-guild-org/the-guild-components/pull/423) [`87f9420`](https://github.com/the-guild-org/the-guild-components/commit/87f942002cb37b6f082109e33b81d5e591b1a632) Thanks [@B2o5T](https://github.com/B2o5T)! - bump nextra-theme-docs
+
+- [#431](https://github.com/the-guild-org/the-guild-components/pull/431) [`2f1c66f`](https://github.com/the-guild-org/the-guild-components/commit/2f1c66fbf1630f68157a55443e020cbe0c41f3f2) Thanks [@B2o5T](https://github.com/B2o5T)! - enhance mdx <img /> with basePath, use next-videos, add video/source/iframe components
+
 ## 3.0.3
 
 ### Patch Changes
