@@ -4,7 +4,6 @@ import { createElement, Fragment, ReactElement, useEffect, useRef } from 'react'
 import algoliaSearch from 'algoliasearch/lite.js';
 import * as algoliaAutocompletePlugin from '@algolia/autocomplete-plugin-algolia-insights';
 import insightsClient from 'search-insights';
-import tinykeys from 'tinykeys';
 
 import { ISearchBarProps } from '../../types/components';
 import { AlgoliaSearchItem } from '../../types/algolia';
@@ -174,21 +173,24 @@ export const SearchBarV2 = ({
 
   // listen for CTRL+K
   useEffect(() => {
-    const onKeyTrigger = () => {
-      if (search.current) {
+    const down = (e: globalThis.KeyboardEvent): void => {
+      if (!search.current) {
+        return;
+      }
+      if (e.key === '/' || (e.key === 'k' && e.metaKey)) {
+        e.preventDefault();
         const isOpen = !document.querySelector('.aa-DetachedOverlay');
         search.current.setIsOpen(isOpen);
+      } else if (e.key === 'Escape') {
+        search.current.setIsOpen(false);
       }
     };
 
-    const unsubscribe = tinykeys(window, {
-      '$mod+K': onKeyTrigger,
-    });
-
+    window.addEventListener('keydown', down);
     return () => {
-      unsubscribe();
+      window.removeEventListener('keydown', down);
     };
-  }, [search]);
+  }, []);
 
   return <div ref={containerRef} className={className} />;
 };

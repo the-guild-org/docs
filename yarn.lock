@@ -9782,7 +9782,7 @@ merge2@^1.3.0, merge2@^1.4.1:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-mermaid@^9.1.7:
+mermaid@9.1.7:
   version "9.1.7"
   resolved "https://registry.yarnpkg.com/mermaid/-/mermaid-9.1.7.tgz#e24de9b2d36c8cb25a09d72ffce966941b24bd6e"
   integrity sha512-MRVHXy5FLjnUQUG7YS3UN9jEN6FXCJbFCXVGJQjVIbiR6Vhw0j/6pLIjqsiah9xoHmQU6DEaKOvB3S1g/1nBPA==
@@ -10420,7 +10420,7 @@ next-themes@0.2.1, next-themes@^0.2.0-beta.2:
   resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.2.1.tgz#0c9f128e847979daf6c67f70b38e6b6567856e45"
   integrity sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==
 
-next-videos@^1.5.0:
+next-videos@1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/next-videos/-/next-videos-1.5.0.tgz#bfc55f7db06e079d4559f6f8b4c28d617192582b"
   integrity sha512-U6HY68UDxsDMMRgjABYq1S2EIStqZNp8FFtL8LKXJrhGFIO1nM2a3Afy0jw3JI2nK1HSXq4s4anQ96Yn4ukceA==
@@ -12054,7 +12054,7 @@ remark-gfm@^3.0.1:
     micromark-extension-gfm "^2.0.0"
     unified "^10.0.0"
 
-remark-mdx-disable-explicit-jsx@^0.1.0:
+remark-mdx-disable-explicit-jsx@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/remark-mdx-disable-explicit-jsx/-/remark-mdx-disable-explicit-jsx-0.1.0.tgz#0100242914cbf54e42da987be547f71dc5473d5d"
   integrity sha512-NC7NUbu4bExZnsWDTJE3UhBRZujW3gyqMufhTHn2GHhZ5LetWzyieyuZerBPdSniLx4d7QKDbf+d3u/qmMGyaQ==
@@ -13356,7 +13356,7 @@ tiny-glob@^0.2.9:
     globalyzer "0.1.0"
     globrex "^0.1.2"
 
-tiny-lru@^8.0.2:
+tiny-lru@8.0.2:
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/tiny-lru/-/tiny-lru-8.0.2.tgz#812fccbe6e622ded552e3ff8a4c3b5ff34a85e4c"
   integrity sha512-ApGvZ6vVvTNdsmt676grvCkUCGwzG9IqXma5Z07xJgiC5L7akUMof5U8G2JTI9Rz/ovtVhJBlY6mNhEvtjzOIg==
@@ -13365,11 +13365,6 @@ tiny-warning@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
-
-tinykeys@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/tinykeys/-/tinykeys-1.4.0.tgz#c2986cd0184c86e943a6b17acc0352e42b542dff"
-  integrity sha512-ysnVd2E4nWbNXIbHaUidcKGLTmNimqP0hdpsD0Ph5hPJ84ntCF6PHj+Jg3im9nZt9/hNsBg/E6m1psHc2KaPnQ==
 
 title@^3.5.3:
   version "3.5.3"
