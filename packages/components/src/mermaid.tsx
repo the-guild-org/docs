@@ -1,6 +1,5 @@
 import { ReactElement, useEffect, useState } from 'react';
-import mermaid from 'mermaid';
-import mermaidAPI from 'mermaid/mermaidAPI';
+import mermaid, { Config } from 'mermaid';
 import { useTheme } from 'nextra-theme-docs';
 
 /**
@@ -15,7 +14,7 @@ export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
   useEffect(() => {
     mermaid.initialize({
       startOnLoad: true,
-      theme: theme as mermaidAPI.Theme,
+      theme: theme as Config['theme'],
       fontFamily: 'inherit',
     });
     mermaid.render(`mermaid-svg-${(id += 1)}`, chart, renderedSvg => {
