@@ -43,7 +43,7 @@
     "eslint-plugin-react": "7.31.8",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-storybook": "0.6.4",
-    "eslint-plugin-tailwindcss": "3.6.1",
+    "eslint-plugin-tailwindcss": "3.6.2",
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
     "next-themes": "0.2.1",

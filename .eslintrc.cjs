@@ -44,7 +44,6 @@ module.exports = {
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
     'tailwindcss/no-custom-classname': 'warn',
     '@typescript-eslint/ban-ts-comment': 'warn',
-    'tailwindcss/no-contradicting-classname': 'warn', // TODO: set to error
   },
   settings: {
     tailwindcss: {

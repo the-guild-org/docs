@@ -50,7 +50,7 @@ const config: StorybookConfig = {
       new TsconfigPathsPlugin({
         extensions: config.resolve.extensions,
       }),
-      new ResolveTypeScriptPlugin(),
+      new ResolveTypeScriptPlugin()
     );
     config.resolve.fallback = {
       ...config.resolve.fallback,
