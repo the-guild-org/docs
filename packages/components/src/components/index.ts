@@ -8,7 +8,7 @@ export { FooterExtended } from './footer-extended.js';
 export { Header } from './header.js';
 export { HeroGradient } from './hero-gradient.js';
 export { HeroIllustration } from './hero-illustration.js';
-export { HeroMarketplace } from './hero-marketplace.js';
+// export { HeroMarketplace } from './hero-marketplace.js';
 export { HeroVideo } from './hero-video.js';
 export { Image } from './image.js';
 export * from './icons/index.js';
