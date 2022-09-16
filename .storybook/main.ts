@@ -2,6 +2,7 @@ import path from 'node:path';
 import { StorybookConfig } from '@storybook/core-common';
 import { Configuration } from 'webpack';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import ResolveTypeScriptPlugin from 'resolve-typescript-plugin';
 
 const config: StorybookConfig = {
   stories: ['../packages/*/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
@@ -23,6 +24,7 @@ const config: StorybookConfig = {
       },
     },
     'storybook-dark-mode', // addon to have toolbar for dark/light mode
+    'storybook-addon-swc',
   ],
   typescript: {
     reactDocgen: false,
@@ -47,7 +49,8 @@ const config: StorybookConfig = {
     config.resolve.plugins.push(
       new TsconfigPathsPlugin({
         extensions: config.resolve.extensions,
-      })
+      }),
+      new ResolveTypeScriptPlugin(),
     );
     config.resolve.fallback = {
       ...config.resolve.fallback,
