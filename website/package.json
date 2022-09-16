@@ -19,7 +19,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@theguild/tailwind-config": "0.0.2",
+    "@theguild/tailwind-config": "0.1.0",
     "@types/react": "18.0.20",
     "critters": "0.0.16",
     "cross-env": "7.0.3",
