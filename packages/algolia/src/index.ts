@@ -272,12 +272,12 @@ async function nextraToAlgoliaRecords(
     const objects: AlgoliaRecord[] = [];
     const slugger = new GitHubSlugger();
 
-    // cache for all needed `meta.json` files
-    const metadataCache: { [k: string]: any } = {};
+    // cache for all needed `_meta.json` files
+    const metadataCache: Record<string, any> = {};
 
     const getMetaFromFile = (path: string) => {
       if (statSync(path)) {
-        return JSON.parse(readFileSync(path).toString() || '{}');
+        return JSON.parse(readFileSync(path, 'utf8') || '{}');
       }
       return {};
     };
@@ -290,15 +290,15 @@ async function nextraToAlgoliaRecords(
       const folders = filePath.replace(docsBaseDir, '').replace(fileName, '').split('/').filter(Boolean);
       // docs/guides/advanced -> ['Guides', 'Advanced']
       // by reading meta from:
-      //  - docs/guides/meta.json (for 'advanced' folder)
-      //  - docs/meta.json (for 'guides' folder)
+      //  - docs/guides/_meta.json (for 'advanced' folder)
+      //  - docs/_meta.json (for 'guides' folder)
       while (folders.length) {
         const folder = folders.pop()!;
         const path = folders.join('/');
 
         if (!metadataCache[path]) {
           metadataCache[path] = getMetaFromFile(
-            `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/meta.json`
+            `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/_meta.json`
           );
         }
         const folderName = metadataCache[path][folder];
@@ -308,7 +308,7 @@ async function nextraToAlgoliaRecords(
         }
       }
       if (!metadataCache[fileDir]) {
-        metadataCache[fileDir] = getMetaFromFile(`${fileDir}${fileDir.endsWith('/') ? '' : '/'}meta.json`);
+        metadataCache[fileDir] = getMetaFromFile(`${fileDir}${fileDir.endsWith('/') ? '' : '/'}_meta.json`);
       }
       const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
       const resolvedTitle = typeof title === 'string' ? title : title?.title;
