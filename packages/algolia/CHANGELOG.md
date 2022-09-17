@@ -1,5 +1,11 @@
 # @theguild/algolia
 
+## 0.0.2
+
+### Patch Changes
+
+- [#437](https://github.com/the-guild-org/the-guild-components/pull/437) [`0226558`](https://github.com/the-guild-org/the-guild-components/commit/0226558fc38fa3952a10dc3e4b531fce10e742df) Thanks [@B2o5T](https://github.com/B2o5T)! - fix algolia, replace `meta.json` by `_meta.json`
+
 ## 0.0.1
 
 ### Patch Changes
