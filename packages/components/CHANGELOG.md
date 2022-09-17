@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 4.0.1
+
+### Patch Changes
+
+- [#435](https://github.com/the-guild-org/the-guild-components/pull/435) [`529d0a8`](https://github.com/the-guild-org/the-guild-components/commit/529d0a898a6cd8e22ba3f9405e9f953b88d187ba) Thanks [@B2o5T](https://github.com/B2o5T)! - fix header glitch while using next export https://github.com/the-guild-org/the-guild-components/pull/433
+
 ## 4.0.0
 
 ### Major Changes
