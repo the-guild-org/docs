@@ -3,7 +3,7 @@ import { Collapse } from 'nextra-theme-docs';
 
 export interface AccordionProps {
   title: string;
-  initiallyOpen?: boolean;
+  defaultOpen?: boolean;
 }
 
 export const Accordion: React.FC<PropsWithChildren<AccordionProps>> = ({ children, title, initiallyOpen }) => {
