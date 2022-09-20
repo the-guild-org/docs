@@ -15,13 +15,15 @@ export const Accordion: React.FC<AccordionProps> = ({ children, title, defaultOp
       <button
         role="button"
         onClick={() => setOpen(open => !open)}
-        className="bg-primary-700/5 dark:bg-primary-300/10 flex w-full justify-between p-2 font-medium text-gray-700 dark:text-gray-200"
+        className="bg-primary-700/5 dark:bg-primary-300/10 flex w-full justify-between p-2 px-4 font-medium text-gray-700 dark:text-gray-200"
       >
         <span>{title}</span>
-        <span className="text-gray-400 dark:text-gray-500">{open ? '-' : '+'}</span>
+        <span>{open ? '-' : '+'}</span>
       </button>
 
-      <Collapse open={open}>{children}</Collapse>
+      <Collapse open={open} className="p-4">
+        {children}
+      </Collapse>
     </section>
   );
 };
