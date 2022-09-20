@@ -7,8 +7,8 @@ export interface AccordionProps {
   children: ReactNode;
 }
 
-export const Accordion: React.FC<AccordionProps> = ({ children, title, initiallyOpen }) => {
-  const [open, setOpen] = useState(Boolean(initiallyOpen));
+export const Accordion: React.FC<AccordionProps> = ({ children, title, defaultOpen }) => {
+  const [open, setOpen] = useState(Boolean(defaultOpen));
 
   return (
     <section className="bg-primary-700/5 dark:bg-primary-300/10 my-4 w-full overflow-hidden rounded-lg">
