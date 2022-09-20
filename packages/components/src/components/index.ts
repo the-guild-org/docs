@@ -26,3 +26,4 @@ export { PackageCmd } from './package-cmd.js';
 export { SearchBar } from './search-bar.js';
 export { Select } from './select.js';
 export { Subheader } from './subheader.js';
+export { Accordion } from './accordion.js';
