@@ -1,12 +1,13 @@
-import React, { PropsWithChildren, useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { Collapse } from 'nextra-theme-docs';
 
 export interface AccordionProps {
   title: string;
   defaultOpen?: boolean;
+  children: ReactNode;
 }
 
-export const Accordion: React.FC<PropsWithChildren<AccordionProps>> = ({ children, title, initiallyOpen }) => {
+export const Accordion: React.FC<AccordionProps> = ({ children, title, initiallyOpen }) => {
   const [open, setOpen] = useState(Boolean(initiallyOpen));
 
   return (
