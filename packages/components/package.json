@@ -82,7 +82,7 @@
     "react-player": "2.10.1",
     "remark-mdx-disable-explicit-jsx": "0.1.0",
     "search-insights": "2.2.1",
-    "tiny-lru": "8.0.2",
+    "tiny-lru": "9.0.0",
     "undici": "5.10.0",
     "unist-util-visit": "^4.1.1",
     "use-debounce": "8.0.4"
