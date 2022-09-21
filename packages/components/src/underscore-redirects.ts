@@ -9,6 +9,8 @@ class RunPromiseWebpackPlugin {
   }
 }
 
+let isWarningPrinted = false;
+
 export function applyUnderscoreRedirects(config: any, meta: any) {
   config.plugins.push(
     new RunPromiseWebpackPlugin(async () => {
@@ -23,14 +25,17 @@ export function applyUnderscoreRedirects(config: any, meta: any) {
           : [];
 
         if (redirects.length === 0) {
-          console.warn(`No redirects defined, no "_redirect" file is created!`);
+          if (!isWarningPrinted) {
+            console.warn('[guild-docs] No redirects defined, no "_redirect" file is created!');
+            isWarningPrinted = true;
+          }
           return;
         }
         const redirectsTxt = redirects.map(r => `${r.source} ${r.destination} ${r.permanent ? 301 : 302}`).join('\n');
         await writeFile(outFile, redirectsTxt);
-      } catch (e) {
-        console.error('Error while generating redirects file:', e);
-        throw new Error(`Failed to generate "_redirects" file during build: ${(e as Error).message}`);
+      } catch (error) {
+        console.error('Error while generating redirects file:', error);
+        throw new Error(`Failed to generate "_redirects" file during build: ${(error as Error).message}`);
       }
     })
   );
