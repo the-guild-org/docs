@@ -63,7 +63,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "//": "`critters` packages is required when `experimental.optimizeCss` is enabled",
+  "//": "`critters` package is required when `experimental.optimizeCss` is enabled",
   "dependencies": {
     "@algolia/autocomplete-js": "1.7.1",
     "@algolia/autocomplete-plugin-algolia-insights": "1.7.1",
