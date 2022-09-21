@@ -1,5 +1,23 @@
 # @theguild/components
 
+## 4.0.3
+
+### Patch Changes
+
+- [#417](https://github.com/the-guild-org/the-guild-components/pull/417) [`4642f4b`](https://github.com/the-guild-org/the-guild-components/commit/4642f4b361a5c4ebfa24ce85edcefd8b39a774b6) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`focus-trap-react@10.0.0` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.0.0) (from `9.0.2`, in `dependencies`)
+
+- [#440](https://github.com/the-guild-org/the-guild-components/pull/440) [`454ad8d`](https://github.com/the-guild-org/the-guild-components/commit/454ad8d02e64ce3b16340d8d57a765c2000aa06b) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`tiny-lru@9.0.0` ↗︎](https://www.npmjs.com/package/tiny-lru/v/9.0.0) (from `8.0.2`, in `dependencies`)
+
+- [#444](https://github.com/the-guild-org/the-guild-components/pull/444) [`61541e2`](https://github.com/the-guild-org/the-guild-components/commit/61541e2d672772a14d56dba0757999dea35e6383) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Added dependency [`critters@0.0.16` ↗︎](https://www.npmjs.com/package/critters/v/0.0.16) (to `dependencies`)
+
+- [#444](https://github.com/the-guild-org/the-guild-components/pull/444) [`61541e2`](https://github.com/the-guild-org/the-guild-components/commit/61541e2d672772a14d56dba0757999dea35e6383) Thanks [@B2o5T](https://github.com/B2o5T)! - enhance `withGuildDocs`, add `nextConfig.basePath`, `nextConfig.webpack` with `applyUnderscoreRedirects`, `images.unoptimized = true` if `basePath` was specified
+
 ## 4.0.2
 
 ### Patch Changes
