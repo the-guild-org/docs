@@ -1,5 +1,5 @@
-import { writeFile } from 'fs/promises';
-import { join } from 'path';
+import { writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 
 class RunPromiseWebpackPlugin {
   constructor(public asyncHook: () => Promise<void>) {}
@@ -26,9 +26,7 @@ export function applyUnderscoreRedirects(config: any, meta: any) {
           console.warn(`No redirects defined, no "_redirect" file is created!`);
           return;
         }
-        const redirectsTxt = redirects
-          .map(r => `${r.source} ${r.destination} ${r.permanent ? '301' : '302'}`)
-          .join('\n');
+        const redirectsTxt = redirects.map(r => `${r.source} ${r.destination} ${r.permanent ? 301 : 302}`).join('\n');
         await writeFile(outFile, redirectsTxt);
       } catch (e) {
         console.error('Error while generating redirects file:', e);

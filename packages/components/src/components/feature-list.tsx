@@ -28,7 +28,7 @@ export const FeatureList = ({ title, description, items, link, className }: IFea
       )}
       <div className="flex flex-wrap justify-center gap-12">
         {items.map(item => (
-          <div className="flex w-56 flex-col items-center" key={title}>
+          <div className="flex w-56 flex-col items-center" key={item.title}>
             <Image {...item.image} className={clsx('w-28', item.image.className)} />
             <h3 className="m-0 text-lg font-bold text-black dark:text-gray-50">{item.title}</h3>
             <div className="text-center text-sm text-gray-500 dark:text-gray-400">{item.description}</div>

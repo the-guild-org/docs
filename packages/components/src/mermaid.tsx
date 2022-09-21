@@ -17,9 +17,12 @@ export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
       theme: theme as Config['theme'],
       fontFamily: 'inherit',
     });
-    mermaid.render(`mermaid-svg-${(id += 1)}`, chart, renderedSvg => {
+    try {
+      const renderedSvg = mermaid.render(`mermaid-svg-${(id += 1)}`, chart);
       setSVG(renderedSvg);
-    });
+    } catch (error) {
+      console.error('Error while rendering mermaid', error);
+    }
   }, [theme, chart]);
 
   return <div className="mt-6 flex justify-center" dangerouslySetInnerHTML={{ __html: svg }} />;

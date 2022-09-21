@@ -68,7 +68,7 @@
     "@algolia/autocomplete-plugin-algolia-insights": "1.7.1",
     "@algolia/autocomplete-plugin-query-suggestions": "1.7.1",
     "@algolia/autocomplete-theme-classic": "1.7.1",
-    "@next/bundle-analyzer": "^12.3.0",
+    "@next/bundle-analyzer": "^12.3.1",
     "@radix-ui/react-navigation-menu": "1.0.0",
     "algoliasearch": "4.14.2",
     "clsx": "1.2.1",
@@ -93,7 +93,7 @@
     "@types/mermaid": "9.1.0",
     "@types/react-dom": "18.0.6",
     "dedent": "0.7.0",
-    "next": "12.3.0",
+    "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
