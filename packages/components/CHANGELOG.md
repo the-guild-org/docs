@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 4.0.2
+
+### Patch Changes
+
+- [#441](https://github.com/the-guild-org/the-guild-components/pull/441) [`077afcb`](https://github.com/the-guild-org/the-guild-components/commit/077afcb5d7078c53217cadad0c344a92e67f0397) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`@next/bundle-analyzer@^12.3.1` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/null) (from `^12.3.0`, in `dependencies`)
+
+- [#441](https://github.com/the-guild-org/the-guild-components/pull/441) [`077afcb`](https://github.com/the-guild-org/the-guild-components/commit/077afcb5d7078c53217cadad0c344a92e67f0397) Thanks [@B2o5T](https://github.com/B2o5T)! - wrap `mermaid.render` with try-catch
+
 ## 4.0.1
 
 ### Patch Changes
