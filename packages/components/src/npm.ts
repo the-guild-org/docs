@@ -1,6 +1,6 @@
 import { promises } from 'fs';
 import { request } from 'undici';
-import Lru from 'tiny-lru';
+import { lru } from 'tiny-lru';
 import { withoutStartingSlash, withoutTrailingSlash, withStartingSlash } from './utils.js';
 
 export interface PackageInfo {
@@ -41,7 +41,7 @@ export interface PackageWithStats<Tags extends string = string> extends Package<
   stats: PackageInfo | undefined | null;
 }
 
-const cache = Lru<PackageInfo>(100, 3.6e6); // 1h
+const cache = lru(100, 3.6e6); // 1h
 
 export const cleanGitRepoLink = (repo: string) => repo.replace(/^git\+/, '').replace(/\.git$/, '');
 
