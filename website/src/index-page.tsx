@@ -1,7 +1,4 @@
-import dynamic from 'next/dynamic';
-import { HeroGradient, InfoList, NPMBadge } from '@theguild/components';
-
-const HeroVideo = dynamic(() => import('@theguild/components').then(mod => mod.HeroVideo), { ssr: false });
+import { HeroGradient, InfoList, NPMBadge, HeroVideo } from '@theguild/components';
 
 export function IndexPage() {
   return (
@@ -14,7 +11,7 @@ export function IndexPage() {
           children: 'Get Started',
           title: 'Get started with The Guild Docs',
         }}
-        version={<NPMBadge name="guild-docs" />}
+        version={<NPMBadge name="@theguild/components" />}
         colors={['#000', '#1cc8ee']}
       />
 

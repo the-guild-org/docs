@@ -7,8 +7,8 @@ import CubeTR from '../static/illustrations/marketplace-cube-tr.png';
 import CubeBL from '../static/illustrations/marketplace-cube-bl.png';
 import CubeBR from '../static/illustrations/marketplace-cube-br.png';
 import { IHeroMarketplaceProps } from '../types/components';
-import { Button } from './button.js';
-import { Image } from './image.js';
+import { Button } from './button';
+import { Image } from './image';
 import { StaticImageData } from 'next/image';
 
 const Shadow = ({ className }: { className: string }): ReactElement => {

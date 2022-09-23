@@ -16,7 +16,7 @@ We recommend running storybook for developing the components.
 yarn start
 ```
 
-Visit <http://localhost:6008>
+Visit <http://localhost:54533>
 
 ## Links
 

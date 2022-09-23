@@ -1,0 +1,11 @@
+{
+  "pipeline": {
+    "build": {
+      "outputs": ["dist/**"],
+      "dependsOn": [
+        // Run builds in workspaces I depend on first
+        "^build"
+      ]
+    }
+  }
+}

@@ -8,8 +8,8 @@ import { GraphQLSchema } from 'graphql';
 import * as monaco from 'monaco-editor';
 import { IRange, CompletionItem } from 'graphql-language-service';
 import { useTheme } from 'next-themes';
-import * as languages from './enums.js';
-import { toGraphQLPosition, toMonacoRange } from './utils.js';
+import * as languages from './enums';
+import { toGraphQLPosition, toMonacoRange } from './utils';
 
 // This enum `CompletionItemKind` exist on graphql-language-service v4
 enum lsCIK {

@@ -2,11 +2,11 @@ import { ReactElement, useEffect, useMemo, useState } from 'react';
 import ReactPaginatePackage from 'react-paginate';
 import clsx from 'clsx';
 import { IMarketplaceListProps, IMarketplaceItemsProps } from '../types/components';
-import { Tag, TagsContainer } from './tag.js';
-import { CaretSlimIcon } from './icons/index.js';
-import { getDefault } from '../helpers/utils.js';
-import { Anchor } from './anchor.js';
-import { Image } from './image.js';
+import { Tag, TagsContainer } from './tag';
+import { CaretSlimIcon } from './icons';
+import { getDefault } from '../helpers/utils';
+import { Anchor } from './anchor';
+import { Image } from './image';
 
 const ReactPaginate = getDefault(ReactPaginatePackage);
 

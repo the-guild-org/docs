@@ -1,5 +1,5 @@
 import { forwardRef, ReactElement } from 'react';
-import NextLink from 'next/link.js';
+import NextLink from 'next/link';
 import { ILink } from '../types/components';
 
 export const Anchor = forwardRef<HTMLAnchorElement, ILink>(function Anchor(

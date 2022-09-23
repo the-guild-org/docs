@@ -2,9 +2,10 @@ import { ReactElement } from 'react';
 import ReactPlayerImport from 'react-player/lazy/index.js';
 import clsx from 'clsx';
 import { IHeroVideoProps } from '../types/components';
-import { getDefault } from '../helpers/utils.js';
-import { Anchor } from './anchor.js';
-import { useRouter } from 'next/router.js';
+import { getDefault } from '../helpers/utils';
+import { Anchor } from './anchor';
+import { useRouter } from 'next/router';
+import { useMounted } from 'nextra/hooks';
 
 const ReactPlayer = getDefault(ReactPlayerImport);
 
@@ -18,6 +19,8 @@ export const HeroVideo = ({
   videoProps,
 }: IHeroVideoProps): ReactElement => {
   const { basePath } = useRouter();
+  // fixes Hydration failed error
+  const mounted = useMounted();
   return (
     <section className={clsx('bg-gray-100 dark:bg-neutral-800', className)}>
       <div
@@ -71,21 +74,23 @@ export const HeroVideo = ({
             flipped ? 'md:mr-8' : 'md:ml-8'
           )}
         >
-          <ReactPlayer
-            url={video.src}
-            light={video.placeholder.startsWith('/') ? basePath + video.placeholder : video.placeholder}
-            controls
-            height="100%"
-            width="100%"
-            config={{
-              youtube: {
-                playerVars: {
-                  autoplay: 1,
+          {mounted && (
+            <ReactPlayer
+              url={video.src}
+              light={video.placeholder.startsWith('/') ? basePath + video.placeholder : video.placeholder}
+              controls
+              height="100%"
+              width="100%"
+              config={{
+                youtube: {
+                  playerVars: {
+                    autoplay: 1,
+                  },
                 },
-              },
-            }}
-            {...videoProps}
-          />
+              }}
+              {...videoProps}
+            />
+          )}
         </div>
       </div>
     </section>

@@ -3,8 +3,8 @@ import nextBundleAnalyzer from '@next/bundle-analyzer';
 import nextra from 'nextra';
 import withVideos from 'next-videos';
 import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
-import { remarkMermaid } from './remark-mermaid.js';
-import { applyUnderscoreRedirects } from './underscore-redirects.js';
+import { remarkMermaid } from './remark-mermaid';
+import { applyUnderscoreRedirects } from './underscore-redirects';
 
 export const withGuildDocs = ({
   themeConfig = './theme.config.tsx',
@@ -42,7 +42,8 @@ export const withGuildDocs = ({
     withVideos(
       withNextra({
         reactStrictMode: true,
-        swcMinify: true,
+        // TODO: Enable after https://github.com/vercel/next.js/issues/40750 will be fixed
+        // swcMinify: true,
         basePath,
         webpack(config, meta) {
           applyUnderscoreRedirects(config, meta);

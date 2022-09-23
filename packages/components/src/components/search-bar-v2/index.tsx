@@ -7,11 +7,11 @@ import insightsClient from 'search-insights';
 
 import { ISearchBarProps } from '../../types/components';
 import { AlgoliaSearchItem } from '../../types/algolia';
-import { SidePreview } from './side-preview.js';
-import { debounced } from './utils.js';
-import { templates } from './templates.js';
-import { Anchor } from '../anchor.js';
-import { getDefault } from '../../helpers/utils.js';
+import { SidePreview } from './side-preview';
+import { debounced } from './utils';
+import { templates } from './templates';
+import { Anchor } from '../anchor';
+import { getDefault } from '../../helpers/utils';
 
 const { autocomplete, getAlgoliaResults } = getDefault(algoliaAutocomplete);
 const { createAlgoliaInsightsPlugin } = getDefault(algoliaAutocompletePlugin);
