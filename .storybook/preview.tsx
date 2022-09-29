@@ -4,10 +4,7 @@ import { themes } from '@storybook/theming';
 import { ThemeProvider } from 'next-themes';
 import NextImage, { ImageProps } from 'next/image';
 import NextLink, { LinkProps } from 'next/link';
-
-import '@algolia/autocomplete-theme-classic';
-import '../styles/global.css';
-import '../styles/search-bar-v2.css';
+import './global.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

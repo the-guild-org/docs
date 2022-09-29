@@ -1,9 +1,9 @@
 import { useMemo, useState, isValidElement, useCallback, ReactElement, FormEvent } from 'react';
 import clsx from 'clsx';
 import { IMarketplaceSearchProps } from '../types/components';
-import { MarketplaceList } from './marketplace-list.js';
-import { Tag, TagsContainer } from './tag.js';
-import { SearchIcon } from './icons/index.js';
+import { MarketplaceList } from './marketplace-list';
+import { Tag, TagsContainer } from './tag';
+import { SearchIcon } from './icons';
 
 const renderQueryPlaceholder = (placeholder: string | ReactElement, query: string) => {
   if (!query || isValidElement(placeholder)) {

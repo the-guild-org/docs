@@ -1,7 +1,7 @@
 import { promises } from 'fs';
 import { request } from 'undici';
 import { lru } from 'tiny-lru';
-import { withoutStartingSlash, withoutTrailingSlash, withStartingSlash } from './utils.js';
+import { withoutStartingSlash, withoutTrailingSlash, withStartingSlash } from './utils';
 
 export interface PackageInfo {
   name: string;

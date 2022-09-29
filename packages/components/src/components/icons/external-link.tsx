@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { DEFAULT_PATH_PROPS } from '../../helpers/utils.js';
+import { DEFAULT_PATH_PROPS } from '../../helpers/utils';
 
 export const ExternalLinkIcon = ({ className }: { className?: string }): ReactElement => {
   return (

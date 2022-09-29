@@ -8,8 +8,8 @@ import {
   HoverSource,
   emptyLocation,
   locToRange,
-} from './utils.js';
-import { EnrichedLanguageService } from './enriched-language-service.js';
+} from './utils';
+import { EnrichedLanguageService } from './enriched-language-service';
 import { GraphQLError, GraphQLSchema, isInterfaceType, isObjectType } from 'graphql';
 
 export type SchemaEditorApi = {

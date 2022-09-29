@@ -1,5 +1,4 @@
 dist/
-dist-storybook/
 storybook-static/
 .next/
 .husky/_/

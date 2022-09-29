@@ -3,16 +3,20 @@ import nextBundleAnalyzer from '@next/bundle-analyzer';
 import nextra from 'nextra';
 import withVideos from 'next-videos';
 import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
-import { remarkMermaid } from './remark-mermaid.js';
-import { applyUnderscoreRedirects } from './underscore-redirects.js';
+import { remarkMermaid } from './remark-mermaid';
+import { applyUnderscoreRedirects } from './underscore-redirects';
 
 export const withGuildDocs = ({
   themeConfig = './theme.config.tsx',
+  whiteListDisableExplicitJsx = [],
   ...nextConfig
-}: NextConfig & { themeConfig?: string } = {}) => {
-  if ('webpack' in nextConfig) {
+}: NextConfig & {
+  themeConfig?: string;
+  whiteListDisableExplicitJsx?: string[];
+} = {}) => {
+  if (nextConfig.webpack?.toString().includes('applyUnderscoreRedirects')) {
     throw new Error(
-      '`nextConfig.webpack` is already specified, remove it to avoid overwrite `applyUnderscoreRedirects` setting'
+      '`applyUnderscoreRedirects` in `nextConfig.webpack` was already configured, remove it from your config'
     );
   }
 
@@ -29,7 +33,7 @@ export const withGuildDocs = ({
         [
           // replace <iframe />, <video />, <source /> tags in MDX
           remarkMdxDisableExplicitJsx,
-          { whiteList: ['iframe', 'video', 'source'] },
+          { whiteList: ['iframe', 'video', 'source', ...whiteListDisableExplicitJsx] },
         ],
         remarkMermaid,
       ],
@@ -42,11 +46,12 @@ export const withGuildDocs = ({
     withVideos(
       withNextra({
         reactStrictMode: true,
-        swcMinify: true,
+        // TODO: Enable after https://github.com/vercel/next.js/issues/40750 will be fixed
+        // swcMinify: true,
         basePath,
         webpack(config, meta) {
           applyUnderscoreRedirects(config, meta);
-          return config;
+          return nextConfig.webpack?.(config, meta) || config;
         },
         ...nextConfig,
         experimental: {

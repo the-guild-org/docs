@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
 import clsx from 'clsx';
 import { IFooterProps, ILink } from '../types/components';
-import { GuildLogo } from './logos/index.js';
-import { Anchor } from './anchor.js';
+import { GuildLogo } from './logos';
+import { Anchor } from './anchor';
 
 const links: ILink[] = [
   {

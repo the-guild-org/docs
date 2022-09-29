@@ -3,15 +3,15 @@ import clsx from 'clsx';
 import * as radixNavigationMenu from '@radix-ui/react-navigation-menu';
 import { useTheme } from 'nextra-theme-docs';
 import { IHeaderProps } from '../types/components';
-import { SearchBar } from './search-bar.js';
-import { CaretIcon, HamburgerIcon, MoonIcon } from './icons/index.js';
-import { GuildLogo, TheGuild } from './logos/index.js';
-import { Nav } from './nav.js';
-import { SolutionsMenu } from './solutions-menu.js';
-import { EcosystemList } from './ecosystem-list.js';
-import { useWindowSize } from '../helpers/hooks.js';
-import { Anchor } from './anchor.js';
-import { getDefault } from '../helpers/utils.js';
+import { SearchBar } from './search-bar';
+import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
+import { GuildLogo, TheGuild } from './logos';
+import { Nav } from './nav';
+import { SolutionsMenu } from './solutions-menu';
+import { EcosystemList } from './ecosystem-list';
+import { useWindowSize } from '../helpers/hooks';
+import { Anchor } from './anchor';
+import { getDefault } from '../helpers/utils';
 
 const { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } = getDefault(radixNavigationMenu);
 

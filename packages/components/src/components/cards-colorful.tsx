@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import clsx from 'clsx';
 import { ILink } from '../types/components';
-import { Anchor } from './anchor.js';
+import { Anchor } from './anchor';
 
 export type CardsColorfulProps = {
   className?: string;

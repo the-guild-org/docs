@@ -4,7 +4,7 @@ import { IDisposable } from 'monaco-editor';
 import { GraphQLError, GraphQLSchema } from 'graphql';
 import { useTheme } from 'next-themes';
 import { EnrichedLanguageService } from './enriched-language-service';
-import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services.js';
+import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
 
 export type SchemaEditorProps = SchemaServicesOptions & {
   onBlur?: (value: string) => void;

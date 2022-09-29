@@ -2,59 +2,43 @@
   "name": "@theguild/components",
   "version": "4.0.3",
   "license": "MIT",
-  "type": "module",
   "repository": {
     "url": "the-guild-org/the-guild-components",
     "directory": "packages/components"
   },
-  "bob": {
-    "check": false,
-    "commonjs": false,
-    "build": {
-      "copy": [
-        "./src/static/illustrations/marketplace-desktop.png",
-        "./src/static/illustrations/marketplace-mobile.png",
-        "./src/static/illustrations/marketplace-cube-tl.png",
-        "./src/static/illustrations/marketplace-cube-tr.png",
-        "./src/static/illustrations/marketplace-cube-bl.png",
-        "./src/static/illustrations/marketplace-cube-br.png",
-        "./src/style.css"
-      ]
-    }
-  },
-  "main": "dist/esm/index.js",
-  "module": "dist/esm/index.js",
-  "typings": "dist/typings/index.d.ts",
-  "typescript": {
-    "definition": "dist/typings/index.d.ts"
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "style.css",
+    "search-bar-v2.css"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsup"
   },
   "exports": {
-    "./style.css": "./dist/style.css",
-    "./search-bar-v2.css": "./dist/search-bar-v2.css",
+    "./style.css": "./style.css",
+    "./search-bar-v2.css": "./search-bar-v2.css",
+    "./package.json": "./package.json",
     ".": {
-      "import": {
-        "types": "./dist/typings/index.d.ts",
-        "default": "./dist/esm/index.js"
-      },
-      "default": {
-        "types": "./dist/typings/index.d.ts",
-        "default": "./dist/esm/index.js"
-      }
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
-    "./*": {
-      "import": {
-        "types": "./dist/typings/*.d.ts",
-        "default": "./dist/esm/*.js"
-      },
-      "default": {
-        "types": "./dist/typings/*.d.ts",
-        "default": "./dist/esm/*.js"
-      }
+    "./next.config": {
+      "import": "./dist/next.config.mjs",
+      "types": "./dist/next.config.d.ts"
     },
-    "./package.json": "./package.json"
+    "./mermaid": {
+      "import": "./dist/mermaid.mjs",
+      "types": "./dist/mermaid.d.ts"
+    },
+    "./npm": {
+      "import": "./dist/npm.mjs",
+      "types": "./dist/npm.d.ts"
+    }
   },
   "publishConfig": {
-    "directory": "dist",
     "access": "public"
   },
   "sideEffects": false,
@@ -81,7 +65,7 @@
     "nextra-theme-docs": "2.0.0-beta.29",
     "react-instantsearch-dom": "6.32.1",
     "react-paginate": "8.1.3",
-    "react-player": "2.10.1",
+    "react-player": "2.11.0",
     "remark-mdx-disable-explicit-jsx": "0.1.0",
     "search-insights": "2.2.1",
     "tiny-lru": "9.0.0",

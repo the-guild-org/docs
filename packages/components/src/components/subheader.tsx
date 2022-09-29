@@ -1,11 +1,11 @@
 import { ReactElement, useState } from 'react';
 import clsx from 'clsx';
 import { ISubheaderProps } from '../types/components';
-import { CaretSlimIcon } from './icons/index.js';
-import { Nav } from './nav.js';
-import { Button } from './button.js';
-import { Anchor } from './anchor.js';
-import { Image } from './image.js';
+import { CaretSlimIcon } from './icons';
+import { Nav } from './nav';
+import { Button } from './button';
+import { Anchor } from './anchor';
+import { Image } from './image';
 
 export const Subheader = ({ product, activeLink, links, cta, className }: ISubheaderProps): ReactElement => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
