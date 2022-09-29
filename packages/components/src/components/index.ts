@@ -5,6 +5,7 @@ export { CardsColorful } from './cards-colorful';
 export { FeatureList } from './feature-list';
 export { Footer } from './footer';
 export { FooterExtended } from './footer-extended';
+export { Giscus } from './giscus';
 export { Header } from './header';
 export { HeroGradient } from './hero-gradient';
 export { HeroIllustration } from './hero-illustration';
