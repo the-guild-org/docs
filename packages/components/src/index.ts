@@ -12,6 +12,7 @@ export {
   ServerSideErrorPage,
   useMDXComponents,
   useConfig,
+  useTheme,
   Navbar,
 } from 'nextra-theme-docs';
 export * from './types/components';
