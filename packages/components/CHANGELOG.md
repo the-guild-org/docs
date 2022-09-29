@@ -1,5 +1,16 @@
 # @theguild/components
 
+## 4.1.0
+
+### Minor Changes
+
+- [#445](https://github.com/the-guild-org/the-guild-components/pull/445) [`a34d3a6`](https://github.com/the-guild-org/the-guild-components/commit/a34d3a65c197639bdb2fa9f10c9e7866562851de) Thanks [@B2o5T](https://github.com/B2o5T)! - use tsup for bundling
+
+### Patch Changes
+
+- [#445](https://github.com/the-guild-org/the-guild-components/pull/445) [`a34d3a6`](https://github.com/the-guild-org/the-guild-components/commit/a34d3a65c197639bdb2fa9f10c9e7866562851de) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+  - Updated dependency [`react-player@2.11.0` ↗︎](https://www.npmjs.com/package/react-player/v/2.11.0) (from `2.10.1`, in `dependencies`)
+
 ## 4.0.3
 
 ### Patch Changes

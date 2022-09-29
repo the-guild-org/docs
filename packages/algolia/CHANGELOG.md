@@ -1,5 +1,11 @@
 # @theguild/algolia
 
+## 0.1.0
+
+### Minor Changes
+
+- [#445](https://github.com/the-guild-org/the-guild-components/pull/445) [`a34d3a6`](https://github.com/the-guild-org/the-guild-components/commit/a34d3a65c197639bdb2fa9f10c9e7866562851de) Thanks [@B2o5T](https://github.com/B2o5T)! - use tsup for bundling
+
 ## 0.0.2
 
 ### Patch Changes

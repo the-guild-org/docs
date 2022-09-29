@@ -1,6 +1,6 @@
 {
   "name": "@theguild/components",
-  "version": "4.0.3",
+  "version": "4.1.0",
   "license": "MIT",
   "repository": {
     "url": "the-guild-org/the-guild-components",
@@ -74,7 +74,7 @@
     "use-debounce": "8.0.4"
   },
   "devDependencies": {
-    "@theguild/algolia": "0.0.2",
+    "@theguild/algolia": "0.1.0",
     "@types/dedent": "0.7.0",
     "@types/mermaid": "9.1.0",
     "@types/react-dom": "18.0.6",
