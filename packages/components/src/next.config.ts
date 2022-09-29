@@ -8,11 +8,15 @@ import { applyUnderscoreRedirects } from './underscore-redirects';
 
 export const withGuildDocs = ({
   themeConfig = './theme.config.tsx',
+  whiteListDisableExplicitJsx = [],
   ...nextConfig
-}: NextConfig & { themeConfig?: string } = {}) => {
-  if ('webpack' in nextConfig) {
+}: NextConfig & {
+  themeConfig?: string;
+  whiteListDisableExplicitJsx?: string[];
+} = {}) => {
+  if (nextConfig.webpack?.toString().includes('applyUnderscoreRedirects')) {
     throw new Error(
-      '`nextConfig.webpack` is already specified, remove it to avoid overwrite `applyUnderscoreRedirects` setting'
+      '`applyUnderscoreRedirects` in `nextConfig.webpack` was already configured, remove it from your config'
     );
   }
 
@@ -29,7 +33,7 @@ export const withGuildDocs = ({
         [
           // replace <iframe />, <video />, <source /> tags in MDX
           remarkMdxDisableExplicitJsx,
-          { whiteList: ['iframe', 'video', 'source'] },
+          { whiteList: ['iframe', 'video', 'source', ...whiteListDisableExplicitJsx] },
         ],
         remarkMermaid,
       ],
@@ -47,7 +51,7 @@ export const withGuildDocs = ({
         basePath,
         webpack(config, meta) {
           applyUnderscoreRedirects(config, meta);
-          return config;
+          return nextConfig.webpack?.(config, meta) || config;
         },
         ...nextConfig,
         experimental: {
