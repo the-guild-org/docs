@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useMemo, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { useTheme } from 'nextra-theme-docs';
@@ -10,8 +10,6 @@ export interface GiscusProps {
   category: string;
   categoryId: string;
 }
-
-let GiscusKeyInc = 0;
 
 export const Giscus = ({ category, categoryId, repo, repoId }: GiscusProps): ReactElement | null => {
   const { asPath } = useRouter();
@@ -34,16 +32,15 @@ export const Giscus = ({ category, categoryId, repo, repoId }: GiscusProps): Rea
     );
   }, [asPath, loaded]);
 
-  const { theme } = useTheme();
-
-  const scriptKey = useMemo(() => `${theme}${asPath}${++GiscusKeyInc}`.replace(/\//g, '_'), [theme, asPath]);
+  const { theme, systemTheme } = useTheme();
+  const renderedTheme = theme === 'system' ? systemTheme : theme;
 
   if (!mounted) return null;
 
   return (
     <>
       <Script
-        src={`https://giscus.app/client.js?key=${scriptKey}`}
+        src={`https://giscus.app/client.js?key=${renderedTheme}${asPath.replace(/\//g, '_')}`}
         data-repo={repo}
         data-repo-id={repoId}
         data-category={category}
