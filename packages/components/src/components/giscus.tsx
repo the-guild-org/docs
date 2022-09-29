@@ -2,6 +2,7 @@ import { ReactElement, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { useTheme } from 'nextra-theme-docs';
+import { useMounted } from 'nextra/hooks';
 
 export interface GiscusProps {
   repo: string;
@@ -15,6 +16,7 @@ let GiscusKeyInc = 0;
 export const Giscus = ({ category, categoryId, repo, repoId }: GiscusProps): ReactElement | null => {
   const { asPath } = useRouter();
   const [loaded, setLoaded] = useState(false);
+  const mounted = useMounted();
 
   useEffect(() => {
     if (!loaded) return;
@@ -36,7 +38,7 @@ export const Giscus = ({ category, categoryId, repo, repoId }: GiscusProps): Rea
 
   const scriptKey = useMemo(() => `${theme}${asPath}${++GiscusKeyInc}`.replace(/\//g, '_'), [theme, asPath]);
 
-  if (typeof window === 'undefined') return null;
+  if (!mounted) return null;
 
   return (
     <>
