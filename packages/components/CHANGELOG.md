@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 4.1.3
+
+### Patch Changes
+
+- [#454](https://github.com/the-guild-org/the-guild-components/pull/454) [`62c6dc8`](https://github.com/the-guild-org/the-guild-components/commit/62c6dc816e872032a6046e29cdcc78e2c2e83a6c) Thanks [@B2o5T](https://github.com/B2o5T)! - parse `config.docsRepositoryBase` and use repo name as default `project.link`
+
 ## 4.1.2
 
 ### Patch Changes
