@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 4.1.2
+
+### Patch Changes
+
+- [#451](https://github.com/the-guild-org/the-guild-components/pull/451) [`4d600f4`](https://github.com/the-guild-org/the-guild-components/commit/4d600f44bca6c5d5945b87c5b42fc8da2c8222bf) Thanks [@B2o5T](https://github.com/B2o5T)! - export defineConfig
+
 ## 4.1.1
 
 ### Patch Changes
