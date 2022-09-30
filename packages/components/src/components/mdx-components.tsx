@@ -23,7 +23,7 @@ export const mdxComponents: {
   ),
   iframe: ({ className, ...props }: ComponentProps<'iframe'>) => (
     <iframe
-      className={clsx('mt-6 h-96 w-full', className)}
+      className={clsx('mt-6 aspect-video w-full', className)}
       title="YouTube Video Player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
