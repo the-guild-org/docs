@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 4.1.4
+
+### Patch Changes
+
+- [#456](https://github.com/the-guild-org/the-guild-components/pull/456) [`a0b7fb3`](https://github.com/the-guild-org/the-guild-components/commit/a0b7fb3323b8fac687f3a4bd8eb1f97445c54121) Thanks [@B2o5T](https://github.com/B2o5T)! - remove required from logo prop
+
 ## 4.1.3
 
 ### Patch Changes
