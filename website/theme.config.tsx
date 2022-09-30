@@ -42,9 +42,6 @@ export default defineConfig({
       </div>
     </>
   ),
-  project: {
-    link: 'https://github.com/the-guild-org/the-guild-components', // GitHub link in the navbar
-  },
   titleSuffix: ` – ${SITE_NAME}`,
 });
 
