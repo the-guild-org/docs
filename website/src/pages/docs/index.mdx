@@ -1,4 +1,8 @@
 import { PackageCmd } from '@theguild/components'
+import { useSSG } from 'nextra/ssg'
+import { compileMdx } from 'nextra/compile'
+import { MDXRemote } from 'next-mdx-remote'
+import pkgJson from '../../../package.json'
 
 # Installation
 
@@ -6,19 +10,46 @@ import { PackageCmd } from '@theguild/components'
 
 ## 1. Add dependencies
 
-```diff filename="package.json"
-{
-  "dependencies": {
-+   "@theguild/components": "4.1.1",
-    "next": "12.3.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-+   "@theguild/tailwind-config": "0.1.1"
+export async function getStaticProps() {
+  const mdx = await compileMdx(
+    [
+      // Render code block with current version of dependencies
+      '```json filename="package.json" {14,20} copy',
+      JSON.stringify(
+        {
+          ...pkgJson,
+          dependencies: {
+            ...pkgJson.dependencies,
+            'next-mdx-remote': undefined
+          },
+          devDependencies: pkgJson.devDependencies,
+          nextBundleAnalysis: undefined
+        },
+        null,
+        2
+      ),
+      '```'
+    ].join('\n'),
+    {
+      mdxOptions: {
+        outputFormat: 'function-body',
+        jsx: false
+      }
+    }
+  )
+  return {
+    props: {
+      ssg: mdx.result
+    }
   }
 }
-```
+
+export function Dependencies() {
+  const compiledSource = useSSG()
+  return <MDXRemote compiledSource={compiledSource} />
+}
+
+<Dependencies />
 
 ## 2. Add Tailwind CSS config
 
@@ -28,19 +59,18 @@ module.exports = require('@theguild/tailwind-config')
 
 ## 3. Add PostCSS config
 
-```js filename="postcss.config.js"
+```js filename="postcss.config.cjs"
 module.exports = require('@theguild/tailwind-config/postcss.config')
 ```
 
 ## 4. Add theme config
 
 ```tsx filename="theme.config.tsx"
-import { DocsThemeConfig } from '@theguild/components'
-const config: DocsThemeConfig = {
-  // Your theme
-}
+import { defineConfig } from '@theguild/components'
 
-export default config
+export default defineConfig({
+  // Your theme
+})
 ```
 
 ## 5. Use `withGuildDocs` in your Next.js config
@@ -58,19 +88,12 @@ export default withGuildDocs({
 
 ## 6. Import styles in `_app.tsx`
 
-```tsx filename="src/pages/_app.tsx" {4,10}
+```tsx filename="src/pages/_app.tsx" {3}
 import { ReactElement } from 'react'
 import { AppProps } from 'next/app'
-import { Header, FooterExtended, ThemeProvider } from '@theguild/components'
 import '@theguild/components/style.css'
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
-  return (
-    <ThemeProvider>
-      <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
-      <Component {...pageProps} />
-      <FooterExtended />
-    </ThemeProvider>
-  )
+  return <Component {...pageProps} />
 }
 ```
