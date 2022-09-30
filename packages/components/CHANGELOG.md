@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 4.1.5
+
+### Patch Changes
+
+- [#458](https://github.com/the-guild-org/the-guild-components/pull/458) [`002d01a`](https://github.com/the-guild-org/the-guild-components/commit/002d01a5812c45a0eeb5d7b7422c22f23d7ac30b) Thanks [@B2o5T](https://github.com/B2o5T)! - update iframe styles
+
 ## 4.1.4
 
 ### Patch Changes
