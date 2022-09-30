@@ -1,7 +1,7 @@
 import { DocsThemeConfig, Navbar } from 'nextra-theme-docs';
 import { FooterExtended, mdxComponents, Header } from './components';
 
-const REQUIRED_PROPERTIES: (keyof DocsThemeConfig)[] = ['docsRepositoryBase', 'head', 'logo', 'project', 'titleSuffix'];
+const REQUIRED_PROPERTIES: (keyof DocsThemeConfig)[] = ['docsRepositoryBase', 'head', 'logo', 'titleSuffix'];
 
 export function defineConfig(config: DocsThemeConfig): DocsThemeConfig {
   for (const prop of REQUIRED_PROPERTIES) {
@@ -9,6 +9,8 @@ export function defineConfig(config: DocsThemeConfig): DocsThemeConfig {
       throw new Error(`Missing required "${prop}" property`);
     }
   }
+  const url = new URL(config.docsRepositoryBase as string);
+  const [, org, repoName] = url.pathname.split('/');
 
   return {
     editLink: {
@@ -32,6 +34,9 @@ export function defineConfig(config: DocsThemeConfig): DocsThemeConfig {
     },
     sidebar: {
       defaultMenuCollapsed: true,
+    },
+    project: {
+      link: `${url.origin}/${org}/${repoName}`, // GitHub link in the navbar
     },
     ...config,
     components: {
