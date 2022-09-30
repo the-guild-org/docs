@@ -17,6 +17,7 @@ export {
 } from 'nextra-theme-docs';
 export * from './types/components';
 export { default as Giscus } from '@giscus/react';
+export { defineConfig } from './define-config';
 
 declare module 'react' {
   interface CSSProperties {
