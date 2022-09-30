@@ -1,7 +1,7 @@
 import { DocsThemeConfig, Navbar } from 'nextra-theme-docs';
 import { FooterExtended, mdxComponents, Header } from './components';
 
-const REQUIRED_PROPERTIES: (keyof DocsThemeConfig)[] = ['docsRepositoryBase', 'head', 'logo', 'titleSuffix'];
+const REQUIRED_PROPERTIES: (keyof DocsThemeConfig)[] = ['docsRepositoryBase', 'head', 'titleSuffix'];
 
 export function defineConfig(config: DocsThemeConfig): DocsThemeConfig {
   for (const prop of REQUIRED_PROPERTIES) {
