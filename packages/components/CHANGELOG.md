@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 4.1.1
+
+### Patch Changes
+
+- [#448](https://github.com/the-guild-org/the-guild-components/pull/448) [`b3362ad`](https://github.com/the-guild-org/the-guild-components/commit/b3362ad25345927005a134b0a55dc534abc1d244) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Added dependency [`@giscus/react@2.2.0` ↗︎](https://www.npmjs.com/package/@giscus/react/v/2.2.0) (to `dependencies`)
+
+- [#448](https://github.com/the-guild-org/the-guild-components/pull/448) [`b3362ad`](https://github.com/the-guild-org/the-guild-components/commit/b3362ad25345927005a134b0a55dc534abc1d244) Thanks [@B2o5T](https://github.com/B2o5T)! - export Giscus
+
 ## 4.1.0
 
 ### Minor Changes
