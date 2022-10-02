@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 4.1.6
+
+### Patch Changes
+
+- [#461](https://github.com/the-guild-org/the-guild-components/pull/461) [`740c21a`](https://github.com/the-guild-org/the-guild-components/commit/740c21a873a836bbe8c5b0a6f90336afc290bd9b) Thanks [@B2o5T](https://github.com/B2o5T)! - handle override `nextConfig.webpack`
+
 ## 4.1.5
 
 ### Patch Changes
