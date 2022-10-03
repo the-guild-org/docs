@@ -3312,17 +3312,6 @@
   dependencies:
     prettier-plugin-sh "^0.12.8"
 
-"@theguild/tailwind-config@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@theguild/tailwind-config/-/tailwind-config-0.1.0.tgz#77b4d54587e02417d7a78baf2b88da54017e0637"
-  integrity sha512-UbxDQ0ZA423/yt5lByoBwwR5tXRr3S1Mr2ZXKD3592fdR43N7uz3mOIOf2lQV3iMtkD+Q+FnPg9DM0AXn9DdnQ==
-  dependencies:
-    autoprefixer "^10.4.8"
-    cssnano "^5.1.13"
-    postcss "^8.4.16"
-    postcss-import "^15.0.0"
-    tailwindcss "^3.1.8"
-
 "@theguild/tailwind-config@0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@theguild/tailwind-config/-/tailwind-config-0.1.1.tgz#ff77a44d97ca62bfb710a29024daee5f17b27cdc"
@@ -4443,7 +4432,7 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-autoprefixer@^10.4.12, autoprefixer@^10.4.8:
+autoprefixer@^10.4.12:
   version "10.4.12"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.12.tgz#183f30bf0b0722af54ee5ef257f7d4320bb33129"
   integrity sha512-WrCGV9/b97Pa+jtwf5UGaRjgQIg7OK3D06GnoYoZNcG1Xb8Gt3EfuKjlhh9i/VtT16g6PYjZ69jdJ2g8FxSC4Q==
