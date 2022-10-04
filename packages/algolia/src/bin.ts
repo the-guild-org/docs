@@ -17,9 +17,8 @@ const options = {
     type: 'string',
     short: 'o',
   },
-  dryrun: {
+  publish: {
     type: 'boolean',
-    short: 'd',
   },
   source: {
     type: 'string',
@@ -39,5 +38,5 @@ indexToAlgolia({
   nextra: {
     docsBaseDir: resolve(CWD, values.docsBaseDir!),
   },
-  dryMode: values.dryrun,
+  dryMode: !values.publish,
 });
