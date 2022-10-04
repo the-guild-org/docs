@@ -84,7 +84,7 @@ export const HeroMarketplace = ({
           {...image}
         >
           <source media="(min-width:768px)" srcSet={IllustrationDesktop} />
-          <Image className="w-full" src={IllustrationMobile} alt="Products List" />
+          <Image className="mx-auto w-auto" src={IllustrationMobile} alt="Products List" />
         </picture>
         <div className="relative z-[1]">
           <h2 className="mb-2.5 max-w-lg text-2xl font-bold text-white dark:text-gray-50 md:text-3xl">{title}</h2>

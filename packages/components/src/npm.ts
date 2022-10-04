@@ -1,242 +1,84 @@
-import { promises } from 'fs';
-import { request } from 'undici';
-import { lru } from 'tiny-lru';
-import { withoutStartingSlash, withoutTrailingSlash, withStartingSlash } from './utils';
+type Package = {
+  readme: string;
+  createdAt: string;
+  updatedAt: string;
+  description: string;
+  weeklyNPMDownloads: number;
+};
 
-export interface PackageInfo {
-  name: string;
-  version: string;
-  description?: string;
-  repository?:
-    | string
-    | {
-        type?: string;
-        url?: string;
-        directory?: string;
-      };
-  repositoryLink?: string;
-  repositoryDirectory?: string;
-  readme?: string;
-  license?: string;
-  createdDate: string;
-  modifiedDate: string;
-  weeklyNPMDownloads?: number;
+const cache: Record<string, Package> = {};
+
+export function withoutStartingSlash(v: string) {
+  if (v === '/') return v;
+  if (v.startsWith('/')) return v.slice(1, v.length);
+  return v;
 }
 
-export interface Package<Tags extends string = string> {
-  identifier: string;
-  title: string;
-  npmPackage: string;
-  tags: Tags[];
-  readme?: string;
-  iconUrl?: string;
-  githubReadme?: {
-    repo: string;
-    path: string;
-  };
-  devFilePath?: string;
+export function withoutTrailingSlash(v: string) {
+  if (v === '/') return v;
+  if (v.endsWith('/')) return v.slice(0, v.length - 1);
+  return v;
 }
 
-export interface PackageWithStats<Tags extends string = string> extends Package<Tags> {
-  stats: PackageInfo | undefined | null;
+export function withStartingSlash(v: string) {
+  if (v.startsWith('/')) return v;
+  return `/${v}`;
 }
 
-const cache = lru(100, 3.6e6); // 1h
+async function tryRemoteReadme(repo: string, path: string) {
+  const fetchPath = `https://raw.githubusercontent.com/${withoutStartingSlash(
+    withoutTrailingSlash(repo)
+  )}/HEAD${withStartingSlash(path)}`;
 
-export const cleanGitRepoLink = (repo: string) => repo.replace(/^git\+/, '').replace(/\.git$/, '');
-
-export async function getPackageStats(name: string): Promise<PackageInfo | null> {
   try {
-    const encodedName = encodeURIComponent(name);
-    const [
-      {
-        readme,
-        time: { created, modified },
-        repository,
-      },
-      latestVersion,
-      { downloads: weeklyNPMDownloads },
-    ] = await Promise.all([
-      request(`https://registry.npmjs.org/${encodedName}`).then(
-        v =>
-          v.body.json() as Promise<{
-            repository?:
-              | string
-              | {
-                  type?: string;
-                  url?: string;
-                  directory?: string;
-                };
-            readme?: string;
-            time: { created: string; modified: string };
-          }>
-      ),
-      request(`https://registry.npmjs.org/${encodedName}/latest`).then(
-        v =>
-          v.body.json() as Promise<{
-            name: string;
-            version: string;
-            description?: string;
-            repository?:
-              | string
-              | {
-                  type?: string;
-                  url?: string;
-                  directory?: string;
-                };
-            license?: string;
-          }>
-      ),
-      request(`https://api.npmjs.org/downloads/point/last-week/${encodedName}`)
-        .then(
-          v =>
-            v.body.json() as Promise<
-              | {
-                  downloads: number;
-                  start: string;
-                  end: string;
-                  package: string;
-                }
-              | { error: string; downloads?: undefined }
-            >
-        )
-        .catch((err): { downloads?: undefined } => {
-          console.error(err);
-          return {};
-        }),
-    ]);
-
-    const repoString = repository ? (typeof repository === 'string' ? repository : repository?.url) : undefined;
-
-    const repositoryLink = repoString ? cleanGitRepoLink(repoString) : undefined;
-    const repositoryDirectory = typeof repository === 'string' ? undefined : repository?.directory;
-
-    return removeUndefineds({
-      ...latestVersion,
-      readme,
-      createdDate: created,
-      modifiedDate: modified,
-      repositoryLink,
-      repositoryDirectory,
-      weeklyNPMDownloads,
+    const response = await fetch(fetchPath, {
+      method: 'GET',
     });
-  } catch (e) {
-    console.error(e);
+
+    if (response.status === 404) {
+      console.error(`ERROR | ${fetchPath} Not Found`);
+    }
+
+    return await response.text();
+  } catch (err) {
+    console.error(`[GUILD-DOCS] ERROR | Error while trying to get README from GitHub ${fetchPath}`);
+    console.error(err);
+
     return null;
   }
 }
 
-export interface GetPackagesOptions<Tags extends string = string> {
-  idSpecific?: string | null;
-  packageList: Package<Tags>[];
-}
-
-export async function getPackagesData<Tags extends string = string>({
-  idSpecific,
-  packageList,
-}: GetPackagesOptions<Tags>): Promise<PackageWithStats<Tags>[]> {
-  let packages = packageList;
-
-  if (idSpecific) {
-    const rawData = packageList.find(t => t.identifier === idSpecific);
-
-    if (!rawData) return [];
-
-    packages = [rawData];
+export const fetchPackageInfo = async (
+  packageName: string,
+  githubReadme?: {
+    repo: string;
+    path: string;
+  }
+): Promise<Package> => {
+  // cache since we fetch same data on /plugins and /plugins/:name
+  const cachedData = cache[packageName];
+  if (cachedData) {
+    return cachedData;
   }
 
-  const allPackages = await Promise.all(
-    packages.map(async (rawData): Promise<PackageWithStats<Tags>> => {
-      const statsPromise = cache.get(rawData.title) || getPackageStats(rawData.npmPackage);
+  const encodedName = encodeURIComponent(packageName);
+  console.debug(`Loading NPM package info: ${packageName}`);
+  const [packageInfo, { downloads }] = await Promise.all([
+    fetch(`https://registry.npmjs.org/${encodedName}`).then(response => response.json()),
+    fetch(`https://api.npmjs.org/downloads/point/last-week/${encodedName}`).then(response => response.json()),
+  ]);
 
-      const readmePromise = (async () => {
-        if (rawData.readme) {
-          return rawData.readme;
-        }
-        if (rawData.devFilePath && process.env.NODE_ENV === 'development') {
-          return promises.readFile(rawData.devFilePath, {
-            encoding: 'utf-8',
-          });
-        }
-        if (rawData.githubReadme) {
-          const fetchPath = `https://raw.githubusercontent.com/${withoutStartingSlash(
-            withoutTrailingSlash(rawData.githubReadme.repo)
-          )}/HEAD${withStartingSlash(rawData.githubReadme.path)}`;
-          try {
-            const response = await request(fetchPath, {
-              method: 'GET',
-            });
+  const { readme, time, description } = packageInfo;
 
-            if (response.statusCode === 404) {
-              console.error(`[GUILD-DOCS] ERROR | ${fetchPath} Not Found`);
-              return;
-            }
+  const readmeContent = githubReadme ? await tryRemoteReadme(githubReadme.repo, githubReadme.path) : readme;
 
-            const text = await response.body.text();
+  cache[packageName] = {
+    readme: readmeContent || readme,
+    createdAt: time.created,
+    updatedAt: time.modified,
+    description,
+    weeklyNPMDownloads: downloads,
+  };
 
-            return text;
-          } catch (err) {
-            console.error(`[GUILD-DOCS] ERROR | Error while trying to get README from GitHub ${fetchPath}`);
-            console.error(err);
-          }
-        }
-        const stats = await statsPromise;
-
-        if (stats?.repositoryDirectory && stats.repositoryLink) {
-          const path = withoutTrailingSlash(withStartingSlash(stats.repositoryDirectory));
-
-          const fetchPath = `${withoutTrailingSlash(
-            stats.repositoryLink.replace('https://github.com', 'https://raw.githubusercontent.com')
-          )}/HEAD${path}/README.md`;
-
-          try {
-            const response = await request(fetchPath, { method: 'GET' });
-
-            if (response.statusCode === 404) {
-              console.error(`[GUILD-DOCS] ERROR | ${fetchPath} Not Found`);
-              return;
-            }
-
-            return await response.body.text();
-          } catch (err) {
-            console.error(`[GUILD-DOCS] ERROR | Error while trying to get README from GitHub ${fetchPath}`);
-            console.error(err);
-          }
-        }
-
-        if (stats?.readme) return stats.readme;
-
-        return;
-      })();
-
-      const [stats, readme] = await Promise.all([statsPromise, readmePromise]);
-
-      if (!readme) {
-        console.warn(`[GUILD-DOCS] WARNING | README could not be found for ${rawData.identifier}`);
-      }
-
-      if (stats && !cache.has(rawData.title)) {
-        cache.set(rawData.title, stats);
-      }
-
-      const data = {
-        ...rawData,
-        readme,
-        stats,
-      };
-
-      return removeUndefineds(data);
-    })
-  );
-
-  return allPackages;
-}
-
-export const removeUndefineds = <T extends object>(v: T): T => {
-  for (const key in v) {
-    if (v[key] === undefined) {
-      delete v[key];
-    }
-  }
-  return v;
+  return cache[packageName];
 };
