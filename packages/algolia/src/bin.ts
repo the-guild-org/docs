@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
+import { resolve } from 'node:path';
 import { AlgoliaRecordSource, indexToAlgolia } from '.';
+
+const CWD = process.cwd();
 
 const options = {
   config: {
@@ -31,10 +34,10 @@ console.log(values);
 
 indexToAlgolia({
   domain: values.domain || process.env.SITE_URL!,
-  lockfilePath: values.output!,
+  lockfilePath: resolve(CWD, values.output!),
   source: values.source as unknown as AlgoliaRecordSource,
   nextra: {
-    docsBaseDir: values.docsBaseDir!,
+    docsBaseDir: resolve(CWD, values.docsBaseDir!),
   },
   dryMode: values.dryrun,
 });
