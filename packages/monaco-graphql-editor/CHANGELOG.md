@@ -1,5 +1,16 @@
 # @theguild/editor
 
+## 1.2.1
+
+### Patch Changes
+
+- [#464](https://github.com/the-guild-org/the-guild-components/pull/464) [`5b5d2e3`](https://github.com/the-guild-org/the-guild-components/commit/5b5d2e3feec7dc36f3bf43f5bd3cf695a8866f84) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`graphql-language-service@3.2.5` ↗︎](https://www.npmjs.com/package/graphql-language-service/v/3.2.5) (from `3.2.4`, in `dependencies`)
+
+- [#466](https://github.com/the-guild-org/the-guild-components/pull/466) [`105c758`](https://github.com/the-guild-org/the-guild-components/commit/105c758dc08ff7b1d4e2ab0c8d8fe7d5afa17ea2) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`monaco-editor@^0.24.0 || ^0.25.0 || ^0.26.0 || ^0.27.0 || ^0.28.0 || ^0.29.0 || ^0.30.0 || ^0.32.0 || ^0.34.0` ↗︎](https://www.npmjs.com/package/monaco-editor/v/0.24.0) (from `^0.24.0 || ^0.25.0 || ^0.26.0 || ^0.27.0 || ^0.28.0 || ^0.29.0 || ^0.30.0 || ^0.32.0`, in `peerDependencies`)
+
 ## 1.2.0
 
 ### Minor Changes
