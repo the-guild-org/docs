@@ -18,6 +18,7 @@ export {
 export * from './types/components';
 export { default as Giscus } from '@giscus/react';
 export { defineConfig } from './define-config';
+export { fetchPackageInfo } from './npm';
 
 declare module 'react' {
   interface CSSProperties {

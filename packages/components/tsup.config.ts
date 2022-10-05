@@ -5,29 +5,25 @@ const options = defineConfig({
   format: 'esm',
   dts: true,
   target: tsconfig.compilerOptions.target,
-  outExtension: () => ({ js: '.mjs' }),
 });
 
 export default defineConfig([
   {
     name: 'components',
-    entry: ['src/index.ts'],
-    ...options,
+    entryPoints: {
+      index: 'src/index.ts',
+      mermaid: 'src/mermaid.tsx',
+    },
+    splitting: false,
+    loader: {
+      '.png': 'copy',
+    },
     outExtension: () => ({ js: '.js' }),
+    ...options,
   },
   {
-    name: 'components/next.config',
+    name: 'next.config',
     entry: ['src/next.config.ts'],
-    ...options,
-  },
-  {
-    name: 'components/mermaid',
-    entry: ['src/mermaid.tsx'],
-    ...options,
-  },
-  {
-    name: 'components/npm',
-    entry: ['src/npm.ts'],
     ...options,
   },
 ]);
