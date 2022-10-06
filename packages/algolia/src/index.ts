@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { readFile } from 'node:fs/promises';
-import { existsSync, writeFileSync, readFileSync, statSync } from 'node:fs';
-import crypto from 'node:crypto';
+import { readFile } from 'fs/promises';
+import { existsSync, writeFileSync, readFileSync, statSync } from 'fs';
+import crypto from 'crypto';
 import sortBy from 'lodash/sortBy.js';
 import isString from 'lodash/isString.js';
 import isArray from 'lodash/isArray.js';
