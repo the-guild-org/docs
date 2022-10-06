@@ -1,5 +1,11 @@
 # @theguild/algolia
 
+## 1.0.0
+
+### Major Changes
+
+- [#469](https://github.com/the-guild-org/the-guild-components/pull/469) [`21bf61e`](https://github.com/the-guild-org/the-guild-components/commit/21bf61e6f91507066a462d8ec9383ea4a0efd9e0) Thanks [@charlypoly](https://github.com/charlypoly)! - Algolia scripts as binary for shared CI worflows
+
 ## 0.1.0
 
 ### Minor Changes
