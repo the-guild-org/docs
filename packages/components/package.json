@@ -1,6 +1,6 @@
 {
   "name": "@theguild/components",
-  "version": "4.1.6",
+  "version": "4.2.0",
   "license": "MIT",
   "repository": {
     "url": "the-guild-org/the-guild-components",
@@ -29,13 +29,9 @@
       "import": "./dist/next.config.mjs",
       "types": "./dist/next.config.d.ts"
     },
-    "./mermaid": {
-      "import": "./dist/mermaid.mjs",
-      "types": "./dist/mermaid.d.ts"
-    },
-    "./npm": {
-      "import": "./dist/npm.mjs",
-      "types": "./dist/npm.d.ts"
+    "./*": {
+      "import": "./dist/*.js",
+      "types": "./dist/*.d.ts"
     }
   },
   "publishConfig": {
@@ -64,13 +60,11 @@
     "next-videos": "1.5.0",
     "nextra": "2.0.0-beta.29",
     "nextra-theme-docs": "2.0.0-beta.29",
-    "react-instantsearch-dom": "6.32.1",
+    "react-instantsearch-dom": "6.36.0",
     "react-paginate": "8.1.3",
     "react-player": "2.11.0",
     "remark-mdx-disable-explicit-jsx": "0.1.0",
     "search-insights": "2.2.1",
-    "tiny-lru": "9.0.2",
-    "undici": "5.10.0",
     "unist-util-visit": "^4.1.1",
     "use-debounce": "8.0.4"
   },

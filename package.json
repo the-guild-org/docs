@@ -19,7 +19,7 @@
     "release": "changeset publish"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "0.4.6",
+    "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.0",
     "@storybook/addon-essentials": "7.0.0-alpha.33",
     "@storybook/addon-links": "7.0.0-alpha.33",
@@ -29,7 +29,7 @@
     "@tailwindcss/line-clamp": "0.4.2",
     "@theguild/prettier-config": "0.1.0",
     "@theguild/tailwind-config": "0.1.1",
-    "@types/react": "18.0.20",
+    "@types/react": "18.0.21",
     "@types/react-instantsearch-core": "6.26.2",
     "@types/react-instantsearch-dom": "6.12.3",
     "@types/react-paginate": "7.1.1",
@@ -50,7 +50,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "storybook": "7.0.0-alpha.33",
-    "storybook-addon-next": "1.6.7",
+    "storybook-addon-next": "1.6.9",
     "storybook-addon-swc": "1.1.8",
     "storybook-dark-mode": "1.1.2",
     "tsconfig-paths-webpack-plugin": "4.0.0",

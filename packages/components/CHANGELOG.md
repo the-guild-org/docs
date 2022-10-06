@@ -1,5 +1,29 @@
 # @theguild/components
 
+## 4.2.0
+
+### Minor Changes
+
+- [#472](https://github.com/the-guild-org/the-guild-components/pull/472) [`c2c5afd`](https://github.com/the-guild-org/the-guild-components/commit/c2c5afd7ca789996190fcad17ce27e63646acadf) Thanks [@B2o5T](https://github.com/B2o5T)! - Bug fixes for marketplace, added NPM utils and export from this package
+
+### Patch Changes
+
+- [#465](https://github.com/the-guild-org/the-guild-components/pull/465) [`03f12e6`](https://github.com/the-guild-org/the-guild-components/commit/03f12e62f5171b3b7ef256156befa13685488993) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`tiny-lru@9.0.2` ↗︎](https://www.npmjs.com/package/tiny-lru/v/9.0.2) (from `9.0.0`, in `dependencies`)
+
+- [#470](https://github.com/the-guild-org/the-guild-components/pull/470) [`41a9053`](https://github.com/the-guild-org/the-guild-components/commit/41a9053717ddd278d61eb3d751f5ffbb07095e82) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`react-instantsearch-dom@6.36.0` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.36.0) (from `6.32.1`, in `dependencies`)
+
+- [#471](https://github.com/the-guild-org/the-guild-components/pull/471) [`96e79a1`](https://github.com/the-guild-org/the-guild-components/commit/96e79a1a77f76510e71a69eca445179e61748963) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`undici@5.11.0` ↗︎](https://www.npmjs.com/package/undici/v/5.11.0) (from `5.10.0`, in `dependencies`)
+
+- [#472](https://github.com/the-guild-org/the-guild-components/pull/472) [`c2c5afd`](https://github.com/the-guild-org/the-guild-components/commit/c2c5afd7ca789996190fcad17ce27e63646acadf) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+  - Removed dependency [`tiny-lru@9.0.2` ↗︎](https://www.npmjs.com/package/tiny-lru/v/9.0.2) (from `dependencies`)
+  - Removed dependency [`undici@5.11.0` ↗︎](https://www.npmjs.com/package/undici/v/5.11.0) (from `dependencies`)
+
 ## 4.1.6
 
 ### Patch Changes
