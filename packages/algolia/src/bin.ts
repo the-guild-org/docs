@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
 import { resolve } from 'node:path';
-import { AlgoliaRecordSource, indexToAlgolia } from '.';
+import { AlgoliaRecordSource, indexToAlgolia } from './index.js';
 
 const CWD = process.cwd();
 
