@@ -1,42 +1,29 @@
 #!/usr/bin/env node
-import { parseArgs } from 'node:util';
+import { Command } from 'commander';
 import { resolve } from 'node:path';
 import { AlgoliaRecordSource, indexToAlgolia } from './index.js';
 
 const CWD = process.cwd();
 
-const options = {
-  config: {
-    type: 'string',
-    short: 'c',
-  },
-  docsBaseDir: {
-    type: 'string',
-  },
-  output: {
-    type: 'string',
-    short: 'o',
-  },
-  publish: {
-    type: 'boolean',
-  },
-  source: {
-    type: 'string',
-  },
-  domain: {
-    type: 'string',
-  },
-} as const;
-const { values } = parseArgs({ options });
+const program = new Command();
 
-console.log(values);
+program
+  .option('--docsBaseDir [rootdir]', 'relative path to nextra pages rootDir', './src/pages/')
+  .option('-o, --output [lockfilepath]', 'relative path to lock file', './algolia-lockfile.json')
+  .option('-p, --publish')
+  .requiredOption('-s, --source <source>')
+  .requiredOption('-d, --domain <domain>');
+
+program.parse(process.argv);
+
+const options = program.opts();
 
 indexToAlgolia({
-  domain: values.domain || process.env.SITE_URL!,
-  lockfilePath: resolve(CWD, values.output!),
-  source: values.source as unknown as AlgoliaRecordSource,
+  domain: options.domain,
+  lockfilePath: resolve(CWD, options.output),
+  source: options.source as unknown as AlgoliaRecordSource,
   nextra: {
-    docsBaseDir: resolve(CWD, values.docsBaseDir!),
+    docsBaseDir: resolve(CWD, options.docsBaseDir),
   },
-  dryMode: !values.publish,
+  dryMode: !options.publish,
 });
