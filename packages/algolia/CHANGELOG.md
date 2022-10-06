@@ -1,5 +1,15 @@
 # @theguild/algolia
 
+## 1.0.1
+
+### Patch Changes
+
+- [#482](https://github.com/the-guild-org/the-guild-components/pull/482) [`7e84a97`](https://github.com/the-guild-org/the-guild-components/commit/7e84a9799816f895e69d1facec0e88ea7a8467d5) Thanks [@charlypoly](https://github.com/charlypoly)! - dependencies updates:
+
+  - Added dependency [`commander@^9.4.1` ↗︎](https://www.npmjs.com/package/commander/v/9.4.1) (to `dependencies`)
+
+- [#482](https://github.com/the-guild-org/the-guild-components/pull/482) [`7e84a97`](https://github.com/the-guild-org/the-guild-components/commit/7e84a9799816f895e69d1facec0e88ea7a8467d5) Thanks [@charlypoly](https://github.com/charlypoly)! - support from node 12
+
 ## 1.0.0
 
 ### Major Changes
