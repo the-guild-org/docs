@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 4.2.1
+
+### Patch Changes
+
+- [#488](https://github.com/the-guild-org/the-guild-components/pull/488) [`62d760f`](https://github.com/the-guild-org/the-guild-components/commit/62d760f937b1333a794a444a1ba104b5294237e1) Thanks [@B2o5T](https://github.com/B2o5T)! - if readme is empty fetch latest readme
+
 ## 4.2.0
 
 ### Minor Changes
