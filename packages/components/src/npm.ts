@@ -1,3 +1,5 @@
+import semver from 'semver';
+
 type Package = {
   readme: string;
   createdAt: string;
@@ -69,11 +71,22 @@ export const fetchPackageInfo = async (
   ]);
 
   const { readme, time, description } = packageInfo;
-
+  const latestVersion = packageInfo['dist-tags'].latest;
   const readmeContent = githubReadme ? await tryRemoteReadme(githubReadme.repo, githubReadme.path) : readme;
 
   cache[packageName] = {
-    readme: readmeContent || readme,
+    readme:
+      readmeContent ||
+      readme ||
+      // for some reason top level "readme" can be empty string, so we get the latest version readme
+      Object.values(packageInfo.versions as { readme?: string; version: string }[])
+        .reverse()
+        .find(curr => {
+          const isReadmeExist = curr.readme && curr.readme !== 'ERROR: No README data found!';
+          if (isReadmeExist) {
+            return semver.lte(curr.version, latestVersion);
+          }
+        })?.readme,
     createdAt: time.created,
     updatedAt: time.modified,
     description,

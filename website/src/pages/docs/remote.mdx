@@ -3,9 +3,11 @@ import { PackageCmd, fetchPackageInfo } from '@theguild/components'
 import { MDXRemote } from 'next-mdx-remote'
 import { compileMdx } from 'nextra/compile'
 
+export const PACKAGE_NAME = '@envelop/core'
+
 export const getStaticProps = async () => {
-  const { readme } = await fetchPackageInfo('@envelop/core')
-  const mdx = await compileMdx(readme.replaceAll('```console', '```'), {
+  const { readme } = await fetchPackageInfo(PACKAGE_NAME)
+  const mdx = await compileMdx(readme, {
     mdxOptions: {
       outputFormat: 'function-body',
       jsx: false
@@ -25,7 +27,7 @@ export const PackageApiDocs = () => {
   const compiledSource = useSSG()
   return (
     <>
-      <PackageCmd packages={['@envelop/core']} />
+      <PackageCmd packages={[PACKAGE_NAME]} />
       <MDXRemote compiledSource={compiledSource} />
     </>
   )
