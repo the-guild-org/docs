@@ -34,8 +34,6 @@ export const InfoList = ({ title, items, className }: IInfoListProps): ReactElem
                   w-max
                   text-sm
                   text-cyan-400
-                  no-underline
-                  transition
                   hover:text-cyan-300
                 "
                 {...item.link}

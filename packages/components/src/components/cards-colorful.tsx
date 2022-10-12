@@ -33,11 +33,10 @@ export const CardsColorful = ({ cards, className }: CardsColorfulProps): ReactEl
           className="
             relative
             min-h-[200px]
-            w-full rounded-3xl
+            w-full
+            rounded-3xl
             p-8
             text-white
-            no-underline
-            transition
             [background:var(--color)]
             after:absolute
             after:top-0

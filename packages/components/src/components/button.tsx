@@ -18,10 +18,7 @@ export const Button = ({ children, className, variant = 'primary', ...props }: B
         text-center
         text-xs
         font-medium
-        no-underline
-        transition
         hover:shadow-lg
-        focus:bg-cyan-500
         md:px-5
       `,
         variant === 'primary'

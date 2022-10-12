@@ -288,11 +288,8 @@ const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }):
                   bg-gray-100
                   px-5
                   py-3
-                  no-underline
-                  outline-none
                   last:mb-0
                   hover:![background:var(--color)]
-                  focus:ring
                   dark:bg-neutral-800
                 "
               >

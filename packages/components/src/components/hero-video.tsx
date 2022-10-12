@@ -49,8 +49,6 @@ export const HeroVideo = ({
               w-max
               text-sm
               text-cyan-400
-              no-underline
-              transition
               hover:text-cyan-300`,
                 link.className
               )}
@@ -60,17 +58,17 @@ export const HeroVideo = ({
         <div
           className={clsx(
             `
-      h-72
-      w-full
-      overflow-hidden
-      rounded-xl
-      bg-white
-      shadow-xl
-      sm:h-96
-      md:h-72
-      md:w-3/5
-      lg:h-96
-      `,
+            h-72
+            w-full
+            overflow-hidden
+            rounded-xl
+            bg-white
+            shadow-xl
+            sm:h-96
+            md:h-72
+            md:w-3/5
+            lg:h-96
+            `,
             flipped ? 'md:mr-8' : 'md:ml-8'
           )}
         >

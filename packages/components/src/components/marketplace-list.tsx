@@ -28,7 +28,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
           <Anchor
             {...item.link}
             className={clsx(
-              'text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400',
+              'text-gray-500 duration-150 ease-in-out hover:opacity-75 dark:text-gray-400',
               item.link.className
             )}
           >
@@ -54,7 +54,6 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
               bg-gray-200
               p-1.5
               text-gray-800
-              transition
               hover:invert
               dark:bg-gray-700
               dark:text-white

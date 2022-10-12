@@ -106,8 +106,6 @@ export const FooterExtended = ({
                 text-sm
                 font-medium
                 text-gray-500
-                no-underline
-                transition
                 hover:text-black
                 dark:text-gray-400
                 hover:dark:text-gray-100
@@ -168,7 +166,7 @@ export const FooterExtended = ({
           "
         >
           <Anchor
-            className="flex items-center gap-x-1.5 text-gray-500 transition hover:text-black hover:dark:text-gray-100"
+            className="flex items-center gap-x-1.5 text-gray-500 hover:text-black hover:dark:text-gray-100"
             href="https://the-guild.dev"
             sameSite={sameSite}
             {...logo}

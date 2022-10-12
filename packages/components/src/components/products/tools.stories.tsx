@@ -42,36 +42,6 @@ Home.args = {
   page: '/',
 };
 
-const subheaderData: ISubheaderProps = {
-  product: {
-    title: 'GraphQL Tools',
-    description: 'Modern GraphQL Framework',
-  },
-  activeLink: '/',
-  links: [
-    {
-      children: 'Home',
-      title: 'Visit our Homepage',
-      href: '/',
-    },
-    {
-      children: 'API & Doc',
-      title: 'Learn more about Envelop',
-      href: '/docs',
-    },
-    {
-      children: 'GitHub',
-      title: 'See our GitHub profile',
-      href: 'https://github.com/ardatan/graphql-tools',
-    },
-  ],
-  cta: {
-    children: 'Get Started',
-    title: 'Learn more about GraphQL Tools',
-    href: '/docs',
-  },
-};
-
 const heroGradientData = {
   title: 'A set of utilities for faster development of GraphQL Schemas',
   description:

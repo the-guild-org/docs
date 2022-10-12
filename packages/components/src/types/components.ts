@@ -1,4 +1,4 @@
-import { ComponentProps, ReactNode, ReactElement, FormEvent, MouseEventHandler } from 'react';
+import { ComponentProps, ReactNode, ReactElement, FormEvent } from 'react';
 import { ReactPlayerProps } from 'react-player';
 import { ImageProps as IImage } from 'next/future/image';
 import { LinkProps } from 'next/link';
@@ -30,12 +30,6 @@ export interface IHeaderProps {
   searchBarProps?: Partial<ISearchBarProps>;
   disableSearch?: boolean;
   sameSite?: boolean;
-}
-
-export interface IFooterProps {
-  className?: string;
-  sameSite?: boolean;
-  logo?: ILink;
 }
 
 export interface IFooterExtendedProps {

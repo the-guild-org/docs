@@ -19,7 +19,7 @@ export const FeatureList = ({ title, description, items, link, className }: IFea
             <Anchor
               {...link}
               className={clsx(
-                'w-max text-sm text-cyan-400 no-underline transition hover:text-cyan-300',
+                'w-max text-sm text-cyan-400 hover:text-cyan-300',
                 link.className
               )}
             />
@@ -36,7 +36,7 @@ export const FeatureList = ({ title, description, items, link, className }: IFea
               <Anchor
                 {...item.link}
                 className={clsx(
-                  'mt-auto w-max pt-2 text-sm text-cyan-400 no-underline transition hover:text-cyan-300',
+                  'w-max mt-2 text-sm text-cyan-400 hover:text-cyan-300',
                   item.link.className
                 )}
               />

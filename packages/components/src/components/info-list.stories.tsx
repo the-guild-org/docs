@@ -4,7 +4,7 @@ import { dummyInfoList } from '../helpers/dummy';
 import { InfoList } from './info-list';
 
 export default {
-  title: 'Components/Lists/Texts',
+  title: 'Components/Lists/InfoList',
   component: InfoList,
   argTypes: {
     title: {
