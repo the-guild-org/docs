@@ -131,7 +131,7 @@ export const ExecutableDocumentEditor = ({
   schema,
   ...editorProps
 }: { schema: GraphQLSchema } & Omit<EditorProps, 'language'>): ReactElement => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const monaco = useMonaco();
   const [completionProvider, setCompletionProvider] = useState<monaco.IDisposable | null>(null);
   const editorUriRef = useRef<monaco.Uri>();
@@ -169,7 +169,7 @@ export const ExecutableDocumentEditor = ({
   return (
     <MonacoEditor
       height="70vh"
-      theme={theme === 'dark' ? 'vs-dark' : 'light'}
+      theme={resolvedTheme === 'dark' ? 'vs-dark' : 'light'}
       {...editorProps}
       language="graphql"
       onMount={editor => {

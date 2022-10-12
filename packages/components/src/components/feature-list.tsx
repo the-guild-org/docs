@@ -16,13 +16,7 @@ export const FeatureList = ({ title, description, items, link, className }: IFea
             <div className="mt-1 mb-1.5 text-center text-base text-gray-500 dark:text-gray-400">{description}</div>
           )}
           {link && (
-            <Anchor
-              {...link}
-              className={clsx(
-                'w-max text-sm text-cyan-400 hover:text-cyan-300',
-                link.className
-              )}
-            />
+            <Anchor {...link} className={clsx('w-max text-sm text-cyan-400 hover:text-cyan-300', link.className)} />
           )}
         </div>
       )}
@@ -35,10 +29,7 @@ export const FeatureList = ({ title, description, items, link, className }: IFea
             {item.link && (
               <Anchor
                 {...item.link}
-                className={clsx(
-                  'w-max mt-2 text-sm text-cyan-400 hover:text-cyan-300',
-                  item.link.className
-                )}
+                className={clsx('mt-2 w-max text-sm text-cyan-400 hover:text-cyan-300', item.link.className)}
               />
             )}
           </div>

@@ -12,7 +12,7 @@ function BaseSchemaDiffEditor(
     modified: SchemaEditorApi;
   }>
 ) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const originalSchemaService = useSchemaServices(props);
   const modifiedSchemaService = useSchemaServices(props);
 
@@ -33,7 +33,7 @@ function BaseSchemaDiffEditor(
   return (
     <DiffEditor
       height="70vh"
-      theme={theme === 'dark' ? 'vs-dark' : 'light'}
+      theme={resolvedTheme === 'dark' ? 'vs-dark' : 'light'}
       {...props}
       beforeMount={monaco => {
         originalSchemaService.setMonaco(monaco);

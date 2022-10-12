@@ -4,12 +4,12 @@
 }
 
 .aa-DetachedSearchButton {
-  @apply bg-transparent md:bg-neutral-100 border-none focus:shadow-none gap-1 h-auto rounded-md p-1.5 md:pr-7 focus-visible:ring text-neutral-500 text-sm;
-  @apply md:dark:bg-neutral-800 dark:text-neutral-300;
+  @apply h-auto gap-1 rounded-md border-none bg-transparent p-1.5 text-sm text-neutral-500 focus:shadow-none focus-visible:ring md:bg-neutral-100 md:pr-7;
+  @apply dark:text-neutral-300 md:dark:bg-neutral-800;
 }
 
 .aa-DetachedSearchButtonIcon {
-  @apply w-[18px] h-[18px] pointer-events-none text-inherit;
+  @apply pointer-events-none h-[18px] w-[18px] text-inherit;
 }
 
 .aa-DetachedSearchButtonPlaceholder {

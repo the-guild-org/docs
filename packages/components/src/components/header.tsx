@@ -22,7 +22,7 @@ export const Header = ({
   sameSite,
   searchBarProps,
 }: IHeaderProps): ReactElement => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const { height: windowHeight, width: windowWidth } = useWindowSize();
 
@@ -117,8 +117,8 @@ export const Header = ({
                         flex
                         w-max
                         items-center
-                        p-1
                         gap-2
+                        p-1
                         text-base
                         hover:text-gray-800
                         dark:hover:text-gray-200
@@ -169,7 +169,7 @@ export const Header = ({
 
               {themeSwitch && (
                 <button
-                  onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                  onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
                   className="mr-1 self-center rounded-sm p-2 outline-none focus-visible:ring"
                 >
                   <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
