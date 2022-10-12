@@ -1,5 +1,18 @@
 # @theguild/components
 
+## 4.2.2
+
+### Patch Changes
+
+- [#497](https://github.com/the-guild-org/the-guild-components/pull/497) [`c066417`](https://github.com/the-guild-org/the-guild-components/commit/c06641709f0962457d5920aac25cc461dc32bd75) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Removed dependency [`critters@0.0.16` ↗︎](https://www.npmjs.com/package/critters/v/0.0.16) (from `dependencies`)
+  - Updated dependency [`next@^12.3.1` ↗︎](https://www.npmjs.com/package/next/v/12.3.1) (from `^12.3.0`, in `peerDependencies`)
+
+- [#497](https://github.com/the-guild-org/the-guild-components/pull/497) [`c066417`](https://github.com/the-guild-org/the-guild-components/commit/c06641709f0962457d5920aac25cc461dc32bd75) Thanks [@B2o5T](https://github.com/B2o5T)! - fix white flash on initial loading with dark theme
+  remove `<SubHeader />`, `<Footer />`, `<Instruction />` components
+  fix showing `NextImage`'s in storybook
+
 ## 4.2.1
 
 ### Patch Changes
