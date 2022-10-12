@@ -1,5 +1,11 @@
 # @theguild/editor
 
+## 1.2.2
+
+### Patch Changes
+
+- [#503](https://github.com/the-guild-org/the-guild-components/pull/503) [`edadd3d`](https://github.com/the-guild-org/the-guild-components/commit/edadd3d931ccdcf64d2568428896058e5399edfd) Thanks [@B2o5T](https://github.com/B2o5T)! - style fixes
+
 ## 1.2.1
 
 ### Patch Changes
