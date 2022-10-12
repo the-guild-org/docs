@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Story, Meta } from '@storybook/react';
 import { CardsColorful } from '../cards-colorful';
-import { Footer } from '../footer';
+import { FooterExtended } from '../footer-extended';
 import { FeatureList } from '../feature-list';
 import { Header } from '../header';
 import { HeroIllustration } from '../hero-illustration';
@@ -10,7 +10,6 @@ import { HeroMarketplace } from '../hero-marketplace';
 import { HeroVideo } from '../hero-video';
 import { InfoList } from '../info-list';
 import { MarketplaceSearch } from '../marketplace-search';
-import { Subheader } from '../subheader';
 import {
   dummyCardsColorful,
   dummyFeatureList,
@@ -20,7 +19,6 @@ import {
   dummyHeroVideo,
   dummyInfoList,
   dummyMarketplaceSearch,
-  dummySubheader,
 } from '../../helpers/dummy';
 
 export default {
@@ -58,9 +56,8 @@ const Template: Story = ({ page }): ReactElement => {
   return (
     <>
       <Header accentColor="#ED2E7E" activeLink="/open-source" themeSwitch />
-      <Subheader {...dummySubheader} activeLink={page} />
       {pages[page]}
-      <Footer />
+      <FooterExtended />
     </>
   );
 };

@@ -153,46 +153,6 @@ export const dummyHeroMarketplace: IHeroMarketplaceProps = {
   },
 };
 
-export const dummySubheader: ISubheaderProps = {
-  product: {
-    title: 'Envelop',
-    description: 'Modern GraphQL Framework',
-  },
-  activeLink: '/',
-  links: [
-    {
-      children: 'Home',
-      title: 'Visit our Homepage',
-      href: '/',
-    },
-    {
-      children: 'Marketplace',
-      title: 'Browse the marketplace',
-      href: '/marketplace',
-    },
-    {
-      children: 'Features',
-      title: "Discover Envelop's features",
-      href: '/features',
-    },
-    {
-      children: 'API & Doc',
-      title: 'Learn more about Envelop',
-      href: '/docs',
-    },
-    {
-      children: 'GitHub',
-      title: 'See our GitHub profile',
-      href: 'https://github.com/dotansimha/envelop',
-    },
-  ],
-  cta: {
-    children: 'Get Started',
-    title: 'Learn more about Envelop',
-    href: '#',
-  },
-};
-
 export const dummyCardsColorful: CardsColorfulProps = {
   cards: [
     {

@@ -40,7 +40,9 @@ export const withGuildDocs = ({
     },
   });
 
-  const isNextExport = process.env.npm_config_argv?.includes('"next","export"');
+  const isNextExport =
+    process.env.npm_config_argv?.includes('"next","export"') ||
+    process.env.npm_package_scripts_build?.includes('next export');
 
   return withBundleAnalyzer(
     withVideos(

@@ -32,19 +32,6 @@ export interface IHeaderProps {
   sameSite?: boolean;
 }
 
-export interface ISubheaderProps {
-  className?: string;
-  product: {
-    title: string | ReactNode;
-    description: string | ReactNode;
-    image?: IImage;
-    onClick?: MouseEventHandler;
-  };
-  activeLink: string;
-  links: ILink[];
-  cta: ILink;
-}
-
 export interface IFooterProps {
   className?: string;
   sameSite?: boolean;
