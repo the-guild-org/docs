@@ -40,10 +40,6 @@ export const withGuildDocs = ({
     },
   });
 
-  const isNextExport =
-    process.env.npm_lifecycle_script?.includes('next export') ||
-    process.env.npm_config_argv?.includes('"next","export"');
-
   return withBundleAnalyzer(
     withVideos(
       withNextra({
@@ -62,12 +58,10 @@ export const withGuildDocs = ({
           newNextLinkBehavior: true,
           ...nextConfig.experimental,
         },
-        ...(isNextExport && {
-          images: {
-            unoptimized: true, // doesn't work with `next export`,
-            ...nextConfig.images,
-          },
-        }),
+        images: {
+          unoptimized: true, // doesn't work with `next export`,
+          ...nextConfig.images,
+        },
       })
     )
   );
