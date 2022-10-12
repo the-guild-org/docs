@@ -12913,10 +12913,10 @@ storybook-addon-next@1.6.9:
     tsconfig-paths "^4.0.0"
     tsconfig-paths-webpack-plugin "^4.0.0"
 
-storybook-addon-swc@1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/storybook-addon-swc/-/storybook-addon-swc-1.1.8.tgz#ff999d2f1360db345e7da0de19e9ff64db46ced8"
-  integrity sha512-z34Y9ugbkmpvCoXuhoXcVDKgkK8mWjnkhvXXo2n+iomE9+GFiY2KRqBsPhtuQDnpJU/aTdL1aNaBiIkLX5bB/w==
+storybook-addon-swc@1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/storybook-addon-swc/-/storybook-addon-swc-1.1.9.tgz#9f5c583be497582475d2b25b6c1e98eb90d11eb7"
+  integrity sha512-JmoPzJ5RA7ytPi58r5dKcRYNEESe57ZAMzJcUqnkMOwBuq0MZvBUH6gHWZxVagQe64RitS83ZOmZEJNxxc0ZWQ==
   dependencies:
     "@babel/runtime" "^7.17.2"
     "@swc/core" "^1.2.152"

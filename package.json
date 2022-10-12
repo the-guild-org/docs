@@ -51,7 +51,7 @@
     "react-dom": "18.2.0",
     "storybook": "7.0.0-alpha.35",
     "storybook-addon-next": "1.6.9",
-    "storybook-addon-swc": "1.1.8",
+    "storybook-addon-swc": "1.1.9",
     "storybook-dark-mode": "1.1.2",
     "tsconfig-paths-webpack-plugin": "4.0.0",
     "tsup": "6.2.3",
