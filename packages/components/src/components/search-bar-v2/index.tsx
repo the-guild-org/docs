@@ -1,8 +1,8 @@
-import * as algoliaAutocomplete from '@algolia/autocomplete-js';
+import { autocomplete, getAlgoliaResults, AutocompleteApi } from '@algolia/autocomplete-js';
 import { createRoot, Root } from 'react-dom/client';
 import { createElement, Fragment, ReactElement, useEffect, useRef } from 'react';
-import algoliaSearch from 'algoliasearch/lite.js';
-import * as algoliaAutocompletePlugin from '@algolia/autocomplete-plugin-algolia-insights';
+import algoliaSearch from 'algoliasearch';
+import { createAlgoliaInsightsPlugin } from '@algolia/autocomplete-plugin-algolia-insights';
 import insightsClient from 'search-insights';
 
 import { ISearchBarProps } from '../../types/components';
@@ -11,10 +11,6 @@ import { SidePreview } from './side-preview';
 import { debounced } from './utils';
 import { templates } from './templates';
 import { Anchor } from '../anchor';
-import { getDefault } from '../../helpers/utils';
-
-const { autocomplete, getAlgoliaResults } = getDefault(algoliaAutocomplete);
-const { createAlgoliaInsightsPlugin } = getDefault(algoliaAutocompletePlugin);
 
 export const SearchBarV2 = ({
   accentColor,
@@ -23,7 +19,7 @@ export const SearchBarV2 = ({
   algolia,
 }: ISearchBarProps): ReactElement => {
   const containerRef = useRef(null);
-  const search = useRef<algoliaAutocomplete.AutocompleteApi<AlgoliaSearchItem>>();
+  const search = useRef<AutocompleteApi<AlgoliaSearchItem>>();
   const panelRootRef = useRef<Root | null>(null);
   const rootRef = useRef<HTMLElement | null>(null);
 

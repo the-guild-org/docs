@@ -2,7 +2,7 @@ const config = require('@theguild/tailwind-config');
 
 module.exports = {
   ...config,
-  content: ['./packages/components/src/**/*.{ts,tsx}'],
+  content: [...config.content, './packages/components/src/**/*.{ts,tsx}'],
   theme: {
     ...config.theme,
     extend: {

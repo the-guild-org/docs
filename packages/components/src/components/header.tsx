@@ -1,6 +1,6 @@
 import { useState, useMemo, ReactElement, useCallback } from 'react';
 import clsx from 'clsx';
-import * as radixNavigationMenu from '@radix-ui/react-navigation-menu';
+import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
 import { useTheme } from 'nextra-theme-docs';
 import { IHeaderProps } from '../types/components';
 import { SearchBar } from './search-bar';
@@ -11,9 +11,6 @@ import { SolutionsMenu } from './solutions-menu';
 import { EcosystemList } from './ecosystem-list';
 import { useWindowSize } from '../helpers/hooks';
 import { Anchor } from './anchor';
-import { getDefault } from '../helpers/utils';
-
-const { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } = getDefault(radixNavigationMenu);
 
 export const Header = ({
   accentColor,
@@ -69,7 +66,7 @@ export const Header = ({
     {
       label: 'Contact Us',
       title: 'Share your excitement with us',
-      href: 'https://www.the-guild.dev/contact',
+      href: 'https://the-guild.dev/contact',
     },
   ]);
 
