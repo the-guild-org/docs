@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 4.2.4
+
+### Patch Changes
+
+- [#501](https://github.com/the-guild-org/the-guild-components/pull/501) [`3699271`](https://github.com/the-guild-org/the-guild-components/commit/369927172a52f4b2bdbf4cd63cc8aea7e6858d26) Thanks [@B2o5T](https://github.com/B2o5T)! - always use `images.unoptimized`
+
+- [#503](https://github.com/the-guild-org/the-guild-components/pull/503) [`edadd3d`](https://github.com/the-guild-org/the-guild-components/commit/edadd3d931ccdcf64d2568428896058e5399edfd) Thanks [@B2o5T](https://github.com/B2o5T)! - style fixes
+
 ## 4.2.3
 
 ### Patch Changes
