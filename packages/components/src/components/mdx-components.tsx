@@ -33,7 +33,9 @@ export const mdxComponents: {
   img({ src = '', ...props }: ComponentProps<'img'>) {
     // eslint-disable-next-line react-hooks/rules-of-hooks -- false positive
     const { basePath } = useRouter();
-    console.warn('Image', src, "doesn't use NextImage");
+    if (!src.startsWith('http')) {
+      console.warn('Image', src, "doesn't use NextImage");
+    }
     return <img {...props} src={src.startsWith('/') ? basePath + src : src} />;
   },
 };

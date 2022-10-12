@@ -40,7 +40,9 @@ export const withGuildDocs = ({
     },
   });
 
-  const basePath = process.env.NEXT_BASE_PATH;
+  const isNextExport =
+    process.env.npm_config_argv?.includes('"next","export"') ||
+    process.env.npm_package_scripts_build?.includes('next export');
 
   return withBundleAnalyzer(
     withVideos(
@@ -48,18 +50,19 @@ export const withGuildDocs = ({
         reactStrictMode: true,
         // TODO: Enable after https://github.com/vercel/next.js/issues/40750 will be fixed
         // swcMinify: true,
-        basePath,
+        basePath: process.env.NEXT_BASE_PATH,
         ...nextConfig,
         webpack(config, meta) {
           applyUnderscoreRedirects(config, meta);
           return nextConfig.webpack?.(config, meta) || config;
         },
         experimental: {
-          optimizeCss: true,
+          // TODO: Provoke white flash ⚪️💥 on initial loading with dark theme
+          // optimizeCss: true,
           newNextLinkBehavior: true,
           ...nextConfig.experimental,
         },
-        ...(basePath && {
+        ...(isNextExport && {
           images: {
             unoptimized: true, // doesn't work with `next export`,
             ...nextConfig.images,

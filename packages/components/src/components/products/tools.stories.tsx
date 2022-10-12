@@ -4,8 +4,7 @@ import { FooterExtended } from '../footer-extended';
 import { Header } from '../header';
 import { HeroGradient } from '../hero-gradient';
 import { InfoList } from '../info-list';
-import { Subheader } from '../subheader';
-import { ILink, ISubheaderProps } from '../../types/components';
+import { ILink } from '../../types/components';
 
 export default {
   title: 'Products/Tools',
@@ -32,7 +31,6 @@ const Template: Story = ({ page }): ReactElement => {
   return (
     <>
       <Header accentColor="#184BE6" activeLink="/open-source" themeSwitch />
-      <Subheader {...subheaderData} activeLink={page} />
       {pages[page]}
       <FooterExtended {...footerData} />
     </>

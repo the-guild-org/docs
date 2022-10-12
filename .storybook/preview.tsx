@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { themes } from '@storybook/theming';
 import { ThemeProvider } from 'next-themes';
-import NextImage, { ImageProps } from 'next/image';
+import NextImage, { ImageProps } from 'next/future/image';
 import NextLink, { LinkProps } from 'next/link';
 import './global.css';
 
