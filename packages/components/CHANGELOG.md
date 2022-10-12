@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 4.2.3
+
+### Patch Changes
+
+- [#499](https://github.com/the-guild-org/the-guild-components/pull/499) [`a52dc2c`](https://github.com/the-guild-org/the-guild-components/commit/a52dc2cb683e779b419e87c2440f52e787553ed1) Thanks [@B2o5T](https://github.com/B2o5T)! - fix `next export`, check for `process.env.npm_lifecycle_script` instead `process.env.npm_package_scripts_build` (for pnpm compatibility)
+
 ## 4.2.2
 
 ### Patch Changes
