@@ -1,6 +1,6 @@
 import { useState, useMemo, ReactElement, useCallback } from 'react';
 import clsx from 'clsx';
-import * as radixNavigationMenu from '@radix-ui/react-navigation-menu';
+import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
 import { useTheme } from 'nextra-theme-docs';
 import { IHeaderProps } from '../types/components';
 import { SearchBar } from './search-bar';
@@ -11,9 +11,6 @@ import { SolutionsMenu } from './solutions-menu';
 import { EcosystemList } from './ecosystem-list';
 import { useWindowSize } from '../helpers/hooks';
 import { Anchor } from './anchor';
-import { getDefault } from '../helpers/utils';
-
-const { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } = getDefault(radixNavigationMenu);
 
 export const Header = ({
   accentColor,
@@ -25,7 +22,7 @@ export const Header = ({
   sameSite,
   searchBarProps,
 }: IHeaderProps): ReactElement => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const { height: windowHeight, width: windowWidth } = useWindowSize();
 
@@ -69,7 +66,7 @@ export const Header = ({
     {
       label: 'Contact Us',
       title: 'Share your excitement with us',
-      href: 'https://www.the-guild.dev/contact',
+      href: 'https://the-guild.dev/contact',
     },
   ]);
 
@@ -87,7 +84,7 @@ export const Header = ({
         "
       >
         <button
-          className="rounded-sm text-gray-500 outline-none transition hover:text-gray-400 focus:ring dark:text-gray-200 dark:hover:text-gray-400 md:hidden"
+          className="rounded-sm text-gray-500 outline-none transition hover:text-gray-400 focus-visible:ring dark:text-gray-200 dark:hover:text-gray-400 md:hidden"
           onClick={toggleNav}
         >
           <HamburgerIcon />
@@ -98,7 +95,7 @@ export const Header = ({
 
         <Anchor
           title="View our website"
-          className="flex items-center gap-x-1.5 rounded-sm text-black outline-none hover:opacity-75 focus:ring dark:text-gray-100"
+          className="flex items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
           href="https://the-guild.dev"
           sameSite={sameSite}
         >
@@ -109,7 +106,7 @@ export const Header = ({
         <Root asChild>
           <List>
             <Viewport className="absolute top-10 right-0 z-50" />
-            <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} className="md:gap-4">
+            <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} className="gap-2">
               {links.map(({ label, menu, ...link }) => {
                 const linkEl = (
                   <Anchor
@@ -120,36 +117,16 @@ export const Header = ({
                         flex
                         w-max
                         items-center
-                        rounded-sm
-                        py-3
-                        text-center
+                        gap-2
+                        p-1
                         text-base
-                        no-underline
-                        outline-none
                         hover:text-gray-800
-                        focus:ring
                         dark:hover:text-gray-200
-                        sm:py-5
                         sm:text-lg
-                        md:py-0
                         md:text-left
                         md:text-sm`,
-                      activeLink?.includes(link.href)
-                        ? `
-                        relative
-                        font-medium
-                        text-black
-                        after:absolute
-                        after:bottom-0
-                        after:h-0.5
-                        after:w-full
-                        after:rounded
-                        after:bg-black
-                        after:content-['']
-                        dark:text-[#f3f4f6]
-                        after:dark:bg-white
-                        after:sm:bottom-2.5
-                        after:md:-bottom-2`
+                      activeLink && link.href.includes(activeLink)
+                        ? 'text-gray-800 dark:text-gray-200'
                         : 'text-gray-600 dark:text-gray-400'
                     )}
                     style={{ '--accentColor': accentColor }}
@@ -159,7 +136,6 @@ export const Header = ({
                     {menu && (
                       <CaretIcon
                         className="
-                          ml-2
                           transition-transform
                           duration-200
                           [[data-state=open]_>_&]:rotate-180
@@ -193,8 +169,8 @@ export const Header = ({
 
               {themeSwitch && (
                 <button
-                  onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-                  className="mr-1 self-center rounded-sm p-2 outline-none focus:ring"
+                  onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+                  className="mr-1 self-center rounded-sm p-2 outline-none focus-visible:ring"
                 >
                   <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
                 </button>

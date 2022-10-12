@@ -1,14 +1,11 @@
 import { ReactElement, useEffect, useMemo, useState } from 'react';
-import ReactPaginatePackage from 'react-paginate';
+import ReactPaginate from 'react-paginate';
 import clsx from 'clsx';
 import { IMarketplaceListProps, IMarketplaceItemsProps } from '../types/components';
 import { Tag, TagsContainer } from './tag';
 import { CaretSlimIcon } from './icons';
-import { getDefault } from '../helpers/utils';
 import { Anchor } from './anchor';
 import { Image } from './image';
-
-const ReactPaginate = getDefault(ReactPaginatePackage);
 
 const formatDate = (value: string): string => {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -28,7 +25,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
           <Anchor
             {...item.link}
             className={clsx(
-              'text-gray-500 no-underline transition duration-150 ease-in-out hover:opacity-75 dark:text-gray-400',
+              'text-gray-500 duration-150 ease-in-out hover:opacity-75 dark:text-gray-400',
               item.link.className
             )}
           >
@@ -54,7 +51,6 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
               bg-gray-200
               p-1.5
               text-gray-800
-              transition
               hover:invert
               dark:bg-gray-700
               dark:text-white

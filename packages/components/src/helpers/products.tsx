@@ -38,25 +38,25 @@ export const PRODUCTS: {
   {
     children: 'Yoga',
     title: 'A fully-featured, simple to set up, performant and extendable server',
-    href: 'https://www.the-guild.dev/graphql/yoga-server',
+    href: 'https://the-guild.dev/graphql/yoga-server',
     logo: YogaLogo,
   },
   {
     children: 'Envelop',
     title: 'Develop and share plugins that are usable with any GraphQL server framework or schema',
-    href: 'https://www.the-guild.dev/graphql/envelop',
+    href: 'https://the-guild.dev/graphql/envelop',
     logo: EnvelopLogo,
   },
   {
     children: 'Inspector',
     title: 'Schema management tool',
-    href: 'https://www.the-guild.dev/graphql/inspector',
+    href: 'https://the-guild.dev/graphql/inspector',
     logo: InspectorLogo,
   },
   {
     children: 'Code Generator',
     title: 'Generation of Typed Queries, Mutations, Subscriptions and Typed GraphQL resolvers',
-    href: 'https://www.the-guild.dev/graphql/codegen',
+    href: 'https://the-guild.dev/graphql/codegen',
     logo: CodeGeneratorLogo,
   },
   {
@@ -86,13 +86,13 @@ export const PRODUCTS: {
   {
     children: 'Config',
     title: 'One configuration for all your GraphQL projects',
-    href: 'https://www.the-guild.dev/graphql/config',
+    href: 'https://the-guild.dev/graphql/config',
     logo: ConfigLogo,
   },
   {
     children: 'Scalars',
     title: 'Common custom GraphQL Scalars for precise type-safe GraphQL schemas',
-    href: 'https://www.the-guild.dev/graphql/scalars',
+    href: 'https://the-guild.dev/graphql/scalars',
     logo: ScalarsLogo,
   },
   {
@@ -122,7 +122,7 @@ export const PRODUCTS: {
   {
     children: 'SOFA',
     title: 'Generate RESTful APIs from your GraphQL Server',
-    href: 'https://www.the-guild.dev/graphql/sofa-api',
+    href: 'https://the-guild.dev/graphql/sofa-api',
     logo: SofaLogo,
   },
   {
@@ -134,7 +134,7 @@ export const PRODUCTS: {
   {
     children: 'Angular',
     title: 'A fully-featured GraphQL client for Angular',
-    href: 'https://www.the-guild.dev/graphql/apollo-angular',
+    href: 'https://the-guild.dev/graphql/apollo-angular',
     logo: AngularLogo,
   },
   {

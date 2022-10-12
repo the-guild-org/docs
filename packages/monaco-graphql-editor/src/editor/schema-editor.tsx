@@ -14,7 +14,7 @@ export type SchemaEditorProps = SchemaServicesOptions & {
 } & Omit<EditorProps, 'language'>;
 
 function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEditorApi>) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const { languageService, setMonaco, setEditor, editorApi, editorRef, setSchema } = useSchemaServices(props);
   useImperativeHandle(ref, () => editorApi, [editorRef, languageService]);
 
@@ -83,7 +83,7 @@ function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEdit
   return (
     <MonacoEditor
       height="70vh"
-      theme={theme === 'dark' ? 'vs-dark' : 'light'}
+      theme={resolvedTheme === 'dark' ? 'vs-dark' : 'light'}
       {...props}
       beforeMount={handleBeforeMount}
       onMount={handleMount}

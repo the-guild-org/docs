@@ -25,6 +25,9 @@ const config: StorybookConfig = {
     'storybook-dark-mode', // addon to have toolbar for dark/light mode
     'storybook-addon-swc',
   ],
+  typescript: {
+    reactDocgen: false,
+  },
   env(config: Record<string, unknown>) {
     return {
       ...config,

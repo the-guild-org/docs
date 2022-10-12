@@ -50,9 +50,7 @@ export const EcosystemList = forwardRef<HTMLDivElement>(function EcosystemList(_
                   gap-3
                   rounded-lg
                   p-2
-                  !no-underline
                   opacity-60
-                  outline-none
                   hover:bg-gray-100
                   hover:opacity-100
                   dark:hover:bg-gray-700

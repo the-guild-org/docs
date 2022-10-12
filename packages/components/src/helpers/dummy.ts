@@ -15,7 +15,6 @@ import {
   IMarketplaceListProps,
   IMarketplaceSearchProps,
   ISchemaPageProps,
-  ISubheaderProps,
 } from '../types/components';
 import { CardsColorfulProps } from '../components/cards-colorful';
 

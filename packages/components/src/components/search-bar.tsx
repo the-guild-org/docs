@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useState, useRef, useCallback, createElement, ReactElement, ReactNode } from 'react';
-import algoliaSearch from 'algoliasearch/lite.js';
+import algoliaSearch from 'algoliasearch';
 import { InstantSearch, connectHits, connectSearchBox, connectStateResults } from 'react-instantsearch-dom';
 import { Hit, SearchBoxProvided, StateResultsProvided } from 'react-instantsearch-core';
 import clsx from 'clsx';
@@ -288,11 +288,8 @@ const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }):
                   bg-gray-100
                   px-5
                   py-3
-                  no-underline
-                  outline-none
                   last:mb-0
                   hover:![background:var(--color)]
-                  focus:ring
                   dark:bg-neutral-800
                 "
               >

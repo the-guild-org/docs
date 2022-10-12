@@ -8,13 +8,13 @@ import { useTheme } from 'nextra-theme-docs';
 let id = 0;
 
 export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [svg, setSVG] = useState('');
 
   useEffect(() => {
     mermaid.initialize({
       startOnLoad: true,
-      theme: theme as Config['theme'],
+      theme: resolvedTheme as Config['theme'],
       fontFamily: 'inherit',
     });
     try {
@@ -23,7 +23,7 @@ export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
     } catch (error) {
       console.error('Error while rendering mermaid', error);
     }
-  }, [theme, chart]);
+  }, [resolvedTheme, chart]);
 
   return <div className="mt-6 flex justify-center" dangerouslySetInnerHTML={{ __html: svg }} />;
 };

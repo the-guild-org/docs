@@ -25,7 +25,7 @@ export const Modal = ({
     }
 
     return typeof description === 'object' ? (
-      <Anchor className="inline-flex gap-x-1.5 transition hover:opacity-60" {...description}>
+      <Anchor className="inline-flex gap-x-1.5 hover:opacity-60" {...description}>
         <p className="line-clamp-1">{description.children}</p>
         <ExternalLinkIcon className="h-4 w-4 shrink-0" />
       </Anchor>
