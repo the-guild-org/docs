@@ -16,6 +16,7 @@ export {
   Navbar,
 } from 'nextra-theme-docs';
 export * from './types/components';
+export * from './mermaid';
 export { default as Giscus } from '@giscus/react';
 export { defineConfig } from './define-config';
 export { fetchPackageInfo } from './npm';
