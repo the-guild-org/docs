@@ -56,12 +56,15 @@ export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
       },
     });
 
-    setSvg(() =>
-      mermaid.render(
+    try {
+      const svg = mermaid.render(
         id.replace(/[^a-zA-Z]+/g, ''), // strip special chars from useId
         `%%{init:${theme}}%%\n${chart}` // apply theme and supply chart
-      )
-    );
+      );
+      setSvg(svg);
+    } catch (error) {
+      console.error('Error while rendering mermaid', error);
+    }
   }, [resolvedTheme, id, chart]);
 
   return <div className="mt-6 flex justify-center" dangerouslySetInnerHTML={{ __html: svg }} />;
