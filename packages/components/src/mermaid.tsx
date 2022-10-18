@@ -36,6 +36,15 @@ export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
             ? '#cbd5e1' // slate-300
             : '#1e293b', // slate-800
 
+        secondaryColor:
+          resolvedTheme === 'dark'
+            ? '#475569' // slate-600
+            : '#f1f5f9', // slate-100
+        secondaryBorderColor:
+          resolvedTheme === 'dark'
+            ? '#f1f5f9' // slate-100
+            : '#475569', // slate-600
+
         tertiaryColor:
           resolvedTheme === 'dark'
             ? '#475569' // slate-600
