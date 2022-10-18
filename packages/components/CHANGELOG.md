@@ -1,5 +1,19 @@
 # @theguild/components
 
+## 4.2.5
+
+### Patch Changes
+
+- [#508](https://github.com/the-guild-org/the-guild-components/pull/508) [`9ae4126`](https://github.com/the-guild-org/the-guild-components/commit/9ae412694529c689f6b34ba9a50f5f05b11c0cb5) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.0.0-beta.30` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0) (from `2.0.0-beta.29`, in `dependencies`)
+
+- [#509](https://github.com/the-guild-org/the-guild-components/pull/509) [`d31f321`](https://github.com/the-guild-org/the-guild-components/commit/d31f321bb7d0eaa80f90615054564be89cfd5d71) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra-theme-docs@2.0.0-beta.30` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0) (from `2.0.0-beta.29`, in `dependencies`)
+
+- [#515](https://github.com/the-guild-org/the-guild-components/pull/515) [`79a1c1e`](https://github.com/the-guild-org/the-guild-components/commit/79a1c1e78ef7bc962a157350e612f584f6e761f5) Thanks [@enisdenjo](https://github.com/enisdenjo)! - Export mermaid component from components index
+
 ## 4.2.4
 
 ### Patch Changes

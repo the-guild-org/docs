@@ -11,7 +11,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@theguild/components": "4.2.4",
+    "@theguild/components": "4.2.5",
     "next": "12.3.1",
     "next-mdx-remote": "4.1.0",
     "react": "18.2.0",
