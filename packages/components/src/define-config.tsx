@@ -56,7 +56,12 @@ export function defineConfig(config: DocsThemeConfig & { siteName?: string }): D
         siteName,
         titleTemplate: `%s – ${siteName}`,
         description: frontMatter.description || `${siteName} Documentation`,
-        images: [{ url: frontMatter.image }],
+        images: [
+          {
+            url: frontMatter.image,
+            alt: frontMatter.description || frontMatter.title,
+          },
+        ],
         twitter: {
           cardType: 'summary_large_image',
           site: 'https://the-guild.dev',
