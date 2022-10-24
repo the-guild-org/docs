@@ -1,5 +1,35 @@
 # @theguild/components
 
+## 4.2.6
+
+### Patch Changes
+
+- [#511](https://github.com/the-guild-org/the-guild-components/pull/511) [`c212397`](https://github.com/the-guild-org/the-guild-components/commit/c2123970faa0e57e05604c7dcd135189c6a8eeaf) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@radix-ui/react-navigation-menu@1.1.1` ↗︎](https://www.npmjs.com/package/@radix-ui/react-navigation-menu/v/1.1.1) (from `1.0.0`, in `dependencies`)
+
+- [#518](https://github.com/the-guild-org/the-guild-components/pull/518) [`abd78c4`](https://github.com/the-guild-org/the-guild-components/commit/abd78c4cfec4a21ca053bc2ff4f3b27d49f477b9) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@algolia/autocomplete-js@1.7.2` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.7.2) (from `1.7.1`, in `dependencies`)
+  - Updated dependency [`@algolia/autocomplete-plugin-algolia-insights@1.7.2` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.7.2) (from `1.7.1`, in `dependencies`)
+  - Updated dependency [`@algolia/autocomplete-plugin-query-suggestions@1.7.2` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.7.2) (from `1.7.1`, in `dependencies`)
+  - Updated dependency [`@algolia/autocomplete-theme-classic@1.7.2` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.7.2) (from `1.7.1`, in `dependencies`)
+
+- [#519](https://github.com/the-guild-org/the-guild-components/pull/519) [`9c853bb`](https://github.com/the-guild-org/the-guild-components/commit/9c853bbb45426967ec44035b6ed78da29ba2ece8) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.0.0-beta.31` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0) (from `2.0.0-beta.30`, in `dependencies`)
+
+- [#520](https://github.com/the-guild-org/the-guild-components/pull/520) [`085b815`](https://github.com/the-guild-org/the-guild-components/commit/085b8156f874ebfa632d0f94862da62f654012f4) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.0.0-beta.36` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0) (from `2.0.0-beta.31`, in `dependencies`)
+  - Updated dependency [`nextra-theme-docs@2.0.0-beta.36` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0) (from `2.0.0-beta.30`, in `dependencies`)
+
+- [#521](https://github.com/the-guild-org/the-guild-components/pull/521) [`d919ecc`](https://github.com/the-guild-org/the-guild-components/commit/d919ecc66897da93702bf8790aa44576a95d8549) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`react-instantsearch-dom@6.37.0` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.37.0) (from `6.36.0`, in `dependencies`)
+
+- [#517](https://github.com/the-guild-org/the-guild-components/pull/517) [`d6dec03`](https://github.com/the-guild-org/the-guild-components/commit/d6dec03a1bfb20b543fea772ed52c3a3c6e5e389) Thanks [@enisdenjo](https://github.com/enisdenjo)! - Themed mermaid and improvements
+
 ## 4.2.5
 
 ### Patch Changes
