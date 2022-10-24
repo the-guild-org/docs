@@ -2,17 +2,14 @@
   "index": {
     "title": "Home",
     "type": "page",
-    "hidden": true,
+    "display": "hidden",
     "theme": {
       "layout": "raw"
     }
   },
   "docs": {
     "title": "Docs",
-    "type": "page",
-    "theme": {
-      "toc": true
-    }
+    "type": "page"
   },
   "contact-us-link": {
     "title": "Contact Us",

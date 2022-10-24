@@ -7,12 +7,7 @@ export const PACKAGE_NAME = '@envelop/core'
 
 export const getStaticProps = async () => {
   const { readme } = await fetchPackageInfo(PACKAGE_NAME)
-  const mdx = await compileMdx(readme, {
-    mdxOptions: {
-      outputFormat: 'function-body',
-      jsx: false
-    }
-  })
+  const mdx = await compileMdx(readme)
   return {
     props: {
       ssg: mdx.result

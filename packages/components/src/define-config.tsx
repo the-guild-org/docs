@@ -1,7 +1,7 @@
 import { DocsThemeConfig, Navbar } from 'nextra-theme-docs';
 import { FooterExtended, mdxComponents, Header } from './components';
 
-const REQUIRED_PROPERTIES: (keyof DocsThemeConfig)[] = ['docsRepositoryBase', 'head', 'titleSuffix'];
+const REQUIRED_PROPERTIES: (keyof DocsThemeConfig)[] = ['docsRepositoryBase', 'getNextSeoProps'];
 
 export function defineConfig(config: DocsThemeConfig): DocsThemeConfig {
   for (const prop of REQUIRED_PROPERTIES) {
@@ -38,6 +38,7 @@ export function defineConfig(config: DocsThemeConfig): DocsThemeConfig {
     project: {
       link: `${url.origin}/${org}/${repoName}`, // GitHub link in the navbar
     },
+    head: null,
     ...config,
     components: {
       ...mdxComponents,
