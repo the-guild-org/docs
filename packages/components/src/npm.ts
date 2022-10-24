@@ -50,6 +50,8 @@ async function tryRemoteReadme(repo: string, path: string) {
   }
 }
 
+const NO_NPM_README_PLACEHOLDER = 'ERROR: No README data found!';
+
 export const fetchPackageInfo = async (
   packageName: string,
   githubReadme?: {
@@ -77,16 +79,17 @@ export const fetchPackageInfo = async (
   cache[packageName] = {
     readme:
       readmeContent ||
-      readme ||
+      (readme !== NO_NPM_README_PLACEHOLDER && readme) ||
       // for some reason top level "readme" can be empty string, so we get the latest version readme
       Object.values(packageInfo.versions as { readme?: string; version: string }[])
         .reverse()
         .find(curr => {
-          const isReadmeExist = curr.readme && curr.readme !== 'ERROR: No README data found!';
+          const isReadmeExist = curr.readme && curr.readme !== NO_NPM_README_PLACEHOLDER;
           if (isReadmeExist) {
             return semver.lte(curr.version, latestVersion);
           }
-        })?.readme,
+        })?.readme ||
+      '',
     createdAt: time.created,
     updatedAt: time.modified,
     description,

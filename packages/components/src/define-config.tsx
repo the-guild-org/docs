@@ -1,9 +1,9 @@
-import { DocsThemeConfig, Navbar } from 'nextra-theme-docs';
+import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
 import { FooterExtended, mdxComponents, Header } from './components';
 
-const REQUIRED_PROPERTIES: (keyof DocsThemeConfig)[] = ['docsRepositoryBase', 'getNextSeoProps'];
+const REQUIRED_PROPERTIES: (keyof DocsThemeConfig | 'siteName')[] = ['docsRepositoryBase', 'siteName'];
 
-export function defineConfig(config: DocsThemeConfig): DocsThemeConfig {
+export function defineConfig(config: DocsThemeConfig & { siteName?: string }): DocsThemeConfig {
   for (const prop of REQUIRED_PROPERTIES) {
     if (!config[prop]) {
       throw new Error(`Missing required "${prop}" property`);
@@ -43,6 +43,32 @@ export function defineConfig(config: DocsThemeConfig): DocsThemeConfig {
     components: {
       ...mdxComponents,
       ...config.components,
+    },
+    getNextSeoProps() {
+      // eslint-disable-next-line react-hooks/rules-of-hooks -- false positive
+      const { frontMatter } = useConfig();
+      const { siteName } = config;
+      const nextSeoProps = config.getNextSeoProps?.();
+      if (!siteName) {
+        return nextSeoProps || {};
+      }
+      return {
+        siteName,
+        titleTemplate: `%s – ${siteName}`,
+        description: frontMatter.description || `${siteName} Documentation`,
+        images: [{ url: frontMatter.image }],
+        twitter: {
+          cardType: 'summary_large_image',
+          site: 'https://the-guild.dev',
+          handle: '@TheGuildDev',
+        },
+        ...nextSeoProps,
+        additionalMetaTags: [
+          { content: siteName, name: 'apple-mobile-web-app-title' },
+          { content: siteName, name: 'application-name' },
+          ...(nextSeoProps?.additionalMetaTags || []),
+        ],
+      };
     },
   };
 }

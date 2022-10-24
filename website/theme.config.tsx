@@ -1,23 +1,13 @@
 /* eslint sort-keys: error */
-import { defineConfig, useConfig } from '@theguild/components';
+import { defineConfig } from '@theguild/components';
 
-const SITE_NAME = 'Guild Docs';
+const siteName = 'Guild Docs';
 
 export default defineConfig({
   docsRepositoryBase: 'https://github.com/the-guild-org/the-guild-components/tree/main/website', // base URL for the docs repository
-  getNextSeoProps() {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { frontMatter } = useConfig();
-    return {
-      additionalLinkTags: [{ href: '/fav.ico', rel: 'shortcut icon' }],
-      additionalMetaTags: [
-        { content: 'The Guild Docs Example', name: 'apple-mobile-web-app-title' },
-        { content: 'The Guild Docs Example', name: 'application-name' },
-      ],
-      description: frontMatter.description || `${SITE_NAME} Documentation`,
-      titleTemplate: `%s – ${SITE_NAME}`,
-    };
-  },
+  getNextSeoProps: () => ({
+    additionalLinkTags: [{ href: '/fav.ico', rel: 'shortcut icon' }],
+  }),
   logo: (
     <>
       <svg
@@ -40,11 +30,12 @@ export default defineConfig({
         />
       </svg>
       <div>
-        <h1 className="text-sm font-medium">{SITE_NAME}</h1>
+        <h1 className="text-sm font-medium">{siteName}</h1>
         <h2 className="text-xs">Just document it</h2>
       </div>
     </>
   ),
+  siteName,
 });
 
 // const defaultSeo: AppSeoProps = {
