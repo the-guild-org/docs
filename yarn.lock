@@ -3253,10 +3253,10 @@
   dependencies:
     prettier-plugin-sh "^0.12.8"
 
-"@theguild/tailwind-config@0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@theguild/tailwind-config/-/tailwind-config-0.1.3.tgz#fbd3b438c89a36f6bae35023c79dc129a6263d7c"
-  integrity sha512-kUkxM5NJeBczrC+go4pGD2sKlFSV7B2KuMjqP3LvyZOJYiDTCUargL9X7j4C0EsIhf3ktD6FLuEyk4u82viL2w==
+"@theguild/tailwind-config@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@theguild/tailwind-config/-/tailwind-config-0.2.0.tgz#bd89d57fe520b9d139025ce809edfff3a14764ad"
+  integrity sha512-W6IO9nt5XMFf9vcT1pXhzd0g5hJ55Pknvoh3TSL29MoXjCBKYSxVbYGRbBRy78yZ8mrAvG9yTGiePAGUlW+7lw==
   dependencies:
     autoprefixer "^10.4.12"
     cssnano "^5.1.13"
@@ -10279,10 +10279,10 @@ next@12.3.1:
     "@next/swc-win32-ia32-msvc" "12.3.1"
     "@next/swc-win32-x64-msvc" "12.3.1"
 
-nextra-theme-docs@2.0.0-beta.35:
-  version "2.0.0-beta.35"
-  resolved "https://registry.yarnpkg.com/nextra-theme-docs/-/nextra-theme-docs-2.0.0-beta.35.tgz#b1f57791c5a5cd206d37d1c339b7d78e1df53db1"
-  integrity sha512-7MpJ9KchZc4mpKyHlUUoc2EUipu1/j0oYLtYf11YtWc37oj8S6s9avmDmaz5bMtcCATv8o1Buizfk7Anch2hew==
+nextra-theme-docs@2.0.0-beta.36:
+  version "2.0.0-beta.36"
+  resolved "https://registry.yarnpkg.com/nextra-theme-docs/-/nextra-theme-docs-2.0.0-beta.36.tgz#d8eee237050bfffe76796477074d1908f37bc593"
+  integrity sha512-FIKdox/n5s+q9ZVdWH5zV1xwz1ZWFhzle7yjE5D7/l5nQMK+K/9RXY7TT5fshRacRPJL/SJzd+fEXQ3SakUURg==
   dependencies:
     "@headlessui/react" "^1.6.6"
     "@mdx-js/react" "^2.1.2"
@@ -10299,10 +10299,10 @@ nextra-theme-docs@2.0.0-beta.35:
     parse-git-url "^1.0.1"
     scroll-into-view-if-needed "^2.2.29"
 
-nextra@2.0.0-beta.31:
-  version "2.0.0-beta.31"
-  resolved "https://registry.yarnpkg.com/nextra/-/nextra-2.0.0-beta.31.tgz#bb6c1b2ec6c73c20e502f8642b5b8ccdfed413c0"
-  integrity sha512-J1CzMoZWX9bH6XsiUxIj7PjyYj0iRspnkSVPYPjvxf4nkRi+eywM3DHszFe4RVw1oLpio5n1A/KMSgodQpN2iw==
+nextra@2.0.0-beta.36:
+  version "2.0.0-beta.36"
+  resolved "https://registry.yarnpkg.com/nextra/-/nextra-2.0.0-beta.36.tgz#cf755780cfe9abf9427237f78426d4f9cd8fdcdf"
+  integrity sha512-j6XBAfOqcmzH5r7i4I6d5O2D06oGJ9qz4RcVlgST8giTatlXo4j2ekFDbReF4P0+WEXfb4G6lFpxINf3nbhkAw==
   dependencies:
     "@mdx-js/mdx" "^2.1.3"
     "@napi-rs/simple-git" "^0.1.8"
