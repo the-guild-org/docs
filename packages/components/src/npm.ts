@@ -74,7 +74,7 @@ export const fetchPackageInfo = async (
 
   const { readme, time, description } = packageInfo;
   const latestVersion = packageInfo['dist-tags'].latest;
-  const readmeContent = githubReadme ? await tryRemoteReadme(githubReadme.repo, githubReadme.path) : readme;
+  const readmeContent = githubReadme && await tryRemoteReadme(githubReadme.repo, githubReadme.path);
 
   cache[packageName] = {
     readme:
