@@ -19,6 +19,7 @@ export default defineConfig([
       '.png': 'copy',
     },
     outExtension: () => ({ js: '.js' }),
+    external: ['semver'],
     ...options,
   },
   {
