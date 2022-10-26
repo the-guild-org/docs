@@ -29,7 +29,7 @@
     "@tailwindcss/line-clamp": "0.4.2",
     "@theguild/prettier-config": "0.1.1",
     "@theguild/tailwind-config": "0.2.0",
-    "@types/react": "18.0.21",
+    "@types/react": "18.0.23",
     "@types/react-instantsearch-core": "6.26.2",
     "@types/react-instantsearch-dom": "6.12.3",
     "@types/react-paginate": "7.1.1",
