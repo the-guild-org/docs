@@ -1,5 +1,30 @@
 # @theguild/components
 
+## 4.2.7
+
+### Patch Changes
+
+- [#510](https://github.com/the-guild-org/the-guild-components/pull/510) [`548285d`](https://github.com/the-guild-org/the-guild-components/commit/548285da26e74e1b1b53a8393eb4d44cc89f2d10) Thanks [@enisdenjo](https://github.com/enisdenjo)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.0.0-beta.30` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0) (from `2.0.0-beta.29`, in `dependencies`)
+  - Updated dependency [`nextra-theme-docs@2.0.0-beta.30` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0) (from `2.0.0-beta.29`, in `dependencies`)
+
+- [#532](https://github.com/the-guild-org/the-guild-components/pull/532) [`f1d5531`](https://github.com/the-guild-org/the-guild-components/commit/f1d5531b0daf29494307b693e8a39cf1969bbf30) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.0.0-beta.38` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0) (from `2.0.0-beta.36`, in `dependencies`)
+
+- [#533](https://github.com/the-guild-org/the-guild-components/pull/533) [`c6f81f7`](https://github.com/the-guild-org/the-guild-components/commit/c6f81f78d0a0226b7b1a07b5ba11fbbafd0ce017) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra-theme-docs@2.0.0-beta.38` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0) (from `2.0.0-beta.36`, in `dependencies`)
+
+- [#535](https://github.com/the-guild-org/the-guild-components/pull/535) [`943901e`](https://github.com/the-guild-org/the-guild-components/commit/943901e0500c23c50a5e3e5be2f76390b4ad551a) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`react-instantsearch-dom@6.38.0` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.38.0) (from `6.37.0`, in `dependencies`)
+
+- [#539](https://github.com/the-guild-org/the-guild-components/pull/539) [`e9ac00d`](https://github.com/the-guild-org/the-guild-components/commit/e9ac00dd526219f898acf033cd9f763a890c4005) Thanks [@B2o5T](https://github.com/B2o5T)! - reduce bundle size by including `semver` as `external` in tsup
+
+- [#528](https://github.com/the-guild-org/the-guild-components/pull/528) [`cab9270`](https://github.com/the-guild-org/the-guild-components/commit/cab9270cdbda4d4e1e7914e947afa8907b1b3d9e) Thanks [@B2o5T](https://github.com/B2o5T)! - improve open graphs tags
+
 ## 4.2.6
 
 ### Patch Changes
