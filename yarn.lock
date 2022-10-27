@@ -10323,10 +10323,10 @@ nextra-theme-docs@2.0.0-beta.39:
     next-themes "^0.2.0-beta.2"
     scroll-into-view-if-needed "^2.2.29"
 
-nextra@2.0.0-beta.39:
-  version "2.0.0-beta.39"
-  resolved "https://registry.yarnpkg.com/nextra/-/nextra-2.0.0-beta.39.tgz#79ff75e058728e81a5b99bf4002dcaf45915f3fe"
-  integrity sha512-HYGeQQ2Y010QIwUlIcpDCfDLrFvF84AXNWkrzPzLl42BB5o56R2D8GjbQp9xzYW9+ZEixcKNu2eKU2QjGLcA+Q==
+nextra@2.0.0-beta.40:
+  version "2.0.0-beta.40"
+  resolved "https://registry.yarnpkg.com/nextra/-/nextra-2.0.0-beta.40.tgz#b0460a27346c6a6d9bc34edf16149c9fff62ae6a"
+  integrity sha512-uiVJ0/bcknmJZ3s+TYBfZh19ar1UEj/bMpo0fRaeKZ9raqW2oyUe8mbCs/gpycp+kEVQH5+9Mc8Fc8zPXwYSeA==
   dependencies:
     "@mdx-js/mdx" "^2.1.3"
     "@napi-rs/simple-git" "^0.1.8"
