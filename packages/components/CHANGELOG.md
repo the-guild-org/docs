@@ -1,5 +1,16 @@
 # @theguild/components
 
+## 4.2.8
+
+### Patch Changes
+
+- [#541](https://github.com/the-guild-org/the-guild-components/pull/541) [`e0b14cc`](https://github.com/the-guild-org/the-guild-components/commit/e0b14ccc4194cf821a75dfae366fa235968ecf39) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.0.0-beta.39` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0) (from `2.0.0-beta.38`, in `dependencies`)
+  - Updated dependency [`nextra-theme-docs@2.0.0-beta.39` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0) (from `2.0.0-beta.38`, in `dependencies`)
+
+- [#541](https://github.com/the-guild-org/the-guild-components/pull/541) [`e0b14cc`](https://github.com/the-guild-org/the-guild-components/commit/e0b14ccc4194cf821a75dfae366fa235968ecf39) Thanks [@B2o5T](https://github.com/B2o5T)! - update nextra to 2-beta.39
+
 ## 4.2.7
 
 ### Patch Changes
