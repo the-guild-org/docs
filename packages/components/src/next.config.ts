@@ -44,6 +44,7 @@ export const withGuildDocs = ({
     withVideos(
       withNextra({
         reactStrictMode: true,
+        poweredByHeader: false,
         // TODO: Enable after https://github.com/vercel/next.js/issues/40750 will be fixed
         // swcMinify: true,
         basePath: process.env.NEXT_BASE_PATH,
