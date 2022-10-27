@@ -33,7 +33,7 @@ export function defineConfig(config: DocsThemeConfig & { siteName?: string }): D
       component: null,
     },
     sidebar: {
-      defaultMenuCollapsed: true,
+      defaultMenuCollapseLevel: 1,
     },
     project: {
       link: `${url.origin}/${org}/${repoName}`, // GitHub link in the navbar
