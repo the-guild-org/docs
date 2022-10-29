@@ -1,39 +1,55 @@
+/* eslint react/no-unknown-property: ['error', { ignore: ['tw'] }] */
 import { ComponentProps } from 'react';
 import { NextRequest } from 'next/server';
 import { ImageResponse } from '@vercel/og';
 import { PRODUCTS } from '@theguild/components/products';
+import { GuildLogo, TheGuild } from '@theguild/components/logos';
 
 export const config = {
   runtime: 'experimental-edge',
 };
 
-const products = Object.fromEntries(PRODUCTS.map(({ children, ...product }) => [children, product]));
+const products = Object.fromEntries([
+  ...PRODUCTS.map(({ children, ...product }) => [children.toUpperCase(), product]),
+  ['GUILD', { logo: GuildLogo, children: 'The Guild' }],
+]);
 
-const englishJoinWords = words => new Intl.ListFormat('en-US', { type: 'disjunction' }).format(words);
+const englishJoinWords = (words: string[]): string =>
+  new Intl.ListFormat('en-US', { type: 'disjunction' }).format(words);
 
 const ALLOWED_PRODUCT_NAMES = englishJoinWords(Object.keys(products));
 
 export default function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-
-    // ?title=<title>
-    const title = searchParams.get('title')?.slice(0, 100) || 'My default title';
     const productName = searchParams.get('product');
     const product = productName && products[productName];
+
     if (!product) {
       throw new Error(`Unknown product name "${productName}".\nAllowed product names: ${ALLOWED_PRODUCT_NAMES}`);
     }
+    // ?title=<title>
+    const title = searchParams.get('title')?.slice(0, 100) || 'use query string "title"';
+    const extra = searchParams.get('extra');
+    const IS_GUILD = productName === 'GUILD';
 
     return new ImageResponse(
       (
         <div tw="flex bg-neutral-900 h-full flex-col w-full items-center justify-center">
-          <LeftCircle tw="absolute left-0 top-0" />
-          <RightCircle tw="absolute right-0" />
-          <RightSmallCircle tw="absolute right-0" />
-          <product.logo style={{ transform: 'scale(2.5)' }} />
-          <span tw="font-bold text-7xl text-white my-14 mb-10">{productName}</span>
-          <span tw="font-bold text-5xl text-white">{title}</span>
+          <LeftCircle tw="absolute left-0 top-0" color={product.primaryColor} />
+          <RightCircle tw="absolute right-0" color={product.primaryColor} />
+          <RightSmallCircle tw="absolute right-0 opacity-80" color={shade(product.primaryColor, 100)} />
+          <product.logo style={{ transform: 'scale(2.5)' }} {...(IS_GUILD && { fill: 'white' })} />
+          <span tw="font-bold text-7xl text-white my-14 mb-10">{product.children}</span>
+          <span tw="font-bold text-5xl text-white mb-4">{title}</span>
+          <span tw="font-bold text-2xl text-white">{extra}</span>
+          {!IS_GUILD && (
+            <div tw="flex items-center mt-14">
+              {/* @ts-expect-error -- using `tw` is valid with vercel/og */}
+              <GuildLogo fill="#fff" tw="mr-1.5" />
+              <TheGuild fill="#fff" />
+            </div>
+          )}
         </div>
       )
     );
@@ -42,7 +58,41 @@ export default function handler(req: NextRequest) {
   }
 }
 
-const RightSmallCircle = (props: ComponentProps<'svg'>) => {
+function shade(color: string, amount: number): string | undefined {
+  if (!color) {
+    return;
+  }
+
+  let result = '';
+
+  if (color[0] == '#') {
+    color = color.slice(1);
+    result = '#';
+  }
+
+  const num = parseInt(color, 16);
+
+  let r = (num >> 16) + amount;
+
+  if (r > 255) r = 255;
+  else if (r < 0) r = 0;
+
+  let b = ((num >> 8) & 0x00ff) + amount;
+
+  if (b > 255) b = 255;
+  else if (b < 0) b = 0;
+
+  let g = (num & 0x0000ff) + amount;
+
+  if (g > 255) g = 255;
+  else if (g < 0) g = 0;
+
+  return result + (g | (b << 8) | (r << 16)).toString(16);
+}
+
+type CircleProps = ComponentProps<'svg'> & { color?: string; tw?: string };
+
+const RightSmallCircle = ({ color = '#f25c40', ...props }: CircleProps) => {
   return (
     <svg width="310" height="316" viewBox="0 0 310 316" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g filter="url(#filter0_b_1686_12556)">
@@ -72,8 +122,8 @@ const RightSmallCircle = (props: ComponentProps<'svg'>) => {
           y2="295.327"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F25C40" />
-          <stop offset="1" stopColor="#FF9E57" />
+          <stop stopColor={color} />
+          <stop offset="1" stopColor={shade(color, -50)} />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1686_12556"
@@ -83,15 +133,15 @@ const RightSmallCircle = (props: ComponentProps<'svg'>) => {
           y2="267.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F25C40" />
-          <stop offset="1" stopColor="#FF9E57" stopOpacity="0" />
+          <stop stopColor={color} />
+          <stop offset="1" stopColor={shade(color, -50)} stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>
   );
 };
 
-const RightCircle = (props: ComponentProps<'svg'>) => {
+const RightCircle = ({ color = '#7433ff', ...props }: CircleProps) => {
   return (
     <svg width="205" height="616" viewBox="0 0 205 616" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <circle cx="308" cy="308" r="308" fill="url(#paint0_linear_1686_12554)" />
@@ -104,15 +154,15 @@ const RightCircle = (props: ComponentProps<'svg'>) => {
           y2="337.493"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#7433FF" />
-          <stop offset="1" stopColor="#FFA3FD" />
+          <stop stopColor={shade(color, -50)} />
+          <stop offset="1" stopColor={color} />
         </linearGradient>
       </defs>
     </svg>
   );
 };
 
-const LeftCircle = (props: ComponentProps<'svg'>) => {
+const LeftCircle = ({ color = '#1cc8ee', ...props }: CircleProps) => {
   return (
     <svg width="572" height="584" viewBox="0 0 572 584" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g opacity="0.4" filter="url(#filter0_f_2101_15208)">
@@ -141,8 +191,8 @@ const LeftCircle = (props: ComponentProps<'svg'>) => {
           y2="682.861"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#47DEFF" />
-          <stop offset="1" stopColor="#9847FF" />
+          <stop stopColor={shade(color, 50)} />
+          <stop offset="1" stopColor={shade(color, 100)} />
         </linearGradient>
         <linearGradient
           id="paint1_linear_2101_15208"
@@ -152,8 +202,8 @@ const LeftCircle = (props: ComponentProps<'svg'>) => {
           y2="554.86"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#1CC8EE" />
-          <stop offset="1" stopColor="#9847FF" />
+          <stop stopColor={color} />
+          <stop offset="1" stopColor={shade(color, 100)} />
         </linearGradient>
       </defs>
     </svg>

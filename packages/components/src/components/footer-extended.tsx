@@ -68,8 +68,16 @@ const COMMUNITY: ILink[] = [
 ];
 
 const limitProductsTo = Math.ceil(PRODUCTS.length / 2);
-const PRODUCTS_COLUMN_1 = PRODUCTS.slice(0, limitProductsTo);
-const PRODUCTS_COLUMN_2 = PRODUCTS.slice(limitProductsTo);
+const PRODUCTS_COLUMN_1 = PRODUCTS.slice(0, limitProductsTo).map(({ children, href, title }) => ({
+  children,
+  href,
+  title,
+}));
+const PRODUCTS_COLUMN_2 = PRODUCTS.slice(limitProductsTo).map(({ children, href, title }) => ({
+  children,
+  href,
+  title,
+}));
 
 const Title = ({ children, ...props }: { children: ReactNode }): ReactElement => {
   return (
@@ -97,8 +105,7 @@ export const FooterExtended = ({
   const renderLinks = useCallback(
     (list: ILink[]) => (
       <ul className="m-0 mb-8 list-none p-0 last:mb-0">
-        {/* @ts-expect-error -- Property 'logo' does not exist on type 'ILink' */}
-        {list.map(({ logo, ...link }) => (
+        {list.map(link => (
           <li key={link.href} className="mb-3 last:mb-0">
             <Anchor
               className="

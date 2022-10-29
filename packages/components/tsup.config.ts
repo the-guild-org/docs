@@ -12,7 +12,8 @@ export default defineConfig([
     name: 'components',
     entryPoints: {
       index: 'src/index.ts',
-      products: 'src/helpers/products.tsx'
+      products: 'src/helpers/products.tsx',
+      logos: 'src/components/logos/index.ts',
     },
     loader: {
       '.png': 'copy',

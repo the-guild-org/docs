@@ -1,7 +1,7 @@
 import { ComponentProps, ReactElement } from 'react';
 
 export const GuildLogo = (props: ComponentProps<'svg'>): ReactElement => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="34" viewBox="0 0 32 34" fill="currentColor" {...props}>
+  <svg width="51" height="54" viewBox="0 0 32 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -11,7 +11,7 @@ export const GuildLogo = (props: ComponentProps<'svg'>): ReactElement => (
 );
 
 export const TheGuild = (props: ComponentProps<'svg'>): ReactElement => (
-  <svg width="47" height="25" viewBox="0 0 47 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg width="75" height="40" viewBox="0 0 47 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path d="M0.313477 2.77294H3.57946V10.6541H6.26751V2.77294H9.53349V0.163818H0.313477V2.77294Z" />
     <path d="M17.8588 0.163818V4.23889H13.5848V0.163818H10.9102V10.6541H13.5848V6.75386H17.8588V10.6541H20.5468V0.163818H17.8588Z" />
     <path d="M22.568 10.6541H30.6187V8.05842H25.2561V6.71352H29.6645V4.27923H25.2561V2.77294H30.6187V0.163818H22.568V10.6541Z" />
