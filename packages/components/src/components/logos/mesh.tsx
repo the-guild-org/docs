@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
+import { ComponentProps, ReactElement } from 'react';
 
-export const MeshLogo = ({ className }: { className?: string }): ReactElement => (
-  <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+export const MeshLogo = (props: ComponentProps<'svg'>): ReactElement => (
+  <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"

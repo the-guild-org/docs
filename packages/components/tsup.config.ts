@@ -12,14 +12,13 @@ export default defineConfig([
     name: 'components',
     entryPoints: {
       index: 'src/index.ts',
-      mermaid: 'src/mermaid.tsx',
+      products: 'src/helpers/products.tsx'
     },
-    splitting: false,
     loader: {
       '.png': 'copy',
     },
     outExtension: () => ({ js: '.js' }),
-    external: ['semver'],
+    external: ['semver', '@headlessui/react'],
     ...options,
   },
   {

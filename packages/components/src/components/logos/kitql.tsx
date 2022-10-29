@@ -1,14 +1,7 @@
-import { ReactElement } from 'react';
+import { ComponentProps, ReactElement } from 'react';
 
-export const KitQLLogo = ({ className }: { className?: string }): ReactElement => (
-  <svg
-    width="54"
-    height="54"
-    viewBox="0 0 217 217"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
+export const KitQLLogo = (props: ComponentProps<'svg'>): ReactElement => (
+  <svg width="54" height="54" viewBox="0 0 217 217" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"

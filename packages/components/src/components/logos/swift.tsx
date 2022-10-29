@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
+import { ComponentProps, ReactElement } from 'react';
 
-export const SwiftLogo = ({ className }: { className?: string }): ReactElement => (
-  <svg width="58" height="62" viewBox="0 0 58 62" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+export const SwiftLogo = (props: ComponentProps<'svg'>): ReactElement => (
+  <svg width="58" height="62" viewBox="0 0 58 62" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       d="M32.3304 13C46.8327 23.0476 42.1421 34.112 42.1421 34.112C42.1421 34.112 46.2656 38.8468 44.6064 43C44.6064 43 42.9017 40.1028 40.0559 40.1028C37.308 40.1028 35.6943 43 30.1497 43C17.8282 43 12 32.5171 12 32.5171C23.0963 39.9707 30.6712 34.6901 30.6712 34.6901C25.6656 31.725 15.0314 17.5885 15.0314 17.5885C24.3005 25.6237 28.3015 27.7324 28.3015 27.7324C25.9072 25.7236 19.2004 15.8972 19.2004 15.8972C24.5665 21.4313 35.2183 29.1346 35.2183 29.1346C38.2602 20.6177 32.3304 13 32.3304 13Z"
       fill="url(#paint0_linear)"

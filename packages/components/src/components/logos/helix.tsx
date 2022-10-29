@@ -1,3 +1,3 @@
-import { ReactElement } from 'react';
+import { ComponentProps, ReactElement } from 'react';
 
-export const HelixLogo = ({ className }: { className?: string }): ReactElement => <svg className={className} />;
+export const HelixLogo = (props: ComponentProps<'svg'>): ReactElement => <svg {...props} />;

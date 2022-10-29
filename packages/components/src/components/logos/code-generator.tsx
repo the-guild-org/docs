@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
+import { ComponentProps, ReactElement } from 'react';
 
-export const CodeGeneratorLogo = ({ className }: { className?: string }): ReactElement => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="54" viewBox="0 0 50 54" fill="none" className={className}>
+export const CodeGeneratorLogo = (props: ComponentProps<'svg'>): ReactElement => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="54" viewBox="0 0 50 54" fill="none" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
