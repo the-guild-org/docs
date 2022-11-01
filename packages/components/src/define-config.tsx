@@ -40,6 +40,11 @@ export function defineConfig(config: DocsThemeConfig & { siteName?: string }): D
     },
     head: null,
     ...config,
+    // remove chat option when https://github.com/shuding/nextra/pull/947 will be merged
+    chat: {
+      icon: null,
+      ...config.chat,
+    },
     components: {
       ...mdxComponents,
       ...config.components,
