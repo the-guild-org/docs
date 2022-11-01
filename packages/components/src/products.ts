@@ -57,7 +57,7 @@ export const PRODUCTS: Record<
 > = {
   HIVE: {
     name: 'Hive',
-    title: 'Schema Registry for your GraphQL Workflows',
+    title: 'Schema registry for your GraphQL workflows',
     href: 'https://graphql-hive.com',
     logo: HiveLogo,
     primaryColor: '#ffb21d',
@@ -85,14 +85,14 @@ export const PRODUCTS: Record<
   },
   CODEGEN: {
     name: 'Code Generator',
-    title: 'Generation of Typed Queries, Mutations, Subscriptions and Typed GraphQL resolvers',
+    title: 'Generation of typed queries, mutations, subscriptions and typed GraphQL resolvers',
     href: 'https://the-guild.dev/graphql/codegen',
     logo: CodeGeneratorLogo,
     primaryColor: '#0284c7',
   },
   MESH: {
     name: 'Mesh',
-    title: 'A fully-featured GraphQL Gateway framework',
+    title: 'A fully-featured GraphQL gateway framework',
     href: 'https://the-guild.dev/graphql/mesh',
     logo: MeshLogo,
     primaryColor: '#1bcbe2',
@@ -106,7 +106,7 @@ export const PRODUCTS: Record<
   },
   MODULES: {
     name: 'Modules',
-    title: 'Enterprise Grade Tooling For Your GraphQL Server',
+    title: 'Enterprise grade tooling for your GraphQL server',
     href: 'https://the-guild.dev/graphql/modules',
     logo: ModulesLogo,
     primaryColor: '#e535ab',
@@ -134,14 +134,14 @@ export const PRODUCTS: Record<
   },
   HELIX: {
     name: 'Helix',
-    title: 'A highly evolved GraphQL HTTP Server',
+    title: 'A highly evolved GraphQL HTTP server',
     href: 'https://graphql-helix.com',
     logo: HelixLogo,
     primaryColor: '#03a9f4',
   },
   SHIELD: {
     name: 'Shield',
-    title: 'GraphQL Permissions Framework For Complex Authorisation Systems',
+    title: 'GraphQL permissions framework for complex authorisation systems',
     href: 'https://graphql-shield.com',
     logo: ShieldLogo,
     primaryColor: '#699efc',
@@ -162,7 +162,7 @@ export const PRODUCTS: Record<
   },
   SOFA: {
     name: 'SOFA',
-    title: 'Generate RESTful APIs from your GraphQL Server',
+    title: 'Generate RESTful APIs from your GraphQL server',
     href: 'https://the-guild.dev/graphql/sofa-api',
     logo: SofaLogo,
     primaryColor: '#e873ff',
@@ -183,7 +183,7 @@ export const PRODUCTS: Record<
   },
   WHATSAPP: {
     name: 'WhatsApp',
-    title: 'Full Stack, open source tutorial',
+    title: 'Full stack, open source tutorial',
     href: 'https://github.com/Urigo/WhatsApp-Clone-Tutorial',
     logo: WhatsUpLogo,
     primaryColor: '#31eb14',
