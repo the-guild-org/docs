@@ -1,5 +1,5 @@
 export * from './components';
-export { PRODUCTS } from './helpers/products';
+export { PRODUCTS } from './products';
 export {
   type DocsThemeConfig,
   default,

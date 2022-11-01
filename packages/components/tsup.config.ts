@@ -12,7 +12,7 @@ export default defineConfig([
     name: 'components',
     entryPoints: {
       index: 'src/index.ts',
-      products: 'src/helpers/products.tsx',
+      products: 'src/products.ts',
       logos: 'src/components/logos/index.ts',
     },
     loader: {
