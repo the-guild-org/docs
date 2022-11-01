@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 4.3.0
+
+### Minor Changes
+
+- [#552](https://github.com/the-guild-org/the-guild-components/pull/552) [`fba5bf0`](https://github.com/the-guild-org/the-guild-components/commit/fba5bf0290b506cd7c88cd2f12bcb39a004e6776) Thanks [@B2o5T](https://github.com/B2o5T)! - add logos, products exports
+
 ## 4.2.9
 
 ### Patch Changes
