@@ -1,17 +1,22 @@
 import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
 import { FooterExtended, mdxComponents, Header } from './components';
+import { PRODUCTS, ProductType } from './products';
 
-const REQUIRED_PROPERTIES: (keyof DocsThemeConfig | 'siteName')[] = ['docsRepositoryBase', 'siteName'];
-
-export function defineConfig(config: DocsThemeConfig & { siteName?: string }): DocsThemeConfig {
-  for (const prop of REQUIRED_PROPERTIES) {
-    if (!config[prop]) {
-      throw new Error(`Missing required "${prop}" property`);
-    }
+export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteName: string }): DocsThemeConfig {
+  if (!siteName) {
+    throw new Error(`Missing required "siteName" property`);
   }
+  if (!config.docsRepositoryBase) {
+    throw new Error(`Missing required "docsRepositoryBase" property`);
+  }
+
   const url = new URL(config.docsRepositoryBase as string);
   const [, org, repoName] = url.pathname.split('/');
 
+  const product = PRODUCTS[siteName as ProductType];
+  if (product) {
+    siteName = product.name;
+  }
   return {
     editLink: {
       text: 'Edit this page on GitHub',
@@ -39,7 +44,21 @@ export function defineConfig(config: DocsThemeConfig & { siteName?: string }): D
       link: `${url.origin}/${org}/${repoName}`, // GitHub link in the navbar
     },
     head: null,
+    logo: product?.logo && (
+      <>
+        <product.logo className="mr-1.5 h-9 w-9" />
+        <div>
+          <h1 className="md:text-md text-sm font-medium">{product.name}</h1>
+          <h2 className="hidden text-xs sm:block">{product.title}</h2>
+        </div>
+      </>
+    ),
     ...config,
+    // remove chat option when https://github.com/shuding/nextra/pull/947 will be merged
+    chat: {
+      icon: null,
+      ...config.chat,
+    },
     components: {
       ...mdxComponents,
       ...config.components,
@@ -47,11 +66,7 @@ export function defineConfig(config: DocsThemeConfig & { siteName?: string }): D
     getNextSeoProps() {
       // eslint-disable-next-line react-hooks/rules-of-hooks -- false positive
       const { frontMatter } = useConfig();
-      const { siteName } = config;
       const nextSeoProps = config.getNextSeoProps?.();
-      if (!siteName) {
-        return nextSeoProps || {};
-      }
       return {
         siteName,
         titleTemplate: `%s – ${siteName}`,

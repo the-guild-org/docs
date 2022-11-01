@@ -1,27 +1,31 @@
 import { forwardRef, ReactElement } from 'react';
-import { PRODUCTS } from '../helpers/products';
+import { PRODUCTS } from '../products';
 import { Anchor } from './anchor';
 
 const productCategories = [
   {
     title: 'Build GraphQL servers',
-    items: PRODUCTS.filter(p =>
-      ['Yoga', 'Modules', 'Envelop', 'Mesh', 'Dataloader', 'LiveQuery', 'Scalars', 'SOFA'].includes(p.children)
-    ),
+    items: [PRODUCTS.YOGA, PRODUCTS.MODULES, PRODUCTS.ENVELOP, PRODUCTS.MESH, PRODUCTS.SCALARS, PRODUCTS.SOFA],
   },
   {
     title: 'Supercharge your workflow',
-    items: PRODUCTS.filter(p =>
-      ['Code Generator', 'Tools', 'Hive', 'Inspector', 'ESLint', 'Config', 'CLI'].includes(p.children)
-    ),
+    items: [
+      PRODUCTS.CODEGEN,
+      PRODUCTS.TOOLS,
+      PRODUCTS.HIVE,
+      PRODUCTS.INSPECTOR,
+      PRODUCTS.ESLINT,
+      PRODUCTS.CONFIG,
+      PRODUCTS.CLI,
+    ],
   },
   // {
   //   title: 'Manage your schemas',
-  //   items: PRODUCTS.filter((p) => ['Hive', 'Inspector'].includes(p.children)),
+  //   items: [PRODUCTS.HIVE, PRODUCTS.INSPECTOR],
   // },
   {
     title: 'Build great user experience',
-    items: PRODUCTS.filter(p => ['Swift', 'Angular', 'Stencil', 'KitQL'].includes(p.children)),
+    items: [PRODUCTS.SWIFT, PRODUCTS.ANGULAR, PRODUCTS.STENCIL, PRODUCTS.KITQL],
   },
 ];
 
@@ -40,7 +44,7 @@ export const EcosystemList = forwardRef<HTMLDivElement>(function EcosystemList(_
           <div className="flex flex-wrap">
             {category.items.map(product => (
               <Anchor
-                key={product.children}
+                key={product.name}
                 href={product.href}
                 className="
                   flex
@@ -59,7 +63,7 @@ export const EcosystemList = forwardRef<HTMLDivElement>(function EcosystemList(_
               >
                 <product.logo className="h-9 w-9 shrink-0" />
                 <span className="flex flex-col justify-center">
-                  <h4 className="m-0 text-sm font-semibold text-black dark:text-gray-300">{product.children}</h4>
+                  <h4 className="m-0 text-sm font-semibold text-black dark:text-gray-300">{product.name}</h4>
                   <p className="!mt-0 text-xs font-medium text-gray-900 dark:text-gray-400">{product.title}</p>
                 </span>
               </Anchor>

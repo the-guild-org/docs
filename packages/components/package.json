@@ -34,6 +34,19 @@
       "types": "./dist/*.d.ts"
     }
   },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/index.d.ts"
+      ],
+      "logos": [
+        "./dist/logos.d.ts"
+      ],
+      "products": [
+        "./dist/products.d.ts"
+      ]
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
