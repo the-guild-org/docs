@@ -48,7 +48,7 @@ export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteNa
       <>
         <product.logo className="mr-1.5 h-9 w-9" />
         <div>
-          <h1 className="md:text-md text-sm font-medium">{product.name}</h1>
+          <h1 className="md:text-md text-sm font-medium">GraphQL {product.name}</h1>
           <h2 className="hidden text-xs sm:block">{product.title}</h2>
         </div>
       </>
