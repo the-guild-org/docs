@@ -35,7 +35,7 @@
     "@types/remove-markdown": "0.3.1"
   },
   "resolutions": {
-    "@types/node": "18.11.8"
+    "@types/node": "18.11.9"
   },
   "exports": {
     ".": {
