@@ -1,8 +1,9 @@
-import { PackageCmd } from '@theguild/components'
+import { PackageCmd, useMDXComponents } from '@theguild/components'
 import { useSSG } from 'nextra/ssg'
 import { compileMdx } from 'nextra/compile'
 import { MDXRemote } from 'next-mdx-remote'
 import pkgJson from '../../../package.json'
+import pkgJsonFromComponents from '@theguild/components/package.json'
 
 # Installation
 
@@ -18,10 +19,10 @@ export async function getStaticProps() {
       JSON.stringify(
         {
           ...pkgJson,
-          dependencies: {
-            ...pkgJson.dependencies,
-            'next-mdx-remote': undefined
-          },
+          dependencies: Object.fromEntries([
+            ['@theguild/components', pkgJsonFromComponents.version],
+            ...Object.entries(pkgJson.dependencies).filter(([key]) => ['next', 'react', 'react-dom'].includes(key))
+          ]),
           devDependencies: pkgJson.devDependencies,
           nextBundleAnalysis: undefined
         },
@@ -40,7 +41,8 @@ export async function getStaticProps() {
 
 export function Dependencies() {
   const compiledSource = useSSG()
-  return <MDXRemote compiledSource={compiledSource} />
+  const components = useMDXComponents()
+  return <MDXRemote compiledSource={compiledSource} components={components} />
 }
 
 <Dependencies />

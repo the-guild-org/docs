@@ -8,17 +8,17 @@
     "build": "turbo run build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/style.css",
     "build-storybook": "storybook build",
-    "next:build": "cd website && yarn build && yarn start",
     "prettier": "prettier --write --list-different .",
     "lint:prettier": "prettier --check .",
     "lint": "eslint --ignore-path .gitignore .",
     "type-check": "tsc",
     "type-check:watch": "tsc --watch",
     "prepare": "husky install",
-    "prerelease": "yarn build",
+    "prerelease": "pnpm build",
     "release": "changeset publish"
   },
   "devDependencies": {
+    "@algolia/autocomplete-theme-classic": "1.7.2",
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.2",
     "@storybook/addon-essentials": "7.0.0-alpha.47",
@@ -36,6 +36,7 @@
     "@typescript-eslint/eslint-plugin": "5.42.0",
     "@typescript-eslint/parser": "5.42.0",
     "concurrently": "7.5.0",
+    "css-loader": "6.7.1",
     "eslint": "8.26.0",
     "eslint-plugin-react": "7.31.10",
     "eslint-plugin-react-hooks": "4.6.0",
@@ -44,6 +45,8 @@
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
     "next-themes": "0.2.1",
+    "postcss": "8.4.18",
+    "postcss-loader": "7.0.1",
     "prettier": "2.7.1",
     "prettier-plugin-tailwindcss": "0.1.13",
     "pretty-quick": "3.1.3",
@@ -53,16 +56,12 @@
     "storybook-addon-next": "1.6.9",
     "storybook-addon-swc": "1.1.9",
     "storybook-dark-mode": "1.1.2",
+    "style-loader": "3.3.1",
+    "tailwindcss": "3.2.1",
     "tsconfig-paths-webpack-plugin": "4.0.0",
     "tsup": "6.3.0",
     "turbo": "1.6.2",
     "typescript": "4.8.4"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "website"
-    ]
   },
   "browserslist": [
     "> 1%"
@@ -76,15 +75,10 @@
     "*.{js,mjs,cjs,ts,tsx,md,json,yml,yaml}": [
       "pretty-quick --staged",
       "eslint"
-    ],
-    "yarn.lock": [
-      "npx yarn-deduplicate"
     ]
   },
   "engines": {
     "node": ">=16"
   },
-  "resolutions": {
-    "@mdx-js/react": "2.1.5"
-  }
+  "packageManager": "pnpm@7.14.1"
 }

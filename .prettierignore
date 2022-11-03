@@ -3,5 +3,5 @@ storybook-static/
 .next/
 .husky/_/
 .changeset/*.md
-.bob/
 website/out/
+pnpm-lock.yaml

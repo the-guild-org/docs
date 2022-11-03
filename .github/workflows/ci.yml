@@ -13,33 +13,27 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7
+
       - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
           node-version: 16
-
-      - uses: actions/cache@v3
-        name: Cache node_modules
-        with:
-          path: '**/node_modules'
-          key: ${{runner.os}}-yarn-${{hashFiles('**/yarn.lock')}}-v2
-          restore-keys: |
-            ${{runner.os}}-yarn-v2
+          cache: pnpm
 
       - name: Install Dependencies
-        run: yarn
+        run: pnpm i
 
       - name: Build
-        run: yarn build
+        run: pnpm build
 
       - name: Lint Prettier
-        run: yarn lint:prettier
+        run: pnpm lint:prettier
 
       - name: Lint ESLint
-        run: yarn lint
+        run: pnpm lint
 
       - name: Build Storybook
-        run: yarn build-storybook
-
-      - name: Build Next.js
-        run: yarn workspace website build
+        run: pnpm build-storybook

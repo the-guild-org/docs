@@ -10,8 +10,8 @@ This library was developed as part of the [Schema Prototyper Grant](https://foru
 
 Start by installing the package from NPM:
 
-```
-yarn add monaco-editor @monaco-editor/react @theguild/editor
+```sh
+pnpm add monaco-editor @monaco-editor/react @theguild/editor
 ```
 
 ## `SchemaEditor`

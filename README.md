@@ -13,7 +13,7 @@ Example page: <https://the-guild-components.vercel.app>
 We recommend running storybook for developing the components.
 
 ```sh
-yarn start
+pnpm start
 ```
 
 Visit <http://localhost:54533>
