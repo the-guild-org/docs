@@ -26,7 +26,7 @@ importers:
       eslint: 8.26.0
       eslint-plugin-react: 7.31.10
       eslint-plugin-react-hooks: 4.6.0
-      eslint-plugin-storybook: 0.6.6
+      eslint-plugin-storybook: 0.6.7
       eslint-plugin-tailwindcss: 3.6.2
       husky: 8.0.1
       lint-staged: 13.0.3
@@ -71,7 +71,7 @@ importers:
       eslint: 8.26.0
       eslint-plugin-react: 7.31.10_eslint@8.26.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.26.0
-      eslint-plugin-storybook: 0.6.6_wyqvi574yv7oiwfeinomdzmc3m
+      eslint-plugin-storybook: 0.6.7_wyqvi574yv7oiwfeinomdzmc3m
       eslint-plugin-tailwindcss: 3.6.2
       husky: 8.0.1
       lint-staged: 13.0.3
@@ -8141,8 +8141,8 @@ packages:
       string.prototype.matchall: 4.0.7
     dev: true
 
-  /eslint-plugin-storybook/0.6.6_wyqvi574yv7oiwfeinomdzmc3m:
-    resolution: {integrity: sha512-nqYq802vJABpaV0n9cpIZl4Mlmy1yStxa8T3sPqvqbByOpXXtA9ZKRqVv2faSDp0DKVC0B3ItTNU7iMX3Et8VQ==}
+  /eslint-plugin-storybook/0.6.7_wyqvi574yv7oiwfeinomdzmc3m:
+    resolution: {integrity: sha512-lcUsB+3PesKWXwwEHGSTCijKWDXuQ4ITVbnsSDMXRCR/cjGtHZIEcy2pp/Eh7nfWA/GZrDPpK97DsTWEzyN6Bw==}
     engines: {node: 12.x || 14.x || >= 16}
     peerDependencies:
       eslint: '>=6'
