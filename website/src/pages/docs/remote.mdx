@@ -1,5 +1,5 @@
 import { useSSG } from 'nextra/ssg'
-import { PackageCmd, fetchPackageInfo } from '@theguild/components'
+import { PackageCmd, fetchPackageInfo, useMDXComponents } from '@theguild/components'
 import { MDXRemote } from 'next-mdx-remote'
 import { compileMdx } from 'nextra/compile'
 
@@ -20,10 +20,11 @@ export const getStaticProps = async () => {
 export const PackageApiDocs = () => {
   // Get the data from SSG, and render it as a component.
   const compiledSource = useSSG()
+  const components = useMDXComponents()
   return (
     <>
       <PackageCmd packages={[PACKAGE_NAME]} />
-      <MDXRemote compiledSource={compiledSource} />
+      <MDXRemote compiledSource={compiledSource} components={components} />
     </>
   )
 }

@@ -8,14 +8,13 @@
     "build": "turbo run build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/style.css",
     "build-storybook": "storybook build",
-    "next:build": "cd website && yarn build && yarn start",
     "prettier": "prettier --write --list-different .",
     "lint:prettier": "prettier --check .",
     "lint": "eslint --ignore-path .gitignore .",
     "type-check": "tsc",
     "type-check:watch": "tsc --watch",
     "prepare": "husky install",
-    "prerelease": "yarn build",
+    "prerelease": "pnpm build",
     "release": "changeset publish"
   },
   "devDependencies": {
@@ -58,12 +57,6 @@
     "turbo": "1.6.2",
     "typescript": "4.8.4"
   },
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "website"
-    ]
-  },
   "browserslist": [
     "> 1%"
   ],
@@ -76,15 +69,10 @@
     "*.{js,mjs,cjs,ts,tsx,md,json,yml,yaml}": [
       "pretty-quick --staged",
       "eslint"
-    ],
-    "yarn.lock": [
-      "npx yarn-deduplicate"
     ]
   },
   "engines": {
     "node": ">=16"
   },
-  "resolutions": {
-    "@mdx-js/react": "2.1.5"
-  }
+  "packageManager": "pnpm@7.14.1"
 }

@@ -4,10 +4,10 @@ import { PRODUCTS, ProductType } from './products';
 
 export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteName: string }): DocsThemeConfig {
   if (!siteName) {
-    throw new Error(`Missing required "siteName" property`);
+    throw new Error('Missing required "siteName" property');
   }
   if (!config.docsRepositoryBase) {
-    throw new Error(`Missing required "docsRepositoryBase" property`);
+    throw new Error('Missing required "docsRepositoryBase" property');
   }
 
   const url = new URL(config.docsRepositoryBase as string);
@@ -53,12 +53,11 @@ export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteNa
         </div>
       </>
     ),
-    ...config,
     // remove chat option when https://github.com/shuding/nextra/pull/947 will be merged
     chat: {
       icon: null,
-      ...config.chat,
     },
+    ...config,
     components: {
       ...mdxComponents,
       ...config.components,
