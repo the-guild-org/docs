@@ -127,7 +127,7 @@ importers:
       '@algolia/autocomplete-plugin-algolia-insights': 1.7.3
       '@algolia/autocomplete-plugin-query-suggestions': 1.7.3
       '@algolia/autocomplete-theme-classic': 1.7.3
-      '@giscus/react': 2.2.0
+      '@giscus/react': 2.2.2
       '@headlessui/react': ^1.7.3
       '@next/bundle-analyzer': 12.3.2
       '@radix-ui/react-navigation-menu': 1.1.1
@@ -161,7 +161,7 @@ importers:
       '@algolia/autocomplete-plugin-algolia-insights': 1.7.3_nl7ecob7oenl7dfhoewptlc4ye
       '@algolia/autocomplete-plugin-query-suggestions': 1.7.3_algoliasearch@4.14.2
       '@algolia/autocomplete-theme-classic': 1.7.3
-      '@giscus/react': 2.2.0_biqbaboplfbrettd7655fr4n2y
+      '@giscus/react': 2.2.2_biqbaboplfbrettd7655fr4n2y
       '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
       '@next/bundle-analyzer': 12.3.2
       '@radix-ui/react-navigation-menu': 1.1.1_biqbaboplfbrettd7655fr4n2y
@@ -2008,13 +2008,13 @@ packages:
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
     dev: true
 
-  /@giscus/react/2.2.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-MXjKAQyO85ZdC8OVApNQsJhPvTJcuUf5GmQw2KdvNcBVivUpVrA+NUppdwsrI+lK6jEX4ZMVOCnbJ5GaQddaAA==}
+  /@giscus/react/2.2.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-UXU2pzJEnsjEh36//UlqmWd7j3FJTGL7ijZIaijwbrsERtzkPkRhOkJ7eqRytCOdpcJSji3XX07/5rPGknmm3w==}
     peerDependencies:
       react: ^16 || ^17 || ^18
       react-dom: ^16 || ^17 || ^18
     dependencies:
-      giscus: 1.2.0
+      giscus: 1.2.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
@@ -9012,10 +9012,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /giscus/1.2.0:
-    resolution: {integrity: sha512-IpfWvU0/hYbMGQKuoPlED8wWmluRYIOjtrBCnL7logsWjMpPRxiAC2pUIC0+SC0pDMOqXrk1onTYMHgwgRpRzg==}
+  /giscus/1.2.2:
+    resolution: {integrity: sha512-H71M3V5K/mmWr5/OwCMCH+s7Z2wVT6uQ1AXe5B0f0jjAGvJ9unAklfp4cNJU5zamjDdMZFVFi/9xhhbHIG3ZTQ==}
     dependencies:
-      lit: 2.4.0
+      lit: 2.4.1
     dev: false
 
   /git-up/7.0.0:
@@ -10476,8 +10476,8 @@ packages:
       '@types/trusted-types': 2.0.2
     dev: false
 
-  /lit/2.4.0:
-    resolution: {integrity: sha512-fdgzxEtLrZFQU/BqTtxFQCLwlZd9bdat+ltzSFjvWkZrs7eBmeX0L5MHUMb3kYIkuS8Xlfnii/iI5klirF8/Xg==}
+  /lit/2.4.1:
+    resolution: {integrity: sha512-qohSgLiyN1cFnJG26dIiY03S4F49857A0AHQfnS0zYtnUVnD2MFvx+UT52rtXsIuNFQrnUupX+zyGSATlk1f/A==}
     dependencies:
       '@lit/reactive-element': 1.4.1
       lit-element: 3.2.2
