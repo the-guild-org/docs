@@ -1,5 +1,33 @@
 # @theguild/components
 
+## 4.3.1
+
+### Patch Changes
+
+- [#567](https://github.com/the-guild-org/docs/pull/567) [`9158733`](https://github.com/the-guild-org/docs/commit/915873329120f1d4151635abff42917751a9c671) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@algolia/autocomplete-js@1.7.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.7.3) (from `1.7.2`, in `dependencies`)
+  - Updated dependency [`@algolia/autocomplete-plugin-algolia-insights@1.7.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.7.3) (from `1.7.2`, in `dependencies`)
+  - Updated dependency [`@algolia/autocomplete-plugin-query-suggestions@1.7.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.7.3) (from `1.7.2`, in `dependencies`)
+  - Updated dependency [`@algolia/autocomplete-theme-classic@1.7.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.7.3) (from `1.7.2`, in `dependencies`)
+
+- [#568](https://github.com/the-guild-org/docs/pull/568) [`556feba`](https://github.com/the-guild-org/docs/commit/556febabb843923f41a369961683392752c9ea22) Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`@next/bundle-analyzer@12.3.2` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/12.3.2) (from `^12.3.1`, in `dependencies`)
+  - Updated dependency [`unist-util-visit@4.1.1` ↗︎](https://www.npmjs.com/package/unist-util-visit/v/4.1.1) (from `^4.1.1`, in `dependencies`)
+  - Added dependency [`@headlessui/react@^1.7.3` ↗︎](https://www.npmjs.com/package/@headlessui/react/v/1.7.3) (to `dependencies`)
+  - Added dependency [`semver@^7.3.8` ↗︎](https://www.npmjs.com/package/semver/v/7.3.8) (to `dependencies`)
+
+- [#575](https://github.com/the-guild-org/docs/pull/575) [`5cb0c5e`](https://github.com/the-guild-org/docs/commit/5cb0c5ec385d1d54b163fc12d53979bc8d35ecf0) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`react-paginate@8.1.4` ↗︎](https://www.npmjs.com/package/react-paginate/v/8.1.4) (from `8.1.3`, in `dependencies`)
+
+- [#577](https://github.com/the-guild-org/docs/pull/577) [`d73ebd3`](https://github.com/the-guild-org/docs/commit/d73ebd3edf2acce91c37f265b708cd3410c3a03b) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@giscus/react@2.2.2` ↗︎](https://www.npmjs.com/package/@giscus/react/v/2.2.2) (from `2.2.0`, in `dependencies`)
+
+- [#581](https://github.com/the-guild-org/docs/pull/581) [`62f4328`](https://github.com/the-guild-org/docs/commit/62f4328762c143f4e70dd933309533fc505e5009) Thanks [@B2o5T](https://github.com/B2o5T)! - add open graph image inside `defineConfig`
+
 ## 4.3.0
 
 ### Minor Changes
