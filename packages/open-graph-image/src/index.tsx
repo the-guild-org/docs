@@ -1,13 +1,8 @@
 /* eslint react/no-unknown-property: ['error', { ignore: ['tw'] }] */
 import { ComponentProps } from 'react';
-import { NextRequest } from 'next/server';
-import { ImageResponse } from '@vercel/og';
 import { PRODUCTS } from '@theguild/components/products';
 import { GuildLogo, TheGuild } from '@theguild/components/logos';
-
-export const config = {
-  runtime: 'experimental-edge',
-};
+import { generateImage } from './lib/img';
 
 const products = {
   ...PRODUCTS,
@@ -23,44 +18,46 @@ const englishJoinWords = (words: string[]): string =>
 
 const ALLOWED_PRODUCT_NAMES = englishJoinWords(Object.keys(products));
 
-export default function handler(req: NextRequest) {
-  try {
-    const { searchParams } = new URL(req.url);
-    const productName = searchParams.get('product') as keyof typeof products | null;
-    const product = productName && products[productName];
+export default {
+  async fetch(request: Request) {
+    try {
+      const { searchParams } = new URL(request.url);
+      const productName = searchParams.get('product') as keyof typeof products | null;
+      const product = productName && products[productName];
 
-    if (!product) {
-      throw new Error(`Unknown product name "${productName}".\nAllowed product names: ${ALLOWED_PRODUCT_NAMES}`);
+      if (!product) {
+        throw new Error(`Unknown product name "${productName}".\nAllowed product names: ${ALLOWED_PRODUCT_NAMES}`);
+      }
+      // ?title=<title>
+      const title = searchParams.get('title')?.slice(0, 100);
+      const extra = searchParams.get('extra');
+      const IS_GUILD = productName === 'GUILD';
+
+      return new Response(
+        await generateImage(
+          <div tw="flex bg-neutral-900 h-full flex-col w-full items-center justify-center">
+            <LeftCircle tw="absolute left-0 top-0" color={product.primaryColor} />
+            <RightCircle tw="absolute right-0" color={product.primaryColor} />
+            <RightSmallCircle tw="absolute right-0 opacity-80" color={shade(product.primaryColor || '', 100)} />
+            <product.logo style={{ transform: 'scale(2.5)' }} {...(IS_GUILD && { fill: 'white' })} />
+            <span tw="font-bold text-7xl text-white my-14 mb-10">{product.name}</span>
+            {title && <span tw="font-bold text-5xl text-white mb-4">{title}</span>}
+            {extra && <span tw="font-bold text-2xl text-white">{extra}</span>}
+            {!IS_GUILD && (
+              <div tw="flex items-center mt-14">
+                {/* @ts-expect-error -- using `tw` is valid with vercel/og */}
+                <GuildLogo fill="#fff" tw="mr-1.5" />
+                <TheGuild fill="#fff" />
+              </div>
+            )}
+          </div>
+        )
+      );
+    } catch (e) {
+      return new Response(`Failed to generate the image.\n\nError: ${(e as Error).message}`, { status: 500 });
     }
-    // ?title=<title>
-    const title = searchParams.get('title')?.slice(0, 100);
-    const extra = searchParams.get('extra');
-    const IS_GUILD = productName === 'GUILD';
-
-    return new ImageResponse(
-      (
-        <div tw="flex bg-neutral-900 h-full flex-col w-full items-center justify-center">
-          <LeftCircle tw="absolute left-0 top-0" color={product.primaryColor} />
-          <RightCircle tw="absolute right-0" color={product.primaryColor} />
-          <RightSmallCircle tw="absolute right-0 opacity-80" color={shade(product.primaryColor || '', 100)} />
-          <product.logo style={{ transform: 'scale(2.5)' }} {...(IS_GUILD && { fill: 'white' })} />
-          <span tw="font-bold text-7xl text-white my-14 mb-10">{product.name}</span>
-          {title && <span tw="font-bold text-5xl text-white mb-4">{title}</span>}
-          {extra && <span tw="font-bold text-2xl text-white">{extra}</span>}
-          {!IS_GUILD && (
-            <div tw="flex items-center mt-14">
-              {/* @ts-expect-error -- using `tw` is valid with vercel/og */}
-              <GuildLogo fill="#fff" tw="mr-1.5" />
-              <TheGuild fill="#fff" />
-            </div>
-          )}
-        </div>
-      )
-    );
-  } catch (e) {
-    return new Response(`Failed to generate the image.\n\nError: ${(e as Error).message}`, { status: 500 });
-  }
-}
+  },
+};
 
 function shade(color: string, amount: number): string | undefined {
   if (!color) {
