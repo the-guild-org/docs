@@ -233,7 +233,6 @@ importers:
       '@theguild/components': workspace:*
       '@theguild/tailwind-config': 0.2.1
       '@types/react': 18.0.25
-      '@vercel/og': 0.0.20
       next: 12.3.2
       next-mdx-remote: 4.1.0
       nextra: 2.0.0-beta.41
@@ -242,7 +241,6 @@ importers:
       typescript: 4.8.4
     dependencies:
       '@theguild/components': link:../packages/components
-      '@vercel/og': 0.0.20
       next: 12.3.2_biqbaboplfbrettd7655fr4n2y
       next-mdx-remote: 4.1.0_biqbaboplfbrettd7655fr4n2y
       nextra: 2.0.0-beta.41_o3dmoitd6lovh72xiz6lllvwai
@@ -3198,11 +3196,6 @@ packages:
     resolution: {integrity: sha512-AW8PKd6iX3vAZ0vA43nOUOnbq/X5ihgU+mSXXqunMkeQADGiqw/PY0JNeYtD5sr0PAy51YPgAPbDoeapv9r8WA==}
     dev: false
 
-  /@resvg/resvg-wasm/2.0.0-alpha.4:
-    resolution: {integrity: sha512-pWIG9a/x1ky8gXKRhPH1OPKpHFoMN1ISLbJ+O+gPXQHIAKhNd5I28RlWf7q576hAOQA9JZTlo3p/M2uyLzJmmw==}
-    engines: {node: '>= 10'}
-    dev: false
-
   /@resvg/resvg-wasm/2.1.0:
     resolution: {integrity: sha512-ov/c2NfqhCreBc9ieuELMgHfOrkCzaymvgGeBDkir0GxINs8CLVbDVqtBWfhgcI3558t1j8WeFDAEtsmI/UDyA==}
     engines: {node: '>= 10'}
@@ -5239,15 +5232,6 @@ packages:
       '@typescript-eslint/types': 5.42.0
       eslint-visitor-keys: 3.3.0
     dev: true
-
-  /@vercel/og/0.0.20:
-    resolution: {integrity: sha512-089P+TfqWz0xBxjOvOhkZIDDtfrLcye94H4IZ+SqxoGPWpNGXaBvRJER/z5SoJxJRcCAL8tPiK5zdjRskM6tLw==}
-    engines: {node: '>=16'}
-    dependencies:
-      '@resvg/resvg-wasm': 2.0.0-alpha.4
-      satori: 0.0.43
-      yoga-wasm-web: 0.1.2
-    dev: false
 
   /@webassemblyjs/ast/1.11.1:
     resolution: {integrity: sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw==}
@@ -14203,19 +14187,6 @@ packages:
       neo-async: 2.6.2
     dev: true
 
-  /satori/0.0.43:
-    resolution: {integrity: sha512-SzYwr+LsELWRJU9KMviEOE9TdShry+R5AdS54YQvgAVKFDN4yniAIzwQk1/z2TtIx0ceUT9zTeosWAoWvJBEtQ==}
-    engines: {node: '>=16'}
-    dependencies:
-      '@shuding/opentype.js': 1.4.0-beta.0
-      css-background-parser: 0.1.0
-      css-box-shadow: 1.0.0-3
-      css-to-react-native: 3.0.0
-      emoji-regex: 10.2.1
-      postcss-value-parser: 4.2.0
-      yoga-layout-prebuilt: 1.10.0
-    dev: false
-
   /satori/0.0.44:
     resolution: {integrity: sha512-WKUxXC2qeyno6J3ucwwLozPL6j1HXOZiN5wIUf7iqAhlx1RUC/6ePIKHi7iPc3Cy6DYuZcJriZXxXkSdo2FQHg==}
     engines: {node: '>=16'}
@@ -16393,10 +16364,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       '@types/yoga-layout': 1.9.2
-    dev: false
-
-  /yoga-wasm-web/0.1.2:
-    resolution: {integrity: sha512-8SkgawHcA0RUbMrnhxbaQkZDBi8rMed8pQHixkFF9w32zGhAwZ9/cOHWlpYfr6RCx42Yp3siV45/jPEkJxsk6w==}
     dev: false
 
   /yoga-wasm-web/0.2.0:
