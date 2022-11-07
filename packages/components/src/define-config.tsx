@@ -2,8 +2,11 @@ import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
 import { FooterExtended, mdxComponents, Header } from './components';
 import { PRODUCTS, ProductType } from './products';
 
-export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteName: string }): DocsThemeConfig {
-  if (!siteName) {
+export function defineConfig({
+  siteName: originalSiteName,
+  ...config
+}: DocsThemeConfig & { siteName: string }): DocsThemeConfig {
+  if (!originalSiteName) {
     throw new Error('Missing required "siteName" property');
   }
   if (!config.docsRepositoryBase) {
@@ -13,10 +16,11 @@ export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteNa
   const url = new URL(config.docsRepositoryBase as string);
   const [, org, repoName] = url.pathname.split('/');
 
-  const product = PRODUCTS[siteName as ProductType];
-  if (product) {
-    siteName = `${['ANGULAR', 'KITQL'].includes(siteName) ? '' : 'GraphQL '}${product.name}`;
-  }
+  const product = PRODUCTS[originalSiteName as ProductType];
+  const siteName = product
+    ? `${['ANGULAR', 'KITQL'].includes(originalSiteName) ? '' : 'GraphQL '}${product.name}`
+    : originalSiteName;
+
   return {
     editLink: {
       text: 'Edit this page on GitHub',
@@ -67,7 +71,6 @@ export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteNa
       const { frontMatter } = useConfig();
       const nextSeoProps = config.getNextSeoProps?.();
       return {
-        siteName,
         titleTemplate: `%s – ${siteName}`,
         description: frontMatter.description || `${siteName} Documentation`,
         twitter: {
@@ -75,12 +78,14 @@ export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteNa
           site: 'https://the-guild.dev',
           handle: '@TheGuildDev',
         },
+        canonical: frontMatter.canonical,
         openGraph: {
+          siteName,
           images: [
             {
               url:
                 frontMatter.image ||
-                `https://open-graph-image.theguild.workers.dev/?product=${product?.name}&title=${frontMatter.title}`,
+                `https://open-graph-image.theguild.workers.dev/?product=${originalSiteName}&title=${frontMatter.title}`,
               alt: frontMatter.description || frontMatter.title,
             },
           ],
