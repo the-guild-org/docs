@@ -7,3 +7,4 @@ dist/
 storybook-static/
 .turbo/
 website/out/
+packages/open-graph-image/src/vender/
