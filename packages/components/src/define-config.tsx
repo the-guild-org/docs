@@ -15,7 +15,7 @@ export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteNa
 
   const product = PRODUCTS[siteName as ProductType];
   if (product) {
-    siteName = product.name;
+    siteName = `${['ANGULAR', 'KITQL'].includes(siteName) ? '' : 'GraphQL '}${product.name}`;
   }
   return {
     editLink: {
@@ -48,7 +48,7 @@ export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteNa
       <>
         <product.logo className="mr-1.5 h-9 w-9" />
         <div>
-          <h1 className="md:text-md text-sm font-medium">GraphQL {product.name}</h1>
+          <h1 className="text-sm font-medium">{siteName}</h1>
           <h2 className="hidden text-xs sm:block">{product.title}</h2>
         </div>
       </>
@@ -70,16 +70,20 @@ export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteNa
         siteName,
         titleTemplate: `%s – ${siteName}`,
         description: frontMatter.description || `${siteName} Documentation`,
-        images: [
-          {
-            url: frontMatter.image,
-            alt: frontMatter.description || frontMatter.title,
-          },
-        ],
         twitter: {
           cardType: 'summary_large_image',
           site: 'https://the-guild.dev',
           handle: '@TheGuildDev',
+        },
+        openGraph: {
+          images: [
+            {
+              url:
+                frontMatter.image ||
+                `https://open-graph-image.theguild.workers.dev/?product=${product?.name}&title=${frontMatter.title}`,
+              alt: frontMatter.description || frontMatter.title,
+            },
+          ],
         },
         ...nextSeoProps,
         additionalMetaTags: [
