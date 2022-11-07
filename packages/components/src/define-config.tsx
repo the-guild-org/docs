@@ -2,8 +2,11 @@ import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
 import { FooterExtended, mdxComponents, Header } from './components';
 import { PRODUCTS, ProductType } from './products';
 
-export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteName: string }): DocsThemeConfig {
-  if (!siteName) {
+export function defineConfig({
+  siteName: originalSiteName,
+  ...config
+}: DocsThemeConfig & { siteName: string }): DocsThemeConfig {
+  if (!originalSiteName) {
     throw new Error('Missing required "siteName" property');
   }
   if (!config.docsRepositoryBase) {
@@ -13,10 +16,11 @@ export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteNa
   const url = new URL(config.docsRepositoryBase as string);
   const [, org, repoName] = url.pathname.split('/');
 
-  const product = PRODUCTS[siteName as ProductType];
-  if (product) {
-    siteName = product.name;
-  }
+  const product = PRODUCTS[originalSiteName as ProductType];
+  const siteName = product
+    ? `${['ANGULAR', 'KITQL'].includes(originalSiteName) ? '' : 'GraphQL '}${product.name}`
+    : originalSiteName;
+
   return {
     editLink: {
       text: 'Edit this page on GitHub',
@@ -48,7 +52,7 @@ export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteNa
       <>
         <product.logo className="mr-1.5 h-9 w-9" />
         <div>
-          <h1 className="md:text-md text-sm font-medium">GraphQL {product.name}</h1>
+          <h1 className="text-sm font-medium">{siteName}</h1>
           <h2 className="hidden text-xs sm:block">{product.title}</h2>
         </div>
       </>
@@ -67,19 +71,24 @@ export function defineConfig({ siteName, ...config }: DocsThemeConfig & { siteNa
       const { frontMatter } = useConfig();
       const nextSeoProps = config.getNextSeoProps?.();
       return {
-        siteName,
         titleTemplate: `%s – ${siteName}`,
         description: frontMatter.description || `${siteName} Documentation`,
-        images: [
-          {
-            url: frontMatter.image,
-            alt: frontMatter.description || frontMatter.title,
-          },
-        ],
         twitter: {
           cardType: 'summary_large_image',
           site: 'https://the-guild.dev',
           handle: '@TheGuildDev',
+        },
+        canonical: frontMatter.canonical,
+        openGraph: {
+          siteName,
+          images: [
+            {
+              url:
+                frontMatter.image ||
+                `https://open-graph-image.theguild.workers.dev/?product=${originalSiteName}&title=${frontMatter.title}`,
+              alt: frontMatter.description || frontMatter.title,
+            },
+          ],
         },
         ...nextSeoProps,
         additionalMetaTags: [

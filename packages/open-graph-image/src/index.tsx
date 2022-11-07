@@ -4,8 +4,10 @@ import { PRODUCTS } from '@theguild/components/products';
 import { GuildLogo, TheGuild } from '@theguild/components/logos';
 import { generateImage } from './lib/img';
 
+const { WHATSAPP, HELIX, STENCIL, ...filteredProducts } = PRODUCTS;
+
 const products = {
-  ...PRODUCTS,
+  ...filteredProducts,
   GUILD: {
     name: 'The Guild',
     logo: GuildLogo,
@@ -18,7 +20,7 @@ const englishJoinWords = (words: string[]): string =>
 
 const ALLOWED_PRODUCT_NAMES = englishJoinWords(Object.keys(products));
 
-function handler(request: Request) {
+async function handler(request: Request): Promise<Response> {
   try {
     const { searchParams } = new URL(request.url);
     const productName = searchParams.get('product') as keyof typeof products | null;
@@ -44,7 +46,7 @@ function handler(request: Request) {
           {extra && <span tw="font-bold text-2xl text-white">{extra}</span>}
           {!IS_GUILD && (
             <div tw="flex items-center mt-14">
-              {/* @ts-expect-error -- using `tw` is valid with vercel/og */}
+              {/* @ts-expect-error -- using `tw` is valid with satori */}
               <GuildLogo fill="#fff" tw="mr-1.5" />
               <TheGuild fill="#fff" />
             </div>
@@ -74,14 +76,17 @@ export default {
       // Must use Response constructor to inherit all of response's fields
       response = new Response(response.body, response);
 
-      // Cache API respects Cache-Control headers. Setting s-max-age to 1800
-      // will limit the response to be in cache for 30 minutes max
+      // Cache API respects Cache-Control headers. Setting s-max-age to 120
+      // will limit the response to be in cache for 2 minutes max
 
       // Any changes made to the response here will be reflected in the cached value
-      response.headers.append('Cache-Control', 's-maxage=1800');
+      response.headers.append('Cache-Control', 'public');
+      response.headers.append('Cache-Control', 's-maxage=120');
+      response.headers.append('Cache-Control', 'max-age=1800');
+      response.headers.append('Cache-Control', 'must-revalidate');
 
       // Store the fetched response as cacheKey
-      // Use waitUntil so you can return the response without blocking on
+      // Use `waitUntil`, so you can return the response without blocking on
       // writing to cache
       ctx.waitUntil(cache.put(cacheKey, response.clone()));
     }
