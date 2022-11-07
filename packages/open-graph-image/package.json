@@ -13,6 +13,7 @@
     "postinstall": "mkdir -p src/vender && curl -L 'https://unpkg.com/yoga-wasm-web/dist/yoga.wasm' -o src/vender/yoga.wasm && curl -L 'https://unpkg.com/@resvg/resvg-wasm/index_bg.wasm' -o src/vender/resvg.wasm"
   },
   "dependencies": {
+    "@theguild/components": "workspace:*",
     "@resvg/resvg-wasm": "2.1.0",
     "react": "18.2.0",
     "satori": "0.0.44",
