@@ -1,6 +1,7 @@
 {
   "name": "@theguild/open-graph-image",
   "version": "0.0.0",
+  "private": true,
   "devDependencies": {
     "@cloudflare/workers-types": "3.18.0",
     "@types/react": "18.0.25",
