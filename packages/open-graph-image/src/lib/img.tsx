@@ -1,9 +1,8 @@
 // @ts-ignore
 import satori, { init } from 'satori/wasm';
-// @ts-ignore
 import initYoga from 'yoga-wasm-web';
 import { Resvg, initWasm } from '@resvg/resvg-wasm';
-import type { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { loadGoogleFont } from './fonts';
 import yogaWasm from '../vender/yoga.wasm';
 import resvgWasm from '../vender/resvg.wasm';
@@ -15,6 +14,7 @@ const genModuleInit = () => {
       return;
     }
 
+    // @ts-ignore
     init(await initYoga(yogaWasm));
     await initWasm(resvgWasm);
     isInit = true;
@@ -22,7 +22,7 @@ const genModuleInit = () => {
 };
 const moduleInit = genModuleInit();
 
-export const generateImage = async (node: ReactNode) => {
+export const generateImage = async (node: ReactNode): Promise<Uint8Array> => {
   await moduleInit();
   const notoSans = await loadGoogleFont({
     family: 'Noto Sans JP',
