@@ -1,10 +1,11 @@
 import { ReactElement, useCallback } from 'react';
 import clsx from 'clsx';
 import { IFooterExtendedProps, ILink } from '../types/components';
-import { Newsletter } from './newsletter';
+import { Image } from './image';
 import { PRODUCTS } from '../products';
 import { GuildLogo, TheGuild } from './logos';
 import { Anchor } from './anchor';
+import csaStar from '../static/illustrations/csa-star-level-1-badge.png';
 
 const COMPANY: ILink[] = [
   {
@@ -85,13 +86,7 @@ const classes = {
   title: clsx('mb-3 text-xs font-semibold text-gray-900 dark:text-gray-100'),
 };
 
-export const FooterExtended = ({
-  className,
-  sameSite,
-  resources,
-  onNewsletterSubmit,
-  logo,
-}: IFooterExtendedProps): ReactElement => {
+export const FooterExtended = ({ className, sameSite, resources, logo }: IFooterExtendedProps): ReactElement => {
   const allResources: ILink[] = [
     {
       children: 'Press Kit',
@@ -135,41 +130,26 @@ export const FooterExtended = ({
               <div className="w-1/2">{renderLinks(PRODUCTS_COLUMN_2)}</div>
             </div>
           </div>
-          <div className="flex flex-col gap-6 sm:w-full sm:flex-row">
-            <div className="sm:w-1/2">
+          <div className="flex w-full flex-row gap-6">
+            <div className="w-1/2">
               <h3 className={classes.title}>RESOURCES</h3>
               {renderLinks(allResources)}
               <h3 className={classes.title}>COMPANY</h3>
               {renderLinks(COMPANY)}
             </div>
-            <div className="sm:w-1/2">
+            <div className="w-1/2">
               <h3 className={classes.title}>COMMUNITY</h3>
               {renderLinks(COMMUNITY)}
-              {onNewsletterSubmit && (
-                <>
-                  <h3 className={classes.title}>NEWSLETTER</h3>
-                  <p className="mb-3 text-sm text-gray-500 dark:text-gray-400">
-                    Stay up to date with the latest features and changes
-                  </p>
-                  <Newsletter onNewsletterSubmit={onNewsletterSubmit} />
-                </>
-              )}
+              <Image
+                src={csaStar}
+                alt="Cloud Security Alliance Star Level One Badge"
+                title="Cloud Security Alliance Star Level One Badge"
+                width="72"
+              />
             </div>
           </div>
         </div>
-        <div
-          className="
-            flex
-            flex-wrap
-            items-center
-            border-t
-            border-gray-300
-            py-4
-            dark:border-gray-800
-            md:py-8
-            lg:flex-nowrap
-          "
-        >
+        <div className="border-t border-gray-300 py-4 dark:border-gray-800">
           <Anchor
             className="flex items-center gap-x-1.5 text-gray-500 hover:text-black hover:dark:text-gray-100"
             href="https://the-guild.dev"
