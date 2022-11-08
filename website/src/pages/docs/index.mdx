@@ -15,7 +15,7 @@ export async function getStaticProps() {
   const mdx = await compileMdx(
     [
       // Render code block with current version of dependencies
-      '```json filename="package.json" {14,20} copy',
+      '```json filename="package.json" {14,20}',
       JSON.stringify(
         {
           ...pkgJson,
