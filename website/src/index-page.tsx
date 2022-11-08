@@ -14,28 +14,6 @@ export function IndexPage() {
         version={<NPMBadge name="@theguild/components" />}
         colors={['#000', '#1cc8ee']}
       />
-
-      <InfoList
-        title="Short List"
-        items={[
-          {
-            title: 'Install',
-            description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ante at ex interdum tincidunt vitae quis justo.',
-          },
-          {
-            title: 'Integrate',
-            description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ante at ex interdum tincidunt vitae quis justo.',
-          },
-          {
-            title: 'Profit',
-            description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ante at ex interdum tincidunt vitae quis justo.',
-          },
-        ]}
-      />
-
       <HeroVideo
         flipped
         title="Simple Video"
@@ -45,7 +23,6 @@ export function IndexPage() {
           placeholder: '/video-placeholder.webp',
         }}
       />
-
       <InfoList
         title="Short List"
         items={[
