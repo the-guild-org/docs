@@ -13,7 +13,7 @@
   "dependencies": {
     "@theguild/components": "workspace:*",
     "next": "12.3.2",
-    "next-mdx-remote": "4.1.0",
+    "next-mdx-remote": "4.2.0",
     "nextra": "2.0.0-beta.41",
     "react": "18.2.0",
     "react-dom": "18.2.0"
