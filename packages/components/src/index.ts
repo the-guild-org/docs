@@ -1,5 +1,3 @@
-export * from './components';
-export { PRODUCTS } from './products';
 export {
   type DocsThemeConfig,
   default,
@@ -15,6 +13,9 @@ export {
   useTheme,
   Navbar,
 } from 'nextra-theme-docs';
+export { useMounted } from 'nextra/hooks';
+export * from './components';
+export { PRODUCTS } from './products';
 export * from './types/components';
 export * from './mermaid';
 export { default as Giscus } from '@giscus/react';
