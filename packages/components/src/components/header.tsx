@@ -194,7 +194,7 @@ export const Header = ({
             {...searchBarProps}
           />
         ) : (
-          <span />
+          <span className="md:absolute" />
         )}
       </div>
     </header>
