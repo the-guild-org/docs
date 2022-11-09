@@ -1,5 +1,16 @@
 # @theguild/components
 
+## 4.3.2
+
+### Patch Changes
+
+- [#593](https://github.com/the-guild-org/docs/pull/593) [`fd84e7e`](https://github.com/the-guild-org/docs/commit/fd84e7efa43275bc108fececbada794d57141523) Thanks [@B2o5T](https://github.com/B2o5T)! - export useMounted
+  set `themeSwitch: true` / `search: true` by default, remove `disableSearch`
+
+- [#591](https://github.com/the-guild-org/docs/pull/591) [`7caae4d`](https://github.com/the-guild-org/docs/commit/7caae4d1e42ce272c7e2ba5c5b2d719279cf2863) Thanks [@B2o5T](https://github.com/B2o5T)! - fix margin-top for `<PackageCmd />`
+
+- [#589](https://github.com/the-guild-org/docs/pull/589) [`4b65de8`](https://github.com/the-guild-org/docs/commit/4b65de82196f3c6eea1b68153cf9ca8da1f9a0e1) Thanks [@B2o5T](https://github.com/B2o5T)! - Cloud Security Alliance Star Level One Badge
+
 ## 4.3.1
 
 ### Patch Changes
