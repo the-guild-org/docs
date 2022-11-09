@@ -30,7 +30,7 @@ const Template: Story = ({ page }): ReactElement => {
 
   return (
     <>
-      <Header accentColor="#184BE6" activeLink="/open-source" themeSwitch />
+      <Header accentColor="#184BE6" activeLink="/open-source" />
       {pages[page]}
       <FooterExtended {...footerData} />
     </>

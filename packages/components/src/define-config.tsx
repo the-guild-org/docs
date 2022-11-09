@@ -34,7 +34,7 @@ export function defineConfig({
     },
     navbar: props => (
       <>
-        <Header accentColor="#1cc8ee" themeSwitch searchBarProps={{ version: 'v2' }} />
+        <Header accentColor="#1cc8ee" searchBarProps={{ version: 'v2' }} />
         <Navbar {...props} />
       </>
     ),

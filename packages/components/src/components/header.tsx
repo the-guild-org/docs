@@ -15,9 +15,9 @@ import { Anchor } from './anchor';
 export const Header = ({
   accentColor,
   activeLink,
-  themeSwitch,
+  themeSwitch = true,
   transformLinks = links => links,
-  disableSearch = false,
+  search = true,
   className,
   sameSite,
   searchBarProps,
@@ -159,13 +159,15 @@ export const Header = ({
                 );
               })}
 
-              <SearchBar
-                accentColor={accentColor}
-                title="Search docs"
-                placeholder="Search…"
-                className="hidden md:flex"
-                {...searchBarProps}
-              />
+              {search && (
+                <SearchBar
+                  accentColor={accentColor}
+                  title="Search docs"
+                  placeholder="Search…"
+                  className="hidden md:flex"
+                  {...searchBarProps}
+                />
+              )}
 
               {themeSwitch && (
                 <button
@@ -183,7 +185,7 @@ export const Header = ({
           </List>
         </Root>
 
-        {!disableSearch && (
+        {search ? (
           <SearchBar
             accentColor={accentColor}
             title="Search docs"
@@ -191,6 +193,8 @@ export const Header = ({
             className="md:hidden"
             {...searchBarProps}
           />
+        ) : (
+          <span />
         )}
       </div>
     </header>
