@@ -36,7 +36,6 @@ export interface IFooterExtendedProps {
   className?: string;
   sameSite?: boolean;
   resources?: ILink[];
-  onNewsletterSubmit?: (e: FormEvent, value: string) => void;
   logo?: ILink;
 }
 
