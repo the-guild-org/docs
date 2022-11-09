@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks -- false positive */
 import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
+import { useRouter } from 'next/router';
 import { FooterExtended, mdxComponents, Header } from './components';
 import { PRODUCTS, ProductType } from './products';
 
@@ -20,6 +22,7 @@ export function defineConfig({
   const siteName = product
     ? `${['ANGULAR', 'KITQL'].includes(originalSiteName) ? '' : 'GraphQL '}${product.name}`
     : originalSiteName;
+  const siteUrl = process.env.SITE_URL;
 
   return {
     editLink: {
@@ -67,8 +70,8 @@ export function defineConfig({
       ...config.components,
     },
     getNextSeoProps() {
-      // eslint-disable-next-line react-hooks/rules-of-hooks -- false positive
       const { frontMatter } = useConfig();
+      const { route } = useRouter();
       const nextSeoProps = config.getNextSeoProps?.();
       return {
         titleTemplate: `%s – ${siteName}`,
@@ -78,7 +81,7 @@ export function defineConfig({
           site: 'https://the-guild.dev',
           handle: '@TheGuildDev',
         },
-        canonical: frontMatter.canonical,
+        canonical: frontMatter.canonical || (siteUrl && `${siteUrl}${route}`),
         openGraph: {
           siteName,
           images: [

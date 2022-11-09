@@ -39,6 +39,7 @@ export const withGuildDocs = ({
       ],
     },
   });
+  const siteUrl = process.env.SITE_URL || '';
 
   return withBundleAnalyzer(
     withVideos(
@@ -49,6 +50,10 @@ export const withGuildDocs = ({
         // swcMinify: true,
         basePath: process.env.NEXT_BASE_PATH,
         ...nextConfig,
+        env: {
+          SITE_URL: siteUrl,
+          ...nextConfig.env,
+        },
         webpack(config, meta) {
           applyUnderscoreRedirects(config, meta);
           return nextConfig.webpack?.(config, meta) || config;
