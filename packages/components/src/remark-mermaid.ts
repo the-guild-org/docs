@@ -83,7 +83,6 @@ export const remarkMermaid: Plugin<[], Root> = () => (ast, _file, done) => {
     for (const [node, index, parent] of codeblocks) {
       parent.children.splice(index, 1, getMermaidElementAST(node.value));
     }
-    // @ts-expect-error -- TODO: fix - is missing the following properties from type 'LinkReference': children, referenceType, identifier
     ast.children.unshift(MERMAID_IMPORT_AST);
   }
 
