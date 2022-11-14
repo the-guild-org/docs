@@ -15,7 +15,8 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "prebuild": "rm -rf dist",
+    "prebuild": "pnpm types:check && rm -rf dist",
+    "types:check": "tsc --noEmit",
     "build": "tsup"
   },
   "publishConfig": {

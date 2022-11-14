@@ -3,6 +3,8 @@ import { ReactElement } from 'react';
 import { AlgoliaSearchItem } from '../../types/algolia';
 import { PRODUCTS } from '../../products';
 
+const products = Object.values(PRODUCTS);
+
 export const SidePreview = ({
   item,
   components: { Highlight, Snippet },
@@ -15,14 +17,14 @@ export const SidePreview = ({
   if (!item) {
     return null;
   }
-  const project = PRODUCTS.find(p => p.children === item.source);
+  const project = products.find(p => p.name === item.source);
   return (
     <div className="flex h-[600px] select-text flex-col overflow-y-auto p-10" style={{ '--accentColor': accentColor }}>
       {project && (
         <div className="my-1 mb-4 box-border flex w-full select-none items-center justify-center">
           <project.logo className="mr-3 h-9 w-9" />
           <span className="flex flex-col justify-center">
-            <h4 className="m-0 text-sm font-semibold text-black dark:text-gray-400">{project.children}</h4>
+            <h4 className="m-0 text-sm font-semibold text-black dark:text-gray-400">{project.name}</h4>
           </span>
         </div>
       )}
