@@ -1,5 +1,17 @@
 # @theguild/components
 
+## 4.3.3
+
+### Patch Changes
+
+- [#595](https://github.com/the-guild-org/docs/pull/595) [`45b1b25`](https://github.com/the-guild-org/docs/commit/45b1b25e1394ca3fb309f6a3bbc20c9a71eedac4) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@next/bundle-analyzer@12.3.3` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/12.3.3) (from `12.3.2`, in `dependencies`)
+
+- [#594](https://github.com/the-guild-org/docs/pull/594) [`16e9ecb`](https://github.com/the-guild-org/docs/commit/16e9ecb72d72552bd985a0680880541bd3ea0ba4) Thanks [@B2o5T](https://github.com/B2o5T)! - generate `<link rel="canonical" href="..." />` based on `process.env.SITE_URL`
+
+- [#605](https://github.com/the-guild-org/docs/pull/605) [`6aeea32`](https://github.com/the-guild-org/docs/commit/6aeea32391c3916176b983b85379b087aa6ea45a) Thanks [@gilgardosh](https://github.com/gilgardosh)! - fix PRODUCTS, now it's object and not array
+
 ## 4.3.2
 
 ### Patch Changes
