@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 4.3.4
+
+### Patch Changes
+
+- [#602](https://github.com/the-guild-org/docs/pull/602) [`8878cb8`](https://github.com/the-guild-org/docs/commit/8878cb870a640ca73839507fdd5342d9439a37fb) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@giscus/react@2.2.3` ↗︎](https://www.npmjs.com/package/@giscus/react/v/2.2.3) (from `2.2.2`, in `dependencies`)
+
+- [#610](https://github.com/the-guild-org/docs/pull/610) [`ca0e4e1`](https://github.com/the-guild-org/docs/commit/ca0e4e13634586864fb1b62bb893997149d404f5) Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - fix define config, fix undefined title in open graph url
+
 ## 4.3.3
 
 ### Patch Changes
