@@ -43,7 +43,7 @@ importers:
       storybook-addon-swc: 1.1.9
       storybook-dark-mode: 1.1.2
       style-loader: 3.3.1
-      tailwindcss: 3.2.3
+      tailwindcss: 3.2.4
       tsconfig-paths-webpack-plugin: 4.0.0
       tsup: 6.4.0
       turbo: 1.6.3
@@ -57,7 +57,7 @@ importers:
       '@storybook/addon-postcss': 3.0.0-alpha.1
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/react-webpack5': 7.0.0-alpha.49_yalvw3r2waubxycyb7k7qsruca
-      '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.3
+      '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
       '@theguild/prettier-config': 0.1.1_prettier@2.7.1
       '@theguild/tailwind-config': 0.2.1
       '@types/react': 18.0.25
@@ -88,7 +88,7 @@ importers:
       storybook-addon-swc: 1.1.9
       storybook-dark-mode: 1.1.2_biqbaboplfbrettd7655fr4n2y
       style-loader: 3.3.1
-      tailwindcss: 3.2.3
+      tailwindcss: 3.2.4
       tsconfig-paths-webpack-plugin: 4.0.0
       tsup: 6.4.0_wj7eq4dpcmr2qz6e5enuabn7dy
       turbo: 1.6.3
@@ -153,7 +153,7 @@ importers:
       remark-mdx-disable-explicit-jsx: 0.1.0
       search-insights: 2.2.1
       semver: ^7.3.8
-      tailwindcss: 3.2.3
+      tailwindcss: 3.2.4
       unist-util-visit: 4.1.1
       use-debounce: 8.0.4
     dependencies:
@@ -190,7 +190,7 @@ importers:
       next: 12.3.3_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      tailwindcss: 3.2.3
+      tailwindcss: 3.2.4
 
   packages/monaco-graphql-editor:
     specifiers:
@@ -4639,12 +4639,12 @@ packages:
       defer-to-connect: 2.0.1
     dev: true
 
-  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.3:
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.4:
     resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.2.3
+      tailwindcss: 3.2.4
     dev: true
 
   /@theguild/prettier-config/0.1.1_prettier@2.7.1:
@@ -4663,7 +4663,7 @@ packages:
       cssnano: 5.1.14_postcss@8.4.19
       postcss: 8.4.19
       postcss-import: 15.0.0_postcss@8.4.19
-      tailwindcss: 3.2.3
+      tailwindcss: 3.2.4
     transitivePeerDependencies:
       - ts-node
     dev: true
@@ -8630,7 +8630,7 @@ packages:
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.19
-      tailwindcss: 3.2.3
+      tailwindcss: 3.2.4
     transitivePeerDependencies:
       - ts-node
     dev: true
@@ -15035,8 +15035,8 @@ packages:
     resolution: {integrity: sha512-SYJSIgeyXW7EuX1ytdneO5e8jip42oHWg9xl/o3oTYhmXusZVgiA+VlPvjIN+kHii9v90AmzTZEBcsEvuAY+TA==}
     dev: false
 
-  /tailwindcss/3.2.3:
-    resolution: {integrity: sha512-Xt9D4PK4zuuQCEB8bwK9JUCKmTgUwyac/6b0/42Vqhgl6YJkep+Wf5wq+5uXYfmrupdAD0YY2NY1hyZp1HjRrg==}
+  /tailwindcss/3.2.4:
+    resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
