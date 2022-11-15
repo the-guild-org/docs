@@ -134,7 +134,7 @@ importers:
       '@theguild/algolia': workspace:*
       '@types/dedent': 0.7.0
       '@types/mermaid': 9.1.0
-      '@types/react-dom': 18.0.8
+      '@types/react-dom': 18.0.9
       '@types/semver': 7.3.13
       algoliasearch: 4.14.2
       clsx: 1.2.1
@@ -184,7 +184,7 @@ importers:
       '@theguild/algolia': link:../algolia
       '@types/dedent': 0.7.0
       '@types/mermaid': 9.1.0
-      '@types/react-dom': 18.0.8
+      '@types/react-dom': 18.0.9
       '@types/semver': 7.3.13
       dedent: 0.7.0
       next: 12.3.3_biqbaboplfbrettd7655fr4n2y
@@ -4948,10 +4948,10 @@ packages:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
     dev: true
 
-  /@types/react-dom/18.0.8:
-    resolution: {integrity: sha512-C3GYO0HLaOkk9dDAz3Dl4sbe4AKUGTCfFIZsz3n/82dPNN8Du533HzKatDxeUYWu24wJgMP1xICqkWk1YOLOIw==}
+  /@types/react-dom/18.0.9:
+    resolution: {integrity: sha512-qnVvHxASt/H7i+XG1U1xMiY5t+IHcPGUK7TDMDzom08xa7e86eCeKOiLZezwCKVxJn6NEiiy2ekgX8aQssjIKg==}
     dependencies:
-      '@types/react': 18.0.24
+      '@types/react': 18.0.25
     dev: true
 
   /@types/react-instantsearch-core/6.26.2:
@@ -4973,14 +4973,6 @@ packages:
     resolution: {integrity: sha512-94cEJHfBaINba2XGQOWFJF/tYe+AImIhOPqMCfqyeFOgk0qUpDZyDOOW76A1rgdtWndR8UwsMPgV/uuTM8vZ7w==}
     dependencies:
       '@types/react': 18.0.25
-    dev: true
-
-  /@types/react/18.0.24:
-    resolution: {integrity: sha512-wRJWT6ouziGUy+9uX0aW4YOJxAY0bG6/AOk5AW5QSvZqI7dk6VBIbXvcVgIw/W5Jrl24f77df98GEKTJGOLx7Q==}
-    dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.2
-      csstype: 3.1.1
     dev: true
 
   /@types/react/18.0.25:
