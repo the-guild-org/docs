@@ -70,7 +70,7 @@ export function defineConfig({
       ...config.components,
     },
     getNextSeoProps() {
-      const { frontMatter } = useConfig();
+      const { frontMatter, title } = useConfig();
       const { route } = useRouter();
       const nextSeoProps = config.getNextSeoProps?.();
       return {
@@ -88,8 +88,8 @@ export function defineConfig({
             {
               url:
                 frontMatter.image ||
-                `https://open-graph-image.theguild.workers.dev/?product=${originalSiteName}&title=${frontMatter.title}`,
-              alt: frontMatter.description || frontMatter.title,
+                `https://open-graph-image.theguild.workers.dev/?product=${originalSiteName}&title=${title}`,
+              alt: frontMatter.description || title,
             },
           ],
         },
