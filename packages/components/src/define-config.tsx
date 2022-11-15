@@ -88,7 +88,7 @@ export function defineConfig({
             {
               url:
                 frontMatter.image ||
-                `https://open-graph-image.theguild.workers.dev/?product=${originalSiteName}&title=${title}`,
+                `https://open-graph-image.theguild.workers.dev/?product=${originalSiteName}&title=${encodeURI(title)}`,
               alt: frontMatter.description || title,
             },
           ],
