@@ -147,7 +147,7 @@ importers:
       nextra-theme-docs: 2.0.0-beta.41
       react: 18.2.0
       react-dom: 18.2.0
-      react-instantsearch-dom: 6.38.0
+      react-instantsearch-dom: 6.38.1
       react-paginate: 8.1.4
       react-player: 2.11.0
       remark-mdx-disable-explicit-jsx: 0.1.0
@@ -172,7 +172,7 @@ importers:
       next-videos: 1.5.0
       nextra: 2.0.0-beta.41_axequwibc5yadwk55bo7ehxsoe
       nextra-theme-docs: 2.0.0-beta.41_axequwibc5yadwk55bo7ehxsoe
-      react-instantsearch-dom: 6.38.0_fzyfqr3mixyxftdbf7mmfo2jb4
+      react-instantsearch-dom: 6.38.1_fzyfqr3mixyxftdbf7mmfo2jb4
       react-paginate: 8.1.4_react@18.2.0
       react-player: 2.11.0_react@18.2.0
       remark-mdx-disable-explicit-jsx: 0.1.0
@@ -13572,8 +13572,8 @@ packages:
       react: 18.2.0
     dev: true
 
-  /react-instantsearch-core/6.38.0_jz5z4e34rsiperspnjrg6onci4:
-    resolution: {integrity: sha512-Y5denvptL+qDOHY3LxipULNun8f3t2WeO9UdiWJd9FER1vn1VBrDdSyZ5b+idxqVWhSeVbncbf98zr7EW/kFvA==}
+  /react-instantsearch-core/6.38.1_jz5z4e34rsiperspnjrg6onci4:
+    resolution: {integrity: sha512-14gy/jsakJELVeMEO+QmsHcugIyaU1pRyyuQjuXuBvF+TMHiWUjfYw7de3Lc4oYcTYIeSllYIxLHxdUoxLWZaA==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 5'
       react: '>= 16.3.0 < 19'
@@ -13586,8 +13586,8 @@ packages:
       react-fast-compare: 3.2.0
     dev: false
 
-  /react-instantsearch-dom/6.38.0_fzyfqr3mixyxftdbf7mmfo2jb4:
-    resolution: {integrity: sha512-yE0y9U1GCPZ/Jqzbd2BHTdx83/DYIEbXqAt7a+a5TLi4qQgwjTpVrtAkqzhT8f1/TRhNqu0wYAT4HFixVsW8FA==}
+  /react-instantsearch-dom/6.38.1_fzyfqr3mixyxftdbf7mmfo2jb4:
+    resolution: {integrity: sha512-Wyzm4JW8O79zwsaWqOBdKbg69O7OcUDiF+p+/LW7zdRZ3RK4mO/q5CZDcziwDbNKqC4OEuG+IpIZuCjcJQrFcQ==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 5'
       react: '>= 16.3.0 < 19'
@@ -13601,7 +13601,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-fast-compare: 3.2.0
-      react-instantsearch-core: 6.38.0_jz5z4e34rsiperspnjrg6onci4
+      react-instantsearch-core: 6.38.1_jz5z4e34rsiperspnjrg6onci4
     dev: false
 
   /react-is/16.13.1:
