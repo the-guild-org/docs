@@ -71,7 +71,7 @@ export function defineConfig({
     },
     getNextSeoProps() {
       const { frontMatter, title } = useConfig();
-      const { route } = useRouter();
+      const { asPath } = useRouter();
       const nextSeoProps = config.getNextSeoProps?.();
       return {
         titleTemplate: `%s – ${siteName}`,
@@ -81,7 +81,7 @@ export function defineConfig({
           site: 'https://the-guild.dev',
           handle: '@TheGuildDev',
         },
-        canonical: frontMatter.canonical || (siteUrl && `${siteUrl}${route}`),
+        canonical: frontMatter.canonical || (siteUrl && `${siteUrl}${asPath}`),
         openGraph: {
           siteName,
           images: [
