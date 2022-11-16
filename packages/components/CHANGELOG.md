@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 4.3.5
+
+### Patch Changes
+
+- [#606](https://github.com/the-guild-org/docs/pull/606) [`5b906a8`](https://github.com/the-guild-org/docs/commit/5b906a88bd2e5a4c840f7e0c6971bb2ed3a86774) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`react-instantsearch-dom@6.38.1` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.38.1) (from `6.38.0`, in `dependencies`)
+
+- [#613](https://github.com/the-guild-org/docs/pull/613) [`6746799`](https://github.com/the-guild-org/docs/commit/6746799b6bebae18682921290890886fa0a899c5) Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - wrap title in open graph url with encodeURI function
+
 ## 4.3.4
 
 ### Patch Changes
