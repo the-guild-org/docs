@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 4.3.6
+
+### Patch Changes
+
+- [#619](https://github.com/the-guild-org/docs/pull/619) [`1c44386`](https://github.com/the-guild-org/docs/commit/1c443862ff5b0eba2473e71736a5e533256698ea) Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - Change canonical path to use asPath from router
+
 ## 4.3.5
 
 ### Patch Changes
