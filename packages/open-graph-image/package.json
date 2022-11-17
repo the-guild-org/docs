@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@theguild/components": "workspace:*",
-    "@resvg/resvg-wasm": "2.1.0",
+    "@resvg/resvg-wasm": "2.2.0",
     "react": "18.2.0",
     "satori": "0.0.44",
     "yoga-wasm-web": "0.2.0"
