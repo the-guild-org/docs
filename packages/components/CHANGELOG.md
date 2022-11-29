@@ -1,5 +1,19 @@
 # @theguild/components
 
+## 4.3.7
+
+### Patch Changes
+
+- [#622](https://github.com/the-guild-org/docs/pull/622) [`d6e99d7`](https://github.com/the-guild-org/docs/commit/d6e99d78a34483613fc11309edd9737cb8efd76c) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`focus-trap-react@10.0.1` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.0.1) (from `10.0.0`, in `dependencies`)
+
+- [#623](https://github.com/the-guild-org/docs/pull/623) [`f7f6b49`](https://github.com/the-guild-org/docs/commit/f7f6b49dcf0d6cce89087e14a6754cbc9fd6668f) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`search-insights@2.2.3` ↗︎](https://www.npmjs.com/package/search-insights/v/2.2.3) (from `2.2.1`, in `dependencies`)
+
+- [#633](https://github.com/the-guild-org/docs/pull/633) [`1cde1f2`](https://github.com/the-guild-org/docs/commit/1cde1f20a3fa29b37a1799a1222fa8293b2103db) Thanks [@charlypoly](https://github.com/charlypoly)! - fix(components/algolia): results sorting
+
 ## 4.3.6
 
 ### Patch Changes
