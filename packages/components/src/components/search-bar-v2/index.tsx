@@ -142,7 +142,7 @@ export const SearchBarV2 = ({
         const itemsSources = items
           .slice()
           // put current website's section on top
-          .sort(a => (a.domain.startsWith(window.location.origin) ? -1 : 0))
+          .sort(a => (a.domain.startsWith(`${window.location.origin}${window.location.pathname}`) ? -1 : 0))
           .map(item => item.source);
 
         const sourcesPerSite = itemsSources.reduce<Record<string, any>>((acc, sourceId) => {
