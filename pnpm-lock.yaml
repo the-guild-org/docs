@@ -143,7 +143,7 @@ importers:
       mermaid: 9.1.7
       next: 12.3.3
       next-videos: 1.5.0
-      nextra: 2.0.0-beta.41
+      nextra: 2.0.0-beta.43
       nextra-theme-docs: 2.0.0-beta.41
       react: 18.2.0
       react-dom: 18.2.0
@@ -170,7 +170,7 @@ importers:
       focus-trap-react: 10.0.1_biqbaboplfbrettd7655fr4n2y
       mermaid: 9.1.7
       next-videos: 1.5.0
-      nextra: 2.0.0-beta.41_axequwibc5yadwk55bo7ehxsoe
+      nextra: 2.0.0-beta.43_axequwibc5yadwk55bo7ehxsoe
       nextra-theme-docs: 2.0.0-beta.41_axequwibc5yadwk55bo7ehxsoe
       react-instantsearch-dom: 6.38.1_fzyfqr3mixyxftdbf7mmfo2jb4
       react-paginate: 8.1.4_react@18.2.0
@@ -235,7 +235,7 @@ importers:
       '@types/react': 18.0.25
       next: 12.3.3
       next-mdx-remote: 4.2.0
-      nextra: 2.0.0-beta.41
+      nextra: 2.0.0-beta.43
       react: 18.2.0
       react-dom: 18.2.0
       typescript: 4.9.3
@@ -243,7 +243,7 @@ importers:
       '@theguild/components': link:../packages/components
       next: 12.3.3_biqbaboplfbrettd7655fr4n2y
       next-mdx-remote: 4.2.0_biqbaboplfbrettd7655fr4n2y
-      nextra: 2.0.0-beta.41_axequwibc5yadwk55bo7ehxsoe
+      nextra: 2.0.0-beta.43_axequwibc5yadwk55bo7ehxsoe
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -12127,8 +12127,8 @@ packages:
       scroll-into-view-if-needed: 2.2.29
     dev: false
 
-  /nextra/2.0.0-beta.41_axequwibc5yadwk55bo7ehxsoe:
-    resolution: {integrity: sha512-AlJdLRYe1r/mMKEjGfr6VqwWkUFKj0AdOBby1k2JILgAK33X+/xiJJ4JF2zLQx0clacINKg3wod8txSJwSWJ0g==}
+  /nextra/2.0.0-beta.43_axequwibc5yadwk55bo7ehxsoe:
+    resolution: {integrity: sha512-wtc0fU4z/dacaW5MSf3ar1jY7Hlij4fqP0PLtoj4F7E0ANV/p+TCU2181S5kCh0TRqMRLCvCpj7lCHZaslPsLA==}
     peerDependencies:
       next: '>=9.5.3'
       react: '>=16.13.1'
