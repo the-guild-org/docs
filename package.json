@@ -38,7 +38,7 @@
     "concurrently": "7.5.0",
     "css-loader": "6.7.2",
     "eslint": "8.28.0",
-    "eslint-plugin-react": "7.31.10",
+    "eslint-plugin-react": "7.31.11",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-storybook": "0.6.7",
     "eslint-plugin-tailwindcss": "3.7.0",
