@@ -90,7 +90,7 @@ export function defineConfig({
             {
               url:
                 frontMatter.image ||
-                `https://open-graph-image.theguild.workers.dev/?product=${originalSiteName}&title=${encodeURI(title)}`,
+                `https://og-image.the-guild.dev/?product=${originalSiteName}&title=${encodeURI(title)}`,
               alt: frontMatter.description || title,
             },
           ],
