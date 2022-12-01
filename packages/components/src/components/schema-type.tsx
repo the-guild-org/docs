@@ -6,7 +6,12 @@ import { SchemaEditor, ExecutableDocumentEditor } from '@theguild/monaco-graphql
 import { CaretSlimIcon, MoreIcon, ShareIcon } from './icons';
 import { Image } from './image';
 
-const Editor = ({ title, frameworks = [], image, children }: Omit<IEditorProps, 'schema' | 'operations'>) => {
+const Editor = ({
+  title,
+  frameworks = [],
+  image,
+  children,
+}: Omit<IEditorProps, 'schema' | 'operations'>) => {
   return (
     <div className="min-w-full max-w-full pr-px lg:min-w-[25%] lg:max-w-[25%]">
       <div
@@ -27,7 +32,10 @@ const Editor = ({ title, frameworks = [], image, children }: Omit<IEditorProps, 
             {frameworks.length > 0 && (
               <span className="text-sm dark:text-gray-50">
                 {frameworks.map(name => (
-                  <span key={name} className="before:mx-1.5 before:content-['•'] before:first-of-type:hidden">
+                  <span
+                    key={name}
+                    className="before:mx-1.5 before:content-['•'] before:first-of-type:hidden"
+                  >
                     {name}
                   </span>
                 ))}
@@ -63,13 +71,19 @@ const Button = ({ children }: { children: ReactNode }): ReactElement => {
   );
 };
 
-export const SchemaPage = ({ schemaName, tags = [], editorData }: ISchemaPageProps): ReactElement => {
+export const SchemaPage = ({
+  schemaName,
+  tags = [],
+  editorData,
+}: ISchemaPageProps): ReactElement => {
   const [schemaObj, setSchemaObj] = useState(() => buildSchema(editorData[0].schema!));
   return (
     <section className="w-full bg-white dark:bg-[#111]">
       <div className="container flex max-w-[90rem] flex-col justify-between py-6 md:flex-row md:gap-16">
         <span className="pb-6 md:pb-0">
-          <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">{schemaName}</h2>
+          <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">
+            {schemaName}
+          </h2>
           <TagsContainer>
             {tags.map(tagName => (
               <Tag key={tagName}>{tagName}</Tag>

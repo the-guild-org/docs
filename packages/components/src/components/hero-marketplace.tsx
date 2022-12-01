@@ -23,14 +23,20 @@ const Shadow = ({ className }: { className: string }): ReactElement => {
         rounded-full
         opacity-40
         blur-3xl`,
-        className
+        className,
       )}
     />
   );
 };
 
 const Cube = ({ className, src }: { className: string; src: StaticImageData }): ReactElement => {
-  return <Image className={clsx(`absolute -translate-x-1/2 -translate-y-1/2`, className)} src={src} alt="Cube" />;
+  return (
+    <Image
+      className={clsx(`absolute -translate-x-1/2 -translate-y-1/2`, className)}
+      src={src}
+      alt="Cube"
+    />
+  );
 };
 
 export const HeroMarketplace = ({
@@ -87,7 +93,9 @@ export const HeroMarketplace = ({
           <Image className="mx-auto w-auto" src={IllustrationMobile} alt="Products List" />
         </picture>
         <div className="relative z-[1]">
-          <h2 className="mb-2.5 max-w-lg text-2xl font-bold text-white dark:text-gray-50 md:text-3xl">{title}</h2>
+          <h2 className="mb-2.5 max-w-lg text-2xl font-bold text-white dark:text-gray-50 md:text-3xl">
+            {title}
+          </h2>
           <p className="max-w-lg text-base text-gray-300 opacity-70">{description}</p>
           {link && (
             <div className="relative z-[1] mt-4 hidden items-center text-xs md:mt-9 md:flex">

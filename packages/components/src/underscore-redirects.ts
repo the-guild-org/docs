@@ -31,12 +31,16 @@ export function applyUnderscoreRedirects(config: any, meta: any) {
           }
           return;
         }
-        const redirectsTxt = redirects.map(r => `${r.source} ${r.destination} ${r.permanent ? 301 : 302}`).join('\n');
+        const redirectsTxt = redirects
+          .map(r => `${r.source} ${r.destination} ${r.permanent ? 301 : 302}`)
+          .join('\n');
         await writeFile(outFile, redirectsTxt);
       } catch (error) {
         console.error('Error while generating redirects file:', error);
-        throw new Error(`Failed to generate "_redirects" file during build: ${(error as Error).message}`);
+        throw new Error(
+          `Failed to generate "_redirects" file during build: ${(error as Error).message}`,
+        );
       }
-    })
+    }),
   );
 }

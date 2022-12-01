@@ -117,7 +117,7 @@ const contentForRecord = (content: string) => {
         return line;
       })
       .filter(line => line !== null)
-      .join(' ')
+      .join(' '),
   );
 };
 
@@ -127,17 +127,22 @@ async function routesToAlgoliaRecords(
   domain: string,
   mdx = true,
   objectsPrefix = new GitHubSlugger().slug(source),
-  parentRoute?: { $name: string; path: string }
+  parentRoute?: { $name: string; path: string },
 ) {
   const objects: AlgoliaRecord[] = [];
 
-  async function routeToAlgoliaRecords(topPath?: string, parentLevelName?: string, slug?: string, title?: string) {
+  async function routeToAlgoliaRecords(
+    topPath?: string,
+    parentLevelName?: string,
+    slug?: string,
+    title?: string,
+  ) {
     if (!slug) {
       return;
     }
 
     const fileContent = await readFile(
-      `./${compact([parentRoute?.path, topPath, slug]).join('/')}.md${mdx ? 'x' : ''}`
+      `./${compact([parentRoute?.path, topPath, slug]).join('/')}.md${mdx ? 'x' : ''}`,
     );
 
     const { data: meta, content } = matter(fileContent.toString());
@@ -209,7 +214,7 @@ async function routesToAlgoliaRecords(
                   {
                     $name: topRoute.$name!,
                     path: topPath,
-                  }
+                  },
                 ).then(objs => {
                   objects.push(...objs);
                   resolve();
@@ -220,9 +225,9 @@ async function routesToAlgoliaRecords(
             return;
           }
           return routeToAlgoliaRecords(topPath, topRoute.$name!, route);
-        })
+        }),
       );
-    })
+    }),
   );
 
   return objects;
@@ -233,7 +238,7 @@ async function pluginsToAlgoliaRecords(
   plugins: any[],
   source: AlgoliaRecordSource,
   domain: string,
-  objectsPrefix = new GitHubSlugger().slug(source)
+  objectsPrefix = new GitHubSlugger().slug(source),
 ): Promise<AlgoliaRecord[]> {
   const objects: AlgoliaRecord[] = [];
   const slugger = new GitHubSlugger();
@@ -266,7 +271,7 @@ async function nextraToAlgoliaRecords(
   { docsBaseDir }: IndexToAlgoliaNextraOptions,
   source: AlgoliaRecordSource,
   domain: string,
-  objectsPrefix = new GitHubSlugger().slug(source)
+  objectsPrefix = new GitHubSlugger().slug(source),
 ): Promise<AlgoliaRecord[]> {
   return new Promise((resolve, reject) => {
     const objects: AlgoliaRecord[] = [];
@@ -282,12 +287,18 @@ async function nextraToAlgoliaRecords(
       return {};
     };
 
-    const getMetadataForFile = (filePath: string): [title: string, hierarchy: string[], urlPath: string] => {
+    const getMetadataForFile = (
+      filePath: string,
+    ): [title: string, hierarchy: string[], urlPath: string] => {
       const hierarchy = [];
 
       const fileDir = filePath.split('/').slice(0, -1).join('/');
       const fileName = filePath.split('/').pop()!;
-      const folders = filePath.replace(docsBaseDir, '').replace(fileName, '').split('/').filter(Boolean);
+      const folders = filePath
+        .replace(docsBaseDir, '')
+        .replace(fileName, '')
+        .split('/')
+        .filter(Boolean);
       // docs/guides/advanced -> ['Guides', 'Advanced']
       // by reading meta from:
       //  - docs/guides/_meta.json (for 'advanced' folder)
@@ -298,22 +309,30 @@ async function nextraToAlgoliaRecords(
 
         if (!metadataCache[path]) {
           metadataCache[path] = getMetaFromFile(
-            `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/_meta.json`
+            `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/_meta.json`,
           );
         }
         const folderName = metadataCache[path][folder];
-        const resolvedFolderName = typeof folderName === 'string' ? folderName : folderName?.title || folder;
+        const resolvedFolderName =
+          typeof folderName === 'string' ? folderName : folderName?.title || folder;
         if (resolvedFolderName) {
           hierarchy.unshift(resolvedFolderName);
         }
       }
       if (!metadataCache[fileDir]) {
-        metadataCache[fileDir] = getMetaFromFile(`${fileDir}${fileDir.endsWith('/') ? '' : '/'}_meta.json`);
+        metadataCache[fileDir] = getMetaFromFile(
+          `${fileDir}${fileDir.endsWith('/') ? '' : '/'}_meta.json`,
+        );
       }
       const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
       const resolvedTitle = typeof title === 'string' ? title : title?.title;
 
-      const urlPath = filePath.replace(docsBaseDir, '').replace(fileName, '').split('/').filter(Boolean).join('/');
+      const urlPath = filePath
+        .replace(docsBaseDir, '')
+        .replace(fileName, '')
+        .split('/')
+        .filter(Boolean)
+        .join('/');
       return [resolvedTitle || fileName.replace('.mdx', ''), hierarchy, urlPath];
     };
 
@@ -381,8 +400,10 @@ export const indexToAlgolia = async ({
   const objects = postProcessor([
     ...flatten(
       await Promise.all(
-        normalizedRoutes.map(routes => routesToAlgoliaRecords(routes, source, normalizeDomain(domain), !docusaurus))
-      )
+        normalizedRoutes.map(routes =>
+          routesToAlgoliaRecords(routes, source, normalizeDomain(domain), !docusaurus),
+        ),
+      ),
     ),
     ...(await pluginsToAlgoliaRecords(plugins, source, normalizeDomain(domain))),
     ...(nextra ? await nextraToAlgoliaRecords(nextra, source, normalizeDomain(domain)) : []),
@@ -390,8 +411,9 @@ export const indexToAlgolia = async ({
 
   const recordsAsString = JSON.stringify(
     sortBy(objects, 'objectID'),
-    (key, value) => (key === 'content' ? crypto.createHash('md5').update(value).digest('hex') : value),
-    2
+    (key, value) =>
+      key === 'content' ? crypto.createHash('md5').update(value).digest('hex') : value,
+    2,
   );
 
   const lockFileExists = existsSync(lockfilePath);
@@ -399,7 +421,7 @@ export const indexToAlgolia = async ({
     // save space but still keep track of content changes
     sortBy(JSON.parse(lockFileExists ? readFileSync(lockfilePath, 'utf-8') : '[]'), 'objectID'),
     null,
-    2
+    2,
   );
 
   if (dryMode) {
@@ -407,7 +429,11 @@ export const indexToAlgolia = async ({
     writeFileSync(lockfilePath, recordsAsString);
   } else {
     if (!lockFileExists || recordsAsString !== lockfileContent) {
-      if (['ALGOLIA_APP_ID', 'ALGOLIA_ADMIN_API_KEY', 'ALGOLIA_INDEX_NAME'].some(envVar => !process.env[envVar])) {
+      if (
+        ['ALGOLIA_APP_ID', 'ALGOLIA_ADMIN_API_KEY', 'ALGOLIA_INDEX_NAME'].some(
+          envVar => !process.env[envVar],
+        )
+      ) {
         console.error('Some Algolia environment variables are missing!');
         return;
       }
@@ -432,7 +458,11 @@ export const indexToAlgolia = async ({
   }
 };
 
-export const docusaurusToRoutes = ({ sidebars }: { sidebars: { docs: Record<string, string[]> } }): IRoutes => {
+export const docusaurusToRoutes = ({
+  sidebars,
+}: {
+  sidebars: { docs: Record<string, string[]> };
+}): IRoutes => {
   const routes: IRoutes = { _: {} };
 
   map(sidebars.docs, (children, title) => {

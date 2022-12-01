@@ -5,7 +5,7 @@ import { ILink } from '../types/components';
 
 export const Anchor = forwardRef<HTMLAnchorElement, ILink>(function Anchor(
   { href = '', children, newWindow, sameSite, className, ...props },
-  forwardedRef
+  forwardedRef,
 ): ReactElement {
   if (sameSite) {
     const url = new URL(href);
@@ -14,7 +14,14 @@ export const Anchor = forwardRef<HTMLAnchorElement, ILink>(function Anchor(
   const classes = clsx(className, 'outline-none focus-visible:ring transition');
   if (newWindow && /^https?:\/\//.test(href)) {
     return (
-      <a ref={forwardedRef} href={href} target="_blank" rel="noreferrer" className={classes} {...props}>
+      <a
+        ref={forwardedRef}
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className={classes}
+        {...props}
+      >
         {children}
       </a>
     );

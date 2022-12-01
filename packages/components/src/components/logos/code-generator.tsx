@@ -1,7 +1,14 @@
 import { ComponentProps, ReactElement } from 'react';
 
 export const CodeGeneratorLogo = (props: ComponentProps<'svg'>): ReactElement => (
-  <svg width="50" height="54" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 54" fill="#0284c7" {...props}>
+  <svg
+    width="50"
+    height="54"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 50 54"
+    fill="#0284c7"
+    {...props}
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"

@@ -13,7 +13,7 @@ importers:
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/react-webpack5': 7.0.0-alpha.53
       '@tailwindcss/line-clamp': 0.4.2
-      '@theguild/prettier-config': 0.1.1
+      '@theguild/prettier-config': 1.0.0
       '@theguild/tailwind-config': 0.2.1
       '@types/react': 18.0.25
       '@types/react-instantsearch-core': 6.26.2
@@ -58,7 +58,7 @@ importers:
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/react-webpack5': 7.0.0-alpha.53_lb6du3saekb5anf2gjv3wxj3oq
       '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
-      '@theguild/prettier-config': 0.1.1_prettier@2.8.0
+      '@theguild/prettier-config': 1.0.0_prettier@2.8.0
       '@theguild/tailwind-config': 0.2.1
       '@types/react': 18.0.25
       '@types/react-instantsearch-core': 6.26.2
@@ -129,7 +129,7 @@ importers:
       '@algolia/autocomplete-theme-classic': 1.7.3
       '@giscus/react': 2.2.4
       '@headlessui/react': ^1.7.3
-      '@next/bundle-analyzer': 12.3.4
+      '@next/bundle-analyzer': 13.0.5
       '@radix-ui/react-navigation-menu': 1.1.1
       '@theguild/algolia': workspace:*
       '@types/dedent': 0.7.0
@@ -163,7 +163,7 @@ importers:
       '@algolia/autocomplete-theme-classic': 1.7.3
       '@giscus/react': 2.2.4_biqbaboplfbrettd7655fr4n2y
       '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
-      '@next/bundle-analyzer': 12.3.4
+      '@next/bundle-analyzer': 13.0.5
       '@radix-ui/react-navigation-menu': 1.1.1_biqbaboplfbrettd7655fr4n2y
       algoliasearch: 4.14.2
       clsx: 1.2.1
@@ -2767,10 +2767,10 @@ packages:
       '@napi-rs/simple-git-win32-x64-msvc': 0.1.8
     dev: false
 
-  /@next/bundle-analyzer/12.3.4:
-    resolution: {integrity: sha512-eKjgRICzbLTmod0UnJcArFVs5uEAiuZwB6NCf84m+btW7jdylUVoOYf1wi5tA14xk5L9Lho7Prm6/XJ8gxYzfQ==}
+  /@next/bundle-analyzer/13.0.5:
+    resolution: {integrity: sha512-45q05yO6ZqS5NHHaxnU/PsVdMw5XfT6d7CptFaIr/9O2nECDjhM56G5JQx+346fkI76l1embxkLBzoQByTYGKQ==}
     dependencies:
-      webpack-bundle-analyzer: 4.3.0
+      webpack-bundle-analyzer: 4.7.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -4680,12 +4680,13 @@ packages:
       tailwindcss: 3.2.4
     dev: true
 
-  /@theguild/prettier-config/0.1.1_prettier@2.8.0:
-    resolution: {integrity: sha512-vZ0DtusRtMWIM4Bmztq+FimDcKftncteEsKhfDeTj7Oos3+lv8bT4e2VR5HKVKVXZn/cLv6eRwR65/puUakOAQ==}
+  /@theguild/prettier-config/1.0.0_prettier@2.8.0:
+    resolution: {integrity: sha512-EdPbtrXN1Z0QqmFJZXGj4n/xLZTCJtDxb+jeNGmOccrv0cJTB46d+lsvCO8j7SmuUhyt/gv9B6nnVKt66D2X1w==}
     peerDependencies:
       prettier: ^2
     dependencies:
       prettier: 2.8.0
+      prettier-plugin-pkg: 0.17.1_prettier@2.8.0
       prettier-plugin-sh: 0.12.8_prettier@2.8.0
     dev: true
 
@@ -6559,6 +6560,7 @@ packages:
   /commander/6.2.1:
     resolution: {integrity: sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==}
     engines: {node: '>= 6'}
+    dev: true
 
   /commander/7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
@@ -13317,6 +13319,15 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
+  /prettier-plugin-pkg/0.17.1_prettier@2.8.0:
+    resolution: {integrity: sha512-XPRRMQR5oseJXdfK8kQDj2LCV1UjmTuDlPbbJ8C2WLaATNhdvZLhQO0+NtWnRrQTP+erLR5cVxfcwyqF+3R8SA==}
+    engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      prettier: ^2.0.0
+    dependencies:
+      prettier: 2.8.0
+    dev: true
+
   /prettier-plugin-sh/0.12.8_prettier@2.8.0:
     resolution: {integrity: sha512-VOq8h2Gn5UzrCIKm4p/nAScXJbN09HdyFDknAcxt6Qu/tv/juu9bahxSrcnM9XWYA+Spz1F1ANJ4LhfwB7+Q1Q==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
@@ -15984,15 +15995,15 @@ packages:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
     dev: true
 
-  /webpack-bundle-analyzer/4.3.0:
-    resolution: {integrity: sha512-J3TPm54bPARx6QG8z4cKBszahnUglcv70+N+8gUqv2I5KOFHJbzBiLx+pAp606so0X004fxM7hqRu10MLjJifA==}
+  /webpack-bundle-analyzer/4.7.0:
+    resolution: {integrity: sha512-j9b8ynpJS4K+zfO5GGwsAcQX4ZHpWV+yRiHDiL+bE0XHJ8NiPYLTNVQdlFYWxtpg9lfAQNlwJg16J9AJtFSXRg==}
     engines: {node: '>= 10.13.0'}
     hasBin: true
     dependencies:
       acorn: 8.8.1
       acorn-walk: 8.2.0
       chalk: 4.1.2
-      commander: 6.2.1
+      commander: 7.2.0
       gzip-size: 6.0.0
       lodash: 4.17.21
       opener: 1.5.2

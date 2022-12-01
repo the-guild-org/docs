@@ -28,11 +28,15 @@ export type SchemaServicesOptions = {
   onBlur?: (value: string) => void;
   onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;
   onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;
-  onSchemaError?: (errors: [GraphQLError], sdl: string, languageService: EnrichedLanguageService) => void;
+  onSchemaError?: (
+    errors: [GraphQLError],
+    sdl: string,
+    languageService: EnrichedLanguageService,
+  ) => void;
   sharedLanguageService?: EnrichedLanguageService;
   keyboardShortcuts?: (
     editorInstance: monaco.editor.IStandaloneCodeEditor,
-    monacoInstance: typeof monaco
+    monacoInstance: typeof monaco,
   ) => monaco.editor.IActionDescriptor[];
 };
 
@@ -51,7 +55,7 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
           },
         },
       }),
-    [options.sharedLanguageService]
+    [options.sharedLanguageService],
   );
 
   useEffect(() => {
@@ -85,20 +89,30 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
       }
 
       const handler = languageService.getModelChangeHandler();
-      handler(editorRef, monacoRef, options.diagnosticsProviders || [], options.decorationsProviders || []);
+      handler(
+        editorRef,
+        monacoRef,
+        options.diagnosticsProviders || [],
+        options.decorationsProviders || [],
+      );
 
       const onChangeDisposable = editorRef.onDidChangeModelContent(() =>
-        handler(editorRef, monacoRef, options.diagnosticsProviders || [], options.decorationsProviders || [])
+        handler(
+          editorRef,
+          monacoRef,
+          options.diagnosticsProviders || [],
+          options.decorationsProviders || [],
+        ),
       );
 
       const definitionProviderDisposable = monacoRef.languages.registerDefinitionProvider(
         'graphql',
-        languageService.getDefinitionProvider(options.definitionProviders || [])
+        languageService.getDefinitionProvider(options.definitionProviders || []),
       );
 
       const hoverDisposable = monacoRef.languages.registerHoverProvider(
         'graphql',
-        languageService.getHoverProvider(options.hoverProviders || [])
+        languageService.getHoverProvider(options.hoverProviders || []),
       );
 
       return () => {
@@ -128,7 +142,10 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
             if (type?.astNode?.loc) {
               const range = locToRange(type.astNode.loc);
               editorRef?.setSelection(range);
-              editorRef?.revealPositionInCenter({ column: 0, lineNumber: range.startLineNumber }, 0);
+              editorRef?.revealPositionInCenter(
+                { column: 0, lineNumber: range.startLineNumber },
+                0,
+              );
             }
           }
         });
@@ -144,7 +161,10 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
               if (field?.astNode?.loc) {
                 const range = locToRange(field.astNode.loc);
                 editorRef?.setSelection(range);
-                editorRef?.revealPositionInCenter({ column: 0, lineNumber: range.startLineNumber }, 0);
+                editorRef?.revealPositionInCenter(
+                  { column: 0, lineNumber: range.startLineNumber },
+                  0,
+                );
               }
             }
           }

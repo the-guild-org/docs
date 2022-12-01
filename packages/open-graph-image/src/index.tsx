@@ -27,7 +27,9 @@ async function handler(request: Request): Promise<Response> {
     const product = productName && products[productName];
 
     if (!product) {
-      throw new Error(`Unknown product name "${productName}".\nAllowed product names: ${ALLOWED_PRODUCT_NAMES}`);
+      throw new Error(
+        `Unknown product name "${productName}".\nAllowed product names: ${ALLOWED_PRODUCT_NAMES}`,
+      );
     }
     // ?title=<title>
     const title = searchParams.get('title')?.slice(0, 100);
@@ -39,7 +41,10 @@ async function handler(request: Request): Promise<Response> {
         <div tw="flex bg-neutral-900 h-full flex-col w-full items-center justify-center">
           <LeftCircle tw="absolute left-0 top-0" color={product.primaryColor} />
           <RightCircle tw="absolute right-0" color={product.primaryColor} />
-          <RightSmallCircle tw="absolute right-0 opacity-80" color={shade(product.primaryColor || '', 100)} />
+          <RightSmallCircle
+            tw="absolute right-0 opacity-80"
+            color={shade(product.primaryColor || '', 100)}
+          />
           <product.logo style={{ transform: 'scale(2.5)' }} {...(IS_GUILD && { fill: 'white' })} />
           <span tw="font-bold text-7xl text-white my-14 mb-10">{product.name}</span>
           {title && <span tw="font-bold text-5xl text-white mb-4">{title}</span>}
@@ -51,16 +56,18 @@ async function handler(request: Request): Promise<Response> {
               <TheGuild fill="#fff" />
             </div>
           )}
-        </div>
+        </div>,
       ),
       {
         headers: {
           'Content-Type': 'image/png',
         },
-      }
+      },
     );
   } catch (e) {
-    return new Response(`Failed to generate the image.\n\nError: ${(e as Error).message}`, { status: 500 });
+    return new Response(`Failed to generate the image.\n\nError: ${(e as Error).message}`, {
+      status: 500,
+    });
   }
 }
 
@@ -134,7 +141,14 @@ type CircleProps = ComponentProps<'svg'> & { color?: string; tw?: string };
 
 const RightSmallCircle = ({ color = '#f25c40', ...props }: CircleProps) => {
   return (
-    <svg width="310" height="316" viewBox="0 0 310 316" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      width="310"
+      height="316"
+      viewBox="0 0 310 316"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <g filter="url(#filter0_b_1686_12556)">
         <circle cx="158" cy="158" r="158" fill="url(#paint0_linear_1686_12556)" fillOpacity="0.4" />
         <circle cx="158" cy="158" r="156" stroke="url(#paint1_linear_1686_12556)" strokeWidth="4" />
@@ -152,7 +166,12 @@ const RightSmallCircle = ({ color = '#f25c40', ...props }: CircleProps) => {
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feGaussianBlur in="BackgroundImageFix" stdDeviation="47" />
           <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1686_12556" />
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1686_12556" result="shape" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect1_backgroundBlur_1686_12556"
+            result="shape"
+          />
         </filter>
         <linearGradient
           id="paint0_linear_1686_12556"
@@ -183,7 +202,14 @@ const RightSmallCircle = ({ color = '#f25c40', ...props }: CircleProps) => {
 
 const RightCircle = ({ color = '#7433ff', ...props }: CircleProps) => {
   return (
-    <svg width="205" height="616" viewBox="0 0 205 616" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      width="205"
+      height="616"
+      viewBox="0 0 205 616"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <circle cx="308" cy="308" r="308" fill="url(#paint0_linear_1686_12554)" />
       <defs>
         <linearGradient
@@ -204,11 +230,24 @@ const RightCircle = ({ color = '#7433ff', ...props }: CircleProps) => {
 
 const LeftCircle = ({ color = '#1cc8ee', ...props }: CircleProps) => {
   return (
-    <svg width="572" height="584" viewBox="0 0 572 584" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      width="572"
+      height="584"
+      viewBox="0 0 572 584"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <g opacity="0.4" filter="url(#filter0_f_2101_15208)">
         <circle cx="70" cy="81.9999" r="308" fill="url(#paint0_linear_2101_15208)" />
       </g>
-      <circle cx="48" cy="17" r="308" transform="rotate(-57.2911 48 17)" fill="url(#paint1_linear_2101_15208)" />
+      <circle
+        cx="48"
+        cy="17"
+        r="308"
+        transform="rotate(-57.2911 48 17)"
+        fill="url(#paint1_linear_2101_15208)"
+      />
       <defs>
         <filter
           id="filter0_f_2101_15208"

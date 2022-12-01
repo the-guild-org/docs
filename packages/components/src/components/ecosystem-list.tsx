@@ -5,7 +5,14 @@ import { Anchor } from './anchor';
 const productCategories = [
   {
     title: 'Build GraphQL servers',
-    items: [PRODUCTS.YOGA, PRODUCTS.MODULES, PRODUCTS.ENVELOP, PRODUCTS.MESH, PRODUCTS.SCALARS, PRODUCTS.SOFA],
+    items: [
+      PRODUCTS.YOGA,
+      PRODUCTS.MODULES,
+      PRODUCTS.ENVELOP,
+      PRODUCTS.MESH,
+      PRODUCTS.SCALARS,
+      PRODUCTS.SOFA,
+    ],
   },
   {
     title: 'Supercharge your workflow',
@@ -29,18 +36,24 @@ const productCategories = [
   },
 ];
 
-export const EcosystemList = forwardRef<HTMLDivElement>(function EcosystemList(_, forwardedRef): ReactElement {
+export const EcosystemList = forwardRef<HTMLDivElement>(function EcosystemList(
+  _,
+  forwardedRef,
+): ReactElement {
   return (
     <div
       className="max-h-[calc(100vh-70px)] min-h-[300px] w-[800px] overflow-y-auto rounded-lg bg-white p-5 dark:bg-neutral-800"
       style={{
-        boxShadow: 'hsl(206 22% 7% / 35%) 0 10px 38px -10px, hsl(206 22% 7% / 20%) 0 10px 20px -15px',
+        boxShadow:
+          'hsl(206 22% 7% / 35%) 0 10px 38px -10px, hsl(206 22% 7% / 20%) 0 10px 20px -15px',
       }}
       ref={forwardedRef}
     >
       {productCategories.map(category => (
         <div key={category.title} className="mb-6 last:mb-0">
-          <h3 className="mt-1 mb-5 w-full text-base font-normal text-gray-600 dark:text-gray-400">{category.title}</h3>
+          <h3 className="mt-1 mb-5 w-full text-base font-normal text-gray-600 dark:text-gray-400">
+            {category.title}
+          </h3>
           <div className="flex flex-wrap">
             {category.items.map(product => (
               <Anchor
@@ -63,8 +76,12 @@ export const EcosystemList = forwardRef<HTMLDivElement>(function EcosystemList(_
               >
                 <product.logo className="h-9 w-9 shrink-0" />
                 <span className="flex flex-col justify-center">
-                  <h4 className="m-0 text-sm font-semibold text-black dark:text-gray-300">{product.name}</h4>
-                  <p className="!mt-0 text-xs font-medium text-gray-900 dark:text-gray-400">{product.title}</p>
+                  <h4 className="m-0 text-sm font-semibold text-black dark:text-gray-300">
+                    {product.name}
+                  </h4>
+                  <p className="!mt-0 text-xs font-medium text-gray-900 dark:text-gray-400">
+                    {product.title}
+                  </p>
                 </span>
               </Anchor>
             ))}

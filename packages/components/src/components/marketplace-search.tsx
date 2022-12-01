@@ -54,7 +54,9 @@ export const MarketplaceSearch = ({
   return (
     <section className={clsx('bg-white dark:bg-[#111]', className)}>
       <div className="container max-w-[90rem] py-12">
-        <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">{title}</h2>
+        <h2 className="mt-0 mb-4 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">
+          {title}
+        </h2>
         {tagsFilter && (
           <TagsContainer>
             {tagsFilter.map(tagName => (

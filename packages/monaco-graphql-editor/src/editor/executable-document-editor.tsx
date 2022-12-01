@@ -83,7 +83,9 @@ const toCompletion = (entry: GraphQLWorkerCompletionItem): monaco.languages.Comp
     kind: toCompletionItemKind(entry.kind as lsCIK),
     label: entry.label,
     insertText: entry.insertText ?? (entry.label as string),
-    insertTextRules: entry.insertText ? languages.CompletionItemInsertTextRule.InsertAsSnippet : undefined,
+    insertTextRules: entry.insertText
+      ? languages.CompletionItemInsertTextRule.InsertAsSnippet
+      : undefined,
     sortText: entry.sortText,
     filterText: entry.filterText,
     documentation: entry.documentation,
@@ -96,7 +98,7 @@ class GraphQLWorker {
   doComplete(
     documentModel: monaco.editor.IReadOnlyModel,
     position: monaco.Position,
-    schema: GraphQLSchema
+    schema: GraphQLSchema,
   ): GraphQLWorkerCompletionItem[] {
     const document = documentModel.getValue();
     if (!document) {
@@ -149,7 +151,7 @@ export const ExecutableDocumentEditor = ({
       triggerCharacters: [':', '$', '\n', ' ', '(', '@'],
       provideCompletionItems(
         model: monaco.editor.IReadOnlyModel,
-        position: monaco.Position
+        position: monaco.Position,
       ): monaco.languages.CompletionList {
         const isUriEquals = model.uri.path === editorUriRef.current!.path;
         if (!isUriEquals) {

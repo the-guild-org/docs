@@ -7,7 +7,12 @@ export type ButtonProps = Omit<ComponentProps<'a'>, 'href' | 'ref'> & {
   href: string;
 };
 
-export const Button = ({ children, className, variant = 'primary', ...props }: ButtonProps): ReactElement => {
+export const Button = ({
+  children,
+  className,
+  variant = 'primary',
+  ...props
+}: ButtonProps): ReactElement => {
   return (
     <Anchor
       className={clsx(
@@ -24,7 +29,7 @@ export const Button = ({ children, className, variant = 'primary', ...props }: B
         variant === 'primary'
           ? 'bg-cyan-400 text-white hover:shadow-cyan-400/40'
           : 'bg-white text-black hover:shadow-white/40',
-        className
+        className,
       )}
       {...props}
     >

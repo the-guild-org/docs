@@ -1,7 +1,14 @@
 import { ComponentProps, ReactElement } from 'react';
 
 export const ConfigLogo = (props: ComponentProps<'svg'>): ReactElement => (
-  <svg width="54" height="54" viewBox="0 0 54 54" fill="#6D7A99" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width="54"
+    height="54"
+    viewBox="0 0 54 54"
+    fill="#6D7A99"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       fillRule="evenodd"
       clipRule="evenodd"

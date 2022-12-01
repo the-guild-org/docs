@@ -1,21 +1,25 @@
 {
   "name": "the-guild-components-monorepo",
-  "private": true,
   "type": "module",
+  "private": true,
+  "packageManager": "pnpm@7.16.1",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
-    "start": "storybook dev",
-    "prebuild": "rimraf packages/*/dist/ .turbo/",
     "build": "turbo run build",
-    "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/style.css",
     "build-storybook": "storybook build",
-    "prettier": "prettier --write --list-different .",
-    "lint:prettier": "prettier --check .",
+    "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/style.css",
     "lint": "eslint --ignore-path .gitignore .",
-    "type-check": "tsc",
-    "type-check:watch": "tsc --watch",
+    "lint:prettier": "prettier --check .",
+    "prebuild": "rimraf packages/*/dist/ .turbo/",
     "prepare": "husky install",
     "prerelease": "pnpm build",
-    "release": "changeset publish"
+    "prettier": "prettier --write --list-different .",
+    "release": "changeset publish",
+    "start": "storybook dev",
+    "type-check": "tsc",
+    "type-check:watch": "tsc --watch"
   },
   "devDependencies": {
     "@algolia/autocomplete-theme-classic": "1.7.3",
@@ -27,7 +31,7 @@
     "@storybook/mdx2-csf": "0.0.3",
     "@storybook/react-webpack5": "7.0.0-alpha.53",
     "@tailwindcss/line-clamp": "0.4.2",
-    "@theguild/prettier-config": "0.1.1",
+    "@theguild/prettier-config": "1.0.0",
     "@theguild/tailwind-config": "0.2.1",
     "@types/react": "18.0.25",
     "@types/react-instantsearch-core": "6.26.2",
@@ -76,9 +80,5 @@
       "pretty-quick --staged",
       "eslint"
     ]
-  },
-  "engines": {
-    "node": ">=16"
-  },
-  "packageManager": "pnpm@7.16.1"
+  }
 }

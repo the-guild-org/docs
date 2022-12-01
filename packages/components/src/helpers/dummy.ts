@@ -63,7 +63,8 @@ export const dummyInfoList: IInfoListProps = {
   items: [
     {
       title: 'Install GraphQL Envelop',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
       link: {
         children: 'Documentation',
         title: 'Read the documentation',
@@ -72,7 +73,8 @@ export const dummyInfoList: IInfoListProps = {
     },
     {
       title: 'GitHub integration',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas euismod amet duis quisque semper.',
       link: {
         children: 'GitHub',
         title: 'View the code',

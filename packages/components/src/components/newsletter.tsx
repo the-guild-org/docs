@@ -17,7 +17,7 @@ export const Newsletter = ({ onNewsletterSubmit }: NewsletterProps): ReactElemen
         'flex items-center gap-x-3 rounded-md border-2 bg-gray-100 px-3 py-2 dark:bg-neutral-800',
         inputError
           ? 'border-red-500 text-red-500 dark:border-red-400 dark:text-red-400'
-          : 'border-gray-100 text-black dark:border-gray-800 dark:text-gray-200'
+          : 'border-gray-100 text-black dark:border-gray-800 dark:text-gray-200',
       )}
       onSubmit={e => {
         e.preventDefault();

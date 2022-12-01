@@ -42,7 +42,7 @@ const config: StorybookConfig = {
     config.resolve.plugins.push(
       new TsconfigPathsPlugin({
         extensions: config.resolve.extensions,
-      })
+      }),
     );
     config.resolve.fallback = {
       ...config.resolve.fallback,
