@@ -41,7 +41,7 @@ export function defineConfig({
           <Header accentColor="#1cc8ee" searchBarProps={{ version: 'v2' }} />
           <Navbar {...props} />
         </>
-      )
+      ),
     },
     search: {
       component: null,
