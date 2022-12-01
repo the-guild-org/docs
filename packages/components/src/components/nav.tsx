@@ -38,7 +38,7 @@ export const Nav = ({
         md:justify-end
         md:transition-none`,
         !isOpen && '-top-full bottom-full',
-        className
+        className,
       )}
     >
       <button

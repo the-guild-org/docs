@@ -18,7 +18,7 @@ export const Banner = ({
     <div
       className={clsx(
         'sticky top-0 w-full py-4 px-6 text-center [background:var(--bgColor)] [color:var(--color)]',
-        animation || 'animate-gradient'
+        animation || 'animate-gradient',
       )}
       style={{
         '--color': color,

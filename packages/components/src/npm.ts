@@ -29,7 +29,7 @@ export function withStartingSlash(v: string) {
 
 async function tryRemoteReadme(repo: string, path: string) {
   const fetchPath = `https://raw.githubusercontent.com/${withoutStartingSlash(
-    withoutTrailingSlash(repo)
+    withoutTrailingSlash(repo),
   )}/HEAD${withStartingSlash(path)}`;
 
   try {
@@ -57,7 +57,7 @@ export const fetchPackageInfo = async (
   githubReadme?: {
     repo: string;
     path: string;
-  }
+  },
 ): Promise<Package> => {
   // cache since we fetch same data on /plugins and /plugins/:name
   const cachedData = cache[packageName];
@@ -69,12 +69,15 @@ export const fetchPackageInfo = async (
   console.debug(`Loading NPM package info: ${packageName}`);
   const [packageInfo, { downloads }] = await Promise.all([
     fetch(`https://registry.npmjs.org/${encodedName}`).then(response => response.json()),
-    fetch(`https://api.npmjs.org/downloads/point/last-week/${encodedName}`).then(response => response.json()),
+    fetch(`https://api.npmjs.org/downloads/point/last-week/${encodedName}`).then(response =>
+      response.json(),
+    ),
   ]);
 
   const { readme, time, description } = packageInfo;
   const latestVersion = packageInfo['dist-tags'].latest;
-  const readmeContent = githubReadme && (await tryRemoteReadme(githubReadme.repo, githubReadme.path));
+  const readmeContent =
+    githubReadme && (await tryRemoteReadme(githubReadme.repo, githubReadme.path));
 
   cache[packageName] = {
     readme:

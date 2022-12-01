@@ -8,7 +8,20 @@ import { Anchor } from './anchor';
 import { Image } from './image';
 
 const formatDate = (value: string): string => {
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
   const date = new Date(value);
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 };
@@ -20,16 +33,20 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
         className="border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 last:border-0 dark:border-gray-800 dark:text-gray-400"
         key={item.title}
       >
-        <td className="w-14 py-4 pr-2 align-top md:w-20">{item.image && <Image {...item.image} />}</td>
+        <td className="w-14 py-4 pr-2 align-top md:w-20">
+          {item.image && <Image {...item.image} />}
+        </td>
         <td className="py-4 px-2">
           <Anchor
             {...item.link}
             className={clsx(
               'text-gray-500 duration-150 ease-in-out hover:opacity-75 dark:text-gray-400',
-              item.link.className
+              item.link.className,
             )}
           >
-            <h3 className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg">{item.title}</h3>
+            <h3 className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg">
+              {item.title}
+            </h3>
             <div className="line-clamp-3">{item.description}</div>
             {item.tags && item.tags.length > 0 && (
               <TagsContainer>
@@ -55,7 +72,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
               dark:bg-gray-700
               dark:text-white
               md:p-2.5`,
-              item.link.className
+              item.link.className,
             )}
           >
             <CaretSlimIcon className="h-5 w-5 -rotate-90" />
@@ -96,7 +113,11 @@ export const MarketplaceList = ({
 
   return (
     <section className={clsx('w-full bg-white dark:bg-[#111]', className)}>
-      {title && <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">{title}</h2>}
+      {title && (
+        <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">
+          {title}
+        </h2>
+      )}
       {!pages[currentPage] || !pages[currentPage].length ? (
         <div className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300">
           {placeholder}

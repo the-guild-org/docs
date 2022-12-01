@@ -61,9 +61,9 @@ export const PackageCmd = ({ packages }: { packages: (string | Command)[] }): Re
                 return `${pkg.isGlobal ? Global[pkgManager] : Add[pkgManager]} ${pkg.name}`;
             }
           })
-          .join('\n')
+          .join('\n'),
       ),
-    [packages]
+    [packages],
   );
 
   return (

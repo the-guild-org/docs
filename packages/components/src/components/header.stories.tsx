@@ -23,7 +23,8 @@ export default {
     },
     themeSwitch: {
       name: 'Theme Switch',
-      description: 'Use this to add a theme switch button (only use on sites with existing theme support).',
+      description:
+        'Use this to add a theme switch button (only use on sites with existing theme support).',
     },
   },
 } as Meta;

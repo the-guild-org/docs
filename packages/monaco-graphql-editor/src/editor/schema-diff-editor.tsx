@@ -10,7 +10,7 @@ function BaseSchemaDiffEditor(
   forwardedRef: ForwardedRef<{
     original: SchemaEditorApi;
     modified: SchemaEditorApi;
-  }>
+  }>,
 ) {
   const { resolvedTheme } = useTheme();
   const originalSchemaService = useSchemaServices(props);
@@ -27,7 +27,7 @@ function BaseSchemaDiffEditor(
       modifiedSchemaService.editorRef,
       originalSchemaService.languageService,
       modifiedSchemaService.languageService,
-    ]
+    ],
   );
 
   return (

@@ -1,4 +1,11 @@
-import { ForwardedRef, useImperativeHandle, useEffect, useState, forwardRef, useCallback } from 'react';
+import {
+  ForwardedRef,
+  useImperativeHandle,
+  useEffect,
+  useState,
+  forwardRef,
+  useCallback,
+} from 'react';
 import MonacoEditor, { EditorProps, BeforeMount, OnMount, OnChange } from '@monaco-editor/react';
 import { IDisposable } from 'monaco-editor';
 import { GraphQLError, GraphQLSchema } from 'graphql';
@@ -10,12 +17,17 @@ export type SchemaEditorProps = SchemaServicesOptions & {
   onBlur?: (value: string) => void;
   onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;
   onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;
-  onSchemaError?: (errors: [GraphQLError], sdl: string, languageService: EnrichedLanguageService) => void;
+  onSchemaError?: (
+    errors: [GraphQLError],
+    sdl: string,
+    languageService: EnrichedLanguageService,
+  ) => void;
 } & Omit<EditorProps, 'language'>;
 
 function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEditorApi>) {
   const { resolvedTheme } = useTheme();
-  const { languageService, setMonaco, setEditor, editorApi, editorRef, setSchema } = useSchemaServices(props);
+  const { languageService, setMonaco, setEditor, editorApi, editorRef, setSchema } =
+    useSchemaServices(props);
   useImperativeHandle(ref, () => editorApi, [editorRef, languageService]);
 
   useEffect(() => {
@@ -43,7 +55,7 @@ function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEdit
       setMonaco(monaco);
       props.beforeMount?.(monaco);
     },
-    [props.beforeMount]
+    [props.beforeMount],
   );
 
   const handleMount = useCallback<OnMount>(
@@ -51,7 +63,7 @@ function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEdit
       setEditor(editor);
       props.onMount?.(editor, monaco);
     },
-    [props.onMount]
+    [props.onMount],
   );
 
   const handleChange = useCallback<OnChange>(
@@ -73,11 +85,18 @@ function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEdit
         const error =
           e instanceof GraphQLError
             ? e
-            : new GraphQLError((e as Error).message, undefined, undefined, undefined, undefined, e as Error);
+            : new GraphQLError(
+                (e as Error).message,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                e as Error,
+              );
         props.onSchemaError([error], newValue, languageService);
       }
     },
-    [props.onChange, props.onSchemaChange, props.onSchemaError]
+    [props.onChange, props.onSchemaChange, props.onSchemaError],
   );
 
   return (

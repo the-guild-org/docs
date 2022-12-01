@@ -74,7 +74,7 @@ export const SearchBarV2 = ({
             <div className="my-20 w-full text-center text-xl font-light text-gray-600 dark:text-gray-400">
               No results for "{query}"
             </div>
-          )
+          ),
         );
       },
       render({ children, state, Fragment, components }, root) {
@@ -83,7 +83,11 @@ export const SearchBarV2 = ({
           <Fragment>
             <div className="flex h-[600px] flex-row">
               <div className="min-w-[400px]">{children}</div>
-              <SidePreview accentColor={accentColor} item={state.context.preview} components={components} />
+              <SidePreview
+                accentColor={accentColor}
+                item={state.context.preview}
+                components={components}
+              />
             </div>
             <Anchor
               href="https://algolia.com"
@@ -99,7 +103,7 @@ export const SearchBarV2 = ({
                 />
               </svg>
             </Anchor>
-          </Fragment>
+          </Fragment>,
         );
       },
       openOnFocus: true,
@@ -142,7 +146,9 @@ export const SearchBarV2 = ({
         const itemsSources = items
           .slice()
           // put current website's section on top
-          .sort(a => (a.domain.startsWith(`${window.location.origin}${window.location.pathname}`) ? -1 : 0))
+          .sort(a =>
+            a.domain.startsWith(`${window.location.origin}${window.location.pathname}`) ? -1 : 0,
+          )
           .map(item => item.source);
 
         const sourcesPerSite = itemsSources.reduce<Record<string, any>>((acc, sourceId) => {

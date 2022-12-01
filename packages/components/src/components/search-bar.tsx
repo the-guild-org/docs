@@ -1,6 +1,20 @@
-import { ChangeEvent, useEffect, useState, useRef, useCallback, createElement, ReactElement, ReactNode } from 'react';
+import {
+  ChangeEvent,
+  useEffect,
+  useState,
+  useRef,
+  useCallback,
+  createElement,
+  ReactElement,
+  ReactNode,
+} from 'react';
 import algoliaSearch from 'algoliasearch';
-import { InstantSearch, connectHits, connectSearchBox, connectStateResults } from 'react-instantsearch-dom';
+import {
+  InstantSearch,
+  connectHits,
+  connectSearchBox,
+  connectStateResults,
+} from 'react-instantsearch-dom';
 import { Hit, SearchBoxProvided, StateResultsProvided } from 'react-instantsearch-core';
 import clsx from 'clsx';
 import { useDebouncedCallback } from 'use-debounce';
@@ -65,7 +79,9 @@ const Snippet = ({
   attribute: string;
   tagName?: string;
 }): ReactElement => {
-  let html = getPropertyByPath(hit, `_snippetResult.${attribute}.value`) || getPropertyByPath(hit, attribute);
+  let html =
+    getPropertyByPath(hit, `_snippetResult.${attribute}.value`) ||
+    getPropertyByPath(hit, attribute);
   if (html) {
     // some query results contains `.css-` selectors, so we strips them out
     html = html.replace(/\s+\.css-.*/, '');
@@ -102,7 +118,7 @@ const SearchBox = ({
       setQuery(value);
       debouncedRefine(value);
     },
-    [setQuery, debouncedRefine]
+    [setQuery, debouncedRefine],
   );
 
   useEffect(() => {
@@ -197,11 +213,14 @@ const StateResults = ({
   searchResults,
   children,
 }: StateResultsProvided<ResultDoc> & { children: ReactNode }): ReactElement => {
-  const content = searchState && searchResults && !searchResults.nbHits && searchResults.query.length > 0 && (
-    <span>
-      No results for <strong>"{searchState.query}"</strong>.
-    </span>
-  );
+  const content = searchState &&
+    searchResults &&
+    !searchResults.nbHits &&
+    searchResults.query.length > 0 && (
+      <span>
+        No results for <strong>"{searchState.query}"</strong>.
+      </span>
+    );
 
   return <div className="mt-9">{content || children}</div>;
 };
@@ -277,7 +296,9 @@ const Hits = ({ hits, accentColor }: { hits: Hit<any>[]; accentColor: string }):
               <Anchor
                 key={subHit.url}
                 href={subHit.url}
-                sameSite={typeof window === 'object' && subHit.url.startsWith(window.location.origin)}
+                sameSite={
+                  typeof window === 'object' && subHit.url.startsWith(window.location.origin)
+                }
                 className="
                   mb-2
                   flex
@@ -323,7 +344,7 @@ export const SearchBarComponent = ({
       setModalOpen(state);
       onHandleModal?.(state);
     },
-    [onHandleModal]
+    [onHandleModal],
   );
 
   const CustomSearchBox = connectSearchBox(SearchBox);
@@ -358,7 +379,7 @@ export const SearchBarComponent = ({
         md:dark:text-gray-300
         `,
           isFull && '!md:p-2 !m-0 w-full',
-          className
+          className,
         )}
         style={{ '--accentColor': accentColor }}
         onClick={() => handleModal(true)}
@@ -368,8 +389,16 @@ export const SearchBarComponent = ({
       </button>
 
       <Modal title={title} visible={modalOpen} placement="top" onCancel={() => handleModal(false)}>
-        <InstantSearch indexName={algoliaConfig.searchIndex} searchClient={searchClient} stalledSearchDelay={500}>
-          <CustomSearchBox accentColor={accentColor} placeholder={placeholder} isModalOpen={modalOpen} />
+        <InstantSearch
+          indexName={algoliaConfig.searchIndex}
+          searchClient={searchClient}
+          stalledSearchDelay={500}
+        >
+          <CustomSearchBox
+            accentColor={accentColor}
+            placeholder={placeholder}
+            isModalOpen={modalOpen}
+          />
           <CustomStateResults>
             <CustomHits accentColor={accentColor} />
           </CustomStateResults>

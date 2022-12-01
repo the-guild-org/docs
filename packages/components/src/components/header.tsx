@@ -1,6 +1,15 @@
 import { useState, useMemo, ReactElement, useCallback } from 'react';
 import clsx from 'clsx';
-import { Root, Trigger, Indicator, Viewport, List, Item, Link, Content } from '@radix-ui/react-navigation-menu';
+import {
+  Root,
+  Trigger,
+  Indicator,
+  Viewport,
+  List,
+  Item,
+  Link,
+  Content,
+} from '@radix-ui/react-navigation-menu';
 import { useTheme } from 'nextra-theme-docs';
 import { IHeaderProps } from '../types/components';
 import { SearchBar } from './search-bar';
@@ -28,7 +37,7 @@ export const Header = ({
 
   const shouldUseMenus = useMemo(
     () => windowWidth && windowHeight && windowHeight > 400 && windowWidth > 800,
-    [windowHeight, windowWidth]
+    [windowHeight, windowWidth],
   );
 
   const toggleNav = useCallback(() => {
@@ -127,7 +136,7 @@ export const Header = ({
                         md:text-sm`,
                       activeLink && link.href.includes(activeLink)
                         ? 'text-gray-800 dark:text-gray-200'
-                        : 'text-gray-600 dark:text-gray-400'
+                        : 'text-gray-600 dark:text-gray-400',
                     )}
                     style={{ '--accentColor': accentColor }}
                     sameSite={sameSite}

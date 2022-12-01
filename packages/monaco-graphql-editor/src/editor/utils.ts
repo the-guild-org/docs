@@ -44,12 +44,14 @@ export type BridgeOptions = {
 };
 
 export type HoverSource = {
-  forNode(options: BridgeOptions): monaco.IMarkdownString | null | Promise<monaco.IMarkdownString | null>;
+  forNode(
+    options: BridgeOptions,
+  ): monaco.IMarkdownString | null | Promise<monaco.IMarkdownString | null>;
 };
 
 export type DiagnosticsSource = {
   forDocument(
-    options: Pick<BridgeOptions, 'document' | 'languageService' | 'model'>
+    options: Pick<BridgeOptions, 'document' | 'languageService' | 'model'>,
   ): monaco.editor.IMarkerData[] | null | Promise<monaco.editor.IMarkerData[] | null>;
 };
 
@@ -82,12 +84,14 @@ export type DecorationsSource = {
     options: Pick<BridgeOptions, 'document' | 'languageService' | 'model'> & {
       editor: monaco.editor.IStandaloneCodeEditor | monaco.editor.IStandaloneDiffEditor;
       monaco: typeof monaco;
-    }
+    },
   ): void | Promise<void>;
 };
 
 export type DefinitionSource = {
-  forNode(options: BridgeOptions): monaco.languages.Definition[] | null | Promise<monaco.languages.Definition[] | null>;
+  forNode(
+    options: BridgeOptions,
+  ): monaco.languages.Definition[] | null | Promise<monaco.languages.Definition[] | null>;
 };
 
 export const coreDefinitionSource: DefinitionSource = {
@@ -175,7 +179,7 @@ export type EditorAction = {
 export function showWidgetInPosition(
   editorInstance: monaco.editor.IStandaloneCodeEditor,
   position: BridgeOptions['position'],
-  htmlElement: HTMLElement
+  htmlElement: HTMLElement,
 ): void {
   editorInstance.changeViewZones(function (changeAccessor) {
     changeAccessor.addZone({

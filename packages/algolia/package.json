@@ -5,20 +5,26 @@
     "url": "the-guild-org/the-guild-components",
     "directory": "packages/algolia"
   },
+  "license": "MIT",
   "bin": {
     "theguild-nextra-algolia": "dist/bin.mjs"
   },
+  "main": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "license": "MIT",
-  "sideEffects": false,
-  "main": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "scripts": {
+    "build": "tsup",
     "prebuild": "pnpm types:check && rm -rf dist",
-    "types:check": "tsc --noEmit",
-    "build": "tsup"
+    "types:check": "tsc --noEmit"
   },
   "dependencies": {
     "algoliasearch": "^4.13.1",
@@ -38,14 +44,8 @@
   "resolutions": {
     "@types/node": "18.11.10"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
-    },
-    "./package.json": "./package.json"
-  },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "sideEffects": false
 }

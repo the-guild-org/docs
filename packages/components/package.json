@@ -1,23 +1,12 @@
 {
   "name": "@theguild/components",
   "version": "4.3.7",
-  "license": "MIT",
   "repository": {
     "url": "the-guild-org/the-guild-components",
     "directory": "packages/components"
   },
+  "license": "MIT",
   "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist",
-    "style.css",
-    "search-bar-v2.css"
-  ],
-  "scripts": {
-    "prebuild": "pnpm types:check && rm -rf dist",
-    "types:check": "tsc --noEmit",
-    "build": "tsup"
-  },
   "exports": {
     "./style.css": "./style.css",
     "./search-bar-v2.css": "./search-bar-v2.css",
@@ -35,6 +24,7 @@
       "types": "./dist/*.d.ts"
     }
   },
+  "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
       ".": [
@@ -48,10 +38,16 @@
       ]
     }
   },
-  "publishConfig": {
-    "access": "public"
+  "files": [
+    "dist",
+    "search-bar-v2.css",
+    "style.css"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "prebuild": "pnpm types:check && rm -rf dist",
+    "types:check": "tsc --noEmit"
   },
-  "sideEffects": false,
   "peerDependencies": {
     "next": "^12.3.1",
     "react": "^18.2.0",
@@ -93,5 +89,9 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.2.4"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
 }

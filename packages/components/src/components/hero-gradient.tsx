@@ -9,7 +9,7 @@ const Shadow = ({ className }: { className: string }): ReactElement => {
     <span
       className={clsx(
         'absolute h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl',
-        className
+        className,
       )}
     />
   );
@@ -29,7 +29,7 @@ export const HeroGradient = ({
       <div
         className={clsx(
           'container relative z-0 flex max-w-[90rem] items-center gap-6 px-6 md:px-14',
-          image ? 'py-6' : 'py-14'
+          image ? 'py-6' : 'py-14',
         )}
       >
         <div
@@ -43,19 +43,33 @@ export const HeroGradient = ({
         </div>
         <div className={clsx('grow md:pl-6')}>
           <h1 className="max-w-lg text-2xl font-bold text-white md:text-3xl">{title}</h1>
-          <p className="mt-2.5 mb-4 max-w-md text-base text-white opacity-70 md:text-lg">{description}</p>
+          <p className="mt-2.5 mb-4 max-w-md text-base text-white opacity-70 md:text-lg">
+            {description}
+          </p>
           <div className="flex items-center gap-x-3 text-xs md:mt-9">
             {link &&
               toArray(link).map(link => (
-                <Button key={link.href} variant="secondary" {...link} className={clsx('!px-8', link.className)} />
+                <Button
+                  key={link.href}
+                  variant="secondary"
+                  {...link}
+                  className={clsx('!px-8', link.className)}
+                />
               ))}
-            {version && isValidElement(version) ? version : <span className="text-gray-50 opacity-60">{version}</span>}
+            {version && isValidElement(version) ? (
+              version
+            ) : (
+              <span className="text-gray-50 opacity-60">{version}</span>
+            )}
           </div>
         </div>
         {image && (
           <Image
             {...image}
-            className={clsx('hidden w-full max-w-sm select-none sm:max-w-md md:block', image.className)}
+            className={clsx(
+              'hidden w-full max-w-sm select-none sm:max-w-md md:block',
+              image.className,
+            )}
           />
         )}
       </div>

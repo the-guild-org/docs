@@ -20,7 +20,9 @@ export async function getStaticProps() {
           ...pkgJson,
           dependencies: Object.fromEntries([
             ['@theguild/components', pkgJsonFromComponents.version],
-            ...Object.entries(pkgJson.dependencies).filter(([key]) => ['next', 'react', 'react-dom'].includes(key))
+            ...Object.entries(pkgJson.dependencies).filter(([key]) =>
+              ['next', 'react', 'react-dom'].includes(key)
+            )
           ]),
           devDependencies: pkgJson.devDependencies,
           nextBundleAnalysis: undefined

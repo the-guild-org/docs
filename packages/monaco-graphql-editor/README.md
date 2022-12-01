@@ -1,10 +1,15 @@
 ## `@theguild/editor`
 
-A monaco editor with built-in support for GraphQL Language Service, with features like online parser, syntax highligh, schema-building validations, hover and much more. The integration between Monaco editor and the GraphQL language service is exposed through a simple props/events based interface, with the awareness of the GraphQL schema.
+A monaco editor with built-in support for GraphQL Language Service, with features like online
+parser, syntax highligh, schema-building validations, hover and much more. The integration between
+Monaco editor and the GraphQL language service is exposed through a simple props/events based
+interface, with the awareness of the GraphQL schema.
 
 #### Acknowledgment
 
-This library was developed as part of the [Schema Prototyper Grant](https://forum.thegraph.com/t/schema-prototyper/1732) given by [The Graph Foundation](https://thegraph.com/).
+This library was developed as part of the
+[Schema Prototyper Grant](https://forum.thegraph.com/t/schema-prototyper/1732) given by
+[The Graph Foundation](https://thegraph.com/).
 
 ### Getting Started
 
@@ -30,7 +35,8 @@ const MyEditor = (): React.ReactElement => {
 
 ### Debugging
 
-If you wish to get all information about specific tokens in your GraphQL editor, you can add the debug hover provider:
+If you wish to get all information about specific tokens in your GraphQL editor, you can add the
+debug hover provider:
 
 ```tsx
 import { SchemaEditor, debugHoverSource } from '@theguild/editor'
@@ -45,9 +51,12 @@ const MyEditor = (): React.ReactElement => {
 You can listen to the following events, on top of the Monaco editor:
 
 - `onBlur?: (value: string) => void` - triggered when the editor is being blurred.
-- `onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;` - triggered when the language service is ready.
-- `onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;` - triggered when a valid schema is present in the editor.
-- `onSchemaError?: (errors: GraphQLError[], sdl: string, languageService: EnrichedLanguageService) => void;` - triggered when an invalid schema is present in the editor.
+- `onLanguageServiceReady?: (languageService: EnrichedLanguageService) => void;` - triggered when
+  the language service is ready.
+- `onSchemaChange?: (schema: GraphQLSchema, sdl: string) => void;` - triggered when a valid schema
+  is present in the editor.
+- `onSchemaError?: (errors: GraphQLError[], sdl: string, languageService: EnrichedLanguageService) => void;` -
+  triggered when an invalid schema is present in the editor.
 
 ### Extending the editor
 

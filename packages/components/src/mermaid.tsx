@@ -59,7 +59,7 @@ export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
     try {
       const svg = mermaid.render(
         id.replace(/[^a-zA-Z]+/g, ''), // strip special chars from useId
-        `%%{init:${theme}}%%\n${chart}` // apply theme and supply chart
+        `%%{init:${theme}}%%\n${chart}`, // apply theme and supply chart
       );
       setSvg(svg);
     } catch (error) {

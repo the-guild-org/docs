@@ -2,11 +2,7 @@
   "name": "@theguild/editor",
   "version": "1.2.2",
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -14,15 +10,15 @@
     },
     "./package.json": "./package.json"
   },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsup",
     "prebuild": "pnpm types:check && rm -rf dist",
-    "types:check": "tsc --noEmit",
-    "build": "tsup"
+    "types:check": "tsc --noEmit"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "sideEffects": false,
   "peerDependencies": {
     "@monaco-editor/react": "^4",
     "monaco-editor": "^0.24.0 || ^0.25.0 || ^0.26.0 || ^0.27.0 || ^0.28.0 || ^0.29.0 || ^0.30.0 || ^0.32.0 || ^0.34.0",
@@ -36,5 +32,9 @@
     "@monaco-editor/react": "4.4.6",
     "graphql": "16.6.0",
     "monaco-editor": "0.34.1"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
 }

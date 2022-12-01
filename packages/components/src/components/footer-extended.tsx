@@ -86,7 +86,12 @@ const classes = {
   title: clsx('mb-3 text-xs font-semibold text-gray-900 dark:text-gray-100'),
 };
 
-export const FooterExtended = ({ className, sameSite, resources, logo }: IFooterExtendedProps): ReactElement => {
+export const FooterExtended = ({
+  className,
+  sameSite,
+  resources,
+  logo,
+}: IFooterExtendedProps): ReactElement => {
   const allResources: ILink[] = [
     {
       children: 'Press Kit',
@@ -116,7 +121,7 @@ export const FooterExtended = ({ className, sameSite, resources, logo }: IFooter
         ))}
       </ul>
     ),
-    []
+    [],
   );
 
   return (

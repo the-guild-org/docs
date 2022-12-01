@@ -16,7 +16,7 @@ export const withGuildDocs = ({
 } = {}) => {
   if (nextConfig.webpack?.toString().includes('applyUnderscoreRedirects')) {
     throw new Error(
-      '`applyUnderscoreRedirects` in `nextConfig.webpack` was already configured, remove it from your config'
+      '`applyUnderscoreRedirects` in `nextConfig.webpack` was already configured, remove it from your config',
     );
   }
 
@@ -68,7 +68,7 @@ export const withGuildDocs = ({
           unoptimized: true, // doesn't work with `next export`,
           ...nextConfig.images,
         },
-      })
-    )
+      }),
+    ),
   );
 };

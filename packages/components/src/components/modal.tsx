@@ -42,7 +42,10 @@ export const Modal = ({
 
   return (
     <div className={clsx('fixed inset-0 z-[50] backdrop-blur-sm', !visible && 'hidden', className)}>
-      <div className="h-full w-full bg-gray-900 opacity-40 dark:bg-gray-500" onClick={() => onCancel()} />
+      <div
+        className="h-full w-full bg-gray-900 opacity-40 dark:bg-gray-500"
+        onClick={() => onCancel()}
+      />
       <FocusTrap
         active={visible}
         focusTrapOptions={{
@@ -71,8 +74,9 @@ export const Modal = ({
             {
               top: 'md:top-10 md:-translate-y-0',
               center: 'md:top-1/2 md:-translate-y-1/2',
-              bottom: 'md:top-1/2 md:left-1/2 md:bottom-0 md:h-5/6 md:max-w-3xl md:-translate-y-1/2',
-            }[placement]
+              bottom:
+                'md:top-1/2 md:left-1/2 md:bottom-0 md:h-5/6 md:max-w-3xl md:-translate-y-1/2',
+            }[placement],
           )}
           id="tgc-modal"
         >
@@ -90,7 +94,9 @@ export const Modal = ({
           >
             {image && <Image {...image} className={clsx('w-10 md:w-16', image.className)} />}
             <div>
-              <h2 className="m-0 text-lg font-semibold text-black dark:text-gray-100 md:text-xl">{title}</h2>
+              <h2 className="m-0 text-lg font-semibold text-black dark:text-gray-100 md:text-xl">
+                {title}
+              </h2>
               <p className="m-0 text-xs text-gray-500 dark:text-gray-100">{renderDescription()}</p>
             </div>
             <button
