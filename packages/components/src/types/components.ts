@@ -1,6 +1,6 @@
-import { ComponentProps, ReactNode, ReactElement, FormEvent } from 'react';
+import { ComponentProps, ReactNode, ReactElement } from 'react';
 import { ReactPlayerProps } from 'react-player';
-import { ImageProps as IImage } from 'next/future/image';
+import { ImageProps as IImage } from 'next/image';
 import { LinkProps } from 'next/link';
 
 interface IVideo {

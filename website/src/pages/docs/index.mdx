@@ -1,5 +1,4 @@
-import { PackageCmd, useMDXComponents } from '@theguild/components'
-import { useSSG } from 'nextra/ssg'
+import { PackageCmd, useMDXComponents, useSSG } from '@theguild/components'
 import { compileMdx } from 'nextra/compile'
 import { MDXRemote } from 'next-mdx-remote'
 import pkgJson from '../../../package.json'
@@ -30,7 +29,10 @@ export async function getStaticProps() {
         2
       ),
       '```'
-    ].join('\n')
+    ].join('\n'),
+    {
+      unstable_defaultShowCopyCode: true
+    }
   )
   return {
     props: {

@@ -1,13 +1,14 @@
-import { useSSG } from 'nextra/ssg'
-import { PackageCmd, fetchPackageInfo, useMDXComponents } from '@theguild/components'
-import { MDXRemote } from 'next-mdx-remote'
+import { PackageCmd, fetchPackageInfo, useMDXComponents, useSSG } from '@theguild/components'
 import { compileMdx } from 'nextra/compile'
+import { MDXRemote } from 'next-mdx-remote'
 
 export const PACKAGE_NAME = '@envelop/core'
 
 export const getStaticProps = async () => {
   const { readme } = await fetchPackageInfo(PACKAGE_NAME)
-  const mdx = await compileMdx(readme)
+  const mdx = await compileMdx(readme, {
+    unstable_defaultShowCopyCode: true
+  })
   return {
     props: {
       ssg: mdx.result
