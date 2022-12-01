@@ -20,6 +20,9 @@ jobs:
           nodeVersion: 18
           packageManager: pnpm
 
+      - name: Build
+        run: pnpm build
+
       - name: Deploy
         working-directory: ./packages/open-graph-image
         run: pnpm run deploy
