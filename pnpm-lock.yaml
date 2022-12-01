@@ -127,7 +127,7 @@ importers:
       '@algolia/autocomplete-plugin-algolia-insights': 1.7.3
       '@algolia/autocomplete-plugin-query-suggestions': 1.7.3
       '@algolia/autocomplete-theme-classic': 1.7.3
-      '@giscus/react': 2.2.3
+      '@giscus/react': 2.2.4
       '@headlessui/react': ^1.7.3
       '@next/bundle-analyzer': 12.3.3
       '@radix-ui/react-navigation-menu': 1.1.1
@@ -161,7 +161,7 @@ importers:
       '@algolia/autocomplete-plugin-algolia-insights': 1.7.3_wd2wzt4bf7iuzlckz6x72hohrm
       '@algolia/autocomplete-plugin-query-suggestions': 1.7.3_algoliasearch@4.14.2
       '@algolia/autocomplete-theme-classic': 1.7.3
-      '@giscus/react': 2.2.3_biqbaboplfbrettd7655fr4n2y
+      '@giscus/react': 2.2.4_biqbaboplfbrettd7655fr4n2y
       '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
       '@next/bundle-analyzer': 12.3.3
       '@radix-ui/react-navigation-menu': 1.1.1_biqbaboplfbrettd7655fr4n2y
@@ -2074,13 +2074,13 @@ packages:
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
     dev: true
 
-  /@giscus/react/2.2.3_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-zsu+ADvxR12PyGZBYMFxYfSQL1eefq/Wkh5g0Eg75BWBiaIT8jSFss4l0Xb2BLQpNAjZ5bzLfJcirz/dPQOkGQ==}
+  /@giscus/react/2.2.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-VkXZ36HL30ynThncflHxPwY/5Ay4a8HuqS3zMczj4a+oIqG1A7IRNeviteYl9lH6FOVc8zSIh/yfLQOIiyrBrw==}
     peerDependencies:
       react: ^16 || ^17 || ^18
       react-dom: ^16 || ^17 || ^18
     dependencies:
-      giscus: 1.2.3
+      giscus: 1.2.4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
@@ -3352,7 +3352,7 @@ packages:
       '@storybook/components': 7.0.0-alpha.53_biqbaboplfbrettd7655fr4n2y
       '@storybook/csf-plugin': 7.0.0-alpha.53
       '@storybook/csf-tools': 7.0.0-alpha.53
-      '@storybook/mdx2-csf': 0.1.0-next.6
+      '@storybook/mdx2-csf': 0.1.0-next.7
       '@storybook/node-logger': 7.0.0-alpha.53
       '@storybook/postinstall': 7.0.0-alpha.53
       '@storybook/preview-web': 7.0.0-alpha.53_biqbaboplfbrettd7655fr4n2y
@@ -4178,8 +4178,8 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/mdx2-csf/0.1.0-next.6:
-    resolution: {integrity: sha512-FDBPTDHG9BcI27Zp5kwkqjsv2A3s8aUahtKeHOsmTicOBS8uWqUZ3jmL7vg6N7SpiUUBAft9/vTQfttNLeHO7w==}
+  /@storybook/mdx2-csf/0.1.0-next.7:
+    resolution: {integrity: sha512-ahwV2A4aS/D79WWum8fmrFhhbC28/f4XlEKtNG1s0EkCVwCSU17bthEBRY5/Y3IBR5jfeN/oApizNQMLh7mqAA==}
     dependencies:
       loader-utils: 2.0.4
     dev: true
@@ -9514,8 +9514,8 @@ packages:
       - supports-color
     dev: true
 
-  /giscus/1.2.3:
-    resolution: {integrity: sha512-1sYu6B3cUzPVZHH93f1DX5PJHf5ak2bPp8N1xZrAPxqccN7C/R6r93usllmCVESJ8cvnyYUaNVyXzOYz9B6OxQ==}
+  /giscus/1.2.4:
+    resolution: {integrity: sha512-c//t+vrEDNJ3jcM2TLz6UG7gZHyRDdYtj2PV0TaKk8eKMfq4OB8K1BFclaQ0UbUh6UN6hp89BNJTTcnibkiILA==}
     dependencies:
       lit: 2.4.1
     dev: false
