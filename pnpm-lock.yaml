@@ -140,7 +140,7 @@ importers:
       clsx: 1.2.1
       dedent: 0.7.0
       focus-trap-react: 10.0.1
-      mermaid: 9.1.7
+      mermaid: 9.2.2
       next: 13.0.5
       next-videos: 1.5.0
       nextra: 2.0.0-beta.43
@@ -168,7 +168,7 @@ importers:
       algoliasearch: 4.14.2
       clsx: 1.2.1
       focus-trap-react: 10.0.1_biqbaboplfbrettd7655fr4n2y
-      mermaid: 9.1.7
+      mermaid: 9.2.2
       next-videos: 1.5.0
       nextra: 2.0.0-beta.43_7iuvftg57tblwyxclfkwku5xo4
       nextra-theme-docs: 2.0.0-beta.43_7iuvftg57tblwyxclfkwku5xo4
@@ -9056,6 +9056,10 @@ packages:
       - supports-color
     dev: true
 
+  /fast-clone/1.5.13:
+    resolution: {integrity: sha512-0ez7coyFBQFjZtId+RJqJ+EQs61w9xARfqjqK0AD9vIUkSxWD4HvPt80+5evebZ1tTnv1GYKrPTipx7kOW5ipA==}
+    dev: false
+
   /fast-deep-equal/3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
 
@@ -11433,18 +11437,22 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  /mermaid/9.1.7:
-    resolution: {integrity: sha512-MRVHXy5FLjnUQUG7YS3UN9jEN6FXCJbFCXVGJQjVIbiR6Vhw0j/6pLIjqsiah9xoHmQU6DEaKOvB3S1g/1nBPA==}
+  /mermaid/9.2.2:
+    resolution: {integrity: sha512-6s7eKMqFJGS+0MYjmx8f6ZigqKBJVoSx5ql2gw6a4Aa+WJ49QiEJg7gPwywaBg3DZMs79UP7trESp4+jmaQccw==}
     dependencies:
       '@braintree/sanitize-url': 6.0.1
       d3: 7.6.1
       dagre: 0.8.5
       dagre-d3: 0.6.4
       dompurify: 2.4.0
+      fast-clone: 1.5.13
       graphlib: 2.1.8
       khroma: 2.0.0
+      lodash: 4.17.21
       moment-mini: 2.24.0
+      non-layered-tidy-tree-layout: 2.0.2
       stylis: 4.1.3
+      uuid: 9.0.0
     dev: false
 
   /meros/1.2.1:
@@ -12276,6 +12284,10 @@ packages:
   /node-releases/2.0.6:
     resolution: {integrity: sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==}
     dev: true
+
+  /non-layered-tidy-tree-layout/2.0.2:
+    resolution: {integrity: sha512-gkXMxRzUH+PB0ax9dUN0yYF0S25BqeAYqhgMaLUFmpXLEk7Fcu8f4emJuOAY0V8kjDICxROIKsTAKsV/v355xw==}
+    dev: false
 
   /normalize-package-data/2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
@@ -15860,6 +15872,11 @@ packages:
   /uuid-browser/3.1.0:
     resolution: {integrity: sha512-dsNgbLaTrd6l3MMxTtouOCFw4CBFc/3a+GgYA2YyrJvyQ1u6q4pcu3ktLoUZ/VN/Aw9WsauazbgsgdfVWgAKQg==}
     dev: true
+
+  /uuid/9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
+    dev: false
 
   /uvu/0.5.6:
     resolution: {integrity: sha512-+g8ENReyr8YsOc6fv/NVJs2vFdHBnBNdfE49rshrTzDWOlUx4Gq7KOS2GD8eqhy2j+Ejq29+SbKH8yjkAqXqoA==}
