@@ -35,12 +35,14 @@ export function defineConfig({
     footer: {
       component: <FooterExtended />,
     },
-    navbar: props => (
-      <>
-        <Header accentColor="#1cc8ee" searchBarProps={{ version: 'v2' }} />
-        <Navbar {...props} />
-      </>
-    ),
+    navbar: {
+      component: props => (
+        <>
+          <Header accentColor="#1cc8ee" searchBarProps={{ version: 'v2' }} />
+          <Navbar {...props} />
+        </>
+      )
+    },
     search: {
       component: null,
     },
