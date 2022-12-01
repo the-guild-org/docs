@@ -21,6 +21,7 @@ export * from './mermaid';
 export { default as Giscus } from '@giscus/react';
 export { defineConfig } from './define-config';
 export { fetchPackageInfo } from './npm';
+export { useSSG } from 'nextra/ssg';
 
 declare module 'react' {
   interface CSSProperties {
