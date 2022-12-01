@@ -52,7 +52,12 @@ async function handler(request: Request): Promise<Response> {
             </div>
           )}
         </div>
-      )
+      ),
+      {
+        headers: {
+          'Content-Type': 'image/png',
+        },
+      }
     );
   } catch (e) {
     return new Response(`Failed to generate the image.\n\nError: ${(e as Error).message}`, { status: 500 });
@@ -61,7 +66,7 @@ async function handler(request: Request): Promise<Response> {
 
 export default {
   async fetch(request: Request, _env: unknown, ctx: ExecutionContext) {
-    const cacheUrl = new URL(request.url);
+    const cacheUrl = new URL(request.url.split('?')[0]);
 
     // Construct the cache key from the cache URL
     const cacheKey = new Request(cacheUrl.toString(), request);
@@ -76,21 +81,19 @@ export default {
       // Must use Response constructor to inherit all of response's fields
       response = new Response(response.body, response);
 
-      // Cache API respects Cache-Control headers. Setting s-max-age to 120
-      // will limit the response to be in cache for 2 minutes max
+      // Cache API respects Cache-Control headers. Setting s-max-age to 10
+      // will limit the response to be in cache for 30 minutes max
 
       // Any changes made to the response here will be reflected in the cached value
       response.headers.append('Cache-Control', 'public');
-      response.headers.append('Cache-Control', 's-maxage=120');
+      response.headers.append('Cache-Control', 's-maxage=1800');
       response.headers.append('Cache-Control', 'max-age=1800');
-      response.headers.append('Cache-Control', 'must-revalidate');
 
       // Store the fetched response as cacheKey
       // Use `waitUntil`, so you can return the response without blocking on
       // writing to cache
       ctx.waitUntil(cache.put(cacheKey, response.clone()));
     }
-
     return response;
   },
 };
