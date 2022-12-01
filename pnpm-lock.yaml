@@ -129,7 +129,7 @@ importers:
       '@algolia/autocomplete-theme-classic': 1.7.3
       '@giscus/react': 2.2.4
       '@headlessui/react': ^1.7.3
-      '@next/bundle-analyzer': 12.3.3
+      '@next/bundle-analyzer': 12.3.4
       '@radix-ui/react-navigation-menu': 1.1.1
       '@theguild/algolia': workspace:*
       '@types/dedent': 0.7.0
@@ -163,7 +163,7 @@ importers:
       '@algolia/autocomplete-theme-classic': 1.7.3
       '@giscus/react': 2.2.4_biqbaboplfbrettd7655fr4n2y
       '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
-      '@next/bundle-analyzer': 12.3.3
+      '@next/bundle-analyzer': 12.3.4
       '@radix-ui/react-navigation-menu': 1.1.1_biqbaboplfbrettd7655fr4n2y
       algoliasearch: 4.14.2
       clsx: 1.2.1
@@ -2767,8 +2767,8 @@ packages:
       '@napi-rs/simple-git-win32-x64-msvc': 0.1.8
     dev: false
 
-  /@next/bundle-analyzer/12.3.3:
-    resolution: {integrity: sha512-CaolCroWvfLdfGY3s61Ipy/oCGYRjhEHd4kYKCE/hVkI1EcKyBm1aDkL+mJnQQKSX4emaTAqzFERC5LMarZefg==}
+  /@next/bundle-analyzer/12.3.4:
+    resolution: {integrity: sha512-eKjgRICzbLTmod0UnJcArFVs5uEAiuZwB6NCf84m+btW7jdylUVoOYf1wi5tA14xk5L9Lho7Prm6/XJ8gxYzfQ==}
     dependencies:
       webpack-bundle-analyzer: 4.3.0
     transitivePeerDependencies:
