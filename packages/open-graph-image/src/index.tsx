@@ -73,7 +73,7 @@ async function handler(request: Request): Promise<Response> {
 
 export default {
   async fetch(request: Request, _env: unknown, ctx: ExecutionContext) {
-    const cacheUrl = new URL(request.url.split('?')[0]);
+    const cacheUrl = new URL(request.url);
 
     // Construct the cache key from the cache URL
     const cacheKey = new Request(cacheUrl.toString(), request);
