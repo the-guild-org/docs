@@ -1,5 +1,67 @@
 # @theguild/components
 
+## 4.4.0
+
+### Minor Changes
+
+- [#642](https://github.com/the-guild-org/docs/pull/642)
+  [`f45bb8c`](https://github.com/the-guild-org/docs/commit/f45bb8c7688d20637e9d6f2c98ea3dd71cf7990a)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - next 13 support
+
+### Patch Changes
+
+- [#564](https://github.com/the-guild-org/docs/pull/564)
+  [`f651964`](https://github.com/the-guild-org/docs/commit/f6519646b2b85958774f6800994b0ca3813030d6)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`mermaid@9.2.2` ↗︎](https://www.npmjs.com/package/mermaid/v/9.2.2) (from
+    `9.1.7`, in `dependencies`)
+
+- [#629](https://github.com/the-guild-org/docs/pull/629)
+  [`b5bf3ec`](https://github.com/the-guild-org/docs/commit/b5bf3ec7cfd585a504bd1ffcd5af55019c72dfaf)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.0.0-beta.43` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.0)
+    (from `2.0.0-beta.41`, in `dependencies`)
+
+- [#630](https://github.com/the-guild-org/docs/pull/630)
+  [`f3b9bd0`](https://github.com/the-guild-org/docs/commit/f3b9bd0c7e8391a849b8714df391f483fb1a3e21)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`nextra-theme-docs@2.0.0-beta.43` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0)
+    (from `2.0.0-beta.41`, in `dependencies`)
+
+- [#635](https://github.com/the-guild-org/docs/pull/635)
+  [`b65cf55`](https://github.com/the-guild-org/docs/commit/b65cf554f7a922367db2c9328fe71fc304aad764)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.0.5` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.0.5)
+    (from `12.3.4`, in `dependencies`)
+
+- [#637](https://github.com/the-guild-org/docs/pull/637)
+  [`a633896`](https://github.com/the-guild-org/docs/commit/a63389680205497ffb6622eee308d7193b0043f2)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@giscus/react@2.2.4` ↗︎](https://www.npmjs.com/package/@giscus/react/v/2.2.4) (from `2.2.3`,
+    in `dependencies`)
+
+- [#638](https://github.com/the-guild-org/docs/pull/638)
+  [`e44a840`](https://github.com/the-guild-org/docs/commit/e44a840fdb2d74125cd2bbf272980ae0ce4995d1)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@12.3.4` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/12.3.4)
+    (from `12.3.3`, in `dependencies`)
+
+- [#641](https://github.com/the-guild-org/docs/pull/641)
+  [`7effa62`](https://github.com/the-guild-org/docs/commit/7effa626d813487fe0692ff1930450b7506e46e4)
+  Thanks [@kamilkisiela](https://github.com/kamilkisiela)! - Use `og-image.the-guild.dev` - it's an
+  alias for `open-graph-image.theguild.workers.dev`. Because of that, it's now using Caching API and
+  response time is around 10ms.
+
 ## 4.3.7
 
 ### Patch Changes

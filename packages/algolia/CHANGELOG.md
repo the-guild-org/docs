@@ -1,5 +1,16 @@
 # @theguild/algolia
 
+## 1.0.2
+
+### Patch Changes
+
+- [#546](https://github.com/the-guild-org/docs/pull/546)
+  [`ba1f2e6`](https://github.com/the-guild-org/docs/commit/ba1f2e6060eaa7cb458a37287229811271df090b)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`github-slugger@^2.0.0` ↗︎](https://www.npmjs.com/package/github-slugger/v/2.0.0) (from
+    `^1.4.0`, in `dependencies`)
+
 ## 1.0.1
 
 ### Patch Changes
