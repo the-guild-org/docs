@@ -55,8 +55,8 @@ async function handler(request: Request): Promise<Response> {
       ),
       {
         headers: {
-          'Content-Type': 'image/png'
-        }
+          'Content-Type': 'image/png',
+        },
       }
     );
   } catch (e) {
