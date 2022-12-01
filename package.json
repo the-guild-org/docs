@@ -27,7 +27,7 @@
     "@storybook/mdx2-csf": "0.0.3",
     "@storybook/react-webpack5": "7.0.0-alpha.53",
     "@tailwindcss/line-clamp": "0.4.2",
-    "@theguild/prettier-config": "0.1.1",
+    "@theguild/prettier-config": "1.0.0",
     "@theguild/tailwind-config": "0.2.1",
     "@types/react": "18.0.25",
     "@types/react-instantsearch-core": "6.26.2",
