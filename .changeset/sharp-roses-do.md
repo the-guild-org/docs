@@ -1,5 +1,5 @@
 ---
-"@theguild/components": patch
+'@theguild/components': patch
 ---
 
 Use `og-image.the-guild.dev` - it's an alias for `open-graph-image.theguild.workers.dev`.
