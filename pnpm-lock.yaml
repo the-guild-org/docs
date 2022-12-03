@@ -144,7 +144,7 @@ importers:
       next: 13.0.5
       next-videos: 1.5.0
       nextra: 2.0.0-beta.43
-      nextra-theme-docs: 2.0.0-beta.43
+      nextra-theme-docs: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0
       react-instantsearch-dom: 6.38.1
@@ -171,7 +171,7 @@ importers:
       mermaid: 9.2.2
       next-videos: 1.5.0
       nextra: 2.0.0-beta.43_7iuvftg57tblwyxclfkwku5xo4
-      nextra-theme-docs: 2.0.0-beta.43_7iuvftg57tblwyxclfkwku5xo4
+      nextra-theme-docs: 2.0.0_7iuvftg57tblwyxclfkwku5xo4
       react-instantsearch-dom: 6.38.1_fzyfqr3mixyxftdbf7mmfo2jb4
       react-paginate: 8.1.4_react@18.2.0
       react-player: 2.11.0_react@18.2.0
@@ -12185,8 +12185,8 @@ packages:
       - '@babel/core'
       - babel-plugin-macros
 
-  /nextra-theme-docs/2.0.0-beta.43_7iuvftg57tblwyxclfkwku5xo4:
-    resolution: {integrity: sha512-IKg834jpbi7tMISvhNL1eqpT6I/ymgeE/95KNKZJoo++62hIc5W+Pxb2iAHcjlWkjcDTzm0dHVgEYipJNB2w4g==}
+  /nextra-theme-docs/2.0.0_7iuvftg57tblwyxclfkwku5xo4:
+    resolution: {integrity: sha512-Bkzbx4I/q4MlhGE9/wkI+xGKQFjwE/M3hcCZY1O6vOXkKWSOZ9L7BNq77iPBOzxqdrdN3fVPh0HYMKaR9O4xHA==}
     peerDependencies:
       next: '>=9.5.3'
       react: '>=16.13.1'
