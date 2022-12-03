@@ -71,9 +71,19 @@ async function handler(request: Request): Promise<Response> {
   }
 }
 
+const hour = 3600;
+const day = hour * 24;
+const year = 365 * day;
+
+const maxAgeForCDN = year;
+const maxAgeForBrowser = hour / 2;
+
 export default {
   async fetch(request: Request, _env: unknown, ctx: ExecutionContext) {
     const cacheUrl = new URL(request.url);
+
+    // In case you want to purge the cache, please bump the version number below:
+    cacheUrl.searchParams.set('version', 'v1');
 
     // Construct the cache key from the cache URL
     const cacheKey = new Request(cacheUrl.toString(), request);
@@ -88,13 +98,10 @@ export default {
       // Must use Response constructor to inherit all of response's fields
       response = new Response(response.body, response);
 
-      // Cache API respects Cache-Control headers. Setting s-max-age to 10
-      // will limit the response to be in cache for 30 minutes max
-
       // Any changes made to the response here will be reflected in the cached value
       response.headers.append('Cache-Control', 'public');
-      response.headers.append('Cache-Control', 's-maxage=1800');
-      response.headers.append('Cache-Control', 'max-age=1800');
+      response.headers.append('Cache-Control', `s-maxage=${maxAgeForCDN}`);
+      response.headers.append('Cache-Control', `max-age=${maxAgeForBrowser}`);
 
       // Store the fetched response as cacheKey
       // Use `waitUntil`, so you can return the response without blocking on
