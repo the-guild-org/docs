@@ -1,5 +1,45 @@
 # @theguild/components
 
+## 4.4.1
+
+### Patch Changes
+
+- [#644](https://github.com/the-guild-org/docs/pull/644)
+  [`bb18164`](https://github.com/the-guild-org/docs/commit/bb181646b8b75bc68235b3c202fc5d5d3858f6f5)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`next@^12.3.1 || ^13.0.0` ↗︎](https://www.npmjs.com/package/next/v/12.3.1)
+    (from `^12.3.1`, in `peerDependencies`)
+
+- [#647](https://github.com/the-guild-org/docs/pull/647)
+  [`2fd6d34`](https://github.com/the-guild-org/docs/commit/2fd6d34f1baadc909a2d33d0352f3e88e8fb0439)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.0.6` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.0.6)
+    (from `13.0.5`, in `dependencies`)
+
+- [#649](https://github.com/the-guild-org/docs/pull/649)
+  [`62f1627`](https://github.com/the-guild-org/docs/commit/62f1627d4ab91236f6b10bd45000f53e3a854ecc)
+  Thanks [@kamilkisiela](https://github.com/kamilkisiela)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.0.6` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.0.6)
+    (from `13.0.5`, in `dependencies`)
+  - Updated dependency [`next@^12.3.1 || ^13.0.0` ↗︎](https://www.npmjs.com/package/next/v/12.3.1)
+    (from `^12.3.1`, in `peerDependencies`)
+
+- [#651](https://github.com/the-guild-org/docs/pull/651)
+  [`d81068a`](https://github.com/the-guild-org/docs/commit/d81068ab6296d395192e0139b67ff126c5b42dfc)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`focus-trap-react@10.0.2` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.0.2) (from
+    `10.0.1`, in `dependencies`)
+
+- [`5a042ba`](https://github.com/the-guild-org/docs/commit/5a042ba69ddbe2a4bef05446f2a421265d973a04)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Update Hive link
+
 ## 4.4.0
 
 ### Minor Changes
