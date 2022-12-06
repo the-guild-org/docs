@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 4.4.2
+
+### Patch Changes
+
+- [#659](https://github.com/the-guild-org/docs/pull/659)
+  [`1c3b985`](https://github.com/the-guild-org/docs/commit/1c3b9853776ffa5fff38401a89a62c1020298849)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - fix bug while using NextImage in footer
+
 ## 4.4.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@theguild/components",
-  "version": "4.4.1",
+  "version": "4.4.2",
   "repository": {
     "url": "the-guild-org/the-guild-components",
     "directory": "packages/components"
