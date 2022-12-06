@@ -58,7 +58,7 @@ export const PRODUCTS: Record<
   HIVE: {
     name: 'Hive',
     title: 'Schema registry for your GraphQL workflows',
-    href: 'https://graphql-hive.com',
+    href: 'https://the-guild.dev/graphql/hive',
     logo: HiveLogo,
     primaryColor: '#ffb21d',
   },
