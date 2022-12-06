@@ -150,6 +150,7 @@ export const FooterExtended = ({
                 alt="Cloud Security Alliance Star Level One Badge"
                 title="Cloud Security Alliance Star Level One Badge"
                 width="72"
+                placeholder="empty"
               />
             </div>
           </div>
