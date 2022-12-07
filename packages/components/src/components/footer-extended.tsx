@@ -96,7 +96,7 @@ export const FooterExtended = ({
     {
       children: 'Press Kit',
       title: 'Press Kit',
-      href: '/logos',
+      href: 'https://the-guild.dev/logos',
     },
     ...(resources || []),
   ];
