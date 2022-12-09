@@ -36,20 +36,17 @@ export const MarketplaceSearch = ({
   const items = useMemo(() => {
     let results = null;
     if (query && queryList) {
-      return (results = queryList.items.filter(
-        e =>
-          fuzzy
-            .filter(
-              // Removes all special characters from the query string for better fuzzy matching
-              query.replace(/[^\w\s]/gi, ''),
-              // Mapping the queryList items into a list of strings including the titles
-              queryList.items.map(e => e.title),
-            )
-            .map(e => e.original)
-            // Filtering only the items that have been selected by the fuzzy matcher
-            .includes(e.title),
-        {},
-      ));
+      const matchedResults = fuzzy
+        .filter(
+          // Removes all special characters from the query string for better fuzzy matching
+          query.replace(/[^\w\s]/gi, ''),
+          // Mapping the queryList items into a list of strings including the titles
+          queryList.items.map(e => e.title),
+        )
+        .map(e => e.original);
+
+      const filteredItems = queryList.items.filter(e => matchedResults.includes(e.title));
+      results = filteredItems;
     }
     return results;
   }, [query, queryList]);
