@@ -42,7 +42,7 @@ export const MarketplaceSearch = ({
             .filter(
               // Removes all special characters from the query string for better fuzzy matching
               query.replace(/[^\w\s]/gi, ''),
-              // Mapping teh queryList items into a list of strings including the titles
+              // Mapping the queryList items into a list of strings including the titles
               queryList.items.map(e => e.title),
             )
             .map(e => e.original)
