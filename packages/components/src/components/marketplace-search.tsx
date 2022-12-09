@@ -36,12 +36,6 @@ export const MarketplaceSearch = ({
   const items = useMemo(() => {
     let results = null;
     if (query && queryList) {
-      console.log(
-        fuzzy.filter(
-          query,
-          queryList.items.map(e => e.title),
-        ),
-      );
       return (results = queryList.items.filter(
         e =>
           fuzzy
