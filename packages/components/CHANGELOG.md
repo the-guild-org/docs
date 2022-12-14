@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 4.4.3
+
+### Patch Changes
+
+- [#667](https://github.com/the-guild-org/docs/pull/667)
+  [`50cfcb1`](https://github.com/the-guild-org/docs/commit/50cfcb195319870434329d9c2520eca70b8feeea)
+  Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - fix href link to Press Kit
+
 ## 4.4.2
 
 ### Patch Changes
