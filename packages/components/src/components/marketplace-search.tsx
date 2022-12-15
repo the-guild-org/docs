@@ -4,6 +4,7 @@ import { IMarketplaceSearchProps } from '../types/components';
 import { MarketplaceList } from './marketplace-list';
 import { Tag, TagsContainer } from './tag';
 import { SearchIcon } from './icons';
+import fuzzy from 'fuzzy';
 
 const renderQueryPlaceholder = (placeholder: string | ReactElement, query: string) => {
   if (!query || isValidElement(placeholder)) {
@@ -35,18 +36,17 @@ export const MarketplaceSearch = ({
   const items = useMemo(() => {
     let results = null;
     if (query && queryList) {
-      const tagsFilter = query.split(' ').filter(t => t.trim().length > 1 && t.startsWith('#'));
-      const queryWithoutTags =
-        tagsFilter.length > 0 ? query.replace(/#\w\w+\s?/g, '').toLowerCase() : query.toLowerCase();
+      const matchedResults = fuzzy
+        .filter(
+          // Removes all special characters from the query string for better fuzzy matching
+          query.replace(/[^\w\s]/gi, ''),
+          // Mapping the queryList items into a list of strings including the titles
+          queryList.items.map(e => e.title),
+        )
+        .map(e => e.original);
 
-      results = queryList.items.filter(item => {
-        const matchesContent = item.title.toLowerCase().includes(queryWithoutTags);
-
-        if (tagsFilter.length === 0) {
-          return matchesContent;
-        }
-        return item.tags?.some(tag => tagsFilter.includes(`#${tag}`)) && matchesContent;
-      });
+      const filteredItems = queryList.items.filter(e => matchedResults.includes(e.title));
+      results = filteredItems;
     }
     return results;
   }, [query, queryList]);
