@@ -1,5 +1,20 @@
 # @theguild/components
 
+## 4.4.4
+
+### Patch Changes
+
+- [#645](https://github.com/the-guild-org/docs/pull/645)
+  [`0a0a5e4`](https://github.com/the-guild-org/docs/commit/0a0a5e4d9d6a8d1660b9274be0ed6c896ccd1deb)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`use-debounce@9.0.2` ↗︎](https://www.npmjs.com/package/use-debounce/v/9.0.2)
+    (from `8.0.4`, in `dependencies`)
+
+- [#676](https://github.com/the-guild-org/docs/pull/676)
+  [`84471f5`](https://github.com/the-guild-org/docs/commit/84471f544186b7d8d0470244f39d1f6ff5745a30)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - fix wrong readmes for remote docs
+
 ## 4.4.3
 
 ### Patch Changes
