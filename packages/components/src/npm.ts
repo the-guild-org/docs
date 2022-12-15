@@ -59,8 +59,10 @@ export const fetchPackageInfo = async (
     path: string;
   },
 ): Promise<Package> => {
-  // cache since we fetch same data on /plugins and /plugins/:name
-  const cachedData = cache[packageName];
+  // cache since we fetch same data on /plugins and /plugins/:name pages
+  const cacheKey = githubReadme ? `${githubReadme.repo}${githubReadme.path}` : packageName;
+
+  const cachedData = cache[cacheKey];
   if (cachedData) {
     return cachedData;
   }
@@ -79,7 +81,7 @@ export const fetchPackageInfo = async (
   const readmeContent =
     githubReadme && (await tryRemoteReadme(githubReadme.repo, githubReadme.path));
 
-  cache[packageName] = {
+  cache[cacheKey] = {
     readme:
       readmeContent ||
       (readme !== NO_NPM_README_PLACEHOLDER && readme) ||
@@ -99,5 +101,5 @@ export const fetchPackageInfo = async (
     weeklyNPMDownloads: downloads,
   };
 
-  return cache[packageName];
+  return cache[cacheKey];
 };
