@@ -214,7 +214,7 @@ importers:
       react: 18.2.0
       satori: 0.0.44
       typescript: 4.9.3
-      wrangler: 2.5.0
+      wrangler: 2.6.2
       yoga-wasm-web: 0.2.0
     dependencies:
       '@resvg/resvg-wasm': 2.2.0
@@ -226,7 +226,7 @@ importers:
       '@cloudflare/workers-types': 4.20221111.1
       '@types/react': 18.0.26
       typescript: 4.9.3
-      wrangler: 2.5.0
+      wrangler: 2.6.2
 
   website:
     specifiers:
@@ -3419,7 +3419,7 @@ packages:
     dependencies:
       '@storybook/client-logger': 7.0.0-alpha.58
       '@storybook/core-events': 7.0.0-alpha.58
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/manager-api': 7.0.0-alpha.58_biqbaboplfbrettd7655fr4n2y
       '@storybook/preview-api': 7.0.0-alpha.58
       '@storybook/router': 7.0.0-alpha.58_biqbaboplfbrettd7655fr4n2y
@@ -3627,7 +3627,7 @@ packages:
       '@storybook/client-logger': 7.0.0-alpha.58
       '@storybook/components': 7.0.0-alpha.58_biqbaboplfbrettd7655fr4n2y
       '@storybook/core-events': 7.0.0-alpha.58
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/docs-tools': 7.0.0-alpha.58_lb6du3saekb5anf2gjv3wxj3oq
       '@storybook/manager-api': 7.0.0-alpha.58_biqbaboplfbrettd7655fr4n2y
       '@storybook/preview-api': 7.0.0-alpha.58
@@ -3848,7 +3848,7 @@ packages:
     resolution: {integrity: sha512-00HBEnc1fFo7hlod0yfKv2I1w25gNnchsiXcKnOpFhABDbPui5O6NBoG88RK+iqlLkL6jOaISHzsPah7kGDsjA==}
     dependencies:
       '@babel/types': 7.20.2
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/csf-tools': 7.0.0-alpha.58
       '@storybook/node-logger': 7.0.0-alpha.58
       '@storybook/types': 7.0.0-alpha.58
@@ -3889,7 +3889,7 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@storybook/client-logger': 7.0.0-alpha.58
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/theming': 7.0.0-alpha.58_biqbaboplfbrettd7655fr4n2y
       '@storybook/types': 7.0.0-alpha.58
       memoizerific: 1.11.3
@@ -3977,7 +3977,7 @@ packages:
       '@storybook/builder-manager': 7.0.0-alpha.58_lb6du3saekb5anf2gjv3wxj3oq
       '@storybook/core-common': 7.0.0-alpha.58_lb6du3saekb5anf2gjv3wxj3oq
       '@storybook/core-events': 7.0.0-alpha.58
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/csf-tools': 7.0.0-alpha.58
       '@storybook/docs-mdx': 0.0.1-next.4
       '@storybook/node-logger': 7.0.0-alpha.58
@@ -4051,7 +4051,7 @@ packages:
     resolution: {integrity: sha512-/lE/cHBvOwzEkYA9vsqf5P6ewdMOOQXUgmyxDJ/ZtKEaI2Lqm410DvN6zV3BwZ6pNsFjN/Iu+82oh7J82XTK2Q==}
     dependencies:
       '@babel/types': 7.20.2
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/types': 7.0.0-alpha.58
       fs-extra: 9.1.0
       ts-dedent: 2.2.0
@@ -4071,8 +4071,8 @@ packages:
       lodash: 4.17.21
     dev: true
 
-  /@storybook/csf/0.0.2-next.7:
-    resolution: {integrity: sha512-OPBZ7WWFjkg6KSpdt+HA9N0WEJqr7wwZaMONNnjo/MxDXZgWNwGDouPBjk7CNuIh2aoDgTo6MfCMg6SOK0/IMQ==}
+  /@storybook/csf/0.0.2-next.8:
+    resolution: {integrity: sha512-3T6rflW7D9q1iXOR+bidwoNbd9rVUTyjYH/sqsnYjbXhb/aOXsQzGKwNeq9QqZIFVpKfg5BoOF5i7DCMtoGknQ==}
     dependencies:
       expect-type: 0.14.2
       lodash: 4.17.21
@@ -4108,7 +4108,7 @@ packages:
       '@storybook/channels': 7.0.0-alpha.58
       '@storybook/client-logger': 7.0.0-alpha.58
       '@storybook/core-events': 7.0.0-alpha.58
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/router': 7.0.0-alpha.58_biqbaboplfbrettd7655fr4n2y
       '@storybook/theming': 7.0.0-alpha.58_biqbaboplfbrettd7655fr4n2y
       '@storybook/types': 7.0.0-alpha.58
@@ -4226,7 +4226,7 @@ packages:
       '@storybook/channels': 7.0.0-alpha.58
       '@storybook/client-logger': 7.0.0-alpha.58
       '@storybook/core-events': 7.0.0-alpha.58
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/types': 7.0.0-alpha.58
       '@types/qs': 6.9.7
       dequal: 2.0.3
@@ -14489,6 +14489,7 @@ packages:
 
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
+    deprecated: Please use @jridgewell/sourcemap-codec instead
     dev: true
 
   /space-separated-tokens/1.1.5:
@@ -16069,8 +16070,8 @@ packages:
     resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}
     dev: true
 
-  /wrangler/2.5.0:
-    resolution: {integrity: sha512-7Y7Vh4yi1Vpa/o2o48VgWMv6G/3u8SPR3CJEWgntL4zPZog7iIxl0R2QjthWpsPHI7+PK6cFtnpSaSrcdEk+vw==}
+  /wrangler/2.6.2:
+    resolution: {integrity: sha512-+in4oEQXDs6+vE+1c6niBd3IrW1DMRTbauR6G0u3TpD6UaXOLwLdBxRLEbN3m82dN+WNm7l1MbFZrKc/TnWjhw==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     dependencies:
