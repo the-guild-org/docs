@@ -22,7 +22,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.45.1
       '@typescript-eslint/parser': 5.45.1
       concurrently: 7.6.0
-      css-loader: 6.7.2
+      css-loader: 6.7.3
       eslint: 8.29.0
       eslint-plugin-react: 7.31.11
       eslint-plugin-react-hooks: 4.6.0
@@ -67,7 +67,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.45.1_f3ripjxnrcbcxlztumpiegdjha
       '@typescript-eslint/parser': 5.45.1_ha6vam6werchizxrnqvarmz2zu
       concurrently: 7.6.0
-      css-loader: 6.7.2
+      css-loader: 6.7.3
       eslint: 8.29.0
       eslint-plugin-react: 7.31.11_eslint@8.29.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.29.0
@@ -3915,7 +3915,7 @@ packages:
       babel-plugin-named-exports-order: 0.0.2
       browser-assert: 1.2.1
       case-sensitive-paths-webpack-plugin: 2.4.0
-      css-loader: 6.7.2_webpack@5.74.0
+      css-loader: 6.7.3_webpack@5.74.0
       express: 4.18.2
       fork-ts-checker-webpack-plugin: 7.2.13_zaqho7obzjkaaboxb7rksrqya4
       fs-extra: 9.1.0
@@ -6861,8 +6861,8 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /css-loader/6.7.2:
-    resolution: {integrity: sha512-oqGbbVcBJkm8QwmnNzrFrWTnudnRZC+1eXikLJl0n4ljcfotgRifpg2a1lKy8jTrc4/d9A/ap1GFq1jDKG7J+Q==}
+  /css-loader/6.7.3:
+    resolution: {integrity: sha512-qhOH1KlBMnZP8FzRO6YCH9UHXQhVMcEGLyNdb7Hv2cpcmJbW0YrddO+tG1ab5nT41KpHIYGsbeHqxB9xPu1pKQ==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -6877,8 +6877,8 @@ packages:
       semver: 7.3.8
     dev: true
 
-  /css-loader/6.7.2_webpack@5.74.0:
-    resolution: {integrity: sha512-oqGbbVcBJkm8QwmnNzrFrWTnudnRZC+1eXikLJl0n4ljcfotgRifpg2a1lKy8jTrc4/d9A/ap1GFq1jDKG7J+Q==}
+  /css-loader/6.7.3_webpack@5.74.0:
+    resolution: {integrity: sha512-qhOH1KlBMnZP8FzRO6YCH9UHXQhVMcEGLyNdb7Hv2cpcmJbW0YrddO+tG1ab5nT41KpHIYGsbeHqxB9xPu1pKQ==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
