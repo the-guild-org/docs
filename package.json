@@ -49,7 +49,7 @@
     "husky": "8.0.2",
     "lint-staged": "13.1.0",
     "next-themes": "0.2.1",
-    "postcss": "8.4.19",
+    "postcss": "8.4.20",
     "postcss-loader": "7.0.2",
     "prettier": "2.8.1",
     "prettier-plugin-tailwindcss": "0.2.1",
