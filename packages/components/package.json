@@ -62,7 +62,7 @@
     "@headlessui/react": "^1.7.3",
     "@next/bundle-analyzer": "13.1.1",
     "@radix-ui/react-navigation-menu": "1.1.1",
-    "algoliasearch": "4.14.2",
+    "algoliasearch": "4.14.3",
     "clsx": "1.2.1",
     "focus-trap-react": "10.0.2",
     "fuzzy": "^0.1.3",
