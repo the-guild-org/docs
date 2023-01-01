@@ -16,7 +16,7 @@ importers:
       '@theguild/prettier-config': 1.0.0
       '@theguild/tailwind-config': 0.2.1
       '@types/react': 18.0.26
-      '@types/react-instantsearch-core': 6.26.2
+      '@types/react-instantsearch-core': 6.26.3
       '@types/react-instantsearch-dom': 6.12.3
       '@types/react-paginate': 7.1.1
       '@typescript-eslint/eslint-plugin': 5.47.1
@@ -61,7 +61,7 @@ importers:
       '@theguild/prettier-config': 1.0.0_prettier@2.8.1
       '@theguild/tailwind-config': 0.2.1
       '@types/react': 18.0.26
-      '@types/react-instantsearch-core': 6.26.2
+      '@types/react-instantsearch-core': 6.26.3
       '@types/react-instantsearch-dom': 6.12.3
       '@types/react-paginate': 7.1.1
       '@typescript-eslint/eslint-plugin': 5.47.1_txmweb6yn7coi7nfrp22gpyqmy
@@ -3652,7 +3652,7 @@ packages:
       '@storybook/components': 7.0.0-beta.8_biqbaboplfbrettd7655fr4n2y
       '@storybook/csf-plugin': 7.0.0-beta.8
       '@storybook/csf-tools': 7.0.0-beta.8
-      '@storybook/mdx2-csf': 1.0.0-next.2
+      '@storybook/mdx2-csf': 1.0.0-next.3
       '@storybook/node-logger': 7.0.0-beta.8
       '@storybook/postinstall': 7.0.0-beta.8
       '@storybook/preview-api': 7.0.0-beta.8
@@ -4414,8 +4414,8 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/mdx2-csf/1.0.0-next.2:
-    resolution: {integrity: sha512-Mg6pYKhuuMrzF/DcCI5dEA36jx7156bBnCk9uFInthFrr1sLYlj+HfRMibFa/VdJx8L0Wsf/15cIu3xPWriinA==}
+  /@storybook/mdx2-csf/1.0.0-next.3:
+    resolution: {integrity: sha512-obodj5cDa943eAPNmawzwviiaheWLvI39/o36O+fwkW8jxxXgyEMgad0mLTiwKjlvitLVoHa4Znm5aIN6TW08A==}
     dev: true
 
   /@storybook/node-logger/6.5.13:
@@ -5196,8 +5196,8 @@ packages:
       '@types/react': 18.0.26
     dev: true
 
-  /@types/react-instantsearch-core/6.26.2:
-    resolution: {integrity: sha512-Z7uNsE4wYUDws7QtP3ZKN/UK5xbKLwY76ZiIIWhNQgPXDV0QG3F/6Qn82MChNUiel/nqXCnCr/ZAj7oa5jsMyg==}
+  /@types/react-instantsearch-core/6.26.3:
+    resolution: {integrity: sha512-dBq/K1NQFBgLmCdiLYaC15KjXdjZk8UTQBhumSg+fAHgpW3ai5fu5BbzAKzSCkqYwbgqvhCQ1EZ9PLvPvOfqwQ==}
     dependencies:
       '@types/react': 18.0.26
       algoliasearch: 4.14.3
@@ -5208,7 +5208,7 @@ packages:
     resolution: {integrity: sha512-HAQG74v7OzsUhdjNermd0A8c7LWRLsrMCsFCY6+7HEXK1hikeCs/Hmy6xjFhZVfFEWvpvX78vxJELafoAnuv8Q==}
     dependencies:
       '@types/react': 18.0.26
-      '@types/react-instantsearch-core': 6.26.2
+      '@types/react-instantsearch-core': 6.26.3
     dev: true
 
   /@types/react-paginate/7.1.1:
