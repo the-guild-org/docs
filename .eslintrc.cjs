@@ -1,26 +1,15 @@
 module.exports = {
   root: true,
-  reportUnusedDisableDirectives: true,
   env: {
     browser: true,
     es2021: true,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:@typescript-eslint/recommended',
+    '@theguild',
+    '@theguild/eslint-config/react',
     'plugin:tailwindcss/recommended',
     'plugin:storybook/recommended',
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 12,
-    sourceType: 'module',
-  },
   rules: {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off', // import of react no longer required
