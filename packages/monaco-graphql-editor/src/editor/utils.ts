@@ -70,11 +70,10 @@ export const coreDiagnosticsSource: DiagnosticsSource = {
               range: getRange(e.locations[0], document),
             }),
           ];
-        } else {
-          console.warn(`GraphQL getDiagnostics failed unexpected error: `, e);
-
-          return [];
         }
+        console.warn(`GraphQL getDiagnostics failed unexpected error: `, e);
+
+        return [];
       });
   },
 };

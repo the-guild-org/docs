@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import crypto from 'crypto';
-import { existsSync, readFileSync, statSync, writeFileSync } from 'fs';
-import { readFile } from 'fs/promises';
+import crypto from 'node:crypto';
+import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { readFile } from 'node:fs/promises';
 import algoliaSearch from 'algoliasearch';
 import GitHubSlugger from 'github-slugger';
 import glob from 'glob';
@@ -72,7 +72,7 @@ const extractToC = (content: string) => {
   return slugs;
 };
 
-const normalizeDomain = (domain: string) => (domain.endsWith('/') ? domain : `${domain}`);
+const normalizeDomain = (domain: string) => (domain.endsWith('/') ? domain : String(domain));
 
 const contentForRecord = (content: string) => {
   let isCodeBlock = false;
@@ -86,11 +86,11 @@ const contentForRecord = (content: string) => {
           if (isCodeBlock) {
             isCodeBlock = false;
             return null;
-          } else {
-            isCodeBlock = true;
-            return null;
           }
-        } else if (isCodeBlock) {
+          isCodeBlock = true;
+          return null;
+        }
+        if (isCodeBlock) {
           return null;
         }
         // remove metadata headers
@@ -98,11 +98,11 @@ const contentForRecord = (content: string) => {
           if (isMeta) {
             isMeta = false;
             return null;
-          } else {
-            isMeta = true;
-            return null;
           }
-        } else if (isMeta) {
+          isMeta = true;
+          return null;
+        }
+        if (isMeta) {
           return null;
         }
         // remove titles
@@ -367,7 +367,7 @@ async function nextraToAlgoliaRecords(
   });
 }
 
-export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
+export type { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC };
 
 interface IndexToAlgoliaOptions {
   routes?: IRoutes[];
