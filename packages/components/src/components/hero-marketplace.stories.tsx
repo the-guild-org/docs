@@ -1,7 +1,7 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
+import { dummyHeroMarketplace } from '../helpers/dummy';
 import { IHeroMarketplaceProps } from '../types/components';
 import { HeroMarketplace } from './hero-marketplace';
-import { dummyHeroMarketplace } from '../helpers/dummy';
 
 export default {
   title: 'Components/Heroes/Marketplace',

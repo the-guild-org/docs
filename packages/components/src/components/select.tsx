@@ -1,6 +1,6 @@
 import { Fragment, ReactElement, useState } from 'react';
-import clsx from 'clsx';
 import { Listbox, Transition } from '@headlessui/react';
+import clsx from 'clsx';
 import { CheckIcon } from './icons';
 
 type SelectOption = {

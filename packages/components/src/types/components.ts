@@ -1,7 +1,7 @@
-import { ComponentProps, ReactNode, ReactElement } from 'react';
-import { ReactPlayerProps } from 'react-player';
+import { ComponentProps, ReactElement, ReactNode } from 'react';
 import { ImageProps as IImage } from 'next/image';
 import { LinkProps } from 'next/link';
+import { ReactPlayerProps } from 'react-player';
 
 interface IVideo {
   src: string;

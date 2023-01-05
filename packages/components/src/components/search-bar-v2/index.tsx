@@ -1,16 +1,15 @@
-import { autocomplete, getAlgoliaResults, AutocompleteApi } from '@algolia/autocomplete-js';
-import { createRoot, Root } from 'react-dom/client';
 import { createElement, Fragment, ReactElement, useEffect, useRef } from 'react';
-import algoliaSearch from 'algoliasearch';
+import { autocomplete, AutocompleteApi, getAlgoliaResults } from '@algolia/autocomplete-js';
 import { createAlgoliaInsightsPlugin } from '@algolia/autocomplete-plugin-algolia-insights';
+import algoliaSearch from 'algoliasearch';
+import { createRoot, Root } from 'react-dom/client';
 import insightsClient from 'search-insights';
-
-import { ISearchBarProps } from '../../types/components';
 import { AlgoliaSearchItem } from '../../types/algolia';
-import { SidePreview } from './side-preview';
-import { debounced } from './utils';
-import { templates } from './templates';
+import { ISearchBarProps } from '../../types/components';
 import { Anchor } from '../anchor';
+import { SidePreview } from './side-preview';
+import { templates } from './templates';
+import { debounced } from './utils';
 
 export const SearchBarV2 = ({
   accentColor,

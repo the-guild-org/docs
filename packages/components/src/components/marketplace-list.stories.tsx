@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
-import { IMarketplaceListProps } from '../types/components';
+import { Meta, Story } from '@storybook/react';
 import { dummyMarketplaceList } from '../helpers/dummy';
+import { IMarketplaceListProps } from '../types/components';
 import { MarketplaceList } from './marketplace-list';
 
 export default {

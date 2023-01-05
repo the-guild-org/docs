@@ -1,10 +1,5 @@
 import dedent from 'dedent';
-import featureListImage1 from '../static/dummy/envelop/features-pluggable.png';
-import featureListImage2 from '../static/dummy/envelop/features-performant.png';
-import featureListImage3 from '../static/dummy/envelop/features-modern.png';
-import heroIllustrationImage from '../static/dummy/envelop/communication.png';
-import marketplaceListImage from '../static/dummy/marketplace/logo-modules.svg';
-import yogaImage from '../static/illustrations/yoga.svg';
+import { CardsColorfulProps } from '../components/cards-colorful';
 import {
   IFeatureListProps,
   IHeroGradientProps,
@@ -16,7 +11,12 @@ import {
   IMarketplaceSearchProps,
   ISchemaPageProps,
 } from '../types/components';
-import { CardsColorfulProps } from '../components/cards-colorful';
+import heroIllustrationImage from '../static/dummy/envelop/communication.png';
+import featureListImage3 from '../static/dummy/envelop/features-modern.png';
+import featureListImage2 from '../static/dummy/envelop/features-performant.png';
+import featureListImage1 from '../static/dummy/envelop/features-pluggable.png';
+import marketplaceListImage from '../static/dummy/marketplace/logo-modules.svg';
+import yogaImage from '../static/illustrations/yoga.svg';
 
 export const dummyFeatureList: IFeatureListProps = {
   title: 'The best and simple features',

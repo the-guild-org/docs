@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
-import { IModalProps } from '../types/components';
+import { Meta, Story } from '@storybook/react';
 import { dummyMarketplaceList } from '../helpers/dummy';
+import { IModalProps } from '../types/components';
 import { Modal } from './modal';
 
 export default {

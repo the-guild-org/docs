@@ -1,30 +1,30 @@
 import {
   ChangeEvent,
-  useEffect,
-  useState,
-  useRef,
-  useCallback,
   createElement,
   ReactElement,
   ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 import algoliaSearch from 'algoliasearch';
+import clsx from 'clsx';
+import { Hit, SearchBoxProvided, StateResultsProvided } from 'react-instantsearch-core';
 import {
-  InstantSearch,
   connectHits,
   connectSearchBox,
   connectStateResults,
+  InstantSearch,
 } from 'react-instantsearch-dom';
-import { Hit, SearchBoxProvided, StateResultsProvided } from 'react-instantsearch-core';
-import clsx from 'clsx';
 import { useDebouncedCallback } from 'use-debounce';
-import { Modal } from './modal';
-import { ISearchBarProps } from '../types/components';
-import { toggleLockBodyScroll } from '../helpers/modals';
 import { algoliaConfig } from '../configs';
-import { CloseIcon, HamburgerIcon, HashTagIcon, PageIcon, SearchIcon } from './icons';
-import { SearchBarV2 } from './search-bar-v2';
+import { toggleLockBodyScroll } from '../helpers/modals';
+import { ISearchBarProps } from '../types/components';
 import { Anchor } from './anchor';
+import { CloseIcon, HamburgerIcon, HashTagIcon, PageIcon, SearchIcon } from './icons';
+import { Modal } from './modal';
+import { SearchBarV2 } from './search-bar-v2';
 
 const algoliaClient = algoliaSearch(algoliaConfig.appID, algoliaConfig.apiKey, {
   hosts: algoliaConfig.hosts,

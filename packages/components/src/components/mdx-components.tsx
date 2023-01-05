@@ -1,6 +1,6 @@
 import { ComponentProps, ReactElement } from 'react';
-import clsx from 'clsx';
 import { useRouter } from 'next/router';
+import clsx from 'clsx';
 
 export const mdxComponents: {
   [tag: string]: (props: object) => ReactElement;

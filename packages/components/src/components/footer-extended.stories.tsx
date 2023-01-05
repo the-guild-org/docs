@@ -1,5 +1,5 @@
 import { FormEvent } from 'react';
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { IFooterExtendedProps } from '../types/components';
 import { FooterExtended } from './footer-extended';
 

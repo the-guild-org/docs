@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
-import { IHeroIllustrationProps } from '../types/components';
+import { Meta, Story } from '@storybook/react';
 import { dummyHeroIllustration } from '../helpers/dummy';
+import { IHeroIllustrationProps } from '../types/components';
 import { HeroIllustration } from './hero-illustration';
 
 export default {

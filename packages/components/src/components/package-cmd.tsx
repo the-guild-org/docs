@@ -1,6 +1,6 @@
 import { ReactElement, useMemo } from 'react';
-import { Tab, Tabs } from 'nextra-theme-docs';
 import { Pre } from 'nextra/components';
+import { Tab, Tabs } from 'nextra-theme-docs';
 
 const PACKAGE_MANAGERS = ['yarn', 'npm', 'pnpm'] as const;
 

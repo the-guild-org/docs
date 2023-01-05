@@ -1,10 +1,10 @@
 import { ReactElement, ReactNode, useState } from 'react';
+import { ExecutableDocumentEditor, SchemaEditor } from '@theguild/monaco-graphql-editor';
 import { buildSchema } from 'graphql';
-import { ISchemaPageProps, IEditorProps } from '../types/components';
-import { Tag, TagsContainer } from './tag';
-import { SchemaEditor, ExecutableDocumentEditor } from '@theguild/monaco-graphql-editor';
+import { IEditorProps, ISchemaPageProps } from '../types/components';
 import { CaretSlimIcon, MoreIcon, ShareIcon } from './icons';
 import { Image } from './image';
+import { Tag, TagsContainer } from './tag';
 
 const Editor = ({
   title,

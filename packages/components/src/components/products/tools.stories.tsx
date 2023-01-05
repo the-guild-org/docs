@@ -1,10 +1,10 @@
 import { ReactElement } from 'react';
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
+import { ILink } from '../../types/components';
 import { FooterExtended } from '../footer-extended';
 import { Header } from '../header';
 import { HeroGradient } from '../hero-gradient';
 import { InfoList } from '../info-list';
-import { ILink } from '../../types/components';
 
 export default {
   title: 'Products/Tools',

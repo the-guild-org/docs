@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
-import { IFeatureListProps } from '../types/components';
+import { Meta, Story } from '@storybook/react';
 import { dummyFeatureList } from '../helpers/dummy';
+import { IFeatureListProps } from '../types/components';
 import { FeatureList } from './feature-list';
 
 export default {

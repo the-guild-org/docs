@@ -1,15 +1,15 @@
 import { ReactElement } from 'react';
+import { StaticImageData } from 'next/image';
 import clsx from 'clsx';
-import IllustrationDesktop from '../static/illustrations/marketplace-desktop.png';
-import IllustrationMobile from '../static/illustrations/marketplace-mobile.png';
-import CubeTL from '../static/illustrations/marketplace-cube-tl.png';
-import CubeTR from '../static/illustrations/marketplace-cube-tr.png';
-import CubeBL from '../static/illustrations/marketplace-cube-bl.png';
-import CubeBR from '../static/illustrations/marketplace-cube-br.png';
 import { IHeroMarketplaceProps } from '../types/components';
 import { Button } from './button';
 import { Image } from './image';
-import { StaticImageData } from 'next/image';
+import CubeBL from '../static/illustrations/marketplace-cube-bl.png';
+import CubeBR from '../static/illustrations/marketplace-cube-br.png';
+import CubeTL from '../static/illustrations/marketplace-cube-tl.png';
+import CubeTR from '../static/illustrations/marketplace-cube-tr.png';
+import IllustrationDesktop from '../static/illustrations/marketplace-desktop.png';
+import IllustrationMobile from '../static/illustrations/marketplace-mobile.png';
 
 const Shadow = ({ className }: { className: string }): ReactElement => {
   return (

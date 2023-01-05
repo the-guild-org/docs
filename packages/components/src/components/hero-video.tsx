@@ -1,10 +1,10 @@
 import { ReactElement } from 'react';
-import ReactPlayer from 'react-player/lazy';
+import { useRouter } from 'next/router';
 import clsx from 'clsx';
+import { useMounted } from 'nextra/hooks';
+import ReactPlayer from 'react-player/lazy';
 import { IHeroVideoProps } from '../types/components';
 import { Anchor } from './anchor';
-import { useRouter } from 'next/router';
-import { useMounted } from 'nextra/hooks';
 
 export const HeroVideo = ({
   title,
