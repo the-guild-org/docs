@@ -180,7 +180,7 @@ export function showWidgetInPosition(
   position: BridgeOptions['position'],
   htmlElement: HTMLElement,
 ): void {
-  editorInstance.changeViewZones(function (changeAccessor) {
+  editorInstance.changeViewZones(changeAccessor => {
     changeAccessor.addZone({
       afterLineNumber: position.line + 1,
       heightInPx: 60,

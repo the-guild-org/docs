@@ -131,12 +131,12 @@ function shade(color: string, amount: number): string | undefined {
   if (r > 255) r = 255;
   else if (r < 0) r = 0;
 
-  let b = ((num >> 8) & 0x00ff) + amount;
+  let b = ((num >> 8) & 0x00_ff) + amount;
 
   if (b > 255) b = 255;
   else if (b < 0) b = 0;
 
-  let g = (num & 0x0000ff) + amount;
+  let g = (num & 0x00_00_ff) + amount;
 
   if (g > 255) g = 255;
   else if (g < 0) g = 0;

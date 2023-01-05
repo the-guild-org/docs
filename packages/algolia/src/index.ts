@@ -426,34 +426,32 @@ export const indexToAlgolia = async ({
   if (dryMode) {
     console.log(`${lockfilePath} updated!`);
     writeFileSync(lockfilePath, recordsAsString);
-  } else {
-    if (!lockFileExists || recordsAsString !== lockfileContent) {
-      if (
-        ['ALGOLIA_APP_ID', 'ALGOLIA_ADMIN_API_KEY', 'ALGOLIA_INDEX_NAME'].some(
-          envVar => !process.env[envVar],
-        )
-      ) {
-        console.error('Some Algolia environment variables are missing!');
-        return;
-      }
-      if (lockFileExists) {
-        console.log('changes detected, updating Algolia index!');
-      } else {
-        console.log('no lockfile detected, push all records');
-      }
-
-      const client = algoliaSearch(process.env.ALGOLIA_APP_ID!, process.env.ALGOLIA_ADMIN_API_KEY!);
-      const index = client.initIndex(process.env.ALGOLIA_INDEX_NAME!);
-      index
-        .deleteBy({ filters: `source: "${source}"` })
-        .then(() => index.saveObjects(objects))
-        .then(({ objectIDs }) => {
-          console.log(objectIDs);
-        })
-        .catch(console.error);
-
-      writeFileSync(lockfilePath, recordsAsString);
+  } else if (!lockFileExists || recordsAsString !== lockfileContent) {
+    if (
+      ['ALGOLIA_APP_ID', 'ALGOLIA_ADMIN_API_KEY', 'ALGOLIA_INDEX_NAME'].some(
+        envVar => !process.env[envVar],
+      )
+    ) {
+      console.error('Some Algolia environment variables are missing!');
+      return;
     }
+    if (lockFileExists) {
+      console.log('changes detected, updating Algolia index!');
+    } else {
+      console.log('no lockfile detected, push all records');
+    }
+
+    const client = algoliaSearch(process.env.ALGOLIA_APP_ID!, process.env.ALGOLIA_ADMIN_API_KEY!);
+    const index = client.initIndex(process.env.ALGOLIA_INDEX_NAME!);
+    index
+      .deleteBy({ filters: `source: "${source}"` })
+      .then(() => index.saveObjects(objects))
+      .then(({ objectIDs }) => {
+        console.log(objectIDs);
+      })
+      .catch(console.error);
+
+    writeFileSync(lockfilePath, recordsAsString);
   }
 };
 
@@ -471,12 +469,10 @@ export const docusaurusToRoutes = ({
         $name: title,
         $routes: [...children],
       };
+    } else if (routes._!.docs) {
+      routes._!.docs.$routes?.push(...children);
     } else {
-      if (routes._!.docs) {
-        routes._!.docs.$routes?.push(...children);
-      } else {
-        routes._!.docs = { $routes: [...children] };
-      }
+      routes._!.docs = { $routes: [...children] };
     }
   });
   return routes;
