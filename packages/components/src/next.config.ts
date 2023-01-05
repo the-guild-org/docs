@@ -26,8 +26,8 @@ export const withGuildDocs = ({
   const withNextra = nextra({
     themeConfig,
     theme: '@theguild/components',
-    unstable_staticImage: true,
-    unstable_defaultShowCopyCode: true,
+    staticImage: true,
+    defaultShowCopyCode: true,
     mdxOptions: {
       remarkPlugins: [
         [

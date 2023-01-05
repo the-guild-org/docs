@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks -- false positive */
 import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
 import { useRouter } from 'next/router';
 import { FooterExtended, mdxComponents, Header } from './components';
@@ -67,10 +66,10 @@ export function defineConfig({
       ...mdxComponents,
       ...config.components,
     },
-    getNextSeoProps() {
+    useNextSeoProps() {
       const { frontMatter, title } = useConfig();
       const { asPath } = useRouter();
-      const nextSeoProps = config.getNextSeoProps?.();
+      const nextSeoProps = config.useNextSeoProps?.();
       return {
         titleTemplate: `%s – ${siteName}`,
         description: frontMatter.description || `${siteName} Documentation`,
