@@ -5,9 +5,6 @@ const siteName = 'Guild Docs';
 
 export default defineConfig({
   docsRepositoryBase: 'https://github.com/the-guild-org/the-guild-components/tree/main/website', // base URL for the docs repository
-  getNextSeoProps: () => ({
-    additionalLinkTags: [{ href: '/fav.ico', rel: 'shortcut icon' }],
-  }),
   logo: (
     <>
       <svg
@@ -36,6 +33,9 @@ export default defineConfig({
     </>
   ),
   siteName,
+  useNextSeoProps: () => ({
+    additionalLinkTags: [{ href: '/fav.ico', rel: 'shortcut icon' }],
+  }),
 });
 
 // const defaultSeo: AppSeoProps = {
