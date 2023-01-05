@@ -1,4 +1,4 @@
-import { useImperativeHandle, forwardRef, ForwardedRef } from 'react';
+import { ForwardedRef, forwardRef, useImperativeHandle } from 'react';
 import { DiffEditor, DiffEditorProps } from '@monaco-editor/react';
 import { useTheme } from 'next-themes';
 import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';

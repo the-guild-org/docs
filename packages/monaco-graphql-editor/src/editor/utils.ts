@@ -1,13 +1,13 @@
 import { GraphQLSchema, Location } from 'graphql';
 import {
-  Position,
-  IRange as GraphQLRange,
-  IPosition as GraphQLPosition,
-  Diagnostic,
   ContextToken,
+  Diagnostic,
+  DIAGNOSTIC_SEVERITY,
   getHoverInformation,
   getRange,
-  DIAGNOSTIC_SEVERITY,
+  IPosition as GraphQLPosition,
+  IRange as GraphQLRange,
+  Position,
 } from 'graphql-language-service';
 import * as monaco from 'monaco-editor';
 import { EnrichedLanguageService } from './enriched-language-service';

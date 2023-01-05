@@ -1,21 +1,20 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { readFile } from 'fs/promises';
-import { existsSync, writeFileSync, readFileSync, statSync } from 'fs';
 import crypto from 'crypto';
-import sortBy from 'lodash/sortBy.js';
-import isString from 'lodash/isString.js';
-import isArray from 'lodash/isArray.js';
-import flatten from 'lodash/flatten.js';
-import compact from 'lodash/compact.js';
-import map from 'lodash/map.js';
-import identity from 'lodash/identity.js';
-import GitHubSlugger from 'github-slugger';
-import removeMarkdown from 'remove-markdown';
+import { existsSync, readFileSync, statSync, writeFileSync } from 'fs';
+import { readFile } from 'fs/promises';
 import algoliaSearch from 'algoliasearch';
-import matter from 'gray-matter';
+import GitHubSlugger from 'github-slugger';
 import glob from 'glob';
-
-import { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource, IRoutes } from './types';
+import matter from 'gray-matter';
+import compact from 'lodash/compact.js';
+import flatten from 'lodash/flatten.js';
+import identity from 'lodash/identity.js';
+import isArray from 'lodash/isArray.js';
+import isString from 'lodash/isString.js';
+import map from 'lodash/map.js';
+import sortBy from 'lodash/sortBy.js';
+import removeMarkdown from 'remove-markdown';
+import { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC, IRoutes } from './types';
 
 const extractToC = (content: string) => {
   const slugger = new GitHubSlugger();

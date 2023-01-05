@@ -1,12 +1,12 @@
 import { ReactElement, useEffect, useRef, useState } from 'react';
-import MonacoEditor, { useMonaco, EditorProps } from '@monaco-editor/react';
+import MonacoEditor, { EditorProps, useMonaco } from '@monaco-editor/react';
+import { GraphQLSchema } from 'graphql';
 import {
   getAutocompleteSuggestions,
   // CompletionItemKind as lsCIK,
 } from 'graphql-language-service';
-import { GraphQLSchema } from 'graphql';
+import { CompletionItem, IRange } from 'graphql-language-service';
 import * as monaco from 'monaco-editor';
-import { IRange, CompletionItem } from 'graphql-language-service';
 import { useTheme } from 'next-themes';
 import * as languages from './enums';
 import { toGraphQLPosition, toMonacoRange } from './utils';

@@ -1,7 +1,7 @@
 /* eslint react/no-unknown-property: ['error', { ignore: ['tw'] }] */
 import { ComponentProps } from 'react';
-import { PRODUCTS } from '@theguild/components/products';
 import { GuildLogo, TheGuild } from '@theguild/components/logos';
+import { PRODUCTS } from '@theguild/components/products';
 import { generateImage } from './lib/img';
 
 const { WHATSAPP, HELIX, STENCIL, ...filteredProducts } = PRODUCTS;

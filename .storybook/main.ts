@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { StorybookConfig } from '@storybook/core-common';
-import { Configuration } from 'webpack';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import { Configuration } from 'webpack';
 
 const config: StorybookConfig = {
   stories: ['../packages/*/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],

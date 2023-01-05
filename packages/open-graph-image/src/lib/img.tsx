@@ -1,11 +1,11 @@
+import { ReactNode } from 'react';
+import { initWasm, Resvg } from '@resvg/resvg-wasm';
 // @ts-ignore
 import satori, { init } from 'satori/wasm';
 import initYoga from 'yoga-wasm-web';
-import { Resvg, initWasm } from '@resvg/resvg-wasm';
-import { ReactNode } from 'react';
-import { loadGoogleFont } from './fonts';
-import yogaWasm from '../vender/yoga.wasm';
 import resvgWasm from '../vender/resvg.wasm';
+import yogaWasm from '../vender/yoga.wasm';
+import { loadGoogleFont } from './fonts';
 
 const genModuleInit = () => {
   let isInit = false;

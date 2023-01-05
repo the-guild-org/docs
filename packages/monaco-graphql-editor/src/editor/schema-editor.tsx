@@ -1,14 +1,14 @@
 import {
   ForwardedRef,
-  useImperativeHandle,
-  useEffect,
-  useState,
   forwardRef,
   useCallback,
+  useEffect,
+  useImperativeHandle,
+  useState,
 } from 'react';
-import MonacoEditor, { EditorProps, BeforeMount, OnMount, OnChange } from '@monaco-editor/react';
-import { IDisposable } from 'monaco-editor';
+import MonacoEditor, { BeforeMount, EditorProps, OnChange, OnMount } from '@monaco-editor/react';
 import { GraphQLError, GraphQLSchema } from 'graphql';
+import { IDisposable } from 'monaco-editor';
 import { useTheme } from 'next-themes';
 import { EnrichedLanguageService } from './enriched-language-service';
 import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
