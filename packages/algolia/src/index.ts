@@ -1,3 +1,4 @@
+/* eslint-disable no-console -- for debug */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import crypto from 'node:crypto';
 import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
@@ -173,11 +174,7 @@ async function routesToAlgoliaRecords(
       if (!topRoute) {
         return;
       }
-      if (isString(topRoute)) {
-        console.warn(`ignored ${topRoute}`);
-        return;
-      }
-      if (isArray(topRoute)) {
+      if (isString(topRoute) || isArray(topRoute)) {
         console.warn(`ignored ${topRoute}`);
         return;
       }

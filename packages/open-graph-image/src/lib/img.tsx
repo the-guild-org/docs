@@ -14,7 +14,7 @@ const genModuleInit = () => {
       return;
     }
 
-    // @ts-ignore
+    // @ts-expect-error todo: fix Type 'YogaWasm' has no call signatures
     init(await initYoga(yogaWasm));
     await initWasm(resvgWasm);
     isInit = true;

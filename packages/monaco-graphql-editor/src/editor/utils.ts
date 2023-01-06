@@ -71,6 +71,7 @@ export const coreDiagnosticsSource: DiagnosticsSource = {
             }),
           ];
         }
+        // eslint-disable-next-line no-console -- show error
         console.warn(`GraphQL getDiagnostics failed unexpected error: `, e);
 
         return [];

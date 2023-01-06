@@ -1,3 +1,4 @@
+/* eslint-disable import/no-default-export */
 /* eslint react/no-unknown-property: ['error', { ignore: ['tw'] }] */
 import { ComponentProps } from 'react';
 import { GuildLogo, TheGuild } from '@theguild/components/logos';
