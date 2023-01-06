@@ -2,9 +2,9 @@ import { ReactElement, useEffect, useRef, useState } from 'react';
 import MonacoEditor, { EditorProps, useMonaco } from '@monaco-editor/react';
 import { GraphQLSchema } from 'graphql';
 import {
-  getAutocompleteSuggestions,
   // CompletionItemKind as lsCIK,
   CompletionItem,
+  getAutocompleteSuggestions,
   IRange,
 } from 'graphql-language-service';
 import * as monaco from 'monaco-editor';

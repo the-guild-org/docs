@@ -10,7 +10,7 @@
     "build": "turbo run build",
     "build-storybook": "storybook build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/style.css",
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "eslint --cache --ignore-path .gitignore .",
     "lint:prettier": "prettier --cache --check .",
     "prebuild": "rimraf packages/*/dist/ .turbo/",
     "prepare": "husky install",
