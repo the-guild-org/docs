@@ -32,6 +32,7 @@ export const SearchBarV2 = ({
     const indexName = algolia?.indexName || process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME;
 
     if (!appId || !searchApiKey || !indexName) {
+      // eslint-disable-next-line no-console -- show error
       console.error('Algolia environments variables missing');
       return;
     }

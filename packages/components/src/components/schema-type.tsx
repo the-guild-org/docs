@@ -64,7 +64,6 @@ const Button = ({ children }: { children: ReactNode }): ReactElement => {
         transition
         hover:opacity-70
       "
-      onClick={() => console.log('clicked')}
     >
       {children}
     </button>
