@@ -12,7 +12,6 @@ export {
   Bleed,
   Callout,
   Collapse,
-  default,
   Navbar,
   NotFoundPage,
   ServerSideErrorPage,

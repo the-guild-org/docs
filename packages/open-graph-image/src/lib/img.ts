@@ -3,9 +3,9 @@ import { initWasm, Resvg } from '@resvg/resvg-wasm';
 // @ts-expect-error -- todo: add declaration
 import satori, { init } from 'satori/wasm';
 import initYoga from 'yoga-wasm-web';
+import { loadGoogleFont } from './fonts';
 import resvgWasm from '../vender/resvg.wasm';
 import yogaWasm from '../vender/yoga.wasm';
-import { loadGoogleFont } from './fonts';
 
 const genModuleInit = () => {
   let isInit = false;

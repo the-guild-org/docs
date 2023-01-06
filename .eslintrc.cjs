@@ -26,7 +26,6 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'warn',
     'jsx-a11y/no-static-element-interactions': 'warn',
     'import/extensions': 'warn',
-    'import/no-default-export': 'warn',
   },
   settings: {
     tailwindcss: {
@@ -43,18 +42,6 @@ module.exports = {
     },
   },
   overrides: [
-    {
-      files: ['postcss.config.cjs', 'rollup.config.js'],
-      env: {
-        node: true,
-      },
-    },
-    {
-      files: ['**/*.stories.tsx', 'tsup.config.ts', '.storybook/main.ts'],
-      rules: {
-        'import/no-default-export': 'off',
-      },
-    },
     {
       files: ['**/*.stories.tsx'],
       rules: {

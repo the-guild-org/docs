@@ -25,7 +25,7 @@ export const withGuildDocs = ({
   });
   const withNextra = nextra({
     themeConfig,
-    theme: '@theguild/components',
+    theme: 'nextra-theme-docs',
     staticImage: true,
     defaultShowCopyCode: true,
     mdxOptions: {

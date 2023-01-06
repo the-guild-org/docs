@@ -7,13 +7,8 @@ import algoliaSearch from 'algoliasearch';
 import GitHubSlugger from 'github-slugger';
 import glob from 'glob';
 import matter from 'gray-matter';
-import compact from 'lodash/compact.js';
-import flatten from 'lodash/flatten.js';
-import identity from 'lodash/identity.js';
-import isArray from 'lodash/isArray.js';
-import isString from 'lodash/isString.js';
-import map from 'lodash/map.js';
-import sortBy from 'lodash/sortBy.js';
+import map from 'lodash.map';
+import sortBy from 'lodash.sortby';
 import removeMarkdown from 'remove-markdown';
 import { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC, IRoutes } from './types';
 
@@ -84,11 +79,7 @@ const contentForRecord = (content: string) => {
       .map(line => {
         // remove code snippets
         if (line.match(/^```(.*)/)) {
-          if (isCodeBlock) {
-            isCodeBlock = false;
-            return null;
-          }
-          isCodeBlock = true;
+          isCodeBlock = !isCodeBlock;
           return null;
         }
         if (isCodeBlock) {
@@ -96,11 +87,7 @@ const contentForRecord = (content: string) => {
         }
         // remove metadata headers
         if (line.startsWith('---')) {
-          if (isMeta) {
-            isMeta = false;
-            return null;
-          }
-          isMeta = true;
+          isMeta = !isMeta;
           return null;
         }
         if (isMeta) {
@@ -142,7 +129,7 @@ async function routesToAlgoliaRecords(
     }
 
     const fileContent = await readFile(
-      `./${compact([parentRoute?.path, topPath, slug]).join('/')}.md${mdx ? 'x' : ''}`,
+      `./${[parentRoute?.path, topPath, slug].filter(Boolean).join('/')}.md${mdx ? 'x' : ''}`,
     );
 
     const { data: meta, content } = matter(fileContent.toString());
@@ -160,9 +147,9 @@ async function routesToAlgoliaRecords(
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url: `${domain}${compact([parentRoute?.path, topPath, slug]).join('/')}`,
+      url: `${domain}${[parentRoute?.path, topPath, slug].filter(Boolean).join('/')}`,
       domain,
-      hierarchy: compact([source, parentRoute?.$name, parentLevelName, resolvedTitle]),
+      hierarchy: [source, parentRoute?.$name, parentLevelName, resolvedTitle].filter(Boolean),
       source,
       title: resolvedTitle,
       type: meta.type || 'Documentation',
@@ -174,7 +161,7 @@ async function routesToAlgoliaRecords(
       if (!topRoute) {
         return;
       }
-      if (isString(topRoute) || isArray(topRoute)) {
+      if (typeof topRoute === 'string' || Array.isArray(topRoute)) {
         console.warn(`ignored ${topRoute}`);
         return;
       }
@@ -183,7 +170,7 @@ async function routesToAlgoliaRecords(
       }
       return Promise.all<void>(
         map(topRoute.$routes, route => {
-          if (isArray(route)) {
+          if (Array.isArray(route)) {
             // `route` is `['slug', 'title']`
             return routeToAlgoliaRecords(topPath, topRoute.$name!, route[0], route[1]);
           }
@@ -386,7 +373,7 @@ export const indexToAlgolia = async ({
   source,
   domain,
   nextra,
-  postProcessor = identity,
+  postProcessor = value => value,
   // TODO: add `force` flag
   dryMode = true,
   lockfilePath,
@@ -394,13 +381,11 @@ export const indexToAlgolia = async ({
   const normalizedRoutes = docusaurus ? [docusaurusToRoutes(docusaurus)] : routesArr || [];
 
   const objects = postProcessor([
-    ...flatten(
-      await Promise.all(
-        normalizedRoutes.map(routes =>
-          routesToAlgoliaRecords(routes, source, normalizeDomain(domain), !docusaurus),
-        ),
+    ...(await Promise.all(
+      normalizedRoutes.map(routes =>
+        routesToAlgoliaRecords(routes, source, normalizeDomain(domain), !docusaurus),
       ),
-    ),
+    ).then(result => result.flat())),
     ...(await pluginsToAlgoliaRecords(plugins, source, normalizeDomain(domain))),
     ...(nextra ? await nextraToAlgoliaRecords(nextra, source, normalizeDomain(domain)) : []),
   ]);
