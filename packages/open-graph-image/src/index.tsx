@@ -5,7 +5,7 @@ import { GuildLogo, TheGuild } from '@theguild/components/logos';
 import { PRODUCTS } from '@theguild/components/products';
 import { generateImage } from './lib/img';
 
-const { WHATSAPP, HELIX, STENCIL, ...filteredProducts } = PRODUCTS;
+const { WHATSAPP: _, HELIX: _2, STENCIL: _3, ...filteredProducts } = PRODUCTS;
 
 const products = {
   ...filteredProducts,
