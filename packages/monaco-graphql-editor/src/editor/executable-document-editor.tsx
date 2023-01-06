@@ -4,8 +4,9 @@ import { GraphQLSchema } from 'graphql';
 import {
   getAutocompleteSuggestions,
   // CompletionItemKind as lsCIK,
+  CompletionItem,
+  IRange,
 } from 'graphql-language-service';
-import { CompletionItem, IRange } from 'graphql-language-service';
 import * as monaco from 'monaco-editor';
 import { useTheme } from 'next-themes';
 import * as languages from './enums';

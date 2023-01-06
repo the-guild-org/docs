@@ -1,4 +1,3 @@
-import '@algolia/autocomplete-core';
 import { BaseItem } from '@algolia/autocomplete-core';
 import { AlgoliaRecord } from '@theguild/algolia';
 
