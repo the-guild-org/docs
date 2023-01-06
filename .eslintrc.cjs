@@ -32,7 +32,6 @@ module.exports = {
     '@typescript-eslint/array-type': ['error', { readonly: 'generic' }],
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
     'tailwindcss/no-custom-classname': 'warn',
-    '@typescript-eslint/ban-ts-comment': 'warn',
   },
   settings: {
     tailwindcss: {
@@ -59,9 +58,22 @@ module.exports = {
       },
     },
     {
-      files: ['**/*.stories.tsx'],
+      files: ['**/*.stories.tsx', 'tsup.config.ts', '.storybook/main.ts'],
       rules: {
         'import/no-default-export': 'off',
+      },
+    },
+    {
+      files: ['**/*.stories.tsx'],
+      rules: {
+        'no-console': 'off',
+      },
+    },
+    {
+      files: ['packages/**'],
+      excludedFiles: ['packages/algolia/**'],
+      rules: {
+        'import/extensions': ['error', 'never'],
       },
     },
   ],

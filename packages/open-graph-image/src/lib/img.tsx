@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { initWasm, Resvg } from '@resvg/resvg-wasm';
-// @ts-ignore
+// @ts-expect-error -- todo: add declaration
 import satori, { init } from 'satori/wasm';
 import initYoga from 'yoga-wasm-web';
 import resvgWasm from '../vender/resvg.wasm';
