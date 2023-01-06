@@ -3,6 +3,9 @@ module.exports = {
   extends: [
     '@theguild',
     '@theguild/eslint-config/react',
+    '@theguild/eslint-config/json',
+    '@theguild/eslint-config/yml',
+    '@theguild/eslint-config/mdx',
     'plugin:tailwindcss/recommended',
     'plugin:storybook/recommended',
   ],
