@@ -68,6 +68,7 @@ export const SearchBarV2 = ({
         const render = getRender(root);
         render(
           !query || status === 'loading' ? (
+            // eslint-disable-next-line react/jsx-no-useless-fragment -- false positive
             <Fragment />
           ) : (
             <div className="my-20 w-full text-center text-xl font-light text-gray-600 dark:text-gray-400">

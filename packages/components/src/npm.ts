@@ -1,3 +1,4 @@
+/* eslint-disable no-console -- show errors and debug */
 import semver from 'semver';
 
 type Package = {

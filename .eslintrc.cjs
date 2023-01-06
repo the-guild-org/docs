@@ -58,5 +58,11 @@ module.exports = {
         node: true,
       },
     },
+    {
+      files: ['**/*.stories.tsx'],
+      rules: {
+        'import/no-default-export': 'off',
+      },
+    },
   ],
 };
