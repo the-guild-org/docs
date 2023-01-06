@@ -1,4 +1,4 @@
-import { HeroGradient, InfoList, NPMBadge, HeroVideo } from '@theguild/components';
+import { HeroGradient, HeroVideo, InfoList, NPMBadge } from '@theguild/components';
 
 export function IndexPage() {
   return (

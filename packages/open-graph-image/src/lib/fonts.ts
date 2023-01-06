@@ -21,7 +21,7 @@ export async function loadGoogleFont({
     .map(key => `${key}=${params[key]}`)
     .join('&')}`;
 
-  const css = await fetch(`${url}`, {
+  const css = await fetch(String(url), {
     headers: {
       // construct user agent to get TTF font
       'User-Agent':

@@ -26,6 +26,7 @@ export function applyUnderscoreRedirects(config: any, meta: any) {
 
         if (redirects.length === 0) {
           if (!isWarningPrinted) {
+            // eslint-disable-next-line no-console -- for debug
             console.warn('[guild-docs] No redirects defined, no "_redirect" file is created!');
             isWarningPrinted = true;
           }
@@ -36,7 +37,6 @@ export function applyUnderscoreRedirects(config: any, meta: any) {
           .join('\n');
         await writeFile(outFile, redirectsTxt);
       } catch (error) {
-        console.error('Error while generating redirects file:', error);
         throw new Error(
           `Failed to generate "_redirects" file during build: ${(error as Error).message}`,
         );

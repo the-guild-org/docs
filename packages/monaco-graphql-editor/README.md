@@ -39,7 +39,7 @@ If you wish to get all information about specific tokens in your GraphQL editor,
 debug hover provider:
 
 ```tsx
-import { SchemaEditor, debugHoverSource } from '@theguild/editor'
+import { debugHoverSource, SchemaEditor } from '@theguild/editor'
 
 const MyEditor = (): React.ReactElement => {
   return <SchemaEditor hoverProviders={[debugHoverSource]} />
@@ -65,7 +65,7 @@ You can listen to the following events, on top of the Monaco editor:
 To create a custom hover provider, you can pass the following prop:
 
 ```tsx
-import { SchemaEditor, HoverSource } from '@theguild/editor'
+import { HoverSource, SchemaEditor } from '@theguild/editor'
 
 export const myHoverProvider: HoverSource = {
   forNode: ({ token }) => ({
@@ -83,7 +83,7 @@ const MyEditor = (): React.ReactElement => {
 To create a custom `Jump to definition` source provider, you can pass the following prop:
 
 ```tsx
-import { SchemaEditor, DefinitionSource } from '@theguild/editor'
+import { DefinitionSource, SchemaEditor } from '@theguild/editor'
 
 export const myDefinitionSource: DefinitionSource = {
   forNode({ schema, model, token }) {
@@ -120,7 +120,7 @@ const MyEditor = (): React.ReactElement => {
 To mark custom errors on GraphQL based nodes, you can implement a custom diagnostics provider.
 
 ```tsx
-import { SchemaEditor, DiagnosticsSource, toMarkerData, getRange } from '@theguild/editor'
+import { DiagnosticsSource, getRange, SchemaEditor, toMarkerData } from '@theguild/editor'
 
 export const myDiagnosticsSoruce: DiagnosticsSource = {
   forDocument({ model, document, languageService }) {

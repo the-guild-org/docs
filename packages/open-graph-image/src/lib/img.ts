@@ -1,11 +1,11 @@
-// @ts-ignore
+import { ReactNode } from 'react';
+import { initWasm, Resvg } from '@resvg/resvg-wasm';
+// @ts-expect-error -- todo: add declaration
 import satori, { init } from 'satori/wasm';
 import initYoga from 'yoga-wasm-web';
-import { Resvg, initWasm } from '@resvg/resvg-wasm';
-import { ReactNode } from 'react';
 import { loadGoogleFont } from './fonts';
-import yogaWasm from '../vender/yoga.wasm';
 import resvgWasm from '../vender/resvg.wasm';
+import yogaWasm from '../vender/yoga.wasm';
 
 const genModuleInit = () => {
   let isInit = false;
@@ -14,7 +14,7 @@ const genModuleInit = () => {
       return;
     }
 
-    // @ts-ignore
+    // @ts-expect-error todo: fix Type 'YogaWasm' has no call signatures
     init(await initYoga(yogaWasm));
     await initWasm(resvgWasm);
     isInit = true;

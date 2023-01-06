@@ -1,13 +1,13 @@
 import { GraphQLSchema, Location } from 'graphql';
 import {
-  Position,
-  IRange as GraphQLRange,
-  IPosition as GraphQLPosition,
-  Diagnostic,
   ContextToken,
+  Diagnostic,
+  DIAGNOSTIC_SEVERITY,
   getHoverInformation,
   getRange,
-  DIAGNOSTIC_SEVERITY,
+  IPosition as GraphQLPosition,
+  IRange as GraphQLRange,
+  Position,
 } from 'graphql-language-service';
 import * as monaco from 'monaco-editor';
 import { EnrichedLanguageService } from './enriched-language-service';
@@ -70,11 +70,11 @@ export const coreDiagnosticsSource: DiagnosticsSource = {
               range: getRange(e.locations[0], document),
             }),
           ];
-        } else {
-          console.warn(`GraphQL getDiagnostics failed unexpected error: `, e);
-
-          return [];
         }
+        // eslint-disable-next-line no-console -- show error
+        console.warn(`GraphQL getDiagnostics failed unexpected error: `, e);
+
+        return [];
       });
   },
 };
@@ -181,7 +181,7 @@ export function showWidgetInPosition(
   position: BridgeOptions['position'],
   htmlElement: HTMLElement,
 ): void {
-  editorInstance.changeViewZones(function (changeAccessor) {
+  editorInstance.changeViewZones(changeAccessor => {
     changeAccessor.addZone({
       afterLineNumber: position.line + 1,
       heightInPx: 60,

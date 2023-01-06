@@ -1,11 +1,11 @@
 import { ReactElement, useEffect, useMemo, useState } from 'react';
-import ReactPaginate from 'react-paginate';
 import clsx from 'clsx';
-import { IMarketplaceListProps, IMarketplaceItemsProps } from '../types/components';
-import { Tag, TagsContainer } from './tag';
-import { CaretSlimIcon } from './icons';
+import ReactPaginate from 'react-paginate';
+import { IMarketplaceItemsProps, IMarketplaceListProps } from '../types/components';
 import { Anchor } from './anchor';
+import { CaretSlimIcon } from './icons';
 import { Image } from './image';
+import { Tag, TagsContainer } from './tag';
 
 const formatDate = (value: string): string => {
   const months = [

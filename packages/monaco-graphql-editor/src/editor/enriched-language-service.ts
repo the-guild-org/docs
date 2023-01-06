@@ -1,10 +1,10 @@
 import { GraphQLSchema } from 'graphql';
 import {
-  LanguageService,
-  getRange,
-  IPosition as GraphQLPosition,
   ContextToken,
+  getRange,
   getTokenAtPosition,
+  IPosition as GraphQLPosition,
+  LanguageService,
 } from 'graphql-language-service';
 import * as monaco from 'monaco-editor';
 import {
@@ -16,9 +16,9 @@ import {
   DefinitionSource,
   DiagnosticsSource,
   HoverSource,
+  removeFalsey,
   toGraphQLPosition,
   toMonacoRange,
-  removeFalsey,
 } from './utils';
 
 export class EnrichedLanguageService extends LanguageService {

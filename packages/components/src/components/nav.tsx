@@ -1,7 +1,7 @@
 import { Dispatch, ReactElement, ReactNode, SetStateAction, useEffect } from 'react';
 import clsx from 'clsx';
-import { CloseIcon } from './icons';
 import { toggleLockBodyScroll } from '../helpers/modals';
+import { CloseIcon } from './icons';
 
 export const Nav = ({
   isOpen,

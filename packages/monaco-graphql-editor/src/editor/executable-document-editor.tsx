@@ -1,12 +1,13 @@
 import { ReactElement, useEffect, useRef, useState } from 'react';
-import MonacoEditor, { useMonaco, EditorProps } from '@monaco-editor/react';
-import {
-  getAutocompleteSuggestions,
-  // CompletionItemKind as lsCIK,
-} from 'graphql-language-service';
+import MonacoEditor, { EditorProps, useMonaco } from '@monaco-editor/react';
 import { GraphQLSchema } from 'graphql';
+import {
+  // CompletionItemKind as lsCIK,
+  CompletionItem,
+  getAutocompleteSuggestions,
+  IRange,
+} from 'graphql-language-service';
 import * as monaco from 'monaco-editor';
-import { IRange, CompletionItem } from 'graphql-language-service';
 import { useTheme } from 'next-themes';
 import * as languages from './enums';
 import { toGraphQLPosition, toMonacoRange } from './utils';
@@ -102,10 +103,12 @@ class GraphQLWorker {
   ): GraphQLWorkerCompletionItem[] {
     const document = documentModel.getValue();
     if (!document) {
+      // eslint-disable-next-line no-console -- show error
       console.log('no document');
       return [];
     }
     if (!schema) {
+      // eslint-disable-next-line no-console -- show error
       console.log('no schema');
     }
     const graphQLPosition = toGraphQLPosition(position);

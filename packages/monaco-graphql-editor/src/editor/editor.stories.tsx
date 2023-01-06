@@ -1,9 +1,9 @@
 import { useRef } from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { SchemaEditor, SchemaEditorProps } from './schema-editor';
+import { Meta, Story } from '@storybook/react/types-6-0';
 import { SchemaDiffEditor, SchemaDiffEditorProps } from './schema-diff-editor';
-import { debugHoverSource, showWidgetInPosition } from './utils';
+import { SchemaEditor, SchemaEditorProps } from './schema-editor';
 import { SchemaEditorApi } from './use-schema-services';
+import { debugHoverSource, showWidgetInPosition } from './utils';
 
 const TEST_SCHEMA = `type Query {
   ping: Boolean

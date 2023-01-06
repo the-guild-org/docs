@@ -1,8 +1,8 @@
 import { PackageCmd, useMDXComponents, useSSG } from '@theguild/components'
-import { compileMdx } from 'nextra/compile'
-import { MDXRemote } from 'next-mdx-remote'
-import pkgJson from '../../../package.json'
 import pkgJsonFromComponents from '@theguild/components/package.json'
+import { MDXRemote } from 'next-mdx-remote'
+import { compileMdx } from 'nextra/compile'
+import pkgJson from '../../../package.json'
 
 # Installation
 
@@ -65,7 +65,7 @@ module.exports = require('@theguild/tailwind-config/postcss.config')
 
 ## 4. Add theme config
 
-```tsx filename="theme.config.tsx"
+```ts filename="theme.config.tsx"
 import { defineConfig } from '@theguild/components'
 
 export default defineConfig({

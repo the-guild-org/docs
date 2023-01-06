@@ -1,7 +1,7 @@
-import { AutocompleteComponents } from '@algolia/autocomplete-js';
 import { ReactElement } from 'react';
-import { AlgoliaSearchItem } from '../../types/algolia';
+import { AutocompleteComponents } from '@algolia/autocomplete-js';
 import { PRODUCTS } from '../../products';
+import { AlgoliaSearchItem } from '../../types/algolia';
 
 const products = Object.values(PRODUCTS);
 

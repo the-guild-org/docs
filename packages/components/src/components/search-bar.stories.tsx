@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { ISearchBarProps } from '../types/components';
 import { SearchBar } from './search-bar';
 

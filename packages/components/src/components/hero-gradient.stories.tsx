@@ -1,6 +1,6 @@
-import { Story, Meta } from '@storybook/react';
-import { IHeroGradientProps } from '../types/components';
+import { Meta, Story } from '@storybook/react';
 import { dummyHeroGradient } from '../helpers/dummy';
+import { IHeroGradientProps } from '../types/components';
 import { HeroGradient } from './hero-gradient';
 
 export default {

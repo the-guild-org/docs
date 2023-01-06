@@ -1,5 +1,5 @@
 import { FormEvent } from 'react';
-import { Story, Meta } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { Newsletter, NewsletterProps } from './newsletter';
 
 export default {

@@ -1,23 +1,18 @@
+/* eslint-disable no-console -- for debug */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { readFile } from 'fs/promises';
-import { existsSync, writeFileSync, readFileSync, statSync } from 'fs';
-import crypto from 'crypto';
-import sortBy from 'lodash/sortBy.js';
-import isString from 'lodash/isString.js';
-import isArray from 'lodash/isArray.js';
-import flatten from 'lodash/flatten.js';
-import compact from 'lodash/compact.js';
-import map from 'lodash/map.js';
-import identity from 'lodash/identity.js';
-import GitHubSlugger from 'github-slugger';
-import removeMarkdown from 'remove-markdown';
+import crypto from 'node:crypto';
+import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { readFile } from 'node:fs/promises';
 import algoliaSearch from 'algoliasearch';
-import matter from 'gray-matter';
+import GitHubSlugger from 'github-slugger';
 import glob from 'glob';
+import matter from 'gray-matter';
+import map from 'lodash.map';
+import sortBy from 'lodash.sortby';
+import removeMarkdown from 'remove-markdown';
+import { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC, IRoutes } from './types';
 
-import { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource, IRoutes } from './types';
-
-const extractToC = (content: string) => {
+const extractToC = (content: string): AlgoliaSearchItemTOC[] => {
   const slugger = new GitHubSlugger();
 
   const lines = content.split('\n');
@@ -26,26 +21,26 @@ const extractToC = (content: string) => {
   let currentDepth = 0;
   let currentParent: AlgoliaSearchItemTOC | undefined;
 
-  const slugs = lines.reduce<AlgoliaSearchItemTOC[]>((acum, value) => {
+  return lines.reduce<AlgoliaSearchItemTOC[]>((acc, value) => {
     if (value.match(/^```(.*)/)) {
       if (isCodeBlock) {
         isCodeBlock = false;
       } else {
         isCodeBlock = true;
-        return acum;
+        return acc;
       }
     } else if (isCodeBlock) {
-      return acum;
+      return acc;
     }
 
     const result = value.match(/(##+ )(.+)/);
 
-    if (!result) return acum;
+    if (!result) return acc;
 
     const depth = result[1]?.length - 3;
 
     if (depth > 1) {
-      return acum;
+      return acc;
     }
 
     const heading = result[2]?.trim();
@@ -63,17 +58,16 @@ const extractToC = (content: string) => {
       }
     } else {
       currentParent = record;
-      acum.push(record);
+      acc.push(record);
     }
 
     currentDepth = depth;
 
-    return acum;
+    return acc;
   }, []);
-  return slugs;
 };
 
-const normalizeDomain = (domain: string) => (domain.endsWith('/') ? domain : `${domain}`);
+const normalizeDomain = (domain: string) => (domain.endsWith('/') ? domain : String(domain));
 
 const contentForRecord = (content: string) => {
   let isCodeBlock = false;
@@ -84,26 +78,18 @@ const contentForRecord = (content: string) => {
       .map(line => {
         // remove code snippets
         if (line.match(/^```(.*)/)) {
-          if (isCodeBlock) {
-            isCodeBlock = false;
-            return null;
-          } else {
-            isCodeBlock = true;
-            return null;
-          }
-        } else if (isCodeBlock) {
+          isCodeBlock = !isCodeBlock;
+          return null;
+        }
+        if (isCodeBlock) {
           return null;
         }
         // remove metadata headers
         if (line.startsWith('---')) {
-          if (isMeta) {
-            isMeta = false;
-            return null;
-          } else {
-            isMeta = true;
-            return null;
-          }
-        } else if (isMeta) {
+          isMeta = !isMeta;
+          return null;
+        }
+        if (isMeta) {
           return null;
         }
         // remove titles
@@ -142,7 +128,7 @@ async function routesToAlgoliaRecords(
     }
 
     const fileContent = await readFile(
-      `./${compact([parentRoute?.path, topPath, slug]).join('/')}.md${mdx ? 'x' : ''}`,
+      `./${[parentRoute?.path, topPath, slug].filter(Boolean).join('/')}.md${mdx ? 'x' : ''}`,
     );
 
     const { data: meta, content } = matter(fileContent.toString());
@@ -160,9 +146,9 @@ async function routesToAlgoliaRecords(
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url: `${domain}${compact([parentRoute?.path, topPath, slug]).join('/')}`,
+      url: `${domain}${[parentRoute?.path, topPath, slug].filter(Boolean).join('/')}`,
       domain,
-      hierarchy: compact([source, parentRoute?.$name, parentLevelName, resolvedTitle]),
+      hierarchy: [source, parentRoute?.$name, parentLevelName, resolvedTitle].filter(Boolean),
       source,
       title: resolvedTitle,
       type: meta.type || 'Documentation',
@@ -174,11 +160,7 @@ async function routesToAlgoliaRecords(
       if (!topRoute) {
         return;
       }
-      if (isString(topRoute)) {
-        console.warn(`ignored ${topRoute}`);
-        return;
-      }
-      if (isArray(topRoute)) {
+      if (typeof topRoute === 'string' || Array.isArray(topRoute)) {
         console.warn(`ignored ${topRoute}`);
         return;
       }
@@ -187,7 +169,7 @@ async function routesToAlgoliaRecords(
       }
       return Promise.all<void>(
         map(topRoute.$routes, route => {
-          if (isArray(route)) {
+          if (Array.isArray(route)) {
             // `route` is `['slug', 'title']`
             return routeToAlgoliaRecords(topPath, topRoute.$name!, route[0], route[1]);
           }
@@ -368,7 +350,7 @@ async function nextraToAlgoliaRecords(
   });
 }
 
-export type { AlgoliaRecord, AlgoliaSearchItemTOC, AlgoliaRecordSource };
+export type { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC };
 
 interface IndexToAlgoliaOptions {
   routes?: IRoutes[];
@@ -390,7 +372,7 @@ export const indexToAlgolia = async ({
   source,
   domain,
   nextra,
-  postProcessor = identity,
+  postProcessor = value => value,
   // TODO: add `force` flag
   dryMode = true,
   lockfilePath,
@@ -398,13 +380,11 @@ export const indexToAlgolia = async ({
   const normalizedRoutes = docusaurus ? [docusaurusToRoutes(docusaurus)] : routesArr || [];
 
   const objects = postProcessor([
-    ...flatten(
-      await Promise.all(
-        normalizedRoutes.map(routes =>
-          routesToAlgoliaRecords(routes, source, normalizeDomain(domain), !docusaurus),
-        ),
+    ...(await Promise.all(
+      normalizedRoutes.map(routes =>
+        routesToAlgoliaRecords(routes, source, normalizeDomain(domain), !docusaurus),
       ),
-    ),
+    ).then(result => result.flat())),
     ...(await pluginsToAlgoliaRecords(plugins, source, normalizeDomain(domain))),
     ...(nextra ? await nextraToAlgoliaRecords(nextra, source, normalizeDomain(domain)) : []),
   ]);
@@ -427,34 +407,32 @@ export const indexToAlgolia = async ({
   if (dryMode) {
     console.log(`${lockfilePath} updated!`);
     writeFileSync(lockfilePath, recordsAsString);
-  } else {
-    if (!lockFileExists || recordsAsString !== lockfileContent) {
-      if (
-        ['ALGOLIA_APP_ID', 'ALGOLIA_ADMIN_API_KEY', 'ALGOLIA_INDEX_NAME'].some(
-          envVar => !process.env[envVar],
-        )
-      ) {
-        console.error('Some Algolia environment variables are missing!');
-        return;
-      }
-      if (lockFileExists) {
-        console.log('changes detected, updating Algolia index!');
-      } else {
-        console.log('no lockfile detected, push all records');
-      }
-
-      const client = algoliaSearch(process.env.ALGOLIA_APP_ID!, process.env.ALGOLIA_ADMIN_API_KEY!);
-      const index = client.initIndex(process.env.ALGOLIA_INDEX_NAME!);
-      index
-        .deleteBy({ filters: `source: "${source}"` })
-        .then(() => index.saveObjects(objects))
-        .then(({ objectIDs }) => {
-          console.log(objectIDs);
-        })
-        .catch(console.error);
-
-      writeFileSync(lockfilePath, recordsAsString);
+  } else if (!lockFileExists || recordsAsString !== lockfileContent) {
+    if (
+      ['ALGOLIA_APP_ID', 'ALGOLIA_ADMIN_API_KEY', 'ALGOLIA_INDEX_NAME'].some(
+        envVar => !process.env[envVar],
+      )
+    ) {
+      console.error('Some Algolia environment variables are missing!');
+      return;
     }
+    if (lockFileExists) {
+      console.log('changes detected, updating Algolia index!');
+    } else {
+      console.log('no lockfile detected, push all records');
+    }
+
+    const client = algoliaSearch(process.env.ALGOLIA_APP_ID!, process.env.ALGOLIA_ADMIN_API_KEY!);
+    const index = client.initIndex(process.env.ALGOLIA_INDEX_NAME!);
+    index
+      .deleteBy({ filters: `source: "${source}"` })
+      .then(() => index.saveObjects(objects))
+      .then(({ objectIDs }) => {
+        console.log(objectIDs);
+      })
+      .catch(console.error);
+
+    writeFileSync(lockfilePath, recordsAsString);
   }
 };
 
@@ -472,12 +450,10 @@ export const docusaurusToRoutes = ({
         $name: title,
         $routes: [...children],
       };
+    } else if (routes._!.docs) {
+      routes._!.docs.$routes?.push(...children);
     } else {
-      if (routes._!.docs) {
-        routes._!.docs.$routes?.push(...children);
-      } else {
-        routes._!.docs = { $routes: [...children] };
-      }
+      routes._!.docs = { $routes: [...children] };
     }
   });
   return routes;

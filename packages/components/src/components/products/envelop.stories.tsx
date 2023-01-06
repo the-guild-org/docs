@@ -1,15 +1,5 @@
 import { ReactElement } from 'react';
-import { Story, Meta } from '@storybook/react';
-import { CardsColorful } from '../cards-colorful';
-import { FooterExtended } from '../footer-extended';
-import { FeatureList } from '../feature-list';
-import { Header } from '../header';
-import { HeroIllustration } from '../hero-illustration';
-import { HeroGradient } from '../hero-gradient';
-import { HeroMarketplace } from '../hero-marketplace';
-import { HeroVideo } from '../hero-video';
-import { InfoList } from '../info-list';
-import { MarketplaceSearch } from '../marketplace-search';
+import { Meta, Story } from '@storybook/react';
 import {
   dummyCardsColorful,
   dummyFeatureList,
@@ -20,6 +10,16 @@ import {
   dummyInfoList,
   dummyMarketplaceSearch,
 } from '../../helpers/dummy';
+import { CardsColorful } from '../cards-colorful';
+import { FeatureList } from '../feature-list';
+import { FooterExtended } from '../footer-extended';
+import { Header } from '../header';
+import { HeroGradient } from '../hero-gradient';
+import { HeroIllustration } from '../hero-illustration';
+import { HeroMarketplace } from '../hero-marketplace';
+import { HeroVideo } from '../hero-video';
+import { InfoList } from '../info-list';
+import { MarketplaceSearch } from '../marketplace-search';
 
 export default {
   title: 'Products/Envelop',

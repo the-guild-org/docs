@@ -1,25 +1,25 @@
-import { useState, useMemo, ReactElement, useCallback } from 'react';
-import clsx from 'clsx';
+import { ReactElement, useCallback, useMemo, useState } from 'react';
 import {
-  Root,
-  Trigger,
+  Content,
   Indicator,
-  Viewport,
-  List,
   Item,
   Link,
-  Content,
+  List,
+  Root,
+  Trigger,
+  Viewport,
 } from '@radix-ui/react-navigation-menu';
+import clsx from 'clsx';
 import { useTheme } from 'nextra-theme-docs';
+import { useWindowSize } from '../helpers/hooks';
 import { IHeaderProps } from '../types/components';
-import { SearchBar } from './search-bar';
+import { Anchor } from './anchor';
+import { EcosystemList } from './ecosystem-list';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
 import { GuildLogo, TheGuild } from './logos';
 import { Nav } from './nav';
+import { SearchBar } from './search-bar';
 import { SolutionsMenu } from './solutions-menu';
-import { EcosystemList } from './ecosystem-list';
-import { useWindowSize } from '../helpers/hooks';
-import { Anchor } from './anchor';
 
 export const Header = ({
   accentColor,

@@ -29,7 +29,7 @@ export const Anchor = forwardRef<HTMLAnchorElement, ILink>(function Anchor(
 
   return (
     <NextLink ref={forwardedRef} href={href} {...props} className={classes} legacyBehavior={false}>
-      {/* Fragment needed to fix Error: React.Children.only expected to receive a single React element child */}
+      {/* eslint-disable-next-line react/jsx-no-useless-fragment -- Fragment needed to fix Error: React.Children.only expected to receive a single React element child */}
       <>{children}</>
     </NextLink>
   );

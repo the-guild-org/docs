@@ -1,10 +1,11 @@
+/* eslint-disable import/no-default-export */
 /* eslint react/no-unknown-property: ['error', { ignore: ['tw'] }] */
 import { ComponentProps } from 'react';
-import { PRODUCTS } from '@theguild/components/products';
 import { GuildLogo, TheGuild } from '@theguild/components/logos';
+import { PRODUCTS } from '@theguild/components/products';
 import { generateImage } from './lib/img';
 
-const { WHATSAPP, HELIX, STENCIL, ...filteredProducts } = PRODUCTS;
+const { WHATSAPP: _, HELIX: _2, STENCIL: _3, ...filteredProducts } = PRODUCTS;
 
 const products = {
   ...filteredProducts,
@@ -131,12 +132,12 @@ function shade(color: string, amount: number): string | undefined {
   if (r > 255) r = 255;
   else if (r < 0) r = 0;
 
-  let b = ((num >> 8) & 0x00ff) + amount;
+  let b = ((num >> 8) & 0x00_ff) + amount;
 
   if (b > 255) b = 255;
   else if (b < 0) b = 0;
 
-  let g = (num & 0x0000ff) + amount;
+  let g = (num & 0x00_00_ff) + amount;
 
   if (g > 255) g = 255;
   else if (g < 0) g = 0;
