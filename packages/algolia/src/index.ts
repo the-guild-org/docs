@@ -12,7 +12,7 @@ import sortBy from 'lodash.sortby';
 import removeMarkdown from 'remove-markdown';
 import { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC, IRoutes } from './types';
 
-const extractToC = (content: string) => {
+const extractToC = (content: string): AlgoliaSearchItemTOC[] => {
   const slugger = new GitHubSlugger();
 
   const lines = content.split('\n');
@@ -21,26 +21,26 @@ const extractToC = (content: string) => {
   let currentDepth = 0;
   let currentParent: AlgoliaSearchItemTOC | undefined;
 
-  const slugs = lines.reduce<AlgoliaSearchItemTOC[]>((acum, value) => {
+  return lines.reduce<AlgoliaSearchItemTOC[]>((acc, value) => {
     if (value.match(/^```(.*)/)) {
       if (isCodeBlock) {
         isCodeBlock = false;
       } else {
         isCodeBlock = true;
-        return acum;
+        return acc;
       }
     } else if (isCodeBlock) {
-      return acum;
+      return acc;
     }
 
     const result = value.match(/(##+ )(.+)/);
 
-    if (!result) return acum;
+    if (!result) return acc;
 
     const depth = result[1]?.length - 3;
 
     if (depth > 1) {
-      return acum;
+      return acc;
     }
 
     const heading = result[2]?.trim();
@@ -58,14 +58,13 @@ const extractToC = (content: string) => {
       }
     } else {
       currentParent = record;
-      acum.push(record);
+      acc.push(record);
     }
 
     currentDepth = depth;
 
-    return acum;
+    return acc;
   }, []);
-  return slugs;
 };
 
 const normalizeDomain = (domain: string) => (domain.endsWith('/') ? domain : String(domain));
