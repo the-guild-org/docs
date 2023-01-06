@@ -103,10 +103,12 @@ class GraphQLWorker {
   ): GraphQLWorkerCompletionItem[] {
     const document = documentModel.getValue();
     if (!document) {
+      // eslint-disable-next-line no-console -- show error
       console.log('no document');
       return [];
     }
     if (!schema) {
+      // eslint-disable-next-line no-console -- show error
       console.log('no schema');
     }
     const graphQLPosition = toGraphQLPosition(position);
