@@ -1,18 +1,8 @@
 import { Fragment, ReactElement, useState } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import clsx from 'clsx';
+import { SelectProps } from '../types/components';
 import { CheckIcon } from './icons';
-
-type SelectOption = {
-  key: string;
-  name: ReactElement | string;
-};
-
-export type SelectProps = {
-  selected: SelectOption;
-  onChange: (option: SelectOption) => void;
-  options: SelectOption[];
-};
 
 export function Select({ options, selected, onChange }: SelectProps): ReactElement {
   const [value, setValue] = useState(selected || {});
