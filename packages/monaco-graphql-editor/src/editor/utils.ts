@@ -15,7 +15,7 @@ import { EnrichedLanguageService } from './enriched-language-service';
 export { getRange };
 
 export function removeFalsey<T>(obj: T | null): obj is T {
-  return Boolean(obj);
+  return !!obj;
 }
 
 export function locToRange(loc: Location): monaco.IRange {
@@ -99,7 +99,7 @@ export const coreDefinitionSource: DefinitionSource = {
     if (token.state && token.state.kind === 'NamedType' && token.state.name) {
       const type = schema.getType(token.state.name);
 
-      if (type && type.astNode && type.astNode.loc) {
+      if (type?.astNode?.loc) {
         return [
           {
             range: {

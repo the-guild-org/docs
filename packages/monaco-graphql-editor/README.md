@@ -91,7 +91,7 @@ export const myDefinitionSource: DefinitionSource = {
     if (token.state && token.state.kind === 'NamedType' && token.state.name) {
       const type = schema.getType(token.state.name)
 
-      if (type && type.astNode && type.astNode.loc) {
+      if (type?.astNode?.loc) {
         return [
           {
             range: {

@@ -118,7 +118,7 @@ export const MarketplaceList = ({
           {title}
         </h2>
       )}
-      {!pages[currentPage] || !pages[currentPage].length ? (
+      {!pages[currentPage]?.length ? (
         <div className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300">
           {placeholder}
         </div>
