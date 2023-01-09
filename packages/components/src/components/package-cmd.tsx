@@ -4,7 +4,7 @@ import { Tab, Tabs } from 'nextra-theme-docs';
 
 const PACKAGE_MANAGERS = ['yarn', 'npm', 'pnpm'] as const;
 
-type PackageMap = Record<typeof PACKAGE_MANAGERS[number], string>;
+type PackageMap = Record<(typeof PACKAGE_MANAGERS)[number], string>;
 
 const Add: PackageMap = {
   yarn: 'yarn add',
