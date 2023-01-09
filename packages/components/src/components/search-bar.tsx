@@ -67,7 +67,7 @@ const searchClient: Pick<typeof algoliaClient, 'search'> = {
 function getPropertyByPath(obj: any, path: string) {
   const parts = path.split('.');
 
-  return parts.reduce((current, key) => current && current[key], obj);
+  return parts.reduce((current, key) => current?.[key], obj);
 }
 
 const Snippet = ({
@@ -82,10 +82,9 @@ const Snippet = ({
   let html =
     getPropertyByPath(hit, `_snippetResult.${attribute}.value`) ||
     getPropertyByPath(hit, attribute);
-  if (html) {
-    // some query results contains `.css-` selectors, so we strips them out
-    html = html.replace(/\s+\.css-.*/, '');
-  }
+
+  // some query results contains `.css-` selectors, so we strip them out
+  html &&= html.replace(/\s+\.css-.*/, '');
 
   return createElement(tagName, {
     dangerouslySetInnerHTML: { __html: html },

@@ -153,14 +153,12 @@ export const SearchBarV2 = ({
           .map(item => item.source);
 
         const sourcesPerSite = itemsSources.reduce<Record<string, any>>((acc, sourceId) => {
-          if (!acc[sourceId]) {
-            acc[sourceId] = {
-              ...algoliaIndex,
-              sourceId,
-              getItems: () => items.filter(item => item.source === sourceId),
-              templates,
-            };
-          }
+          acc[sourceId] ||= {
+            ...algoliaIndex,
+            sourceId,
+            getItems: () => items.filter(item => item.source === sourceId),
+            templates,
+          };
           return acc;
         }, {});
 

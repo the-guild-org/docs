@@ -31,7 +31,7 @@
     "@storybook/mdx2-csf": "0.0.3",
     "@storybook/react-webpack5": "7.0.0-beta.20",
     "@tailwindcss/line-clamp": "0.4.2",
-    "@theguild/eslint-config": "0.4.2",
+    "@theguild/eslint-config": "0.6.0",
     "@theguild/prettier-config": "1.0.0",
     "@theguild/tailwind-config": "0.2.1",
     "@types/react": "18.0.26",

@@ -13,7 +13,7 @@ importers:
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/react-webpack5': 7.0.0-beta.20
       '@tailwindcss/line-clamp': 0.4.2
-      '@theguild/eslint-config': 0.4.2
+      '@theguild/eslint-config': 0.6.0
       '@theguild/prettier-config': 1.0.0
       '@theguild/tailwind-config': 0.2.1
       '@types/react': 18.0.26
@@ -55,7 +55,7 @@ importers:
       '@storybook/mdx2-csf': 0.0.3
       '@storybook/react-webpack5': 7.0.0-beta.20_o4scbtliisanygemawej7x2d6i
       '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
-      '@theguild/eslint-config': 0.4.2_iukboom6ndih5an6iafl45j2fe
+      '@theguild/eslint-config': 0.6.0_iukboom6ndih5an6iafl45j2fe
       '@theguild/prettier-config': 1.0.0_prettier@2.8.1
       '@theguild/tailwind-config': 0.2.1
       '@types/react': 18.0.26
@@ -5060,10 +5060,10 @@ packages:
       tailwindcss: 3.2.4_postcss@8.4.21
     dev: true
 
-  /@theguild/eslint-config/0.4.2_iukboom6ndih5an6iafl45j2fe:
-    resolution: {integrity: sha512-vlddJaprW6lfb0dJWu22mEcYNKvOXv/YZRPFuCmTKWVHqmwZZUwBkkAbrvP1am1VP4Jrg4pm/p1SZyRBD0ttlQ==}
+  /@theguild/eslint-config/0.6.0_iukboom6ndih5an6iafl45j2fe:
+    resolution: {integrity: sha512-KvhPwf1X7Ra775dwdl4ZP2jlqUWpvQPxAm8MSX5QCT5sJu3I/FkW/i1eNgtKiWlu7bqCaqhCMuBmrzDgIFxy7Q==}
     peerDependencies:
-      eslint: ^8
+      eslint: ^8.24.0
     dependencies:
       '@rushstack/eslint-patch': 1.2.0
       '@typescript-eslint/eslint-plugin': 5.48.0_k73wpmdolxikpyqun3p36akaaq
