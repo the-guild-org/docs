@@ -22,4 +22,3 @@ export { Newsletter } from './newsletter';
 export { NPMBadge } from './npm-badge';
 export { PackageCmd } from './package-cmd';
 export { SearchBar } from './search-bar';
-export { Select } from './select';
