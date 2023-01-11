@@ -177,14 +177,3 @@ export interface IEditorProps {
   image?: string;
   operations?: string;
 }
-
-export type SelectOption = {
-  key: string;
-  name: ReactElement | string;
-};
-
-export type SelectProps = {
-  selected: SelectOption;
-  onChange: (option: SelectOption) => void;
-  options: SelectOption[];
-};
