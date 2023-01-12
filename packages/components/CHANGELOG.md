@@ -1,5 +1,112 @@
 # @theguild/components
 
+## 4.5.0
+
+### Minor Changes
+
+- [#729](https://github.com/the-guild-org/docs/pull/729)
+  [`e458101`](https://github.com/the-guild-org/docs/commit/e45810189241ff8c0aff14542cb28a4f5e310b45)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - add graphql-eslint website url, add conductor, remove
+  graphql cli
+
+### Patch Changes
+
+- [#679](https://github.com/the-guild-org/docs/pull/679)
+  [`6d344ce`](https://github.com/the-guild-org/docs/commit/6d344cea1448809f9917789202b2094cf7083b3e)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.1.1` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.1.1)
+    (from `13.0.6`, in `dependencies`)
+
+- [#680](https://github.com/the-guild-org/docs/pull/680)
+  [`b49b552`](https://github.com/the-guild-org/docs/commit/b49b552129017f7a0cccd277f91f43c8acae197b)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`mermaid@9.3.0` ↗︎](https://www.npmjs.com/package/mermaid/v/9.3.0) (from
+    `9.2.2`, in `dependencies`)
+
+- [#687](https://github.com/the-guild-org/docs/pull/687)
+  [`3d0058a`](https://github.com/the-guild-org/docs/commit/3d0058a00f0c93fcf8ba97272b575ed354f495d9)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.7.4` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.7.4)
+    (from `1.7.3`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.7.4` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.7.4)
+    (from `1.7.3`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.7.4` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.7.4)
+    (from `1.7.3`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.7.4` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.7.4)
+    (from `1.7.3`, in `dependencies`)
+
+- [#688](https://github.com/the-guild-org/docs/pull/688)
+  [`a43094a`](https://github.com/the-guild-org/docs/commit/a43094aed959bd5d5567e6ed295690f14f084911)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@giscus/react@2.2.6` ↗︎](https://www.npmjs.com/package/@giscus/react/v/2.2.6) (from `2.2.4`,
+    in `dependencies`)
+
+- [#689](https://github.com/the-guild-org/docs/pull/689)
+  [`48fe9f7`](https://github.com/the-guild-org/docs/commit/48fe9f7b1cb9ef799d2b75bd4d075ab0055c720d)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`algoliasearch@4.14.3` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.14.3) (from
+    `4.14.2`, in `dependencies`)
+
+- [#703](https://github.com/the-guild-org/docs/pull/703)
+  [`a1f9737`](https://github.com/the-guild-org/docs/commit/a1f9737e44f14d6fac9f9467e08aad7578bd0d52)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-instantsearch-dom@6.38.2` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.38.2)
+    (from `6.38.1`, in `dependencies`)
+
+- [#704](https://github.com/the-guild-org/docs/pull/704)
+  [`fbedb25`](https://github.com/the-guild-org/docs/commit/fbedb25e6deddab1940c18ec855bbed4aa9d6317)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.0.3` ↗︎](https://www.npmjs.com/package/nextra/v/2.0.3) (from
+    `2.0.0-beta.43`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.0.3` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.3) (from
+    `2.0.0-beta.43`, in `dependencies`)
+
+- [#721](https://github.com/the-guild-org/docs/pull/721)
+  [`f43c4ed`](https://github.com/the-guild-org/docs/commit/f43c4edfb37ec779257c66c173fc58bb53e6b560)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-instantsearch-dom@6.38.3` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.38.3)
+    (from `6.38.2`, in `dependencies`)
+
+- [#726](https://github.com/the-guild-org/docs/pull/726)
+  [`29f5596`](https://github.com/the-guild-org/docs/commit/29f55965c7bfc1a26166877a07efc80d4dcb8043)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Removed dependency
+    [`@headlessui/react@^1.7.3` ↗︎](https://www.npmjs.com/package/@headlessui/react/v/1.7.3) (from
+    `dependencies`)
+
+- [#728](https://github.com/the-guild-org/docs/pull/728)
+  [`760201c`](https://github.com/the-guild-org/docs/commit/760201ca66124756fcfaa0d588eba91d1b3ebcd4)
+  Thanks [@YassinEldeeb](https://github.com/YassinEldeeb)! - fix: broken search bar with tags
+  filters #727
+
+- [#726](https://github.com/the-guild-org/docs/pull/726)
+  [`29f5596`](https://github.com/the-guild-org/docs/commit/29f55965c7bfc1a26166877a07efc80d4dcb8043)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - remove unused <Select /> export {
+  InformationCircleIcon } from 'nextra/icons'
+
+- [#708](https://github.com/the-guild-org/docs/pull/708)
+  [`02ff9b5`](https://github.com/the-guild-org/docs/commit/02ff9b52b237fe704fe673f2acfec9c6b9c186b4)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - lint with guild eslint config
+
 ## 4.4.4
 
 ### Patch Changes

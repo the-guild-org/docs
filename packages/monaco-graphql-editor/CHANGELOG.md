@@ -1,5 +1,13 @@
 # @theguild/editor
 
+## 1.2.3
+
+### Patch Changes
+
+- [#708](https://github.com/the-guild-org/docs/pull/708)
+  [`02ff9b5`](https://github.com/the-guild-org/docs/commit/02ff9b52b237fe704fe673f2acfec9c6b9c186b4)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - lint with guild eslint config
+
 ## 1.2.2
 
 ### Patch Changes
