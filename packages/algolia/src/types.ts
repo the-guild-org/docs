@@ -1,5 +1,6 @@
 export type AlgoliaRecordSource =
   | 'Hive'
+  | 'Conductor'
   | 'Yoga'
   | 'Envelop'
   | 'Inspector'
@@ -13,7 +14,6 @@ export type AlgoliaRecordSource =
   | 'Helix'
   | 'Shield'
   | 'Swift'
-  | 'CLI'
   | 'SOFA'
   | 'Stencil'
   | 'Angular'
