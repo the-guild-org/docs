@@ -12,3 +12,4 @@ export * from './more';
 export * from './page';
 export * from './search';
 export * from './share';
+export { InformationCircleIcon } from 'nextra/icons';
