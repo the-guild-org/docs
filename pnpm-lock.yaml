@@ -213,13 +213,13 @@ importers:
       satori: 0.0.46
       typescript: 4.9.4
       wrangler: 2.6.2
-      yoga-wasm-web: 0.2.0
+      yoga-wasm-web: 0.3.0
     dependencies:
       '@resvg/resvg-wasm': 2.2.0
       '@theguild/components': link:../components
       react: 18.2.0
       satori: 0.0.46
-      yoga-wasm-web: 0.2.0
+      yoga-wasm-web: 0.3.0
     devDependencies:
       '@cloudflare/workers-types': 4.20221111.1
       '@types/react': 18.0.26
@@ -16890,10 +16890,6 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
     dev: true
-
-  /yoga-wasm-web/0.2.0:
-    resolution: {integrity: sha512-eM/ZUCGFZop9+PA4ZbIxzguVYgeAwNFm68dsEDhvUbpkPnfTSWh/b1t1ZSgh6NY0TYMDpa5CbMmg00b1mvsO3Q==}
-    dev: false
 
   /yoga-wasm-web/0.3.0:
     resolution: {integrity: sha512-rD3L4jyMlO1m+RWU60lNwZQK5zmzglCV5fI1gTRikmpv3YzmNIZQbjyfE6cMNb9Xaly/C1SwemYGbsiOekMvnQ==}
