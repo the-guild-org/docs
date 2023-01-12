@@ -34,32 +34,27 @@ export const MarketplaceSearch = ({
   }, []);
 
   const items = useMemo(() => {
-    let results = null;
     if (query && queryList) {
       // Filter by tags
       if (query.startsWith('#')) {
-        const filteredItems = queryList.items.filter(item =>
+        return queryList.items.filter(item =>
           query
             .split(/\s+/)
             .map(e => e.replace('#', ''))
             .every(e => item.tags?.includes(e)),
         );
-        results = filteredItems;
-      } else {
-        const matchedResults = fuzzy
-          .filter(
-            // Removes all special characters from the query string for better fuzzy matching
-            query.replace(/[^\w\s]/gi, ''),
-            // Mapping the queryList items into a list of strings including the titles
-            queryList.items.map(e => e.title),
-          )
-          .map(e => e.original);
-
-        const filteredItems = queryList.items.filter(e => matchedResults.includes(e.title));
-        results = filteredItems;
       }
+      const matchedResults = fuzzy
+        .filter(
+          // Removes all special characters from the query string for better fuzzy matching
+          query.replace(/[^\w\s]/gi, ''),
+          // Mapping the queryList items into a list of strings including the titles
+          queryList.items.map(e => e.title),
+        )
+        .map(e => e.original);
+
+      return queryList.items.filter(e => matchedResults.includes(e.title));
     }
-    return results;
   }, [query, queryList]);
 
   return (
