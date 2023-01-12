@@ -38,7 +38,12 @@ export const MarketplaceSearch = ({
     if (query && queryList) {
       // Filter by tags
       if (query.startsWith('#')) {
-        const filteredItems = queryList.items.filter(e => e.tags?.includes(query.replace('#', '')));
+        const filteredItems = queryList.items.filter(item =>
+          query
+            .split(' ')
+            .map(e => e.trim().replace('#', ''))
+            .every(e => item.tags?.includes(e)),
+        );
         results = filteredItems;
       } else {
         const matchedResults = fuzzy
