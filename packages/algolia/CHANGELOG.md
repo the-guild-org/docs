@@ -1,5 +1,35 @@
 # @theguild/algolia
 
+## 1.1.0
+
+### Minor Changes
+
+- [#729](https://github.com/the-guild-org/docs/pull/729)
+  [`e458101`](https://github.com/the-guild-org/docs/commit/e45810189241ff8c0aff14542cb28a4f5e310b45)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - add graphql-eslint website url, add conductor, remove
+  graphql cli
+
+### Patch Changes
+
+- [#708](https://github.com/the-guild-org/docs/pull/708)
+  [`02ff9b5`](https://github.com/the-guild-org/docs/commit/02ff9b52b237fe704fe673f2acfec9c6b9c186b4)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency
+    [`remove-markdown@^0.5.0` ↗︎](https://www.npmjs.com/package/remove-markdown/v/0.5.0) (from
+    `0.5.0`, in `dependencies`)
+  - Added dependency [`lodash.map@^4.6.0` ↗︎](https://www.npmjs.com/package/lodash.map/v/4.6.0) (to
+    `dependencies`)
+  - Added dependency
+    [`lodash.sortby@^4.7.0` ↗︎](https://www.npmjs.com/package/lodash.sortby/v/4.7.0) (to
+    `dependencies`)
+  - Removed dependency [`lodash@^4.17.21` ↗︎](https://www.npmjs.com/package/lodash/v/4.17.21) (from
+    `dependencies`)
+
+- [#708](https://github.com/the-guild-org/docs/pull/708)
+  [`02ff9b5`](https://github.com/the-guild-org/docs/commit/02ff9b52b237fe704fe673f2acfec9c6b9c186b4)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - lint with guild eslint config
+
 ## 1.0.2
 
 ### Patch Changes

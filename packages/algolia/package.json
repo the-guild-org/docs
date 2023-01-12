@@ -1,6 +1,6 @@
 {
   "name": "@theguild/algolia",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "repository": {
     "url": "the-guild-org/the-guild-components",
     "directory": "packages/algolia"
