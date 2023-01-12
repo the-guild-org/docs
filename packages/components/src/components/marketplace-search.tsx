@@ -40,8 +40,8 @@ export const MarketplaceSearch = ({
       if (query.startsWith('#')) {
         const filteredItems = queryList.items.filter(item =>
           query
-            .split(' ')
-            .map(e => e.trim().replace('#', ''))
+            .split(/\s+/)
+            .map(e => e.replace('#', ''))
             .every(e => item.tags?.includes(e)),
         );
         results = filteredItems;
