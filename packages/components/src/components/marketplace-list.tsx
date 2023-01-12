@@ -118,11 +118,7 @@ export const MarketplaceList = ({
           {title}
         </h2>
       )}
-      {!pages[currentPage]?.length ? (
-        <div className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300">
-          {placeholder}
-        </div>
-      ) : (
+      {pages[currentPage]?.length ? (
         <>
           <table className="w-full border-collapse">
             <thead className="whitespace-nowrap px-2 text-left text-xs font-semibold uppercase text-gray-300 dark:text-gray-600">
@@ -163,6 +159,10 @@ export const MarketplaceList = ({
             />
           )}
         </>
+      ) : (
+        <div className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300">
+          {placeholder}
+        </div>
       )}
     </section>
   );

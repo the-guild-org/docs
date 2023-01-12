@@ -2,8 +2,8 @@ import { ReactElement } from 'react';
 import { AlgoliaRecordSource } from '@theguild/algolia';
 import {
   AngularLogo,
-  CLILogo,
   CodeGeneratorLogo,
+  ConductorLogo,
   ConfigLogo,
   EnvelopLogo,
   ESLintLogo,
@@ -25,6 +25,7 @@ import {
 
 export type ProductType =
   | 'HIVE'
+  | 'CONDUCTOR'
   | 'YOGA'
   | 'ENVELOP'
   | 'INSPECTOR'
@@ -38,7 +39,6 @@ export type ProductType =
   | 'HELIX'
   | 'SHIELD'
   | 'SWIFT'
-  | 'CLI'
   | 'SOFA'
   | 'STENCIL'
   | 'ANGULAR'
@@ -61,6 +61,13 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/hive',
     logo: HiveLogo,
     primaryColor: '#ffb21d',
+  },
+  CONDUCTOR: {
+    name: 'Conductor',
+    title: 'All-in-one GraphQL Gateway',
+    href: 'https://the-guild.dev/graphql/gateway',
+    logo: ConductorLogo,
+    primaryColor: '#0f766e',
   },
   YOGA: {
     name: 'Yoga',
@@ -114,7 +121,7 @@ export const PRODUCTS: Record<
   ESLINT: {
     name: 'ESLint',
     title: 'Customisable ESLint parser, plugin and set rules for GraphQL',
-    href: 'https://github.com/B2o5T/graphql-eslint',
+    href: 'https://the-guild.dev/graphql/eslint',
     logo: ESLintLogo,
     primaryColor: '#5639ca',
   },
@@ -152,13 +159,6 @@ export const PRODUCTS: Record<
     href: 'https://swift-graphql.com',
     logo: SwiftLogo,
     primaryColor: '#f25c40',
-  },
-  CLI: {
-    name: 'CLI',
-    title: 'Command line tool for common GraphQL workflows',
-    href: 'https://github.com/Urigo/graphql-cli',
-    logo: CLILogo,
-    primaryColor: '#8c0082',
   },
   SOFA: {
     name: 'SOFA',

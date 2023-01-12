@@ -20,10 +20,10 @@ const productCategories = [
       PRODUCTS.CODEGEN,
       PRODUCTS.TOOLS,
       PRODUCTS.HIVE,
+      PRODUCTS.CONDUCTOR,
       PRODUCTS.INSPECTOR,
       PRODUCTS.ESLINT,
       PRODUCTS.CONFIG,
-      PRODUCTS.CLI,
     ],
   },
   // {

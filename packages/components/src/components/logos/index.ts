@@ -1,6 +1,6 @@
 export * from './angular';
-export * from './cli';
 export * from './code-generator';
+export * from './conductor';
 export * from './config';
 export * from './envelop';
 export * from './eslint';
