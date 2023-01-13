@@ -76,7 +76,7 @@
     "search-insights": "2.2.3",
     "semver": "^7.3.8",
     "unist-util-visit": "4.1.1",
-    "use-debounce": "9.0.2"
+    "use-debounce": "9.0.3"
   },
   "devDependencies": {
     "@theguild/algolia": "workspace:*",
