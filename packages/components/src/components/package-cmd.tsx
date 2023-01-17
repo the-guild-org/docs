@@ -70,15 +70,11 @@ export const PackageCmd = ({ packages }: { packages: (string | Command)[] }): Re
     <Tabs items={PACKAGE_MANAGERS}>
       {PACKAGE_MANAGERS.map((pkgManager, index) => (
         <Tab key={pkgManager}>
-          <div data-rehype-pretty-code-fragment>
-            <Pre value={JSON.stringify(commands[index])}>
-              <code data-language="sh" data-theme="default">
-                <span className="line" style={{ color: 'var(--shiki-color-text)' }}>
-                  {commands[index]}
-                </span>
-              </code>
-            </Pre>
-          </div>
+          <Pre filename="Terminal" hasCopyCode data-language="sh" data-theme="default">
+            <code>
+              <span className="line">{commands[index]}</span>
+            </code>
+          </Pre>
         </Tab>
       ))}
     </Tabs>

@@ -80,7 +80,13 @@ export const Header = ({
   ]);
 
   return (
-    <header className={clsx('bg-white py-2.5 dark:bg-[#111] md:py-3.5', className)}>
+    <header
+      className={clsx(
+        'bg-white py-2.5 dark:bg-[#111] md:py-3.5',
+        !sameSite && 'max-md:hidden',
+        className,
+      )}
+    >
       <div
         className="
           container
