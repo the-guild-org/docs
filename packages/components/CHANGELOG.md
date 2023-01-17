@@ -1,5 +1,38 @@
 # @theguild/components
 
+## 4.5.1
+
+### Patch Changes
+
+- [#732](https://github.com/the-guild-org/docs/pull/732)
+  [`307f407`](https://github.com/the-guild-org/docs/commit/307f407bc9b4b52f68699551aebd0f6bc45b62f6)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`use-debounce@9.0.3` ↗︎](https://www.npmjs.com/package/use-debounce/v/9.0.3)
+    (from `9.0.2`, in `dependencies`)
+
+- [#733](https://github.com/the-guild-org/docs/pull/733)
+  [`a6912b7`](https://github.com/the-guild-org/docs/commit/a6912b782e75a23223654a45738af6bb6b8f2c40)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.1.2` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.1.2)
+    (from `13.1.1`, in `dependencies`)
+
+- [#740](https://github.com/the-guild-org/docs/pull/740)
+  [`5fec93e`](https://github.com/the-guild-org/docs/commit/5fec93ea18e587c136ed97c91e88cb29603a8d0c)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.2.4` ↗︎](https://www.npmjs.com/package/nextra/v/2.2.4) (from
+    `2.0.3`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.2.4` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.2.4) (from
+    `2.0.3`, in `dependencies`)
+
+- [#740](https://github.com/the-guild-org/docs/pull/740)
+  [`5fec93e`](https://github.com/the-guild-org/docs/commit/5fec93ea18e587c136ed97c91e88cb29603a8d0c)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - bump nextra
+
 ## 4.5.0
 
 ### Minor Changes
