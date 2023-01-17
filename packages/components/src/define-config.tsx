@@ -47,6 +47,7 @@ export function defineConfig({
     },
     sidebar: {
       defaultMenuCollapseLevel: 1,
+      toggleButton: true,
     },
     project: {
       link: `${url.origin}/${org}/${repoName}`, // GitHub link in the navbar
