@@ -232,7 +232,7 @@ importers:
       '@theguild/tailwind-config': 0.2.1
       '@types/react': 18.0.27
       next: 13.1.2
-      next-mdx-remote: 4.2.0
+      next-mdx-remote: 4.3.0
       nextra: 2.2.7
       react: 18.2.0
       react-dom: 18.2.0
@@ -240,7 +240,7 @@ importers:
     dependencies:
       '@theguild/components': link:../packages/components
       next: 13.1.2_biqbaboplfbrettd7655fr4n2y
-      next-mdx-remote: 4.2.0_biqbaboplfbrettd7655fr4n2y
+      next-mdx-remote: 4.3.0_biqbaboplfbrettd7655fr4n2y
       nextra: 2.2.7_7jnwqgtpcnwg4nzft4b6xlzlfi
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -4287,7 +4287,7 @@ packages:
       '@storybook/core-events': 7.0.0-beta.11
       '@storybook/csf': 0.0.2-next.8
       '@storybook/csf-tools': 7.0.0-beta.11
-      '@storybook/docs-mdx': 0.0.1-next.5
+      '@storybook/docs-mdx': 0.0.1-next.6
       '@storybook/node-logger': 7.0.0-beta.11
       '@storybook/preview-api': 7.0.0-beta.11
       '@storybook/telemetry': 7.0.0-beta.11
@@ -4381,8 +4381,8 @@ packages:
       type-fest: 2.19.0
     dev: true
 
-  /@storybook/docs-mdx/0.0.1-next.5:
-    resolution: {integrity: sha512-EowXFPq4TBZQguKCdU8y7EzpuSv2vSu5gy7pgF/1P5mq7LG9h8YIrerOW9DL4zfp9E0GHIWlSXR5KuFIqqKc/Q==}
+  /@storybook/docs-mdx/0.0.1-next.6:
+    resolution: {integrity: sha512-DjoSIXADmLJtdroXAjUotFiZlcZ2usWhqrS7aeOtZs0DVR0Ws5WQjnwtpDUXt8gryTSd+OZJ0cNsDcqg4JDEvQ==}
     dev: true
 
   /@storybook/docs-tools/7.0.0-beta.11:
@@ -12654,6 +12654,23 @@ packages:
 
   /next-mdx-remote/4.2.0_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-X5RhD7f7b78pH2abbuusObSGgII5l54OdusS/2iXljN7WN1cel6ToLlZeCZcyxx9cR4wmBGQYGongIttDYNmAA==}
+    engines: {node: '>=14', npm: '>=7'}
+    peerDependencies:
+      react: '>=16.x <=18.x'
+      react-dom: '>=16.x <=18.x'
+    dependencies:
+      '@mdx-js/mdx': 2.2.1
+      '@mdx-js/react': 2.2.1_react@18.2.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      vfile: 5.3.5
+      vfile-matter: 3.0.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /next-mdx-remote/4.3.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-fbxkY03pM2Wx5bDNTVKpYD5Hx3QVZGH+6xDtVIxlxXz4HTifP1yI2DrkDvxXbTz0SYGIbluRMIW81IOOa8pigA==}
     engines: {node: '>=14', npm: '>=7'}
     peerDependencies:
       react: '>=16.x <=18.x'
