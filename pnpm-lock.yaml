@@ -91,7 +91,7 @@ importers:
   packages/algolia:
     specifiers:
       '@types/github-slugger': 1.3.0
-      '@types/glob': 8.0.0
+      '@types/glob': 8.0.1
       '@types/lodash.map': 4.6.13
       '@types/lodash.sortby': 4.7.7
       '@types/remove-markdown': 0.3.1
@@ -114,7 +114,7 @@ importers:
       remove-markdown: 0.5.0
     devDependencies:
       '@types/github-slugger': 1.3.0
-      '@types/glob': 8.0.0
+      '@types/glob': 8.0.1
       '@types/lodash.map': 4.6.13
       '@types/lodash.sortby': 4.7.7
       '@types/remove-markdown': 0.3.1
@@ -4287,7 +4287,7 @@ packages:
       '@storybook/core-events': 7.0.0-beta.11
       '@storybook/csf': 0.0.2-next.8
       '@storybook/csf-tools': 7.0.0-beta.11
-      '@storybook/docs-mdx': 0.0.1-next.5
+      '@storybook/docs-mdx': 0.0.1-next.6
       '@storybook/node-logger': 7.0.0-beta.11
       '@storybook/preview-api': 7.0.0-beta.11
       '@storybook/telemetry': 7.0.0-beta.11
@@ -4381,8 +4381,8 @@ packages:
       type-fest: 2.19.0
     dev: true
 
-  /@storybook/docs-mdx/0.0.1-next.5:
-    resolution: {integrity: sha512-EowXFPq4TBZQguKCdU8y7EzpuSv2vSu5gy7pgF/1P5mq7LG9h8YIrerOW9DL4zfp9E0GHIWlSXR5KuFIqqKc/Q==}
+  /@storybook/docs-mdx/0.0.1-next.6:
+    resolution: {integrity: sha512-DjoSIXADmLJtdroXAjUotFiZlcZ2usWhqrS7aeOtZs0DVR0Ws5WQjnwtpDUXt8gryTSd+OZJ0cNsDcqg4JDEvQ==}
     dev: true
 
   /@storybook/docs-tools/7.0.0-beta.11:
@@ -5132,8 +5132,8 @@ packages:
     resolution: {integrity: sha512-J/rMZa7RqiH/rT29TEVZO4nBoDP9XJOjnbbIofg7GQKs4JIduEO3WLpte+6WeUz/TcrXKlY+bM7FYrp8yFB+3g==}
     dev: true
 
-  /@types/glob/8.0.0:
-    resolution: {integrity: sha512-l6NQsDDyQUVeoTynNpC9uRvCUint/gSUXQA2euwmTuWGvPY5LSDUu6tkCtJB2SvGQlJQzLaKqcGZP4//7EDveA==}
+  /@types/glob/8.0.1:
+    resolution: {integrity: sha512-8bVUjXZvJacUFkJXHdyZ9iH1Eaj5V7I8c4NdH5sQJsdXkqT4CA5Dhb4yb4VE/3asyx4L9ayZr1NIhTsWHczmMw==}
     dependencies:
       '@types/minimatch': 5.1.2
       '@types/node': 18.11.9
