@@ -141,8 +141,8 @@ importers:
       mermaid: 9.3.0
       next: 13.1.4
       next-videos: 1.5.0
-      nextra: 2.2.7
-      nextra-theme-docs: 2.2.7
+      nextra: 2.2.13
+      nextra-theme-docs: 2.2.13
       react: 18.2.0
       react-dom: 18.2.0
       react-instantsearch-dom: 6.38.3
@@ -168,8 +168,8 @@ importers:
       fuzzy: 0.1.3
       mermaid: 9.3.0
       next-videos: 1.5.0
-      nextra: 2.2.7_gru2niblrprbai56sdagiiy5sa
-      nextra-theme-docs: 2.2.7_gru2niblrprbai56sdagiiy5sa
+      nextra: 2.2.13_gru2niblrprbai56sdagiiy5sa
+      nextra-theme-docs: 2.2.13_25jiwmpzxelxfigqmqp2gumk4a
       react-instantsearch-dom: 6.38.3_lcvw2wliyvolumce2ki4t5bwom
       react-paginate: 8.1.4_react@18.2.0
       react-player: 2.11.0_react@18.2.0
@@ -233,7 +233,7 @@ importers:
       '@types/react': 18.0.27
       next: 13.1.4
       next-mdx-remote: 4.3.0
-      nextra: 2.2.7
+      nextra: 2.2.13
       react: 18.2.0
       react-dom: 18.2.0
       typescript: 4.9.4
@@ -241,7 +241,7 @@ importers:
       '@theguild/components': link:../packages/components
       next: 13.1.4_biqbaboplfbrettd7655fr4n2y
       next-mdx-remote: 4.3.0_biqbaboplfbrettd7655fr4n2y
-      nextra: 2.2.7_gru2niblrprbai56sdagiiy5sa
+      nextra: 2.2.13_gru2niblrprbai56sdagiiy5sa
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -12757,23 +12757,6 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
 
-  /next-mdx-remote/4.2.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-X5RhD7f7b78pH2abbuusObSGgII5l54OdusS/2iXljN7WN1cel6ToLlZeCZcyxx9cR4wmBGQYGongIttDYNmAA==}
-    engines: {node: '>=14', npm: '>=7'}
-    peerDependencies:
-      react: '>=16.x <=18.x'
-      react-dom: '>=16.x <=18.x'
-    dependencies:
-      '@mdx-js/mdx': 2.2.1
-      '@mdx-js/react': 2.2.1_react@18.2.0
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      vfile: 5.3.5
-      vfile-matter: 3.0.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /next-mdx-remote/4.3.0_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-fbxkY03pM2Wx5bDNTVKpYD5Hx3QVZGH+6xDtVIxlxXz4HTifP1yI2DrkDvxXbTz0SYGIbluRMIW81IOOa8pigA==}
     engines: {node: '>=14', npm: '>=7'}
@@ -12877,10 +12860,11 @@ packages:
       - '@babel/core'
       - babel-plugin-macros
 
-  /nextra-theme-docs/2.2.7_gru2niblrprbai56sdagiiy5sa:
-    resolution: {integrity: sha512-McvGaNAEmEAzwcxFO1FHMu3xhICAO/fFQiFyMfHmKZqcWnmhukPldbunApHDGNdsAJ+CVMyiguM1YD9S8hxeMw==}
+  /nextra-theme-docs/2.2.13_25jiwmpzxelxfigqmqp2gumk4a:
+    resolution: {integrity: sha512-cMjxK/ooLaobm/3xxioKnyUrdTXcejMh1hB0bJirKZ7Vm5GdI3hHsvlE4hCj3mV3/JvusEaUx8VvApb2LsJ/FQ==}
     peerDependencies:
       next: '>=9.5.3'
+      nextra: 2.2.13
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
     dependencies:
@@ -12895,14 +12879,15 @@ packages:
       next: 13.1.4_biqbaboplfbrettd7655fr4n2y
       next-seo: 5.13.0_gru2niblrprbai56sdagiiy5sa
       next-themes: 0.2.1_gru2niblrprbai56sdagiiy5sa
+      nextra: 2.2.13_gru2niblrprbai56sdagiiy5sa
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       scroll-into-view-if-needed: 3.0.3
       zod: 3.20.2
     dev: false
 
-  /nextra/2.2.7_gru2niblrprbai56sdagiiy5sa:
-    resolution: {integrity: sha512-dXtiucCHH71eye9fPdZViDN0//ClkZdVNuG9d0FxSwSfFD7UCuvAKQvDkZVHf/iw6mK4UJU6knRYM/HCLu5wBA==}
+  /nextra/2.2.13_gru2niblrprbai56sdagiiy5sa:
+    resolution: {integrity: sha512-COTh3Dw00qkiOMKynJlJlWNbhjHwawoL3oc206+C9x8V0zRmWg0bbwpRYpVeJXw7E627G/zL2jw8iZG01pk8ZQ==}
     peerDependencies:
       next: '>=9.5.3'
       react: '>=16.13.1'
@@ -12917,7 +12902,7 @@ packages:
       katex: 0.16.4
       lodash.get: 4.4.2
       next: 13.1.4_biqbaboplfbrettd7655fr4n2y
-      next-mdx-remote: 4.2.0_biqbaboplfbrettd7655fr4n2y
+      next-mdx-remote: 4.3.0_biqbaboplfbrettd7655fr4n2y
       p-limit: 3.1.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -12929,6 +12914,7 @@ packages:
       shiki: 0.12.1
       slash: 3.0.0
       title: 3.5.3
+      unist-util-remove: 3.1.1
       unist-util-visit: 4.1.1
     transitivePeerDependencies:
       - supports-color
@@ -16494,6 +16480,14 @@ packages:
     dependencies:
       '@types/unist': 2.0.6
       unist-util-visit: 4.1.1
+
+  /unist-util-remove/3.1.1:
+    resolution: {integrity: sha512-kfCqZK5YVY5yEa89tvpl7KnBBHu2c6CzMkqHUrlOqaRgGOMp0sMvwWOVrbAtj03KhovQB7i96Gda72v/EFE0vw==}
+    dependencies:
+      '@types/unist': 2.0.6
+      unist-util-is: 5.1.1
+      unist-util-visit-parents: 5.1.1
+    dev: false
 
   /unist-util-stringify-position/2.0.3:
     resolution: {integrity: sha512-3faScn5I+hy9VleOq/qNbAd6pAx7iH5jYBMS9I1HgQVijz/4mv5Bvw5iw1sC/90CODiKo81G/ps8AJrISn687g==}
