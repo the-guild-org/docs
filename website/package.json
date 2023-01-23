@@ -14,7 +14,7 @@
     "@theguild/components": "workspace:*",
     "next": "13.1.4",
     "next-mdx-remote": "4.3.0",
-    "nextra": "2.2.7",
+    "nextra": "2.2.13",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
