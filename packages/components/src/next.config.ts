@@ -9,6 +9,7 @@ import { applyUnderscoreRedirects } from './underscore-redirects';
 export const withGuildDocs = ({
   themeConfig = './theme.config.tsx',
   whiteListDisableExplicitJsx = [],
+  transformPageOpts,
   ...nextConfig
 }: NextConfig & {
   themeConfig?: string;
@@ -26,8 +27,8 @@ export const withGuildDocs = ({
   const withNextra = nextra({
     themeConfig,
     theme: 'nextra-theme-docs',
-    staticImage: true,
     defaultShowCopyCode: true,
+    transformPageOpts,
     mdxOptions: {
       remarkPlugins: [
         [
