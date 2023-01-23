@@ -24,7 +24,7 @@ importers:
       css-loader: 6.7.3
       eslint: 8.32.0
       eslint-plugin-storybook: 0.6.10
-      eslint-plugin-tailwindcss: 3.8.0
+      eslint-plugin-tailwindcss: 3.8.1
       husky: 8.0.3
       lint-staged: 13.1.0
       next-themes: 0.2.1
@@ -66,7 +66,7 @@ importers:
       css-loader: 6.7.3
       eslint: 8.32.0
       eslint-plugin-storybook: 0.6.10_7uibuqfxkfaozanbtbziikiqje
-      eslint-plugin-tailwindcss: 3.8.0
+      eslint-plugin-tailwindcss: 3.8.1_tailwindcss@3.2.4
       husky: 8.0.3
       lint-staged: 13.1.0
       next-themes: 0.2.1_biqbaboplfbrettd7655fr4n2y
@@ -9059,15 +9059,17 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-tailwindcss/3.8.0:
-    resolution: {integrity: sha512-Lsyncgp/eXZriAEUK9zfGHOH+9iQplygHiOuGY8SFFHKIeT0BYjyST/ownHF8UPa1TEh+jJPkdE2vlV3778C3w==}
+  /eslint-plugin-tailwindcss/3.8.1_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-b01CBIT6TrK5IhrwmjDkuLzl2di5yXUmL8RyEZV710sGtw2zesr2csyGOc7e/IuV6tb8MfuHeksgMvaBEl9qvA==}
     engines: {node: '>=12.13.0'}
+    peerDependencies:
+      '@angular-eslint/template-parser': ^15.2.0
+      '@typescript-eslint/parser': ^5.48.2
+      tailwindcss: ^3.2.2
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.21
       tailwindcss: 3.2.4
-    transitivePeerDependencies:
-      - ts-node
     dev: true
 
   /eslint-plugin-unicorn/45.0.2_eslint@8.32.0:
