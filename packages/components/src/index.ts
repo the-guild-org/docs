@@ -19,7 +19,7 @@ export {
   Tab,
   Tabs,
   useConfig,
-  useTheme
+  useTheme,
 } from 'nextra-theme-docs';
 
 declare module 'react' {
