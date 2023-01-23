@@ -32,10 +32,7 @@ export async function getStaticProps() {
       ),
       '```'
     ].join('\n'),
-    {
-      defaultShowCopyCode: true,
-      codeHighlight: true
-    }
+    { defaultShowCopyCode: true }
   )
   return {
     props: {

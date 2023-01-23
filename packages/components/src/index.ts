@@ -6,7 +6,8 @@ export { PRODUCTS } from './products';
 export * from './types/components';
 export { default as Giscus } from '@giscus/react';
 export { useMounted } from 'nextra/hooks';
-export { useSSG } from 'nextra/ssg';
+export { useMDXComponents } from 'nextra/mdx';
+export { RemoteContent, useSSG } from 'nextra/ssg';
 export {
   type DocsThemeConfig,
   Bleed,
@@ -18,7 +19,6 @@ export {
   Tab,
   Tabs,
   useConfig,
-  useMDXComponents,
   useTheme,
 } from 'nextra-theme-docs';
 

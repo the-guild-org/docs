@@ -27,10 +27,10 @@
     "types:check": "tsc --noEmit"
   },
   "dependencies": {
-    "algoliasearch": "^4.13.1",
-    "commander": "^9.4.1",
+    "algoliasearch": "^4.14.3",
+    "commander": "^9.5.0",
     "github-slugger": "^2.0.0",
-    "glob": "^8.0.3",
+    "glob": "^8.1.0",
     "gray-matter": "^4.0.3",
     "lodash.map": "^4.6.0",
     "lodash.sortby": "^4.7.0",
