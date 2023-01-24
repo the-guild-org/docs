@@ -1,5 +1,54 @@
 # @theguild/components
 
+## 4.5.2
+
+### Patch Changes
+
+- [#743](https://github.com/the-guild-org/docs/pull/743)
+  [`0b667c6`](https://github.com/the-guild-org/docs/commit/0b667c6e8736127186f2862a55a699044274780b)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.2.5` ↗︎](https://www.npmjs.com/package/nextra/v/2.2.5) (from
+    `2.2.4`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.2.5` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.2.5) (from
+    `2.2.4`, in `dependencies`)
+
+- [#747](https://github.com/the-guild-org/docs/pull/747)
+  [`bd92fcf`](https://github.com/the-guild-org/docs/commit/bd92fcfe6eee39046eb8d2b2063eb4c4ffa9764a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.2.7` ↗︎](https://www.npmjs.com/package/nextra/v/2.2.7) (from
+    `2.2.5`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.2.7` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.2.7) (from
+    `2.2.5`, in `dependencies`)
+
+- [#748](https://github.com/the-guild-org/docs/pull/748)
+  [`510ac6d`](https://github.com/the-guild-org/docs/commit/510ac6deb35394b74b9b0c79d305158869b2b9a2)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.2.13` ↗︎](https://www.npmjs.com/package/nextra/v/2.2.13) (from
+    `2.2.7`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.2.13` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.2.13) (from
+    `2.2.7`, in `dependencies`)
+
+- [#749](https://github.com/the-guild-org/docs/pull/749)
+  [`0e53360`](https://github.com/the-guild-org/docs/commit/0e53360751dc11515420f06575767ad0bda45be9)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.1.4` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.1.4)
+    (from `13.1.2`, in `dependencies`)
+
+- [#754](https://github.com/the-guild-org/docs/pull/754)
+  [`5b6bb36`](https://github.com/the-guild-org/docs/commit/5b6bb362a7c1463403959e0bbe6ee7b39b23e733)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`@next/bundle-analyzer@13.1.5` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.1.5)
+    (from `13.1.4`, in `dependencies`)
+
 ## 4.5.1
 
 ### Patch Changes

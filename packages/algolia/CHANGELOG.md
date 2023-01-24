@@ -1,5 +1,25 @@
 # @theguild/algolia
 
+## 1.1.1
+
+### Patch Changes
+
+- [#753](https://github.com/the-guild-org/docs/pull/753)
+  [`154d517`](https://github.com/the-guild-org/docs/commit/154d51724b5376be2512ed570d9ee5bfb97f44cf)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency
+    [`algoliasearch@^4.14.3` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.14.3) (from
+    `^4.13.1`, in `dependencies`)
+  - Updated dependency [`commander@^9.5.0` ↗︎](https://www.npmjs.com/package/commander/v/9.5.0)
+    (from `^9.4.1`, in `dependencies`)
+  - Updated dependency [`glob@^8.1.0` ↗︎](https://www.npmjs.com/package/glob/v/8.1.0) (from
+    `^8.0.3`, in `dependencies`)
+
+- [#753](https://github.com/the-guild-org/docs/pull/753)
+  [`154d517`](https://github.com/the-guild-org/docs/commit/154d51724b5376be2512ed570d9ee5bfb97f44cf)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - update deps
+
 ## 1.1.0
 
 ### Minor Changes
