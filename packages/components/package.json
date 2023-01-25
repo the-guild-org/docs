@@ -75,7 +75,7 @@
     "remark-mdx-disable-explicit-jsx": "0.1.0",
     "search-insights": "2.2.3",
     "semver": "^7.3.8",
-    "unist-util-visit": "4.1.1",
+    "unist-util-visit": "4.1.2",
     "use-debounce": "9.0.3"
   },
   "devDependencies": {
