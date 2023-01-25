@@ -24,7 +24,7 @@ jobs:
         run: pnpm build
 
       - name: Deploy
-        working-directory: ./packages/open-graph-image
+        working-directory: ./packages/og-image
         run: pnpm run deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
