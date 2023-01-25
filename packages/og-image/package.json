@@ -1,5 +1,5 @@
 {
-  "name": "@theguild/open-graph-image",
+  "name": "@theguild/og-image",
   "version": "0.0.0",
   "private": true,
   "scripts": {

@@ -6,7 +6,7 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["website", "@theguild/open-graph-image"],
+  "ignore": ["website", "@theguild/og-image"],
   "snapshot": {
     "useCalculatedVersion": true,
     "prereleaseTemplate": "{tag}-{datetime}-{commit}"
