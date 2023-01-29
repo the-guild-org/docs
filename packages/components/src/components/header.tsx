@@ -12,11 +12,11 @@ import {
 import clsx from 'clsx';
 import { useTheme } from 'nextra-theme-docs';
 import { useWindowSize } from '../helpers/hooks';
+import { GuildLogo, TheGuild } from '../logos';
 import { IHeaderProps } from '../types/components';
 import { Anchor } from './anchor';
 import { EcosystemList } from './ecosystem-list';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
-import { GuildLogo, TheGuild } from './logos';
 import { Nav } from './nav';
 import { SearchBar } from './search-bar';
 import { SolutionsMenu } from './solutions-menu';

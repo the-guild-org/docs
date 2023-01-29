@@ -22,7 +22,7 @@ import {
   ToolsLogo,
   WhatsAppLogo,
   YogaLogo,
-} from './components/logos';
+} from './logos';
 
 export type ProductType =
   | 'HIVE'
