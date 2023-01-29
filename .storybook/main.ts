@@ -48,29 +48,15 @@ const config: StorybookConfig = {
       ...config.resolve.fallback,
       url: false,
     };
-    // disable whatever is already set to load SVGs
-    for (const rule of config.module.rules) {
-      if (rule.test?.test('.svg')) {
-        rule.exclude = /\.svg$/i;
-      }
-    }
 
-    config.module.rules.push({
+    config.module.rules.unshift({
       test: /\.svg$/,
-      use: [
-        { loader: '@svgr/webpack' },
-        {
-          loader: 'file-loader',
-          options: {
-            name: 'static/[path][name].[ext]',
-          },
-        },
-      ],
-      type: 'javascript/auto',
-      issuer: {
-        and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
+      loader: '@svgr/webpack',
+      options: {
+        svgo: false, // otherwise svg width/height will don't affect
       },
     });
+
     return config;
   },
   features: {
