@@ -19,6 +19,7 @@ const productCategories = [
     items: [
       PRODUCTS.CODEGEN,
       PRODUCTS.TOOLS,
+      PRODUCTS.STITCHING,
       PRODUCTS.HIVE,
       PRODUCTS.CONDUCTOR,
       PRODUCTS.INSPECTOR,
@@ -36,10 +37,7 @@ const productCategories = [
   },
 ];
 
-export const EcosystemList = forwardRef<HTMLDivElement>(function EcosystemList(
-  _,
-  forwardedRef,
-): ReactElement {
+export const EcosystemList = forwardRef<HTMLDivElement>((_, forwardedRef): ReactElement => {
   return (
     <div
       className="max-h-[calc(100vh-70px)] min-h-[300px] w-[800px] overflow-y-auto rounded-lg bg-white p-5 dark:bg-neutral-800"
@@ -91,3 +89,5 @@ export const EcosystemList = forwardRef<HTMLDivElement>(function EcosystemList(
     </div>
   );
 });
+
+EcosystemList.displayName = 'EcosystemList';
