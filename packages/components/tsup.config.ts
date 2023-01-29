@@ -23,7 +23,7 @@ export default defineConfig([
     external: ['semver'],
     esbuildPlugins: [svgrPlugin({ exportType: 'named' })],
     async onSuccess() {
-      // tsup unable generate d.ts for svg https://github.com/egoist/tsup/issues/570
+      // tsup unable generate d.ts for .svg imports https://github.com/egoist/tsup/issues/570
       const logos = [
         'AngularLogo',
         'CodeGeneratorLogo',
