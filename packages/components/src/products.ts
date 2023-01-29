@@ -20,7 +20,7 @@ import {
   StitchingLogo,
   SwiftLogo,
   ToolsLogo,
-  WhatsUpLogo,
+  WhatsAppLogo,
   YogaLogo,
 } from './components/logos';
 
@@ -195,7 +195,7 @@ export const PRODUCTS: Record<
     name: 'WhatsApp',
     title: 'Full stack, open source tutorial',
     href: 'https://github.com/Urigo/WhatsApp-Clone-Tutorial',
-    logo: WhatsUpLogo,
+    logo: WhatsAppLogo,
     primaryColor: '#31eb14',
   },
   KITQL: {
