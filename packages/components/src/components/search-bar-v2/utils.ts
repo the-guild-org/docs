@@ -19,6 +19,7 @@ export function debouncePromise<I, O>(
 }
 
 export const debounced = debouncePromise(
+  // @ts-expect-error todo: fix Type 'AlgoliaSearchItem' does not satisfy the constraint 'BaseItem'.
   (items: AutocompleteSource<AlgoliaSearchItem>[]) => items,
   300,
 );

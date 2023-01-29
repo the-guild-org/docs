@@ -18,6 +18,7 @@ export const SearchBarV2 = ({
   algolia,
 }: ISearchBarProps): ReactElement => {
   const containerRef = useRef(null);
+  // @ts-expect-error todo: fix Index signature for type 'string' is missing in type 'AlgoliaSearchItem'
   const search = useRef<AutocompleteApi<AlgoliaSearchItem>>();
   const panelRootRef = useRef<Root | null>(null);
   const rootRef = useRef<HTMLElement | null>(null);
@@ -54,6 +55,7 @@ export const SearchBarV2 = ({
       return panelRootRef.current.render.bind(panelRootRef.current);
     };
 
+    // @ts-expect-error todo: fix Type 'AlgoliaSearchItem' does not satisfy the constraint 'BaseItem'.
     const s = autocomplete<AlgoliaSearchItem>({
       container: containerRef.current,
       detachedMediaQuery: '',
@@ -86,6 +88,7 @@ export const SearchBarV2 = ({
               <div className="min-w-[400px]">{children}</div>
               <SidePreview
                 accentColor={accentColor}
+                // @ts-expect-error todo: fix Type 'unknown' is not assignable to type 'AlgoliaSearchItem'.
                 item={state.context.preview}
                 components={components}
               />

@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode, useState } from 'react';
-import { ExecutableDocumentEditor, SchemaEditor } from '@theguild/monaco-graphql-editor';
+import { ExecutableDocumentEditor, SchemaEditor } from '@theguild/editor';
 import { buildSchema } from 'graphql';
 import { IEditorProps, ISchemaPageProps } from '../types/components';
 import { CaretSlimIcon, MoreIcon, ShareIcon } from './icons';

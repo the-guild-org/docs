@@ -17,6 +17,7 @@ import {
   ShieldLogo,
   SofaLogo,
   StencilLogo,
+  StitchingLogo,
   SwiftLogo,
   ToolsLogo,
   WhatsUpLogo,
@@ -41,6 +42,7 @@ export type ProductType =
   | 'SWIFT'
   | 'SOFA'
   | 'STENCIL'
+  | 'STITCHING'
   | 'ANGULAR'
   | 'WHATSAPP'
   | 'KITQL';
@@ -82,6 +84,14 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/envelop',
     logo: EnvelopLogo,
     primaryColor: '#ff00e5',
+  },
+  STITCHING: {
+    name: 'Stitching',
+    title:
+      'Automatically stitch multiple schemas together into one larger API in a simple, fast and powerful way.',
+    href: 'https://the-guild.dev/graphql/stitching',
+    logo: StitchingLogo,
+    primaryColor: '#f95428',
   },
   INSPECTOR: {
     name: 'Inspector',
@@ -149,7 +159,7 @@ export const PRODUCTS: Record<
   SHIELD: {
     name: 'Shield',
     title: 'GraphQL permissions framework for complex authorisation systems',
-    href: 'https://graphql-shield.com',
+    href: 'https://the-guild.dev/graphql/shield',
     logo: ShieldLogo,
     primaryColor: '#699efc',
   },

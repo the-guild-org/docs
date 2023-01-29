@@ -15,6 +15,7 @@ export * from './scalars';
 export * from './shield';
 export * from './sofa';
 export * from './stencil';
+export { ReactComponent as StitchingLogo } from './stitching.svg'
 export * from './swift';
 export * from './tools';
 export * from './whatsapp';
