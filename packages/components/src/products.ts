@@ -86,7 +86,7 @@ export const PRODUCTS: Record<
   STITCHING: {
     name: 'Stitching',
     title:
-      'Automatically stitch multiple schemas together into one larger API in a simple, fast and powerful way.',
+      'Automatically stitch multiple schemas together into one larger API in a simple, fast and powerful way',
     href: 'https://the-guild.dev/graphql/stitching',
     logo: StitchingLogo,
     primaryColor: '#f95428',
