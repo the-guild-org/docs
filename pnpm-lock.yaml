@@ -102,7 +102,7 @@ importers:
       '@types/lodash.sortby': 4.7.7
       '@types/remove-markdown': 0.3.1
       algoliasearch: ^4.14.3
-      commander: ^9.5.0
+      commander: ^10.0.0
       github-slugger: ^2.0.0
       glob: ^8.1.0
       gray-matter: ^4.0.3
@@ -111,7 +111,7 @@ importers:
       remove-markdown: ^0.5.0
     dependencies:
       algoliasearch: 4.14.3
-      commander: 9.5.0
+      commander: 10.0.0
       github-slugger: 2.0.0
       glob: 8.1.0
       gray-matter: 4.0.3
@@ -7238,6 +7238,11 @@ packages:
   /comma-separated-tokens/2.0.2:
     resolution: {integrity: sha512-G5yTt3KQN4Yn7Yk4ed73hlZ1evrFKXeUW3086p3PRFNp7m2vIjI6Pg+Kgb+oyzhd9F2qdcoj67+y3SdxL5XWsg==}
 
+  /commander/10.0.0:
+    resolution: {integrity: sha512-zS5PnTI22FIRM6ylNW8G4Ap0IEOyk62fhLSD0+uHRT9McRCLGpkVNvao4bjimpK/GShynyQkFFxHhwMcETmduA==}
+    engines: {node: '>=14'}
+    dev: false
+
   /commander/2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: true
@@ -7263,6 +7268,7 @@ packages:
   /commander/9.5.0:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
     engines: {node: ^12.20.0 || >=14}
+    dev: true
 
   /common-path-prefix/3.0.0:
     resolution: {integrity: sha512-QE33hToZseCH3jS0qN96O/bSh3kaw/h+Tq7ngyY9eWDUnTlTNUyqfqvCXioLe5Na5jFsL78ra/wuBU4iuEgd4w==}
