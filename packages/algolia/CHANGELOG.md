@@ -1,5 +1,15 @@
 # @theguild/algolia
 
+## 1.1.2
+
+### Patch Changes
+
+- [#735](https://github.com/the-guild-org/docs/pull/735)
+  [`d34d0a7`](https://github.com/the-guild-org/docs/commit/d34d0a7c69a948bc3422770878f7c547f68921c0)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`commander@^10.0.0` ↗︎](https://www.npmjs.com/package/commander/v/10.0.0)
+    (from `^9.5.0`, in `dependencies`)
+
 ## 1.1.1
 
 ### Patch Changes
