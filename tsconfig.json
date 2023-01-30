@@ -17,7 +17,7 @@
     "paths": {
       "@theguild/algolia": ["packages/algolia/src/index.ts"],
       "@theguild/components": ["packages/components/src/index.ts"],
-      "@theguild/monaco-graphql-editor": ["packages/monaco-graphql-editor/src/index.ts"]
+      "@theguild/editor": ["packages/editor/src/index.ts"]
     },
     "strict": true /* Enable all strict type-checking options. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
