@@ -38,13 +38,24 @@ export class EnrichedLanguageService extends LanguageService {
     return null;
   }
 
+  public async getSchemaSafe() {
+    try {
+      return await this.getSchema();
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.warn(`Failed to get schema:`, e);
+
+      return null;
+    }
+  }
+
   public async buildBridgeForProviders(
     model: monaco.editor.ITextModel,
     position: monaco.Position,
   ): Promise<null | BridgeOptions> {
     const graphQLPosition = toGraphQLPosition(position);
     const document = model.getValue();
-    const schema = await this.getSchema();
+    const schema = await this.getSchemaSafe();
 
     if (!schema) {
       return null;
@@ -193,6 +204,6 @@ export class EnrichedLanguageService extends LanguageService {
   trySchema(sdl: string): Promise<GraphQLSchema | null> {
     // XX-DOTAN: In case of an issue with the schema parsing, we'll get the error through
     // the Marker, and we can safely ignore it here.
-    return this.setSchema(sdl).then(() => this.getSchema());
+    return this.setSchema(sdl).then(() => this.getSchemaSafe());
   }
 }
