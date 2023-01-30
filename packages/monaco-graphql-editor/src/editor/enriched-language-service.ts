@@ -42,6 +42,7 @@ export class EnrichedLanguageService extends LanguageService {
     try {
       return await this.getSchema();
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.warn(`Failed to get schema:`, e);
 
       return null;
