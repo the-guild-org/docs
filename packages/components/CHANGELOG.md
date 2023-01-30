@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 4.5.4
+
+### Patch Changes
+
+- [#770](https://github.com/the-guild-org/docs/pull/770)
+  [`d9099e3`](https://github.com/the-guild-org/docs/commit/d9099e3f747c9adce571e60ab787bb6b5d7474e6)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - add stitching
+
 ## 4.5.3
 
 ### Patch Changes
