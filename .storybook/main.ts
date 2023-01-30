@@ -49,11 +49,11 @@ const config: StorybookConfig = {
       url: false,
     };
 
-    config.module.rules.unshift({
+    config.module?.rules?.unshift({
       test: /\.svg$/,
       loader: '@svgr/webpack',
       options: {
-        svgo: false, // otherwise svg width/height will don't affect
+        svgo: false, // otherwise setting SVG component width/height will don't affect
       },
     });
 
