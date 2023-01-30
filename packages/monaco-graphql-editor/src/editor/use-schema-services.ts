@@ -135,7 +135,7 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
     setSchema: (newValue: string) => languageService.trySchema(newValue),
     editorApi: {
       jumpToType: (typeName: string) => {
-        languageService.getSchema().then(schema => {
+        languageService.getSchemaSafe().then(schema => {
           if (schema) {
             const type = schema.getType(typeName);
 
@@ -151,7 +151,7 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
         });
       },
       jumpToField(typeName: string, fieldName: string) {
-        languageService.getSchema().then(schema => {
+        languageService.getSchemaSafe().then(schema => {
           if (schema) {
             const type = schema.getType(typeName);
 
