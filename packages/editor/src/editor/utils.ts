@@ -95,8 +95,8 @@ export type DefinitionSource = {
 };
 
 export const coreDefinitionSource: DefinitionSource = {
-  forNode: ({ schema, model, token }) => {
-    if (token.state && token.state.kind === 'NamedType' && token.state.name) {
+  forNode({ schema, model, token }) {
+    if (token.state?.name && token.state.kind === 'NamedType') {
       const type = schema.getType(token.state.name);
 
       if (type?.astNode?.loc) {

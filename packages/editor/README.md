@@ -1,7 +1,7 @@
 ## `@theguild/editor`
 
 A monaco editor with built-in support for GraphQL Language Service, with features like online
-parser, syntax highligh, schema-building validations, hover and much more. The integration between
+parser, syntax highlight, schema-building validations, hover and much more. The integration between
 Monaco editor and the GraphQL language service is exposed through a simple props/events based
 interface, with the awareness of the GraphQL schema.
 
@@ -9,13 +9,13 @@ interface, with the awareness of the GraphQL schema.
 
 This library was developed as part of the
 [Schema Prototyper Grant](https://forum.thegraph.com/t/schema-prototyper/1732) given by
-[The Graph Foundation](https://thegraph.com/).
+[The Graph Foundation](https://thegraph.com).
 
 ### Getting Started
 
 Start by installing the package from NPM:
 
-```sh
+```bash
 pnpm add monaco-editor @monaco-editor/react @theguild/editor
 ```
 
@@ -88,7 +88,7 @@ import { DefinitionSource, SchemaEditor } from '@theguild/editor'
 export const myDefinitionSource: DefinitionSource = {
   forNode({ schema, model, token }) {
     // You can access the actual GQL type / schema and everything you need.
-    if (token.state && token.state.kind === 'NamedType' && token.state.name) {
+    if (token.state?.name && token.state.kind === 'NamedType') {
       const type = schema.getType(token.state.name)
 
       if (type?.astNode?.loc) {
