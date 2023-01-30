@@ -33,7 +33,7 @@ const productCategories = [
   // },
   {
     title: 'Build great user experience',
-    items: [PRODUCTS.SWIFT, PRODUCTS.ANGULAR, PRODUCTS.STENCIL, PRODUCTS.KITQL],
+    items: [PRODUCTS.SWIFT, PRODUCTS.ANGULAR, PRODUCTS.KITQL],
   },
 ];
 
