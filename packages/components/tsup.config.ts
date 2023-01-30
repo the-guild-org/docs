@@ -41,7 +41,6 @@ export default defineConfig([
         'ScalarsLogo',
         'ShieldLogo',
         'SofaLogo',
-        'StencilLogo',
         'SwiftLogo',
         'TheGuild',
         'ToolsLogo',

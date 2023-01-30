@@ -16,7 +16,6 @@ import {
   ScalarsLogo,
   ShieldLogo,
   SofaLogo,
-  StencilLogo,
   StitchingLogo,
   SwiftLogo,
   ToolsLogo,
