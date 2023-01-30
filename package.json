@@ -1,10 +1,10 @@
 {
-  "name": "the-guild-components-monorepo",
+  "name": "the-guild-docs-monorepo",
   "type": "module",
   "private": true,
   "packageManager": "pnpm@7.26.2",
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "scripts": {
     "build": "turbo run build",

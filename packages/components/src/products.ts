@@ -41,7 +41,6 @@ export type ProductType =
   | 'SHIELD'
   | 'SWIFT'
   | 'SOFA'
-  | 'STENCIL'
   | 'STITCHING'
   | 'ANGULAR'
   | 'WHATSAPP'
@@ -176,13 +175,6 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/sofa-api',
     logo: SofaLogo,
     primaryColor: '#e873ff',
-  },
-  STENCIL: {
-    name: 'Stencil',
-    title: 'A fully-featured, production ready caching GraphQL client',
-    href: 'https://github.com/ardatan/stencil-apollo',
-    logo: StencilLogo,
-    primaryColor: '#e88e18',
   },
   ANGULAR: {
     name: 'Angular',
