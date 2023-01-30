@@ -1,5 +1,14 @@
 # @theguild/editor
 
+## 1.2.4
+
+### Patch Changes
+
+- [#771](https://github.com/the-guild-org/docs/pull/771)
+  [`6141b5c`](https://github.com/the-guild-org/docs/commit/6141b5c7de17ef8b349fcb1bc40a5c71bfbe2197)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Fix issue with error when trying to fetch
+  schema using getSchema
+
 ## 1.2.3
 
 ### Patch Changes
