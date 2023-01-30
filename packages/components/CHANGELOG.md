@@ -1,5 +1,42 @@
 # @theguild/components
 
+## 4.5.3
+
+### Patch Changes
+
+- [#757](https://github.com/the-guild-org/docs/pull/757)
+  [`bf75033`](https://github.com/the-guild-org/docs/commit/bf7503386564a353186ab20adb9bbad074408d52)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`unist-util-visit@4.1.2` ↗︎](https://www.npmjs.com/package/unist-util-visit/v/4.1.2) (from
+    `4.1.1`, in `dependencies`)
+
+- [#764](https://github.com/the-guild-org/docs/pull/764)
+  [`098afc1`](https://github.com/the-guild-org/docs/commit/098afc110d8ed99a586b018a66a1be35a2006710)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.2.14` ↗︎](https://www.npmjs.com/package/nextra/v/2.2.14) (from
+    `2.2.13`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.2.14` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.2.14) (from
+    `2.2.13`, in `dependencies`)
+
+- [#765](https://github.com/the-guild-org/docs/pull/765)
+  [`d379dff`](https://github.com/the-guild-org/docs/commit/d379dff10a1f1b748ebb721f47b27b237c251332)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-instantsearch-dom@6.39.0` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.39.0)
+    (from `6.38.3`, in `dependencies`)
+
+- [#768](https://github.com/the-guild-org/docs/pull/768)
+  [`55a9e88`](https://github.com/the-guild-org/docs/commit/55a9e88a145439c61e7047b7753e2842d0e17ee1)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`@next/bundle-analyzer@13.1.6` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.1.6)
+    (from `13.1.5`, in `dependencies`)
+
 ## 4.5.2
 
 ### Patch Changes
