@@ -1,10 +1,10 @@
 {
-  "name": "the-guild-components-monorepo",
+  "name": "the-guild-docs-monorepo",
   "type": "module",
   "private": true,
   "packageManager": "pnpm@7.26.2",
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "scripts": {
     "build": "turbo run build",
@@ -12,12 +12,11 @@
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/style.css",
     "lint": "eslint --cache --ignore-path .gitignore .",
     "lint:prettier": "prettier --cache --check .",
-    "prebuild": "rimraf packages/*/dist/ .turbo/",
     "prepare": "husky install",
     "prerelease": "pnpm build",
     "prettier": "prettier --cache --write --list-different .",
     "release": "changeset publish",
-    "start": "storybook dev",
+    "start": "storybook dev --port 4000",
     "type-check": "tsc",
     "type-check:watch": "tsc --watch"
   },
@@ -28,8 +27,10 @@
     "@storybook/addon-essentials": "7.0.0-beta.11",
     "@storybook/addon-links": "7.0.0-beta.11",
     "@storybook/addon-postcss": "3.0.0-alpha.1",
+    "@storybook/core-common": "7.0.0-beta.11",
     "@storybook/mdx2-csf": "0.0.4",
     "@storybook/react-webpack5": "7.0.0-beta.11",
+    "@svgr/webpack": "6.5.1",
     "@tailwindcss/line-clamp": "0.4.2",
     "@theguild/eslint-config": "0.7.0-alpha-20230112182953-377ac47",
     "@theguild/prettier-config": "1.1.0",
@@ -38,6 +39,7 @@
     "@types/react-instantsearch-core": "6.26.3",
     "@types/react-instantsearch-dom": "6.12.3",
     "@types/react-paginate": "7.1.1",
+    "@types/webpack": "5.28.0",
     "concurrently": "7.6.0",
     "css-loader": "6.7.3",
     "eslint": "8.33.0",

@@ -48,6 +48,15 @@ const config: StorybookConfig = {
       ...config.resolve.fallback,
       url: false,
     };
+
+    config.module?.rules?.unshift({
+      test: /\.svg$/,
+      loader: '@svgr/webpack',
+      options: {
+        svgo: false, // otherwise setting SVG component width/height will don't affect
+      },
+    });
+
     return config;
   },
   features: {

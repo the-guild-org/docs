@@ -16,12 +16,12 @@ import {
   ScalarsLogo,
   ShieldLogo,
   SofaLogo,
-  StencilLogo,
+  StitchingLogo,
   SwiftLogo,
   ToolsLogo,
-  WhatsUpLogo,
+  WhatsAppLogo,
   YogaLogo,
-} from './components/logos';
+} from './logos';
 
 export type ProductType =
   | 'HIVE'
@@ -40,7 +40,7 @@ export type ProductType =
   | 'SHIELD'
   | 'SWIFT'
   | 'SOFA'
-  | 'STENCIL'
+  | 'STITCHING'
   | 'ANGULAR'
   | 'WHATSAPP'
   | 'KITQL';
@@ -82,6 +82,14 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/envelop',
     logo: EnvelopLogo,
     primaryColor: '#ff00e5',
+  },
+  STITCHING: {
+    name: 'Stitching',
+    title:
+      'Automatically stitch multiple schemas together into one larger API in a simple, fast and powerful way',
+    href: 'https://the-guild.dev/graphql/stitching',
+    logo: StitchingLogo,
+    primaryColor: '#f95428',
   },
   INSPECTOR: {
     name: 'Inspector',
@@ -149,7 +157,7 @@ export const PRODUCTS: Record<
   SHIELD: {
     name: 'Shield',
     title: 'GraphQL permissions framework for complex authorisation systems',
-    href: 'https://graphql-shield.com',
+    href: 'https://the-guild.dev/graphql/shield',
     logo: ShieldLogo,
     primaryColor: '#699efc',
   },
@@ -167,13 +175,6 @@ export const PRODUCTS: Record<
     logo: SofaLogo,
     primaryColor: '#e873ff',
   },
-  STENCIL: {
-    name: 'Stencil',
-    title: 'A fully-featured, production ready caching GraphQL client',
-    href: 'https://github.com/ardatan/stencil-apollo',
-    logo: StencilLogo,
-    primaryColor: '#e88e18',
-  },
   ANGULAR: {
     name: 'Angular',
     title: 'A fully-featured GraphQL client for Angular',
@@ -185,7 +186,7 @@ export const PRODUCTS: Record<
     name: 'WhatsApp',
     title: 'Full stack, open source tutorial',
     href: 'https://github.com/Urigo/WhatsApp-Clone-Tutorial',
-    logo: WhatsUpLogo,
+    logo: WhatsAppLogo,
     primaryColor: '#31eb14',
   },
   KITQL: {

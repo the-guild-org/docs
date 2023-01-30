@@ -5,7 +5,7 @@ import { visit } from 'unist-util-visit';
 const FILE_PATH = '@theguild/components';
 
 const MERMAID_IMPORT_AST = {
-  type: 'mdxjsEsm',
+  type: 'mdxjsEsm' as 'inlineCode',
   value: `import { Mermaid } from "${FILE_PATH}"`,
   data: {
     estree: {

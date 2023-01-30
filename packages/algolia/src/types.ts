@@ -15,7 +15,7 @@ export type AlgoliaRecordSource =
   | 'Shield'
   | 'Swift'
   | 'SOFA'
-  | 'Stencil'
+  | 'Stitching'
   | 'Angular'
   | 'WhatsApp'
   | 'KitQL';

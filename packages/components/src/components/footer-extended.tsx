@@ -1,10 +1,10 @@
 import { ReactElement, useCallback } from 'react';
 import clsx from 'clsx';
+import { GuildLogo, TheGuild } from '../logos';
 import { PRODUCTS } from '../products';
 import { IFooterExtendedProps, ILink } from '../types/components';
 import { Anchor } from './anchor';
 import { Image } from './image';
-import { GuildLogo, TheGuild } from './logos';
 import csaStar from '../static/illustrations/csa-star-level-1-badge.png';
 
 const COMPANY: ILink[] = [
