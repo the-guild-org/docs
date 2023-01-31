@@ -41,8 +41,8 @@ export type SchemaServicesOptions = {
 };
 
 export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
-  const [editorRef, setEditor] = useState<monaco.editor.IStandaloneCodeEditor | null>(null);
-  const [monacoRef, setMonaco] = useState<typeof monaco | null>(null);
+  const [editorRef, setEditorRef] = useState<monaco.editor.IStandaloneCodeEditor | null>(null);
+  const [monacoRef, setMonacoRef] = useState<typeof monaco | null>(null);
   const languageService = useMemo(
     () =>
       options.sharedLanguageService ||
@@ -127,8 +127,8 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
   }, [editorRef, monacoRef]);
 
   return {
-    setEditor,
-    setMonaco,
+    setEditor: setEditorRef,
+    setMonaco: setMonacoRef,
     editorRef,
     monacoRef,
     languageService,

@@ -32,7 +32,7 @@
     "@storybook/react-webpack5": "7.0.0-beta.11",
     "@svgr/webpack": "6.5.1",
     "@tailwindcss/line-clamp": "0.4.2",
-    "@theguild/eslint-config": "0.7.0-alpha-20230112182953-377ac47",
+    "@theguild/eslint-config": "0.8.0",
     "@theguild/prettier-config": "1.1.1",
     "@theguild/tailwind-config": "0.2.1",
     "@types/react": "18.0.27",

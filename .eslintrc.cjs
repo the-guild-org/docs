@@ -24,6 +24,8 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn',
     'jsx-a11y/click-events-have-key-events': 'warn',
     'jsx-a11y/no-static-element-interactions': 'warn',
+    // enable without breaking existing iframes
+    'react/iframe-missing-sandbox': 'off',
   },
   settings: {
     tailwindcss: {

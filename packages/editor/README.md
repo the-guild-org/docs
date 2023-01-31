@@ -26,7 +26,7 @@ Import and use it as a component:
 ```tsx
 import { SchemaEditor } from '@theguild/editor'
 
-const initialSchema = `type Query { foo: String }`
+const initialSchema = 'type Query { foo: String }'
 
 const MyEditor = (): React.ReactElement => {
   return <SchemaEditor schema={initialSchema} />
