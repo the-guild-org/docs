@@ -33,7 +33,7 @@
     "@svgr/webpack": "6.5.1",
     "@tailwindcss/line-clamp": "0.4.2",
     "@theguild/eslint-config": "0.7.0-alpha-20230112182953-377ac47",
-    "@theguild/prettier-config": "1.1.0",
+    "@theguild/prettier-config": "1.1.1",
     "@theguild/tailwind-config": "0.2.1",
     "@types/react": "18.0.27",
     "@types/react-instantsearch-core": "6.26.3",
