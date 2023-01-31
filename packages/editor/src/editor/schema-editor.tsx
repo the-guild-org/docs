@@ -36,7 +36,7 @@ function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEdit
     }
   }, [languageService, props.onLanguageServiceReady]);
 
-  const [onBlurHandler, setOnBlurSubscription] = useState<IDisposable>();
+  const [onBlurHandler, setOnBlurHandler] = useState<IDisposable>();
 
   useEffect(() => {
     if (editorRef && props.onBlur) {
@@ -46,7 +46,7 @@ function BaseSchemaEditor(props: SchemaEditorProps, ref: ForwardedRef<SchemaEdit
         props.onBlur?.(editorRef.getValue() || '');
       });
 
-      setOnBlurSubscription(subscription);
+      setOnBlurHandler(subscription);
     }
   }, [props.onBlur, editorRef]);
 
