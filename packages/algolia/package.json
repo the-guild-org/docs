@@ -44,7 +44,7 @@
     "@types/remove-markdown": "0.3.1"
   },
   "resolutions": {
-    "@types/node": "18.11.18"
+    "@types/node": "18.11.19"
   },
   "publishConfig": {
     "access": "public"
