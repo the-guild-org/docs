@@ -12,11 +12,10 @@
 //   // Note: augmenting jest.Matchers interface will also work.
 // }
 
-
 declare global {
   namespace jest {
     interface Matchers<R> {
-      toMatchImageSnapshot(): R
+      toMatchImageSnapshot(): R;
     }
   }
 }
