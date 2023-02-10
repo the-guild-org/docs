@@ -17,6 +17,7 @@
     "prettier": "prettier --cache --write --list-different .",
     "release": "changeset publish",
     "start": "storybook dev --port 4000",
+    "test": "vitest .",
     "type-check": "tsc",
     "type-check:watch": "tsc --watch"
   },
@@ -35,6 +36,7 @@
     "@theguild/eslint-config": "0.8.0",
     "@theguild/prettier-config": "1.1.1",
     "@theguild/tailwind-config": "0.2.1",
+    "@types/jest-image-snapshot": "6.1.0",
     "@types/react": "18.0.27",
     "@types/react-instantsearch-core": "6.26.3",
     "@types/react-instantsearch-dom": "6.12.3",
@@ -46,6 +48,7 @@
     "eslint-plugin-storybook": "0.6.10",
     "eslint-plugin-tailwindcss": "3.8.3",
     "husky": "8.0.3",
+    "jest-image-snapshot": "6.1.0",
     "lint-staged": "13.1.1",
     "next-themes": "0.2.1",
     "postcss": "8.4.21",
@@ -64,7 +67,8 @@
     "tsconfig-paths-webpack-plugin": "4.0.0",
     "tsup": "6.5.0",
     "turbo": "1.7.4",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "vitest": "0.28.4"
   },
   "browserslist": [
     "> 1%"

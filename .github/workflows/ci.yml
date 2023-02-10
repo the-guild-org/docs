@@ -35,5 +35,8 @@ jobs:
       - name: Lint ESLint
         run: pnpm lint
 
+      - name: Test
+        run: pnpm test
+
       - name: Build Storybook
         run: pnpm build-storybook

@@ -26,7 +26,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "types": ["vitest/globals"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["packages/**/*.stories.tsx", "website"]

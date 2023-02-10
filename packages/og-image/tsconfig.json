@@ -5,7 +5,7 @@
     "jsx": "react-jsx",
     "module": "es2022",
     "moduleResolution": "node",
-    "types": ["@cloudflare/workers-types"],
+    "types": ["vitest/globals", "@cloudflare/workers-types"],
     "resolveJsonModule": true,
     "allowJs": true,
     "checkJs": false,
