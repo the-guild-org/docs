@@ -1,4 +1,4 @@
-import { handler } from './index';
+import { handler } from './handler';
 
 describe('handler()', () => {
   it('should works', async () => {
