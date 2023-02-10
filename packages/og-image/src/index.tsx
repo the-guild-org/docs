@@ -4,6 +4,7 @@ import { ComponentProps } from 'react';
 import { GuildLogo, TheGuild } from '@theguild/components/logos';
 import { PRODUCTS } from '@theguild/components/products';
 import { generateImage } from './lib/img';
+import { Resvg } from '@resvg/resvg-js';
 
 const { WHATSAPP: _, HELIX: _2, ...filteredProducts } = PRODUCTS;
 
@@ -16,12 +17,18 @@ const products = {
   },
 };
 
+function toImage(svg: string) {
+  const resvg = new Resvg(svg)
+  const pngData = resvg.render()
+  return pngData.asPng()
+}
+
 const englishJoinWords = (words: string[]): string =>
   new Intl.ListFormat('en-US', { type: 'disjunction' }).format(words);
 
 const ALLOWED_PRODUCT_NAMES = englishJoinWords(Object.keys(products));
 
-async function handler(request: Request): Promise<Response> {
+export async function handler(request: Request): Promise<Response> {
   try {
     const { searchParams } = new URL(request.url);
     const productName = searchParams.get('product') as keyof typeof products | null;
@@ -37,34 +44,33 @@ async function handler(request: Request): Promise<Response> {
     const extra = searchParams.get('extra');
     const IS_GUILD = productName === 'GUILD';
 
-    return new Response(
-      await generateImage(
-        <div tw="flex bg-neutral-900 h-full flex-col w-full items-center justify-center">
-          <LeftCircle tw="absolute left-0 top-0" color={product.primaryColor} />
-          <RightCircle tw="absolute right-0" color={product.primaryColor} />
-          <RightSmallCircle
-            tw="absolute right-0 opacity-80"
-            color={shade(product.primaryColor || '', 100)}
-          />
-          <product.logo style={{ transform: 'scale(2.5)' }} {...(IS_GUILD && { fill: 'white' })} />
-          <span tw="font-bold text-7xl text-white my-14 mb-10">{product.name}</span>
-          {title && <span tw="font-bold text-5xl text-white mb-4">{title}</span>}
-          {extra && <span tw="font-bold text-2xl text-white">{extra}</span>}
-          {!IS_GUILD && (
-            <div tw="flex items-center mt-14">
-              {/* @ts-expect-error -- using `tw` is valid with satori */}
-              <GuildLogo fill="#fff" tw="mr-1.5" />
-              <TheGuild fill="#fff" />
-            </div>
-          )}
-        </div>,
-      ),
-      {
-        headers: {
-          'Content-Type': 'image/png',
-        },
-      },
+    const rawSvg = await generateImage(
+      <div tw="flex bg-neutral-900 h-full flex-col w-full items-center justify-center">
+        <LeftCircle tw="absolute left-0 top-0" color={product.primaryColor} />
+        <RightCircle tw="absolute right-0" color={product.primaryColor} />
+        <RightSmallCircle
+          tw="absolute right-0 opacity-80"
+          color={shade(product.primaryColor || '', 100)}
+        />
+        <product.logo style={{ transform: 'scale(2.5)' }} {...(IS_GUILD && { fill: 'white' })} />
+        <span tw="font-bold text-7xl text-white my-14 mb-10">{product.name}</span>
+        {title && <span tw="font-bold text-5xl text-white mb-4">{title}</span>}
+        {extra && <span tw="font-bold text-2xl text-white">{extra}</span>}
+        {!IS_GUILD && (
+          <div tw="flex items-center mt-14">
+            {/* @ts-expect-error -- using `tw` is valid with satori */}
+            <GuildLogo fill="#fff" tw="mr-1.5" />
+            <TheGuild fill="#fff" />
+          </div>
+        )}
+      </div>,
     );
+
+    const buffer = toImage(rawSvg)
+
+    return new Response(buffer, {
+      headers: { 'Content-Type': 'image/png' },
+    });
   } catch (e) {
     return new Response(`Failed to generate the image.\n\nError: ${(e as Error).message}`, {
       status: 500,
