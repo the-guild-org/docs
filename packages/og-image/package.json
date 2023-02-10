@@ -10,7 +10,7 @@
     "@resvg/resvg-js": "2.4.0",
     "@theguild/components": "workspace:*",
     "react": "18.2.0",
-    "satori": "0.1.1"
+    "satori": "0.2.3"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20230115.0",
