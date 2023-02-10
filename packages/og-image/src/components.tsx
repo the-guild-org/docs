@@ -3,7 +3,7 @@ import { shade } from './utils';
 
 type CircleProps = ComponentProps<'svg'> & { color?: string; tw?: string };
 
-export const RightSmallCircle = ({ color = '#f25c40', ...props }: CircleProps) => {
+export function RightSmallCircle({ color = '#f25c40', ...props }: CircleProps) {
   return (
     <svg
       width="310"
@@ -62,9 +62,9 @@ export const RightSmallCircle = ({ color = '#f25c40', ...props }: CircleProps) =
       </defs>
     </svg>
   );
-};
+}
 
-export const RightCircle = ({ color = '#7433ff', ...props }: CircleProps) => {
+export function RightCircle({ color = '#7433ff', ...props }: CircleProps) {
   return (
     <svg
       width="205"
@@ -90,9 +90,9 @@ export const RightCircle = ({ color = '#7433ff', ...props }: CircleProps) => {
       </defs>
     </svg>
   );
-};
+}
 
-export const LeftCircle = ({ color = '#1cc8ee', ...props }: CircleProps) => {
+export function LeftCircle({ color = '#1cc8ee', ...props }: CircleProps) {
   return (
     <svg
       width="572"
@@ -151,4 +151,4 @@ export const LeftCircle = ({ color = '#1cc8ee', ...props }: CircleProps) => {
       </defs>
     </svg>
   );
-};
+}
