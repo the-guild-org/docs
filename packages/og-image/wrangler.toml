@@ -1,5 +1,5 @@
 name = "open-graph-image"
-main = "src/index.tsx"
+main = "src/index.ts"
 compatibility_date = "2022-10-07"
 compatibility_flags = ["streams_enable_constructors"]
 rules = [
