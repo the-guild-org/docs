@@ -49,27 +49,20 @@ export async function loadGoogleFont({
   text?: string;
 }): Promise<ArrayBuffer> {
   const params: Record<string, string> = {
-    family: `${encodeURIComponent(family)}${weight ? `:wght@${weight}` : ''}`,
+    family: `${family}${weight ? `:wght@${weight}` : ''}`,
+    ...(text ? { text } : { subset: 'latin' }),
   };
 
-  if (text) {
-    params.text = text;
-  } else {
-    params.subset = 'latin';
-  }
+  const url = `https://fonts.googleapis.com/css2?${new URLSearchParams(params)}`;
 
-  const url = `https://fonts.googleapis.com/css2?${Object.keys(params)
-    .map(key => `${key}=${params[key]}`)
-    .join('&')}`;
-
-  const css = await fetch(String(url), {
+  const response = await fetch(String(url), {
     headers: {
       // construct user agent to get TTF font
       'User-Agent':
         'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; de-at) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1',
     },
-  }).then(res => res.text());
-
+  });
+  const css = await response.text();
   // Get the font URL from the CSS text
   const fontUrl = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/)?.[1];
 
@@ -80,34 +73,21 @@ export async function loadGoogleFont({
   return fetch(fontUrl).then(res => res.arrayBuffer());
 }
 
-const genModuleInit = () => {
-  let isInit = false;
-  return async () => {
-    if (isInit) {
-      return;
-    }
-    await initWasm(resvgWasm);
-    isInit = true;
-  };
-};
-
-const moduleInit = genModuleInit();
+let notoSans: Promise<ArrayBuffer>;
+let init = false;
 
 export async function toSVG(node: ReactNode): Promise<string> {
-  await moduleInit();
-  const notoSans = await loadGoogleFont({
-    family: 'Noto Sans JP',
-    weight: 400,
-  });
+  if (!init) {
+    notoSans = await loadGoogleFont({
+      family: 'Noto Sans JP',
+      weight: 400,
+    });
+    await initWasm(resvgWasm);
+    init = true;
+  }
   return satori(node, {
     width: 1200,
     height: 600,
-    fonts: [
-      {
-        name: 'NotoSansJP',
-        data: notoSans,
-        weight: 100,
-      },
-    ],
+    fonts: [{ name: 'NotoSansJP', data: notoSans, weight: 400 }],
   });
 }
