@@ -16,7 +16,7 @@ importers:
       '@svgr/webpack': 6.5.1
       '@tailwindcss/line-clamp': 0.4.2
       '@theguild/eslint-config': 0.8.0
-      '@theguild/prettier-config': 1.1.1
+      '@theguild/prettier-config': 1.1.2
       '@theguild/tailwind-config': 0.2.1
       '@types/jest-image-snapshot': 6.1.0
       '@types/react': 18.0.28
@@ -64,7 +64,7 @@ importers:
       '@svgr/webpack': 6.5.1
       '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.6
       '@theguild/eslint-config': 0.8.0_7kw3g6rralp5ps6mg3uyzz6azm
-      '@theguild/prettier-config': 1.1.1_prettier@2.8.4
+      '@theguild/prettier-config': 1.1.2_prettier@2.8.4
       '@theguild/tailwind-config': 0.2.1
       '@types/jest-image-snapshot': 6.1.0
       '@types/react': 18.0.28
@@ -5612,8 +5612,8 @@ packages:
       - typescript
     dev: true
 
-  /@theguild/prettier-config/1.1.1_prettier@2.8.4:
-    resolution: {integrity: sha512-tcMAzhyWLORFKCoG97uYGyRW2HIzroba2ie+V5tsOGRlgAesv+86cPVf6DSfb6J/KHqDLsu8jU0iaBgkjgCERw==}
+  /@theguild/prettier-config/1.1.2_prettier@2.8.4:
+    resolution: {integrity: sha512-G4zChCRSSv6B9usDnJNkJOL6as/TmfP6LMLbmpnbATVARzArY4nGTRFD5NQBH64SbVLrmfvtbOGJJIBUtDOU+w==}
     peerDependencies:
       prettier: ^2
     dependencies:
