@@ -1,5 +1,6 @@
-import { Resvg } from '@resvg/resvg-js';
 import { ReactNode } from 'react';
+import resvgWasm from './vender/resvg.wasm';
+import { initWasm, Resvg } from '@resvg/resvg-wasm';
 import satori from 'satori';
 
 export function shade(color: string, amount: number): string {
@@ -32,7 +33,7 @@ export function shade(color: string, amount: number): string {
   return result + (g | (b << 8) | (r << 16)).toString(16);
 }
 
-export function toImage(svg: string): Buffer {
+export function toImage(svg: string): Uint8Array {
   const resvg = new Resvg(svg);
   const pngData = resvg.render();
   return pngData.asPng();
@@ -79,7 +80,21 @@ export async function loadGoogleFont({
   return fetch(fontUrl).then(res => res.arrayBuffer());
 }
 
+const genModuleInit = () => {
+  let isInit = false;
+  return async () => {
+    if (isInit) {
+      return;
+    }
+    await initWasm(resvgWasm);
+    isInit = true;
+  };
+};
+
+const moduleInit = genModuleInit();
+
 export async function toSVG(node: ReactNode): Promise<string> {
+  await moduleInit();
   const notoSans = await loadGoogleFont({
     family: 'Noto Sans JP',
     weight: 400,
