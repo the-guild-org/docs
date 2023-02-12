@@ -50,7 +50,6 @@ export async function handler(request: Request): Promise<Response> {
         {extra && <span tw="font-bold text-2xl text-white">{extra}</span>}
         {!IS_GUILD && (
           <div tw="flex items-center mt-14">
-            {/* @ts-expect-error -- using `tw` is valid with satori */}
             <GuildLogo fill="#fff" tw="mr-1.5" />
             <TheGuild fill="#fff" />
           </div>
@@ -64,6 +63,8 @@ export async function handler(request: Request): Promise<Response> {
       headers: { 'Content-Type': 'image/png' },
     });
   } catch (e) {
+    // eslint-disable-next-line no-console -- to debug
+    console.error(e);
     return new Response(`Failed to generate the image.\n\nError: ${(e as Error).message}`, {
       status: 500,
     });

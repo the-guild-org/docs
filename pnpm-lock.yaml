@@ -228,18 +228,20 @@ importers:
   packages/og-image:
     specifiers:
       '@cloudflare/workers-types': 4.20230115.0
-      '@resvg/resvg-js': 2.4.0
+      '@resvg/resvg-wasm': 2.4.0
       '@theguild/components': workspace:*
       '@types/react': 18.0.27
       react: 18.2.0
       satori: 0.2.3
       typescript: 4.9.5
       wrangler: 2.9.1
+      yoga-wasm-web: 0.3.1
     dependencies:
-      '@resvg/resvg-js': 2.4.0
+      '@resvg/resvg-wasm': 2.4.0
       '@theguild/components': link:../components
       react: 18.2.0
       satori: 0.2.3
+      yoga-wasm-web: 0.3.1
     devDependencies:
       '@cloudflare/workers-types': 4.20230115.0
       '@types/react': 18.0.27
@@ -3968,130 +3970,9 @@ packages:
     resolution: {integrity: sha512-AW8PKd6iX3vAZ0vA43nOUOnbq/X5ihgU+mSXXqunMkeQADGiqw/PY0JNeYtD5sr0PAy51YPgAPbDoeapv9r8WA==}
     dev: false
 
-  /@resvg/resvg-js-android-arm-eabi/2.4.0:
-    resolution: {integrity: sha512-AtsKxd4bxlaMvWNZev6IMSNVl48yOHYMuccoVNT1Kzg5L/uWsEtWw8YV16GPc5W08NeeAOPr9ErCszm+fXYcsg==}
+  /@resvg/resvg-wasm/2.4.0:
+    resolution: {integrity: sha512-C7c51Nn4yTxXFKvgh2txJFNweaVcfUPQxwEUFw4aWsCmfiBDJsTSwviIF8EcwjQ6k8bPyMWCl1vw4BdxE569Cg==}
     engines: {node: '>= 10'}
-    cpu: [arm]
-    os: [android]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js-android-arm64/2.4.0:
-    resolution: {integrity: sha512-i0uuOSRrloU15mEPX21kOIVMNwoYKhcmiDjF+Cfu1K3LCNgPpIevu5oZ+wDnDy3Camcmu1bIEIkZ472wStK3aA==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [android]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js-darwin-arm64/2.4.0:
-    resolution: {integrity: sha512-9XoPblXClMaT+lxX2YVy+kjOClOKEWQf8ijtJMGwVLcn/kgiQoA1iDXL7KPm8cUh/PElUh/ANLIveESAoNkuvw==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js-darwin-x64/2.4.0:
-    resolution: {integrity: sha512-Qb8JT/kYy4N0jfSR0kpzNeeDjMo2Os991SaPfWOqWE8RBXEYf6RUULwkfFzxRNsb5d/ohNF03VXKkiyLzQ/2ig==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js-linux-arm-gnueabihf/2.4.0:
-    resolution: {integrity: sha512-JcYAi4m0mgqWjkOHZFHQIVWb7/w9eQJ3jtWmUt14NZ/pvS4a98n+MbDKWNHO9qaCSDIEitQS8t09MhgO04yAAw==}
-    engines: {node: '>= 10'}
-    cpu: [arm]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js-linux-arm64-gnu/2.4.0:
-    resolution: {integrity: sha512-jYDMHQJ0au5JT8qt5abPyJySd4wRuoT9Y7A9l0thHPHVaNo8GO8kWLy8iC03N0CP+/Ber/s1kPo/NxkvkXev5w==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js-linux-arm64-musl/2.4.0:
-    resolution: {integrity: sha512-YByXwG1dRWd5xetawMj9a2pbGtR8HuRSon5xKPCN30xHACTorXeCr8G0rtsMq/e8GkoHjgrvtA3QnPpB2d7z7Q==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js-linux-x64-gnu/2.4.0:
-    resolution: {integrity: sha512-OCWMeR9W55rkyxh6Gwnu04rr856uzEngUF4mXE1fqaTXLvGgNG++RpjwE7gQ64nKvSJF1stiL2QPqRB72LHPtw==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js-linux-x64-musl/2.4.0:
-    resolution: {integrity: sha512-JoFsQwg4T/1i+xjih5nFSSGF4RgcH1U5gbRVUL3YZW/HNO+7Mmmlv6F3HXCJI2xm9rVHoiNnzkFVD7AAXbG+ng==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js-win32-arm64-msvc/2.4.0:
-    resolution: {integrity: sha512-SReuI+6PKgtd4NI491Y1epaEqerRz+Pf/O/3ePTSCiTYZaLQoUIJ0b7POIFbMKKW0el7Iv+CeSOMy2/TffbX9Q==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [win32]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js-win32-ia32-msvc/2.4.0:
-    resolution: {integrity: sha512-vO1Hqt6/1MFL9+PBvBP7GoqxtyUWEsUvUG0FunreBIX2NCifh0cwZxKKAN5NFpyAD/0F+os5SxDpBwpf2BBotg==}
-    engines: {node: '>= 10'}
-    cpu: [ia32]
-    os: [win32]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js-win32-x64-msvc/2.4.0:
-    resolution: {integrity: sha512-JEX4gp+qm+v7LKw8vVS4zP04qGK135Ja11QWmbM3OOpFvyTQkOiKuqm3FS+CIw6DE1A6kqX+dEwN8wBXWGDDDQ==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@resvg/resvg-js/2.4.0:
-    resolution: {integrity: sha512-M8Oetgb1w7x062aJDZl7Sf859pcbLm+5jen+aT5ShrSQRcHqftEbFzCgeOggZkcsFr4D8i9pM0ZuhOOhZWrORQ==}
-    engines: {node: '>= 10'}
-    optionalDependencies:
-      '@resvg/resvg-js-android-arm-eabi': 2.4.0
-      '@resvg/resvg-js-android-arm64': 2.4.0
-      '@resvg/resvg-js-darwin-arm64': 2.4.0
-      '@resvg/resvg-js-darwin-x64': 2.4.0
-      '@resvg/resvg-js-linux-arm-gnueabihf': 2.4.0
-      '@resvg/resvg-js-linux-arm64-gnu': 2.4.0
-      '@resvg/resvg-js-linux-arm64-musl': 2.4.0
-      '@resvg/resvg-js-linux-x64-gnu': 2.4.0
-      '@resvg/resvg-js-linux-x64-musl': 2.4.0
-      '@resvg/resvg-js-win32-arm64-msvc': 2.4.0
-      '@resvg/resvg-js-win32-ia32-msvc': 2.4.0
-      '@resvg/resvg-js-win32-x64-msvc': 2.4.0
     dev: false
 
   /@rushstack/eslint-patch/1.2.0:
@@ -15909,7 +15790,7 @@ packages:
       css-to-react-native: 3.0.0
       emoji-regex: 10.2.1
       postcss-value-parser: 4.2.0
-      yoga-wasm-web: 0.3.0
+      yoga-wasm-web: 0.3.1
     dev: false
 
   /scheduler/0.23.0:
@@ -18338,8 +18219,8 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /yoga-wasm-web/0.3.0:
-    resolution: {integrity: sha512-rD3L4jyMlO1m+RWU60lNwZQK5zmzglCV5fI1gTRikmpv3YzmNIZQbjyfE6cMNb9Xaly/C1SwemYGbsiOekMvnQ==}
+  /yoga-wasm-web/0.3.1:
+    resolution: {integrity: sha512-J74OxJtRb5GLW/GH+ibYpb0/0zixk9qp0EOIuKKkavk0w0cMHIQ76YPkca4cRBUW+d+r+GFSM9Q3a+HXQd4b8g==}
     dev: false
 
   /youch/2.2.2:
