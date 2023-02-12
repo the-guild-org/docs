@@ -27,8 +27,9 @@ export async function handler(request: Request): Promise<Response> {
     const product = productName && products[productName];
 
     if (!product) {
-      throw new Error(
+      return new Response(
         `Unknown product name "${productName}".\nAllowed product names: ${ALLOWED_PRODUCT_NAMES}`,
+        { status: 404 },
       );
     }
     // ?title=<title>

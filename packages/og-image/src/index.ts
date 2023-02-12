@@ -29,10 +29,12 @@ export default {
       // Must use Response constructor to inherit all of response's fields
       response = new Response(response.body, response);
 
-      // Any changes made to the response here will be reflected in the cached value
-      response.headers.append('Cache-Control', 'public');
-      response.headers.append('Cache-Control', `s-maxage=${maxAgeForCDN}`);
-      response.headers.append('Cache-Control', `max-age=${maxAgeForBrowser}`);
+      if (![404, 500].includes(response.status)) {
+        // Any changes made to the response here will be reflected in the cached value
+        response.headers.append('Cache-Control', 'public');
+        response.headers.append('Cache-Control', `s-maxage=${maxAgeForCDN}`);
+        response.headers.append('Cache-Control', `max-age=${maxAgeForBrowser}`);
+      }
 
       // Store the fetched response as cacheKey
       // Use `waitUntil`, so you can return the response without blocking on
