@@ -25,10 +25,7 @@ export default {
     if (!response) {
       // If not in cache, get it from origin
       response = await handler(request);
-
       // Must use Response constructor to inherit all of response's fields
-      response = new Response(response.body, response);
-
       if (![404, 500].includes(response.status)) {
         // Any changes made to the response here will be reflected in the cached value
         response.headers.append('Cache-Control', 'public');
