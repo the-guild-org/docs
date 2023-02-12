@@ -26,7 +26,7 @@ export default {
       // If not in cache, get it from origin
       response = await handler(request);
       // Must use Response constructor to inherit all of response's fields
-      if (![404, 500].includes(response.status)) {
+      if (process.env.NODE_ENV !== 'test' && ![404, 500].includes(response.status)) {
         // Any changes made to the response here will be reflected in the cached value
         response.headers.append('Cache-Control', 'public');
         response.headers.append('Cache-Control', `s-maxage=${maxAgeForCDN}`);

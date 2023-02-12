@@ -45,10 +45,10 @@ export async function handler(request: Request): Promise<Response> {
           tw="absolute right-0 opacity-80"
           color={product.primaryColor && shade(product.primaryColor, 100)}
         />
-        <product.logo style={{ transform: 'scale(2.5)' }} {...(IS_GUILD && { fill: 'white' })} />
-        <span tw="font-bold text-7xl text-white my-14 mb-10">{product.name}</span>
-        {title && <span tw="font-bold text-5xl text-white mb-4">{title}</span>}
-        {extra && <span tw="font-bold text-2xl text-white">{extra}</span>}
+        <product.logo style={{ width: 102, height: 108 }} />
+        <span tw="font-bold text-7xl my-5">{product.name}</span>
+        {title && <span tw="font-bold text-5xl">{title}</span>}
+        {extra && <span tw="font-bold text-2xl mt-4">{extra}</span>}
         {!IS_GUILD && (
           <div tw="flex items-center mt-auto" style={{ gap: '0.375rem' }}>
             <GuildLogo />
