@@ -50,7 +50,13 @@ export async function handler(request: Request): Promise<Response> {
         {title && <span tw="font-bold text-5xl">{title}</span>}
         {extra && <span tw="font-bold text-2xl mt-4">{extra}</span>}
         {!IS_GUILD && (
-          <div tw="flex items-center mt-auto" style={{ gap: '0.375rem' }}>
+          <div
+            tw="flex items-center"
+            style={{
+              gap: '0.375rem',
+              marginTop: title || extra ? 'auto' : '2rem',
+            }}
+          >
             <GuildLogo />
             <TheGuild />
           </div>
