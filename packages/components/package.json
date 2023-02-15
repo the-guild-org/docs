@@ -84,7 +84,7 @@
     "@types/dedent": "0.7.0",
     "@types/mdast": "3.0.10",
     "@types/mermaid": "9.1.0",
-    "@types/react-dom": "18.0.10",
+    "@types/react-dom": "18.0.11",
     "@types/semver": "7.3.13",
     "dedent": "0.7.0",
     "esbuild-plugin-svgr": "1.0.1",
