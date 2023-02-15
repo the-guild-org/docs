@@ -228,7 +228,7 @@ importers:
   packages/og-image:
     specifiers:
       '@cloudflare/workers-types': 4.20230214.0
-      '@resvg/resvg-wasm': 2.4.0
+      '@resvg/resvg-wasm': 2.4.1
       '@theguild/components': workspace:*
       '@types/react': 18.0.28
       react: 18.2.0
@@ -237,7 +237,7 @@ importers:
       wrangler: 2.9.1
       yoga-wasm-web: 0.3.1
     dependencies:
-      '@resvg/resvg-wasm': 2.4.0
+      '@resvg/resvg-wasm': 2.4.1
       '@theguild/components': link:../components
       react: 18.2.0
       satori: 0.2.3
@@ -3970,8 +3970,8 @@ packages:
     resolution: {integrity: sha512-AW8PKd6iX3vAZ0vA43nOUOnbq/X5ihgU+mSXXqunMkeQADGiqw/PY0JNeYtD5sr0PAy51YPgAPbDoeapv9r8WA==}
     dev: false
 
-  /@resvg/resvg-wasm/2.4.0:
-    resolution: {integrity: sha512-C7c51Nn4yTxXFKvgh2txJFNweaVcfUPQxwEUFw4aWsCmfiBDJsTSwviIF8EcwjQ6k8bPyMWCl1vw4BdxE569Cg==}
+  /@resvg/resvg-wasm/2.4.1:
+    resolution: {integrity: sha512-yi6R0HyHtsoWTRA06Col4WoDs7SvlXU3DLMNP2bdAgs7HK18dTEVl1weXgxRzi8gwLteGUbIg29zulxIB3GSdg==}
     engines: {node: '>= 10'}
     dev: false
 
