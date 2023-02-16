@@ -1,5 +1,5 @@
+import { readFile } from 'node:fs/promises';
 import { ReactNode } from 'react';
-import resvgWasm from './vender/resvg.wasm';
 import { initWasm, Resvg } from '@resvg/resvg-wasm';
 import satori from 'satori';
 
@@ -82,7 +82,7 @@ export async function toSVG(node: ReactNode): Promise<string> {
       family: 'Noto Sans JP',
       weight: 400,
     });
-    await initWasm(resvgWasm);
+    await initWasm(await readFile(require.resolve('@resvg/resvg-wasm/index_bg.wasm')));
     init = true;
   }
   return satori(node, {

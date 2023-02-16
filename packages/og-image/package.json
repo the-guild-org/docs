@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "deploy": "wrangler publish",
-    "postinstall": "mkdir -p src/vender && curl -L 'https://unpkg.com/@resvg/resvg-wasm/index_bg.wasm' -o src/vender/resvg.wasm",
     "start": "wrangler dev --local"
   },
   "dependencies": {
