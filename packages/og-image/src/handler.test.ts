@@ -1,6 +1,6 @@
 import { handler } from './handler';
 
-vi.mock('@resvg/resvg-wasm/index_bg.wasm', async () => {
+vi.mock('../vender/index_bg.wasm', async () => {
   const fs = await import('node:fs/promises');
   const wasm = await fs.readFile(require.resolve('@resvg/resvg-wasm/index_bg.wasm'));
   return {

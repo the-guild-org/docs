@@ -7,5 +7,5 @@ dist/
 storybook-static/
 .turbo/
 website/out/
-packages/og-image/src/vender/
+packages/og-image/vender/*.wasm
 .eslintcache
