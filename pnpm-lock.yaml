@@ -165,7 +165,7 @@ importers:
       react-paginate: 8.1.4
       react-player: 2.11.2
       remark-mdx-disable-explicit-jsx: 0.1.0
-      search-insights: 2.2.3
+      search-insights: 2.3.0
       semver: ^7.3.8
       tailwindcss: 3.2.6
       unified: 10.1.2
@@ -173,7 +173,7 @@ importers:
       use-debounce: 9.0.3
     dependencies:
       '@algolia/autocomplete-js': 1.8.1_algoliasearch@4.14.3
-      '@algolia/autocomplete-plugin-algolia-insights': 1.8.1_63b7o44z6gna276vbllt5f25q4
+      '@algolia/autocomplete-plugin-algolia-insights': 1.8.1_hcazqzbqnk6zvprzn6pqthzfmy
       '@algolia/autocomplete-plugin-query-suggestions': 1.8.1_algoliasearch@4.14.3
       '@algolia/autocomplete-theme-classic': 1.8.1
       '@giscus/react': 2.2.6_biqbaboplfbrettd7655fr4n2y
@@ -191,7 +191,7 @@ importers:
       react-paginate: 8.1.4_react@18.2.0
       react-player: 2.11.2_react@18.2.0
       remark-mdx-disable-explicit-jsx: 0.1.0
-      search-insights: 2.2.3
+      search-insights: 2.3.0
       semver: 7.3.8
       unist-util-visit: 4.1.2
       use-debounce: 9.0.3_react@18.2.0
@@ -293,14 +293,14 @@ packages:
       - algoliasearch
     dev: false
 
-  /@algolia/autocomplete-plugin-algolia-insights/1.8.1_63b7o44z6gna276vbllt5f25q4:
+  /@algolia/autocomplete-plugin-algolia-insights/1.8.1_hcazqzbqnk6zvprzn6pqthzfmy:
     resolution: {integrity: sha512-RjqqOilQ1YJahOBRp6lg4Ue+QvskBd1BcQ7lvcrnBxQCvh+4TrubJRN98MNfYp0Ey90qBqrEPqB3YA2P6p7j2A==}
     peerDependencies:
       search-insights: '>= 1 < 3'
     dependencies:
       '@algolia/autocomplete-js': 1.8.1_algoliasearch@4.14.3
       '@algolia/autocomplete-shared': 1.8.1
-      search-insights: 2.2.3
+      search-insights: 2.3.0
     transitivePeerDependencies:
       - '@algolia/client-search'
       - algoliasearch
@@ -15901,8 +15901,8 @@ packages:
       compute-scroll-into-view: 2.0.3
     dev: false
 
-  /search-insights/2.2.3:
-    resolution: {integrity: sha512-fXwC0QzkBGZuGTb6FoQG+iLS81wljYuBU4Sco4TGTgp5boVkiKZeFqPV0e5h5++5QncTU2FQrQ+G3ILnqEa3yA==}
+  /search-insights/2.3.0:
+    resolution: {integrity: sha512-0v/TTO4fbd6I91sFBK/e2zNfD0f51A+fMoYNkMplmR77NpThUye/7gIxNoJ3LejKpZH6Z2KNBIpxxFmDKj10Yw==}
     engines: {node: '>=8.16.0'}
     dev: false
 
