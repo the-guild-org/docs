@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "deploy": "wrangler publish",
+    "postinstall": "tsx ../../scripts/copy-wasm.ts",
     "start": "wrangler dev --local"
   },
   "dependencies": {

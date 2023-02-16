@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import resvgWasm from '@resvg/resvg-wasm/index_bg.wasm';
+import resvgWasm from '../vender/index_bg.wasm';
 import { initWasm, Resvg } from '@resvg/resvg-wasm';
 import satori from 'satori';
 
