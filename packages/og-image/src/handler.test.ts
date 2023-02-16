@@ -1,11 +1,8 @@
 import { handler } from './handler';
 
-vi.mock('./vender/resvg.wasm', async () => {
+vi.mock('@resvg/resvg-wasm/index_bg.wasm', async () => {
   const fs = await import('node:fs/promises');
-  const { fileURLToPath } = await import('node:url');
-  const __dirname = fileURLToPath(new URL('.', import.meta.url));
-  const wasmUrl = `${__dirname}vender/resvg.wasm`;
-  const wasm = await fs.readFile(wasmUrl);
+  const wasm = await fs.readFile(require.resolve('@resvg/resvg-wasm/index_bg.wasm'));
   return {
     default: wasm,
   };
