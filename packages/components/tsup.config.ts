@@ -1,11 +1,11 @@
 import fs from 'node:fs/promises';
 import svgrPlugin from 'esbuild-plugin-svgr';
-import { defineConfig } from 'tsup';
+import { defineConfig, Options } from 'tsup';
 import tsconfig from './tsconfig.json';
 
 const options = defineConfig({
   format: 'esm',
-  target: tsconfig.compilerOptions.target,
+  target: tsconfig.compilerOptions.target as Options['target'],
 });
 
 export default defineConfig([
