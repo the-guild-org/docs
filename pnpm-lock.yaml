@@ -45,7 +45,7 @@ importers:
       storybook-addon-swc: 1.1.9
       storybook-dark-mode: 2.1.0
       style-loader: 3.3.1
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
       tsconfig-paths-webpack-plugin: 4.0.0
       tsup: 6.6.3
       tsx: 3.12.3
@@ -63,7 +63,7 @@ importers:
       '@storybook/mdx2-csf': 0.0.4
       '@storybook/react-webpack5': 7.0.0-beta.11_xozxi7kvngxyvqgsqckbk6cpxy
       '@svgr/webpack': 6.5.1
-      '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.6
+      '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.7
       '@theguild/eslint-config': 0.8.0_7kw3g6rralp5ps6mg3uyzz6azm
       '@theguild/prettier-config': 1.1.2_prettier@2.8.4
       '@theguild/tailwind-config': 0.2.1
@@ -77,7 +77,7 @@ importers:
       css-loader: 6.7.3
       eslint: 8.34.0
       eslint-plugin-storybook: 0.6.10_7kw3g6rralp5ps6mg3uyzz6azm
-      eslint-plugin-tailwindcss: 3.9.0_tailwindcss@3.2.6
+      eslint-plugin-tailwindcss: 3.9.0_tailwindcss@3.2.7
       husky: 8.0.3
       jest-image-snapshot: 6.1.0
       lint-staged: 13.1.2
@@ -94,7 +94,7 @@ importers:
       storybook-addon-swc: 1.1.9
       storybook-dark-mode: 2.1.0_biqbaboplfbrettd7655fr4n2y
       style-loader: 3.3.1
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
       tsconfig-paths-webpack-plugin: 4.0.0
       tsup: 6.6.3_uujdqti2krmttzhqvubwnsmcci
       tsx: 3.12.3
@@ -169,7 +169,7 @@ importers:
       remark-mdx-disable-explicit-jsx: 0.1.0
       search-insights: 2.3.0
       semver: ^7.3.8
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
       unified: 10.1.2
       unist-util-visit: 4.1.2
       use-debounce: 9.0.3
@@ -211,7 +211,7 @@ importers:
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
       unified: 10.1.2
 
   packages/editor:
@@ -5777,12 +5777,12 @@ packages:
       defer-to-connect: 2.0.1
     dev: true
 
-  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.6:
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.7:
     resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
     dev: true
 
   /@theguild/eslint-config/0.8.0_7kw3g6rralp5ps6mg3uyzz6azm:
@@ -5834,7 +5834,7 @@ packages:
       cssnano: 5.1.14_postcss@8.4.21
       postcss: 8.4.21
       postcss-import: 15.0.0_postcss@8.4.21
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
     transitivePeerDependencies:
       - ts-node
     dev: true
@@ -9690,7 +9690,7 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-tailwindcss/3.9.0_tailwindcss@3.2.6:
+  /eslint-plugin-tailwindcss/3.9.0_tailwindcss@3.2.7:
     resolution: {integrity: sha512-uA2/Q0g22i1uGFI/FTBkLCvpc5VpzMZjAJn3/hPqhongG0V7aaRHrFx4LyfOje/b9Q/t9iarx40InrXKf2jC6w==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
@@ -9698,7 +9698,7 @@ packages:
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.21
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
     dev: true
 
   /eslint-plugin-unicorn/45.0.2_eslint@8.34.0:
@@ -16745,8 +16745,8 @@ packages:
     resolution: {integrity: sha512-4kl5w+nCB44EVRdO0g/UGoOp3vlwgycUVtkk/7DPyeLZUCuNFFKCFG6/t/DgHLrUPHjrZg6s5tNm+56Q2B0xyg==}
     dev: false
 
-  /tailwindcss/3.2.6:
-    resolution: {integrity: sha512-BfgQWZrtqowOQMC2bwaSNe7xcIjdDEgixWGYOd6AL0CbKHJlvhfdbINeAW76l1sO+1ov/MJ93ODJ9yluRituIw==}
+  /tailwindcss/3.2.7:
+    resolution: {integrity: sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
