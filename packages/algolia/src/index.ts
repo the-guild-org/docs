@@ -211,7 +211,11 @@ export async function nextraToAlgoliaRecords({
 
       for (const file of files) {
         // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-        const filename = file.split('/').pop()?.split('.')[0]!;
+        const filename = file
+          .split('/')
+          .pop()
+          ?.split('.')[0]
+          .replace(/^index$/, '')!;
         const fileContent = readFileSync(file);
         const { data: meta, content } = matter(fileContent.toString());
         const toc = extractToC(content);

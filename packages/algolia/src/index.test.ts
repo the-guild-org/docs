@@ -65,7 +65,7 @@ describe('nextraToAlgoliaRecords()', () => {
           "hierarchy": [
             "Docs",
           ],
-          "objectID": "some-test-docs-index",
+          "objectID": "some-test-docs-",
           "source": "Some test",
           "title": "Installation",
           "toc": [
@@ -101,7 +101,7 @@ describe('nextraToAlgoliaRecords()', () => {
             },
           ],
           "type": "Documentation",
-          "url": "https://www.the-guild.dev/graphql/some-testdocs/index",
+          "url": "https://www.the-guild.dev/graphql/some-testdocs/",
         },
         {
           "content": "   graph TD; subgraph AA [Consumers] A[Mobile app]; B[Web app]; C[Node.js client]; end subgraph BB [Services] E[REST API]; F[GraphQL API]; G[SOAP API]; end Z[GraphQL API]; A --> Z; B --> Z; C --> Z; Z --> E; Z --> F; Z --> G;",
@@ -150,12 +150,12 @@ describe('nextraToAlgoliaRecords()', () => {
           "domain": "https://www.the-guild.dev/graphql/some-test",
           "headings": [],
           "hierarchy": [],
-          "objectID": "some-test-index",
+          "objectID": "some-test-",
           "source": "Some test",
           "title": "Home",
           "toc": [],
           "type": "Documentation",
-          "url": "https://www.the-guild.dev/graphql/some-test/index",
+          "url": "https://www.the-guild.dev/graphql/some-test/",
         },
       ]
     `);
