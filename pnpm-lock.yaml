@@ -114,7 +114,6 @@ importers:
       github-slugger: ^2.0.0
       glob: ^8.1.0
       gray-matter: ^4.0.3
-      lodash.map: ^4.6.0
       lodash.sortby: ^4.7.0
       remove-markdown: ^0.5.0
     dependencies:
@@ -123,7 +122,6 @@ importers:
       github-slugger: 2.0.0
       glob: 8.1.0
       gray-matter: 4.0.3
-      lodash.map: 4.6.0
       lodash.sortby: 4.7.0
       remove-markdown: 0.5.0
     devDependencies:
@@ -12426,10 +12424,6 @@ packages:
 
   /lodash.get/4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
-    dev: false
-
-  /lodash.map/4.6.0:
-    resolution: {integrity: sha512-worNHGKLDetmcEYDvh2stPCrrQRkP20E4l0iIS7F8EvzMqBBi7ltvFN5m1HvTf1P7Jk1txKhvFcmYsCr8O2F1Q==}
     dev: false
 
   /lodash.memoize/4.1.2:
