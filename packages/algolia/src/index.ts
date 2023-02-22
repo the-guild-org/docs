@@ -1,27 +1,24 @@
 /* eslint-disable no-console -- for debug */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import crypto from 'node:crypto';
-import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
-import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { existsSync } from 'node:fs';
+import { writeFile, readFile } from 'node:fs/promises';
 import algoliaSearch from 'algoliasearch';
 import GitHubSlugger from 'github-slugger';
-import glob from 'glob';
+import fg from 'fast-glob';
 import matter from 'gray-matter';
-import map from 'lodash.map';
 import sortBy from 'lodash.sortby';
 import removeMarkdown from 'remove-markdown';
-import { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC, IRoutes } from './types';
+import { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC } from './types';
 
-const extractToC = (content: string): AlgoliaSearchItemTOC[] => {
+function extractToC(content: string): AlgoliaSearchItemTOC[] {
   const slugger = new GitHubSlugger();
-
-  const lines = content.split('\n');
 
   let isCodeBlock = false;
   let currentDepth = 0;
   let currentParent: AlgoliaSearchItemTOC | undefined;
 
-  return lines.reduce<AlgoliaSearchItemTOC[]>((acc, value) => {
+  return content.split('\n').reduce<AlgoliaSearchItemTOC[]>((acc, value) => {
     if (value.match(/^```(.*)/)) {
       if (isCodeBlock) {
         isCodeBlock = false;
@@ -65,7 +62,7 @@ const extractToC = (content: string): AlgoliaSearchItemTOC[] => {
 
     return acc;
   }, []);
-};
+}
 
 const normalizeDomain = (domain: string) => (domain.endsWith('/') ? domain : String(domain));
 
@@ -107,114 +104,6 @@ const contentForRecord = (content: string) => {
   );
 };
 
-async function routesToAlgoliaRecords(
-  routes: IRoutes,
-  source: AlgoliaRecordSource,
-  domain: string,
-  mdx = true,
-  objectsPrefix = new GitHubSlugger().slug(source),
-  parentRoute?: { $name: string; path: string },
-) {
-  const objects: AlgoliaRecord[] = [];
-
-  async function routeToAlgoliaRecords(
-    topPath?: string,
-    parentLevelName?: string,
-    slug?: string,
-    title?: string,
-  ) {
-    if (!slug) {
-      return;
-    }
-
-    const fileContent = await readFile(
-      `./${[parentRoute?.path, topPath, slug].filter(Boolean).join('/')}.md${mdx ? 'x' : ''}`,
-    );
-
-    const { data: meta, content } = matter(fileContent.toString());
-
-    const resolvedTitle = title || meta.title || meta.sidebar_label;
-
-    if (!resolvedTitle) {
-      return;
-    }
-
-    const toc = extractToC(content);
-
-    objects.push({
-      objectID: `${objectsPrefix}-${slug}`,
-      headings: toc.map(t => t.title),
-      toc,
-      content: contentForRecord(content),
-      url: `${domain}${[parentRoute?.path, topPath, slug].filter(Boolean).join('/')}`,
-      domain,
-      hierarchy: [source, parentRoute?.$name, parentLevelName, resolvedTitle].filter(Boolean),
-      source,
-      title: resolvedTitle,
-      type: meta.type || 'Documentation',
-    });
-  }
-
-  await Promise.all(
-    map(routes._, async (topRoute, topPath) => {
-      if (!topRoute) {
-        return;
-      }
-      if (typeof topRoute === 'string' || Array.isArray(topRoute)) {
-        console.warn(`ignored ${topRoute}`);
-        return;
-      }
-      if (topRoute.$name && !topRoute.$routes) {
-        return routeToAlgoliaRecords(undefined, undefined, topPath, topRoute.$name);
-      }
-      return Promise.all<void>(
-        map(topRoute.$routes, route => {
-          if (Array.isArray(route)) {
-            // `route` is `['slug', 'title']`
-            return routeToAlgoliaRecords(topPath, topRoute.$name!, route[0], route[1]);
-          }
-          // `route` is `'slug'`
-          if (route.startsWith('$')) {
-            const refName = route.substring(1);
-            const refs = topRoute._ as {
-              [k: string]: Record<string, IRoutes>;
-            };
-            const subRoutes = refs[refName];
-
-            if (subRoutes) {
-              return new Promise(resolve => {
-                routesToAlgoliaRecords(
-                  {
-                    _: {
-                      [refName]: subRoutes,
-                    },
-                  },
-                  source,
-                  domain,
-                  mdx,
-                  new GitHubSlugger().slug(`${source}-${refName}`),
-                  {
-                    $name: topRoute.$name!,
-                    path: topPath,
-                  },
-                ).then(objs => {
-                  objects.push(...objs);
-                  resolve();
-                });
-              });
-            }
-            console.warn(`could not find routes for reference ${route}`);
-            return;
-          }
-          return routeToAlgoliaRecords(topPath, topRoute.$name!, route);
-        }),
-      );
-    }),
-  );
-
-  return objects;
-}
-
 async function pluginsToAlgoliaRecords(
   // TODO: fix later
   plugins: any[],
@@ -222,13 +111,11 @@ async function pluginsToAlgoliaRecords(
   domain: string,
   objectsPrefix = new GitHubSlugger().slug(source),
 ): Promise<AlgoliaRecord[]> {
-  const objects: AlgoliaRecord[] = [];
   const slugger = new GitHubSlugger();
 
-  plugins.forEach((plugin: any) => {
+  return plugins.map((plugin: any) => {
     const toc = extractToC(plugin.readme || '');
-
-    objects.push({
+    return {
       objectID: slugger.slug(`${objectsPrefix}-${plugin.title}`),
       headings: toc.map(t => t.title),
       toc,
@@ -239,118 +126,123 @@ async function pluginsToAlgoliaRecords(
       source,
       title: plugin.title,
       type: 'Plugin',
-    });
+    };
   });
-
-  return objects;
 }
 
 interface IndexToAlgoliaNextraOptions {
   docsBaseDir: string;
+  source: AlgoliaRecordSource;
+  domain: string;
+  objectsPrefix?: string;
 }
 
-async function nextraToAlgoliaRecords(
-  { docsBaseDir }: IndexToAlgoliaNextraOptions,
-  source: AlgoliaRecordSource,
-  domain: string,
+async function getMetaFromFile(path: string) {
+  try {
+    return JSON.parse(await readFile(path, 'utf8'));
+  } catch {
+    /* ignore if _meta.json doesn't exist */
+  }
+}
+
+export async function nextraToAlgoliaRecords({
+  docsBaseDir,
+  source,
+  domain,
   objectsPrefix = new GitHubSlugger().slug(source),
-): Promise<AlgoliaRecord[]> {
-  return new Promise((resolve, reject) => {
-    const objects: AlgoliaRecord[] = [];
-    const slugger = new GitHubSlugger();
+}: IndexToAlgoliaNextraOptions): Promise<AlgoliaRecord[]> {
+  const objects: AlgoliaRecord[] = [];
+  const slugger = new GitHubSlugger();
 
-    // cache for all needed `_meta.json` files
-    const metadataCache: Record<string, any> = {};
+  // cache for all needed `_meta.json` files
+  const metadataCache: Record<string, any> = {};
 
-    const getMetaFromFile = (path: string) => {
-      if (statSync(path)) {
-        return JSON.parse(readFileSync(path, 'utf8') || '{}');
-      }
-      return {};
-    };
+  const getMetadataForFile = async (
+    filePath: string,
+  ): Promise<[title: string, hierarchy: string[], urlPath: string] | void> => {
+    const hierarchy = [];
 
-    const getMetadataForFile = (
-      filePath: string,
-    ): [title: string, hierarchy: string[], urlPath: string] => {
-      const hierarchy = [];
+    const fileDir = filePath.split('/').slice(0, -1).join('/');
+    const fileName = filePath.split('/').pop()!;
+    const folders = filePath
+      .replace(docsBaseDir, '')
+      .replace(fileName, '')
+      .split('/')
+      .filter(Boolean);
+    // docs/guides/advanced -> ['Guides', 'Advanced']
+    // by reading meta from:
+    //  - docs/guides/_meta.json (for 'advanced' folder)
+    //  - docs/_meta.json (for 'guides' folder)
+    while (folders.length) {
+      const folder = folders.pop()!;
+      const path = folders.join('/');
 
-      const fileDir = filePath.split('/').slice(0, -1).join('/');
-      const fileName = filePath.split('/').pop()!;
-      const folders = filePath
-        .replace(docsBaseDir, '')
-        .replace(fileName, '')
-        .split('/')
-        .filter(Boolean);
-      // docs/guides/advanced -> ['Guides', 'Advanced']
-      // by reading meta from:
-      //  - docs/guides/_meta.json (for 'advanced' folder)
-      //  - docs/_meta.json (for 'guides' folder)
-      while (folders.length) {
-        const folder = folders.pop()!;
-        const path = folders.join('/');
-
-        metadataCache[path] ||= getMetaFromFile(
-          `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/_meta.json`,
-        );
-        const folderName = metadataCache[path][folder];
-        const resolvedFolderName =
-          typeof folderName === 'string' ? folderName : folderName?.title || folder;
-        if (resolvedFolderName) {
-          hierarchy.unshift(resolvedFolderName);
-        }
-      }
-      metadataCache[fileDir] ||= getMetaFromFile(
-        `${fileDir}${fileDir.endsWith('/') ? '' : '/'}_meta.json`,
+      metadataCache[path] ||= await getMetaFromFile(
+        `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/_meta.json`,
       );
-      const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
-      const resolvedTitle = typeof title === 'string' ? title : title?.title;
-
-      const urlPath = filePath
-        .replace(docsBaseDir, '')
-        .replace(fileName, '')
-        .split('/')
-        .filter(Boolean)
-        .join('/');
-      return [resolvedTitle || fileName.replace('.mdx', ''), hierarchy, urlPath];
-    };
-
-    glob(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`, (err, files) => {
-      if (err) {
-        reject(err);
-      } else {
-        files.forEach(file => {
-          // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-          const filename = file.split('/').pop()?.split('.')[0]!;
-          const fileContent = readFileSync(file);
-          const { data: meta, content } = matter(fileContent.toString());
-          const toc = extractToC(content);
-
-          const [title, hierarchy, urlPath] = getMetadataForFile(file);
-
-          objects.push({
-            objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
-            headings: toc.map(t => t.title),
-            toc,
-            content: contentForRecord(content),
-            url: `${domain}${urlPath}/${filename}`,
-            domain,
-            hierarchy,
-            source,
-            title,
-            type: meta.type || 'Documentation',
-          });
-        });
-        resolve(objects);
+      const folderName = metadataCache[path][folder];
+      const resolvedFolderName =
+        typeof folderName === 'string' ? folderName : folderName?.title || folder;
+      if (resolvedFolderName) {
+        hierarchy.unshift(resolvedFolderName);
       }
+    }
+    metadataCache[fileDir] ||= await getMetaFromFile(
+      `${fileDir}${fileDir.endsWith('/') ? '' : '/'}_meta.json`,
+    );
+    if (!metadataCache[fileDir]) {
+      return;
+    }
+
+    const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
+    const resolvedTitle = typeof title === 'string' ? title : title?.title;
+
+    const urlPath = filePath
+      .replace(docsBaseDir, '')
+      .replace(fileName, '')
+      .split('/')
+      .filter(Boolean)
+      .join('/');
+    return [resolvedTitle || fileName.replace('.mdx', ''), hierarchy, urlPath];
+  };
+
+  const files = await fg.sync(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`);
+
+  for (const file of files) {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+    const filename = file
+      .split('/')
+      .pop()
+      ?.split('.')[0]
+      .replace(/^index$/, '')!;
+    const fileContent = await readFile(file);
+    const { data: meta, content } = matter(fileContent.toString());
+    const toc = extractToC(content);
+    const metaData = await getMetadataForFile(file);
+    if (!metaData) {
+      continue;
+    }
+    const [title, hierarchy, urlPath] = metaData;
+
+    objects.push({
+      objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
+      headings: toc.map(t => t.title),
+      toc,
+      content: contentForRecord(content),
+      url: `${domain}${urlPath}/${filename}`,
+      domain,
+      hierarchy,
+      source,
+      title,
+      type: meta.type || 'Documentation',
     });
-  });
+  }
+  return objects;
 }
 
 export type { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC };
 
 interface IndexToAlgoliaOptions {
-  routes?: IRoutes[];
-  docusaurus?: { sidebars: { docs: Record<string, string[]> } };
   // TODO: fix later
   plugins?: any[];
   nextra?: IndexToAlgoliaNextraOptions;
@@ -361,9 +253,7 @@ interface IndexToAlgoliaOptions {
   postProcessor?: (objects: AlgoliaRecord[]) => AlgoliaRecord[];
 }
 
-export const indexToAlgolia = async ({
-  routes: routesArr,
-  docusaurus,
+export async function indexToAlgolia({
   plugins = [],
   source,
   domain,
@@ -372,42 +262,42 @@ export const indexToAlgolia = async ({
   // TODO: add `force` flag
   dryMode = true,
   lockfilePath,
-}: IndexToAlgoliaOptions) => {
-  const normalizedRoutes = docusaurus ? [docusaurusToRoutes(docusaurus)] : routesArr || [];
-
+}: IndexToAlgoliaOptions) {
   const objects = postProcessor([
-    ...(await Promise.all(
-      normalizedRoutes.map(routes =>
-        routesToAlgoliaRecords(routes, source, normalizeDomain(domain), !docusaurus),
-      ),
-    ).then(result => result.flat())),
     ...(await pluginsToAlgoliaRecords(plugins, source, normalizeDomain(domain))),
-    ...(nextra ? await nextraToAlgoliaRecords(nextra, source, normalizeDomain(domain)) : []),
+    ...(nextra
+      ? await nextraToAlgoliaRecords({
+          docsBaseDir: nextra.docsBaseDir,
+          source,
+          domain: normalizeDomain(domain),
+        })
+      : []),
   ]);
 
   const recordsAsString = JSON.stringify(
     sortBy(objects, 'objectID'),
-    (key, value) =>
-      key === 'content' ? crypto.createHash('md5').update(value).digest('hex') : value,
+    (key, value) => (key === 'content' ? createHash('md5').update(value).digest('hex') : value),
     2,
   );
 
   const lockFileExists = existsSync(lockfilePath);
   const lockfileContent = JSON.stringify(
     // save space but still keep track of content changes
-    sortBy(JSON.parse(lockFileExists ? readFileSync(lockfilePath, 'utf-8') : '[]'), 'objectID'),
+    sortBy(lockFileExists ? JSON.parse(await readFile(lockfilePath, 'utf8')) : [], 'objectID'),
     null,
     2,
   );
 
   if (dryMode) {
     console.log(`${lockfilePath} updated!`);
-    writeFileSync(lockfilePath, recordsAsString);
-  } else if (!lockFileExists || recordsAsString !== lockfileContent) {
+    await writeFile(lockfilePath, recordsAsString);
+    return;
+  }
+  if (!lockFileExists || recordsAsString !== lockfileContent) {
     if (
-      ['ALGOLIA_APP_ID', 'ALGOLIA_ADMIN_API_KEY', 'ALGOLIA_INDEX_NAME'].some(
-        envVar => !process.env[envVar],
-      )
+      !process.env.ALGOLIA_APP_ID ||
+      !process.env.ALGOLIA_ADMIN_API_KEY ||
+      !process.env.ALGOLIA_INDEX_NAME
     ) {
       console.error('Some Algolia environment variables are missing!');
       return;
@@ -418,39 +308,14 @@ export const indexToAlgolia = async ({
       console.log('no lockfile detected, push all records');
     }
 
-    const client = algoliaSearch(process.env.ALGOLIA_APP_ID!, process.env.ALGOLIA_ADMIN_API_KEY!);
-    const index = client.initIndex(process.env.ALGOLIA_INDEX_NAME!);
+    const client = algoliaSearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_ADMIN_API_KEY);
+    const index = client.initIndex(process.env.ALGOLIA_INDEX_NAME);
     index
       .deleteBy({ filters: `source: "${source}"` })
       .then(() => index.saveObjects(objects))
-      .then(({ objectIDs }) => {
-        console.log(objectIDs);
-      })
+      .then(console.log)
       .catch(console.error);
 
-    writeFileSync(lockfilePath, recordsAsString);
+    await writeFile(lockfilePath, recordsAsString);
   }
-};
-
-export const docusaurusToRoutes = ({
-  sidebars,
-}: {
-  sidebars: { docs: Record<string, string[]> };
-}): IRoutes => {
-  const routes: IRoutes = { _: {} };
-
-  map(sidebars.docs, (children, title) => {
-    if (children.every(c => c.includes('/'))) {
-      const path = `docs/${children[0].split('/')[0]}`;
-      routes._![path] = {
-        $name: title,
-        $routes: [...children],
-      };
-    } else if (routes._!.docs) {
-      routes._!.docs.$routes?.push(...children);
-    } else {
-      routes._!.docs = { $routes: [...children] };
-    }
-  });
-  return routes;
-};
+}
