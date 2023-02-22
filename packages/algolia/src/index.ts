@@ -1,7 +1,8 @@
 /* eslint-disable no-console -- for debug */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { createHash } from 'node:crypto';
-import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, statSync } from 'node:fs';
+import { writeFile } from 'node:fs/promises';
 import algoliaSearch from 'algoliasearch';
 import GitHubSlugger from 'github-slugger';
 import fg from 'fast-glob';
@@ -281,7 +282,7 @@ export async function indexToAlgolia({
 
   if (dryMode) {
     console.log(`${lockfilePath} updated!`);
-    writeFileSync(lockfilePath, recordsAsString);
+    await writeFile(lockfilePath, recordsAsString);
     return;
   }
   if (!lockFileExists || recordsAsString !== lockfileContent) {
@@ -309,6 +310,6 @@ export async function indexToAlgolia({
       })
       .catch(console.error);
 
-    writeFileSync(lockfilePath, recordsAsString);
+    await writeFile(lockfilePath, recordsAsString);
   }
 }
