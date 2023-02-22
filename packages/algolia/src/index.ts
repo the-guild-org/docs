@@ -1,10 +1,10 @@
 /* eslint-disable no-console -- for debug */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import crypto from 'node:crypto';
+import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import algoliaSearch from 'algoliasearch';
 import GitHubSlugger from 'github-slugger';
-import glob from 'glob';
+import fg from 'fast-glob';
 import matter from 'gray-matter';
 import sortBy from 'lodash.sortby';
 import removeMarkdown from 'remove-markdown';
@@ -13,13 +13,11 @@ import { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC } from './type
 function extractToC(content: string): AlgoliaSearchItemTOC[] {
   const slugger = new GitHubSlugger();
 
-  const lines = content.split('\n');
-
   let isCodeBlock = false;
   let currentDepth = 0;
   let currentParent: AlgoliaSearchItemTOC | undefined;
 
-  return lines.reduce<AlgoliaSearchItemTOC[]>((acc, value) => {
+  return content.split('\n').reduce<AlgoliaSearchItemTOC[]>((acc, value) => {
     if (value.match(/^```(.*)/)) {
       if (isCodeBlock) {
         isCodeBlock = false;
@@ -138,106 +136,99 @@ interface IndexToAlgoliaNextraOptions {
   objectsPrefix?: string;
 }
 
+const getMetaFromFile = (path: string) => {
+  if (statSync(path)) {
+    return JSON.parse(readFileSync(path, 'utf8') || '{}');
+  }
+  return {};
+};
+
 export async function nextraToAlgoliaRecords({
   docsBaseDir,
   source,
   domain,
   objectsPrefix = new GitHubSlugger().slug(source),
 }: IndexToAlgoliaNextraOptions): Promise<AlgoliaRecord[]> {
-  return new Promise((resolve, reject) => {
-    const objects: AlgoliaRecord[] = [];
-    const slugger = new GitHubSlugger();
+  const objects: AlgoliaRecord[] = [];
+  const slugger = new GitHubSlugger();
 
-    // cache for all needed `_meta.json` files
-    const metadataCache: Record<string, any> = {};
+  // cache for all needed `_meta.json` files
+  const metadataCache: Record<string, any> = {};
 
-    const getMetaFromFile = (path: string) => {
-      if (statSync(path)) {
-        return JSON.parse(readFileSync(path, 'utf8') || '{}');
-      }
-      return {};
-    };
+  const getMetadataForFile = (
+    filePath: string,
+  ): [title: string, hierarchy: string[], urlPath: string] => {
+    const hierarchy = [];
 
-    const getMetadataForFile = (
-      filePath: string,
-    ): [title: string, hierarchy: string[], urlPath: string] => {
-      const hierarchy = [];
+    const fileDir = filePath.split('/').slice(0, -1).join('/');
+    const fileName = filePath.split('/').pop()!;
+    const folders = filePath
+      .replace(docsBaseDir, '')
+      .replace(fileName, '')
+      .split('/')
+      .filter(Boolean);
+    // docs/guides/advanced -> ['Guides', 'Advanced']
+    // by reading meta from:
+    //  - docs/guides/_meta.json (for 'advanced' folder)
+    //  - docs/_meta.json (for 'guides' folder)
+    while (folders.length) {
+      const folder = folders.pop()!;
+      const path = folders.join('/');
 
-      const fileDir = filePath.split('/').slice(0, -1).join('/');
-      const fileName = filePath.split('/').pop()!;
-      const folders = filePath
-        .replace(docsBaseDir, '')
-        .replace(fileName, '')
-        .split('/')
-        .filter(Boolean);
-      // docs/guides/advanced -> ['Guides', 'Advanced']
-      // by reading meta from:
-      //  - docs/guides/_meta.json (for 'advanced' folder)
-      //  - docs/_meta.json (for 'guides' folder)
-      while (folders.length) {
-        const folder = folders.pop()!;
-        const path = folders.join('/');
-
-        metadataCache[path] ||= getMetaFromFile(
-          `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/_meta.json`,
-        );
-        const folderName = metadataCache[path][folder];
-        const resolvedFolderName =
-          typeof folderName === 'string' ? folderName : folderName?.title || folder;
-        if (resolvedFolderName) {
-          hierarchy.unshift(resolvedFolderName);
-        }
-      }
-      metadataCache[fileDir] ||= getMetaFromFile(
-        `${fileDir}${fileDir.endsWith('/') ? '' : '/'}_meta.json`,
+      metadataCache[path] ||= getMetaFromFile(
+        `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/_meta.json`,
       );
-      const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
-      const resolvedTitle = typeof title === 'string' ? title : title?.title;
-
-      const urlPath = filePath
-        .replace(docsBaseDir, '')
-        .replace(fileName, '')
-        .split('/')
-        .filter(Boolean)
-        .join('/');
-      return [resolvedTitle || fileName.replace('.mdx', ''), hierarchy, urlPath];
-    };
-
-    glob(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`, (err, files) => {
-      if (err) {
-        reject(err);
-        return;
+      const folderName = metadataCache[path][folder];
+      const resolvedFolderName =
+        typeof folderName === 'string' ? folderName : folderName?.title || folder;
+      if (resolvedFolderName) {
+        hierarchy.unshift(resolvedFolderName);
       }
+    }
+    metadataCache[fileDir] ||= getMetaFromFile(
+      `${fileDir}${fileDir.endsWith('/') ? '' : '/'}_meta.json`,
+    );
+    const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
+    const resolvedTitle = typeof title === 'string' ? title : title?.title;
 
-      for (const file of files) {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-        const filename = file
-          .split('/')
-          .pop()
-          ?.split('.')[0]
-          .replace(/^index$/, '')!;
-        const fileContent = readFileSync(file);
-        const { data: meta, content } = matter(fileContent.toString());
-        const toc = extractToC(content);
+    const urlPath = filePath
+      .replace(docsBaseDir, '')
+      .replace(fileName, '')
+      .split('/')
+      .filter(Boolean)
+      .join('/');
+    return [resolvedTitle || fileName.replace('.mdx', ''), hierarchy, urlPath];
+  };
 
-        const [title, hierarchy, urlPath] = getMetadataForFile(file);
+  const files = await fg.sync(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`);
 
-        objects.push({
-          objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
-          headings: toc.map(t => t.title),
-          toc,
-          content: contentForRecord(content),
-          url: `${domain}${urlPath}/${filename}`,
-          domain,
-          hierarchy,
-          source,
-          title,
-          type: meta.type || 'Documentation',
-        });
-      }
-      resolve(objects);
+  for (const file of files) {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+    const filename = file
+      .split('/')
+      .pop()
+      ?.split('.')[0]
+      .replace(/^index$/, '')!;
+    const fileContent = readFileSync(file);
+    const { data: meta, content } = matter(fileContent.toString());
+    const toc = extractToC(content);
+
+    const [title, hierarchy, urlPath] = getMetadataForFile(file);
+
+    objects.push({
+      objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
+      headings: toc.map(t => t.title),
+      toc,
+      content: contentForRecord(content),
+      url: `${domain}${urlPath}/${filename}`,
+      domain,
+      hierarchy,
+      source,
+      title,
+      type: meta.type || 'Documentation',
     });
-  });
+  }
+  return objects;
 }
 
 export type { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC };
@@ -276,8 +267,7 @@ export async function indexToAlgolia({
 
   const recordsAsString = JSON.stringify(
     sortBy(objects, 'objectID'),
-    (key, value) =>
-      key === 'content' ? crypto.createHash('md5').update(value).digest('hex') : value,
+    (key, value) => (key === 'content' ? createHash('md5').update(value).digest('hex') : value),
     2,
   );
 

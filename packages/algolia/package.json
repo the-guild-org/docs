@@ -22,16 +22,16 @@
     "dist"
   ],
   "scripts": {
-    "test": "vitest .",
     "build": "tsup",
     "prebuild": "pnpm types:check && rm -rf dist",
+    "test": "vitest .",
     "types:check": "tsc --noEmit"
   },
   "dependencies": {
     "algoliasearch": "^4.14.3",
     "commander": "^10.0.0",
+    "fast-glob": "^3.2.12",
     "github-slugger": "^2.0.0",
-    "glob": "^8.1.0",
     "gray-matter": "^4.0.3",
     "lodash.sortby": "^4.7.0",
     "remove-markdown": "^0.5.0"

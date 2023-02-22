@@ -41,6 +41,18 @@ describe('nextraToAlgoliaRecords()', () => {
           "content": "",
           "domain": "https://www.the-guild.dev/graphql/some-test",
           "headings": [],
+          "hierarchy": [],
+          "objectID": "some-test-",
+          "source": "Some test",
+          "title": "Home",
+          "toc": [],
+          "type": "Documentation",
+          "url": "https://www.the-guild.dev/graphql/some-test/",
+        },
+        {
+          "content": "",
+          "domain": "https://www.the-guild.dev/graphql/some-test",
+          "headings": [],
           "hierarchy": [
             "Docs",
           ],
@@ -144,18 +156,6 @@ describe('nextraToAlgoliaRecords()', () => {
           "toc": [],
           "type": "Documentation",
           "url": "https://www.the-guild.dev/graphql/some-testdocs/video",
-        },
-        {
-          "content": "",
-          "domain": "https://www.the-guild.dev/graphql/some-test",
-          "headings": [],
-          "hierarchy": [],
-          "objectID": "some-test-",
-          "source": "Some test",
-          "title": "Home",
-          "toc": [],
-          "type": "Documentation",
-          "url": "https://www.the-guild.dev/graphql/some-test/",
         },
       ]
     `);
