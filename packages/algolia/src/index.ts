@@ -1,8 +1,8 @@
 /* eslint-disable no-console -- for debug */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { createHash } from 'node:crypto';
-import { existsSync, readFileSync } from 'node:fs';
-import { writeFile, stat } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { writeFile, readFile } from 'node:fs/promises';
 import algoliaSearch from 'algoliasearch';
 import GitHubSlugger from 'github-slugger';
 import fg from 'fast-glob';
@@ -139,7 +139,7 @@ interface IndexToAlgoliaNextraOptions {
 
 async function getMetaFromFile(path: string) {
   try {
-    return JSON.parse(readFileSync(path, 'utf8') || '{}');
+    return JSON.parse(await readFile(path, 'utf8') || '{}');
   } catch {
     /* ignore if _meta.json doesn't exist */
   }
@@ -212,7 +212,7 @@ export async function nextraToAlgoliaRecords({
       .pop()
       ?.split('.')[0]
       .replace(/^index$/, '')!;
-    const fileContent = readFileSync(file);
+    const fileContent = await readFile(file);
     const { data: meta, content } = matter(fileContent.toString());
     const toc = extractToC(content);
 
@@ -277,7 +277,7 @@ export async function indexToAlgolia({
   const lockFileExists = existsSync(lockfilePath);
   const lockfileContent = JSON.stringify(
     // save space but still keep track of content changes
-    sortBy(JSON.parse(lockFileExists ? readFileSync(lockfilePath, 'utf-8') : '[]'), 'objectID'),
+    sortBy(JSON.parse(lockFileExists ? await readFile(lockfilePath, 'utf8') : '[]'), 'objectID'),
     null,
     2,
   );
