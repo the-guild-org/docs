@@ -218,8 +218,11 @@ export async function nextraToAlgoliaRecords({
     const fileContent = await readFile(file);
     const { data: meta, content } = matter(fileContent.toString());
     const toc = extractToC(content);
-
-    const [title, hierarchy, urlPath] = await getMetadataForFile(file);
+    const metaData = await getMetadataForFile(file);
+    if (!metaData) {
+      continue;
+    }
+    const [title, hierarchy, urlPath] = metaData;
 
     objects.push({
       objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
