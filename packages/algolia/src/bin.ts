@@ -24,6 +24,6 @@ indexToAlgolia({
   source: options.source as unknown as AlgoliaRecordSource,
   nextra: {
     docsBaseDir: resolve(CWD, options.docsBaseDir),
-  },
+  } as any,
   dryMode: !options.publish,
 });
