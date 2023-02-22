@@ -2,4 +2,4 @@
 '@theguild/algolia': patch
 ---
 
-add changeset
+ignore if `_meta.json` doesn't exist
