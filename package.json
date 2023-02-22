@@ -45,7 +45,7 @@
     "concurrently": "7.6.0",
     "css-loader": "6.7.3",
     "eslint": "8.34.0",
-    "eslint-plugin-storybook": "0.6.10",
+    "eslint-plugin-storybook": "0.6.11",
     "eslint-plugin-tailwindcss": "3.9.0",
     "husky": "8.0.3",
     "jest-image-snapshot": "6.1.0",
