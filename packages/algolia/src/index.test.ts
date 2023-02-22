@@ -157,20 +157,6 @@ describe('nextraToAlgoliaRecords()', () => {
           "type": "Documentation",
           "url": "https://www.the-guild.dev/graphql/some-testdocs/video",
         },
-        {
-          "content": "",
-          "domain": "https://www.the-guild.dev/graphql/some-test",
-          "headings": [],
-          "hierarchy": [
-            "remote",
-          ],
-          "objectID": "some-test-remote-",
-          "source": "Some test",
-          "title": "[[...slug]]",
-          "toc": [],
-          "type": "Documentation",
-          "url": "https://www.the-guild.dev/graphql/some-testremote/[[",
-        },
       ]
     `);
   });

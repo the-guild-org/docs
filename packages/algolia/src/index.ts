@@ -139,11 +139,10 @@ interface IndexToAlgoliaNextraOptions {
 
 async function getMetaFromFile(path: string) {
   try {
-    return JSON.parse(await readFile(path, 'utf8') || '{}');
+    return JSON.parse(await readFile(path, 'utf8'));
   } catch {
     /* ignore if _meta.json doesn't exist */
   }
-  return {};
 }
 
 export async function nextraToAlgoliaRecords({
@@ -160,7 +159,7 @@ export async function nextraToAlgoliaRecords({
 
   const getMetadataForFile = async (
     filePath: string,
-  ): Promise<[title: string, hierarchy: string[], urlPath: string]> => {
+  ): Promise<[title: string, hierarchy: string[], urlPath: string] | void> => {
     const hierarchy = [];
 
     const fileDir = filePath.split('/').slice(0, -1).join('/');
@@ -191,6 +190,10 @@ export async function nextraToAlgoliaRecords({
     metadataCache[fileDir] ||= await getMetaFromFile(
       `${fileDir}${fileDir.endsWith('/') ? '' : '/'}_meta.json`,
     );
+    if (!metadataCache[fileDir]) {
+      return;
+    }
+
     const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
     const resolvedTitle = typeof title === 'string' ? title : title?.title;
 
@@ -277,7 +280,7 @@ export async function indexToAlgolia({
   const lockFileExists = existsSync(lockfilePath);
   const lockfileContent = JSON.stringify(
     // save space but still keep track of content changes
-    sortBy(JSON.parse(lockFileExists ? await readFile(lockfilePath, 'utf8') : '[]'), 'objectID'),
+    sortBy(lockFileExists ? JSON.parse(await readFile(lockfilePath, 'utf8')) : [], 'objectID'),
     null,
     2,
   );
@@ -307,9 +310,7 @@ export async function indexToAlgolia({
     index
       .deleteBy({ filters: `source: "${source}"` })
       .then(() => index.saveObjects(objects))
-      .then(({ objectIDs }) => {
-        console.log(objectIDs);
-      })
+      .then(console.log)
       .catch(console.error);
 
     await writeFile(lockfilePath, recordsAsString);
