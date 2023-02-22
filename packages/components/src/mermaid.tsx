@@ -4,7 +4,7 @@ import { useTheme } from 'nextra-theme-docs';
 
 let initialized = false;
 
-export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
+export function Mermaid({ chart }: { chart: string }): ReactElement {
   const { resolvedTheme } = useTheme();
   const id = useId();
   const [svg, setSvg] = useState('');
@@ -52,17 +52,19 @@ export const Mermaid = ({ chart }: { chart: string }): ReactElement => {
       },
     });
 
-    try {
-      const svg = mermaid.render(
+    mermaid
+      .render(
         id.replace(/[^a-zA-Z]+/g, ''), // strip special chars from useId
         `%%{init:${theme}}%%\n${chart}`, // apply theme and supply chart
-      );
-      setSvg(svg);
-    } catch (error) {
-      // eslint-disable-next-line no-console -- show error
-      console.error('Error while rendering mermaid', error);
-    }
+      )
+      .then(({ svg }) => {
+        setSvg(svg);
+      })
+      .catch(error => {
+        // eslint-disable-next-line no-console -- show error
+        console.error('Error while rendering mermaid', error);
+      });
   }, [resolvedTheme, id, chart]);
 
   return <div className="mt-6 flex justify-center" dangerouslySetInnerHTML={{ __html: svg }} />;
-};
+}
