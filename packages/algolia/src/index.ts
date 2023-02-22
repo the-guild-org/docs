@@ -1,8 +1,8 @@
 /* eslint-disable no-console -- for debug */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { createHash } from 'node:crypto';
-import { existsSync, readFileSync, statSync } from 'node:fs';
-import { writeFile } from 'node:fs/promises';
+import { existsSync, readFileSync } from 'node:fs';
+import { writeFile, stat } from 'node:fs/promises';
 import algoliaSearch from 'algoliasearch';
 import GitHubSlugger from 'github-slugger';
 import fg from 'fast-glob';
@@ -137,12 +137,12 @@ interface IndexToAlgoliaNextraOptions {
   objectsPrefix?: string;
 }
 
-const getMetaFromFile = (path: string) => {
-  if (statSync(path)) {
+async function getMetaFromFile(path: string) {
+  if (await stat(path)) {
     return JSON.parse(readFileSync(path, 'utf8') || '{}');
   }
   return {};
-};
+}
 
 export async function nextraToAlgoliaRecords({
   docsBaseDir,
@@ -156,9 +156,9 @@ export async function nextraToAlgoliaRecords({
   // cache for all needed `_meta.json` files
   const metadataCache: Record<string, any> = {};
 
-  const getMetadataForFile = (
+  const getMetadataForFile = async (
     filePath: string,
-  ): [title: string, hierarchy: string[], urlPath: string] => {
+  ): Promise<[title: string, hierarchy: string[], urlPath: string]> => {
     const hierarchy = [];
 
     const fileDir = filePath.split('/').slice(0, -1).join('/');
@@ -176,7 +176,7 @@ export async function nextraToAlgoliaRecords({
       const folder = folders.pop()!;
       const path = folders.join('/');
 
-      metadataCache[path] ||= getMetaFromFile(
+      metadataCache[path] ||= await getMetaFromFile(
         `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/_meta.json`,
       );
       const folderName = metadataCache[path][folder];
@@ -186,7 +186,7 @@ export async function nextraToAlgoliaRecords({
         hierarchy.unshift(resolvedFolderName);
       }
     }
-    metadataCache[fileDir] ||= getMetaFromFile(
+    metadataCache[fileDir] ||= await getMetaFromFile(
       `${fileDir}${fileDir.endsWith('/') ? '' : '/'}_meta.json`,
     );
     const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
@@ -214,7 +214,7 @@ export async function nextraToAlgoliaRecords({
     const { data: meta, content } = matter(fileContent.toString());
     const toc = extractToC(content);
 
-    const [title, hierarchy, urlPath] = getMetadataForFile(file);
+    const [title, hierarchy, urlPath] = await getMetadataForFile(file);
 
     objects.push({
       objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
