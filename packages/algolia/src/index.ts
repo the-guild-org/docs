@@ -138,8 +138,10 @@ interface IndexToAlgoliaNextraOptions {
 }
 
 async function getMetaFromFile(path: string) {
-  if (await stat(path)) {
+  try {
     return JSON.parse(readFileSync(path, 'utf8') || '{}');
+  } catch {
+    /* ignore if _meta.json doesn't exist */
   }
   return {};
 }
