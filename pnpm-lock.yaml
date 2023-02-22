@@ -43,7 +43,7 @@ importers:
       storybook: 7.0.0-beta.11
       storybook-addon-next: 1.7.2
       storybook-addon-swc: 1.1.9
-      storybook-dark-mode: 2.1.0
+      storybook-dark-mode: 2.1.1
       style-loader: 3.3.1
       tailwindcss: 3.2.7
       tsconfig-paths-webpack-plugin: 4.0.0
@@ -92,7 +92,7 @@ importers:
       storybook: 7.0.0-beta.11
       storybook-addon-next: 1.7.2_gjpyg5imi5mt2gbvkmn3a4dr7m
       storybook-addon-swc: 1.1.9
-      storybook-dark-mode: 2.1.0_biqbaboplfbrettd7655fr4n2y
+      storybook-dark-mode: 2.1.1_biqbaboplfbrettd7655fr4n2y
       style-loader: 3.3.1
       tailwindcss: 3.2.7
       tsconfig-paths-webpack-plugin: 4.0.0
@@ -16353,8 +16353,8 @@ packages:
       swc-loader: 0.1.16_@swc+core@1.3.11
     dev: true
 
-  /storybook-dark-mode/2.1.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-h9in9pa1SzUD4bZ9eYSQfvPMW2Gp17XdkfF0GbTrOBx8DgmTUoqyA2xa3D/asJaGeaksPWcmFURoqUkJuta5JA==}
+  /storybook-dark-mode/2.1.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Ops6u/htODxIUXnAYASttqcbd2PRN723o0uIKpoYQn1+so2g6gYalpAhuysxnRhCG8yHsm6NJuX5drzzI+uFvQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
