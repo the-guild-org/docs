@@ -13,7 +13,6 @@ export type AlgoliaRecordSource =
   | 'Scalars'
   | 'Helix'
   | 'Shield'
-  | 'Swift'
   | 'SOFA'
   | 'Stitching'
   | 'Angular'

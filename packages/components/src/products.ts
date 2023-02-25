@@ -17,7 +17,6 @@ import {
   ShieldLogo,
   SofaLogo,
   StitchingLogo,
-  SwiftLogo,
   ToolsLogo,
   WhatsAppLogo,
   YogaLogo,
@@ -38,7 +37,6 @@ export type ProductType =
   | 'SCALARS'
   | 'HELIX'
   | 'SHIELD'
-  | 'SWIFT'
   | 'SOFA'
   | 'STITCHING'
   | 'ANGULAR'
@@ -160,13 +158,6 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/shield',
     logo: ShieldLogo,
     primaryColor: '#699efc',
-  },
-  SWIFT: {
-    name: 'Swift',
-    title: 'A GraphQL client that lets you forget about GraphQL',
-    href: 'https://swift-graphql.com',
-    logo: SwiftLogo,
-    primaryColor: '#f25c40',
   },
   SOFA: {
     name: 'SOFA',
