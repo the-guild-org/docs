@@ -12,7 +12,7 @@
     "@theguild/components": "workspace:*",
     "react": "18.2.0",
     "satori": "0.3.2",
-    "yoga-wasm-web": "0.3.1"
+    "yoga-wasm-web": "0.3.2"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20230221.0",

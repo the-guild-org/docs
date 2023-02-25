@@ -233,13 +233,13 @@ importers:
       satori: 0.3.2
       typescript: 4.9.5
       wrangler: 2.11.0
-      yoga-wasm-web: 0.3.1
+      yoga-wasm-web: 0.3.2
     dependencies:
       '@resvg/resvg-wasm': 2.4.1
       '@theguild/components': link:../components
       react: 18.2.0
       satori: 0.3.2
-      yoga-wasm-web: 0.3.1
+      yoga-wasm-web: 0.3.2
     devDependencies:
       '@cloudflare/workers-types': 4.20230221.0
       '@types/react': 18.0.28
@@ -15754,7 +15754,7 @@ packages:
       emoji-regex: 10.2.1
       linebreak: 1.1.0
       postcss-value-parser: 4.2.0
-      yoga-wasm-web: 0.3.1
+      yoga-wasm-web: 0.3.2
     dev: false
 
   /scheduler/0.23.0:
@@ -18213,8 +18213,8 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /yoga-wasm-web/0.3.1:
-    resolution: {integrity: sha512-J74OxJtRb5GLW/GH+ibYpb0/0zixk9qp0EOIuKKkavk0w0cMHIQ76YPkca4cRBUW+d+r+GFSM9Q3a+HXQd4b8g==}
+  /yoga-wasm-web/0.3.2:
+    resolution: {integrity: sha512-X//8P6RHzkO4E1ba/wXwKOybeArNDQJI2vwzFLJxz5bfT9K8fB798ZVYvq+Z+hjRA0Wy2iUlOUch4n2+ddqbDQ==}
     dev: false
 
   /youch/2.2.2:
