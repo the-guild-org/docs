@@ -1,5 +1,28 @@
 # @theguild/editor
 
+## 1.2.5
+
+### Patch Changes
+
+- [#793](https://github.com/the-guild-org/docs/pull/793)
+  [`2782c30`](https://github.com/the-guild-org/docs/commit/2782c30087093bc131b541fc98c0a8acf387e9fb)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`monaco-editor@^0.24.0 || ^0.25.0 || ^0.26.0 || ^0.27.0 || ^0.28.0 || ^0.29.0 || ^0.30.0 || ^0.32.0 || ^0.34.0 || ^0.35.0` ↗︎](https://www.npmjs.com/package/monaco-editor/v/0.24.0)
+    (from
+    `^0.24.0 || ^0.25.0 || ^0.26.0 || ^0.27.0 || ^0.28.0 || ^0.29.0 || ^0.30.0 || ^0.32.0 || ^0.34.0`,
+    in `peerDependencies`)
+
+- [#843](https://github.com/the-guild-org/docs/pull/843)
+  [`6ad94e0`](https://github.com/the-guild-org/docs/commit/6ad94e0909a7d9bbf3f760eae0b8d5175bdaa6aa)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`monaco-editor@^0.24.0 || ^0.25.0 || ^0.26.0 || ^0.27.0 || ^0.28.0 || ^0.29.0 || ^0.30.0 || ^0.32.0 || ^0.34.0 || ^0.35.0 || ^0.36.0` ↗︎](https://www.npmjs.com/package/monaco-editor/v/0.24.0)
+    (from
+    `^0.24.0 || ^0.25.0 || ^0.26.0 || ^0.27.0 || ^0.28.0 || ^0.29.0 || ^0.30.0 || ^0.32.0 || ^0.34.0 || ^0.35.0`,
+    in `peerDependencies`)
+
 ## 1.2.4
 
 ### Patch Changes
