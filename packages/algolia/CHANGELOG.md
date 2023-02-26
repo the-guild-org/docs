@@ -1,5 +1,13 @@
 # @theguild/algolia
 
+## 1.1.4
+
+### Patch Changes
+
+- [#853](https://github.com/the-guild-org/docs/pull/853)
+  [`a71bab2`](https://github.com/the-guild-org/docs/commit/a71bab2ce5346404ed946f70787d3da41d792422)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - fix double slash `//` for algolia url record
+
 ## 1.1.3
 
 ### Patch Changes
