@@ -58,7 +58,7 @@
     "@algolia/autocomplete-plugin-algolia-insights": "1.8.2",
     "@algolia/autocomplete-plugin-query-suggestions": "1.8.2",
     "@algolia/autocomplete-theme-classic": "1.8.2",
-    "@giscus/react": "2.2.6",
+    "@giscus/react": "2.2.8",
     "@next/bundle-analyzer": "13.2.1",
     "@radix-ui/react-navigation-menu": "1.1.1",
     "algoliasearch": "4.14.3",
