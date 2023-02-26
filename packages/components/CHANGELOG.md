@@ -1,5 +1,154 @@
 # @theguild/components
 
+## 4.5.5
+
+### Patch Changes
+
+- [#791](https://github.com/the-guild-org/docs/pull/791)
+  [`a3e0c75`](https://github.com/the-guild-org/docs/commit/a3e0c75409f6d46c187d0f2870cce998e2056461)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`search-insights@2.3.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.3.0) (from
+    `2.2.3`, in `dependencies`)
+
+- [#797](https://github.com/the-guild-org/docs/pull/797)
+  [`bb18933`](https://github.com/the-guild-org/docs/commit/bb18933704208ebdfb78e2cc50fe3753329de889)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-player@2.11.1` ↗︎](https://www.npmjs.com/package/react-player/v/2.11.1) (from `2.11.0`,
+    in `dependencies`)
+
+- [#799](https://github.com/the-guild-org/docs/pull/799)
+  [`0937a46`](https://github.com/the-guild-org/docs/commit/0937a46b8d70faf03eec980ade0bea5e72707d45)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.8.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.8.0)
+    (from `1.7.4`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.8.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.8.0)
+    (from `1.7.4`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.8.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.8.0)
+    (from `1.7.4`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.8.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.8.0)
+    (from `1.7.4`, in `dependencies`)
+
+- [#800](https://github.com/the-guild-org/docs/pull/800)
+  [`96e6358`](https://github.com/the-guild-org/docs/commit/96e6358ac4acdceb6af6528ab82e3b6a71e637a3)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-player@2.11.2` ↗︎](https://www.npmjs.com/package/react-player/v/2.11.2) (from `2.11.1`,
+    in `dependencies`)
+
+- [#812](https://github.com/the-guild-org/docs/pull/812)
+  [`0101986`](https://github.com/the-guild-org/docs/commit/010198623cda04bf140364b1b9fea397e99b27ac)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.8.1` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.8.1)
+    (from `1.8.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.8.1` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.8.1)
+    (from `1.8.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.8.1` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.8.1)
+    (from `1.8.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.8.1` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.8.1)
+    (from `1.8.0`, in `dependencies`)
+
+- [#816](https://github.com/the-guild-org/docs/pull/816)
+  [`fded79c`](https://github.com/the-guild-org/docs/commit/fded79c22bbbb939e8e01542d6dac506d90b883f)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`focus-trap-react@10.1.0` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.1.0) (from
+    `10.0.2`, in `dependencies`)
+
+- [#817](https://github.com/the-guild-org/docs/pull/817)
+  [`3e9e440`](https://github.com/the-guild-org/docs/commit/3e9e440168fabcec4468df2ff25e211d1ee96f17)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`mermaid@9.4.0` ↗︎](https://www.npmjs.com/package/mermaid/v/9.4.0) (from
+    `9.3.0`, in `dependencies`)
+
+- [#818](https://github.com/the-guild-org/docs/pull/818)
+  [`29f4b33`](https://github.com/the-guild-org/docs/commit/29f4b33400b0b850cc43856129602198e307daf9)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`search-insights@2.3.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.3.0) (from
+    `2.2.3`, in `dependencies`)
+
+- [#829](https://github.com/the-guild-org/docs/pull/829)
+  [`d70b0db`](https://github.com/the-guild-org/docs/commit/d70b0db08ae3f23ebf3b279f09d754ab53fe3cc4)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.8.2` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.8.2)
+    (from `1.8.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.8.2` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.8.2)
+    (from `1.8.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.8.2` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.8.2)
+    (from `1.8.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.8.2` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.8.2)
+    (from `1.8.1`, in `dependencies`)
+
+- [#830](https://github.com/the-guild-org/docs/pull/830)
+  [`e56d28d`](https://github.com/the-guild-org/docs/commit/e56d28db7187a9063cc13dd74f199ddc4b349970)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.2.15` ↗︎](https://www.npmjs.com/package/nextra/v/2.2.15) (from
+    `2.2.14`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.2.15` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.2.15) (from
+    `2.2.14`, in `dependencies`)
+
+- [#835](https://github.com/the-guild-org/docs/pull/835)
+  [`d5cd242`](https://github.com/the-guild-org/docs/commit/d5cd242c9f1fb128790efebecea567f413a541ca)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`mermaid@10.0.0` ↗︎](https://www.npmjs.com/package/mermaid/v/10.0.0) (from
+    `9.4.0`, in `dependencies`)
+
+- [#841](https://github.com/the-guild-org/docs/pull/841)
+  [`4617fac`](https://github.com/the-guild-org/docs/commit/4617facc48c7c3540452817bfd4fce309feca77f)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.2.0` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.2.0)
+    (from `13.1.6`, in `dependencies`)
+
+- [#842](https://github.com/the-guild-org/docs/pull/842)
+  [`b470294`](https://github.com/the-guild-org/docs/commit/b470294fcbcefb5d6807d6e5c0471ea6c014bf31)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.2.16` ↗︎](https://www.npmjs.com/package/nextra/v/2.2.16) (from
+    `2.2.15`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.2.16` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.2.16) (from
+    `2.2.15`, in `dependencies`)
+
+- [#845](https://github.com/the-guild-org/docs/pull/845)
+  [`0e09caa`](https://github.com/the-guild-org/docs/commit/0e09caa608de0a32bf339cc481243989db404057)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.2.1` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.2.1)
+    (from `13.2.0`, in `dependencies`)
+
+- [#850](https://github.com/the-guild-org/docs/pull/850)
+  [`71caa11`](https://github.com/the-guild-org/docs/commit/71caa11b2f78c44f725252ed9f9dc23fef0968f3)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - remove swift from products
+
 ## 4.5.4
 
 ### Patch Changes

@@ -1,5 +1,28 @@
 # @theguild/algolia
 
+## 1.1.3
+
+### Patch Changes
+
+- [#838](https://github.com/the-guild-org/docs/pull/838)
+  [`1acffe4`](https://github.com/the-guild-org/docs/commit/1acffe49a82c51ed8da82170e50b35280d73c669)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Added dependency [`fast-glob@^3.2.12` ↗︎](https://www.npmjs.com/package/fast-glob/v/3.2.12) (to
+    `dependencies`)
+  - Removed dependency [`glob@^8.1.0` ↗︎](https://www.npmjs.com/package/glob/v/8.1.0) (from
+    `dependencies`)
+  - Removed dependency [`lodash.map@^4.6.0` ↗︎](https://www.npmjs.com/package/lodash.map/v/4.6.0)
+    (from `dependencies`)
+
+- [#838](https://github.com/the-guild-org/docs/pull/838)
+  [`1acffe4`](https://github.com/the-guild-org/docs/commit/1acffe49a82c51ed8da82170e50b35280d73c669)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - ignore if `_meta.json` doesn't exist
+
+- [#850](https://github.com/the-guild-org/docs/pull/850)
+  [`71caa11`](https://github.com/the-guild-org/docs/commit/71caa11b2f78c44f725252ed9f9dc23fef0968f3)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - remove swift from products
+
 ## 1.1.2
 
 ### Patch Changes
