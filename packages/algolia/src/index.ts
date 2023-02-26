@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
+import path from 'node:path';
 import { writeFile, readFile } from 'node:fs/promises';
 import algoliaSearch from 'algoliasearch';
 import GitHubSlugger from 'github-slugger';
@@ -10,6 +11,8 @@ import matter from 'gray-matter';
 import sortBy from 'lodash.sortby';
 import removeMarkdown from 'remove-markdown';
 import { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC } from './types';
+
+const MARKDOWN_EXTENSION = /\.mdx?$/;
 
 function extractToC(content: string): AlgoliaSearchItemTOC[] {
   const slugger = new GitHubSlugger();
@@ -101,7 +104,7 @@ const contentForRecord = (content: string) => {
       })
       .filter(line => line !== null)
       .join(' '),
-  );
+  ).trim();
 };
 
 async function pluginsToAlgoliaRecords(
@@ -151,6 +154,7 @@ export async function nextraToAlgoliaRecords({
   domain,
   objectsPrefix = new GitHubSlugger().slug(source),
 }: IndexToAlgoliaNextraOptions): Promise<AlgoliaRecord[]> {
+  domain = domain.replace(/\/$/, '');
   const objects: AlgoliaRecord[] = [];
   const slugger = new GitHubSlugger();
 
@@ -175,38 +179,31 @@ export async function nextraToAlgoliaRecords({
     //  - docs/_meta.json (for 'guides' folder)
     while (folders.length) {
       const folder = folders.pop()!;
-      const path = folders.join('/');
+      const folderPath = folders.join('/');
 
-      metadataCache[path] ||= await getMetaFromFile(
-        `${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}${path}/_meta.json`,
+      metadataCache[folderPath] ||= await getMetaFromFile(
+        path.join(docsBaseDir, folderPath, '_meta.json'),
       );
-      const folderName = metadataCache[path][folder];
+      const folderName = metadataCache[folderPath][folder];
       const resolvedFolderName =
         typeof folderName === 'string' ? folderName : folderName?.title || folder;
       if (resolvedFolderName) {
         hierarchy.unshift(resolvedFolderName);
       }
     }
-    metadataCache[fileDir] ||= await getMetaFromFile(
-      `${fileDir}${fileDir.endsWith('/') ? '' : '/'}_meta.json`,
-    );
+    metadataCache[fileDir] ||= await getMetaFromFile(path.join(fileDir, '_meta.json'));
     if (!metadataCache[fileDir]) {
       return;
     }
 
-    const title = metadataCache[fileDir][fileName.replace('.mdx', '')];
+    const title = metadataCache[fileDir][fileName.replace(MARKDOWN_EXTENSION, '')];
     const resolvedTitle = typeof title === 'string' ? title : title?.title;
 
-    const urlPath = filePath
-      .replace(docsBaseDir, '')
-      .replace(fileName, '')
-      .split('/')
-      .filter(Boolean)
-      .join('/');
-    return [resolvedTitle || fileName.replace('.mdx', ''), hierarchy, urlPath];
+    const urlPath = filePath.replace(docsBaseDir, '').replace(fileName, '');
+    return [resolvedTitle || fileName.replace(MARKDOWN_EXTENSION, ''), hierarchy, urlPath];
   };
 
-  const files = await fg.sync(`${docsBaseDir}${docsBaseDir.endsWith('/') ? '' : '/'}**/*.mdx`);
+  const files = await fg.sync(path.join(docsBaseDir, '**', '*.{md,mdx}'));
 
   for (const file of files) {
     // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
@@ -229,7 +226,7 @@ export async function nextraToAlgoliaRecords({
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url: `${domain}${urlPath}/${filename}`,
+      url: `${domain}${urlPath}${filename}`,
       domain,
       hierarchy,
       source,
