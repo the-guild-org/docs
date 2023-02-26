@@ -47,8 +47,18 @@ export async function handler(request: Request): Promise<Response> {
         />
         <product.logo style={{ width: 102, height: 108 }} />
         <span tw="font-bold text-7xl my-5">{product.name}</span>
-        {title && <span tw="font-bold text-5xl">{title}</span>}
-        {extra && <span tw="font-bold text-2xl mt-4">{extra}</span>}
+        {title && (
+          // @ts-expect-error This isn't a valid CSS property supported by browsers yet.
+          <span tw="font-bold text-5xl" style={{ textWrap: 'balance' }}>
+            {title}
+          </span>
+        )}
+        {extra && (
+          // @ts-expect-error This isn't a valid CSS property supported by browsers yet.
+          <span tw="font-bold text-2xl mt-4" style={{ textWrap: 'balance' }}>
+            {extra}
+          </span>
+        )}
         {!IS_GUILD && (
           <div
             tw="flex items-center"
