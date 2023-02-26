@@ -61,10 +61,10 @@ describe('nextraToAlgoliaRecords()', () => {
           "title": "import",
           "toc": [],
           "type": "Documentation",
-          "url": "https://www.the-guild.dev/graphql/some-testdocs/import",
+          "url": "https://www.the-guild.dev/graphql/some-test/docs/import",
         },
         {
-          "content": "       const mdx = await compileMdx(     [       // Render code block with current version of dependencies       'json filename=\\"package.json\\" {14,20}',       JSON.stringify(         {           ...pkgJson,           dependencies: Object.fromEntries([             ['@theguild/components', pkgJsonFromComponents.version],             ...Object.entries(pkgJson.dependencies).filter(([key]) =>               ['next', 'react', 'react-dom'].includes(key)             )           ]),           devDependencies: pkgJson.devDependencies,           nextBundleAnalysis: undefined         },         null,         2       ),       ''     ].join('\\\\n'),     { defaultShowCopyCode: true }   )   return {     props: {       ssg: mdx.result     }   } }    const compiledSource = useSSG()   const components = useMDXComponents()   return  }",
+          "content": "const mdx = await compileMdx(     [       // Render code block with current version of dependencies       'json filename=\\"package.json\\" {14,20}',       JSON.stringify(         {           ...pkgJson,           dependencies: Object.fromEntries([             ['@theguild/components', pkgJsonFromComponents.version],             ...Object.entries(pkgJson.dependencies).filter(([key]) =>               ['next', 'react', 'react-dom'].includes(key)             )           ]),           devDependencies: pkgJson.devDependencies,           nextBundleAnalysis: undefined         },         null,         2       ),       ''     ].join('\\\\n'),     { defaultShowCopyCode: true }   )   return {     props: {       ssg: mdx.result     }   } }    const compiledSource = useSSG()   const components = useMDXComponents()   return  }",
           "domain": "https://www.the-guild.dev/graphql/some-test",
           "headings": [
             "1. Add dependencies",
@@ -113,10 +113,10 @@ describe('nextraToAlgoliaRecords()', () => {
             },
           ],
           "type": "Documentation",
-          "url": "https://www.the-guild.dev/graphql/some-testdocs/",
+          "url": "https://www.the-guild.dev/graphql/some-test/docs/",
         },
         {
-          "content": "   graph TD; subgraph AA [Consumers] A[Mobile app]; B[Web app]; C[Node.js client]; end subgraph BB [Services] E[REST API]; F[GraphQL API]; G[SOAP API]; end Z[GraphQL API]; A --> Z; B --> Z; C --> Z; Z --> E; Z --> F; Z --> G;",
+          "content": "graph TD; subgraph AA [Consumers] A[Mobile app]; B[Web app]; C[Node.js client]; end subgraph BB [Services] E[REST API]; F[GraphQL API]; G[SOAP API]; end Z[GraphQL API]; A --> Z; B --> Z; C --> Z; Z --> E; Z --> F; Z --> G;",
           "domain": "https://www.the-guild.dev/graphql/some-test",
           "headings": [],
           "hierarchy": [
@@ -127,10 +127,10 @@ describe('nextraToAlgoliaRecords()', () => {
           "title": "mermaid",
           "toc": [],
           "type": "Documentation",
-          "url": "https://www.the-guild.dev/graphql/some-testdocs/mermaid",
+          "url": "https://www.the-guild.dev/graphql/some-test/docs/mermaid",
         },
         {
-          "content": "    const { readme } = await fetchPackageInfo(PACKAGE_NAME)   const mdx = await compileMdx(readme, { defaultShowCopyCode: true })   return {     props: {       ssg: mdx.result     },     // Revalidate at most once every 1 hour     revalidate: 60 * 60   } }    // Get the data from SSG, and render it as a component.   const compiledSource = useSSG()   const components = useMDXComponents()   return (                           ) }",
+          "content": "const { readme } = await fetchPackageInfo(PACKAGE_NAME)   const mdx = await compileMdx(readme, { defaultShowCopyCode: true })   return {     props: {       ssg: mdx.result     },     // Revalidate at most once every 1 hour     revalidate: 60 * 60   } }    // Get the data from SSG, and render it as a component.   const compiledSource = useSSG()   const components = useMDXComponents()   return (                           ) }",
           "domain": "https://www.the-guild.dev/graphql/some-test",
           "headings": [],
           "hierarchy": [
@@ -141,7 +141,7 @@ describe('nextraToAlgoliaRecords()', () => {
           "title": "Remote MDX",
           "toc": [],
           "type": "Documentation",
-          "url": "https://www.the-guild.dev/graphql/some-testdocs/remote",
+          "url": "https://www.the-guild.dev/graphql/some-test/docs/remote",
         },
         {
           "content": "",
@@ -155,7 +155,7 @@ describe('nextraToAlgoliaRecords()', () => {
           "title": "video",
           "toc": [],
           "type": "Documentation",
-          "url": "https://www.the-guild.dev/graphql/some-testdocs/video",
+          "url": "https://www.the-guild.dev/graphql/some-test/docs/video",
         },
       ]
     `);
