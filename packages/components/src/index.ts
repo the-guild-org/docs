@@ -20,6 +20,10 @@ export {
   Tabs,
   useConfig,
   useTheme,
+  Card,
+  Cards,
+  Steps,
+  FileTree,
 } from 'nextra-theme-docs';
 
 declare module 'react' {
