@@ -11,7 +11,7 @@
     "@resvg/resvg-wasm": "2.4.1",
     "@theguild/components": "workspace:*",
     "react": "18.2.0",
-    "satori": "0.4.0",
+    "satori": "0.4.1",
     "yoga-wasm-web": "0.3.2"
   },
   "devDependencies": {
