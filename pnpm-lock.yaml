@@ -161,7 +161,7 @@ importers:
       react-dom: 18.2.0
       react-instantsearch-dom: 6.39.0
       react-paginate: 8.1.4
-      react-player: 2.11.2
+      react-player: 2.12.0
       remark-mdx-disable-explicit-jsx: 0.1.0
       search-insights: 2.3.0
       semver: ^7.3.8
@@ -187,7 +187,7 @@ importers:
       nextra-theme-docs: 2.2.17_sk5zsfkxizvi3trle4mkuwucem
       react-instantsearch-dom: 6.39.0_jmf63fejdqsy6olssod66bzdge
       react-paginate: 8.1.4_react@18.2.0
-      react-player: 2.11.2_react@18.2.0
+      react-player: 2.12.0_react@18.2.0
       remark-mdx-disable-explicit-jsx: 0.1.0
       search-insights: 2.3.0
       semver: 7.3.8
@@ -15266,8 +15266,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-player/2.11.2_react@18.2.0:
-    resolution: {integrity: sha512-V5bf3g6lIpOjfKPUw18Og+qfizmlv6PQfJojlFiGpkfn/e21w5U4nSXE8vSIrFkfllgCrLM35nNGR1/jYQ8KIw==}
+  /react-player/2.12.0_react@18.2.0:
+    resolution: {integrity: sha512-rymLRz/2GJJD+Wc01S7S+i9pGMFYnNmQibR2gVE3KmHJCBNN8BhPAlOPTGZtn1uKpJ6p4RPLlzPQ1OLreXd8gw==}
     peerDependencies:
       react: '>=16.6.0'
     dependencies:
