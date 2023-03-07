@@ -1,5 +1,84 @@
 # @theguild/components
 
+## 4.5.6
+
+### Patch Changes
+
+- [#856](https://github.com/the-guild-org/docs/pull/856)
+  [`87c3062`](https://github.com/the-guild-org/docs/commit/87c30623766655dbead83aeb75cb643a0516573a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@giscus/react@2.2.8` ↗︎](https://www.npmjs.com/package/@giscus/react/v/2.2.8) (from `2.2.6`,
+    in `dependencies`)
+
+- [#864](https://github.com/the-guild-org/docs/pull/864)
+  [`8f94f11`](https://github.com/the-guild-org/docs/commit/8f94f112a2b312b2fd0817512f73f56a180fd483)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.2.3` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.2.3)
+    (from `13.2.1`, in `dependencies`)
+
+- [#866](https://github.com/the-guild-org/docs/pull/866)
+  [`ce6c9a3`](https://github.com/the-guild-org/docs/commit/ce6c9a35148dfacedeaf315a097aadede52e71ec)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`mermaid@10.0.2` ↗︎](https://www.npmjs.com/package/mermaid/v/10.0.2) (from
+    `10.0.0`, in `dependencies`)
+
+- [#867](https://github.com/the-guild-org/docs/pull/867)
+  [`74aaef9`](https://github.com/the-guild-org/docs/commit/74aaef9946bf4a5aa6ff934938cba2044ce3489a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.8.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.8.3)
+    (from `1.8.2`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.8.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.8.3)
+    (from `1.8.2`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.8.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.8.3)
+    (from `1.8.2`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.8.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.8.3)
+    (from `1.8.2`, in `dependencies`)
+
+- [#869](https://github.com/the-guild-org/docs/pull/869)
+  [`0d92fe9`](https://github.com/the-guild-org/docs/commit/0d92fe9abdbf5b84f2e4fa5d987f06d60c865196)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.2.17` ↗︎](https://www.npmjs.com/package/nextra/v/2.2.17) (from
+    `2.2.16`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.2.17` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.2.17) (from
+    `2.2.16`, in `dependencies`)
+
+- [#870](https://github.com/the-guild-org/docs/pull/870)
+  [`efcf303`](https://github.com/the-guild-org/docs/commit/efcf30326d387125762390490888febd6801c716)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`algoliasearch@4.15.0` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.15.0) (from
+    `4.14.3`, in `dependencies`)
+
+- [#875](https://github.com/the-guild-org/docs/pull/875)
+  [`74eb251`](https://github.com/the-guild-org/docs/commit/74eb2514f2de0b77337147d41afb7e3006061e35)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-player@2.12.0` ↗︎](https://www.npmjs.com/package/react-player/v/2.12.0) (from `2.11.2`,
+    in `dependencies`)
+
+- [#878](https://github.com/the-guild-org/docs/pull/878)
+  [`40153c2`](https://github.com/the-guild-org/docs/commit/40153c2d1e18a2fc8ed2b9a756767b6e7f528feb)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`nextra@2.2.18` ↗︎](https://www.npmjs.com/package/nextra/v/2.2.18) (from
+    `2.2.17`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.2.18` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.2.18) (from
+    `2.2.17`, in `dependencies`)
+
 ## 4.5.5
 
 ### Patch Changes
