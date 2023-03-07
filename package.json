@@ -22,7 +22,7 @@
     "type-check:watch": "tsc --watch"
   },
   "devDependencies": {
-    "@algolia/autocomplete-theme-classic": "1.8.2",
+    "@algolia/autocomplete-theme-classic": "1.8.3",
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.0",
     "@storybook/addon-essentials": "7.0.0-beta.11",
