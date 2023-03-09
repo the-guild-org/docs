@@ -149,7 +149,7 @@ importers:
       clsx: 1.2.1
       dedent: 0.7.0
       esbuild-plugin-svgr: 1.0.1
-      focus-trap-react: 10.1.0
+      focus-trap-react: 10.1.1
       fuzzy: ^0.1.3
       graphql: 16.6.0
       mermaid: 10.0.2
@@ -179,7 +179,7 @@ importers:
       '@radix-ui/react-navigation-menu': 1.1.1_biqbaboplfbrettd7655fr4n2y
       algoliasearch: 4.15.0
       clsx: 1.2.1
-      focus-trap-react: 10.1.0_biqbaboplfbrettd7655fr4n2y
+      focus-trap-react: 10.1.1_biqbaboplfbrettd7655fr4n2y
       fuzzy: 0.1.3
       mermaid: 10.0.2
       next-videos: 1.5.0
@@ -10359,21 +10359,21 @@ packages:
     engines: {node: '>=0.4.0'}
     dev: true
 
-  /focus-trap-react/10.1.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-mAUw9lrcZbMz/KZZdU55TuwHp5991hES7z7WKokopzIsRC5cTmbMUXRIhN7ZNPW4Mt7ULAH+gVjm0v4e2kN4/Q==}
+  /focus-trap-react/10.1.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-OtLeSIQPKFzMzbLHkGtfZYwGLMhTRHd3CDhfyd0DDx8tvXzlgpseClDiuiKoiIHZtdjsbXTfTmUuuLKaxrwSyQ==}
     peerDependencies:
       prop-types: ^15.8.1
       react: '>=16.3.0'
       react-dom: '>=16.3.0'
     dependencies:
-      focus-trap: 7.3.1
+      focus-trap: 7.4.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       tabbable: 6.1.1
     dev: false
 
-  /focus-trap/7.3.1:
-    resolution: {integrity: sha512-bX/u4FJ+F0Pp6b/8Q9W8Br/JaLJ7rrhOJAzai9JU8bh4BPdOjEATy4pxHcbBBxFjPN4d1oHy7/KqknEdOetm9w==}
+  /focus-trap/7.4.0:
+    resolution: {integrity: sha512-yI7FwUqU4TVb+7t6PaQ3spT/42r/KLEi8mtdGoQo2li/kFzmu9URmalTvw7xCCJtSOyhBxscvEAmvjeN9iHARg==}
     dependencies:
       tabbable: 6.1.1
     dev: false
