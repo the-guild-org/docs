@@ -46,7 +46,7 @@ importers:
       storybook-dark-mode: 2.1.1
       style-loader: 3.3.1
       tailwindcss: 3.2.7
-      tsconfig-paths-webpack-plugin: 4.0.0
+      tsconfig-paths-webpack-plugin: 4.0.1
       tsup: 6.6.3
       tsx: 3.12.3
       turbo: 1.8.3
@@ -95,7 +95,7 @@ importers:
       storybook-dark-mode: 2.1.1_biqbaboplfbrettd7655fr4n2y
       style-loader: 3.3.1
       tailwindcss: 3.2.7
-      tsconfig-paths-webpack-plugin: 4.0.0
+      tsconfig-paths-webpack-plugin: 4.0.1
       tsup: 6.6.3_uujdqti2krmttzhqvubwnsmcci
       tsx: 3.12.3
       turbo: 1.8.3
@@ -12123,12 +12123,6 @@ packages:
     dependencies:
       minimist: 1.2.7
 
-  /json5/2.2.1:
-    resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
-    engines: {node: '>=6'}
-    hasBin: true
-    dev: true
-
   /json5/2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
@@ -16427,7 +16421,7 @@ packages:
       sass-loader: 13.2.0
       semver: 7.3.8
       tsconfig-paths: 4.1.2
-      tsconfig-paths-webpack-plugin: 4.0.0
+      tsconfig-paths-webpack-plugin: 4.0.1
     transitivePeerDependencies:
       - fibers
       - node-sass
@@ -17092,13 +17086,13 @@ packages:
       yn: 3.1.1
     dev: false
 
-  /tsconfig-paths-webpack-plugin/4.0.0:
-    resolution: {integrity: sha512-fw/7265mIWukrSHd0i+wSwx64kYUSAKPfxRDksjKIYTxSAp9W9/xcZVBF4Kl0eqQd5eBpAQ/oQrc5RyM/0c1GQ==}
+  /tsconfig-paths-webpack-plugin/4.0.1:
+    resolution: {integrity: sha512-m5//KzLoKmqu2MVix+dgLKq70MnFi8YL8sdzQZ6DblmCdfuq/y3OqvJd5vMndg2KEVCOeNz8Es4WVZhYInteLw==}
     engines: {node: '>=10.13.0'}
     dependencies:
       chalk: 4.1.2
       enhanced-resolve: 5.10.0
-      tsconfig-paths: 4.1.0
+      tsconfig-paths: 4.1.2
     dev: true
 
   /tsconfig-paths/3.14.1:
@@ -17106,15 +17100,6 @@ packages:
     dependencies:
       '@types/json5': 0.0.29
       json5: 1.0.1
-      minimist: 1.2.7
-      strip-bom: 3.0.0
-    dev: true
-
-  /tsconfig-paths/4.1.0:
-    resolution: {integrity: sha512-AHx4Euop/dXFC+Vx589alFba8QItjF+8hf8LtmuiCwHyI4rHXQtOOENaM8kvYf5fR0dRChy3wzWIZ9WbB7FWow==}
-    engines: {node: '>=6'}
-    dependencies:
-      json5: 2.2.1
       minimist: 1.2.7
       strip-bom: 3.0.0
     dev: true
