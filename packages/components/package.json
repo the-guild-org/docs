@@ -60,7 +60,7 @@
     "@algolia/autocomplete-theme-classic": "1.8.3",
     "@giscus/react": "2.2.8",
     "@next/bundle-analyzer": "13.2.4",
-    "@radix-ui/react-navigation-menu": "1.1.1",
+    "@radix-ui/react-navigation-menu": "1.1.2",
     "algoliasearch": "4.15.0",
     "clsx": "1.2.1",
     "focus-trap-react": "10.1.0",
