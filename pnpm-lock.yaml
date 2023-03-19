@@ -47,7 +47,7 @@ importers:
       style-loader: 3.3.2
       tailwindcss: 3.2.7
       tsconfig-paths-webpack-plugin: 4.0.1
-      tsup: 6.6.3
+      tsup: 6.7.0
       tsx: 3.12.5
       turbo: 1.8.3
       typescript: 4.9.5
@@ -96,7 +96,7 @@ importers:
       style-loader: 3.3.2
       tailwindcss: 3.2.7
       tsconfig-paths-webpack-plugin: 4.0.1
-      tsup: 6.6.3_uujdqti2krmttzhqvubwnsmcci
+      tsup: 6.7.0_uujdqti2krmttzhqvubwnsmcci
       tsx: 3.12.5
       turbo: 1.8.3
       typescript: 4.9.5
@@ -4430,7 +4430,7 @@ packages:
       '@storybook/components': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/csf-plugin': 7.0.0-beta.11
       '@storybook/csf-tools': 7.0.0-beta.11
-      '@storybook/mdx2-csf': 1.0.0-next.5
+      '@storybook/mdx2-csf': 1.0.0-next.6
       '@storybook/node-logger': 7.0.0-beta.11
       '@storybook/postinstall': 7.0.0-beta.11
       '@storybook/preview-api': 7.0.0-beta.11
@@ -5257,8 +5257,8 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/mdx2-csf/1.0.0-next.5:
-    resolution: {integrity: sha512-02w0sgGZaK1agT050yCVhJ+o4rLHANWvLKWjQjeAsYbjneLC5ITt+3GDB4jRiWwJboZ8dHW1fGSK1Vg5fA34aQ==}
+  /@storybook/mdx2-csf/1.0.0-next.6:
+    resolution: {integrity: sha512-m6plojocU/rmrqWd26yvm8D+oHZPZ6PtSSFmZIgpNDEPVmc8s4fBD6LXOAB5MiPI5f8KLUr2HVhOMZ97o5pDTw==}
     dev: true
 
   /@storybook/node-logger/6.5.13:
@@ -17134,14 +17134,14 @@ packages:
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
 
-  /tsup/6.6.3_uujdqti2krmttzhqvubwnsmcci:
-    resolution: {integrity: sha512-OLx/jFllYlVeZQ7sCHBuRVEQBBa1tFbouoc/gbYakyipjVQdWy/iQOvmExUA/ewap9iQ7tbJf9pW0PgcEFfJcQ==}
+  /tsup/6.7.0_uujdqti2krmttzhqvubwnsmcci:
+    resolution: {integrity: sha512-L3o8hGkaHnu5TdJns+mCqFsDBo83bJ44rlK7e6VdanIvpea4ArPcU3swWGsLVbXak1PqQx/V+SSmFPujBK+zEQ==}
     engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
       '@swc/core': ^1
       postcss: ^8.4.12
-      typescript: ^4.1.0
+      typescript: '>=4.1.0'
     peerDependenciesMeta:
       '@swc/core':
         optional: true
