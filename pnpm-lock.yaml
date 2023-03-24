@@ -155,8 +155,8 @@ importers:
       mermaid: 10.0.2
       next: 13.2.4
       next-videos: 1.5.0
-      nextra: 2.2.19
-      nextra-theme-docs: 2.2.19
+      nextra: 2.2.20
+      nextra-theme-docs: 2.2.20
       react: 18.2.0
       react-dom: 18.2.0
       react-instantsearch-dom: 6.39.0
@@ -183,8 +183,8 @@ importers:
       fuzzy: 0.1.3
       mermaid: 10.0.2
       next-videos: 1.5.0
-      nextra: 2.2.19_ld2jel3hspngo3u5lti2kgl2sq
-      nextra-theme-docs: 2.2.19_i765vautotixoofbdi6dinfkwe
+      nextra: 2.2.20_ld2jel3hspngo3u5lti2kgl2sq
+      nextra-theme-docs: 2.2.20_mborlevrhep2dwd3wssrtcgtou
       react-instantsearch-dom: 6.39.0_jmf63fejdqsy6olssod66bzdge
       react-paginate: 8.1.4_react@18.2.0
       react-player: 2.12.0_react@18.2.0
@@ -253,7 +253,7 @@ importers:
       '@types/react': 18.0.28
       next: 13.2.4
       next-mdx-remote: 4.4.1
-      nextra: 2.2.19
+      nextra: 2.2.20
       react: 18.2.0
       react-dom: 18.2.0
       typescript: 4.9.5
@@ -261,7 +261,7 @@ importers:
       '@theguild/components': link:../packages/components
       next: 13.2.4_biqbaboplfbrettd7655fr4n2y
       next-mdx-remote: 4.4.1_biqbaboplfbrettd7655fr4n2y
-      nextra: 2.2.19_ld2jel3hspngo3u5lti2kgl2sq
+      nextra: 2.2.20_ld2jel3hspngo3u5lti2kgl2sq
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -13635,11 +13635,11 @@ packages:
       - '@babel/core'
       - babel-plugin-macros
 
-  /nextra-theme-docs/2.2.19_i765vautotixoofbdi6dinfkwe:
-    resolution: {integrity: sha512-+5PcNgHwxwSAmQZlbV2cbjbvxj7CPYnN44OtWNxHQ8L3dzlw6fUyIJtyCUcGbDHpFC3sHmwYgB3OCWH8m4P35Q==}
+  /nextra-theme-docs/2.2.20_mborlevrhep2dwd3wssrtcgtou:
+    resolution: {integrity: sha512-YbDbpwvLCUnDvq9afP57Zu/fDFbSrsvx5MEZIhKRcrn/eCfo4yIwoMMhdRF0yntB5uTDc4MZ8jqJgb25g2v7QA==}
     peerDependencies:
       next: '>=9.5.3'
-      nextra: 2.2.19
+      nextra: 2.2.20
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
     dependencies:
@@ -13654,15 +13654,15 @@ packages:
       next: 13.2.4_biqbaboplfbrettd7655fr4n2y
       next-seo: 5.13.0_ld2jel3hspngo3u5lti2kgl2sq
       next-themes: 0.2.1_ld2jel3hspngo3u5lti2kgl2sq
-      nextra: 2.2.19_ld2jel3hspngo3u5lti2kgl2sq
+      nextra: 2.2.20_ld2jel3hspngo3u5lti2kgl2sq
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       scroll-into-view-if-needed: 3.0.3
       zod: 3.20.2
     dev: false
 
-  /nextra/2.2.19_ld2jel3hspngo3u5lti2kgl2sq:
-    resolution: {integrity: sha512-QmgbJvT1lfmFCM8n5gfGTA5p8efw20N/oZP9ojBhWhmatq/PwAp7VoSeTan6TT9Yspv6PmnrgpqKhYGzPSkFVw==}
+  /nextra/2.2.20_ld2jel3hspngo3u5lti2kgl2sq:
+    resolution: {integrity: sha512-V5P5UHvA7GvISziJSEMVV9jCDBm1aMlez3XqKPzvr/aIrugfnIPBhGrFh2YjpXp5FspldgTS8lbZVf36Alonhg==}
     peerDependencies:
       next: '>=9.5.3'
       react: '>=16.13.1'
@@ -13691,6 +13691,7 @@ packages:
       title: 3.5.3
       unist-util-remove: 3.1.1
       unist-util-visit: 4.1.2
+      zod: 3.20.2
     transitivePeerDependencies:
       - supports-color
     dev: false
