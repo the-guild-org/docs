@@ -19,7 +19,7 @@ importers:
       '@theguild/prettier-config': 1.1.3
       '@theguild/tailwind-config': 0.2.1
       '@types/jest-image-snapshot': 6.1.0
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       '@types/react-instantsearch-core': 6.26.3
       '@types/react-instantsearch-dom': 6.12.3
       '@types/react-paginate': 7.1.1
@@ -68,7 +68,7 @@ importers:
       '@theguild/prettier-config': 1.1.3_prettier@2.8.4
       '@theguild/tailwind-config': 0.2.1
       '@types/jest-image-snapshot': 6.1.0
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       '@types/react-instantsearch-core': 6.26.3
       '@types/react-instantsearch-dom': 6.12.3
       '@types/react-paginate': 7.1.1
@@ -228,7 +228,7 @@ importers:
       '@cloudflare/workers-types': 4.20230307.0
       '@resvg/resvg-wasm': 2.4.1
       '@theguild/components': workspace:*
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       react: 18.2.0
       satori: 0.4.2
       typescript: 4.9.5
@@ -242,7 +242,7 @@ importers:
       yoga-wasm-web: 0.3.3
     devDependencies:
       '@cloudflare/workers-types': 4.20230307.0
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       typescript: 4.9.5
       wrangler: 2.12.3
 
@@ -250,7 +250,7 @@ importers:
     specifiers:
       '@theguild/components': workspace:*
       '@theguild/tailwind-config': 0.2.1
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       next: 13.2.4
       next-mdx-remote: 4.4.1
       nextra: 2.2.20
@@ -266,7 +266,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
       '@theguild/tailwind-config': 0.2.1
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       typescript: 4.9.5
 
 packages:
@@ -3523,7 +3523,7 @@ packages:
       react: '>=16'
     dependencies:
       '@types/mdx': 2.0.3
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       react: 18.2.0
 
   /@miniflare/cache/2.12.1:
@@ -6284,7 +6284,7 @@ packages:
   /@types/react-instantsearch-core/6.26.3:
     resolution: {integrity: sha512-dBq/K1NQFBgLmCdiLYaC15KjXdjZk8UTQBhumSg+fAHgpW3ai5fu5BbzAKzSCkqYwbgqvhCQ1EZ9PLvPvOfqwQ==}
     dependencies:
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       algoliasearch: 4.15.0
       algoliasearch-helper: 3.11.1_algoliasearch@4.15.0
     dev: true
@@ -6292,18 +6292,26 @@ packages:
   /@types/react-instantsearch-dom/6.12.3:
     resolution: {integrity: sha512-HAQG74v7OzsUhdjNermd0A8c7LWRLsrMCsFCY6+7HEXK1hikeCs/Hmy6xjFhZVfFEWvpvX78vxJELafoAnuv8Q==}
     dependencies:
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
       '@types/react-instantsearch-core': 6.26.3
     dev: true
 
   /@types/react-paginate/7.1.1:
     resolution: {integrity: sha512-94cEJHfBaINba2XGQOWFJF/tYe+AImIhOPqMCfqyeFOgk0qUpDZyDOOW76A1rgdtWndR8UwsMPgV/uuTM8vZ7w==}
     dependencies:
-      '@types/react': 18.0.28
+      '@types/react': 18.0.29
     dev: true
 
   /@types/react/18.0.28:
     resolution: {integrity: sha512-RD0ivG1kEztNBdoAK7lekI9M+azSnitIn85h4iOiaLjaTrMjzslhaqCGaI4IyCJ1RljWiLCEu4jyrLLgqxBTew==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      '@types/scheduler': 0.16.2
+      csstype: 3.1.1
+    dev: true
+
+  /@types/react/18.0.29:
+    resolution: {integrity: sha512-wXHktgUABxplw1+UnljseDq4+uztQyp2tlWZRIxHlpchsCFqiYkvaDS8JR7eKOQm8wziTH/el5qL7D6gYNkYcw==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
