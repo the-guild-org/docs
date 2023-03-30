@@ -1,5 +1,13 @@
 # @theguild/algolia
 
+## 1.1.5
+
+### Patch Changes
+
+- [#933](https://github.com/the-guild-org/docs/pull/933)
+  [`8c096c9`](https://github.com/the-guild-org/docs/commit/8c096c9878ab293d42235c80d8d113ba2ecc9ff3)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - add new products `graphql-sse` and `graphql-ws`
+
 ## 1.1.4
 
 ### Patch Changes
