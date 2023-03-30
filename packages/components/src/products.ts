@@ -193,14 +193,14 @@ export const PRODUCTS: Record<
   },
   WS: {
     name: 'WS',
-    title: 'Zero-dependency, lazy, simple, spec compliant server and client',
+    title: 'Reference implementation of the GraphQL over WS spec',
     href: 'https://the-guild.dev/graphql/ws',
     logo: WSLogo,
     primaryColor: '#0bf2e7',
   },
   SSE: {
     name: 'SSE',
-    title: 'Zero-dependency, HTTP/1 safe, simple, spec compliant server and client',
+    title: 'Reference implementation of the GraphQL over SSE spec',
     href: 'https://the-guild.dev/graphql/sse',
     logo: SSELogo,
     primaryColor: '#08e045',
