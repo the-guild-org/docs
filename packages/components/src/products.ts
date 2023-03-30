@@ -20,6 +20,8 @@ import {
   ToolsLogo,
   WhatsAppLogo,
   YogaLogo,
+  WSLogo,
+  SSELogo,
 } from './logos';
 
 export type ProductType =
@@ -41,7 +43,9 @@ export type ProductType =
   | 'STITCHING'
   | 'ANGULAR'
   | 'WHATSAPP'
-  | 'KITQL';
+  | 'KITQL'
+  | 'SSE'
+  | 'WS';
 
 export const PRODUCTS: Record<
   ProductType,
@@ -186,5 +190,19 @@ export const PRODUCTS: Record<
     href: 'https://kitql.dev',
     logo: KitQLLogo,
     primaryColor: '#ff3e00',
+  },
+  WS: {
+    name: 'WS',
+    title: 'Reference implementation of the GraphQL over WS spec',
+    href: 'https://the-guild.dev/graphql/ws',
+    logo: WSLogo,
+    primaryColor: '#0bf2e7',
+  },
+  SSE: {
+    name: 'SSE',
+    title: 'Reference implementation of the GraphQL over SSE spec',
+    href: 'https://the-guild.dev/graphql/sse',
+    logo: SSELogo,
+    primaryColor: '#08e045',
   },
 };

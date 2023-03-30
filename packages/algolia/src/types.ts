@@ -17,7 +17,9 @@ export type AlgoliaRecordSource =
   | 'Stitching'
   | 'Angular'
   | 'WhatsApp'
-  | 'KitQL';
+  | 'KitQL'
+  | 'WS'
+  | 'SSE';
 
 export interface AlgoliaRecord {
   objectID: string;

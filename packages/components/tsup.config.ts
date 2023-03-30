@@ -47,6 +47,8 @@ export default defineConfig([
         'WhatsAppLogo',
         'YogaLogo',
         'StitchingLogo',
+        'WSLogo',
+        'SSELogo',
       ];
       await fs.writeFile(
         './dist/logos.d.ts',
