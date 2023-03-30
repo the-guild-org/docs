@@ -159,7 +159,7 @@ importers:
       nextra-theme-docs: 2.2.20
       react: 18.2.0
       react-dom: 18.2.0
-      react-instantsearch-dom: 6.39.0
+      react-instantsearch-dom: 6.39.1
       react-paginate: 8.1.4
       react-player: 2.12.0
       remark-mdx-disable-explicit-jsx: 0.1.0
@@ -185,7 +185,7 @@ importers:
       next-videos: 1.5.0
       nextra: 2.2.20_ld2jel3hspngo3u5lti2kgl2sq
       nextra-theme-docs: 2.2.20_mborlevrhep2dwd3wssrtcgtou
-      react-instantsearch-dom: 6.39.0_hat5hgb73khbq5sjh6uehchiaa
+      react-instantsearch-dom: 6.39.1_hat5hgb73khbq5sjh6uehchiaa
       react-paginate: 8.1.4_react@18.2.0
       react-player: 2.12.0_react@18.2.0
       remark-mdx-disable-explicit-jsx: 0.1.0
@@ -16516,8 +16516,8 @@ packages:
       react: 18.2.0
     dev: true
 
-  /react-instantsearch-core/6.39.0_pjkbbcxpnmwx6cqm2kk66w63ne:
-    resolution: {integrity: sha512-UROe0jjXI56pu1uHuP5lDhyXMIrodkDBISBv5pLU9/1LIYMNF3o4C9FllTdfia3Jz3lDDsSEcPpc/77so2x3Ww==}
+  /react-instantsearch-core/6.39.1_pjkbbcxpnmwx6cqm2kk66w63ne:
+    resolution: {integrity: sha512-rvzOoNGBT2O28mmcpXfcN4pVF+p07jlDMbEKB1TRdW3jE9dm8U6uCS/X6DWqigYLr8svVRcG/Ez+wzYK+yuPZw==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 5'
       react: '>= 16.3.0 < 19'
@@ -16530,8 +16530,8 @@ packages:
       react-fast-compare: 3.2.0
     dev: false
 
-  /react-instantsearch-dom/6.39.0_hat5hgb73khbq5sjh6uehchiaa:
-    resolution: {integrity: sha512-wdFGDFugoCpO9buxjybyLTs7cblQ6g+NIiYIsZ9ua0FLUIdoeawXQYDV83dDzcNgbml5RTiKJsAFxlne8gguMg==}
+  /react-instantsearch-dom/6.39.1_hat5hgb73khbq5sjh6uehchiaa:
+    resolution: {integrity: sha512-lfTHQZ3ILwlQeDsd+GqvVCVLyOzK8FYMtICJvc0PXANhcXXMM+7WvqJGlDclcnujPPSDuQl6MmKTHcTNVapQoA==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 5'
       react: '>= 16.3.0 < 19'
@@ -16545,7 +16545,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-fast-compare: 3.2.0
-      react-instantsearch-core: 6.39.0_pjkbbcxpnmwx6cqm2kk66w63ne
+      react-instantsearch-core: 6.39.1_pjkbbcxpnmwx6cqm2kk66w63ne
     dev: false
 
   /react-is/16.13.1:
