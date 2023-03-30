@@ -1,5 +1,81 @@
 # @theguild/components
 
+## 4.5.7
+
+### Patch Changes
+
+- [#881](https://github.com/the-guild-org/docs/pull/881)
+  [`d9f73d3`](https://github.com/the-guild-org/docs/commit/d9f73d34eae70a404df89e0e12a43bc65fba2fbd)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@radix-ui/react-navigation-menu@1.1.2` ↗︎](https://www.npmjs.com/package/@radix-ui/react-navigation-menu/v/1.1.2)
+    (from `1.1.1`, in `dependencies`)
+
+- [#882](https://github.com/the-guild-org/docs/pull/882)
+  [`21309ac`](https://github.com/the-guild-org/docs/commit/21309ac076eab203359feb80c9ab86ab06752694)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`focus-trap-react@10.1.1` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.1.1) (from
+    `10.1.0`, in `dependencies`)
+
+- [#887](https://github.com/the-guild-org/docs/pull/887)
+  [`59a0367`](https://github.com/the-guild-org/docs/commit/59a0367c35f02a9a6489c63bc83bdc81c555fc87)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.2.4` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.2.4)
+    (from `13.2.3`, in `dependencies`)
+
+- [#889](https://github.com/the-guild-org/docs/pull/889)
+  [`f6f11a8`](https://github.com/the-guild-org/docs/commit/f6f11a83c019a5e91c2bad78a68f0fecc140e01f)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.2.19` ↗︎](https://www.npmjs.com/package/nextra/v/2.2.19) (from
+    `2.2.18`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.2.19` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.2.19) (from
+    `2.2.18`, in `dependencies`)
+
+- [#909](https://github.com/the-guild-org/docs/pull/909)
+  [`387b574`](https://github.com/the-guild-org/docs/commit/387b574fe81e83b2c75f3a20d7bf353df33cfeda)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`search-insights@2.4.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.4.0) (from
+    `2.3.0`, in `dependencies`)
+
+- [#914](https://github.com/the-guild-org/docs/pull/914)
+  [`a1ea0c0`](https://github.com/the-guild-org/docs/commit/a1ea0c0791b06d3c90bb3ce336f436b71a459984)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-instantsearch-dom@6.39.1` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.39.1)
+    (from `6.39.0`, in `dependencies`)
+
+- [#919](https://github.com/the-guild-org/docs/pull/919)
+  [`c8c2980`](https://github.com/the-guild-org/docs/commit/c8c2980797dcd37ddf1473edf301b75415ba28df)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`algoliasearch@4.16.0` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.16.0) (from
+    `4.15.0`, in `dependencies`)
+
+- [#920](https://github.com/the-guild-org/docs/pull/920)
+  [`254d51e`](https://github.com/the-guild-org/docs/commit/254d51eb0140a6b2a223239f89b458597aa21dd0)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.2.20` ↗︎](https://www.npmjs.com/package/nextra/v/2.2.20) (from
+    `2.2.19`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.2.20` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.2.20) (from
+    `2.2.19`, in `dependencies`)
+
+- [#933](https://github.com/the-guild-org/docs/pull/933)
+  [`8c096c9`](https://github.com/the-guild-org/docs/commit/8c096c9878ab293d42235c80d8d113ba2ecc9ff3)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - add new products `graphql-sse` and `graphql-ws`
+
 ## 4.5.6
 
 ### Patch Changes
