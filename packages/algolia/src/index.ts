@@ -67,7 +67,8 @@ function extractToC(content: string): AlgoliaSearchItemTOC[] {
   }, []);
 }
 
-const normalizeDomain = (domain: string) => (domain.endsWith('/') ? domain : String(domain));
+const withTrailingSlash = (str: string) => (str.endsWith('/') ? str : `${str}/`);
+const withoutTrailingSlashes = (str: string) => str.replace(/\/+$/, '');
 
 const contentForRecord = (content: string) => {
   let isCodeBlock = false;
@@ -123,8 +124,8 @@ async function pluginsToAlgoliaRecords(
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(plugin.readme || ''),
-      url: `${domain}plugins/${plugin.identifier}`,
-      domain,
+      url: `${withTrailingSlash(domain)}plugins/${plugin.identifier}`,
+      domain: withoutTrailingSlashes(domain),
       hierarchy: [source, 'Plugins'],
       source,
       title: plugin.title,
@@ -154,7 +155,6 @@ export async function nextraToAlgoliaRecords({
   domain,
   objectsPrefix = new GitHubSlugger().slug(source),
 }: IndexToAlgoliaNextraOptions): Promise<AlgoliaRecord[]> {
-  domain = domain.replace(/\/$/, '');
   const objects: AlgoliaRecord[] = [];
   const slugger = new GitHubSlugger();
 
@@ -226,8 +226,8 @@ export async function nextraToAlgoliaRecords({
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url: `${domain}${urlPath}${filename}`,
-      domain,
+      url: `${withTrailingSlash(domain)}${urlPath}${filename}`,
+      domain: withoutTrailingSlashes(domain),
       hierarchy,
       source,
       title,
@@ -261,12 +261,12 @@ export async function indexToAlgolia({
   lockfilePath,
 }: IndexToAlgoliaOptions) {
   const objects = postProcessor([
-    ...(await pluginsToAlgoliaRecords(plugins, source, normalizeDomain(domain))),
+    ...(await pluginsToAlgoliaRecords(plugins, source, domain)),
     ...(nextra
       ? await nextraToAlgoliaRecords({
           docsBaseDir: nextra.docsBaseDir,
           source,
-          domain: normalizeDomain(domain),
+          domain,
         })
       : []),
   ]);
