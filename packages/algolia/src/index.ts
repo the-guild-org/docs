@@ -226,7 +226,8 @@ export async function nextraToAlgoliaRecords({
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url: `${withTrailingSlash(domain)}${urlPath}${filename}`,
+      // without trailing slashes because the urlPath should have a leading slash
+      url: `${withoutTrailingSlashes(domain)}${urlPath}${filename}`,
       domain: withoutTrailingSlashes(domain),
       hierarchy,
       source,
