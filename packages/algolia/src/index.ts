@@ -68,7 +68,13 @@ function extractToC(content: string): AlgoliaSearchItemTOC[] {
 }
 
 const withTrailingSlash = (str: string) => (str.endsWith('/') ? str : `${str}/`);
+const withLeadingSlash = (str: string) => (str.startsWith('/') ? str : `/${str}`);
 const withoutTrailingSlashes = (str: string) => str.replace(/\/+$/, '');
+const withLeadingTrailingSlash = (str: string) => {
+  str = withLeadingSlash(str);
+  str = withTrailingSlash(str);
+  return str;
+};
 
 const contentForRecord = (content: string) => {
   let isCodeBlock = false;
@@ -226,8 +232,10 @@ export async function nextraToAlgoliaRecords({
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      // without trailing slashes because the urlPath should have a leading slash
-      url: `${withoutTrailingSlashes(domain)}${urlPath}${filename}`,
+      url: `${withoutTrailingSlashes(domain)}${
+        // urlPath doesnt always have a leading slash
+        withLeadingTrailingSlash(urlPath)
+      }${filename}`,
       domain: withoutTrailingSlashes(domain),
       hierarchy,
       source,
