@@ -8,7 +8,7 @@ export function shade(color: string, amount: number): string {
   if (!color) {
     return result;
   }
-  if (color[0] == '#') {
+  if (color[0] === '#') {
     color = color.slice(1);
     result = '#';
   }
