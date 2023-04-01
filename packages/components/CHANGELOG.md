@@ -1,5 +1,31 @@
 # @theguild/components
 
+## 4.5.8
+
+### Patch Changes
+
+- [#934](https://github.com/the-guild-org/docs/pull/934)
+  [`9268a68`](https://github.com/the-guild-org/docs/commit/9268a689a7d9c79fd5553edad9fa169022adc685)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.3.0` ↗︎](https://www.npmjs.com/package/nextra/v/2.3.0) (from
+    `2.2.20`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.3.0` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.3.0) (from
+    `2.2.20`, in `dependencies`)
+
+- [#938](https://github.com/the-guild-org/docs/pull/938)
+  [`aefbd37`](https://github.com/the-guild-org/docs/commit/aefbd37857694b1cc97cf70b830e2b301f5778c5)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-paginate@8.1.5` ↗︎](https://www.npmjs.com/package/react-paginate/v/8.1.5) (from `8.1.4`,
+    in `dependencies`)
+
+- [#939](https://github.com/the-guild-org/docs/pull/939)
+  [`4f323e7`](https://github.com/the-guild-org/docs/commit/4f323e70b81dae09ae3fd1881369aa07c174264b)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - Add WS and SSE to ecosystem
+
 ## 4.5.7
 
 ### Patch Changes
