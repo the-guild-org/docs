@@ -12,6 +12,8 @@ const productCategories = [
       PRODUCTS.MESH,
       PRODUCTS.SCALARS,
       PRODUCTS.SOFA,
+      PRODUCTS.WS,
+      PRODUCTS.SSE,
     ],
   },
   {
