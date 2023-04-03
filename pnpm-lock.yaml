@@ -28,7 +28,7 @@ importers:
       css-loader: 6.7.3
       eslint: 8.37.0
       eslint-plugin-storybook: 0.6.11
-      eslint-plugin-tailwindcss: 3.10.1
+      eslint-plugin-tailwindcss: 3.10.3
       husky: 8.0.3
       jest-image-snapshot: 6.1.0
       lint-staged: 13.2.0
@@ -77,7 +77,7 @@ importers:
       css-loader: 6.7.3
       eslint: 8.37.0
       eslint-plugin-storybook: 0.6.11_ip5up2nocltd47wbnuyybe5dxu
-      eslint-plugin-tailwindcss: 3.10.1_tailwindcss@3.2.7
+      eslint-plugin-tailwindcss: 3.10.3_tailwindcss@3.2.7
       husky: 8.0.3
       jest-image-snapshot: 6.1.0
       lint-staged: 13.2.0
@@ -10963,8 +10963,8 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-tailwindcss/3.10.1_tailwindcss@3.2.7:
-    resolution: {integrity: sha512-NLPZ6b6nd/8CgGNMQ6NDiPUfBLQpSGu/u9RyX3MCZOwzNs2dFt1OamNAiRuo3Ixh7Gv4t5UcAcdNt8z74UDJkA==}
+  /eslint-plugin-tailwindcss/3.10.3_tailwindcss@3.2.7:
+    resolution: {integrity: sha512-yDJDs0R6AHT1quc9cCB5mpg5s5hBH0yE5L57GYWfRQWidF3HVEVrRF+Hg/4metBJzKikTD9QPIFd6CZANarWOQ==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: ^3.2.2
