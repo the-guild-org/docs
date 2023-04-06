@@ -1,5 +1,14 @@
 # @theguild/algolia
 
+## 1.1.6
+
+### Patch Changes
+
+- [#941](https://github.com/the-guild-org/docs/pull/941)
+  [`e519816`](https://github.com/the-guild-org/docs/commit/e51981682814bd40e0c9cadb852a43236e366b14)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - Properly normalize domains with and without
+  trailing slashes
+
 ## 1.1.5
 
 ### Patch Changes
