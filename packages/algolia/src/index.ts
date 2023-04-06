@@ -204,15 +204,14 @@ export async function nextraToAlgoliaRecords({
     return [resolvedTitle || fileName.replace(MARKDOWN_EXTENSION, ''), hierarchy, urlPath];
   };
 
-  const files = await fg.sync(path.join(docsBaseDir, '**', '*.{md,mdx}'));
+  const files = fg.sync(path.join(docsBaseDir, '**', '*.{md,mdx}'));
 
   for (const file of files) {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
     const filename = file
       .split('/')
-      .pop()
-      ?.split('.')[0]
-      .replace(/^index$/, '')!;
+      .pop()!
+      .replace(/\.\w+$/, '')
+      .replace(/^index$/, '');
     const fileContent = await readFile(file);
     const { data: meta, content } = matter(fileContent.toString());
     const toc = extractToC(content);
@@ -223,7 +222,9 @@ export async function nextraToAlgoliaRecords({
     const [title, hierarchy, urlPath] = metaData;
 
     objects.push({
-      objectID: slugger.slug(`${objectsPrefix}-${[...hierarchy, filename].join('-')}`),
+      objectID: slugger.slug(
+        `${objectsPrefix}-${[...hierarchy, filename.replace('.', '_')].join('-')}`,
+      ),
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
