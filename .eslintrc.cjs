@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  ignorePatterns: ['__fixtures__'],
   extends: [
     '@theguild',
     '@theguild/eslint-config/react',
