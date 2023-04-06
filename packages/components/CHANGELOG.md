@@ -1,5 +1,16 @@
 # @theguild/components
 
+## 4.5.9
+
+### Patch Changes
+
+- [#937](https://github.com/the-guild-org/docs/pull/937)
+  [`3cf896c`](https://github.com/the-guild-org/docs/commit/3cf896c891a80b7fd13c4652cc6d3f87d60eb7f7)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`react-paginate@8.1.5` ↗︎](https://www.npmjs.com/package/react-paginate/v/8.1.5) (from `8.1.4`,
+    in `dependencies`)
+
 ## 4.5.8
 
 ### Patch Changes
