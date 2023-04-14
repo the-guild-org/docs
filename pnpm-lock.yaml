@@ -168,7 +168,7 @@ importers:
       tailwindcss: 3.2.7
       unified: 10.1.2
       unist-util-visit: 4.1.2
-      use-debounce: 9.0.3
+      use-debounce: 9.0.4
     dependencies:
       '@algolia/autocomplete-js': 1.8.3_algoliasearch@4.16.0
       '@algolia/autocomplete-plugin-algolia-insights': 1.8.3_5l4bvtxbzhvequytfhrdtvpvu4
@@ -192,7 +192,7 @@ importers:
       search-insights: 2.4.0
       semver: 7.3.8
       unist-util-visit: 4.1.2
-      use-debounce: 9.0.3_react@18.2.0
+      use-debounce: 9.0.4_react@18.2.0
     devDependencies:
       '@theguild/algolia': link:../algolia
       '@theguild/editor': link:../editor
@@ -18944,8 +18944,8 @@ packages:
     resolution: {integrity: sha512-DOE84vZT2fEcl9gqCUTcnAw5ZY5Id55ikUcziSUntuEFL3pRvavg5kwDmTEUJkeCHInTlV/HexFomgYnzO5kdQ==}
     dev: true
 
-  /use-debounce/9.0.3_react@18.2.0:
-    resolution: {integrity: sha512-FhtlbDtDXILJV7Lix5OZj5yX/fW1tzq+VrvK1fnT2bUrPOGruU9Rw8NCEn+UI9wopfERBEZAOQ8lfeCJPllgnw==}
+  /use-debounce/9.0.4_react@18.2.0:
+    resolution: {integrity: sha512-6X8H/mikbrt0XE8e+JXRtZ8yYVvKkdYRfmIhWZYsP8rcNs9hk3APV8Ua2mFkKRLcJKVdnX2/Vwrmg2GWKUQEaQ==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       react: '>=16.8.0'
