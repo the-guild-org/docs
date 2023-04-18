@@ -230,7 +230,7 @@ importers:
       '@theguild/components': workspace:*
       '@types/react': 18.0.37
       react: 18.2.0
-      satori: 0.4.11
+      satori: 0.4.13
       typescript: 4.9.5
       wrangler: 2.16.0
       yoga-wasm-web: 0.3.3
@@ -238,7 +238,7 @@ importers:
       '@resvg/resvg-wasm': 2.4.1
       '@theguild/components': link:../components
       react: 18.2.0
-      satori: 0.4.11
+      satori: 0.4.13
       yoga-wasm-web: 0.3.3
     devDependencies:
       '@cloudflare/workers-types': 4.20230321.0
@@ -12352,6 +12352,11 @@ packages:
     resolution: {integrity: sha512-2bsegYkkHO+h/9MGbn6KWcE45cHZgPANo5LXF7EvWdT0yT2EguSVO1nDgU5c8+ZOPwp2vMNa7YFsJhVcDR9Sdg==}
     dev: false
 
+  /hex-rgb/4.3.0:
+    resolution: {integrity: sha512-Ox1pJVrDCyGHMG9CFg1tmrRUMRPRsAWYc/PinY0XzJU4K7y7vjNoLKIQ7BR5UJMCxNN8EM1MNDmHWA/B3aZUuw==}
+    engines: {node: '>=6'}
+    dev: false
+
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
     dev: true
@@ -15366,6 +15371,13 @@ packages:
     dependencies:
       callsites: 3.1.0
 
+  /parse-css-color/0.2.1:
+    resolution: {integrity: sha512-bwS/GGIFV3b6KS4uwpzCFj4w297Yl3uqnSgIPsoQkx7GMLROXfMnWvxfNkL0oh8HVhZA4hvJoEoEIqonfJ3BWg==}
+    dependencies:
+      color-name: 1.1.4
+      hex-rgb: 4.3.0
+    dev: false
+
   /parse-entities/2.0.0:
     resolution: {integrity: sha512-kkywGpCcRYhqQIchaWqZ875wzpS/bMKhz5HnN3p7wveJTkTtyAB/AlnS0f8DFSqYW1T82t6yEAkEcB+A1I3MbQ==}
     dependencies:
@@ -17173,8 +17185,8 @@ packages:
       neo-async: 2.6.2
     dev: true
 
-  /satori/0.4.11:
-    resolution: {integrity: sha512-Ev8xEkDkURnEz/qWeGLWss3BkbfeoSfB0tXTqijfLrdaOsUyTW4SQmEtvF5atoYw/8GgS1Nq2sJMXX4BXhyFPg==}
+  /satori/0.4.13:
+    resolution: {integrity: sha512-KVN7gZgyHLsLqV02r+tFD2yqeUw+jkR3vWC8kg9f8Ouym/KTjPaimUr1mNnJfYgxgspUvATMwaLqdf3VcySnsA==}
     engines: {node: '>=16'}
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
@@ -17183,6 +17195,7 @@ packages:
       css-to-react-native: 3.0.0
       emoji-regex: 10.2.1
       linebreak: 1.1.0
+      parse-css-color: 0.2.1
       postcss-value-parser: 4.2.0
       yoga-wasm-web: 0.3.3
     dev: false
