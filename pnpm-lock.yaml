@@ -155,8 +155,8 @@ importers:
       mermaid: 10.0.2
       next: 13.3.0
       next-videos: 1.5.0
-      nextra: 2.4.0
-      nextra-theme-docs: 2.4.0
+      nextra: 2.4.1
+      nextra-theme-docs: 2.4.1
       react: 18.2.0
       react-dom: 18.2.0
       react-instantsearch-dom: 6.39.1
@@ -183,8 +183,8 @@ importers:
       fuzzy: 0.1.3
       mermaid: 10.0.2
       next-videos: 1.5.0
-      nextra: 2.4.0_yucv4tfv7v7nrkw2uguegj6e7e
-      nextra-theme-docs: 2.4.0_zjtljgkl22tbcpoe6tc442tdum
+      nextra: 2.4.1_yucv4tfv7v7nrkw2uguegj6e7e
+      nextra-theme-docs: 2.4.1_5vt5kfm3oc6znrwwvskadsrmu4
       react-instantsearch-dom: 6.39.1_jkqj3263ob3etl7pry73ztmn6q
       react-paginate: 8.2.0_react@18.2.0
       react-player: 2.12.0_react@18.2.0
@@ -253,7 +253,7 @@ importers:
       '@types/react': 18.0.37
       next: 13.3.0
       next-mdx-remote: 4.4.1
-      nextra: 2.4.0
+      nextra: 2.4.1
       react: 18.2.0
       react-dom: 18.2.0
       typescript: 4.9.5
@@ -261,7 +261,7 @@ importers:
       '@theguild/components': link:../packages/components
       next: 13.3.0_biqbaboplfbrettd7655fr4n2y
       next-mdx-remote: 4.4.1_biqbaboplfbrettd7655fr4n2y
-      nextra: 2.4.0_yucv4tfv7v7nrkw2uguegj6e7e
+      nextra: 2.4.1_yucv4tfv7v7nrkw2uguegj6e7e
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -14766,11 +14766,11 @@ packages:
       - '@babel/core'
       - babel-plugin-macros
 
-  /nextra-theme-docs/2.4.0_zjtljgkl22tbcpoe6tc442tdum:
-    resolution: {integrity: sha512-RXwrMUOZANpw11d+IYaRW9OclwVYGcX6z4K27lLx1w2qCVW5Qvlfkm30lIKtqLrksgHnGa2UI50QzmQ0MYa5uw==}
+  /nextra-theme-docs/2.4.1_5vt5kfm3oc6znrwwvskadsrmu4:
+    resolution: {integrity: sha512-KJ0SwM6KCbv0OBByD14j9fiZw0Yzx3fNIovUt6g4cwGx0CsSY80b1PSohtNtOmIOB2Rvr/pSF56+IeJxnX3iXg==}
     peerDependencies:
       next: '>=9.5.3'
-      nextra: 2.4.0
+      nextra: 2.4.1
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
     dependencies:
@@ -14785,15 +14785,15 @@ packages:
       next: 13.3.0_biqbaboplfbrettd7655fr4n2y
       next-seo: 6.0.0_yucv4tfv7v7nrkw2uguegj6e7e
       next-themes: 0.2.1_yucv4tfv7v7nrkw2uguegj6e7e
-      nextra: 2.4.0_yucv4tfv7v7nrkw2uguegj6e7e
+      nextra: 2.4.1_yucv4tfv7v7nrkw2uguegj6e7e
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       scroll-into-view-if-needed: 3.0.3
       zod: 3.20.2
     dev: false
 
-  /nextra/2.4.0_yucv4tfv7v7nrkw2uguegj6e7e:
-    resolution: {integrity: sha512-bAA1BOf/aegOXy878FLms3nOD4I+s8ksrPEoaFi1PrDzIATuf3ftgPf4y8vpgVGlkbE666p3bDHi7QHOclS22Q==}
+  /nextra/2.4.1_yucv4tfv7v7nrkw2uguegj6e7e:
+    resolution: {integrity: sha512-QDHBHdtbBMGVAdbkzOV76Z9disoI+BkOCTJjHGVobG1ukhuHHipJLiaxfIouJL1KqFKAX/L6RQBTSJgY4b7HKg==}
     engines: {node: '>=16'}
     peerDependencies:
       next: '>=9.5.3'
