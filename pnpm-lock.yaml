@@ -230,7 +230,7 @@ importers:
       '@theguild/components': workspace:*
       '@types/react': 18.0.38
       react: 18.2.0
-      satori: 0.5.0
+      satori: 0.6.0
       typescript: 4.9.5
       wrangler: 2.16.0
       yoga-wasm-web: 0.3.3
@@ -238,7 +238,7 @@ importers:
       '@resvg/resvg-wasm': 2.4.1
       '@theguild/components': link:../components
       react: 18.2.0
-      satori: 0.5.0
+      satori: 0.6.0
       yoga-wasm-web: 0.3.3
     devDependencies:
       '@cloudflare/workers-types': 4.20230404.0
@@ -17068,8 +17068,8 @@ packages:
       neo-async: 2.6.2
     dev: true
 
-  /satori/0.5.0:
-    resolution: {integrity: sha512-/R57iNjwVdFNSkJOJgE+k/QtGp3Ozx6XSWN4dRSJ4hqmunzpSp7nTFSzH1HMHbSYnp6AVouJiBREpDv5N0rADQ==}
+  /satori/0.6.0:
+    resolution: {integrity: sha512-fbH0A4qvJG0qxZdnoLro9DlLwuPm/NQ78x0OWHqEm/94noWwP5BMolBeO2pAYkMxp9fD6ayKgvoaq54rrMGQZQ==}
     engines: {node: '>=16'}
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
