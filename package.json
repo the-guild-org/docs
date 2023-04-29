@@ -29,7 +29,7 @@
     "@storybook/addon-links": "7.0.0-beta.11",
     "@storybook/addon-postcss": "3.0.0-alpha.1",
     "@storybook/core-common": "7.0.0-beta.11",
-    "@storybook/mdx2-csf": "1.0.0",
+    "@storybook/mdx2-csf": "1.1.0-next.1",
     "@storybook/react-webpack5": "7.0.0-beta.11",
     "@svgr/webpack": "7.0.0",
     "@tailwindcss/line-clamp": "0.4.4",

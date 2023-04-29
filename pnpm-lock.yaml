@@ -11,7 +11,7 @@ importers:
       '@storybook/addon-links': 7.0.0-beta.11
       '@storybook/addon-postcss': 3.0.0-alpha.1
       '@storybook/core-common': 7.0.0-beta.11
-      '@storybook/mdx2-csf': 1.0.0
+      '@storybook/mdx2-csf': 1.1.0-next.1
       '@storybook/react-webpack5': 7.0.0-beta.11
       '@svgr/webpack': 7.0.0
       '@tailwindcss/line-clamp': 0.4.4
@@ -60,7 +60,7 @@ importers:
       '@storybook/addon-links': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-postcss': 3.0.0-alpha.1
       '@storybook/core-common': 7.0.0-beta.11
-      '@storybook/mdx2-csf': 1.0.0
+      '@storybook/mdx2-csf': 1.1.0-next.1
       '@storybook/react-webpack5': 7.0.0-beta.11_stkcruybl6yrl2b3tmujyzzm7y
       '@svgr/webpack': 7.0.0
       '@tailwindcss/line-clamp': 0.4.4_tailwindcss@3.2.7
@@ -5249,7 +5249,7 @@ packages:
       '@storybook/components': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/csf-plugin': 7.0.0-beta.11
       '@storybook/csf-tools': 7.0.0-beta.11
-      '@storybook/mdx2-csf': 1.1.0-next.0
+      '@storybook/mdx2-csf': 1.1.0-next.1
       '@storybook/node-logger': 7.0.0-beta.11
       '@storybook/postinstall': 7.0.0-beta.11
       '@storybook/preview-api': 7.0.0-beta.11
@@ -6003,12 +6003,8 @@ packages:
     resolution: {integrity: sha512-1bOkCAqJZA33QaY1EjTsHWiLF/hlYkObEexUnPohFo6PJq4Xj3lWFOrlrJpWM/ybafJn4WacAKRxeAIdG2QAUQ==}
     dev: true
 
-  /@storybook/mdx2-csf/1.0.0:
-    resolution: {integrity: sha512-dBAnEL4HfxxJmv7LdEYUoZlQbWj9APZNIbOaq0tgF8XkxiIbzqvgB0jhL/9UOrysSDbQWBiCRTu2wOVxedGfmw==}
-    dev: true
-
-  /@storybook/mdx2-csf/1.1.0-next.0:
-    resolution: {integrity: sha512-DeXEULA683XaoNJpAwqJU4lKnpCAACdIiSDqCuAfKzhHYAv11snQ8VjPrtR1I0WcWG4ATi+TawT1dWFnsYhhAQ==}
+  /@storybook/mdx2-csf/1.1.0-next.1:
+    resolution: {integrity: sha512-ONvFBZySHsBIkUYGrUM8FCG2tDKf663TIErztPSOghOpmBGyFLjSsXJHkNWiRi4c740PoemLqJd2XZZVlXRVLQ==}
     dev: true
 
   /@storybook/node-logger/6.5.13:
