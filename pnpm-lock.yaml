@@ -48,7 +48,7 @@ importers:
       tailwindcss: 3.2.7
       tsconfig-paths-webpack-plugin: 4.0.1
       tsup: 6.7.0
-      tsx: 3.12.6
+      tsx: 3.12.7
       turbo: 1.9.3
       typescript: 4.9.5
       vitest: 0.30.1
@@ -97,7 +97,7 @@ importers:
       tailwindcss: 3.2.7
       tsconfig-paths-webpack-plugin: 4.0.1
       tsup: 6.7.0_l4dqjfpio6vprhp23b7ka4ihxi
-      tsx: 3.12.6
+      tsx: 3.12.7
       turbo: 1.9.3
       typescript: 4.9.5
       vitest: 0.30.1
@@ -18318,8 +18318,8 @@ packages:
       typescript: 4.9.5
     dev: true
 
-  /tsx/3.12.6:
-    resolution: {integrity: sha512-q93WgS3lBdHlPgS0h1i+87Pt6n9K/qULIMNYZo07nSeu2z5QE2CellcAZfofVXBo2tQg9av2ZcRMQ2S2i5oadQ==}
+  /tsx/3.12.7:
+    resolution: {integrity: sha512-C2Ip+jPmqKd1GWVQDvz/Eyc6QJbGfE7NrR3fx5BpEHMZsEHoIxHL1j+lKdGobr8ovEyqeNkPLSKp6SCSOt7gmw==}
     hasBin: true
     dependencies:
       '@esbuild-kit/cjs-loader': 2.4.2
