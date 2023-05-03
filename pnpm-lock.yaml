@@ -225,7 +225,7 @@ importers:
 
   packages/og-image:
     specifiers:
-      '@cloudflare/workers-types': 4.20230404.0
+      '@cloudflare/workers-types': 4.20230419.0
       '@resvg/resvg-wasm': 2.4.1
       '@theguild/components': workspace:*
       '@types/react': 18.2.0
@@ -241,7 +241,7 @@ importers:
       satori: 0.7.3
       yoga-wasm-web: 0.3.3
     devDependencies:
-      '@cloudflare/workers-types': 4.20230404.0
+      '@cloudflare/workers-types': 4.20230419.0
       '@types/react': 18.2.0
       typescript: 4.9.5
       wrangler: 2.18.0
@@ -3107,8 +3107,8 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/workers-types/4.20230404.0:
-    resolution: {integrity: sha512-fG3oaJX1icfsGV74nhx1+AC6opvZsGqnpx6FvrcVqQaBmCNkjKNqDRFrpasXWFiOIvysBXHKQAzsAJkBZgnM+A==}
+  /@cloudflare/workers-types/4.20230419.0:
+    resolution: {integrity: sha512-MfNBlHrI/ekRkbLtdAo23D4hkXF+3QD92OCwuXxCUK73HtMHuBqkMp9T/8KFbKNRCnz7PzUderc7Jr5m3eeW3g==}
     dev: true
 
   /@colors/colors/1.5.0:
