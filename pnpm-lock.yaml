@@ -232,7 +232,7 @@ importers:
       react: 18.2.0
       satori: 0.7.3
       typescript: 4.9.5
-      wrangler: 2.18.0
+      wrangler: 2.19.0
       yoga-wasm-web: 0.3.3
     dependencies:
       '@resvg/resvg-wasm': 2.4.1
@@ -244,7 +244,7 @@ importers:
       '@cloudflare/workers-types': 4.20230419.0
       '@types/react': 18.2.0
       typescript: 4.9.5
-      wrangler: 2.18.0
+      wrangler: 2.19.0
 
   website:
     specifiers:
@@ -19286,8 +19286,8 @@ packages:
     resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}
     dev: true
 
-  /wrangler/2.18.0:
-    resolution: {integrity: sha512-e+WJ019AbioAf9u4YiOxjrfKqzOP8K3kDAM9v+lGQa+WKsae/UVcMb3Hn5iMIlIt2fc622WefZfuSNRpkAzrSA==}
+  /wrangler/2.19.0:
+    resolution: {integrity: sha512-/XykXkD7dtvBMWq2p84V/aHhkifZA15+HBD7nm/pV62s6MJrJ+DWd1QJB7CF2D7DqknBLxdWpmmZB6YCo0BtMw==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     dependencies:
