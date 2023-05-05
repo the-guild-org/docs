@@ -212,14 +212,14 @@ importers:
 
   packages/editor:
     specifiers:
-      '@monaco-editor/react': 4.5.0
+      '@monaco-editor/react': 4.5.1
       graphql: 16.6.0
       graphql-language-service: 3.2.5
       monaco-editor: 0.38.0
     dependencies:
       graphql-language-service: 3.2.5_graphql@16.6.0
     devDependencies:
-      '@monaco-editor/react': 4.5.0_monaco-editor@0.38.0
+      '@monaco-editor/react': 4.5.1_monaco-editor@0.38.0
       graphql: 16.6.0
       monaco-editor: 0.38.0
 
@@ -4594,8 +4594,8 @@ packages:
       state-local: 1.0.7
     dev: true
 
-  /@monaco-editor/react/4.5.0_monaco-editor@0.38.0:
-    resolution: {integrity: sha512-VJMkp5Fe1+w8pLEq8tZPHZKu8zDXQIA1FtiDTSNccg1D3wg1YIZaH2es2Qpvop1k62g3c/YySRb3bnGXu2XwYQ==}
+  /@monaco-editor/react/4.5.1_monaco-editor@0.38.0:
+    resolution: {integrity: sha512-NNDFdP+2HojtNhCkRfE6/D6ro6pBNihaOzMbGK84lNWzRu+CfBjwzGt4jmnqimLuqp5yE5viHS2vi+QOAnD5FQ==}
     peerDependencies:
       monaco-editor: '>= 0.25.0 < 1'
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
