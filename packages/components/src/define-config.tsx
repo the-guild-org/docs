@@ -71,6 +71,8 @@ export function defineConfig({
       const { frontMatter, title } = useConfig();
       const { asPath } = useRouter();
       const nextSeoProps = config.useNextSeoProps?.();
+      const type = frontMatter.type || 'website';
+
       return {
         titleTemplate: `%s – ${siteName}`,
         description: frontMatter.description || `${siteName} Documentation`,
@@ -81,6 +83,7 @@ export function defineConfig({
         },
         canonical: frontMatter.canonical || (siteUrl && `${siteUrl}${asPath}`),
         openGraph: {
+          type: type.toLowerCase(),
           siteName,
           images: [
             {
