@@ -52,7 +52,7 @@ export function defineConfig({
     project: {
       link: `${url.origin}/${org}/${repoName}`, // GitHub link in the navbar
     },
-    head: null,
+    head: <html lang="en" />,
     logo: product?.logo && (
       <>
         <product.logo className="mr-1.5 h-9 w-9" />
