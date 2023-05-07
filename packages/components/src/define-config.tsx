@@ -71,7 +71,7 @@ export function defineConfig({
       const { frontMatter, title } = useConfig();
       const { asPath } = useRouter();
       const nextSeoProps = config.useNextSeoProps?.();
-      const type = frontMatter.type || 'website';
+      const type = frontMatter.type ?? 'website';
 
       return {
         titleTemplate: `%s – ${siteName}`,
