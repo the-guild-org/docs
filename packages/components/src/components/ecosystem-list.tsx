@@ -27,6 +27,7 @@ const productCategories = [
       PRODUCTS.INSPECTOR,
       PRODUCTS.ESLINT,
       PRODUCTS.CONFIG,
+      PRODUCTS.FETS,
     ],
   },
   // {

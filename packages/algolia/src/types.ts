@@ -19,7 +19,8 @@ export type AlgoliaRecordSource =
   | 'WhatsApp'
   | 'KitQL'
   | 'WS'
-  | 'SSE';
+  | 'SSE'
+  | 'feTS';
 
 export interface AlgoliaRecord {
   objectID: string;

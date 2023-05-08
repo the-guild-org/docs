@@ -22,6 +22,7 @@ import {
   YogaLogo,
   WSLogo,
   SSELogo,
+  FetsLogo,
 } from './logos';
 
 export type ProductType =
@@ -45,7 +46,8 @@ export type ProductType =
   | 'WHATSAPP'
   | 'KITQL'
   | 'SSE'
-  | 'WS';
+  | 'WS'
+  | 'FETS';
 
 export const PRODUCTS: Record<
   ProductType,
@@ -141,6 +143,13 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/config',
     logo: ConfigLogo,
     primaryColor: '#6d7a99',
+  },
+  FETS: {
+    name: 'feTS',
+    title: 'Build and consume REST APIs with the e2e type safety using TypeScript and OpenAPI',
+    href: 'https://the-guild.dev/fets',
+    logo: FetsLogo,
+    primaryColor: '#3178C6',
   },
   SCALARS: {
     name: 'Scalars',
