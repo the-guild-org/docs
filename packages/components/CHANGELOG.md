@@ -1,5 +1,47 @@
 # @theguild/components
 
+## 4.5.11
+
+### Patch Changes
+
+- [#1002](https://github.com/the-guild-org/docs/pull/1002)
+  [`41ad803`](https://github.com/the-guild-org/docs/commit/41ad803fc29aa3d4f2478e6f833bcd60a58ba82c)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.3.4` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.3.4)
+    (from `13.3.2`, in `dependencies`)
+
+- [#1011](https://github.com/the-guild-org/docs/pull/1011)
+  [`03692d6`](https://github.com/the-guild-org/docs/commit/03692d676bd64c7ca80779e8fde1fa7bafa36411)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.4.1` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.4.1)
+    (from `13.3.4`, in `dependencies`)
+
+- [#1012](https://github.com/the-guild-org/docs/pull/1012)
+  [`e40c92c`](https://github.com/the-guild-org/docs/commit/e40c92c93f6f082ebb3a0fd477ff18bc6ba71afd)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.5.0` ↗︎](https://www.npmjs.com/package/nextra/v/2.5.0) (from
+    `2.4.2`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.5.0` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.5.0) (from
+    `2.4.2`, in `dependencies`)
+
+- [#998](https://github.com/the-guild-org/docs/pull/998)
+  [`64b7191`](https://github.com/the-guild-org/docs/commit/64b7191b32508a1a845e5513aea327836d3ad9f2)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.3.2` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.3.2)
+    (from `13.3.1`, in `dependencies`)
+
+- [#1020](https://github.com/the-guild-org/docs/pull/1020)
+  [`f6f7627`](https://github.com/the-guild-org/docs/commit/f6f76277cd09620571dc1c74d3f9e6025dabe644)
+  Thanks [@beerose](https://github.com/beerose)! - Add feTS to the list of products
+
 ## 4.5.10
 
 ### Patch Changes
