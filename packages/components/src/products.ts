@@ -145,7 +145,7 @@ export const PRODUCTS: Record<
     primaryColor: '#6d7a99',
   },
   FETS: {
-    name: 'FETS',
+    name: 'feTS',
     title: 'Build and consume REST APIs with the e2e type safety using TypeScript and OpenAPI',
     href: 'https://the-guild.dev/fets',
     logo: FetsLogo,
