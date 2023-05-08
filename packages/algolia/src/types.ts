@@ -20,7 +20,7 @@ export type AlgoliaRecordSource =
   | 'KitQL'
   | 'WS'
   | 'SSE'
-  | 'FETS';
+  | 'feTS';
 
 export interface AlgoliaRecord {
   objectID: string;
