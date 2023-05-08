@@ -1,5 +1,13 @@
 # @theguild/algolia
 
+## 1.1.7
+
+### Patch Changes
+
+- [#1020](https://github.com/the-guild-org/docs/pull/1020)
+  [`f6f7627`](https://github.com/the-guild-org/docs/commit/f6f76277cd09620571dc1c74d3f9e6025dabe644)
+  Thanks [@beerose](https://github.com/beerose)! - Add feTS to the list of products
+
 ## 1.1.6
 
 ### Patch Changes
