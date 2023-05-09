@@ -2,7 +2,7 @@
   "name": "the-guild-docs-monorepo",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@7.32.3",
+  "packageManager": "pnpm@7.32.4",
   "engines": {
     "node": ">=18"
   },
