@@ -43,7 +43,7 @@
     "@types/remove-markdown": "0.3.1"
   },
   "resolutions": {
-    "@types/node": "18.16.5"
+    "@types/node": "18.16.6"
   },
   "publishConfig": {
     "access": "public"
