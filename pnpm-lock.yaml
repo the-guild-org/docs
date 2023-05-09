@@ -144,7 +144,7 @@ importers:
       '@types/mdast': 3.0.11
       '@types/mermaid': 9.1.0
       '@types/react-dom': 18.2.4
-      '@types/semver': 7.3.13
+      '@types/semver': 7.5.0
       algoliasearch: 4.17.0
       clsx: 1.2.1
       dedent: 0.7.0
@@ -200,7 +200,7 @@ importers:
       '@types/mdast': 3.0.11
       '@types/mermaid': 9.1.0
       '@types/react-dom': 18.2.4
-      '@types/semver': 7.3.13
+      '@types/semver': 7.5.0
       dedent: 0.7.0
       esbuild-plugin-svgr: 1.1.0
       graphql: 16.6.0
@@ -5580,7 +5580,7 @@ packages:
       '@storybook/store': 7.0.0-beta.11
       '@storybook/theming': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
       '@types/node': 16.18.4
-      '@types/semver': 7.3.13
+      '@types/semver': 7.5.0
       babel-loader: 8.3.0_5jrwmrzcwgc7x4kzf5jhpefmzy
       babel-plugin-named-exports-order: 0.0.2
       browser-assert: 1.2.1
@@ -5667,7 +5667,7 @@ packages:
       '@storybook/node-logger': 7.0.0-beta.11
       '@storybook/telemetry': 7.0.0-beta.11
       '@storybook/types': 7.0.0-beta.11
-      '@types/semver': 7.3.13
+      '@types/semver': 7.5.0
       boxen: 5.1.2
       chalk: 4.1.2
       commander: 6.2.1
@@ -5842,7 +5842,7 @@ packages:
       '@types/node': 16.18.4
       '@types/node-fetch': 2.6.2
       '@types/pretty-hrtime': 1.0.1
-      '@types/semver': 7.3.13
+      '@types/semver': 7.5.0
       better-opn: 2.1.1
       boxen: 5.1.2
       chalk: 4.1.2
@@ -6054,7 +6054,7 @@ packages:
       '@storybook/react': 7.0.0-beta.11_ygqkwb4gg3aean7xjfdauovyqq
       '@storybook/react-docgen-typescript-plugin': 1.0.2-canary.6.9d540b91e815f8fc2f8829189deb00553559ff63.0_typescript@4.9.5
       '@types/node': 16.18.4
-      '@types/semver': 7.3.13
+      '@types/semver': 7.5.0
       babel-plugin-add-react-displayname: 0.0.5
       babel-plugin-react-docgen: 4.2.1
       fs-extra: 9.1.0
@@ -7279,8 +7279,8 @@ packages:
     resolution: {integrity: sha512-KQf+QAMWKMrtBMsB8/24w53tEsxllMj6TuA80TT/5igJalLI/zm0L3oXRbIAl4Ohfc85gyHX/jhMwsVkmhLU4A==}
     dev: true
 
-  /@types/semver/7.3.13:
-    resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
+  /@types/semver/7.5.0:
+    resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}
     dev: true
 
   /@types/serve-static/1.15.0:
@@ -7476,7 +7476,7 @@ packages:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       '@types/json-schema': 7.0.11
-      '@types/semver': 7.3.13
+      '@types/semver': 7.5.0
       '@typescript-eslint/scope-manager': 5.48.1
       '@typescript-eslint/types': 5.48.1
       '@typescript-eslint/typescript-estree': 5.48.1_typescript@4.9.5
