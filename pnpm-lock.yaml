@@ -11,7 +11,7 @@ importers:
       '@storybook/addon-links': 7.0.0-beta.11
       '@storybook/addon-postcss': 3.0.0-alpha.1
       '@storybook/core-common': 7.0.0-beta.11
-      '@storybook/mdx2-csf': 1.1.0-next.1
+      '@storybook/mdx2-csf': 1.1.0
       '@storybook/react-webpack5': 7.0.0-beta.11
       '@svgr/webpack': 7.0.0
       '@tailwindcss/line-clamp': 0.4.4
@@ -60,7 +60,7 @@ importers:
       '@storybook/addon-links': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-postcss': 3.0.0-alpha.1
       '@storybook/core-common': 7.0.0-beta.11
-      '@storybook/mdx2-csf': 1.1.0-next.1
+      '@storybook/mdx2-csf': 1.1.0
       '@storybook/react-webpack5': 7.0.0-beta.11_stkcruybl6yrl2b3tmujyzzm7y
       '@svgr/webpack': 7.0.0
       '@tailwindcss/line-clamp': 0.4.4_tailwindcss@3.2.7
@@ -6001,6 +6001,10 @@ packages:
 
   /@storybook/manager/7.0.0-beta.11:
     resolution: {integrity: sha512-1bOkCAqJZA33QaY1EjTsHWiLF/hlYkObEexUnPohFo6PJq4Xj3lWFOrlrJpWM/ybafJn4WacAKRxeAIdG2QAUQ==}
+    dev: true
+
+  /@storybook/mdx2-csf/1.1.0:
+    resolution: {integrity: sha512-TXJJd5RAKakWx4BtpwvSNdgTDkKM6RkXU8GK34S/LhidQ5Pjz3wcnqb0TxEkfhK/ztbP8nKHqXFwLfa2CYkvQw==}
     dev: true
 
   /@storybook/mdx2-csf/1.1.0-next.1:
