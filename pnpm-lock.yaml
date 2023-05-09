@@ -155,8 +155,8 @@ importers:
       mermaid: 10.0.2
       next: 13.4.1
       next-videos: 1.5.0
-      nextra: 2.5.0
-      nextra-theme-docs: 2.5.0
+      nextra: 2.5.1
+      nextra-theme-docs: 2.5.1
       react: 18.2.0
       react-dom: 18.2.0
       react-instantsearch-dom: 6.39.1
@@ -183,8 +183,8 @@ importers:
       fuzzy: 0.1.3
       mermaid: 10.0.2
       next-videos: 1.5.0
-      nextra: 2.5.0_2xek2u27flvv5bywadnu4xxgx4
-      nextra-theme-docs: 2.5.0_ooeqhjcfwpwu4rejhflgv5om7q
+      nextra: 2.5.1_2xek2u27flvv5bywadnu4xxgx4
+      nextra-theme-docs: 2.5.1_tlhj43wk5f6rx4tq5x2t6mzv5u
       react-instantsearch-dom: 6.39.1_jkqj3263ob3etl7pry73ztmn6q
       react-paginate: 8.2.0_react@18.2.0
       react-player: 2.12.0_react@18.2.0
@@ -253,7 +253,7 @@ importers:
       '@types/react': 18.2.6
       next: 13.4.1
       next-mdx-remote: 4.4.1
-      nextra: 2.5.0
+      nextra: 2.5.1
       react: 18.2.0
       react-dom: 18.2.0
       typescript: 4.9.5
@@ -261,7 +261,7 @@ importers:
       '@theguild/components': link:../packages/components
       next: 13.4.1_biqbaboplfbrettd7655fr4n2y
       next-mdx-remote: 4.4.1_biqbaboplfbrettd7655fr4n2y
-      nextra: 2.5.0_2xek2u27flvv5bywadnu4xxgx4
+      nextra: 2.5.1_2xek2u27flvv5bywadnu4xxgx4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -14754,11 +14754,11 @@ packages:
       - '@babel/core'
       - babel-plugin-macros
 
-  /nextra-theme-docs/2.5.0_ooeqhjcfwpwu4rejhflgv5om7q:
-    resolution: {integrity: sha512-xmJx0xj0Mewfr/h4xkZH5TuTB6qWeygCGW384ySqZA81LargQjEqw8a25BSif8dWaMAZZ+oIBOvJ2Et+CJytQQ==}
+  /nextra-theme-docs/2.5.1_tlhj43wk5f6rx4tq5x2t6mzv5u:
+    resolution: {integrity: sha512-GtDHlvMFtsnxm6Wm2yvmeRGw+sFf2stcDzwAX8+HT+54TUrKUtnZu17I8OPdtcVBOpUxfpAaEHPKbDsPc9Pcaw==}
     peerDependencies:
       next: '>=9.5.3'
-      nextra: 2.5.0
+      nextra: 2.5.1
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
     dependencies:
@@ -14773,15 +14773,15 @@ packages:
       next: 13.4.1_biqbaboplfbrettd7655fr4n2y
       next-seo: 6.0.0_2xek2u27flvv5bywadnu4xxgx4
       next-themes: 0.2.1_2xek2u27flvv5bywadnu4xxgx4
-      nextra: 2.5.0_2xek2u27flvv5bywadnu4xxgx4
+      nextra: 2.5.1_2xek2u27flvv5bywadnu4xxgx4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       scroll-into-view-if-needed: 3.0.3
-      zod: 3.20.2
+      zod: 3.21.4
     dev: false
 
-  /nextra/2.5.0_2xek2u27flvv5bywadnu4xxgx4:
-    resolution: {integrity: sha512-YvknuUvV2fdFY3F3gsxNFA2lwDWg3KHEAiyumUxZKOnW8+yTwocXGFccD76Py9fYxcmUL9ARo+PEusnXlWmLeQ==}
+  /nextra/2.5.1_2xek2u27flvv5bywadnu4xxgx4:
+    resolution: {integrity: sha512-/UO65BvXpyMcLdKGfzxzMPxUr5yuZ8qrrJGA3/lW6nNIxtlHsO3NdhA9Nkis0ia5GUZB2JXl0AhEmZ67oT9MVQ==}
     engines: {node: '>=16'}
     peerDependencies:
       next: '>=9.5.3'
@@ -14811,7 +14811,7 @@ packages:
       title: 3.5.3
       unist-util-remove: 3.1.1
       unist-util-visit: 4.1.2
-      zod: 3.20.2
+      zod: 3.21.4
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -19556,10 +19556,6 @@ packages:
       mustache: 4.2.0
       stack-trace: 0.0.10
     dev: true
-
-  /zod/3.20.2:
-    resolution: {integrity: sha512-1MzNQdAvO+54H+EaK5YpyEy0T+Ejo/7YLHS93G3RnYWh5gaotGHwGeN/ZO687qEDU2y4CdStQYXVHIgrUl5UVQ==}
-    dev: false
 
   /zod/3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
