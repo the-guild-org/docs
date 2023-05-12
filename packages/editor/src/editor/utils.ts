@@ -10,6 +10,7 @@ import {
   Position,
 } from 'graphql-language-service';
 import * as monaco from 'monaco-editor';
+import { MarkerSeverity } from 'monaco-editor';
 import { EnrichedLanguageService } from './enriched-language-service';
 
 export { getRange };
@@ -134,6 +135,13 @@ export function toGraphQLPosition(position: monaco.Position): GraphQLPosition {
   return new Position(position.lineNumber - 1, position.column - 1);
 }
 
+const DiagnosticSeverityToMarkerSeverity = {
+  1: MarkerSeverity.Error,
+  2: MarkerSeverity.Warning,
+  3: MarkerSeverity.Info,
+  4: MarkerSeverity.Hint,
+};
+
 export function toMarkerData(diagnostic: Diagnostic): monaco.editor.IMarkerData {
   return {
     startLineNumber: diagnostic.range.start.line + 1,
@@ -141,8 +149,9 @@ export function toMarkerData(diagnostic: Diagnostic): monaco.editor.IMarkerData 
     startColumn: diagnostic.range.start.character + 1,
     endColumn: diagnostic.range.end.character,
     message: diagnostic.message,
-    severity: 5,
-    // severity: toMonacoSeverity(diagnostic.severity),
+    severity: diagnostic.severity
+      ? DiagnosticSeverityToMarkerSeverity[diagnostic.severity]
+      : MarkerSeverity.Info,
     code: (diagnostic.code as string) || undefined,
   };
 }
@@ -155,13 +164,6 @@ export function toMonacoRange(range: GraphQLRange): monaco.IRange {
     endColumn: range.end.character + 1,
   };
 }
-
-export type PreviewAction = {
-  id: string;
-  title: string;
-  onOpen: () => HTMLElement;
-  onClose: () => void;
-};
 
 export type EditorAction = {
   id: string;
