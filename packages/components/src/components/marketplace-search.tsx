@@ -10,7 +10,7 @@ const renderQueryPlaceholder = (placeholder: string | ReactElement, query: strin
   if (!query || isValidElement(placeholder)) {
     return placeholder;
   }
-  const subStrings = placeholder.split('{query}');
+  const subStrings = (placeholder as string).split('{query}');
   return (
     <>
       {subStrings[0]} <strong>"{query}"</strong> {subStrings[1]}

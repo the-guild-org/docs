@@ -7,7 +7,7 @@ import { Anchor } from './anchor';
 import { CloseIcon, ExternalLinkIcon } from './icons';
 import { Image } from './image';
 
-export const Modal = ({
+export function Modal({
   image,
   title,
   description,
@@ -16,7 +16,7 @@ export const Modal = ({
   placement,
   onCancel,
   className,
-}: IModalProps): ReactElement => {
+}: IModalProps): ReactElement {
   const escapePress = useKeyPress('Escape');
 
   const renderDescription = () => {
@@ -126,4 +126,4 @@ export const Modal = ({
       </FocusTrap>
     </div>
   );
-};
+}

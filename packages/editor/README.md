@@ -1,4 +1,4 @@
-## `@theguild/editor`
+# `@theguild/editor`
 
 A monaco editor with built-in support for GraphQL Language Service, with features like online
 parser, syntax highlight, schema-building validations, hover and much more. The integration between
