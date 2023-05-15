@@ -67,7 +67,7 @@
     "tsconfig-paths-webpack-plugin": "4.0.1",
     "tsup": "6.7.0",
     "tsx": "3.12.7",
-    "turbo": "1.9.4",
+    "turbo": "1.9.5",
     "typescript": "5.0.4",
     "vitest": "0.31.0"
   },
