@@ -1,5 +1,49 @@
 # @theguild/components
 
+## 4.5.12
+
+### Patch Changes
+
+- [#1026](https://github.com/the-guild-org/docs/pull/1026)
+  [`57eb4e5`](https://github.com/the-guild-org/docs/commit/57eb4e5ee19e43094a8faafe03c29a8cb7af0d41)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.5.1` ↗︎](https://www.npmjs.com/package/nextra/v/2.5.1) (from
+    `2.5.0`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.5.1` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.5.1) (from
+    `2.5.0`, in `dependencies`)
+
+- [#1031](https://github.com/the-guild-org/docs/pull/1031)
+  [`3c24075`](https://github.com/the-guild-org/docs/commit/3c24075170a5a044425ad3528b9999bf56fdb828)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`focus-trap-react@10.1.2` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.1.2) (from
+    `10.1.1`, in `dependencies`)
+
+- [#1033](https://github.com/the-guild-org/docs/pull/1033)
+  [`022bd83`](https://github.com/the-guild-org/docs/commit/022bd837c97f200f1b96d522d06a1759aee4e4e9)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.5.2` ↗︎](https://www.npmjs.com/package/nextra/v/2.5.2) (from
+    `2.5.1`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.5.2` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.5.2) (from
+    `2.5.1`, in `dependencies`)
+
+- [#1035](https://github.com/the-guild-org/docs/pull/1035)
+  [`e1b54d6`](https://github.com/the-guild-org/docs/commit/e1b54d69692ed723065968ab9198897b18832459)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.4.2` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.4.2)
+    (from `13.4.1`, in `dependencies`)
+
+- [#1043](https://github.com/the-guild-org/docs/pull/1043)
+  [`3d029d9`](https://github.com/the-guild-org/docs/commit/3d029d957501abceaa9bb0f4f47682574eac42e0)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - No trailing slash on homepages
+
 ## 4.5.11
 
 ### Patch Changes
