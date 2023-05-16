@@ -69,7 +69,7 @@
     "next-videos": "1.5.0",
     "nextra": "2.5.2",
     "nextra-theme-docs": "2.5.2",
-    "react-instantsearch-dom": "6.39.1",
+    "react-instantsearch-dom": "6.40.0",
     "react-paginate": "8.2.0",
     "react-player": "2.12.0",
     "remark-mdx-disable-explicit-jsx": "0.1.0",
