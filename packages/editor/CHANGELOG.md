@@ -1,5 +1,13 @@
 # @theguild/editor
 
+## 1.3.0
+
+### Minor Changes
+
+- [#904](https://github.com/the-guild-org/docs/pull/904)
+  [`4de0bd0`](https://github.com/the-guild-org/docs/commit/4de0bd08452872b93cb3e93003727f0ed0560735)
+  Thanks [@renovate](https://github.com/apps/renovate)! - update typescript to v5
+
 ## 1.2.7
 
 ### Patch Changes
