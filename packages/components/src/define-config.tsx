@@ -71,6 +71,8 @@ export function defineConfig({
       const { frontMatter, title } = useConfig();
       const { asPath } = useRouter();
       const nextSeoProps = config.useNextSeoProps?.();
+      const type = frontMatter.type?.toLowerCase() ?? 'website';
+
       return {
         titleTemplate: `%s – ${siteName}`,
         description: frontMatter.description || `${siteName} Documentation`,
@@ -79,8 +81,23 @@ export function defineConfig({
           site: 'https://the-guild.dev',
           handle: '@TheGuildDev',
         },
-        canonical: frontMatter.canonical || (siteUrl && `${siteUrl}${asPath}`),
+        canonical:
+          frontMatter.canonical ||
+          (siteUrl &&
+            `${siteUrl}${
+              // we disallow trailing slashes
+              // TODO: dont do this if `trailingSlashes: true`
+              asPath === '/'
+                ? // homepage
+                  ''
+                : asPath.startsWith('/?')
+                ? // homepage with search params (remove just slash)
+                  asPath.slice(1)
+                : // other pages
+                  asPath
+            }`),
         openGraph: {
+          type,
           siteName,
           images: [
             {
