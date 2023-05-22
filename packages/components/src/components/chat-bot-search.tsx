@@ -105,7 +105,7 @@ export const ChatBotSearch = ({
               className="
               inline-flex
               h-6
-              flex-grow-0
+              grow-0
               items-center
               rounded-md
               bg-gray-100
