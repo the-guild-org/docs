@@ -52,7 +52,7 @@ export function defineConfig({
     project: {
       link: `${url.origin}/${org}/${repoName}`, // GitHub link in the navbar
     },
-    head: <html lang="en" />,
+    head: null,
     logo: product?.logo && (
       <>
         <product.logo className="mr-1.5 h-9 w-9" />
@@ -71,7 +71,7 @@ export function defineConfig({
       const { frontMatter, title } = useConfig();
       const { asPath } = useRouter();
       const nextSeoProps = config.useNextSeoProps?.();
-      const type = frontMatter.type ?? 'website';
+      const type = frontMatter.type?.toLowerCase() ?? 'website';
 
       return {
         titleTemplate: `%s – ${siteName}`,
@@ -83,7 +83,7 @@ export function defineConfig({
         },
         canonical: frontMatter.canonical || (siteUrl && `${siteUrl}${asPath}`),
         openGraph: {
-          type: type.toLowerCase(),
+          type,
           siteName,
           images: [
             {
