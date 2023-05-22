@@ -25,7 +25,7 @@ importers:
       '@types/react-paginate': 7.1.1
       '@types/webpack': 5.28.1
       concurrently: 8.0.1
-      css-loader: 6.7.3
+      css-loader: 6.7.4
       eslint: 8.41.0
       eslint-plugin-storybook: 0.6.12
       eslint-plugin-tailwindcss: 3.11.0
@@ -74,7 +74,7 @@ importers:
       '@types/react-paginate': 7.1.1
       '@types/webpack': 5.28.1
       concurrently: 8.0.1
-      css-loader: 6.7.3
+      css-loader: 6.7.4
       eslint: 8.41.0
       eslint-plugin-storybook: 0.6.12_opaykosi7ysrbskpnffskmbrki
       eslint-plugin-tailwindcss: 3.11.0_tailwindcss@3.2.7
@@ -5455,7 +5455,7 @@ packages:
       babel-plugin-named-exports-order: 0.0.2
       browser-assert: 1.2.1
       case-sensitive-paths-webpack-plugin: 2.4.0
-      css-loader: 6.7.3_webpack@5.74.0
+      css-loader: 6.7.4_webpack@5.74.0
       express: 4.18.2
       fork-ts-checker-webpack-plugin: 7.2.13_j7cvak3p3w6hy6s2yp2kv2aalm
       fs-extra: 9.1.0
@@ -9177,8 +9177,8 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /css-loader/6.7.3:
-    resolution: {integrity: sha512-qhOH1KlBMnZP8FzRO6YCH9UHXQhVMcEGLyNdb7Hv2cpcmJbW0YrddO+tG1ab5nT41KpHIYGsbeHqxB9xPu1pKQ==}
+  /css-loader/6.7.4:
+    resolution: {integrity: sha512-0Y5uHtK5BswfaGJ+jrO+4pPg1msFBc0pwPIE1VqfpmVn6YbDfYfXMj8rfd7nt+4goAhJueO+H/I40VWJfcP1mQ==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -9186,15 +9186,15 @@ packages:
       icss-utils: 5.1.0_postcss@8.4.23
       postcss: 8.4.23
       postcss-modules-extract-imports: 3.0.0_postcss@8.4.23
-      postcss-modules-local-by-default: 4.0.0_postcss@8.4.23
+      postcss-modules-local-by-default: 4.0.1_postcss@8.4.23
       postcss-modules-scope: 3.0.0_postcss@8.4.23
       postcss-modules-values: 4.0.0_postcss@8.4.23
       postcss-value-parser: 4.2.0
       semver: 7.3.8
     dev: true
 
-  /css-loader/6.7.3_webpack@5.74.0:
-    resolution: {integrity: sha512-qhOH1KlBMnZP8FzRO6YCH9UHXQhVMcEGLyNdb7Hv2cpcmJbW0YrddO+tG1ab5nT41KpHIYGsbeHqxB9xPu1pKQ==}
+  /css-loader/6.7.4_webpack@5.74.0:
+    resolution: {integrity: sha512-0Y5uHtK5BswfaGJ+jrO+4pPg1msFBc0pwPIE1VqfpmVn6YbDfYfXMj8rfd7nt+4goAhJueO+H/I40VWJfcP1mQ==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -9202,7 +9202,7 @@ packages:
       icss-utils: 5.1.0_postcss@8.4.23
       postcss: 8.4.23
       postcss-modules-extract-imports: 3.0.0_postcss@8.4.23
-      postcss-modules-local-by-default: 4.0.0_postcss@8.4.23
+      postcss-modules-local-by-default: 4.0.1_postcss@8.4.23
       postcss-modules-scope: 3.0.0_postcss@8.4.23
       postcss-modules-values: 4.0.0_postcss@8.4.23
       postcss-value-parser: 4.2.0
@@ -15651,12 +15651,12 @@ packages:
     dependencies:
       icss-utils: 4.1.1
       postcss: 7.0.39
-      postcss-selector-parser: 6.0.10
+      postcss-selector-parser: 6.0.11
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-modules-local-by-default/4.0.0_postcss@8.4.23:
-    resolution: {integrity: sha512-sT7ihtmGSF9yhm6ggikHdV0hlziDTX7oFoXtuVWeDd3hHObNkcHRo9V3yg7vCAY7cONyxJC/XXCmmiHHcvX7bQ==}
+  /postcss-modules-local-by-default/4.0.1_postcss@8.4.23:
+    resolution: {integrity: sha512-Zr/dB+IlXaEqdoslLHhhqecwj73vc3rDmOpsBNBEVk7P2aqAlz+Ijy0fFbU5Ie9PtreDOIgGa9MsLWakVGl+fA==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
@@ -15672,7 +15672,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       postcss: 7.0.39
-      postcss-selector-parser: 6.0.10
+      postcss-selector-parser: 6.0.11
     dev: true
 
   /postcss-modules-scope/3.0.0_postcss@8.4.23:
@@ -15833,14 +15833,6 @@ packages:
     dependencies:
       postcss: 8.4.21
       postcss-value-parser: 4.2.0
-    dev: true
-
-  /postcss-selector-parser/6.0.10:
-    resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
-    engines: {node: '>=4'}
-    dependencies:
-      cssesc: 3.0.0
-      util-deprecate: 1.0.2
     dev: true
 
   /postcss-selector-parser/6.0.11:
