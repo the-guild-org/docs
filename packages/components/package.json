@@ -35,6 +35,9 @@
       ],
       "products": [
         "./dist/products.d.ts"
+      ],
+      "next.config": [
+        "./dist/next.config.d.ts"
       ]
     }
   },
