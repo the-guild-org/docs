@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import resvgWasm from '../vender/index_bg.wasm';
-import { initWasm, Resvg } from '@resvg/resvg-wasm';
 import satori from 'satori';
+import { initWasm, Resvg } from '@resvg/resvg-wasm';
+import resvgWasm from '../vender/index_bg.wasm';
 
 export function shade(color: string, amount: number): string {
   let result = '';

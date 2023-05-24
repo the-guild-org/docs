@@ -1,5 +1,4 @@
 import { ReactElement, useEffect, useRef, useState } from 'react';
-import MonacoEditor, { EditorProps, useMonaco } from '@monaco-editor/react';
 import { GraphQLSchema } from 'graphql';
 import {
   // CompletionItemKind as lsCIK,
@@ -9,6 +8,7 @@ import {
 } from 'graphql-language-service';
 import * as monaco from 'monaco-editor';
 import { useTheme } from 'next-themes';
+import MonacoEditor, { EditorProps, useMonaco } from '@monaco-editor/react';
 import * as languages from './enums';
 import { toGraphQLPosition, toMonacoRange } from './utils';
 
