@@ -36,7 +36,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
         <td className="w-14 py-4 pr-2 align-top md:w-20">
           {item.image && <Image {...item.image} />}
         </td>
-        <td className="py-4 px-2">
+        <td className="px-2 py-4">
           <Anchor
             {...item.link}
             className={clsx(
@@ -57,7 +57,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
             )}
           </Anchor>
         </td>
-        <td className="hidden py-4 px-2 md:table-cell">{formatDate(item.update)}</td>
+        <td className="hidden px-2 py-4 md:table-cell">{formatDate(item.update)}</td>
         <td className="py-4 pl-2">
           <Anchor
             {...item.link}
@@ -114,7 +114,7 @@ export const MarketplaceList = ({
   return (
     <section className={clsx('w-full bg-white dark:bg-[#111]', className)}>
       {title && (
-        <h2 className="mt-0 mb-4 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">
+        <h2 className="mb-4 mt-0 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">
           {title}
         </h2>
       )}

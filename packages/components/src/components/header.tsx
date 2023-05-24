@@ -120,7 +120,7 @@ export const Header = ({
 
         <Root asChild>
           <List>
-            <Viewport className="absolute top-10 right-0 z-50" />
+            <Viewport className="absolute right-0 top-10 z-50" />
             <Nav isOpen={mobileNavOpen} setOpen={setMobileNavOpen} className="gap-2">
               {links.map(({ label, menu, ...link }) => {
                 const linkEl = (
