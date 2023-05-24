@@ -45,8 +45,8 @@ export const Nav = ({
         onClick={() => setOpen(false)}
         className="
           absolute
-          top-6
           right-6
+          top-6
           rounded-lg
           bg-gray-200
           p-1.5

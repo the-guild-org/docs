@@ -39,8 +39,8 @@ export const CardsColorful = ({ cards, className }: CardsColorfulProps): ReactEl
             text-white
             [background:var(--color)]
             after:absolute
-            after:top-0
             after:right-0
+            after:top-0
             after:h-full
             after:w-[calc(30%-1rem)]
             after:rounded-3xl

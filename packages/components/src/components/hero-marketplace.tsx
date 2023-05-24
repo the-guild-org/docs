@@ -58,29 +58,29 @@ export const HeroMarketplace = ({
         "
         style={{ '--colorA': '#ff34ae', '--colorB': '#1cc8ee' }}
       >
-        <Shadow className="top-[-175px] left-[-30px] [background:var(--colorA)] md:top-[-150px] md:left-[-60px]" />
-        <Shadow className="right-[-700px] bottom-[-800px] hidden [background:var(--colorA)] md:block" />
-        <Shadow className="left-[-30px] bottom-[-600px] [background:var(--colorB)] md:left-5 md:bottom-[-700px]" />
+        <Shadow className="left-[-30px] top-[-175px] [background:var(--colorA)] md:left-[-60px] md:top-[-150px]" />
+        <Shadow className="bottom-[-800px] right-[-700px] hidden [background:var(--colorA)] md:block" />
+        <Shadow className="bottom-[-600px] left-[-30px] [background:var(--colorB)] md:bottom-[-700px] md:left-5" />
       </div>
       <div>
-        <Cube src={CubeTL} className="-top-2.5 left-6 md:top-6 md:left-10" />
-        <Cube src={CubeTR} className="-bottom-60 -right-52 top-auto md:top-20 md:bottom-auto" />
-        <Cube src={CubeBR} className="-right-20 -bottom-32 hidden md:block" />
+        <Cube src={CubeTL} className="-top-2.5 left-6 md:left-10 md:top-6" />
+        <Cube src={CubeTR} className="-bottom-60 -right-52 top-auto md:bottom-auto md:top-20" />
+        <Cube src={CubeBR} className="-bottom-32 -right-20 hidden md:block" />
         <Cube src={CubeBL} className="-bottom-40 left-10 hidden md:block" />
       </div>
-      <div className="container mt-16 mb-28 flex max-w-[90rem] flex-wrap items-center pt-20 pb-1 md:mt-7 md:mb-20 md:flex-nowrap md:pt-0">
+      <div className="container mb-28 mt-16 flex max-w-[90rem] flex-wrap items-center pb-1 pt-20 md:mb-20 md:mt-7 md:flex-nowrap md:pt-0">
         <picture
           className="
             z-[1]
             order-last
-            -ml-8
             -mb-20
+            -ml-8
             mt-5
             w-full
             max-w-md
             md:order-first
-            md:-ml-12
             md:-mb-24
+            md:-ml-12
             md:mt-0
             md:w-auto
             md:max-w-none

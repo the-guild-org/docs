@@ -70,12 +70,12 @@ export function Modal({
             md:rounded-md
           `,
             (placement === 'top' || placement === 'center') &&
-              'md:left-1/2 md:right-auto md:bottom-auto md:h-auto md:max-w-3xl',
+              'md:bottom-auto md:left-1/2 md:right-auto md:h-auto md:max-w-3xl',
             {
               top: 'md:top-10 md:-translate-y-0',
               center: 'md:top-1/2 md:-translate-y-1/2',
               bottom:
-                'md:top-1/2 md:left-1/2 md:bottom-0 md:h-5/6 md:max-w-3xl md:-translate-y-1/2',
+                'md:bottom-0 md:left-1/2 md:top-1/2 md:h-5/6 md:max-w-3xl md:-translate-y-1/2',
             }[placement],
           )}
           id="tgc-modal"

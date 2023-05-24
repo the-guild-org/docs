@@ -52,7 +52,7 @@ export const EcosystemList = forwardRef<HTMLDivElement>((_, forwardedRef): React
     >
       {productCategories.map(category => (
         <div key={category.title} className="mb-6 last:mb-0">
-          <h3 className="mt-1 mb-5 w-full text-base font-normal text-gray-600 dark:text-gray-400">
+          <h3 className="mb-5 mt-1 w-full text-base font-normal text-gray-600 dark:text-gray-400">
             {category.title}
           </h3>
           <div className="flex flex-wrap">
