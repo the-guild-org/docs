@@ -152,7 +152,7 @@ importers:
       focus-trap-react: 10.1.4
       fuzzy: ^0.1.3
       graphql: 16.6.0
-      mermaid: 10.1.0
+      mermaid: 10.2.0
       next: 13.4.2
       next-videos: 1.5.0
       nextra: 2.6.1
@@ -181,7 +181,7 @@ importers:
       clsx: 1.2.1
       focus-trap-react: 10.1.4_biqbaboplfbrettd7655fr4n2y
       fuzzy: 0.1.3
-      mermaid: 10.1.0_biqbaboplfbrettd7655fr4n2y
+      mermaid: 10.2.0
       next-videos: 1.5.0
       nextra: 2.6.1_cmp7sjki5xcmfyvhcokzzink7a
       nextra-theme-docs: 2.6.1_gy4ltiunyjvynse4mfiwwfjfri
@@ -2894,8 +2894,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@braintree/sanitize-url/6.0.1:
-    resolution: {integrity: sha512-zr9Qs9KFQiEvMWdZesjcmRJlUck5NR+eKGS1uyKk+oYTWwlYrsoPEi6VmG6/TzBD1hKCGEimrhTgGS6hvn/xIQ==}
+  /@braintree/sanitize-url/6.0.2:
+    resolution: {integrity: sha512-Tbsj02wXCbqGmzdnXNk0SOF19ChhRU70BsroIi4Pm6Ehp56in6vch94mfbdQ17DozxkL3BAVjbZ4Qc1a0HFRAg==}
     dev: false
 
   /@changesets/apply-release-plan/6.1.3:
@@ -4396,17 +4396,6 @@ packages:
   /@juggle/resize-observer/3.4.0:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
     dev: true
-
-  /@khanacademy/simple-markdown/0.8.6_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-mAUlR9lchzfqunR89pFvNI51jQKsMpJeWYsYWw0DQcUXczn/T/V6510utgvm7X0N3zN87j1SvuKk8cMbl9IAFw==}
-    peerDependencies:
-      react: 16.14.0
-      react-dom: 16.14.0
-    dependencies:
-      '@types/react': 18.2.6
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
 
   /@lit-labs/ssr-dom-shim/1.0.0:
     resolution: {integrity: sha512-ic93MBXfApIFTrup4a70M/+ddD8xdt2zxxj9sRwHQzhS9ag/syqkD8JPdTXsc1gUy2K8TTirhlCqyTEM/sifNw==}
@@ -10010,8 +9999,8 @@ packages:
       domelementtype: 2.3.0
     dev: true
 
-  /dompurify/2.4.5:
-    resolution: {integrity: sha512-jggCCd+8Iqp4Tsz0nIvpcb22InKEBrGz5dw3EQJMs8HPJDsKbFIO3STYtAvCfDx26Muevn1MHVI0XxjgFfmiSA==}
+  /dompurify/3.0.3:
+    resolution: {integrity: sha512-axQ9zieHLnAnHh0sfAamKYiqXMJAVwu+LM/alQ7WDagoWessyWvMSFyW65CqF3owufNu8HBcE4cM2Vflu7YWcQ==}
     dev: false
 
   /domutils/2.8.0:
@@ -13696,8 +13685,8 @@ packages:
       - supports-color
     dev: true
 
-  /mdast-util-from-markdown/1.2.0:
-    resolution: {integrity: sha512-iZJyyvKD1+K7QX1b5jXdE7Sc5dtoTry1vzV28UZZe8Z1xVnB/czKntJ7ZAkG0tANqRnBF6p3p7GpU1y19DTf2Q==}
+  /mdast-util-from-markdown/1.3.0:
+    resolution: {integrity: sha512-HN3W1gRIuN/ZW295c7zi7g9lVBllMgZE40RxCX37wrTPWXCWtpvOZdfnuK+1WNpvZje6XuJeI3Wnb4TJEUem+g==}
     dependencies:
       '@types/mdast': 3.0.11
       '@types/unist': 2.0.6
@@ -13743,7 +13732,7 @@ packages:
     dependencies:
       '@types/mdast': 3.0.11
       markdown-table: 3.0.2
-      mdast-util-from-markdown: 1.2.0
+      mdast-util-from-markdown: 1.3.0
       mdast-util-to-markdown: 1.3.0
     transitivePeerDependencies:
       - supports-color
@@ -13759,7 +13748,7 @@ packages:
   /mdast-util-gfm/2.0.1:
     resolution: {integrity: sha512-42yHBbfWIFisaAfV1eixlabbsa6q7vHeSPY+cg+BBjX51M8xhgMacqH9g6TftB/9+YkcI0ooV4ncfrJslzm/RQ==}
     dependencies:
-      mdast-util-from-markdown: 1.2.0
+      mdast-util-from-markdown: 1.3.0
       mdast-util-gfm-autolink-literal: 1.0.2
       mdast-util-gfm-footnote: 1.0.1
       mdast-util-gfm-strikethrough: 1.0.1
@@ -13784,7 +13773,7 @@ packages:
       '@types/estree-jsx': 1.0.0
       '@types/hast': 2.3.4
       '@types/mdast': 3.0.11
-      mdast-util-from-markdown: 1.2.0
+      mdast-util-from-markdown: 1.3.0
       mdast-util-to-markdown: 1.3.0
     transitivePeerDependencies:
       - supports-color
@@ -13818,7 +13807,7 @@ packages:
       '@types/estree-jsx': 1.0.0
       '@types/hast': 2.3.4
       '@types/mdast': 3.0.11
-      mdast-util-from-markdown: 1.2.0
+      mdast-util-from-markdown: 1.3.0
       mdast-util-to-markdown: 1.3.0
     transitivePeerDependencies:
       - supports-color
@@ -13922,29 +13911,28 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  /mermaid/10.1.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-LYekSMNJygI1VnMizAPUddY95hZxOjwZxr7pODczILInO0dhQKuhXeu4sargtnuTwCilSuLS7Uiq/Qn7HTVrmA==}
+  /mermaid/10.2.0:
+    resolution: {integrity: sha512-mYKXlH9ngKdMsJ87VYMdlDZXS+MXDAGKPf3XzDf2vvAPnmRoFm7GFebemOAOWYI1bWSECDyoWTGwesWe6mW1Cw==}
     dependencies:
-      '@braintree/sanitize-url': 6.0.1
-      '@khanacademy/simple-markdown': 0.8.6_biqbaboplfbrettd7655fr4n2y
+      '@braintree/sanitize-url': 6.0.2
       cytoscape: 3.23.0
       cytoscape-cose-bilkent: 4.1.0_cytoscape@3.23.0
       cytoscape-fcose: 2.2.0_cytoscape@3.23.0
       d3: 7.8.2
       dagre-d3-es: 7.0.10
       dayjs: 1.11.7
-      dompurify: 2.4.5
+      dompurify: 3.0.3
       elkjs: 0.8.2
       khroma: 2.0.0
       lodash-es: 4.17.21
+      mdast-util-from-markdown: 1.3.0
       non-layered-tidy-tree-layout: 2.0.2
       stylis: 4.1.3
       ts-dedent: 2.2.0
       uuid: 9.0.0
       web-worker: 1.2.0
     transitivePeerDependencies:
-      - react
-      - react-dom
+      - supports-color
     dev: false
 
   /meros/1.2.1:
@@ -16688,7 +16676,7 @@ packages:
     resolution: {integrity: sha512-1fUyHr2jLsVOkhbvPRBJ5zTKZZyD6yZzYaWCS6BPBdQ8vEMBCH+9zNCDA6tET/zHCi/jLqjCWtlJZUPk+DbnFw==}
     dependencies:
       '@types/mdast': 3.0.11
-      mdast-util-from-markdown: 1.2.0
+      mdast-util-from-markdown: 1.3.0
       unified: 10.1.2
     transitivePeerDependencies:
       - supports-color
