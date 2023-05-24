@@ -1,5 +1,117 @@
 # @theguild/components
 
+## 4.6.0
+
+### Minor Changes
+
+- [#1060](https://github.com/the-guild-org/docs/pull/1060)
+  [`9897b11`](https://github.com/the-guild-org/docs/commit/9897b11bfe5ddbd719ff924413c6428fb39c0dd8)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - export `defaultRemarkPlugins`
+
+### Patch Changes
+
+- [#1019](https://github.com/the-guild-org/docs/pull/1019)
+  [`db4039e`](https://github.com/the-guild-org/docs/commit/db4039e6b8858ec8521c21d6a646632adaa1695f)
+  Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@13.4.2` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/13.4.2)
+    (from `13.3.4`, in `dependencies`)
+  - Updated dependency
+    [`focus-trap-react@10.1.4` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.1.4) (from
+    `10.1.1`, in `dependencies`)
+  - Updated dependency [`nextra@2.5.2` ↗︎](https://www.npmjs.com/package/nextra/v/2.5.2) (from
+    `2.5.0`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.5.2` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.5.2) (from
+    `2.5.0`, in `dependencies`)
+  - Updated dependency
+    [`react-instantsearch-dom@6.40.0` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.40.0)
+    (from `6.39.1`, in `dependencies`)
+
+- [#1039](https://github.com/the-guild-org/docs/pull/1039)
+  [`d7ddf4c`](https://github.com/the-guild-org/docs/commit/d7ddf4c156b99400ce150e7d63514df19aef6d69)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`algoliasearch@4.17.1` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.17.1) (from
+    `4.17.0`, in `dependencies`)
+  - Updated dependency
+    [`focus-trap-react@10.1.4` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.1.4) (from
+    `10.1.2`, in `dependencies`)
+  - Updated dependency [`nextra@2.6.0` ↗︎](https://www.npmjs.com/package/nextra/v/2.6.0) (from
+    `2.5.2`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.6.0` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.6.0) (from
+    `2.5.2`, in `dependencies`)
+  - Updated dependency
+    [`react-instantsearch-dom@6.40.0` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.40.0)
+    (from `6.39.1`, in `dependencies`)
+
+- [#1044](https://github.com/the-guild-org/docs/pull/1044)
+  [`4e5c0da`](https://github.com/the-guild-org/docs/commit/4e5c0da04572394dc72b7e59f557d305fcadade3)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-instantsearch-dom@6.40.0` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.40.0)
+    (from `6.39.1`, in `dependencies`)
+
+- [#1048](https://github.com/the-guild-org/docs/pull/1048)
+  [`e0939be`](https://github.com/the-guild-org/docs/commit/e0939be2bcbc6f587b0a83b508ff123355641628)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`focus-trap-react@10.1.3` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.1.3) (from
+    `10.1.2`, in `dependencies`)
+
+- [#1053](https://github.com/the-guild-org/docs/pull/1053)
+  [`174e537`](https://github.com/the-guild-org/docs/commit/174e5374cebfc7a4d727c4681b74bbbb0a8b0213)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`focus-trap-react@10.1.4` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.1.4) (from
+    `10.1.3`, in `dependencies`)
+
+- [#1056](https://github.com/the-guild-org/docs/pull/1056)
+  [`399a532`](https://github.com/the-guild-org/docs/commit/399a5320c38325fad3e0fc20e9709d6266755bf1)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.6.0` ↗︎](https://www.npmjs.com/package/nextra/v/2.6.0) (from
+    `2.5.2`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.6.0` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.6.0) (from
+    `2.5.2`, in `dependencies`)
+
+- [#1063](https://github.com/the-guild-org/docs/pull/1063)
+  [`d975c89`](https://github.com/the-guild-org/docs/commit/d975c89221f3368c0b71d102c679b285c1f78fcd)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`algoliasearch@4.17.1` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.17.1) (from
+    `4.17.0`, in `dependencies`)
+
+- [#1064](https://github.com/the-guild-org/docs/pull/1064)
+  [`e29e190`](https://github.com/the-guild-org/docs/commit/e29e190c2064a6b8fcd7b76f9c49438ec65a61ce)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.6.1` ↗︎](https://www.npmjs.com/package/nextra/v/2.6.1) (from
+    `2.6.0`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.6.1` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.6.1) (from
+    `2.6.0`, in `dependencies`)
+
+- [#952](https://github.com/the-guild-org/docs/pull/952)
+  [`f2af2ea`](https://github.com/the-guild-org/docs/commit/f2af2eada6867a76270623412a6f7ab7ad89bdd0)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`mermaid@10.1.0` ↗︎](https://www.npmjs.com/package/mermaid/v/10.1.0) (from
+    `10.0.2`, in `dependencies`)
+
+- [#1019](https://github.com/the-guild-org/docs/pull/1019)
+  [`db4039e`](https://github.com/the-guild-org/docs/commit/db4039e6b8858ec8521c21d6a646632adaa1695f)
+  Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - Added open graph type to website pages. By
+  default type is 'website'
+
 ## 4.5.12
 
 ### Patch Changes
