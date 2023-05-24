@@ -1,4 +1,6 @@
 import { ReactElement, useCallback, useMemo, useState } from 'react';
+import clsx from 'clsx';
+import { useTheme } from 'nextra-theme-docs';
 import {
   Content,
   Indicator,
@@ -9,8 +11,6 @@ import {
   Trigger,
   Viewport,
 } from '@radix-ui/react-navigation-menu';
-import clsx from 'clsx';
-import { useTheme } from 'nextra-theme-docs';
 import { useWindowSize } from '../helpers/hooks';
 import { GuildLogo, TheGuild } from '../logos';
 import { IHeaderProps } from '../types/components';

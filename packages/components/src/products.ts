@@ -7,6 +7,7 @@ import {
   ConfigLogo,
   EnvelopLogo,
   ESLintLogo,
+  FetsLogo,
   HelixLogo,
   HiveLogo,
   InspectorLogo,
@@ -16,13 +17,12 @@ import {
   ScalarsLogo,
   ShieldLogo,
   SofaLogo,
+  SSELogo,
   StitchingLogo,
   ToolsLogo,
   WhatsAppLogo,
-  YogaLogo,
   WSLogo,
-  SSELogo,
-  FetsLogo,
+  YogaLogo,
 } from './logos';
 
 export type ProductType =

@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode, useState } from 'react';
-import { ExecutableDocumentEditor, SchemaEditor } from '@theguild/editor';
 import { buildSchema } from 'graphql';
+import { ExecutableDocumentEditor, SchemaEditor } from '@theguild/editor';
 import { IEditorProps, ISchemaPageProps } from '../types/components';
 import { CaretSlimIcon, MoreIcon, ShareIcon } from './icons';
 import { Image } from './image';

@@ -1,12 +1,13 @@
 /* eslint-disable no-console -- for debug */
+
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
+import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { writeFile, readFile } from 'node:fs/promises';
 import algoliaSearch from 'algoliasearch';
-import GitHubSlugger from 'github-slugger';
 import fg from 'fast-glob';
+import GitHubSlugger from 'github-slugger';
 import matter from 'gray-matter';
 import sortBy from 'lodash.sortby';
 import removeMarkdown from 'remove-markdown';

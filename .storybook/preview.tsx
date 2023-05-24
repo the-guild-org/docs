@@ -1,6 +1,6 @@
-import { themes } from '@storybook/theming';
 import { ThemeProvider } from 'next-themes';
 import { useDarkMode } from 'storybook-dark-mode';
+import { themes } from '@storybook/theming';
 import './global.css';
 
 export const parameters = {
