@@ -64,7 +64,7 @@
     "@giscus/react": "2.2.8",
     "@next/bundle-analyzer": "13.4.2",
     "@radix-ui/react-navigation-menu": "1.1.2",
-    "algoliasearch": "4.17.0",
+    "algoliasearch": "4.17.1",
     "clsx": "1.2.1",
     "focus-trap-react": "10.1.4",
     "fuzzy": "^0.1.3",
