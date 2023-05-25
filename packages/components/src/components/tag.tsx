@@ -13,7 +13,7 @@ export const Tag = ({
   return (
     <button
       className={clsx(
-        'mb-2 mr-2 inline cursor-pointer rounded-md border-0 px-2 py-1 text-xs text-gray-500 outline-none',
+        'mb-2 mr-2 inline cursor-pointer rounded-md border-0 px-2 py-1 text-xs outline-none',
         selected ? 'bg-gray-400 text-gray-700' : 'bg-gray-200 text-gray-500',
       )}
       onClick={onClick}
