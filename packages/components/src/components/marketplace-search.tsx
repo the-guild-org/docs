@@ -35,7 +35,7 @@ export const MarketplaceSearch = ({
 
   const handleTagClick = (tagName: string) => {
     if (query.includes(`#${tagName}`)) {
-      setQuery(query.replace(`#${tagName}`, ''));
+      setQuery(query.replace(`#${tagName}`, '').trim());
     } else {
       setQuery(prev => `${prev} #${tagName}`);
     }
