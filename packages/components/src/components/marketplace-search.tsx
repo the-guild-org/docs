@@ -54,8 +54,8 @@ export const MarketplaceSearch = ({
       }
       const matchedResults = fuzzy
         .filter(
-          // Removestags and all special characters from the query string for better fuzzy matching
-          // query,
+          // Removes tags and all special characters from the query string for better fuzzy matching
+          // query
           query
             .replace(/#\w+/gi, '')
             .replace(/[^\w\s]/gi, '')
