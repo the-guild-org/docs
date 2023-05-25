@@ -36,14 +36,14 @@ export const HeroGradient = ({
           className="absolute inset-0 z-[-1] overflow-hidden bg-black dark:bg-[#111] md:mx-6 md:rounded-3xl"
           style={{ '--colorA': colors[0], '--colorB': colors[1] }}
         >
-          <Shadow className="-top-24 -left-10 [background:var(--colorA)]" />
+          <Shadow className="-left-10 -top-24 [background:var(--colorA)]" />
           <Shadow className="-top-5 hidden [background:var(--colorA)] md:right-[-28rem] md:block" />
-          <Shadow className="right-[-22rem] bottom-[-31rem] [background:var(--colorB)]" />
+          <Shadow className="bottom-[-31rem] right-[-22rem] [background:var(--colorB)]" />
           <Shadow className="-left-12 bottom-[-37rem] hidden [background:var(--colorB)] md:block" />
         </div>
         <div className={clsx('grow md:pl-6')}>
           <h1 className="max-w-lg text-2xl font-bold text-white md:text-3xl">{title}</h1>
-          <p className="mt-2.5 mb-4 max-w-md text-base text-white opacity-70 md:text-lg">
+          <p className="mb-4 mt-2.5 max-w-md text-base text-white opacity-70 md:text-lg">
             {description}
           </p>
           <div className="flex items-center gap-x-3 text-xs md:mt-9">

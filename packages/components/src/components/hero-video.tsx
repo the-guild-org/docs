@@ -34,11 +34,11 @@ export const HeroVideo = ({
           flipped && 'md:flex-row-reverse',
         )}
       >
-        <div className="mt-8 mb-16 md:my-0">
+        <div className="mb-16 mt-8 md:my-0">
           <h2 className="m-0 max-w-sm text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">
             {title}
           </h2>
-          <p className="mt-1 mb-3 max-w-md text-base text-gray-500 dark:text-gray-400">
+          <p className="mb-3 mt-1 max-w-md text-base text-gray-500 dark:text-gray-400">
             {description}
           </p>
           {link && (

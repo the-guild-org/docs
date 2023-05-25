@@ -35,8 +35,8 @@ export const SidePreview = ({
       )}
       <h3
         className="
-          mt-0
           mb-3
+          mt-0
           w-full
           text-center
           text-2xl
@@ -50,7 +50,7 @@ export const SidePreview = ({
       >
         <Highlight hit={item} attribute="title" />
       </h3>
-      <p className="mt-0 mb-6 w-full text-center text-base font-light text-gray-600 dark:text-gray-400">
+      <p className="mb-6 mt-0 w-full text-center text-base font-light text-gray-600 dark:text-gray-400">
         {item.hierarchy.slice(1).join(' > ')}
       </p>
       <p className="text-center text-center text-sm font-light text-black dark:text-gray-400">
@@ -58,7 +58,7 @@ export const SidePreview = ({
       </p>
       {item.toc.length > 1 && (
         <>
-          <h4 className="mt-10 mb-1 w-full text-lg font-light text-gray-600 dark:text-gray-400">
+          <h4 className="mb-1 mt-10 w-full text-lg font-light text-gray-600 dark:text-gray-400">
             Table of content:
           </h4>
           <ol className="text-left text-base font-light text-gray-600 dark:text-gray-400">

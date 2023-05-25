@@ -6,10 +6,10 @@ import {
   useImperativeHandle,
   useState,
 } from 'react';
-import MonacoEditor, { BeforeMount, EditorProps, OnChange, OnMount } from '@monaco-editor/react';
 import { GraphQLError, GraphQLSchema } from 'graphql';
 import { IDisposable } from 'monaco-editor';
 import { useTheme } from 'next-themes';
+import MonacoEditor, { BeforeMount, EditorProps, OnChange, OnMount } from '@monaco-editor/react';
 import { EnrichedLanguageService } from './enriched-language-service';
 import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
 

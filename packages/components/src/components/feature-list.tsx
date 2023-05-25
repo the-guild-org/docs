@@ -15,11 +15,11 @@ export const FeatureList = ({
     <div className="container py-14">
       {title && (
         <div className="mb-6 flex flex-col items-center">
-          <h2 className="mt-0 mb-1.5 text-center text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">
+          <h2 className="mb-1.5 mt-0 text-center text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">
             {title}
           </h2>
           {description && (
-            <div className="mt-1 mb-1.5 text-center text-base text-gray-500 dark:text-gray-400">
+            <div className="mb-1.5 mt-1 text-center text-base text-gray-500 dark:text-gray-400">
               {description}
             </div>
           )}

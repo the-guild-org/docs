@@ -1,9 +1,9 @@
 import { createElement, Fragment, ReactElement, useEffect, useRef } from 'react';
-import { autocomplete, AutocompleteApi, getAlgoliaResults } from '@algolia/autocomplete-js';
-import { createAlgoliaInsightsPlugin } from '@algolia/autocomplete-plugin-algolia-insights';
 import algoliaSearch from 'algoliasearch';
 import { createRoot, Root } from 'react-dom/client';
 import insightsClient from 'search-insights';
+import { autocomplete, AutocompleteApi, getAlgoliaResults } from '@algolia/autocomplete-js';
+import { createAlgoliaInsightsPlugin } from '@algolia/autocomplete-plugin-algolia-insights';
 import { AlgoliaSearchItem } from '../../types/algolia';
 import { ISearchBarProps } from '../../types/components';
 import { Anchor } from '../anchor';

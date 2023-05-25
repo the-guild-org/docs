@@ -127,7 +127,7 @@ export const FooterExtended = ({
   return (
     <footer className={clsx('bg-white text-xs dark:bg-[#111]', className)}>
       <div className="container max-w-[90rem] border-t border-gray-300 dark:border-gray-800">
-        <div className="my-8 flex flex-col gap-6 pt-2 pb-4 lg:flex-row">
+        <div className="my-8 flex flex-col gap-6 pb-4 pt-2 lg:flex-row">
           <div className="lg:w-full">
             <h3 className={classes.title}>PRODUCTS</h3>
             <div className="flex gap-6">
