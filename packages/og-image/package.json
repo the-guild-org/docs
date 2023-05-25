@@ -11,13 +11,13 @@
     "@resvg/resvg-wasm": "2.4.1",
     "@theguild/components": "workspace:*",
     "react": "18.2.0",
-    "satori": "0.8.1",
+    "satori": "0.9.1",
     "yoga-wasm-web": "0.3.3"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20230518.0",
     "@types/react": "18.2.6",
     "typescript": "5.0.4",
-    "wrangler": "3.0.0"
+    "wrangler": "3.0.1"
   }
 }

@@ -1,6 +1,6 @@
 import { ForwardedRef, forwardRef, useImperativeHandle } from 'react';
-import { DiffEditor, DiffEditorProps } from '@monaco-editor/react';
 import { useTheme } from 'next-themes';
+import { DiffEditor, DiffEditorProps } from '@monaco-editor/react';
 import { SchemaEditorApi, SchemaServicesOptions, useSchemaServices } from './use-schema-services';
 
 export type SchemaDiffEditorProps = SchemaServicesOptions & Omit<DiffEditorProps, 'language'>;
