@@ -2,7 +2,7 @@ import { FormEvent, isValidElement, ReactElement, useCallback, useMemo, useState
 import clsx from 'clsx';
 import fuzzy from 'fuzzy';
 import { IMarketplaceSearchProps } from '../types/components';
-import { SearchIcon } from './icons';
+import { CloseIcon, SearchIcon } from './icons';
 import { MarketplaceList } from './marketplace-list';
 import { Tag, TagsContainer } from './tag';
 
@@ -33,27 +33,39 @@ export const MarketplaceSearch = ({
     setQuery(e.currentTarget.value);
   }, []);
 
+  const handleTagClick = (tagName: string) => {
+    if (query.includes(`#${tagName}`)) {
+      setQuery(query.replace(`#${tagName}`, '').trim());
+    } else {
+      setQuery(prev => `${prev} #${tagName}`);
+    }
+  };
+
   const items = useMemo(() => {
     if (query && queryList) {
+      const tags = query
+        .split(/\s+/)
+        .filter(e => e.startsWith('#'))
+        .map(e => e.replace('#', ''));
       // Filter by tags
-      if (query.startsWith('#')) {
-        return queryList.items.filter(item =>
-          query
-            .split(/\s+/)
-            .map(e => e.replace('#', ''))
-            .every(e => item.tags?.includes(e)),
-        );
+      let filteredItems = queryList.items;
+      if (tags.length > 0) {
+        filteredItems = queryList.items.filter(item => tags.every(e => item.tags?.includes(e)));
       }
       const matchedResults = fuzzy
         .filter(
-          // Removes all special characters from the query string for better fuzzy matching
-          query.replace(/[^\w\s]/gi, ''),
+          // Removes tags and all special characters from the query string for better fuzzy matching
+          // query
+          query
+            .replace(/#\w+/gi, '')
+            .replace(/[^\w\s]/gi, '')
+            .trim(),
           // Mapping the queryList items into a list of strings including the titles
-          queryList.items.map(e => e.title),
+          filteredItems.map(e => e.title),
         )
-        .map(e => e.original);
+        .map(e => e.original.toLowerCase());
 
-      return queryList.items.filter(e => matchedResults.includes(e.title));
+      return queryList.items.filter(e => matchedResults.includes(e.title.toLowerCase()));
     }
   }, [query, queryList]);
 
@@ -66,7 +78,11 @@ export const MarketplaceSearch = ({
         {tagsFilter && (
           <TagsContainer>
             {tagsFilter.map(tagName => (
-              <Tag key={tagName} onClick={() => setQuery(`#${tagName}`)}>
+              <Tag
+                key={tagName}
+                selected={query.includes(`#${tagName}`)}
+                onClick={() => handleTagClick(tagName)}
+              >
                 {tagName}
               </Tag>
             ))}
@@ -81,6 +97,12 @@ export const MarketplaceSearch = ({
             onChange={handleChange}
             className="ml-1.5 mt-0.5 w-full border-0 bg-white text-sm font-medium text-black outline-none dark:bg-[#111] dark:text-gray-50"
           />
+          <button
+            onClick={() => setQuery('')}
+            className="text-gray-300 hover:text-gray-700 dark:hover:text-white"
+          >
+            <CloseIcon />
+          </button>
         </div>
 
         <div className="flex flex-wrap gap-10 py-6 lg:flex-nowrap">
