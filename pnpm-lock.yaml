@@ -33,7 +33,7 @@ importers:
       jest-image-snapshot: 6.1.0
       lint-staged: 13.2.2
       next-themes: 0.2.1
-      postcss: 8.4.23
+      postcss: 8.4.24
       postcss-loader: 7.3.2
       prettier: 2.8.8
       prettier-plugin-tailwindcss: 0.3.0
@@ -82,21 +82,21 @@ importers:
       jest-image-snapshot: 6.1.0
       lint-staged: 13.2.2
       next-themes: 0.2.1_biqbaboplfbrettd7655fr4n2y
-      postcss: 8.4.23
-      postcss-loader: 7.3.2_postcss@8.4.23
+      postcss: 8.4.24
+      postcss-loader: 7.3.2_postcss@8.4.24
       prettier: 2.8.8
       prettier-plugin-tailwindcss: 0.3.0_prettier@2.8.8
       pretty-quick: 3.1.3_prettier@2.8.8
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       storybook: 7.0.0-beta.11
-      storybook-addon-next: 1.8.0_32xl2rsypatwxm4tslngv2ai6a
+      storybook-addon-next: 1.8.0_h3rxfjmhog736pfptar7lau7zy
       storybook-addon-swc: 1.1.9
       storybook-dark-mode: 3.0.0_biqbaboplfbrettd7655fr4n2y
       style-loader: 3.3.3
       tailwindcss: 3.3.2
       tsconfig-paths-webpack-plugin: 4.0.1
-      tsup: 6.7.0_ysxqmvwu3gtlor2giyp77j2bti
+      tsup: 6.7.0_fvlz6elegfzcpkm2thuyvgpwkq
       tsx: 3.12.7
       turbo: 1.9.9
       typescript: 5.0.4
@@ -9271,12 +9271,12 @@ packages:
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
-      icss-utils: 5.1.0_postcss@8.4.23
-      postcss: 8.4.23
-      postcss-modules-extract-imports: 3.0.0_postcss@8.4.23
-      postcss-modules-local-by-default: 4.0.3_postcss@8.4.23
-      postcss-modules-scope: 3.0.0_postcss@8.4.23
-      postcss-modules-values: 4.0.0_postcss@8.4.23
+      icss-utils: 5.1.0_postcss@8.4.24
+      postcss: 8.4.24
+      postcss-modules-extract-imports: 3.0.0_postcss@8.4.24
+      postcss-modules-local-by-default: 4.0.3_postcss@8.4.24
+      postcss-modules-scope: 3.0.0_postcss@8.4.24
+      postcss-modules-values: 4.0.0_postcss@8.4.24
       postcss-value-parser: 4.2.0
       semver: 7.3.8
     dev: true
@@ -9287,12 +9287,12 @@ packages:
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
-      icss-utils: 5.1.0_postcss@8.4.23
-      postcss: 8.4.23
-      postcss-modules-extract-imports: 3.0.0_postcss@8.4.23
-      postcss-modules-local-by-default: 4.0.3_postcss@8.4.23
-      postcss-modules-scope: 3.0.0_postcss@8.4.23
-      postcss-modules-values: 4.0.0_postcss@8.4.23
+      icss-utils: 5.1.0_postcss@8.4.24
+      postcss: 8.4.24
+      postcss-modules-extract-imports: 3.0.0_postcss@8.4.24
+      postcss-modules-local-by-default: 4.0.3_postcss@8.4.24
+      postcss-modules-scope: 3.0.0_postcss@8.4.24
+      postcss-modules-values: 4.0.0_postcss@8.4.24
       postcss-value-parser: 4.2.0
       semver: 7.3.8
       webpack: 5.74.0
@@ -10782,7 +10782,7 @@ packages:
       tailwindcss: ^3.3.2
     dependencies:
       fast-glob: 3.2.12
-      postcss: 8.4.23
+      postcss: 8.4.24
       tailwindcss: 3.3.2
     dev: true
 
@@ -12422,13 +12422,13 @@ packages:
       postcss: 7.0.39
     dev: true
 
-  /icss-utils/5.1.0_postcss@8.4.23:
+  /icss-utils/5.1.0_postcss@8.4.24:
     resolution: {integrity: sha512-soFhflCVWLfRNOPU3iv5Z9VUdT44xFRbzjLsEzSr5AQmgqPMTHdU3PMT1Cf1ssx8fLNJDA1juftYl+PUcv3MqA==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: 8.4.23
+      postcss: 8.4.24
     dev: true
 
   /ieee754/1.2.1:
@@ -15600,7 +15600,7 @@ packages:
       postcss: 8.4.23
     dev: true
 
-  /postcss-load-config/3.1.4_postcss@8.4.23:
+  /postcss-load-config/3.1.4_postcss@8.4.24:
     resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
     engines: {node: '>= 10'}
     peerDependencies:
@@ -15613,7 +15613,7 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.1.0
-      postcss: 8.4.23
+      postcss: 8.4.24
       yaml: 1.10.2
     dev: true
 
@@ -15649,7 +15649,7 @@ packages:
       semver: 7.3.8
     dev: true
 
-  /postcss-loader/7.3.2_postcss@8.4.23:
+  /postcss-loader/7.3.2_postcss@8.4.24:
     resolution: {integrity: sha512-c7qDlXErX6n0VT+LUsW+nwefVtTu3ORtVvK8EXuUIDcxo+b/euYqpuHlJAvePb0Af5e8uMjR/13e0lTuYifaig==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -15659,7 +15659,7 @@ packages:
       cosmiconfig: 8.1.3
       jiti: 1.18.2
       klona: 2.0.6
-      postcss: 8.4.23
+      postcss: 8.4.24
       semver: 7.3.8
     dev: true
 
@@ -15738,13 +15738,13 @@ packages:
       postcss: 7.0.39
     dev: true
 
-  /postcss-modules-extract-imports/3.0.0_postcss@8.4.23:
+  /postcss-modules-extract-imports/3.0.0_postcss@8.4.24:
     resolution: {integrity: sha512-bdHleFnP3kZ4NYDhuGlVK+CMrQ/pqUm8bx/oGL93K6gVwiclvX5x0n76fYMKuIGKzlABOy13zsvqjb0f92TEXw==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: 8.4.23
+      postcss: 8.4.24
     dev: true
 
   /postcss-modules-local-by-default/3.0.3:
@@ -15757,14 +15757,14 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-modules-local-by-default/4.0.3_postcss@8.4.23:
+  /postcss-modules-local-by-default/4.0.3_postcss@8.4.24:
     resolution: {integrity: sha512-2/u2zraspoACtrbFRnTijMiQtb4GW4BvatjaG/bCjYQo8kLTdevCUlwuBHx2sCnSyrI3x3qj4ZK1j5LQBgzmwA==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      icss-utils: 5.1.0_postcss@8.4.23
-      postcss: 8.4.23
+      icss-utils: 5.1.0_postcss@8.4.24
+      postcss: 8.4.24
       postcss-selector-parser: 6.0.11
       postcss-value-parser: 4.2.0
     dev: true
@@ -15777,13 +15777,13 @@ packages:
       postcss-selector-parser: 6.0.11
     dev: true
 
-  /postcss-modules-scope/3.0.0_postcss@8.4.23:
+  /postcss-modules-scope/3.0.0_postcss@8.4.24:
     resolution: {integrity: sha512-hncihwFA2yPath8oZ15PZqvWGkWf+XUfQgUGamS4LqoP1anQLOsOJw0vr7J7IwLpoY9fatA2qiGUGmuZL0Iqlg==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: 8.4.23
+      postcss: 8.4.24
       postcss-selector-parser: 6.0.11
     dev: true
 
@@ -15794,14 +15794,14 @@ packages:
       postcss: 7.0.39
     dev: true
 
-  /postcss-modules-values/4.0.0_postcss@8.4.23:
+  /postcss-modules-values/4.0.0_postcss@8.4.24:
     resolution: {integrity: sha512-RDxHkAiEGI78gS2ofyvCsu7iycRv7oqw5xMWn9iMoR0N/7mf9D50ecQqUo5BZ9Zh2vH4bCUR/ktCqbB9m8vJjQ==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      icss-utils: 5.1.0_postcss@8.4.23
-      postcss: 8.4.23
+      icss-utils: 5.1.0_postcss@8.4.24
+      postcss: 8.4.24
     dev: true
 
   /postcss-nested/6.0.1_postcss@8.4.23:
@@ -15996,6 +15996,15 @@ packages:
 
   /postcss/8.4.23:
     resolution: {integrity: sha512-bQ3qMcpF6A/YjR55xtoTr0jGOlnPOKAIMdOWiv0EIT6HVPEaJiJB4NLljSbiHoC2RX7DN5Uvjtpbg1NPdwv1oA==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.6
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
+    dev: true
+
+  /postcss/8.4.24:
+    resolution: {integrity: sha512-M0RzbcI0sO/XJNucsGjvWU9ERWxb/ytp1w6dKtxTKgixdtQDq4rmx/g8W1hnaheq9jgwL/oyEdH5Bc4WwJKMqg==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.6
@@ -16872,7 +16881,7 @@ packages:
       adjust-sourcemap-loader: 4.0.0
       convert-source-map: 1.9.0
       loader-utils: 2.0.4
-      postcss: 8.4.23
+      postcss: 8.4.24
       source-map: 0.6.1
     dev: true
 
@@ -17592,7 +17601,7 @@ packages:
     resolution: {integrity: sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==}
     dev: true
 
-  /storybook-addon-next/1.8.0_32xl2rsypatwxm4tslngv2ai6a:
+  /storybook-addon-next/1.8.0_h3rxfjmhog736pfptar7lau7zy:
     resolution: {integrity: sha512-hCDRkgTllb9Qz14u+oafnhUbKMWZ/YKgcVBHDc9ilbsd9I3bHqBwpldfTelL/ahfo2jDqPnCQVnQkXV8U+fr2Q==}
     peerDependencies:
       '@storybook/addon-actions': ^6.0.0 || ^7.0.0
@@ -17603,7 +17612,7 @@ packages:
     dependencies:
       image-size: 1.0.2
       loader-utils: 3.2.1
-      postcss-loader: 7.3.2_postcss@8.4.23
+      postcss-loader: 7.3.2_postcss@8.4.24
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       resolve-url-loader: 5.0.0
@@ -18350,7 +18359,7 @@ packages:
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
 
-  /tsup/6.7.0_ysxqmvwu3gtlor2giyp77j2bti:
+  /tsup/6.7.0_fvlz6elegfzcpkm2thuyvgpwkq:
     resolution: {integrity: sha512-L3o8hGkaHnu5TdJns+mCqFsDBo83bJ44rlK7e6VdanIvpea4ArPcU3swWGsLVbXak1PqQx/V+SSmFPujBK+zEQ==}
     engines: {node: '>=14.18'}
     hasBin: true
@@ -18374,8 +18383,8 @@ packages:
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
-      postcss: 8.4.23
-      postcss-load-config: 3.1.4_postcss@8.4.23
+      postcss: 8.4.24
+      postcss-load-config: 3.1.4_postcss@8.4.24
       resolve-from: 5.0.0
       rollup: 3.15.0
       source-map: 0.8.0-beta.0
@@ -19016,7 +19025,7 @@ packages:
     dependencies:
       '@types/node': 18.11.9
       esbuild: 0.16.17
-      postcss: 8.4.23
+      postcss: 8.4.24
       resolve: 1.22.2
       rollup: 3.15.0
     optionalDependencies:
