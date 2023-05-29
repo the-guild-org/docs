@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 4.6.2
+
+### Patch Changes
+
+- [#1078](https://github.com/the-guild-org/docs/pull/1078)
+  [`6b5c1d2`](https://github.com/the-guild-org/docs/commit/6b5c1d2d31fd5e1defa4fa565b5a7536ea830968)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+  - Updated dependency [`mermaid@10.1.0` ↗︎](https://www.npmjs.com/package/mermaid/v/10.1.0) (from
+    `10.2.0`, in `dependencies`)
+
 ## 4.6.1
 
 ### Patch Changes
