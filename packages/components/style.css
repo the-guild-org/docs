@@ -1,4 +1,5 @@
 @import 'nextra-theme-docs/style.css';
+@import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import '@algolia/autocomplete-theme-classic';
