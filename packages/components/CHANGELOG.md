@@ -1,5 +1,42 @@
 # @theguild/components
 
+## 4.6.1
+
+### Patch Changes
+
+- [#1065](https://github.com/the-guild-org/docs/pull/1065)
+  [`90d232b`](https://github.com/the-guild-org/docs/commit/90d232bf08da10b3fc165cc715837cfecc95468f)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`mermaid@10.2.0` ↗︎](https://www.npmjs.com/package/mermaid/v/10.2.0) (from
+    `10.1.0`, in `dependencies`)
+
+- [#1071](https://github.com/the-guild-org/docs/pull/1071)
+  [`32bacd8`](https://github.com/the-guild-org/docs/commit/32bacd85cfb590bd3730f63cb17db08eea9a2840)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@radix-ui/react-navigation-menu@1.1.3` ↗︎](https://www.npmjs.com/package/@radix-ui/react-navigation-menu/v/1.1.3)
+    (from `1.1.2`, in `dependencies`)
+
+- [#1077](https://github.com/the-guild-org/docs/pull/1077)
+  [`84f63d0`](https://github.com/the-guild-org/docs/commit/84f63d049a7ea2056fa9d72a07f8a2b9f8e3403a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.6.2` ↗︎](https://www.npmjs.com/package/nextra/v/2.6.2) (from
+    `2.6.1`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.6.2` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.6.2) (from
+    `2.6.1`, in `dependencies`)
+
+- [#1076](https://github.com/the-guild-org/docs/pull/1076)
+  [`881c6ca`](https://github.com/the-guild-org/docs/commit/881c6cad15b5e0bd12ffb568ee8bacf5779b4028)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - fix tailwindcss gradient
+
+- [#1068](https://github.com/the-guild-org/docs/pull/1068)
+  [`e07dc13`](https://github.com/the-guild-org/docs/commit/e07dc13edca8c8e92cc6b4d47c0d85062f8ff675)
+  Thanks [@beerose](https://github.com/beerose)! - Improve MarketplaceSearch component
+
 ## 4.6.0
 
 ### Minor Changes
