@@ -2,4 +2,4 @@
 '@theguild/components': patch
 ---
 
-try fix tailwindcss gradient
+fix tailwindcss gradient
