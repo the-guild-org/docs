@@ -34,7 +34,7 @@ importers:
       lint-staged: 13.2.2
       next-themes: 0.2.1
       postcss: 8.4.23
-      postcss-loader: 7.3.1
+      postcss-loader: 7.3.2
       prettier: 2.8.8
       prettier-plugin-tailwindcss: 0.3.0
       pretty-quick: 3.1.3
@@ -83,7 +83,7 @@ importers:
       lint-staged: 13.2.2
       next-themes: 0.2.1_biqbaboplfbrettd7655fr4n2y
       postcss: 8.4.23
-      postcss-loader: 7.3.1_postcss@8.4.23
+      postcss-loader: 7.3.2_postcss@8.4.23
       prettier: 2.8.8
       prettier-plugin-tailwindcss: 0.3.0_prettier@2.8.8
       pretty-quick: 3.1.3_prettier@2.8.8
@@ -15649,8 +15649,8 @@ packages:
       semver: 7.3.8
     dev: true
 
-  /postcss-loader/7.3.1_postcss@8.4.23:
-    resolution: {integrity: sha512-uevGt8yy2gvruNvzy8jxgYSSnyqBcA7CnS6/57qoZnUMM51XgsTqxIpWZWdHyvIyo4ov0lCgnzIbhtWwVFI8lg==}
+  /postcss-loader/7.3.2_postcss@8.4.23:
+    resolution: {integrity: sha512-c7qDlXErX6n0VT+LUsW+nwefVtTu3ORtVvK8EXuUIDcxo+b/euYqpuHlJAvePb0Af5e8uMjR/13e0lTuYifaig==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       postcss: ^7.0.0 || ^8.0.1
@@ -17603,7 +17603,7 @@ packages:
     dependencies:
       image-size: 1.0.2
       loader-utils: 3.2.1
-      postcss-loader: 7.3.1_postcss@8.4.23
+      postcss-loader: 7.3.2_postcss@8.4.23
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       resolve-url-loader: 5.0.0
