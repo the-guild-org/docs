@@ -10,3 +10,4 @@ out/
 packages/og-image/vender/*.wasm
 .eslintcache
 .wrangler/
+.DS_Store
