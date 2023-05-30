@@ -6,6 +6,8 @@ dist/
 *.log
 storybook-static/
 .turbo/
-website/out/
+out/
 packages/og-image/vender/*.wasm
 .eslintcache
+.wrangler/
+.DS_Store

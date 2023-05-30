@@ -23,4 +23,11 @@ describe('handler()', () => {
     const result = Buffer.from(await response.arrayBuffer());
     expect(result).toMatchImageSnapshot();
   });
+  it('should align title without whitespaces', async () => {
+    const response = await handler({
+      url: 'http://localhost:3000?product=FETS&title=Home',
+    });
+    const result = Buffer.from(await response.arrayBuffer());
+    expect(result).toMatchImageSnapshot();
+  });
 });
