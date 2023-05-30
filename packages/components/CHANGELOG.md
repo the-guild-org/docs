@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 4.6.3
+
+### Patch Changes
+
+- [#1081](https://github.com/the-guild-org/docs/pull/1081)
+  [`3f0f0cc`](https://github.com/the-guild-org/docs/commit/3f0f0cc962aee5a13452c8f04d865d00b569a20f)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - fets should be without graphql suffix
+
 ## 4.6.2
 
 ### Patch Changes
