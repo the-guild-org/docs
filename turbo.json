@@ -6,6 +6,7 @@
         // Run builds in workspaces I depend on first
         "^build"
       ]
-    }
+    },
+    "dev": {}
   }
 }

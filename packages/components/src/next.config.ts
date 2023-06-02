@@ -39,6 +39,7 @@ export const withGuildDocs = ({
     mdxOptions: {
       remarkPlugins: defaultRemarkPlugins,
     },
+    flexsearch: false
   });
   const siteUrl = process.env.SITE_URL || '';
 
