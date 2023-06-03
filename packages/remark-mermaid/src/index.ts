@@ -1,12 +1,15 @@
+import { createRequire } from 'node:module';
 import { Root } from 'mdast';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
 
-const FILE_PATH = '@theguild/components';
+const require = createRequire(import.meta.url);
+
+const MERMAID_COMPONENT_PATH = require.resolve('@theguild/remark-mermaid/mermaid');
 
 const MERMAID_IMPORT_AST = {
   type: 'mdxjsEsm' as 'inlineCode',
-  value: `import { Mermaid } from "${FILE_PATH}"`,
+  value: `import { Mermaid } from "${MERMAID_COMPONENT_PATH}"`,
   data: {
     estree: {
       type: 'Program',
@@ -23,8 +26,8 @@ const MERMAID_IMPORT_AST = {
           ],
           source: {
             type: 'Literal',
-            value: FILE_PATH,
-            raw: `"${FILE_PATH}"`,
+            value: MERMAID_COMPONENT_PATH,
+            raw: `"${MERMAID_COMPONENT_PATH}"`,
           },
         },
       ],

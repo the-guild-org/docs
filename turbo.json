@@ -6,6 +6,10 @@
         // Run builds in workspaces I depend on first
         "^build"
       ]
+    },
+    "dev": {
+      "dependsOn": ["^dev"],
+      "cache": false
     }
   }
 }

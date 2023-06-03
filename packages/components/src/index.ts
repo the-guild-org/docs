@@ -1,6 +1,5 @@
 export * from './components';
 export { defineConfig } from './define-config';
-export * from './mermaid';
 export { fetchPackageInfo } from './npm';
 export { PRODUCTS } from './products';
 export * from './types/components';

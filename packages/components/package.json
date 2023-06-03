@@ -48,6 +48,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "dev": "tsup --watch",
     "prebuild": "pnpm types:check && rm -rf dist",
     "types:check": "tsc --noEmit"
   },
@@ -64,11 +65,11 @@
     "@giscus/react": "2.2.8",
     "@next/bundle-analyzer": "13.4.2",
     "@radix-ui/react-navigation-menu": "1.1.3",
+    "@theguild/remark-mermaid": "workspace:*",
     "algoliasearch": "4.17.1",
     "clsx": "1.2.1",
     "focus-trap-react": "10.1.4",
     "fuzzy": "^0.1.3",
-    "mermaid": "10.1.0",
     "next-videos": "1.5.0",
     "nextra": "2.6.2",
     "nextra-theme-docs": "2.6.2",
@@ -78,15 +79,12 @@
     "remark-mdx-disable-explicit-jsx": "0.1.0",
     "search-insights": "2.6.0",
     "semver": "^7.3.8",
-    "unist-util-visit": "4.1.2",
     "use-debounce": "9.0.4"
   },
   "devDependencies": {
     "@theguild/algolia": "workspace:*",
     "@theguild/editor": "workspace:*",
     "@types/dedent": "0.7.0",
-    "@types/mdast": "3.0.11",
-    "@types/mermaid": "9.1.0",
     "@types/react-dom": "18.2.4",
     "@types/semver": "7.5.0",
     "dedent": "0.7.0",
@@ -95,8 +93,7 @@
     "next": "13.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "3.3.2",
-    "unified": "10.1.2"
+    "tailwindcss": "3.3.2"
   },
   "publishConfig": {
     "access": "public"
