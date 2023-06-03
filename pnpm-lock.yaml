@@ -230,7 +230,7 @@ importers:
       '@theguild/components': workspace:*
       '@types/react': 18.2.6
       react: 18.2.0
-      satori: 0.9.1
+      satori: 0.10.0
       typescript: 5.0.4
       wrangler: 3.0.1
       yoga-wasm-web: 0.3.3
@@ -238,7 +238,7 @@ importers:
       '@resvg/resvg-wasm': 2.4.1
       '@theguild/components': link:../components
       react: 18.2.0
-      satori: 0.9.1
+      satori: 0.10.0
       yoga-wasm-web: 0.3.3
     devDependencies:
       '@cloudflare/workers-types': 4.20230518.0
@@ -5289,7 +5289,7 @@ packages:
     dependencies:
       '@storybook/client-logger': 7.0.0-beta.11
       '@storybook/core-events': 7.0.0-beta.11
-      '@storybook/csf': 0.0.2-next.11
+      '@storybook/csf': 0.1.1-next.0
       '@storybook/manager-api': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/preview-api': 7.0.0-beta.11
       '@storybook/router': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
@@ -5479,7 +5479,7 @@ packages:
       '@storybook/client-logger': 7.0.0-beta.11
       '@storybook/components': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/core-events': 7.0.0-beta.11
-      '@storybook/csf': 0.0.2-next.11
+      '@storybook/csf': 0.1.1-next.0
       '@storybook/docs-tools': 7.0.0-beta.11
       '@storybook/manager-api': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/preview-api': 7.0.0-beta.11
@@ -5699,7 +5699,7 @@ packages:
     dependencies:
       '@babel/preset-env': 7.20.2_@babel+core@7.20.2
       '@babel/types': 7.21.3
-      '@storybook/csf': 0.0.2-next.11
+      '@storybook/csf': 0.1.1-next.0
       '@storybook/csf-tools': 7.0.0-beta.11
       '@storybook/node-logger': 7.0.0-beta.11
       '@storybook/types': 7.0.0-beta.11
@@ -5722,7 +5722,7 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@storybook/client-logger': 7.0.0-beta.11
-      '@storybook/csf': 0.0.2-next.11
+      '@storybook/csf': 0.1.1-next.0
       '@storybook/theming': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/types': 7.0.0-beta.11
       memoizerific: 1.11.3
@@ -5806,7 +5806,7 @@ packages:
       '@storybook/builder-manager': 7.0.0-beta.11
       '@storybook/core-common': 7.0.0-beta.11
       '@storybook/core-events': 7.0.0-beta.11
-      '@storybook/csf': 0.0.2-next.11
+      '@storybook/csf': 0.1.1-next.0
       '@storybook/csf-tools': 7.0.0-beta.11
       '@storybook/docs-mdx': 0.0.1-next.7
       '@storybook/node-logger': 7.0.0-beta.11
@@ -5874,7 +5874,7 @@ packages:
     resolution: {integrity: sha512-My4JLpQwp6L1rbyLFbjnc5MK/YsIoJM89poYD4mzoVAhMNuxd3Hkiu/j10qIDftplaNycMH5igNyg+ew0stexA==}
     dependencies:
       '@babel/types': 7.21.3
-      '@storybook/csf': 0.0.2-next.11
+      '@storybook/csf': 0.1.1-next.0
       '@storybook/types': 7.0.0-beta.11
       fs-extra: 9.1.0
       ts-dedent: 2.2.0
@@ -5888,14 +5888,14 @@ packages:
       lodash: 4.17.21
     dev: true
 
-  /@storybook/csf/0.0.2-next.11:
-    resolution: {integrity: sha512-xGt0YSVxZb43sKmEf1GIQD8xEbo+c+S6khDEL7Qu/pYA0gh5z3WUuhOlovnelYj/YJod+XRsfVvk23AaRfUJ4Q==}
+  /@storybook/csf/0.1.0:
+    resolution: {integrity: sha512-uk+jMXCZ8t38jSTHk2o5btI+aV2Ksbvl6DoOv3r6VaCM1KZqeuMwtwywIQdflkA8/6q/dKT8z8L+g8hC4GC3VQ==}
     dependencies:
       type-fest: 2.19.0
     dev: true
 
-  /@storybook/csf/0.1.0:
-    resolution: {integrity: sha512-uk+jMXCZ8t38jSTHk2o5btI+aV2Ksbvl6DoOv3r6VaCM1KZqeuMwtwywIQdflkA8/6q/dKT8z8L+g8hC4GC3VQ==}
+  /@storybook/csf/0.1.1-next.0:
+    resolution: {integrity: sha512-2M8E4CZOVW77P9lrgZZc2rcwxhNKVVykpzbcAauc3bots7xvDJMG60EasMRB/Y+cfqnSu6aaSUEVmKHTKsVJ3A==}
     dependencies:
       type-fest: 2.19.0
     dev: true
@@ -5930,7 +5930,7 @@ packages:
       '@storybook/channels': 7.0.0-beta.11
       '@storybook/client-logger': 7.0.0-beta.11
       '@storybook/core-events': 7.0.0-beta.11
-      '@storybook/csf': 0.0.2-next.11
+      '@storybook/csf': 0.1.1-next.0
       '@storybook/router': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/theming': 7.0.0-beta.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/types': 7.0.0-beta.11
@@ -6058,7 +6058,7 @@ packages:
       '@storybook/channels': 7.0.0-beta.11
       '@storybook/client-logger': 7.0.0-beta.11
       '@storybook/core-events': 7.0.0-beta.11
-      '@storybook/csf': 0.0.2-next.11
+      '@storybook/csf': 0.1.1-next.0
       '@storybook/types': 7.0.0-beta.11
       '@types/qs': 6.9.7
       dequal: 2.0.3
@@ -17090,8 +17090,8 @@ packages:
       neo-async: 2.6.2
     dev: true
 
-  /satori/0.9.1:
-    resolution: {integrity: sha512-2ggMOiY8O8rIxQ6vywiw3LlBheWHbsOzu5hZdMXTDFKzE9sDHUOtJegGmGE+e9aRSO1ttttgXrcHVsHPKYU2GQ==}
+  /satori/0.10.0:
+    resolution: {integrity: sha512-mst4KubaYn5qN1tsEXxwErPXJ3fR+GB0g5gN2h76rMfefC0IZu3o1/EZZTs+NE5UgcvTdPSXax9hiROc8S9e0g==}
     engines: {node: '>=16'}
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
