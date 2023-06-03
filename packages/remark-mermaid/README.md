@@ -8,7 +8,8 @@ Remark plugin for replacing ```mermaid code blocks with react `<Mermaid />` comp
 
 - Support MDX2
 
-- Support both dark and light themes. Listening for the `dark` class on the `<html />` element and updating mermaid's theme.
+- Support both dark and light themes. Listening for the `dark` class on the `<html />` element and
+  updating mermaid's theme.
 
 ## Install
 
