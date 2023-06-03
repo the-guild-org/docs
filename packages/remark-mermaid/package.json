@@ -1,9 +1,12 @@
 {
-  "name": "@b2o5t/remark-mermaid",
+  "name": "@theguild/remark-mermaid",
   "version": "0.0.0",
   "type": "module",
   "description": "Remark plugin for replacing ```mermaid codeblocks with mermaid diagrams",
-  "repository": "https://github.com/B2o5T/remark-mermaid",
+  "repository": {
+    "url": "https://github.com/the-guild-org/docs",
+    "directory": "packages/remark-mermaid"
+  },
   "author": "Dimitri POSTOLOV <dmytropostolov@gmail.com> (https://github.com/B2o5T)",
   "license": "MIT",
   "main": "./dist/index.js",
