@@ -135,12 +135,12 @@ importers:
       '@algolia/autocomplete-plugin-algolia-insights': 1.9.2
       '@algolia/autocomplete-plugin-query-suggestions': 1.9.2
       '@algolia/autocomplete-theme-classic': 1.9.2
-      '@b2o5t/remark-mermaid': workspace:*
       '@giscus/react': 2.2.8
       '@next/bundle-analyzer': 13.4.2
       '@radix-ui/react-navigation-menu': 1.1.3
       '@theguild/algolia': workspace:*
       '@theguild/editor': workspace:*
+      '@theguild/remark-mermaid': workspace:*
       '@types/dedent': 0.7.0
       '@types/react-dom': 18.2.4
       '@types/semver': 7.5.0
@@ -170,10 +170,10 @@ importers:
       '@algolia/autocomplete-plugin-algolia-insights': 1.9.2_rlcvrrtyerozuwbpmovapkww2e
       '@algolia/autocomplete-plugin-query-suggestions': 1.9.2_rlcvrrtyerozuwbpmovapkww2e
       '@algolia/autocomplete-theme-classic': 1.9.2
-      '@b2o5t/remark-mermaid': link:../remark-mermaid
       '@giscus/react': 2.2.8_biqbaboplfbrettd7655fr4n2y
       '@next/bundle-analyzer': 13.4.2
       '@radix-ui/react-navigation-menu': 1.1.3_45ykguepgogovtidncmkcsxgye
+      '@theguild/remark-mermaid': link:../remark-mermaid
       algoliasearch: 4.17.1
       clsx: 1.2.1
       focus-trap-react: 10.1.4_biqbaboplfbrettd7655fr4n2y
@@ -13822,8 +13822,8 @@ packages:
       - supports-color
     dev: true
 
-  /mdast-util-from-markdown/1.3.1:
-    resolution: {integrity: sha512-4xTO/M8c82qBcnQc1tgpNtubGUW/Y1tBQ1B0i5CtSoelOLKFYlElIr3bvgREYYO5iRqbMY1YuqZng0GVOI8Qww==}
+  /mdast-util-from-markdown/1.3.0:
+    resolution: {integrity: sha512-HN3W1gRIuN/ZW295c7zi7g9lVBllMgZE40RxCX37wrTPWXCWtpvOZdfnuK+1WNpvZje6XuJeI3Wnb4TJEUem+g==}
     dependencies:
       '@types/mdast': 3.0.11
       '@types/unist': 2.0.6
@@ -13869,7 +13869,7 @@ packages:
     dependencies:
       '@types/mdast': 3.0.11
       markdown-table: 3.0.2
-      mdast-util-from-markdown: 1.3.1
+      mdast-util-from-markdown: 1.3.0
       mdast-util-to-markdown: 1.3.0
     transitivePeerDependencies:
       - supports-color
@@ -13885,7 +13885,7 @@ packages:
   /mdast-util-gfm/2.0.1:
     resolution: {integrity: sha512-42yHBbfWIFisaAfV1eixlabbsa6q7vHeSPY+cg+BBjX51M8xhgMacqH9g6TftB/9+YkcI0ooV4ncfrJslzm/RQ==}
     dependencies:
-      mdast-util-from-markdown: 1.3.1
+      mdast-util-from-markdown: 1.3.0
       mdast-util-gfm-autolink-literal: 1.0.2
       mdast-util-gfm-footnote: 1.0.1
       mdast-util-gfm-strikethrough: 1.0.1
@@ -13910,7 +13910,7 @@ packages:
       '@types/estree-jsx': 1.0.0
       '@types/hast': 2.3.4
       '@types/mdast': 3.0.11
-      mdast-util-from-markdown: 1.3.1
+      mdast-util-from-markdown: 1.3.0
       mdast-util-to-markdown: 1.3.0
     transitivePeerDependencies:
       - supports-color
@@ -13944,7 +13944,7 @@ packages:
       '@types/estree-jsx': 1.0.0
       '@types/hast': 2.3.4
       '@types/mdast': 3.0.11
-      mdast-util-from-markdown: 1.3.1
+      mdast-util-from-markdown: 1.3.0
       mdast-util-to-markdown: 1.3.0
     transitivePeerDependencies:
       - supports-color
@@ -14062,7 +14062,7 @@ packages:
       elkjs: 0.8.2
       khroma: 2.0.0
       lodash-es: 4.17.21
-      mdast-util-from-markdown: 1.3.1
+      mdast-util-from-markdown: 1.3.0
       non-layered-tidy-tree-layout: 2.0.2
       stylis: 4.1.3
       ts-dedent: 2.2.0
@@ -16899,7 +16899,7 @@ packages:
     resolution: {integrity: sha512-1fUyHr2jLsVOkhbvPRBJ5zTKZZyD6yZzYaWCS6BPBdQ8vEMBCH+9zNCDA6tET/zHCi/jLqjCWtlJZUPk+DbnFw==}
     dependencies:
       '@types/mdast': 3.0.11
-      mdast-util-from-markdown: 1.3.1
+      mdast-util-from-markdown: 1.3.0
       unified: 10.1.2
     transitivePeerDependencies:
       - supports-color

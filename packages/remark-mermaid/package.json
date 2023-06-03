@@ -2,7 +2,7 @@
   "name": "@theguild/remark-mermaid",
   "version": "0.0.0",
   "type": "module",
-  "description": "Remark plugin for replacing ```mermaid codeblocks with mermaid diagrams",
+  "description": "Remark plugin for replacing ```mermaid code blocks with react `<Mermaid />` component",
   "repository": {
     "url": "https://github.com/the-guild-org/docs",
     "directory": "packages/remark-mermaid"

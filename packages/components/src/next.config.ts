@@ -2,9 +2,8 @@ import { NextConfig } from 'next';
 import withVideos from 'next-videos';
 import nextra from 'nextra';
 import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
-import { remarkMermaid } from '@b2o5t/remark-mermaid';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
-import { remarkMermaid } from './remark-mermaid';
+import { remarkMermaid } from '@theguild/remark-mermaid';
 import { applyUnderscoreRedirects } from './underscore-redirects';
 
 export const defaultRemarkPlugins = [
