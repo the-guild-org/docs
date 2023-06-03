@@ -6,9 +6,9 @@
 
 Remark plugin for replacing ```mermaid code blocks with react `<Mermaid />` component.
 
-Support both dark and light themes.
+- Support MDX2
 
-> Listening for the `dark` class on the `<html />` element and updating mermaid's theme.
+- Support both dark and light themes. Listening for the `dark` class on the `<html />` element and updating mermaid's theme.
 
 ## Install
 
