@@ -2,6 +2,7 @@ import { NextConfig } from 'next';
 import withVideos from 'next-videos';
 import nextra from 'nextra';
 import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
+import { remarkMermaid } from '@b2o5t/remark-mermaid';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
 import { remarkMermaid } from './remark-mermaid';
 import { applyUnderscoreRedirects } from './underscore-redirects';
@@ -39,7 +40,7 @@ export const withGuildDocs = ({
     mdxOptions: {
       remarkPlugins: defaultRemarkPlugins,
     },
-    flexsearch: false
+    flexsearch: false,
   });
   const siteUrl = process.env.SITE_URL || '';
 

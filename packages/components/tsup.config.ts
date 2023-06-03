@@ -6,6 +6,7 @@ import tsconfig from './tsconfig.json';
 const options = defineConfig({
   format: 'esm',
   target: tsconfig.compilerOptions.target as Options['target'],
+  clean: true,
 });
 
 export default defineConfig([
