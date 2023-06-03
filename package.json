@@ -45,7 +45,7 @@
     "@types/webpack": "5.28.1",
     "concurrently": "8.1.0",
     "css-loader": "6.8.1",
-    "eslint": "8.41.0",
+    "eslint": "8.42.0",
     "eslint-plugin-storybook": "0.6.12",
     "eslint-plugin-tailwindcss": "3.12.1",
     "husky": "8.0.3",
