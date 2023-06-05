@@ -1,0 +1,41 @@
+{
+  "name": "@theguild/remark-npm2yarn",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Remark plugin for transforming npm bash commands to yarn/pnpm with tabs",
+  "repository": {
+    "url": "https://github.com/the-guild-org/docs",
+    "directory": "packages/remark-npm2yarn"
+  },
+  "author": "Dimitri POSTOLOV <dmytropostolov@gmail.com> (https://github.com/B2o5T)",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "npm-to-yarn": "^2.0.0",
+    "unist-util-visit": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/mdast": "3.0.11",
+    "nextra": "2.7.0",
+    "unified": "10.1.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
+}
