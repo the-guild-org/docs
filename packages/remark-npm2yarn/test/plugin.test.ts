@@ -37,4 +37,23 @@ npm install bar
     );
     expect(mdx.result).toMatchSnapshot();
   });
+
+  it('should alias if Tabs/Tab already declared', async () => {
+    const mdx = await compileMdx(
+      `
+export const Tabs = 0;
+export const Tab = 1;
+
+\`\`\`sh npm2yarn
+npm i -D @graphql-eslint/eslint-plugin
+\`\`\`
+    `,
+      {
+        mdxOptions: {
+          remarkPlugins: [remarkNpm2Yarn],
+        },
+      },
+    );
+    expect(mdx.result).toMatchSnapshot();
+  });
 });
