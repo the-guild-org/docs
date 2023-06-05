@@ -1,5 +1,5 @@
 import { createRequire } from 'node:module';
-import { Root } from 'mdast';
+import { Code, Root } from 'mdast';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
 
@@ -9,7 +9,6 @@ const MERMAID_COMPONENT_PATH = require.resolve('@theguild/remark-mermaid/mermaid
 
 const MERMAID_IMPORT_AST = {
   type: 'mdxjsEsm' as 'inlineCode',
-  value: `import { Mermaid } from "${MERMAID_COMPONENT_PATH}"`,
   data: {
     estree: {
       type: 'Program',
@@ -27,25 +26,22 @@ const MERMAID_IMPORT_AST = {
           source: {
             type: 'Literal',
             value: MERMAID_COMPONENT_PATH,
-            raw: `"${MERMAID_COMPONENT_PATH}"`,
           },
         },
       ],
     },
   },
-};
+} as any;
 
 const getMermaidElementAST = (value: string) => ({
   type: 'mdxJsxFlowElement',
   name: 'Mermaid',
-  children: [],
   attributes: [
     {
       type: 'mdxJsxAttribute',
       name: 'chart',
       value: {
         type: 'mdxJsxAttributeValueExpression',
-        value: `\`${value}\``,
         data: {
           estree: {
             type: 'Program',
@@ -55,15 +51,12 @@ const getMermaidElementAST = (value: string) => ({
                 type: 'ExpressionStatement',
                 expression: {
                   type: 'TemplateLiteral',
-                  expressions: [],
                   quasis: [
                     {
                       type: 'TemplateElement',
                       value: {
-                        raw: value,
                         cooked: value,
                       },
-                      tail: true,
                     },
                   ],
                 },
@@ -78,7 +71,7 @@ const getMermaidElementAST = (value: string) => ({
 
 export const remarkMermaid: Plugin<[], Root> = () => (ast, _file, done) => {
   const codeblocks: any[][] = [];
-  visit(ast, { type: 'code', lang: 'mermaid' }, (node, index, parent) => {
+  visit(ast, { type: 'code', lang: 'mermaid' }, (node: Code, index, parent) => {
     codeblocks.push([node, index, parent]);
   });
 
