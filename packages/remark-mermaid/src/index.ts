@@ -5,27 +5,26 @@ import { visit } from 'unist-util-visit';
 
 const require = createRequire(import.meta.url);
 
-const MERMAID_COMPONENT_PATH = require.resolve('@theguild/remark-mermaid/mermaid');
+const COMPONENT_PATH = require.resolve('@theguild/remark-mermaid/mermaid');
+const COMPONENT_NAME = 'Mermaid';
 
 const MERMAID_IMPORT_AST = {
-  type: 'mdxjsEsm' as 'inlineCode',
+  type: 'mdxjsEsm',
   data: {
     estree: {
-      type: 'Program',
-      sourceType: 'module',
       body: [
         {
           type: 'ImportDeclaration',
           specifiers: [
             {
               type: 'ImportSpecifier',
-              imported: { type: 'Identifier', name: 'Mermaid' },
-              local: { type: 'Identifier', name: 'Mermaid' },
+              imported: { type: 'Identifier', name: COMPONENT_NAME },
+              local: { type: 'Identifier', name: COMPONENT_NAME },
             },
           ],
           source: {
             type: 'Literal',
-            value: MERMAID_COMPONENT_PATH,
+            value: COMPONENT_PATH,
           },
         },
       ],
@@ -35,7 +34,7 @@ const MERMAID_IMPORT_AST = {
 
 const getMermaidElementAST = (value: string) => ({
   type: 'mdxJsxFlowElement',
-  name: 'Mermaid',
+  name: COMPONENT_NAME,
   attributes: [
     {
       type: 'mdxJsxAttribute',
@@ -44,18 +43,17 @@ const getMermaidElementAST = (value: string) => ({
         type: 'mdxJsxAttributeValueExpression',
         data: {
           estree: {
-            type: 'Program',
-            sourceType: 'module',
             body: [
               {
                 type: 'ExpressionStatement',
                 expression: {
                   type: 'TemplateLiteral',
+                  expressions: [],
                   quasis: [
                     {
                       type: 'TemplateElement',
                       value: {
-                        cooked: value,
+                        raw: value,
                       },
                     },
                   ],

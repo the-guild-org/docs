@@ -17,8 +17,6 @@ const IMPORT_AST = {
   type: 'mdxjsEsm',
   data: {
     estree: {
-      type: 'Program',
-      sourceType: 'module',
       body: [
         {
           type: 'ImportDeclaration',
@@ -52,8 +50,6 @@ const TABS_AST = {
         type: 'mdxJsxAttributeValueExpression',
         data: {
           estree: {
-            type: 'Program',
-            sourceType: 'module',
             body: [
               {
                 type: 'ExpressionStatement',
