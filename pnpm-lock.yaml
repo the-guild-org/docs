@@ -242,12 +242,12 @@ importers:
     specifiers:
       '@types/mdast': 3.0.11
       '@types/mermaid': 9.2.0
-      mermaid: 10.2.1
+      mermaid: 10.2.2
       react: ^18.2.0
       unified: 10.1.2
       unist-util-visit: 4.1.2
     dependencies:
-      mermaid: 10.2.1
+      mermaid: 10.2.2
       unist-util-visit: 4.1.2
     devDependencies:
       '@types/mdast': 3.0.11
@@ -7138,7 +7138,7 @@ packages:
     resolution: {integrity: sha512-AlvLWYer6u4BkO4QzMkHo0t9RkvVIgqggVZmO+5snUiuX2caTKqtdqygX6GeE1VQa/TnXw9WoH0spcmHtG0inQ==}
     deprecated: This is a stub types definition. mermaid provides its own type definitions, so you do not need this installed.
     dependencies:
-      mermaid: 10.2.1
+      mermaid: 10.2.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -13969,8 +13969,8 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  /mermaid/10.2.1:
-    resolution: {integrity: sha512-gziwXLuAidRxPJxcA0LqPhToirGZ2J2gD+UrDEtGNeKb98BtcQde28UUcCUCmNplkQOwE7oynrzKcMe9i29AMw==}
+  /mermaid/10.2.2:
+    resolution: {integrity: sha512-ifYKlCcZKYq48hxC1poJXnvk/PbCdgqqbg5B4qsybb8nIItPM1ATKqVEDkyde6BBJxVFhVJr9hoUjipzniQJZg==}
     dependencies:
       '@braintree/sanitize-url': 6.0.2
       cytoscape: 3.23.0
