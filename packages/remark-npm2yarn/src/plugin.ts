@@ -18,7 +18,6 @@ export const remarkNpm2Yarn: Plugin<[], Root> = () => (ast, _file, done) => {
 
       ast.children.push({
         type: 'mdxjsEsm',
-        value: `import { Tabs, Tab } from '${packageName}'`,
         data: {
           estree: {
             type: 'Program',
@@ -58,7 +57,6 @@ export const remarkNpm2Yarn: Plugin<[], Root> = () => (ast, _file, done) => {
             name: 'items',
             value: {
               type: 'mdxJsxAttributeValueExpression',
-              value: "['pnpm', 'npm', 'yarn']",
               data: {
                 estree: {
                   type: 'Program',
