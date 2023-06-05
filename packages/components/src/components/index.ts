@@ -12,6 +12,7 @@ export { HeroVideo } from './hero-video';
 export * from './icons/index';
 export { Image } from './image';
 export { InfoList } from './info-list';
+export { LegacyPackageCmd } from './legacy-package-cmd';
 export { MarketplaceList } from './marketplace-list';
 export { MarketplaceSearch } from './marketplace-search';
 export { mdxComponents } from './mdx-components';
