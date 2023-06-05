@@ -25,10 +25,17 @@ function getTabAST(node: Code, packageManager: PackageManager) {
 }
 
 export const remarkNpm2Yarn: Plugin<[], Root> = () => (ast, _file, done) => {
+  let isImported = false;
+
   visit(ast, 'code', (node: Code, index, parent) => {
     const hasNpm2YarnMeta = node.meta?.includes(META_PLACEHOLDER);
 
     if (!hasNpm2YarnMeta) return;
+
+    if (!node.value.startsWith('npm')) {
+      throw new Error('`npm-to-yarn` package convert only npm commands to all package managers');
+    }
+
     console.log('here', node.value, index);
 
     // Replace current node with Tabs/Tab
@@ -62,6 +69,8 @@ export const remarkNpm2Yarn: Plugin<[], Root> = () => (ast, _file, done) => {
       children: PACKAGE_MANAGERS.map(value => getTabAST(node, value)),
     } as any;
 
+    if (isImported) return;
+
     // Add import statement at top of file
     ast.children.unshift({
       type: 'mdxjsEsm',
@@ -90,6 +99,8 @@ export const remarkNpm2Yarn: Plugin<[], Root> = () => (ast, _file, done) => {
         },
       },
     } as any);
+
+    isImported = true;
   });
 
   done();

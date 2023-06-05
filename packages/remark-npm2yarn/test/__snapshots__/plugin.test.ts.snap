@@ -179,7 +179,7 @@ function _missingMdxReference(id, component) {
 "
 `;
 
-exports[`remark-npm2yarn > should not add 2 times imports 1`] = `
+exports[`remark-npm2yarn > should not add import if it was already added 1`] = `
 "/*@jsxRuntime automatic @jsxImportSource react*/
 const {Fragment: _Fragment, jsx: _jsx, jsxs: _jsxs} = arguments[0];
 const {useMDXComponents: _provideComponents} = arguments[0];
@@ -354,7 +354,7 @@ function _createMdxContent(props) {
                 style: {
                   color: \\"var(--shiki-token-function)\\"
                 },
-                children: \\"yarn\\"
+                children: \\"pnpm\\"
               }), _jsx(_components.span, {
                 style: {
                   color: \\"var(--shiki-color-text)\\"

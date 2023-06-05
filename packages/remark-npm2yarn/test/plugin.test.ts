@@ -26,7 +26,7 @@ npm i -D @graphql-eslint/eslint-plugin
 \`\`\`
 
 \`\`\`sh npm2yarn
-yarn add bar
+npm install bar
 \`\`\`
     `,
       {
