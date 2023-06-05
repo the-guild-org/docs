@@ -9,12 +9,12 @@ function _createMdxContent(props) {
     pre: \\"pre\\",
     code: \\"code\\",
     span: \\"span\\"
-  }, _provideComponents(), props.components), {Tabs, Tab} = _components;
-  if (!Tab) _missingMdxReference(\\"Tab\\", true);
-  if (!Tabs) _missingMdxReference(\\"Tabs\\", true);
-  return _jsxs(Tabs, {
+  }, _provideComponents(), props.components), {$Tabs, $Tab} = _components;
+  if (!$Tab) _missingMdxReference(\\"$Tab\\", true);
+  if (!$Tabs) _missingMdxReference(\\"$Tabs\\", true);
+  return _jsxs($Tabs, {
     items: [\\"pnpm\\", \\"yarn\\", \\"npm\\"],
-    children: [_jsx(Tab, {
+    children: [_jsx($Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
@@ -62,7 +62,7 @@ function _createMdxContent(props) {
           })
         })
       })
-    }), _jsx(Tab, {
+    }), _jsx($Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
@@ -110,7 +110,7 @@ function _createMdxContent(props) {
           })
         })
       })
-    }), _jsx(Tab, {
+    }), _jsx($Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
@@ -185,12 +185,12 @@ function _createMdxContent(props) {
     pre: \\"pre\\",
     code: \\"code\\",
     span: \\"span\\"
-  }, _provideComponents(), props.components), {Tabs, Tab} = _components;
-  if (!Tab) _missingMdxReference(\\"Tab\\", true);
-  if (!Tabs) _missingMdxReference(\\"Tabs\\", true);
-  return _jsxs(Tabs, {
+  }, _provideComponents(), props.components), {$Tabs, $Tab} = _components;
+  if (!$Tab) _missingMdxReference(\\"$Tab\\", true);
+  if (!$Tabs) _missingMdxReference(\\"$Tabs\\", true);
+  return _jsxs($Tabs, {
     items: [\\"pnpm\\", \\"yarn\\", \\"npm\\"],
-    children: [_jsx(Tab, {
+    children: [_jsx($Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
@@ -239,7 +239,7 @@ function _createMdxContent(props) {
           })
         })
       })
-    }), _jsx(Tab, {
+    }), _jsx($Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
@@ -288,7 +288,7 @@ function _createMdxContent(props) {
           })
         })
       })
-    }), _jsx(Tab, {
+    }), _jsx($Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
@@ -364,13 +364,13 @@ function _createMdxContent(props) {
     pre: \\"pre\\",
     code: \\"code\\",
     span: \\"span\\"
-  }, _provideComponents(), props.components), {Tabs, Tab} = _components;
-  if (!Tab) _missingMdxReference(\\"Tab\\", true);
-  if (!Tabs) _missingMdxReference(\\"Tabs\\", true);
+  }, _provideComponents(), props.components), {$Tabs, $Tab} = _components;
+  if (!$Tab) _missingMdxReference(\\"$Tab\\", true);
+  if (!$Tabs) _missingMdxReference(\\"$Tabs\\", true);
   return _jsxs(_Fragment, {
-    children: [_jsxs(Tabs, {
+    children: [_jsxs($Tabs, {
       items: [\\"pnpm\\", \\"yarn\\", \\"npm\\"],
-      children: [_jsx(Tab, {
+      children: [_jsx($Tab, {
         children: _jsx(_components.pre, {
           \\"data-language\\": \\"sh\\",
           \\"data-theme\\": \\"default\\",
@@ -418,7 +418,7 @@ function _createMdxContent(props) {
             })
           })
         })
-      }), _jsx(Tab, {
+      }), _jsx($Tab, {
         children: _jsx(_components.pre, {
           \\"data-language\\": \\"sh\\",
           \\"data-theme\\": \\"default\\",
@@ -466,7 +466,7 @@ function _createMdxContent(props) {
             })
           })
         })
-      }), _jsx(Tab, {
+      }), _jsx($Tab, {
         children: _jsx(_components.pre, {
           \\"data-language\\": \\"sh\\",
           \\"data-theme\\": \\"default\\",
@@ -515,9 +515,9 @@ function _createMdxContent(props) {
           })
         })
       })]
-    }), \\"\\\\n\\", _jsxs(Tabs, {
+    }), \\"\\\\n\\", _jsxs($Tabs, {
       items: [\\"pnpm\\", \\"yarn\\", \\"npm\\"],
-      children: [_jsx(Tab, {
+      children: [_jsx($Tab, {
         children: _jsx(_components.pre, {
           \\"data-language\\": \\"sh\\",
           \\"data-theme\\": \\"default\\",
@@ -555,7 +555,7 @@ function _createMdxContent(props) {
             })
           })
         })
-      }), _jsx(Tab, {
+      }), _jsx($Tab, {
         children: _jsx(_components.pre, {
           \\"data-language\\": \\"sh\\",
           \\"data-theme\\": \\"default\\",
@@ -593,7 +593,7 @@ function _createMdxContent(props) {
             })
           })
         })
-      }), _jsx(Tab, {
+      }), _jsx($Tab, {
         children: _jsx(_components.pre, {
           \\"data-language\\": \\"sh\\",
           \\"data-theme\\": \\"default\\",

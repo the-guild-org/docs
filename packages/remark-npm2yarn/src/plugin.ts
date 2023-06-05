@@ -9,10 +9,71 @@ const PACKAGE_MANAGERS = ['pnpm', 'yarn', 'npm'] as const;
 
 type PackageManager = (typeof PACKAGE_MANAGERS)[number];
 
+// To avoid conflicts with other Tabs/Tab declarations
+const TABS_NAME = '$Tabs';
+const TAB_NAME = '$Tab';
+
+const IMPORT_AST = {
+  type: 'mdxjsEsm',
+  data: {
+    estree: {
+      type: 'Program',
+      sourceType: 'module',
+      body: [
+        {
+          type: 'ImportDeclaration',
+          source: { type: 'Literal', value: TABS_PACKAGE_NAME },
+          specifiers: [
+            {
+              type: 'ImportSpecifier',
+              imported: { type: 'Identifier', name: 'Tabs' },
+              local: { type: 'Identifier', name: TABS_NAME },
+            },
+            {
+              type: 'ImportSpecifier',
+              imported: { type: 'Identifier', name: 'Tab' },
+              local: { type: 'Identifier', name: TAB_NAME },
+            },
+          ],
+        },
+      ],
+    },
+  },
+};
+
+const TABS_AST = {
+  type: 'mdxJsxFlowElement',
+  name: TABS_NAME,
+  attributes: [
+    {
+      type: 'mdxJsxAttribute',
+      name: 'items',
+      value: {
+        type: 'mdxJsxAttributeValueExpression',
+        data: {
+          estree: {
+            type: 'Program',
+            sourceType: 'module',
+            body: [
+              {
+                type: 'ExpressionStatement',
+                expression: {
+                  type: 'ArrayExpression',
+                  elements: PACKAGE_MANAGERS.map(value => ({ type: 'Literal', value })),
+                },
+              },
+            ],
+          },
+        },
+      },
+    },
+  ],
+};
+
 function getTabAST(node: Code, packageManager: PackageManager) {
   return {
     type: 'mdxJsxFlowElement',
-    name: 'Tab',
+    name: TAB_NAME,
     children: [
       {
         type: node.type,
@@ -36,69 +97,16 @@ export const remarkNpm2Yarn: Plugin<[], Root> = () => (ast, _file, done) => {
       throw new Error('`npm-to-yarn` package convert only npm commands to all package managers');
     }
 
-    console.log('here', node.value, index);
-
-    // Replace current node with Tabs/Tab
+    // Replace current node with Tabs/Tab components
     parent!.children[index!] = {
-      type: 'mdxJsxFlowElement',
-      name: 'Tabs',
-      attributes: [
-        {
-          type: 'mdxJsxAttribute',
-          name: 'items',
-          value: {
-            type: 'mdxJsxAttributeValueExpression',
-            data: {
-              estree: {
-                type: 'Program',
-                sourceType: 'module',
-                body: [
-                  {
-                    type: 'ExpressionStatement',
-                    expression: {
-                      type: 'ArrayExpression',
-                      elements: PACKAGE_MANAGERS.map(value => ({ type: 'Literal', value })),
-                    },
-                  },
-                ],
-              },
-            },
-          },
-        },
-      ],
+      ...TABS_AST,
       children: PACKAGE_MANAGERS.map(value => getTabAST(node, value)),
     } as any;
 
     if (isImported) return;
 
     // Add import statement at top of file
-    ast.children.unshift({
-      type: 'mdxjsEsm',
-      data: {
-        estree: {
-          type: 'Program',
-          sourceType: 'module',
-          body: [
-            {
-              type: 'ImportDeclaration',
-              source: { type: 'Literal', value: TABS_PACKAGE_NAME },
-              specifiers: [
-                {
-                  type: 'ImportSpecifier',
-                  imported: { type: 'Identifier', name: 'Tabs' },
-                  local: { type: 'Identifier', name: 'Tabs' },
-                },
-                {
-                  type: 'ImportSpecifier',
-                  imported: { type: 'Identifier', name: 'Tab' },
-                  local: { type: 'Identifier', name: 'Tab' },
-                },
-              ],
-            },
-          ],
-        },
-      },
-    } as any);
+    ast.children.unshift(IMPORT_AST as any);
 
     isImported = true;
   });
