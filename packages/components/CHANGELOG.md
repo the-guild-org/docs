@@ -1,5 +1,29 @@
 # @theguild/components
 
+## 4.6.5
+
+### Patch Changes
+
+- [#1100](https://github.com/the-guild-org/docs/pull/1100)
+  [`689e633`](https://github.com/the-guild-org/docs/commit/689e6337a33e2f614c2652d558c02822f1bee083)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.7.0` ↗︎](https://www.npmjs.com/package/nextra/v/2.7.0) (from
+    `2.6.2`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.7.0` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.7.0) (from
+    `2.6.2`, in `dependencies`)
+
+- [#1097](https://github.com/the-guild-org/docs/pull/1097)
+  [`ef33af3`](https://github.com/the-guild-org/docs/commit/ef33af3e62ccf2431f165527d6acb5b92be095a0)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - fix export of Mermaid component
+
+- Updated dependencies
+  [[`ef33af3`](https://github.com/the-guild-org/docs/commit/ef33af3e62ccf2431f165527d6acb5b92be095a0),
+  [`ef33af3`](https://github.com/the-guild-org/docs/commit/ef33af3e62ccf2431f165527d6acb5b92be095a0),
+  [`689e633`](https://github.com/the-guild-org/docs/commit/689e6337a33e2f614c2652d558c02822f1bee083)]:
+  - @theguild/remark-mermaid@0.0.2
+
 ## 4.6.4
 
 ### Patch Changes
