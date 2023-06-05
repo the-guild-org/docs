@@ -38,7 +38,6 @@
   },
   "devDependencies": {
     "@types/mdast": "3.0.11",
-    "@types/mermaid": "9.2.0",
     "react": "18.2.0",
     "unified": "10.1.2"
   },
