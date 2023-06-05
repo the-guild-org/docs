@@ -24,6 +24,7 @@ export {
   Steps,
   FileTree,
 } from 'nextra-theme-docs';
+export { Mermaid } from '@theguild/remark-mermaid/mermaid';
 
 declare module 'react' {
   interface CSSProperties {
