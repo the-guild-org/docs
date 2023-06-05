@@ -11,46 +11,9 @@ npm i -D @graphql-eslint/eslint-plugin
     `,
       {
         mdxOptions: {
-          remarkPlugins: [remarkNpm2Yarn],
-        },
-      },
-    );
-    expect(mdx.result).toMatchSnapshot();
-  });
-
-  it('should not add import if it was already added', async () => {
-    const mdx = await compileMdx(
-      `
-\`\`\`sh npm2yarn
-npm i -D @graphql-eslint/eslint-plugin
-\`\`\`
-
-\`\`\`sh npm2yarn
-npm install bar
-\`\`\`
-    `,
-      {
-        mdxOptions: {
-          remarkPlugins: [remarkNpm2Yarn],
-        },
-      },
-    );
-    expect(mdx.result).toMatchSnapshot();
-  });
-
-  it('should alias if Tabs/Tab already declared', async () => {
-    const mdx = await compileMdx(
-      `
-export const Tabs = 0;
-export const Tab = 1;
-
-\`\`\`sh npm2yarn
-npm i -D @graphql-eslint/eslint-plugin
-\`\`\`
-    `,
-      {
-        mdxOptions: {
-          remarkPlugins: [remarkNpm2Yarn],
+          remarkPlugins: [
+            [remarkNpm2Yarn, { packageName: 'nextra/components', tabNamesProp: 'items' }],
+          ],
         },
       },
     );

@@ -14,14 +14,14 @@ npm i @theguild/remark-npm2yarn
 
 ## Usage
 
-```js
+```jsx
 import { remark } from 'remark'
 import { remarkNpm2Yarn } from 'remark-npm2yarn'
 
-remark.use(
-  remarkNpm2Yarn,
-  { packageName: 'package-name-with-tabs-and-tab-components', tabNamesProp: 'items' }
-)
+remark.use(remarkNpm2Yarn, {
+  packageName: '<string>', // nextra/components
+  tabNamesProp: '<string>' // items
+})
 ```
 
 ````mdx
