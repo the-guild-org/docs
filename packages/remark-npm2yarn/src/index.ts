@@ -1,1 +1,1 @@
-export { remarkNpm2Yarn } from './plugin';
+export { remarkNpm2Yarn } from './plugin.js';
