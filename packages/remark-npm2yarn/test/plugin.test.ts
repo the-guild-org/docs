@@ -24,54 +24,159 @@ npm i -D @graphql-eslint/eslint-plugin
           pre: \\"pre\\",
           code: \\"code\\",
           span: \\"span\\"
-        }, _provideComponents(), props.components);
-        return _jsx(_components.pre, {
-          \\"data-language\\": \\"sh\\",
-          \\"data-theme\\": \\"default\\",
-          filename: \\"Terminal\\",
-          children: _jsx(_components.code, {
-            \\"data-language\\": \\"sh\\",
-            \\"data-theme\\": \\"default\\",
-            children: _jsxs(_components.span, {
-              className: \\"line\\",
-              children: [_jsx(_components.span, {
-                style: {
-                  color: \\"var(--shiki-token-function)\\"
-                },
-                children: \\"npm\\"
-              }), _jsx(_components.span, {
-                style: {
-                  color: \\"var(--shiki-color-text)\\"
-                },
-                children: \\" \\"
-              }), _jsx(_components.span, {
-                style: {
-                  color: \\"var(--shiki-token-string)\\"
-                },
-                children: \\"i\\"
-              }), _jsx(_components.span, {
-                style: {
-                  color: \\"var(--shiki-color-text)\\"
-                },
-                children: \\" \\"
-              }), _jsx(_components.span, {
-                style: {
-                  color: \\"var(--shiki-token-string)\\"
-                },
-                children: \\"-D\\"
-              }), _jsx(_components.span, {
-                style: {
-                  color: \\"var(--shiki-color-text)\\"
-                },
-                children: \\" \\"
-              }), _jsx(_components.span, {
-                style: {
-                  color: \\"var(--shiki-token-string)\\"
-                },
-                children: \\"@graphql-eslint/eslint-plugin\\"
-              })]
+        }, _provideComponents(), props.components), {Tabs, Tab} = _components;
+        if (!Tab) _missingMdxReference(\\"Tab\\", true);
+        if (!Tabs) _missingMdxReference(\\"Tabs\\", true);
+        return _jsxs(Tabs, {
+          items: [\\"pnpm\\", \\"yarn\\", \\"npm\\"],
+          children: [_jsx(Tab, {
+            children: _jsx(_components.pre, {
+              \\"data-language\\": \\"sh\\",
+              \\"data-theme\\": \\"default\\",
+              filename: \\"Terminal\\",
+              children: _jsx(_components.code, {
+                \\"data-language\\": \\"sh\\",
+                \\"data-theme\\": \\"default\\",
+                children: _jsxs(_components.span, {
+                  className: \\"line\\",
+                  children: [_jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-function)\\"
+                    },
+                    children: \\"pnpm\\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-color-text)\\"
+                    },
+                    children: \\" \\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-string)\\"
+                    },
+                    children: \\"add\\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-color-text)\\"
+                    },
+                    children: \\" \\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-string)\\"
+                    },
+                    children: \\"-D\\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-color-text)\\"
+                    },
+                    children: \\" \\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-string)\\"
+                    },
+                    children: \\"@graphql-eslint/eslint-plugin\\"
+                  })]
+                })
+              })
             })
-          })
+          }), _jsx(Tab, {
+            children: _jsx(_components.pre, {
+              \\"data-language\\": \\"sh\\",
+              \\"data-theme\\": \\"default\\",
+              filename: \\"Terminal\\",
+              children: _jsx(_components.code, {
+                \\"data-language\\": \\"sh\\",
+                \\"data-theme\\": \\"default\\",
+                children: _jsxs(_components.span, {
+                  className: \\"line\\",
+                  children: [_jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-function)\\"
+                    },
+                    children: \\"yarn\\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-color-text)\\"
+                    },
+                    children: \\" \\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-string)\\"
+                    },
+                    children: \\"add\\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-color-text)\\"
+                    },
+                    children: \\" \\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-string)\\"
+                    },
+                    children: \\"--dev\\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-color-text)\\"
+                    },
+                    children: \\" \\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-string)\\"
+                    },
+                    children: \\"@graphql-eslint/eslint-plugin\\"
+                  })]
+                })
+              })
+            })
+          }), _jsx(Tab, {
+            children: _jsx(_components.pre, {
+              \\"data-language\\": \\"sh\\",
+              \\"data-theme\\": \\"default\\",
+              filename: \\"Terminal\\",
+              children: _jsx(_components.code, {
+                \\"data-language\\": \\"sh\\",
+                \\"data-theme\\": \\"default\\",
+                children: _jsxs(_components.span, {
+                  className: \\"line\\",
+                  children: [_jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-function)\\"
+                    },
+                    children: \\"npm\\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-color-text)\\"
+                    },
+                    children: \\" \\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-string)\\"
+                    },
+                    children: \\"i\\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-color-text)\\"
+                    },
+                    children: \\" \\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-string)\\"
+                    },
+                    children: \\"-D\\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-color-text)\\"
+                    },
+                    children: \\" \\"
+                  }), _jsx(_components.span, {
+                    style: {
+                      color: \\"var(--shiki-token-string)\\"
+                    },
+                    children: \\"@graphql-eslint/eslint-plugin\\"
+                  })]
+                })
+              })
+            })
+          })]
         });
       }
       function MDXContent(props = {}) {
@@ -83,6 +188,9 @@ npm i -D @graphql-eslint/eslint-plugin
       return {
         default: MDXContent
       };
+      function _missingMdxReference(id, component) {
+        throw new Error(\\"Expected \\" + (component ? \\"component\\" : \\"object\\") + \\" \`\\" + id + \\"\` to be defined: you likely forgot to import, pass, or provide it.\\");
+      }
       "
     `);
   });

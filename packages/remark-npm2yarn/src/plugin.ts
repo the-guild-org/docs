@@ -29,7 +29,7 @@ export const remarkNpm2Yarn: Plugin<[], Root> = () => (ast, _file, done) => {
     const hasNpm2YarnMeta = node.meta?.includes(META_PLACEHOLDER);
 
     if (!hasNpm2YarnMeta) return;
-    console.log('here', hasNpm2YarnMeta, index);
+    console.log('here', node.value, index);
 
     // Replace current node with Tabs/Tab
     parent!.children[index!] = {
@@ -50,11 +50,7 @@ export const remarkNpm2Yarn: Plugin<[], Root> = () => (ast, _file, done) => {
                     type: 'ExpressionStatement',
                     expression: {
                       type: 'ArrayExpression',
-                      elements: [
-                        { type: 'Literal', value: 'pnpm' },
-                        { type: 'Literal', value: 'yarn' },
-                        { type: 'Literal', value: 'npm' },
-                      ],
+                      elements: PACKAGE_MANAGERS.map(value => ({ type: 'Literal', value })),
                     },
                   },
                 ],
@@ -63,7 +59,7 @@ export const remarkNpm2Yarn: Plugin<[], Root> = () => (ast, _file, done) => {
           },
         },
       ],
-      children: [getTabAST(node, 'pnpm'), getTabAST(node, 'yarn'), getTabAST(node, 'npm')],
+      children: PACKAGE_MANAGERS.map(value => getTabAST(node, value)),
     } as any;
 
     // Add import statement at top of file
