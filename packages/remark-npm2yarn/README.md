@@ -14,6 +14,16 @@ npm i @theguild/remark-npm2yarn
 
 ## Usage
 
+```js
+import { remark } from 'remark'
+import { remarkNpm2Yarn } from 'remark-npm2yarn'
+
+remark.use(
+  remarkNpm2Yarn,
+  { packageName: 'package-name-with-tabs-and-tab-components', tabNamesProp: 'items' }
+)
+```
+
 ````mdx
 ```sh npm2yarn
 npm i -D @graphql-eslint/eslint-plugin
