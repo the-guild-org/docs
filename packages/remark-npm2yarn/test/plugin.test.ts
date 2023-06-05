@@ -17,4 +17,24 @@ npm i -D @graphql-eslint/eslint-plugin
     );
     expect(mdx.result).toMatchSnapshot();
   });
+
+  it('should not add import if it was already added', async () => {
+    const mdx = await compileMdx(
+      `
+\`\`\`sh npm2yarn
+npm i -D @graphql-eslint/eslint-plugin
+\`\`\`
+
+\`\`\`sh npm2yarn
+yarn add bar
+\`\`\`
+    `,
+      {
+        mdxOptions: {
+          remarkPlugins: [remarkNpm2Yarn],
+        },
+      },
+    );
+    expect(mdx.result).toMatchSnapshot();
+  });
 });
