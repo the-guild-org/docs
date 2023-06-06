@@ -8,7 +8,6 @@ import {
   EnvelopLogo,
   ESLintLogo,
   FetsLogo,
-  HelixLogo,
   HiveLogo,
   InspectorLogo,
   KitQLLogo,
@@ -38,7 +37,6 @@ export type ProductType =
   | 'ESLINT'
   | 'CONFIG'
   | 'SCALARS'
-  | 'HELIX'
   | 'SHIELD'
   | 'SOFA'
   | 'STITCHING'
@@ -149,7 +147,7 @@ export const PRODUCTS: Record<
     title: 'Build and consume REST APIs with the e2e type safety using TypeScript and OpenAPI',
     href: 'https://the-guild.dev/fets',
     logo: FetsLogo,
-    primaryColor: '#3178C6',
+    primaryColor: '#3178c6',
   },
   SCALARS: {
     name: 'Scalars',
@@ -157,13 +155,6 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/scalars',
     logo: ScalarsLogo,
     primaryColor: '#f38',
-  },
-  HELIX: {
-    name: 'Helix',
-    title: 'A highly evolved GraphQL HTTP server',
-    href: 'https://graphql-helix.com',
-    logo: HelixLogo,
-    primaryColor: '#03a9f4',
   },
   SHIELD: {
     name: 'Shield',

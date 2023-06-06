@@ -4,7 +4,7 @@ import { PRODUCTS } from '@theguild/components/products';
 import { LeftCircle, RightCircle, RightSmallCircle } from './components';
 import { shade, toImage, toSVG } from './utils';
 
-const { WHATSAPP: _, HELIX: _2, ...filteredProducts } = PRODUCTS;
+const { WHATSAPP: _, ...filteredProducts } = PRODUCTS;
 
 const products = {
   ...filteredProducts,
