@@ -1,55 +1,48 @@
 import { createRequire } from 'node:module';
-import { Root } from 'mdast';
+import { Code, Root } from 'mdast';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
 
 const require = createRequire(import.meta.url);
 
-const MERMAID_COMPONENT_PATH = require.resolve('@theguild/remark-mermaid/mermaid');
+const COMPONENT_PATH = require.resolve('@theguild/remark-mermaid/mermaid');
+const COMPONENT_NAME = 'Mermaid';
 
 const MERMAID_IMPORT_AST = {
-  type: 'mdxjsEsm' as 'inlineCode',
-  value: `import { Mermaid } from "${MERMAID_COMPONENT_PATH}"`,
+  type: 'mdxjsEsm',
   data: {
     estree: {
-      type: 'Program',
-      sourceType: 'module',
       body: [
         {
           type: 'ImportDeclaration',
           specifiers: [
             {
               type: 'ImportSpecifier',
-              imported: { type: 'Identifier', name: 'Mermaid' },
-              local: { type: 'Identifier', name: 'Mermaid' },
+              imported: { type: 'Identifier', name: COMPONENT_NAME },
+              local: { type: 'Identifier', name: COMPONENT_NAME },
             },
           ],
           source: {
             type: 'Literal',
-            value: MERMAID_COMPONENT_PATH,
-            raw: `"${MERMAID_COMPONENT_PATH}"`,
+            value: COMPONENT_PATH,
           },
         },
       ],
     },
   },
-};
+} as any;
 
 const getMermaidElementAST = (value: string) => ({
   type: 'mdxJsxFlowElement',
-  name: 'Mermaid',
-  children: [],
+  name: COMPONENT_NAME,
   attributes: [
     {
       type: 'mdxJsxAttribute',
       name: 'chart',
       value: {
         type: 'mdxJsxAttributeValueExpression',
-        value: `\`${value}\``,
         data: {
           estree: {
-            type: 'Program',
-            sourceType: 'module',
             body: [
               {
                 type: 'ExpressionStatement',
@@ -61,9 +54,7 @@ const getMermaidElementAST = (value: string) => ({
                       type: 'TemplateElement',
                       value: {
                         raw: value,
-                        cooked: value,
                       },
-                      tail: true,
                     },
                   ],
                 },
@@ -78,7 +69,7 @@ const getMermaidElementAST = (value: string) => ({
 
 export const remarkMermaid: Plugin<[], Root> = () => (ast, _file, done) => {
   const codeblocks: any[][] = [];
-  visit(ast, { type: 'code', lang: 'mermaid' }, (node, index, parent) => {
+  visit(ast, { type: 'code', lang: 'mermaid' }, (node: Code, index, parent) => {
     codeblocks.push([node, index, parent]);
   });
 

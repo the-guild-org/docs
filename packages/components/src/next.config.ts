@@ -3,6 +3,7 @@ import withVideos from 'next-videos';
 import nextra from 'nextra';
 import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
+import { remarkNpm2Yarn } from '@theguild/remark-npm2yarn';
 import { applyUnderscoreRedirects } from './underscore-redirects';
 
 export const defaultRemarkPlugins = [
@@ -11,6 +12,7 @@ export const defaultRemarkPlugins = [
     remarkMdxDisableExplicitJsx,
     { whiteList: ['iframe', 'video', 'source'] },
   ],
+  [remarkNpm2Yarn, { packageName: '@theguild/components', tabNamesProp: 'items' }],
 ] as any;
 
 export const withGuildDocs = ({

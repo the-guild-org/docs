@@ -1,12 +1,15 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { compileMdx } from 'nextra/compile'
-import { PackageCmd, useMDXComponents, useSSG } from '@theguild/components'
+import { useMDXComponents, useSSG } from '@theguild/components'
 import pkgJsonFromComponents from '@theguild/components/package.json'
 import pkgJson from '../../../package.json'
 
 # Installation
 
-<PackageCmd packages={['@theguild/components', '-D @theguild/tailwind-config']} />
+```sh npm2yarn
+npm install @theguild/components
+npm install -D @theguild/tailwind-config
+```
 
 ## 1. Add dependencies
 

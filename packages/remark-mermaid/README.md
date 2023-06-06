@@ -17,7 +17,7 @@ Remark plugin for replacing ```mermaid code blocks with react `<Mermaid />` comp
 npm i @theguild/remark-mermaid
 ```
 
-## How to Use
+## Usage
 
 Follow code will be converted to a mermaid diagram.
 
