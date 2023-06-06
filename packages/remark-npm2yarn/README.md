@@ -14,7 +14,7 @@ npm i @theguild/remark-npm2yarn
 
 ## Usage
 
-```jsx
+```js
 import { remark } from 'remark'
 import { remarkNpm2Yarn } from 'remark-npm2yarn'
 
