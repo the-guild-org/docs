@@ -27,7 +27,10 @@ function getTabAST(node: Code, packageManager: PackageManager) {
   };
 }
 
-export const remarkNpm2Yarn: Plugin<[{ packageName: string; tabNamesProp: string }], Root> = opts => {
+export const remarkNpm2Yarn: Plugin<
+  [{ packageName: string; tabNamesProp: string }],
+  Root
+> = opts => {
   if (!opts?.packageName) throw new Error('remarkNpm2Yarn: `packageName` option is required');
   if (!opts?.tabNamesProp) throw new Error('remarkNpm2Yarn: `tabNamesProp` option is required');
 

@@ -43,7 +43,11 @@ type Command = {
   isGlobal?: boolean;
 };
 
-export const LegacyPackageCmd = ({ packages }: { packages: (string | Command)[] }): ReactElement => {
+export const LegacyPackageCmd = ({
+  packages,
+}: {
+  packages: (string | Command)[];
+}): ReactElement => {
   const commands = useMemo(
     () =>
       PACKAGE_MANAGERS.map(pkgManager =>
