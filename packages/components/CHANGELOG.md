@@ -1,5 +1,34 @@
 # @theguild/components
 
+## 5.0.0
+
+### Major Changes
+
+- [#1105](https://github.com/the-guild-org/docs/pull/1105)
+  [`35f249a`](https://github.com/the-guild-org/docs/commit/35f249a4dd0803596afd34cd450a682b5f625557)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - deprecate `<PackageCmd />`, rename to
+  `<LegacyPackageCmd />` (for versioning)
+
+### Patch Changes
+
+- [#1111](https://github.com/the-guild-org/docs/pull/1111)
+  [`fe4c150`](https://github.com/the-guild-org/docs/commit/fe4c1507f5b607116ff330d3fcdb6032e080b77c)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.7.1` ↗︎](https://www.npmjs.com/package/nextra/v/2.7.1) (from
+    `2.7.0`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.7.1` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.7.1) (from
+    `2.7.0`, in `dependencies`)
+
+- [#1108](https://github.com/the-guild-org/docs/pull/1108)
+  [`56e9704`](https://github.com/the-guild-org/docs/commit/56e9704da5a348adf39a653881d885b8625bccb9)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - remove Helix from products
+
+- Updated dependencies
+  [[`35f249a`](https://github.com/the-guild-org/docs/commit/35f249a4dd0803596afd34cd450a682b5f625557)]:
+  - @theguild/remark-npm2yarn@0.0.1
+
 ## 4.6.5
 
 ### Patch Changes

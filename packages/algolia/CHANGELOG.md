@@ -1,5 +1,13 @@
 # @theguild/algolia
 
+## 1.1.8
+
+### Patch Changes
+
+- [#1108](https://github.com/the-guild-org/docs/pull/1108)
+  [`56e9704`](https://github.com/the-guild-org/docs/commit/56e9704da5a348adf39a653881d885b8625bccb9)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - remove Helix from products
+
 ## 1.1.7
 
 ### Patch Changes
