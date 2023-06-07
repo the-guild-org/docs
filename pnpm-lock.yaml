@@ -235,11 +235,11 @@ importers:
         specifier: 1.5.0
         version: 1.5.0(webpack@4.46.0)
       nextra:
-        specifier: 2.7.0
-        version: 2.7.0(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.7.1
+        version: 2.7.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
       nextra-theme-docs:
-        specifier: 2.7.0
-        version: 2.7.0(next@13.4.2)(nextra@2.7.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.7.1
+        version: 2.7.1(next@13.4.2)(nextra@2.7.1)(react-dom@18.2.0)(react@18.2.0)
       react-instantsearch-dom:
         specifier: 6.40.0
         version: 6.40.0(algoliasearch@4.17.1)(react-dom@18.2.0)(react@18.2.0)
@@ -387,8 +387,8 @@ importers:
         specifier: 3.0.11
         version: 3.0.11
       nextra:
-        specifier: 2.7.0
-        version: 2.7.0(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.7.1
+        version: 2.7.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
       unified:
         specifier: 10.1.2
         version: 10.1.2
@@ -405,8 +405,8 @@ importers:
         specifier: 4.4.1
         version: 4.4.1(react-dom@18.2.0)(react@18.2.0)
       nextra:
-        specifier: 2.7.0
-        version: 2.7.0(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.7.1
+        version: 2.7.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -15374,11 +15374,11 @@ packages:
       - '@babel/core'
       - babel-plugin-macros
 
-  /nextra-theme-docs@2.7.0(next@13.4.2)(nextra@2.7.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-984jZR13QO/YTIsLEYpFK2Pf4hQjD2Z2fHrBYJl/ZZQjylwxnnGcx1QAciy65mnPWr7/Kv9/dAKpjm9tYtyLrw==}
+  /nextra-theme-docs@2.7.1(next@13.4.2)(nextra@2.7.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-C2DtoGH15q22t4r2JC89lvvajmnyiqsv3PaqHJpoHRlF2eR5giuLhZC5Oahb9AENRDcnUIUvqVi/8NlfiIM0yQ==}
     peerDependencies:
       next: '>=9.5.3'
-      nextra: 2.7.0
+      nextra: 2.7.1
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
     dependencies:
@@ -15393,15 +15393,15 @@ packages:
       next: 13.4.2(@babel/core@7.20.2)(react-dom@18.2.0)(react@18.2.0)
       next-seo: 6.0.0(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
       next-themes: 0.2.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
-      nextra: 2.7.0(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
+      nextra: 2.7.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       scroll-into-view-if-needed: 3.0.3
       zod: 3.21.4
     dev: false
 
-  /nextra@2.7.0(next@13.4.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-SXUsczIzb6+apg3ipRQQllBJk6W2FJfUrmJrQySu9DJpUfS36ylQYLX5ofkCI+Sq3ZHfefZbnut49KGozt/rGQ==}
+  /nextra@2.7.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-qchTb7XSm357XAHf9MV9UlUSGolPEPE8iFnC/9KMwvhIoE4seyPYWMrnH84XraZCcGERvy9TrkFD30VE7Qv1MA==}
     engines: {node: '>=16'}
     peerDependencies:
       next: '>=9.5.3'
