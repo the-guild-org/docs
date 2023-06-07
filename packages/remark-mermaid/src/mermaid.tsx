@@ -17,7 +17,7 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
 
     // Switching themes taken from https://github.com/mermaid-js/mermaid/blob/1b40f552b20df4ab99a986dd58c9d254b3bfd7bc/packages/mermaid/src/docs/.vitepress/theme/Mermaid.vue#L53
     async function renderChart() {
-      const hasDarkClass =
+      const isDarkTheme =
         htmlElement.classList.contains('dark') ||
         htmlElement.attributes.getNamedItem('data-theme')?.value === 'dark';
       const mermaidConfig: MermaidConfig = {
@@ -25,7 +25,7 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
         securityLevel: 'loose',
         fontFamily: 'inherit',
         themeCSS: 'margin: 1.5rem auto 0;',
-        theme: hasDarkClass ? 'dark' : 'default',
+        theme: isDarkTheme ? 'dark' : 'default',
       };
 
       try {
