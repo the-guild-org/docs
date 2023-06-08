@@ -66,7 +66,7 @@
     "@next/bundle-analyzer": "13.4.2",
     "@radix-ui/react-navigation-menu": "1.1.3",
     "@theguild/remark-npm2yarn": "workspace:*",
-    "algoliasearch": "4.17.1",
+    "algoliasearch": "4.17.2",
     "clsx": "1.2.1",
     "focus-trap-react": "10.1.4",
     "fuzzy": "^0.1.3",
