@@ -1,5 +1,17 @@
 # @theguild/remark-mermaid
 
+## 0.0.3
+
+### Patch Changes
+
+- [#1112](https://github.com/the-guild-org/docs/pull/1112)
+  [`2f99481`](https://github.com/the-guild-org/docs/commit/2f99481e490dac65e36664076d9816cd7fa570da)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - support `data-theme="dark"` on htmlElement
+
+- [#1105](https://github.com/the-guild-org/docs/pull/1105)
+  [`35f249a`](https://github.com/the-guild-org/docs/commit/35f249a4dd0803596afd34cd450a682b5f625557)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - remove unneeded AST properties
+
 ## 0.0.2
 
 ### Patch Changes
