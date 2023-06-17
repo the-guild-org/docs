@@ -12,7 +12,15 @@
   "main": "./dist/index.js",
   "exports": {
     "./package.json": "./package.json",
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js"
+  },
+  "typesVersions": {
+    "*": {
+      "tabs": [
+        "./dist/tabs.d.ts"
+      ]
+    }
   },
   "files": [
     "dist"
@@ -31,7 +39,10 @@
   },
   "devDependencies": {
     "@types/mdast": "3.0.11",
+    "@types/react": "^18.2.12",
     "nextra": "2.7.1",
+    "nextra-theme-docs": "2.7.1",
+    "react": "^18.2.0",
     "unified": "10.1.2"
   },
   "publishConfig": {
