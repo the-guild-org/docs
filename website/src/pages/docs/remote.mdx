@@ -1,12 +1,24 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { compileMdx } from 'nextra/compile'
-import { fetchPackageInfo, LegacyPackageCmd, useMDXComponents, useSSG } from '@theguild/components'
-
-export const PACKAGE_NAME = '@envelop/core'
+import { fetchPackageInfo, Tab, Tabs, useMDXComponents, useSSG } from '@theguild/components'
+import { defaultRemarkPlugins } from '@theguild/components/next.config'
 
 export const getStaticProps = async () => {
+  const PACKAGE_NAME = '@envelop/core'
   const { readme } = await fetchPackageInfo(PACKAGE_NAME)
-  const mdx = await compileMdx(readme, { defaultShowCopyCode: true })
+  const mdx = await compileMdx(
+    `
+\`\`\`sh npm2yarn
+npm i ${PACKAGE_NAME}
+\`\`\`
+${readme}`,
+    {
+      defaultShowCopyCode: true,
+      mdxOptions: {
+        remarkPlugins: defaultRemarkPlugins
+      }
+    }
+  )
   return {
     props: {
       ssg: mdx.result
@@ -22,8 +34,10 @@ export const PackageApiDocs = () => {
   const components = useMDXComponents()
   return (
     <>
-      <LegacyPackageCmd packages={[PACKAGE_NAME]} />
-      <MDXRemote compiledSource={compiledSource} components={components} />
+      <MDXRemote
+        compiledSource={compiledSource}
+        components={{ ...components, $Tab: Tab, $Tabs: Tabs }}
+      />
     </>
   )
 }
