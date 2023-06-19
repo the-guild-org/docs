@@ -31,15 +31,12 @@ export function Tabs({
   }, []);
 
   const handleChange = useCallback((index: number) => {
-    localStorage.setItem(STORAGE_KEY, packageManagers[index]);
+    const newValue = packageManagers[index];
+    localStorage.setItem(STORAGE_KEY, newValue);
+
     // the storage event only get picked up (by the listener) if the localStorage was changed in
     // another browser's tab/window (of the same app), but not within the context of the current tab.
-    window.dispatchEvent(
-      new StorageEvent('storage', {
-        key: STORAGE_KEY,
-        newValue: packageManagers[index],
-      }),
-    );
+    window.dispatchEvent(new StorageEvent('storage', { key: STORAGE_KEY, newValue }));
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only on mount
   }, []);
 
