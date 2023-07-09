@@ -13,8 +13,58 @@ function _createMdxContent(props) {
   if (!$Tab) _missingMdxReference(\\"$Tab\\", true);
   if (!$Tabs) _missingMdxReference(\\"$Tabs\\", true);
   return _jsxs($Tabs, {
-    items: [\\"pnpm\\", \\"yarn\\", \\"npm\\"],
+    items: [\\"npm\\", \\"pnpm\\", \\"yarn\\"],
+    storageKey: \\"testKey\\",
     children: [_jsx($Tab, {
+      children: _jsx(_components.pre, {
+        \\"data-language\\": \\"sh\\",
+        \\"data-theme\\": \\"default\\",
+        filename: \\"Terminal\\",
+        children: _jsx(_components.code, {
+          \\"data-language\\": \\"sh\\",
+          \\"data-theme\\": \\"default\\",
+          children: _jsxs(_components.span, {
+            className: \\"line\\",
+            children: [_jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-token-function)\\"
+              },
+              children: \\"npm\\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-color-text)\\"
+              },
+              children: \\" \\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-token-string)\\"
+              },
+              children: \\"i\\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-color-text)\\"
+              },
+              children: \\" \\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-token-string)\\"
+              },
+              children: \\"-D\\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-color-text)\\"
+              },
+              children: \\" \\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-token-string)\\"
+              },
+              children: \\"@graphql-eslint/eslint-plugin\\"
+            })]
+          })
+        })
+      })
+    }), _jsx($Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
@@ -98,55 +148,6 @@ function _createMdxContent(props) {
                 color: \\"var(--shiki-token-string)\\"
               },
               children: \\"--dev\\"
-            }), _jsx(_components.span, {
-              style: {
-                color: \\"var(--shiki-color-text)\\"
-              },
-              children: \\" \\"
-            }), _jsx(_components.span, {
-              style: {
-                color: \\"var(--shiki-token-string)\\"
-              },
-              children: \\"@graphql-eslint/eslint-plugin\\"
-            })]
-          })
-        })
-      })
-    }), _jsx($Tab, {
-      children: _jsx(_components.pre, {
-        \\"data-language\\": \\"sh\\",
-        \\"data-theme\\": \\"default\\",
-        filename: \\"Terminal\\",
-        children: _jsx(_components.code, {
-          \\"data-language\\": \\"sh\\",
-          \\"data-theme\\": \\"default\\",
-          children: _jsxs(_components.span, {
-            className: \\"line\\",
-            children: [_jsx(_components.span, {
-              style: {
-                color: \\"var(--shiki-token-function)\\"
-              },
-              children: \\"npm\\"
-            }), _jsx(_components.span, {
-              style: {
-                color: \\"var(--shiki-color-text)\\"
-              },
-              children: \\" \\"
-            }), _jsx(_components.span, {
-              style: {
-                color: \\"var(--shiki-token-string)\\"
-              },
-              children: \\"i\\"
-            }), _jsx(_components.span, {
-              style: {
-                color: \\"var(--shiki-color-text)\\"
-              },
-              children: \\" \\"
-            }), _jsx(_components.span, {
-              style: {
-                color: \\"var(--shiki-token-string)\\"
-              },
-              children: \\"-D\\"
             }), _jsx(_components.span, {
               style: {
                 color: \\"var(--shiki-color-text)\\"

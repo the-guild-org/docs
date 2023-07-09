@@ -19,7 +19,8 @@
   ],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch"
+    "dev": "tsup --watch",
+    "test": "vitest"
   },
   "dependencies": {
     "npm-to-yarn": "^2.0.0",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@types/mdast": "3.0.11",
+    "nextra": "2.9.0",
     "unified": "10.1.2"
   },
   "publishConfig": {

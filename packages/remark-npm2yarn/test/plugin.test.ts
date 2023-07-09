@@ -12,7 +12,7 @@ npm i -D @graphql-eslint/eslint-plugin
       {
         mdxOptions: {
           remarkPlugins: [
-            [remarkNpm2Yarn, { packageName: 'nextra/components', tabNamesProp: 'items' }],
+            [remarkNpm2Yarn, { packageName: 'nextra/components', tabNamesProp: 'items', storageKey: 'testKey' }],
           ],
         },
       },
