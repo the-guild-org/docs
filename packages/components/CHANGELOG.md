@@ -1,5 +1,95 @@
 # @theguild/components
 
+## 5.1.0
+
+### Minor Changes
+
+- [#1153](https://github.com/the-guild-org/docs/pull/1153)
+  [`74e7a5a`](https://github.com/the-guild-org/docs/commit/74e7a5a7f25733166d5657a5b724dc0a8f35e03b)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - save selected package manager chose in `localStorage`
+
+### Patch Changes
+
+- [#1115](https://github.com/the-guild-org/docs/pull/1115)
+  [`c07f356`](https://github.com/the-guild-org/docs/commit/c07f3566de2200a49ba8b6a619cc35fc40575157)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.9.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.9.3)
+    (from `1.9.2`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.9.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.9.3)
+    (from `1.9.2`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.9.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.9.3)
+    (from `1.9.2`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.9.3` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.9.3)
+    (from `1.9.2`, in `dependencies`)
+
+- [#1116](https://github.com/the-guild-org/docs/pull/1116)
+  [`b9f73cd`](https://github.com/the-guild-org/docs/commit/b9f73cd99ee0862ae0499b81c2fc549a4aae382c)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`algoliasearch@4.17.2` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.17.2) (from
+    `4.17.1`, in `dependencies`)
+
+- [#1131](https://github.com/the-guild-org/docs/pull/1131)
+  [`a3e582a`](https://github.com/the-guild-org/docs/commit/a3e582ab1a9b0d657d8524f9fd8042cccac7ab2a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.9.4` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.9.4)
+    (from `1.9.3`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.9.4` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.9.4)
+    (from `1.9.3`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.9.4` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.9.4)
+    (from `1.9.3`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.9.4` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.9.4)
+    (from `1.9.3`, in `dependencies`)
+
+- [#1132](https://github.com/the-guild-org/docs/pull/1132)
+  [`2b16ff5`](https://github.com/the-guild-org/docs/commit/2b16ff5465318cedb09711d5b7d088a850e12fd2)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-instantsearch-dom@6.40.1` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.40.1)
+    (from `6.40.0`, in `dependencies`)
+
+- [#1136](https://github.com/the-guild-org/docs/pull/1136)
+  [`4f2eddc`](https://github.com/the-guild-org/docs/commit/4f2eddc03ab53cf3da11c9c60b2436793b7ad4fe)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.9.0` ↗︎](https://www.npmjs.com/package/nextra/v/2.9.0) (from
+    `2.7.1`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.9.0` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.9.0) (from
+    `2.7.1`, in `dependencies`)
+
+- [#1144](https://github.com/the-guild-org/docs/pull/1144)
+  [`3270e04`](https://github.com/the-guild-org/docs/commit/3270e045a4b5ca300f6e4bd574c41b0dbe2b869e)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@giscus/react@2.3.0` ↗︎](https://www.npmjs.com/package/@giscus/react/v/2.3.0) (from `2.2.8`,
+    in `dependencies`)
+
+- [#1146](https://github.com/the-guild-org/docs/pull/1146)
+  [`989e04e`](https://github.com/the-guild-org/docs/commit/989e04ebf821194f23d81e8bcfb1ca7288918224)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`focus-trap-react@10.2.1` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.2.1) (from
+    `10.1.4`, in `dependencies`)
+- Updated dependencies
+  [[`ded0217`](https://github.com/the-guild-org/docs/commit/ded0217953ea3d430a87db4349a4f199ad6de63a),
+  [`74e7a5a`](https://github.com/the-guild-org/docs/commit/74e7a5a7f25733166d5657a5b724dc0a8f35e03b),
+  [`74e7a5a`](https://github.com/the-guild-org/docs/commit/74e7a5a7f25733166d5657a5b724dc0a8f35e03b)]:
+  - @theguild/remark-npm2yarn@0.1.0
+
 ## 5.0.0
 
 ### Major Changes

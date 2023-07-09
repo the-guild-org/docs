@@ -1,6 +1,6 @@
 {
   "name": "@theguild/remark-npm2yarn",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "description": "Remark plugin for transforming npm bash commands to yarn/pnpm with tabs",
   "repository": {
