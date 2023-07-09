@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "mermaid": "^10.2.2",
-    "unist-util-visit": "^4.1.2"
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@types/mdast": "3.0.11",
