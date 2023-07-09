@@ -12,7 +12,14 @@ export const defaultRemarkPlugins = [
     remarkMdxDisableExplicitJsx,
     { whiteList: ['iframe', 'video', 'source'] },
   ],
-  [remarkNpm2Yarn, { packageName: '@theguild/components', tabNamesProp: 'items' }],
+  [
+    remarkNpm2Yarn,
+    {
+      packageName: '@theguild/components',
+      tabNamesProp: 'items',
+      storageKey: 'selectedPackageManager',
+    },
+  ],
 ] as any;
 
 export const withGuildDocs = ({

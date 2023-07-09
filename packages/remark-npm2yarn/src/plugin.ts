@@ -2,11 +2,9 @@ import { Code, Root } from 'mdast';
 import convert from 'npm-to-yarn';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
+import { PACKAGE_MANAGERS, PackageManager } from './constants.js';
 
 const META_PLACEHOLDER = 'npm2yarn';
-const PACKAGE_MANAGERS = ['pnpm', 'yarn', 'npm'] as const;
-
-type PackageManager = (typeof PACKAGE_MANAGERS)[number];
 
 // To avoid conflicts with other Tabs/Tab declarations
 const TABS_NAME = '$Tabs';
@@ -84,6 +82,11 @@ export const remarkNpm2Yarn: Plugin<
             },
           },
         },
+      },
+      {
+        type: 'mdxJsxAttribute',
+        name: 'storageKey',
+        value: opts.storageKey,
       },
     ],
   };

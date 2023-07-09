@@ -16,7 +16,6 @@ export {
   NotFoundPage,
   ServerSideErrorPage,
   Tab,
-  Tabs,
   useConfig,
   useTheme,
   Card,

@@ -21,3 +21,4 @@ export { Nav } from './nav';
 export { Newsletter } from './newsletter';
 export { NPMBadge } from './npm-badge';
 export { SearchBar } from './search-bar';
+export { Tabs } from './tabs';
