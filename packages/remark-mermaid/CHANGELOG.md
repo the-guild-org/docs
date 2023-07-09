@@ -1,5 +1,16 @@
 # @theguild/remark-mermaid
 
+## 0.0.4
+
+### Patch Changes
+
+- [#1151](https://github.com/the-guild-org/docs/pull/1151)
+  [`ded0217`](https://github.com/the-guild-org/docs/commit/ded0217953ea3d430a87db4349a4f199ad6de63a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`unist-util-visit@^5.0.0` ↗︎](https://www.npmjs.com/package/unist-util-visit/v/5.0.0) (from
+    `^4.1.2`, in `dependencies`)
+
 ## 0.0.3
 
 ### Patch Changes
