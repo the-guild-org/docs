@@ -34,7 +34,7 @@
     "@storybook/react-webpack5": "7.0.0-beta.11",
     "@svgr/webpack": "8.0.1",
     "@tailwindcss/line-clamp": "0.4.4",
-    "@theguild/eslint-config": "0.10.0",
+    "@theguild/eslint-config": "0.11.0",
     "@theguild/prettier-config": "1.2.0",
     "@theguild/tailwind-config": "0.2.2",
     "@types/jest-image-snapshot": "6.1.0",
