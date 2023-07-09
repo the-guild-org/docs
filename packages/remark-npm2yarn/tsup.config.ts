@@ -4,7 +4,7 @@ import tsconfig from './tsconfig.json';
 export default defineConfig([
   {
     format: 'esm',
-    entry: ['src/**/*.{ts,tsx}'],
+    entry: ['src/**/*.ts'],
     target: tsconfig.compilerOptions.target as Options['target'],
     bundle: false,
   },

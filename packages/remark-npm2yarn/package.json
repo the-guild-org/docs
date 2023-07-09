@@ -12,15 +12,7 @@
   "main": "./dist/index.js",
   "exports": {
     "./package.json": "./package.json",
-    ".": "./dist/index.js",
-    "./*": "./dist/*.js"
-  },
-  "typesVersions": {
-    "*": {
-      "tabs": [
-        "./dist/tabs.d.ts"
-      ]
-    }
+    ".": "./dist/index.js"
   },
   "files": [
     "dist"
