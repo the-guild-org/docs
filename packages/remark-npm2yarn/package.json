@@ -9,7 +9,7 @@
   },
   "author": "Dimitri POSTOLOV <dmytropostolov@gmail.com> (https://github.com/B2o5T)",
   "license": "MIT",
-  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": "./dist/index.js"
@@ -19,11 +19,7 @@
   ],
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch",
-    "test": "vitest"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0"
+    "dev": "tsup --watch"
   },
   "dependencies": {
     "npm-to-yarn": "^2.0.0",
@@ -31,10 +27,6 @@
   },
   "devDependencies": {
     "@types/mdast": "3.0.11",
-    "@types/react": "^18.2.12",
-    "nextra": "2.7.1",
-    "nextra-theme-docs": "2.7.1",
-    "react": "^18.2.0",
     "unified": "10.1.2"
   },
   "publishConfig": {
