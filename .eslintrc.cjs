@@ -6,7 +6,7 @@ module.exports = {
     '@theguild/eslint-config/react',
     '@theguild/eslint-config/json',
     '@theguild/eslint-config/yml',
-    '@theguild/eslint-config/mdx',
+    // '@theguild/eslint-config/mdx',
     'plugin:tailwindcss/recommended',
     'plugin:storybook/recommended',
   ],
@@ -21,7 +21,7 @@ module.exports = {
     '@typescript-eslint/array-type': ['error', { readonly: 'generic' }],
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
 
-    // todo: fix below
+    // TODO: fix below
     '@typescript-eslint/no-explicit-any': 'warn',
     'jsx-a11y/click-events-have-key-events': 'warn',
     'jsx-a11y/no-static-element-interactions': 'warn',
@@ -31,6 +31,17 @@ module.exports = {
   settings: {
     tailwindcss: {
       config: 'tailwind.config.cjs',
+      whitelist: [
+        // TODO: find a way to fix it and remove these classes since they are imported somewhere and are used
+        'line',
+        'aa-ItemLink',
+        'aa-ItemContent',
+        'aa-ItemContentBody',
+        'aa-ItemContentTitle',
+        'aa-ItemContentSubtitle',
+        'aa-SourceHeader',
+        'aa-SourceHeaderTitle',
+      ],
     },
   },
   overrides: [
