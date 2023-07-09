@@ -1,17 +1,20 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { compileMdx } from 'nextra/compile'
-import { useMDXComponents, useSSG } from '@theguild/components'
+import { Steps, useMDXComponents, useSSG } from '@theguild/components'
 import pkgJsonFromComponents from '@theguild/components/package.json'
 import pkgJson from '../../../package.json'
 
-# Installation
+# Getting Started
+
+<Steps>
+### Install
 
 ```sh npm2yarn
 npm install @theguild/components
 npm install -D @theguild/tailwind-config
 ```
 
-## 1. Add dependencies
+### Add dependencies
 
 export async function getStaticProps() {
   const mdx = await compileMdx(
@@ -52,19 +55,19 @@ export function Dependencies() {
 
 <Dependencies />
 
-## 2. Add Tailwind CSS config
+### Add Tailwind CSS config
 
 ```js filename="tailwind.config.cjs"
 module.exports = require('@theguild/tailwind-config')
 ```
 
-## 3. Add PostCSS config
+### Add PostCSS config
 
 ```js filename="postcss.config.cjs"
 module.exports = require('@theguild/tailwind-config/postcss.config')
 ```
 
-## 4. Add theme config
+### Add theme config
 
 ```ts filename="theme.config.tsx"
 import { defineConfig } from '@theguild/components'
@@ -74,7 +77,7 @@ export default defineConfig({
 })
 ```
 
-## 5. Use `withGuildDocs` in your Next.js config
+### Use `withGuildDocs` in your Next.js config
 
 ```js filename="next.config.mjs" /withGuildDocs/
 import { withGuildDocs } from '@theguild/components/next.config'
@@ -87,7 +90,7 @@ export default withGuildDocs({
 })
 ```
 
-## 6. Import styles in `_app.tsx`
+### Import styles in `_app.tsx`
 
 ```tsx filename="src/pages/_app.tsx" {3}
 import { ReactElement } from 'react'
@@ -98,3 +101,5 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
   return <Component {...pageProps} />
 }
 ```
+
+</Steps>

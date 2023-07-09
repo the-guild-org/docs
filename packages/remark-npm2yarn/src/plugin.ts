@@ -2,11 +2,9 @@ import { Code, Root } from 'mdast';
 import convert from 'npm-to-yarn';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
+import { PACKAGE_MANAGERS, PackageManager } from './constants.js';
 
 const META_PLACEHOLDER = 'npm2yarn';
-const PACKAGE_MANAGERS = ['pnpm', 'yarn', 'npm'] as const;
-
-type PackageManager = (typeof PACKAGE_MANAGERS)[number];
 
 // To avoid conflicts with other Tabs/Tab declarations
 const TABS_NAME = '$Tabs';
@@ -28,11 +26,12 @@ function getTabAST(node: Code, packageManager: PackageManager) {
 }
 
 export const remarkNpm2Yarn: Plugin<
-  [{ packageName: string; tabNamesProp: string }],
+  [{ packageName: string; tabNamesProp: string; storageKey: string }],
   Root
 > = opts => {
   if (!opts?.packageName) throw new Error('remarkNpm2Yarn: `packageName` option is required');
   if (!opts?.tabNamesProp) throw new Error('remarkNpm2Yarn: `tabNamesProp` option is required');
+  if (!opts?.storageKey) throw new Error('remarkNpm2Yarn: `storageKey` option is required');
 
   const IMPORT_AST = {
     type: 'mdxjsEsm',
@@ -83,6 +82,11 @@ export const remarkNpm2Yarn: Plugin<
             },
           },
         },
+      },
+      {
+        type: 'mdxJsxAttribute',
+        name: 'storageKey',
+        value: opts.storageKey,
       },
     ],
   };

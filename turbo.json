@@ -3,13 +3,18 @@
     "build": {
       "outputs": ["dist/**"],
       "dependsOn": [
-        // Run builds in workspaces I depend on first
+        // Run `build` in workspaces I depend on first
         "^build"
       ]
     },
     "dev": {
-      "dependsOn": ["^dev"],
-      "cache": false
+      "dependsOn": [
+        // Run `dev` in workspaces I depend on first
+        "^dev"
+      ],
+      // Never cache anything (including logs) emitted by a `dev` task
+      "cache": false,
+      "persistent": true
     }
   }
 }
