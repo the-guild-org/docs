@@ -2,7 +2,7 @@ import { Code, Root } from 'mdast';
 import convert from 'npm-to-yarn';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
-import { PACKAGE_MANAGERS, PackageManager } from './constants.js';
+import { cleanMeta, PACKAGE_MANAGERS, PackageManager } from './constants.js';
 
 const META_PLACEHOLDER = 'npm2yarn';
 
@@ -10,7 +10,8 @@ const META_PLACEHOLDER = 'npm2yarn';
 const TABS_NAME = '$Tabs';
 const TAB_NAME = '$Tab';
 
-function getTabAST(node: Code, packageManager: PackageManager) {
+function getTabAST(node: Code, packageManager: PackageManager, npm2yarnIndex: number) {
+  const meta = node.meta!;
   return {
     type: 'mdxJsxFlowElement',
     name: TAB_NAME,
@@ -18,7 +19,8 @@ function getTabAST(node: Code, packageManager: PackageManager) {
       {
         type: node.type,
         lang: node.lang,
-        meta: node.meta?.replace(META_PLACEHOLDER, ''),
+        // Replace `npm2yarn` metadata keyword, so it will be not picked by inserted code-blocks
+        meta: meta.slice(0, npm2yarnIndex) + meta.slice(npm2yarnIndex + META_PLACEHOLDER.length),
         value: convert(node.value, packageManager),
       },
     ],
@@ -95,9 +97,9 @@ export const remarkNpm2Yarn: Plugin<
     let isImported = false;
 
     visit(ast, 'code', (node: Code, index, parent) => {
-      const hasNpm2YarnMeta = node.meta?.includes(META_PLACEHOLDER);
+      const npm2yarnIndex = node.meta ? cleanMeta(node.meta).indexOf(META_PLACEHOLDER) : -1;
 
-      if (!hasNpm2YarnMeta) return;
+      if (npm2yarnIndex === -1) return;
 
       if (!node.value.startsWith('npm')) {
         throw new Error('`npm-to-yarn` package convert only npm commands to all package managers');
@@ -106,7 +108,7 @@ export const remarkNpm2Yarn: Plugin<
       // Replace current node with Tabs/Tab components
       parent!.children[index!] = {
         ...TABS_AST,
-        children: PACKAGE_MANAGERS.map(value => getTabAST(node, value)),
+        children: PACKAGE_MANAGERS.map(value => getTabAST(node, value, npm2yarnIndex)),
       } as any;
 
       if (isImported) return;
