@@ -39,23 +39,28 @@ export async function handler(request: Request): Promise<Response> {
 
     const rawSvg = await toSVG(
       <div tw="flex bg-neutral-900 h-full flex-col w-full items-center justify-center text-center text-white p-10">
-        <LeftCircle tw="absolute left-0 top-0" color={product.primaryColor} />
-        <RightCircle tw="absolute right-0" color={product.primaryColor} />
+        <LeftCircle tw="absolute left-[-25px] top-[-120px]" color={product.primaryColor} />
+        <RightCircle tw="absolute right-[-100px]" color={product.primaryColor} />
         <RightSmallCircle
-          tw="absolute right-0 opacity-80"
+          tw="absolute left-[-25px] bottom-[-200px] opacity-80"
           color={product.primaryColor && shade(product.primaryColor, 100)}
         />
-        <product.logo style={{ width: 102, height: 108 }} />
-        <span tw="font-bold text-7xl my-5">{product.name}</span>
+        <div tw="flex flex-row items-center justify-center my-12">
+          <product.logo style={{ width: 102, height: 108 }} />
+          <div tw="font-semibold text-7xl ml-6">{product.name}</div>
+        </div>
         {title && (
           // @ts-expect-error This isn't a valid CSS property supported by browsers yet.
-          <span tw="font-bold text-5xl" style={{ textWrap: title.includes(' ') ? 'balance' : '' }}>
+          <span
+            tw="font-regular text-5xl mt-4"
+            style={{ textWrap: title.includes(' ') ? 'balance' : '' }}
+          >
             {title}
           </span>
         )}
         {extra && (
           <span
-            tw="font-bold text-2xl mt-4"
+            tw="font-regular text-2xl mt-4"
             // @ts-expect-error This isn't a valid CSS property supported by browsers yet.
             style={{ textWrap: extra.includes(' ') ? 'balance' : '' }}
           >
