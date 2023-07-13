@@ -1,5 +1,15 @@
 # @theguild/remark-npm2yarn
 
+## 0.1.1
+
+### Patch Changes
+
+- [#1161](https://github.com/the-guild-org/docs/pull/1161)
+  [`760197b`](https://github.com/the-guild-org/docs/commit/760197bbcde931e17d6033a18c1a0724e10e2c4e)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - do not trigger npm2yarn replacement when there are
+  word highlighting `/npm2yarn/` or key values pairs `filename="my npm2yarn"` that contains
+  `npm2yarn`
+
 ## 0.1.0
 
 ### Minor Changes
