@@ -8,9 +8,12 @@ export const CHARS_REGEX = /\/(.*?)\/((#[a-z])|([\d-,])+)?/g;
 
 export const LINES_REGEX = /\{(.*?)}/g;
 
-export function cleanMeta(meta: string): string {
-  return meta
-    .replaceAll(KEY_VALUE_REGEX, '')
-    .replaceAll(CHARS_REGEX, '')
-    .replaceAll(LINES_REGEX, '');
+export const META_PLACEHOLDER = 'npm2yarn';
+
+export function cleanMetadataParam(metadata: string, param: string): string {
+  const regex = new RegExp(
+    `${KEY_VALUE_REGEX.source}|${CHARS_REGEX.source}|${LINES_REGEX.source}|${param}`,
+    'g',
+  );
+  return metadata.replace(regex, matched => (matched === param ? '' : matched));
 }
