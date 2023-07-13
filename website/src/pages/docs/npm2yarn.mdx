@@ -3,17 +3,25 @@
 export const Tabs = 0
 export const Tab = 1
 
-```sh filename="without npm2yarn metadata"
+## Without
+
+```sh
 yarn add foo
 ```
+
+## With
 
 ```sh npm2yarn
 npm i -D @graphql-eslint/eslint-plugin
 ```
 
-```sh npm2yarn filename="Terminal"
+## With + filename
+
+```sh filename="Terminal" npm2yarn
 npm i bar
 ```
+
+## Usage
 
 ````mdx filename="Markdown" /npm2yarn/
 ```sh npm2yarn

@@ -99,9 +99,9 @@ export const remarkNpm2Yarn: Plugin<
     let isImported = false;
 
     visit(ast, 'code', (node: Code, index, parent) => {
-      const newMetadata = node.meta && cleanMetadataParam(node.meta, META_PLACEHOLDER);
+      const newMetadata = node.meta ? cleanMetadataParam(node.meta, META_PLACEHOLDER) : '';
 
-      if (!newMetadata || newMetadata === node.meta) return;
+      if (!node.meta || node.meta === newMetadata) return;
 
       if (!node.value.startsWith('npm')) {
         throw new Error(
