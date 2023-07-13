@@ -58,10 +58,10 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@algolia/autocomplete-js": "1.9.4",
-    "@algolia/autocomplete-plugin-algolia-insights": "1.9.4",
-    "@algolia/autocomplete-plugin-query-suggestions": "1.9.4",
-    "@algolia/autocomplete-theme-classic": "1.9.4",
+    "@algolia/autocomplete-js": "1.10.0",
+    "@algolia/autocomplete-plugin-algolia-insights": "1.10.0",
+    "@algolia/autocomplete-plugin-query-suggestions": "1.10.0",
+    "@algolia/autocomplete-theme-classic": "1.10.0",
     "@giscus/react": "2.3.0",
     "@next/bundle-analyzer": "13.4.2",
     "@radix-ui/react-navigation-menu": "1.1.3",
