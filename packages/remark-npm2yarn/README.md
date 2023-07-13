@@ -1,4 +1,4 @@
-# `@theguild/remark-mermaid`
+# `@theguild/remark-npm2yarn`
 
 > Created by Dimitri POSTOLOV https://twitter.com/B2o5T.
 >
