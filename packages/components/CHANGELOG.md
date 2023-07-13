@@ -1,5 +1,44 @@
 # @theguild/components
 
+## 5.1.1
+
+### Patch Changes
+
+- [#1137](https://github.com/the-guild-org/docs/pull/1137)
+  [`f6a6eb5`](https://github.com/the-guild-org/docs/commit/f6a6eb597c3380615df0f48160e60b01910f34fa)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`algoliasearch@4.18.0` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.18.0) (from
+    `4.17.2`, in `dependencies`)
+
+- [#1163](https://github.com/the-guild-org/docs/pull/1163)
+  [`46558bf`](https://github.com/the-guild-org/docs/commit/46558bfa3e994c570e2f1d106ba873016d8adb0a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.10.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.10.0)
+    (from `1.9.4`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.10.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.10.0)
+    (from `1.9.4`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.10.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.10.0)
+    (from `1.9.4`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.10.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.10.0)
+    (from `1.9.4`, in `dependencies`)
+
+- [#1165](https://github.com/the-guild-org/docs/pull/1165)
+  [`74ecfcf`](https://github.com/the-guild-org/docs/commit/74ecfcff691a72d62d775908cdebb065b3e8784a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`search-insights@2.7.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.7.0) (from
+    `2.6.0`, in `dependencies`)
+- Updated dependencies
+  [[`760197b`](https://github.com/the-guild-org/docs/commit/760197bbcde931e17d6033a18c1a0724e10e2c4e)]:
+  - @theguild/remark-npm2yarn@0.1.1
+
 ## 5.1.0
 
 ### Minor Changes
