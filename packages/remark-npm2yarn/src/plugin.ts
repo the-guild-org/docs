@@ -2,15 +2,18 @@ import { Code, Root } from 'mdast';
 import convert from 'npm-to-yarn';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
-import { PACKAGE_MANAGERS, PackageManager } from './constants.js';
-
-const META_PLACEHOLDER = 'npm2yarn';
+import {
+  cleanMetadataParam,
+  META_PLACEHOLDER,
+  PACKAGE_MANAGERS,
+  PackageManager,
+} from './constants.js';
 
 // To avoid conflicts with other Tabs/Tab declarations
 const TABS_NAME = '$Tabs';
 const TAB_NAME = '$Tab';
 
-function getTabAST(node: Code, packageManager: PackageManager) {
+function getTabAST(node: Code, packageManager: PackageManager, newMetadata: string) {
   return {
     type: 'mdxJsxFlowElement',
     name: TAB_NAME,
@@ -18,7 +21,8 @@ function getTabAST(node: Code, packageManager: PackageManager) {
       {
         type: node.type,
         lang: node.lang,
-        meta: node.meta?.replace(META_PLACEHOLDER, ''),
+        // Replace `npm2yarn` metadata keyword, so it will be not picked by inserted code-blocks
+        meta: newMetadata,
         value: convert(node.value, packageManager),
       },
     ],
@@ -95,18 +99,20 @@ export const remarkNpm2Yarn: Plugin<
     let isImported = false;
 
     visit(ast, 'code', (node: Code, index, parent) => {
-      const hasNpm2YarnMeta = node.meta?.includes(META_PLACEHOLDER);
+      const newMetadata = node.meta ? cleanMetadataParam(node.meta, META_PLACEHOLDER) : '';
 
-      if (!hasNpm2YarnMeta) return;
+      if (!node.meta || node.meta === newMetadata) return;
 
       if (!node.value.startsWith('npm')) {
-        throw new Error('`npm-to-yarn` package convert only npm commands to all package managers');
+        throw new Error(
+          `\`npm-to-yarn\` package can convert only npm commands to all package managers. Found: ${node.value}`,
+        );
       }
 
       // Replace current node with Tabs/Tab components
       parent!.children[index!] = {
         ...TABS_AST,
-        children: PACKAGE_MANAGERS.map(value => getTabAST(node, value)),
+        children: PACKAGE_MANAGERS.map(value => getTabAST(node, value, newMetadata)),
       } as any;
 
       if (isImported) return;
