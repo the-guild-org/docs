@@ -73,21 +73,33 @@ export async function loadGoogleFont({
   return fetch(fontUrl).then(res => res.arrayBuffer());
 }
 
-let notoSans: Promise<ArrayBuffer>;
+let font400: Promise<ArrayBuffer>;
+let font600: Promise<ArrayBuffer>;
 let init = false;
 
 export async function toSVG(node: ReactNode): Promise<string> {
   if (!init) {
-    notoSans = await loadGoogleFont({
-      family: 'Noto Sans JP',
-      weight: 400,
-    });
+    const [f400, f600] = await Promise.all([
+      loadGoogleFont({
+        family: 'Inter',
+        weight: 400,
+      }),
+      loadGoogleFont({
+        family: 'Inter',
+        weight: 600,
+      }),
+    ]);
+    font400 = f400;
+    font600 = f600;
     await initWasm(resvgWasm);
     init = true;
   }
   return satori(node, {
     width: 1200,
     height: 600,
-    fonts: [{ name: 'NotoSansJP', data: notoSans, weight: 400 }],
+    fonts: [
+      { name: 'Inter', data: font400, weight: 400 },
+      { name: 'Inter', data: font600, weight: 600 },
+    ],
   });
 }
