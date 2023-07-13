@@ -48,8 +48,6 @@ describe('clean up meta', () => {
     '/npm2yarn/#v',
   ];
 
-  const finalResult = '  npm2yarn    foo  ';
-
   it('should clean by regex', () => {
     const withoutKeyValues = META.join(' ').replaceAll(KEY_VALUE_REGEX, '');
     expect(withoutKeyValues).toBe(
@@ -60,12 +58,12 @@ describe('clean up meta', () => {
     expect(withoutChars).toBe('  npm2yarn {npm2yarn}   foo {npm2yarn} ');
 
     const withoutLines = withoutChars.replaceAll(LINES_REGEX, '');
-    expect(withoutLines).toBe(finalResult);
+    expect(withoutLines).toBe('  npm2yarn    foo  ');
   });
 
   it('should clean by cleanMeta()', () => {
-    expect(cleanMetadataParam(META.join(' '), META_PLACEHOLDER)).toBe(
-      META.map(str => (str === META_PLACEHOLDER ? '' : str)).join(' '),
-    );
+    const newMetadata = cleanMetadataParam(META.join(' '), META_PLACEHOLDER);
+    const result = META.map(str => (str === META_PLACEHOLDER ? '' : str)).join(' ');
+    expect(newMetadata).toBe(result);
   });
 });
