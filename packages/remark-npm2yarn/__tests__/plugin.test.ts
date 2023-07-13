@@ -61,7 +61,7 @@ describe('clean up meta', () => {
     expect(withoutLines).toBe('  npm2yarn    foo  ');
   });
 
-  it('should clean by cleanMeta()', () => {
+  it('should clean by cleanMetadataParam()', () => {
     const newMetadata = cleanMetadataParam(META.join(' '), META_PLACEHOLDER);
     const result = META.map(str => (str === META_PLACEHOLDER ? '' : str)).join(' ');
     expect(newMetadata).toBe(result);
