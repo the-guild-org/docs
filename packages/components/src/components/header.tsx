@@ -16,13 +16,15 @@ import { GuildLogo, TheGuild } from '../logos';
 import { IHeaderProps } from '../types/components';
 import { Anchor } from './anchor';
 import { EcosystemList } from './ecosystem-list';
+import { GraphqlConfLogo } from './graphql-conf-logo';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
-import { Image } from './image';
 import { Nav } from './nav';
 import { SearchBar } from './search-bar';
 import { SolutionsMenu } from './solutions-menu';
 import graphqlConfBg from '../static/conf/graphql-conf-bg.png';
-import graphqlConfLogo from '../static/conf/graphql-conf-logo.svg';
+
+// TODO: fails during build (no matching export in for import "default")
+// import graphqlConfLogo from '../static/conf/graphql-conf-logo.svg';
 
 export const Header = ({
   accentColor,
@@ -89,9 +91,7 @@ export const Header = ({
         style={{ background: `url(${graphqlConfBg.src}) repeat 50%` }}
       >
         <div>
-          <Image
-            src={graphqlConfLogo}
-            alt="GraphQLConf logo"
+          <GraphqlConfLogo
             width={
               // match width with the text content
               454
