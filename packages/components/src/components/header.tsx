@@ -86,19 +86,33 @@ export const Header = ({
 
   return (
     <>
-      <div
-        className="flex flex-col items-center justify-center gap-2 p-6 md:flex-row md:gap-6"
-        style={{ background: `url(${graphqlConfBg.src}) repeat 50%` }}
-      >
-        <div className="text-center md:text-right">
-          <GraphqlConfLogoHoriz className="w-full sm:w-[400px] md:w-[500px]" />
-          <small className="text-white">SEPTEMBER 19-21, 2023 • SAN FRANCISCO BAY AREA, CA</small>
+      <div className="hidden md:block">
+        <div
+          className="flex items-center justify-center gap-6 p-6"
+          style={{ background: `url(${graphqlConfBg.src}) repeat 50%` }}
+        >
+          <div className="text-center md:text-right">
+            <GraphqlConfLogoHoriz className="w-[500px]" />
+            <small className="text-white">SEPTEMBER 19-21, 2023 • SAN FRANCISCO</small>
+          </div>
+          <Anchor
+            href="https://graphql.org/conf/#attend"
+            className="rounded-md border-2 px-3 py-2 font-medium text-white"
+          >
+            Register Now!
+          </Anchor>
         </div>
+      </div>
+      <div className="block md:hidden">
         <Anchor
           href="https://graphql.org/conf/#attend"
-          className="rounded-md border-2 px-3 py-2 font-medium text-white"
+          className="flex flex-row items-center justify-center gap-2 p-6"
+          style={{ background: `url(${graphqlConfBg.src}) repeat 50%` }}
         >
-          Register Now!
+          <div className="text-center md:text-right">
+            <GraphqlConfLogoHoriz className="w-full sm:w-[400px]" />
+            <small className="text-white">SEPTEMBER 19-21, 2023 • SAN FRANCISCO</small>
+          </div>
         </Anchor>
       </div>
       <header
