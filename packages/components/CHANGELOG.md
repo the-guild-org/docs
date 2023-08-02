@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 5.2.0
+
+### Minor Changes
+
+- [#1193](https://github.com/the-guild-org/docs/pull/1193)
+  [`63ac247`](https://github.com/the-guild-org/docs/commit/63ac247bd69bca5b8dfeb23e96b5fba2ad4638ae)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - GraphQL Conf banner in header
+
 ## 5.1.1
 
 ### Patch Changes
