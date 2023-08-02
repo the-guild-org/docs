@@ -96,7 +96,7 @@ export const Header = ({
             <small className="text-white">SEPTEMBER 19-21, 2023 • SAN FRANCISCO</small>
           </div>
           <Anchor
-            href="https://graphql.org/conf/#attend"
+            href="https://graphql.org/conf/"
             className="rounded-md border-2 px-3 py-2 font-medium text-white"
           >
             Register Now!
@@ -105,7 +105,7 @@ export const Header = ({
       </div>
       <div className="block md:hidden">
         <Anchor
-          href="https://graphql.org/conf/#attend"
+          href="https://graphql.org/conf/"
           className="flex flex-row items-center justify-center gap-2 p-6"
           style={{ background: `url(${graphqlConfBg.src}) repeat 50%`, borderRadius: 0 }}
         >
