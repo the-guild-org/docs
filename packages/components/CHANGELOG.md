@@ -1,5 +1,12 @@
 # @theguild/components
 
+## 5.2.1
+
+### Patch Changes
+
+- [`da9050e`](https://github.com/the-guild-org/docs/commit/da9050e7bcc3cda93bebaac4439d0943a8943feb)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - GraphQL Conf links to landing page
+
 ## 5.2.0
 
 ### Minor Changes
