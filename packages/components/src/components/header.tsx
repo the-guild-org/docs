@@ -107,7 +107,7 @@ export const Header = ({
         <Anchor
           href="https://graphql.org/conf/#attend"
           className="flex flex-row items-center justify-center gap-2 p-6"
-          style={{ background: `url(${graphqlConfBg.src}) repeat 50%` }}
+          style={{ background: `url(${graphqlConfBg.src}) repeat 50%`, borderRadius: 0 }}
         >
           <div className="text-center md:text-right">
             <GraphqlConfLogoHoriz className="w-full sm:w-[400px]" />
