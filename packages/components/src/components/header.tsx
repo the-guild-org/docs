@@ -86,18 +86,21 @@ export const Header = ({
 
   return (
     <>
-      <Anchor
-        href="https://graphql.org/conf/"
-        className="flex flex-col items-center justify-center gap-2 p-6"
+      <div
+        className="flex flex-col items-center justify-center gap-2 p-6 md:flex-row md:gap-6"
         style={{ background: `url(${graphqlConfBg.src}) repeat 50%` }}
       >
-        <div>
+        <div className="text-center md:text-right">
           <GraphqlConfLogoHoriz className="w-full sm:w-[400px] md:w-[500px]" />
+          <small className="text-white">SEPTEMBER 19-21, 2023 • SAN FRANCISCO BAY AREA, CA</small>
         </div>
-        <small className="text-center text-white">
-          SEPTEMBER 19-21, 2023 • SAN FRANCISCO BAY AREA, CA
-        </small>
-      </Anchor>
+        <Anchor
+          href="https://graphql.org/conf/#attend"
+          className="rounded-md border-2 px-3 py-2 font-medium text-white"
+        >
+          Register Now!
+        </Anchor>
+      </div>
       <header
         className={clsx(
           'bg-white py-2.5 dark:bg-[#111] md:py-3.5',
