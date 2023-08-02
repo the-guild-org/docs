@@ -16,7 +16,7 @@ import { GuildLogo, TheGuild } from '../logos';
 import { IHeaderProps } from '../types/components';
 import { Anchor } from './anchor';
 import { EcosystemList } from './ecosystem-list';
-import { GraphqlConfLogo } from './graphql-conf-logo';
+import { GraphqlConfLogoHoriz } from './graphql-conf-logo-horiz';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
 import { Nav } from './nav';
 import { SearchBar } from './search-bar';
@@ -86,31 +86,18 @@ export const Header = ({
 
   return (
     <>
-      <div
-        className="flex flex-col items-center justify-center gap-6 p-6 md:flex-row"
+      <Anchor
+        href="https://graphql.org/conf/"
+        className="flex flex-col items-center justify-center gap-2 p-6"
         style={{ background: `url(${graphqlConfBg.src}) repeat 50%` }}
       >
         <div>
-          <GraphqlConfLogo
-            width={
-              // match width with the text content
-              454
-            }
-          />
+          <GraphqlConfLogoHoriz className="w-full sm:w-[400px] md:w-[500px]" />
         </div>
-        <div className="flex flex-col gap-3 text-white">
-          <div>The official GraphQL conference, by the GraphQL Foundation</div>
-          <div className="font-bold">SEPTEMBER 19-21, 2023 • SAN FRANCISCO BAY AREA, CA</div>
-          <div className="flex">
-            <Anchor
-              href="https://graphql.org/conf/#attend"
-              className="rounded-md border-2 px-3 py-2 font-medium"
-            >
-              Register Now!
-            </Anchor>
-          </div>
-        </div>
-      </div>
+        <small className="text-center text-white">
+          SEPTEMBER 19-21, 2023 • SAN FRANCISCO BAY AREA, CA
+        </small>
+      </Anchor>
       <header
         className={clsx(
           'bg-white py-2.5 dark:bg-[#111] md:py-3.5',
