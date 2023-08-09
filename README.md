@@ -1,3 +1,5 @@
+[![GraphQL Conf 2023](/GraphQLConf-2023-Banner.png)](https://graphql.org/conf/)
+
 # The Guild Component Library
 
 ## Getting started
