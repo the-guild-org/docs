@@ -1,6 +1,7 @@
 /* eslint-disable import/no-default-export */
 
 /* eslint react/no-unknown-property: ['error', { ignore: ['tw'] }] */
+import { handler as confHandler } from './conf-handler';
 import { handler } from './handler';
 
 const hour = 3600;
@@ -15,7 +16,7 @@ export default {
     const cacheUrl = new URL(request.url);
 
     // In case you want to purge the cache, please bump the version number below:
-    cacheUrl.searchParams.set('version', 'v10');
+    cacheUrl.searchParams.set('version', 'v11');
 
     // Construct the cache key from the cache URL
     const cacheKey = new Request(cacheUrl.toString(), request);
@@ -25,7 +26,8 @@ export default {
 
     if (!response) {
       // If not in cache, get it from origin
-      response = await handler(request);
+      response =
+        cacheUrl.pathname === '/conf' ? await confHandler(request) : await handler(request);
 
       if (process.env.NODE_ENV !== 'test' && ![404, 500].includes(response.status)) {
         // Any changes made to the response here will be reflected in the cached value
