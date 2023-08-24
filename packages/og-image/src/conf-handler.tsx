@@ -1,6 +1,9 @@
+/* eslint react/no-unknown-property: ['error', { ignore: ['tw'] }] */
+/* eslint-disable jsx-a11y/alt-text */
 import { ComponentProps } from 'react';
-import base64 from './img';
+import { base64 } from './img';
 import { toImage, toSVG } from './utils';
+
 
 export async function handler(request: Request): Promise<Response> {
   try {
