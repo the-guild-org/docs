@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import satori from 'satori';
+import satori, { FontWeight } from 'satori';
 import { initWasm, Resvg } from '@resvg/resvg-wasm';
 import resvgWasm from '../vender/index_bg.wasm';
 
@@ -39,23 +39,22 @@ export function toImage(svg: string): Uint8Array {
   return pngData.asPng();
 }
 
+type Font = { data: ArrayBuffer; weight: FontWeight; name: string };
+
 export async function loadGoogleFont({
   family,
   weight,
-  text,
 }: {
   family: string;
   weight?: number;
-  text?: string;
-}): Promise<ArrayBuffer> {
+}): Promise<Font> {
   const params: Record<string, string> = {
     family: `${family}${weight ? `:wght@${weight}` : ''}`,
-    ...(text ? { text } : { subset: 'latin' }),
   };
 
   const url = `https://fonts.googleapis.com/css2?${new URLSearchParams(params)}`;
 
-  const response = await fetch(String(url), {
+  const response = await fetch(url, {
     headers: {
       // construct user agent to get TTF font
       'User-Agent':
@@ -64,30 +63,35 @@ export async function loadGoogleFont({
   });
   const css = await response.text();
   // Get the font URL from the CSS text
-  const fontUrl = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/)?.[1];
+  const fontUrl = /src: url\((.+)\) format\('(opentype|truetype)'\)/.exec(css)?.[1];
 
   if (!fontUrl) {
     throw new Error('Could not find font URL');
   }
 
-  return fetch(fontUrl).then(res => res.arrayBuffer());
+  const res = await fetch(fontUrl);
+  return {
+    data: await res.arrayBuffer(),
+    weight: Number(/weight: (.+);/.exec(css)?.[1]) as FontWeight,
+    name: family,
+  };
 }
 
-let notoSans: Promise<ArrayBuffer>;
+let fonts: Font[];
 let init = false;
 
 export async function toSVG(node: ReactNode): Promise<string> {
   if (!init) {
-    notoSans = await loadGoogleFont({
-      family: 'Noto Sans JP',
-      weight: 400,
-    });
+    fonts = await Promise.all([
+      loadGoogleFont({ family: 'Noto Sans', weight: 400 }),
+      loadGoogleFont({ family: 'Noto Sans', weight: 700 }),
+    ]);
     await initWasm(resvgWasm);
     init = true;
   }
   return satori(node, {
     width: 1200,
     height: 600,
-    fonts: [{ name: 'NotoSansJP', data: notoSans, weight: 400 }],
+    fonts,
   });
 }
