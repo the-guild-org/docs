@@ -4,7 +4,6 @@ import { ComponentProps } from 'react';
 import { base64 } from './img';
 import { toImage, toSVG } from './utils';
 
-
 export async function handler(request: Request): Promise<Response> {
   try {
     const { searchParams } = new URL(request.url);
