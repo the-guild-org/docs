@@ -9,23 +9,27 @@ export async function handler(request: Request): Promise<Response> {
     const { searchParams } = new URL(request.url);
     const fullName = searchParams.get('fullName');
     const jobTitle = searchParams.get('jobTitle');
-    const bio = searchParams.get('bio')?.slice(0, 100);
-    const imageUrl = searchParams.get('imageUrl');
+    const company = searchParams.get('company')?.slice(0, 100);
+    let imageUrl = searchParams.get('imageUrl');
+    const github = searchParams.get('github');
 
-    for (const [key, value] of Object.entries({ fullName, jobTitle, bio })) {
+    for (const [key, value] of Object.entries({ fullName, jobTitle, company })) {
       if (!value) {
         return new Response(`Missing require parameter "${key}".`, { status: 404 });
       }
     }
 
-    // const response = await fetch(`https://api.github.com/users/${username}`, {
-    //   headers: { 'User-Agent': 'request' },
-    // });
-    //
-    // if (response.status !== 200) {
-    //   throw new Error('Failed to fetch user data');
-    // }
-    // const data = (await response.json()) as any;
+    if (github) {
+      const response = await fetch(`https://api.github.com/users/${github}`, {
+        headers: { 'User-Agent': 'request' },
+      });
+
+      if (response.status !== 200) {
+        throw new Error('Failed to fetch user data');
+      }
+      const data = (await response.json()) as any;
+      imageUrl ??= data.avatar_url;
+    }
 
     const rawSvg = await toSVG(
       <>
@@ -58,7 +62,7 @@ export async function handler(request: Request): Promise<Response> {
             <div tw="flex flex-col">
               <span tw="font-bold text-5xl">{fullName}</span>
               <span tw="text-2xl mb-5">{jobTitle}</span>
-              <span tw="max-w-[400px] text-xl">{bio}</span>
+              <span tw="max-w-[400px] text-xl">{company}</span>
             </div>
           </div>
         </div>
