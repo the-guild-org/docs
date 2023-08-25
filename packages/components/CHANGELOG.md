@@ -1,5 +1,81 @@
 # @theguild/components
 
+## 5.2.2
+
+### Patch Changes
+
+- [#1181](https://github.com/the-guild-org/docs/pull/1181)
+  [`c8d4cb3`](https://github.com/the-guild-org/docs/commit/c8d4cb37d578709e39f48e4f456afa27eb83236c)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`clsx@2.0.0` ↗︎](https://www.npmjs.com/package/clsx/v/2.0.0) (from `1.2.1`,
+    in `dependencies`)
+
+- [#1185](https://github.com/the-guild-org/docs/pull/1185)
+  [`27af037`](https://github.com/the-guild-org/docs/commit/27af03777ee89af494e3414adf7893598fc1f475)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-instantsearch-dom@6.40.4` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.40.4)
+    (from `6.40.1`, in `dependencies`)
+
+- [#1186](https://github.com/the-guild-org/docs/pull/1186)
+  [`73c4eb8`](https://github.com/the-guild-org/docs/commit/73c4eb8036a69f810af78fec4dc73b4861ded657)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`algoliasearch@4.19.0` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.19.0) (from
+    `4.18.0`, in `dependencies`)
+
+- [#1198](https://github.com/the-guild-org/docs/pull/1198)
+  [`138c90d`](https://github.com/the-guild-org/docs/commit/138c90da4728123db3dd6e1438b33b9e8295abf8)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`algoliasearch@4.19.1` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.19.1) (from
+    `4.19.0`, in `dependencies`)
+
+- [#1209](https://github.com/the-guild-org/docs/pull/1209)
+  [`a2c96f0`](https://github.com/the-guild-org/docs/commit/a2c96f04eb81f3624f164de9465c31c287512c37)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.11.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.11.0)
+    (from `1.10.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.11.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.11.0)
+    (from `1.10.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.11.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.11.0)
+    (from `1.10.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.11.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.11.0)
+    (from `1.10.0`, in `dependencies`)
+
+- [#1215](https://github.com/the-guild-org/docs/pull/1215)
+  [`3138ec7`](https://github.com/the-guild-org/docs/commit/3138ec7eb31447aae15d2374e1f698d294a14f50)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.11.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.11.0)
+    (from `1.10.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.11.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.11.0)
+    (from `1.10.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.11.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.11.0)
+    (from `1.10.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.11.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.11.0)
+    (from `1.10.0`, in `dependencies`)
+  - Updated dependency
+    [`react-instantsearch-dom@6.40.4` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.40.4)
+    (from `6.40.1`, in `dependencies`)
+
+- [#1220](https://github.com/the-guild-org/docs/pull/1220)
+  [`875bf4b`](https://github.com/the-guild-org/docs/commit/875bf4b69b775d68a0d1ac4170948f5e041d7914)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - use new logo for fets
+
 ## 5.2.1
 
 ### Patch Changes
