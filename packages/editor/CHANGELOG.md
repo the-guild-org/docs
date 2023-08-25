@@ -1,5 +1,16 @@
 # @theguild/editor
 
+## 1.3.3
+
+### Patch Changes
+
+- [#1196](https://github.com/the-guild-org/docs/pull/1196)
+  [`b990664`](https://github.com/the-guild-org/docs/commit/b99066412a24cf248195eca33d7488231476b51c)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`monaco-editor@^0.40.0 || ^0.41.0` ↗︎](https://www.npmjs.com/package/monaco-editor/v/0.40.0)
+    (from `^0.40.0`, in `peerDependencies`)
+
 ## 1.3.2
 
 ### Patch Changes
