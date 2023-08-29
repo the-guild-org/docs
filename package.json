@@ -52,7 +52,7 @@
     "jest-image-snapshot": "6.2.0",
     "lint-staged": "14.0.1",
     "next-themes": "0.2.1",
-    "postcss": "8.4.28",
+    "postcss": "8.4.29",
     "postcss-loader": "7.3.3",
     "prettier": "2.8.8",
     "prettier-plugin-tailwindcss": "0.4.1",
