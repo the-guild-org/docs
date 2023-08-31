@@ -46,16 +46,16 @@ export async function handler(request: Request): Promise<Response> {
           color={product.primaryColor && shade(product.primaryColor, 100)}
         />
         <product.logo style={{ width: 102, height: 108 }} />
-        <span tw="font-bold text-7xl my-5">{product.name}</span>
+        <span tw="font-bold text-7xl mb-10 mt-3">{product.name}</span>
         {title && (
           // @ts-expect-error This isn't a valid CSS property supported by browsers yet.
-          <span tw="font-bold text-5xl" style={{ textWrap: title.includes(' ') ? 'balance' : '' }}>
+          <span tw="font-medium text-5xl" style={{ textWrap: title.includes(' ') ? 'balance' : '' }}>
             {title}
           </span>
         )}
         {extra && (
           <span
-            tw="font-bold text-2xl mt-4"
+            tw="font-bold text-2xl mt-16"
             // @ts-expect-error This isn't a valid CSS property supported by browsers yet.
             style={{ textWrap: extra.includes(' ') ? 'balance' : '' }}
           >

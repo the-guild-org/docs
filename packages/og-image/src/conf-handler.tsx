@@ -25,10 +25,11 @@ export async function handler(request: Request): Promise<Response> {
       });
 
       if (response.status !== 200) {
-        throw new Error('Failed to fetch user data');
+        // throw new Error('Failed to fetch user data');
+      } else {
+        const data = (await response.json()) as any;
+        imageUrl ??= data.avatar_url;
       }
-      const data = (await response.json()) as any;
-      imageUrl ??= data.avatar_url;
     }
 
     const rawSvg = await toSVG(
@@ -61,8 +62,8 @@ export async function handler(request: Request): Promise<Response> {
             )}
             <div tw="flex flex-col">
               <span tw="font-bold text-5xl">{fullName}</span>
-              <span tw="text-2xl mb-5">{jobTitle}</span>
-              <span tw="max-w-[400px] text-xl">{company}</span>
+              <span tw="font-medium text-3xl mb-5 mt-2">{jobTitle}</span>
+              <span tw="font-medium max-w-[400px] text-2xl">{company}</span>
             </div>
           </div>
         </div>
