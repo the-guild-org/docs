@@ -24,11 +24,11 @@ export async function handler(request: Request): Promise<Response> {
         headers: { 'User-Agent': 'request' },
       });
 
-      if (response.status !== 200) {
-        // throw new Error('Failed to fetch user data');
-      } else {
+      if (response.status === 200) {
         const data = (await response.json()) as any;
         imageUrl ??= data.avatar_url;
+      } else {
+        // throw new Error('Failed to fetch user data');
       }
     }
 
