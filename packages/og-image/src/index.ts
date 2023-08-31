@@ -16,7 +16,7 @@ export default {
     const cacheUrl = new URL(request.url);
 
     // In case you want to purge the cache, please bump the version number below:
-    cacheUrl.searchParams.set('version', 'v12');
+    cacheUrl.searchParams.set('version', 'v13');
 
     // Construct the cache key from the cache URL
     const cacheKey = new Request(cacheUrl.toString(), request);
