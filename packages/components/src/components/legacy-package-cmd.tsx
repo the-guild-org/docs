@@ -2,7 +2,7 @@ import { ReactElement, useMemo } from 'react';
 import { Tab, Tabs } from 'nextra-theme-docs';
 import { Pre } from 'nextra/components';
 
-const PACKAGE_MANAGERS = ['yarn', 'npm', 'pnpm'] as const;
+const PACKAGE_MANAGERS = ['yarn', 'npm', 'pnpm'];
 
 type PackageMap = Record<(typeof PACKAGE_MANAGERS)[number], string>;
 

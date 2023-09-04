@@ -7,7 +7,7 @@ export { default as Giscus } from '@giscus/react';
 export { useMounted } from 'nextra/hooks';
 export { useMDXComponents } from 'nextra/mdx';
 export { RemoteContent, useSSG } from 'nextra/ssg';
-export { Mermaid, Callout } from 'nextra/components';
+export { Mermaid, Callout, Tabs, Cards, Steps, FileTree, Tab, Card } from 'nextra/components';
 export {
   type DocsThemeConfig,
   Bleed,
@@ -15,13 +15,8 @@ export {
   Navbar,
   NotFoundPage,
   ServerSideErrorPage,
-  Tab,
   useConfig,
   useTheme,
-  Card,
-  Cards,
-  Steps,
-  FileTree,
 } from 'nextra-theme-docs';
 
 declare module 'react' {
