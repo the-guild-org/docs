@@ -75,7 +75,7 @@
     "nextra-theme-docs": "2.9.0",
     "react-instantsearch-dom": "6.40.4",
     "react-paginate": "8.2.0",
-    "react-player": "2.12.0",
+    "react-player": "2.13.0",
     "remark-mdx-disable-explicit-jsx": "0.1.0",
     "search-insights": "2.8.0",
     "semver": "^7.3.8",
