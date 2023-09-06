@@ -48,7 +48,7 @@ export async function handler(request: Request): Promise<Response> {
             <CalendarIcon />
             <span tw="text-xl">September 19-21, 2023</span>
             <MarkerIcon tw="ml-7" />
-            <span tw="text-xl">SF Bay Area</span>
+            <span tw="text-xl">San Francisco, CA</span>
           </div>
           <div tw="flex mt-10" style={{ gap: 40 }}>
             {imageUrl && (
