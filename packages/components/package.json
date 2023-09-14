@@ -86,7 +86,7 @@
     "@theguild/editor": "workspace:*",
     "@types/dedent": "0.7.0",
     "@types/react-dom": "18.2.7",
-    "@types/semver": "7.5.1",
+    "@types/semver": "7.5.2",
     "dedent": "0.7.0",
     "esbuild-plugin-svgr": "1.1.0",
     "graphql": "16.8.0",
