@@ -1,7 +1,6 @@
 /* eslint react/no-unknown-property: ['error', { ignore: ['tw'] }] */
 /* eslint-disable jsx-a11y/alt-text */
 import { ComponentProps } from 'react';
-import { base64 } from './img';
 import { toImage, toSVG } from './utils';
 
 export async function handler(request: Request): Promise<Response> {
@@ -31,9 +30,6 @@ export async function handler(request: Request): Promise<Response> {
         // throw new Error('Failed to fetch user data');
       }
     }
-
-    // TODO: remove this
-    imageUrl = 'https://avatars.githubusercontent.com/u/72823042?v=4';
 
     const rawSvg = await toSVG(
       <>
