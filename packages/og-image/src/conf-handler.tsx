@@ -127,8 +127,6 @@ export async function handler(request: Request): Promise<Response> {
       }
     }
 
-    imageUrl = 'https://avatars.githubusercontent.com/u/72823042?v=4';
-
     const rawSvg = await toSVG(
       <div tw="flex justify-center items-center w-[1200px] h-[600px] bg-[#171d26]">
         <TicketComponent>
