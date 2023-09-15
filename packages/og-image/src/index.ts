@@ -16,7 +16,7 @@ export default {
     const cacheUrl = new URL(request.url);
 
     // In case you want to purge the cache, please bump the version number below:
-    cacheUrl.searchParams.set('version', 'v14');
+    cacheUrl.searchParams.set('version', 'hash:$GIT_CHANGED_HASH');
 
     // Construct the cache key from the cache URL
     const cacheKey = new Request(cacheUrl.toString(), request);
@@ -29,7 +29,10 @@ export default {
       response =
         cacheUrl.pathname === '/conf' ? await confHandler(request) : await handler(request);
 
-      if (process.env.NODE_ENV !== 'test' && ![404, 500].includes(response.status)) {
+      if (
+        !['test', 'development'].includes(process.env.NODE_ENV as string) &&
+        ![404, 500].includes(response.status)
+      ) {
         // Any changes made to the response here will be reflected in the cached value
         response.headers.append('Cache-Control', 'public');
         response.headers.append('Cache-Control', `s-maxage=${maxAgeForCDN}`);

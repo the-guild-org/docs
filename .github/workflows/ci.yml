@@ -24,6 +24,29 @@ jobs:
       - name: Install Dependencies
         run: pnpm i
 
+      - name: Detect changes in packages/og-image/src
+        id: detect-changes
+        run: |
+          git fetch origin main:main
+          if git diff --quiet main HEAD -- packages/og-image/src; then
+            echo "changed=no" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=yes" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Get commit hash if OG generation related files changed
+        id: gethash
+        if: steps.detect-changes.outputs.changed == 'yes'
+        run: |
+          HASH=$(git log -n 1 --pretty=format:"%h" -- packages/og-image/src)
+          echo "hash=$HASH" >> "$GITHUB_OUTPUT"
+
+      - name: Replace hash for cache in source code
+        if: steps.gethash.outputs.hash
+        run:
+          sed -i 's/hash:$GIT_CHANGED_HASH/hash:${{ steps.gethash.outputs.hash }}/g'
+          ./packages/og-image/src/index.ts
+
       - name: Build
         run: pnpm build
 
