@@ -43,8 +43,8 @@ jobs:
 
       - name: Replace hash for cache in source code
         if: steps.gethash.outputs.hash
-        run:
-          sed -i '' 's/hash:$GIT_CHANGED_HASH/hash:${{ steps.gethash.outputs.hash }}/g' ./packages/og-image/src/index.ts
+        run: sed -i 's/hash:$GIT_CHANGED_HASH/hash:${{ steps.gethash.outputs.hash }}/g' ./packages/og-image/src/index.ts
+
       - name: Build
         run: pnpm build
 
