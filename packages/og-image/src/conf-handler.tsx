@@ -3,6 +3,102 @@
 import { ComponentProps } from 'react';
 import { toImage, toSVG } from './utils';
 
+function TicketComponent({ children }: { children: any }) {
+  return (
+    <div
+      tw="flex"
+      style={{
+        width: '1120px',
+        height: '520px',
+        background: '#f6009b',
+        borderRadius: '30px',
+        padding: '10px',
+        position: 'relative',
+        overflow: 'hidden',
+        boxSizing: 'border-box',
+      }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '-30px',
+          width: '60px',
+          height: '60px',
+          borderRadius: '50%',
+          background: '#f6009b',
+          transform: 'translateY(-50%)',
+        }}
+      />
+
+      <div
+        tw="flex"
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'relative',
+          background: '#000',
+          borderRadius: '80px',
+        }}
+      >
+        {children}
+
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '-55px',
+            width: '105px',
+            height: '105px',
+            borderRadius: '50%',
+            border: '8px solid #f6009b',
+            background: '#171d26',
+            transform: 'translateY(-50%)',
+          }}
+        />
+
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            right: '-55px',
+            width: '105px',
+            height: '105px',
+            borderRadius: '50%',
+            border: '8px solid #f6009b',
+            background: '#171d26',
+            transform: 'translateY(-50%)',
+          }}
+        />
+
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '-80px',
+            width: '80px',
+            height: '80px',
+            background: '#171d26',
+            transform: 'translateY(-50%)',
+          }}
+        />
+
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            right: '-80px',
+            width: '80px',
+            height: '80px',
+            background: '#171d26',
+            transform: 'translateY(-50%)',
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
 export async function handler(request: Request): Promise<Response> {
   try {
     const { searchParams } = new URL(request.url);
@@ -31,53 +127,55 @@ export async function handler(request: Request): Promise<Response> {
       }
     }
 
+    imageUrl = 'https://avatars.githubusercontent.com/u/72823042?v=4';
+
     const rawSvg = await toSVG(
-      <>
-        <div
-          tw="absolute left-0 top-0 w-[100%] h-[100%]"
-          style={{
-            backgroundImage:
-              'linear-gradient(to right, black, black, transparent), url(https://graphql.org/img/conf/graphql-conf-bg.png)',
-          }}
-        />
-        <span tw="absolute bottom-[25px] right-[25px] text-white font-medium text-[20px] font-light">
-          — Hosted by The GraphQL Foundation
-        </span>
-        <div
-          tw="flex h-full flex-col w-full justify-center text-white py-20 px-30"
-          style={{ gap: 12 }}
-        >
-          <div tw="flex items-center">
-            <GraphQLConf />
-            <span tw="ml-3 mr-8 text-[60px] leading-none mb-6 font-medium">2023</span>
-            <div tw="rounded-full bg-[#F5009B] py-3 px-5 text-xl font-black flex justify-center items-center mb-1.5">
-              <span tw="mb-0.5">ATTENDEE</span>
+      <div tw="flex justify-center items-center w-[1200px] h-[600px] bg-[#171d26]">
+        <TicketComponent>
+          <div
+            tw="absolute left-0 top-0 w-[100%] h-[100%]"
+            style={{
+              borderRadius: '20px',
+              backgroundImage:
+                'linear-gradient(to right, black, black, transparent), url(https://graphql.org/img/conf/graphql-conf-bg.png)',
+            }}
+          />
+          <span tw="absolute bottom-[25px] right-[28px] text-white font-medium text-[26px] font-medium">
+            — Hosted by The GraphQL Foundation
+          </span>
+          <div tw="flex h-full flex-col w-full justify-center text-white px-30" style={{ gap: 12 }}>
+            <div tw="flex items-center">
+              <GraphQLConf />
+              <span tw="ml-3 mr-8 text-[60px] leading-none mb-6 font-medium">2023</span>
+              <div tw="rounded-full bg-[#F5009B] py-3 px-5 text-xl font-black flex justify-center items-center mb-2.5">
+                <span tw="mb-0.5">ATTENDEE</span>
+              </div>
+            </div>
+            <div tw="flex items-center" style={{ gap: 7 }}>
+              <CalendarIcon />
+              <span tw="text-[28px] mb-1.5">September 19-21, 2023</span>
+              <MarkerIcon tw="ml-7" />
+              <span tw="text-[28px] mb-1.5">San Francisco, CA</span>
+            </div>
+            <div tw="flex mt-5 items-center" style={{ gap: 35 }}>
+              {imageUrl && (
+                <div
+                  tw="w-60 h-60 bg-[rgba(255,255,255,.1)] rounded-full border-2 border-white"
+                  style={{
+                    backgroundImage: `url(${imageUrl})`,
+                    backgroundSize: '100% 100%',
+                  }}
+                />
+              )}
+              <div tw="flex flex-col mb-2.5">
+                <span tw="font-bold text-[58px]">{fullName}</span>
+                <span tw="font-medium text-[30px] mb-2 mt-2 ml-1">{jobTitle}</span>
+                <span tw="font-medium max-w-[400px] text-2xl ml-1">{company}</span>
+              </div>
             </div>
           </div>
-          <div tw="flex items-center" style={{ gap: 7 }}>
-            <CalendarIcon />
-            <span tw="text-[28px] mb-1.5">September 19-21, 2023</span>
-            <MarkerIcon tw="ml-7" />
-            <span tw="text-[28px] mb-1.5">San Francisco, CA</span>
-          </div>
-          <div tw="flex mt-10 items-center" style={{ gap: 35 }}>
-            {imageUrl && (
-              <div
-                tw="w-60 h-60 bg-[rgba(255,255,255,.1)] rounded-full border-2 border-white"
-                style={{
-                  backgroundImage: `url(${imageUrl})`,
-                  backgroundSize: '100% 100%',
-                }}
-              />
-            )}
-            <div tw="flex flex-col mb-2.5">
-              <span tw="font-bold text-[58px]">{fullName}</span>
-              <span tw="font-medium text-[30px] mb-2 mt-2 ml-1">{jobTitle}</span>
-              <span tw="font-medium max-w-[400px] text-2xl ml-1">{company}</span>
-            </div>
-          </div>
-        </div>
-      </>,
+        </TicketComponent>
+      </div>,
     );
 
     const buffer = toImage(rawSvg);
