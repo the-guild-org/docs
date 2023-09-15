@@ -8,8 +8,8 @@ function TicketComponent({ children }: { children: any }) {
     <div
       tw="flex"
       style={{
-        width: '1120px',
-        height: '520px',
+        width: '1160px',
+        height: '560px',
         background: '#f6009b',
         borderRadius: '30px',
         padding: '10px',
@@ -127,6 +127,8 @@ export async function handler(request: Request): Promise<Response> {
       }
     }
 
+    imageUrl = 'https://avatars.githubusercontent.com/u/72823042?v=4';
+
     const rawSvg = await toSVG(
       <div tw="flex justify-center items-center w-[1200px] h-[600px] bg-[#171d26]">
         <TicketComponent>
@@ -158,7 +160,7 @@ export async function handler(request: Request): Promise<Response> {
             <div tw="flex mt-5 items-center" style={{ gap: 35 }}>
               {imageUrl && (
                 <div
-                  tw="w-60 h-60 bg-[rgba(255,255,255,.1)] rounded-full border-2 border-white"
+                  tw="w-57 h-57 bg-[rgba(255,255,255,.1)] rounded-full border-2 border-white"
                   style={{
                     backgroundImage: `url(${imageUrl})`,
                     backgroundSize: '100% 100%',
