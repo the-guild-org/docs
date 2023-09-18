@@ -1,5 +1,13 @@
 # @theguild/remark-mermaid
 
+## 0.0.5
+
+### Patch Changes
+
+- [#1246](https://github.com/the-guild-org/docs/pull/1246)
+  [`4e1885a`](https://github.com/the-guild-org/docs/commit/4e1885ac85392847c912aa55eb411f6aa8dff258)
+  Thanks [@sanyuan0704](https://github.com/sanyuan0704)! - fix: hmr not work in Mermaid component
+
 ## 0.0.4
 
 ### Patch Changes
