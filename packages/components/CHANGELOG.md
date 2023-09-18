@@ -1,5 +1,16 @@
 # @theguild/components
 
+## 5.2.3
+
+### Patch Changes
+
+- [#1227](https://github.com/the-guild-org/docs/pull/1227)
+  [`bbee464`](https://github.com/the-guild-org/docs/commit/bbee464aa9d1ecd4ec58fbef494b79d69d887a04)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`search-insights@2.8.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.8.0) (from
+    `2.7.0`, in `dependencies`)
+
 ## 5.2.2
 
 ### Patch Changes
