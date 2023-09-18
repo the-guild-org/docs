@@ -42,8 +42,8 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
       }
     }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- only on mount
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- when chart code changes, we need to re-render
+  }, [chart]);
 
   return <div dangerouslySetInnerHTML={{ __html: svg }} />;
 }
