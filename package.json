@@ -85,5 +85,11 @@
       "pretty-quick --staged",
       "eslint"
     ]
+  },
+  "pnpm": {
+    "overrides": {
+      "@theguild/remark-npm2yarn": "workspace:*",
+      "@theguild/remark-mermaid": "workspace:*"
+    }
   }
 }

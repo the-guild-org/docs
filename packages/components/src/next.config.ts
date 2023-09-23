@@ -46,8 +46,6 @@ export const withGuildDocs = ({
       withNextra({
         reactStrictMode: true,
         poweredByHeader: false,
-        // TODO: Enable after https://github.com/vercel/next.js/issues/40750 will be fixed
-        // swcMinify: true,
         basePath: process.env.NEXT_BASE_PATH,
         ...nextConfig,
         env: {
@@ -61,7 +59,6 @@ export const withGuildDocs = ({
         experimental: {
           // TODO: Provoke white flash ⚪️💥 on initial loading with dark theme
           // optimizeCss: true,
-          newNextLinkBehavior: true,
           ...nextConfig.experimental,
         },
         images: {
