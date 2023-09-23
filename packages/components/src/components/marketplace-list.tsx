@@ -44,7 +44,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
               item.link.className,
             )}
           >
-            <h3 className="m-0 text-base font-bold text-black line-clamp-2 dark:text-white md:text-lg">
+            <h3 className="m-0 line-clamp-2 text-base font-bold text-black dark:text-white md:text-lg">
               {item.title}
             </h3>
             <div className="line-clamp-3">{item.description}</div>

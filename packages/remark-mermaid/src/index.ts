@@ -22,10 +22,7 @@ const MERMAID_IMPORT_AST = {
               local: { type: 'Identifier', name: COMPONENT_NAME },
             },
           ],
-          source: {
-            type: 'Literal',
-            value: COMPONENT_PATH,
-          },
+          source: { type: 'Literal', value: COMPONENT_PATH },
         },
       ],
     },
@@ -52,9 +49,7 @@ const getMermaidElementAST = (value: string) => ({
                   quasis: [
                     {
                       type: 'TemplateElement',
-                      value: {
-                        raw: value,
-                      },
+                      value: { raw: value },
                     },
                   ],
                 },

@@ -13,7 +13,7 @@ function _createMdxContent(props) {
   if (!$Tabs) _missingMdxReference(\\"$Tabs\\", true);
   if (!$Tabs.Tab) _missingMdxReference(\\"$Tabs.Tab\\", true);
   return _jsxs($Tabs, {
-    items: [\\"npm\\", \\"pnpm\\", \\"yarn\\"],
+    items: [\\"npm\\", \\"pnpm\\", \\"yarn\\", \\"bun\\"],
     storageKey: \\"testKey\\",
     children: [_jsx($Tabs.Tab, {
       children: _jsx(_components.pre, {
@@ -128,6 +128,55 @@ function _createMdxContent(props) {
                 color: \\"var(--shiki-token-function)\\"
               },
               children: \\"yarn\\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-color-text)\\"
+              },
+              children: \\" \\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-token-string)\\"
+              },
+              children: \\"add\\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-color-text)\\"
+              },
+              children: \\" \\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-token-string)\\"
+              },
+              children: \\"--dev\\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-color-text)\\"
+              },
+              children: \\" \\"
+            }), _jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-token-string)\\"
+              },
+              children: \\"@graphql-eslint/eslint-plugin\\"
+            })]
+          })
+        })
+      })
+    }), _jsx($Tab, {
+      children: _jsx(_components.pre, {
+        \\"data-language\\": \\"sh\\",
+        \\"data-theme\\": \\"default\\",
+        filename: \\"Terminal\\",
+        children: _jsx(_components.code, {
+          \\"data-language\\": \\"sh\\",
+          \\"data-theme\\": \\"default\\",
+          children: _jsxs(_components.span, {
+            className: \\"line\\",
+            children: [_jsx(_components.span, {
+              style: {
+                color: \\"var(--shiki-token-function)\\"
+              },
+              children: \\"bun\\"
             }), _jsx(_components.span, {
               style: {
                 color: \\"var(--shiki-color-text)\\"

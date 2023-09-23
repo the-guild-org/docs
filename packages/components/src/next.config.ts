@@ -3,7 +3,6 @@ import withVideos from 'next-videos';
 import nextra from 'nextra';
 import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
-import { remarkNpm2Yarn } from '@theguild/remark-npm2yarn';
 import { applyUnderscoreRedirects } from './underscore-redirects';
 
 export const defaultRemarkPlugins = [
@@ -11,14 +10,6 @@ export const defaultRemarkPlugins = [
     // replace <iframe />, <video />, <source /> tags in MDX
     remarkMdxDisableExplicitJsx,
     { whiteList: ['iframe', 'video', 'source'] },
-  ],
-  [
-    remarkNpm2Yarn,
-    {
-      packageName: '@theguild/components',
-      tabNamesProp: 'items',
-      storageKey: 'selectedPackageManager',
-    },
   ],
 ] as any;
 
@@ -55,8 +46,6 @@ export const withGuildDocs = ({
       withNextra({
         reactStrictMode: true,
         poweredByHeader: false,
-        // TODO: Enable after https://github.com/vercel/next.js/issues/40750 will be fixed
-        // swcMinify: true,
         basePath: process.env.NEXT_BASE_PATH,
         ...nextConfig,
         env: {
@@ -70,7 +59,6 @@ export const withGuildDocs = ({
         experimental: {
           // TODO: Provoke white flash ⚪️💥 on initial loading with dark theme
           // optimizeCss: true,
-          newNextLinkBehavior: true,
           ...nextConfig.experimental,
         },
         images: {
