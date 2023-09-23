@@ -1,5 +1,26 @@
 # @theguild/components
 
+## 5.2.4
+
+### Patch Changes
+
+- [#1231](https://github.com/the-guild-org/docs/pull/1231)
+  [`5967db3`](https://github.com/the-guild-org/docs/commit/5967db34dd47c83cb53db415c9471a14c56b482e)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`search-insights@2.8.1` ↗︎](https://www.npmjs.com/package/search-insights/v/2.8.1) (from
+    `2.8.0`, in `dependencies`)
+
+- [#1247](https://github.com/the-guild-org/docs/pull/1247)
+  [`d3c94b0`](https://github.com/the-guild-org/docs/commit/d3c94b03e620e71e0ef5781afc0c9e8304ae0dfe)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+  - Updated dependency [`nextra@2.12.3` ↗︎](https://www.npmjs.com/package/nextra/v/2.12.3) (from
+    `2.9.0`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.12.3` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.12.3) (from
+    `2.9.0`, in `dependencies`)
+
 ## 5.2.3
 
 ### Patch Changes

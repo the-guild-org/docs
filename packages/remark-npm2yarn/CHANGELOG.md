@@ -1,5 +1,21 @@
 # @theguild/remark-npm2yarn
 
+## 0.2.0
+
+### Minor Changes
+
+- [#1247](https://github.com/the-guild-org/docs/pull/1247)
+  [`d3c94b0`](https://github.com/the-guild-org/docs/commit/d3c94b03e620e71e0ef5781afc0c9e8304ae0dfe)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - add tab for `bun` package manager
+
+### Patch Changes
+
+- [#1247](https://github.com/the-guild-org/docs/pull/1247)
+  [`d3c94b0`](https://github.com/the-guild-org/docs/commit/d3c94b03e620e71e0ef5781afc0c9e8304ae0dfe)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+  - Updated dependency [`npm-to-yarn@^2.1.0` ↗︎](https://www.npmjs.com/package/npm-to-yarn/v/2.1.0)
+    (from `^2.0.0`, in `dependencies`)
+
 ## 0.1.1
 
 ### Patch Changes
