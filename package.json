@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "turbo run build",
-    "build-storybook": "storybook build",
+    "build-storybook": "pnpm --filter @theguild/remark-mermaid build && storybook build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/style.css",
     "dev": "turbo run dev --parallel",
     "lint": "eslint --cache --ignore-path .gitignore .",
@@ -18,9 +18,7 @@
     "prettier": "pnpm lint:prettier --write",
     "release": "changeset publish",
     "start": "storybook dev --port 4000",
-    "test": "vitest .",
-    "type-check": "tsc",
-    "type-check:watch": "tsc --watch"
+    "test": "vitest ."
   },
   "devDependencies": {
     "@algolia/autocomplete-theme-classic": "1.11.0",
@@ -33,7 +31,6 @@
     "@storybook/mdx2-csf": "1.1.0",
     "@storybook/react-webpack5": "7.0.0-beta.11",
     "@svgr/webpack": "8.0.1",
-    "@tailwindcss/line-clamp": "0.4.4",
     "@theguild/eslint-config": "0.11.0",
     "@theguild/prettier-config": "1.2.0",
     "@theguild/tailwind-config": "0.3.0",
@@ -85,5 +82,11 @@
       "pretty-quick --staged",
       "eslint"
     ]
+  },
+  "pnpm": {
+    "overrides": {
+      "@theguild/remark-npm2yarn": "workspace:*",
+      "@theguild/remark-mermaid": "workspace:*"
+    }
   }
 }
