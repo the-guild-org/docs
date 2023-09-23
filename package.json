@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "turbo run build",
-    "build-storybook": "storybook build",
+    "build-storybook": "pnpm --filter @theguild/remark-mermaid build && storybook build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/style.css",
     "dev": "turbo run dev --parallel",
     "lint": "eslint --cache --ignore-path .gitignore .",
@@ -18,9 +18,7 @@
     "prettier": "pnpm lint:prettier --write",
     "release": "changeset publish",
     "start": "storybook dev --port 4000",
-    "test": "vitest .",
-    "type-check": "tsc",
-    "type-check:watch": "tsc --watch"
+    "test": "vitest ."
   },
   "devDependencies": {
     "@algolia/autocomplete-theme-classic": "1.11.0",
