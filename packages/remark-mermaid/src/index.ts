@@ -1,5 +1,4 @@
 import { createRequire } from 'node:module';
-import path from 'node:path';
 import { Code, Root } from 'mdast';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
