@@ -4,11 +4,9 @@ import { Code, Root } from 'mdast';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
 
-const workingDirRequire = createRequire(import.meta.url);
-const nextraWorkingDir = path.resolve(workingDirRequire.resolve('nextra/package.json'), '..');
-const nextraRequire = createRequire(nextraWorkingDir);
+const require = createRequire(import.meta.url);
 
-const COMPONENT_PATH = nextraRequire.resolve('@theguild/remark-mermaid/mermaid');
+const COMPONENT_PATH = require.resolve('@theguild/remark-mermaid/mermaid');
 const COMPONENT_NAME = 'Mermaid';
 
 const MERMAID_IMPORT_AST = {
