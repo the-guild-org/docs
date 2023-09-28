@@ -85,14 +85,23 @@ export const Header = ({
   return (
     <>
       <div className="block">
-        <div className="flex flex-col items-center justify-center bg-[#48224e] p-2 text-xs font-medium text-white sm:flex-row">
-          Catch the highlights of GraphQLConf 2023!
+        <div className="flex flex-col items-center justify-center space-x-1 bg-[#48224e] p-2 text-xs font-medium text-white sm:flex-row">
+          <span>Catch the highlights of GraphQLConf 2023!</span>
           <Anchor
             href="https://graphql.org/conf/schedule/"
-            className="rounded-md p-1 text-xs text-white underline"
+            className="rounded-md text-xs text-white underline"
           >
-            Recordings available here.
+            Click for recordings.
           </Anchor>
+          <span>
+            Or check out our{' '}
+            <Anchor
+              href="https://the-guild.dev/blog/graphqlconf-2023-recap"
+              className="rounded-md text-xs text-white underline"
+            >
+              blogpost.
+            </Anchor>
+          </span>
         </div>
       </div>
       <header
