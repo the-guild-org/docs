@@ -16,12 +16,10 @@ import { GuildLogo, TheGuild } from '../logos';
 import { IHeaderProps } from '../types/components';
 import { Anchor } from './anchor';
 import { EcosystemList } from './ecosystem-list';
-import { GraphqlConfLogoHoriz } from './graphql-conf-logo-horiz';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
 import { Nav } from './nav';
 import { SearchBar } from './search-bar';
 import { SolutionsMenu } from './solutions-menu';
-import graphqlConfBg from '../static/conf/graphql-conf-bg.png';
 
 // TODO: fails during build (no matching export in for import "default")
 // import graphqlConfLogo from '../static/conf/graphql-conf-logo.svg';
