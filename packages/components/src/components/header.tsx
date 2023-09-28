@@ -99,7 +99,7 @@ export const Header = ({
               href="https://the-guild.dev/blog/graphqlconf-2023-recap"
               className="rounded-md text-xs text-white underline"
             >
-              blogpost.
+              recap blog post.
             </Anchor>
           </span>
         </div>
