@@ -88,9 +88,9 @@ export const Header = ({
     <>
       <div className="block">
         <div className="flex flex-col items-center justify-center bg-[#48224e] p-2 text-xs font-medium text-white sm:flex-row">
-          Catch the highlights of GraphQL 2023!
+          Catch the highlights of GraphQLConf 2023!
           <Anchor
-            href="https://graphql.org/conf/"
+            href="https://graphql.org/conf/schedule/"
             className="rounded-md p-1 text-xs text-white underline"
           >
             Recordings available here.
