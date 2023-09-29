@@ -16,12 +16,10 @@ import { GuildLogo, TheGuild } from '../logos';
 import { IHeaderProps } from '../types/components';
 import { Anchor } from './anchor';
 import { EcosystemList } from './ecosystem-list';
-import { GraphqlConfLogoHoriz } from './graphql-conf-logo-horiz';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
 import { Nav } from './nav';
 import { SearchBar } from './search-bar';
 import { SolutionsMenu } from './solutions-menu';
-import graphqlConfBg from '../static/conf/graphql-conf-bg.png';
 
 // TODO: fails during build (no matching export in for import "default")
 // import graphqlConfLogo from '../static/conf/graphql-conf-logo.svg';
@@ -86,34 +84,25 @@ export const Header = ({
 
   return (
     <>
-      <div className="hidden md:block">
-        <div
-          className="flex items-center justify-center gap-6 p-6"
-          style={{ background: `url(${graphqlConfBg.src}) repeat 50%` }}
-        >
-          <div className="text-center md:text-right">
-            <GraphqlConfLogoHoriz className="w-[500px]" />
-            <small className="text-white">SEPTEMBER 19-21, 2023 • SAN FRANCISCO</small>
-          </div>
+      <div className="block">
+        <div className="flex flex-col items-center justify-center space-x-1 bg-[#48224e] p-2 text-xs font-medium text-white sm:flex-row">
+          <span>Catch the highlights of GraphQLConf 2023!</span>
           <Anchor
-            href="https://graphql.org/conf/"
-            className="rounded-md border-2 px-3 py-2 font-medium text-white"
+            href="https://graphql.org/conf/schedule/"
+            className="rounded-md text-xs text-white underline"
           >
-            Register Now!
+            Click for recordings.
           </Anchor>
+          <span>
+            Or check out our{' '}
+            <Anchor
+              href="https://the-guild.dev/blog/graphqlconf-2023-recap"
+              className="rounded-md text-xs text-white underline"
+            >
+              recap blog post.
+            </Anchor>
+          </span>
         </div>
-      </div>
-      <div className="block md:hidden">
-        <Anchor
-          href="https://graphql.org/conf/"
-          className="flex flex-row items-center justify-center gap-2 p-6"
-          style={{ background: `url(${graphqlConfBg.src}) repeat 50%`, borderRadius: 0 }}
-        >
-          <div className="text-center md:text-right">
-            <GraphqlConfLogoHoriz className="w-full sm:w-[400px]" />
-            <small className="text-white">SEPTEMBER 19-21, 2023 • SAN FRANCISCO</small>
-          </div>
-        </Anchor>
       </div>
       <header
         className={clsx(
