@@ -162,7 +162,7 @@ function _createMdxContent(props) {
           })
         })
       })
-    }), _jsx($Tab, {
+    }), _jsx($Tabs.Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
