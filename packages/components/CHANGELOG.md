@@ -1,5 +1,24 @@
 # @theguild/components
 
+## 5.2.6
+
+### Patch Changes
+
+- [#1232](https://github.com/the-guild-org/docs/pull/1232)
+  [`5aeaec7`](https://github.com/the-guild-org/docs/commit/5aeaec777a6c5280c7e0f387502d8671ccddf148)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`nextra@2.12.3` ↗︎](https://www.npmjs.com/package/nextra/v/2.12.3) (from
+    `2.9.0`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.12.3` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.12.3) (from
+    `2.9.0`, in `dependencies`)
+  - Updated dependency
+    [`react-player@2.13.0` ↗︎](https://www.npmjs.com/package/react-player/v/2.13.0) (from `2.12.0`,
+    in `dependencies`)
+  - Updated dependency
+    [`search-insights@2.8.2` ↗︎](https://www.npmjs.com/package/search-insights/v/2.8.2) (from
+    `2.8.0`, in `dependencies`)
+
 ## 5.2.5
 
 ### Patch Changes
