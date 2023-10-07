@@ -335,8 +335,8 @@ importers:
         version: 0.3.3
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20230914.0
-        version: 4.20230914.0
+        specifier: 4.20231002.0
+        version: 4.20231002.0
       '@types/react':
         specifier: 18.2.25
         version: 18.2.25
@@ -3385,8 +3385,8 @@ packages:
     dev: true
     optional: true
 
-  /@cloudflare/workers-types@4.20230914.0:
-    resolution: {integrity: sha512-OVeN4lFVu1O0PJGZ2d0FwpK8lelFcr33qYOgCh77ErEYmEBO4adwnIxcIsdQbFbhF0ffN6joiVcljD4zakdaeQ==}
+  /@cloudflare/workers-types@4.20231002.0:
+    resolution: {integrity: sha512-gQMKf3THqAFWH426OXXfVx0gFLXiSiL2fo6mKjQYx4PU74MgmVDFh25NvpAIBK+XN+xXlrImClfYeqErXIT7jA==}
     dev: true
 
   /@colors/colors@1.5.0:
