@@ -9,13 +9,13 @@ function _createMdxContent(props) {
     pre: \\"pre\\",
     code: \\"code\\",
     span: \\"span\\"
-  }, _provideComponents(), props.components), {$Tabs} = _components;
+  }, _provideComponents(), props.components), {$Tabs, $Tab} = _components;
+  if (!$Tab) _missingMdxReference(\\"$Tab\\", true);
   if (!$Tabs) _missingMdxReference(\\"$Tabs\\", true);
-  if (!$Tabs.Tab) _missingMdxReference(\\"$Tabs.Tab\\", true);
   return _jsxs($Tabs, {
     items: [\\"npm\\", \\"pnpm\\", \\"yarn\\", \\"bun\\"],
     storageKey: \\"testKey\\",
-    children: [_jsx($Tabs.Tab, {
+    children: [_jsx($Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
@@ -64,7 +64,7 @@ function _createMdxContent(props) {
           })
         })
       })
-    }), _jsx($Tabs.Tab, {
+    }), _jsx($Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
@@ -113,7 +113,7 @@ function _createMdxContent(props) {
           })
         })
       })
-    }), _jsx($Tabs.Tab, {
+    }), _jsx($Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
@@ -162,7 +162,7 @@ function _createMdxContent(props) {
           })
         })
       })
-    }), _jsx($Tabs.Tab, {
+    }), _jsx($Tab, {
       children: _jsx(_components.pre, {
         \\"data-language\\": \\"sh\\",
         \\"data-theme\\": \\"default\\",
