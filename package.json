@@ -83,6 +83,7 @@
   },
   "pnpm": {
     "overrides": {
+      "hast-util-to-estree": "^2.3.3",
       "@theguild/remark-npm2yarn": "workspace:*",
       "@theguild/remark-mermaid": "workspace:*"
     }
