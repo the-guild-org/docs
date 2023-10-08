@@ -197,4 +197,4 @@ export function SearchBar({
   }, []);
 
   return <div ref={containerRef} className={className} />;
-};
+}
