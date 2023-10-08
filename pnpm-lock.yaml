@@ -64,8 +64,8 @@ importers:
         specifier: 6.12.4
         version: 6.12.4
       '@types/react-paginate':
-        specifier: 7.1.1
-        version: 7.1.1
+        specifier: 7.1.2
+        version: 7.1.2
       '@types/webpack':
         specifier: 5.28.3
         version: 5.28.3(@swc/core@1.3.11)(esbuild@0.17.8)
@@ -7840,8 +7840,8 @@ packages:
       '@types/react-instantsearch-core': 6.26.5
     dev: true
 
-  /@types/react-paginate@7.1.1:
-    resolution: {integrity: sha512-94cEJHfBaINba2XGQOWFJF/tYe+AImIhOPqMCfqyeFOgk0qUpDZyDOOW76A1rgdtWndR8UwsMPgV/uuTM8vZ7w==}
+  /@types/react-paginate@7.1.2:
+    resolution: {integrity: sha512-5wDaAo3J4fEoGSYxNDZ9XRufuNoxCKG8OMEYBHmXvbKpJudyg+dkJxDh8wNPbIngZYV3ULTvXXrq+7dUiRt0EQ==}
     dependencies:
       '@types/react': 18.2.25
     dev: true
