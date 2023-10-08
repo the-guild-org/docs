@@ -222,11 +222,11 @@ importers:
         specifier: 1.5.0
         version: 1.5.0(webpack@4.46.0)
       nextra:
-        specifier: 3.0.0-alpha.1
-        version: 3.0.0-alpha.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 3.0.0-alpha.2
+        version: 3.0.0-alpha.2(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
       nextra-theme-docs:
-        specifier: 3.0.0-alpha.1
-        version: 3.0.0-alpha.1(next@13.4.2)(nextra@3.0.0-alpha.1)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 3.0.0-alpha.2
+        version: 3.0.0-alpha.2(next@13.4.2)(nextra@3.0.0-alpha.2)(react-dom@18.2.0)(react@18.2.0)
       react-paginate:
         specifier: 8.2.0
         version: 8.2.0(react@18.2.0)
@@ -365,8 +365,8 @@ importers:
         specifier: 3.0.13
         version: 3.0.13
       nextra:
-        specifier: 3.0.0-alpha.1
-        version: 3.0.0-alpha.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 3.0.0-alpha.2
+        version: 3.0.0-alpha.2(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
       unified:
         specifier: 11.0.3
         version: 11.0.3
@@ -13180,7 +13180,7 @@ packages:
       unist-util-visit: 5.0.0
       vfile: 6.0.1
       web-namespaces: 2.0.1
-      zwitch: 2.0.2
+      zwitch: 2.0.4
 
   /hast-util-to-estree@2.3.3:
     resolution: {integrity: sha512-ihhPIUPxN0v0w6M5+IiAZZrn0LH2uZomeWwhn7uP7avZC6TE7lIiEh2yBMPr5+zi1aUCXq6VoYRgs2Bw9xmycQ==}
@@ -13228,7 +13228,7 @@ packages:
       property-information: 6.1.1
       space-separated-tokens: 2.0.1
       web-namespaces: 2.0.1
-      zwitch: 2.0.2
+      zwitch: 2.0.4
 
   /hast-util-to-text@4.0.0:
     resolution: {integrity: sha512-EWiE1FSArNBPUo1cKWtzqgnuRQwEeQbQtnFJRYV1hb1BWDgrAlBU0ExptvZMM/KSA82cDpm2sFGf3Dmc5Mza3w==}
@@ -15026,7 +15026,7 @@ packages:
       mdast-util-to-string: 4.0.0
       micromark-util-decode-string: 2.0.0
       unist-util-visit: 5.0.0
-      zwitch: 2.0.2
+      zwitch: 2.0.4
 
   /mdast-util-to-string@1.1.0:
     resolution: {integrity: sha512-jVU0Nr2B9X3MU4tSK7JP1CMkSvOj7X5l/GboG1tKRw52lLF1x2Ju92Ms9tNetCcbfX3hzlM73zYo2NKkWSfF/A==}
@@ -16106,11 +16106,11 @@ packages:
       - '@babel/core'
       - babel-plugin-macros
 
-  /nextra-theme-docs@3.0.0-alpha.1(next@13.4.2)(nextra@3.0.0-alpha.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-uLS9HzQACWlFisG0Th9N8/0w7UoWJQDAAG7F4eJFa65sjMpDWEplPxgoHN7V4gsQZ5Pk7tM7uMYA3jJnz3emHQ==}
+  /nextra-theme-docs@3.0.0-alpha.2(next@13.4.2)(nextra@3.0.0-alpha.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-33GuLeuZ0UVl70kULxd8G6mOqL4Vf2mzhNE+j9eCb8rzTs37IYyubKmScgUWSTB/mupcZYEwgmo52SUSTsfL3Q==}
     peerDependencies:
       next: '>=13'
-      nextra: 3.0.0-alpha.1
+      nextra: 3.0.0-alpha.2
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
     dependencies:
@@ -16123,15 +16123,15 @@ packages:
       intersection-observer: 0.12.2
       next: 13.4.2(@babel/core@7.20.2)(react-dom@18.2.0)(react@18.2.0)
       next-themes: 0.2.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
-      nextra: 3.0.0-alpha.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
+      nextra: 3.0.0-alpha.2(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       scroll-into-view-if-needed: 3.1.0
       zod: 3.22.4
     dev: false
 
-  /nextra@3.0.0-alpha.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-CyIu9QJrZfb5UgwCIpmpHZGGYf5TF6A5MW6jzO4tJa9GwZqNWxsRkdhAAaeygzXG3XpqsfHmbH6qobwxZrGYjA==}
+  /nextra@3.0.0-alpha.2(next@13.4.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-QPAYAy8mU/b64iq0QhNN7mpsXHLWIubhHK92mKB6msteLCtfu5K0Zu1RPuF481v0xlNP87sRpg9VSc9HOvf14g==}
     engines: {node: '>=18'}
     peerDependencies:
       next: '>=13'
@@ -20164,7 +20164,7 @@ packages:
       vfile-message: 3.1.2
       vfile-reporter: 7.0.5
       vfile-statistics: 2.0.1
-      yaml: 2.3.1
+      yaml: 2.3.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -21265,7 +21265,7 @@ packages:
     dependencies:
       eslint-visitor-keys: 3.4.3
       lodash: 4.17.21
-      yaml: 2.3.1
+      yaml: 2.3.2
     dev: true
 
   /yaml@1.10.2:
