@@ -39,17 +39,6 @@ export interface IFooterExtendedProps {
   logo?: ILink;
 }
 
-export interface IModalProps {
-  className?: string;
-  children: ReactNode;
-  title: string | ReactNode;
-  description?: string | ILink;
-  image?: IImage;
-  visible: boolean;
-  placement: 'top' | 'center' | 'bottom';
-  onCancel: (state?: boolean) => void;
-}
-
 export interface ISearchBarProps {
   version?: 'v1' | 'v2';
   algolia?: {

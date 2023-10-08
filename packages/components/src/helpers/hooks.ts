@@ -1,31 +1,5 @@
 import { useEffect, useState } from 'react';
 
-export const useKeyPress = (targetKey: string): boolean => {
-  // State for keeping track of whether key is pressed
-  const [keyPressed, setKeyPressed] = useState(false);
-
-  // Add event listeners
-  useEffect(() => {
-    const keyHandler = (event: KeyboardEvent) => {
-      if (event.key === targetKey) {
-        // If pressed key is our target key then set to true
-        setKeyPressed(event.type === 'keydown');
-      }
-    };
-
-    window.addEventListener('keydown', keyHandler);
-    window.addEventListener('keyup', keyHandler);
-
-    // Remove event listeners on cleanup
-    return () => {
-      window.removeEventListener('keydown', keyHandler);
-      window.removeEventListener('keyup', keyHandler);
-    };
-  }, [targetKey]);
-
-  return keyPressed;
-};
-
 interface ISize {
   width?: number;
   height?: number;
