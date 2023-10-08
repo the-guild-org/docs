@@ -52,26 +52,13 @@ export function defineConfig({
     project: {
       link: `${url.origin}/${org}/${repoName}`, // GitHub link in the navbar
     },
-    head: null,
-    logo: product?.logo && (
-      <>
-        <product.logo className="mr-1.5 h-9 w-9" />
-        <div>
-          <h1 className="text-sm font-medium">{siteName}</h1>
-          <h2 className="hidden text-xs sm:block">{product.title}</h2>
-        </div>
-      </>
-    ),
-    ...config,
-    components: {
-      ...mdxComponents,
-      ...config.components,
-    },
-    useNextSeoProps() {
-      const { frontMatter, title } = useConfig();
+    head: function useHead() {
+      const { frontMatter, title: pageTitle } = useConfig();
       const { asPath } = useRouter();
-      const nextSeoProps = config.useNextSeoProps?.();
-      const type = frontMatter.type || 'website';
+
+      const title = `${pageTitle} – ${siteName}`;
+      const { description = `${siteName} Documentation`, image } = frontMatter;
+
       const canonical =
         frontMatter.canonical ||
         (siteUrl &&
@@ -88,15 +75,53 @@ export function defineConfig({
                 asPath
           }`);
 
+      return (
+        <>
+          <title>{title}</title>
+          <meta property="og:title" content={title} />
+          {description && (
+            <>
+              <meta name="description" content={description} />
+              <meta property="og:description" content={description} />
+            </>
+          )}
+          {canonical && <link rel="canonical" href={canonical} />}
+          {image && <meta name="og:image" content={image} />}
+
+          <meta content={siteName} name="apple-mobile-web-app-title" />
+          <meta content={siteName} name="application-name" />
+        </>
+      );
+    },
+    logo: product?.logo && (
+      <>
+        <product.logo className="mr-1.5 h-9 w-9" />
+        <div>
+          <h1 className="text-sm font-medium">{siteName}</h1>
+          <h2 className="hidden text-xs sm:block">{product.title}</h2>
+        </div>
+      </>
+    ),
+    ...config,
+    components: {
+      ...mdxComponents,
+      ...config.components,
+    },
+    useNextSeoProps() {
+      const { frontMatter, title } = useConfig();
+      // const { asPath } = useRouter();
+      // const nextSeoProps = config.useNextSeoProps?.();
+      const type = frontMatter.type || 'website';
+
       return {
-        titleTemplate: `%s – ${siteName}`,
-        description: frontMatter.description || `${siteName} Documentation`,
+        // titleTemplate: `%s – ${siteName}`,
+        // description: frontMatter.description || `${siteName} Documentation`,
         twitter: {
           cardType: 'summary_large_image',
           site: 'https://the-guild.dev',
           handle: '@TheGuildDev',
         },
-        canonical,
+        // canonical,
         openGraph: {
           type,
           siteName,
@@ -111,12 +136,12 @@ export function defineConfig({
             },
           ],
         },
-        ...nextSeoProps,
-        additionalMetaTags: [
-          { content: siteName, name: 'apple-mobile-web-app-title' },
-          { content: siteName, name: 'application-name' },
-          ...(nextSeoProps?.additionalMetaTags || []),
-        ],
+        // ...nextSeoProps,
+        // additionalMetaTags: [
+        // { content: siteName, name: 'apple-mobile-web-app-title' },
+        // { content: siteName, name: 'application-name' },
+        // ...(nextSeoProps?.additionalMetaTags || []),
+        // ],
       };
     },
   };

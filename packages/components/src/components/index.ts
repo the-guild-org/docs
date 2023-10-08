@@ -1,5 +1,4 @@
 export { Anchor } from './anchor';
-export { Banner } from './banner';
 export { Button } from './button';
 export { CardsColorful } from './cards-colorful';
 export { FeatureList } from './feature-list';
