@@ -1,5 +1,15 @@
 # @theguild/remark-npm2yarn
 
+## 0.2.1
+
+### Patch Changes
+
+- [#1232](https://github.com/the-guild-org/docs/pull/1232)
+  [`5aeaec7`](https://github.com/the-guild-org/docs/commit/5aeaec777a6c5280c7e0f387502d8671ccddf148)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`npm-to-yarn@^2.1.0` ↗︎](https://www.npmjs.com/package/npm-to-yarn/v/2.1.0)
+    (from `^2.0.0`, in `dependencies`)
+
 ## 0.2.0
 
 ### Minor Changes

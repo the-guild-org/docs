@@ -1,5 +1,45 @@
 # @theguild/components
 
+## 5.2.5
+
+### Patch Changes
+
+- [#1232](https://github.com/the-guild-org/docs/pull/1232)
+  [`5aeaec7`](https://github.com/the-guild-org/docs/commit/5aeaec777a6c5280c7e0f387502d8671ccddf148)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@2.12.3` ↗︎](https://www.npmjs.com/package/nextra/v/2.12.3) (from
+    `2.9.0`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.12.3` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.12.3) (from
+    `2.9.0`, in `dependencies`)
+  - Updated dependency
+    [`react-player@2.13.0` ↗︎](https://www.npmjs.com/package/react-player/v/2.13.0) (from `2.12.0`,
+    in `dependencies`)
+  - Updated dependency
+    [`search-insights@2.8.2` ↗︎](https://www.npmjs.com/package/search-insights/v/2.8.2) (from
+    `2.8.0`, in `dependencies`)
+
+- [#1268](https://github.com/the-guild-org/docs/pull/1268)
+  [`53ba33c`](https://github.com/the-guild-org/docs/commit/53ba33c78976c2fe97824aac8fc7ff6c21fe61da)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency
+    [`react-player@2.13.0` ↗︎](https://www.npmjs.com/package/react-player/v/2.13.0) (from `2.12.0`,
+    in `dependencies`)
+
+- [#1268](https://github.com/the-guild-org/docs/pull/1268)
+  [`53ba33c`](https://github.com/the-guild-org/docs/commit/53ba33c78976c2fe97824aac8fc7ff6c21fe61da)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency
+    [`search-insights@2.8.2` ↗︎](https://www.npmjs.com/package/search-insights/v/2.8.2) (from
+    `2.8.1`, in `dependencies`)
+
+- [#1268](https://github.com/the-guild-org/docs/pull/1268)
+  [`53ba33c`](https://github.com/the-guild-org/docs/commit/53ba33c78976c2fe97824aac8fc7ff6c21fe61da)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - update conf banner with the recordings link
+
 ## 5.2.4
 
 ### Patch Changes
