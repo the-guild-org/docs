@@ -16,6 +16,7 @@ export default defineConfig([
       index: 'src/index.ts',
       products: 'src/products.ts',
       logos: 'src/logos/index.ts',
+      compile: 'src/compile.ts',
     },
     loader: {
       '.png': 'copy',
@@ -64,7 +65,10 @@ export default defineConfig([
   },
   {
     name: 'next.config',
-    entry: ['src/next.config.ts'],
+    entry: {
+      'next.config': 'src/next.config.ts',
+      compile: 'src/compile.ts',
+    },
     ...options,
   },
   {
@@ -73,6 +77,7 @@ export default defineConfig([
       index: 'src/index.ts',
       products: 'src/products.ts',
       'next.config': 'src/next.config.ts',
+      compile: 'src/compile.ts',
     },
     dts: {
       only: true,

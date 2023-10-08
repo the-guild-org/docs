@@ -19,6 +19,10 @@
       "import": "./dist/next.config.mjs",
       "types": "./dist/next.config.d.ts"
     },
+    "./compile": {
+      "import": "./dist/compile.mjs",
+      "types": "./dist/compile.d.ts"
+    },
     "./*": {
       "import": "./dist/*.js",
       "types": "./dist/*.d.ts"
@@ -38,6 +42,9 @@
       ],
       "next.config": [
         "./dist/next.config.d.ts"
+      ],
+      "compile": [
+        "./dist/compile.d.ts"
       ]
     }
   },
@@ -65,6 +72,7 @@
     "@giscus/react": "2.3.0",
     "@next/bundle-analyzer": "13.4.2",
     "@radix-ui/react-navigation-menu": "1.1.3",
+    "@theguild/remark-mermaid": "workspace:*",
     "algoliasearch": "4.19.1",
     "clsx": "2.0.0",
     "fuzzy": "^0.1.3",
