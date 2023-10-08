@@ -1,5 +1,59 @@
 # @theguild/components
 
+## 5.2.6
+
+### Patch Changes
+
+- [#1278](https://github.com/the-guild-org/docs/pull/1278)
+  [`50a1da8`](https://github.com/the-guild-org/docs/commit/50a1da887766972344c13b9cba75075b2a1e003b)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.11.1` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.11.1)
+    (from `1.11.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.11.1` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.11.1)
+    (from `1.11.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.11.1` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.11.1)
+    (from `1.11.0`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.11.1` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.11.1)
+    (from `1.11.0`, in `dependencies`)
+
+- [#1279](https://github.com/the-guild-org/docs/pull/1279)
+  [`a47490e`](https://github.com/the-guild-org/docs/commit/a47490e61c887721df126837a0592d9b2cea4345)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@radix-ui/react-navigation-menu@1.1.4` ↗︎](https://www.npmjs.com/package/@radix-ui/react-navigation-menu/v/1.1.4)
+    (from `1.1.3`, in `dependencies`)
+
+- [#1280](https://github.com/the-guild-org/docs/pull/1280)
+  [`11999a8`](https://github.com/the-guild-org/docs/commit/11999a83a5848fb7a6dd20be6c0e18080dff2869)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`focus-trap-react@10.2.2` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.2.2) (from
+    `10.2.1`, in `dependencies`)
+
+- [#1282](https://github.com/the-guild-org/docs/pull/1282)
+  [`8f52219`](https://github.com/the-guild-org/docs/commit/8f522199642457af2ccd1db1a20064ce53e11b80)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`search-insights@2.8.3` ↗︎](https://www.npmjs.com/package/search-insights/v/2.8.3) (from
+    `2.8.2`, in `dependencies`)
+
+- [#1286](https://github.com/the-guild-org/docs/pull/1286)
+  [`7b9fb88`](https://github.com/the-guild-org/docs/commit/7b9fb88a5d45ed910364f60a507ec560ffc43e22)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`nextra@2.13.2` ↗︎](https://www.npmjs.com/package/nextra/v/2.13.2) (from
+    `2.12.3`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@2.13.2` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.13.2) (from
+    `2.12.3`, in `dependencies`)
+
 ## 5.2.5
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@theguild/remark-npm2yarn",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "type": "module",
   "description": "Remark plugin for transforming npm bash commands to yarn/pnpm with tabs",
   "repository": {
@@ -29,7 +29,7 @@
   "devDependencies": {
     "@types/mdast": "3.0.13",
     "nextra": "3.0.0-alpha.1",
-    "unified": "10.1.2"
+    "unified": "11.0.3"
   },
   "publishConfig": {
     "access": "public"
