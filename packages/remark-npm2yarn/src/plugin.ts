@@ -11,12 +11,11 @@ import {
 
 // To avoid conflicts with other Tabs/Tab declarations
 const TABS_NAME = '$Tabs';
-const TAB_NAME = '$Tab';
 
 function getTabAST(node: Code, packageManager: PackageManager, newMetadata: string) {
   return {
     type: 'mdxJsxFlowElement',
-    name: TAB_NAME,
+    name: `${TABS_NAME}.Tab`,
     children: [
       {
         type: node.type,
@@ -50,11 +49,6 @@ export const remarkNpm2Yarn: Plugin<
                 type: 'ImportSpecifier',
                 imported: { type: 'Identifier', name: 'Tabs' },
                 local: { type: 'Identifier', name: TABS_NAME },
-              },
-              {
-                type: 'ImportSpecifier',
-                imported: { type: 'Identifier', name: 'Tab' },
-                local: { type: 'Identifier', name: TAB_NAME },
               },
             ],
           },
