@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { compileMdx } from 'nextra/compile'
-import { Steps, useMDXComponents, useSSG } from '@theguild/components'
+import { Steps, useMDXComponents, useData } from '@theguild/components'
 import pkgJsonFromComponents from '@theguild/components/package.json'
 import pkgJson from '../../../package.json'
 
@@ -48,7 +48,7 @@ export async function getStaticProps() {
 }
 
 export function Dependencies() {
-  const compiledSource = useSSG()
+  const compiledSource = useData()
   const components = useMDXComponents()
   return <MDXRemote compiledSource={compiledSource} components={components} />
 }

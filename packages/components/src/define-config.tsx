@@ -56,7 +56,6 @@ export function defineConfig({
       const { frontMatter, title: pageTitle } = useConfig();
       const { asPath } = useRouter();
 
-      const title = `${pageTitle} – ${siteName}`;
       const {
         description = `${siteName} Documentation`,
         type = 'website',
@@ -74,9 +73,11 @@ export function defineConfig({
                 asPath
           }`,
         image = `https://og-image.the-guild.dev/?product=${originalSiteName}&title=${encodeURI(
-          title,
+          pageTitle,
         )}`,
       } = frontMatter;
+
+      const title = `${pageTitle} – ${siteName}`;
 
       return (
         <>
