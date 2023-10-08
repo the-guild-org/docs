@@ -57,11 +57,10 @@ export function defineConfig({
       const { asPath } = useRouter();
 
       const title = `${pageTitle} – ${siteName}`;
-      const { description = `${siteName} Documentation`, image } = frontMatter;
-
-      const canonical =
-        frontMatter.canonical ||
-        (siteUrl &&
+      const {
+        description = `${siteName} Documentation`,
+        type = 'website',
+        canonical = siteUrl &&
           `${siteUrl}${
             // we disallow trailing slashes
             // TODO: dont do this if `trailingSlashes: true`
@@ -73,7 +72,11 @@ export function defineConfig({
                 asPath.slice(1)
               : // other pages
                 asPath
-          }`);
+          }`,
+        image = `https://og-image.the-guild.dev/?product=${originalSiteName}&title=${encodeURI(
+          title,
+        )}`,
+      } = frontMatter;
 
       return (
         <>
@@ -85,11 +88,25 @@ export function defineConfig({
               <meta property="og:description" content={description} />
             </>
           )}
-          {canonical && <link rel="canonical" href={canonical} />}
-          {image && <meta name="og:image" content={image} />}
+          {canonical && (
+            <>
+              <link rel="canonical" href={canonical} />
+              <meta property="og:url" content={canonical} />
+            </>
+          )}
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="https://the-guild.dev" />
+          <meta name="twitter:creator" content="@TheGuildDev" />
+
+          <meta property="og:type" content={type} />
+          <meta property="og:site_name" content={siteName} />
+          <meta property="og:image" content={image} />
+          <meta property="og:image:alt" content={pageTitle} />
 
           <meta content={siteName} name="apple-mobile-web-app-title" />
           <meta content={siteName} name="application-name" />
+          <meta name="robots" content="index,follow" />
         </>
       );
     },
@@ -106,43 +123,6 @@ export function defineConfig({
     components: {
       ...mdxComponents,
       ...config.components,
-    },
-    useNextSeoProps() {
-      const { frontMatter, title } = useConfig();
-      // const { asPath } = useRouter();
-      // const nextSeoProps = config.useNextSeoProps?.();
-      const type = frontMatter.type || 'website';
-
-      return {
-        // titleTemplate: `%s – ${siteName}`,
-        // description: frontMatter.description || `${siteName} Documentation`,
-        twitter: {
-          cardType: 'summary_large_image',
-          site: 'https://the-guild.dev',
-          handle: '@TheGuildDev',
-        },
-        // canonical,
-        openGraph: {
-          type,
-          siteName,
-          images: [
-            {
-              url:
-                frontMatter.image ||
-                `https://og-image.the-guild.dev/?product=${originalSiteName}&title=${encodeURI(
-                  title,
-                )}`,
-              alt: frontMatter.description || title,
-            },
-          ],
-        },
-        // ...nextSeoProps,
-        // additionalMetaTags: [
-        // { content: siteName, name: 'apple-mobile-web-app-title' },
-        // { content: siteName, name: 'application-name' },
-        // ...(nextSeoProps?.additionalMetaTags || []),
-        // ],
-      };
     },
   };
 }
