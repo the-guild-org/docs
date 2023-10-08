@@ -58,8 +58,8 @@ importers:
         specifier: 18.2.25
         version: 18.2.25
       '@types/react-instantsearch-core':
-        specifier: 6.26.4
-        version: 6.26.4
+        specifier: 6.26.5
+        version: 6.26.5
       '@types/react-instantsearch-dom':
         specifier: 6.12.4
         version: 6.12.4
@@ -7825,8 +7825,8 @@ packages:
     dependencies:
       '@types/react': 18.2.25
 
-  /@types/react-instantsearch-core@6.26.4:
-    resolution: {integrity: sha512-Iy6I0oOojQiVhPzaN9HsKs0ajODXv7nuUDDLGTSWw8XS7l6Dz2PaMwusEIhfSMz//13J5bUas3K5xoreRdptzA==}
+  /@types/react-instantsearch-core@6.26.5:
+    resolution: {integrity: sha512-JnyKjJqcD7AJNWrgf6tkK72iqR2p0v8VLeP3x5ZCdiD78+GDYNBXOWj7Sj7l1zGLtTVgNJcIuCTvNKuH0BY72w==}
     dependencies:
       '@types/react': 18.2.25
       algoliasearch: 4.19.1
@@ -7837,7 +7837,7 @@ packages:
     resolution: {integrity: sha512-J5CeXqg5Iq7KWVeVnLBO8Yk52+joJRknipC2RHiTVzEM+c5xa58EqJH3Y9Whrjbz/USZd62XlL852lt0T8zxUA==}
     dependencies:
       '@types/react': 18.2.25
-      '@types/react-instantsearch-core': 6.26.4
+      '@types/react-instantsearch-core': 6.26.5
     dev: true
 
   /@types/react-paginate@7.1.1:
@@ -9605,7 +9605,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
 
   /chownr@1.1.4:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
@@ -12567,19 +12567,11 @@ packages:
     dev: false
     optional: true
 
-  /fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    optional: true
-
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /function-bind@1.1.1:
@@ -14170,7 +14162,7 @@ packages:
       micromatch: 4.0.5
       walker: 1.0.8
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /jest-image-snapshot@6.2.0:
@@ -18377,7 +18369,7 @@ packages:
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /run-parallel@1.2.0:
@@ -20618,7 +20610,7 @@ packages:
       resolve: 1.22.2
       rollup: 3.15.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /vitest@0.31.1:
@@ -21069,7 +21061,7 @@ packages:
       source-map-support: 0.5.21
       xxhash-wasm: 1.0.2
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
       - supports-color
