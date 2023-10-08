@@ -25,7 +25,7 @@ export function defineConfig({
 
   return {
     editLink: {
-      text: 'Edit this page on GitHub',
+      content: 'Edit this page on GitHub',
     },
     feedback: {
       content: 'Question? Give us feedback →',
@@ -37,7 +37,7 @@ export function defineConfig({
     navbar: {
       component: props => (
         <>
-          <Header accentColor="#1cc8ee" searchBarProps={{ version: 'v2' }} />
+          <Header accentColor="#1cc8ee" />
           <Navbar {...props} />
         </>
       ),

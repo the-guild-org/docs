@@ -27,7 +27,6 @@ export interface IHeaderProps {
   activeLink?: string;
   themeSwitch?: boolean;
   transformLinks?: (links: Omit<IHeaderLink, 'children'>[]) => Omit<IHeaderLink, 'children'>[];
-  searchBarProps?: Partial<ISearchBarProps>;
   search?: boolean;
   sameSite?: boolean;
 }

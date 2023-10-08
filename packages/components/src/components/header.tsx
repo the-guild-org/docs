@@ -18,7 +18,7 @@ import { Anchor } from './anchor';
 import { EcosystemList } from './ecosystem-list';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
 import { Nav } from './nav';
-import { SearchBar } from './search-bar';
+import { SearchBar } from './search-bar-v2';
 import { SolutionsMenu } from './solutions-menu';
 
 // TODO: fails during build (no matching export in for import "default")
@@ -32,7 +32,6 @@ export const Header = ({
   search = true,
   className,
   sameSite,
-  searchBarProps,
 }: IHeaderProps): ReactElement => {
   const { resolvedTheme, setTheme } = useTheme();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -204,7 +203,6 @@ export const Header = ({
                     title="Search docs"
                     placeholder="Search…"
                     className="hidden md:flex"
-                    {...searchBarProps}
                   />
                 )}
 
@@ -230,7 +228,6 @@ export const Header = ({
               title="Search docs"
               placeholder="Search…"
               className="md:hidden"
-              {...searchBarProps}
             />
           ) : (
             <span className="md:absolute" />
