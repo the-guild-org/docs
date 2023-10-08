@@ -1,5 +1,13 @@
 # @theguild/remark-npm2yarn
 
+## 0.3.0
+
+### Minor Changes
+
+- [#1234](https://github.com/the-guild-org/docs/pull/1234)
+  [`51afe0b`](https://github.com/the-guild-org/docs/commit/51afe0bed8dbb065645dc88c879a5d8405f28e0f)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - import `Tab` as `Tabs.Tab`
+
 ## 0.2.1
 
 ### Patch Changes
