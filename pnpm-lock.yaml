@@ -363,8 +363,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0
       unified:
-        specifier: 10.1.2
-        version: 10.1.2
+        specifier: 11.0.3
+        version: 11.0.3
 
   packages/remark-npm2yarn:
     dependencies:
@@ -382,8 +382,8 @@ importers:
         specifier: 2.13.2
         version: 2.13.2(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
       unified:
-        specifier: 10.1.2
-        version: 10.1.2
+        specifier: 11.0.3
+        version: 11.0.3
 
   website:
     dependencies:
@@ -20099,6 +20099,18 @@ packages:
       is-plain-obj: 4.1.0
       trough: 2.1.0
       vfile: 5.3.5
+
+  /unified@11.0.3:
+    resolution: {integrity: sha512-jlCV402P+YDcFcB2VcN/n8JasOddqIiaxv118wNBoZXEhOn+lYG7BR4Bfg2BwxvlK58dwbuH2w7GX2esAjL6Mg==}
+    dependencies:
+      '@types/unist': 3.0.0
+      bail: 2.0.2
+      devlop: 1.1.0
+      extend: 3.0.2
+      is-plain-obj: 4.1.0
+      trough: 2.1.0
+      vfile: 6.0.1
+    dev: true
 
   /union-value@1.0.1:
     resolution: {integrity: sha512-tJfXmxMeWYnczCVs7XAEvIV7ieppALdyepWMkHkwciRpZraG/xwT+s2JN8+pr1+8jCRf80FFzvr+MpQeeoF4Xg==}
