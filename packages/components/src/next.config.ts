@@ -1,6 +1,6 @@
 import { NextConfig } from 'next';
 import withVideos from 'next-videos';
-import nextra from 'nextra';
+import nextra, { NextraConfig } from 'nextra';
 import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
 import { applyUnderscoreRedirects } from './underscore-redirects';
@@ -13,13 +13,10 @@ export const defaultRemarkPlugins = [
   ],
 ] as any;
 
-export const withGuildDocs = ({
-  themeConfig = './theme.config.tsx',
-  transformPageOpts,
+export function withGuildDocs({
+  nextraConfig,
   ...nextConfig
-}: NextConfig & {
-  themeConfig?: string;
-} = {}) => {
+}: NextConfig & { nextraConfig?: NextraConfig } = {}) {
   if (nextConfig.webpack?.toString().includes('applyUnderscoreRedirects')) {
     throw new Error(
       '`applyUnderscoreRedirects` in `nextConfig.webpack` was already configured, remove it from your config',
@@ -30,14 +27,14 @@ export const withGuildDocs = ({
     enabled: process.env.ANALYZE === 'true',
   });
   const withNextra = nextra({
-    themeConfig,
     theme: 'nextra-theme-docs',
     defaultShowCopyCode: true,
-    transformPageOpts,
     mdxOptions: {
       remarkPlugins: defaultRemarkPlugins,
     },
-    flexsearch: false,
+    search: false,
+    ...nextraConfig,
+    themeConfig: nextraConfig?.themeConfig || './theme.config.tsx',
   });
   const siteUrl = process.env.SITE_URL || '';
 
@@ -68,4 +65,4 @@ export const withGuildDocs = ({
       }),
     ),
   );
-};
+}
