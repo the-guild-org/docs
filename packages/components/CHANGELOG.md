@@ -1,29 +1,5 @@
 # @theguild/components
 
-## 5.2.5
-
-### Patch Changes
-
-- [#1236](https://github.com/the-guild-org/docs/pull/1236)
-  [`7f4ed25`](https://github.com/the-guild-org/docs/commit/7f4ed25414726b47aa44fd812fa7ae7d15232ae0)
-  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
-
-  - Updated dependency
-    [`react-player@2.13.0` ↗︎](https://www.npmjs.com/package/react-player/v/2.13.0) (from `2.12.0`,
-    in `dependencies`)
-
-- [#1255](https://github.com/the-guild-org/docs/pull/1255)
-  [`b6b4121`](https://github.com/the-guild-org/docs/commit/b6b41213e0353fd816f2119afa4fcde68f2c25de)
-  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
-
-  - Updated dependency
-    [`search-insights@2.8.2` ↗︎](https://www.npmjs.com/package/search-insights/v/2.8.2) (from
-    `2.8.1`, in `dependencies`)
-
-- [#1262](https://github.com/the-guild-org/docs/pull/1262)
-  [`b0f1b4b`](https://github.com/the-guild-org/docs/commit/b0f1b4bd69d079bdac35e8a7e99fddf76d18179b)
-  Thanks [@beerose](https://github.com/beerose)! - update conf banner with the recordings link
-
 ## 5.2.4
 
 ### Patch Changes
