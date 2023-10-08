@@ -17,6 +17,7 @@ export {
   useConfig,
   useTheme,
 } from 'nextra-theme-docs';
+export { createCatchAllMeta } from 'nextra/catch-all';
 
 declare module 'react' {
   interface CSSProperties {
