@@ -1,5 +1,34 @@
 # @theguild/components
 
+## 6.0.0
+
+### Major Changes
+
+- [#1275](https://github.com/the-guild-org/docs/pull/1275)
+  [`c1ed672`](https://github.com/the-guild-org/docs/commit/c1ed672e3b72e01d0bea1616b01b8728ab047ec0)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - update nextra to v3, remove Modal, Banner, SearchBar
+  v1
+
+### Patch Changes
+
+- [#1275](https://github.com/the-guild-org/docs/pull/1275)
+  [`c1ed672`](https://github.com/the-guild-org/docs/commit/c1ed672e3b72e01d0bea1616b01b8728ab047ec0)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+  - Updated dependency [`nextra@3.0.0-alpha.4` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `2.13.2`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.4` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `2.13.2`, in `dependencies`)
+  - Removed dependency
+    [`focus-trap-react@10.2.2` ↗︎](https://www.npmjs.com/package/focus-trap-react/v/10.2.2) (from
+    `dependencies`)
+  - Removed dependency
+    [`react-instantsearch-dom@6.40.4` ↗︎](https://www.npmjs.com/package/react-instantsearch-dom/v/6.40.4)
+    (from `dependencies`)
+  - Removed dependency
+    [`use-debounce@9.0.4` ↗︎](https://www.npmjs.com/package/use-debounce/v/9.0.4) (from
+    `dependencies`)
+
 ## 5.2.6
 
 ### Patch Changes
