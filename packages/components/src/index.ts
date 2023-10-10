@@ -16,6 +16,7 @@ export {
   NotFoundPage,
   useConfig,
   useTheme,
+  useThemeConfig,
 } from 'nextra-theme-docs';
 export { createCatchAllMeta } from 'nextra/catch-all';
 
