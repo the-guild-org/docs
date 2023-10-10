@@ -691,8 +691,9 @@
   [`3bec5f5`](https://github.com/the-guild-org/docs/commit/3bec5f58d13e5b8ba6ca6c2f2f5df8dd1f059aa6)
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
 
-  - Updated dependency [`use-debounce@9.0.4` ↗︎](https://www.npmjs.com/package/use-debounce/v/9.0.4)
-    (from `9.0.3`, in `dependencies`)
+  - Updated dependency
+    [`use-debounce@9.0.4` ↗︎](https://www.npmjs.com/package/use-debounce/v/9.0.4) (from `9.0.3`, in
+    `dependencies`)
 
 - [#957](https://github.com/the-guild-org/docs/pull/957)
   [`5eccc67`](https://github.com/the-guild-org/docs/commit/5eccc67a0cdc5bd636e89ee6103301421d59bae1)
@@ -707,8 +708,8 @@
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
 
   - Updated dependency
-    [`react-paginate@8.2.0` ↗︎](https://www.npmjs.com/package/react-paginate/v/8.2.0) (from `8.1.5`,
-    in `dependencies`)
+    [`react-paginate@8.2.0` ↗︎](https://www.npmjs.com/package/react-paginate/v/8.2.0) (from
+    `8.1.5`, in `dependencies`)
 
 - [#965](https://github.com/the-guild-org/docs/pull/965)
   [`57a062d`](https://github.com/the-guild-org/docs/commit/57a062d940efc1cd71b74571d02c4e1871b30053)
@@ -805,8 +806,8 @@
   [`3cf896c`](https://github.com/the-guild-org/docs/commit/3cf896c891a80b7fd13c4652cc6d3f87d60eb7f7)
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
   - Updated dependency
-    [`react-paginate@8.1.5` ↗︎](https://www.npmjs.com/package/react-paginate/v/8.1.5) (from `8.1.4`,
-    in `dependencies`)
+    [`react-paginate@8.1.5` ↗︎](https://www.npmjs.com/package/react-paginate/v/8.1.5) (from
+    `8.1.4`, in `dependencies`)
 
 ## 4.5.8
 
@@ -827,8 +828,8 @@
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
 
   - Updated dependency
-    [`react-paginate@8.1.5` ↗︎](https://www.npmjs.com/package/react-paginate/v/8.1.5) (from `8.1.4`,
-    in `dependencies`)
+    [`react-paginate@8.1.5` ↗︎](https://www.npmjs.com/package/react-paginate/v/8.1.5) (from
+    `8.1.4`, in `dependencies`)
 
 - [#939](https://github.com/the-guild-org/docs/pull/939)
   [`4f323e7`](https://github.com/the-guild-org/docs/commit/4f323e70b81dae09ae3fd1881369aa07c174264b)
@@ -1240,8 +1241,9 @@
   [`307f407`](https://github.com/the-guild-org/docs/commit/307f407bc9b4b52f68699551aebd0f6bc45b62f6)
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
 
-  - Updated dependency [`use-debounce@9.0.3` ↗︎](https://www.npmjs.com/package/use-debounce/v/9.0.3)
-    (from `9.0.2`, in `dependencies`)
+  - Updated dependency
+    [`use-debounce@9.0.3` ↗︎](https://www.npmjs.com/package/use-debounce/v/9.0.3) (from `9.0.2`, in
+    `dependencies`)
 
 - [#733](https://github.com/the-guild-org/docs/pull/733)
   [`a6912b7`](https://github.com/the-guild-org/docs/commit/a6912b782e75a23223654a45738af6bb6b8f2c40)
@@ -1380,8 +1382,9 @@
   [`0a0a5e4`](https://github.com/the-guild-org/docs/commit/0a0a5e4d9d6a8d1660b9274be0ed6c896ccd1deb)
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
 
-  - Updated dependency [`use-debounce@9.0.2` ↗︎](https://www.npmjs.com/package/use-debounce/v/9.0.2)
-    (from `8.0.4`, in `dependencies`)
+  - Updated dependency
+    [`use-debounce@9.0.2` ↗︎](https://www.npmjs.com/package/use-debounce/v/9.0.2) (from `8.0.4`, in
+    `dependencies`)
 
 - [#676](https://github.com/the-guild-org/docs/pull/676)
   [`84471f5`](https://github.com/the-guild-org/docs/commit/84471f544186b7d8d0470244f39d1f6ff5745a30)
@@ -1652,8 +1655,8 @@
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
 
   - Updated dependency
-    [`react-paginate@8.1.4` ↗︎](https://www.npmjs.com/package/react-paginate/v/8.1.4) (from `8.1.3`,
-    in `dependencies`)
+    [`react-paginate@8.1.4` ↗︎](https://www.npmjs.com/package/react-paginate/v/8.1.4) (from
+    `8.1.3`, in `dependencies`)
 
 - [#577](https://github.com/the-guild-org/docs/pull/577)
   [`d73ebd3`](https://github.com/the-guild-org/docs/commit/d73ebd3edf2acce91c37f265b708cd3410c3a03b)
@@ -1869,8 +1872,8 @@
   [`c066417`](https://github.com/the-guild-org/the-guild-components/commit/c06641709f0962457d5920aac25cc461dc32bd75)
   Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
 
-  - Removed dependency [`critters@0.0.16` ↗︎](https://www.npmjs.com/package/critters/v/0.0.16) (from
-    `dependencies`)
+  - Removed dependency [`critters@0.0.16` ↗︎](https://www.npmjs.com/package/critters/v/0.0.16)
+    (from `dependencies`)
   - Updated dependency [`next@^12.3.1` ↗︎](https://www.npmjs.com/package/next/v/12.3.1) (from
     `^12.3.0`, in `peerDependencies`)
 
@@ -1978,8 +1981,9 @@
   [`b3362ad`](https://github.com/the-guild-org/the-guild-components/commit/b3362ad25345927005a134b0a55dc534abc1d244)
   Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
 
-  - Added dependency [`@giscus/react@2.2.0` ↗︎](https://www.npmjs.com/package/@giscus/react/v/2.2.0)
-    (to `dependencies`)
+  - Added dependency
+    [`@giscus/react@2.2.0` ↗︎](https://www.npmjs.com/package/@giscus/react/v/2.2.0) (to
+    `dependencies`)
 
 - [#448](https://github.com/the-guild-org/the-guild-components/pull/448)
   [`b3362ad`](https://github.com/the-guild-org/the-guild-components/commit/b3362ad25345927005a134b0a55dc534abc1d244)
@@ -2077,8 +2081,9 @@
   - Updated dependency
     [`nextra-theme-docs@2.0.0-beta.24` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/2.0.0-beta.24)
     (from `2.0.0-beta.18`, in `dependencies`)
-  - Updated dependency [`use-debounce@8.0.4` ↗︎](https://www.npmjs.com/package/use-debounce/v/8.0.4)
-    (from `8.0.3`, in `dependencies`)
+  - Updated dependency
+    [`use-debounce@8.0.4` ↗︎](https://www.npmjs.com/package/use-debounce/v/8.0.4) (from `8.0.3`, in
+    `dependencies`)
   - Added dependency
     [`@emotion/react@11.10.4` ↗︎](https://www.npmjs.com/package/@emotion/react/v/11.10.4) (to
     `dependencies`)
@@ -2088,8 +2093,9 @@
   - Added dependency
     [`@next/bundle-analyzer@^12.2.5` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/null)
     (to `dependencies`)
-  - Added dependency [`framer-motion@7.2.1` ↗︎](https://www.npmjs.com/package/framer-motion/v/7.2.1)
-    (to `dependencies`)
+  - Added dependency
+    [`framer-motion@7.2.1` ↗︎](https://www.npmjs.com/package/framer-motion/v/7.2.1) (to
+    `dependencies`)
   - Added dependency [`mermaid@^9.1.6` ↗︎](https://www.npmjs.com/package/mermaid/v/null) (to
     `dependencies`)
   - Added dependency [`next-seo@5.5.0` ↗︎](https://www.npmjs.com/package/next-seo/v/5.5.0) (to
@@ -2126,8 +2132,8 @@
     `2.0.0-beta.24`, in `dependencies`)
   - Updated dependency [`tiny-lru@8.0.2` ↗︎](https://www.npmjs.com/package/tiny-lru/v/8.0.2) (from
     `^8.0.2`, in `dependencies`)
-  - Added dependency [`next-videos@1.5.0` ↗︎](https://www.npmjs.com/package/next-videos/v/1.5.0) (to
-    `dependencies`)
+  - Added dependency [`next-videos@1.5.0` ↗︎](https://www.npmjs.com/package/next-videos/v/1.5.0)
+    (to `dependencies`)
   - Added dependency
     [`remark-mdx-disable-explicit-jsx@0.1.0` ↗︎](https://www.npmjs.com/package/remark-mdx-disable-explicit-jsx/v/0.1.0)
     (to `dependencies`)
@@ -2150,8 +2156,8 @@
     `dependencies`)
   - Removed dependency [`next-seo@5.5.0` ↗︎](https://www.npmjs.com/package/next-seo/v/5.5.0) (from
     `dependencies`)
-  - Removed dependency [`nprogress@0.2.0` ↗︎](https://www.npmjs.com/package/nprogress/v/0.2.0) (from
-    `dependencies`)
+  - Removed dependency [`nprogress@0.2.0` ↗︎](https://www.npmjs.com/package/nprogress/v/0.2.0)
+    (from `dependencies`)
   - Updated dependency [`next@^12.3.0` ↗︎](https://www.npmjs.com/package/next/v/null) (from
     `^12.2.5`, in `peerDependencies`)
 

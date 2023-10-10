@@ -65,30 +65,28 @@ const CATEGORIES: {
   },
 ];
 
-export const SolutionsMenu = forwardRef<HTMLDivElement>(function SolutionsMenu(
-  _,
-  forwardedRef,
-): ReactElement {
-  return (
-    <div
-      className="w-[700px] rounded-lg bg-white p-5 dark:bg-neutral-800"
-      style={{
-        boxShadow:
-          'hsl(206 22% 7% / 35%) 0 10px 38px -10px, hsl(206 22% 7% / 20%) 0 10px 20px -15px',
-      }}
-      ref={forwardedRef}
-    >
-      {CATEGORIES.map(category => (
-        <div key={category.title} className="mb-6 last:mb-0">
-          <h3 className="mb-5 mt-1 w-full text-base font-normal text-black dark:text-gray-400">
-            {category.title}
-          </h3>
-          <div className="flex flex-wrap">
-            {category.items.map(item => (
-              <Anchor
-                key={item.title}
-                href={item.url}
-                className="
+export const SolutionsMenu = forwardRef<HTMLDivElement>(
+  function SolutionsMenu(_, forwardedRef): ReactElement {
+    return (
+      <div
+        className="w-[700px] rounded-lg bg-white p-5 dark:bg-neutral-800"
+        style={{
+          boxShadow:
+            'hsl(206 22% 7% / 35%) 0 10px 38px -10px, hsl(206 22% 7% / 20%) 0 10px 20px -15px',
+        }}
+        ref={forwardedRef}
+      >
+        {CATEGORIES.map(category => (
+          <div key={category.title} className="mb-6 last:mb-0">
+            <h3 className="mb-5 mt-1 w-full text-base font-normal text-black dark:text-gray-400">
+              {category.title}
+            </h3>
+            <div className="flex flex-wrap">
+              {category.items.map(item => (
+                <Anchor
+                  key={item.title}
+                  href={item.url}
+                  className="
                   flex
                   w-full
                   items-center
@@ -101,22 +99,23 @@ export const SolutionsMenu = forwardRef<HTMLDivElement>(function SolutionsMenu(
                   dark:hover:bg-gray-700
                   md:w-1/2
                 "
-              >
-                <h4 className="m-0 text-xs text-black dark:text-gray-300">{item.title}</h4>
-              </Anchor>
-            ))}
+                >
+                  <h4 className="m-0 text-xs text-black dark:text-gray-300">{item.title}</h4>
+                </Anchor>
+              ))}
+            </div>
           </div>
+        ))}
+        <div className="text-right">
+          <Anchor
+            href="https://graphql-yoga.com/tutorial/basic/00-introduction"
+            newWindow
+            className="text-xs text-black dark:text-white"
+          >
+            Write your first GraphQL API →
+          </Anchor>
         </div>
-      ))}
-      <div className="text-right">
-        <Anchor
-          href="https://graphql-yoga.com/tutorial/basic/00-introduction"
-          newWindow
-          className="text-xs text-black dark:text-white"
-        >
-          Write your first GraphQL API →
-        </Anchor>
       </div>
-    </div>
-  );
-});
+    );
+  },
+);
