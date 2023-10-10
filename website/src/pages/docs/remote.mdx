@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote'
-import { compileMdx } from 'nextra/compile'
-import { fetchPackageInfo, Tab, Tabs, useMDXComponents, useSSG } from '@theguild/components'
+import { fetchPackageInfo, Tabs, useData, useMDXComponents } from '@theguild/components'
+import { compileMdx } from '@theguild/components/compile'
 import { defaultRemarkPlugins } from '@theguild/components/next.config'
 
 export const getStaticProps = async () => {
@@ -30,16 +30,9 @@ ${readme}`,
 
 export const PackageApiDocs = () => {
   // Get the data from SSG, and render it as a component.
-  const compiledSource = useSSG()
+  const compiledSource = useData()
   const components = useMDXComponents()
-  return (
-    <>
-      <MDXRemote
-        compiledSource={compiledSource}
-        components={{ ...components, $Tab: Tab, $Tabs: Tabs }}
-      />
-    </>
-  )
+  return <MDXRemote compiledSource={compiledSource} components={{ ...components, $Tabs: Tabs }} />
 }
 
 # Remote MDX Support

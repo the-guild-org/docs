@@ -6,18 +6,19 @@ export * from './types/components';
 export { default as Giscus } from '@giscus/react';
 export { useMounted } from 'nextra/hooks';
 export { useMDXComponents } from 'nextra/mdx';
-export { RemoteContent, useSSG } from 'nextra/ssg';
-export { Mermaid, Callout, Tabs, Cards, Steps, FileTree, Tab, Card } from 'nextra/components';
+export { RemoteContent, useData } from 'nextra/data';
+export { Mermaid, Callout, Tabs, Cards, Steps, FileTree } from 'nextra/components';
 export {
   type DocsThemeConfig,
   Bleed,
   Collapse,
   Navbar,
   NotFoundPage,
-  ServerSideErrorPage,
   useConfig,
   useTheme,
+  useThemeConfig,
 } from 'nextra-theme-docs';
+export { createCatchAllMeta } from 'nextra/catch-all';
 
 declare module 'react' {
   interface CSSProperties {

@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode, useCallback, useEffect, useState } from 'react';
-import { Tabs as NextraTabs } from 'nextra-theme-docs';
+import { Tabs as NextraTabs } from 'nextra/components';
 
 export function Tabs({
   children,

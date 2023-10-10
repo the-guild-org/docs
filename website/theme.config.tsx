@@ -33,17 +33,4 @@ export default defineConfig({
     </>
   ),
   siteName,
-  useNextSeoProps: () => ({
-    additionalLinkTags: [{ href: '/fav.ico', rel: 'shortcut icon' }],
-  }),
 });
-
-// const defaultSeo: AppSeoProps = {
-//   title: 'Guild Docs',
-//   description: 'Guild Docs Example',
-//   logo: {
-//     url: 'https://the-guild-docs.vercel.app/assets/subheader-logo.png',
-//     width: 50,
-//     height: 54,
-//   },
-// };

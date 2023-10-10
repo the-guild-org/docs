@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
-import { FooterExtended, Header, mdxComponents } from './components';
+import { Anchor, FooterExtended, Header, mdxComponents } from './components';
 import { PRODUCTS, ProductType } from './products';
 
 export function defineConfig({
@@ -24,8 +24,24 @@ export function defineConfig({
   const siteUrl = process.env.SITE_URL;
 
   return {
+    banner: {
+      content: (
+        <span className="text-xs">
+          Catch the highlights of GraphQLConf 2023!{' '}
+          <Anchor href="https://graphql.org/conf/schedule" className="underline">
+            Click for recordings
+          </Anchor>
+          . Or check out our{' '}
+          <Anchor href="https://the-guild.dev/blog/graphqlconf-2023-recap" className="underline">
+            recap blog post
+          </Anchor>
+          .
+        </span>
+      ),
+      key: 'graphql-conf-2023',
+    },
     editLink: {
-      text: 'Edit this page on GitHub',
+      content: 'Edit this page on GitHub',
     },
     feedback: {
       content: 'Question? Give us feedback →',
@@ -37,7 +53,7 @@ export function defineConfig({
     navbar: {
       component: props => (
         <>
-          <Header accentColor="#1cc8ee" searchBarProps={{ version: 'v2' }} />
+          <Header accentColor="#1cc8ee" />
           <Navbar {...props} />
         </>
       ),
@@ -52,7 +68,65 @@ export function defineConfig({
     project: {
       link: `${url.origin}/${org}/${repoName}`, // GitHub link in the navbar
     },
-    head: null,
+    head: function useHead() {
+      const { frontMatter, title: pageTitle } = useConfig();
+      const { asPath } = useRouter();
+
+      const {
+        description = `${siteName} Documentation`,
+        type = 'website',
+        canonical = siteUrl &&
+          `${siteUrl}${
+            // we disallow trailing slashes
+            // TODO: dont do this if `trailingSlashes: true`
+            asPath === '/'
+              ? // homepage
+                ''
+              : asPath.startsWith('/?')
+              ? // homepage with search params (remove just slash)
+                asPath.slice(1)
+              : // other pages
+                asPath
+          }`,
+        image = `https://og-image.the-guild.dev/?product=${originalSiteName}&title=${encodeURI(
+          pageTitle,
+        )}`,
+      } = frontMatter;
+
+      const title = `${pageTitle} – ${siteName}`;
+
+      return (
+        <>
+          <title>{title}</title>
+          <meta property="og:title" content={title} />
+          {description && (
+            <>
+              <meta name="description" content={description} />
+              <meta property="og:description" content={description} />
+            </>
+          )}
+          {canonical && (
+            <>
+              <link rel="canonical" href={canonical} />
+              <meta property="og:url" content={canonical} />
+            </>
+          )}
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="https://the-guild.dev" />
+          <meta name="twitter:creator" content="@TheGuildDev" />
+
+          <meta property="og:type" content={type} />
+          <meta property="og:site_name" content={siteName} />
+          <meta property="og:image" content={image} />
+          <meta property="og:image:alt" content={pageTitle} />
+
+          <meta content={siteName} name="apple-mobile-web-app-title" />
+          <meta content={siteName} name="application-name" />
+          <meta name="robots" content="index,follow" />
+        </>
+      );
+    },
     logo: product?.logo && (
       <>
         <product.logo className="mr-1.5 h-9 w-9" />
@@ -66,57 +140,6 @@ export function defineConfig({
     components: {
       ...mdxComponents,
       ...config.components,
-    },
-    useNextSeoProps() {
-      const { frontMatter, title } = useConfig();
-      const { asPath } = useRouter();
-      const nextSeoProps = config.useNextSeoProps?.();
-      const type = frontMatter.type?.toLowerCase() ?? 'website';
-
-      return {
-        titleTemplate: `%s – ${siteName}`,
-        description: frontMatter.description || `${siteName} Documentation`,
-        twitter: {
-          cardType: 'summary_large_image',
-          site: 'https://the-guild.dev',
-          handle: '@TheGuildDev',
-        },
-        canonical:
-          frontMatter.canonical ||
-          (siteUrl &&
-            `${siteUrl}${
-              // we disallow trailing slashes
-              // TODO: dont do this if `trailingSlashes: true`
-              asPath === '/'
-                ? // homepage
-                  ''
-                : asPath.startsWith('/?')
-                ? // homepage with search params (remove just slash)
-                  asPath.slice(1)
-                : // other pages
-                  asPath
-            }`),
-        openGraph: {
-          type,
-          siteName,
-          images: [
-            {
-              url:
-                frontMatter.image ||
-                `https://og-image.the-guild.dev/?product=${originalSiteName}&title=${encodeURI(
-                  title,
-                )}`,
-              alt: frontMatter.description || title,
-            },
-          ],
-        },
-        ...nextSeoProps,
-        additionalMetaTags: [
-          { content: siteName, name: 'apple-mobile-web-app-title' },
-          { content: siteName, name: 'application-name' },
-          ...(nextSeoProps?.additionalMetaTags || []),
-        ],
-      };
     },
   };
 }

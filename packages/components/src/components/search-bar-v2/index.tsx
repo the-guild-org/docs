@@ -11,12 +11,12 @@ import { SidePreview } from './side-preview';
 import { templates } from './templates';
 import { debounced } from './utils';
 
-export const SearchBarV2 = ({
+export function SearchBar({
   accentColor,
   placeholder = 'Search our documentations',
   className,
   algolia,
-}: ISearchBarProps): ReactElement => {
+}: ISearchBarProps): ReactElement {
   const containerRef = useRef(null);
   // @ts-expect-error todo: fix Index signature for type 'string' is missing in type 'AlgoliaSearchItem'
   const search = useRef<AutocompleteApi<AlgoliaSearchItem>>();
@@ -197,4 +197,4 @@ export const SearchBarV2 = ({
   }, []);
 
   return <div ref={containerRef} className={className} />;
-};
+}

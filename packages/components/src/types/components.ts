@@ -27,7 +27,6 @@ export interface IHeaderProps {
   activeLink?: string;
   themeSwitch?: boolean;
   transformLinks?: (links: Omit<IHeaderLink, 'children'>[]) => Omit<IHeaderLink, 'children'>[];
-  searchBarProps?: Partial<ISearchBarProps>;
   search?: boolean;
   sameSite?: boolean;
 }
@@ -37,17 +36,6 @@ export interface IFooterExtendedProps {
   sameSite?: boolean;
   resources?: ILink[];
   logo?: ILink;
-}
-
-export interface IModalProps {
-  className?: string;
-  children: ReactNode;
-  title: string | ReactNode;
-  description?: string | ILink;
-  image?: IImage;
-  visible: boolean;
-  placement: 'top' | 'center' | 'bottom';
-  onCancel: (state?: boolean) => void;
 }
 
 export interface ISearchBarProps {

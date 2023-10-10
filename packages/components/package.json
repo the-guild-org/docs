@@ -19,6 +19,10 @@
       "import": "./dist/next.config.mjs",
       "types": "./dist/next.config.d.ts"
     },
+    "./compile": {
+      "import": "./dist/compile.mjs",
+      "types": "./dist/compile.d.ts"
+    },
     "./*": {
       "import": "./dist/*.js",
       "types": "./dist/*.d.ts"
@@ -38,6 +42,9 @@
       ],
       "next.config": [
         "./dist/next.config.d.ts"
+      ],
+      "compile": [
+        "./dist/compile.d.ts"
       ]
     }
   },
@@ -67,18 +74,15 @@
     "@radix-ui/react-navigation-menu": "1.1.4",
     "algoliasearch": "4.19.1",
     "clsx": "2.0.0",
-    "focus-trap-react": "10.2.2",
     "fuzzy": "^0.1.3",
     "next-videos": "1.5.0",
-    "nextra": "2.13.2",
-    "nextra-theme-docs": "2.13.2",
-    "react-instantsearch-dom": "6.40.4",
+    "nextra": "3.0.0-alpha.4",
+    "nextra-theme-docs": "3.0.0-alpha.4",
     "react-paginate": "8.2.0",
     "react-player": "2.13.0",
     "remark-mdx-disable-explicit-jsx": "0.1.0",
     "search-insights": "2.8.3",
-    "semver": "^7.3.8",
-    "use-debounce": "9.0.4"
+    "semver": "^7.3.8"
   },
   "devDependencies": {
     "@theguild/algolia": "workspace:*",

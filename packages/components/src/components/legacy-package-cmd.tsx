@@ -1,6 +1,5 @@
 import { ReactElement, useMemo } from 'react';
-import { Tab, Tabs } from 'nextra-theme-docs';
-import { Pre } from 'nextra/components';
+import { Pre, Tabs } from 'nextra/components';
 
 const PACKAGE_MANAGERS = ['yarn', 'npm', 'pnpm'];
 
@@ -73,13 +72,13 @@ export const LegacyPackageCmd = ({
   return (
     <Tabs items={PACKAGE_MANAGERS}>
       {PACKAGE_MANAGERS.map((pkgManager, index) => (
-        <Tab key={pkgManager}>
-          <Pre filename="Terminal" hasCopyCode data-language="sh" data-theme="default">
+        <Tabs.Tab key={pkgManager}>
+          <Pre data-filename="Terminal" data-copy="" data-language="sh" data-theme="default">
             <code>
               <span className="line">{commands[index]}</span>
             </code>
           </Pre>
-        </Tab>
+        </Tabs.Tab>
       ))}
     </Tabs>
   );

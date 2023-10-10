@@ -1,5 +1,4 @@
 export { Anchor } from './anchor';
-export { Banner } from './banner';
 export { Button } from './button';
 export { CardsColorful } from './cards-colorful';
 export { FeatureList } from './feature-list';
@@ -16,9 +15,8 @@ export { LegacyPackageCmd } from './legacy-package-cmd';
 export { MarketplaceList } from './marketplace-list';
 export { MarketplaceSearch } from './marketplace-search';
 export { mdxComponents } from './mdx-components';
-export { Modal } from './modal';
 export { Nav } from './nav';
 export { Newsletter } from './newsletter';
 export { NPMBadge } from './npm-badge';
-export { SearchBar } from './search-bar';
+export { SearchBar } from './search-bar-v2';
 export { Tabs } from './tabs';
