@@ -70,7 +70,7 @@
     "@algolia/autocomplete-plugin-query-suggestions": "1.11.1",
     "@algolia/autocomplete-theme-classic": "1.11.1",
     "@giscus/react": "2.3.0",
-    "@next/bundle-analyzer": "13.4.2",
+    "@next/bundle-analyzer": "13.5.4",
     "@radix-ui/react-navigation-menu": "1.1.4",
     "algoliasearch": "4.19.1",
     "clsx": "2.0.0",
@@ -93,7 +93,7 @@
     "dedent": "0.7.0",
     "esbuild-plugin-svgr": "1.1.0",
     "graphql": "16.8.1",
-    "next": "13.4.2",
+    "next": "13.5.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3"
