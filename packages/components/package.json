@@ -91,7 +91,7 @@
     "@types/react-dom": "18.2.12",
     "@types/semver": "7.5.3",
     "dedent": "0.7.0",
-    "esbuild-plugin-svgr": "1.1.0",
+    "esbuild-plugin-svgr": "2.1.0",
     "graphql": "16.8.1",
     "next": "13.4.2",
     "react": "18.2.0",
