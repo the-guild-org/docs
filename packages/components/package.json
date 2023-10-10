@@ -88,7 +88,7 @@
     "@theguild/algolia": "workspace:*",
     "@theguild/editor": "workspace:*",
     "@types/dedent": "0.7.0",
-    "@types/react-dom": "18.2.12",
+    "@types/react-dom": "18.2.13",
     "@types/semver": "7.5.3",
     "dedent": "0.7.0",
     "esbuild-plugin-svgr": "1.1.0",
