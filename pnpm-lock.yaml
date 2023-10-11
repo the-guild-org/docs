@@ -321,8 +321,8 @@ importers:
         version: 0.3.3
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20231002.0
-        version: 4.20231002.0
+        specifier: 4.20231010.0
+        version: 4.20231010.0
       '@types/react':
         specifier: 18.2.28
         version: 18.2.28
@@ -3305,8 +3305,8 @@ packages:
     dev: true
     optional: true
 
-  /@cloudflare/workers-types@4.20231002.0:
-    resolution: {integrity: sha512-gQMKf3THqAFWH426OXXfVx0gFLXiSiL2fo6mKjQYx4PU74MgmVDFh25NvpAIBK+XN+xXlrImClfYeqErXIT7jA==}
+  /@cloudflare/workers-types@4.20231010.0:
+    resolution: {integrity: sha512-Jscqg52ScJMTMRHHVeoUvXYYiXPT4V59NKaClQVju9B6oPAzuePFYHwi5PLQ5Yr+xEbJ6+bHuq1aYV/69z6L0w==}
     dev: true
 
   /@colors/colors@1.5.0:
@@ -14840,7 +14840,7 @@ packages:
       mdast-util-to-string: 3.1.0
       micromark-util-decode-string: 1.0.2
       unist-util-visit: 4.1.2
-      zwitch: 2.0.2
+      zwitch: 2.0.4
 
   /mdast-util-to-markdown@2.1.0:
     resolution: {integrity: sha512-SR2VnIEdVNCJbP6y7kVTJgPLifdr8WEU440fQec7qHoHOUz/oJ2jmNRqdDQ3rbiStOXb2mCDGTuwsK5OPUgYlQ==}
@@ -21158,9 +21158,6 @@ packages:
 
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
-
-  /zwitch@2.0.2:
-    resolution: {integrity: sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA==}
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
