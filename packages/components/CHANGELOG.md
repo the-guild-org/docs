@@ -1,5 +1,18 @@
 # @theguild/components
 
+## 6.0.2
+
+### Patch Changes
+
+- [#1295](https://github.com/the-guild-org/docs/pull/1295)
+  [`2573a33`](https://github.com/the-guild-org/docs/commit/2573a339f4eb6413b7e17eb9231728e3f3d0f613)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+  - Updated dependency [`nextra@3.0.0-alpha.6` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.5`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.6` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.5`, in `dependencies`)
+
 ## 6.0.1
 
 ### Patch Changes
