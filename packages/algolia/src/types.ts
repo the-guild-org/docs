@@ -12,7 +12,6 @@ export type AlgoliaRecordSource =
   | 'Mesh'
   | 'Modules'
   | 'Scalars'
-  | 'Shield'
   | 'SOFA'
   | 'SSE'
   | 'Stitching'
