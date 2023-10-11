@@ -14,7 +14,6 @@ import {
   MeshLogo,
   ModulesLogo,
   ScalarsLogo,
-  ShieldLogo,
   SofaLogo,
   SSELogo,
   StitchingLogo,
@@ -37,7 +36,6 @@ export type ProductType =
   | 'ESLINT'
   | 'CONFIG'
   | 'SCALARS'
-  | 'SHIELD'
   | 'SOFA'
   | 'STITCHING'
   | 'ANGULAR'
@@ -155,13 +153,6 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/scalars',
     logo: ScalarsLogo,
     primaryColor: '#f38',
-  },
-  SHIELD: {
-    name: 'Shield',
-    title: 'GraphQL permissions framework for complex authorisation systems',
-    href: 'https://the-guild.dev/graphql/shield',
-    logo: ShieldLogo,
-    primaryColor: '#699efc',
   },
   SOFA: {
     name: 'SOFA',
