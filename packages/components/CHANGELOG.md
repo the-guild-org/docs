@@ -1,5 +1,33 @@
 # @theguild/components
 
+## 6.0.1
+
+### Patch Changes
+
+- [#1158](https://github.com/the-guild-org/docs/pull/1158)
+  [`e28d132`](https://github.com/the-guild-org/docs/commit/e28d1323da2ed6f070da3475603cfa1c758105b2)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.5` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.4`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.5` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.4`, in `dependencies`)
+
+- [#1292](https://github.com/the-guild-org/docs/pull/1292)
+  [`0485116`](https://github.com/the-guild-org/docs/commit/04851166b1b170283dcbe210dccc2aaf652b5b8f)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.5` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.4`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.5` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.4`, in `dependencies`)
+
+- [#1292](https://github.com/the-guild-org/docs/pull/1292)
+  [`0485116`](https://github.com/the-guild-org/docs/commit/04851166b1b170283dcbe210dccc2aaf652b5b8f)
+  Thanks [@B2o5T](https://github.com/B2o5T)! - bump nextra, remove Shield from products
+
 ## 6.0.0
 
 ### Major Changes
