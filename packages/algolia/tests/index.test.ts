@@ -38,7 +38,7 @@ describe('nextraToAlgoliaRecords()', () => {
             },
           ],
           "type": "Documentation",
-          "url": "https://www.the-guild.dev/graphql/ws/docs",
+          "url": "https://www.the-guild.dev/graphql/ws/docs/",
         },
         {
           "content": "",

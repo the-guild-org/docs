@@ -173,8 +173,8 @@ export async function nextraToAlgoliaRecords({
   const objects: AlgoliaRecord[] = [];
   const slugger = new GitHubSlugger();
 
-  for (const url of sitemapUrls) {
-    const pageSlug = withoutTrailingSlashes(url.replace(withTrailingSlash(domain), ''));
+  for (const sitemapUrl of sitemapUrls) {
+    const pageSlug = withoutTrailingSlashes(sitemapUrl.replace(withTrailingSlash(domain), ''));
 
     let pagePath = path.join(docsBaseDir, pageSlug);
     let pageContent: string;
@@ -232,7 +232,7 @@ export async function nextraToAlgoliaRecords({
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url,
+      url: sitemapUrl,
       domain: withoutTrailingSlashes(domain),
       hierarchy,
       source,
