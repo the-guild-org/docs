@@ -65,8 +65,8 @@ function extractToC(content: string): AlgoliaSearchItemTOC[] {
   }, []);
 }
 
-const withTrailingSlash = (str: string) => `${withoutTrailingSlashes(str)}/`;
 const withoutTrailingSlashes = (str: string) => str.replace(/\/+$/, '');
+const withTrailingSlash = (str: string) => `${withoutTrailingSlashes(str)}/`;
 
 const contentForRecord = (content: string) => {
   let isCodeBlock = false;
