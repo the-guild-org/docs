@@ -181,20 +181,15 @@ export async function nextraToAlgoliaRecords({
 
     // since we strip extensions from urls, if the path exists - it's a directory, otherwise a markdown file
     const isDir = existsSync(pagePath);
-    if (isDir) {
-      pagePath = path.join(pagePath, 'index.md');
+    pagePath = `${pagePath}${isDir ? '/index' : ''}.md`;
+    if (existsSync(pagePath)) {
+      // .md
+      pageContent = await readFile(pagePath, 'utf-8');
+    } else if (((pagePath = `${pagePath}x`), existsSync(pagePath))) {
+      // .mdx
       pageContent = await readFile(pagePath, 'utf-8');
     } else {
-      pagePath = `${pagePath}.md`;
-      if (existsSync(pagePath)) {
-        // .md
-        pageContent = await readFile(pagePath, 'utf-8');
-      } else if (((pagePath = `${pagePath}x`), existsSync(pagePath))) {
-        // .mdx
-        pageContent = await readFile(pagePath, 'utf-8');
-      } else {
-        throw new Error(`Page ${pagePath.replace('.mdx', '.{md,mdx}')} does not exist`);
-      }
+      throw new Error(`Page ${pagePath.replace('.mdx', '.{md,mdx}')} does not exist`);
     }
 
     // front-matter title or first appearing H1 heading content
