@@ -12,7 +12,8 @@ program
   .option('-o, --output [lockfilepath]', 'relative path to lock file', './algolia-lockfile.json')
   .option('-p, --publish')
   .requiredOption('-s, --source <source>')
-  .requiredOption('-d, --domain <domain>');
+  .requiredOption('-d, --domain <domain>')
+  .requiredOption('--sitemap-xml <sitemapXmlPath>');
 
 program.parse(process.argv);
 
@@ -20,6 +21,7 @@ const options = program.opts();
 
 indexToAlgolia({
   domain: options.domain,
+  sitemapXmlPath: options.sitemapXmlPath,
   lockfilePath: resolve(CWD, options.output),
   source: options.source as unknown as AlgoliaRecordSource,
   nextra: {
