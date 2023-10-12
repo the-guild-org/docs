@@ -18,7 +18,7 @@
     "prettier": "pnpm lint:prettier --write",
     "release": "changeset publish",
     "start": "storybook dev --port 4000",
-    "test": "vitest ."
+    "test": "vitest"
   },
   "devDependencies": {
     "@algolia/autocomplete-theme-classic": "1.11.1",

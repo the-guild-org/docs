@@ -24,7 +24,7 @@
   "scripts": {
     "build": "tsup",
     "prebuild": "pnpm types:check && rm -rf dist",
-    "test": "vitest .",
+    "test": "vitest",
     "types:check": "tsc --noEmit"
   },
   "dependencies": {

@@ -20,7 +20,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "vitest ."
+    "test": "vitest"
   },
   "dependencies": {
     "npm-to-yarn": "^2.1.0",
