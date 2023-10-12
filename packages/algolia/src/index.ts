@@ -149,7 +149,7 @@ async function getSitemapUrlsXml(sitemapXmlPath: string): Promise<string[]> {
   }
   const sitemap = new XMLParser().parse(await readFile(sitemapXmlPath, 'utf-8'));
   const sitemapUrls: { loc: string }[] = sitemap?.urlset?.url;
-  if ((sitemapUrls?.length || 0) === 0) {
+  if (!sitemapUrls?.length) {
     console.log(sitemapXmlPath, JSON.stringify(sitemap, null, '  '));
     throw new Error('Sitemap urls not found at path urlset>url');
   }
