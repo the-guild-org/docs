@@ -226,7 +226,7 @@ export async function nextraToAlgoliaRecords({
         `${objectsPrefix}-${[
           ...hierarchy,
           // TODO: should we remove the `index` file from the object ID?
-          filenameWithoutExt.replace('.', '_'),
+          filenameWithoutExt.replaceAll('.', '_'),
         ].join('-')}`,
       ),
       headings: toc.map(t => t.title),
