@@ -150,12 +150,12 @@ async function getSitemapUrlsXml(sitemapXmlPath: string): Promise<string[]> {
   const sitemap = new XMLParser().parse(await readFile(sitemapXmlPath, 'utf-8'));
   const sitemapUrls: { loc: string }[] = sitemap?.urlset?.url;
   if (!sitemapUrls?.length) {
-    console.log(sitemapXmlPath, JSON.stringify(sitemap, null, '  '));
+    console.debug(sitemapXmlPath, JSON.stringify(sitemap, null, '  '));
     throw new Error('Sitemap urls not found at path urlset>url');
   }
   const urls = sitemapUrls.map(({ loc }) => loc).filter(Boolean);
   if (!urls?.length) {
-    console.log(sitemapXmlPath, JSON.stringify(sitemap, null, '  '));
+    console.debug(sitemapXmlPath, JSON.stringify(sitemap, null, '  '));
     throw new Error('No sitemap urls found path urlset>url>loc');
   }
   return urls;
