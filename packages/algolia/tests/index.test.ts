@@ -19,6 +19,18 @@ describe('nextraToAlgoliaRecords()', () => {
     expect(records).toMatchInlineSnapshot(`
       [
         {
+          "content": "",
+          "domain": "https://www.the-guild.dev/graphql/ws",
+          "headings": [],
+          "hierarchy": [],
+          "objectID": "ws-index",
+          "source": "WS",
+          "title": "Home",
+          "toc": [],
+          "type": "Documentation",
+          "url": "https://www.the-guild.dev/graphql/ws",
+        },
+        {
           "content": "client",
           "domain": "https://www.the-guild.dev/graphql/ws",
           "headings": [

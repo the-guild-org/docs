@@ -174,8 +174,10 @@ export async function nextraToAlgoliaRecords({
   const slugger = new GitHubSlugger();
 
   for (const sitemapUrl of sitemapUrls) {
-    const pageSlug = withoutTrailingSlashes(sitemapUrl.replace(withTrailingSlash(domain), ''));
-
+    const pageSlug =
+      withoutTrailingSlashes(domain) === sitemapUrl
+        ? 'index' // homepage
+        : withoutTrailingSlashes(sitemapUrl.replace(withTrailingSlash(domain), '')); // all other pages
     let pagePath = path.join(docsBaseDir, pageSlug);
     let pageContent: string;
 
