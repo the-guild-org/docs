@@ -1,19 +1,16 @@
 /* eslint-disable no-console -- for debug */
 
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import algoliaSearch from 'algoliasearch';
-import fg from 'fast-glob';
+import { XMLParser } from 'fast-xml-parser';
 import GitHubSlugger from 'github-slugger';
 import matter from 'gray-matter';
 import sortBy from 'lodash.sortby';
 import removeMarkdown from 'remove-markdown';
 import { AlgoliaRecord, AlgoliaRecordSource, AlgoliaSearchItemTOC } from './types';
-
-const MARKDOWN_EXTENSION = /\.mdx?$/;
 
 function extractToC(content: string): AlgoliaSearchItemTOC[] {
   const slugger = new GitHubSlugger();
@@ -68,9 +65,8 @@ function extractToC(content: string): AlgoliaSearchItemTOC[] {
   }, []);
 }
 
-const withTrailingSlash = (str: string) => (str.endsWith('/') ? str : `${str}/`);
-const withLeadingSlash = (str: string) => (str.startsWith('/') ? str : `/${str}`);
 const withoutTrailingSlashes = (str: string) => str.replace(/\/+$/, '');
+const withTrailingSlash = (str: string) => `${withoutTrailingSlashes(str)}/`;
 
 const contentForRecord = (content: string) => {
   let isCodeBlock = false;
@@ -140,103 +136,113 @@ interface IndexToAlgoliaNextraOptions {
   docsBaseDir: string;
   source: AlgoliaRecordSource;
   domain: string;
+  sitemapXmlPath: string;
   objectsPrefix?: string;
 }
 
-async function getMetaFromFile(path: string) {
-  try {
-    return JSON.parse(await readFile(path, 'utf8'));
-  } catch {
-    /* ignore if _meta.json doesn't exist */
+async function getSitemapUrlsXml(sitemapXmlPath: string): Promise<string[]> {
+  if (!sitemapXmlPath) {
+    throw new Error('Sitemap path not provided');
   }
+  if (!existsSync(sitemapXmlPath)) {
+    throw new Error(`Sitemap at path "${sitemapXmlPath}" does not exist`);
+  }
+  const sitemap = new XMLParser().parse(await readFile(sitemapXmlPath, 'utf-8'));
+  const sitemapUrls: { loc: string }[] = sitemap?.urlset?.url;
+  if (!sitemapUrls?.length) {
+    console.debug(sitemapXmlPath, JSON.stringify(sitemap, null, '  '));
+    throw new Error('Sitemap urls not found at path urlset>url');
+  }
+  const urls = sitemapUrls.map(({ loc }) => loc).filter(Boolean);
+  if (!urls?.length) {
+    console.debug(sitemapXmlPath, JSON.stringify(sitemap, null, '  '));
+    throw new Error('No sitemap urls found path urlset>url>loc');
+  }
+  return urls;
 }
 
 export async function nextraToAlgoliaRecords({
   docsBaseDir,
   source,
   domain,
+  sitemapXmlPath,
   objectsPrefix = new GitHubSlugger().slug(source),
 }: IndexToAlgoliaNextraOptions): Promise<AlgoliaRecord[]> {
+  const sitemapUrls = await getSitemapUrlsXml(sitemapXmlPath);
+
   const objects: AlgoliaRecord[] = [];
   const slugger = new GitHubSlugger();
 
-  // cache for all needed `_meta.json` files
-  const metadataCache: Record<string, any> = {};
+  for (const sitemapUrl of sitemapUrls) {
+    const pageSlug =
+      withoutTrailingSlashes(domain) === sitemapUrl
+        ? 'index' // homepage
+        : withoutTrailingSlashes(sitemapUrl.replace(withTrailingSlash(domain), '')); // all other pages
+    let pagePath = path.join(docsBaseDir, pageSlug);
+    let pageContent: string;
 
-  const getMetadataForFile = async (
-    filePath: string,
-  ): Promise<[title: string, hierarchy: string[], urlPath: string] | void> => {
-    const hierarchy = [];
+    // since we strip extensions from urls, if the path exists - it's a directory, otherwise a markdown file
+    const isDir = existsSync(pagePath);
+    pagePath = `${pagePath}${isDir ? '/index' : ''}.md`;
+    if (existsSync(pagePath)) {
+      // .md
+      pageContent = await readFile(pagePath, 'utf-8');
+    } else if (((pagePath = `${pagePath}x`), existsSync(pagePath))) {
+      // .mdx
+      pageContent = await readFile(pagePath, 'utf-8');
+    } else {
+      throw new Error(`Page ${pagePath.replace('.mdx', '.{md,mdx}')} does not exist`);
+    }
 
-    const fileDir = filePath.split('/').slice(0, -1).join('/');
-    const fileName = filePath.split('/').pop()!;
-    const folders = filePath
-      .replace(docsBaseDir, '')
-      .replace(fileName, '')
-      .split('/')
-      .filter(Boolean);
-    // docs/guides/advanced -> ['Guides', 'Advanced']
-    // by reading meta from:
-    //  - docs/guides/_meta.json (for 'advanced' folder)
-    //  - docs/_meta.json (for 'guides' folder)
-    while (folders.length) {
-      const folderPath = folders.join('/');
-      const folder = folders.pop()!;
-
-      metadataCache[folderPath] ||= await getMetaFromFile(
-        path.join(docsBaseDir, folderPath, '_meta.json'),
-      );
-      const folderName = metadataCache[folderPath][folder];
-      const resolvedFolderName =
-        typeof folderName === 'string' ? folderName : folderName?.title || folder;
-      if (resolvedFolderName) {
-        hierarchy.unshift(resolvedFolderName);
+    // front-matter title or first appearing H1 heading content
+    const {
+      data: { title: matterTitle, type: matterType },
+      content,
+    } = matter(pageContent);
+    let title = matterTitle;
+    if (!title) {
+      // title mustnt be on the first line
+      for (const line of content.split('\n')) {
+        if (line.startsWith('# ')) {
+          title = line.replace('# ', '').trim();
+          break;
+        }
       }
     }
-    metadataCache[fileDir] ||= await getMetaFromFile(path.join(fileDir, '_meta.json'));
-    if (!metadataCache[fileDir]) {
-      return;
+    if (!title) {
+      throw new Error(`Title for page ${pagePath} not found`);
     }
 
-    const title = metadataCache[fileDir][fileName.replace(MARKDOWN_EXTENSION, '')];
-    const resolvedTitle = typeof title === 'string' ? title : title?.title;
+    const hierarchy = pageSlug.split('/');
+    if (!isDir) {
+      // if the page is an actual file, then the directory (for the hierarchy) is one up
+      hierarchy.pop();
+    }
 
-    const urlPath = filePath.replace(docsBaseDir, '').replace(fileName, '');
-    return [resolvedTitle || fileName.replace(MARKDOWN_EXTENSION, ''), hierarchy, urlPath];
-  };
+    const filenameWithoutExt = path.basename(pagePath, path.extname(pagePath));
 
-  const files = fg.sync(path.join(docsBaseDir, '**', '*.{md,mdx}'));
-
-  for (const file of files) {
-    const filename = file
-      .split('/')
-      .pop()!
-      .replace(/\.\w+$/, '')
-      .replace(/^index$/, '');
-    const fileContent = await readFile(file);
-    const { data: meta, content } = matter(fileContent.toString());
     const toc = extractToC(content);
-    const metaData = await getMetadataForFile(file);
-    if (!metaData) {
-      continue;
-    }
-    const [title, hierarchy, urlPath] = metaData;
 
     objects.push({
       objectID: slugger.slug(
-        `${objectsPrefix}-${[...hierarchy, filename.replace('.', '_')].join('-')}`,
+        `${objectsPrefix}-${[
+          ...hierarchy,
+          // TODO: should we remove the `index` file from the object ID?
+          filenameWithoutExt.replaceAll('.', '_'),
+        ].join('-')}`,
       ),
       headings: toc.map(t => t.title),
       toc,
       content: contentForRecord(content),
-      url: `${withoutTrailingSlashes(domain)}${withLeadingSlash(urlPath)}${filename}`,
+      url: sitemapUrl,
       domain: withoutTrailingSlashes(domain),
       hierarchy,
       source,
       title,
-      type: meta.type || 'Documentation',
+      type: matterType || 'Documentation',
     });
   }
+
   return objects;
 }
 
@@ -248,6 +254,7 @@ interface IndexToAlgoliaOptions {
   nextra?: IndexToAlgoliaNextraOptions;
   source: AlgoliaRecordSource;
   domain: string;
+  sitemapXmlPath: string;
   lockfilePath: string;
   dryMode?: boolean;
   postProcessor?: (objects: AlgoliaRecord[]) => AlgoliaRecord[];
@@ -257,6 +264,7 @@ export async function indexToAlgolia({
   plugins = [],
   source,
   domain,
+  sitemapXmlPath,
   nextra,
   postProcessor = value => value,
   // TODO: add `force` flag
@@ -270,6 +278,7 @@ export async function indexToAlgolia({
           docsBaseDir: nextra.docsBaseDir,
           source,
           domain,
+          sitemapXmlPath,
         })
       : []),
   ]);

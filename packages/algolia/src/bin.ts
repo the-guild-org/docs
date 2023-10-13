@@ -8,11 +8,16 @@ const CWD = process.cwd();
 const program = new Command();
 
 program
-  .option('--docsBaseDir [rootdir]', 'relative path to nextra pages rootDir', './src/pages/')
-  .option('-o, --output [lockfilepath]', 'relative path to lock file', './algolia-lockfile.json')
+  .option('--docsBaseDir [rootDir]', 'relative path to nextra pages rootDir', './src/pages/')
+  .option(
+    '-o, --output [lockfileOutputPath]',
+    'relative path to the generated lockfile',
+    './algolia-lockfile.json',
+  )
   .option('-p, --publish')
   .requiredOption('-s, --source <source>')
-  .requiredOption('-d, --domain <domain>');
+  .requiredOption('-d, --domain <domain>')
+  .option('--sitemap-xml [sitemapXmlPath]', 'relative path to the sitemap', './public/sitemap.xml');
 
 program.parse(process.argv);
 
@@ -20,6 +25,7 @@ const options = program.opts();
 
 indexToAlgolia({
   domain: options.domain,
+  sitemapXmlPath: options.sitemapXmlPath,
   lockfilePath: resolve(CWD, options.output),
   source: options.source as unknown as AlgoliaRecordSource,
   nextra: {

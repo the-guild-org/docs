@@ -14,11 +14,24 @@ describe('nextraToAlgoliaRecords()', () => {
       docsBaseDir: path.join(__dirname, '__fixtures__', 'typedoc'),
       source: 'WS',
       domain,
+      sitemapXmlPath: path.join(__dirname, '__fixtures__', 'typedoc', 'sitemap.xml'),
     });
     expect(records).toMatchInlineSnapshot(`
       [
         {
-          "content": "client - common - server - use/@fastify/websocket - use/fastify-websocket - use/uWebSockets - use/ws",
+          "content": "",
+          "domain": "https://www.the-guild.dev/graphql/ws",
+          "headings": [],
+          "hierarchy": [],
+          "objectID": "ws-index",
+          "source": "WS",
+          "title": "Home",
+          "toc": [],
+          "type": "Documentation",
+          "url": "https://www.the-guild.dev/graphql/ws",
+        },
+        {
+          "content": "client",
           "domain": "https://www.the-guild.dev/graphql/ws",
           "headings": [
             "Modules",
@@ -26,9 +39,9 @@ describe('nextraToAlgoliaRecords()', () => {
           "hierarchy": [
             "docs",
           ],
-          "objectID": "ws-docs-",
+          "objectID": "ws-docs-index",
           "source": "WS",
-          "title": "Home",
+          "title": "graphql-ws",
           "toc": [
             {
               "anchor": "modules",
@@ -49,23 +62,37 @@ describe('nextraToAlgoliaRecords()', () => {
           ],
           "objectID": "ws-docs-enums-common_messagetype",
           "source": "WS",
-          "title": "common.MessageType",
+          "title": "Enumeration: MessageType",
           "toc": [],
           "type": "Documentation",
           "url": "https://www.the-guild.dev/graphql/ws/docs/enums/common.MessageType",
         },
         {
-          "content": "",
+          "content": "Here   There",
           "domain": "https://www.the-guild.dev/graphql/ws",
-          "headings": [],
+          "headings": [
+            "Supertitle",
+          ],
           "hierarchy": [
             "docs",
             "interfaces",
           ],
           "objectID": "ws-docs-interfaces-client_client",
           "source": "WS",
-          "title": "client.Client",
-          "toc": [],
+          "title": "Interface: Client",
+          "toc": [
+            {
+              "anchor": "supertitle",
+              "children": [
+                {
+                  "anchor": "subtitle",
+                  "children": [],
+                  "title": "Subtitle",
+                },
+              ],
+              "title": "Supertitle",
+            },
+          ],
           "type": "Documentation",
           "url": "https://www.the-guild.dev/graphql/ws/docs/interfaces/client.Client",
         },
@@ -79,7 +106,7 @@ describe('nextraToAlgoliaRecords()', () => {
           ],
           "objectID": "ws-docs-modules-client",
           "source": "WS",
-          "title": "client",
+          "title": "Module: client",
           "toc": [],
           "type": "Documentation",
           "url": "https://www.the-guild.dev/graphql/ws/docs/modules/client",
