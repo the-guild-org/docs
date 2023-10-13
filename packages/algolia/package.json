@@ -1,6 +1,6 @@
 {
   "name": "@theguild/algolia",
-  "version": "1.1.9",
+  "version": "2.0.0",
   "repository": {
     "url": "https://github.com/the-guild-org/docs",
     "directory": "packages/algolia"

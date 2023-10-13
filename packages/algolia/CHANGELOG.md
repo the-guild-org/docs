@@ -1,5 +1,24 @@
 # @theguild/algolia
 
+## 2.0.0
+
+### Major Changes
+
+- [#1299](https://github.com/the-guild-org/docs/pull/1299)
+  [`5f8cdd4`](https://github.com/the-guild-org/docs/commit/5f8cdd4fb90e8b2908acdcbc1645af7aa54d5340)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - Create algolia records using sitemap.xml
+
+### Patch Changes
+
+- [#1299](https://github.com/the-guild-org/docs/pull/1299)
+  [`5f8cdd4`](https://github.com/the-guild-org/docs/commit/5f8cdd4fb90e8b2908acdcbc1645af7aa54d5340)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - dependencies updates:
+  - Added dependency
+    [`fast-xml-parser@^4.3.2` ↗︎](https://www.npmjs.com/package/fast-xml-parser/v/4.3.2) (to
+    `dependencies`)
+  - Removed dependency [`fast-glob@^3.2.12` ↗︎](https://www.npmjs.com/package/fast-glob/v/3.2.12)
+    (from `dependencies`)
+
 ## 1.1.9
 
 ### Patch Changes
