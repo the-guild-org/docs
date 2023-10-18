@@ -53,8 +53,8 @@ importers:
         specifier: 0.3.0
         version: 0.3.0
       '@types/jest-image-snapshot':
-        specifier: 6.2.1
-        version: 6.2.1
+        specifier: 6.2.2
+        version: 6.2.2
       '@types/react':
         specifier: 18.2.28
         version: 18.2.28
@@ -7513,8 +7513,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest-image-snapshot@6.2.1:
-    resolution: {integrity: sha512-lq+nenXshw04WT22KhR3jlafeLWiA9FRGNAc7cD/IdDvjGo2OPvnKPFDIA7qFKy5oaY2pyBnWeyOaEkRIiE5FQ==}
+  /@types/jest-image-snapshot@6.2.2:
+    resolution: {integrity: sha512-wRjyeSDkBiYUXURQgWkfmlcKG5vpv3VsoWfwtbQPHgicjCx/sBtRKR2kCT6MGCWNY+HuWbrmvVVAaVSsqU4Q4Q==}
     dependencies:
       '@types/jest': 29.4.0
       '@types/pixelmatch': 5.2.4
