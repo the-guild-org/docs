@@ -191,8 +191,8 @@ importers:
         specifier: 4.7.8
         version: 4.7.8
       '@types/remove-markdown':
-        specifier: 0.3.2
-        version: 0.3.2
+        specifier: 0.3.3
+        version: 0.3.3
 
   packages/components:
     dependencies:
@@ -7377,8 +7377,8 @@ packages:
       '@types/scheduler': 0.16.2
       csstype: 3.1.1
 
-  /@types/remove-markdown@0.3.2:
-    resolution: {integrity: sha512-XlpidYPjaOU6Te0Sfw8xfMudk3k8i8MQsTBw9JZ9MPuTRpqP4mYc2PWibr5T5VAdxEVbd++qXkCGuNVtNype8g==}
+  /@types/remove-markdown@0.3.3:
+    resolution: {integrity: sha512-Ga6BahW66yyp6QyxDOrHdsSLVTwyM1or4rfeTt/2DpC20R8aClQcflvVWR0Z9FU3cv5tUykc9GZ3Tns7Khlgvg==}
     dev: true
 
   /@types/scheduler@0.16.2:
