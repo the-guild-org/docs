@@ -13,38 +13,38 @@
     "./package.json": "./package.json",
     ".": {
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.mts"
     },
     "./next.config": {
       "import": "./dist/next.config.mjs",
-      "types": "./dist/next.config.d.ts"
+      "types": "./dist/next.config.d.mts"
     },
     "./compile": {
       "import": "./dist/compile.mjs",
-      "types": "./dist/compile.d.ts"
+      "types": "./dist/compile.d.mts"
     },
     "./*": {
       "import": "./dist/*.js",
-      "types": "./dist/*.d.ts"
+      "types": "./dist/*.d.mts"
     }
   },
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.mts",
   "typesVersions": {
     "*": {
       ".": [
-        "./dist/index.d.ts"
+        "./dist/index.d.mts"
       ],
       "logos": [
-        "./dist/logos.d.ts"
+        "./dist/logos.d.mts"
       ],
       "products": [
-        "./dist/products.d.ts"
+        "./dist/products.d.mts"
       ],
       "next.config": [
-        "./dist/next.config.d.ts"
+        "./dist/next.config.d.mts"
       ],
       "compile": [
-        "./dist/compile.d.ts"
+        "./dist/compile.d.mts"
       ]
     }
   },
@@ -76,8 +76,8 @@
     "clsx": "2.0.0",
     "fuzzy": "^0.1.3",
     "next-videos": "1.5.0",
-    "nextra": "3.0.0-alpha.8",
-    "nextra-theme-docs": "3.0.0-alpha.8",
+    "nextra": "3.0.0-alpha.10",
+    "nextra-theme-docs": "3.0.0-alpha.10",
     "react-paginate": "8.2.0",
     "react-player": "2.13.0",
     "remark-mdx-disable-explicit-jsx": "0.1.0",
@@ -91,7 +91,7 @@
     "@types/react-dom": "18.2.13",
     "@types/semver": "7.5.3",
     "dedent": "0.7.0",
-    "esbuild-plugin-svgr": "1.1.0",
+    "esbuild-plugin-svgr": "^2.1.0",
     "graphql": "16.8.1",
     "next": "13.4.2",
     "react": "18.2.0",
