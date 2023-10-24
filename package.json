@@ -24,6 +24,7 @@
     "@algolia/autocomplete-theme-classic": "1.11.1",
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.2",
+    "@rollup/plugin-alias": "5.0.1",
     "@storybook/addon-essentials": "7.0.0-beta.11",
     "@storybook/addon-links": "7.0.0-beta.11",
     "@storybook/addon-postcss": "3.0.0-alpha.1",
@@ -65,8 +66,7 @@
     "tsx": "3.13.0",
     "turbo": "1.10.15",
     "typescript": "5.2.2",
-    "vitest": "0.31.1",
-    "@rollup/plugin-alias": "5.0.1"
+    "vitest": "0.31.1"
   },
   "browserslist": [
     "> 1%"

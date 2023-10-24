@@ -1,5 +1,5 @@
-import { ComponentProps, ReactElement } from 'react'
+import { ComponentProps, ReactElement } from 'react';
 
-declare const ReactComponent: (props: ComponentProps<'svg'>) => ReactElement
+declare const ReactComponent: (props: ComponentProps<'svg'>) => ReactElement;
 
-export { ReactComponent }
+export { ReactComponent };

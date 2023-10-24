@@ -1,4 +1,4 @@
-import svgr from 'esbuild-plugin-svgr'
+import svgr from 'esbuild-plugin-svgr';
 import { defineConfig, Options } from 'tsup';
 import tsconfig from './tsconfig.json';
 
@@ -15,7 +15,7 @@ export default defineConfig([
     entry: {
       index: 'src/index.ts',
       products: 'src/products.ts',
-      logos: 'src/logos/index.ts'
+      logos: 'src/logos/index.ts',
     },
     loader: {
       '.png': 'copy',
@@ -25,8 +25,8 @@ export default defineConfig([
     esbuildPlugins: [
       svgr({
         exportType: 'named',
-        typescript: true
-      })
+        typescript: true,
+      }),
     ],
     ...options,
   },
