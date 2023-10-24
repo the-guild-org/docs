@@ -1,5 +1,46 @@
 # @theguild/components
 
+## 6.0.3
+
+### Patch Changes
+
+- [#1300](https://github.com/the-guild-org/docs/pull/1300)
+  [`2058beb`](https://github.com/the-guild-org/docs/commit/2058beb5f1bdb5a1784fc9322a9ff842daf8c073)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`search-insights@2.9.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.9.0) (from
+    `2.8.3`, in `dependencies`)
+
+- [#1302](https://github.com/the-guild-org/docs/pull/1302)
+  [`0298704`](https://github.com/the-guild-org/docs/commit/02987041b747b2086906159f748a49e59ab93650)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.7` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.6`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.7` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.6`, in `dependencies`)
+
+- [#1304](https://github.com/the-guild-org/docs/pull/1304)
+  [`46844a8`](https://github.com/the-guild-org/docs/commit/46844a88613c869ee4cf3648da8d34d8980da8d5)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.8` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.7`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.8` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.7`, in `dependencies`)
+
+- [#1320](https://github.com/the-guild-org/docs/pull/1320)
+  [`cbea662`](https://github.com/the-guild-org/docs/commit/cbea662f02b2f845845a5b67fe740e3e9329e3e4)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+  - Updated dependency [`nextra@3.0.0-alpha.10` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.8`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.10` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.8`, in `dependencies`)
+
 ## 6.0.2
 
 ### Patch Changes
