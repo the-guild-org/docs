@@ -84,7 +84,6 @@
   },
   "pnpm": {
     "overrides": {
-      "esbuild": "^0.19.3",
       "hast-util-to-estree": "^2.3.3",
       "@theguild/remark-npm2yarn": "workspace:*",
       "@theguild/remark-mermaid": "workspace:*"
