@@ -87,7 +87,7 @@
   "devDependencies": {
     "@theguild/algolia": "workspace:*",
     "@theguild/editor": "workspace:*",
-    "@types/dedent": "0.7.0",
+    "@types/dedent": "0.7.1",
     "@types/react-dom": "18.2.13",
     "@types/semver": "7.5.4",
     "dedent": "0.7.0",
