@@ -29,7 +29,7 @@
   "devDependencies": {
     "@types/mdast": "4.0.2",
     "nextra": "3.0.0-alpha.10",
-    "unified": "11.0.3"
+    "unified": "11.0.4"
   },
   "publishConfig": {
     "access": "public"

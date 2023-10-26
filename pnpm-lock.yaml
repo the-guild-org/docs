@@ -357,8 +357,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0
       unified:
-        specifier: 11.0.3
-        version: 11.0.3
+        specifier: 11.0.4
+        version: 11.0.4
 
   packages/remark-npm2yarn:
     dependencies:
@@ -376,8 +376,8 @@ importers:
         specifier: 3.0.0-alpha.10
         version: 3.0.0-alpha.10(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
       unified:
-        specifier: 11.0.3
-        version: 11.0.3
+        specifier: 11.0.4
+        version: 11.0.4
 
   website:
     dependencies:
@@ -16721,7 +16721,7 @@ packages:
       '@types/mdast': 4.0.2
       mdast-util-math: 3.0.0
       micromark-extension-math: 3.0.0
-      unified: 11.0.3
+      unified: 11.0.4
     transitivePeerDependencies:
       - supports-color
 
@@ -18694,8 +18694,8 @@ packages:
       trough: 2.1.0
       vfile: 5.3.5
 
-  /unified@11.0.3:
-    resolution: {integrity: sha512-jlCV402P+YDcFcB2VcN/n8JasOddqIiaxv118wNBoZXEhOn+lYG7BR4Bfg2BwxvlK58dwbuH2w7GX2esAjL6Mg==}
+  /unified@11.0.4:
+    resolution: {integrity: sha512-apMPnyLjAX+ty4OrNap7yumyVAMlKx5IWU2wlzzUdYJO9A8f1p9m/gywF/GM2ZDFcjQPrx59Mc90KwmxsoklxQ==}
     dependencies:
       '@types/unist': 3.0.0
       bail: 2.0.2
