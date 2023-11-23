@@ -21,6 +21,7 @@ import {
   WhatsAppLogo,
   WSLogo,
   YogaLogo,
+  HeltinLogo,
 } from './logos';
 
 export type ProductType =
@@ -43,7 +44,8 @@ export type ProductType =
   | 'KITQL'
   | 'SSE'
   | 'WS'
-  | 'FETS';
+  | 'FETS'
+  | 'HELTIN';
 
 export const PRODUCTS: Record<
   ProductType,
@@ -195,5 +197,12 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/sse',
     logo: SSELogo,
     primaryColor: '#08e045',
+  },
+  HELTIN: {
+    name: 'heltin',
+    title: 'Interdisciplinary registry for a holistic view on mental health',
+    href: 'https://the-guild.dev/heltin',
+    logo: HeltinLogo,
+    primaryColor: '#1d90ff',
   },
 };
