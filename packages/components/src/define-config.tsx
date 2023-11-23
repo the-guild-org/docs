@@ -19,7 +19,9 @@ export function defineConfig({
 
   const product = PRODUCTS[originalSiteName as ProductType];
   const siteName = product
-    ? `${['ANGULAR', 'KITQL', 'FETS'].includes(originalSiteName) ? '' : 'GraphQL '}${product.name}`
+    ? `${['ANGULAR', 'KITQL', 'FETS', 'HELTIN'].includes(originalSiteName) ? '' : 'GraphQL '}${
+        product.name
+      }`
     : originalSiteName;
   const siteUrl = process.env.SITE_URL;
 
