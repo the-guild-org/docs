@@ -200,7 +200,7 @@ export const PRODUCTS: Record<
   },
   HELTIN: {
     name: 'heltin',
-    title: 'Interdisciplinary registry for a holistic view on mental health',
+    title: 'Mental healthcare registry',
     href: 'https://the-guild.dev/heltin',
     logo: HeltinLogo,
     primaryColor: '#1d90ff',
