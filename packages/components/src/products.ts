@@ -8,6 +8,7 @@ import {
   EnvelopLogo,
   ESLintLogo,
   FetsLogo,
+  HeltinLogo,
   HiveLogo,
   InspectorLogo,
   KitQLLogo,
@@ -21,7 +22,6 @@ import {
   WhatsAppLogo,
   WSLogo,
   YogaLogo,
-  HeltinLogo,
 } from './logos';
 
 export type ProductType =
