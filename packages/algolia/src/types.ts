@@ -18,7 +18,8 @@ export type AlgoliaRecordSource =
   | 'Tools'
   | 'WhatsApp'
   | 'WS'
-  | 'Yoga';
+  | 'Yoga'
+  | 'heltin';
 
 export interface AlgoliaRecord {
   objectID: string;

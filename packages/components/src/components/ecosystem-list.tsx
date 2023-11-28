@@ -38,6 +38,10 @@ const productCategories = [
     title: 'Build great user experience',
     items: [PRODUCTS.ANGULAR, PRODUCTS.KITQL],
   },
+  {
+    title: 'Our solutions',
+    items: [PRODUCTS.HELTIN],
+  },
 ];
 
 export const EcosystemList = forwardRef<HTMLDivElement>((_, forwardedRef): ReactElement => {
