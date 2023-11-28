@@ -1,5 +1,13 @@
 # @theguild/algolia
 
+## 2.1.0
+
+### Minor Changes
+
+- [#1344](https://github.com/the-guild-org/docs/pull/1344)
+  [`5ccc42d`](https://github.com/the-guild-org/docs/commit/5ccc42d177be12764bbbe651f225aba1abeaca5b)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - Add heltin
+
 ## 2.0.0
 
 ### Major Changes
