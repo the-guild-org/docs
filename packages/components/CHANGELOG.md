@@ -1,5 +1,21 @@
 # @theguild/components
 
+## 6.1.1
+
+### Patch Changes
+
+- [#1346](https://github.com/the-guild-org/docs/pull/1346)
+  [`63d31b7`](https://github.com/the-guild-org/docs/commit/63d31b7deb435f92b63c8900c3c6be9a5604c109)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - dependencies updates:
+
+  - Updated dependency [`next@^13 || ^14` ↗︎](https://www.npmjs.com/package/next/v/13.0.0) (from
+    `^12.3.1 || ^13.0.0`, in `peerDependencies`)
+
+- [#1346](https://github.com/the-guild-org/docs/pull/1346)
+  [`63d31b7`](https://github.com/the-guild-org/docs/commit/63d31b7deb435f92b63c8900c3c6be9a5604c109)
+  Thanks [@enisdenjo](https://github.com/enisdenjo)! - List Next 14 in peer-deps since it is also
+  supported
+
 ## 6.1.0
 
 ### Minor Changes
