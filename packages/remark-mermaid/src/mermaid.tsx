@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useId, useState } from 'react';
+import { ReactElement, useEffect, useId, useState, useRef } from 'react';
 import mermaid, { MermaidConfig } from 'mermaid';
 
 export function Mermaid({ chart }: { chart: string }): ReactElement {
