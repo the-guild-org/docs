@@ -67,8 +67,8 @@ importers:
         specifier: 18.2.31
         version: 18.2.31
       '@types/react-paginate':
-        specifier: 7.1.3
-        version: 7.1.3
+        specifier: 7.1.4
+        version: 7.1.4
       '@types/webpack':
         specifier: 5.28.4
         version: 5.28.4(@swc/core@1.3.11)(esbuild@0.18.20)
@@ -6402,8 +6402,8 @@ packages:
     dependencies:
       '@types/react': 18.2.31
 
-  /@types/react-paginate@7.1.3:
-    resolution: {integrity: sha512-YfGEduO5Y5VqsyWqLcgYPffqnczzpMlzy9Xpb+VTY3JxW3xmFgJhjObEDekKLAv97V/iX6m5NWtDvfcWQJZ1rw==}
+  /@types/react-paginate@7.1.4:
+    resolution: {integrity: sha512-6fqZvDzRJHubOGl6c7cGFC9ysgQSWYy0Gpus9HjORpydlcXgPnT8x+aKgqwCdtpZrRTwcBz2Q7JWAOYaRrsXGg==}
     dependencies:
       '@types/react': 18.2.31
     dev: true
