@@ -39,7 +39,7 @@
   "devDependencies": {
     "@types/mdast": "4.0.3",
     "react": "18.2.0",
-    "unified": "11.0.3"
+    "unified": "11.0.4"
   },
   "publishConfig": {
     "access": "public"
