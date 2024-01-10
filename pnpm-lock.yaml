@@ -188,8 +188,8 @@ importers:
         specifier: 4.6.13
         version: 4.6.13
       '@types/lodash.sortby':
-        specifier: 4.7.8
-        version: 4.7.8
+        specifier: 4.7.9
+        version: 4.7.9
       '@types/remove-markdown':
         specifier: 0.3.3
         version: 0.3.3
@@ -6305,8 +6305,8 @@ packages:
       '@types/lodash': 4.14.191
     dev: true
 
-  /@types/lodash.sortby@4.7.8:
-    resolution: {integrity: sha512-+JxRnAqZRZQ/lgvtOowq/iyAMtHjO06eyzSFkuGLos/n7RuJy1oqZg/ucxvraAQYb+DNnq3LToZxubJclTxhvA==}
+  /@types/lodash.sortby@4.7.9:
+    resolution: {integrity: sha512-PDmjHnOlndLS59GofH0pnxIs+n9i4CWeXGErSB5JyNFHu2cmvW6mQOaUKjG8EDPkni14IgF8NsRW8bKvFzTm9A==}
     dependencies:
       '@types/lodash': 4.14.191
     dev: true
