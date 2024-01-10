@@ -38,7 +38,7 @@
     "@types/jest-image-snapshot": "6.2.2",
     "@types/react": "18.2.31",
     "@types/react-paginate": "7.1.4",
-    "@types/webpack": "5.28.4",
+    "@types/webpack": "5.28.5",
     "concurrently": "8.2.2",
     "css-loader": "6.8.1",
     "eslint": "8.52.0",
