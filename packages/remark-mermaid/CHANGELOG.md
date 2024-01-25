@@ -1,5 +1,14 @@
 # @theguild/remark-mermaid
 
+## 0.0.6
+
+### Patch Changes
+
+- [#1348](https://github.com/the-guild-org/docs/pull/1348)
+  [`c736e8c`](https://github.com/the-guild-org/docs/commit/c736e8c2a6c0ed56a03da7f923a4933dee229908)
+  Thanks [@tomasreimers](https://github.com/tomasreimers)! - Pass the container ref to mermaid
+  render, add 'use client' directive for mermaid component
+
 ## 0.0.5
 
 ### Patch Changes
