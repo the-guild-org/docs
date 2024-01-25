@@ -27,9 +27,9 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@types/mdast": "4.0.2",
+    "@types/mdast": "4.0.3",
     "nextra": "3.0.0-alpha.10",
-    "unified": "11.0.3"
+    "unified": "11.0.4"
   },
   "publishConfig": {
     "access": "public"
