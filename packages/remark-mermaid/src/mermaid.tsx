@@ -1,9 +1,12 @@
-import { ReactElement, useEffect, useId, useState } from 'react';
+'use client';
+
+import { ReactElement, useEffect, useId, useRef, useState } from 'react';
 import mermaid, { MermaidConfig } from 'mermaid';
 
 export function Mermaid({ chart }: { chart: string }): ReactElement {
   const id = useId();
   const [svg, setSvg] = useState('');
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const htmlElement = document.documentElement;
@@ -34,6 +37,7 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
           // strip invalid characters for `id` attribute
           id.replaceAll(':', ''),
           chart,
+          containerRef.current || undefined,
         );
         setSvg(svg);
       } catch (error) {
@@ -45,5 +49,5 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- when chart code changes, we need to re-render
   }, [chart]);
 
-  return <div dangerouslySetInnerHTML={{ __html: svg }} />;
+  return <div ref={containerRef} dangerouslySetInnerHTML={{ __html: svg }} />;
 }
