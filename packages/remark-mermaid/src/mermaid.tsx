@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useId, useState, useRef } from 'react';
+import { ReactElement, useEffect, useId, useRef, useState } from 'react';
 import mermaid, { MermaidConfig } from 'mermaid';
 
 export function Mermaid({ chart }: { chart: string }): ReactElement {
@@ -35,7 +35,7 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
           // strip invalid characters for `id` attribute
           id.replaceAll(':', ''),
           chart,
-          containerRef.current || undefined
+          containerRef.current || undefined,
         );
         setSvg(svg);
       } catch (error) {
