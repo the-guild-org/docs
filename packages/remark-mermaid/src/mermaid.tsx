@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactElement, useEffect, useId, useRef, useState } from 'react';
-import mermaid, { MermaidConfig } from 'mermaid';
+import { MermaidConfig } from 'mermaid';
 
 export function Mermaid({ chart }: { chart: string }): ReactElement {
   const id = useId();
@@ -30,6 +30,8 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
         themeCSS: 'margin: 1.5rem auto 0;',
         theme: isDarkTheme ? 'dark' : 'default',
       };
+
+      const { default: mermaid } = await import('mermaid');
 
       try {
         mermaid.initialize(mermaidConfig);
