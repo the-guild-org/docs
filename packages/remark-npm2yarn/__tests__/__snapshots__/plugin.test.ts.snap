@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`remark-npm2yarn > should convert to tabs 1`] = `
-"/*@jsxRuntime automatic @jsxImportSource react*/
+"\\"use strict\\";
 const {jsx: _jsx, jsxs: _jsxs} = arguments[0];
 const {useMDXComponents: _provideComponents} = arguments[0];
 const title = \\"\\";
@@ -10,11 +10,13 @@ function useTOC(props) {
   return [];
 }
 function _createMdxContent(props) {
-  const _components = Object.assign({
-    pre: \\"pre\\",
+  const _components = {
     code: \\"code\\",
-    span: \\"span\\"
-  }, _provideComponents(), props.components), {$Tabs} = _components;
+    pre: \\"pre\\",
+    span: \\"span\\",
+    ..._provideComponents(),
+    ...props.components
+  }, {$Tabs} = _components;
   if (!$Tabs) _missingMdxReference(\\"$Tabs\\", true);
   if (!$Tabs.Tab) _missingMdxReference(\\"$Tabs.Tab\\", true);
   return _jsxs($Tabs, {
@@ -22,7 +24,9 @@ function _createMdxContent(props) {
     storageKey: \\"testKey\\",
     children: [_jsx($Tabs.Tab, {
       children: _jsx(_components.pre, {
+        tabIndex: \\"0\\",
         \\"data-language\\": \\"sh\\",
+        \\"data-word-wrap\\": \\"\\",
         \\"data-filename\\": \\"Terminal\\",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
@@ -37,26 +41,16 @@ function _createMdxContent(props) {
                 \\"--shiki-light\\": \\"#032F62\\",
                 \\"--shiki-dark\\": \\"#9ECBFF\\"
               },
-              children: \\" i\\"
-            }), _jsx(_components.span, {
-              style: {
-                \\"--shiki-light\\": \\"#005CC5\\",
-                \\"--shiki-dark\\": \\"#79B8FF\\"
-              },
-              children: \\" -D\\"
-            }), _jsx(_components.span, {
-              style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
-              },
-              children: \\" @graphql-eslint/eslint-plugin\\"
+              children: \\" i -D @graphql-eslint/eslint-plugin\\"
             })]
           })
         })
       })
     }), _jsx($Tabs.Tab, {
       children: _jsx(_components.pre, {
+        tabIndex: \\"0\\",
         \\"data-language\\": \\"sh\\",
+        \\"data-word-wrap\\": \\"\\",
         \\"data-filename\\": \\"Terminal\\",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
@@ -71,26 +65,16 @@ function _createMdxContent(props) {
                 \\"--shiki-light\\": \\"#032F62\\",
                 \\"--shiki-dark\\": \\"#9ECBFF\\"
               },
-              children: \\" add\\"
-            }), _jsx(_components.span, {
-              style: {
-                \\"--shiki-light\\": \\"#005CC5\\",
-                \\"--shiki-dark\\": \\"#79B8FF\\"
-              },
-              children: \\" -D\\"
-            }), _jsx(_components.span, {
-              style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
-              },
-              children: \\" @graphql-eslint/eslint-plugin\\"
+              children: \\" add -D @graphql-eslint/eslint-plugin\\"
             })]
           })
         })
       })
     }), _jsx($Tabs.Tab, {
       children: _jsx(_components.pre, {
+        tabIndex: \\"0\\",
         \\"data-language\\": \\"sh\\",
+        \\"data-word-wrap\\": \\"\\",
         \\"data-filename\\": \\"Terminal\\",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
@@ -105,26 +89,16 @@ function _createMdxContent(props) {
                 \\"--shiki-light\\": \\"#032F62\\",
                 \\"--shiki-dark\\": \\"#9ECBFF\\"
               },
-              children: \\" add\\"
-            }), _jsx(_components.span, {
-              style: {
-                \\"--shiki-light\\": \\"#005CC5\\",
-                \\"--shiki-dark\\": \\"#79B8FF\\"
-              },
-              children: \\" --dev\\"
-            }), _jsx(_components.span, {
-              style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
-              },
-              children: \\" @graphql-eslint/eslint-plugin\\"
+              children: \\" add --dev @graphql-eslint/eslint-plugin\\"
             })]
           })
         })
       })
     }), _jsx($Tabs.Tab, {
       children: _jsx(_components.pre, {
+        tabIndex: \\"0\\",
         \\"data-language\\": \\"sh\\",
+        \\"data-word-wrap\\": \\"\\",
         \\"data-filename\\": \\"Terminal\\",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
@@ -139,19 +113,7 @@ function _createMdxContent(props) {
                 \\"--shiki-light\\": \\"#032F62\\",
                 \\"--shiki-dark\\": \\"#9ECBFF\\"
               },
-              children: \\" add\\"
-            }), _jsx(_components.span, {
-              style: {
-                \\"--shiki-light\\": \\"#005CC5\\",
-                \\"--shiki-dark\\": \\"#79B8FF\\"
-              },
-              children: \\" --dev\\"
-            }), _jsx(_components.span, {
-              style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
-              },
-              children: \\" @graphql-eslint/eslint-plugin\\"
+              children: \\" add --dev @graphql-eslint/eslint-plugin\\"
             })]
           })
         })
