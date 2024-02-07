@@ -40,7 +40,7 @@
     "@types/react-paginate": "7.1.4",
     "@types/webpack": "5.28.5",
     "concurrently": "8.2.2",
-    "css-loader": "6.8.1",
+    "css-loader": "6.10.0",
     "eslint": "8.52.0",
     "eslint-plugin-storybook": "0.6.15",
     "eslint-plugin-tailwindcss": "3.13.1",
