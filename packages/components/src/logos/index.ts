@@ -11,6 +11,7 @@ export { ReactComponent as InspectorLogo } from './inspector.svg';
 export { ReactComponent as KitQLLogo } from './kitql.svg';
 export { ReactComponent as MeshLogo } from './mesh.svg';
 export { ReactComponent as ModulesLogo } from './modules.svg';
+export { ReactComponent as NextraLogo } from './nextra.svg';
 export { ReactComponent as ScalarsLogo } from './scalars.svg';
 export { ReactComponent as ShieldLogo } from './shield.svg';
 export { ReactComponent as SofaLogo } from './sofa.svg';

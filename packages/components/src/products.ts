@@ -14,6 +14,7 @@ import {
   KitQLLogo,
   MeshLogo,
   ModulesLogo,
+  NextraLogo,
   ScalarsLogo,
   SofaLogo,
   SSELogo,
@@ -45,7 +46,8 @@ export type ProductType =
   | 'SSE'
   | 'WS'
   | 'FETS'
-  | 'HELTIN';
+  | 'HELTIN'
+  | 'NEXTRA';
 
 export const PRODUCTS: Record<
   ProductType,
@@ -204,5 +206,13 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/heltin',
     logo: HeltinLogo,
     primaryColor: '#1d90ff',
+  },
+  NEXTRA: {
+    name: 'Nextra',
+    title:
+      'Simple, powerful and flexible site generation framework with everything you love from Next.js',
+    href: 'https://nextra.site',
+    logo: NextraLogo,
+    primaryColor: '#000',
   },
 };
