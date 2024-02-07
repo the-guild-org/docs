@@ -1,5 +1,5 @@
-import { ReactElement } from 'react'
-import { AlgoliaRecordSource } from '@theguild/algolia'
+import { ReactElement } from 'react';
+import { AlgoliaRecordSource } from '@theguild/algolia';
 import {
   AngularLogo,
   CodeGeneratorLogo,
@@ -14,6 +14,7 @@ import {
   KitQLLogo,
   MeshLogo,
   ModulesLogo,
+  NextraLogo,
   ScalarsLogo,
   SofaLogo,
   SSELogo,
@@ -22,8 +23,7 @@ import {
   WhatsAppLogo,
   WSLogo,
   YogaLogo,
-  NextraLogo
-} from './logos'
+} from './logos';
 
 export type ProductType =
   | 'HIVE'
@@ -47,7 +47,7 @@ export type ProductType =
   | 'WS'
   | 'FETS'
   | 'HELTIN'
-  | 'NEXTRA'
+  | 'NEXTRA';
 
 export const PRODUCTS: Record<
   ProductType,
@@ -209,9 +209,10 @@ export const PRODUCTS: Record<
   },
   NEXTRA: {
     name: 'Nextra',
-    title: 'Simple, powerful and flexible site generation framework with everything you love from Next.js',
+    title:
+      'Simple, powerful and flexible site generation framework with everything you love from Next.js',
     href: 'https://nextra.site',
     logo: NextraLogo,
     primaryColor: '#000',
   },
-}
+};
