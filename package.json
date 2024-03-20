@@ -2,9 +2,10 @@
   "name": "the-guild-docs-monorepo",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.14.0",
+  "packageManager": "pnpm@8.15.5",
   "engines": {
-    "node": ">=18"
+    "node": ">=20",
+    "pnpm": ">=8.15"
   },
   "scripts": {
     "build": "turbo run build",
