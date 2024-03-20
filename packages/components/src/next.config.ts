@@ -32,7 +32,7 @@ export function withGuildDocs({
     mdxOptions: {
       remarkPlugins: defaultRemarkPlugins,
     },
-    search: false,
+    search: true,
     ...nextraConfig,
     themeConfig: nextraConfig?.themeConfig || './theme.config.tsx',
   });
