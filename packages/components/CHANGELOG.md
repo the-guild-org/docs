@@ -1,5 +1,30 @@
 # @theguild/components
 
+## 6.3.0
+
+### Minor Changes
+
+- [`2515e45`](https://github.com/the-guild-org/docs/commit/2515e4598a9cfab26ff24cd7648e45f3017550cc)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - remove old conf banner
+
+### Patch Changes
+
+- [#1326](https://github.com/the-guild-org/docs/pull/1326)
+  [`4b33a63`](https://github.com/the-guild-org/docs/commit/4b33a63a07de257b7650c90779ad1ddf4b9f1983)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+
 ## 6.2.0
 
 ### Minor Changes
