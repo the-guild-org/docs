@@ -26,22 +26,6 @@ export function defineConfig({
   const siteUrl = process.env.SITE_URL;
 
   return {
-    banner: {
-      content: (
-        <span className="text-xs">
-          Catch the highlights of GraphQLConf 2023!{' '}
-          <Anchor href="https://graphql.org/conf/schedule" className="underline">
-            Click for recordings
-          </Anchor>
-          . Or check out our{' '}
-          <Anchor href="https://the-guild.dev/blog/graphqlconf-2023-recap" className="underline">
-            recap blog post
-          </Anchor>
-          .
-        </span>
-      ),
-      key: 'graphql-conf-2023',
-    },
     editLink: {
       content: 'Edit this page on GitHub',
     },
