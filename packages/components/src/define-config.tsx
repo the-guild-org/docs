@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
-import { Anchor, FooterExtended, Header, mdxComponents } from './components';
+import { FooterExtended, Header, mdxComponents } from './components';
 import { PRODUCTS, ProductType } from './products';
 
 export function defineConfig({
