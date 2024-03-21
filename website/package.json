@@ -20,7 +20,7 @@
   "devDependencies": {
     "@theguild/tailwind-config": "0.3.2",
     "@types/react": "18.2.67",
-    "typescript": "5.3.3"
+    "typescript": "5.4.3"
   },
   "nextBundleAnalysis": {
     "budget": null,
