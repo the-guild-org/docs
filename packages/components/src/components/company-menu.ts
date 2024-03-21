@@ -2,7 +2,6 @@ import { MenuItem, PageItem } from 'nextra/normalize-pages';
 
 export function addGuildCompanyMenu(items: (PageItem | MenuItem)[]): (PageItem | MenuItem)[] {
   return [
-    ...items,
     {
       type: 'menu',
       title: 'Company',
@@ -31,5 +30,6 @@ export function addGuildCompanyMenu(items: (PageItem | MenuItem)[]): (PageItem |
       name: 'company',
       route: '#',
     } satisfies MenuItem,
+    ...items,
   ];
 }
