@@ -36,14 +36,6 @@ export function defineConfig({
     footer: {
       component: <FooterExtended />,
     },
-    // navbar: {
-    //   component: props => (
-    //     <>
-    //       <Header accentColor="#1cc8ee" />
-    //       <Navbar {...props} />
-    //     </>
-    //   ),
-    // },
     sidebar: {
       defaultMenuCollapseLevel: 1,
       toggleButton: true,
