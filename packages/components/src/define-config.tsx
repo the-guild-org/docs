@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
-import { Anchor, FooterExtended, mdxComponents } from './components';
-import { GuildLogo, TheGuild } from './logos';
+import { FooterExtended, mdxComponents } from './components';
+import { GuildUnifiedLogo } from './components/guild-navvar';
+import { ThemeSwitcherButton } from './components/theme-switcher';
 
 export function defineConfig({
   websiteName,
@@ -98,43 +99,13 @@ export function defineConfig({
     },
     logoLink: false,
     logo: (
-      <div className="flex items-center justify-center py-2">
-        <Anchor
-          title="View our website"
-          className="flex items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
-          href="https://the-guild.dev"
-          target="_blank"
-          sameSite={false}
-        >
-          <GuildLogo className="hidden h-9 w-9 md:block" />
-          <TheGuild className="hidden w-11 md:block" />
-        </Anchor>
-        <div className="hidden cursor-default select-none p-6 md:block">
-          <svg
-            width="10"
-            height="22"
-            viewBox="0 0 10 22"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M8.6001 0.833313L0.600097 20.8333" stroke="#0B0D11" />
-          </svg>
-        </div>
-        {logoComponent ? (
-          <Anchor
-            title={websiteName}
-            className="flex items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
-            href="/"
-          >
-            {typeof logoComponent === 'function' ? logoComponent({}) : logoComponent}
-            <div>
-              <h1 className="text-sm font-bold leading-tight">{websiteName}</h1>
-              <h2 className="hidden text-xs sm:block">{description}</h2>
-            </div>
-          </Anchor>
-        ) : null}
-      </div>
+      <GuildUnifiedLogo description={description} title={websiteName}>
+        {logoComponent}
+      </GuildUnifiedLogo>
     ),
+    navbar: {
+      extraContent: <ThemeSwitcherButton />,
+    },
     ...config,
     components: {
       ...mdxComponents,
