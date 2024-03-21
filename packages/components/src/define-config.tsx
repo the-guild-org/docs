@@ -1,15 +1,14 @@
 import { useRouter } from 'next/router';
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
-import { FooterExtended, mdxComponents } from './components';
-import { PRODUCTS, ProductType } from './products';
+import { Anchor, FooterExtended, mdxComponents } from './components';
+import { GuildLogo, TheGuild } from './logos';
 
 export function defineConfig({
-  siteName: originalSiteName,
+  websiteName,
+  description,
+  logo,
   ...config
-}: DocsThemeConfig & { siteName: string }): DocsThemeConfig {
-  if (!originalSiteName) {
-    throw new Error('Missing required "siteName" property');
-  }
+}: DocsThemeConfig & { websiteName: string; description: string }): DocsThemeConfig {
   if (!config.docsRepositoryBase) {
     throw new Error('Missing required "docsRepositoryBase" property');
   }
@@ -17,13 +16,8 @@ export function defineConfig({
   const url = new URL(config.docsRepositoryBase as string);
   const [, org, repoName] = url.pathname.split('/');
 
-  const product = PRODUCTS[originalSiteName as ProductType];
-  const siteName = product
-    ? `${['ANGULAR', 'KITQL', 'FETS', 'HELTIN'].includes(originalSiteName) ? '' : 'GraphQL '}${
-        product.name
-      }`
-    : originalSiteName;
   const siteUrl = process.env.SITE_URL;
+  const logoComponent = logo || null;
 
   return {
     editLink: {
@@ -48,7 +42,7 @@ export function defineConfig({
       const { asPath } = useRouter();
 
       const {
-        description = `${siteName} Documentation`,
+        description = `${websiteName} Documentation`,
         type = 'website',
         canonical = siteUrl &&
           `${siteUrl}${
@@ -63,12 +57,12 @@ export function defineConfig({
               : // other pages
                 asPath
           }`,
-        image = `https://og-image.the-guild.dev/?product=${originalSiteName}&title=${encodeURI(
+        image = `https://og-image.the-guild.dev/?product=${websiteName}&title=${encodeURI(
           pageTitle,
         )}`,
       } = frontMatter;
 
-      const title = `${pageTitle} – ${siteName}`;
+      const title = `${pageTitle} (${websiteName})`;
 
       return (
         <>
@@ -92,24 +86,54 @@ export function defineConfig({
           <meta name="twitter:creator" content="@TheGuildDev" />
 
           <meta property="og:type" content={type} />
-          <meta property="og:site_name" content={siteName} />
+          <meta property="og:site_name" content={websiteName} />
           <meta property="og:image" content={image} />
           <meta property="og:image:alt" content={pageTitle} />
 
-          <meta content={siteName} name="apple-mobile-web-app-title" />
-          <meta content={siteName} name="application-name" />
+          <meta content={websiteName} name="apple-mobile-web-app-title" />
+          <meta content={websiteName} name="application-name" />
           <meta name="robots" content="index,follow" />
         </>
       );
     },
-    logo: product?.logo && (
-      <>
-        <product.logo className="mr-1.5 h-9 w-9" />
-        <div>
-          <h1 className="text-sm font-medium">{siteName}</h1>
-          <h2 className="hidden text-xs sm:block">{product.title}</h2>
+    logoLink: false,
+    logo: (
+      <div className="flex items-center justify-center py-2">
+        <Anchor
+          title="View our website"
+          className="flex items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
+          href="https://the-guild.dev"
+          target="_blank"
+          sameSite={false}
+        >
+          <GuildLogo className="hidden h-9 w-9 md:block" />
+          <TheGuild className="hidden w-11 md:block" />
+        </Anchor>
+        <div className="hidden cursor-default select-none p-6 md:block">
+          <svg
+            width="10"
+            height="22"
+            viewBox="0 0 10 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M8.6001 0.833313L0.600097 20.8333" stroke="#0B0D11" />
+          </svg>
         </div>
-      </>
+        {logoComponent ? (
+          <Anchor
+            title={websiteName}
+            className="flex items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
+            href="/"
+          >
+            {typeof logoComponent === 'function' ? logoComponent({}) : logoComponent}
+            <div>
+              <h1 className="text-sm font-bold leading-tight">{websiteName}</h1>
+              <h2 className="hidden text-xs sm:block">{description}</h2>
+            </div>
+          </Anchor>
+        ) : null}
+      </div>
     ),
     ...config,
     components: {
