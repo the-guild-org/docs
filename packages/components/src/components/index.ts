@@ -18,5 +18,6 @@ export { mdxComponents } from './mdx-components';
 export { Nav } from './nav';
 export { Newsletter } from './newsletter';
 export { NPMBadge } from './npm-badge';
-export { SearchBar } from './search-bar-v2';
 export { Tabs } from './tabs';
+export { GuildUnifiedLogo } from './guild-navvar';
+export { ThemeSwitcherButton } from './theme-switcher';

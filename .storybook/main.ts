@@ -1,7 +1,7 @@
 import path from 'node:path';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import { Configuration } from 'webpack';
-import { StorybookConfig } from '@storybook/core-common';
+import { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
   stories: ['../packages/*/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
@@ -29,12 +29,7 @@ const config: StorybookConfig = {
     reactDocgen: false,
   },
   env(config: Record<string, unknown>) {
-    return {
-      ...config,
-      NEXT_PUBLIC_ALGOLIA_APP_ID: 'ANRJKXZTRW',
-      NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY: 'a5522203ca95675199cc21edf09e6d75',
-      NEXT_PUBLIC_ALGOLIA_INDEX_NAME: 'searchv2_main',
-    };
+    return config;
   },
   webpackFinal(config: Configuration) {
     config.resolve ||= {};
