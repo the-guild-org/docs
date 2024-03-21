@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
-import { FooterExtended, Header, mdxComponents } from './components';
+import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
+import { FooterExtended, mdxComponents } from './components';
 import { PRODUCTS, ProductType } from './products';
 
 export function defineConfig({
@@ -36,17 +36,14 @@ export function defineConfig({
     footer: {
       component: <FooterExtended />,
     },
-    navbar: {
-      component: props => (
-        <>
-          <Header accentColor="#1cc8ee" />
-          <Navbar {...props} />
-        </>
-      ),
-    },
-    search: {
-      component: null,
-    },
+    // navbar: {
+    //   component: props => (
+    //     <>
+    //       <Header accentColor="#1cc8ee" />
+    //       <Navbar {...props} />
+    //     </>
+    //   ),
+    // },
     sidebar: {
       defaultMenuCollapseLevel: 1,
       toggleButton: true,

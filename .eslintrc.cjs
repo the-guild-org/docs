@@ -53,7 +53,6 @@ module.exports = {
     },
     {
       files: ['packages/**'],
-      excludedFiles: ['packages/algolia/**'],
       rules: {
         'import/extensions': ['error', { js: 'never', json: 'always' }],
       },

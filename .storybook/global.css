@@ -1,7 +1,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import '@algolia/autocomplete-theme-classic';
 @import '../packages/components/search-bar-v2.css';
 
 input::-webkit-search-decoration,
