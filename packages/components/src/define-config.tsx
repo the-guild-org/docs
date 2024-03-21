@@ -69,10 +69,10 @@ export function defineConfig({
               ? // homepage
                 ''
               : asPath.startsWith('/?')
-              ? // homepage with search params (remove just slash)
-                asPath.slice(1)
-              : // other pages
-                asPath
+                ? // homepage with search params (remove just slash)
+                  asPath.slice(1)
+                : // other pages
+                  asPath
           }`,
         image = `https://og-image.the-guild.dev/?product=${originalSiteName}&title=${encodeURI(
           pageTitle,
