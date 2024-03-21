@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
-import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
+import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
 import { FooterExtended, mdxComponents } from './components';
+import { addGuildCompanyMenu } from './components/company-menu';
 import { GuildUnifiedLogo } from './components/guild-navvar';
 import { ThemeSwitcherButton } from './components/theme-switcher';
 
@@ -105,6 +106,7 @@ export function defineConfig({
     ),
     navbar: {
       extraContent: <ThemeSwitcherButton />,
+      component: props => <Navbar items={addGuildCompanyMenu(props.items)} />,
     },
     ...config,
     components: {
