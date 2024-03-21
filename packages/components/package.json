@@ -69,7 +69,7 @@
     "@algolia/autocomplete-plugin-algolia-insights": "1.17.0",
     "@algolia/autocomplete-plugin-query-suggestions": "1.17.0",
     "@algolia/autocomplete-theme-classic": "1.17.0",
-    "@giscus/react": "2.3.0",
+    "@giscus/react": "2.4.0",
     "@next/bundle-analyzer": "13.4.2",
     "@radix-ui/react-navigation-menu": "1.1.4",
     "algoliasearch": "4.19.1",
