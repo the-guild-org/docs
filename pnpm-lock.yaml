@@ -190,8 +190,8 @@ importers:
         specifier: 0.1.0
         version: 0.1.0
       search-insights:
-        specifier: 2.9.0
-        version: 2.9.0
+        specifier: 2.13.0
+        version: 2.13.0
       semver:
         specifier: ^7.3.8
         version: 7.3.8
@@ -18883,8 +18883,8 @@ packages:
       compute-scroll-into-view: 3.1.0
     dev: false
 
-  /search-insights@2.9.0:
-    resolution: {integrity: sha512-bkWW9nIHOFkLwjQ1xqVaMbjjO5vhP26ERsH9Y3pKr8imthofEFIxlnOabkmGcw6ksRj9jWidcI65vvjJH/nTGg==}
+  /search-insights@2.13.0:
+    resolution: {integrity: sha512-Orrsjf9trHHxFRuo9/rzm0KIWmgzE8RMlZMzuhZOJ01Rnz3D0YBAe+V6473t6/H6c7irs6Lt48brULAiRWb3Vw==}
     dev: false
 
   /section-matter@1.0.0:
