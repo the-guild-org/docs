@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { Meta, Story } from '@storybook/react';
 import { ILink } from '../../types/components';
 import { FooterExtended } from '../footer-extended';
-import { Header } from '../header';
+import { GuildUnifiedLogo } from '../guild-navvar';
 import { HeroGradient } from '../hero-gradient';
 import { InfoList } from '../info-list';
 
@@ -30,7 +30,7 @@ const Template: Story = ({ page }): ReactElement => {
 
   return (
     <>
-      <Header accentColor="#184BE6" activeLink="/open-source" />
+      <GuildUnifiedLogo accentColor="#184BE6" activeLink="/open-source" />
       {pages[page]}
       <FooterExtended {...footerData} />
     </>

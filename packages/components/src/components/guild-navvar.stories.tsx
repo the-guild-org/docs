@@ -1,10 +1,10 @@
 import { Meta, Story } from '@storybook/react';
 import { IHeaderProps } from '../types/components';
-import { Header } from './header';
+import { GuildUnifiedLogo } from './guild-navvar';
 
 export default {
   title: 'Components/Headers',
-  component: Header,
+  component: GuildUnifiedLogo,
   argTypes: {
     accentColor: {
       name: 'Accent Color',
@@ -29,7 +29,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IHeaderProps> = args => <Header {...args} />;
+const Template: Story<IHeaderProps> = args => <GuildUnifiedLogo {...args} />;
 
 export const Default = Template.bind({});
 

@@ -1,4 +1,4 @@
-import { DocsThemeConfig, useTheme } from 'nextra-theme-docs';
+import { DocsThemeConfig } from 'nextra-theme-docs';
 import { GuildLogo, TheGuild } from '../logos';
 import { Anchor } from './anchor';
 
@@ -7,15 +7,13 @@ export function GuildUnifiedLogo(props: {
   title: string;
   description: string;
 }) {
-  const { resolvedTheme } = useTheme();
-
   return (
     <div className="flex items-center justify-center py-2">
       <Anchor
         title="View our website"
         className="flex items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
         href="https://the-guild.dev"
-        target="_blank"
+        target="_self"
         sameSite={false}
       >
         <GuildLogo className="hidden h-9 w-9 md:block" />
@@ -23,22 +21,20 @@ export function GuildUnifiedLogo(props: {
       </Anchor>
       <div className="hidden cursor-default select-none p-6 md:block">
         <svg
+          className="stroke-current dark:fill-gray-100 dark:stroke-gray-100"
           width="10"
           height="22"
           viewBox="0 0 10 22"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M8.6001 0.833313L0.600097 20.8333"
-            stroke={resolvedTheme === 'light' ? '#0B0D11' : 'white'}
-          />
+          <path d="M8.6001 0.833313L0.600097 20.8333" />
         </svg>
       </div>
       {props.children ? (
         <Anchor
           title={props.title}
-          className="flex items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
+          className="flex shrink-0 items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
           href="/"
         >
           {typeof props.children === 'function' ? props.children({}) : props.children}

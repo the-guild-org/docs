@@ -7,7 +7,7 @@ export function ThemeSwitcherButton() {
   return (
     <button
       onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
-      className="mr-1 self-center rounded-sm p-2 outline-none focus-visible:ring"
+      className="self-center rounded-sm p-2 outline-none focus-visible:ring"
     >
       <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
     </button>
