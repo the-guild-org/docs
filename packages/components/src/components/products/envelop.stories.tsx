@@ -13,7 +13,7 @@ import {
 import { CardsColorful } from '../cards-colorful';
 import { FeatureList } from '../feature-list';
 import { FooterExtended } from '../footer-extended';
-import { Header } from '../header';
+import { GuildUnifiedLogo } from '../guild-navvar';
 import { HeroGradient } from '../hero-gradient';
 import { HeroIllustration } from '../hero-illustration';
 import { HeroMarketplace } from '../hero-marketplace';
@@ -55,7 +55,7 @@ const Template: Story = ({ page }): ReactElement => {
 
   return (
     <>
-      <Header accentColor="#ED2E7E" activeLink="/open-source" />
+      <GuildUnifiedLogo accentColor="#ED2E7E" activeLink="/open-source" />
       {pages[page]}
       <FooterExtended />
     </>
