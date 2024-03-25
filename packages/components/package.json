@@ -65,7 +65,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@giscus/react": "2.4.0",
+    "@giscus/react": "3.0.0",
     "@next/bundle-analyzer": "13.4.2",
     "@radix-ui/react-navigation-menu": "1.1.4",
     "clsx": "2.0.0",
