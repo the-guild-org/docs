@@ -8,7 +8,7 @@
     "start": "NODE_ENV=development wrangler dev"
   },
   "dependencies": {
-    "@resvg/resvg-wasm": "2.4.1",
+    "@resvg/resvg-wasm": "2.6.2",
     "@theguild/components": "workspace:*",
     "react": "18.2.0",
     "satori": "0.10.13",
