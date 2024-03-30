@@ -271,8 +271,8 @@ importers:
         version: 0.3.3
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20240320.1
-        version: 4.20240320.1
+        specifier: 4.20240329.0
+        version: 4.20240329.0
       '@types/react':
         specifier: 18.2.69
         version: 18.2.69
@@ -281,7 +281,7 @@ importers:
         version: 5.4.3
       wrangler:
         specifier: 3.37.0
-        version: 3.37.0(@cloudflare/workers-types@4.20240320.1)
+        version: 3.37.0(@cloudflare/workers-types@4.20240329.0)
 
   packages/remark-mermaid:
     dependencies:
@@ -3141,8 +3141,8 @@ packages:
     dev: true
     optional: true
 
-  /@cloudflare/workers-types@4.20240320.1:
-    resolution: {integrity: sha512-CiYtVpQURPgQqtBKkmOAnfPElVZuD7Xyf1IxKtKp2B4aB9gnooapwJhzeY8c4Ls4u17SgMS0MprOkrgYwzZ6xg==}
+  /@cloudflare/workers-types@4.20240329.0:
+    resolution: {integrity: sha512-AbzgvSQjG8Nci4xxQEcjTTVjiWXgOQnFIbIHtEZXteHiMGDXMWGegjWBo5JHGsZCq+U5V/SD5EnlypQnUQEoig==}
     dev: true
 
   /@colors/colors@1.5.0:
@@ -5956,7 +5956,7 @@ packages:
       '@storybook/core-events': 7.0.0-beta.11
       '@storybook/csf': 0.1.3-next.0
       '@storybook/csf-tools': 7.0.0-beta.11
-      '@storybook/docs-mdx': 0.1.1-next.3
+      '@storybook/docs-mdx': 3.1.0-next.0
       '@storybook/node-logger': 7.0.0-beta.11
       '@storybook/preview-api': 7.0.0-beta.11
       '@storybook/telemetry': 7.0.0-beta.11
@@ -6048,8 +6048,8 @@ packages:
       type-fest: 2.19.0
     dev: true
 
-  /@storybook/docs-mdx@0.1.1-next.3:
-    resolution: {integrity: sha512-gdjVot7Lphf1LZnd9Bi3d3bCVMxDEoJGId1fYpaABpx+sMxeO3w2QA24fPeHa8jlRsEPY/W1p34jxPmu57KaHQ==}
+  /@storybook/docs-mdx@3.1.0-next.0:
+    resolution: {integrity: sha512-t4syFIeSyufieNovZbLruPt2DmRKpbwL4fERCZ1MifWDRIORCKLc4NCEHy+IqvIqd71/SJV2k4B51nF7vlJfmQ==}
     dev: true
 
   /@storybook/docs-tools@7.0.0-beta.11:
@@ -21629,7 +21629,7 @@ packages:
       '@cloudflare/workerd-windows-64': 1.20240320.1
     dev: true
 
-  /wrangler@3.37.0(@cloudflare/workers-types@4.20240320.1):
+  /wrangler@3.37.0(@cloudflare/workers-types@4.20240329.0):
     resolution: {integrity: sha512-dffPF92EApW77lIYXxz0DMoMm2LPMlFNlgrQ0jNj7g7Mm/AaogtSuY7jXNLSeoniYNHL/57V7wlVBn82aYIqyg==}
     engines: {node: '>=16.17.0'}
     hasBin: true
@@ -21640,7 +21640,7 @@ packages:
         optional: true
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.1
-      '@cloudflare/workers-types': 4.20240320.1
+      '@cloudflare/workers-types': 4.20240329.0
       '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
       '@esbuild-plugins/node-modules-polyfill': 0.2.2(esbuild@0.17.19)
       blake3-wasm: 2.1.5
