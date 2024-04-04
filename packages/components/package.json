@@ -82,7 +82,7 @@
   "devDependencies": {
     "@theguild/editor": "workspace:*",
     "@types/dedent": "0.7.2",
-    "@types/react-dom": "18.2.22",
+    "@types/react-dom": "18.2.24",
     "@types/semver": "7.5.8",
     "dedent": "1.5.1",
     "esbuild-plugin-svgr": "^2.1.0",
