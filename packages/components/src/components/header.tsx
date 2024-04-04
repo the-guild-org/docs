@@ -105,9 +105,6 @@ export const Header = ({
           <HamburgerIcon />
         </button>
 
-        {/* TODO: find a way to remove this tag otherwise header not centered on mobile */}
-        <div className="md:absolute" />
-
         <Anchor
           title="View our website"
           className="flex items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
