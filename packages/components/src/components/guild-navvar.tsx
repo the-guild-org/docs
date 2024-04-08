@@ -18,7 +18,7 @@ export function GuildUnifiedLogo(props: {
         target="_blank"
         sameSite={false}
       >
-        <GuildLogo className="hidden h-9 w-9 md:block" />
+        <GuildLogo className="hidden size-9 md:block" />
         <TheGuild className="hidden w-11 md:block" />
       </Anchor>
       <div className="hidden cursor-default select-none p-6 md:block">

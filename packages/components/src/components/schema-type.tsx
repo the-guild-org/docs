@@ -26,7 +26,7 @@ const Editor = ({
         "
       >
         <div className="flex items-center gap-2.5">
-          {image && <Image src={image} alt="logo" className="h-14 w-14" />}
+          {image && <Image src={image} alt="logo" className="size-14" />}
           <span>
             {title && <p className="text-sm dark:text-gray-50">{title}</p>}
             {frameworks.length > 0 && (
@@ -44,7 +44,7 @@ const Editor = ({
           </span>
         </div>
         <Button>
-          <CaretSlimIcon className="h-4 w-4" />
+          <CaretSlimIcon className="size-4" />
         </Button>
       </div>
       {children}

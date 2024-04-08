@@ -75,7 +75,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
               item.link.className,
             )}
           >
-            <CaretSlimIcon className="h-5 w-5 -rotate-90" />
+            <CaretSlimIcon className="size-5 -rotate-90" />
           </Anchor>
         </td>
       </tr>
