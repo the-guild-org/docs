@@ -130,8 +130,8 @@ importers:
         specifier: 4.0.1
         version: 4.0.1(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
       style-loader:
-        specifier: 3.3.4
-        version: 3.3.4(webpack@5.91.0)
+        specifier: 4.0.0
+        version: 4.0.0(webpack@5.91.0)
       tailwindcss:
         specifier: 3.4.3
         version: 3.4.3
@@ -19718,6 +19718,15 @@ packages:
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
+    dependencies:
+      webpack: 5.91.0(@swc/core@1.4.8)(esbuild@0.19.12)
+    dev: true
+
+  /style-loader@4.0.0(webpack@5.91.0):
+    resolution: {integrity: sha512-1V4WqhhZZgjVAVJyt7TdDPZoPBPNHbekX4fWnCJL1yQukhCeZhJySUL+gL9y6sNdN95uEOS83Y55SqHcP7MzLA==}
+    engines: {node: '>= 18.12.0'}
+    peerDependencies:
+      webpack: ^5.27.0
     dependencies:
       webpack: 5.91.0(@swc/core@1.4.8)(esbuild@0.19.12)
     dev: true
