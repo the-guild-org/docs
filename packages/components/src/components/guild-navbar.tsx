@@ -1,8 +1,12 @@
-import { DocsThemeConfig } from 'nextra-theme-docs'
-import { GuildLogo, TheGuild } from '../logos'
-import { Anchor } from './anchor'
+import { DocsThemeConfig } from 'nextra-theme-docs';
+import { GuildLogo, TheGuild } from '../logos';
+import { Anchor } from './anchor';
 
-export function GuildUnifiedLogo({ children, title, description }: {
+export function GuildUnifiedLogo({
+  children,
+  title,
+  description,
+}: {
   children: DocsThemeConfig['logo'];
   title: string;
   description: string;
@@ -11,7 +15,7 @@ export function GuildUnifiedLogo({ children, title, description }: {
     <>
       <Anchor
         title="View our website"
-        className="flex items-center gap-x-1.5 hover:opacity-75 max-md:hidden transition-opacity"
+        className="flex items-center gap-x-1.5 transition-opacity hover:opacity-75 max-md:hidden"
         href="https://the-guild.dev"
       >
         <GuildLogo className="h-9 w-auto" />
@@ -21,7 +25,7 @@ export function GuildUnifiedLogo({ children, title, description }: {
         height="22"
         viewBox="0 0 10 22"
         stroke="currentColor"
-        className="max-md:hidden mx-6 shrink-0"
+        className="mx-6 shrink-0 max-md:hidden"
       >
         <path d="M8.6001 0.833313L0.600097 20.8333" />
       </svg>
@@ -39,5 +43,5 @@ export function GuildUnifiedLogo({ children, title, description }: {
         </Anchor>
       )}
     </>
-  )
+  );
 }
