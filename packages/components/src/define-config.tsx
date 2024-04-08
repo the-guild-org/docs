@@ -19,7 +19,6 @@ export function defineConfig({
   const [, org, repoName] = url.pathname.split('/');
 
   const siteUrl = process.env.SITE_URL;
-  const logoComponent = logo || null;
 
   return {
     editLink: {
@@ -101,7 +100,7 @@ export function defineConfig({
     logoLink: false,
     logo: (
       <GuildUnifiedLogo description={description} title={websiteName}>
-        {logoComponent}
+        {logo}
       </GuildUnifiedLogo>
     ),
     navbar: {
