@@ -1,5 +1,19 @@
 # @theguild/components
 
+## 6.4.2
+
+### Patch Changes
+
+- [#1418](https://github.com/the-guild-org/docs/pull/1418) [`1bbcec4`](https://github.com/the-guild-org/docs/commit/1bbcec44100fcff28cc82b11da141e287861a7dd) Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - dependencies updates:
+
+  - Removed dependency [`@radix-ui/react-navigation-menu@1.1.4` ↗︎](https://www.npmjs.com/package/@radix-ui/react-navigation-menu/v/1.1.4) (from `dependencies`)
+
+- [#1439](https://github.com/the-guild-org/docs/pull/1439) [`aea9d61`](https://github.com/the-guild-org/docs/commit/aea9d617c0056b357652a102e1ef936db6fb83b7) Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+
+  - Updated dependency [`clsx@2.1.0` ↗︎](https://www.npmjs.com/package/clsx/v/2.1.0) (from `2.0.0`, in `dependencies`)
+
+- [#1418](https://github.com/the-guild-org/docs/pull/1418) [`1bbcec4`](https://github.com/the-guild-org/docs/commit/1bbcec44100fcff28cc82b11da141e287861a7dd) Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - Fix some UI issues realted to GuildUnifiedLogo + Deleted old Header
+
 ## 6.4.1
 
 ### Patch Changes
