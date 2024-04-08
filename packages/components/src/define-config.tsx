@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
 import { FooterExtended, mdxComponents } from './components';
 import { addGuildCompanyMenu } from './components/company-menu';
-import { GuildUnifiedLogo } from './components/guild-navvar';
+import { GuildUnifiedLogo } from './components/guild-navbar';
 import { ThemeSwitcherButton } from './components/theme-switcher';
 
 export function defineConfig({
