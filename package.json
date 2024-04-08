@@ -2,7 +2,7 @@
   "name": "the-guild-docs-monorepo",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.15.5",
+  "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=20",
     "pnpm": ">=8.15"
@@ -10,7 +10,7 @@
   "scripts": {
     "build": "turbo run build",
     "build-storybook": "pnpm --filter @theguild/remark-mermaid build && storybook build",
-    "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.cjs --postcss --output packages/components/style.css",
+    "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.ts --postcss --output packages/components/style.css",
     "dev": "turbo run dev --parallel",
     "lint": "eslint --cache --ignore-path .gitignore .",
     "lint:prettier": "prettier --cache --check .",
@@ -32,26 +32,26 @@
     "@storybook/mdx2-csf": "1.1.0",
     "@storybook/react-webpack5": "7.0.0-beta.11",
     "@svgr/webpack": "8.1.0",
-    "@theguild/eslint-config": "0.11.0",
-    "@theguild/prettier-config": "2.0.1",
-    "@theguild/tailwind-config": "0.3.2",
+    "@theguild/eslint-config": "0.11.6",
+    "@theguild/prettier-config": "2.0.6",
+    "@theguild/tailwind-config": "0.4.0",
     "@types/jest-image-snapshot": "6.4.0",
-    "@types/react": "18.2.69",
+    "@types/react": "18.2.74",
     "@types/react-paginate": "7.1.4",
     "@types/webpack": "5.28.5",
     "concurrently": "8.2.2",
     "css-loader": "6.10.0",
     "eslint": "8.57.0",
     "eslint-plugin-storybook": "0.8.0",
-    "eslint-plugin-tailwindcss": "3.13.1",
+    "eslint-plugin-tailwindcss": "3.15.1",
     "husky": "9.0.11",
     "jest-image-snapshot": "6.4.0",
     "lint-staged": "15.2.2",
     "next-themes": "0.3.0",
     "postcss": "8.4.38",
     "postcss-loader": "8.1.1",
-    "prettier": "3.0.3",
-    "prettier-plugin-tailwindcss": "0.5.11",
+    "prettier": "3.2.5",
+    "prettier-plugin-tailwindcss": "0.5.13",
     "pretty-quick": "4.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -60,13 +60,13 @@
     "storybook-addon-swc": "1.2.0",
     "storybook-dark-mode": "4.0.1",
     "style-loader": "3.3.4",
-    "tailwindcss": "3.4.1",
+    "tailwindcss": "3.4.3",
     "tsconfig-paths-webpack-plugin": "4.1.0",
-    "tsup": "7.2.0",
-    "tsx": "4.7.1",
-    "turbo": "1.13.0",
-    "typescript": "5.4.3",
-    "vitest": "0.31.1"
+    "tsup": "8.0.2",
+    "tsx": "4.7.2",
+    "turbo": "1.13.2",
+    "typescript": "5.4.4",
+    "vitest": "0.34.6"
   },
   "browserslist": [
     "> 1%"
@@ -89,7 +89,7 @@
       "@theguild/remark-mermaid": "workspace:*"
     },
     "patchedDependencies": {
-      "tsup@7.2.0": "patches/tsup@7.2.0.patch"
+      "tsup@8.0.2": "patches/tsup@7.2.0.patch"
     }
   }
 }

@@ -1,6 +1,6 @@
-const config = require('@theguild/tailwind-config');
+import config, { Config } from '@theguild/tailwind-config';
 
-module.exports = {
+export default {
   ...config,
   content: ['./packages/components/src/**/*.{ts,tsx}'],
   theme: {
@@ -17,4 +17,4 @@ module.exports = {
       },
     },
   },
-};
+} satisfies Config;

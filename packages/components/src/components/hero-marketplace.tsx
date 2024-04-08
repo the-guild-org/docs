@@ -16,8 +16,7 @@ const Shadow = ({ className }: { className: string }): ReactElement => {
     <span
       className={clsx(
         `absolute
-        h-[750px]
-        w-[750px]
+        size-[750px]
         -translate-x-1/2
         -translate-y-1/2
         rounded-full

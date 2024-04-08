@@ -5,13 +5,15 @@ import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
 import { applyUnderscoreRedirects } from './underscore-redirects';
 
-export const defaultRemarkPlugins = [
+type MdxOptions = Exclude<NextraConfig['mdxOptions'], undefined>;
+
+export const defaultRemarkPlugins: MdxOptions['remarkPlugins'] = [
   [
     // replace <iframe />, <video />, <source /> tags in MDX
     remarkMdxDisableExplicitJsx,
     { whiteList: ['iframe', 'video', 'source'] },
   ],
-] as any;
+];
 
 export function withGuildDocs({
   nextraConfig,

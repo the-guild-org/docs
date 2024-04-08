@@ -79,7 +79,7 @@ export const EcosystemList = forwardRef<HTMLDivElement>((_, forwardedRef): React
                   md:w-1/2
                 "
               >
-                <product.logo className="h-9 w-9 shrink-0" />
+                <product.logo className="size-9 shrink-0" />
                 <span className="flex flex-col justify-center">
                   <h4 className="m-0 text-sm font-semibold text-black dark:text-gray-300">
                     {product.name}

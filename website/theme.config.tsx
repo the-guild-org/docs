@@ -11,7 +11,7 @@ export default defineConfig({
       viewBox="0 0 50 54"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="mr-1.5 h-9 w-9"
+      className="mr-1.5 size-9"
     >
       <path
         fillRule="evenodd"
