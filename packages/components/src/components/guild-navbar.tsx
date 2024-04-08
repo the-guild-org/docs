@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { DocsThemeConfig } from 'nextra-theme-docs';
 import { GuildLogo, TheGuild } from '../logos';
 import { Anchor } from './anchor';
@@ -15,7 +16,10 @@ export function GuildUnifiedLogo({
     <>
       <Anchor
         title="View our website"
-        className="flex items-center gap-x-1.5 transition-opacity hover:opacity-75 max-md:hidden"
+        className={clsx(
+          'flex items-center gap-x-1.5 transition-opacity hover:opacity-75',
+          !children && 'max-md:hidden',
+        )}
         href="https://the-guild.dev"
       >
         <GuildLogo className="h-9 w-auto" />
@@ -39,7 +43,7 @@ export function GuildUnifiedLogo({
             {typeof children === 'function' ? children({}) : children}
             <div>
               <h1 className="text-sm font-bold leading-tight">{title}</h1>
-              <h2 className="hidden text-xs sm:block">{description}</h2>
+              <h2 className="text-xs max-sm:hidden">{description}</h2>
             </div>
           </Anchor>
         </>
