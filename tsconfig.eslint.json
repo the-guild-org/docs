@@ -11,7 +11,7 @@
     "tailwind.config.ts",
     "setup-file.ts",
     "scripts/copy-wasm.ts",
-    "postcss.config.ts",
+    "postcss.config.cjs",
     "packages/*/src/**/*.stories.tsx",
     ".storybook/preview.tsx",
     ".storybook/next.config.cjs",
