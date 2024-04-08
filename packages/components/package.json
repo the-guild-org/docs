@@ -9,7 +9,6 @@
   "main": "./dist/index.js",
   "exports": {
     "./style.css": "./style.css",
-    "./search-bar-v2.css": "./search-bar-v2.css",
     "./package.json": "./package.json",
     ".": {
       "import": "./dist/index.js",
