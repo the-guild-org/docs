@@ -18,7 +18,7 @@ export function GuildUnifiedLogo({
         title="View our website"
         className={clsx(
           'flex items-center gap-x-1.5 transition-opacity hover:opacity-75',
-          !children && 'max-md:hidden',
+          children && 'max-md:hidden',
         )}
         href="https://the-guild.dev"
       >
