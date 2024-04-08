@@ -1,7 +1,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import './search-bar-v2.css';
 
 .nextra-banner-container._bg-neutral-900._flex {
   @apply bg-[#48224e] bg-none;
