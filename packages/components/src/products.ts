@@ -1,5 +1,4 @@
 import { ReactElement } from 'react';
-import { AlgoliaRecordSource } from '@theguild/algolia';
 import {
   AngularLogo,
   CodeGeneratorLogo,
@@ -52,7 +51,7 @@ export type ProductType =
 export const PRODUCTS: Record<
   ProductType,
   {
-    name: AlgoliaRecordSource;
+    name: string;
     title: string;
     href: `https://${string}`;
     logo: (props: { className?: string }) => ReactElement;

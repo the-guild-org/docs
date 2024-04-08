@@ -18,7 +18,6 @@ import { Anchor } from './anchor';
 import { EcosystemList } from './ecosystem-list';
 import { CaretIcon, HamburgerIcon, MoonIcon } from './icons';
 import { Nav } from './nav';
-import { SearchBar } from './search-bar-v2';
 import { SolutionsMenu } from './solutions-menu';
 
 // TODO: fails during build (no matching export in for import "default")
@@ -29,7 +28,6 @@ export const Header = ({
   activeLink,
   themeSwitch = true,
   transformLinks = links => links,
-  search = true,
   className,
   sameSite,
 }: IHeaderProps): ReactElement => {
@@ -107,9 +105,6 @@ export const Header = ({
           <HamburgerIcon />
         </button>
 
-        {/* TODO: find a way to remove this tag otherwise header not centered on mobile */}
-        <div className="md:absolute" />
-
         <Anchor
           title="View our website"
           className="flex items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
@@ -176,15 +171,6 @@ export const Header = ({
                 );
               })}
 
-              {search && (
-                <SearchBar
-                  accentColor={accentColor}
-                  title="Search docs"
-                  placeholder="Search…"
-                  className="hidden md:flex"
-                />
-              )}
-
               {themeSwitch && (
                 <button
                   onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
@@ -200,17 +186,6 @@ export const Header = ({
             </Indicator>
           </List>
         </Root>
-
-        {search ? (
-          <SearchBar
-            accentColor={accentColor}
-            title="Search docs"
-            placeholder="Search…"
-            className="md:hidden"
-          />
-        ) : (
-          <span className="md:absolute" />
-        )}
       </div>
     </header>
   );

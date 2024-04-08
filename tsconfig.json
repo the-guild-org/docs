@@ -15,7 +15,6 @@
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "preserveWatchOutput": true,
     "paths": {
-      "@theguild/algolia": ["packages/algolia/src/index.ts"],
       "@theguild/components": ["packages/components/src/index.ts"],
       "@theguild/editor": ["packages/editor/src/index.ts"]
     },
@@ -30,5 +29,5 @@
     "types": ["vitest/globals"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["packages/**/*.stories.tsx", "website"]
+  "exclude": ["packages/**/*.stories.tsx", "website", "scripts"]
 }

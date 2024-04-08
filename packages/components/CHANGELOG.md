@@ -1,5 +1,122 @@
 # @theguild/components
 
+## 6.4.1
+
+### Patch Changes
+
+- [#1410](https://github.com/the-guild-org/docs/pull/1410)
+  [`cb0e60b`](https://github.com/the-guild-org/docs/commit/cb0e60be4578abee95ebcb295ce1a8e1bd41d31a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-player@2.15.1` ↗︎](https://www.npmjs.com/package/react-player/v/2.15.1) (from `2.13.0`,
+    in `dependencies`)
+
+- [#1411](https://github.com/the-guild-org/docs/pull/1411)
+  [`790c6e1`](https://github.com/the-guild-org/docs/commit/790c6e135a1ed38cd6eaab007a66efc1907e61e5)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`search-insights@2.13.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.13.0) (from
+    `2.9.0`, in `dependencies`)
+
+- [#1414](https://github.com/the-guild-org/docs/pull/1414)
+  [`6a99f63`](https://github.com/the-guild-org/docs/commit/6a99f630819a2f08e603b95b9f7b15be43253791)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@giscus/react@3.0.0` ↗︎](https://www.npmjs.com/package/@giscus/react/v/3.0.0) (from `2.4.0`,
+    in `dependencies`)
+
+- [#1434](https://github.com/the-guild-org/docs/pull/1434)
+  [`c580e8e`](https://github.com/the-guild-org/docs/commit/c580e8e8593f6efc21ab738d2fdb1889d5e6991e)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - fix `the-guild.dev` doesn't centered on
+  mobile
+
+## 6.4.0
+
+### Minor Changes
+
+- [#1406](https://github.com/the-guild-org/docs/pull/1406)
+  [`68f6014`](https://github.com/the-guild-org/docs/commit/68f60140553c8fc440303aceaf3e70d83032ec40)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Updated new nav bar
+
+- [#1406](https://github.com/the-guild-org/docs/pull/1406)
+  [`68f6014`](https://github.com/the-guild-org/docs/commit/68f60140553c8fc440303aceaf3e70d83032ec40)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Remove Algolia search and eanble Nextra
+  flexsearch
+
+- [#1406](https://github.com/the-guild-org/docs/pull/1406)
+  [`68f6014`](https://github.com/the-guild-org/docs/commit/68f60140553c8fc440303aceaf3e70d83032ec40)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Remove duplicated header and cleanup
+  codebase
+
+### Patch Changes
+
+- [#1402](https://github.com/the-guild-org/docs/pull/1402)
+  [`1ffc809`](https://github.com/the-guild-org/docs/commit/1ffc8090a4cb1070965908034a7410836aa6666e)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@giscus/react@2.4.0` ↗︎](https://www.npmjs.com/package/@giscus/react/v/2.4.0) (from `2.3.0`,
+    in `dependencies`)
+
+- [#1406](https://github.com/the-guild-org/docs/pull/1406)
+  [`68f6014`](https://github.com/the-guild-org/docs/commit/68f60140553c8fc440303aceaf3e70d83032ec40)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - dependencies updates:
+
+  - Updated dependency [`fuzzy@0.1.3` ↗︎](https://www.npmjs.com/package/fuzzy/v/0.1.3) (from
+    `^0.1.3`, in `dependencies`)
+  - Updated dependency [`nextra@3.0.0-alpha.22` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.17`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.22` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.17`, in `dependencies`)
+  - Removed dependency
+    [`@algolia/autocomplete-js@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.17.0)
+    (from `dependencies`)
+  - Removed dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.17.0)
+    (from `dependencies`)
+  - Removed dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.17.0)
+    (from `dependencies`)
+  - Removed dependency
+    [`@algolia/autocomplete-theme-classic@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.17.0)
+    (from `dependencies`)
+  - Removed dependency
+    [`algoliasearch@4.19.1` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.19.1) (from
+    `dependencies`)
+
+- [#1406](https://github.com/the-guild-org/docs/pull/1406)
+  [`68f6014`](https://github.com/the-guild-org/docs/commit/68f60140553c8fc440303aceaf3e70d83032ec40)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Removed defualt "graphql" prefix for titles
+
+## 6.3.0
+
+### Minor Changes
+
+- [`2515e45`](https://github.com/the-guild-org/docs/commit/2515e4598a9cfab26ff24cd7648e45f3017550cc)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - remove old conf banner
+
+### Patch Changes
+
+- [#1326](https://github.com/the-guild-org/docs/pull/1326)
+  [`4b33a63`](https://github.com/the-guild-org/docs/commit/4b33a63a07de257b7650c90779ad1ddf4b9f1983)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+
 ## 6.2.0
 
 ### Minor Changes
