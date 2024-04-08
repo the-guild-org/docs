@@ -21,26 +21,28 @@ export function GuildUnifiedLogo({
         <GuildLogo className="h-9 w-auto" />
         <TheGuild className="w-11" />
       </Anchor>
-      <svg
-        height="22"
-        viewBox="0 0 10 22"
-        stroke="currentColor"
-        className="mx-6 shrink-0 max-md:hidden"
-      >
-        <path d="M8.6001 0.833313L0.600097 20.8333" />
-      </svg>
       {children && (
-        <Anchor
-          title={title}
-          className="flex shrink-0 items-center gap-x-1.5 hover:opacity-75"
-          href="/"
-        >
-          {typeof children === 'function' ? children({}) : children}
-          <div>
-            <h1 className="text-sm font-bold leading-tight">{title}</h1>
-            <h2 className="hidden text-xs sm:block">{description}</h2>
-          </div>
-        </Anchor>
+        <>
+          <svg
+            height="22"
+            viewBox="0 0 10 22"
+            stroke="currentColor"
+            className="mx-6 shrink-0 max-md:hidden"
+          >
+            <path d="M8.6001 0.833313L0.600097 20.8333" />
+          </svg>
+          <Anchor
+            title={title}
+            className="flex shrink-0 items-center gap-x-1.5 hover:opacity-75"
+            href="/"
+          >
+            {typeof children === 'function' ? children({}) : children}
+            <div>
+              <h1 className="text-sm font-bold leading-tight">{title}</h1>
+              <h2 className="hidden text-xs sm:block">{description}</h2>
+            </div>
+          </Anchor>
+        </>
       )}
     </>
   );
