@@ -21,16 +21,6 @@ export type IHeaderLink = ILink & {
   menu?: ReactNode;
 };
 
-export interface IHeaderProps {
-  className?: string;
-  accentColor: string;
-  activeLink?: string;
-  themeSwitch?: boolean;
-  transformLinks?: (links: Omit<IHeaderLink, 'children'>[]) => Omit<IHeaderLink, 'children'>[];
-  search?: boolean;
-  sameSite?: boolean;
-}
-
 export interface IFooterExtendedProps {
   className?: string;
   sameSite?: boolean;

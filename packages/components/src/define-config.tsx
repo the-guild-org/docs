@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
 import { FooterExtended, mdxComponents } from './components';
 import { addGuildCompanyMenu } from './components/company-menu';
-import { GuildUnifiedLogo } from './components/guild-navvar';
+import { GuildUnifiedLogo } from './components/guild-navbar';
 import { ThemeSwitcherButton } from './components/theme-switcher';
 
 export function defineConfig({
@@ -19,7 +19,6 @@ export function defineConfig({
   const [, org, repoName] = url.pathname.split('/');
 
   const siteUrl = process.env.SITE_URL;
-  const logoComponent = logo || null;
 
   return {
     editLink: {
@@ -101,7 +100,7 @@ export function defineConfig({
     logoLink: false,
     logo: (
       <GuildUnifiedLogo description={description} title={websiteName}>
-        {logoComponent}
+        {logo}
       </GuildUnifiedLogo>
     ),
     navbar: {
