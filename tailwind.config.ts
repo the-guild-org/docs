@@ -1,4 +1,4 @@
-import config, { Config } from '@theguild/tailwind-config';
+import config, { Config } from '@theguild/tailwind-config'
 
 export default {
   ...config,
@@ -17,4 +17,4 @@ export default {
       },
     },
   },
-} satisfies Config;
+} satisfies Config
