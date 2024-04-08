@@ -1,0 +1,23 @@
+{
+  // https://typescript-eslint.io/docs/linting/typed-linting/monorepos/#one-root-tsconfigjson
+  // extend your base config to share compilerOptions, etc
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // ensure that nobody can accidentally use this config for a build
+    "noEmit": true
+  },
+  "include": [
+    "vite.config.ts",
+    "tailwind.config.ts",
+    "setup-file.ts",
+    "scripts/copy-wasm.ts",
+    "postcss.config.ts",
+    "packages/*/src/**/*.stories.tsx",
+    ".storybook/preview.tsx",
+    ".storybook/next.config.cjs",
+    ".storybook/main.ts",
+    ".prettierrc.cjs",
+    ".eslintrc.cjs"
+  ],
+  "exclude": []
+}
