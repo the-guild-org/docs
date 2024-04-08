@@ -5,7 +5,7 @@ import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
 import { applyUnderscoreRedirects } from './underscore-redirects';
 
-type MdxOptions = Exclude<NextraConfig['mdxOptions'], undefined>
+type MdxOptions = Exclude<NextraConfig['mdxOptions'], undefined>;
 
 export const defaultRemarkPlugins: MdxOptions['remarkPlugins'] = [
   [

@@ -8,10 +8,10 @@ module.exports = {
     '@theguild/eslint-config/yml',
     // '@theguild/eslint-config/mdx',
     'plugin:tailwindcss/recommended',
-    'plugin:storybook/recommended'
+    'plugin:storybook/recommended',
   ],
   parserOptions: {
-    project: ['tsconfig.eslint.json', 'website/tsconfig.json', 'packages/*/tsconfig.json']
+    project: ['tsconfig.eslint.json', 'website/tsconfig.json', 'packages/*/tsconfig.json'],
   },
   rules: {
     'tailwindcss/classnames-order': 'off', // conflicts with official prettier-plugin-tailwindcss and tailwind v3
@@ -29,7 +29,7 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'warn',
     'jsx-a11y/no-static-element-interactions': 'warn',
     // enable without breaking existing iframes
-    'react/iframe-missing-sandbox': 'off'
+    'react/iframe-missing-sandbox': 'off',
   },
   settings: {
     tailwindcss: {
@@ -43,22 +43,22 @@ module.exports = {
         'aa-ItemContentTitle',
         'aa-ItemContentSubtitle',
         'aa-SourceHeader',
-        'aa-SourceHeaderTitle'
-      ]
-    }
+        'aa-SourceHeaderTitle',
+      ],
+    },
   },
   overrides: [
     {
       files: ['**/*.stories.tsx'],
       rules: {
-        'no-console': 'off'
-      }
+        'no-console': 'off',
+      },
     },
     {
       files: ['packages/**'],
       rules: {
-        'import/extensions': ['error', { js: 'never', json: 'always' }]
-      }
-    }
-  ]
-}
+        'import/extensions': ['error', { js: 'never', json: 'always' }],
+      },
+    },
+  ],
+};
