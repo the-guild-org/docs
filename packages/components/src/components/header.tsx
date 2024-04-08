@@ -111,7 +111,7 @@ export const Header = ({
           href="https://the-guild.dev"
           sameSite={sameSite}
         >
-          <GuildLogo className="h-9 w-9" />
+          <GuildLogo className="size-9" />
           <TheGuild className="hidden w-11 md:block" />
         </Anchor>
 
@@ -182,7 +182,7 @@ export const Header = ({
             </Nav>
 
             <Indicator className="absolute top-9 z-50 flex h-2.5 justify-center">
-              <div className="h-3 w-3 rotate-45 rounded-t-sm bg-white dark:bg-neutral-800" />
+              <div className="size-3 rotate-45 rounded-t-sm bg-white dark:bg-neutral-800" />
             </Indicator>
           </List>
         </Root>
