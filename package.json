@@ -62,7 +62,7 @@
     "style-loader": "3.3.4",
     "tailwindcss": "3.4.3",
     "tsconfig-paths-webpack-plugin": "4.1.0",
-    "tsup": "7.2.0",
+    "tsup": "8.0.2",
     "tsx": "4.7.2",
     "turbo": "1.13.2",
     "typescript": "5.4.4",
@@ -89,7 +89,7 @@
       "@theguild/remark-mermaid": "workspace:*"
     },
     "patchedDependencies": {
-      "tsup@7.2.0": "patches/tsup@7.2.0.patch"
+      "tsup@8.0.2": "patches/tsup@7.2.0.patch"
     }
   }
 }

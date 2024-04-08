@@ -23,7 +23,6 @@ export default defineConfig([
     outExtension: () => ({ js: '.js' }),
     external: ['semver'],
     esbuildPlugins: [
-      // @ts-expect-error fixme
       svgr({
         exportType: 'named',
         typescript: true,
