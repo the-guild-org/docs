@@ -1,49 +1,43 @@
-import { DocsThemeConfig } from 'nextra-theme-docs';
-import { GuildLogo, TheGuild } from '../logos';
-import { Anchor } from './anchor';
+import { DocsThemeConfig } from 'nextra-theme-docs'
+import { GuildLogo, TheGuild } from '../logos'
+import { Anchor } from './anchor'
 
-export function GuildUnifiedLogo(props: {
+export function GuildUnifiedLogo({ children, title, description }: {
   children: DocsThemeConfig['logo'];
   title: string;
   description: string;
 }) {
   return (
-    <div className="flex items-center justify-center py-2">
+    <>
       <Anchor
         title="View our website"
-        className="flex items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
+        className="flex items-center gap-x-1.5 hover:opacity-75 max-md:hidden transition-opacity"
         href="https://the-guild.dev"
-        target="_self"
-        sameSite={false}
       >
-        <GuildLogo className="hidden size-9 md:block" />
-        <TheGuild className="hidden w-11 md:block" />
+        <GuildLogo className="h-9 w-auto" />
+        <TheGuild className="w-11" />
       </Anchor>
-      <div className="hidden cursor-default select-none p-6 md:block">
-        <svg
-          className="stroke-current dark:fill-gray-100 dark:stroke-gray-100"
-          width="10"
-          height="22"
-          viewBox="0 0 10 22"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M8.6001 0.833313L0.600097 20.8333" />
-        </svg>
-      </div>
-      {props.children ? (
+      <svg
+        height="22"
+        viewBox="0 0 10 22"
+        stroke="currentColor"
+        className="max-md:hidden mx-6 shrink-0"
+      >
+        <path d="M8.6001 0.833313L0.600097 20.8333" />
+      </svg>
+      {children && (
         <Anchor
-          title={props.title}
-          className="flex shrink-0 items-center gap-x-1.5 text-black hover:opacity-75 dark:text-gray-100"
+          title={title}
+          className="flex shrink-0 items-center gap-x-1.5 hover:opacity-75"
           href="/"
         >
-          {typeof props.children === 'function' ? props.children({}) : props.children}
+          {typeof children === 'function' ? children({}) : children}
           <div>
-            <h1 className="text-sm font-bold leading-tight">{props.title}</h1>
-            <h2 className="hidden text-xs sm:block">{props.description}</h2>
+            <h1 className="text-sm font-bold leading-tight">{title}</h1>
+            <h2 className="hidden text-xs sm:block">{description}</h2>
           </div>
         </Anchor>
-      ) : null}
-    </div>
-  );
+      )}
+    </>
+  )
 }
