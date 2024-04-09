@@ -190,6 +190,9 @@ importers:
         specifier: ^7.3.8
         version: 7.3.8
     devDependencies:
+      '@svgr/babel-plugin-remove-jsx-attribute':
+        specifier: ^8.0.0
+        version: 8.0.0(@babel/core@7.24.3)
       '@theguild/editor':
         specifier: workspace:*
         version: link:../editor
@@ -6293,6 +6296,15 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.22.8
+    dev: true
+
+  /@svgr/babel-plugin-remove-jsx-attribute@8.0.0(@babel/core@7.24.3):
+    resolution: {integrity: sha512-BcCkm/STipKvbCl6b7QFrMh/vx00vIP63k2eM66MfHJzPr6O2U0jYEViXkHJWqXqQYjdeA9cuCl5KWmlwjDvbA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.24.3
     dev: true
 
   /@svgr/babel-plugin-remove-jsx-empty-expression@8.0.0(@babel/core@7.22.8):
