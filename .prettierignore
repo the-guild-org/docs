@@ -5,3 +5,4 @@ storybook-static/
 .changeset/*.md
 website/out/
 pnpm-lock.yaml
+CHANGELOG.md
