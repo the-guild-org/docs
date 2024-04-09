@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 6.5.1
+
+### Patch Changes
+
+- [#1446](https://github.com/the-guild-org/docs/pull/1446) [`5a39e51`](https://github.com/the-guild-org/docs/commit/5a39e516a2ff597c2c8622b14f0baedeb0f297ba) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`react-player@2.16.0` ↗︎](https://www.npmjs.com/package/react-player/v/2.16.0) (from `2.15.1`, in `dependencies`)
+
+- [#1447](https://github.com/the-guild-org/docs/pull/1447) [`43c66a3`](https://github.com/the-guild-org/docs/commit/43c66a359eed889264a43da02e8fae61c17b8c69) Thanks [@dimaMachina](https://github.com/dimaMachina)! - use url `url.pathname` only for products when `host: 'the-guild.dev'`
+
 ## 6.5.0
 
 ### Minor Changes
