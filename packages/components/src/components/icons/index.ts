@@ -1,4 +1,4 @@
-export * from './arrow-up-right';
+export { ReactComponent as ArrowUpRightIcon } from './arrow-up-right.svg';
 export * from './caret-slim';
 export * from './close';
 export * from './mail';

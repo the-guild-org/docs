@@ -186,9 +186,6 @@ importers:
       remark-mdx-disable-explicit-jsx:
         specifier: 0.1.0
         version: 0.1.0
-      search-insights:
-        specifier: 2.13.0
-        version: 2.13.0
       semver:
         specifier: ^7.3.8
         version: 7.3.8
@@ -223,9 +220,6 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
-      tailwindcss:
-        specifier: 3.4.3
-        version: 3.4.3
 
   packages/editor:
     dependencies:
@@ -18641,10 +18635,6 @@ packages:
     resolution: {integrity: sha512-49oNpRjWRvnU8NyGVmUaYG4jtTkNonFZI86MmGRDqBphEK2EXT9gdEUoQPZhuBM8yWHxCWbobltqYO5M4XrUvQ==}
     dependencies:
       compute-scroll-into-view: 3.1.0
-    dev: false
-
-  /search-insights@2.13.0:
-    resolution: {integrity: sha512-Orrsjf9trHHxFRuo9/rzm0KIWmgzE8RMlZMzuhZOJ01Rnz3D0YBAe+V6473t6/H6c7irs6Lt48brULAiRWb3Vw==}
     dev: false
 
   /section-matter@1.0.0:
