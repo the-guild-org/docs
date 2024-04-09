@@ -7,7 +7,7 @@ export const productsItems = Object.fromEntries(
     {
       title: (
         <span className="flex items-center gap-2">
-          <product.logo className="h-7 w-auto" />
+          <product.logo className="h-7 w-auto shrink-0" />
           {product.name}
         </span> // todo: fix type in nextra
       ) as any,
