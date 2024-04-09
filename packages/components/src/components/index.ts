@@ -16,7 +16,6 @@ export { MarketplaceSearch } from './marketplace-search';
 export { mdxComponents } from './mdx-components';
 export { Newsletter } from './newsletter';
 export { NPMBadge } from './npm-badge';
-export { Tabs } from './tabs';
 export { GuildUnifiedLogo } from './guild-navbar';
 export { ThemeSwitcherButton } from './theme-switcher';
 export { productsItems } from './company-menu';
