@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 6.5.0
+
+### Minor Changes
+
+- [#1444](https://github.com/the-guild-org/docs/pull/1444) [`bad4173`](https://github.com/the-guild-org/docs/commit/bad41733c80474b9184740ece36a7e9e45609b8e) Thanks [@dimaMachina](https://github.com/dimaMachina)! - add Products link in navbar
+
 ## 6.4.2
 
 ### Patch Changes
