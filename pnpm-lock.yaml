@@ -186,13 +186,13 @@ importers:
       remark-mdx-disable-explicit-jsx:
         specifier: 0.1.0
         version: 0.1.0
-      search-insights:
-        specifier: 2.13.0
-        version: 2.13.0
       semver:
         specifier: ^7.3.8
         version: 7.3.8
     devDependencies:
+      '@svgr/babel-plugin-remove-jsx-attribute':
+        specifier: ^8.0.0
+        version: 8.0.0(@babel/core@7.24.3)
       '@theguild/editor':
         specifier: workspace:*
         version: link:../editor
@@ -223,9 +223,6 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
-      tailwindcss:
-        specifier: 3.4.3
-        version: 3.4.3
 
   packages/editor:
     dependencies:
@@ -6299,6 +6296,15 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.22.8
+    dev: true
+
+  /@svgr/babel-plugin-remove-jsx-attribute@8.0.0(@babel/core@7.24.3):
+    resolution: {integrity: sha512-BcCkm/STipKvbCl6b7QFrMh/vx00vIP63k2eM66MfHJzPr6O2U0jYEViXkHJWqXqQYjdeA9cuCl5KWmlwjDvbA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.24.3
     dev: true
 
   /@svgr/babel-plugin-remove-jsx-empty-expression@8.0.0(@babel/core@7.22.8):
@@ -18641,10 +18647,6 @@ packages:
     resolution: {integrity: sha512-49oNpRjWRvnU8NyGVmUaYG4jtTkNonFZI86MmGRDqBphEK2EXT9gdEUoQPZhuBM8yWHxCWbobltqYO5M4XrUvQ==}
     dependencies:
       compute-scroll-into-view: 3.1.0
-    dev: false
-
-  /search-insights@2.13.0:
-    resolution: {integrity: sha512-Orrsjf9trHHxFRuo9/rzm0KIWmgzE8RMlZMzuhZOJ01Rnz3D0YBAe+V6473t6/H6c7irs6Lt48brULAiRWb3Vw==}
     dev: false
 
   /section-matter@1.0.0:
