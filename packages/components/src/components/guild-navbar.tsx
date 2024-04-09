@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import clsx from 'clsx';
 import { DocsThemeConfig } from 'nextra-theme-docs';
 import { GuildLogo, TheGuild } from '../logos';
@@ -11,7 +12,7 @@ export function GuildUnifiedLogo({
   children: DocsThemeConfig['logo'];
   title: string;
   description: string;
-}) {
+}): ReactElement {
   return (
     <>
       <Anchor

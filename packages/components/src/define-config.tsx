@@ -10,7 +10,10 @@ export function defineConfig({
   description,
   logo,
   ...config
-}: DocsThemeConfig & { websiteName: string; description: string }): DocsThemeConfig {
+}: DocsThemeConfig & {
+  websiteName: string;
+  description: string;
+}): DocsThemeConfig {
   if (!config.docsRepositoryBase) {
     throw new Error('Missing required "docsRepositoryBase" property');
   }
@@ -105,7 +108,7 @@ export function defineConfig({
     ),
     navbar: {
       extraContent: <ThemeSwitcherButton />,
-      component: props => <Navbar items={addGuildCompanyMenu(props.items)} />,
+      ...(logo && { component: props => <Navbar items={addGuildCompanyMenu(props.items)} /> }),
     },
     ...config,
     components: {

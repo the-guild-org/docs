@@ -1,4 +1,20 @@
 import { MenuItem, PageItem } from 'nextra/normalize-pages';
+import { PRODUCTS } from '../products';
+
+export const productsItems = Object.fromEntries(
+  Object.values(PRODUCTS).map(product => [
+    product.name,
+    {
+      title: (
+        <span className="flex items-center gap-2">
+          <product.logo className="h-7 w-auto shrink-0" />
+          {product.name}
+        </span> // todo: fix type in nextra
+      ) as any,
+      href: new URL(product.href).pathname,
+    },
+  ]),
+);
 
 export function addGuildCompanyMenu(items: (PageItem | MenuItem)[]): (PageItem | MenuItem)[] {
   return [
@@ -9,11 +25,6 @@ export function addGuildCompanyMenu(items: (PageItem | MenuItem)[]): (PageItem |
         about: {
           title: 'About',
           href: 'https://the-guild.dev/about-us',
-          newWindow: true,
-        },
-        solutions: {
-          title: 'Solutions',
-          href: 'https://the-guild.dev/solutions',
           newWindow: true,
         },
         blog: {
@@ -28,6 +39,13 @@ export function addGuildCompanyMenu(items: (PageItem | MenuItem)[]): (PageItem |
         },
       },
       name: 'company',
+      route: '#',
+    } satisfies MenuItem,
+    {
+      type: 'menu',
+      title: 'Products',
+      items: productsItems,
+      name: 'products',
       route: '#',
     } satisfies MenuItem,
     ...items,
