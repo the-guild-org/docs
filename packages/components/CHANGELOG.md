@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 6.5.2
+
+### Patch Changes
+
+- [#1449](https://github.com/the-guild-org/docs/pull/1449) [`b79f8dc`](https://github.com/the-guild-org/docs/commit/b79f8dc6eab4c3e6a577c859f5493e95811fbf4f) Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+
+  - Removed dependency [`search-insights@2.13.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.13.0) (from `dependencies`)
+
+- [#1451](https://github.com/the-guild-org/docs/pull/1451) [`bf079fe`](https://github.com/the-guild-org/docs/commit/bf079fe86e77418965cc48a5144ffd8a01a2877e) Thanks [@dimaMachina](https://github.com/dimaMachina)! - use `product.href` because products urls can be incorrect due to use `basePath`
+
 ## 6.5.1
 
 ### Patch Changes
