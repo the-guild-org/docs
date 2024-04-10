@@ -9,7 +9,8 @@
   --nextra-navbar-height: 4.5rem;
 }
 
-.nextra-nav-container [role='menu']:has(a[href='/graphql/hive']) {
+.nextra-nav-container [role='menu']:has(a[href='https://the-guild.dev/graphql/hive'])
+{
   @apply grid max-h-[unset] w-[470px] grid-cols-3 gap-y-2 p-2;
 
   a:nth-child(-n + 3) {
