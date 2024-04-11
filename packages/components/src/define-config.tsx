@@ -5,15 +5,25 @@ import { addGuildCompanyMenu } from './components/company-menu';
 import { GuildUnifiedLogo } from './components/guild-navbar';
 import { ThemeSwitcherButton } from './components/theme-switcher';
 
-export function defineConfig({
-  websiteName,
-  description,
-  logo,
-  ...config
-}: DocsThemeConfig & {
-  websiteName: string;
-  description: string;
-}): DocsThemeConfig {
+export function defineConfig(
+  config: DocsThemeConfig &
+    (
+      | {
+          websiteName: string;
+          description: string;
+        }
+      | {
+          titleSuffix?: string;
+          title: string;
+          description: string;
+          productLogo: {
+            name: string;
+            tagline: string;
+          };
+          ogImage: (props: { title: string; description?: string }) => string;
+        }
+    ),
+): DocsThemeConfig {
   if (!config.docsRepositoryBase) {
     throw new Error('Missing required "docsRepositoryBase" property');
   }
@@ -46,12 +56,14 @@ export function defineConfig({
       const { asPath } = useRouter();
 
       const {
-        description = `${websiteName} Documentation`,
+        description = 'websiteName' in config
+          ? `${config.websiteName} Documentation`
+          : `Documentation${config.titleSuffix}`,
         type = 'website',
         canonical = siteUrl &&
           `${siteUrl}${
             // we disallow trailing slashes
-            // TODO: dont do this if `trailingSlashes: true`
+            // TODO: don't do this if `trailingSlashes: true`
             asPath === '/'
               ? // homepage
                 ''
@@ -61,12 +73,20 @@ export function defineConfig({
                 : // other pages
                   asPath
           }`,
-        image = `https://og-image.the-guild.dev/?product=${websiteName}&title=${encodeURI(
-          pageTitle,
-        )}`,
+        image = 'ogImage' in config
+          ? config.ogImage({
+              title: pageTitle,
+              description: frontMatter.description ?? description,
+            })
+          : `https://og-image.the-guild.dev/?product=${config.websiteName}&title=${encodeURI(
+              pageTitle,
+            )}`,
       } = frontMatter;
 
-      const title = `${pageTitle} (${websiteName})`;
+      const title =
+        'websiteName' in config
+          ? `${pageTitle} (${config.websiteName})`
+          : `${pageTitle}${config.titleSuffix}`;
 
       return (
         <>
@@ -90,25 +110,36 @@ export function defineConfig({
           <meta name="twitter:creator" content="@TheGuildDev" />
 
           <meta property="og:type" content={type} />
-          <meta property="og:site_name" content={websiteName} />
+          {'websiteName' in config ? (
+            <meta property="og:site_name" content={config.websiteName} />
+          ) : null}
           <meta property="og:image" content={image} />
           <meta property="og:image:alt" content={pageTitle} />
 
-          <meta content={websiteName} name="apple-mobile-web-app-title" />
-          <meta content={websiteName} name="application-name" />
+          {'websiteName' in config ? (
+            <meta content={config.websiteName} name="apple-mobile-web-app-title" />
+          ) : null}
+          {'websiteName' in config ? (
+            <meta content={config.websiteName} name="application-name" />
+          ) : null}
           <meta name="robots" content="index,follow" />
         </>
       );
     },
     logoLink: false,
     logo: (
-      <GuildUnifiedLogo description={description} title={websiteName}>
-        {logo}
+      <GuildUnifiedLogo
+        description={'productLogo' in config ? config.productLogo.tagline : config.description}
+        title={'productLogo' in config ? config.productLogo.name : config.websiteName}
+      >
+        {config.logo}
       </GuildUnifiedLogo>
     ),
     navbar: {
       extraContent: <ThemeSwitcherButton />,
-      ...(logo && { component: props => <Navbar items={addGuildCompanyMenu(props.items)} /> }),
+      ...(config.logo && {
+        component: props => <Navbar items={addGuildCompanyMenu(props.items)} />,
+      }),
     },
     ...config,
     components: {
