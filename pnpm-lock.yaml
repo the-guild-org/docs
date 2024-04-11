@@ -55,8 +55,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6(prettier@3.2.5)
       '@theguild/tailwind-config':
-        specifier: 0.4.0
-        version: 0.4.0
+        specifier: 0.4.1
+        version: 0.4.1
       '@types/jest-image-snapshot':
         specifier: 6.4.0
         version: 6.4.0
@@ -337,8 +337,8 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@theguild/tailwind-config':
-        specifier: 0.4.0
-        version: 0.4.0
+        specifier: 0.4.1
+        version: 0.4.1
       '@types/react':
         specifier: 18.2.76
         version: 18.2.76
@@ -519,7 +519,7 @@ packages:
       '@babel/core': 7.22.8
       '@babel/helper-validator-option': 7.22.5
       '@nicolo-ribaudo/semver-v6': 6.3.3
-      browserslist: 4.21.9
+      browserslist: 4.23.0
       lru-cache: 5.1.1
     dev: true
 
@@ -6671,8 +6671,8 @@ packages:
       - supports-color
     dev: true
 
-  /@theguild/tailwind-config@0.4.0:
-    resolution: {integrity: sha512-yBKCWCObEpu8JvB4aPXysDHmwecGJyms6P6Gj3LG3cA+3HiWTj/bqjU4TigotK+n/Dg/bbP4ZllYfhg4Llzypg==}
+  /@theguild/tailwind-config@0.4.1:
+    resolution: {integrity: sha512-o04kB4/fzlSPUS6LRMjTCmiozmDzrYPDB4rIRd3g/6ELcPbU45Zv+WcsZHxR5djgh0SuL6tCyFZji8cXdCvH/A==}
     dependencies:
       autoprefixer: 10.4.19(postcss@8.4.38)
       cssnano: 6.1.2(postcss@8.4.38)
@@ -8653,9 +8653,9 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001599
-      electron-to-chromium: 1.4.454
-      node-releases: 2.0.13
-      update-browserslist-db: 1.0.11(browserslist@4.21.9)
+      electron-to-chromium: 1.4.713
+      node-releases: 2.0.14
+      update-browserslist-db: 1.0.13(browserslist@4.21.9)
     dev: true
 
   /browserslist@4.23.0:
@@ -9382,7 +9382,7 @@ packages:
   /core-js-compat@3.26.0:
     resolution: {integrity: sha512-piOX9Go+Z4f9ZiBFLnZ5VrOpBl0h7IGCkiFUN11QTe6LjAvOT3ifL/5TdoizMh99hcGy5SoLyWbapIY/PIb/3A==}
     dependencies:
-      browserslist: 4.21.9
+      browserslist: 4.23.0
     dev: true
 
   /core-js-compat@3.36.1:
@@ -10537,10 +10537,6 @@ packages:
     hasBin: true
     dependencies:
       jake: 10.8.5
-    dev: true
-
-  /electron-to-chromium@1.4.454:
-    resolution: {integrity: sha512-pmf1rbAStw8UEQ0sr2cdJtWl48ZMuPD9Sto8HVQOq9vx9j2WgDEN6lYoaqFvqEHYOmGA9oRGn7LqWI9ta0YugQ==}
     dev: true
 
   /electron-to-chromium@1.4.713:
@@ -16132,10 +16128,6 @@ packages:
       vm-browserify: 1.1.2
     dev: false
 
-  /node-releases@2.0.13:
-    resolution: {integrity: sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ==}
-    dev: true
-
   /node-releases@2.0.14:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
 
@@ -20725,8 +20717,8 @@ packages:
     dev: false
     optional: true
 
-  /update-browserslist-db@1.0.11(browserslist@4.21.9):
-    resolution: {integrity: sha512-dCwEFf0/oT85M1fHBg4F0jtLwJrutGoHSQXCh7u4o2t1drG+c0a9Flnqww6XUKSfQMPpJBRjU8d4RXB09qtvaA==}
+  /update-browserslist-db@1.0.13(browserslist@4.21.9):
+    resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
