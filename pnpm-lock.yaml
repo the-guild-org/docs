@@ -223,6 +223,9 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      unified:
+        specifier: ^11.0.3
+        version: 11.0.4
 
   packages/editor:
     dependencies:

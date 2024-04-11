@@ -27,7 +27,7 @@ export function applyUnderscoreRedirects(config: any, meta: any) {
         if (redirects.length === 0) {
           if (!isWarningPrinted) {
             // eslint-disable-next-line no-console -- for debug
-            console.warn('[guild-docs] No redirects defined, no "_redirect" file is created!');
+            console.warn('[@theguild/components] No redirects defined, no "_redirect" file is created!');
             isWarningPrinted = true;
           }
           return;
