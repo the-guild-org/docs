@@ -1,7 +1,9 @@
+import path from 'node:path';
 import { NextConfig } from 'next';
 import withVideos from 'next-videos';
 import nextra, { NextraConfig } from 'nextra';
 import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
+import { Plugin } from 'unified';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
 import { applyUnderscoreRedirects } from './underscore-redirects';
 
@@ -14,6 +16,37 @@ export const defaultRemarkPlugins: MdxOptions['remarkPlugins'] = [
     { whiteList: ['iframe', 'video', 'source'] },
   ],
 ];
+
+const warnings = new Set<string>();
+
+const rehypeCheckFrontMatter: Plugin<[], any> = () => (_ast, file) => {
+  const { description } = file.data.frontMatter as Record<string, string>;
+  const filePath = path.relative(process.cwd(), file.history[0]);
+
+  // Ignore warning for partial mdx files
+  if (!filePath.includes('/pages/')) return;
+
+  function warnOnce(message: string) {
+    const msg = `[@theguild/components] SEO issue in "${filePath}": ${message}`;
+    if (!warnings.has(msg)) {
+      warnings.add(msg);
+      // eslint-disable-next-line no-console
+      console.warn(msg);
+    }
+  }
+
+  if (!description) {
+    warnOnce('The description is missing');
+  } else if (description.length > 160) {
+    warnOnce(
+      `The description "${description}" is too long, should be less than 160 characters, not ${description.length}`,
+    );
+  } else if (description.length < 50) {
+    warnOnce(
+      `The description "${description}" is too short, should be more than 50 characters, not ${description.length}`,
+    );
+  }
+};
 
 export function withGuildDocs({
   nextraConfig,
@@ -33,6 +66,8 @@ export function withGuildDocs({
     defaultShowCopyCode: true,
     mdxOptions: {
       remarkPlugins: defaultRemarkPlugins,
+      // Should be rehype since frontMatter is attached in remark plugins
+      rehypePlugins: [rehypeCheckFrontMatter],
     },
     search: {
       codeblocks: true,

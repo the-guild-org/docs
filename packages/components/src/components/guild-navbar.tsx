@@ -44,7 +44,7 @@ export function GuildUnifiedLogo({
             {typeof children === 'function' ? children({}) : children}
             <div>
               <h1 className="text-sm font-bold leading-tight">{title}</h1>
-              <h2 className="text-xs max-sm:hidden">{description}</h2>
+              <h2 className="text-xs max-lg:hidden">{description}</h2>
             </div>
           </Anchor>
         </>
