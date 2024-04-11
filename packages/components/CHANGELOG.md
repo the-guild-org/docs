@@ -1,5 +1,11 @@
 # @theguild/components
 
+## 6.5.3
+
+### Patch Changes
+
+- [#1457](https://github.com/the-guild-org/docs/pull/1457) [`da5fa93`](https://github.com/the-guild-org/docs/commit/da5fa932f49b9d22dfb8cfdcd694c77156cdb535) Thanks [@dimaMachina](https://github.com/dimaMachina)! - warn on server when missing `frontMatter.description`
+
 ## 6.5.2
 
 ### Patch Changes
