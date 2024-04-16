@@ -73,6 +73,7 @@
     "react-paginate": "8.2.0",
     "react-player": "2.16.0",
     "remark-mdx-disable-explicit-jsx": "0.1.0",
+    "date-fns": "3.6.0",
     "semver": "^7.3.8"
   },
   "devDependencies": {

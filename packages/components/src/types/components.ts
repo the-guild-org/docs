@@ -111,6 +111,17 @@ export interface IMarketplaceListProps {
   items: IMarketplaceItemProps[];
 }
 
+export interface IChangelogListProps {
+  className?: string;
+  title?: string;
+  items: {
+    title: string;
+    date: string;
+    description: string;
+    route: string;
+  }[];
+}
+
 export interface IMarketplaceSearchProps {
   className?: string;
   title: string | ReactNode;
