@@ -175,11 +175,11 @@ importers:
         specifier: 1.5.0
         version: 1.5.0(webpack@4.47.0)
       nextra:
-        specifier: 3.0.0-alpha.22
-        version: 3.0.0-alpha.22(@types/react@18.2.76)(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
+        specifier: 3.0.0-alpha.23
+        version: 3.0.0-alpha.23(@types/react@18.2.76)(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
       nextra-theme-docs:
-        specifier: 3.0.0-alpha.22
-        version: 3.0.0-alpha.22(next@13.4.2)(nextra@3.0.0-alpha.22)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 3.0.0-alpha.23
+        version: 3.0.0-alpha.23(next@13.4.2)(nextra@3.0.0-alpha.23)(react-dom@18.2.0)(react@18.2.0)
       react-paginate:
         specifier: 8.2.0
         version: 8.2.0(react@18.2.0)
@@ -315,8 +315,8 @@ importers:
         specifier: 4.0.3
         version: 4.0.3
       nextra:
-        specifier: 3.0.0-alpha.22
-        version: 3.0.0-alpha.22(@types/react@18.2.76)(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
+        specifier: 3.0.0-alpha.23
+        version: 3.0.0-alpha.23(@types/react@18.2.76)(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
       unified:
         specifier: 11.0.4
         version: 11.0.4
@@ -4446,7 +4446,7 @@ packages:
   /@mdx-js/mdx@3.0.0:
     resolution: {integrity: sha512-Icm0TBKBLYqroYbNW3BPnzMGn+7mwpQOK310aZ7+fkCtiU3aqv2cdcX+nd0Ydo3wI5Rx8bX2Z2QmGb/XcAClCw==}
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.5
       '@types/estree-jsx': 1.0.0
       '@types/hast': 3.0.4
       '@types/mdx': 2.0.3
@@ -7512,14 +7512,11 @@ packages:
   /@types/estree-jsx@1.0.0:
     resolution: {integrity: sha512-3qvGd0z8F2ENTGr/GG1yViqfiKmRfrXVx5sJyHGFu3z7m5g5utCQtGp/g29JnjflhtQJBv1WDQukHiT58xPcYQ==}
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.5
 
   /@types/estree@0.0.51:
     resolution: {integrity: sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==}
     dev: true
-
-  /@types/estree@1.0.0:
-    resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
 
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -7549,11 +7546,6 @@ packages:
 
   /@types/hast@2.3.4:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}
-    dependencies:
-      '@types/unist': 3.0.0
-
-  /@types/hast@3.0.1:
-    resolution: {integrity: sha512-hs/iBJx2aydugBQx5ETV3ZgeSS0oIreQrFJ4bjBl0XvM4wAmDjFEALY7p0rTSLt2eL+ibjRAAs9dTPiCLtmbqQ==}
     dependencies:
       '@types/unist': 3.0.0
 
@@ -12183,7 +12175,7 @@ packages:
   /estree-util-attach-comments@2.1.0:
     resolution: {integrity: sha512-rJz6I4L0GaXYtHpoMScgDIwM0/Vwbu5shbMeER596rB2D1EWF6+Gj0e0UKzJPZrpoOc87+Q2kgVFHfjAymIqmw==}
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.5
 
   /estree-util-build-jsx@2.2.0:
     resolution: {integrity: sha512-apsfRxF9uLrqosApvHVtYZjISPvTJ+lBiIydpC+9wE6cF6ssbhnjyQLqaIjgzGxvC2Hbmec1M7g91PoBayYoQQ==}
@@ -12232,7 +12224,7 @@ packages:
     resolution: {integrity: sha512-b2tdzTurEIbwRh+mKrEcaWfu1wgb8J1hVsgREg7FFiecWwK/PhO8X0kyc+0bIcKNtD4sqxIdNoRy6/p/TvECEA==}
     engines: {node: '>=16.0.0'}
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 1.0.5
       is-plain-obj: 4.1.0
 
   /estree-util-visit@1.2.1:
@@ -13495,14 +13487,14 @@ packages:
   /hast-util-from-dom@5.0.0:
     resolution: {integrity: sha512-d6235voAp/XR3Hh5uy7aGLbM3S4KamdW0WEgOaU1YoewnuYw4HXb5eRtv9g65m/RFGEfUY1Mw4UqCc5Y8L4Stg==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       hastscript: 8.0.0
       web-namespaces: 2.0.1
 
   /hast-util-from-html-isomorphic@2.0.0:
     resolution: {integrity: sha512-zJfpXq44yff2hmE0XmwEOzdWin5xwH+QIhMLOScpX91e/NSGPsAzNCvLQDIEPyO2TXi+lBmU6hjLIhV8MwP2kw==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       hast-util-from-dom: 5.0.0
       hast-util-from-html: 2.0.1
       unist-util-remove-position: 5.0.0
@@ -13520,7 +13512,7 @@ packages:
   /hast-util-from-parse5@8.0.1:
     resolution: {integrity: sha512-Er/Iixbc7IEa7r/XLtuG52zoqn/b3Xng/w6aZQ0xGVxzhw5xUFxcRqdPzP6yFi/4HBYRaifaI5fQ1RH8n0ZeOQ==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       '@types/unist': 3.0.0
       devlop: 1.1.0
       hastscript: 8.0.0
@@ -13532,17 +13524,17 @@ packages:
   /hast-util-is-element@3.0.0:
     resolution: {integrity: sha512-Val9mnv2IWpLbNPqc/pUem+a7Ipj2aHacCwgNfTiK0vJKl0LF+4Ba4+v1oPHFpf3bLYmreq0/l3Gud9S5OH42g==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
 
   /hast-util-parse-selector@4.0.0:
     resolution: {integrity: sha512-wkQCkSYoOGCRKERFWcxMVMOcYE2K1AaNLU8DXS9arxnLOUEWbOXKXiJUNzEpqZ3JOKpnha3jkFrumEjVliDe7A==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
 
   /hast-util-raw@9.0.1:
     resolution: {integrity: sha512-5m1gmba658Q+lO5uqL5YNGQWeh1MYWZbZmWrM5lncdcuiXuo5E2HT/CIOp0rLF8ksfSwiCVJ3twlgVRyTGThGA==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       '@types/unist': 3.0.0
       '@ungap/structured-clone': 1.2.0
       hast-util-from-parse5: 8.0.1
@@ -13580,8 +13572,8 @@ packages:
   /hast-util-to-jsx-runtime@2.3.0:
     resolution: {integrity: sha512-H/y0+IWPdsLLS738P8tDnrQ8Z+dj12zQQ6WC11TIM21C8WFVoIxcqWXf2H3hiTVZjF1AWqoimGwrTWecWrnmRQ==}
     dependencies:
-      '@types/estree': 1.0.0
-      '@types/hast': 3.0.1
+      '@types/estree': 1.0.5
+      '@types/hast': 3.0.4
       '@types/unist': 3.0.0
       comma-separated-tokens: 2.0.2
       devlop: 1.1.0
@@ -13601,7 +13593,7 @@ packages:
   /hast-util-to-parse5@8.0.0:
     resolution: {integrity: sha512-3KKrV5ZVI8if87DVSi1vDeByYrkGzg4mEfeu4alwgmmIeARiBLKCZS2uw5Gb6nU9x9Yufyj3iudm6i7nl52PFw==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       comma-separated-tokens: 2.0.2
       devlop: 1.1.0
       property-information: 6.1.1
@@ -13617,7 +13609,7 @@ packages:
   /hast-util-to-text@4.0.0:
     resolution: {integrity: sha512-EWiE1FSArNBPUo1cKWtzqgnuRQwEeQbQtnFJRYV1hb1BWDgrAlBU0ExptvZMM/KSA82cDpm2sFGf3Dmc5Mza3w==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       '@types/unist': 3.0.0
       hast-util-is-element: 3.0.0
       unist-util-find-after: 5.0.0
@@ -13628,12 +13620,12 @@ packages:
   /hast-util-whitespace@3.0.0:
     resolution: {integrity: sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
 
   /hastscript@8.0.0:
     resolution: {integrity: sha512-dMOtzCEd3ABUeSIISmrETiKuyydk1w0pa+gE/uormcTpSYuaNJPbX1NU3JLyscSLjwAQM8bWMhhIlnCqnRvDTw==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       comma-separated-tokens: 2.0.2
       hast-util-parse-selector: 4.0.0
       property-information: 6.1.1
@@ -15403,7 +15395,7 @@ packages:
   /mdast-util-math@3.0.0:
     resolution: {integrity: sha512-Tl9GBNeG/AhJnQM221bJR2HPvLOSnLE/T9cJI9tlc6zwQk2nPk/4f0cHkOdEixQPC/j8UtKDdITswvLAy1OZ1w==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       '@types/mdast': 4.0.3
       devlop: 1.1.0
       longest-streak: 3.0.1
@@ -15428,7 +15420,7 @@ packages:
     resolution: {integrity: sha512-fGCu8eWdKUKNu5mohVGkhBXCXGnOTLuFqOvGMvdikr+J1w7lDJgxThOKpwRWzzbyXAU2hhSwsmssOY4yTokluw==}
     dependencies:
       '@types/estree-jsx': 1.0.0
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       '@types/mdast': 4.0.3
       devlop: 1.1.0
       mdast-util-from-markdown: 2.0.0
@@ -15455,7 +15447,7 @@ packages:
     resolution: {integrity: sha512-XZuPPzQNBPAlaqsTTgRrcJnyFbSOBovSadFgbFu8SnuNgm+6Bdx1K+IWoitsmj6Lq6MNtI+ytOqwN70n//NaBA==}
     dependencies:
       '@types/estree-jsx': 1.0.0
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       '@types/mdast': 4.0.3
       '@types/unist': 3.0.0
       ccount: 2.0.1
@@ -15506,7 +15498,7 @@ packages:
     resolution: {integrity: sha512-EcmOpxsZ96CvlP03NghtH1EsLtr0n9Tm4lPUJUBccV9RwUOneqSycg19n5HGzCf+10LozMRSObtVr3ee1WoHtg==}
     dependencies:
       '@types/estree-jsx': 1.0.0
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       '@types/mdast': 4.0.3
       devlop: 1.1.0
       mdast-util-from-markdown: 2.0.0
@@ -15537,7 +15529,7 @@ packages:
   /mdast-util-to-hast@13.0.2:
     resolution: {integrity: sha512-U5I+500EOOw9e3ZrclN3Is3fRpw8c19SMyNZlZ2IS+7vLsNzb2Om11VpIVOR+/0137GhZsFEF6YiKD5+0Hr2Og==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       '@types/mdast': 4.0.3
       '@ungap/structured-clone': 1.2.0
       devlop: 1.1.0
@@ -16622,18 +16614,6 @@ packages:
       - supports-color
     dev: false
 
-  /next-themes@0.2.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==}
-    peerDependencies:
-      next: '*'
-      react: '*'
-      react-dom: '*'
-    dependencies:
-      next: 13.4.2(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
   /next-themes@0.3.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-/QHIrsYpd6Kfk7xakK4svpDI5mmXP0gfvCoJdGpZQ2TOrQZmsW0QxjaiLn8wbIKjtm4BTSqLoix4lxYYOnLJ/w==}
     peerDependencies:
@@ -16642,7 +16622,6 @@ packages:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-    dev: true
 
   /next-videos@1.5.0(webpack@4.47.0):
     resolution: {integrity: sha512-U6HY68UDxsDMMRgjABYq1S2EIStqZNp8FFtL8LKXJrhGFIO1nM2a3Afy0jw3JI2nK1HSXq4s4anQ96Yn4ukceA==}
@@ -16696,11 +16675,11 @@ packages:
       - '@babel/core'
       - babel-plugin-macros
 
-  /nextra-theme-docs@3.0.0-alpha.22(next@13.4.2)(nextra@3.0.0-alpha.22)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-MKFSDjslUE086KqWE/5gYK3wri2N+SEpQRfYBF2GNrvg7ksSUjXVzyuYQHZ5moQiCEYAS59T13zwhkfCITaPVQ==}
+  /nextra-theme-docs@3.0.0-alpha.23(next@13.4.2)(nextra@3.0.0-alpha.23)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Ra+ZHzGnpX4IIfhVniMbDlSdwx5fTfaw7GV7P2pPALy/5EcwVLWgrCpNlE55QgRqqgvS7DjKvNliZVHisWMZdw==}
     peerDependencies:
       next: '>=13'
-      nextra: 3.0.0-alpha.22
+      nextra: 3.0.0-alpha.23
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
     dependencies:
@@ -16712,16 +16691,16 @@ packages:
       focus-visible: 5.2.0
       intersection-observer: 0.12.2
       next: 13.4.2(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
-      next-themes: 0.2.1(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)
-      nextra: 3.0.0-alpha.22(@types/react@18.2.76)(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
+      next-themes: 0.3.0(react-dom@18.2.0)(react@18.2.0)
+      nextra: 3.0.0-alpha.23(@types/react@18.2.76)(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       scroll-into-view-if-needed: 3.1.0
       zod: 3.22.4
     dev: false
 
-  /nextra@3.0.0-alpha.22(@types/react@18.2.76)(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5):
-    resolution: {integrity: sha512-4V1kLs0MiQ1KE/Dh1cnLc100Ibyo/PY46v1NdRzrYe7uzCBcSGTiG9OwHTE/34wUwbM5N7TptiDOlV79BBZ0Ng==}
+  /nextra@3.0.0-alpha.23(@types/react@18.2.76)(next@13.4.2)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-TfFd2ISqvlkhfdGkjrqXWA7uTyfNvwhbSaqEuATmto+SMpyfyamiRD6SloaZbKBZkiwqLD4PlDa9254GiPKUBQ==}
     engines: {node: '>=18'}
     peerDependencies:
       next: '>=13'
@@ -18992,7 +18971,7 @@ packages:
   /remark-rehype@11.1.0:
     resolution: {integrity: sha512-z3tJrAs2kIs1AqIIy6pzHmAHlF1hWQ+OdY4/hv+Wxe35EhyLKcajL33iUEn3ScxtFox9nUvRufR/Zre8Q08H/g==}
     dependencies:
-      '@types/hast': 3.0.1
+      '@types/hast': 3.0.4
       '@types/mdast': 4.0.3
       mdast-util-to-hast: 13.0.2
       unified: 11.0.4

@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@types/mdast": "4.0.3",
-    "nextra": "3.0.0-alpha.22",
+    "nextra": "3.0.0-alpha.23",
     "unified": "11.0.4"
   },
   "publishConfig": {
