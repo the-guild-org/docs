@@ -23,11 +23,12 @@ const COMPANY: ILink[] = [
     title: 'Newsletter',
     href: 'https://the-guild.dev/newsletter',
   },
-  {
-    children: 'Open Source',
-    title: 'Open Source',
-    href: 'https://the-guild.dev/open-source',
-  },
+  // Add this back when we have the page on the website - Redirect make some issues
+  // {
+  //   children: 'Open Source',
+  //   title: 'Open Source',
+  //   href: 'https://the-guild.dev/open-source',
+  // },
   {
     children: 'Services',
     title: 'services',
