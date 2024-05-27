@@ -1,4 +1,4 @@
-import { HeroGradient, HeroVideo, InfoList, NPMBadge } from '@theguild/components';
+import { HeroGradient, HeroVideo, InfoList, NPMBadge, ProductUpdates } from '@theguild/components';
 
 export function IndexPage() {
   return (
@@ -40,6 +40,24 @@ export function IndexPage() {
             title: 'Profit',
             description:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ante at ex interdum tincidunt vitae quis justo.',
+          },
+        ]}
+      />
+      <ProductUpdates
+        changelogs={[
+          {
+            title: 'New Feature',
+            description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ante at ex interdum tincidunt vitae quis justo.',
+            date: '2022-01-01',
+            route: '/changelog',
+          },
+          {
+            title: 'Bugfix',
+            description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ante at ex interdum tincidunt vitae quis justo.',
+            date: '2022-01-01',
+            route: '/changelog',
           },
         ]}
       />

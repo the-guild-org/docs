@@ -19,3 +19,4 @@ export { NPMBadge } from './npm-badge';
 export { GuildUnifiedLogo } from './guild-navbar';
 export { ThemeSwitcherButton } from './theme-switcher';
 export { productsItems } from './company-menu';
+export { ProductUpdates } from './changelog-list';

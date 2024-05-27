@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { dummyChangelogList } from '../helpers/dummy';
-import { ChangelogType, ProductUpdates } from './changelog-list';
+import { IChangelogListProps } from '../types/components';
+import { ProductUpdates } from './changelog-list';
 
 export default {
   title: 'Components/Changelog/List',
@@ -9,7 +10,7 @@ export default {
   argTypes: {},
 } as Meta;
 
-const Template: Story<ChangelogType> = args => (
+const Template: Story<IChangelogListProps> = args => (
   <div>
     <ProductUpdates {...args} />
   </div>

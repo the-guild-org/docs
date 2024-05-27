@@ -1,15 +1,8 @@
-import { ReactElement, ReactNode } from 'react';
+import { ReactElement } from 'react';
 import { format } from 'date-fns';
+import { IChangelogListProps } from '../types/components';
 
-export type ChangelogType = {
-  title: string;
-  date: string;
-  description: string;
-  route: string;
-  icon?: ReactNode;
-};
-
-function ProductUpdateItem(props: ChangelogType) {
+function ProductUpdateItem(props: IChangelogListProps) {
   return (
     <div className="relative mx-auto flex pb-5 pt-[10px] sm:items-center md:w-2/3">
       <div className="absolute inset-0 flex h-full w-3 items-center justify-center">
@@ -41,7 +34,7 @@ function ProductUpdateItem(props: ChangelogType) {
   );
 }
 
-export const ProductUpdates = (props: { changelogs: ChangelogType[] }): ReactElement => {
+export const ProductUpdates = (props: { changelogs: IChangelogListProps[] }): ReactElement => {
   return (
     <div>
       <div className="container mx-auto flex flex-wrap px-5 py-24">
