@@ -18,8 +18,10 @@ import featureListImage2 from '../static/dummy/envelop/features-performant.png';
 import featureListImage1 from '../static/dummy/envelop/features-pluggable.png';
 import marketplaceListImage from '../static/dummy/marketplace/logo-modules.svg';
 import yogaImage from '../static/illustrations/yoga.svg';
+import { ChangelogType } from '../components/changelog-list';
 
-export const dummyChangelogList: IChangelogListProps[] = [
+export const dummyChangelogList: ChangelogType[] = [
+
   {
     title: 'GraphQL Modules',
     date: '2021-05-07T10:14:55.884Z',
