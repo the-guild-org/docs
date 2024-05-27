@@ -1,51 +1,54 @@
-import { format } from "date-fns";
-import { ReactElement, ReactNode } from "react";
-
+import { ReactElement, ReactNode } from 'react';
+import { format } from 'date-fns';
 
 export type ChangelogType = {
-    title: string;
-    date: string;
-    description: string;
-    route: string;
-    icon?: ReactNode
+  title: string;
+  date: string;
+  description: string;
+  route: string;
+  icon?: ReactNode;
 };
 
 function ProductUpdateItem(props: ChangelogType) {
-    return (
-        <div className="flex relative pt-[10px] pb-5 sm:items-center md:w-2/3 mx-auto">
-            <div className="h-full w-3 absolute inset-0 flex items-center justify-center">
-                <div className="h-full w-[2px] bg-gray-100 pointer-events-none" />
-            </div>
-            <div className="flex-shrink-0 w-3 h-3 rounded-full mt-10 sm:mt-0 inline-flex items-end justify-end bg-gray-200 text-white relative z-10" />
-            <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                {props.icon ?
-                    <div className="inline-flex items-center justify-center relative z-10">
-                        {props.icon}
-                    </div> : null
-                }
-                <div className="flex-grow  sm:pl-6 mt-6 sm:mt-0">
-                    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500" dateTime={props.date}>
-                        {format(new Date(props.date), 'do MMMM yyyy')}
-                    </time>
-                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white title-font mb-1">
-                        <a className="hover:underline cursor-pointer" href={props.route}>{props.title}</a>
-                    </h2>
-                    <p className="mb-4 mt-1 max-w-[600px] text-base font-normal leading-6 text-gray-500 dark:text-gray-400">{props.description}</p>
-                </div>
-            </div>
+  return (
+    <div className="relative mx-auto flex pb-5 pt-[10px] sm:items-center md:w-2/3">
+      <div className="absolute inset-0 flex h-full w-3 items-center justify-center">
+        <div className="pointer-events-none h-full w-[2px] bg-gray-100" />
+      </div>
+      <div className="relative z-10 mt-10 inline-flex h-3 w-3 flex-shrink-0 items-end justify-end rounded-full bg-gray-200 text-white sm:mt-0" />
+      <div className="flex flex-grow flex-col items-start pl-6 sm:flex-row sm:items-center md:pl-8">
+        {props.icon ? (
+          <div className="relative z-10 inline-flex items-center justify-center">{props.icon}</div>
+        ) : null}
+        <div className="mt-6  flex-grow sm:mt-0 sm:pl-6">
+          <time
+            className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+            dateTime={props.date}
+          >
+            {format(new Date(props.date), 'do MMMM yyyy')}
+          </time>
+          <h2 className="title-font mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+            <a className="cursor-pointer hover:underline" href={props.route}>
+              {props.title}
+            </a>
+          </h2>
+          <p className="mb-4 mt-1 max-w-[600px] text-base font-normal leading-6 text-gray-500 dark:text-gray-400">
+            {props.description}
+          </p>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export const ProductUpdates = (props: { changelogs: ChangelogType[] }): ReactElement => {
-    return (
-        <div>
-            <div className="container px-5 py-24 mx-auto flex flex-wrap">
-                {props.changelogs.map((changelog, index) => (
-                    <ProductUpdateItem key={index} {...changelog} />
-                ))}
-            </div>
-        </div>
-    );
-}
-
+  return (
+    <div>
+      <div className="container mx-auto flex flex-wrap px-5 py-24">
+        {props.changelogs.map((changelog, index) => (
+          <ProductUpdateItem key={index} {...changelog} />
+        ))}
+      </div>
+    </div>
+  );
+};
