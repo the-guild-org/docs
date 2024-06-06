@@ -271,8 +271,8 @@ importers:
         version: 0.3.3
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20240405.0
-        version: 4.20240405.0
+        specifier: 4.20240605.0
+        version: 4.20240605.0
       '@types/react':
         specifier: 18.2.76
         version: 18.2.76
@@ -281,7 +281,7 @@ importers:
         version: 5.4.5
       wrangler:
         specifier: 3.50.0
-        version: 3.50.0(@cloudflare/workers-types@4.20240405.0)
+        version: 3.50.0(@cloudflare/workers-types@4.20240605.0)
 
   packages/remark-mermaid:
     dependencies:
@@ -3270,8 +3270,8 @@ packages:
     dev: true
     optional: true
 
-  /@cloudflare/workers-types@4.20240405.0:
-    resolution: {integrity: sha512-sEVOhyOgXUwfLkgHqbLZa/sfkSYrh7/zLmI6EZNibPaVPvAnAcItbNNl3SAlLyLKuwf8m4wAIAgu9meKWCvXjg==}
+  /@cloudflare/workers-types@4.20240605.0:
+    resolution: {integrity: sha512-zJw4Q6CnkaQ5JZmHRkNiSs5GfiRgUIUL8BIHPQkd2XUHZkIBv9M9yc0LKEwMYGpCFC+oSOltet6c9RjP9uQ99g==}
     dev: true
 
   /@colors/colors@1.5.0:
@@ -5787,7 +5787,7 @@ packages:
     dependencies:
       '@storybook/client-logger': 7.0.0-beta.11
       '@storybook/core-events': 7.0.0-beta.11
-      '@storybook/csf': 0.1.4-next.0
+      '@storybook/csf': 0.1.8-next.0
       '@storybook/manager-api': 7.0.0-beta.11(react-dom@18.2.0)(react@18.2.0)
       '@storybook/preview-api': 7.0.0-beta.11
       '@storybook/router': 7.0.0-beta.11(react-dom@18.2.0)(react@18.2.0)
@@ -5958,7 +5958,7 @@ packages:
       '@storybook/client-logger': 7.0.0-beta.11
       '@storybook/components': 7.0.0-beta.11(react-dom@18.2.0)(react@18.2.0)
       '@storybook/core-events': 7.0.0-beta.11
-      '@storybook/csf': 0.1.4-next.0
+      '@storybook/csf': 0.1.8-next.0
       '@storybook/docs-tools': 7.0.0-beta.11
       '@storybook/manager-api': 7.0.0-beta.11(react-dom@18.2.0)(react@18.2.0)
       '@storybook/preview-api': 7.0.0-beta.11
@@ -6208,7 +6208,7 @@ packages:
     dependencies:
       '@babel/preset-env': 7.24.4(@babel/core@7.24.3)
       '@babel/types': 7.24.0
-      '@storybook/csf': 0.1.4-next.0
+      '@storybook/csf': 0.1.8-next.0
       '@storybook/csf-tools': 7.0.0-beta.11
       '@storybook/node-logger': 7.0.0-beta.11
       '@storybook/types': 7.0.0-beta.11
@@ -6231,7 +6231,7 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@storybook/client-logger': 7.0.0-beta.11
-      '@storybook/csf': 0.1.4-next.0
+      '@storybook/csf': 0.1.8-next.0
       '@storybook/theming': 7.0.0-beta.11(react-dom@18.2.0)(react@18.2.0)
       '@storybook/types': 7.0.0-beta.11
       memoizerific: 1.11.3
@@ -6355,7 +6355,7 @@ packages:
       '@storybook/builder-manager': 7.0.0-beta.11
       '@storybook/core-common': 7.0.0-beta.11
       '@storybook/core-events': 7.0.0-beta.11
-      '@storybook/csf': 0.1.4-next.0
+      '@storybook/csf': 0.1.8-next.0
       '@storybook/csf-tools': 7.0.0-beta.11
       '@storybook/docs-mdx': 3.1.0-next.0
       '@storybook/node-logger': 7.0.0-beta.11
@@ -6423,7 +6423,7 @@ packages:
     resolution: {integrity: sha512-My4JLpQwp6L1rbyLFbjnc5MK/YsIoJM89poYD4mzoVAhMNuxd3Hkiu/j10qIDftplaNycMH5igNyg+ew0stexA==}
     dependencies:
       '@babel/types': 7.24.0
-      '@storybook/csf': 0.1.4-next.0
+      '@storybook/csf': 0.1.8-next.0
       '@storybook/types': 7.0.0-beta.11
       fs-extra: 9.1.0
       ts-dedent: 2.2.0
@@ -6443,8 +6443,8 @@ packages:
       type-fest: 2.19.0
     dev: true
 
-  /@storybook/csf@0.1.4-next.0:
-    resolution: {integrity: sha512-7Ti8jPyMRAIZYgm5CF+HBbRywdX8uGpgt5fNAhfidZ713MIqSlxViDq+Znc+lWRNQap62sKoIio6O/9myFEwug==}
+  /@storybook/csf@0.1.8-next.0:
+    resolution: {integrity: sha512-RPe5ar2GCevQRZdmoPrPhkhdJ/Z/cYKURGEn+iT5LuxAv4PN1T73ZD9WDnmOOCzVtC2iUlwxsUsjKFPEoLacMw==}
     dependencies:
       type-fest: 2.19.0
     dev: true
@@ -6490,7 +6490,7 @@ packages:
       '@storybook/channels': 7.0.0-beta.11
       '@storybook/client-logger': 7.0.0-beta.11
       '@storybook/core-events': 7.0.0-beta.11
-      '@storybook/csf': 0.1.4-next.0
+      '@storybook/csf': 0.1.8-next.0
       '@storybook/router': 7.0.0-beta.11(react-dom@18.2.0)(react@18.2.0)
       '@storybook/theming': 7.0.0-beta.11(react-dom@18.2.0)(react@18.2.0)
       '@storybook/types': 7.0.0-beta.11
@@ -6664,7 +6664,7 @@ packages:
       '@storybook/channels': 7.0.0-beta.11
       '@storybook/client-logger': 7.0.0-beta.11
       '@storybook/core-events': 7.0.0-beta.11
-      '@storybook/csf': 0.1.4-next.0
+      '@storybook/csf': 0.1.8-next.0
       '@storybook/types': 7.0.0-beta.11
       '@types/qs': 6.9.14
       dequal: 2.0.3
@@ -10070,6 +10070,7 @@ packages:
 
   /copy-concurrently@1.0.5:
     resolution: {integrity: sha512-f2domd9fsVDFtaFcbaRZuYXwtdmnzqbADSwhSWYxYB/Q8zsdUUFMXVRwXGDMWmbEzAn1kdRrtI1T/KTFOL4X2A==}
+    deprecated: This package is no longer supported.
     dependencies:
       aproba: 1.2.0
       fs-write-stream-atomic: 1.0.10
@@ -12830,6 +12831,7 @@ packages:
 
   /fs-write-stream-atomic@1.0.10:
     resolution: {integrity: sha512-gehEzmPn2nAwr39eay+x3X34Ra+M2QlVUTLhkXPjWdeO8RF9kszk116avgBJM3ZyNHgHXBNx+VmPaFC36k0PzA==}
+    deprecated: This package is no longer supported.
     dependencies:
       graceful-fs: 4.2.11
       iferr: 0.1.5
@@ -16515,6 +16517,7 @@ packages:
 
   /move-concurrently@1.0.1:
     resolution: {integrity: sha512-hdrFxZOycD/g6A6SoI2bB5NA/5NEqD0569+S47WZhPvm46sD50ZHdYaFmnua5lndde9rCHGjmfK7Z8BuCt/PcQ==}
+    deprecated: This package is no longer supported.
     dependencies:
       aproba: 1.2.0
       copy-concurrently: 1.0.5
@@ -22307,7 +22310,7 @@ packages:
       '@cloudflare/workerd-windows-64': 1.20240405.0
     dev: true
 
-  /wrangler@3.50.0(@cloudflare/workers-types@4.20240405.0):
+  /wrangler@3.50.0(@cloudflare/workers-types@4.20240605.0):
     resolution: {integrity: sha512-JlLuch+6DtaC5HGp8YD9Au++XvMv34g3ySdlB5SyPbaObELi8P9ZID5vgyf9AA75djzxL7cuNOk1YdKCJEuq0w==}
     engines: {node: '>=16.17.0'}
     hasBin: true
@@ -22318,7 +22321,7 @@ packages:
         optional: true
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.1
-      '@cloudflare/workers-types': 4.20240405.0
+      '@cloudflare/workers-types': 4.20240605.0
       '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
       '@esbuild-plugins/node-modules-polyfill': 0.2.2(esbuild@0.17.19)
       blake3-wasm: 2.1.5
