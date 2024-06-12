@@ -271,8 +271,8 @@ importers:
         version: 0.3.3
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20240405.0
-        version: 4.20240405.0
+        specifier: 4.20240605.0
+        version: 4.20240605.0
       '@types/react':
         specifier: 18.2.76
         version: 18.2.76
@@ -281,7 +281,7 @@ importers:
         version: 5.4.5
       wrangler:
         specifier: 3.50.0
-        version: 3.50.0(@cloudflare/workers-types@4.20240405.0)
+        version: 3.50.0(@cloudflare/workers-types@4.20240605.0)
 
   packages/remark-mermaid:
     dependencies:
@@ -3270,8 +3270,8 @@ packages:
     dev: true
     optional: true
 
-  /@cloudflare/workers-types@4.20240405.0:
-    resolution: {integrity: sha512-sEVOhyOgXUwfLkgHqbLZa/sfkSYrh7/zLmI6EZNibPaVPvAnAcItbNNl3SAlLyLKuwf8m4wAIAgu9meKWCvXjg==}
+  /@cloudflare/workers-types@4.20240605.0:
+    resolution: {integrity: sha512-zJw4Q6CnkaQ5JZmHRkNiSs5GfiRgUIUL8BIHPQkd2XUHZkIBv9M9yc0LKEwMYGpCFC+oSOltet6c9RjP9uQ99g==}
     dev: true
 
   /@colors/colors@1.5.0:
@@ -22554,7 +22554,7 @@ packages:
       '@cloudflare/workerd-windows-64': 1.20240405.0
     dev: true
 
-  /wrangler@3.50.0(@cloudflare/workers-types@4.20240405.0):
+  /wrangler@3.50.0(@cloudflare/workers-types@4.20240605.0):
     resolution: {integrity: sha512-JlLuch+6DtaC5HGp8YD9Au++XvMv34g3ySdlB5SyPbaObELi8P9ZID5vgyf9AA75djzxL7cuNOk1YdKCJEuq0w==}
     engines: {node: '>=16.17.0'}
     hasBin: true
@@ -22565,7 +22565,7 @@ packages:
         optional: true
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.1
-      '@cloudflare/workers-types': 4.20240405.0
+      '@cloudflare/workers-types': 4.20240605.0
       '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
       '@esbuild-plugins/node-modules-polyfill': 0.2.2(esbuild@0.17.19)
       blake3-wasm: 2.1.5
