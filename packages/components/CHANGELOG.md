@@ -1,5 +1,15 @@
 # @theguild/components
 
+## 6.5.4
+
+### Patch Changes
+
+- [#1488](https://github.com/the-guild-org/docs/pull/1488) [`5bc0e5a`](https://github.com/the-guild-org/docs/commit/5bc0e5ad1fe2705f4553209e26ac76e40e82eb36) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`clsx@2.1.1` ↗︎](https://www.npmjs.com/package/clsx/v/2.1.1) (from `2.1.0`, in `dependencies`)
+
+- [#1460](https://github.com/the-guild-org/docs/pull/1460) [`0e260c4`](https://github.com/the-guild-org/docs/commit/0e260c451febc8e56591a1d196fe8a29ac46b19e) Thanks [@dimaMachina](https://github.com/dimaMachina)! - use `product.title` as `title` prop when hovering
+
 ## 6.5.3
 
 ### Patch Changes
