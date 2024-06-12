@@ -67,7 +67,7 @@
     "tsx": "4.15.2",
     "turbo": "1.13.2",
     "typescript": "5.4.5",
-    "vitest": "0.34.6"
+    "vitest": "1.6.0"
   },
   "browserslist": [
     "> 1%"
