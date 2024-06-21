@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@monaco-editor/react": "4.6.0",
-    "graphql": "16.8.1",
+    "graphql": "16.9.0",
     "monaco-editor": "0.48.0"
   },
   "publishConfig": {
