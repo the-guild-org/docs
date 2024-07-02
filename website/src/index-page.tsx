@@ -50,14 +50,14 @@ export function IndexPage() {
             description:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ante at ex interdum tincidunt vitae quis justo.',
             date: '2022-01-01',
-            route: '/changelog',
+            href: '/changelog',
           },
           {
             title: 'Bugfix',
             description:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis ante at ex interdum tincidunt vitae quis justo.',
             date: '2022-01-01',
-            route: '/changelog',
+            href: '/changelog',
           },
         ]}
       />
