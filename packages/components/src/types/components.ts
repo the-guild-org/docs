@@ -115,8 +115,8 @@ export interface IChangelogListProps {
   title: string;
   date: string;
   description: string;
-  route: string;
-  icon?: ReactNode;
+  href: string;
+  className?: string;
 }
 
 export interface IMarketplaceSearchProps {
