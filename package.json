@@ -64,7 +64,7 @@
     "tailwindcss": "3.4.3",
     "tsconfig-paths-webpack-plugin": "4.1.0",
     "tsup": "8.0.2",
-    "tsx": "4.15.2",
+    "tsx": "4.16.2",
     "turbo": "1.13.4",
     "typescript": "5.4.5",
     "vitest": "0.34.6"
