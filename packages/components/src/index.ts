@@ -21,7 +21,8 @@ export {
   Tabs,
   Table,
   Td,
-  Th, Tr
+  Th,
+  Tr,
 } from 'nextra/components';
 export { useData, useMounted } from 'nextra/hooks';
 export { useMDXComponents } from 'nextra/mdx';
