@@ -1,14 +1,5 @@
-export * from './components';
-export { defineConfig } from './define-config';
-export { fetchPackageInfo } from './npm';
-export { PRODUCTS } from './products';
-export * from './types/components';
 export { default as Giscus } from '@giscus/react';
-export { useMounted, useData } from 'nextra/hooks';
-export { useMDXComponents } from 'nextra/mdx';
-export { Mermaid, Callout, Tabs, Cards, Steps, FileTree, RemoteContent } from 'nextra/components';
 export {
-  type DocsThemeConfig,
   Bleed,
   Collapse,
   Navbar,
@@ -16,8 +7,30 @@ export {
   useConfig,
   useTheme,
   useThemeConfig,
+  type DocsThemeConfig,
 } from 'nextra-theme-docs';
 export { createCatchAllMeta } from 'nextra/catch-all';
+export {
+  Callout,
+  Cards,
+  Code,
+  FileTree,
+  Mermaid,
+  RemoteContent,
+  Steps,
+  Tabs,
+  Table,
+  Td,
+  Th,
+  Tr,
+} from 'nextra/components';
+export { useData, useMounted } from 'nextra/hooks';
+export { useMDXComponents } from 'nextra/mdx';
+export * from './components';
+export { defineConfig } from './define-config';
+export { fetchPackageInfo } from './npm';
+export { PRODUCTS } from './products';
+export * from './types/components';
 
 declare module 'react' {
   interface CSSProperties {
