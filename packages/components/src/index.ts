@@ -19,7 +19,9 @@ export {
   RemoteContent,
   Steps,
   Tabs,
-  Table
+  Table,
+  Td,
+  Th, Tr
 } from 'nextra/components';
 export { useData, useMounted } from 'nextra/hooks';
 export { useMDXComponents } from 'nextra/mdx';
