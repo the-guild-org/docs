@@ -33,7 +33,7 @@
     "@storybook/mdx2-csf": "1.1.0",
     "@storybook/react-webpack5": "7.0.0-beta.11",
     "@svgr/webpack": "8.1.0",
-    "@theguild/eslint-config": "0.11.9",
+    "@theguild/eslint-config": "0.11.10",
     "@theguild/prettier-config": "2.0.6",
     "@theguild/tailwind-config": "0.4.1",
     "@types/jest-image-snapshot": "6.4.0",
