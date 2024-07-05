@@ -130,8 +130,8 @@ importers:
         specifier: 1.2.0
         version: 1.2.0(@swc/core@1.4.8)(webpack@5.91.0)
       storybook-dark-mode:
-        specifier: 4.0.1
-        version: 4.0.1(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
+        specifier: 4.0.2
+        version: 4.0.2(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
       style-loader:
         specifier: 4.0.0
         version: 4.0.0(webpack@5.91.0)
@@ -7089,7 +7089,7 @@ packages:
     dependencies:
       '@storybook/client-logger': 8.0.2
       memoizerific: 1.11.3
-      qs: 6.11.0
+      qs: 6.12.0
     dev: true
 
   /@storybook/store@7.0.0-beta.11:
@@ -19976,8 +19976,8 @@ packages:
       webpack: 5.91.0(@swc/core@1.4.8)(esbuild@0.19.12)
     dev: true
 
-  /storybook-dark-mode@4.0.1(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-9l3qY8NdgwZnY+NlO1XHB3eUb6FmZo9GazJeUSeFkjRqwA5FmnMSeq0YVqEOqfwniM/TvQwOiTYd5g/hC2wugA==}
+  /storybook-dark-mode@4.0.2(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-zjcwwQ01R5t1VsakA6alc2JDIRVtavryW8J3E3eKLDIlAMcvsgtpxlelWkZs2cuNspk6Z10XzhQVrUWtYc3F0w==}
     dependencies:
       '@storybook/components': 8.0.2(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
       '@storybook/core-events': 8.0.2
