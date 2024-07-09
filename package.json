@@ -25,13 +25,11 @@
     "@changesets/changelog-github": "0.5.0",
     "@changesets/cli": "2.27.7",
     "@rollup/plugin-alias": "5.1.0",
-    "@storybook/addon-essentials": "7.0.0-beta.11",
-    "@storybook/addon-links": "7.0.0-beta.11",
+    "@storybook/addon-essentials": "8.1.11",
+    "@storybook/addon-links": "8.1.11",
     "@storybook/addon-postcss": "2.0.0",
-    "@storybook/core-common": "7.0.0-beta.11",
-    "@storybook/global": "^5.0.0",
-    "@storybook/mdx2-csf": "1.1.0",
-    "@storybook/react-webpack5": "7.0.0-beta.11",
+    "@storybook/core-common": "8.1.11",
+    "@storybook/nextjs": "^8.1.11",
     "@svgr/webpack": "8.1.0",
     "@theguild/eslint-config": "0.11.10",
     "@theguild/prettier-config": "2.0.6",
@@ -56,9 +54,7 @@
     "pretty-quick": "4.0.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "storybook": "7.0.0-beta.11",
-    "storybook-addon-next": "1.8.0",
-    "storybook-addon-swc": "1.2.0",
+    "storybook": "8.1.11",
     "storybook-dark-mode": "4.0.2",
     "style-loader": "4.0.0",
     "tailwindcss": "3.4.4",
@@ -87,7 +83,8 @@
     "overrides": {
       "hast-util-to-estree": "^3.0.0",
       "@theguild/remark-npm2yarn": "workspace:*",
-      "@theguild/remark-mermaid": "workspace:*"
+      "@theguild/remark-mermaid": "workspace:*",
+      "esbuild": "0.23.0"
     },
     "patchedDependencies": {
       "tsup@8.0.2": "patches/tsup@7.2.0.patch"

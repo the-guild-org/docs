@@ -1,9 +1,8 @@
-import path from 'node:path';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import { Configuration } from 'webpack';
 import { StorybookConfig } from '@storybook/react-webpack5';
 
-const config: StorybookConfig = {
+export default {
   stories: ['../packages/*/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
     '@storybook/addon-essentials',
@@ -16,14 +15,7 @@ const config: StorybookConfig = {
         },
       },
     },
-    {
-      name: 'storybook-addon-next',
-      options: {
-        nextConfigPath: path.resolve(__dirname, 'next.config.cjs'),
-      },
-    },
-    'storybook-dark-mode', // addon to have toolbar for dark/light mode
-    'storybook-addon-swc',
+    // 'storybook-dark-mode', // addon to have toolbar for dark/light mode
   ],
   typescript: {
     reactDocgen: false,
@@ -54,16 +46,11 @@ const config: StorybookConfig = {
 
     return config;
   },
-  features: {
-    previewMdx2: true,
-  },
   framework: {
-    name: '@storybook/react-webpack5',
+    name: '@storybook/nextjs',
     options: { fastRefresh: true },
   },
   core: {
     disableTelemetry: true,
   },
-};
-
-export default config;
+} satisfies StorybookConfig;
