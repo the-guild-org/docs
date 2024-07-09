@@ -106,15 +106,7 @@ export const FooterExtended = ({
         {list.map(link => (
           <li key={link.href} className="mb-3 last:mb-0">
             <Anchor
-              className="
-                inline-block
-                text-sm
-                font-medium
-                text-gray-500
-                hover:text-black
-                dark:text-gray-400
-                hover:dark:text-gray-100
-              "
+              className="inline-block text-sm font-medium text-gray-500 hover:text-black dark:text-gray-400 hover:dark:text-gray-100"
               {...link}
             />
           </li>
