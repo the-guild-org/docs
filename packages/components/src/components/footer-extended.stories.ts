@@ -20,26 +20,26 @@ type Story = StoryObj<typeof FooterExtended>;
 
 export const Default: Story = {
   args: {
-    // sameSite: false,
-    // resources: [
-    //   {
-    //     children: 'Documentation',
-    //     title: 'Read the Docs',
-    //     href: '/docs1',
-    //     onClick(e) {
-    //       e.preventDefault();
-    //       alert('Internal link handler');
-    //     },
-    //   },
-    //   {
-    //     children: 'Quick start',
-    //     title: 'Learn first steps',
-    //     href: '/docs2',
-    //     onClick(e) {
-    //       e.preventDefault();
-    //       alert('Internal link handler');
-    //     },
-    //   },
-    // ],
+    sameSite: false,
+    resources: [
+      {
+        children: 'Documentation',
+        title: 'Read the Docs',
+        href: '/docs1',
+        onClick(e) {
+          e.preventDefault();
+          alert('Internal link handler');
+        },
+      },
+      {
+        children: 'Quick start',
+        title: 'Learn first steps',
+        href: '/docs2',
+        onClick(e) {
+          e.preventDefault();
+          alert('Internal link handler');
+        },
+      },
+    ],
   },
 };
