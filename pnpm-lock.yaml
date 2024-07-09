@@ -180,7 +180,7 @@ importers:
         version: 0.1.0
       semver:
         specifier: ^7.3.8
-        version: 7.3.8
+        version: 7.6.2
     devDependencies:
       '@svgr/babel-plugin-remove-jsx-attribute':
         specifier: ^8.0.0
@@ -6739,10 +6739,6 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lru-cache@6.0.0:
-    resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
-    engines: {node: '>=10'}
-
   lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
@@ -8608,22 +8604,12 @@ packages:
     resolution: {integrity: sha512-GSL3aowiF7wa/WtSFwnUrludWFoNhftq8bUkH9pkzjpN2XSPOAYEgg6e0sS9s0rZwgJzJiQRPU18A6clnoW5wQ==}
     engines: {node: '>=10'}
 
-  semver@5.7.1:
-    resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
+  semver@5.7.2:
+    resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
     hasBin: true
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
-    hasBin: true
-
-  semver@7.3.8:
-    resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
-    engines: {node: '>=10'}
-    hasBin: true
-
-  semver@7.5.4:
-    resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
-    engines: {node: '>=10'}
     hasBin: true
 
   semver@7.6.2:
@@ -11748,7 +11734,7 @@ snapshots:
       outdent: 0.5.0
       prettier: 2.8.8
       resolve-from: 5.0.0
-      semver: 7.5.4
+      semver: 7.6.2
 
   '@changesets/assemble-release-plan@6.0.3':
     dependencies:
@@ -11758,7 +11744,7 @@ snapshots:
       '@changesets/should-skip-package': 0.1.0
       '@changesets/types': 6.0.0
       '@manypkg/get-packages': 1.1.3
-      semver: 7.5.4
+      semver: 7.6.2
 
   '@changesets/changelog-git@0.2.0':
     dependencies:
@@ -11803,7 +11789,7 @@ snapshots:
       p-limit: 2.3.0
       preferred-pm: 3.0.3
       resolve-from: 5.0.0
-      semver: 7.5.4
+      semver: 7.6.2
       spawndamnit: 2.0.0
       term-size: 2.2.1
 
@@ -11827,7 +11813,7 @@ snapshots:
       '@manypkg/get-packages': 1.1.3
       chalk: 2.4.2
       fs-extra: 7.0.1
-      semver: 7.5.4
+      semver: 7.6.2
 
   '@changesets/get-github-info@0.6.0':
     dependencies:
@@ -12218,7 +12204,7 @@ snapshots:
       '@babel/traverse': 7.24.1
       '@babel/types': 7.24.0
       prettier: 3.3.2
-      semver: 7.5.4
+      semver: 7.6.2
     transitivePeerDependencies:
       - supports-color
 
@@ -14234,7 +14220,7 @@ snapshots:
       graphemer: 1.4.0
       ignore: 5.3.0
       natural-compare: 1.4.0
-      semver: 7.5.4
+      semver: 7.6.2
       ts-api-utils: 1.3.0(typescript@5.5.3)
     optionalDependencies:
       typescript: 5.5.3
@@ -14302,7 +14288,7 @@ snapshots:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
-      semver: 7.5.4
+      semver: 7.6.2
       ts-api-utils: 1.3.0(typescript@5.5.3)
     optionalDependencies:
       typescript: 5.5.3
@@ -14319,7 +14305,7 @@ snapshots:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.5.3)
       eslint: 8.57.0
       eslint-scope: 5.1.1
-      semver: 7.5.4
+      semver: 7.6.2
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -14333,7 +14319,7 @@ snapshots:
       '@typescript-eslint/types': 7.5.0
       '@typescript-eslint/typescript-estree': 7.5.0(typescript@5.5.3)
       eslint: 8.57.0
-      semver: 7.5.4
+      semver: 7.6.2
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -15587,7 +15573,7 @@ snapshots:
       postcss-modules-scope: 3.2.0(postcss@8.4.39)
       postcss-modules-values: 4.0.0(postcss@8.4.39)
       postcss-value-parser: 4.2.0
-      semver: 7.5.4
+      semver: 7.6.2
     optionalDependencies:
       webpack: 5.74.0(@swc/core@1.4.8)(esbuild@0.23.0)
 
@@ -16322,7 +16308,7 @@ snapshots:
   eslint-compat-utils@0.5.0(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
-      semver: 7.5.4
+      semver: 7.6.2
 
   eslint-config-prettier@9.1.0(eslint@8.57.0):
     dependencies:
@@ -16481,7 +16467,7 @@ snapshots:
       ignore: 5.3.0
       is-builtin-module: 3.2.1
       minimatch: 9.0.3
-      semver: 7.5.4
+      semver: 7.6.2
 
   eslint-plugin-promise@6.1.1(eslint@8.57.0):
     dependencies:
@@ -17965,7 +17951,7 @@ snapshots:
       acorn: 8.12.1
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
-      semver: 7.5.4
+      semver: 7.6.2
 
   jsonfile@4.0.0:
     optionalDependencies:
@@ -18189,10 +18175,6 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lru-cache@6.0.0:
-    dependencies:
-      yallist: 4.0.0
-
   lz-string@1.5.0: {}
 
   magic-string@0.25.9:
@@ -18206,7 +18188,7 @@ snapshots:
   make-dir@2.1.0:
     dependencies:
       pify: 4.0.1
-      semver: 5.7.1
+      semver: 5.7.2
 
   make-dir@3.1.0:
     dependencies:
@@ -19284,7 +19266,7 @@ snapshots:
     dependencies:
       hosted-git-info: 2.8.9
       resolve: 1.22.8
-      semver: 5.7.1
+      semver: 5.7.2
       validate-npm-package-license: 3.0.4
 
   normalize-path@2.1.1:
@@ -19732,7 +19714,7 @@ snapshots:
       loader-utils: 2.0.4
       postcss: 7.0.39
       schema-utils: 3.3.0
-      semver: 7.5.4
+      semver: 7.6.2
       webpack: 5.74.0(@swc/core@1.4.8)(esbuild@0.23.0)
 
   postcss-loader@8.1.1(postcss@8.4.39)(typescript@5.5.3)(webpack@5.74.0(@swc/core@1.4.8)(esbuild@0.23.0)):
@@ -19740,7 +19722,7 @@ snapshots:
       cosmiconfig: 9.0.0(typescript@5.5.3)
       jiti: 1.21.0
       postcss: 8.4.39
-      semver: 7.5.4
+      semver: 7.6.2
     optionalDependencies:
       webpack: 5.74.0(@swc/core@1.4.8)(esbuild@0.23.0)
     transitivePeerDependencies:
@@ -20704,17 +20686,9 @@ snapshots:
     dependencies:
       node-forge: 1.3.1
 
-  semver@5.7.1: {}
+  semver@5.7.2: {}
 
   semver@6.3.1: {}
-
-  semver@7.3.8:
-    dependencies:
-      lru-cache: 6.0.0
-
-  semver@7.5.4:
-    dependencies:
-      lru-cache: 6.0.0
 
   semver@7.6.2: {}
 
