@@ -295,7 +295,7 @@ importers:
     dependencies:
       npm-to-yarn:
         specifier: ^2.1.0
-        version: 2.1.0
+        version: 2.2.1
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.0.0
@@ -7339,8 +7339,8 @@ packages:
     resolution: {integrity: sha512-sJOdmRGrY2sjNTRMbSvluQqg+8X7ZK61yvzBEIDhz4f8z1TZFYABsqjjCBd/0PUNE9M6QDgHJXQkGUEm7Q+l9Q==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  npm-to-yarn@2.1.0:
-    resolution: {integrity: sha512-2C1IgJLdJngq1bSER7K7CGFszRr9s2rijEwvENPEgI0eK9xlD3tNwDc0UJnRj7FIT2aydWm72jB88uVswAhXHA==}
+  npm-to-yarn@2.2.1:
+    resolution: {integrity: sha512-O/j/ROyX0KGLG7O6Ieut/seQ0oiTpHF2tXAcFbpdTLQFiaNtkyTXXocM1fwpaa60dg1qpWj0nHlbNhx6qwuENQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
   npmlog@5.0.1:
@@ -19291,7 +19291,7 @@ snapshots:
     dependencies:
       path-key: 4.0.0
 
-  npm-to-yarn@2.1.0: {}
+  npm-to-yarn@2.2.1: {}
 
   npmlog@5.0.1:
     dependencies:
