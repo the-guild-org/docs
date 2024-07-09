@@ -1,21 +1,13 @@
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import { Configuration } from 'webpack';
-import { StorybookConfig } from '@storybook/react-webpack5';
+import { StorybookConfig } from '@storybook/nextjs';
 
 export default {
   stories: ['../packages/*/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-links',
-    {
-      name: '@storybook/addon-postcss',
-      options: {
-        postcssLoaderOptions: {
-          implementation: require('postcss'),
-        },
-      },
-    },
-    // 'storybook-dark-mode', // addon to have toolbar for dark/light mode
+    'storybook-dark-mode', // addon to have toolbar for dark/light mode
   ],
   typescript: {
     reactDocgen: false,
