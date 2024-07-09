@@ -40,7 +40,7 @@ export default {
   },
   framework: {
     name: '@storybook/nextjs',
-    options: { fastRefresh: true },
+    options: {},
   },
   core: {
     disableTelemetry: true,

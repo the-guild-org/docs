@@ -26,17 +26,7 @@ const COMPANY: ILink[] = [
   {
     children: 'Open Source',
     title: 'Open Source',
-    href: 'https://the-guild.dev/open-source',
-  },
-  {
-    children: 'Services',
-    title: 'services',
-    href: 'https://the-guild.dev/services',
-  },
-  {
-    children: 'GitHub',
-    title: 'Check our GitHub account',
-    href: 'https://github.com/the-guild-org',
+    href: 'https://the-guild.dev/about-us',
   },
 ];
 
@@ -68,15 +58,14 @@ const COMMUNITY: ILink[] = [
   },
 ];
 
-const products = Object.values(PRODUCTS);
-const limitProductsTo = Math.ceil(products.length / 2);
-
-const PRODUCTS_COLUMN_1 = products.slice(0, limitProductsTo).map(({ name, href, title }) => ({
-  children: name,
-  href,
-  title,
-}));
-const PRODUCTS_COLUMN_2 = products.slice(limitProductsTo).map(({ name, href, title }) => ({
+const products = [
+  PRODUCTS.HIVE,
+  PRODUCTS.MESH,
+  PRODUCTS.YOGA,
+  PRODUCTS.CODEGEN,
+  PRODUCTS.NEXTRA,
+  { ...PRODUCTS.SOFA, name: 'GraphQL to REST' },
+].map(({ name, href, title }) => ({
   children: name,
   href,
   title,
@@ -89,7 +78,7 @@ const classes = {
 export const FooterExtended = ({
   className,
   sameSite,
-  resources,
+  resources = [],
   logo,
 }: IFooterExtendedProps): ReactElement => {
   const allResources: ILink[] = [
@@ -98,7 +87,7 @@ export const FooterExtended = ({
       title: 'Press Kit',
       href: 'https://the-guild.dev/logos',
     },
-    ...(resources || []),
+    ...resources,
   ];
   const renderLinks = useCallback(
     (list: ILink[]) => (
@@ -120,23 +109,26 @@ export const FooterExtended = ({
     <footer className={clsx('bg-white text-xs dark:bg-[#111]', className)}>
       <div className="container max-w-[90rem] border-t border-gray-300 dark:border-gray-800">
         <div className="my-8 flex flex-col gap-6 pb-4 pt-2 lg:flex-row">
-          <div className="lg:w-full">
-            <h3 className={classes.title}>PRODUCTS</h3>
-            <div className="flex gap-6">
-              <div className="w-1/2">{renderLinks(PRODUCTS_COLUMN_1)}</div>
-              <div className="w-1/2">{renderLinks(PRODUCTS_COLUMN_2)}</div>
+          <div className="flex gap-10">
+            <div>
+              <h3 className={classes.title}>PRODUCTS</h3>
+              <div className="flex gap-6">{renderLinks(products)}</div>
+            </div>
+            <div>
+              <h3 className={classes.title}>RESOURCES</h3>
+              {renderLinks(allResources)}
+            </div>
+            <div>
+              <h3 className={classes.title}>COMPANY</h3>
+              {renderLinks(COMPANY)}
+            </div>
+            <div>
+              <h3 className={classes.title}>COMMUNITY</h3>
+              {renderLinks(COMMUNITY)}
             </div>
           </div>
           <div className="flex w-full flex-row gap-6">
             <div className="w-1/2">
-              <h3 className={classes.title}>RESOURCES</h3>
-              {renderLinks(allResources)}
-              <h3 className={classes.title}>COMPANY</h3>
-              {renderLinks(COMPANY)}
-            </div>
-            <div className="w-1/2">
-              <h3 className={classes.title}>COMMUNITY</h3>
-              {renderLinks(COMMUNITY)}
               <Image
                 src={csaStar}
                 alt="Cloud Security Alliance Star Level One Badge"
@@ -147,17 +139,15 @@ export const FooterExtended = ({
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-300 py-4 dark:border-gray-800">
-          <Anchor
-            className="flex items-center gap-x-1.5 text-gray-500 hover:text-black hover:dark:text-gray-100"
-            href="https://the-guild.dev"
-            sameSite={sameSite}
-            {...logo}
-          >
-            <GuildLogo className="w-7" />
-            <TheGuild className="w-10" />
-          </Anchor>
-        </div>
+        <Anchor
+          className="flex items-center gap-x-1.5 text-gray-500 hover:text-black hover:dark:text-gray-100"
+          href="https://the-guild.dev"
+          sameSite={sameSite}
+          {...logo}
+        >
+          <GuildLogo className="w-7" />
+          <TheGuild className="w-10" />
+        </Anchor>
       </div>
     </footer>
   );
