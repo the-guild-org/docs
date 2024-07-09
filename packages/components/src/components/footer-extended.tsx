@@ -1,11 +1,18 @@
-import { ReactElement, useCallback } from 'react';
-import clsx from 'clsx';
+import { ComponentProps, FC, ReactElement } from 'react';
+import { clsx } from 'clsx';
 import { GuildLogo, TheGuild } from '../logos';
 import { PRODUCTS } from '../products';
 import { IFooterExtendedProps, ILink } from '../types/components';
 import { Anchor } from './anchor';
-import { Image } from './image';
-import csaStar from '../static/illustrations/csa-star-level-1-badge.png';
+import {
+  CSAStarLevelOneIcon,
+  DiscordIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  MediumIcon,
+  TwitterIcon,
+  YouTubeIcon,
+} from './icons';
 
 const COMPANY: ILink[] = [
   {
@@ -30,31 +37,36 @@ const COMPANY: ILink[] = [
   },
 ];
 
-const COMMUNITY: ILink[] = [
+const COMMUNITY: (Omit<ILink, 'children'> & { icon: FC<ComponentProps<'svg'>> })[] = [
   {
-    children: 'Twitter',
+    icon: TwitterIcon,
     title: 'Visit our Twitter',
     href: 'https://twitter.com/TheGuildDev',
   },
   {
-    children: 'LinkedIn',
+    icon: LinkedInIcon,
     title: 'Visit our LinkedIn',
     href: 'https://linkedin.com/company/the-guild-software',
   },
   {
-    children: 'Discord',
+    icon: DiscordIcon,
     title: 'Reach us on Discord',
     href: 'https://discord.com/invite/xud7bH9',
   },
   {
-    children: 'Medium',
-    title: 'Read our Medium posts',
-    href: 'https://medium.com/the-guild',
+    icon: GitHubIcon,
+    title: 'Check our GitHub account',
+    href: 'https://github.com/the-guild-org',
   },
   {
-    children: 'YouTube',
+    icon: YouTubeIcon,
     title: 'Watch Our Videos',
     href: 'https://youtube.com/watch?v=d_GBgH-L5c4&list=PLhCf3AUOg4PgQoY_A6xWDQ70yaNtPYtZd',
+  },
+  {
+    icon: MediumIcon,
+    title: 'Read our Medium posts',
+    href: 'https://medium.com/the-guild',
   },
 ];
 
@@ -72,8 +84,19 @@ const products = [
 }));
 
 const classes = {
-  title: clsx('mb-3 text-xs font-semibold text-gray-900 dark:text-gray-100'),
+  title: clsx('mb-2.5 text-lg font-medium text-gray-900 dark:text-gray-100'),
+  anchor: clsx('text-gray-500 hover:text-black dark:text-[#b4b5be] hover:dark:text-gray-100'),
 };
+
+const renderLinks = (list: ILink[]) => (
+  <ul className="m-0 mb-8 list-none p-0 last:mb-0">
+    {list.map(link => (
+      <li key={link.href} className="mb-3 last:mb-0">
+        <Anchor className={clsx(classes.anchor, 'inline-block text-sm')} {...link} />
+      </li>
+    ))}
+  </ul>
+);
 
 export const FooterExtended = ({
   className,
@@ -81,73 +104,49 @@ export const FooterExtended = ({
   resources = [],
   logo,
 }: IFooterExtendedProps): ReactElement => {
-  const allResources: ILink[] = [
-    {
-      children: 'Press Kit',
-      title: 'Press Kit',
-      href: 'https://the-guild.dev/logos',
-    },
-    ...resources,
-  ];
-  const renderLinks = useCallback(
-    (list: ILink[]) => (
-      <ul className="m-0 mb-8 list-none p-0 last:mb-0">
-        {list.map(link => (
-          <li key={link.href} className="mb-3 last:mb-0">
-            <Anchor
-              className="inline-block text-sm font-medium text-gray-500 hover:text-black dark:text-gray-400 hover:dark:text-gray-100"
-              {...link}
-            />
-          </li>
-        ))}
-      </ul>
-    ),
-    [],
-  );
-
   return (
-    <footer className={clsx('bg-white text-xs dark:bg-[#111]', className)}>
-      <div className="container max-w-[90rem] border-t border-gray-300 dark:border-gray-800">
-        <div className="my-8 flex flex-col gap-6 pb-4 pt-2 lg:flex-row">
-          <div className="flex gap-10">
-            <div>
-              <h3 className={classes.title}>PRODUCTS</h3>
-              <div className="flex gap-6">{renderLinks(products)}</div>
-            </div>
-            <div>
-              <h3 className={classes.title}>RESOURCES</h3>
-              {renderLinks(allResources)}
-            </div>
-            <div>
-              <h3 className={classes.title}>COMPANY</h3>
-              {renderLinks(COMPANY)}
-            </div>
-            <div>
-              <h3 className={classes.title}>COMMUNITY</h3>
-              {renderLinks(COMMUNITY)}
-            </div>
+    <footer
+      className={clsx('bg-white py-[60px] text-base dark:bg-[#0f1114] md:py-[140px]', className)}
+    >
+      <div className="container max-w-[90rem]">
+        <div className="relative flex justify-between gap-10 max-md:flex-col">
+          <Anchor
+            className="flex items-center gap-2 self-start"
+            href="https://the-guild.dev"
+            sameSite={sameSite}
+            {...logo}
+          >
+            <GuildLogo className="h-9 w-auto" />
+            <TheGuild className="h-7 w-auto" />
+          </Anchor>
+          <div>
+            <h3 className={classes.title}>Products</h3>
+            <div className="flex gap-6">{renderLinks(products)}</div>
           </div>
-          <div className="flex w-full flex-row gap-6">
-            <div className="w-1/2">
-              <Image
-                src={csaStar}
-                alt="Cloud Security Alliance Star Level One Badge"
-                title="Cloud Security Alliance Star Level One Badge"
-                width="72"
-                placeholder="empty"
-              />
-            </div>
+          <div>
+            <h3 className={classes.title}>Resources</h3>
+            {renderLinks([
+              {
+                children: 'Press Kit',
+                title: 'Press Kit',
+                href: 'https://the-guild.dev/logos',
+              },
+              ...resources,
+            ])}
           </div>
+          <div>
+            <h3 className={classes.title}>Company</h3>
+            {renderLinks(COMPANY)}
+          </div>
+          <div className="flex gap-5 text-[#b4b5be] max-sm:justify-between">
+            {COMMUNITY.map(({ icon: Icon, ...iconProps }) => (
+              <Anchor key={iconProps.title} className={classes.anchor} {...iconProps}>
+                <Icon className="h-5 w-auto" />
+              </Anchor>
+            ))}
+          </div>
+          <CSAStarLevelOneIcon className="absolute right-0 ml-auto h-[4.5rem] w-auto md:bottom-0" />
         </div>
-        <Anchor
-          className="flex items-center gap-x-1.5 text-gray-500 hover:text-black hover:dark:text-gray-100"
-          href="https://the-guild.dev"
-          sameSite={sameSite}
-          {...logo}
-        >
-          <GuildLogo className="w-7" />
-          <TheGuild className="w-10" />
-        </Anchor>
       </div>
     </footer>
   );
