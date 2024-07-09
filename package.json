@@ -55,7 +55,6 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "storybook": "8.1.11",
-    "storybook-addon-swc": "1.2.0",
     "storybook-dark-mode": "4.0.2",
     "style-loader": "4.0.0",
     "tailwindcss": "3.4.4",
@@ -84,7 +83,8 @@
     "overrides": {
       "hast-util-to-estree": "^3.0.0",
       "@theguild/remark-npm2yarn": "workspace:*",
-      "@theguild/remark-mermaid": "workspace:*"
+      "@theguild/remark-mermaid": "workspace:*",
+      "esbuild": "0.23.0"
     },
     "patchedDependencies": {
       "tsup@8.0.2": "patches/tsup@7.2.0.patch"
