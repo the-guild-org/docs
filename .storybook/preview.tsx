@@ -1,9 +1,10 @@
 import { ThemeProvider } from 'next-themes';
 import { useDarkMode } from 'storybook-dark-mode';
+import { Preview } from '@storybook/react';
 import { themes } from '@storybook/theming';
 import './global.css';
 
-export const parameters = {
+export const parameters: Preview['parameters'] = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   options: {
     storySort: {
@@ -16,15 +17,19 @@ export const parameters = {
     dark: { ...themes.normal, appBg: 'white' },
     // Override the default light theme
     light: { ...themes.normal, appBg: 'white' },
+    classTarget: 'html',
   },
   // Remove padding from storybook in mobile
   layout: 'fullscreen',
 };
 
-export const decorators = [
-  Story => (
-    <ThemeProvider attribute="class" forcedTheme={useDarkMode() ? 'dark' : 'light'}>
-      <Story />
-    </ThemeProvider>
-  ),
+export const decorators: Preview['decorators'] = [
+  Story => {
+    const theme = useDarkMode() ? 'dark' : 'light';
+    return (
+      <ThemeProvider attribute="class" forcedTheme={theme}>
+        <Story />
+      </ThemeProvider>
+    );
+  },
 ];
