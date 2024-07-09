@@ -264,8 +264,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1
       satori:
-        specifier: 0.10.13
-        version: 0.10.13
+        specifier: 0.10.14
+        version: 0.10.14
       yoga-wasm-web:
         specifier: 0.3.3
         version: 0.3.3
@@ -19317,8 +19317,8 @@ packages:
       webpack: 5.91.0(@swc/core@1.4.8)(esbuild@0.19.12)
     dev: true
 
-  /satori@0.10.13:
-    resolution: {integrity: sha512-klCwkVYMQ/ZN5inJLHzrUmGwoRfsdP7idB5hfpJ1jfiJk1ErDitK8Hkc6Kll1+Ox2WtqEuGecSZLnmup3CGzvQ==}
+  /satori@0.10.14:
+    resolution: {integrity: sha512-abovcqmwl97WKioxpkfuMeZmndB1TuDFY/R+FymrZyiGP+pMYomvgSzVPnbNMWHHESOPosVHGL352oFbdAnJcA==}
     engines: {node: '>=16'}
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
