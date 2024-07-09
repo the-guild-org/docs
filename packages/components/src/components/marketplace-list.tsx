@@ -62,7 +62,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
           <Anchor
             {...item.link}
             className={clsx(
-              `inline-block rounded-lg bg-gray-200 p-1.5 text-gray-800 hover:invert dark:bg-gray-700 dark:text-white md:p-2.5`,
+              'inline-block rounded-lg bg-gray-200 p-1.5 text-gray-800 hover:invert dark:bg-gray-700 dark:text-white md:p-2.5',
               item.link.className,
             )}
           >

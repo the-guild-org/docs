@@ -22,7 +22,7 @@ export const HeroVideo = ({
     <section className={clsx('bg-gray-100 dark:bg-neutral-800', className)}>
       <div
         className={clsx(
-          `container flex flex-wrap py-8 md:flex-nowrap md:items-center md:justify-center`,
+          'container flex flex-wrap py-8 md:flex-nowrap md:items-center md:justify-center',
           flipped && 'md:flex-row-reverse',
         )}
       >
@@ -37,7 +37,7 @@ export const HeroVideo = ({
             <Anchor
               {...link}
               className={clsx(
-                `mt-auto w-max text-sm text-cyan-400 hover:text-cyan-300`,
+                'mt-auto w-max text-sm text-cyan-400 hover:text-cyan-300',
                 link.className,
               )}
             />
@@ -45,7 +45,7 @@ export const HeroVideo = ({
         </div>
         <div
           className={clsx(
-            `h-72 w-full overflow-hidden rounded-xl bg-white shadow-xl sm:h-96 md:h-72 md:w-3/5 lg:h-96`,
+            'h-72 w-full overflow-hidden rounded-xl bg-white shadow-xl sm:h-96 md:h-72 md:w-3/5 lg:h-96',
             flipped ? 'md:mr-8' : 'md:ml-8',
           )}
         >

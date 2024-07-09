@@ -15,7 +15,7 @@ export const HeroIllustration = ({
   <section className={clsx('bg-white dark:bg-[#111]', className)}>
     <div
       className={clsx(
-        `container flex flex-wrap items-center gap-8 py-8 md:flex-nowrap md:justify-around`,
+        'container flex flex-wrap items-center gap-8 py-8 md:flex-nowrap md:justify-around',
         flipped && 'md:flex-row-reverse',
       )}
     >
