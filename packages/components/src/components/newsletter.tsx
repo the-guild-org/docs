@@ -49,18 +49,7 @@ export const Newsletter = ({ onNewsletterSubmit }: NewsletterProps): ReactElemen
       />
       <button
         type="submit"
-        className="
-          flex-none
-          rounded-md
-          bg-gray-300
-          px-1
-          py-0.5
-          transition
-          hover:outline-none
-          hover:invert
-          dark:bg-gray-700
-          lg:p-2
-        "
+        className="flex-none rounded-md bg-gray-300 px-1 py-0.5 transition hover:outline-none hover:invert dark:bg-gray-700 lg:p-2"
       >
         <ArrowUpRightIcon className="w-5" />
       </button>
