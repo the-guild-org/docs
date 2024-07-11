@@ -72,19 +72,15 @@ export function defineConfig({
         <>
           <title>{title}</title>
           <meta property="og:title" content={title} />
-          {description && (
-            <>
-              <meta name="description" content={description} />
-              <meta property="og:description" content={description} />
-            </>
-          )}
-          {canonical && (
-            <>
-              <link rel="canonical" href={canonical} />
-              <meta property="og:url" content={canonical} />
-            </>
-          )}
-
+          {/* We can't use React.Fragment https://nextjs.org/docs/pages/api-reference/components/head#use-minimal-nesting */}
+          {description && [
+            <meta key={0} name="description" content={description} />,
+            <meta key={1} property="og:description" content={description} />,
+          ]}
+          {canonical && [
+            <link key={3} rel="canonical" href={canonical} />,
+            <meta key={4} property="og:url" content={canonical} />,
+          ]}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="https://the-guild.dev" />
           <meta name="twitter:creator" content="@TheGuildDev" />

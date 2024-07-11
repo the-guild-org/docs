@@ -30,11 +30,6 @@ const COMPANY: ILink[] = [
     title: 'Newsletter',
     href: 'https://the-guild.dev/newsletter',
   },
-  {
-    children: 'Open Source',
-    title: 'Open Source',
-    href: 'https://the-guild.dev/about-us',
-  },
 ];
 
 const COMMUNITY: (Omit<ILink, 'children'> & { icon: FC<ComponentProps<'svg'>> })[] = [
