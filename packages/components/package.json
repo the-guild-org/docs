@@ -84,7 +84,7 @@
     "dedent": "1.5.3",
     "esbuild-plugin-svgr": "^2.1.0",
     "graphql": "16.9.0",
-    "next": "14.2.4",
+    "next": "14.2.5",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "unified": "^11.0.3"
