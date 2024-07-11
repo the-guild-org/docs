@@ -14,7 +14,6 @@ export { LegacyPackageCmd } from './legacy-package-cmd';
 export { MarketplaceList } from './marketplace-list';
 export { MarketplaceSearch } from './marketplace-search';
 export { mdxComponents } from './mdx-components';
-export { Newsletter } from './newsletter';
 export { NPMBadge } from './npm-badge';
 export { GuildUnifiedLogo } from './guild-navbar';
 export { ThemeSwitcherButton } from './theme-switcher';

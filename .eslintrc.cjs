@@ -49,9 +49,10 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/*.stories.tsx'],
+      files: ['**/*.stories.{ts,tsx}'],
       rules: {
         'no-console': 'off',
+        'import/no-default-export': 'off',
       },
     },
     {
