@@ -1,50 +1,164 @@
 # @theguild/components
 
+## 6.6.0
+
+### Minor Changes
+
+- [#1529](https://github.com/the-guild-org/docs/pull/1529)
+  [`310f066`](https://github.com/the-guild-org/docs/commit/310f0669618fb905572fc4f025720b594fd36acb)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - - remove newsletter component
+
+  - add new footer
+
+- [#1514](https://github.com/the-guild-org/docs/pull/1514)
+  [`be34032`](https://github.com/the-guild-org/docs/commit/be34032aa1b430fd2fa60d428c99a0e0f35782d9)
+  Thanks [@EmrysMyrddin](https://github.com/EmrysMyrddin)! - Expose nextra's `Code`, `Pre` and
+  `Table` components
+
+### Patch Changes
+
+- [#1330](https://github.com/the-guild-org/docs/pull/1330)
+  [`9451ff9`](https://github.com/the-guild-org/docs/commit/9451ff9972c35e19e2e044f9bcf96f916e9bcd2b)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@14.2.4` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/14.2.4)
+    (from `13.4.2`, in `dependencies`)
+
+- [#1488](https://github.com/the-guild-org/docs/pull/1488)
+  [`5bc0e5a`](https://github.com/the-guild-org/docs/commit/5bc0e5ad1fe2705f4553209e26ac76e40e82eb36)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`clsx@2.1.1` ↗︎](https://www.npmjs.com/package/clsx/v/2.1.1) (from `2.1.0`,
+    in `dependencies`)
+
+- [#1494](https://github.com/the-guild-org/docs/pull/1494)
+  [`bf7b19b`](https://github.com/the-guild-org/docs/commit/bf7b19b8872819dfddd1ae0f2b23c262ce9a7093)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.24` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.22`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.24` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.22`, in `dependencies`)
+
+- [#1505](https://github.com/the-guild-org/docs/pull/1505)
+  [`59551ff`](https://github.com/the-guild-org/docs/commit/59551ff727520828e07b875927761da5f9f781bc)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.24` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.22`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.24` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.22`, in `dependencies`)
+
+- [#1533](https://github.com/the-guild-org/docs/pull/1533)
+  [`2052922`](https://github.com/the-guild-org/docs/commit/2052922087fee9f4c957ea0cab08871da543bd69)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@14.2.5` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/14.2.5)
+    (from `14.2.4`, in `dependencies`)
+
+- [#1534](https://github.com/the-guild-org/docs/pull/1534)
+  [`3a7f88f`](https://github.com/the-guild-org/docs/commit/3a7f88fc71f5deb355bbc5f19fb64b9a68131b53)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.25` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.24`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.25` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.24`, in `dependencies`)
+
+- [#1535](https://github.com/the-guild-org/docs/pull/1535)
+  [`d0fc2b8`](https://github.com/the-guild-org/docs/commit/d0fc2b8ccf43002d5a5b4f161aaa11470613e3d0)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - fix broken description/canonical in
+  `<head />`
+
+- [#1460](https://github.com/the-guild-org/docs/pull/1460)
+  [`0e260c4`](https://github.com/the-guild-org/docs/commit/0e260c451febc8e56591a1d196fe8a29ac46b19e)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - use `product.title` as `title` prop when
+  hovering
+
+- [#1515](https://github.com/the-guild-org/docs/pull/1515)
+  [`78601d1`](https://github.com/the-guild-org/docs/commit/78601d1668618d886ea9a441d02a3b590886f744)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - polish graphql-eslint logo to use parent
+  `stroke`
+
 ## 6.5.3
 
 ### Patch Changes
 
-- [#1457](https://github.com/the-guild-org/docs/pull/1457) [`da5fa93`](https://github.com/the-guild-org/docs/commit/da5fa932f49b9d22dfb8cfdcd694c77156cdb535) Thanks [@dimaMachina](https://github.com/dimaMachina)! - warn on server when missing `frontMatter.description`
+- [#1457](https://github.com/the-guild-org/docs/pull/1457)
+  [`da5fa93`](https://github.com/the-guild-org/docs/commit/da5fa932f49b9d22dfb8cfdcd694c77156cdb535)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - warn on server when missing
+  `frontMatter.description`
 
 ## 6.5.2
 
 ### Patch Changes
 
-- [#1449](https://github.com/the-guild-org/docs/pull/1449) [`b79f8dc`](https://github.com/the-guild-org/docs/commit/b79f8dc6eab4c3e6a577c859f5493e95811fbf4f) Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+- [#1449](https://github.com/the-guild-org/docs/pull/1449)
+  [`b79f8dc`](https://github.com/the-guild-org/docs/commit/b79f8dc6eab4c3e6a577c859f5493e95811fbf4f)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
 
-  - Removed dependency [`search-insights@2.13.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.13.0) (from `dependencies`)
+  - Removed dependency
+    [`search-insights@2.13.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.13.0) (from
+    `dependencies`)
 
-- [#1451](https://github.com/the-guild-org/docs/pull/1451) [`bf079fe`](https://github.com/the-guild-org/docs/commit/bf079fe86e77418965cc48a5144ffd8a01a2877e) Thanks [@dimaMachina](https://github.com/dimaMachina)! - use `product.href` because products urls can be incorrect due to use `basePath`
+- [#1451](https://github.com/the-guild-org/docs/pull/1451)
+  [`bf079fe`](https://github.com/the-guild-org/docs/commit/bf079fe86e77418965cc48a5144ffd8a01a2877e)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - use `product.href` because products urls
+  can be incorrect due to use `basePath`
 
 ## 6.5.1
 
 ### Patch Changes
 
-- [#1446](https://github.com/the-guild-org/docs/pull/1446) [`5a39e51`](https://github.com/the-guild-org/docs/commit/5a39e516a2ff597c2c8622b14f0baedeb0f297ba) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+- [#1446](https://github.com/the-guild-org/docs/pull/1446)
+  [`5a39e51`](https://github.com/the-guild-org/docs/commit/5a39e516a2ff597c2c8622b14f0baedeb0f297ba)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
 
-  - Updated dependency [`react-player@2.16.0` ↗︎](https://www.npmjs.com/package/react-player/v/2.16.0) (from `2.15.1`, in `dependencies`)
+  - Updated dependency
+    [`react-player@2.16.0` ↗︎](https://www.npmjs.com/package/react-player/v/2.16.0) (from `2.15.1`,
+    in `dependencies`)
 
-- [#1447](https://github.com/the-guild-org/docs/pull/1447) [`43c66a3`](https://github.com/the-guild-org/docs/commit/43c66a359eed889264a43da02e8fae61c17b8c69) Thanks [@dimaMachina](https://github.com/dimaMachina)! - use url `url.pathname` only for products when `host: 'the-guild.dev'`
+- [#1447](https://github.com/the-guild-org/docs/pull/1447)
+  [`43c66a3`](https://github.com/the-guild-org/docs/commit/43c66a359eed889264a43da02e8fae61c17b8c69)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - use url `url.pathname` only for products
+  when `host: 'the-guild.dev'`
 
 ## 6.5.0
 
 ### Minor Changes
 
-- [#1444](https://github.com/the-guild-org/docs/pull/1444) [`bad4173`](https://github.com/the-guild-org/docs/commit/bad41733c80474b9184740ece36a7e9e45609b8e) Thanks [@dimaMachina](https://github.com/dimaMachina)! - add Products link in navbar
+- [#1444](https://github.com/the-guild-org/docs/pull/1444)
+  [`bad4173`](https://github.com/the-guild-org/docs/commit/bad41733c80474b9184740ece36a7e9e45609b8e)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - add Products link in navbar
 
 ## 6.4.2
 
 ### Patch Changes
 
-- [#1418](https://github.com/the-guild-org/docs/pull/1418) [`1bbcec4`](https://github.com/the-guild-org/docs/commit/1bbcec44100fcff28cc82b11da141e287861a7dd) Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - dependencies updates:
+- [#1418](https://github.com/the-guild-org/docs/pull/1418)
+  [`1bbcec4`](https://github.com/the-guild-org/docs/commit/1bbcec44100fcff28cc82b11da141e287861a7dd)
+  Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - dependencies updates:
 
-  - Removed dependency [`@radix-ui/react-navigation-menu@1.1.4` ↗︎](https://www.npmjs.com/package/@radix-ui/react-navigation-menu/v/1.1.4) (from `dependencies`)
+  - Removed dependency
+    [`@radix-ui/react-navigation-menu@1.1.4` ↗︎](https://www.npmjs.com/package/@radix-ui/react-navigation-menu/v/1.1.4)
+    (from `dependencies`)
 
-- [#1439](https://github.com/the-guild-org/docs/pull/1439) [`aea9d61`](https://github.com/the-guild-org/docs/commit/aea9d617c0056b357652a102e1ef936db6fb83b7) Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+- [#1439](https://github.com/the-guild-org/docs/pull/1439)
+  [`aea9d61`](https://github.com/the-guild-org/docs/commit/aea9d617c0056b357652a102e1ef936db6fb83b7)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
 
-  - Updated dependency [`clsx@2.1.0` ↗︎](https://www.npmjs.com/package/clsx/v/2.1.0) (from `2.0.0`, in `dependencies`)
+  - Updated dependency [`clsx@2.1.0` ↗︎](https://www.npmjs.com/package/clsx/v/2.1.0) (from `2.0.0`,
+    in `dependencies`)
 
-- [#1418](https://github.com/the-guild-org/docs/pull/1418) [`1bbcec4`](https://github.com/the-guild-org/docs/commit/1bbcec44100fcff28cc82b11da141e287861a7dd) Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - Fix some UI issues realted to GuildUnifiedLogo + Deleted old Header
+- [#1418](https://github.com/the-guild-org/docs/pull/1418)
+  [`1bbcec4`](https://github.com/the-guild-org/docs/commit/1bbcec44100fcff28cc82b11da141e287861a7dd)
+  Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - Fix some UI issues realted to
+  GuildUnifiedLogo + Deleted old Header
 
 ## 6.4.1
 
