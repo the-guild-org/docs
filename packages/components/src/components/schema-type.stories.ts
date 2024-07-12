@@ -1,7 +1,7 @@
+import dedent from 'dedent';
 import { Meta, StoryObj } from '@storybook/react';
 import { SchemaPage } from './schema-type';
 import marketplaceListImage from '../static/dummy/marketplace/logo-modules.svg';
-import dedent from 'dedent'
 
 export default {
   title: 'Components/Schema Type',
