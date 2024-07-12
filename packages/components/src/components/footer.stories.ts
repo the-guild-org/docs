@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { FooterExtended } from './footer-extended';
+import { Footer } from './footer';
 
 export default {
   title: 'Components/Footer',
-  component: FooterExtended,
+  component: Footer,
   argTypes: {
     sameSite: {
       name: 'Same Site',
@@ -14,9 +14,9 @@ export default {
       description: "Use this to add current site's links to the footer.",
     },
   },
-} satisfies Meta<typeof FooterExtended>;
+} satisfies Meta<typeof Footer>;
 
-type Story = StoryObj<typeof FooterExtended>;
+type Story = StoryObj<typeof Footer>;
 
 export const Default: Story = {
   args: {

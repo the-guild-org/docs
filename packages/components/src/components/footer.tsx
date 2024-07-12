@@ -9,7 +9,6 @@ import {
   DiscordIcon,
   GitHubIcon,
   LinkedInIcon,
-  MediumIcon,
   TwitterIcon,
   YouTubeIcon,
 } from './icons';
@@ -58,11 +57,6 @@ const COMMUNITY: (Omit<ILink, 'children'> & { icon: FC<ComponentProps<'svg'>> })
     title: 'Watch Our Videos',
     href: 'https://youtube.com/watch?v=d_GBgH-L5c4&list=PLhCf3AUOg4PgQoY_A6xWDQ70yaNtPYtZd',
   },
-  {
-    icon: MediumIcon,
-    title: 'Read our Medium posts',
-    href: 'https://medium.com/the-guild',
-  },
 ];
 
 const products = [
@@ -93,15 +87,18 @@ const renderLinks = (list: ILink[]) => (
   </ul>
 );
 
-export const FooterExtended = ({
+export function Footer({
   className,
   sameSite,
   resources = [],
   logo,
-}: IFooterExtendedProps): ReactElement => {
+}: IFooterExtendedProps): ReactElement {
   return (
     <footer
-      className={clsx('bg-white py-[60px] text-base dark:bg-[#0f1114] md:py-[140px]', className)}
+      className={clsx(
+        'bg-[#fafafa] py-[60px] text-base dark:bg-[#0f1114] md:py-[140px]',
+        className,
+      )}
     >
       <div className="container max-w-[90rem]">
         <div className="relative flex justify-between gap-10 max-md:flex-col">
@@ -133,7 +130,7 @@ export const FooterExtended = ({
             <h3 className={classes.title}>Company</h3>
             {renderLinks(COMPANY)}
           </div>
-          <div className="flex gap-5 text-[#b4b5be] max-sm:justify-between">
+          <div className="flex gap-5 text-[#b4b5be]">
             {COMMUNITY.map(({ icon: Icon, ...iconProps }) => (
               <Anchor key={iconProps.title} className={classes.anchor} {...iconProps}>
                 <Icon className="h-5 w-auto" />
@@ -145,4 +142,4 @@ export const FooterExtended = ({
       </div>
     </footer>
   );
-};
+}

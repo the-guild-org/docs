@@ -2,7 +2,7 @@ export { Anchor } from './anchor';
 export { Button } from './button';
 export { CardsColorful } from './cards-colorful';
 export { FeatureList } from './feature-list';
-export { FooterExtended } from './footer-extended';
+export { Footer } from './footer';
 export { HeroGradient } from './hero-gradient';
 export { HeroIllustration } from './hero-illustration';
 export { HeroMarketplace } from './hero-marketplace';

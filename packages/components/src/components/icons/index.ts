@@ -6,7 +6,6 @@ export { ReactComponent as SearchIcon } from './search.svg';
 export { ReactComponent as ShareIcon } from './share.svg';
 export { ReactComponent as TwitterIcon } from './twitter.svg';
 export { ReactComponent as LinkedInIcon } from './linkedin.svg';
-export { ReactComponent as MediumIcon } from './medium.svg';
 export { ReactComponent as YouTubeIcon } from './youtube.svg';
 export { ReactComponent as CSAStarLevelOneIcon } from './csa-star-level-one.svg';
 export { InformationCircleIcon, GitHubIcon, DiscordIcon } from 'nextra/icons';

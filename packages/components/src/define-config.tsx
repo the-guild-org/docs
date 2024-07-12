@@ -1,9 +1,7 @@
 import { useRouter } from 'next/router';
 import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
-import { FooterExtended, mdxComponents } from './components';
+import { Footer, GuildUnifiedLogo, mdxComponents, ThemeSwitcherButton } from './components';
 import { addGuildCompanyMenu } from './components/company-menu';
-import { GuildUnifiedLogo } from './components/guild-navbar';
-import { ThemeSwitcherButton } from './components/theme-switcher';
 
 export function defineConfig({
   websiteName,
@@ -18,7 +16,7 @@ export function defineConfig({
     throw new Error('Missing required "docsRepositoryBase" property');
   }
 
-  const url = new URL(config.docsRepositoryBase as string);
+  const url = new URL(config.docsRepositoryBase);
   const [, org, repoName] = url.pathname.split('/');
 
   const siteUrl = process.env.SITE_URL;
@@ -32,7 +30,7 @@ export function defineConfig({
       labels: 'kind/docs',
     },
     footer: {
-      component: <FooterExtended />,
+      component: <Footer />,
     },
     sidebar: {
       defaultMenuCollapseLevel: 1,
