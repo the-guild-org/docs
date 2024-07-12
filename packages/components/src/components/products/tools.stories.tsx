@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Meta, Story } from '@storybook/react';
 import { ILink } from '../../types/components';
-import { FooterExtended } from '../footer-extended';
+import { Footer } from '../footer';
 import { HeroGradient } from '../hero-gradient';
 import { InfoList } from '../info-list';
 
@@ -30,7 +30,7 @@ const Template: Story = ({ page }): ReactElement => {
   return (
     <>
       {pages[page]}
-      <FooterExtended {...footerData} />
+      <Footer {...footerData} />
     </>
   );
 };
