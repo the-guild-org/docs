@@ -15,6 +15,12 @@
       // Never cache anything (including logs) emitted by a `dev` task
       "cache": false,
       "persistent": true
+    },
+    "types:check": {
+      "dependsOn": [
+        // Run `build` in workspaces I depend on first
+        "^build"
+      ]
     }
   }
 }

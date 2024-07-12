@@ -1,6 +1,5 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { dummyMarketplaceList } from '../helpers/dummy';
-import { IMarketplaceListProps } from '../types/components';
 import { MarketplaceList } from './marketplace-list';
 
 export default {
@@ -20,9 +19,8 @@ export default {
       name: 'Items',
     },
   },
-} as Meta;
+} satisfies Meta<typeof MarketplaceList>;
 
-const Template: Story<IMarketplaceListProps> = args => <MarketplaceList {...args} />;
+type Story = StoryObj<typeof MarketplaceList>;
 
-export const Default = Template.bind({});
-Default.args = dummyMarketplaceList;
+export const Default: Story = { args: dummyMarketplaceList };

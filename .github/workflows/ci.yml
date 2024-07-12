@@ -56,6 +56,9 @@ jobs:
       - name: Lint ESLint
         run: pnpm lint
 
+      - name: Type Check
+        run: pnpm types:check
+
       - name: Test
         run: pnpm test
 

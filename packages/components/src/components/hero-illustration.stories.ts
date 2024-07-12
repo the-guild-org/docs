@@ -1,6 +1,5 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { dummyHeroIllustration } from '../helpers/dummy';
-import { IHeroIllustrationProps } from '../types/components';
 import { HeroIllustration } from './hero-illustration';
 
 export default {
@@ -23,15 +22,14 @@ export default {
       name: 'Link',
     },
   },
-} as Meta;
+} satisfies Meta<typeof HeroIllustration>;
 
-const Template: Story<IHeroIllustrationProps> = args => (
-  <>
-    <HeroIllustration {...args} />
-    <HeroIllustration {...args} flipped={false} />
-    <HeroIllustration {...args} />
-  </>
-);
+type Story = StoryObj<typeof HeroIllustration>;
 
-export const Default = Template.bind({});
-Default.args = dummyHeroIllustration;
+export const Default: Story = { args: dummyHeroIllustration };
+export const Flipped: Story = {
+  args: {
+    ...dummyHeroIllustration,
+    flipped: false,
+  },
+};

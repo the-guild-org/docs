@@ -1,6 +1,5 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { dummyHeroVideo } from '../helpers/dummy';
-import { IHeroVideoProps } from '../types/components';
 import { HeroVideo } from './hero-video';
 
 export default {
@@ -23,9 +22,8 @@ export default {
       name: 'Link',
     },
   },
-} as Meta;
+} satisfies Meta<typeof HeroVideo>;
 
-const Template: Story<IHeroVideoProps> = args => <HeroVideo {...args} />;
+type Story = StoryObj<typeof HeroVideo>;
 
-export const Default = Template.bind({});
-Default.args = dummyHeroVideo;
+export const Default: Story = { args: dummyHeroVideo };

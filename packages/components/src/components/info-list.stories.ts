@@ -1,6 +1,5 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { dummyInfoList } from '../helpers/dummy';
-import { IInfoListProps } from '../types/components';
 import { InfoList } from './info-list';
 
 export default {
@@ -14,9 +13,8 @@ export default {
       name: 'Items',
     },
   },
-} as Meta;
+} satisfies Meta<typeof InfoList>;
 
-const Template: Story<IInfoListProps> = args => <InfoList {...args} />;
+type Story = StoryObj<typeof InfoList>;
 
-export const Default = Template.bind({});
-Default.args = dummyInfoList;
+export const Default: Story = { args: dummyInfoList };
