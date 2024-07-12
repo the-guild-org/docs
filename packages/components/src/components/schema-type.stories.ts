@@ -11,7 +11,7 @@ export default {
       name: 'Title',
     },
   },
-} as Meta<typeof SchemaPage>;
+} satisfies Meta<typeof SchemaPage>;
 
 type Story = StoryObj<typeof SchemaPage>;
 

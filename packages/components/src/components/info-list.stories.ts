@@ -13,7 +13,7 @@ export default {
       name: 'Items',
     },
   },
-} as Meta<typeof InfoList>;
+} satisfies Meta<typeof InfoList>;
 
 type Story = StoryObj<typeof InfoList>;
 

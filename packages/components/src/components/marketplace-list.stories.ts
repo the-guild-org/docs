@@ -19,7 +19,7 @@ export default {
       name: 'Items',
     },
   },
-} as Meta<typeof MarketplaceList>;
+} satisfies Meta<typeof MarketplaceList>;
 
 type Story = StoryObj<typeof MarketplaceList>;
 

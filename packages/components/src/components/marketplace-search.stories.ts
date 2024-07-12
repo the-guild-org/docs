@@ -13,7 +13,7 @@ export default {
       name: 'Input Placeholder',
     },
   },
-} as Meta<typeof MarketplaceSearch>;
+} satisfies Meta<typeof MarketplaceSearch>;
 
 type Story = StoryObj<typeof MarketplaceSearch>;
 
