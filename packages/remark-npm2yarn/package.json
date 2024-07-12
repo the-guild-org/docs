@@ -20,7 +20,8 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "vitest"
+    "test": "vitest",
+    "types:check": "tsc --noEmit"
   },
   "dependencies": {
     "npm-to-yarn": "^2.1.0",

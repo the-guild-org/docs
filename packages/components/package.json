@@ -54,7 +54,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "prebuild": "pnpm types:check && rm -rf dist",
+    "prebuild": "rm -rf dist",
     "types:check": "tsc --noEmit"
   },
   "peerDependencies": {
