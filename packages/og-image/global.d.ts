@@ -17,7 +17,7 @@ declare module 'react' {
 
   interface CSSProperties {
     // This isn't a valid CSS property supported by browsers yet
-    textWrap?: 'balance';
+    textWrap?: 'balance' | '';
   }
 }
 

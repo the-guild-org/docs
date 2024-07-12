@@ -50,7 +50,7 @@ export async function handler(request: Request): Promise<Response> {
         {title && (
           <span
             tw="font-medium text-5xl"
-            style={{ textWrap: title.includes(' ') ? 'balance' : undefined }}
+            style={{ textWrap: title.includes(' ') ? 'balance' : '' }}
           >
             {title}
           </span>
@@ -58,7 +58,7 @@ export async function handler(request: Request): Promise<Response> {
         {extra && (
           <span
             tw="font-bold text-2xl mt-16"
-            style={{ textWrap: extra.includes(' ') ? 'balance' : undefined }}
+            style={{ textWrap: extra.includes(' ') ? 'balance' : '' }}
           >
             {extra}
           </span>
