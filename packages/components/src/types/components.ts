@@ -124,7 +124,7 @@ export interface IMarketplaceSearchProps {
 export interface ISchemaPageProps {
   schemaName: string;
   tags?: string[];
-  editorData: Omit<IEditorProps, 'icon'>[];
+  editorData: Omit<IEditorProps, 'icon' | 'children'>[];
 }
 
 export interface IEditorProps {

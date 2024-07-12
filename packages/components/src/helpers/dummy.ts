@@ -1,4 +1,3 @@
-import dedent from 'dedent';
 import { CardsColorfulProps } from '../components/cards-colorful';
 import {
   IFeatureListProps,
@@ -9,7 +8,6 @@ import {
   IInfoListProps,
   IMarketplaceListProps,
   IMarketplaceSearchProps,
-  ISchemaPageProps,
 } from '../types/components';
 import heroIllustrationImage from '../static/dummy/envelop/communication.png';
 import featureListImage3 from '../static/dummy/envelop/features-modern.png';
@@ -507,77 +505,4 @@ export const dummyMarketplaceSearch: IMarketplaceSearchProps = {
     placeholder: 'No results for {query}',
     pagination: 8,
   },
-};
-
-const dummySchema = dedent(/* GraphQL */ `
-  type Query {
-    ping: Boolean
-    me: User!
-  }
-
-  " represents a valid email "
-  scalar Email
-
-  """
-  Represents a simple user
-  """
-  type User {
-    id: ID!
-    email: Email!
-    profile: Profile!
-  }
-
-  type Profile {
-    name: String
-    age: Int
-  }
-`);
-
-const dummyOperations = dedent(/* GraphQL */ `
-  query Me {
-    me {
-      id
-      profile {
-        name
-      }
-    }
-    ping
-  }
-
-  fragment UserFields on User {
-    profile {
-      name
-    }
-  }
-`);
-
-export const dummySchemaPage: Omit<ISchemaPageProps, 'editorData'> & {
-  editorData: Omit<ISchemaPageProps['editorData'][number], 'children'>[];
-} = {
-  schemaName: 'Schema Type 1',
-  tags: ['TypeScript', 'Frontend', 'Backend'],
-  editorData: [
-    {
-      title: 'schema.graphql',
-      frameworks: ['TS', 'React', 'Frontend'],
-      schema: dummySchema,
-      image: marketplaceListImage,
-    },
-    {
-      title: 'operation.graphql',
-      frameworks: [],
-      operations: dummyOperations,
-      image: marketplaceListImage,
-    },
-    {
-      title: 'codegen.yml',
-      frameworks: [],
-      schema: dummySchema,
-      image: marketplaceListImage,
-    },
-    {
-      title: '',
-      schema: dummySchema,
-    },
-  ],
 };
