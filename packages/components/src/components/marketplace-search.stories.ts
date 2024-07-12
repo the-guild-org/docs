@@ -1,6 +1,5 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { dummyMarketplaceSearch } from '../helpers/dummy';
-import { IMarketplaceSearchProps } from '../types/components';
 import { MarketplaceSearch } from './marketplace-search';
 
 export default {
@@ -14,9 +13,8 @@ export default {
       name: 'Input Placeholder',
     },
   },
-} as Meta;
+} as Meta<typeof MarketplaceSearch>;
 
-const Template: Story<IMarketplaceSearchProps> = args => <MarketplaceSearch {...args} />;
+type Story = StoryObj<typeof MarketplaceSearch>;
 
-export const Default = Template.bind({});
-Default.args = dummyMarketplaceSearch;
+export const Default: Story = { args: dummyMarketplaceSearch };
