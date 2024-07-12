@@ -1,6 +1,5 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { dummyHeroMarketplace } from '../helpers/dummy';
-import { IHeroMarketplaceProps } from '../types/components';
 import { HeroMarketplace } from './hero-marketplace';
 
 export default {
@@ -17,9 +16,8 @@ export default {
       name: 'Call to Action',
     },
   },
-} as Meta;
+} satisfies Meta<typeof HeroMarketplace>;
 
-const Template: Story<IHeroMarketplaceProps> = args => <HeroMarketplace {...args} />;
+type Story = StoryObj<typeof HeroMarketplace>;
 
-export const Default = Template.bind({});
-Default.args = dummyHeroMarketplace;
+export const Default: Story = { args: dummyHeroMarketplace };
