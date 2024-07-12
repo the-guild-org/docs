@@ -1,5 +1,5 @@
-import { ReactElement } from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ReactElement, ReactNode } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 import {
   dummyCardsColorful,
   dummyFeatureList,
@@ -22,19 +22,23 @@ import { MarketplaceSearch } from '../marketplace-search';
 
 export default {
   title: 'Products/Envelop',
-  argTypes: {
-    page: {
-      table: {
-        disable: true,
-      },
-      control: false,
-    },
-  },
-} as Meta;
+  component: Template,
+} satisfies Meta<typeof Template>;
 
-const Template: Story = ({ page }): ReactElement => {
-  const pages: Record<string, ReactElement> = {
-    '/': (
+type Story = StoryObj<typeof Template>;
+
+function Template({ children }: { children: ReactNode }): ReactElement {
+  return (
+    <>
+      {children}
+      <Footer />
+    </>
+  );
+}
+
+export const Home: Story = {
+  args: {
+    children: (
       <>
         <HeroGradient {...dummyHeroGradient} />
         <FeatureList {...dummyFeatureList} />
@@ -44,28 +48,16 @@ const Template: Story = ({ page }): ReactElement => {
         <InfoList {...dummyInfoList} />
       </>
     ),
-    '/marketplace': (
+  },
+};
+
+export const Marketplace: Story = {
+  args: {
+    children: (
       <>
         <CardsColorful {...dummyCardsColorful} />
         <MarketplaceSearch {...dummyMarketplaceSearch} />
       </>
     ),
-  };
-
-  return (
-    <>
-      {pages[page]}
-      <Footer />
-    </>
-  );
-};
-
-export const Home = Template.bind({});
-Home.args = {
-  page: '/',
-};
-
-export const Marketplace = Template.bind({});
-Marketplace.args = {
-  page: '/marketplace',
+  },
 };
