@@ -29,11 +29,6 @@ type Profile {
 export default {
   title: 'MonacoEditor',
   component: SchemaEditor,
-  parameters: {
-    backgrounds: {
-      default: 'light',
-    },
-  },
 } satisfies Meta<typeof SchemaEditor>;
 
 type Story = StoryObj<typeof SchemaTemplate>;
