@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 6.6.1
+
+### Patch Changes
+
+- [#1538](https://github.com/the-guild-org/docs/pull/1538)
+  [`4ad4722`](https://github.com/the-guild-org/docs/commit/4ad47225487a2140841e73d26d989d79ad7f51e1)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - remove medium link from footer
+
 ## 6.6.0
 
 ### Minor Changes
