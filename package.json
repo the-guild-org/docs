@@ -51,7 +51,7 @@
     "next-themes": "0.3.0",
     "postcss": "8.4.39",
     "postcss-loader": "8.1.1",
-    "prettier": "3.3.2",
+    "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.5",
     "pretty-quick": "4.0.0",
     "react": "18.3.1",
