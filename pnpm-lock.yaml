@@ -12,7 +12,7 @@ overrides:
 
 patchedDependencies:
   tsup@8.2.1:
-    hash: nmg2rx4cpaccaeqqcupusdo6jq
+    hash: pyplzk42qm64umsryuxnu4us5e
     path: patches/tsup@8.2.1.patch
 
 importers:
@@ -135,7 +135,7 @@ importers:
         version: 4.1.0
       tsup:
         specifier: 8.2.1
-        version: 8.2.1(patch_hash=nmg2rx4cpaccaeqqcupusdo6jq)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
+        version: 8.2.1(patch_hash=pyplzk42qm64umsryuxnu4us5e)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       tsx:
         specifier: 4.16.2
         version: 4.16.2
@@ -20256,7 +20256,7 @@ snapshots:
 
   tslib@2.6.2: {}
 
-  tsup@8.2.1(patch_hash=nmg2rx4cpaccaeqqcupusdo6jq)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5):
+  tsup@8.2.1(patch_hash=pyplzk42qm64umsryuxnu4us5e)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
