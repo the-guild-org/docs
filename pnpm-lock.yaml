@@ -167,11 +167,11 @@ importers:
         specifier: 1.5.0
         version: 1.5.0(webpack@5.91.0(@swc/core@1.4.8)(esbuild@0.23.0))
       nextra:
-        specifier: 3.0.0-alpha.26
-        version: 3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
+        specifier: 3.0.0-alpha.27
+        version: 3.0.0-alpha.27(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
       nextra-theme-docs:
-        specifier: 3.0.0-alpha.26
-        version: 3.0.0-alpha.26(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 3.0.0-alpha.27
+        version: 3.0.0-alpha.27(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@3.0.0-alpha.27(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-paginate:
         specifier: 8.2.0
         version: 8.2.0(react@18.3.1)
@@ -307,8 +307,8 @@ importers:
         specifier: 4.0.4
         version: 4.0.4
       nextra:
-        specifier: 3.0.0-alpha.26
-        version: 3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
+        specifier: 3.0.0-alpha.27
+        version: 3.0.0-alpha.27(@types/react@18.3.3)(next@14.2.5(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
       unified:
         specifier: 11.0.5
         version: 11.0.5
@@ -6814,16 +6814,16 @@ packages:
       sass:
         optional: true
 
-  nextra-theme-docs@3.0.0-alpha.26:
-    resolution: {integrity: sha512-+xbmsOdPS5soCdjTPi9hyeqPbuJHKSKt6hDUbBMl9Be13JYtcj16ufcZIxmLaRJDf7STfWRkDDMjYJkZKpYCsA==}
+  nextra-theme-docs@3.0.0-alpha.27:
+    resolution: {integrity: sha512-nwoI7X81PZjR0gKM3S4CfPBwAo5hY5fQ/4jzDwNLAvXWpS7KmVt+uKajpx8L6Q79Q7vqYZIAZiaTMV+z6c621w==}
     peerDependencies:
       next: '>=13'
-      nextra: 3.0.0-alpha.26
+      nextra: 3.0.0-alpha.27
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
 
-  nextra@3.0.0-alpha.26:
-    resolution: {integrity: sha512-o9EttYmRiPODuOl+o1CPXTBOi1IXsAhfMC296pUOHRUyvXDK9hyq0RQXS4SuUivYiujICp6Vpd6NbTZNHRT1Mw==}
+  nextra@3.0.0-alpha.27:
+    resolution: {integrity: sha512-sv+v6C3o3kmnCZeqeLlxrWlBzqKSMjKZwF8dHnwheC1fDr1EYXyt4Qi16BQAY9WYg/KEV17L2G7a+GDKLn8vNA==}
     engines: {node: '>=18'}
     peerDependencies:
       next: '>=13'
@@ -17759,7 +17759,7 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  nextra-theme-docs@3.0.0-alpha.26(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  nextra-theme-docs@3.0.0-alpha.27(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@3.0.0-alpha.27(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@headlessui/react': 1.7.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@popperjs/core': 2.11.8
@@ -17770,13 +17770,13 @@ snapshots:
       intersection-observer: 0.12.2
       next: 14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-themes: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      nextra: 3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
+      nextra: 3.0.0-alpha.27(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       scroll-into-view-if-needed: 3.1.0
       zod: 3.22.4
 
-  nextra@3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3):
+  nextra@3.0.0-alpha.27(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3):
     dependencies:
       '@headlessui/react': 1.7.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@mdx-js/mdx': 3.0.1
@@ -17819,7 +17819,7 @@ snapshots:
       - supports-color
       - typescript
 
-  nextra@3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3):
+  nextra@3.0.0-alpha.27(@types/react@18.3.3)(next@14.2.5(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3):
     dependencies:
       '@headlessui/react': 1.7.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@mdx-js/mdx': 3.0.1
