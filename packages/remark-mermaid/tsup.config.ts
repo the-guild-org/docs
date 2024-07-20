@@ -7,12 +7,6 @@ export default defineConfig([
     entry: ['src/**/*.{ts,tsx}'],
     target: tsconfig.compilerOptions.target as Options['target'],
     bundle: false,
-  },
-  {
-    name: 'dts',
-    entry: ['src/**/*.{ts,tsx}'],
-    dts: {
-      only: true,
-    },
+    dts: true
   },
 ]);
