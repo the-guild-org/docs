@@ -1,5 +1,13 @@
 # @theguild/remark-mermaid
 
+## 0.0.7
+
+### Patch Changes
+
+- [#1365](https://github.com/the-guild-org/docs/pull/1365)
+  [`bf9cb56`](https://github.com/the-guild-org/docs/commit/bf9cb5662dff5ec340f51d32154703bb195da9a8)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - use dynamic import for loading `mermaid`
+
 ## 0.0.6
 
 ### Patch Changes

@@ -1,5 +1,28 @@
 # @theguild/components
 
+## 6.6.2
+
+### Patch Changes
+
+- [#1554](https://github.com/the-guild-org/docs/pull/1554)
+  [`56d5020`](https://github.com/the-guild-org/docs/commit/56d50207722d67acb4663d8a18dec03206fdff62)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.26` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.25`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.26` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.25`, in `dependencies`)
+
+- [#1556](https://github.com/the-guild-org/docs/pull/1556)
+  [`a750a73`](https://github.com/the-guild-org/docs/commit/a750a73812b174425bc1b0448fdd5bb2ed8920cf)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`nextra@3.0.0-alpha.27` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.26`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.27` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.26`, in `dependencies`)
+
 ## 6.6.1
 
 ### Patch Changes
