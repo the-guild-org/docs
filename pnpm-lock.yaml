@@ -167,11 +167,11 @@ importers:
         specifier: 1.5.0
         version: 1.5.0(webpack@5.91.0(@swc/core@1.4.8)(esbuild@0.23.0))
       nextra:
-        specifier: 3.0.0-alpha.25
-        version: 3.0.0-alpha.25(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
+        specifier: 3.0.0-alpha.26
+        version: 3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
       nextra-theme-docs:
-        specifier: 3.0.0-alpha.25
-        version: 3.0.0-alpha.25(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@3.0.0-alpha.25(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 3.0.0-alpha.26
+        version: 3.0.0-alpha.26(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-paginate:
         specifier: 8.2.0
         version: 8.2.0(react@18.3.1)
@@ -307,8 +307,8 @@ importers:
         specifier: 4.0.4
         version: 4.0.4
       nextra:
-        specifier: 3.0.0-alpha.25
-        version: 3.0.0-alpha.25(@types/react@18.3.3)(next@14.2.5(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
+        specifier: 3.0.0-alpha.26
+        version: 3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
       unified:
         specifier: 11.0.5
         version: 11.0.5
@@ -5122,9 +5122,6 @@ packages:
   estree-walker@0.6.1:
     resolution: {integrity: sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==}
 
-  estree-walker@3.0.1:
-    resolution: {integrity: sha512-woY0RUD87WzMBUiZLx8NsYr23N5BKsOMZHhu2hoNRVh6NXGfoiT1KOL8G3UHlJAnEDGmfa5ubNA/AacfG+Kb0g==}
-
   estree-walker@3.0.3:
     resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
 
@@ -6563,9 +6560,6 @@ packages:
   micromark-util-character@1.2.0:
     resolution: {integrity: sha512-lXraTwcX3yH/vMDaFWCQJP1uIszLVebzUa3ZHdrgxr7KEU/9mL4mVgCpGbyhvNLNlauROiNUq7WN5u7ndbY6xg==}
 
-  micromark-util-character@2.0.1:
-    resolution: {integrity: sha512-3wgnrmEAJ4T+mGXAUfMvMAbxU9RDG43XmGce4j6CwPtVxB3vfwXSZ6KhFwDzZ3mZHhmPimMAXg71veiBGzeAZw==}
-
   micromark-util-character@2.1.0:
     resolution: {integrity: sha512-KvOVV+X1yLBfs9dCBSopq/+G1PcgT3lAK07mC4BzXi5E7ahzMAF8oIupDDJ6mievI6F+lAATkbQQlQixJfT3aQ==}
 
@@ -6820,16 +6814,16 @@ packages:
       sass:
         optional: true
 
-  nextra-theme-docs@3.0.0-alpha.25:
-    resolution: {integrity: sha512-1B9CyQW0Cs+H7En9ZN+qoFP4wHrmdMolzLX3LUdBzypHevu2YjN5p6f5JzvORdf92yUBEmCEaUD69C0N/Rmx6g==}
+  nextra-theme-docs@3.0.0-alpha.26:
+    resolution: {integrity: sha512-+xbmsOdPS5soCdjTPi9hyeqPbuJHKSKt6hDUbBMl9Be13JYtcj16ufcZIxmLaRJDf7STfWRkDDMjYJkZKpYCsA==}
     peerDependencies:
       next: '>=13'
-      nextra: 3.0.0-alpha.25
+      nextra: 3.0.0-alpha.26
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
 
-  nextra@3.0.0-alpha.25:
-    resolution: {integrity: sha512-vikr4bJm75j9V5kMWxmUMphDDaoTxRUvdImmKPhIFd+Fg0LYJJJnpuuV4mf7w0I8uPlfob8ETRK1j776GKAMRw==}
+  nextra@3.0.0-alpha.26:
+    resolution: {integrity: sha512-o9EttYmRiPODuOl+o1CPXTBOi1IXsAhfMC296pUOHRUyvXDK9hyq0RQXS4SuUivYiujICp6Vpd6NbTZNHRT1Mw==}
     engines: {node: '>=18'}
     peerDependencies:
       next: '>=13'
@@ -11783,7 +11777,7 @@ snapshots:
       estree-util-build-jsx: 3.0.1
       estree-util-is-identifier-name: 3.0.0
       estree-util-to-js: 2.0.0
-      estree-walker: 3.0.1
+      estree-walker: 3.0.3
       hast-util-to-estree: 3.1.0
       hast-util-to-jsx-runtime: 2.3.0
       markdown-extensions: 2.0.0
@@ -15396,7 +15390,7 @@ snapshots:
       '@types/estree-jsx': 1.0.0
       devlop: 1.1.0
       estree-util-is-identifier-name: 3.0.0
-      estree-walker: 3.0.1
+      estree-walker: 3.0.3
 
   estree-util-is-identifier-name@2.0.1: {}
 
@@ -15423,8 +15417,6 @@ snapshots:
       '@types/unist': 3.0.2
 
   estree-walker@0.6.1: {}
-
-  estree-walker@3.0.1: {}
 
   estree-walker@3.0.3:
     dependencies:
@@ -17336,7 +17328,7 @@ snapshots:
 
   micromark-factory-destination@2.0.0:
     dependencies:
-      micromark-util-character: 2.0.1
+      micromark-util-character: 2.1.0
       micromark-util-symbol: 2.0.0
       micromark-util-types: 2.0.0
 
@@ -17350,7 +17342,7 @@ snapshots:
   micromark-factory-label@2.0.0:
     dependencies:
       devlop: 1.1.0
-      micromark-util-character: 2.0.1
+      micromark-util-character: 2.1.0
       micromark-util-symbol: 2.0.0
       micromark-util-types: 2.0.0
 
@@ -17372,7 +17364,7 @@ snapshots:
 
   micromark-factory-space@2.0.0:
     dependencies:
-      micromark-util-character: 2.0.1
+      micromark-util-character: 2.1.0
       micromark-util-types: 2.0.0
 
   micromark-factory-title@1.1.0:
@@ -17385,7 +17377,7 @@ snapshots:
   micromark-factory-title@2.0.0:
     dependencies:
       micromark-factory-space: 2.0.0
-      micromark-util-character: 2.0.1
+      micromark-util-character: 2.1.0
       micromark-util-symbol: 2.0.0
       micromark-util-types: 2.0.0
 
@@ -17399,7 +17391,7 @@ snapshots:
   micromark-factory-whitespace@2.0.0:
     dependencies:
       micromark-factory-space: 2.0.0
-      micromark-util-character: 2.0.1
+      micromark-util-character: 2.1.0
       micromark-util-symbol: 2.0.0
       micromark-util-types: 2.0.0
 
@@ -17407,11 +17399,6 @@ snapshots:
     dependencies:
       micromark-util-symbol: 1.1.0
       micromark-util-types: 1.1.0
-
-  micromark-util-character@2.0.1:
-    dependencies:
-      micromark-util-symbol: 2.0.0
-      micromark-util-types: 2.0.0
 
   micromark-util-character@2.1.0:
     dependencies:
@@ -17772,7 +17759,7 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  nextra-theme-docs@3.0.0-alpha.25(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@3.0.0-alpha.25(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  nextra-theme-docs@3.0.0-alpha.26(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@headlessui/react': 1.7.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@popperjs/core': 2.11.8
@@ -17783,13 +17770,13 @@ snapshots:
       intersection-observer: 0.12.2
       next: 14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-themes: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      nextra: 3.0.0-alpha.25(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
+      nextra: 3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       scroll-into-view-if-needed: 3.1.0
       zod: 3.22.4
 
-  nextra@3.0.0-alpha.25(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3):
+  nextra@3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.22.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3):
     dependencies:
       '@headlessui/react': 1.7.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@mdx-js/mdx': 3.0.1
@@ -17832,7 +17819,7 @@ snapshots:
       - supports-color
       - typescript
 
-  nextra@3.0.0-alpha.25(@types/react@18.3.3)(next@14.2.5(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3):
+  nextra@3.0.0-alpha.26(@types/react@18.3.3)(next@14.2.5(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3):
     dependencies:
       '@headlessui/react': 1.7.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@mdx-js/mdx': 3.0.1
@@ -18238,7 +18225,7 @@ snapshots:
 
   periscopic@3.0.4:
     dependencies:
-      estree-walker: 3.0.1
+      estree-walker: 3.0.3
       is-reference: 3.0.0
 
   picocolors@1.0.0: {}
