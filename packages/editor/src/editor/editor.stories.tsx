@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { Meta, Story } from '@storybook/react/types-6-0';
-import { SchemaDiffEditor, SchemaDiffEditorProps } from './schema-diff-editor';
+import { Meta, StoryObj } from '@storybook/react';
+import { SchemaDiffEditor } from './schema-diff-editor';
 import { SchemaEditor, SchemaEditorProps } from './schema-editor';
 import { SchemaEditorApi } from './use-schema-services';
 import { debugHoverSource, showWidgetInPosition } from './utils';
@@ -29,15 +29,11 @@ type Profile {
 export default {
   title: 'MonacoEditor',
   component: SchemaEditor,
-  argTypes: {},
-  parameters: {
-    backgrounds: {
-      default: 'light',
-    },
-  },
-} as Meta;
+} satisfies Meta<typeof SchemaEditor>;
 
-const SchemaTemplate: Story<SchemaEditorProps> = args => {
+type Story = StoryObj<typeof SchemaTemplate>;
+
+function SchemaTemplate(props: SchemaEditorProps) {
   const ref = useRef<SchemaEditorApi>(null);
 
   return (
@@ -77,60 +73,56 @@ const SchemaTemplate: Story<SchemaEditorProps> = args => {
       >
         Jump To Field
       </button>
-      <SchemaEditor ref={ref} {...args} />
+      <SchemaEditor ref={ref} {...props} />
     </div>
   );
-};
+}
 
-const SchemaDiffTemplate: Story<SchemaDiffEditorProps> = args => {
-  return <SchemaDiffEditor {...args} />;
-};
-
-export const BasicSchemaEditor = SchemaTemplate.bind({});
-export const BasicSchemaDiffEditor = SchemaDiffTemplate.bind({});
-
-BasicSchemaDiffEditor.args = {
-  original: TEST_SCHEMA,
-  modified: `${TEST_SCHEMA}\ntype Test { id: ID! }`,
-};
-
-BasicSchemaEditor.args = {
-  height: '100vh',
-  schema: TEST_SCHEMA,
-  hoverProviders: [debugHoverSource],
-  onChange(value, event) {
-    console.log('onChange', { value, event });
-  },
-  onMount(editor, monaco) {
-    console.log('onMount', { editor, monaco });
-  },
-  beforeMount(monaco) {
-    console.log('beforeMount', { monaco });
-  },
-  onBlur(value) {
-    console.log('onBlur', { value });
-  },
-  onLanguageServiceReady(languageService) {
-    console.log('onLanguageServiceReady', { languageService });
-  },
-  onSchemaChange(schema, sdl) {
-    console.log('onSchemaChange', { schema, sdl });
-  },
-  onSchemaError(errors, sdl) {
-    console.log('onSchemaError', { errors, sdl });
-  },
-  actions: [
-    {
-      id: 'dotan.test.click',
-      label: 'My Custom Aaction',
-      onRun({ editor, bridge }) {
-        if (['NamedType', 'ObjectTypeDef'].includes(bridge.token.state.kind as string)) {
-          const domNode = document.createElement('div');
-          domNode.innerHTML = `You Selected: <strong>${bridge.token.state.kind} / ${bridge.token.state.name}</strong><br />You can show here any html that you wish!`;
-          domNode.style.background = 'orange';
-          showWidgetInPosition(editor as any, bridge.position, domNode);
-        }
-      },
+export const BasicSchemaEditor: Story = {
+  args: {
+    height: '100vh',
+    schema: TEST_SCHEMA,
+    hoverProviders: [debugHoverSource],
+    onChange(value, event) {
+      console.log('onChange', { value, event });
     },
-  ],
-} as SchemaEditorProps;
+    onMount(editor, monaco) {
+      console.log('onMount', { editor, monaco });
+    },
+    beforeMount(monaco) {
+      console.log('beforeMount', { monaco });
+    },
+    onBlur(value) {
+      console.log('onBlur', { value });
+    },
+    onLanguageServiceReady(languageService) {
+      console.log('onLanguageServiceReady', { languageService });
+    },
+    onSchemaChange(schema, sdl) {
+      console.log('onSchemaChange', { schema, sdl });
+    },
+    onSchemaError(errors, sdl) {
+      console.log('onSchemaError', { errors, sdl });
+    },
+    actions: [
+      {
+        id: 'dotan.test.click',
+        label: 'My Custom Aaction',
+        onRun({ editor, bridge }) {
+          if (['NamedType', 'ObjectTypeDef'].includes(bridge.token.state.kind as string)) {
+            const domNode = document.createElement('div');
+            domNode.innerHTML = `You Selected: <strong>${bridge.token.state.kind} / ${bridge.token.state.name}</strong><br />You can show here any html that you wish!`;
+            domNode.style.background = 'orange';
+            showWidgetInPosition(editor as any, bridge.position, domNode);
+          }
+        },
+      },
+    ],
+  },
+};
+
+export function BasicSchemaDiffEditor() {
+  return (
+    <SchemaDiffEditor original={TEST_SCHEMA} modified={`${TEST_SCHEMA}\ntype Test { id: ID! }`} />
+  );
+}

@@ -10,6 +10,9 @@ module.exports = {
     'plugin:tailwindcss/recommended',
     'plugin:storybook/recommended',
   ],
+  parserOptions: {
+    project: ['tsconfig.eslint.json', 'website/tsconfig.json', 'packages/*/tsconfig.json'],
+  },
   rules: {
     'tailwindcss/classnames-order': 'off', // conflicts with official prettier-plugin-tailwindcss and tailwind v3
     // set more strict to highlight in editor
@@ -46,14 +49,14 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/*.stories.tsx'],
+      files: ['**/*.stories.{ts,tsx}'],
       rules: {
         'no-console': 'off',
+        'import/no-default-export': 'off',
       },
     },
     {
       files: ['packages/**'],
-      excludedFiles: ['packages/algolia/**'],
       rules: {
         'import/extensions': ['error', { js: 'never', json: 'always' }],
       },

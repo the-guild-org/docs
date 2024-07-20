@@ -12,21 +12,21 @@ describe('handler()', () => {
   it('should works', async () => {
     const response = await handler({
       url: 'http://localhost:3000?product=CONDUCTOR',
-    });
+    } as Request);
     const result = Buffer.from(await response.arrayBuffer());
     expect(result).toMatchImageSnapshot();
   });
   it('should align title and have container padding', async () => {
     const response = await handler({
       url: 'http://localhost:3000?product=ESLINT&title=Hello this is a test of really really really really really really long title',
-    });
+    } as Request);
     const result = Buffer.from(await response.arrayBuffer());
     expect(result).toMatchImageSnapshot();
   });
   it('should align title without whitespaces', async () => {
     const response = await handler({
       url: 'http://localhost:3000?product=FETS&title=Home',
-    });
+    } as Request);
     const result = Buffer.from(await response.arrayBuffer());
     expect(result).toMatchImageSnapshot();
   });

@@ -1,5 +1,5 @@
-import { ReactElement } from 'react';
-import { Meta, Story } from '@storybook/react';
+import { ReactElement, ReactNode } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 import {
   dummyCardsColorful,
   dummyFeatureList,
@@ -12,8 +12,7 @@ import {
 } from '../../helpers/dummy';
 import { CardsColorful } from '../cards-colorful';
 import { FeatureList } from '../feature-list';
-import { FooterExtended } from '../footer-extended';
-import { Header } from '../header';
+import { Footer } from '../footer';
 import { HeroGradient } from '../hero-gradient';
 import { HeroIllustration } from '../hero-illustration';
 import { HeroMarketplace } from '../hero-marketplace';
@@ -23,19 +22,23 @@ import { MarketplaceSearch } from '../marketplace-search';
 
 export default {
   title: 'Products/Envelop',
-  argTypes: {
-    page: {
-      table: {
-        disable: true,
-      },
-      control: false,
-    },
-  },
-} as Meta;
+  component: Template,
+} satisfies Meta<typeof Template>;
 
-const Template: Story = ({ page }): ReactElement => {
-  const pages: Record<string, ReactElement> = {
-    '/': (
+type Story = StoryObj<typeof Template>;
+
+function Template({ children }: { children: ReactNode }): ReactElement {
+  return (
+    <>
+      {children}
+      <Footer />
+    </>
+  );
+}
+
+export const Home: Story = {
+  args: {
+    children: (
       <>
         <HeroGradient {...dummyHeroGradient} />
         <FeatureList {...dummyFeatureList} />
@@ -45,29 +48,16 @@ const Template: Story = ({ page }): ReactElement => {
         <InfoList {...dummyInfoList} />
       </>
     ),
-    '/marketplace': (
+  },
+};
+
+export const Marketplace: Story = {
+  args: {
+    children: (
       <>
         <CardsColorful {...dummyCardsColorful} />
         <MarketplaceSearch {...dummyMarketplaceSearch} />
       </>
     ),
-  };
-
-  return (
-    <>
-      <Header accentColor="#ED2E7E" activeLink="/open-source" />
-      {pages[page]}
-      <FooterExtended />
-    </>
-  );
-};
-
-export const Home = Template.bind({});
-Home.args = {
-  page: '/',
-};
-
-export const Marketplace = Template.bind({});
-Marketplace.args = {
-  page: '/marketplace',
+  },
 };

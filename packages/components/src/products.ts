@@ -1,5 +1,4 @@
 import { ReactElement } from 'react';
-import { AlgoliaRecordSource } from '@theguild/algolia';
 import {
   AngularLogo,
   CodeGeneratorLogo,
@@ -14,6 +13,7 @@ import {
   KitQLLogo,
   MeshLogo,
   ModulesLogo,
+  NextraLogo,
   ScalarsLogo,
   SofaLogo,
   SSELogo,
@@ -45,12 +45,13 @@ export type ProductType =
   | 'SSE'
   | 'WS'
   | 'FETS'
-  | 'HELTIN';
+  | 'HELTIN'
+  | 'NEXTRA';
 
 export const PRODUCTS: Record<
   ProductType,
   {
-    name: AlgoliaRecordSource;
+    name: string;
     title: string;
     href: `https://${string}`;
     logo: (props: { className?: string }) => ReactElement;
@@ -64,12 +65,12 @@ export const PRODUCTS: Record<
     logo: HiveLogo,
     primaryColor: '#ffb21d',
   },
-  CONDUCTOR: {
-    name: 'Conductor',
-    title: 'All-in-one GraphQL Gateway',
-    href: 'https://the-guild.dev/graphql/gateway',
-    logo: ConductorLogo,
-    primaryColor: '#0f766e',
+  MESH: {
+    name: 'Mesh',
+    title: 'A fully-featured GraphQL gateway framework',
+    href: 'https://the-guild.dev/graphql/mesh',
+    logo: MeshLogo,
+    primaryColor: '#1bcbe2',
   },
   YOGA: {
     name: 'Yoga',
@@ -77,6 +78,13 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/yoga-server',
     logo: YogaLogo,
     primaryColor: '#c026d3',
+  },
+  CONDUCTOR: {
+    name: 'Conductor',
+    title: 'All-in-one GraphQL Gateway',
+    href: 'https://the-guild.dev/graphql/gateway',
+    logo: ConductorLogo,
+    primaryColor: '#0f766e',
   },
   ENVELOP: {
     name: 'Envelop',
@@ -106,13 +114,6 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/codegen',
     logo: CodeGeneratorLogo,
     primaryColor: '#0284c7',
-  },
-  MESH: {
-    name: 'Mesh',
-    title: 'A fully-featured GraphQL gateway framework',
-    href: 'https://the-guild.dev/graphql/mesh',
-    logo: MeshLogo,
-    primaryColor: '#1bcbe2',
   },
   TOOLS: {
     name: 'Tools',
@@ -204,5 +205,13 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/heltin',
     logo: HeltinLogo,
     primaryColor: '#1d90ff',
+  },
+  NEXTRA: {
+    name: 'Nextra',
+    title:
+      'Simple, powerful and flexible site generation framework with everything you love from Next.js',
+    href: 'https://nextra.site',
+    logo: NextraLogo,
+    primaryColor: '#000',
   },
 };

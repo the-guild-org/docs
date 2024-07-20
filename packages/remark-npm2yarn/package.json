@@ -20,16 +20,17 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "vitest"
+    "test": "vitest",
+    "types:check": "tsc --noEmit"
   },
   "dependencies": {
     "npm-to-yarn": "^2.1.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@types/mdast": "4.0.3",
-    "nextra": "3.0.0-alpha.10",
-    "unified": "11.0.4"
+    "@types/mdast": "4.0.4",
+    "nextra": "3.0.0-alpha.27",
+    "unified": "11.0.5"
   },
   "publishConfig": {
     "access": "public"

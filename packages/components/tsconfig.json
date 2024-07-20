@@ -11,6 +11,5 @@
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "resolveJsonModule": true
-  },
-  "exclude": ["**/*.stories.tsx"]
+  }
 }

@@ -48,7 +48,6 @@ export async function handler(request: Request): Promise<Response> {
         <product.logo style={{ width: 102, height: 108 }} />
         <span tw="font-bold text-7xl mb-10 mt-3">{product.name}</span>
         {title && (
-          // @ts-expect-error This isn't a valid CSS property supported by browsers yet.
           <span
             tw="font-medium text-5xl"
             style={{ textWrap: title.includes(' ') ? 'balance' : '' }}
@@ -59,7 +58,6 @@ export async function handler(request: Request): Promise<Response> {
         {extra && (
           <span
             tw="font-bold text-2xl mt-16"
-            // @ts-expect-error This isn't a valid CSS property supported by browsers yet.
             style={{ textWrap: extra.includes(' ') ? 'balance' : '' }}
           >
             {extra}

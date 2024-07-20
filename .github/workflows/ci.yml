@@ -13,12 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v2.4.0
+      - uses: pnpm/action-setup@v4.0.0
 
-      - name: Use Node.js 21
+      - name: setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 21
+          node-version: 20
           cache: pnpm
 
       - name: Install Dependencies
@@ -55,6 +55,9 @@ jobs:
 
       - name: Lint ESLint
         run: pnpm lint
+
+      - name: Type Check
+        run: pnpm types:check
 
       - name: Test
         run: pnpm test

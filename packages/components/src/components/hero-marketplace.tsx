@@ -15,14 +15,7 @@ const Shadow = ({ className }: { className: string }): ReactElement => {
   return (
     <span
       className={clsx(
-        `absolute
-        h-[750px]
-        w-[750px]
-        -translate-x-1/2
-        -translate-y-1/2
-        rounded-full
-        opacity-40
-        blur-3xl`,
+        'absolute size-[750px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 blur-3xl',
         className,
       )}
     />
@@ -49,13 +42,7 @@ export const HeroMarketplace = ({
   <section className={clsx('overflow-hidden bg-white dark:bg-[#111]', className)}>
     <div className="relative">
       <div
-        className="
-         absolute
-         inset-0
-         overflow-hidden
-         bg-black
-         dark:bg-[#111]
-        "
+        className="absolute inset-0 overflow-hidden bg-black dark:bg-[#111]"
         style={{ '--colorA': '#ff34ae', '--colorB': '#1cc8ee' }}
       >
         <Shadow className="left-[-30px] top-[-175px] [background:var(--colorA)] md:left-[-60px] md:top-[-150px]" />
@@ -70,23 +57,7 @@ export const HeroMarketplace = ({
       </div>
       <div className="container mb-28 mt-16 flex max-w-[90rem] flex-wrap items-center pb-1 pt-20 md:mb-20 md:mt-7 md:flex-nowrap md:pt-0">
         <picture
-          className="
-            z-[1]
-            order-last
-            -mb-20
-            -ml-8
-            mt-5
-            w-full
-            max-w-md
-            md:order-first
-            md:-mb-24
-            md:-ml-12
-            md:mt-0
-            md:w-auto
-            md:max-w-none
-            lg:-ml-14
-            lg:w-2/3
-          "
+          className="z-[1] order-last -mb-20 -ml-8 mt-5 w-full max-w-md md:order-first md:-mb-24 md:-ml-12 md:mt-0 md:w-auto md:max-w-none lg:-ml-14 lg:w-2/3"
           {...image}
         >
           <source media="(min-width:768px)" srcSet={IllustrationDesktop} />

@@ -1,157 +1,167 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`remark-npm2yarn > should convert to tabs 1`] = `
-"/*@jsxRuntime automatic @jsxImportSource react*/
+""use strict";
 const {jsx: _jsx, jsxs: _jsxs} = arguments[0];
 const {useMDXComponents: _provideComponents} = arguments[0];
-const title = \\"\\";
+const title = "";
 const frontMatter = {};
 function useTOC(props) {
   return [];
 }
 function _createMdxContent(props) {
-  const _components = Object.assign({
-    pre: \\"pre\\",
-    code: \\"code\\",
-    span: \\"span\\"
-  }, _provideComponents(), props.components), {$Tabs} = _components;
-  if (!$Tabs) _missingMdxReference(\\"$Tabs\\", true);
-  if (!$Tabs.Tab) _missingMdxReference(\\"$Tabs.Tab\\", true);
+  const _components = {
+    code: "code",
+    pre: "pre",
+    span: "span",
+    ..._provideComponents(),
+    ...props.components
+  }, {$Tabs} = _components;
+  if (!$Tabs) _missingMdxReference("$Tabs", true);
+  if (!$Tabs.Tab) _missingMdxReference("$Tabs.Tab", true);
   return _jsxs($Tabs, {
-    items: [\\"npm\\", \\"pnpm\\", \\"yarn\\", \\"bun\\"],
-    storageKey: \\"testKey\\",
+    items: ["npm", "pnpm", "yarn", "bun"],
+    storageKey: "testKey",
     children: [_jsx($Tabs.Tab, {
       children: _jsx(_components.pre, {
-        \\"data-language\\": \\"sh\\",
-        \\"data-filename\\": \\"Terminal\\",
+        tabIndex: "0",
+        "data-language": "sh",
+        "data-word-wrap": "",
+        "data-filename": "Terminal",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
             children: [_jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#6F42C1\\",
-                \\"--shiki-dark\\": \\"#B392F0\\"
+                "--shiki-light": "#6F42C1",
+                "--shiki-dark": "#B392F0"
               },
-              children: \\"npm\\"
+              children: "npm"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
+                "--shiki-light": "#032F62",
+                "--shiki-dark": "#9ECBFF"
               },
-              children: \\" i\\"
+              children: " i"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#005CC5\\",
-                \\"--shiki-dark\\": \\"#79B8FF\\"
+                "--shiki-light": "#005CC5",
+                "--shiki-dark": "#79B8FF"
               },
-              children: \\" -D\\"
+              children: " -D"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
+                "--shiki-light": "#032F62",
+                "--shiki-dark": "#9ECBFF"
               },
-              children: \\" @graphql-eslint/eslint-plugin\\"
+              children: " @graphql-eslint/eslint-plugin"
             })]
           })
         })
       })
     }), _jsx($Tabs.Tab, {
       children: _jsx(_components.pre, {
-        \\"data-language\\": \\"sh\\",
-        \\"data-filename\\": \\"Terminal\\",
+        tabIndex: "0",
+        "data-language": "sh",
+        "data-word-wrap": "",
+        "data-filename": "Terminal",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
             children: [_jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#6F42C1\\",
-                \\"--shiki-dark\\": \\"#B392F0\\"
+                "--shiki-light": "#6F42C1",
+                "--shiki-dark": "#B392F0"
               },
-              children: \\"pnpm\\"
+              children: "pnpm"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
+                "--shiki-light": "#032F62",
+                "--shiki-dark": "#9ECBFF"
               },
-              children: \\" add\\"
+              children: " add"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#005CC5\\",
-                \\"--shiki-dark\\": \\"#79B8FF\\"
+                "--shiki-light": "#005CC5",
+                "--shiki-dark": "#79B8FF"
               },
-              children: \\" -D\\"
+              children: " -D"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
+                "--shiki-light": "#032F62",
+                "--shiki-dark": "#9ECBFF"
               },
-              children: \\" @graphql-eslint/eslint-plugin\\"
+              children: " @graphql-eslint/eslint-plugin"
             })]
           })
         })
       })
     }), _jsx($Tabs.Tab, {
       children: _jsx(_components.pre, {
-        \\"data-language\\": \\"sh\\",
-        \\"data-filename\\": \\"Terminal\\",
+        tabIndex: "0",
+        "data-language": "sh",
+        "data-word-wrap": "",
+        "data-filename": "Terminal",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
             children: [_jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#6F42C1\\",
-                \\"--shiki-dark\\": \\"#B392F0\\"
+                "--shiki-light": "#6F42C1",
+                "--shiki-dark": "#B392F0"
               },
-              children: \\"yarn\\"
+              children: "yarn"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
+                "--shiki-light": "#032F62",
+                "--shiki-dark": "#9ECBFF"
               },
-              children: \\" add\\"
+              children: " add"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#005CC5\\",
-                \\"--shiki-dark\\": \\"#79B8FF\\"
+                "--shiki-light": "#005CC5",
+                "--shiki-dark": "#79B8FF"
               },
-              children: \\" --dev\\"
+              children: " --dev"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
+                "--shiki-light": "#032F62",
+                "--shiki-dark": "#9ECBFF"
               },
-              children: \\" @graphql-eslint/eslint-plugin\\"
+              children: " @graphql-eslint/eslint-plugin"
             })]
           })
         })
       })
     }), _jsx($Tabs.Tab, {
       children: _jsx(_components.pre, {
-        \\"data-language\\": \\"sh\\",
-        \\"data-filename\\": \\"Terminal\\",
+        tabIndex: "0",
+        "data-language": "sh",
+        "data-word-wrap": "",
+        "data-filename": "Terminal",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
             children: [_jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#6F42C1\\",
-                \\"--shiki-dark\\": \\"#B392F0\\"
+                "--shiki-light": "#6F42C1",
+                "--shiki-dark": "#B392F0"
               },
-              children: \\"bun\\"
+              children: "bun"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
+                "--shiki-light": "#032F62",
+                "--shiki-dark": "#9ECBFF"
               },
-              children: \\" add\\"
+              children: " add"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#005CC5\\",
-                \\"--shiki-dark\\": \\"#79B8FF\\"
+                "--shiki-light": "#005CC5",
+                "--shiki-dark": "#79B8FF"
               },
-              children: \\" --dev\\"
+              children: " --dev"
             }), _jsx(_components.span, {
               style: {
-                \\"--shiki-light\\": \\"#032F62\\",
-                \\"--shiki-dark\\": \\"#9ECBFF\\"
+                "--shiki-light": "#032F62",
+                "--shiki-dark": "#9ECBFF"
               },
-              children: \\" @graphql-eslint/eslint-plugin\\"
+              children: " @graphql-eslint/eslint-plugin"
             })]
           })
         })
@@ -166,7 +176,7 @@ return {
   default: _createMdxContent
 };
 function _missingMdxReference(id, component) {
-  throw new Error(\\"Expected \\" + (component ? \\"component\\" : \\"object\\") + \\" \`\\" + id + \\"\` to be defined: you likely forgot to import, pass, or provide it.\\");
+  throw new Error("Expected " + (component ? "component" : "object") + " \`" + id + "\` to be defined: you likely forgot to import, pass, or provide it.");
 }
 "
 `;

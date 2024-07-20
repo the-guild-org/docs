@@ -16,41 +16,11 @@ export type ILink = Omit<LinkProps, 'href'> &
     sameSite?: boolean;
   };
 
-export type IHeaderLink = ILink & {
-  label: string;
-  menu?: ReactNode;
-};
-
-export interface IHeaderProps {
-  className?: string;
-  accentColor: string;
-  activeLink?: string;
-  themeSwitch?: boolean;
-  transformLinks?: (links: Omit<IHeaderLink, 'children'>[]) => Omit<IHeaderLink, 'children'>[];
-  search?: boolean;
-  sameSite?: boolean;
-}
-
 export interface IFooterExtendedProps {
   className?: string;
   sameSite?: boolean;
   resources?: ILink[];
   logo?: ILink;
-}
-
-export interface ISearchBarProps {
-  version?: 'v1' | 'v2';
-  algolia?: {
-    appId: string;
-    searchApiKey: string;
-    indexName: string;
-  };
-  accentColor: string;
-  title: string;
-  placeholder: string;
-  isFull?: boolean;
-  onHandleModal?: (state: boolean) => void;
-  className?: string;
 }
 
 export interface IFeatureListProps {
@@ -154,7 +124,7 @@ export interface IMarketplaceSearchProps {
 export interface ISchemaPageProps {
   schemaName: string;
   tags?: string[];
-  editorData: Omit<IEditorProps, 'icon'>[];
+  editorData: Omit<IEditorProps, 'icon' | 'children'>[];
 }
 
 export interface IEditorProps {

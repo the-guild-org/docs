@@ -1,9 +1,9 @@
 /* eslint react/no-unknown-property: ['error', { ignore: ['tw'] }] */
-/* eslint-disable jsx-a11y/alt-text */
-import { ComponentProps } from 'react';
+
+import { ComponentProps, ReactElement, ReactNode } from 'react';
 import { toImage, toSVG } from './utils';
 
-function TicketComponent({ children }: { children: any }) {
+function TicketComponent({ children }: { children: ReactNode }): ReactElement {
   return (
     <div
       tw="flex"

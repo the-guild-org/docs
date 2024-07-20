@@ -121,9 +121,6 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
         onChangeDisposable?.dispose();
       };
     }
-
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    return () => {};
   }, [editorRef, monacoRef]);
 
   return {

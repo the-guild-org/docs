@@ -16,42 +16,11 @@ export type CardsColorfulProps = {
 
 export const CardsColorful = ({ cards, className }: CardsColorfulProps): ReactElement => (
   <section className={clsx('bg-white py-8 dark:bg-[#111]', className)}>
-    <div
-      className="
-        container
-        flex
-        flex-wrap
-        space-y-6
-        md:flex-nowrap
-        md:space-x-8
-        md:space-y-0
-    "
-    >
+    <div className="container flex flex-wrap space-y-6 md:flex-nowrap md:space-x-8 md:space-y-0">
       {cards.map(card => (
         <Anchor
           key={card.title}
-          className="
-            relative
-            min-h-[200px]
-            w-full
-            rounded-3xl
-            p-8
-            text-white
-            [background:var(--color)]
-            after:absolute
-            after:right-0
-            after:top-0
-            after:h-full
-            after:w-[calc(30%-1rem)]
-            after:rounded-3xl
-            after:bg-white/10
-            after:content-['']
-            md:h-72
-            md:w-1/2
-            md:hover:scale-105
-            md:hover:shadow-xl
-            lg:after:w-[calc(50%-1rem)]
-          "
+          className="relative min-h-[200px] w-full rounded-3xl p-8 text-white [background:var(--color)] after:absolute after:right-0 after:top-0 after:h-full after:w-[calc(30%-1rem)] after:rounded-3xl after:bg-white/10 after:content-[''] md:h-72 md:w-1/2 md:hover:scale-105 md:hover:shadow-xl lg:after:w-[calc(50%-1rem)]"
           style={{ '--color': card.color }}
           {...card.link}
         >

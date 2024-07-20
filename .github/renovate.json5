@@ -1,9 +1,3 @@
 {
   extends: ['github>the-guild-org/shared-config:renovate'],
-  packageRules: [
-    {
-      matchSourceUrls: ['https://github.com/storybookjs/storybook'],
-      enabled: false,
-    },
-  ],
 }

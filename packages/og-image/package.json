@@ -5,19 +5,20 @@
   "scripts": {
     "deploy": "wrangler publish",
     "postinstall": "tsx ../../scripts/copy-wasm.ts",
-    "start": "NODE_ENV=development wrangler dev"
+    "start": "NODE_ENV=development wrangler dev",
+    "types:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@resvg/resvg-wasm": "2.4.1",
+    "@resvg/resvg-wasm": "2.6.2",
     "@theguild/components": "workspace:*",
-    "react": "18.2.0",
-    "satori": "0.10.9",
+    "react": "18.3.1",
+    "satori": "0.10.14",
     "yoga-wasm-web": "0.3.3"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20240117.0",
-    "@types/react": "18.2.48",
-    "typescript": "5.2.2",
-    "wrangler": "3.22.4"
+    "@cloudflare/workers-types": "4.20240718.0",
+    "@types/react": "18.3.3",
+    "typescript": "5.5.3",
+    "wrangler": "3.65.1"
   }
 }

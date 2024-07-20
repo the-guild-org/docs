@@ -44,7 +44,9 @@ async function tryRemoteReadme(repo: string, path: string) {
 
     return await response.text();
   } catch (err) {
-    console.error(`[GUILD-DOCS] ERROR | Error while trying to get README from GitHub ${fetchPath}`);
+    console.error(
+      `[@theguild/components] ERROR | Error while trying to get README from GitHub ${fetchPath}`,
+    );
     console.error(err);
 
     return null;

@@ -1,5 +1,310 @@
 # @theguild/components
 
+## 6.6.1
+
+### Patch Changes
+
+- [#1538](https://github.com/the-guild-org/docs/pull/1538)
+  [`4ad4722`](https://github.com/the-guild-org/docs/commit/4ad47225487a2140841e73d26d989d79ad7f51e1)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - remove medium link from footer
+
+## 6.6.0
+
+### Minor Changes
+
+- [#1529](https://github.com/the-guild-org/docs/pull/1529)
+  [`310f066`](https://github.com/the-guild-org/docs/commit/310f0669618fb905572fc4f025720b594fd36acb)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - - remove newsletter component
+
+  - add new footer
+
+- [#1514](https://github.com/the-guild-org/docs/pull/1514)
+  [`be34032`](https://github.com/the-guild-org/docs/commit/be34032aa1b430fd2fa60d428c99a0e0f35782d9)
+  Thanks [@EmrysMyrddin](https://github.com/EmrysMyrddin)! - Expose nextra's `Code`, `Pre` and
+  `Table` components
+
+### Patch Changes
+
+- [#1330](https://github.com/the-guild-org/docs/pull/1330)
+  [`9451ff9`](https://github.com/the-guild-org/docs/commit/9451ff9972c35e19e2e044f9bcf96f916e9bcd2b)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@14.2.4` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/14.2.4)
+    (from `13.4.2`, in `dependencies`)
+
+- [#1488](https://github.com/the-guild-org/docs/pull/1488)
+  [`5bc0e5a`](https://github.com/the-guild-org/docs/commit/5bc0e5ad1fe2705f4553209e26ac76e40e82eb36)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`clsx@2.1.1` ↗︎](https://www.npmjs.com/package/clsx/v/2.1.1) (from `2.1.0`,
+    in `dependencies`)
+
+- [#1494](https://github.com/the-guild-org/docs/pull/1494)
+  [`bf7b19b`](https://github.com/the-guild-org/docs/commit/bf7b19b8872819dfddd1ae0f2b23c262ce9a7093)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.24` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.22`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.24` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.22`, in `dependencies`)
+
+- [#1505](https://github.com/the-guild-org/docs/pull/1505)
+  [`59551ff`](https://github.com/the-guild-org/docs/commit/59551ff727520828e07b875927761da5f9f781bc)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.24` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.22`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.24` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.22`, in `dependencies`)
+
+- [#1533](https://github.com/the-guild-org/docs/pull/1533)
+  [`2052922`](https://github.com/the-guild-org/docs/commit/2052922087fee9f4c957ea0cab08871da543bd69)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@14.2.5` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/14.2.5)
+    (from `14.2.4`, in `dependencies`)
+
+- [#1534](https://github.com/the-guild-org/docs/pull/1534)
+  [`3a7f88f`](https://github.com/the-guild-org/docs/commit/3a7f88fc71f5deb355bbc5f19fb64b9a68131b53)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.25` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.24`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.25` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.24`, in `dependencies`)
+
+- [#1535](https://github.com/the-guild-org/docs/pull/1535)
+  [`d0fc2b8`](https://github.com/the-guild-org/docs/commit/d0fc2b8ccf43002d5a5b4f161aaa11470613e3d0)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - fix broken description/canonical in
+  `<head />`
+
+- [#1460](https://github.com/the-guild-org/docs/pull/1460)
+  [`0e260c4`](https://github.com/the-guild-org/docs/commit/0e260c451febc8e56591a1d196fe8a29ac46b19e)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - use `product.title` as `title` prop when
+  hovering
+
+- [#1515](https://github.com/the-guild-org/docs/pull/1515)
+  [`78601d1`](https://github.com/the-guild-org/docs/commit/78601d1668618d886ea9a441d02a3b590886f744)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - polish graphql-eslint logo to use parent
+  `stroke`
+
+## 6.5.3
+
+### Patch Changes
+
+- [#1457](https://github.com/the-guild-org/docs/pull/1457)
+  [`da5fa93`](https://github.com/the-guild-org/docs/commit/da5fa932f49b9d22dfb8cfdcd694c77156cdb535)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - warn on server when missing
+  `frontMatter.description`
+
+## 6.5.2
+
+### Patch Changes
+
+- [#1449](https://github.com/the-guild-org/docs/pull/1449)
+  [`b79f8dc`](https://github.com/the-guild-org/docs/commit/b79f8dc6eab4c3e6a577c859f5493e95811fbf4f)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+
+  - Removed dependency
+    [`search-insights@2.13.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.13.0) (from
+    `dependencies`)
+
+- [#1451](https://github.com/the-guild-org/docs/pull/1451)
+  [`bf079fe`](https://github.com/the-guild-org/docs/commit/bf079fe86e77418965cc48a5144ffd8a01a2877e)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - use `product.href` because products urls
+  can be incorrect due to use `basePath`
+
+## 6.5.1
+
+### Patch Changes
+
+- [#1446](https://github.com/the-guild-org/docs/pull/1446)
+  [`5a39e51`](https://github.com/the-guild-org/docs/commit/5a39e516a2ff597c2c8622b14f0baedeb0f297ba)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-player@2.16.0` ↗︎](https://www.npmjs.com/package/react-player/v/2.16.0) (from `2.15.1`,
+    in `dependencies`)
+
+- [#1447](https://github.com/the-guild-org/docs/pull/1447)
+  [`43c66a3`](https://github.com/the-guild-org/docs/commit/43c66a359eed889264a43da02e8fae61c17b8c69)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - use url `url.pathname` only for products
+  when `host: 'the-guild.dev'`
+
+## 6.5.0
+
+### Minor Changes
+
+- [#1444](https://github.com/the-guild-org/docs/pull/1444)
+  [`bad4173`](https://github.com/the-guild-org/docs/commit/bad41733c80474b9184740ece36a7e9e45609b8e)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - add Products link in navbar
+
+## 6.4.2
+
+### Patch Changes
+
+- [#1418](https://github.com/the-guild-org/docs/pull/1418)
+  [`1bbcec4`](https://github.com/the-guild-org/docs/commit/1bbcec44100fcff28cc82b11da141e287861a7dd)
+  Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - dependencies updates:
+
+  - Removed dependency
+    [`@radix-ui/react-navigation-menu@1.1.4` ↗︎](https://www.npmjs.com/package/@radix-ui/react-navigation-menu/v/1.1.4)
+    (from `dependencies`)
+
+- [#1439](https://github.com/the-guild-org/docs/pull/1439)
+  [`aea9d61`](https://github.com/the-guild-org/docs/commit/aea9d617c0056b357652a102e1ef936db6fb83b7)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+
+  - Updated dependency [`clsx@2.1.0` ↗︎](https://www.npmjs.com/package/clsx/v/2.1.0) (from `2.0.0`,
+    in `dependencies`)
+
+- [#1418](https://github.com/the-guild-org/docs/pull/1418)
+  [`1bbcec4`](https://github.com/the-guild-org/docs/commit/1bbcec44100fcff28cc82b11da141e287861a7dd)
+  Thanks [@TuvalSimha](https://github.com/TuvalSimha)! - Fix some UI issues realted to
+  GuildUnifiedLogo + Deleted old Header
+
+## 6.4.1
+
+### Patch Changes
+
+- [#1410](https://github.com/the-guild-org/docs/pull/1410)
+  [`cb0e60b`](https://github.com/the-guild-org/docs/commit/cb0e60be4578abee95ebcb295ce1a8e1bd41d31a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`react-player@2.15.1` ↗︎](https://www.npmjs.com/package/react-player/v/2.15.1) (from `2.13.0`,
+    in `dependencies`)
+
+- [#1411](https://github.com/the-guild-org/docs/pull/1411)
+  [`790c6e1`](https://github.com/the-guild-org/docs/commit/790c6e135a1ed38cd6eaab007a66efc1907e61e5)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`search-insights@2.13.0` ↗︎](https://www.npmjs.com/package/search-insights/v/2.13.0) (from
+    `2.9.0`, in `dependencies`)
+
+- [#1414](https://github.com/the-guild-org/docs/pull/1414)
+  [`6a99f63`](https://github.com/the-guild-org/docs/commit/6a99f630819a2f08e603b95b9f7b15be43253791)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@giscus/react@3.0.0` ↗︎](https://www.npmjs.com/package/@giscus/react/v/3.0.0) (from `2.4.0`,
+    in `dependencies`)
+
+- [#1434](https://github.com/the-guild-org/docs/pull/1434)
+  [`c580e8e`](https://github.com/the-guild-org/docs/commit/c580e8e8593f6efc21ab738d2fdb1889d5e6991e)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - fix `the-guild.dev` doesn't centered on
+  mobile
+
+## 6.4.0
+
+### Minor Changes
+
+- [#1406](https://github.com/the-guild-org/docs/pull/1406)
+  [`68f6014`](https://github.com/the-guild-org/docs/commit/68f60140553c8fc440303aceaf3e70d83032ec40)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Updated new nav bar
+
+- [#1406](https://github.com/the-guild-org/docs/pull/1406)
+  [`68f6014`](https://github.com/the-guild-org/docs/commit/68f60140553c8fc440303aceaf3e70d83032ec40)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Remove Algolia search and eanble Nextra
+  flexsearch
+
+- [#1406](https://github.com/the-guild-org/docs/pull/1406)
+  [`68f6014`](https://github.com/the-guild-org/docs/commit/68f60140553c8fc440303aceaf3e70d83032ec40)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Remove duplicated header and cleanup
+  codebase
+
+### Patch Changes
+
+- [#1402](https://github.com/the-guild-org/docs/pull/1402)
+  [`1ffc809`](https://github.com/the-guild-org/docs/commit/1ffc8090a4cb1070965908034a7410836aa6666e)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@giscus/react@2.4.0` ↗︎](https://www.npmjs.com/package/@giscus/react/v/2.4.0) (from `2.3.0`,
+    in `dependencies`)
+
+- [#1406](https://github.com/the-guild-org/docs/pull/1406)
+  [`68f6014`](https://github.com/the-guild-org/docs/commit/68f60140553c8fc440303aceaf3e70d83032ec40)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - dependencies updates:
+
+  - Updated dependency [`fuzzy@0.1.3` ↗︎](https://www.npmjs.com/package/fuzzy/v/0.1.3) (from
+    `^0.1.3`, in `dependencies`)
+  - Updated dependency [`nextra@3.0.0-alpha.22` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.17`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.22` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.17`, in `dependencies`)
+  - Removed dependency
+    [`@algolia/autocomplete-js@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.17.0)
+    (from `dependencies`)
+  - Removed dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.17.0)
+    (from `dependencies`)
+  - Removed dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.17.0)
+    (from `dependencies`)
+  - Removed dependency
+    [`@algolia/autocomplete-theme-classic@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.17.0)
+    (from `dependencies`)
+  - Removed dependency
+    [`algoliasearch@4.19.1` ↗︎](https://www.npmjs.com/package/algoliasearch/v/4.19.1) (from
+    `dependencies`)
+
+- [#1406](https://github.com/the-guild-org/docs/pull/1406)
+  [`68f6014`](https://github.com/the-guild-org/docs/commit/68f60140553c8fc440303aceaf3e70d83032ec40)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - Removed defualt "graphql" prefix for titles
+
+## 6.3.0
+
+### Minor Changes
+
+- [`2515e45`](https://github.com/the-guild-org/docs/commit/2515e4598a9cfab26ff24cd7648e45f3017550cc)
+  Thanks [@dotansimha](https://github.com/dotansimha)! - remove old conf banner
+
+### Patch Changes
+
+- [#1326](https://github.com/the-guild-org/docs/pull/1326)
+  [`4b33a63`](https://github.com/the-guild-org/docs/commit/4b33a63a07de257b7650c90779ad1ddf4b9f1983)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`@algolia/autocomplete-js@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-js/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-algolia-insights@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-algolia-insights/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-plugin-query-suggestions@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-plugin-query-suggestions/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+  - Updated dependency
+    [`@algolia/autocomplete-theme-classic@1.17.0` ↗︎](https://www.npmjs.com/package/@algolia/autocomplete-theme-classic/v/1.17.0)
+    (from `1.11.1`, in `dependencies`)
+
+## 6.2.0
+
+### Minor Changes
+
+- [#1370](https://github.com/the-guild-org/docs/pull/1370)
+  [`1cf336a`](https://github.com/the-guild-org/docs/commit/1cf336a90dd706c988258f711c0f4d5a937892e8)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - add nextra to products list, bump nextra
+  3 alpha dependencies
+
+### Patch Changes
+
+- [#1370](https://github.com/the-guild-org/docs/pull/1370)
+  [`1cf336a`](https://github.com/the-guild-org/docs/commit/1cf336a90dd706c988258f711c0f4d5a937892e8)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+  - Updated dependency [`nextra@3.0.0-alpha.17` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.10`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.17` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.10`, in `dependencies`)
+
 ## 6.1.1
 
 ### Patch Changes
