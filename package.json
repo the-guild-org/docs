@@ -14,7 +14,7 @@
     "prerelease": "pnpm build",
     "prettier": "pnpm lint:prettier --write",
     "release": "changeset publish",
-    "start": "storybook dev --port 4000",
+    "storybook": "storybook dev --port 4000",
     "test": "vitest",
     "types:check": "turbo run types:check"
   },
