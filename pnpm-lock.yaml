@@ -98,11 +98,11 @@ importers:
         specifier: 0.3.0
         version: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       postcss:
-        specifier: 8.4.39
-        version: 8.4.39
+        specifier: 8.4.40
+        version: 8.4.40
       postcss-loader:
         specifier: 8.1.1
-        version: 8.1.1(postcss@8.4.39)(typescript@5.5.3)(webpack@5.74.0(@swc/core@1.4.8)(esbuild@0.23.0))
+        version: 8.1.1(postcss@8.4.40)(typescript@5.5.3)(webpack@5.74.0(@swc/core@1.4.8)(esbuild@0.23.0))
       prettier:
         specifier: 3.3.3
         version: 3.3.3
@@ -135,7 +135,7 @@ importers:
         version: 4.1.0
       tsup:
         specifier: 8.2.1
-        version: 8.2.1(patch_hash=pyplzk42qm64umsryuxnu4us5e)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
+        version: 8.2.1(patch_hash=pyplzk42qm64umsryuxnu4us5e)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.40)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       tsx:
         specifier: 4.16.2
         version: 4.16.2
@@ -7556,6 +7556,10 @@ packages:
     resolution: {integrity: sha512-0vzE+lAiG7hZl1/9I8yzKLx3aR9Xbof3fBHKunvMfOCYAtMhrsnccJY2iTURb9EZd5+pLuiNV9/c/GZJOHsgIw==}
     engines: {node: ^10 || ^12 || >=14}
 
+  postcss@8.4.40:
+    resolution: {integrity: sha512-YF2kKIUzAofPMpfH6hOi2cGnv/HrUlfucspc7pDyvv7kGdqXrfj8SCl/t8owkEgKEuu8ZcRjSOxFxVLqwChZ2Q==}
+    engines: {node: ^10 || ^12 || >=14}
+
   preferred-pm@3.0.3:
     resolution: {integrity: sha512-+wZgbxNES/KlJs9q40F/1sfOd/j7f1O9JaHcW5Dsn3aUUOZg3L2bjpVUcKV2jvtElYfoTuQiNeMfQJ4kwUAhCQ==}
     engines: {node: '>=10'}
@@ -12456,8 +12460,8 @@ snapshots:
       next: 14.2.5(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       node-polyfill-webpack-plugin: 2.0.1(webpack@5.74.0(@swc/core@1.4.8)(esbuild@0.23.0))
       pnp-webpack-plugin: 1.7.0(typescript@5.5.3)
-      postcss: 8.4.39
-      postcss-loader: 8.1.1(postcss@8.4.39)(typescript@5.5.3)(webpack@5.74.0(@swc/core@1.4.8)(esbuild@0.23.0))
+      postcss: 8.4.40
+      postcss-loader: 8.1.1(postcss@8.4.40)(typescript@5.5.3)(webpack@5.74.0(@swc/core@1.4.8)(esbuild@0.23.0))
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-refresh: 0.14.2
@@ -14394,12 +14398,12 @@ snapshots:
 
   css-loader@6.11.0(webpack@5.74.0(@swc/core@1.4.8)(esbuild@0.23.0)):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.39)
-      postcss: 8.4.39
-      postcss-modules-extract-imports: 3.1.0(postcss@8.4.39)
-      postcss-modules-local-by-default: 4.0.5(postcss@8.4.39)
-      postcss-modules-scope: 3.2.0(postcss@8.4.39)
-      postcss-modules-values: 4.0.0(postcss@8.4.39)
+      icss-utils: 5.1.0(postcss@8.4.40)
+      postcss: 8.4.40
+      postcss-modules-extract-imports: 3.1.0(postcss@8.4.40)
+      postcss-modules-local-by-default: 4.0.5(postcss@8.4.40)
+      postcss-modules-scope: 3.2.0(postcss@8.4.40)
+      postcss-modules-values: 4.0.0(postcss@8.4.40)
       postcss-value-parser: 4.2.0
       semver: 7.6.3
     optionalDependencies:
@@ -14407,12 +14411,12 @@ snapshots:
 
   css-loader@6.11.0(webpack@5.91.0(@swc/core@1.4.8)(esbuild@0.23.0)):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.39)
-      postcss: 8.4.39
-      postcss-modules-extract-imports: 3.1.0(postcss@8.4.39)
-      postcss-modules-local-by-default: 4.0.5(postcss@8.4.39)
-      postcss-modules-scope: 3.2.0(postcss@8.4.39)
-      postcss-modules-values: 4.0.0(postcss@8.4.39)
+      icss-utils: 5.1.0(postcss@8.4.40)
+      postcss: 8.4.40
+      postcss-modules-extract-imports: 3.1.0(postcss@8.4.40)
+      postcss-modules-local-by-default: 4.0.5(postcss@8.4.40)
+      postcss-modules-scope: 3.2.0(postcss@8.4.40)
+      postcss-modules-values: 4.0.0(postcss@8.4.40)
       postcss-value-parser: 4.2.0
       semver: 7.6.3
     optionalDependencies:
@@ -14420,12 +14424,12 @@ snapshots:
 
   css-loader@7.1.2(webpack@5.74.0(@swc/core@1.4.8)(esbuild@0.23.0)):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.39)
-      postcss: 8.4.39
-      postcss-modules-extract-imports: 3.1.0(postcss@8.4.39)
-      postcss-modules-local-by-default: 4.0.5(postcss@8.4.39)
-      postcss-modules-scope: 3.2.0(postcss@8.4.39)
-      postcss-modules-values: 4.0.0(postcss@8.4.39)
+      icss-utils: 5.1.0(postcss@8.4.40)
+      postcss: 8.4.40
+      postcss-modules-extract-imports: 3.1.0(postcss@8.4.40)
+      postcss-modules-local-by-default: 4.0.5(postcss@8.4.40)
+      postcss-modules-scope: 3.2.0(postcss@8.4.40)
+      postcss-modules-values: 4.0.0(postcss@8.4.40)
       postcss-value-parser: 4.2.0
       semver: 7.6.3
     optionalDependencies:
@@ -15333,7 +15337,7 @@ snapshots:
   eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.6(ts-node@10.9.1(@swc/core@1.4.8)(@types/node@20.11.30)(typescript@5.5.3))):
     dependencies:
       fast-glob: 3.3.2
-      postcss: 8.4.39
+      postcss: 8.4.40
       tailwindcss: 3.4.6(ts-node@10.9.1(@swc/core@1.4.8)(@types/node@20.11.30)(typescript@5.5.3))
 
   eslint-plugin-unicorn@54.0.0(eslint@8.57.0):
@@ -16329,9 +16333,9 @@ snapshots:
     dependencies:
       safer-buffer: 2.1.2
 
-  icss-utils@5.1.0(postcss@8.4.39):
+  icss-utils@5.1.0(postcss@8.4.40):
     dependencies:
-      postcss: 8.4.39
+      postcss: 8.4.40
 
   ieee754@1.2.1: {}
 
@@ -18431,9 +18435,9 @@ snapshots:
     dependencies:
       postcss: 8.4.39
 
-  postcss-import@15.1.0(postcss@8.4.39):
+  postcss-import@15.1.0(postcss@8.4.40):
     dependencies:
-      postcss: 8.4.39
+      postcss: 8.4.40
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
@@ -18445,33 +18449,33 @@ snapshots:
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-js@4.0.1(postcss@8.4.39):
+  postcss-js@4.0.1(postcss@8.4.40):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.39
+      postcss: 8.4.40
 
-  postcss-load-config@4.0.1(postcss@8.4.39)(ts-node@10.9.1(@swc/core@1.4.8)(@types/node@20.11.30)(typescript@5.5.3)):
+  postcss-load-config@4.0.1(postcss@8.4.40)(ts-node@10.9.1(@swc/core@1.4.8)(@types/node@20.11.30)(typescript@5.5.3)):
     dependencies:
       lilconfig: 2.1.0
       yaml: 2.4.5
     optionalDependencies:
-      postcss: 8.4.39
+      postcss: 8.4.40
       ts-node: 10.9.1(@swc/core@1.4.8)(@types/node@20.11.30)(typescript@5.5.3)
 
-  postcss-load-config@6.0.1(jiti@1.21.0)(postcss@8.4.39)(tsx@4.16.2)(yaml@2.4.5):
+  postcss-load-config@6.0.1(jiti@1.21.0)(postcss@8.4.40)(tsx@4.16.2)(yaml@2.4.5):
     dependencies:
       lilconfig: 3.1.2
     optionalDependencies:
       jiti: 1.21.0
-      postcss: 8.4.39
+      postcss: 8.4.40
       tsx: 4.16.2
       yaml: 2.4.5
 
-  postcss-loader@8.1.1(postcss@8.4.39)(typescript@5.5.3)(webpack@5.74.0(@swc/core@1.4.8)(esbuild@0.23.0)):
+  postcss-loader@8.1.1(postcss@8.4.40)(typescript@5.5.3)(webpack@5.74.0(@swc/core@1.4.8)(esbuild@0.23.0)):
     dependencies:
       cosmiconfig: 9.0.0(typescript@5.5.3)
       jiti: 1.21.0
-      postcss: 8.4.39
+      postcss: 8.4.40
       semver: 7.6.3
     optionalDependencies:
       webpack: 5.74.0(@swc/core@1.4.8)(esbuild@0.23.0)
@@ -18517,30 +18521,30 @@ snapshots:
       postcss: 8.4.39
       postcss-selector-parser: 6.1.0
 
-  postcss-modules-extract-imports@3.1.0(postcss@8.4.39):
+  postcss-modules-extract-imports@3.1.0(postcss@8.4.40):
     dependencies:
-      postcss: 8.4.39
+      postcss: 8.4.40
 
-  postcss-modules-local-by-default@4.0.5(postcss@8.4.39):
+  postcss-modules-local-by-default@4.0.5(postcss@8.4.40):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.39)
-      postcss: 8.4.39
+      icss-utils: 5.1.0(postcss@8.4.40)
+      postcss: 8.4.40
       postcss-selector-parser: 6.0.16
       postcss-value-parser: 4.2.0
 
-  postcss-modules-scope@3.2.0(postcss@8.4.39):
+  postcss-modules-scope@3.2.0(postcss@8.4.40):
     dependencies:
-      postcss: 8.4.39
+      postcss: 8.4.40
       postcss-selector-parser: 6.0.16
 
-  postcss-modules-values@4.0.0(postcss@8.4.39):
+  postcss-modules-values@4.0.0(postcss@8.4.40):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.39)
-      postcss: 8.4.39
+      icss-utils: 5.1.0(postcss@8.4.40)
+      postcss: 8.4.40
 
-  postcss-nested@6.0.1(postcss@8.4.39):
+  postcss-nested@6.0.1(postcss@8.4.40):
     dependencies:
-      postcss: 8.4.39
+      postcss: 8.4.40
       postcss-selector-parser: 6.1.0
 
   postcss-normalize-charset@7.0.0(postcss@8.4.39):
@@ -18635,6 +18639,12 @@ snapshots:
       source-map-js: 1.2.0
 
   postcss@8.4.39:
+    dependencies:
+      nanoid: 3.3.7
+      picocolors: 1.0.1
+      source-map-js: 1.2.0
+
+  postcss@8.4.40:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.0.1
@@ -19146,7 +19156,7 @@ snapshots:
       adjust-sourcemap-loader: 4.0.0
       convert-source-map: 1.9.0
       loader-utils: 2.0.4
-      postcss: 8.4.39
+      postcss: 8.4.40
       source-map: 0.6.1
 
   resolve.exports@2.0.2: {}
@@ -19889,11 +19899,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.0
-      postcss: 8.4.39
-      postcss-import: 15.1.0(postcss@8.4.39)
-      postcss-js: 4.0.1(postcss@8.4.39)
-      postcss-load-config: 4.0.1(postcss@8.4.39)(ts-node@10.9.1(@swc/core@1.4.8)(@types/node@20.11.30)(typescript@5.5.3))
-      postcss-nested: 6.0.1(postcss@8.4.39)
+      postcss: 8.4.40
+      postcss-import: 15.1.0(postcss@8.4.40)
+      postcss-js: 4.0.1(postcss@8.4.40)
+      postcss-load-config: 4.0.1(postcss@8.4.40)(ts-node@10.9.1(@swc/core@1.4.8)(@types/node@20.11.30)(typescript@5.5.3))
+      postcss-nested: 6.0.1(postcss@8.4.40)
       postcss-selector-parser: 6.0.16
       resolve: 1.22.8
       sucrase: 3.32.0
@@ -19916,11 +19926,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.1
-      postcss: 8.4.39
-      postcss-import: 15.1.0(postcss@8.4.39)
-      postcss-js: 4.0.1(postcss@8.4.39)
-      postcss-load-config: 4.0.1(postcss@8.4.39)(ts-node@10.9.1(@swc/core@1.4.8)(@types/node@20.11.30)(typescript@5.5.3))
-      postcss-nested: 6.0.1(postcss@8.4.39)
+      postcss: 8.4.40
+      postcss-import: 15.1.0(postcss@8.4.40)
+      postcss-js: 4.0.1(postcss@8.4.40)
+      postcss-load-config: 4.0.1(postcss@8.4.40)(ts-node@10.9.1(@swc/core@1.4.8)(@types/node@20.11.30)(typescript@5.5.3))
+      postcss-nested: 6.0.1(postcss@8.4.40)
       postcss-selector-parser: 6.1.0
       resolve: 1.22.8
       sucrase: 3.32.0
@@ -20121,7 +20131,7 @@ snapshots:
 
   tslib@2.6.2: {}
 
-  tsup@8.2.1(patch_hash=pyplzk42qm64umsryuxnu4us5e)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5):
+  tsup@8.2.1(patch_hash=pyplzk42qm64umsryuxnu4us5e)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.40)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -20134,7 +20144,7 @@ snapshots:
       joycon: 3.1.1
       picocolors: 1.0.1
       picomatch: 4.0.2
-      postcss-load-config: 6.0.1(jiti@1.21.0)(postcss@8.4.39)(tsx@4.16.2)(yaml@2.4.5)
+      postcss-load-config: 6.0.1(jiti@1.21.0)(postcss@8.4.40)(tsx@4.16.2)(yaml@2.4.5)
       resolve-from: 5.0.0
       rollup: 4.19.0
       source-map: 0.8.0-beta.0
@@ -20142,7 +20152,7 @@ snapshots:
       tree-kill: 1.2.2
     optionalDependencies:
       '@swc/core': 1.4.8
-      postcss: 8.4.39
+      postcss: 8.4.40
       typescript: 5.5.3
     transitivePeerDependencies:
       - jiti
@@ -20600,7 +20610,7 @@ snapshots:
   vite@5.3.3(@types/node@20.11.30)(terser@5.29.2):
     dependencies:
       esbuild: 0.23.0
-      postcss: 8.4.39
+      postcss: 8.4.40
       rollup: 4.19.0
     optionalDependencies:
       '@types/node': 20.11.30
