@@ -1,10 +1,10 @@
 import { ReactElement } from 'react';
 import clsx from 'clsx';
 import { DocsThemeConfig } from 'nextra-theme-docs';
-import { GuildLogo, TheGuild } from '../logos';
+import { GuildLogo, HivePlatformLogo, TheGuild } from '../logos';
 import { Anchor } from './anchor';
 
-export function GuildUnifiedLogo({
+function GuildUnifiedLogo({
   children,
   title,
   description,
@@ -50,5 +50,25 @@ export function GuildUnifiedLogo({
         </>
       )}
     </>
+  );
+}
+
+/**
+ * GraphQL-related products live under the Hive platform brand, so we use a single logo for them.
+ * The rest gets The Guild / {Product} logo.
+ */
+export function getNavbarLogo(
+  logo: DocsThemeConfig['logo'],
+  websiteName: string,
+  description: string,
+) {
+  return logo === HivePlatformLogo ? (
+    <Anchor title={websiteName} href="/">
+      <HivePlatformLogo />
+    </Anchor>
+  ) : (
+    <GuildUnifiedLogo description={description} title={websiteName}>
+      {logo}
+    </GuildUnifiedLogo>
   );
 }

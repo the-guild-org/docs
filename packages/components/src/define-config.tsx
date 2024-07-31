@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router';
 import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
-import { Anchor, Footer, GuildUnifiedLogo, mdxComponents, ThemeSwitcherButton } from './components';
+import { Footer, getNavbarLogo, mdxComponents, ThemeSwitcherButton } from './components';
 import { addGuildCompanyMenu } from './components/company-menu';
-import { HivePlatformLogo } from './logos';
 
 export function defineConfig({
   websiteName,
@@ -96,16 +95,7 @@ export function defineConfig({
       );
     },
     logoLink: false,
-    logo:
-      logo === HivePlatformLogo ? (
-        <Anchor title={websiteName} href="/">
-          <HivePlatformLogo />
-        </Anchor>
-      ) : (
-        <GuildUnifiedLogo description={description} title={websiteName}>
-          {logo}
-        </GuildUnifiedLogo>
-      ),
+    logo: getNavbarLogo(logo, websiteName, description),
     navbar: {
       extraContent: <ThemeSwitcherButton />,
       ...(logo && { component: props => <Navbar items={addGuildCompanyMenu(props.items)} /> }),
