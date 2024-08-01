@@ -21,4 +21,4 @@ export { ReactComponent as ToolsLogo } from './tools.svg';
 export { ReactComponent as WhatsAppLogo } from './whatsapp.svg';
 export { ReactComponent as WSLogo } from './ws.svg';
 export { ReactComponent as YogaLogo } from './yoga.svg';
-export { ReactComponent as HivePlatformLogo } from './hive-platform.svg';
+export { ReactComponent as HiveCombinationMark } from './hive-combination-mark.svg';
