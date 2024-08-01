@@ -8,7 +8,6 @@ import {
   ESLintLogo,
   FetsLogo,
   HeltinLogo,
-  HiveLogo,
   HivePlatformLogo,
   InspectorLogo,
   KitQLLogo,

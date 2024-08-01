@@ -7,7 +7,6 @@ export { ReactComponent as ESLintLogo } from './eslint.svg';
 export { ReactComponent as FetsLogo } from './fets.svg';
 export { ReactComponent as GuildLogo } from './guild.svg';
 export { ReactComponent as HeltinLogo } from './heltin.svg';
-export { ReactComponent as HiveLogo } from './hive.svg';
 export { ReactComponent as InspectorLogo } from './inspector.svg';
 export { ReactComponent as KitQLLogo } from './kitql.svg';
 export { ReactComponent as MeshLogo } from './mesh.svg';
