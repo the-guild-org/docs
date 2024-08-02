@@ -3,15 +3,17 @@ import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
 import { Footer, getNavbarLogo, mdxComponents, ThemeSwitcherButton } from './components';
 import { addGuildCompanyMenu } from './components/company-menu';
 
+export interface GuildDocsThemeConfig extends DocsThemeConfig {
+  websiteName: string;
+  description: string;
+}
+
 export function defineConfig({
   websiteName,
   description,
   logo,
   ...config
-}: DocsThemeConfig & {
-  websiteName: string;
-  description: string;
-}): DocsThemeConfig {
+}: GuildDocsThemeConfig): DocsThemeConfig {
   if (!config.docsRepositoryBase) {
     throw new Error('Missing required "docsRepositoryBase" property');
   }

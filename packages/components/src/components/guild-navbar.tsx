@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import clsx from 'clsx';
 import { DocsThemeConfig } from 'nextra-theme-docs';
-import { GuildLogo, HivePlatformLogo, TheGuild } from '../logos';
+import { GuildLogo, TheGuild } from '../logos';
 import { Anchor } from './anchor';
 
 function GuildUnifiedLogo({
@@ -62,9 +62,9 @@ export function getNavbarLogo(
   websiteName: string,
   description: string,
 ) {
-  return logo === HivePlatformLogo ? (
+  return websiteName === 'Hive' ? (
     <Anchor title={websiteName} href="/">
-      <HivePlatformLogo />
+      {typeof logo === 'function' ? logo({}) : logo}
     </Anchor>
   ) : (
     <GuildUnifiedLogo description={description} title={websiteName}>
