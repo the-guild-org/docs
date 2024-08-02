@@ -7,7 +7,6 @@
     "@theguild/og-image": "0.0.0",
     "@theguild/remark-mermaid": "0.0.7",
     "@theguild/remark-npm2yarn": "0.3.0",
-    "website": "0.0.0"
   },
   "changesets": []
 }
