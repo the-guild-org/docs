@@ -33,7 +33,7 @@
     "@storybook/react": "8.2.5",
     "@storybook/theming": "8.2.5",
     "@svgr/webpack": "8.1.0",
-    "@theguild/eslint-config": "0.11.10",
+    "@theguild/eslint-config": "0.11.11",
     "@theguild/prettier-config": "2.0.7",
     "@theguild/tailwind-config": "0.4.2",
     "@types/jest-image-snapshot": "6.4.0",
