@@ -3,16 +3,12 @@
   "type": "module",
   "private": true,
   "packageManager": "pnpm@9.6.0",
-  "engines": {
-    "node": ">=20",
-    "pnpm": ">=8.15"
-  },
   "scripts": {
     "build": "turbo run build",
     "build-storybook": "pnpm --filter @theguild/remark-mermaid build && storybook build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.ts --postcss --output packages/components/style.css",
     "dev": "turbo run dev --parallel",
-    "lint": "eslint --cache --ignore-path .gitignore .",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --cache --ignore-path .gitignore .",
     "lint:prettier": "prettier --cache --check .",
     "prepare": "husky install",
     "prerelease": "pnpm build",
@@ -33,7 +29,7 @@
     "@storybook/react": "8.2.7",
     "@storybook/theming": "8.2.7",
     "@svgr/webpack": "8.1.0",
-    "@theguild/eslint-config": "0.11.11",
+    "@theguild/eslint-config": "0.12.0",
     "@theguild/prettier-config": "2.0.7",
     "@theguild/tailwind-config": "0.4.2",
     "@types/jest-image-snapshot": "6.4.0",
@@ -42,7 +38,7 @@
     "@types/webpack": "5.28.5",
     "concurrently": "8.2.2",
     "css-loader": "7.1.2",
-    "eslint": "8.57.0",
+    "eslint": "9.8.0",
     "eslint-plugin-storybook": "0.8.0",
     "eslint-plugin-tailwindcss": "3.17.4",
     "husky": "9.1.4",
@@ -78,7 +74,7 @@
   "lint-staged": {
     "*.{js,mjs,cjs,ts,tsx,md,json,yml,yaml}": [
       "pretty-quick --staged",
-      "eslint"
+      "ESLINT_USE_FLAT_CONFIG=false eslint"
     ]
   },
   "pnpm": {
@@ -86,7 +82,8 @@
       "hast-util-to-estree": "^3.0.0",
       "@theguild/remark-npm2yarn": "workspace:*",
       "@theguild/remark-mermaid": "workspace:*",
-      "esbuild": "0.23.0"
+      "esbuild": "0.23.0",
+      "eslint-plugin-react-hooks": "5.1.0-rc-06d0b89e-20240801"
     },
     "patchedDependencies": {
       "tsup@8.2.1": "patches/tsup@8.2.1.patch"
