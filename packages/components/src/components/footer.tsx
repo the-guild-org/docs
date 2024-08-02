@@ -1,4 +1,4 @@
-import { ComponentProps, FC, ReactElement } from 'react';
+import { ComponentProps, ReactElement } from 'react';
 import { clsx } from 'clsx';
 import { GuildLogo, TheGuild } from '../logos';
 import { PRODUCTS } from '../products';
@@ -31,7 +31,9 @@ const COMPANY: ILink[] = [
   },
 ];
 
-const COMMUNITY: (Omit<ILink, 'children'> & { icon: FC<ComponentProps<'svg'>> })[] = [
+const COMMUNITY: (Omit<ILink, 'children'> & {
+  icon: (props: ComponentProps<'svg'>) => ReactElement;
+})[] = [
   {
     icon: TwitterIcon,
     title: 'Visit our Twitter',
