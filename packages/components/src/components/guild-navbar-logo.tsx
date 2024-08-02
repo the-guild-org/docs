@@ -52,3 +52,23 @@ export function GuildUnifiedLogo({
     </>
   );
 }
+
+/**
+ * GraphQL-related products live under the Hive platform brand, so we use a single logo for them.
+ * The rest gets The Guild / {Product} logo.
+ */
+export function getNavbarLogo(
+  logo: DocsThemeConfig['logo'],
+  websiteName: string,
+  description: string,
+) {
+  return websiteName === 'Hive' ? (
+    <Anchor title={websiteName} href="/">
+      {typeof logo === 'function' ? logo({}) : logo}
+    </Anchor>
+  ) : (
+    <GuildUnifiedLogo description={description} title={websiteName}>
+      {logo}
+    </GuildUnifiedLogo>
+  );
+}
