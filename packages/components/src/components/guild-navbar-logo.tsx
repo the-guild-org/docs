@@ -4,7 +4,7 @@ import { DocsThemeConfig } from 'nextra-theme-docs';
 import { GuildLogo, TheGuild } from '../logos';
 import { Anchor } from './anchor';
 
-function GuildUnifiedLogo({
+export function GuildUnifiedLogo({
   children,
   title,
   description,
