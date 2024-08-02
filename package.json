@@ -86,7 +86,8 @@
       "eslint-plugin-react-hooks": "5.1.0-rc-06d0b89e-20240801"
     },
     "patchedDependencies": {
-      "tsup@8.2.4": "patches/tsup@8.2.1.patch"
+      "tsup@8.2.4": "patches/tsup@8.2.1.patch",
+      "@changesets/cli@2.27.7": "patches/@changesets__cli@2.27.7.patch"
     }
   }
 }
