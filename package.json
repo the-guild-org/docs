@@ -83,7 +83,7 @@
       "@theguild/remark-npm2yarn": "workspace:*",
       "@theguild/remark-mermaid": "workspace:*",
       "esbuild": "0.23.0",
-      "eslint-plugin-react-hooks": "5.1.0-rc-06d0b89e-20240801"
+      "eslint-plugin-react-hooks": "5.1.0-rc-fb9a90fa48-20240614"
     },
     "patchedDependencies": {
       "tsup@8.2.1": "patches/tsup@8.2.1.patch"
