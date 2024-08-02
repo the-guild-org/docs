@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { HivePlatformLogo, MeshLogo } from '../logos';
+import { HiveCombinationMark, MeshLogo } from '../logos';
 import { getNavbarLogo, GuildUnifiedLogo } from './guild-navbar-logo';
 
 export default {
@@ -21,5 +21,5 @@ export const Default: StoryObj<typeof GuildUnifiedLogo> = {
 };
 
 export const Hive: StoryObj = {
-  render: () => getNavbarLogo(HivePlatformLogo, 'Hive', ''),
+  render: () => getNavbarLogo(HiveCombinationMark, 'Hive', ''),
 };
