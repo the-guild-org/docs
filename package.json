@@ -57,7 +57,7 @@
     "style-loader": "4.0.0",
     "tailwindcss": "3.4.7",
     "tsconfig-paths-webpack-plugin": "4.1.0",
-    "tsup": "8.2.1",
+    "tsup": "8.2.4",
     "tsx": "4.16.5",
     "turbo": "2.0.11",
     "typescript": "5.5.4",
@@ -86,7 +86,7 @@
       "eslint-plugin-react-hooks": "5.1.0-rc-06d0b89e-20240801"
     },
     "patchedDependencies": {
-      "tsup@8.2.1": "patches/tsup@8.2.1.patch"
+      "tsup@8.2.4": "patches/tsup@8.2.1.patch"
     }
   }
 }

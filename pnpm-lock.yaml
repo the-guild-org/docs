@@ -12,8 +12,8 @@ overrides:
   eslint-plugin-react-hooks: 5.1.0-rc-06d0b89e-20240801
 
 patchedDependencies:
-  tsup@8.2.1:
-    hash: pyplzk42qm64umsryuxnu4us5e
+  tsup@8.2.4:
+    hash: lm5dngj54e7vpltieovf2eenaa
     path: patches/tsup@8.2.1.patch
 
 importers:
@@ -135,8 +135,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       tsup:
-        specifier: 8.2.1
-        version: 8.2.1(patch_hash=pyplzk42qm64umsryuxnu4us5e)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
+        specifier: 8.2.4
+        version: 8.2.4(patch_hash=lm5dngj54e7vpltieovf2eenaa)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       tsx:
         specifier: 4.16.5
         version: 4.16.5
@@ -5191,14 +5191,6 @@ packages:
   fd-package-json@1.2.0:
     resolution: {integrity: sha512-45LSPmWf+gC5tdCQMNH4s9Sr00bIkiD9aN7dc5hqkrEw1geRYyDQS1v1oMHAW3ysfxfndqGsrDREHHjNNbKUfA==}
 
-  fdir@6.1.1:
-    resolution: {integrity: sha512-QfKBVg453Dyn3mr0Q0O+Tkr1r79lOTAKSi9f/Ot4+qVEwxWhav2Z+SudrG9vQjM2aYRMQQZ2/Q1zdA8ACM1pDg==}
-    peerDependencies:
-      picomatch: 3.x
-    peerDependenciesMeta:
-      picomatch:
-        optional: true
-
   fflate@0.7.4:
     resolution: {integrity: sha512-5u2V/CDW15QM1XbbgS+0DfPxVB+jUKhWEKuuFuHncbk3tEEqzmoXL+2KyOFuKGqOnmdIy0/davWF1CkuwtibCw==}
 
@@ -7183,10 +7175,6 @@ packages:
     resolution: {integrity: sha512-I3EurrIQMlRc9IaAZnqRR044Phh2DXY+55o7uJ0V+hYZAcQYSuFWsc9q5PvyDHUSCe1Qxn/iBz+78s86zWnGag==}
     engines: {node: '>=10'}
 
-  picomatch@4.0.2:
-    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
-    engines: {node: '>=12'}
-
   pidtree@0.6.0:
     resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
     engines: {node: '>=0.10'}
@@ -8742,8 +8730,8 @@ packages:
   tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
-  tsup@8.2.1:
-    resolution: {integrity: sha512-ArA/s1GvXbovrnNeTtLphz7D2+OiFVCARviT8RmnWxFdH44dFt8v2tqz54MjJyqZC+QgjKjRuTlWKvC3CkAq3Q==}
+  tsup@8.2.4:
+    resolution: {integrity: sha512-akpCPePnBnC/CXgRrcy72ZSntgIEUa1jN0oJbbvpALWKNOz1B7aM+UVDWGRGIO/T/PZugAESWDJUAb5FD48o8Q==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -15519,10 +15507,6 @@ snapshots:
     dependencies:
       walk-up-path: 3.0.1
 
-  fdir@6.1.1(picomatch@4.0.2):
-    optionalDependencies:
-      picomatch: 4.0.2
-
   fflate@0.7.4: {}
 
   file-entry-cache@8.0.0:
@@ -15817,7 +15801,7 @@ snapshots:
       array-union: 2.1.0
       dir-glob: 3.0.1
       fast-glob: 3.3.2
-      ignore: 5.3.0
+      ignore: 5.3.1
       merge2: 1.4.1
       slash: 3.0.0
 
@@ -18215,8 +18199,6 @@ snapshots:
 
   picomatch@3.0.1: {}
 
-  picomatch@4.0.2: {}
-
   pidtree@0.6.0: {}
 
   pify@2.3.0: {}
@@ -19997,7 +19979,7 @@ snapshots:
 
   tslib@2.6.2: {}
 
-  tsup@8.2.1(patch_hash=pyplzk42qm64umsryuxnu4us5e)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5):
+  tsup@8.2.4(patch_hash=lm5dngj54e7vpltieovf2eenaa)(@swc/core@1.4.8)(jiti@1.21.0)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -20006,10 +19988,9 @@ snapshots:
       debug: 4.3.5
       esbuild: 0.23.0
       execa: 5.1.1
-      fdir: 6.1.1(picomatch@4.0.2)
+      globby: 11.1.0
       joycon: 3.1.1
       picocolors: 1.0.1
-      picomatch: 4.0.2
       postcss-load-config: 6.0.1(jiti@1.21.0)(postcss@8.4.40)(tsx@4.16.5)(yaml@2.4.5)
       resolve-from: 5.0.0
       rollup: 4.19.0
