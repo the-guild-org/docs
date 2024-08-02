@@ -13,7 +13,7 @@ overrides:
 
 patchedDependencies:
   '@changesets/cli@2.27.7':
-    hash: 4czhnslu6sw5imqf3fafdp57hu
+    hash: nfmalmm2fm6cntqe6lwgota7ta
     path: patches/@changesets__cli@2.27.7.patch
   tsup@8.2.4:
     hash: lm5dngj54e7vpltieovf2eenaa
@@ -28,7 +28,7 @@ importers:
         version: 0.5.0
       '@changesets/cli':
         specifier: 2.27.7
-        version: 2.27.7(patch_hash=4czhnslu6sw5imqf3fafdp57hu)
+        version: 2.27.7(patch_hash=nfmalmm2fm6cntqe6lwgota7ta)
       '@rollup/plugin-alias':
         specifier: 5.1.0
         version: 5.1.0(rollup@4.19.0)
@@ -11118,7 +11118,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@changesets/cli@2.27.7(patch_hash=4czhnslu6sw5imqf3fafdp57hu)':
+  '@changesets/cli@2.27.7(patch_hash=nfmalmm2fm6cntqe6lwgota7ta)':
     dependencies:
       '@babel/runtime': 7.24.4
       '@changesets/apply-release-plan': 7.0.4
