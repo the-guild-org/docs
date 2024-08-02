@@ -1,6 +1,6 @@
 {
   "mode": "pre",
-  "tag": "next",
+  "tag": "alpha",
   "initialVersions": {
     "@theguild/components": "6.6.3",
     "@theguild/editor": "1.3.8",
