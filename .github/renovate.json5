@@ -1,3 +1,9 @@
 {
   extends: ['github>the-guild-org/shared-config:renovate'],
+  packageRules: [
+    {
+      matchPackageNames: ['eslint-plugin-react-hooks'],
+      enabled: false,
+    },
+  ],
 }
