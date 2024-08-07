@@ -1,17 +1,19 @@
 import { useRouter } from 'next/router';
 import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
-import { Footer, GuildUnifiedLogo, mdxComponents, ThemeSwitcherButton } from './components';
+import { Footer, getNavbarLogo, mdxComponents, ThemeSwitcherButton } from './components';
 import { addGuildCompanyMenu } from './components/company-menu';
+
+export interface GuildDocsThemeConfig extends DocsThemeConfig {
+  websiteName: string;
+  description: string;
+}
 
 export function defineConfig({
   websiteName,
   description,
   logo,
   ...config
-}: DocsThemeConfig & {
-  websiteName: string;
-  description: string;
-}): DocsThemeConfig {
+}: GuildDocsThemeConfig): DocsThemeConfig {
   if (!config.docsRepositoryBase) {
     throw new Error('Missing required "docsRepositoryBase" property');
   }
@@ -95,11 +97,7 @@ export function defineConfig({
       );
     },
     logoLink: false,
-    logo: (
-      <GuildUnifiedLogo description={description} title={websiteName}>
-        {logo}
-      </GuildUnifiedLogo>
-    ),
+    logo: getNavbarLogo(logo, websiteName, description),
     navbar: {
       extraContent: <ThemeSwitcherButton />,
       ...(logo && { component: props => <Navbar items={addGuildCompanyMenu(props.items)} /> }),

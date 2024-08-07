@@ -8,7 +8,7 @@ import {
   ESLintLogo,
   FetsLogo,
   HeltinLogo,
-  HiveLogo,
+  HiveCombinationMark,
   InspectorLogo,
   KitQLLogo,
   MeshLogo,
@@ -62,7 +62,7 @@ export const PRODUCTS: Record<
     name: 'Hive',
     title: 'Schema registry for your GraphQL workflows',
     href: 'https://the-guild.dev/graphql/hive',
-    logo: HiveLogo,
+    logo: HiveCombinationMark,
     primaryColor: '#ffb21d',
   },
   MESH: {
