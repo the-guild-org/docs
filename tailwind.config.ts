@@ -6,6 +6,7 @@ export default {
   theme: {
     ...config.theme,
     extend: {
+      ...config.theme.extend,
       animation: {
         gradient: 'gradient 15s ease infinite',
       },
