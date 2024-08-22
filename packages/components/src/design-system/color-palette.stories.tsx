@@ -17,8 +17,8 @@ export const ColorPalette: StoryObj = {
         <header className="flex flex-row items-center text-5xl tracking-[-0.288px]">
           <HiveIconMark className="mr-6" />
           <p>Core Elements</p>
-          <ArrowRightIcon className="mx-4 font-medium" />
-          <h1>Color Palette</h1>
+          <ArrowRightIcon className="mx-4 shrink font-medium" />
+          <h1 className="font-medium">Color Palette</h1>
           <p className="ml-auto text-sm leading-6 tracking-[-0.084px]">Hive</p>
         </header>
         <hr className="my-6 border-t border-t-beige-200" />
@@ -121,7 +121,7 @@ function ColorSwatch({
   return (
     <div
       className={clsx(
-        'rounded-2xl p-4 text-sm xl:p-6',
+        'rounded-2xl p-4 text-sm dark:ring-1 dark:ring-white/5 xl:p-6',
         className,
         dark ? 'text-white' : 'text-green-1000',
       )}
