@@ -1,8 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 import tailwindConfig from '@theguild/tailwind-config';
+import { hiveThemeDecorator } from '../../../../.storybook/hiveThemeDecorator';
 
 export default {
   title: 'Design System/Color Palette',
+  decorators: [hiveThemeDecorator],
 } satisfies Meta;
 
 export const ColorPalette: StoryObj = {
