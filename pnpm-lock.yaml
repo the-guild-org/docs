@@ -158,6 +158,9 @@ importers:
       '@next/bundle-analyzer':
         specifier: 14.2.5
         version: 14.2.5
+      '@theguild/tailwind-config':
+        specifier: file:/Users/hasparus/workspace/the-guild-shared-config/packages/tailwind-config
+        version: file:../the-guild-shared-config/packages/tailwind-config
       clsx:
         specifier: 2.1.1
         version: 2.1.1

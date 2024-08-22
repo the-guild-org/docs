@@ -15,7 +15,10 @@ const neueMontreal = localFont({
     { path: './fonts/NeueMontreal-Bold.otf', weight: '700' },
     { path: './fonts/NeueMontreal-BoldItalic.otf', weight: '700', style: 'italic' },
   ],
+  variable: '--font-sans',
 });
+
+console.log({ neueMontreal });
 
 export const hiveThemeDecorator = (Story: () => React.ReactNode, _ctx: unknown) => {
   return (

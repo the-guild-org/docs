@@ -1,3 +1,4 @@
+import { fontFamily } from 'tailwindcss/defaultTheme';
 import config, { Config } from '@theguild/tailwind-config';
 
 export default {
@@ -7,6 +8,9 @@ export default {
     ...config.theme,
     extend: {
       ...config.theme.extend,
+      fontFamily: {
+        sans: [`var(--font-sans, ${fontFamily.sans.slice(0, 3).join(', ')})`, ...fontFamily.sans],
+      },
       animation: {
         gradient: 'gradient 15s ease infinite',
       },

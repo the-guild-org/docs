@@ -45,4 +45,5 @@ export default {
   core: {
     disableTelemetry: true,
   },
+  staticDirs: ['./public'],
 } satisfies StorybookConfig;
