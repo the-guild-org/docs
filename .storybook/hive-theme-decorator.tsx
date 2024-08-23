@@ -18,11 +18,10 @@ const neueMontreal = localFont({
   variable: '--font-sans',
 });
 
-console.log({ neueMontreal });
-
 export const hiveThemeDecorator = (Story: () => React.ReactNode, _ctx: unknown) => {
   return (
     <div
+      data-hive-theme-decorator
       className={`${neueMontreal.variable}`}
       style={{
         fontFamily: 'var(--font-sans)',
