@@ -20,7 +20,7 @@ export default {
 } as Meta;
 
 export const ArchDecorationStory: StoryObj<typeof ArchDecoration> = {
-  storyName: 'ArchDecoration',
+  name: 'ArchDecoration',
   render(args) {
     return (
       <>
@@ -32,14 +32,14 @@ export const ArchDecorationStory: StoryObj<typeof ArchDecoration> = {
 };
 
 export const HighlightDecorationStory: StoryObj<typeof HighlightDecoration> = {
-  storyName: 'HighlightDecoration',
+  name: 'HighlightDecoration',
   render(args) {
     return <HighlightDecoration {...args} />;
   },
 };
 
 export const LargeHiveIconDecorationStory: StoryObj<typeof LargeHiveIconDecoration> = {
-  storyName: 'Large Hive Icon Decoration',
+  name: 'Large Hive Icon Decoration',
   render(args) {
     return <LargeHiveIconDecoration {...args} />;
   },
