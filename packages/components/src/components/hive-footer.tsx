@@ -15,6 +15,27 @@ import {
 
 export interface HiveFooterProps extends IFooterExtendedProps {}
 
+// 1. Products ✅
+// 2. Developer
+// - Documentation
+// - Hive Status
+// - Hive Updates
+// - Blog
+
+// 3. Enterprise
+// - Customer Stories
+// - Why GraphQL
+// - Professional Services
+// - Commitment to Security
+
+// 4. Company
+// - About Us
+// - Brand Assets
+
+// 5. Pricing
+
+// 6. Contact Us
+
 export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFooterProps) {
   return (
     <footer
@@ -122,39 +143,6 @@ const COMMUNITY: (Omit<ILink, 'children'> & {
     href: 'https://youtube.com/watch?v=d_GBgH-L5c4&list=PLhCf3AUOg4PgQoY_A6xWDQ70yaNtPYtZd',
   },
 ];
-
-// 2. Developer
-// - Documentation
-// - Hive Status
-// - Hive Updates
-// - Blog
-
-// 3. Enterprise
-// - Customer Stories
-// - Why GraphQL
-// - Professional Services
-// - Commitment to Security
-
-// 4. Company
-// - About Us
-// - Brand Assets
-
-// 5. Pricing
-
-// 6. Contact Us
-
-// 1. Products
-// - Hive
-// - Mesh
-// - Yoga
-// - GraphQL Codegen
-// - Inspector
-// - Scalars
-// - Envelop
-// - GraphQL ESLint
-// - SOFA
-// - Nextra
-// - All libraries
 
 const products = [
   PRODUCTS.HIVE,
