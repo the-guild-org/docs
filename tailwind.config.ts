@@ -3,7 +3,7 @@ import config, { Config } from '@theguild/tailwind-config';
 
 export default {
   ...config,
-  content: ['./packages/components/src/**/*.{ts,tsx}'],
+  content: ['./packages/components/src/**/*.{ts,tsx}', './.storybook/**/*.{ts,tsx}'],
   theme: {
     ...config.theme,
     extend: {
