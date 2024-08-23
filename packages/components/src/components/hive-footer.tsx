@@ -1,5 +1,5 @@
 import { ComponentProps, ReactElement } from 'react';
-import { clsx } from 'clsx';
+import { cn } from '../cn';
 import { HiveCombinationMark } from '../logos';
 import { PRODUCTS } from '../products';
 import { IFooterExtendedProps, ILink } from '../types/components';
@@ -18,7 +18,7 @@ export interface HiveFooterProps extends IFooterExtendedProps {}
 export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFooterProps) {
   return (
     <footer
-      className={clsx(
+      className={cn(
         'relative grid grid-cols-1 gap-x-6 gap-y-12 bg-white px-4 py-6 text-green-800 lg:grid-cols-4 lg:px-[120px]',
         className,
       )}
@@ -57,7 +57,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
             Contact Us
           </a>
         </div>
-        <CSAStarLevelOneIcon className="size-20 lg:col-start-3 lg:size-[120px] lg:translate-y-[calc(-100%-1.5rem)]" />
+        <CSAStarLevelOneIcon className="size-20 lg:col-start-3 lg:size-[120px]" />
       </div>
       <div className="col-span-full flex flex-row flex-wrap justify-between gap-[inherit] lg:w-full lg:pb-2 lg:pt-8">
         <div className="flex gap-6 lg:order-1">
@@ -84,7 +84,7 @@ function List({
   className?: string;
 }) {
   return (
-    <div className={clsx('flex flex-col gap-y-3 text-nowrap lg:gap-y-4', className)}>
+    <div className={cn('flex flex-col gap-y-3 text-nowrap lg:gap-y-4', className)}>
       <h3 className="font-medium">{heading}</h3>
       <ul className="contents">
         {links.map(link => (
