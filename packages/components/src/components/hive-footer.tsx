@@ -19,7 +19,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
   return (
     <footer
       className={cn(
-        'relative grid grid-cols-1 gap-x-6 gap-y-12 bg-white px-4 py-6 text-green-800 lg:grid-cols-4 lg:px-[120px]',
+        'relative grid grid-cols-1 gap-x-6 gap-y-12 bg-white px-4 py-6 text-green-800 lg:grid-cols-4 lg:px-24 xl:px-[120px]',
         className,
       )}
     >
@@ -197,7 +197,6 @@ const products = [
   PRODUCTS.ENVELOP,
   PRODUCTS.ESLINT,
   PRODUCTS.SOFA,
-  { ...PRODUCTS.SOFA, name: 'GraphQL to REST' },
   // TODO: All libraries, go to /explore page
 ].map(({ name, href, title }) => ({
   children: name,
