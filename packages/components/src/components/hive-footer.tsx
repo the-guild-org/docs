@@ -88,7 +88,7 @@ function List({ heading, links }: { heading: string; links: ILink[] }) {
       <ul className="contents">
         {links.map(link => (
           <li key={link.href}>
-            <Anchor {...link} />
+            <Anchor {...link} className="-m-2 block p-2 hover:underline" />
           </li>
         ))}
       </ul>
