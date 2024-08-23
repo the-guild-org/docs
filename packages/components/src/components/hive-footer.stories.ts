@@ -3,7 +3,7 @@ import { hiveThemeDecorator } from '../../../../.storybook/hive-theme-decorator'
 import { HiveFooter, HiveFooterProps } from './hive-footer';
 
 export default {
-  title: 'Components/HiveFooter',
+  title: 'Components/Hive/HiveFooter',
   component: HiveFooter,
   decorators: [hiveThemeDecorator],
   argTypes: {
