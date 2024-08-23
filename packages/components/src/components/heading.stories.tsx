@@ -21,13 +21,9 @@ export default {
       control: 'text',
     },
   },
-  decorators: [
-    (Story: React.FC) => (
-      <div className="p-8">
-        <Story />
-      </div>
-    ),
-  ],
+  parameters: {
+    padding: true,
+  },
 } satisfies Meta<HeadingProps>;
 
 export const Heading: StoryObj<HeadingProps> = {
