@@ -19,6 +19,7 @@ export default {
 } satisfies Meta<HiveFooterProps>;
 
 export const Default: StoryObj<HiveFooterProps> = {
+  name: 'HiveFooter',
   args: {
     sameSite: false,
     resources: [
