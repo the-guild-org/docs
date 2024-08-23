@@ -74,7 +74,8 @@
     "react-paginate": "8.2.0",
     "react-player": "2.16.0",
     "remark-mdx-disable-explicit-jsx": "0.1.0",
-    "semver": "^7.3.8"
+    "semver": "^7.3.8",
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@svgr/babel-plugin-remove-jsx-attribute": "^8.0.0",
