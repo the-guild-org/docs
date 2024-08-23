@@ -23,22 +23,12 @@ export const Default: StoryObj<HiveFooterProps> = {
     sameSite: false,
     resources: [
       {
-        children: 'Documentation',
-        title: 'Read the Docs',
-        href: '/docs1',
-        onClick(e) {
-          e.preventDefault();
-          alert('Internal link handler');
-        },
+        children: 'Privacy Policy',
+        href: 'https://the-guild.dev/graphql/hive/privacy-policy.pdf',
       },
       {
-        children: 'Quick start',
-        title: 'Learn first steps',
-        href: '/docs2',
-        onClick(e) {
-          e.preventDefault();
-          alert('Internal link handler');
-        },
+        children: 'Terms of Use',
+        href: 'https://the-guild.dev/graphql/hive/terms-of-use.pdf',
       },
     ],
   },

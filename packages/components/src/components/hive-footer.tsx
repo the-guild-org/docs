@@ -15,27 +15,6 @@ import {
 
 export interface HiveFooterProps extends IFooterExtendedProps {}
 
-// 1. Products ✅
-// 2. Developer
-// - Documentation
-// - Hive Status
-// - Hive Updates
-// - Blog
-
-// 3. Enterprise
-// - Customer Stories
-// - Why GraphQL
-// - Professional Services
-// - Commitment to Security
-
-// 4. Company
-// - About Us
-// - Brand Assets
-
-// 5. Pricing
-
-// 6. Contact Us
-
 export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFooterProps) {
   return (
     <footer
@@ -50,20 +29,34 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
         </Anchor>
         <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
       </div>
-      <div className="grid grid-cols-2 justify-stretch gap-6 text-sm lg:col-span-3 lg:grid-cols-subgrid lg:pb-12 lg:pt-[72px] lg:text-base">
-        <List heading="Products" links={products} />
-        <List
-          heading="Resources"
-          links={[
-            {
-              children: 'Press Kit',
-              title: 'Press Kit',
-              href: 'https://the-guild.dev/logos',
-            },
-            ...resources,
-          ]}
-        />
-        <List heading="Company" links={COMPANY} />
+      <div className="grid grid-flow-col-dense grid-cols-2 justify-stretch gap-6 text-sm lg:col-span-3 lg:grid-cols-subgrid lg:pb-12 lg:pt-[72px] lg:text-base">
+        <List heading="Products" links={products} className="row-span-5" />
+        <div className="flex flex-col gap-[inherit]">
+          <List heading="Developer" links={DEVELOPER} />
+          {ENTERPRISE.length > 0 && <List heading="Enterprise" links={ENTERPRISE} />}
+          {resources.length > 0 && <List heading="Resources" links={resources} />}
+        </div>
+        <div className="flex flex-col gap-[inherit] lg:col-start-3">
+          <List heading="Company" links={COMPANY} className="lg:col-start-3" />
+          <a
+            href="https://the-guild.dev/graphql/hive#pricing"
+            className="font-medium hover:text-blue-700 hover:underline"
+          >
+            Pricing
+          </a>
+          <a
+            className="font-medium hover:text-blue-700 hover:underline"
+            href="https://the-guild.dev/contact"
+            onClick={event => {
+              if (typeof window !== 'undefined' && '$crisp' in window) {
+                (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
+                event.preventDefault();
+              }
+            }}
+          >
+            Contact Us
+          </a>
+        </div>
         <CSAStarLevelOneIcon className="size-20 lg:col-start-3 lg:size-[120px] lg:translate-y-[calc(-100%-1.5rem)]" />
       </div>
       <div className="col-span-full flex flex-row flex-wrap justify-between gap-[inherit] lg:w-full lg:pb-2 lg:pt-8">
@@ -81,20 +74,70 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
   );
 }
 
-function List({ heading, links }: { heading: string; links: ILink[] }) {
+function List({
+  heading,
+  links,
+  className,
+}: {
+  heading: string;
+  links: ILink[];
+  className?: string;
+}) {
   return (
-    <div className="flex flex-col gap-y-3 text-nowrap lg:gap-y-4">
+    <div className={clsx('flex flex-col gap-y-3 text-nowrap lg:gap-y-4', className)}>
       <h3 className="font-medium">{heading}</h3>
       <ul className="contents">
         {links.map(link => (
           <li key={link.href}>
-            <Anchor {...link} className="-m-2 block p-2 hover:underline" />
+            <Anchor {...link} className="-m-2 block p-2 hover:text-blue-700 hover:underline" />
           </li>
         ))}
       </ul>
     </div>
   );
 }
+
+const ENTERPRISE: ILink[] = [
+  //   {
+  //     children: 'Consumer Stories',
+  //     href: '#TODO!',
+  //   },
+  //   {
+  //     children: 'Why GraphQL',
+  //     href: '#TODO!',
+  //   },
+  //   {
+  //     children: 'Professional Services',
+  //     href: '#TODO!',
+  //   },
+  //   {
+  //     children: 'Commitment to Security',
+  //     href: '#TODO!',
+  //   },
+];
+
+const DEVELOPER: ILink[] = [
+  {
+    children: 'Documentation',
+    title: 'Read the docs',
+    href: '/docs',
+  },
+  {
+    children: 'Hive Status',
+    title: 'Check Hive status',
+    href: 'https://status.graphql-hive.com/',
+  },
+  {
+    children: 'Hive Updates',
+    title: 'Read most recent developments from GraphQL Hive',
+    href: 'https://the-guild.dev/graphql/hive/product-updates',
+  },
+  {
+    children: 'Blog',
+    title: 'Read our blog',
+    href: 'https://the-guild.dev/blog',
+  },
+];
 
 const COMPANY: ILink[] = [
   {
@@ -103,9 +146,9 @@ const COMPANY: ILink[] = [
     href: 'https://the-guild.dev/about-us',
   },
   {
-    children: 'Blog',
-    title: 'Read our blog',
-    href: 'https://the-guild.dev/blog',
+    children: 'Brand Assets',
+    title: 'Brand Assets',
+    href: 'https://the-guild.dev/logos',
   },
   {
     children: 'Newsletter',
