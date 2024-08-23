@@ -2,7 +2,6 @@ import { ComponentPropsWithoutRef } from 'react';
 import { cn } from '../cn';
 import { Anchor } from './anchor';
 
-// todo: use cva later?
 const variantStyles = {
   primary: cn(
     'bg-primary hover:bg-green-800 hover:text-white' +

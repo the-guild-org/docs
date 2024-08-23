@@ -1,3 +1,4 @@
+import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { Heading as _Heading, HeadingProps } from './heading';
 
@@ -20,6 +21,13 @@ export default {
       control: 'text',
     },
   },
+  decorators: [
+    (Story: React.FC) => (
+      <div className="p-8">
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<HeadingProps>;
 
 export const Heading: StoryObj<HeadingProps> = {
