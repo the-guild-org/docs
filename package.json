@@ -56,6 +56,7 @@
     "storybook-dark-mode": "4.0.2",
     "style-loader": "4.0.0",
     "tailwindcss": "3.4.10",
+    "tailwindcss-animate": "^1.0.7",
     "tsconfig-paths-webpack-plugin": "4.1.0",
     "tsup": "8.2.4",
     "tsx": "4.18.0",
@@ -83,7 +84,8 @@
       "@theguild/remark-npm2yarn": "workspace:*",
       "@theguild/remark-mermaid": "workspace:*",
       "esbuild": "0.23.1",
-      "eslint-plugin-react-hooks": "5.1.0-rc-06d0b89e-20240801"
+      "eslint-plugin-react-hooks": "5.1.0-rc-06d0b89e-20240801",
+      "@types/react": "18.3.3"
     },
     "patchedDependencies": {
       "tsup@8.2.4": "patches/tsup@8.2.1.patch"
