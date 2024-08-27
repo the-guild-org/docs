@@ -61,15 +61,12 @@ const secondaryProducts = [
   PRODUCTS.ESLINT,
   PRODUCTS.NEXTRA,
 ];
-const logos = {
-  [PRODUCTS.ESLINT.name]: 'ESL',
-  [PRODUCTS.NEXTRA.name]: <PRODUCTS.NEXTRA.logo className="w-8" />,
-};
 
 function SecondaryCards() {
   return (
     <ul className="flex h-max grid-cols-6 flex-row gap-[22px] overflow-x-auto overflow-y-hidden max-sm:-mx-8 max-sm:px-8 sm:grid sm:grid-cols-2 lg:grid-cols-3">
       {secondaryProducts.map(product => {
+        const Logo = product.logo;
         return (
           <li
             key={product.name}
@@ -83,7 +80,7 @@ function SecondaryCards() {
                 role="presentation"
                 className="flex size-8 items-center justify-center rounded bg-green-1000 text-sm font-medium leading-5 text-white"
               >
-                {logos[product.name] ?? product.name.slice(0, 1)}
+                <Logo />
               </div>
               <ArrowIcon className="absolute bottom-8 right-8" />
             </a>
