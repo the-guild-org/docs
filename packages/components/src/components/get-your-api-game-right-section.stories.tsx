@@ -3,7 +3,7 @@ import { hiveThemeDecorator } from '../../../../.storybook/hive-theme-decorator'
 import { GetYourAPIGameRightSection } from './get-your-api-game-right-section';
 
 export default {
-  title: 'Components/Hive/GetYourAPIGameRightSection',
+  title: 'Hive/GetYourAPIGameRightSection',
   component: GetYourAPIGameRightSection,
   decorators: [hiveThemeDecorator],
   parameters: {

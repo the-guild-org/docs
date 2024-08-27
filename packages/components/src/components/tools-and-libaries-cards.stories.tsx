@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ToolsAndLibrariesCards } from './tools-and-libraries-cards';
 
 export default {
-  title: 'Components/Hive/ToolsAndLibrariesCards',
+  title: 'Hive/ToolsAndLibrariesCards',
   component: ToolsAndLibrariesCards,
 } as Meta;
 
