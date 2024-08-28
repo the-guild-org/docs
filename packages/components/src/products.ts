@@ -212,3 +212,12 @@ export const PRODUCTS: Record<
     primaryColor: '#000',
   },
 };
+
+export const sixHighlightedProducts = [
+  PRODUCTS.INSPECTOR,
+  PRODUCTS.ENVELOP,
+  PRODUCTS.SOFA,
+  PRODUCTS.SCALARS,
+  PRODUCTS.ESLINT,
+  PRODUCTS.NEXTRA,
+];
