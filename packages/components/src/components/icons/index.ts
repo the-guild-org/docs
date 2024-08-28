@@ -6,6 +6,11 @@ export { ReactComponent as SearchIcon } from './search.svg';
 export { ReactComponent as ShareIcon } from './share.svg';
 export { ReactComponent as CSAStarLevelOneIcon } from './csa-star-level-one.svg';
 export { ReactComponent as ArrowIcon } from './arrow-icon.svg';
+export { ReactComponent as ListIcon } from './list.svg';
+export { ReactComponent as PaperIcon } from './paper.svg';
+export { ReactComponent as TargetIcon } from './target.svg';
+export { ReactComponent as RightCornerIcon } from './right-corner.svg';
+export { ReactComponent as PencilIcon } from './pencil.svg';
 
 export { ReactComponent as TwitterIcon } from './twitter.svg';
 export { ReactComponent as LinkedInIcon } from './linkedin.svg';
