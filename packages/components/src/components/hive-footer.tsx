@@ -100,7 +100,7 @@ function List({
         ))}
       </ul>
     </div>
-  );
+);
 }
 
 const ENTERPRISE: ILink[] = [

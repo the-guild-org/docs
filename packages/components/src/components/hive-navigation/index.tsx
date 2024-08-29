@@ -1,12 +1,15 @@
-import React, { forwardRef, Fragment } from 'react';
+import React, { forwardRef, Fragment, ReactNode } from 'react';
 import { GraphQLFoundationLogo, HiveCombinationMark, TheGuild } from '../../logos';
 import { PRODUCTS, sixHighlightedProducts } from '../../products';
 import { Anchor } from '../anchor';
+import { CallToAction } from '../call-to-action';
 import {
   AccountBox,
+  AppsIcon,
   ArrowIcon,
   BardIcon,
   GitHubIcon,
+  GroupIcon,
   HiveIcon,
   HonourIcon,
   ListIcon,
@@ -16,7 +19,6 @@ import {
   ShieldFlashIcon,
   TargetIcon,
 } from '../icons';
-import { Image } from '../image';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -29,7 +31,11 @@ import {
 const PRICING_HREF = 'https://the-guild.dev/graphql/hive#pricing';
 const EXPLORE_HREF = 'https://github.com/the-guild-org';
 
-export function HiveNavigation() {
+export interface HiveNavigationProps {
+  companyMenuChildren?: ReactNode;
+  children?: ReactNode;
+}
+export function HiveNavigation({ companyMenuChildren, children }: HiveNavigationProps) {
   return (
     <NavigationMenu className="w-screen p-6">
       <Anchor href="/" className="flex items-center">
@@ -57,7 +63,7 @@ export function HiveNavigation() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Company</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <CompanyMenu />
+            <CompanyMenu>{companyMenuChildren}</CompanyMenu>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
@@ -66,6 +72,25 @@ export function HiveNavigation() {
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
+      <div className="flex-1" />
+      {children}
+      <CallToAction
+        variant="tertiary"
+        href="https://the-guild.dev/contact"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={event => {
+          if (typeof window !== 'undefined' && '$crisp' in window) {
+            (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
+            event.preventDefault();
+          }
+        }}
+      >
+        Contact us
+      </CallToAction>
+      <CallToAction variant="primary" href="https://app.graphql-hive.com/">
+        Get started for free
+      </CallToAction>
     </NavigationMenu>
   );
 }
@@ -163,16 +188,18 @@ const MenuContentColumns = forwardRef(
   (props: React.HTMLAttributes<HTMLDivElement>, ref: React.ForwardedRef<HTMLDivElement>) => {
     return (
       <div className="flex gap-x-6 [&>*]:flex [&>*]:flex-col [&>*]:gap-4" ref={ref} {...props}>
-        {React.Children.map(props.children, (child, index) => {
-          return (
-            <Fragment key={index}>
-              {child}
-              {index < React.Children.count(props.children) - 1 && (
-                <div className="w-px bg-beige-200" />
-              )}
-            </Fragment>
-          );
-        })}
+        {React.Children.toArray(props.children)
+          .filter(Boolean)
+          .map((child, index) => {
+            return (
+              <Fragment key={index}>
+                {child}
+                {index < React.Children.count(props.children) - 1 && (
+                  <div className="w-px bg-beige-200" />
+                )}
+              </Fragment>
+            );
+          })}
       </div>
     );
   },
@@ -194,8 +221,10 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, React.HTMLAttribut
                 ['Blog', PencilIcon, 'https://the-guild.dev/blog'],
                 ['GitHub', GitHubIcon, 'https://github.com/kamilkisiela/graphql-hive'],
               ] as const
-            ).map(([name, Icon, href]) => (
-              <MenuColumnListItem text={name} href={href} icon={Icon} />
+            ).map(([text, Icon, href], i) => (
+              <MenuColumnListItem key={i} href={href} icon={Icon}>
+                {text}
+              </MenuColumnListItem>
             ))}
           </ul>
         </div>
@@ -213,8 +242,10 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, React.HTMLAttribut
                 ['LinkedIn', LinkedInIcon, 'https://www.linkedin.com/company/the-guild-software/'],
                 ['Discord', DiscordIcon, 'https://discord.com/invite/xud7bH9'],
               ] as const
-            ).map(([name, Icon, href]) => (
-              <MenuColumnListItem text={name} href={href} icon={Icon} />
+            ).map(([text, Icon, href], i) => (
+              <MenuColumnListItem key={i} href={href} icon={Icon}>
+                {text}
+              </MenuColumnListItem>
             ))}
           </ul>
         </div>
@@ -224,23 +255,23 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, React.HTMLAttribut
 );
 
 function MenuColumnListItem({
-  text,
+  children,
   href,
   icon: Icon,
 }: {
-  text: string;
+  children: ReactNode;
   href: string;
   icon: (props: React.SVGProps<SVGSVGElement>) => React.ReactElement;
 }) {
   return (
-    <li key={text}>
+    <li>
       <NavigationMenuLink
         href={href}
         className="flex flex-row items-center gap-3 text-nowrap px-4 py-2"
         arrow
       >
         <Icon className="size-6 shrink-0" />
-        <p className="text-base font-medium leading-normal text-green-1000">{text}</p>
+        <p className="text-base font-medium leading-normal text-green-1000">{children}</p>
       </NavigationMenuLink>
     </li>
   );
@@ -291,24 +322,37 @@ export function EnterpriseMenu() {
       <ul>
         {(
           [
+            // TODO: Chris
             [AccountBox, 'Customer Stories', ''],
             [BardIcon, 'Why GraphQL', ''],
             [HonourIcon, 'Professional Services', ''],
             [ShieldFlashIcon, 'Commitment to Security', ''],
           ] as const
         ).map(([Icon, text, href], i) => {
-          return <MenuColumnListItem text={text} href={href} icon={Icon} />;
+          return (
+            <MenuColumnListItem key={i} href={href} icon={Icon}>
+              {text}
+            </MenuColumnListItem>
+          );
         })}
       </ul>
     </MenuContentColumns>
   );
 }
 
-export function CompanyMenu({ children }: { children?: React.ReactNode }) {
+export function CompanyMenu({ children }: { children: React.ReactNode }) {
   return (
     <MenuContentColumns>
       <div>
         <ColumnLabel>Company</ColumnLabel>
+        <ul>
+          <MenuColumnListItem icon={GroupIcon} href="https://the-guild.dev/about-us">
+            About Us
+          </MenuColumnListItem>
+          <MenuColumnListItem icon={AppsIcon} href="https://the-guild.dev/logos">
+            Brand Assets
+          </MenuColumnListItem>
+        </ul>
         <ColumnLabel>Proudly made by</ColumnLabel>
         <NavigationMenuLink href="https://the-guild.dev" className="px-4 py-2" arrow>
           <TheGuild />
