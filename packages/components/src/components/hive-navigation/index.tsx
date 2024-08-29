@@ -1,5 +1,5 @@
 import React, { forwardRef, Fragment, ReactNode } from 'react';
-import { GraphQLFoundationLogo, HiveCombinationMark, TheGuild } from '../../logos';
+import { GraphQLFoundationLogo, GuildLogo, HiveCombinationMark, TheGuild } from '../../logos';
 import { PRODUCTS, sixHighlightedProducts } from '../../products';
 import { Anchor } from '../anchor';
 import { CallToAction } from '../call-to-action';
@@ -75,6 +75,7 @@ export function HiveNavigation({ companyMenuChildren, children }: HiveNavigation
       <div className="flex-1" />
       {children}
       <CallToAction
+        className="ml-4"
         variant="tertiary"
         href="https://the-guild.dev/contact"
         target="_blank"
@@ -88,7 +89,7 @@ export function HiveNavigation({ companyMenuChildren, children }: HiveNavigation
       >
         Contact us
       </CallToAction>
-      <CallToAction variant="primary" href="https://app.graphql-hive.com/">
+      <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
         Get started for free
       </CallToAction>
     </NavigationMenu>
@@ -186,17 +187,16 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, {}>((props, ref) =>
 
 const MenuContentColumns = forwardRef(
   (props: React.HTMLAttributes<HTMLDivElement>, ref: React.ForwardedRef<HTMLDivElement>) => {
+    console.log('>>', React.Children.toArray(props.children).filter(Boolean));
     return (
       <div className="flex gap-x-6 [&>*]:flex [&>*]:flex-col [&>*]:gap-4" ref={ref} {...props}>
         {React.Children.toArray(props.children)
           .filter(Boolean)
-          .map((child, index) => {
+          .map((child, index, array) => {
             return (
               <Fragment key={index}>
                 {child}
-                {index < React.Children.count(props.children) - 1 && (
-                  <div className="w-px bg-beige-200" />
-                )}
+                {index < array.length - 1 && <div className="w-px bg-beige-200" />}
               </Fragment>
             );
           })}
@@ -318,25 +318,23 @@ function DiscordIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export function EnterpriseMenu() {
   return (
-    <MenuContentColumns>
-      <ul>
-        {(
-          [
-            // TODO: Chris
-            [AccountBox, 'Customer Stories', ''],
-            [BardIcon, 'Why GraphQL', ''],
-            [HonourIcon, 'Professional Services', ''],
-            [ShieldFlashIcon, 'Commitment to Security', ''],
-          ] as const
-        ).map(([Icon, text, href], i) => {
-          return (
-            <MenuColumnListItem key={i} href={href} icon={Icon}>
-              {text}
-            </MenuColumnListItem>
-          );
-        })}
-      </ul>
-    </MenuContentColumns>
+    <ul>
+      {(
+        [
+          // TODO: Chris
+          [AccountBox, 'Customer Stories', ''],
+          [BardIcon, 'Why GraphQL', ''],
+          [HonourIcon, 'Professional Services', ''],
+          [ShieldFlashIcon, 'Commitment to Security', ''],
+        ] as const
+      ).map(([Icon, text, href], i) => {
+        return (
+          <MenuColumnListItem key={i} href={href} icon={Icon}>
+            {text}
+          </MenuColumnListItem>
+        );
+      })}
+    </ul>
   );
 }
 
@@ -355,18 +353,19 @@ export function CompanyMenu({ children }: { children: React.ReactNode }) {
         </ul>
         <ColumnLabel>Proudly made by</ColumnLabel>
         <NavigationMenuLink href="https://the-guild.dev" className="px-4 py-2" arrow>
-          <TheGuild />
+          <GuildLogo className="-my-2 size-10" />
+          <TheGuild className="h-8" />
         </NavigationMenuLink>
         <ColumnLabel>Part of</ColumnLabel>
         <NavigationMenuLink
           href="https://graphql.org/community/foundation/"
-          className="px-4 py-2"
+          className="px-4 py-2 text-blue-800 hover:text-blue-1000"
           arrow
         >
-          <GraphQLFoundationLogo className="text-blue-800" />
+          <GraphQLFoundationLogo className="" />
         </NavigationMenuLink>
       </div>
-      {children}
+      {children && <div>{children}</div>}
     </MenuContentColumns>
   );
 }
