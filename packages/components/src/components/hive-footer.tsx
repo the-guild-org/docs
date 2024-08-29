@@ -23,22 +23,22 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
         className,
       )}
     >
-      <div className="container grid max-w-[75rem] grid-cols-1 gap-x-6 lg:grid-cols-4">
-        <div className="lg:pt-[72px]">
+      <div className="container grid max-w-[75rem] grid-cols-1 gap-x-6 max-lg:gap-y-16 sm:grid-cols-4">
+        <div className="max-lg:col-span-full lg:pt-[72px]">
           <Anchor href="https://the-guild.dev" sameSite={sameSite} {...logo}>
             <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:[:not(.never-dark)_&]:text-white" />
           </Anchor>
           <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
         </div>
-        <div className="grid grid-flow-col-dense grid-cols-2 justify-stretch gap-6 text-sm lg:col-span-3 lg:grid-cols-subgrid lg:pb-12 lg:pt-[72px] lg:text-base">
-          <List heading="Products" links={products} className="row-span-5" />
+        <div className="grid grid-flow-row grid-cols-2 justify-stretch gap-6 text-sm sm:col-span-3 sm:grid-cols-subgrid lg:pb-12 lg:pt-[72px] lg:text-base">
+          <List heading="Products" links={products} />
           <div className="flex flex-col gap-[inherit]">
             <List heading="Developer" links={DEVELOPER} />
             {ENTERPRISE.length > 0 && <List heading="Enterprise" links={ENTERPRISE} />}
             {resources.length > 0 && <List heading="Resources" links={resources} />}
           </div>
-          <div className="flex flex-col gap-[inherit] lg:col-start-3">
-            <List heading="Company" links={COMPANY} className="lg:col-start-3" />
+          <div className="flex flex-col gap-[inherit]">
+            <List heading="Company" links={COMPANY} />
             <a
               href="https://the-guild.dev/graphql/hive#pricing"
               className="font-medium hover:text-blue-700 hover:underline dark:[:not(.never-dark)_&]:hover:text-blue-100"
@@ -58,9 +58,9 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
               Contact Us
             </a>
           </div>
-          <CSAStarLevelOneIcon className="size-20 lg:col-start-3 lg:size-[120px] dark:[:not(.never-dark)_&]:opacity-95" />
+          <CSAStarLevelOneIcon className="col-start-[-2] row-start-2 size-20 lg:size-[120px] dark:[:not(.never-dark)_&]:opacity-95" />
         </div>
-        <div className="col-span-full flex flex-row flex-wrap justify-between gap-[inherit] lg:w-full lg:pb-2 lg:pt-8">
+        <div className="col-span-full flex flex-row flex-wrap justify-between gap-x-[inherit] gap-y-8 lg:w-full lg:pb-2 lg:pt-8">
           <div className="flex gap-6 lg:order-1">
             {COMMUNITY.map(({ icon: Icon, ...iconProps }) => (
               <Anchor key={iconProps.title} {...iconProps}>
