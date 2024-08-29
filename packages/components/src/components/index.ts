@@ -19,6 +19,6 @@ export { getNavbarLogo } from './guild-navbar-logo';
 export { ThemeSwitcherButton } from './theme-switcher';
 export { productsItems } from './company-menu';
 export { GetYourAPIGameRightSection } from './get-your-api-game-right-section';
-export { HiveNavigation } from './hive-navigation';
+export { HiveNavigation, GraphQLConfCard } from './hive-navigation';
 export { HiveFooter } from './hive-footer';
 export { ToolsAndLibrariesCards } from './tools-and-libraries-cards';

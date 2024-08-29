@@ -28,6 +28,8 @@ import {
   NavigationMenuTrigger,
 } from './navigation-menu';
 
+export { GraphQLConfCard } from './graphql-conf-card';
+
 const PRICING_HREF = 'https://the-guild.dev/graphql/hive#pricing';
 const EXPLORE_HREF = 'https://github.com/the-guild-org';
 
@@ -96,6 +98,9 @@ export function HiveNavigation({ companyMenuChildren, children }: HiveNavigation
   );
 }
 
+/**
+ * @internal
+ */
 export const ProductsMenu = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
   return (
     <MenuContentColumns ref={ref} {...props}>
@@ -205,6 +210,9 @@ const MenuContentColumns = forwardRef(
   },
 );
 
+/**
+ * @internal
+ */
 export const DeveloperMenu = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLElement>>(
   (props, ref) => {
     return (
@@ -316,6 +324,9 @@ function DiscordIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+/**
+ * @internal
+ */
 export function EnterpriseMenu() {
   return (
     <ul>
@@ -338,6 +349,9 @@ export function EnterpriseMenu() {
   );
 }
 
+/**
+ * @internal
+ */
 export function CompanyMenu({ children }: { children: React.ReactNode }) {
   return (
     <MenuContentColumns>
