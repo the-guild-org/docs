@@ -1,5 +1,6 @@
-import React, { forwardRef, Fragment, ReactNode } from 'react';
-import { useThemeConfig } from 'nextra-theme-docs';
+import React, { cloneElement, forwardRef, Fragment, ReactNode } from 'react';
+import { Navbar as NextraNavbar, useThemeConfig } from 'nextra-theme-docs';
+import { cn } from '../../cn';
 import { GraphQLFoundationLogo, GuildLogo, HiveCombinationMark, TheGuild } from '../../logos';
 import { PRODUCTS, sixHighlightedProducts } from '../../products';
 import { Anchor } from '../anchor';
@@ -29,12 +30,14 @@ import {
   NavigationMenuTrigger,
 } from './navigation-menu';
 
-export { GraphQLConfCard } from './graphql-conf-card';
+export * from './graphql-conf-card';
 
 const PRICING_HREF = 'https://the-guild.dev/graphql/hive#pricing';
 const EXPLORE_HREF = 'https://github.com/the-guild-org';
 
-export interface HiveNavigationProps {
+type NextraNavbarProps = Parameters<typeof NextraNavbar>[0];
+
+export interface HiveNavigationProps extends NextraNavbarProps {
   companyMenuChildren?: ReactNode;
   children?: ReactNode;
 }
@@ -42,74 +45,95 @@ export interface HiveNavigationProps {
  *
  * @example
  * ```tsx
- * <HiveNavigation companyMenuChildren={<GraphQLConfCard image={graphQLConfLocalImage} />}>
+ * <HiveNavigation
+ *   companyMenuChildren={<GraphQLConfCard image={graphQLConfLocalImage} />}
+ *   items={items}
+ * >
  *   {extraContent}
  * </HiveNavigation>
  * ```
  */
-export function HiveNavigation({ companyMenuChildren, children }: HiveNavigationProps) {
+export function HiveNavigation({
+  companyMenuChildren,
+  children,
+  ...nextraNavbarProps
+}: HiveNavigationProps) {
   // `useThemeConfig` doesn't return anything outside of Nextra, and the provider isn't exported
   const themeConfig = useThemeConfig() as ReturnType<typeof useThemeConfig> | undefined;
-  const Search = themeConfig?.search.component;
+  const Search = themeConfig?.search?.component;
 
   return (
-    <NavigationMenu className="w-screen p-6">
-      <Anchor href="/" className="flex items-center">
-        <HiveCombinationMark className="text-green-1000" />
-      </Anchor>
-      <NavigationMenuList className="ml-16">
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ProductsMenu />
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <DeveloperMenu />
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Enterprise</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <EnterpriseMenu />
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Company</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <CompanyMenu>{companyMenuChildren}</CompanyMenu>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href={PRICING_HREF} className="font-medium">
-            Pricing
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-      <div className="flex-1" />
-      {children}
-      {typeof Search === 'function' ? <Search className="ml-4" /> : Search}
-      <CallToAction
-        className="ml-4"
-        variant="tertiary"
-        href="https://the-guild.dev/contact"
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={event => {
-          if (typeof window !== 'undefined' && '$crisp' in window) {
-            (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
-            event.preventDefault();
-          }
-        }}
-      >
-        Contact us
-      </CallToAction>
-      <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
-        Get started for free
-      </CallToAction>
-    </NavigationMenu>
+    <>
+      <div className="md:hidden">
+        <NextraNavbar {...nextraNavbarProps} />
+      </div>
+      <NavigationMenu className="hidden w-screen p-6 md:flex">
+        <Anchor href="/" className="flex items-center">
+          <HiveCombinationMark className="text-green-1000" />
+        </Anchor>
+        <NavigationMenuList className="lg:ml-16">
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ProductsMenu />
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <DeveloperMenu />
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Enterprise</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <EnterpriseMenu />
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Company</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <CompanyMenu>{companyMenuChildren}</CompanyMenu>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink href={PRICING_HREF} className="font-medium">
+              Pricing
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+        <div className="flex-1" />
+
+        {children}
+
+        {typeof Search === 'function' ? (
+          <Search className="ml-4 max-lg:[&_input::placeholder]:text-[0px]" />
+        ) : typeof Search === 'object' && Search && 'props' in Search ? (
+          cloneElement(Search, {
+            className: cn(Search.props.className, 'ml-4 max-lg:placeholder:hidden'),
+          })
+        ) : null}
+
+        <CallToAction
+          className="ml-4 max-lg:hidden"
+          variant="tertiary"
+          href="https://the-guild.dev/contact"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={event => {
+            if (typeof window !== 'undefined' && '$crisp' in window) {
+              (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
+              event.preventDefault();
+            }
+          }}
+        >
+          Contact <span className="hidden xl:contents">us</span>
+        </CallToAction>
+        <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
+          Get started <span className="hidden lg:contents">for free</span>
+        </CallToAction>
+      </NavigationMenu>
+    </>
   );
 }
 
@@ -207,7 +231,6 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, {}>((props, ref) =>
 
 const MenuContentColumns = forwardRef(
   (props: React.HTMLAttributes<HTMLDivElement>, ref: React.ForwardedRef<HTMLDivElement>) => {
-    console.log('>>', React.Children.toArray(props.children).filter(Boolean));
     return (
       <div className="flex gap-x-6 [&>*]:flex [&>*]:flex-col [&>*]:gap-4" ref={ref} {...props}>
         {React.Children.toArray(props.children)

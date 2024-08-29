@@ -1,7 +1,15 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { DocsThemeConfig, default as NextraLayout } from 'nextra-theme-docs';
+import { Meta, StoryContext, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 import { GraphQLConfCard } from './graphql-conf-card';
-import { CompanyMenu, DeveloperMenu, EnterpriseMenu, HiveNavigation, ProductsMenu } from './index';
+import {
+  CompanyMenu,
+  DeveloperMenu,
+  EnterpriseMenu,
+  HiveNavigation,
+  HiveNavigationProps,
+  ProductsMenu,
+} from './index';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,8 +22,11 @@ import graphQLConfLocalImage from './local-image-for-stories.png';
 export default {
   title: 'Hive/HiveNavigation',
   component: HiveNavigation,
-  decorators: [hiveThemeDecorator],
-} as Meta;
+  decorators: [hiveThemeDecorator, nextraThemeDocsCtxDecorator],
+  args: {
+    items: [{ name: 'Mobile Item 1', title: 'Mobile Item 1', route: '/', items: {}, type: 'link' }],
+  },
+} as Meta<HiveNavigationProps>;
 
 export const Default = {
   name: 'HiveNavigation',
@@ -88,3 +99,21 @@ export const Company: StoryObj = {
     );
   },
 };
+
+function nextraThemeDocsCtxDecorator(Story: () => React.ReactNode, _ctx: StoryContext) {
+  return (
+    <NextraLayout
+      pageProps={{}}
+      pageOpts={{ filePath: '', frontMatter: {}, pageMap: [], title: '' }}
+      themeConfig={
+        {
+          logoLink: false,
+          navbar: { component: () => null },
+          footer: { component: () => null },
+        } satisfies DocsThemeConfig
+      }
+    >
+      <Story />
+    </NextraLayout>
+  );
+}

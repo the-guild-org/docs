@@ -4,7 +4,10 @@ import { ArrowIcon } from '../icons';
 import { Image } from '../image';
 import { NavigationMenuLink } from './navigation-menu';
 
-export function GraphQLConfCard({ image }: { image: StaticImageData }) {
+export interface GraphQLConfCardProps {
+  image: StaticImageData;
+}
+export function GraphQLConfCard({ image }: GraphQLConfCardProps) {
   return (
     <NavigationMenuLink href="https://graphql.org/conf/2024/" className="group w-[358px]">
       <Image alt="" {...image} width={358} height={200} />
