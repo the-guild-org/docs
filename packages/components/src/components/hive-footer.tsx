@@ -19,13 +19,13 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
   return (
     <footer
       className={cn(
-        'relative grid grid-cols-1 gap-x-6 gap-y-12 bg-white px-4 py-6 text-green-800 lg:grid-cols-4 lg:px-24 xl:px-[120px]',
+        'relative grid grid-cols-1 gap-x-6 bg-[(var(--nextra-bg))] px-4 py-6 text-green-800 lg:grid-cols-4 xl:px-[120px] dark:[&:not(.never-dark)]:text-neutral-400',
         className,
       )}
     >
       <div className="lg:pt-[72px]">
         <Anchor href="https://the-guild.dev" sameSite={sameSite} {...logo}>
-          <HiveCombinationMark className="h-8 w-auto text-green-1000" />
+          <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:[:not(.never-dark)_&]:text-white" />
         </Anchor>
         <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
       </div>
@@ -40,12 +40,12 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
           <List heading="Company" links={COMPANY} className="lg:col-start-3" />
           <a
             href="https://the-guild.dev/graphql/hive#pricing"
-            className="font-medium hover:text-blue-700 hover:underline"
+            className="font-medium hover:text-blue-700 hover:underline dark:[:not(.never-dark)_&]:hover:text-blue-100"
           >
             Pricing
           </a>
           <a
-            className="font-medium hover:text-blue-700 hover:underline"
+            className="font-medium hover:text-blue-700 hover:underline dark:[:not(.never-dark)_&]:hover:text-blue-100"
             href="https://the-guild.dev/contact"
             onClick={event => {
               if (typeof window !== 'undefined' && '$crisp' in window) {
@@ -57,7 +57,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
             Contact Us
           </a>
         </div>
-        <CSAStarLevelOneIcon className="size-20 lg:col-start-3 lg:size-[120px]" />
+        <CSAStarLevelOneIcon className="size-20 lg:col-start-3 lg:size-[120px] dark:[:not(.never-dark)_&]:opacity-95" />
       </div>
       <div className="col-span-full flex flex-row flex-wrap justify-between gap-[inherit] lg:w-full lg:pb-2 lg:pt-8">
         <div className="flex gap-6 lg:order-1">
@@ -69,7 +69,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
         </div>
         <p className="text-sm">© 2024 The Guild</p>
       </div>
-      <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden lg:block" />
+      <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden lg:block dark:[:not(.never-dark)_&]:opacity-5" />
     </footer>
   );
 }
@@ -85,11 +85,14 @@ function List({
 }) {
   return (
     <div className={cn('flex flex-col gap-y-3 text-nowrap lg:gap-y-4', className)}>
-      <h3 className="font-medium">{heading}</h3>
+      <h3 className="font-medium dark:[:not(.never-dark)_&]:text-white">{heading}</h3>
       <ul className="contents">
         {links.map(link => (
           <li key={link.href}>
-            <Anchor {...link} className="-m-2 block p-2 hover:text-blue-700 hover:underline" />
+            <Anchor
+              {...link}
+              className="-m-2 block p-2 hover:text-blue-700 hover:underline dark:[:not(.never-dark)_&]:hover:text-blue-100"
+            />
           </li>
         ))}
       </ul>
