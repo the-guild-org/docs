@@ -19,7 +19,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
   return (
     <footer
       className={clsx(
-        'relative grid grid-cols-1 gap-x-6 gap-y-12 bg-white px-4 py-6 text-green-800 lg:grid-cols-4 lg:px-[120px]',
+        'relative grid grid-cols-1 gap-x-6 gap-y-12 bg-[(var(--nextra-bg))] px-4 py-6 text-green-800 dark:text-neutral-400 lg:grid-cols-4 lg:px-[120px]',
         className,
       )}
     >
