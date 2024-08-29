@@ -1,17 +1,22 @@
 import React, { forwardRef, Fragment } from 'react';
-import { HiveCombinationMark } from '../../logos';
+import { GraphQLFoundationLogo, HiveCombinationMark, TheGuild } from '../../logos';
 import { PRODUCTS, sixHighlightedProducts } from '../../products';
 import { Anchor } from '../anchor';
 import {
+  AccountBox,
   ArrowIcon,
+  BardIcon,
   GitHubIcon,
   HiveIcon,
+  HonourIcon,
   ListIcon,
   PaperIcon,
   PencilIcon,
   RightCornerIcon,
+  ShieldFlashIcon,
   TargetIcon,
 } from '../icons';
+import { Image } from '../image';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -46,13 +51,13 @@ export function HiveNavigation() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Enterprise</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ProductsMenu />
+            <EnterpriseMenu />
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Company</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ProductsMenu />
+            <CompanyMenu />
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
@@ -189,20 +194,9 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, React.HTMLAttribut
                 ['Blog', PencilIcon, 'https://the-guild.dev/blog'],
                 ['GitHub', GitHubIcon, 'https://github.com/kamilkisiela/graphql-hive'],
               ] as const
-            ).map(([name, Icon, href]) => {
-              return (
-                <li key={name}>
-                  <NavigationMenuLink
-                    href={href}
-                    className="flex flex-row items-center gap-3 text-nowrap px-4 py-2"
-                    arrow
-                  >
-                    <Icon className="size-6 shrink-0" />
-                    <p className="text-base font-medium leading-normal text-green-1000">{name}</p>
-                  </NavigationMenuLink>
-                </li>
-              );
-            })}
+            ).map(([name, Icon, href]) => (
+              <MenuColumnListItem text={name} href={href} icon={Icon} />
+            ))}
           </ul>
         </div>
         <div className="w-[188px]">
@@ -219,26 +213,38 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, React.HTMLAttribut
                 ['LinkedIn', LinkedInIcon, 'https://www.linkedin.com/company/the-guild-software/'],
                 ['Discord', DiscordIcon, 'https://discord.com/invite/xud7bH9'],
               ] as const
-            ).map(([name, Icon, href]) => {
-              return (
-                <li key={name}>
-                  <NavigationMenuLink
-                    href={href}
-                    className="flex flex-row items-center gap-3 px-4 py-2"
-                    arrow
-                  >
-                    <Icon className="size-6 shrink-0" />
-                    <p className="text-base font-medium leading-normal text-green-1000">{name}</p>
-                  </NavigationMenuLink>
-                </li>
-              );
-            })}
+            ).map(([name, Icon, href]) => (
+              <MenuColumnListItem text={name} href={href} icon={Icon} />
+            ))}
           </ul>
         </div>
       </MenuContentColumns>
     );
   },
 );
+
+function MenuColumnListItem({
+  text,
+  href,
+  icon: Icon,
+}: {
+  text: string;
+  href: string;
+  icon: (props: React.SVGProps<SVGSVGElement>) => React.ReactElement;
+}) {
+  return (
+    <li key={text}>
+      <NavigationMenuLink
+        href={href}
+        className="flex flex-row items-center gap-3 text-nowrap px-4 py-2"
+        arrow
+      >
+        <Icon className="size-6 shrink-0" />
+        <p className="text-base font-medium leading-normal text-green-1000">{text}</p>
+      </NavigationMenuLink>
+    </li>
+  );
+}
 
 function ColumnLabel({ children }: { children: React.ReactNode }) {
   return <p className="px-4 text-sm leading-5 text-green-700">{children}</p>;
@@ -276,5 +282,47 @@ function DiscordIcon(props: React.SVGProps<SVGSVGElement>) {
     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}>
       <path d="M10.2684 11.1C10.8084 11.1 11.2458 11.505 11.2359 12C11.2359 12.495 10.8093 12.9 10.2684 12.9C9.73742 12.9 9.30002 12.495 9.30002 12C9.30002 11.505 9.72752 11.1 10.2684 11.1ZM13.7316 11.1C14.2725 11.1 14.7 11.505 14.7 12C14.7 12.495 14.2725 12.9 13.7316 12.9C13.2006 12.9 12.7641 12.495 12.7641 12C12.7641 11.505 13.1907 11.1 13.7316 11.1ZM18.2019 3C19.2486 3 20.1 3.8694 20.1 4.9467V21.9L18.1101 20.1045L16.9896 19.0461L15.8043 17.9211L16.2957 19.6698H5.79812C4.75142 19.6698 3.90002 18.8004 3.90002 17.7231V4.9467C3.90002 3.8694 4.75142 3 5.79812 3H18.201H18.2019ZM14.6289 15.3417C16.6746 15.276 17.4621 13.9053 17.4621 13.9053C17.4621 10.8624 16.1283 8.3955 16.1283 8.3955C14.7963 7.3758 13.5273 7.4037 13.5273 7.4037L13.3977 7.5549C14.9718 8.0463 15.7026 8.7555 15.7026 8.7555C14.8432 8.27129 13.896 7.9629 12.9162 7.8483C12.2947 7.7781 11.667 7.78415 11.0469 7.8663C10.9911 7.8663 10.9443 7.8762 10.8894 7.8852C10.5654 7.914 9.77792 8.0364 8.78792 8.481C8.44592 8.6412 8.24162 8.7555 8.24162 8.7555C8.24162 8.7555 9.01022 8.0085 10.6761 7.5171L10.5834 7.4037C10.5834 7.4037 9.31532 7.3758 7.98242 8.3964C7.98242 8.3964 6.64952 10.8624 6.64952 13.9053C6.64952 13.9053 7.42712 15.2751 9.47283 15.3417C9.47283 15.3417 9.81482 14.9169 10.0938 14.5578C8.91752 14.1978 8.47382 13.4418 8.47382 13.4418C8.47382 13.4418 8.56563 13.5084 8.73212 13.6029C8.74113 13.6119 8.75012 13.6218 8.76902 13.6308C8.79692 13.6506 8.82482 13.6596 8.85273 13.6785C9.08402 13.8108 9.31532 13.9143 9.52772 13.9998C9.90753 14.151 10.3611 14.3022 10.8894 14.4066C11.6808 14.5617 12.4945 14.5648 13.287 14.4156C13.7487 14.3332 14.199 14.197 14.6289 14.0097C14.9529 13.8864 15.3138 13.7064 15.6936 13.4517C15.6936 13.4517 15.231 14.2266 14.0178 14.5767C14.2959 14.9358 14.6298 15.3417 14.6298 15.3417H14.6289Z" />
     </svg>
+  );
+}
+
+export function EnterpriseMenu() {
+  return (
+    <MenuContentColumns>
+      <ul>
+        {(
+          [
+            [AccountBox, 'Customer Stories', ''],
+            [BardIcon, 'Why GraphQL', ''],
+            [HonourIcon, 'Professional Services', ''],
+            [ShieldFlashIcon, 'Commitment to Security', ''],
+          ] as const
+        ).map(([Icon, text, href], i) => {
+          return <MenuColumnListItem text={text} href={href} icon={Icon} />;
+        })}
+      </ul>
+    </MenuContentColumns>
+  );
+}
+
+export function CompanyMenu({ children }: { children?: React.ReactNode }) {
+  return (
+    <MenuContentColumns>
+      <div>
+        <ColumnLabel>Company</ColumnLabel>
+        <ColumnLabel>Proudly made by</ColumnLabel>
+        <NavigationMenuLink href="https://the-guild.dev" className="px-4 py-2" arrow>
+          <TheGuild />
+        </NavigationMenuLink>
+        <ColumnLabel>Part of</ColumnLabel>
+        <NavigationMenuLink
+          href="https://graphql.org/community/foundation/"
+          className="px-4 py-2"
+          arrow
+        >
+          <GraphQLFoundationLogo className="text-blue-800" />
+        </NavigationMenuLink>
+      </div>
+      {children}
+    </MenuContentColumns>
   );
 }

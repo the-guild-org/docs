@@ -20,6 +20,7 @@ export { ReactComponent as WhatsAppLogo } from './whatsapp.svg';
 export { ReactComponent as WSLogo } from './ws.svg';
 export { ReactComponent as YogaLogo } from './yoga.svg';
 export { ReactComponent as HiveCombinationMark } from './hive-combination-mark.svg';
+export { ReactComponent as GraphQLFoundationLogo } from './graphql-foundation.svg';
 
 export interface LettermarkLogoProps extends HTMLAttributes<HTMLElement> {}
 const createLettermarkLogo = (text: string) => (props: LettermarkLogoProps) => {

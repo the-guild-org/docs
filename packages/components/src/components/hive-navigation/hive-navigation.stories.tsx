@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
-import { HiveNavigation, ProductsMenu, DeveloperMenu } from './index';
+import { GraphQLConfCard } from './graphql-conf-card';
+import { CompanyMenu, DeveloperMenu, EnterpriseMenu, HiveNavigation, ProductsMenu } from './index';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -8,6 +9,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from './navigation-menu';
+import graphQLConfLocalImage from './local-image-for-stories.png';
 
 export default {
   title: 'Hive/HiveNavigation',
@@ -55,6 +57,34 @@ export const Developer: StoryObj = {
       <NavigationMenu>
         <DeveloperMenu />
       </NavigationMenu>
-    )
-  }
-}
+    );
+  },
+};
+
+export const Enterprise: StoryObj = {
+  render() {
+    return (
+      <NavigationMenu>
+        <EnterpriseMenu />
+      </NavigationMenu>
+    );
+  },
+};
+
+export const Company: StoryObj = {
+  render() {
+    return (
+      <NavigationMenu>
+        <CompanyMenu>
+          <GraphQLConfCard
+            image={{
+              height: 750,
+              width: 1200,
+              src: graphQLConfLocalImage,
+            }}
+          />
+        </CompanyMenu>
+      </NavigationMenu>
+    );
+  },
+};
