@@ -1,4 +1,5 @@
 import React, { forwardRef, Fragment, ReactNode } from 'react';
+import { useThemeConfig } from 'nextra-theme-docs';
 import { GraphQLFoundationLogo, GuildLogo, HiveCombinationMark, TheGuild } from '../../logos';
 import { PRODUCTS, sixHighlightedProducts } from '../../products';
 import { Anchor } from '../anchor';
@@ -37,7 +38,20 @@ export interface HiveNavigationProps {
   companyMenuChildren?: ReactNode;
   children?: ReactNode;
 }
+/**
+ *
+ * @example
+ * ```tsx
+ * <HiveNavigation companyMenuChildren={<GraphQLConfCard image={graphQLConfLocalImage} />}>
+ *   {extraContent}
+ * </HiveNavigation>
+ * ```
+ */
 export function HiveNavigation({ companyMenuChildren, children }: HiveNavigationProps) {
+  // `useThemeConfig` doesn't return anything outside of Nextra, and the provider isn't exported
+  const themeConfig = useThemeConfig() as ReturnType<typeof useThemeConfig> | undefined;
+  const Search = themeConfig?.search.component;
+
   return (
     <NavigationMenu className="w-screen p-6">
       <Anchor href="/" className="flex items-center">
@@ -76,6 +90,7 @@ export function HiveNavigation({ companyMenuChildren, children }: HiveNavigation
       </NavigationMenuList>
       <div className="flex-1" />
       {children}
+      {typeof Search === 'function' ? <Search className="ml-4" /> : Search}
       <CallToAction
         className="ml-4"
         variant="tertiary"

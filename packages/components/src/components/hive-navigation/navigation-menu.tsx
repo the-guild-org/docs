@@ -104,7 +104,7 @@ export const NavigationMenuLink = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Link>,
   NavigationMenuLinkProps
 >(({ className, arrow, children, href, ...rest }, ref) => {
-  const isActive = false; // TODO
+  const isActive = false; // TODO: Do we even discern this in the design?
   return (
     <NavigationMenuPrimitive.Link active={isActive} {...rest} asChild ref={ref}>
       <Anchor
