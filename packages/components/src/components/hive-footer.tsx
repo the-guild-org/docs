@@ -57,7 +57,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
             Contact Us
           </a>
         </div>
-        <CSAStarLevelOneIcon className="size-20 lg:col-start-3 lg:size-[120px]" />
+        <CSAStarLevelOneIcon className="size-20 lg:col-start-3 lg:size-[120px] dark:[:not(.never-dark)_&]:opacity-95" />
       </div>
       <div className="col-span-full flex flex-row flex-wrap justify-between gap-[inherit] lg:w-full lg:pb-2 lg:pt-8">
         <div className="flex gap-6 lg:order-1">
