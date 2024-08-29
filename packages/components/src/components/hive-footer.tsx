@@ -30,7 +30,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
           </Anchor>
           <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
         </div>
-        <div className="grid grid-flow-row grid-cols-2 justify-stretch gap-6 text-sm sm:col-span-3 sm:grid-cols-subgrid lg:pb-12 lg:pt-[72px] lg:text-base">
+        <div className="col-span-full grid grid-flow-row grid-cols-2 justify-stretch gap-6 text-sm sm:col-span-4 sm:grid-cols-3 lg:col-span-3 lg:pb-12 lg:pt-[72px] lg:text-base">
           <List heading="Products" links={products} />
           <div className="flex flex-col gap-[inherit]">
             <List heading="Developer" links={DEVELOPER} />
@@ -58,7 +58,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
               Contact Us
             </a>
           </div>
-          <CSAStarLevelOneIcon className="col-start-[-2] row-start-2 size-20 lg:size-[120px] dark:[:not(.never-dark)_&]:opacity-95" />
+          <CSAStarLevelOneIcon className="size-20 sm:col-start-[-1] lg:col-start-[-2] lg:size-[120px] dark:[:not(.never-dark)_&]:opacity-95" />
         </div>
         <div className="col-span-full flex flex-row flex-wrap justify-between gap-x-[inherit] gap-y-8 lg:w-full lg:pb-2 lg:pt-8">
           <div className="flex gap-6 lg:order-1">
