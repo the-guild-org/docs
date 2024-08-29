@@ -18,8 +18,8 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@theguild/tailwind-config": "0.4.2",
-    "@types/react": "18.3.3",
+    "@theguild/tailwind-config": "0.5.0",
+    "@types/react": "18.3.4",
     "typescript": "5.5.4"
   },
   "nextBundleAnalysis": {
