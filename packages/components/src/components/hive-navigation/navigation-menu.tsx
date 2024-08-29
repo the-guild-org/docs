@@ -116,7 +116,7 @@ export const NavigationMenuLink = React.forwardRef<
         )}
       >
         {children}
-        {arrow && <ArrowIcon className="ml-auto size-6 opacity-0 transition-all" />}
+        {arrow && <ArrowIcon className="ml-auto size-6 shrink-0 opacity-0 transition-all" />}
       </Anchor>
     </NavigationMenuPrimitive.Link>
   );
@@ -157,11 +157,11 @@ export const NavigationMenuViewport = React.forwardRef<
     >
       <NavigationMenuPrimitive.Viewport
         className={cn(
-          'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-[var(--radix-navigation-menu-viewport-width)] origin-[top_center] overflow-hidden rounded-xl border shadow-[0px_16px_32px_-12px_rgba(14,18,27,0.10)] ease-in-out',
+          'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 data-[state=closed]:fade-out-0 data-[state=open]:fade-in-90 relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-[var(--radix-navigation-menu-viewport-width)] origin-[top_center] overflow-hidden rounded-xl border shadow-[0px_16px_32px_-12px_rgba(14,18,27,0.10)] ease-in-out',
           className,
         )}
         style={{
-          transition: 'width 500ms, height 500ms, transform 250ms',
+          transition: 'width 500ms, height 500ms, transform 250ms, opacity 250ms',
         }}
         ref={ref}
         {...rest}
