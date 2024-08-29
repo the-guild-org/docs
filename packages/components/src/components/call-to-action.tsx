@@ -44,7 +44,7 @@ export function CallToAction({ className, variant, ...rest }: CallToActionProps)
       className={cn(
         'relative block rounded-lg sm:w-fit' +
           ' px-6 py-3 font-medium leading-6 text-green-1000' +
-          ' relative flex flex-row items-center justify-center gap-2',
+          ' relative flex flex-row items-center justify-center gap-2 text-nowrap',
         'focus-visible:ring-0 focus-visible:ring-offset-0',
         '[&:hover>:first-child]:inset-[-1px] [&:hover>:first-child]:rounded-[9px]',
         variantStyles[variant],

@@ -67,9 +67,9 @@ export function HiveNavigation({
       <div className="md:hidden">
         <NextraNavbar {...nextraNavbarProps} />
       </div>
-      <NavigationMenu className="hidden w-screen p-6 md:flex">
+      <NavigationMenu className="hidden w-screen p-6 md:flex dark:[&:not(.never-dark)]:bg-[rgb(var(--nextra-bg))]">
         <Anchor href="/" className="flex items-center">
-          <HiveCombinationMark className="text-green-1000" />
+          <HiveCombinationMark className="text-green-1000 dark:[&:not(.never-dark)]:text-neutral-200" />
         </Anchor>
         <NavigationMenuList className="lg:ml-16">
           <NavigationMenuItem>
@@ -107,7 +107,7 @@ export function HiveNavigation({
         {children}
 
         {typeof Search === 'function' ? (
-          <Search className="ml-4 max-lg:[&_input::placeholder]:text-[0px]" />
+          <Search className="ml-4 max-lg:[&_input::placeholder]:text-[0px] max-lg:[&_input]:w-20" />
         ) : typeof Search === 'object' && Search && 'props' in Search ? (
           cloneElement(Search, {
             className: cn(Search.props.className, 'ml-4 max-lg:placeholder:hidden'),
