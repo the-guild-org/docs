@@ -5,7 +5,8 @@ import { Anchor } from './anchor';
 const variantStyles = {
   primary: cn(
     'bg-primary hover:bg-green-800 hover:text-white' +
-      ' focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-green-800',
+      ' focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-green-800' +
+      ' dark:[:not(.never-dark)_&]:text-neutral-800 dark:[:not(.never-dark)_&]:hover:text-neutral-900 dark:[:not(.never-dark)_&]:bg-neutral-100 dark:[:not(.never-dark)_&]:hover:bg-white',
   ),
   'primary-inverted': cn(
     'bg-primary hover:bg-white' +
@@ -21,7 +22,8 @@ const variantStyles = {
   ),
   tertiary: cn(
     'bg-transparent text-green-1000' +
-      ' focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-green-800',
+      ' focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-green-800' +
+      '  ',
   ),
 };
 
@@ -44,7 +46,8 @@ export function CallToAction({ className, variant, ...rest }: CallToActionProps)
       className={cn(
         'relative block rounded-lg sm:w-fit' +
           ' px-6 py-3 font-medium leading-6 text-green-1000' +
-          ' relative flex flex-row items-center justify-center gap-2 text-nowrap',
+          ' relative flex flex-row items-center justify-center gap-2 text-nowrap' +
+          ' dark:[:not(.never-dark)_&]:text-neutral-200',
         'focus-visible:ring-0 focus-visible:ring-offset-0',
         '[&:hover>:first-child]:inset-[-1px] [&:hover>:first-child]:rounded-[9px]',
         variantStyles[variant],
@@ -52,7 +55,7 @@ export function CallToAction({ className, variant, ...rest }: CallToActionProps)
       )}
       {...rest}
     >
-      <div className="absolute inset-0 rounded-lg border border-green-800" />
+      <div className="absolute inset-0 rounded-lg border border-green-800 dark:[:not(.never-dark)_&]:border-neutral-200" />
       {rest.children}
     </Anchor>
   );

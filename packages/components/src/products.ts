@@ -213,7 +213,7 @@ export const PRODUCTS: Record<
   },
 };
 
-export const sixHighlightedProducts = [
+export const SIX_HIGHLIGHTED_PRODUCTS = [
   PRODUCTS.INSPECTOR,
   PRODUCTS.ENVELOP,
   PRODUCTS.SOFA,

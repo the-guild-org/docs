@@ -2,7 +2,7 @@ import React, { cloneElement, forwardRef, Fragment, ReactNode } from 'react';
 import { Navbar as NextraNavbar, useThemeConfig } from 'nextra-theme-docs';
 import { cn } from '../../cn';
 import { GraphQLFoundationLogo, GuildLogo, HiveCombinationMark, TheGuild } from '../../logos';
-import { PRODUCTS, sixHighlightedProducts } from '../../products';
+import { PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../../products';
 import { Anchor } from '../anchor';
 import { CallToAction } from '../call-to-action';
 import {
@@ -146,17 +146,19 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, {}>((props, ref) =>
       <div className="w-[220px]">
         <ColumnLabel>Platform</ColumnLabel>
         <NavigationMenuLink href={PRODUCTS.HIVE.href} className="p-4">
-          <div className="w-fit rounded-lg bg-green-800 p-3">
+          <div className="w-fit rounded-lg bg-green-800 p-3 dark:[:not(.never-dark)_&]:bg-white/10">
             <HiveIcon className="size-10 text-white" />
           </div>
-          <p className="mt-4 text-base font-medium leading-normal text-green-1000">Hive</p>
-          <p className="mt-1 text-sm leading-5 text-green-800">
+          <p className="mt-4 text-base font-medium leading-normal text-green-1000 dark:[:not(.never-dark)_&]:text-neutral-200">
+            Hive
+          </p>
+          <p className="mt-1 text-sm leading-5 text-green-800 dark:[:not(.never-dark)_&]:text-neutral-400">
             GraphQL Management Platform & Decision-making Engine
           </p>
         </NavigationMenuLink>
         <Anchor
           href="https://app.graphql-hive.com/"
-          className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:text-green-1000"
+          className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:text-green-1000 dark:[:not(.never-dark)_&]:text-neutral-400 dark:[:not(.never-dark)_&]:hover:text-neutral-200"
         >
           <span>Get started</span> <ArrowIcon />
         </Anchor>
@@ -196,7 +198,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, {}>((props, ref) =>
       <div className="w-[364px]">
         <ColumnLabel>Libraries</ColumnLabel>
         <ul className="grid grid-cols-2 gap-x-4">
-          {sixHighlightedProducts.map(product => {
+          {SIX_HIGHLIGHTED_PRODUCTS.map(product => {
             const Logo = product.logo;
             return (
               <li key={product.name}>
@@ -205,8 +207,8 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, {}>((props, ref) =>
                   className="flex flex-row items-center gap-3 px-4 py-2"
                   arrow
                 >
-                  <div className="flex size-8 items-center justify-center rounded bg-beige-200">
-                    <Logo className="size-8 text-green-1000" />
+                  <div className="flex size-8 items-center justify-center rounded bg-beige-200 dark:[:not(.never-dark)_&]:bg-white/5">
+                    <Logo className="size-8 text-green-1000 dark:[:not(.never-dark)_&]:text-neutral-300" />
                   </div>
                   <div>
                     <p className="text-base font-medium leading-normal text-green-1000">
@@ -220,7 +222,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, {}>((props, ref) =>
         </ul>
         <Anchor
           href={EXPLORE_HREF}
-          className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:text-green-1000"
+          className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:text-green-1000 dark:[:not(.never-dark)_&]:text-neutral-400 dark:[:not(.never-dark)_&]:hover:text-neutral-200"
         >
           <span>Explore all libraries</span> <ArrowIcon />
         </Anchor>
@@ -317,14 +319,20 @@ function MenuColumnListItem({
         arrow
       >
         <Icon className="size-6 shrink-0" />
-        <p className="text-base font-medium leading-normal text-green-1000">{children}</p>
+        <p className="text-base font-medium leading-normal text-green-1000 dark:[:not(.never-dark)_&]:text-neutral-200">
+          {children}
+        </p>
       </NavigationMenuLink>
     </li>
   );
 }
 
 function ColumnLabel({ children }: { children: React.ReactNode }) {
-  return <p className="px-4 text-sm leading-5 text-green-700">{children}</p>;
+  return (
+    <p className="px-4 text-sm leading-5 text-green-700 dark:[:not(.never-dark)_&]:text-neutral-300">
+      {children}
+    </p>
+  );
 }
 
 // These icons are _different_ than the ones used elsewhere.

@@ -35,7 +35,7 @@ export const NavigationMenuList = React.forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      'group flex flex-1 list-none items-center rounded-lg border-beige-200 px-3 lg:border',
+      'group flex flex-1 list-none items-center rounded-lg border-beige-200 px-3 lg:border dark:[:not(.never-dark)_&]:border-neutral-700',
       className,
     )}
     {...rest}
@@ -84,10 +84,14 @@ export const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      'data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 absolute left-0 top-0 w-auto !duration-500 [&>:first-child]:p-6',
+      'absolute left-0 top-0 w-auto bg-white data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 [&>:first-child]:p-6',
       className,
     )}
     {...rest}
+    style={{
+      animationDuration: '0.4s',
+      ...rest.style,
+    }}
   />
 ));
 NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName;
@@ -157,7 +161,7 @@ export const NavigationMenuViewport = React.forwardRef<
     >
       <NavigationMenuPrimitive.Viewport
         className={cn(
-          'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 data-[state=closed]:fade-out-0 data-[state=open]:fade-in-90 relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-[var(--radix-navigation-menu-viewport-width)] origin-[top_center] overflow-hidden rounded-xl border shadow-[0px_16px_32px_-12px_rgba(14,18,27,0.10)] ease-in-out',
+          'relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-[var(--radix-navigation-menu-viewport-width)] origin-[top_center] overflow-hidden rounded-xl border shadow-[0px_16px_32px_-12px_rgba(14,18,27,0.10)] ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-90 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90',
           className,
         )}
         style={{
@@ -178,7 +182,7 @@ export const NavigationMenuIndicator = React.forwardRef<
   <NavigationMenuPrimitive.Indicator
     ref={ref}
     className={cn(
-      'data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden',
+      'top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in',
       className,
     )}
     {...rest}

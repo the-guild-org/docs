@@ -1,5 +1,5 @@
 import { cn } from '../cn';
-import { PRODUCTS, sixHighlightedProducts } from '../products';
+import { PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../products';
 import { CallToAction } from './call-to-action';
 import { HighlightDecoration } from './decorations';
 import { Heading } from './heading';
@@ -56,7 +56,7 @@ function MainCards() {
 function SecondaryCards() {
   return (
     <ul className="flex h-max grid-cols-6 flex-row gap-[22px] overflow-x-auto overflow-y-hidden max-sm:-mx-8 max-sm:px-8 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-      {sixHighlightedProducts.map(product => {
+      {SIX_HIGHLIGHTED_PRODUCTS.map(product => {
         const Logo = product.logo;
         return (
           <li
