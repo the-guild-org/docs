@@ -35,6 +35,8 @@ export * from './graphql-conf-card';
 const PRICING_HREF = 'https://the-guild.dev/graphql/hive#pricing';
 const EXPLORE_HREF = 'https://github.com/the-guild-org';
 
+const ENTERPRISE_MENU_HIDDEN = true;
+
 type NextraNavbarProps = Parameters<typeof NextraNavbar>[0];
 
 export interface HiveNavigationProps extends NextraNavbarProps {
@@ -84,12 +86,14 @@ export function HiveNavigation({
               <DeveloperMenu />
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Enterprise</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <EnterpriseMenu />
-            </NavigationMenuContent>
-          </NavigationMenuItem>
+          {!ENTERPRISE_MENU_HIDDEN && (
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Enterprise</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <EnterpriseMenu />
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          )}
           <NavigationMenuItem>
             <NavigationMenuTrigger>Company</NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -184,8 +188,10 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, {}>((props, ref) =>
                     <Logo className="size-7 text-green-1000" />
                   </div>
                   <div>
-                    <p className="text-base font-medium leading-normal text-green-1000">Mesh</p>
-                    <p className="col-start-2 mt-1 text-sm leading-5 text-green-800">
+                    <p className="text-base font-medium leading-normal text-green-1000 dark:[:not(.never-dark)_&]:text-neutral-200">
+                      Mesh
+                    </p>
+                    <p className="col-start-2 mt-1 text-sm leading-5 text-green-800 dark:[:not(.never-dark)_&]:text-neutral-300">
                       {description}
                     </p>
                   </div>
@@ -211,7 +217,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, {}>((props, ref) =>
                     <Logo className="size-8 text-green-1000 dark:[:not(.never-dark)_&]:text-neutral-300" />
                   </div>
                   <div>
-                    <p className="text-base font-medium leading-normal text-green-1000">
+                    <p className="text-base font-medium leading-normal text-green-1000 dark:[:not(.never-dark)_&]:text-neutral-200">
                       {product.name}
                     </p>
                   </div>
@@ -241,7 +247,9 @@ const MenuContentColumns = forwardRef(
             return (
               <Fragment key={index}>
                 {child}
-                {index < array.length - 1 && <div className="w-px bg-beige-200" />}
+                {index < array.length - 1 && (
+                  <div className="w-px bg-beige-200 dark:[:not(.never-dark)_&]:bg-neutral-800" />
+                )}
               </Fragment>
             );
           })}

@@ -84,7 +84,7 @@ export const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      'absolute left-0 top-0 w-auto bg-white data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 [&>:first-child]:p-6',
+      'absolute left-0 top-0 w-auto bg-white data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 [&>:first-child]:p-6 dark:[:not(.never-dark)_&]:bg-neutral-900',
       className,
     )}
     {...rest}
@@ -161,11 +161,11 @@ export const NavigationMenuViewport = React.forwardRef<
     >
       <NavigationMenuPrimitive.Viewport
         className={cn(
-          'relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-[var(--radix-navigation-menu-viewport-width)] origin-[top_center] overflow-hidden rounded-xl border shadow-[0px_16px_32px_-12px_rgba(14,18,27,0.10)] ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-90 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90',
+          'relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-[var(--radix-navigation-menu-viewport-width)] origin-[top_center] overflow-hidden rounded-xl border border-beige-200 shadow-[0px_16px_32px_-12px_rgba(14,18,27,0.10)] ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-90 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 dark:[:not(.never-dark)_&]:border-neutral-800',
           className,
         )}
         style={{
-          transition: 'width 500ms, height 500ms, transform 250ms, opacity 250ms',
+          transition: 'width 450ms, height 450ms, transform 250ms, opacity 250ms',
         }}
         ref={ref}
         {...rest}
