@@ -15,7 +15,7 @@ export default defineConfig([
     entry: {
       index: 'src/index.ts',
       products: 'src/products.ts',
-      logos: 'src/logos/index.ts',
+      logos: 'src/logos/index.tsx',
     },
     loader: {
       '.png': 'copy',
