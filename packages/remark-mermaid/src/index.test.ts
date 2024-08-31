@@ -24,10 +24,12 @@ A
       }"
     `);
   });
-  it('should escape `', async () => {
+  it('should escape', async () => {
     const doc = `\`\`\`mermaid
 graph TD
-A
+Z["API"]
+\\
+\`
 \`\``;
 
     const { result } = await compileMdx(doc);
@@ -42,33 +44,10 @@ A
         if (!Mermaid) _missingMdxReference("Mermaid", true);
         return _jsx(Mermaid, {
           chart: \`graph TD
-      A
-      \\\`\\\`\`
-        });
-      }"
-    `);
-  });
-  it('should escape \\', async () => {
-    const doc = `\`\`\`mermaid
-graph TD
-A
-\\
-\`\`\``;
-
-    const { result } = await compileMdx(doc);
-    expect(
-      result.slice(result.indexOf('function _createMdxContent'), result.indexOf('return {') - 1),
-    ).toMatchInlineSnapshot(`
-      "function _createMdxContent(props) {
-        const {Mermaid} = {
-          ..._provideComponents(),
-          ...props.components
-        };
-        if (!Mermaid) _missingMdxReference("Mermaid", true);
-        return _jsx(Mermaid, {
-          chart: \`graph TD
-      A
+      Z["API"]
+      \\
       \\\`
+      \\\`\\\`\`
         });
       }"
     `);
