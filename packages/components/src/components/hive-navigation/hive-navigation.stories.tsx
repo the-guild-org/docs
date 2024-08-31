@@ -28,8 +28,16 @@ export default {
   },
 } as Meta<HiveNavigationProps>;
 
-export const Default = {
+export const Default: StoryObj = {
   name: 'HiveNavigation',
+  decorators: [
+    // to test sticky header
+    Story => (
+      <div className="h-[120vh]">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Viewport: StoryObj = {

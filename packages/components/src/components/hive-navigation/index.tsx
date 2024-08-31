@@ -74,7 +74,7 @@ export function HiveNavigation({
       </div>
       <NavigationMenu
         className={cn(
-          'hidden w-screen p-6 md:flex dark:[&:not(.never-dark)]:bg-[rgb(var(--nextra-bg))]',
+          'sticky top-0 mx-auto hidden w-screen p-6 md:flex dark:[&:not(.never-dark)]:bg-[rgb(var(--nextra-bg))]',
           className,
         )}
       >
