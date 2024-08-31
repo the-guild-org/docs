@@ -118,7 +118,7 @@ export function HiveNavigation({
         {children}
 
         {typeof Search === 'function' ? (
-          <Search className="ml-4 max-lg:[&_input::placeholder]:text-[0px] max-lg:[&_input]:w-20" />
+          <Search className="ml-4" />
         ) : typeof Search === 'object' && Search && 'props' in Search ? (
           cloneElement(Search, {
             className: cn(Search.props.className, 'ml-4 max-lg:placeholder:hidden'),
