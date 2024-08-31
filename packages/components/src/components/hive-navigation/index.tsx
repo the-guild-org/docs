@@ -1,6 +1,7 @@
-import React, { cloneElement, forwardRef, Fragment, ReactNode } from 'react';
+import React, { forwardRef, Fragment, ReactNode } from 'react';
 import { Navbar as NextraNavbar, useThemeConfig } from 'nextra-theme-docs';
 import { cn } from '../../cn';
+import { renderSlot } from '../../helpers/renderSlot';
 import { GraphQLFoundationLogo, GuildLogo, HiveCombinationMark, TheGuild } from '../../logos';
 import { PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../../products';
 import { Anchor } from '../anchor';
@@ -117,13 +118,7 @@ export function HiveNavigation({
 
         {children}
 
-        {typeof Search === 'function' ? (
-          <Search className="ml-4" />
-        ) : typeof Search === 'object' && Search && 'props' in Search ? (
-          cloneElement(Search, {
-            className: cn(Search.props.className, 'ml-4 max-lg:placeholder:hidden'),
-          })
-        ) : null}
+        {renderSlot(Search, { className: 'ml-4' })}
 
         <CallToAction
           className="ml-4 max-lg:hidden"
