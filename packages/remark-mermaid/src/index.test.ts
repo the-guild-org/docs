@@ -24,7 +24,7 @@ A
       }"
     `);
   });
-  it('should parse invalid ending ``', async () => {
+  it('should escape `', async () => {
     const doc = `\`\`\`mermaid
 graph TD
 A
@@ -48,11 +48,12 @@ A
       }"
     `);
   });
-  it('should parse invalid ending `', async () => {
+  it('should escape \\', async () => {
     const doc = `\`\`\`mermaid
 graph TD
 A
-\``;
+\\
+\`\`\``;
 
     const { result } = await compileMdx(doc);
     expect(
@@ -67,7 +68,7 @@ A
         return _jsx(Mermaid, {
           chart: \`graph TD
       A
-      \\\`\`
+      \\\`
         });
       }"
     `);
