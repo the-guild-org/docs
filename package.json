@@ -2,7 +2,7 @@
   "name": "the-guild-docs-monorepo",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.7.1",
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "build": "turbo run build",
     "build-storybook": "pnpm --filter @theguild/remark-mermaid build && storybook build",
