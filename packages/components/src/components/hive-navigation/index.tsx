@@ -42,6 +42,7 @@ type NextraNavbarProps = Parameters<typeof NextraNavbar>[0];
 export interface HiveNavigationProps extends NextraNavbarProps {
   companyMenuChildren?: ReactNode;
   children?: ReactNode;
+  className?: string;
 }
 /**
  *
@@ -58,6 +59,7 @@ export interface HiveNavigationProps extends NextraNavbarProps {
 export function HiveNavigation({
   companyMenuChildren,
   children,
+  className,
   ...nextraNavbarProps
 }: HiveNavigationProps) {
   // `useThemeConfig` doesn't return anything outside of Nextra, and the provider isn't exported
@@ -69,7 +71,12 @@ export function HiveNavigation({
       <div className="md:hidden">
         <NextraNavbar {...nextraNavbarProps} />
       </div>
-      <NavigationMenu className="hidden w-screen p-6 md:flex dark:[&:not(.never-dark)]:bg-[rgb(var(--nextra-bg))]">
+      <NavigationMenu
+        className={cn(
+          'hidden w-screen p-6 md:flex dark:[&:not(.never-dark)]:bg-[rgb(var(--nextra-bg))]',
+          className,
+        )}
+      >
         <Anchor href="/" className="flex items-center">
           <HiveCombinationMark className="text-green-1000 dark:[&:not(.never-dark)]:text-neutral-200" />
         </Anchor>
