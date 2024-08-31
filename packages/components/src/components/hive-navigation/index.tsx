@@ -72,77 +72,74 @@ export function HiveNavigation({
       <div className="md:hidden">
         <NextraNavbar {...nextraNavbarProps} />
       </div>
-      <NavigationMenu
-        className={cn(
-          'sticky top-0 mx-auto my-2 hidden w-screen bg-white px-6 py-4 md:flex dark:[&:not(.never-dark)]:bg-[rgb(var(--nextra-bg))]',
-          className,
-        )}
-      >
-        <Anchor href="/" className="flex items-center">
-          <HiveCombinationMark className="text-green-1000 dark:[&:not(.never-dark)]:text-neutral-200" />
-        </Anchor>
-        <NavigationMenuList className="lg:ml-16">
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ProductsMenu />
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <DeveloperMenu />
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          {!ENTERPRISE_MENU_HIDDEN && (
+      <div className="sticky top-0 my-2 bg-white px-6 py-4 dark:[&:not(.never-dark)]:bg-[rgb(var(--nextra-bg))]">
+        <NavigationMenu className={cn('mx-auto hidden w-screen md:flex', className)}>
+          <Anchor href="/" className="flex items-center">
+            <HiveCombinationMark className="text-green-1000 dark:[&:not(.never-dark)]:text-neutral-200" />
+          </Anchor>
+          <NavigationMenuList className="lg:ml-16">
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Enterprise</NavigationMenuTrigger>
+              <NavigationMenuTrigger>Products</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <EnterpriseMenu />
+                <ProductsMenu />
               </NavigationMenuContent>
             </NavigationMenuItem>
-          )}
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Company</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <CompanyMenu>{companyMenuChildren}</CompanyMenu>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink href={PRICING_HREF} className="font-medium">
-              Pricing
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-        <div className="flex-1" />
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <DeveloperMenu />
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            {!ENTERPRISE_MENU_HIDDEN && (
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Enterprise</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <EnterpriseMenu />
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            )}
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Company</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <CompanyMenu>{companyMenuChildren}</CompanyMenu>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink href={PRICING_HREF} className="font-medium">
+                Pricing
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+          <div className="flex-1" />
 
-        {children}
+          {children}
 
-        {renderSlot(Search, {
-          className: cn(
-            'relative ml-4 [&_input]:h-[48px] [&_input]:rounded-lg [&_input]:border-green-200 [&_input]:bg-inherit [&_input]:pl-4 [&_input]:pr-8 [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:top-1/2 [&_kbd]:translate-y-[-50%] [&_kbd]:border-none [&_kbd]:bg-green-200 [:not(.never-dark)_&_input]:border dark:[:not(.never-dark)_&_input]:border-neutral-800 dark:[:not(.never-dark)_&_kbd]:bg-neutral-700 [&_:is(input,kbd)]:text-green-700 dark:[:not(.never-dark)_&_:is(input,kbd)]:text-neutral-300 [&_kbd]:my-0',
-          ),
-        })}
+          {renderSlot(Search, {
+            className: cn(
+              'relative ml-4 [&_input]:h-[48px] [&_input]:rounded-lg [&_input]:border-green-200 [&_input]:bg-inherit [&_input]:pl-4 [&_input]:pr-8 [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:top-1/2 [&_kbd]:translate-y-[-50%] [&_kbd]:border-none [&_kbd]:bg-green-200 [:not(.never-dark)_&_input]:border dark:[:not(.never-dark)_&_input]:border-neutral-800 dark:[:not(.never-dark)_&_kbd]:bg-neutral-700 [&_:is(input,kbd)]:text-green-700 dark:[:not(.never-dark)_&_:is(input,kbd)]:text-neutral-300 [&_kbd]:my-0',
+            ),
+          })}
 
-        <CallToAction
-          className="ml-4 max-lg:hidden"
-          variant="tertiary"
-          href="https://the-guild.dev/contact"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={event => {
-            if (typeof window !== 'undefined' && '$crisp' in window) {
-              (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
-              event.preventDefault();
-            }
-          }}
-        >
-          Contact <span className="hidden xl:contents">us</span>
-        </CallToAction>
-        <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
-          Get started <span className="hidden lg:contents">for free</span>
-        </CallToAction>
-      </NavigationMenu>
+          <CallToAction
+            className="ml-4 max-lg:hidden"
+            variant="tertiary"
+            href="https://the-guild.dev/contact"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={event => {
+              if (typeof window !== 'undefined' && '$crisp' in window) {
+                (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
+                event.preventDefault();
+              }
+            }}
+          >
+            Contact <span className="hidden xl:contents">us</span>
+          </CallToAction>
+          <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
+            Get started <span className="hidden lg:contents">for free</span>
+          </CallToAction>
+        </NavigationMenu>
+      </div>
     </>
   );
 }
