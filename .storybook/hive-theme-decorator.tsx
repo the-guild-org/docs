@@ -39,6 +39,9 @@ export const hiveThemeDecorator = (Story: () => React.ReactNode, ctx: StoryConte
             --nextra-bg: 20, 20, 20;
           }
         }
+        .dark {
+          --nextra-bg: 20, 20, 20;
+        }
       `}</style>
     </div>
   );

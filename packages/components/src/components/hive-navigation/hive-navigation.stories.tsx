@@ -33,7 +33,7 @@ export const Default: StoryObj = {
   decorators: [
     // to test sticky header
     Story => (
-      <div className="h-[120vh]">
+      <div className="h-[120vh] bg-gradient-to-b from-beige-500/15 to-transparent">
         <Story />
       </div>
     ),
