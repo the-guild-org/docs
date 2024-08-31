@@ -277,10 +277,14 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, React.HTMLAttribut
           <ul>
             {(
               [
-                ['Documentation', PaperIcon, ''],
-                ['Changelog', ListIcon, ''],
-                ['Status', TargetIcon, ''],
-                ['Product Updates', RightCornerIcon, ''],
+                ['Documentation', PaperIcon, 'https://the-guild.dev/graphql/hive/docs'],
+                ['Changelog', ListIcon, 'https://github.com/kamilkisiela/graphql-hive/releases'],
+                ['Status', TargetIcon, 'https://status.graphql-hive.com/'],
+                [
+                  'Product Updates',
+                  RightCornerIcon,
+                  'https://the-guild.dev/graphql/hive/product-updates',
+                ],
                 ['Blog', PencilIcon, 'https://the-guild.dev/blog'],
                 ['GitHub', GitHubIcon, 'https://github.com/kamilkisiela/graphql-hive'],
               ] as const
