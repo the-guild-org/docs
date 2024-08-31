@@ -72,7 +72,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
         </div>
       </div>
 
-      <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden mix-blend-multiply lg:block dark:[:not(.never-dark)_&]:opacity-5" />
+      <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden mix-blend-multiply lg:block dark:[:not(.never-dark)_&]:opacity-5 dark:[:not(.never-dark)_&]:mix-blend-normal" />
     </footer>
   );
 }
