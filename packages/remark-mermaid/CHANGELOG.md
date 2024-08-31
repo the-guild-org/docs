@@ -1,5 +1,14 @@
 # @theguild/remark-mermaid
 
+## 0.1.1
+
+### Patch Changes
+
+- [#1642](https://github.com/the-guild-org/docs/pull/1642)
+  [`70bbc88`](https://github.com/the-guild-org/docs/commit/70bbc88bde6fdf7520cd3278268bd25fcb75e72d)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - should correctly escape ` and \ in
+  mermaid blocks
+
 ## 0.1.0
 
 ### Minor Changes
