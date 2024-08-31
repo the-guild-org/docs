@@ -45,7 +45,9 @@ const getMermaidElementAST = (value: string) => ({
                   quasis: [
                     {
                       type: 'TemplateElement',
-                      value: { raw: value },
+                      value: {
+                        raw: value.replaceAll('`', '\\`'),
+                      },
                     },
                   ],
                 },

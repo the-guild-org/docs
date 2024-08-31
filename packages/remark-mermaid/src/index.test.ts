@@ -43,7 +43,7 @@ A
         return _jsx(Mermaid, {
           chart: \`graph TD
       A
-      \`\`\`
+      \\\`\\\`\`
         });
       }"
     `);
@@ -67,7 +67,7 @@ A
         return _jsx(Mermaid, {
           chart: \`graph TD
       A
-      \`\`
+      \\\`\`
         });
       }"
     `);
