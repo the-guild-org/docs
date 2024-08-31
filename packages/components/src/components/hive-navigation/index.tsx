@@ -118,7 +118,11 @@ export function HiveNavigation({
 
         {children}
 
-        {renderSlot(Search, { className: 'ml-4' })}
+        {renderSlot(Search, {
+          className: cn(
+            'relative ml-4 [&_input]:h-[48px] [&_input]:rounded-lg [&_input]:border-green-200 [&_input]:bg-inherit [&_input]:pl-4 [&_input]:pr-8 [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:top-1/2 [&_kbd]:translate-y-[-50%] [&_kbd]:border-none [&_kbd]:bg-green-200 [:not(.never-dark)_&_input]:border dark:[:not(.never-dark)_&_input]:border-neutral-800 dark:[:not(.never-dark)_&_kbd]:bg-neutral-800 [&_:is(input,kbd)]:text-green-700 dark:[:not(.never-dark)_&_:is(input,kbd)]:text-neutral-300',
+          ),
+        })}
 
         <CallToAction
           className="ml-4 max-lg:hidden"
