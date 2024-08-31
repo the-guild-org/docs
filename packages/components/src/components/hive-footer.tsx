@@ -19,7 +19,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
   return (
     <footer
       className={cn(
-        'relative bg-white px-4 py-6 text-green-800 xl:px-[120px] dark:[&:not(.never-dark)]:bg-[rgb(var(--nextra-bg))] dark:[&:not(.never-dark)]:text-neutral-400',
+        'relative px-4 py-6 text-green-800 xl:px-[120px] dark:[&:not(.never-dark)]:text-neutral-400',
         className,
       )}
     >
