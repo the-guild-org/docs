@@ -23,7 +23,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
         className,
       )}
     >
-      <div className="grid max-w-[75rem] grid-cols-1 gap-x-6 max-lg:gap-y-16 sm:grid-cols-4">
+      <div className="grid max-w-[75rem] grid-cols-1 gap-x-6 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10">
         <div className="max-lg:col-span-full lg:pt-[72px]">
           <Anchor href="https://the-guild.dev" sameSite={sameSite} {...logo}>
             <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:[:not(.never-dark)_&]:text-white" />
