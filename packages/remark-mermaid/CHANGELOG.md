@@ -1,5 +1,14 @@
 # @theguild/remark-mermaid
 
+## 0.1.2
+
+### Patch Changes
+
+- [#1645](https://github.com/the-guild-org/docs/pull/1645)
+  [`e380c22`](https://github.com/the-guild-org/docs/commit/e380c22d103bfbb6d0479615de12a13b5a42b409)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - add `types` field in `exports` object in
+  `package.json`
+
 ## 0.1.1
 
 ### Patch Changes
