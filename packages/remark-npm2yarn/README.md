@@ -18,7 +18,7 @@ npm i @theguild/remark-npm2yarn
 import { remark } from 'remark'
 import { remarkNpm2Yarn } from 'remark-npm2yarn'
 
-remark.use(remarkNpm2Yarn, {
+remark().use(remarkNpm2Yarn, {
   packageName: '<string>', // e.g. 'nextra/components'
   tabNamesProp: '<string>', // e.g. 'items'
   storageKey: '<string>' // local storage key, e.g. 'selectedPackageManager'
