@@ -2,4 +2,4 @@
 '@theguild/remark-mermaid': patch
 ---
 
-should correctly escape '`' if code block ends invalid
+should correctly escape ` and \ in mermaid blocks

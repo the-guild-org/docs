@@ -18,8 +18,7 @@ A
         };
         if (!Mermaid) _missingMdxReference("Mermaid", true);
         return _jsx(Mermaid, {
-          chart: \`graph TD
-      A\`
+          chart: "graph TD\\nA"
         });
       }"
     `);
@@ -30,7 +29,7 @@ graph TD
 Z["API"]
 \\
 \`
-\`\``;
+\`\`\``;
 
     const { result } = await compileMdx(doc);
     expect(
@@ -43,11 +42,7 @@ Z["API"]
         };
         if (!Mermaid) _missingMdxReference("Mermaid", true);
         return _jsx(Mermaid, {
-          chart: \`graph TD
-      Z["API"]
-      \\
-      \\\`
-      \\\`\\\`\`
+          chart: "graph TD\\nZ[\\"API\\"]\\n\\\\\\n\`"
         });
       }"
     `);
