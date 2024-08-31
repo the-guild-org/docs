@@ -1,4 +1,3 @@
-import * as fs from 'fs/promises';
 import svgr from 'esbuild-plugin-svgr';
 import { defineConfig, Options } from 'tsup';
 import tsconfig from './tsconfig.json';
