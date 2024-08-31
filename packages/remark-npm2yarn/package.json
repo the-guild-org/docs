@@ -24,7 +24,7 @@
     "types:check": "tsc --noEmit"
   },
   "dependencies": {
-    "npm-to-yarn": "^2.1.0",
+    "npm-to-yarn": "^3.0.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
