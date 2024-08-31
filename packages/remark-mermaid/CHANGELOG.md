@@ -1,5 +1,23 @@
 # @theguild/remark-mermaid
 
+## 0.1.0
+
+### Minor Changes
+
+- [#1640](https://github.com/the-guild-org/docs/pull/1640)
+  [`12aee5b`](https://github.com/the-guild-org/docs/commit/12aee5bc570b611a36d192c2bc3cd8936e52778c)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - replace
+  `require.resolve('@theguild/remark-mermaid/mermaid')` by `'@theguild/remark-mermaid/mermaid'` to
+  make it possible compile mermaid code blocks in browser
+
+### Patch Changes
+
+- [#1627](https://github.com/the-guild-org/docs/pull/1627)
+  [`1233d55`](https://github.com/the-guild-org/docs/commit/1233d55cc1c1a0cd442447b8db7aef4606222304)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`mermaid@^11.0.0` ↗︎](https://www.npmjs.com/package/mermaid/v/11.0.0) (from
+    `^10.2.2`, in `dependencies`)
+
 ## 0.0.7
 
 ### Patch Changes

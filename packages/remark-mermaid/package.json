@@ -1,6 +1,6 @@
 {
   "name": "@theguild/remark-mermaid",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "type": "module",
   "description": "Remark plugin for replacing ```mermaid code blocks with react `<Mermaid />` component",
   "repository": {
