@@ -20,6 +20,14 @@
       "default": "./dist/*.js"
     }
   },
+  "typesVersions": {
+    "*": {
+      "mermaid": [
+        "./dist/mermaid.d.ts"
+      ]
+    }
+  },
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
