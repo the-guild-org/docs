@@ -19,7 +19,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
   return (
     <footer
       className={cn(
-        'relative bg-[rgb(var(--nextra-bg))] px-4 py-6 text-green-800 xl:px-[120px] dark:[&:not(.never-dark)]:text-neutral-400',
+        'relative bg-white px-4 py-6 text-green-800 xl:px-[120px] dark:[&:not(.never-dark)]:bg-[rgb(var(--nextra-bg))] dark:[&:not(.never-dark)]:text-neutral-400',
         className,
       )}
     >
@@ -72,7 +72,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
         </div>
       </div>
 
-      <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden lg:block dark:[:not(.never-dark)_&]:opacity-5" />
+      <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden mix-blend-multiply lg:block dark:[:not(.never-dark)_&]:opacity-5" />
     </footer>
   );
 }
@@ -100,7 +100,7 @@ function List({
         ))}
       </ul>
     </div>
-);
+  );
 }
 
 const ENTERPRISE: ILink[] = [
