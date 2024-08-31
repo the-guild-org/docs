@@ -9,17 +9,15 @@
   },
   "author": "Dimitri POSTOLOV <dmytropostolov@gmail.com> (https://github.com/B2o5T)",
   "license": "MIT",
-  "main": "./dist/index.js",
   "exports": {
     "./package.json": "./package.json",
-    ".": "./dist/index.js",
-    "./*": "./dist/*.js"
-  },
-  "typesVersions": {
-    "*": {
-      "mermaid": [
-        "./dist/mermaid.d.ts"
-      ]
+    ".": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": {
+      "default": "./dist/*.js",
+      "types": "./dist/*.d.ts"
     }
   },
   "files": [
