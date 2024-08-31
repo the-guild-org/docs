@@ -1,11 +1,7 @@
-import { createRequire } from 'node:module';
 import { Code, Root } from 'mdast';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
 
-const require = createRequire(import.meta.url);
-
-const COMPONENT_PATH = require.resolve('@theguild/remark-mermaid/mermaid');
 const COMPONENT_NAME = 'Mermaid';
 
 const MERMAID_IMPORT_AST = {
@@ -22,7 +18,7 @@ const MERMAID_IMPORT_AST = {
               local: { type: 'Identifier', name: COMPONENT_NAME },
             },
           ],
-          source: { type: 'Literal', value: COMPONENT_PATH },
+          source: { type: 'Literal', value: '@theguild/remark-mermaid/mermaid' },
         },
       ],
     },
