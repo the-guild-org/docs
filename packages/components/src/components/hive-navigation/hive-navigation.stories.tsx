@@ -40,6 +40,13 @@ export const Default: StoryObj = {
   ],
 };
 
+export const NarrowMaxWidth: StoryObj = {
+  ...Default,
+  args: {
+    className: 'max-w-[75rem]',
+  },
+};
+
 export const Viewport: StoryObj = {
   render() {
     return (

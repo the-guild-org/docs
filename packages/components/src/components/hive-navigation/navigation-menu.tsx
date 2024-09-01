@@ -57,9 +57,10 @@ export const NavigationMenuTrigger = React.forwardRef<
     )}
     onPointerOver={event => {
       rest.onPointerOver?.(event);
+      const container = document.getElementById(CONTAINER_ID);
       const viewport = document.getElementById(VIEWPORT_ID);
-      if (!viewport || !(viewport instanceof HTMLElement)) return;
-      let newX = getTransformX(event.currentTarget, viewport);
+      if (!viewport || !(viewport instanceof HTMLElement) || !container) return;
+      let newX = getTransformX(event.currentTarget, viewport, container);
       if (!viewport.style.transition) {
         setTimeout(() => {
           // First transition will be immediate.
@@ -148,7 +149,7 @@ export const NavigationMenuViewport = React.forwardRef<
 
     const firstCollectionItem = container.querySelector('[data-radix-collection-item]');
     if (firstCollectionItem && firstCollectionItem instanceof HTMLElement) {
-      viewport.style.transform = `translateX(${getTransformX(firstCollectionItem, viewport)}px)`;
+      viewport.style.transform = `translateX(${getTransformX(firstCollectionItem, viewport, container)}px)`;
     }
   }, []);
   return (
@@ -192,10 +193,12 @@ export const NavigationMenuIndicator = React.forwardRef<
 ));
 NavigationMenuIndicator.displayName = NavigationMenuPrimitive.Indicator.displayName;
 
-function getTransformX(element: HTMLElement, viewport: HTMLElement) {
+function getTransformX(element: HTMLElement, viewport: HTMLElement, container: HTMLElement) {
   const boundingBox = element.getBoundingClientRect();
+  const containerLeft = container.getBoundingClientRect().left;
+  const left = boundingBox.left - containerLeft;
   const offsetX = -32;
-  let newX = boundingBox.left + offsetX;
+  let newX = left + offsetX;
   if (newX + viewport.offsetWidth > window.innerWidth) {
     newX = window.innerWidth - viewport.offsetWidth + offsetX;
   }
