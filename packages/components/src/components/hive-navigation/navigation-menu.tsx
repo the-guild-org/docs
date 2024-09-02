@@ -24,6 +24,7 @@ export const NavigationMenu = React.forwardRef<
   >
     {children}
     <NavigationMenuViewport forceMount={forceMount} />
+    <RemoveMotionIfPreferred />
   </NavigationMenuPrimitive.Root>
 ));
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName;
@@ -203,4 +204,13 @@ function getTransformX(element: HTMLElement, viewport: HTMLElement, container: H
     newX = window.innerWidth - viewport.offsetWidth + offsetX;
   }
   return newX;
+}
+
+// We're removing fade-in and fade-out too, because without the slide animations they make the content less readable.
+function RemoveMotionIfPreferred() {
+  return (
+    <style>
+      {`@media (prefers-reduced-motion: reduce) { #${CONTAINER_ID} * { animation-duration: 0ms !important; transition-duration: 0ms !important; } }`}
+    </style>
+  );
 }
