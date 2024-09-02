@@ -46,7 +46,7 @@ export interface HiveNavigationProps extends NextraNavbarProps {
   /**
    * We change links to relative based on what product we're in.
    */
-  productName: string & {};
+  productName: string;
 }
 /**
  *
