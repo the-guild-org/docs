@@ -24,6 +24,7 @@ export default {
   component: HiveNavigation,
   decorators: [hiveThemeDecorator, nextraThemeDocsCtxDecorator],
   args: {
+    productName: 'Hive',
     items: [{ name: 'Mobile Item 1', title: 'Mobile Item 1', route: '/', items: {}, type: 'link' }],
   },
 } as Meta<HiveNavigationProps>;
@@ -92,7 +93,7 @@ export const Developer: StoryObj = {
   render() {
     return (
       <NavigationMenu>
-        <DeveloperMenu />
+        <DeveloperMenu isHive={false} />
       </NavigationMenu>
     );
   },

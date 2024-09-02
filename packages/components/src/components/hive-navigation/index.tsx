@@ -33,7 +33,6 @@ import {
 
 export * from './graphql-conf-card';
 
-const PRICING_HREF = 'https://the-guild.dev/graphql/hive#pricing';
 const EXPLORE_HREF = 'https://github.com/the-guild-org';
 
 const ENTERPRISE_MENU_HIDDEN = true;
@@ -44,6 +43,10 @@ export interface HiveNavigationProps extends NextraNavbarProps {
   companyMenuChildren?: ReactNode;
   children?: ReactNode;
   className?: string;
+  /**
+   * We change links to relative based on what product we're in.
+   */
+  productName: string & {};
 }
 /**
  *
@@ -61,11 +64,14 @@ export function HiveNavigation({
   companyMenuChildren,
   children,
   className,
+  productName,
   ...nextraNavbarProps
 }: HiveNavigationProps) {
   // `useThemeConfig` doesn't return anything outside of Nextra, and the provider isn't exported
   const themeConfig = useThemeConfig() as ReturnType<typeof useThemeConfig> | undefined;
   const Search = themeConfig?.search?.component;
+
+  const isHive = productName === 'Hive';
 
   return (
     <>
@@ -92,7 +98,7 @@ export function HiveNavigation({
             <NavigationMenuItem>
               <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <DeveloperMenu />
+                <DeveloperMenu isHive={isHive} />
               </NavigationMenuContent>
             </NavigationMenuItem>
             {!ENTERPRISE_MENU_HIDDEN && (
@@ -110,7 +116,10 @@ export function HiveNavigation({
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href={PRICING_HREF} className="font-medium">
+              <NavigationMenuLink
+                href={isHive ? '/#pricing' : 'https://the-guild.dev/graphql/hive#pricing'}
+                className="font-medium"
+              >
                 Pricing
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -267,25 +276,34 @@ const MenuContentColumns = forwardRef(
   },
 );
 
+interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
+  isHive: boolean;
+}
 /**
  * @internal
  */
-export const DeveloperMenu = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLElement>>(
-  (props, ref) => {
+export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps>(
+  ({ isHive, ...rest }, ref) => {
     return (
-      <MenuContentColumns {...props} ref={ref}>
+      <MenuContentColumns {...rest} ref={ref}>
         <div className="w-[188px]">
           <ColumnLabel>Developer</ColumnLabel>
           <ul>
             {(
               [
-                ['Documentation', PaperIcon, 'https://the-guild.dev/graphql/hive/docs'],
+                [
+                  'Documentation',
+                  PaperIcon,
+                  isHive ? '/docs' : 'https://the-guild.dev/graphql/hive/docs',
+                ],
                 ['Changelog', ListIcon, 'https://github.com/kamilkisiela/graphql-hive/releases'],
                 ['Status', TargetIcon, 'https://status.graphql-hive.com/'],
                 [
                   'Product Updates',
                   RightCornerIcon,
-                  'https://the-guild.dev/graphql/hive/product-updates',
+                  isHive
+                    ? '/product-updates'
+                    : 'https://the-guild.dev/graphql/hive/product-updates',
                 ],
                 ['Blog', PencilIcon, 'https://the-guild.dev/blog'],
                 ['GitHub', GitHubIcon, 'https://github.com/kamilkisiela/graphql-hive'],
@@ -395,7 +413,7 @@ export function EnterpriseMenu() {
     <ul>
       {(
         [
-          // TODO: Chris
+          // TODO: Enable these when the pages are created.
           [AccountBox, 'Customer Stories', ''],
           [BardIcon, 'Why GraphQL', ''],
           [HonourIcon, 'Professional Services', ''],
