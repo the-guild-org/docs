@@ -72,7 +72,12 @@ export function HiveNavigation({
       <div className="md:hidden">
         <NextraNavbar {...nextraNavbarProps} />
       </div>
-      <div className="sticky top-0 z-20 my-2 bg-white px-6 py-4 text-green-1000 dark:bg-[rgb(var(--nextra-bg))] dark:text-neutral-200">
+      <div
+        className={cn(
+          'sticky top-0 z-20 my-2 bg-white px-6 py-4 text-green-1000 dark:bg-[rgb(var(--nextra-bg))] dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
+          className?.includes('light') && 'light',
+        )}
+      >
         <NavigationMenu className={cn('mx-auto hidden w-screen md:flex', className)}>
           <Anchor href="/" className="flex items-center">
             <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
