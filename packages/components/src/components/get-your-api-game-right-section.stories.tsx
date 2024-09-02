@@ -8,6 +8,7 @@ export default {
   decorators: [hiveThemeDecorator],
   parameters: {
     padding: true,
+    forcedLightMode: true,
   },
 } as Meta;
 

@@ -2,6 +2,7 @@ import React from 'react';
 // @ts-expect-error We have `next` because of `@theguild/components`.
 import localFont from 'next/font/local';
 import type { StoryContext } from '@storybook/react';
+import { cn } from '../packages/components/src/cn';
 
 const neueMontreal = localFont({
   // TODO: Swap to variable version.
@@ -21,16 +22,22 @@ const neueMontreal = localFont({
 
 export const hiveThemeDecorator = (Story: () => React.ReactNode, ctx: StoryContext) => {
   return (
-    <div
-      data-hive-theme-decorator
-      className={`${neueMontreal.variable}`}
-      style={{
-        fontFamily: 'var(--font-sans)',
-        padding: ctx.parameters.padding === true ? '2rem' : ctx.parameters.padding,
-      }}
-    >
-      <Story />
-      <style>{`
+    <>
+      <div
+        data-hive-theme-decorator
+        className={cn(
+          'text-green-1000',
+          neueMontreal.variable,
+          ctx.parameters.forcedLightMode ? 'light' : '',
+        )}
+        style={{
+          fontFamily: 'var(--font-sans)',
+          padding: ctx.parameters.padding === true ? '2rem' : ctx.parameters.padding,
+          backgroundColor: ctx.parameters.forcedLightMode ? 'white' : '',
+        }}
+      >
+        <Story />
+        <style>{`
         :root {
           --nextra-bg: 255, 255, 255;
         }
@@ -43,6 +50,10 @@ export const hiveThemeDecorator = (Story: () => React.ReactNode, ctx: StoryConte
           --nextra-bg: 20, 20, 20;
         }
       `}</style>
-    </div>
+      </div>
+      <small className="absolute right-2 top-2 hidden text-[10px] text-black dark:block">
+        forced light mode
+      </small>
+    </>
   );
 };

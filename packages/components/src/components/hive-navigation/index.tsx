@@ -72,7 +72,7 @@ export function HiveNavigation({
       <div className="md:hidden">
         <NextraNavbar {...nextraNavbarProps} />
       </div>
-      <div className="sticky top-0 z-20 my-2 bg-white px-6 py-4 dark:bg-[rgb(var(--nextra-bg))]">
+      <div className="sticky top-0 z-20 my-2 bg-white px-6 py-4 text-green-1000 dark:bg-[rgb(var(--nextra-bg))] dark:text-neutral-200">
         <NavigationMenu className={cn('mx-auto hidden w-screen md:flex', className)}>
           <Anchor href="/" className="flex items-center">
             <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
@@ -115,8 +115,9 @@ export function HiveNavigation({
           {children}
 
           {renderSlot(Search, {
+            // The && and :is(x) selector bump the specificity to 0-2-2 to override Nextra styles.
             className: cn(
-              'relative ml-4 [&_input]:h-[48px] [&_input]:rounded-lg [&_input]:border-green-200 [&_input]:bg-inherit [&_input]:pl-4 [&_input]:pr-8 [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:top-1/2 [&_kbd]:translate-y-[-50%] [&_kbd]:border-none [&_kbd]:bg-green-200 [&_input]:border dark:[&_input]:border-neutral-800 dark:[&_kbd]:bg-neutral-700 [&_:is(input,kbd)]:text-green-700 dark:[&_:is(input,kbd)]:text-neutral-300 [&_kbd]:my-0',
+              'relative ml-4 [&&_input:is(input)]:h-[48px] [&&_input:is(input)]:rounded-lg [&&_input:is(input)]:border-green-200 [&&_input:is(input)]:bg-inherit [&&_input:is(input)]:pl-4 [&&_input:is(input)]:pr-8 [&&_kbd:is(kbd)]:absolute [&&_kbd:is(kbd)]:right-4 [&&_kbd:is(kbd)]:top-1/2 [&&_kbd:is(kbd)]:translate-y-[-50%] [&&_kbd:is(kbd)]:border-none [&&_kbd:is(kbd)]:bg-green-200 [&&_input:is(input)]:border dark:[&&_input:is(input)]:border-neutral-800 dark:[&&_kbd:is(kbd)]:bg-neutral-700 [&&_:is(input,kbd):is(input,kbd)]:text-green-700 dark:[&&_:is(input,kbd):is(input,kbd)]:text-neutral-300 [&&_kbd:is(kbd)]:my-0',
             ),
           })}
 
