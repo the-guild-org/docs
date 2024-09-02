@@ -35,7 +35,7 @@ export const NavigationMenuList = React.forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      'group flex flex-1 list-none items-center rounded-lg border-beige-200 px-3 lg:border dark:[:not(.never-dark)_&]:border-neutral-700',
+      'group flex flex-1 list-none items-center rounded-lg border-beige-200 px-3 dark:border-neutral-700 lg:border',
       className,
     )}
     {...rest}
@@ -52,7 +52,7 @@ export const NavigationMenuTrigger = React.forwardRef<
   <NavigationMenuPrimitive.Trigger
     ref={ref}
     className={cn(
-      'cursor-default p-3 font-medium leading-normal text-green-800 aria-expanded:text-green-1000 dark:[&:not(.never-dark)]:text-neutral-300 dark:[&:not(.never-dark)]:aria-expanded:text-neutral-100',
+      'cursor-default p-3 font-medium leading-normal text-green-800 aria-expanded:text-green-1000 dark:text-neutral-300 dark:aria-expanded:text-neutral-100',
       className,
     )}
     onPointerOver={event => {
@@ -85,7 +85,7 @@ export const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      'absolute left-0 top-0 w-auto bg-white data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 [&>:first-child]:p-6 dark:[:not(.never-dark)_&]:bg-neutral-900',
+      'absolute left-0 top-0 w-auto bg-white data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 dark:bg-neutral-900 [&>:first-child]:p-6',
       className,
     )}
     {...rest}
@@ -115,7 +115,7 @@ export const NavigationMenuLink = React.forwardRef<
       <Anchor
         href={href}
         className={cn(
-          '[data-active="true"]:text-green-1000 rounded-lg p-3 leading-normal text-green-800 transition-colors hover:text-green-1000 [&:hover>svg]:opacity-100 dark:[&:not(.never-dark)]:text-neutral-300 dark:[&:not(.never-dark)]:hover:text-neutral-100',
+          '[data-active="true"]:text-green-1000 rounded-lg p-3 leading-normal text-green-800 transition-colors hover:text-green-1000 dark:text-neutral-300 dark:hover:text-neutral-100 [&:hover>svg]:opacity-100',
           arrow && 'flex items-center',
           className,
         )}
@@ -162,7 +162,7 @@ export const NavigationMenuViewport = React.forwardRef<
     >
       <NavigationMenuPrimitive.Viewport
         className={cn(
-          'relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-[var(--radix-navigation-menu-viewport-width)] origin-[top_center] overflow-hidden rounded-xl border border-beige-200 bg-white shadow-[0px_16px_32px_-12px_rgba(14,18,27,0.10)] ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-90 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 dark:[:not(.never-dark)_&]:border-neutral-800 dark:[:not(.never-dark)_&]:bg-neutral-900',
+          'relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-[var(--radix-navigation-menu-viewport-width)] origin-[top_center] overflow-hidden rounded-xl border border-beige-200 bg-white shadow-[0px_16px_32px_-12px_rgba(14,18,27,0.10)] ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-90 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 dark:border-neutral-800 dark:bg-neutral-900',
           className,
         )}
         style={{

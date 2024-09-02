@@ -47,6 +47,17 @@ export const NarrowMaxWidth: StoryObj = {
   },
 };
 
+export const ForcedLightMode: StoryObj = {
+  ...Default,
+  decorators: [
+    Story => (
+      <div className="light">
+        <Story />
+      </div>
+    ),
+  ],
+};
+
 export const Viewport: StoryObj = {
   render() {
     return (
