@@ -42,7 +42,7 @@ export const NavigationMenuList = forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      'group flex flex-1 list-none items-center rounded-lg border-beige-200 px-3 lg:border dark:border-neutral-700',
+      'group flex flex-1 list-none items-center rounded-lg border-beige-200 px-3 dark:border-neutral-700 lg:border',
       className,
     )}
     {...rest}
@@ -122,7 +122,7 @@ export const NavigationMenuLink = forwardRef<
       <Anchor
         href={href}
         className={cn(
-          '[data-active="true"]:text-green-1000 rounded-lg p-3 leading-normal text-green-800 transition-colors hover:text-green-1000 dark:text-neutral-300 dark:hover:text-neutral-100 [&:hover>svg]:opacity-100',
+          '[data-active="true"]:text-green-1000 rounded-lg p-3 leading-normal text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-300 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-100 [&:hover>svg]:opacity-100',
           arrow && 'flex items-center',
           className,
         )}
