@@ -36,12 +36,12 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
             <List heading="Company" links={COMPANY} />
             <a
               href="https://the-guild.dev/graphql/hive#pricing"
-              className="font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
+              className="-m-2 p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
             >
               Pricing
             </a>
             <a
-              className="font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
+              className="-m-2 p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
               href="https://the-guild.dev/contact"
               onClick={event => {
                 if (typeof window !== 'undefined' && '$crisp' in window) {
