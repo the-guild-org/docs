@@ -65,7 +65,7 @@ function SecondaryCards() {
             key={product.name}
             className="shrink-0 basis-[283.5px] rounded-2xl bg-beige-200 text-green-1000 transition-colors duration-500 hover:bg-beige-400 max-sm:min-w-[283.5px]"
           >
-            <a href={product.href} className="relative flex h-full flex-col p-8">
+            <a href={product.href} className="relative flex h-full flex-col rounded-[inherit] p-8">
               <p>{product.name}</p>
               <p className="mt-2 text-sm text-green-800">{product.title}</p>
               <div className="h-8 grow" />
