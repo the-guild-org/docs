@@ -70,7 +70,6 @@ export function HiveNavigation({
   const Search = themeConfig?.search?.component;
 
   const mobileMenu = useMenu();
-  console.log({ mobileMenu });
 
   const isHive = productName === 'Hive';
 
