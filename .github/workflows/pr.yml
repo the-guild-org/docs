@@ -1,9 +1,8 @@
 name: PR
 
 on:
+  # eslint-disable-next-line yml/no-empty-mapping-value
   pull_request:
-    branches:
-      - main
 
 jobs:
   dependencies:
