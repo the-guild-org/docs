@@ -53,7 +53,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
               Contact Us
             </a>
           </div>
-          <CSAStarLevelOneIcon className="size-20 sm:col-start-[-1] lg:col-start-[-2] lg:size-[120px] dark:opacity-95" />
+          <CSAStarLink className="sm:col-start-[-1] lg:col-start-[-2]" />
         </div>
         <div className="col-span-full flex flex-row flex-wrap justify-between gap-x-[inherit] gap-y-8 lg:w-full lg:pb-2 lg:pt-8">
           <div className="flex gap-6 lg:order-1">
@@ -233,5 +233,21 @@ function DecorationArch(props: React.SVGProps<SVGSVGElement>) {
         </linearGradient>
       </defs>
     </svg>
+  );
+}
+
+function CSAStarLink({ className }: { className?: string }) {
+  return (
+    <a
+      href="https://cloudsecurityalliance.org/star/registry/software-products-guild-ltd-the-guild/services/graphql-hive"
+      target="_blank"
+      rel="noreferrer noopener"
+      className={cn(
+        'w-fit rounded-full focus-visible:ring-2 focus-visible:ring-offset-4',
+        className,
+      )}
+    >
+      <CSAStarLevelOneIcon className="size-20 lg:size-[120px] dark:opacity-95" />
+    </a>
   );
 }
