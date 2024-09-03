@@ -7,7 +7,7 @@ export const InfoList = ({ title, items, className }: IInfoListProps): ReactElem
   <section className={clsx('bg-white dark:bg-dark', className)}>
     <div className="container max-w-[90rem] py-12">
       {title && (
-        <h2 className="mb-4 mt-0 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">
+        <h2 className="mb-4 mt-0 text-2xl font-bold text-black md:text-3xl dark:text-gray-50">
           {title}
         </h2>
       )}

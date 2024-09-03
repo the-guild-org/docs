@@ -42,7 +42,7 @@ export const NavigationMenuList = forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      'group flex flex-1 list-none items-center rounded-lg border-beige-200 px-3 dark:border-neutral-700 lg:border',
+      'group flex flex-1 list-none items-center rounded-lg border-beige-200 px-3 lg:border dark:border-neutral-700',
       className,
     )}
     {...rest}

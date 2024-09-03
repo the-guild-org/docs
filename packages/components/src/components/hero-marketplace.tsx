@@ -64,7 +64,7 @@ export const HeroMarketplace = ({
           <Image className="mx-auto w-auto" src={IllustrationMobile} alt="Products List" />
         </picture>
         <div className="relative z-[1]">
-          <h2 className="mb-2.5 max-w-lg text-2xl font-bold text-white dark:text-gray-50 md:text-3xl">
+          <h2 className="mb-2.5 max-w-lg text-2xl font-bold text-white md:text-3xl dark:text-gray-50">
             {title}
           </h2>
           <p className="max-w-lg text-base text-gray-300 opacity-70">{description}</p>

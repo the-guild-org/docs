@@ -10,7 +10,7 @@ export default {
 
 export const ColorPalette: StoryObj = {
   render() {
-    const {colors} = tailwindConfig.theme.extend;
+    const { colors } = tailwindConfig.theme.extend;
 
     return (
       <>
