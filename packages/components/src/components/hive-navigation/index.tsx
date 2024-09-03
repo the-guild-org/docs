@@ -68,15 +68,7 @@ export function HiveNavigation({
   const themeConfig = useThemeConfig() as ReturnType<typeof useThemeConfig> | undefined;
   const Search = themeConfig?.search?.component;
 
-  const mobileMenu = useMenu();
-
   const isHive = productName === 'Hive';
-
-  const logo = (
-    <Anchor href="/" className="-m-2 flex items-center rounded-md p-2">
-      <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
-    </Anchor>
-  );
 
   return (
     <div
@@ -87,25 +79,13 @@ export function HiveNavigation({
     >
       {/* mobile menu */}
       <div className="flex items-center justify-between md:hidden">
-        {logo}
-        <button
-          type="button"
-          aria-label="Menu"
-          className="md:_hidden hover -m-1 rounded-lg bg-transparent p-1 text-green-1000 focus-visible:outline-none focus-visible:ring active:bg-beige-200 dark:text-neutral-200 dark:active:bg-neutral-800"
-          onClick={() => mobileMenu.setMenu(!mobileMenu.menu)}
-        >
-          <MenuIcon
-            className={cn(
-              { open: mobileMenu.menu },
-              'size-6 stroke-current [&_path]:[stroke-linecap:square]',
-            )}
-          />
-        </button>
+        <HiveLogoLink />
+        <HamburgerButton />
       </div>
 
       {/* desktop menu */}
       <NavigationMenu className={cn('mx-auto hidden md:flex', className)}>
-        {logo}
+        <HiveLogoLink />
         <NavigationMenuList className="lg:ml-16">
           <NavigationMenuItem>
             <NavigationMenuTrigger>Products</NavigationMenuTrigger>
@@ -481,5 +461,30 @@ export function CompanyMenu({ children }: { children: React.ReactNode }) {
       </div>
       {children && <div>{children}</div>}
     </MenuContentColumns>
+  );
+}
+
+function HiveLogoLink() {
+  return (
+    <Anchor href="/" className="-m-2 flex items-center rounded-md p-2">
+      <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
+    </Anchor>
+  );
+}
+
+function HamburgerButton() {
+  const { menu, setMenu } = useMenu();
+
+  return (
+    <button
+      type="button"
+      aria-label="Menu"
+      className="md:_hidden hover nextra-hamburger -m-1 rounded-lg bg-transparent p-1 text-green-1000 focus-visible:outline-none focus-visible:ring active:bg-beige-200 dark:text-neutral-200 dark:active:bg-neutral-800"
+      onClick={() => setMenu(!menu)}
+    >
+      <MenuIcon
+        className={cn({ open: menu }, 'size-6 stroke-current [&_path]:[stroke-linecap:square]')}
+      />
+    </button>
   );
 }
