@@ -51,9 +51,11 @@ export const hiveThemeDecorator = (Story: () => React.ReactNode, ctx: StoryConte
         }
       `}</style>
       </div>
-      <small className="absolute right-2 top-2 hidden text-[10px] text-black dark:block">
-        forced light mode
-      </small>
+      {ctx.parameters.forcedLightMode && (
+        <small className="absolute right-2 top-2 hidden text-[10px] text-black dark:block">
+          forced light mode
+        </small>
+      )}
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React, { forwardRef, Fragment, ReactNode } from 'react';
-import { Navbar as NextraNavbar, useThemeConfig } from 'nextra-theme-docs';
+import { useMenu, useThemeConfig } from 'nextra-theme-docs';
+import { MenuIcon } from 'nextra/icons';
 import { cn } from '../../cn';
 import { renderSlot } from '../../helpers/render-slot';
 import { GraphQLFoundationLogo, GuildLogo, HiveCombinationMark, TheGuild } from '../../logos';
@@ -15,7 +16,6 @@ import {
   GroupIcon,
   HiveIcon,
   HonourIcon,
-  ListIcon,
   PaperIcon,
   PencilIcon,
   RightCornerIcon,
@@ -37,9 +37,7 @@ const EXPLORE_HREF = 'https://github.com/the-guild-org';
 
 const ENTERPRISE_MENU_HIDDEN = true;
 
-type NextraNavbarProps = Parameters<typeof NextraNavbar>[0];
-
-export interface HiveNavigationProps extends NextraNavbarProps {
+export interface HiveNavigationProps {
   companyMenuChildren?: ReactNode;
   children?: ReactNode;
   className?: string;
@@ -71,23 +69,46 @@ export function HiveNavigation({
   const themeConfig = useThemeConfig() as ReturnType<typeof useThemeConfig> | undefined;
   const Search = themeConfig?.search?.component;
 
+  const mobileMenu = useMenu();
+  console.log({ mobileMenu });
+
   const isHive = productName === 'Hive';
+
+  const logo = (
+    <Anchor href="/" className="-m-2 flex items-center rounded-md p-2">
+      <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
+    </Anchor>
+  );
 
   return (
     <>
-      <div className="md:hidden">
-        <NextraNavbar {...nextraNavbarProps} />
-      </div>
       <div
         className={cn(
-          'sticky top-0 z-20 my-2 bg-white px-6 py-4 text-green-1000 dark:bg-[rgb(var(--nextra-bg))] dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
+          'sticky top-0 z-20 bg-white px-6 py-4 text-green-1000 dark:bg-[rgb(var(--nextra-bg))] dark:text-neutral-200 md:my-2 [&.light]:bg-white [&.light]:text-green-1000',
           className?.includes('light') && 'light',
         )}
       >
-        <NavigationMenu className={cn('mx-auto hidden w-screen md:flex', className)}>
-          <Anchor href="/" className="-m-2 flex items-center rounded-md p-2">
-            <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
-          </Anchor>
+        {/* mobile menu */}
+        <div className="flex items-center justify-between md:hidden">
+          {logo}
+          <button
+            type="button"
+            aria-label="Menu"
+            className="md:_hidden hover -m-1 rounded-lg bg-transparent p-1 text-green-1000 focus-visible:outline-none focus-visible:ring active:bg-beige-200 dark:text-neutral-200 dark:active:bg-neutral-800"
+            onClick={() => mobileMenu.setMenu(!mobileMenu.menu)}
+          >
+            <MenuIcon
+              className={cn(
+                { open: mobileMenu.menu },
+                'size-6 stroke-current [&_path]:[stroke-linecap:square]',
+              )}
+            />
+          </button>
+        </div>
+
+        {/* desktop menu */}
+        <NavigationMenu className={cn('mx-auto hidden md:flex', className)}>
+          {logo}
           <NavigationMenuList className="lg:ml-16">
             <NavigationMenuItem>
               <NavigationMenuTrigger>Products</NavigationMenuTrigger>
@@ -288,7 +309,7 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
   ({ isHive, ...rest }, ref) => {
     return (
       <MenuContentColumns {...rest} ref={ref}>
-        <div className="w-[188px]">
+        <div>
           <ColumnLabel>Developer</ColumnLabel>
           <ul>
             {(
@@ -298,7 +319,6 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
                   PaperIcon,
                   isHive ? '/docs' : 'https://the-guild.dev/graphql/hive/docs',
                 ],
-                ['Changelog', ListIcon, 'https://github.com/kamilkisiela/graphql-hive/releases'],
                 ['Status', TargetIcon, 'https://status.graphql-hive.com/'],
                 [
                   'Product Updates',
@@ -317,7 +337,7 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
             ))}
           </ul>
         </div>
-        <div className="w-[188px]">
+        <div>
           <ColumnLabel>Community</ColumnLabel>
           <ul>
             {(
