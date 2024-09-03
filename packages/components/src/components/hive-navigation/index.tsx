@@ -83,7 +83,7 @@ export function HiveNavigation({
     <>
       <div
         className={cn(
-          'sticky top-0 z-20 bg-white px-6 py-4 text-green-1000 dark:bg-[rgb(var(--nextra-bg))] dark:text-neutral-200 md:my-2 [&.light]:bg-white [&.light]:text-green-1000',
+          'sticky top-0 z-20 bg-white px-6 py-4 text-green-1000 md:my-2 dark:bg-[rgb(var(--nextra-bg))] dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
           className?.includes('light') && 'light',
         )}
       >
