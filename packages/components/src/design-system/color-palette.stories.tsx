@@ -109,7 +109,7 @@ function ColorSwatch({
   return (
     <div
       className={clsx(
-        'rounded-2xl p-4 text-sm dark:ring-1 dark:ring-white/5 xl:p-6',
+        'rounded-2xl p-4 text-sm xl:p-6 dark:ring-1 dark:ring-white/5',
         className,
         dark ? 'text-white' : 'text-green-1000',
       )}

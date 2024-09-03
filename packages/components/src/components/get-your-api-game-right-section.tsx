@@ -5,7 +5,7 @@ import { Heading } from './heading';
 export function GetYourAPIGameRightSection({ className }: { className?: string }) {
   return (
     <section
-      className={cn(className, 'bg-primary relative overflow-hidden rounded-3xl md:h-[308px]')}
+      className={cn(className, 'relative overflow-hidden rounded-3xl bg-primary md:h-[308px]')}
     >
       <GreenArchDecoration className="absolute inset-y-0 right-0 hidden opacity-10 md:block [@media(min-width:1300px)]:opacity-100" />
       <StrokeDecoration className="absolute right-[607px] max-md:right-[-36px] max-md:top-[-71px] max-md:size-[200px] max-md:rotate-180 md:bottom-0" />

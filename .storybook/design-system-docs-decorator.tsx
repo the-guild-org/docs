@@ -6,7 +6,7 @@ import { hiveThemeDecorator } from './hive-theme-decorator';
 export function designSystemDocsDecorator(Story: () => React.ReactNode, ctx: StoryContext) {
   return hiveThemeDecorator(
     () => (
-      <div className="h-screen overflow-auto bg-white p-8 text-green-1000 dark:bg-green-1000 dark:text-white xl:p-16">
+      <div className="h-screen overflow-auto bg-white p-8 text-green-1000 xl:p-16 dark:bg-green-1000 dark:text-white">
         <header className="flex flex-row items-center text-5xl tracking-[-0.288px]">
           <HiveIconMark className="mr-6" />
           <p>Core Elements</p>

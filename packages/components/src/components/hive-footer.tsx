@@ -18,7 +18,7 @@ export interface HiveFooterProps extends IFooterExtendedProps {}
 export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFooterProps) {
   return (
     <footer className={cn('relative flex justify-center px-4 py-6 xl:px-[120px]', className)}>
-      <div className="mx-4 grid max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 dark:text-neutral-400 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10">
+      <div className="mx-4 grid max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10 dark:text-neutral-400">
         <div className="max-lg:col-span-full">
           <Anchor href="https://the-guild.dev" sameSite={sameSite} {...logo}>
             <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:text-white" />
@@ -53,7 +53,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
               Contact Us
             </a>
           </div>
-          <CSAStarLevelOneIcon className="size-20 dark:opacity-95 sm:col-start-[-1] lg:col-start-[-2] lg:size-[120px]" />
+          <CSAStarLevelOneIcon className="size-20 sm:col-start-[-1] lg:col-start-[-2] lg:size-[120px] dark:opacity-95" />
         </div>
         <div className="col-span-full flex flex-row flex-wrap justify-between gap-x-[inherit] gap-y-8 lg:w-full lg:pb-2 lg:pt-8">
           <div className="flex gap-6 lg:order-1">
@@ -67,7 +67,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
         </div>
       </div>
 
-      <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden mix-blend-multiply dark:opacity-5 dark:mix-blend-normal lg:block" />
+      <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden mix-blend-multiply lg:block dark:opacity-5 dark:mix-blend-normal" />
     </footer>
   );
 }
