@@ -98,7 +98,7 @@ export function Footer({
   return (
     <footer
       className={clsx(
-        'bg-[#fafafa] py-[60px] text-base dark:bg-[#0f1114] md:py-[140px]',
+        'bg-[#fafafa] py-[60px] text-base md:py-[140px] dark:bg-[#0f1114]',
         className,
       )}
     >
