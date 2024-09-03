@@ -17,3 +17,18 @@ export { ReactComponent as YogaIcon } from './yoga.svg';
 export { ReactComponent as HiveIcon } from './hive.svg';
 
 export { InformationCircleIcon, GitHubIcon, DiscordIcon } from 'nextra/icons';
+
+// The following icons come from Iconoir.
+// Consider if the app and landing page should use the same ones
+// and if so, add `iconoir-react` to deps?
+export { ReactComponent as ListIcon } from './list.svg';
+export { ReactComponent as PaperIcon } from './paper.svg';
+export { ReactComponent as TargetIcon } from './target.svg';
+export { ReactComponent as RightCornerIcon } from './right-corner.svg';
+export { ReactComponent as PencilIcon } from './pencil.svg';
+export { ReactComponent as AccountBox } from './account-box.svg';
+export { ReactComponent as BardIcon } from './bard.svg';
+export { ReactComponent as HonourIcon } from './honour.svg';
+export { ReactComponent as ShieldFlashIcon } from './shield-flash.svg';
+export { ReactComponent as GroupIcon } from './group.svg';
+export { ReactComponent as AppsIcon } from './apps.svg';

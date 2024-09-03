@@ -1,5 +1,5 @@
 import { cn } from '../cn';
-import { PRODUCTS } from '../products';
+import { PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../products';
 import { CallToAction } from './call-to-action';
 import { HighlightDecoration } from './decorations';
 import { Heading } from './heading';
@@ -7,7 +7,9 @@ import { ArrowIcon, CodegenIcon, HiveIcon, MeshIcon, YogaIcon } from './icons';
 
 export function ToolsAndLibrariesCards({ className }: { className?: string }) {
   return (
-    <section className={cn('flex flex-col gap-6 px-4 py-6 lg:gap-12 lg:p-[120px]', className)}>
+    <section
+      className={cn('isolate flex flex-col gap-6 px-4 py-6 lg:gap-12 lg:p-[120px]', className)}
+    >
       <Heading as="h2" size="md" className="text-green-1000">
         Discover the complete ecosystem of tools and libraries
       </Heading>
@@ -53,23 +55,11 @@ function MainCards() {
   );
 }
 
-const secondaryProducts = [
-  PRODUCTS.INSPECTOR,
-  PRODUCTS.ENVELOP,
-  PRODUCTS.SOFA,
-  PRODUCTS.SCALARS,
-  PRODUCTS.ESLINT,
-  PRODUCTS.NEXTRA,
-];
-const logos = {
-  [PRODUCTS.ESLINT.name]: 'ESL',
-  [PRODUCTS.NEXTRA.name]: <PRODUCTS.NEXTRA.logo className="w-8" />,
-};
-
 function SecondaryCards() {
   return (
     <ul className="flex h-max grid-cols-6 flex-row gap-[22px] overflow-x-auto overflow-y-hidden max-sm:-mx-8 max-sm:px-8 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-      {secondaryProducts.map(product => {
+      {SIX_HIGHLIGHTED_PRODUCTS.map(product => {
+        const Logo = product.logo;
         return (
           <li
             key={product.name}
@@ -83,7 +73,7 @@ function SecondaryCards() {
                 role="presentation"
                 className="flex size-8 items-center justify-center rounded bg-green-1000 text-sm font-medium leading-5 text-white"
               >
-                {logos[product.name] ?? product.name.slice(0, 1)}
+                <Logo />
               </div>
               <ArrowIcon className="absolute bottom-8 right-8" />
             </a>

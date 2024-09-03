@@ -17,20 +17,15 @@ export interface HiveFooterProps extends IFooterExtendedProps {}
 
 export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFooterProps) {
   return (
-    <footer
-      className={cn(
-        'relative bg-[rgb(var(--nextra-bg))] px-4 py-6 text-green-800 xl:px-[120px] dark:[&:not(.never-dark)]:text-neutral-400',
-        className,
-      )}
-    >
-      <div className="container grid max-w-[75rem] grid-cols-1 gap-x-6 max-lg:gap-y-16 sm:grid-cols-4">
-        <div className="max-lg:col-span-full lg:pt-[72px]">
+    <footer className={cn('relative flex justify-center px-4 py-6 xl:px-[120px]', className)}>
+      <div className="mx-4 grid max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 dark:text-neutral-400 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10">
+        <div className="max-lg:col-span-full">
           <Anchor href="https://the-guild.dev" sameSite={sameSite} {...logo}>
-            <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:[:not(.never-dark)_&]:text-white" />
+            <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:text-white" />
           </Anchor>
           <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
         </div>
-        <div className="col-span-full grid grid-flow-row grid-cols-2 justify-stretch gap-6 text-sm sm:col-span-4 sm:grid-cols-3 lg:col-span-3 lg:pb-12 lg:pt-[72px] lg:text-base">
+        <div className="col-span-full grid grid-flow-row grid-cols-2 justify-stretch gap-6 text-sm sm:col-span-4 sm:grid-cols-3 lg:col-span-3 lg:pb-12 lg:text-base">
           <List heading="Products" links={products} />
           <div className="flex flex-col gap-[inherit]">
             <List heading="Developer" links={DEVELOPER} />
@@ -41,12 +36,12 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
             <List heading="Company" links={COMPANY} />
             <a
               href="https://the-guild.dev/graphql/hive#pricing"
-              className="font-medium hover:text-blue-700 hover:underline dark:[:not(.never-dark)_&]:hover:text-blue-100"
+              className="font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
             >
               Pricing
             </a>
             <a
-              className="font-medium hover:text-blue-700 hover:underline dark:[:not(.never-dark)_&]:hover:text-blue-100"
+              className="font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
               href="https://the-guild.dev/contact"
               onClick={event => {
                 if (typeof window !== 'undefined' && '$crisp' in window) {
@@ -58,7 +53,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
               Contact Us
             </a>
           </div>
-          <CSAStarLevelOneIcon className="size-20 sm:col-start-[-1] lg:col-start-[-2] lg:size-[120px] dark:[:not(.never-dark)_&]:opacity-95" />
+          <CSAStarLevelOneIcon className="size-20 dark:opacity-95 sm:col-start-[-1] lg:col-start-[-2] lg:size-[120px]" />
         </div>
         <div className="col-span-full flex flex-row flex-wrap justify-between gap-x-[inherit] gap-y-8 lg:w-full lg:pb-2 lg:pt-8">
           <div className="flex gap-6 lg:order-1">
@@ -72,7 +67,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
         </div>
       </div>
 
-      <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden lg:block dark:[:not(.never-dark)_&]:opacity-5" />
+      <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden mix-blend-multiply dark:opacity-5 dark:mix-blend-normal lg:block" />
     </footer>
   );
 }
@@ -88,13 +83,13 @@ function List({
 }) {
   return (
     <div className={cn('flex flex-col gap-y-3 text-nowrap lg:gap-y-4', className)}>
-      <h3 className="font-medium dark:[:not(.never-dark)_&]:text-white">{heading}</h3>
+      <h3 className="font-medium dark:text-white">{heading}</h3>
       <ul className="contents">
         {links.map(link => (
           <li key={link.href}>
             <Anchor
               {...link}
-              className="-m-2 block p-2 hover:text-blue-700 hover:underline dark:[:not(.never-dark)_&]:hover:text-blue-100"
+              className="-m-2 block p-2 hover:text-blue-700 hover:underline dark:hover:text-blue-100"
             />
           </li>
         ))}
