@@ -330,7 +330,7 @@ importers:
         version: 14.2.5(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-mdx-remote:
         specifier: 5.0.0
-        version: 5.0.0(@types/react@18.3.4)(react@18.3.1)
+        version: 5.0.0(@types/react@18.3.3)(react@18.3.1)
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -342,8 +342,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0
       '@types/react':
-        specifier: 18.3.4
-        version: 18.3.4
+        specifier: 18.3.3
+        version: 18.3.3
       typescript:
         specifier: 5.5.4
         version: 5.5.4
@@ -10181,6 +10181,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@mdx-js/react@3.0.1(@types/react@18.3.3)(react@18.3.1)':
+    dependencies:
+      '@types/mdx': 2.0.13
+      '@types/react': 18.3.3
+      react: 18.3.1
+
   '@mdx-js/react@3.0.1(@types/react@18.3.4)(react@18.3.1)':
     dependencies:
       '@types/mdx': 2.0.13
@@ -15817,11 +15823,11 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next-mdx-remote@5.0.0(@types/react@18.3.4)(react@18.3.1):
+  next-mdx-remote@5.0.0(@types/react@18.3.3)(react@18.3.1):
     dependencies:
       '@babel/code-frame': 7.24.7
       '@mdx-js/mdx': 3.0.1
-      '@mdx-js/react': 3.0.1(@types/react@18.3.4)(react@18.3.1)
+      '@mdx-js/react': 3.0.1(@types/react@18.3.3)(react@18.3.1)
       react: 18.3.1
       unist-util-remove: 3.1.1
       vfile: 6.0.2

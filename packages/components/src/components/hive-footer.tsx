@@ -1,5 +1,5 @@
 import { ComponentProps, ReactElement } from 'react';
-import { clsx } from 'clsx';
+import { cn } from '../cn';
 import { HiveCombinationMark } from '../logos';
 import { PRODUCTS } from '../products';
 import { IFooterExtendedProps, ILink } from '../types/components';
@@ -18,57 +18,60 @@ export interface HiveFooterProps extends IFooterExtendedProps {}
 export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFooterProps) {
   return (
     <footer
-      className={clsx(
-        'relative grid grid-cols-1 gap-x-6 bg-[(var(--nextra-bg))] px-4 py-6 text-green-800 lg:grid-cols-4 lg:px-[120px] dark:[&:not(.never-dark)]:text-neutral-400',
+      className={cn(
+        'relative bg-[rgb(var(--nextra-bg))] px-4 py-6 text-green-800 xl:px-[120px] dark:[&:not(.never-dark)]:text-neutral-400',
         className,
       )}
     >
-      <div className="lg:pt-[72px]">
-        <Anchor href="https://the-guild.dev" sameSite={sameSite} {...logo}>
-          <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:[:not(.never-dark)_&]:text-white" />
-        </Anchor>
-        <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
-      </div>
-      <div className="grid grid-flow-col-dense grid-cols-2 justify-stretch gap-6 text-sm lg:col-span-3 lg:grid-cols-subgrid lg:pb-12 lg:pt-[72px] lg:text-base">
-        <List heading="Products" links={products} className="row-span-5" />
-        <div className="flex flex-col gap-[inherit]">
-          <List heading="Developer" links={DEVELOPER} />
-          {ENTERPRISE.length > 0 && <List heading="Enterprise" links={ENTERPRISE} />}
-          {resources.length > 0 && <List heading="Resources" links={resources} />}
+      <div className="container grid max-w-[75rem] grid-cols-1 gap-x-6 max-lg:gap-y-16 sm:grid-cols-4">
+        <div className="max-lg:col-span-full lg:pt-[72px]">
+          <Anchor href="https://the-guild.dev" sameSite={sameSite} {...logo}>
+            <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:[:not(.never-dark)_&]:text-white" />
+          </Anchor>
+          <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
         </div>
-        <div className="flex flex-col gap-[inherit] lg:col-start-3">
-          <List heading="Company" links={COMPANY} className="lg:col-start-3" />
-          <a
-            href="https://the-guild.dev/graphql/hive#pricing"
-            className="font-medium hover:text-blue-700 hover:underline dark:[:not(.never-dark)_&]:hover:text-blue-100"
-          >
-            Pricing
-          </a>
-          <a
-            className="font-medium hover:text-blue-700 hover:underline dark:[:not(.never-dark)_&]:hover:text-blue-100"
-            href="https://the-guild.dev/contact"
-            onClick={event => {
-              if (typeof window !== 'undefined' && '$crisp' in window) {
-                (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
-                event.preventDefault();
-              }
-            }}
-          >
-            Contact Us
-          </a>
+        <div className="col-span-full grid grid-flow-row grid-cols-2 justify-stretch gap-6 text-sm sm:col-span-4 sm:grid-cols-3 lg:col-span-3 lg:pb-12 lg:pt-[72px] lg:text-base">
+          <List heading="Products" links={products} />
+          <div className="flex flex-col gap-[inherit]">
+            <List heading="Developer" links={DEVELOPER} />
+            {ENTERPRISE.length > 0 && <List heading="Enterprise" links={ENTERPRISE} />}
+            {resources.length > 0 && <List heading="Resources" links={resources} />}
+          </div>
+          <div className="flex flex-col gap-[inherit]">
+            <List heading="Company" links={COMPANY} />
+            <a
+              href="https://the-guild.dev/graphql/hive#pricing"
+              className="font-medium hover:text-blue-700 hover:underline dark:[:not(.never-dark)_&]:hover:text-blue-100"
+            >
+              Pricing
+            </a>
+            <a
+              className="font-medium hover:text-blue-700 hover:underline dark:[:not(.never-dark)_&]:hover:text-blue-100"
+              href="https://the-guild.dev/contact"
+              onClick={event => {
+                if (typeof window !== 'undefined' && '$crisp' in window) {
+                  (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
+                  event.preventDefault();
+                }
+              }}
+            >
+              Contact Us
+            </a>
+          </div>
+          <CSAStarLevelOneIcon className="size-20 sm:col-start-[-1] lg:col-start-[-2] lg:size-[120px] dark:[:not(.never-dark)_&]:opacity-95" />
         </div>
-        <CSAStarLevelOneIcon className="size-20 lg:col-start-3 lg:size-[120px] dark:[:not(.never-dark)_&]:opacity-95" />
-      </div>
-      <div className="col-span-full flex flex-row flex-wrap justify-between gap-[inherit] lg:w-full lg:pb-2 lg:pt-8">
-        <div className="flex gap-6 lg:order-1">
-          {COMMUNITY.map(({ icon: Icon, ...iconProps }) => (
-            <Anchor key={iconProps.title} {...iconProps}>
-              <Icon className="h-5 w-auto" />
-            </Anchor>
-          ))}
+        <div className="col-span-full flex flex-row flex-wrap justify-between gap-x-[inherit] gap-y-8 lg:w-full lg:pb-2 lg:pt-8">
+          <div className="flex gap-6 lg:order-1">
+            {COMMUNITY.map(({ icon: Icon, ...iconProps }) => (
+              <Anchor key={iconProps.title} {...iconProps}>
+                <Icon className="h-5 w-auto" />
+              </Anchor>
+            ))}
+          </div>
+          <p className="text-sm">© 2024 The Guild</p>
         </div>
-        <p className="text-sm">© 2024 The Guild</p>
       </div>
+
       <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden lg:block dark:[:not(.never-dark)_&]:opacity-5" />
     </footer>
   );
@@ -84,7 +87,7 @@ function List({
   className?: string;
 }) {
   return (
-    <div className={clsx('flex flex-col gap-y-3 text-nowrap lg:gap-y-4', className)}>
+    <div className={cn('flex flex-col gap-y-3 text-nowrap lg:gap-y-4', className)}>
       <h3 className="font-medium dark:[:not(.never-dark)_&]:text-white">{heading}</h3>
       <ul className="contents">
         {links.map(link => (
@@ -200,7 +203,6 @@ const products = [
   PRODUCTS.ENVELOP,
   PRODUCTS.ESLINT,
   PRODUCTS.SOFA,
-  { ...PRODUCTS.SOFA, name: 'GraphQL to REST' },
   // TODO: All libraries, go to /explore page
 ].map(({ name, href, title }) => ({
   children: name,

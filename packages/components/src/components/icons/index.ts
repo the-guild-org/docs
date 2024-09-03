@@ -5,6 +5,7 @@ export { ReactComponent as MoreIcon } from './more.svg';
 export { ReactComponent as SearchIcon } from './search.svg';
 export { ReactComponent as ShareIcon } from './share.svg';
 export { ReactComponent as CSAStarLevelOneIcon } from './csa-star-level-one.svg';
+export { ReactComponent as ArrowIcon } from './arrow-icon.svg';
 
 export { ReactComponent as TwitterIcon } from './twitter.svg';
 export { ReactComponent as LinkedInIcon } from './linkedin.svg';

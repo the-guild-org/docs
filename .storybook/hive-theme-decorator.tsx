@@ -1,6 +1,7 @@
 import React from 'react';
 // @ts-expect-error We have `next` because of `@theguild/components`.
 import localFont from 'next/font/local';
+import type { StoryContext } from '@storybook/react';
 
 const neueMontreal = localFont({
   // TODO: Swap to variable version.
@@ -18,13 +19,14 @@ const neueMontreal = localFont({
   variable: '--font-sans',
 });
 
-export const hiveThemeDecorator = (Story: () => React.ReactNode, _ctx: unknown) => {
+export const hiveThemeDecorator = (Story: () => React.ReactNode, ctx: StoryContext) => {
   return (
     <div
       data-hive-theme-decorator
       className={`${neueMontreal.variable}`}
       style={{
         fontFamily: 'var(--font-sans)',
+        padding: ctx.parameters.padding === true ? '2rem' : ctx.parameters.padding,
       }}
     >
       <Story />
@@ -34,7 +36,7 @@ export const hiveThemeDecorator = (Story: () => React.ReactNode, _ctx: unknown) 
         }
         @media (prefers-color-scheme: dark) {
           :root {
-            --nextra-bg: 33, 33, 33;
+            --nextra-bg: 20, 20, 20;
           }
         }
       `}</style>

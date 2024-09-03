@@ -8,6 +8,10 @@ export default {
     ...config.theme,
     extend: {
       ...config.theme.extend,
+      colors: {
+        ...config.theme.extend.colors,
+        primary: config.theme.extend.colors['hive-yellow'],
+      },
       fontFamily: {
         sans: [`var(--font-sans, ${fontFamily.sans.slice(0, 3).join(', ')})`, ...fontFamily.sans],
       },
