@@ -1,12 +1,11 @@
-import { defineConfig, Options } from 'tsup';
-import tsconfig from './tsconfig.json';
+import { defineConfig } from 'tsup';
 
 export default defineConfig([
   {
     format: 'esm',
-    entry: ['src/**/*.{ts,tsx}'],
-    target: tsconfig.compilerOptions.target as Options['target'],
+    entry: ['src/**/*.{ts,tsx}', '!**/*.test.{ts,tsx}'],
     bundle: false,
     dts: true,
+    clean: true,
   },
 ]);

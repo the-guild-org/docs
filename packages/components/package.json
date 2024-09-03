@@ -1,6 +1,6 @@
 {
   "name": "@theguild/components",
-  "version": "6.6.4",
+  "version": "6.6.5",
   "repository": {
     "url": "https://github.com/the-guild-org/docs",
     "directory": "packages/components"
@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "@giscus/react": "3.0.0",
-    "@next/bundle-analyzer": "14.2.5",
+    "@next/bundle-analyzer": "14.2.7",
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@theguild/tailwind-config": "0.5.0",
     "clsx": "2.1.1",
@@ -88,7 +88,7 @@
     "dedent": "1.5.3",
     "esbuild-plugin-svgr": "^2.1.0",
     "graphql": "16.9.0",
-    "next": "14.2.5",
+    "next": "14.2.7",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "unified": "^11.0.3"

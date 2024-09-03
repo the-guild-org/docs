@@ -1,5 +1,24 @@
 # @theguild/remark-npm2yarn
 
+## 0.3.2
+
+### Patch Changes
+
+- [#1645](https://github.com/the-guild-org/docs/pull/1645)
+  [`e380c22`](https://github.com/the-guild-org/docs/commit/e380c22d103bfbb6d0479615de12a13b5a42b409)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - add `types` field in `exports` object in
+  `package.json`
+
+## 0.3.1
+
+### Patch Changes
+
+- [#1637](https://github.com/the-guild-org/docs/pull/1637)
+  [`4cfa876`](https://github.com/the-guild-org/docs/commit/4cfa8762897de43d92b29e92da10da21e6a90b1f)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`npm-to-yarn@^3.0.0` ↗︎](https://www.npmjs.com/package/npm-to-yarn/v/3.0.0)
+    (from `^2.1.0`, in `dependencies`)
+
 ## 0.3.0
 
 ### Minor Changes

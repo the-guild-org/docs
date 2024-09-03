@@ -1,11 +1,7 @@
-import { createRequire } from 'node:module';
 import { Code, Root } from 'mdast';
 import { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
 
-const require = createRequire(import.meta.url);
-
-const COMPONENT_PATH = require.resolve('@theguild/remark-mermaid/mermaid');
 const COMPONENT_NAME = 'Mermaid';
 
 const MERMAID_IMPORT_AST = {
@@ -22,45 +18,12 @@ const MERMAID_IMPORT_AST = {
               local: { type: 'Identifier', name: COMPONENT_NAME },
             },
           ],
-          source: { type: 'Literal', value: COMPONENT_PATH },
+          source: { type: 'Literal', value: '@theguild/remark-mermaid/mermaid' },
         },
       ],
     },
   },
 } as any;
-
-const getMermaidElementAST = (value: string) => ({
-  type: 'mdxJsxFlowElement',
-  name: COMPONENT_NAME,
-  attributes: [
-    {
-      type: 'mdxJsxAttribute',
-      name: 'chart',
-      value: {
-        type: 'mdxJsxAttributeValueExpression',
-        data: {
-          estree: {
-            body: [
-              {
-                type: 'ExpressionStatement',
-                expression: {
-                  type: 'TemplateLiteral',
-                  expressions: [],
-                  quasis: [
-                    {
-                      type: 'TemplateElement',
-                      value: { raw: value },
-                    },
-                  ],
-                },
-              },
-            ],
-          },
-        },
-      },
-    },
-  ],
-});
 
 export const remarkMermaid: Plugin<[], Root> = () => (ast, _file, done) => {
   const codeblocks: any[][] = [];
@@ -70,7 +33,17 @@ export const remarkMermaid: Plugin<[], Root> = () => (ast, _file, done) => {
 
   if (codeblocks.length !== 0) {
     for (const [node, index, parent] of codeblocks) {
-      parent.children.splice(index, 1, getMermaidElementAST(node.value));
+      parent.children.splice(index, 1, {
+        type: 'mdxJsxFlowElement',
+        name: COMPONENT_NAME,
+        attributes: [
+          {
+            type: 'mdxJsxAttribute',
+            name: 'chart',
+            value: node.value,
+          },
+        ],
+      });
     }
     ast.children.unshift(MERMAID_IMPORT_AST);
   }

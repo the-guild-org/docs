@@ -1,6 +1,6 @@
 {
   "name": "@theguild/remark-mermaid",
-  "version": "0.0.7",
+  "version": "0.1.2",
   "type": "module",
   "description": "Remark plugin for replacing ```mermaid code blocks with react `<Mermaid />` component",
   "repository": {
@@ -9,12 +9,18 @@
   },
   "author": "Dimitri POSTOLOV <dmytropostolov@gmail.com> (https://github.com/B2o5T)",
   "license": "MIT",
-  "main": "./dist/index.js",
   "exports": {
     "./package.json": "./package.json",
-    ".": "./dist/index.js",
-    "./*": "./dist/*.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
   },
+  "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
       "mermaid": [
@@ -28,17 +34,19 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "test": "vitest",
     "types:check": "tsc --noEmit"
   },
   "peerDependencies": {
     "react": "^18.2.0"
   },
   "dependencies": {
-    "mermaid": "^10.2.2",
+    "mermaid": "^11.0.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@types/mdast": "4.0.4",
+    "nextra": "^3.0.0-alpha.35",
     "react": "18.3.1",
     "unified": "11.0.5"
   },

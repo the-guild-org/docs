@@ -1,5 +1,41 @@
 # @theguild/remark-mermaid
 
+## 0.1.2
+
+### Patch Changes
+
+- [#1645](https://github.com/the-guild-org/docs/pull/1645)
+  [`e380c22`](https://github.com/the-guild-org/docs/commit/e380c22d103bfbb6d0479615de12a13b5a42b409)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - add `types` field in `exports` object in
+  `package.json`
+
+## 0.1.1
+
+### Patch Changes
+
+- [#1642](https://github.com/the-guild-org/docs/pull/1642)
+  [`70bbc88`](https://github.com/the-guild-org/docs/commit/70bbc88bde6fdf7520cd3278268bd25fcb75e72d)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - should correctly escape ` and \ in
+  mermaid blocks
+
+## 0.1.0
+
+### Minor Changes
+
+- [#1640](https://github.com/the-guild-org/docs/pull/1640)
+  [`12aee5b`](https://github.com/the-guild-org/docs/commit/12aee5bc570b611a36d192c2bc3cd8936e52778c)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - replace
+  `require.resolve('@theguild/remark-mermaid/mermaid')` by `'@theguild/remark-mermaid/mermaid'` to
+  make it possible compile mermaid code blocks in browser
+
+### Patch Changes
+
+- [#1627](https://github.com/the-guild-org/docs/pull/1627)
+  [`1233d55`](https://github.com/the-guild-org/docs/commit/1233d55cc1c1a0cd442447b8db7aef4606222304)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`mermaid@^11.0.0` ↗︎](https://www.npmjs.com/package/mermaid/v/11.0.0) (from
+    `^10.2.2`, in `dependencies`)
+
 ## 0.0.7
 
 ### Patch Changes
