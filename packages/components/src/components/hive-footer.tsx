@@ -223,7 +223,7 @@ function DecorationArch(props: React.SVGProps<SVGSVGElement>) {
         <linearGradient
           id="paint0_linear_711_2541"
           x1={180}
-          y1={-0.00000786805}
+          y1={-0.000_007_868_05}
           x2={180}
           y2={360}
           gradientUnits="userSpaceOnUse"

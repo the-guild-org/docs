@@ -15,7 +15,7 @@ export type CardsColorfulProps = {
 };
 
 export const CardsColorful = ({ cards, className }: CardsColorfulProps): ReactElement => (
-  <section className={clsx('bg-white py-8 dark:bg-[#111]', className)}>
+  <section className={clsx('bg-white py-8 dark:bg-dark', className)}>
     <div className="container flex flex-wrap space-y-6 md:flex-nowrap md:space-x-8 md:space-y-0">
       {cards.map(card => (
         <Anchor

@@ -23,19 +23,23 @@ export { ReactComponent as HiveCombinationMark } from './hive-combination-mark.s
 export { ReactComponent as GraphQLFoundationLogo } from './graphql-foundation.svg';
 
 export interface LettermarkLogoProps extends HTMLAttributes<HTMLElement> {}
-const createLettermarkLogo = (text: string) => (props: LettermarkLogoProps) => {
-  return (
-    <span
-      role="img"
-      {...props}
-      className={cn(
-        'inline-flex items-center justify-center text-sm font-medium uppercase leading-5',
-        props.className,
-      )}
-    >
-      {text}
-    </span>
-  );
+const createLettermarkLogo = (text: string) => {
+  function LettermarkLogo(props: LettermarkLogoProps) {
+    return (
+      <span
+        role="img"
+        {...props}
+        className={cn(
+          'inline-flex items-center justify-center text-sm font-medium uppercase leading-5',
+          props.className,
+        )}
+      >
+        {text}
+      </span>
+    );
+  }
+  LettermarkLogo.displayName = 'LettermarkLogo';
+  return LettermarkLogo;
 };
 
 export const InspectorLettermark = createLettermarkLogo('I');

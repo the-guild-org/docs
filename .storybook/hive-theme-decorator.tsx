@@ -1,7 +1,7 @@
 import React from 'react';
 // @ts-expect-error We have `next` because of `@theguild/components`.
 import localFont from 'next/font/local';
-import type { StoryContext } from '@storybook/react';
+import { StoryContext } from '@storybook/react';
 import { cn } from '../packages/components/src/cn';
 
 const neueMontreal = localFont({

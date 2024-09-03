@@ -11,7 +11,7 @@ export const FeatureList = ({
   link,
   className,
 }: IFeatureListProps): ReactElement => (
-  <section className={clsx('bg-white dark:bg-[#111]', className)}>
+  <section className={clsx('bg-white dark:bg-dark', className)}>
     <div className="container py-14">
       {title && (
         <div className="mb-6 flex flex-col items-center">

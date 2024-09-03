@@ -39,10 +39,10 @@ export const HeroMarketplace = ({
   className,
   image,
 }: IHeroMarketplaceProps): ReactElement => (
-  <section className={clsx('overflow-hidden bg-white dark:bg-[#111]', className)}>
+  <section className={clsx('overflow-hidden bg-white dark:bg-dark', className)}>
     <div className="relative">
       <div
-        className="absolute inset-0 overflow-hidden bg-black dark:bg-[#111]"
+        className="absolute inset-0 overflow-hidden bg-black dark:bg-dark"
         style={{ '--colorA': '#ff34ae', '--colorB': '#1cc8ee' }}
       >
         <Shadow className="left-[-30px] top-[-175px] [background:var(--colorA)] md:left-[-60px] md:top-[-150px]" />

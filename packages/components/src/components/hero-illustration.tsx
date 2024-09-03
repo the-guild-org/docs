@@ -12,7 +12,7 @@ export const HeroIllustration = ({
   flipped,
   className,
 }: IHeroIllustrationProps): ReactElement => (
-  <section className={clsx('bg-white dark:bg-[#111]', className)}>
+  <section className={clsx('bg-white dark:bg-dark', className)}>
     <div
       className={clsx(
         'container flex flex-wrap items-center gap-8 py-8 md:flex-nowrap md:justify-around',

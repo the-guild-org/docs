@@ -10,7 +10,7 @@ export default {
 export const Typography: StoryObj = {
   render() {
     return (
-      <div className="gap flex flex-col gap-6">
+      <div className="flex flex-col gap-6">
         <h1 className="my-6 text-2xl font-medium">Heading</h1>
         {(['xl', 'lg', 'md', 'sm'] satisfies HeadingProps['size'][]).map(size => (
           <>

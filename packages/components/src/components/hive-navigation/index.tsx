@@ -1,7 +1,7 @@
 import React, { forwardRef, Fragment, ReactNode } from 'react';
 import { Navbar as NextraNavbar, useThemeConfig } from 'nextra-theme-docs';
 import { cn } from '../../cn';
-import { renderSlot } from '../../helpers/renderSlot';
+import { renderSlot } from '../../helpers/render-slot';
 import { GraphQLFoundationLogo, GuildLogo, HiveCombinationMark, TheGuild } from '../../logos';
 import { PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../../products';
 import { Anchor } from '../anchor';
@@ -254,6 +254,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, {}>((props, ref) =>
     </MenuContentColumns>
   );
 });
+ProductsMenu.displayName = 'ProductsMenu';
 
 const MenuContentColumns = forwardRef(
   (props: React.HTMLAttributes<HTMLDivElement>, ref: React.ForwardedRef<HTMLDivElement>) => {
@@ -275,6 +276,7 @@ const MenuContentColumns = forwardRef(
     );
   },
 );
+MenuContentColumns.displayName = 'MenuContentColumns';
 
 interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   isHive: boolean;
@@ -340,6 +342,7 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
     );
   },
 );
+DeveloperMenu.displayName = 'DeveloperMenu';
 
 function MenuColumnListItem({
   children,

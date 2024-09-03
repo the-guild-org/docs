@@ -103,7 +103,7 @@ export const MarketplaceList = ({
   }, [items, pageSize]);
 
   return (
-    <section className={clsx('w-full bg-white dark:bg-[#111]', className)}>
+    <section className={clsx('w-full bg-white dark:bg-dark', className)}>
       {title && (
         <h2 className="mb-4 mt-0 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">
           {title}

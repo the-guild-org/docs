@@ -1,5 +1,4 @@
-import type { StaticImageData } from 'next/image';
-import { Anchor } from '../anchor';
+import { StaticImageData } from 'next/image';
 import { ArrowIcon } from '../icons';
 import { Image } from '../image';
 import { NavigationMenuLink } from './navigation-menu';
@@ -14,7 +13,7 @@ export function GraphQLConfCard({ image }: GraphQLConfCardProps) {
       <strong className="mt-6 block text-xl font-medium leading-7 text-green-1000 dark:text-neutral-100">
         GraphQLConf 2024
       </strong>
-      <p className="font-mdeium mt-4 text-sm leading-5 text-green-800 dark:text-neutral-200">
+      <p className="mt-4 text-sm font-medium leading-5 text-green-800 dark:text-neutral-200">
         September 10-12 | San Fransico CA
       </p>
       <p className="mt-2 text-sm font-normal leading-5 text-green-800 dark:text-neutral-200">

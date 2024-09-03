@@ -1,4 +1,10 @@
-import * as React from 'react';
+import {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  forwardRef,
+  useEffect,
+  useLayoutEffect,
+} from 'react';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { cn } from '../../cn';
 import { Anchor } from '../anchor';
@@ -8,11 +14,11 @@ const CONTAINER_ID = 'h-navmenu-container';
 const VIEWPORT_ID = 'h-navmenu-viewport';
 
 export interface NavigationMenuProps
-  extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root> {
+  extends ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root> {
   forceMount?: true;
 }
-export const NavigationMenu = React.forwardRef<
-  React.ElementRef<typeof NavigationMenuPrimitive.Root>,
+export const NavigationMenu = forwardRef<
+  ElementRef<typeof NavigationMenuPrimitive.Root>,
   NavigationMenuProps
 >(({ className, children, forceMount, ...rest }, ref) => (
   <NavigationMenuPrimitive.Root
@@ -29,14 +35,14 @@ export const NavigationMenu = React.forwardRef<
 ));
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName;
 
-export const NavigationMenuList = React.forwardRef<
+export const NavigationMenuList = forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.List>
 >(({ className, ...rest }, ref) => (
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      'group flex flex-1 list-none items-center rounded-lg border-beige-200 px-3 lg:border dark:border-neutral-700',
+      'group flex flex-1 list-none items-center rounded-lg border-beige-200 px-3 dark:border-neutral-700 lg:border',
       className,
     )}
     {...rest}
@@ -46,7 +52,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 
 export const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
-export const NavigationMenuTrigger = React.forwardRef<
+export const NavigationMenuTrigger = forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger>
 >(({ className, children, ...rest }, ref) => (
@@ -61,7 +67,7 @@ export const NavigationMenuTrigger = React.forwardRef<
       const container = document.getElementById(CONTAINER_ID);
       const viewport = document.getElementById(VIEWPORT_ID);
       if (!viewport || !(viewport instanceof HTMLElement) || !container) return;
-      let newX = getTransformX(event.currentTarget, viewport, container);
+      const newX = getTransformX(event.currentTarget, viewport, container);
       if (!viewport.style.transition) {
         setTimeout(() => {
           // First transition will be immediate.
@@ -79,7 +85,7 @@ export const NavigationMenuTrigger = React.forwardRef<
 ));
 NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName;
 
-export const NavigationMenuContent = React.forwardRef<
+export const NavigationMenuContent = forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content>
 >(({ className, ...rest }, ref) => (
@@ -106,7 +112,7 @@ export interface NavigationMenuLinkProps
 export interface NavigationMenuLinkProps {
   arrow?: boolean;
 }
-export const NavigationMenuLink = React.forwardRef<
+export const NavigationMenuLink = forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Link>,
   NavigationMenuLinkProps
 >(({ className, arrow, children, href, ...rest }, ref) => {
@@ -127,14 +133,15 @@ export const NavigationMenuLink = React.forwardRef<
     </NavigationMenuPrimitive.Link>
   );
 });
+NavigationMenuLink.displayName = NavigationMenuPrimitive.Link.displayName;
 
-const useLayoutEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
+const useIsomorphicLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
 
-export const NavigationMenuViewport = React.forwardRef<
+export const NavigationMenuViewport = forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
 >(({ className, ...rest }, ref) => {
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const viewport = document.getElementById(VIEWPORT_ID);
     const container = document.getElementById(CONTAINER_ID);
     if (
@@ -177,7 +184,7 @@ export const NavigationMenuViewport = React.forwardRef<
 });
 NavigationMenuViewport.displayName = NavigationMenuPrimitive.Viewport.displayName;
 
-export const NavigationMenuIndicator = React.forwardRef<
+export const NavigationMenuIndicator = forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Indicator>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Indicator>
 >(({ className, ...rest }, ref) => (
@@ -189,7 +196,7 @@ export const NavigationMenuIndicator = React.forwardRef<
     )}
     {...rest}
   >
-    <div className="bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
+    <div className="relative top-[60%] size-2 rotate-45 rounded-tl-sm bg-beige-200 shadow-md" />
   </NavigationMenuPrimitive.Indicator>
 ));
 NavigationMenuIndicator.displayName = NavigationMenuPrimitive.Indicator.displayName;
