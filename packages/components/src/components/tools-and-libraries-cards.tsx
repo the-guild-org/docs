@@ -39,7 +39,7 @@ function MainCards() {
             className="group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 first-of-type:bg-green-1000 first-of-type:text-white max-md:w-[283.5px]"
           >
             <a className="relative z-10 block flex-1 p-8" href={product.href}>
-              {product.name}
+              <p className="font-medium">{product.name}</p>
               <Icon className="mt-8" />
               <ArrowIcon className="absolute bottom-8 right-8" />
             </a>
@@ -66,7 +66,7 @@ function SecondaryCards() {
             className="shrink-0 basis-[283.5px] rounded-2xl bg-beige-200 text-green-1000 transition-colors duration-500 hover:bg-beige-400 max-sm:min-w-[283.5px]"
           >
             <a href={product.href} className="relative flex h-full flex-col rounded-[inherit] p-8">
-              <p>{product.name}</p>
+              <p className="font-medium">{product.name}</p>
               <p className="mt-2 text-sm text-green-800">{product.title}</p>
               <div className="h-8 grow" />
               <div
