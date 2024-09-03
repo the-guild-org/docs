@@ -85,7 +85,7 @@ export function HiveNavigation({
         )}
       >
         <NavigationMenu className={cn('mx-auto hidden w-screen md:flex', className)}>
-          <Anchor href="/" className="flex items-center">
+          <Anchor href="/" className="-m-2 flex items-center rounded-md p-2">
             <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
           </Anchor>
           <NavigationMenuList className="lg:ml-16">
