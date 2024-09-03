@@ -27,7 +27,7 @@ export function Heading({ as: _as, size, className, children, ...rest }: Heading
   }
 
   const id =
-    typeof children === 'string' ? children.replace(/[\s\.,]+/g, '-').toLowerCase() : undefined;
+    typeof children === 'string' ? children.replace(/[\s.,]+/g, '-').toLowerCase() : undefined;
 
   return (
     <Level className={cn(sizeStyle, className)} id={id} {...rest}>

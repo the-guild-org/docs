@@ -162,7 +162,7 @@ export function HiveNavigation({
 /**
  * @internal
  */
-export const ProductsMenu = React.forwardRef<HTMLDivElement, {}>((props, ref) => {
+export const ProductsMenu = React.forwardRef<HTMLDivElement, object>((props, ref) => {
   return (
     <MenuContentColumns ref={ref} {...props}>
       <div className="w-[220px]">
