@@ -27,36 +27,58 @@ const variantStyles = {
   ),
 };
 
-type CallToActionVariant = keyof typeof variantStyles;
+// eslint-disable-next-line @typescript-eslint/no-namespace
+export declare namespace CallToActionProps {
+  export type Variant = keyof typeof variantStyles;
 
-export interface CallToActionProps extends ComponentPropsWithoutRef<typeof Anchor> {
-  href: string;
-  variant: CallToActionVariant;
+  export interface BaseProps {
+    variant: Variant;
+  }
+
+  export interface AnchorProps extends BaseProps, ComponentPropsWithoutRef<typeof Anchor> {
+    href: string;
+  }
+
+  export interface ButtonProps
+    extends BaseProps,
+      React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+    href?: never;
+    onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  }
 }
+
+export type CallToActionProps = CallToActionProps.AnchorProps | CallToActionProps.ButtonProps;
 
 /**
  * This is called `Button` in Figma in the new Hive brand design system.
  * It's a styled variant of {@link Anchor}.
  *
- * // TODO: Consider changing it to use `<button />` if `href` is not given and rename it to `Button`.
+ * // TODO: Consider renaming it to `Button`.
  */
-export function CallToAction({ className, variant, ...rest }: CallToActionProps) {
-  return (
-    <Anchor
-      className={cn(
-        'relative block rounded-lg sm:w-fit' +
-          ' px-6 py-3 font-medium leading-6 text-green-1000' +
-          ' relative flex flex-row items-center justify-center gap-2 text-nowrap' +
-          ' dark:text-neutral-200',
-        'focus-visible:ring-0 focus-visible:ring-offset-0',
-        '[&:hover>:first-child]:inset-[-1px] [&:hover>:first-child]:rounded-[9px]',
-        variantStyles[variant],
-        className,
-      )}
-      {...rest}
-    >
-      <div className="absolute inset-0 rounded-lg border border-green-800 dark:border-neutral-200" />
-      {rest.children}
-    </Anchor>
+export function CallToAction(props: CallToActionProps) {
+  const className = cn(
+    'relative block rounded-lg sm:w-fit' +
+      ' px-6 py-3 font-medium leading-6 text-green-1000' +
+      ' relative flex flex-row items-center justify-center gap-2 text-nowrap' +
+      ' dark:text-neutral-200',
+    'focus-visible:ring-0 focus-visible:ring-offset-0',
+    '[&:hover>:first-child]:inset-[-1px] [&:hover>:first-child]:rounded-[9px]',
+    variantStyles[props.variant],
+    props.className,
   );
+
+  if ('href' in props && typeof props.href === 'string') {
+    const { className: _1, variant: _2, ...rest } = props;
+
+    return (
+      <Anchor className={className} {...rest}>
+        <div className="absolute inset-0 rounded-lg border border-green-800 dark:border-neutral-200" />
+        {rest.children}
+      </Anchor>
+    );
+  }
+
+  const { className: _1, variant: _2, ...rest } = props;
+
+  return <button className={className} {...rest} />;
 }
