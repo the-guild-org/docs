@@ -18,7 +18,7 @@ export interface HiveFooterProps extends IFooterExtendedProps {}
 export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFooterProps) {
   return (
     <footer className={cn('relative flex justify-center px-4 py-6 xl:px-[120px]', className)}>
-      <div className="mx-4 grid max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10 dark:text-neutral-400">
+      <div className="mx-4 grid w-full max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10 dark:text-neutral-400">
         <div className="max-lg:col-span-full">
           <Anchor href="https://the-guild.dev" sameSite={sameSite} {...logo}>
             <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:text-white" />
