@@ -4,7 +4,12 @@ import { cn } from '../cn';
  * Decorations must be isolated, as clicking id links scrolls the container with overflow: hidden.
  */
 export function DecorationIsolation(props: React.HTMLAttributes<HTMLDivElement>) {
-  return <div {...props} className={cn('absolute inset-0 overflow-hidden', props.className)} />;
+  return (
+    <div
+      {...props}
+      className={cn('pointer-events-none absolute inset-0 overflow-hidden', props.className)}
+    />
+  );
 }
 
 export function ArchDecoration(props: React.SVGProps<SVGSVGElement>) {
