@@ -1,4 +1,3 @@
-import { ComponentPropsWithoutRef } from 'react';
 import { cn } from '../cn';
 import { Anchor } from './anchor';
 
@@ -35,7 +34,7 @@ export declare namespace CallToActionProps {
     variant: Variant;
   }
 
-  export interface AnchorProps extends BaseProps, ComponentPropsWithoutRef<typeof Anchor> {
+  export interface AnchorProps extends BaseProps, React.ComponentPropsWithoutRef<typeof Anchor> {
     href: string;
   }
 
