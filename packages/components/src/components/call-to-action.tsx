@@ -67,17 +67,22 @@ export function CallToAction(props: CallToActionProps) {
   );
 
   if ('href' in props && typeof props.href === 'string') {
-    const { className: _1, variant: _2, ...rest } = props;
+    const { className: _1, variant: _2, children, ...rest } = props;
 
     return (
       <Anchor className={className} {...rest}>
         <div className="absolute inset-0 rounded-lg border border-green-800 dark:border-neutral-200" />
-        {rest.children}
+        {children}
       </Anchor>
     );
   }
 
-  const { className: _1, variant: _2, ...rest } = props;
+  const { className: _1, variant: _2, children, ...rest } = props;
 
-  return <button className={className} {...rest} />;
+  return (
+    <button className={className} {...rest}>
+      <div className="absolute inset-0 rounded-lg border border-green-800 dark:border-neutral-200" />
+      {children}
+    </button>
+  );
 }
