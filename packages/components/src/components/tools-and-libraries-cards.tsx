@@ -9,7 +9,7 @@ export function ToolsAndLibrariesCards({ className }: { className?: string }) {
   return (
     <section
       className={cn(
-        'isolate flex flex-col gap-6 px-4 py-6 lg:gap-12 lg:px-[120px] lg:py-24',
+        'isolate flex flex-col gap-6 px-4 py-6 lg:gap-12 xl:px-[120px] lg:py-24',
         className,
       )}
     >
