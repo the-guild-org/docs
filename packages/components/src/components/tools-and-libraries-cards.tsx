@@ -8,7 +8,10 @@ import { ArrowIcon, CodegenIcon, HiveIcon, MeshIcon, YogaIcon } from './icons';
 export function ToolsAndLibrariesCards({ className }: { className?: string }) {
   return (
     <section
-      className={cn('isolate flex flex-col gap-6 px-4 py-6 lg:gap-12 lg:p-[120px]', className)}
+      className={cn(
+        'isolate flex flex-col gap-6 px-4 py-6 lg:gap-12 lg:px-[120px] lg:py-24',
+        className,
+      )}
     >
       <Heading as="h2" size="md" className="text-green-1000">
         Discover the complete ecosystem of tools and libraries
