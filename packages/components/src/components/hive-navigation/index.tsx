@@ -204,7 +204,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, object>((props, ref
                   </div>
                   <div>
                     <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
-                      Mesh
+                      {product.name}
                     </p>
                     <p className="col-start-2 mt-1 text-sm leading-5 text-green-800 dark:text-neutral-300">
                       {description}
