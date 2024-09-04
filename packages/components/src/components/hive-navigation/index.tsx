@@ -84,7 +84,7 @@ export function HiveNavigation({
       </div>
 
       {/* desktop menu */}
-      <NavigationMenu className={cn('mx-auto hidden md:flex', className)}>
+      <NavigationMenu className={cn('mx-auto hidden md:flex', className)} delayDuration={0}>
         <HiveLogoLink />
         <NavigationMenuList className="lg:ml-16">
           <NavigationMenuItem>

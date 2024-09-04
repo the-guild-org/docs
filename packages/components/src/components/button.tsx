@@ -1,11 +1,10 @@
-import { ComponentProps, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import clsx from 'clsx';
-import { Anchor } from './anchor';
+import { Anchor, AnchorProps } from './anchor';
 
-export type ButtonProps = Omit<ComponentProps<'a'>, 'href' | 'ref'> & {
+export interface ButtonProps extends AnchorProps {
   variant?: 'primary' | 'secondary';
-  href: string;
-};
+}
 
 export const Button = ({
   children,

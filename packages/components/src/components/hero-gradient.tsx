@@ -48,9 +48,9 @@ export const HeroGradient = ({
           </p>
           <div className="flex items-center gap-x-3 text-xs md:mt-9">
             {link &&
-              toArray(link).map(link => (
+              toArray(link).map((link, i) => (
                 <Button
-                  key={link.href}
+                  key={i}
                   variant="secondary"
                   {...link}
                   className={clsx('!px-8', link.className)}

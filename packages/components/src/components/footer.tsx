@@ -81,8 +81,8 @@ const classes = {
 
 const renderLinks = (list: ILink[]) => (
   <ul className="m-0 mb-8 list-none p-0 last:mb-0">
-    {list.map(link => (
-      <li key={link.href} className="mb-3 last:mb-0">
+    {list.map((link, i) => (
+      <li key={i} className="mb-3 last:mb-0">
         <Anchor className={clsx(classes.anchor, 'inline-block text-sm')} {...link} />
       </li>
     ))}

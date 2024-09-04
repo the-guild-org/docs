@@ -85,8 +85,8 @@ function List({
     <div className={cn('flex flex-col gap-y-3 text-nowrap lg:gap-y-4', className)}>
       <h3 className="font-medium dark:text-white">{heading}</h3>
       <ul className="contents">
-        {links.map(link => (
-          <li key={link.href}>
+        {links.map((link, i) => (
+          <li key={i}>
             <Anchor
               {...link}
               className="-m-2 block p-2 hover:text-blue-700 hover:underline dark:hover:text-blue-100"

@@ -1,0 +1,45 @@
+import { useCallback, useState } from 'react';
+import { cn } from '../cn';
+import { CallToAction } from './call-to-action';
+
+export interface CookiesConsentProps extends React.HTMLAttributes<HTMLElement> {}
+export function CookiesConsent(props: CookiesConsentProps) {
+  const [show, setShow] = useState(() => localStorage.getItem('cookies') !== 'true');
+
+  const accept = useCallback(() => {
+    setShow(false);
+    localStorage.setItem('cookies', 'true');
+  }, []);
+
+  if (!show) {
+    return null;
+  }
+
+  return (
+    <div
+      {...props}
+      className={cn(
+        'z-100 fixed bottom-0 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 rounded-lg border border-beige-200 bg-beige-100 p-4 text-sm text-green-800 shadow-xl lg:flex-nowrap lg:justify-between lg:text-left dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200',
+        props.className,
+      )}
+    >
+      <div>
+        <p className="max-sm:inline">
+          This site uses cookies for analytics and improving your experience.
+        </p>{' '}
+        <p className="max-sm:inline">By using our services, you consent to cookies.</p>
+      </div>
+      <div className="ml-auto flex w-auto items-center justify-end gap-4">
+        <a
+          href="https://the-guild.dev/graphql/hive/privacy-policy.pdf"
+          className="whitespace-nowrap hover:text-blue-700 hover:underline dark:hover:text-blue-100"
+        >
+          Privacy Policy
+        </a>
+        <CallToAction variant="tertiary" onClick={accept} className="px-4 py-2">
+          Allow
+        </CallToAction>
+      </div>
+    </div>
+  );
+}

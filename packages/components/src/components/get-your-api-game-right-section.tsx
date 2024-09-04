@@ -1,5 +1,6 @@
 import { cn } from '../cn';
 import { CallToAction } from './call-to-action';
+import { DecorationIsolation } from './decorations';
 import { Heading } from './heading';
 
 export function GetYourAPIGameRightSection({ className }: { className?: string }) {
@@ -7,8 +8,10 @@ export function GetYourAPIGameRightSection({ className }: { className?: string }
     <section
       className={cn(className, 'relative overflow-hidden rounded-3xl bg-primary md:h-[308px]')}
     >
-      <GreenArchDecoration className="absolute inset-y-0 right-0 hidden opacity-10 md:block [@media(min-width:1300px)]:opacity-100" />
-      <StrokeDecoration className="absolute right-[607px] max-md:right-[-36px] max-md:top-[-71px] max-md:size-[200px] max-md:rotate-180 md:bottom-0" />
+      <DecorationIsolation>
+        <GreenArchDecoration className="absolute inset-y-0 right-0 hidden opacity-10 md:block [@media(min-width:1300px)]:opacity-100" />
+        <StrokeDecoration className="absolute right-[607px] max-md:right-[-36px] max-md:top-[-71px] max-md:size-[200px] max-md:rotate-180 md:bottom-0" />
+      </DecorationIsolation>
       <div className="flex flex-col items-stretch justify-between gap-x-6 gap-y-4 p-4 sm:items-center md:h-[308px] md:flex-row md:px-24">
         <Heading
           as="h2"
