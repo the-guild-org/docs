@@ -126,6 +126,7 @@ export const NavigationMenuLink = forwardRef<
           arrow && 'flex items-center',
           className,
         )}
+        {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       >
         {children}
         {arrow && <ArrowIcon className="ml-auto size-6 shrink-0 opacity-0 transition-all" />}

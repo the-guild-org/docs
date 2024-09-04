@@ -1,5 +1,6 @@
 import React, { forwardRef, Fragment, ReactNode } from 'react';
-import { Navbar as NextraNavbar, useThemeConfig } from 'nextra-theme-docs';
+import { useMenu, useThemeConfig } from 'nextra-theme-docs';
+import { MenuIcon } from 'nextra/icons';
 import { cn } from '../../cn';
 import { renderSlot } from '../../helpers/render-slot';
 import { GraphQLFoundationLogo, GuildLogo, HiveCombinationMark, TheGuild } from '../../logos';
@@ -15,7 +16,6 @@ import {
   GroupIcon,
   HiveIcon,
   HonourIcon,
-  ListIcon,
   PaperIcon,
   PencilIcon,
   RightCornerIcon,
@@ -37,9 +37,7 @@ const EXPLORE_HREF = 'https://github.com/the-guild-org';
 
 const ENTERPRISE_MENU_HIDDEN = true;
 
-type NextraNavbarProps = Parameters<typeof NextraNavbar>[0];
-
-export interface HiveNavigationProps extends NextraNavbarProps {
+export interface HiveNavigationProps {
   companyMenuChildren?: ReactNode;
   children?: ReactNode;
   className?: string;
@@ -65,7 +63,6 @@ export function HiveNavigation({
   children,
   className,
   productName,
-  ...nextraNavbarProps
 }: HiveNavigationProps) {
   // `useThemeConfig` doesn't return anything outside of Nextra, and the provider isn't exported
   const themeConfig = useThemeConfig() as ReturnType<typeof useThemeConfig> | undefined;
@@ -74,88 +71,88 @@ export function HiveNavigation({
   const isHive = productName === 'Hive';
 
   return (
-    <>
-      <div className="md:hidden">
-        <NextraNavbar {...nextraNavbarProps} />
+    <div
+      className={cn(
+        'sticky top-0 z-20 bg-white px-6 py-4 text-green-1000 md:my-2 dark:bg-[rgb(var(--nextra-bg))] dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
+        className?.includes('light') && 'light',
+      )}
+    >
+      {/* mobile menu */}
+      <div className="flex items-center justify-between md:hidden">
+        <HiveLogoLink />
+        <HamburgerButton />
       </div>
-      <div
-        className={cn(
-          'sticky top-0 z-20 my-2 bg-white px-6 py-4 text-green-1000 dark:bg-[rgb(var(--nextra-bg))] dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
-          className?.includes('light') && 'light',
-        )}
-      >
-        <NavigationMenu className={cn('mx-auto hidden w-screen md:flex', className)}>
-          <Anchor href="/" className="-m-2 flex items-center rounded-md p-2">
-            <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
-          </Anchor>
-          <NavigationMenuList className="lg:ml-16">
+
+      {/* desktop menu */}
+      <NavigationMenu className={cn('mx-auto hidden md:flex', className)}>
+        <HiveLogoLink />
+        <NavigationMenuList className="lg:ml-16">
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ProductsMenu />
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <DeveloperMenu isHive={isHive} />
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          {!ENTERPRISE_MENU_HIDDEN && (
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+              <NavigationMenuTrigger>Enterprise</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ProductsMenu />
+                <EnterpriseMenu />
               </NavigationMenuContent>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <DeveloperMenu isHive={isHive} />
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            {!ENTERPRISE_MENU_HIDDEN && (
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Enterprise</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <EnterpriseMenu />
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            )}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Company</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <CompanyMenu>{companyMenuChildren}</CompanyMenu>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                href={isHive ? '/#pricing' : 'https://the-guild.dev/graphql/hive#pricing'}
-                className="font-medium"
-              >
-                Pricing
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-          <div className="flex-1" />
+          )}
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Company</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <CompanyMenu>{companyMenuChildren}</CompanyMenu>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink
+              href={isHive ? '/#pricing' : 'https://the-guild.dev/graphql/hive#pricing'}
+              className="font-medium"
+            >
+              Pricing
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+        <div className="flex-1" />
 
-          {children}
+        {children}
 
-          {renderSlot(Search, {
-            // The && and :is(x) selector bump the specificity to 0-2-2 to override Nextra styles.
-            className: cn(
-              'relative ml-4 [&&_input:is(input)]:h-[48px] [&&_input:is(input)]:rounded-lg [&&_input:is(input)]:border-green-200 [&&_input:is(input)]:bg-inherit [&&_input:is(input)]:pl-4 [&&_input:is(input)]:pr-8 [&&_kbd:is(kbd)]:absolute [&&_kbd:is(kbd)]:right-4 [&&_kbd:is(kbd)]:top-1/2 [&&_kbd:is(kbd)]:translate-y-[-50%] [&&_kbd:is(kbd)]:border-none [&&_kbd:is(kbd)]:bg-green-200 [&&_input:is(input)]:border dark:[&&_input:is(input)]:border-neutral-800 dark:[&&_kbd:is(kbd)]:bg-neutral-700 [&&_:is(input,kbd):is(input,kbd)]:text-green-700 dark:[&&_:is(input,kbd):is(input,kbd)]:text-neutral-300 [&&_kbd:is(kbd)]:my-0',
-            ),
-          })}
+        {renderSlot(Search, {
+          // The && and :is(x) selector bump the specificity to 0-2-2 to override Nextra styles.
+          className: cn(
+            'relative ml-4 [&&_input:is(input)]:h-[48px] [&&_input:is(input)]:rounded-lg [&&_input:is(input)]:border-green-200 [&&_input:is(input)]:bg-inherit [&&_input:is(input)]:pl-4 [&&_input:is(input)]:pr-8 [&&_kbd:is(kbd)]:absolute [&&_kbd:is(kbd)]:right-4 [&&_kbd:is(kbd)]:top-1/2 [&&_kbd:is(kbd)]:translate-y-[-50%] [&&_kbd:is(kbd)]:border-none [&&_kbd:is(kbd)]:bg-green-200 [&&_input:is(input)]:border dark:[&&_input:is(input)]:border-neutral-800 dark:[&&_kbd:is(kbd)]:bg-neutral-700 [&&_:is(input,kbd):is(input,kbd)]:text-green-700 dark:[&&_:is(input,kbd):is(input,kbd)]:text-neutral-300 [&&_kbd:is(kbd)]:my-0',
+          ),
+        })}
 
-          <CallToAction
-            className="ml-4 max-lg:hidden"
-            variant="tertiary"
-            href="https://the-guild.dev/contact"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={event => {
-              if (typeof window !== 'undefined' && '$crisp' in window) {
-                (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
-                event.preventDefault();
-              }
-            }}
-          >
-            Contact <span className="hidden xl:contents">us</span>
-          </CallToAction>
-          <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
-            Get started <span className="hidden lg:contents">for free</span>
-          </CallToAction>
-        </NavigationMenu>
-      </div>
-    </>
+        <CallToAction
+          className="ml-4 max-lg:hidden"
+          variant="tertiary"
+          href="https://the-guild.dev/contact"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={event => {
+            if (typeof window !== 'undefined' && '$crisp' in window) {
+              (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
+              event.preventDefault();
+            }
+          }}
+        >
+          Contact <span className="hidden xl:contents">us</span>
+        </CallToAction>
+        <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
+          Get started <span className="hidden lg:contents">for free</span>
+        </CallToAction>
+      </NavigationMenu>
+    </div>
   );
 }
 
@@ -288,7 +285,7 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
   ({ isHive, ...rest }, ref) => {
     return (
       <MenuContentColumns {...rest} ref={ref}>
-        <div className="w-[188px]">
+        <div>
           <ColumnLabel>Developer</ColumnLabel>
           <ul>
             {(
@@ -298,7 +295,6 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
                   PaperIcon,
                   isHive ? '/docs' : 'https://the-guild.dev/graphql/hive/docs',
                 ],
-                ['Changelog', ListIcon, 'https://github.com/kamilkisiela/graphql-hive/releases'],
                 ['Status', TargetIcon, 'https://status.graphql-hive.com/'],
                 [
                   'Product Updates',
@@ -317,7 +313,7 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
             ))}
           </ul>
         </div>
-        <div className="w-[188px]">
+        <div>
           <ColumnLabel>Community</ColumnLabel>
           <ul>
             {(
@@ -465,5 +461,30 @@ export function CompanyMenu({ children }: { children: React.ReactNode }) {
       </div>
       {children && <div>{children}</div>}
     </MenuContentColumns>
+  );
+}
+
+function HiveLogoLink() {
+  return (
+    <Anchor href="/" className="-m-2 flex items-center rounded-md p-2">
+      <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
+    </Anchor>
+  );
+}
+
+function HamburgerButton() {
+  const { menu, setMenu } = useMenu();
+
+  return (
+    <button
+      type="button"
+      aria-label="Menu"
+      className="md:_hidden hover nextra-hamburger -m-1 rounded-lg bg-transparent p-1 text-green-1000 focus-visible:outline-none focus-visible:ring active:bg-beige-200 dark:text-neutral-200 dark:active:bg-neutral-800"
+      onClick={() => setMenu(!menu)}
+    >
+      <MenuIcon
+        className={cn({ open: menu }, 'size-6 stroke-current [&_path]:[stroke-linecap:square]')}
+      />
+    </button>
   );
 }
