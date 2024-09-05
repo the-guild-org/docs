@@ -32,7 +32,7 @@ export function Heading({ as: _as, size, className, children, ...rest }: Heading
   return (
     <Level className={cn(sizeStyle, className)} id={id} {...rest}>
       {id ? (
-        <a href={`#${id}`} className="cursor-text" tabIndex={-1}>
+        <a href={`#${id}`} className="cursor-text" tabIndex={-1} onClick={preventScroll}>
           {children}
         </a>
       ) : (
@@ -40,4 +40,14 @@ export function Heading({ as: _as, size, className, children, ...rest }: Heading
       )}
     </Level>
   );
+}
+
+function preventScroll(event: React.MouseEvent<HTMLAnchorElement>) {
+  if (event.currentTarget.tagName !== 'A') return;
+  const href = event.currentTarget.getAttribute('href');
+  if (href?.[0] !== '#') return;
+  event.preventDefault();
+  const url = new URL(window.location.href);
+  url.hash = href.slice(1);
+  window.history.replaceState({}, '', url.toString());
 }
