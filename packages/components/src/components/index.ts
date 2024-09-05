@@ -30,3 +30,4 @@ export { ToolsAndLibrariesCards } from './tools-and-libraries-cards';
 export * from './decorations';
 export * from './call-to-action';
 export * from './cookies-consent';
+export * from './heading';
