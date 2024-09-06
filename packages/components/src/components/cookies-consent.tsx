@@ -33,6 +33,8 @@ export function CookiesConsent(props: CookiesConsentProps) {
         <a
           href="https://the-guild.dev/graphql/hive/privacy-policy.pdf"
           className="whitespace-nowrap hover:text-blue-700 hover:underline dark:hover:text-blue-100"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Privacy Policy
         </a>
