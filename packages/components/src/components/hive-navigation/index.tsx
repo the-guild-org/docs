@@ -1,4 +1,5 @@
 import React, { forwardRef, Fragment, ReactNode } from 'react';
+import { useRouter } from 'next/router';
 import { useMenu, useThemeConfig } from 'nextra-theme-docs';
 import { MenuIcon } from 'nextra/icons';
 import { cn } from '../../cn';
@@ -90,7 +91,7 @@ export function HiveNavigation({
           <NavigationMenuItem>
             <NavigationMenuTrigger>Products</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ProductsMenu />
+              <ProductsMenu isHive={isHive} />
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -156,105 +157,123 @@ export function HiveNavigation({
   );
 }
 
+interface ProductsMenuProps extends MenuContentColumnsProps {
+  isHive: boolean;
+}
 /**
  * @internal
  */
-export const ProductsMenu = React.forwardRef<HTMLDivElement, object>((props, ref) => {
-  return (
-    <MenuContentColumns ref={ref} {...props}>
-      <div className="w-[220px]">
-        <ColumnLabel>Platform</ColumnLabel>
-        <NavigationMenuLink href={PRODUCTS.HIVE.href} className="p-4">
-          <div className="w-fit rounded-lg bg-green-800 p-3 dark:bg-white/10">
-            <HiveIcon className="size-10 text-white" />
-          </div>
-          <p className="mt-4 text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
-            Hive
-          </p>
-          <p className="mt-1 text-sm leading-5 text-green-800 dark:text-neutral-400">
-            GraphQL Management Platform & Decision-making Engine
-          </p>
-        </NavigationMenuLink>
-        <Anchor
-          href="https://app.graphql-hive.com/"
-          className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
-        >
-          <span>Get started</span> <ArrowIcon />
-        </Anchor>
-      </div>
-      <div className="w-[257px]">
-        <ColumnLabel>The GraphQL Stack</ColumnLabel>
-        <ul>
-          {(
-            [
-              [PRODUCTS.MESH, 'Gateway GraphQL API'],
-              [PRODUCTS.YOGA, 'GraphQL Subgraph'],
-              [PRODUCTS.CODEGEN, 'GraphQL Code Generation'],
-            ] as const
-          ).map(([product, description]) => {
-            const Logo = product.logo;
-            return (
-              <li key={product.name}>
-                <NavigationMenuLink
-                  href={product.href}
-                  className="flex flex-row items-center gap-4 p-4"
-                >
-                  <div className="size-12 rounded-lg bg-blue-400 p-2.5">
-                    <Logo className="size-7 text-green-1000" />
-                  </div>
-                  <div>
-                    <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
-                      {product.name}
-                    </p>
-                    <p className="col-start-2 mt-1 text-sm leading-5 text-green-800 dark:text-neutral-300">
-                      {description}
-                    </p>
-                  </div>
-                </NavigationMenuLink>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div className="w-[364px]">
-        <ColumnLabel>Libraries</ColumnLabel>
-        <ul className="grid grid-cols-2 gap-x-4">
-          {SIX_HIGHLIGHTED_PRODUCTS.map(product => {
-            const Logo = product.logo;
-            return (
-              <li key={product.name}>
-                <NavigationMenuLink
-                  href={product.href}
-                  className="flex flex-row items-center gap-3 px-4 py-2"
-                  arrow
-                >
-                  <div className="flex size-8 items-center justify-center rounded bg-beige-200 dark:bg-white/5">
-                    <Logo className="size-8 text-green-1000 dark:text-neutral-300" />
-                  </div>
-                  <div>
-                    <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
-                      {product.name}
-                    </p>
-                  </div>
-                </NavigationMenuLink>
-              </li>
-            );
-          })}
-        </ul>
-        <Anchor
-          href={EXPLORE_HREF}
-          className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
-        >
-          <span>Explore all libraries</span> <ArrowIcon />
-        </Anchor>
-      </div>
-    </MenuContentColumns>
-  );
-});
+export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
+  ({ isHive, ...rest }, ref) => {
+    const { asPath } = useRouter();
+
+    return (
+      <MenuContentColumns ref={ref} {...rest}>
+        <div className="w-[220px]">
+          <ColumnLabel>Platform</ColumnLabel>
+          <NavigationMenuLink
+            href={
+              isHive
+                ? // We link bidirectionally between the landing page and the docs.
+                  asPath === '/'
+                  ? '/docs'
+                  : '/'
+                : PRODUCTS.HIVE.href
+            }
+            className="p-4"
+          >
+            <div className="w-fit rounded-lg bg-green-800 p-3 dark:bg-white/10">
+              <HiveIcon className="size-10 text-white" />
+            </div>
+            <p className="mt-4 text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
+              Hive
+            </p>
+            <p className="mt-1 text-sm leading-5 text-green-800 dark:text-neutral-400">
+              GraphQL Management Platform & Decision-making Engine
+            </p>
+          </NavigationMenuLink>
+          <Anchor
+            href="https://app.graphql-hive.com/"
+            className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
+          >
+            <span>Get started</span> <ArrowIcon />
+          </Anchor>
+        </div>
+        <div className="w-[257px]">
+          <ColumnLabel>The GraphQL Stack</ColumnLabel>
+          <ul>
+            {(
+              [
+                [PRODUCTS.MESH, 'Gateway GraphQL API'],
+                [PRODUCTS.YOGA, 'GraphQL Subgraph'],
+                [PRODUCTS.CODEGEN, 'GraphQL Code Generation'],
+              ] as const
+            ).map(([product, description]) => {
+              const Logo = product.logo;
+              return (
+                <li key={product.name}>
+                  <NavigationMenuLink
+                    href={product.href}
+                    className="flex flex-row items-center gap-4 p-4"
+                  >
+                    <div className="size-12 rounded-lg bg-blue-400 p-2.5">
+                      <Logo className="size-7 text-green-1000" />
+                    </div>
+                    <div>
+                      <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
+                        {product.name}
+                      </p>
+                      <p className="col-start-2 mt-1 text-sm leading-5 text-green-800 dark:text-neutral-300">
+                        {description}
+                      </p>
+                    </div>
+                  </NavigationMenuLink>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="w-[364px]">
+          <ColumnLabel>Libraries</ColumnLabel>
+          <ul className="grid grid-cols-2 gap-x-4">
+            {SIX_HIGHLIGHTED_PRODUCTS.map(product => {
+              const Logo = product.logo;
+              return (
+                <li key={product.name}>
+                  <NavigationMenuLink
+                    href={product.href}
+                    className="flex flex-row items-center gap-3 px-4 py-2"
+                    arrow
+                  >
+                    <div className="flex size-8 items-center justify-center rounded bg-beige-200 dark:bg-white/5">
+                      <Logo className="size-8 text-green-1000 dark:text-neutral-300" />
+                    </div>
+                    <div>
+                      <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
+                        {product.name}
+                      </p>
+                    </div>
+                  </NavigationMenuLink>
+                </li>
+              );
+            })}
+          </ul>
+          <Anchor
+            href={EXPLORE_HREF}
+            className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
+          >
+            <span>Explore all libraries</span> <ArrowIcon />
+          </Anchor>
+        </div>
+      </MenuContentColumns>
+    );
+  },
+);
 ProductsMenu.displayName = 'ProductsMenu';
 
+interface MenuContentColumnsProps extends React.HTMLAttributes<HTMLDivElement> {}
 const MenuContentColumns = forwardRef(
-  (props: React.HTMLAttributes<HTMLDivElement>, ref: React.ForwardedRef<HTMLDivElement>) => {
+  (props: MenuContentColumnsProps, ref: React.ForwardedRef<HTMLDivElement>) => {
     return (
       <div className="flex gap-x-6 [&>*]:flex [&>*]:flex-col [&>*]:gap-4" ref={ref} {...props}>
         {React.Children.toArray(props.children)
