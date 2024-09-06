@@ -70,6 +70,7 @@ export function HighlightDecoration(props: React.SVGAttributes<SVGSVGElement>) {
       viewBox="0 0 895 674"
       fill="#86B6C1"
       {...props}
+      // eslint-disable-next-line tailwindcss/no-custom-classname
       className={cn('firefox-highlight-fix', props.className)}
     >
       <g filter="url(#filter0_f_711_1774)">
