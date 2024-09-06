@@ -33,6 +33,7 @@ module.exports = {
   },
   settings: {
     tailwindcss: {
+      callees: ['clsx', 'cn', 'cva', 'cx'],
       config: 'tailwind.config.ts',
       whitelist: [
         // TODO: find a way to fix it and remove these classes since they are imported somewhere and are used
