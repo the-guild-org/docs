@@ -25,7 +25,6 @@ export default {
   decorators: [hiveThemeDecorator, nextraThemeDocsCtxDecorator],
   args: {
     productName: 'Hive',
-    items: [{ name: 'Mobile Item 1', title: 'Mobile Item 1', route: '/', items: {}, type: 'link' }],
   },
 } as Meta<HiveNavigationProps>;
 
@@ -52,7 +51,27 @@ export const ForcedLightMode: StoryObj = {
   ...Default,
   decorators: [
     Story => (
-      <div className="light">
+      <div className="light" style={{ '--nextra-bg': '255 255 255' }}>
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+export const BackgroundFromCSSProperty: StoryObj = {
+  ...Default,
+  decorators: [
+    Story => (
+      // eslint-disable-next-line tailwindcss/no-custom-classname
+      <div className="background-vars">
+        <style>{`
+          .background-vars {
+            --nextra-bg: 250 250 250;
+          }
+          .dark .background-vars {
+            --nextra-bg: 30 30 30;
+          }
+        `}</style>
         <Story />
       </div>
     ),
@@ -67,7 +86,7 @@ export const Viewport: StoryObj = {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Menu Item</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ProductsMenu />
+              <ProductsMenu isHive={false} />
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -83,7 +102,7 @@ export const Products: StoryObj = {
   render() {
     return (
       <NavigationMenu>
-        <ProductsMenu />
+        <ProductsMenu isHive={false} />
       </NavigationMenu>
     );
   },
