@@ -8,8 +8,6 @@ export default {
   component: CookiesConsent,
   decorators: [
     Story => {
-      // false positives on unused variables
-      // eslint-disable-next-line react/hook-use-state
       const [key, setKey] = useState(0);
       const remount = () => setKey(Math.random());
 
