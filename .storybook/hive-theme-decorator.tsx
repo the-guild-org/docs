@@ -41,11 +41,6 @@ export const hiveThemeDecorator = (Story: () => React.ReactNode, ctx: StoryConte
         :root {
           --nextra-bg: 255, 255, 255;
         }
-        @media (prefers-color-scheme: dark) {
-          :root {
-            --nextra-bg: 20, 20, 20;
-          }
-        }
         .dark {
           --nextra-bg: 20, 20, 20;
         }

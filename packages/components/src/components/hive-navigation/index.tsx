@@ -199,7 +199,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
             <span>Get started</span> <ArrowIcon />
           </Anchor>
         </div>
-        <div className="w-[257px]">
+        <div className="w-[267px]">
           <ColumnLabel>The GraphQL Stack</ColumnLabel>
           <ul>
             {(
