@@ -189,7 +189,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
               Hive
             </p>
             <p className="mt-1 text-sm leading-5 text-green-800 dark:text-neutral-400">
-              GraphQL Management Platform & Decision-making Engine
+              GraphQL Management Platform, a Gateway & Decision-making Engine
             </p>
           </NavigationMenuLink>
           <Anchor
@@ -204,8 +204,8 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
           <ul>
             {(
               [
-                [PRODUCTS.MESH, 'Gateway GraphQL API'],
-                [PRODUCTS.YOGA, 'GraphQL Subgraph'],
+                [PRODUCTS.MESH, 'Anything to GraphQL'],
+                [PRODUCTS.YOGA, 'GraphQL Server & Subgraph'],
                 [PRODUCTS.CODEGEN, 'GraphQL Code Generation'],
               ] as const
             ).map(([product, description]) => {
