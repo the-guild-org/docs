@@ -257,8 +257,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1
       satori:
-        specifier: 0.10.14
-        version: 0.10.14
+        specifier: 0.11.1
+        version: 0.11.1
       yoga-wasm-web:
         specifier: 0.3.3
         version: 0.3.3
@@ -3595,6 +3595,10 @@ packages:
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       postcss: ^8.0.9
+
+  css-gradient-parser@0.0.16:
+    resolution: {integrity: sha512-3O5QdqgFRUbXvK1x5INf1YkBz1UKSWqrd63vWsum8MNHDBYD5urm3QtxZbKU259OrEXNM26lP/MPY3d1IGkBgA==}
+    engines: {node: '>=16'}
 
   css-loader@6.11.0:
     resolution: {integrity: sha512-CTJ+AEQJjq5NzLga5pE39qdiSV56F8ywCIsqNIRF0r7BDgWsN25aazToqAFg7ZrtA/U016xudB3ffgweORxX7g==}
@@ -7408,8 +7412,8 @@ packages:
       sass-embedded:
         optional: true
 
-  satori@0.10.14:
-    resolution: {integrity: sha512-abovcqmwl97WKioxpkfuMeZmndB1TuDFY/R+FymrZyiGP+pMYomvgSzVPnbNMWHHESOPosVHGL352oFbdAnJcA==}
+  satori@0.11.1:
+    resolution: {integrity: sha512-xIfUwWEiGsJPK4T+iALLhop2bNY4Kg/PvElG9aCQFdocBgPBWTTOULDdOBVaGwqqCMNmibXMoGC0uSteNr7kuQ==}
     engines: {node: '>=16'}
 
   scheduler@0.23.2:
@@ -12701,6 +12705,8 @@ snapshots:
     dependencies:
       postcss: 8.4.45
 
+  css-gradient-parser@0.0.16: {}
+
   css-loader@6.11.0(webpack@5.94.0(esbuild@0.23.1)):
     dependencies:
       icss-utils: 5.1.0(postcss@8.4.45)
@@ -17468,11 +17474,12 @@ snapshots:
       neo-async: 2.6.2
       webpack: 5.94.0(esbuild@0.23.1)
 
-  satori@0.10.14:
+  satori@0.11.1:
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
       css-background-parser: 0.1.0
       css-box-shadow: 1.0.0-3
+      css-gradient-parser: 0.0.16
       css-to-react-native: 3.2.0
       emoji-regex: 10.4.0
       escape-html: 1.0.3
