@@ -1,4 +1,12 @@
-import React, { forwardRef, Fragment, ReactNode } from 'react';
+import React, {
+  forwardRef,
+  Fragment,
+  ReactNode,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from 'react';
+import { createPortal } from 'react-dom';
 import { useRouter } from 'next/router';
 import { useMenu, useThemeConfig } from 'nextra-theme-docs';
 import { MenuIcon } from 'nextra/icons';
@@ -71,13 +79,24 @@ export function HiveNavigation({
 
   const isHive = productName === 'Hive';
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
     <div
+      ref={containerRef}
+      data-scrolled="false"
       className={cn(
-        'sticky top-0 z-20 bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 md:my-2 dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
+        'sticky top-0 z-20 border-b border-beige-400 bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 data-[scrolled=false]:border-transparent md:my-2 dark:border-neutral-700 dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
         className?.includes('light') && 'light',
       )}
     >
+      <TopOfSiteMarker
+        onChange={scrolled => {
+          const container = containerRef.current;
+          if (container) container.dataset.scrolled = String(scrolled);
+        }}
+      />
+
       {/* mobile menu */}
       <div className="flex items-center justify-between md:hidden">
         <HiveLogoLink />
@@ -507,3 +526,33 @@ function HamburgerButton() {
     </button>
   );
 }
+
+const TopOfSiteMarker = function TopOfSiteMarker({
+  onChange,
+  className,
+}: {
+  onChange: (scrolled: boolean) => void;
+  className?: string;
+}) {
+  const markerRef = useRef<HTMLDivElement>(null);
+  const onChangeRef = useRef(onChange);
+  onChangeRef.current = onChange;
+
+  useEffect(() => {
+    if (markerRef.current && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        onChangeRef.current(entries[0].boundingClientRect.y < -2);
+      });
+      observer.observe(markerRef.current);
+    }
+  }, []);
+
+  return createPortal(
+    <div
+      data-top-marker
+      ref={markerRef}
+      className={cn('absolute left-0 top-0 -z-50 size-px', className)}
+    />,
+    document.body,
+  );
+};
