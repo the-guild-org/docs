@@ -540,10 +540,15 @@ const TopOfSiteMarker = function TopOfSiteMarker({
 
   useEffect(() => {
     if (markerRef.current && 'IntersectionObserver' in window) {
+      const marker = markerRef.current;
       const observer = new IntersectionObserver(entries => {
         onChangeRef.current(entries[0].boundingClientRect.y < -2);
       });
       observer.observe(markerRef.current);
+
+      return () => {
+        observer.unobserve(marker);
+      };
     }
   }, []);
 
