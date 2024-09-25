@@ -1,11 +1,4 @@
-import React, {
-  forwardRef,
-  Fragment,
-  ReactNode,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-} from 'react';
+import React, { forwardRef, Fragment, ReactNode, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useRouter } from 'next/router';
 import { useMenu, useThemeConfig } from 'nextra-theme-docs';
