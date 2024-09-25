@@ -86,7 +86,7 @@ export function HiveNavigation({
       ref={containerRef}
       data-scrolled="false"
       className={cn(
-        'sticky top-0 z-20 border-b border-beige-400 bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 data-[scrolled=false]:border-transparent md:mb-[7px] md:mt-2 dark:border-neutral-700 dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
+        'sticky top-0 z-20 border-b border-beige-400/[var(--border-opacity)] bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 data-[scrolled=false]:[--border-opacity:0] md:mb-[7px] md:mt-2 dark:border-neutral-700/[var(--border-opacity,1)] dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
         className?.includes('light') && 'light',
       )}
     >
@@ -543,7 +543,7 @@ const TopOfSiteMarker = function TopOfSiteMarker({
       const marker = markerRef.current;
       const observer = new IntersectionObserver(entries => {
         onChangeRef.current(entries[0].boundingClientRect.y < -2);
-      });
+      }, {});
       observer.observe(markerRef.current);
 
       return () => {
