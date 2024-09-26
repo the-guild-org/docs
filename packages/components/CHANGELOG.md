@@ -1,5 +1,16 @@
 # @theguild/components
 
+## 6.6.6
+
+### Patch Changes
+
+- [#1659](https://github.com/the-guild-org/docs/pull/1659)
+  [`a7f3fcc`](https://github.com/the-guild-org/docs/commit/a7f3fcc70e415759ba4f4a8012aacff6a4f28fea)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`@next/bundle-analyzer@14.2.8` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/14.2.8)
+    (from `14.2.7`, in `dependencies`)
+
 ## 6.6.5
 
 ### Patch Changes

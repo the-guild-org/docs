@@ -1,5 +1,14 @@
 # @theguild/remark-mermaid
 
+## 0.1.3
+
+### Patch Changes
+
+- [#1691](https://github.com/the-guild-org/docs/pull/1691)
+  [`cb506c0`](https://github.com/the-guild-org/docs/commit/cb506c0246f373f1668c6881ec0f71b111f188aa)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - fix mermaid issues
+  https://github.com/shuding/nextra/issues/3291 and https://github.com/shuding/nextra/issues/3236
+
 ## 0.1.2
 
 ### Patch Changes
