@@ -1,14 +1,34 @@
 'use client';
 
-import { ReactElement, useEffect, useId, useRef, useState } from 'react';
+import { MutableRefObject, ReactElement, useEffect, useId, useRef, useState } from 'react';
 import { MermaidConfig } from 'mermaid';
+
+function useIsVisible(ref: MutableRefObject<HTMLElement>) {
+  const [isIntersecting, setIntersecting] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => setIntersecting(entry.isIntersecting));
+
+    observer.observe(ref.current);
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref]);
+
+  return isIntersecting;
+}
 
 export function Mermaid({ chart }: { chart: string }): ReactElement {
   const id = useId();
   const [svg, setSvg] = useState('');
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null!);
+
+  const isVisible = useIsVisible(containerRef);
 
   useEffect(() => {
+    if (!isVisible) {
+      return;
+    }
     const htmlElement = document.documentElement;
     const mutationObserver = new MutationObserver(renderChart);
     mutationObserver.observe(htmlElement, { attributes: true });
@@ -38,8 +58,8 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
         const { svg } = await mermaid.render(
           // strip invalid characters for `id` attribute
           id.replaceAll(':', ''),
-          chart,
-          containerRef.current || undefined,
+          chart.replaceAll('\\n', '\n'),
+          containerRef.current,
         );
         setSvg(svg);
       } catch (error) {
@@ -49,7 +69,7 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps -- when chart code changes, we need to re-render
-  }, [chart]);
+  }, [chart, isVisible]);
 
   return <div ref={containerRef} dangerouslySetInnerHTML={{ __html: svg }} />;
 }
