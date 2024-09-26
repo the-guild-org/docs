@@ -60,7 +60,7 @@
     "tsup": "8.2.4",
     "tsx": "4.19.1",
     "turbo": "2.1.2",
-    "typescript": "5.5.4",
+    "typescript": "5.6.2",
     "vitest": "2.1.1"
   },
   "browserslist": [
