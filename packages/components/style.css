@@ -6,7 +6,7 @@
   @apply bg-[#48224e] bg-none;
 }
 :root {
-  --nextra-navbar-height: 4.5rem;
+  --nextra-navbar-height: 72px;
 }
 
 .nextra-nav-container [role='menu']:has(a[href='https://the-guild.dev/graphql/hive'])
