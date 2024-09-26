@@ -61,7 +61,7 @@
     "tsup": "8.2.4",
     "tsx": "4.19.1",
     "turbo": "2.1.2",
-    "typescript": "5.5.4",
+    "typescript": "5.6.2",
     "vitest": "2.1.1"
   },
   "browserslist": [
@@ -83,7 +83,7 @@
       "hast-util-to-estree": "^3.0.0",
       "@theguild/remark-npm2yarn": "workspace:*",
       "@theguild/remark-mermaid": "workspace:*",
-      "esbuild": "0.23.1",
+      "esbuild": "0.24.0",
       "eslint-plugin-react-hooks": "5.1.0-rc-06d0b89e-20240801",
       "@types/react": "18.3.3"
     },
