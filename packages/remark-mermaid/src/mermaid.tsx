@@ -4,10 +4,12 @@ import { MutableRefObject, ReactElement, useEffect, useId, useRef, useState } fr
 import { MermaidConfig } from 'mermaid';
 
 function useIsVisible(ref: MutableRefObject<HTMLElement>) {
-  const [isIntersecting, setIntersecting] = useState(false);
+  const [isIntersecting, setIsIntersecting] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => setIntersecting(entry.isIntersecting));
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+    });
 
     observer.observe(ref.current);
     return () => {
@@ -22,7 +24,6 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
   const id = useId();
   const [svg, setSvg] = useState('');
   const containerRef = useRef<HTMLDivElement>(null!);
-
   const isVisible = useIsVisible(containerRef);
 
   useEffect(() => {
