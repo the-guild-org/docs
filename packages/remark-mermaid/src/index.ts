@@ -40,7 +40,7 @@ export const remarkMermaid: Plugin<[], Root> = () => (ast, _file, done) => {
           {
             type: 'mdxJsxAttribute',
             name: 'chart',
-            value: node.value,
+            value: node.value.replaceAll('\n', '\\n'),
           },
         ],
       });
