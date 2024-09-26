@@ -1,21 +1,48 @@
 'use client';
 
-import { ReactElement, useEffect, useId, useRef, useState } from 'react';
+import { MutableRefObject, ReactElement, useEffect, useId, useRef, useState } from 'react';
 import { MermaidConfig } from 'mermaid';
+
+function useIsVisible(ref: MutableRefObject<HTMLElement>) {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        // disconnect after once visible to avoid re-rendering of chart when `isIntersecting` will
+        // be changed to true/false
+        observer.disconnect();
+        setIsIntersecting(true);
+      }
+    });
+
+    observer.observe(ref.current);
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref]);
+
+  return isIntersecting;
+}
 
 export function Mermaid({ chart }: { chart: string }): ReactElement {
   const id = useId();
   const [svg, setSvg] = useState('');
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null!);
+  const isVisible = useIsVisible(containerRef);
 
   useEffect(() => {
+    // Fix when inside element with `display: hidden` https://github.com/shuding/nextra/issues/3291
+    if (!isVisible) {
+      return;
+    }
     const htmlElement = document.documentElement;
-    const mutationObserver = new MutationObserver(renderChart);
-    mutationObserver.observe(htmlElement, { attributes: true });
+    const observer = new MutationObserver(renderChart);
+    observer.observe(htmlElement, { attributes: true });
     renderChart();
 
     return () => {
-      mutationObserver.disconnect();
+      observer.disconnect();
     };
 
     // Switching themes taken from https://github.com/mermaid-js/mermaid/blob/1b40f552b20df4ab99a986dd58c9d254b3bfd7bc/packages/mermaid/src/docs/.vitepress/theme/Mermaid.vue#L53
@@ -38,8 +65,8 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
         const { svg } = await mermaid.render(
           // strip invalid characters for `id` attribute
           id.replaceAll(':', ''),
-          chart,
-          containerRef.current || undefined,
+          chart.replaceAll('\\n', '\n'),
+          containerRef.current,
         );
         setSvg(svg);
       } catch (error) {
@@ -49,7 +76,7 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps -- when chart code changes, we need to re-render
-  }, [chart]);
+  }, [chart, isVisible]);
 
   return <div ref={containerRef} dangerouslySetInnerHTML={{ __html: svg }} />;
 }
