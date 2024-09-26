@@ -79,7 +79,7 @@ export function HiveNavigation({
     <div
       ref={containerRef}
       className={cn(
-        'sticky top-0 z-20 border-b border-beige-400/[var(--border-opacity)] bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 md:mb-[7px] md:mt-2 dark:border-neutral-700/[var(--border-opacity)] dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
+        'sticky top-0 z-20 border-b border-beige-400/[var(--border-opacity)] bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 md:mb-[7px] md:mt-2 dark:border-neutral-700/[var(--border-opacity)] dark:text-neutral-200 [&.light]:border-beige-400/[var(--border-opacity)] [&.light]:bg-white [&.light]:text-green-1000',
         className?.includes('light') && 'light',
       )}
       style={{ '--border-opacity': 0 }}
