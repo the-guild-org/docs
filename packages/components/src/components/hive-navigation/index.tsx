@@ -2,6 +2,7 @@ import React, { forwardRef, Fragment, ReactNode, useEffect, useRef } from 'react
 import { createPortal } from 'react-dom';
 import { useRouter } from 'next/router';
 import { useMenu, useThemeConfig } from 'nextra-theme-docs';
+import { useMounted } from 'nextra/hooks';
 import { MenuIcon } from 'nextra/icons';
 import { cn } from '../../cn';
 import { renderSlot } from '../../helpers/render-slot';
@@ -527,6 +528,8 @@ const TopOfSiteMarker = function TopOfSiteMarker({
   onChange: (scrolled: boolean) => void;
   className?: string;
 }) {
+  const mounted = useMounted();
+
   const markerRef = useRef<HTMLDivElement>(null);
   const onChangeRef = useRef(onChange);
   onChangeRef.current = onChange;
@@ -544,6 +547,11 @@ const TopOfSiteMarker = function TopOfSiteMarker({
       };
     }
   }, []);
+
+  // We can't create a portal to document.body if we are not in the browser.
+  if (!mounted) {
+    return null;
+  }
 
   return createPortal(
     <div
