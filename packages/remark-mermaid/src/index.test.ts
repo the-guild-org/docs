@@ -18,7 +18,7 @@ A
         };
         if (!Mermaid) _missingMdxReference("Mermaid", true);
         return _jsx(Mermaid, {
-          chart: "graph TD\\nA"
+          chart: "graph TD\\\\nA"
         });
       }"
     `);
@@ -42,7 +42,7 @@ Z["API"]
         };
         if (!Mermaid) _missingMdxReference("Mermaid", true);
         return _jsx(Mermaid, {
-          chart: "graph TD\\nZ[\\"API\\"]\\n\\\\\\n\`"
+          chart: "graph TD\\\\nZ[\\"API\\"]\\\\n\\\\\\\\n\`"
         });
       }"
     `);
