@@ -8,7 +8,11 @@ function useIsVisible(ref: MutableRefObject<HTMLElement>) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      setIsIntersecting(entry.isIntersecting);
+      if (entry.isIntersecting) {
+        // disconnect after first visibility to avoid re-rendering of chart
+        observer.disconnect();
+        setIsIntersecting(true);
+      }
     });
 
     observer.observe(ref.current);
