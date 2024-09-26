@@ -1,4 +1,5 @@
-import type { FC, SVGProps } from 'react';
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
+import { FC, SVGProps } from 'react';
 
 declare const ReactComponent: FC<SVGProps<SVGElement>>;
 

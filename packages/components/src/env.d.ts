@@ -13,7 +13,8 @@ declare module 'next-videos' {
 }
 
 declare module '*.svg' {
-  import type { FC, SVGProps } from 'react';
+  // eslint-disable-next-line @typescript-eslint/no-restricted-imports
+  import { FC, SVGProps } from 'react';
   export const ReactComponent: FC<SVGProps<SVGElement>>;
 }
 declare module '*.png';
