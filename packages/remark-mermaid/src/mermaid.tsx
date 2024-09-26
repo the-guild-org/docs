@@ -27,6 +27,7 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
   const isVisible = useIsVisible(containerRef);
 
   useEffect(() => {
+    // Fix when inside element with `display: hidden` https://github.com/shuding/nextra/issues/3291
     if (!isVisible) {
       return;
     }
