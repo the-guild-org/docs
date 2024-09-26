@@ -16,5 +16,7 @@ declare module '*.svg' {
   // eslint-disable-next-line @typescript-eslint/no-restricted-imports
   import { FC, SVGProps } from 'react';
   export const ReactComponent: FC<SVGProps<SVGElement>>;
+  const src: string;
+  export default src;
 }
 declare module '*.png';
