@@ -32,12 +32,12 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
       return;
     }
     const htmlElement = document.documentElement;
-    const mutationObserver = new MutationObserver(renderChart);
-    mutationObserver.observe(htmlElement, { attributes: true });
+    const observer = new MutationObserver(renderChart);
+    observer.observe(htmlElement, { attributes: true });
     renderChart();
 
     return () => {
-      mutationObserver.disconnect();
+      observer.disconnect();
     };
 
     // Switching themes taken from https://github.com/mermaid-js/mermaid/blob/1b40f552b20df4ab99a986dd58c9d254b3bfd7bc/packages/mermaid/src/docs/.vitepress/theme/Mermaid.vue#L53
