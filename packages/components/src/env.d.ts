@@ -13,10 +13,7 @@ declare module 'next-videos' {
 }
 
 declare module '*.svg' {
-  import { ComponentProps, ReactElement } from 'react';
-
-  export const ReactComponent: (props: ComponentProps<'svg'>) => ReactElement;
-  const src: string;
-  export default src;
+  import type { FC, SVGProps } from 'react'
+  export const ReactComponent: FC<SVGProps<SVGElement>>
 }
 declare module '*.png';
