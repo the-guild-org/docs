@@ -78,16 +78,18 @@ export function HiveNavigation({
   return (
     <div
       ref={containerRef}
-      data-scrolled="false"
       className={cn(
-        'sticky top-0 z-20 border-b border-beige-400/[var(--border-opacity)] bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 data-[scrolled=false]:[--border-opacity:0] md:mb-[7px] md:mt-2 dark:border-neutral-700/[var(--border-opacity,1)] dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
+        'sticky top-0 z-20 border-b border-beige-400/[var(--border-opacity)] bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 md:mb-[7px] md:mt-2 dark:border-neutral-700/[var(--border-opacity)] dark:text-neutral-200 [&.light]:bg-white [&.light]:text-green-1000',
         className?.includes('light') && 'light',
       )}
+      style={{ '--border-opacity': 0 }}
     >
       <TopOfSiteMarker
         onChange={scrolled => {
           const container = containerRef.current;
-          if (container) container.dataset.scrolled = String(scrolled);
+          if (container) {
+            container.style.setProperty('--border-opacity', scrolled ? '1' : '0');
+          }
         }}
       />
 
@@ -535,10 +537,10 @@ const TopOfSiteMarker = function TopOfSiteMarker({
   onChangeRef.current = onChange;
 
   useEffect(() => {
-    if (markerRef.current && 'IntersectionObserver' in window) {
+    if (mounted && markerRef.current && 'IntersectionObserver' in window) {
       const marker = markerRef.current;
       const observer = new IntersectionObserver(entries => {
-        onChangeRef.current(entries[0].boundingClientRect.y < -2);
+        onChangeRef.current(entries[0].boundingClientRect.y < -1);
       }, {});
       observer.observe(markerRef.current);
 
@@ -546,7 +548,7 @@ const TopOfSiteMarker = function TopOfSiteMarker({
         observer.unobserve(marker);
       };
     }
-  }, []);
+  }, [mounted]);
 
   // We can't create a portal to document.body if we are not in the browser.
   if (!mounted) {
@@ -554,11 +556,7 @@ const TopOfSiteMarker = function TopOfSiteMarker({
   }
 
   return createPortal(
-    <div
-      data-top-marker
-      ref={markerRef}
-      className={cn('absolute left-0 top-0 -z-50 size-px', className)}
-    />,
+    <div ref={markerRef} className={cn('absolute left-0 top-0 -z-50 size-px', className)} />,
     document.body,
   );
 };
