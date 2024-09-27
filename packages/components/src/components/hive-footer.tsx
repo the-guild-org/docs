@@ -1,4 +1,4 @@
-import { ComponentProps, ReactElement, ReactNode } from 'react';
+import { ComponentProps, ReactNode } from 'react';
 import { cn } from '../cn';
 import { HiveCombinationMark } from '../logos';
 import { PRODUCTS } from '../products';
