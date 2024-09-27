@@ -1,4 +1,4 @@
-import { ComponentProps, ReactElement } from 'react';
+import { ComponentProps, ReactElement, ReactNode } from 'react';
 import { cn } from '../cn';
 import { HiveCombinationMark } from '../logos';
 import { PRODUCTS } from '../products';
@@ -159,7 +159,7 @@ const COMPANY: ILink[] = [
 ];
 
 const COMMUNITY: (Omit<ILink, 'children'> & {
-  icon: (props: ComponentProps<'svg'>) => ReactElement;
+  icon: (props: ComponentProps<'svg'>) => ReactNode;
 })[] = [
   {
     icon: GitHubIcon,
