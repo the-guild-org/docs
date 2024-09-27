@@ -19,7 +19,7 @@ export const defaultRemarkPlugins: MdxOptions['remarkPlugins'] = [
 
 const warnings = new Set<string>();
 
-const rehypeCheckFrontMatter: Plugin<[], any> = () => (_ast, file) => {
+const rehypeCheckFrontMatter: Plugin<[]> = () => (_ast, file) => {
   const { description } = file.data.frontMatter as Record<string, string>;
   const filePath = path.relative(process.cwd(), file.history[0]);
 

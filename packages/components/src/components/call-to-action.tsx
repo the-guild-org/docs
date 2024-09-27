@@ -61,7 +61,7 @@ export function CallToAction(props: CallToActionProps) {
       ' relative flex flex-row items-center justify-center gap-2 text-nowrap' +
       ' dark:text-neutral-200',
     'focus-visible:ring-0 focus-visible:ring-offset-0',
-    '[&:hover>:first-child]:inset-[-1px] [&:hover>:first-child]:rounded-[9px]',
+    '[&:hover>:first-child]:-inset-px [&:hover>:first-child]:rounded-[9px]',
     variantStyles[props.variant],
     props.className,
   );

@@ -145,7 +145,7 @@ export function HiveNavigation({
         {renderSlot(Search, {
           // The && and :is(x) selector bump the specificity to 0-2-2 to override Nextra styles.
           className: cn(
-            'relative ml-4 [&&_input:is(input)]:h-[48px] [&&_input:is(input)]:bg-white [&&_input:is(input)]:dark:bg-inherit [&&_input:is(input)]:rounded-lg [&&_input:is(input)]:border-green-200 [&&_input:is(input)]:pl-4 [&&_input:is(input)]:pr-8 [&&_kbd:is(kbd)]:absolute [&&_kbd:is(kbd)]:right-4 [&&_kbd:is(kbd)]:top-1/2 [&&_kbd:is(kbd)]:translate-y-[-50%] [&&_kbd:is(kbd)]:border-none [&&_kbd:is(kbd)]:bg-green-200 [&&_input:is(input)]:border dark:[&&_input:is(input)]:border-neutral-800 dark:[&&_kbd:is(kbd)]:bg-neutral-700 [&&_:is(input,kbd):is(input,kbd)]:text-green-700 dark:[&&_:is(input,kbd):is(input,kbd)]:text-neutral-300 [&&_kbd:is(kbd)]:my-0',
+            'relative ml-4 [&&_input:is(input)]:h-[48px] [&&_input:is(input)]:bg-white [&&_input:is(input)]:dark:bg-inherit [&&_input:is(input)]:rounded-lg [&&_input:is(input)]:border-green-200 [&&_input:is(input)]:pl-4 [&&_input:is(input)]:pr-8 [&&_kbd:is(kbd)]:absolute [&&_kbd:is(kbd)]:right-4 [&&_kbd:is(kbd)]:top-1/2 [&&_kbd:is(kbd)]:-translate-y-1/2 [&&_kbd:is(kbd)]:border-none [&&_kbd:is(kbd)]:bg-green-200 [&&_input:is(input)]:border dark:[&&_input:is(input)]:border-neutral-800 dark:[&&_kbd:is(kbd)]:bg-neutral-700 [&&_:is(input,kbd):is(input,kbd)]:text-green-700 dark:[&&_:is(input,kbd):is(input,kbd)]:text-neutral-300 [&&_kbd:is(kbd)]:my-0',
           ),
         })}
 
