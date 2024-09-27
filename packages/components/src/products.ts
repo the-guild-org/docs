@@ -1,4 +1,5 @@
-import { ReactElement } from 'react';
+// eslint-disable-next-line @typescript-eslint/no-restricted-imports
+import { FC, HTMLProps, SVGProps } from 'react';
 import { CodegenIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
 import {
   AngularLogo,
@@ -51,7 +52,7 @@ export const PRODUCTS: Record<
     name: string;
     title: string;
     href: `https://${string}`;
-    logo: (props: { className?: string }) => ReactElement;
+    logo: FC<SVGProps<SVGElement>> | FC<HTMLProps<HTMLElement>>;
     primaryColor: `#${string}`;
   }
 > = {
