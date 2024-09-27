@@ -381,7 +381,7 @@ function MenuColumnListItem({
 }: {
   children: ReactNode;
   href: string;
-  icon: (props: React.SVGProps<SVGSVGElement>) => React.ReactElement;
+  icon: (props: React.SVGProps<SVGSVGElement>) => React.ReactNode;
 }) {
   return (
     <li>
