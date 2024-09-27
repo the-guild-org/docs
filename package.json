@@ -5,7 +5,7 @@
   "packageManager": "pnpm@9.11.0",
   "scripts": {
     "build": "turbo run build",
-    "build-storybook": "pnpm --filter @theguild/remark-mermaid build && storybook build",
+    "build-storybook": "pnpm --filter @theguild/remark-mermaid @theguild/remark-npm2yarn build && storybook build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.ts --postcss --output packages/components/style.css",
     "dev": "turbo run dev --parallel",
     "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --cache --ignore-path .gitignore .",
