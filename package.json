@@ -33,7 +33,7 @@
     "@theguild/prettier-config": "2.0.7",
     "@theguild/tailwind-config": "0.5.0",
     "@types/jest-image-snapshot": "6.4.0",
-    "@types/react": "18.3.9",
+    "@types/react": "18.3.10",
     "@types/react-paginate": "7.1.4",
     "@types/webpack": "5.28.5",
     "concurrently": "9.0.1",
