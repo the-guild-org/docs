@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { FC, HTMLProps, SVGProps } from 'react';
+import { cn } from './cn';
 import { CodegenIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
 import {
   AngularLogo,
@@ -222,3 +223,58 @@ export const SIX_HIGHLIGHTED_PRODUCTS = [
   PRODUCTS.ESLINT,
   PRODUCTS.NEXTRA,
 ];
+
+/** List of products displayed in hamburger menu. */
+export const PRODUCTS_MENU_LIST = Object.fromEntries(
+  (
+    [
+      'The GraphQL Stack',
+      PRODUCTS.MESH,
+      PRODUCTS.YOGA,
+      PRODUCTS.CODEGEN,
+      'Libraries',
+      ...SIX_HIGHLIGHTED_PRODUCTS,
+    ] as const
+  ).map((item, i) => {
+    if (typeof item === 'string') {
+      return [
+        i,
+        {
+          type: 'separator',
+          title: (
+            <>
+              {/* This is a one-off class, because I want to style the parent. */}
+              {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
+              <style className="label-separator">
+                {
+                  'li:has(.label-separator) { margin: 0.75rem 0 0.25rem 0 !important; padding: 0 !important; }'
+                }
+              </style>
+              <span className="ml-2 font-medium text-[var(--hive-meta-label-color)]">{item}</span>
+            </>
+          ) as any as string,
+        },
+      ];
+    }
+    const Logo = item.logo;
+    return [
+      i,
+      {
+        type: 'page',
+        href: item.href,
+        newWindow: true,
+        title: (
+          <div className="flex items-center gap-2">
+            <Logo
+              className={cn(
+                'size-4 translate-y-[0.25px]',
+                i > 3 && 'rounded-sm bg-[var(--hive-meta-lettermark-bg)] text-[8px] text-white',
+              )}
+            />
+            {item.name}
+          </div>
+        ),
+      },
+    ];
+  }),
+);
