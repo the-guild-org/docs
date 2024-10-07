@@ -33,8 +33,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from './navigation-menu';
-import './nextra-search-results-overrides.css';
-import './mobile-menu.styles.css';
 
 export * from './graphql-conf-card';
 
