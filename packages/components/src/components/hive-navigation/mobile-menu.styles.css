@@ -15,3 +15,11 @@
 .light .nextra-sidebar-container kbd {
   @apply !border-gray-200 !bg-white;
 }
+
+.light .nextra-sidebar-container li > :is(a, button) {
+  @apply text-gray-500 hover:bg-gray-100 hover:text-gray-900;
+}
+
+.light .nextra-sidebar-container ul::before {
+  @apply !bg-gray-200;
+}
