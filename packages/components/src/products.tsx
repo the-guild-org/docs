@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { FC, HTMLProps, SVGProps } from 'react';
+import { MenuItem } from 'nextra/normalize-pages';
 import { cn } from './cn';
 import { CodegenIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
 import {
@@ -225,7 +226,7 @@ export const SIX_HIGHLIGHTED_PRODUCTS = [
 ];
 
 /** List of products displayed in hamburger menu. */
-export const PRODUCTS_MENU_LIST = Object.fromEntries(
+export const PRODUCTS_MENU_LIST: MenuItem[] = Object.fromEntries(
   (
     [
       'The GraphQL Stack',
