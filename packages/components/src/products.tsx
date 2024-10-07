@@ -226,7 +226,7 @@ export const SIX_HIGHLIGHTED_PRODUCTS = [
 ];
 
 /** List of products displayed in hamburger menu. */
-export const PRODUCTS_MENU_LIST: MenuItem[] = Object.fromEntries(
+export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
   (
     [
       'The GraphQL Stack',
