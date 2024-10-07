@@ -33,6 +33,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from './navigation-menu';
+import './nextra-search-results-overrides.css';
 
 export * from './graphql-conf-card';
 
@@ -102,7 +103,7 @@ export function HiveNavigation({
       {/* desktop menu */}
       <NavigationMenu className={cn('mx-auto hidden md:flex', className)} delayDuration={0}>
         <HiveLogoLink />
-        <NavigationMenuList className="bg-white dark:bg-transparent [@media(min-width:1180px)]:ml-16">
+        <NavigationMenuList className="ml-2 bg-white dark:bg-transparent [@media(min-width:1180px)]:ml-16">
           <NavigationMenuItem>
             <NavigationMenuTrigger>Products</NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -150,7 +151,7 @@ export function HiveNavigation({
         })}
 
         <CallToAction
-          className="ml-4 max-lg:hidden"
+          className="ml-4 [@media(max-width:1170px)]:hidden"
           variant="tertiary"
           href="https://the-guild.dev/contact"
           target="_blank"
