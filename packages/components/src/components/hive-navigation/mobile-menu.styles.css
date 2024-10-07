@@ -1,0 +1,13 @@
+.light .nextra-sidebar-container input {
+  color: rgb(0, 52, 44);
+  background-color: rgb(248, 247, 246) !important;
+  border: 1px solid rgb(241, 238, 228);
+}
+
+.light .nextra-sidebar-container input::placeholder {
+  color: rgba(36, 88, 80, 0.9) !important;
+}
+
+.light .nextra-sidebar-container .nextra-sidebar-footer:is(html[class] *) {
+  border-color: #e5e7eb;
+}
