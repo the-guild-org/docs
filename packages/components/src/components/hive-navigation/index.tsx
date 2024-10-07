@@ -102,7 +102,7 @@ export function HiveNavigation({
       {/* desktop menu */}
       <NavigationMenu className={cn('mx-auto hidden md:flex', className)} delayDuration={0}>
         <HiveLogoLink />
-        <NavigationMenuList className="ml-2 bg-white dark:bg-transparent [@media(min-width:1180px)]:ml-16">
+        <NavigationMenuList className="ml-4 bg-white dark:bg-transparent [@media(min-width:1180px)]:ml-16">
           <NavigationMenuItem>
             <NavigationMenuTrigger>Products</NavigationMenuTrigger>
             <NavigationMenuContent>
