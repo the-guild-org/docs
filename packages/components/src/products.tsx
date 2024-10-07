@@ -250,7 +250,7 @@ export const PRODUCTS_MENU_LIST = Object.fromEntries(
                   'li:has(.label-separator) { margin: 0.75rem 0 0.25rem 0 !important; padding: 0 !important; }'
                 }
               </style>
-              <span className="ml-2 font-medium text-[var(--hive-meta-label-color)]">{item}</span>
+              <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
             </>
           ) as any as string,
         },
@@ -268,7 +268,7 @@ export const PRODUCTS_MENU_LIST = Object.fromEntries(
             <Logo
               className={cn(
                 'size-4 translate-y-[0.25px]',
-                i > 3 && 'rounded-sm bg-[var(--hive-meta-lettermark-bg)] text-[8px] text-white',
+                i > 3 && 'rounded-sm bg-gray-500 text-[8px] text-white dark:bg-white/10',
               )}
             />
             {item.name}
