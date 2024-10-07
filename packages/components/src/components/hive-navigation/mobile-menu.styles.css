@@ -11,3 +11,7 @@
 .light .nextra-sidebar-container .nextra-sidebar-footer:is(html[class] *) {
   border-color: #e5e7eb;
 }
+
+.light .nextra-sidebar-container kbd {
+  @apply !border-gray-200 !bg-white;
+}
