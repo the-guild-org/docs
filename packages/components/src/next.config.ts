@@ -48,10 +48,11 @@ const rehypeCheckFrontMatter: Plugin<[]> = () => (_ast, file) => {
   }
 };
 
-export function withGuildDocs({
-  nextraConfig,
-  ...nextConfig
-}: NextConfig & { nextraConfig?: NextraConfig } = {}) {
+// this won't be emitted if it's inline in parens
+export interface WithGuildDocsOptions extends NextConfig {
+  nextraConfig?: NextraConfig;
+}
+export function withGuildDocs({ nextraConfig, ...nextConfig }: WithGuildDocsOptions = {}) {
   if (nextConfig.webpack?.toString().includes('applyUnderscoreRedirects')) {
     throw new Error(
       '`applyUnderscoreRedirects` in `nextConfig.webpack` was already configured, remove it from your config',
