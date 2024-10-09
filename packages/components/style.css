@@ -50,40 +50,35 @@
 
 /* #region search results */
 
-/* without this, if your rotate your phone to horizontal with menu open, you see just a black overlay */
-._fixed._z-10:has(+ .hive-search-results) {
-  @apply md:hidden;
-}
-
-.light .hive-search-results {
+.light .nextra-search-results {
   @apply !border-green-200;
   background-color: white;
   padding: 1rem 0;
 }
 
-.light .hive-search-results .dark\:_text-gray-400:is(html[class~='dark'] *) {
+.light .nextra-search-results .dark\:_text-gray-400:is(html[class~='dark'] *) {
   @apply !text-green-800;
 }
 
-.light .hive-search-results .dark\:_text-gray-300:is(html[class~='dark'] *) {
+.light .nextra-search-results .dark\:_text-gray-300:is(html[class~='dark'] *) {
   @apply !text-green-1000;
 }
 
-.light .hive-search-results .dark\:_text-gray-300:is(html[class~='dark'] *) {
+.light .nextra-search-results .dark\:_text-gray-300:is(html[class~='dark'] *) {
   @apply !text-green-800;
 }
 
-.light .hive-search-results .dark\:_text-neutral-400:is(html[class~='dark'] *) {
+.light .nextra-search-results .dark\:_text-neutral-400:is(html[class~='dark'] *) {
   color: rgb(107, 114, 128);
 }
 
-.light .hive-search-results,
-.light .hive-search-results:is(html[class~='dark'] *) {
+.light .nextra-search-results,
+.light .nextra-search-results:is(html[class~='dark'] *) {
   background-color: #fff;
   border-color: #e5e7eb;
 }
 
-.light .hive-search-results .dark\:before\:_bg-neutral-800:is(html[class~='dark'] *):before {
+.light .nextra-search-results .dark\:before\:_bg-neutral-800:is(html[class~='dark'] *):before {
   background-color: rgb(229, 231, 235);
 }
 
