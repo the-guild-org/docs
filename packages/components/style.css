@@ -18,10 +18,6 @@
   }
 }
 
-._fixed._inset-0._z-10:has(+ .nextra-sidebar-container) {
-  @apply md:hidden;
-}
-
 /* #region hamburger mobile menu */
 
 .light .nextra-sidebar-container input {
