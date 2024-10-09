@@ -1,6 +1,9 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@layer l-base, l-nextra, l-components, l-utilities;
+
+@import 'tailwindcss/base' layer(l-base);
+@import 'nextra-theme-docs/dist/style.css' layer(l-nextra);
+@import 'tailwindcss/components' layer(l-components);
+@import 'tailwindcss/utilities' layer(l-utilities);
 
 .nextra-banner-container._bg-neutral-900._flex {
   @apply bg-[#48224e] bg-none;
