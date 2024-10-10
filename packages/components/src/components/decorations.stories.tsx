@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import {
   ArchDecoration,
   ArchDecorationGradientDefs,
+  DecorationIsolation,
   HighlightDecoration,
   LargeHiveIconDecoration,
 } from './decorations';
@@ -12,8 +13,10 @@ export default {
   subcomponents: { ArchDecorationGradientDefs, HighlightDecoration, LargeHiveIconDecoration },
   decorators: [
     Story => (
-      <div className="bg-green-1000">
-        <Story />
+      <div className="h-screen bg-green-1000">
+        <DecorationIsolation>
+          <Story />
+        </DecorationIsolation>
       </div>
     ),
   ],
