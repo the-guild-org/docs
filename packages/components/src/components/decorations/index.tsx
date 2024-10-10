@@ -1,4 +1,7 @@
-import { cn } from '../cn';
+import { cn } from '../../cn';
+
+export { ReactComponent as ArchDecoration } from './arch-decoration.svg';
+export { ReactComponent as ArchDecorationGradientDefs } from './arch-decoration-gradient-defs.svg';
 
 /**
  * Decorations must be isolated, as clicking id links scrolls the container with overflow: hidden.
@@ -9,56 +12,6 @@ export function DecorationIsolation(props: React.HTMLAttributes<HTMLDivElement>)
       {...props}
       className={cn('pointer-events-none absolute inset-0 overflow-hidden', props.className)}
     />
-  );
-}
-
-export function ArchDecoration(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      width="432"
-      height="432"
-      viewBox="0 0 432 432"
-      preserveAspectRatio="xMidYMid meet"
-      {...props}
-    >
-      <path
-        d="M.75 431v.25h90.24V160.868c0-38.596 31.282-69.878 69.878-69.878H431.25V.75H191.864a47.017 47.017 0 0 0-33.23 13.771l-68.07 68.071-7.972 7.971-68.07 68.071A47.018 47.018 0 0 0 .75 191.864V431Z"
-        fill="url(#arch-decoration-a)"
-        stroke="url(#arch-decoration-b)"
-        strokeWidth=".5"
-      />
-    </svg>
-  );
-}
-
-export function ArchDecorationGradientDefs() {
-  return (
-    <svg width="432" height="432" viewBox="0 0 432 432" className="absolute -z-10">
-      <defs>
-        <linearGradient
-          id="arch-decoration-a"
-          x1="48.5"
-          y1="53.5"
-          x2="302.5"
-          y2="341"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#fff" stopOpacity=".1" />
-          <stop offset="1" stopColor="#fff" stopOpacity=".3" />
-        </linearGradient>
-        <linearGradient
-          id="arch-decoration-b"
-          x1="1"
-          y1="1"
-          x2="431"
-          y2="431"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#fff" stopOpacity=".1" />
-          <stop offset="1" stopColor="#fff" stopOpacity=".4" />
-        </linearGradient>
-      </defs>
-    </svg>
   );
 }
 

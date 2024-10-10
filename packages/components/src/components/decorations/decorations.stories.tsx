@@ -5,7 +5,7 @@ import {
   DecorationIsolation,
   HighlightDecoration,
   LargeHiveIconDecoration,
-} from './decorations';
+} from './index';
 
 export default {
   title: 'Components/Decorations',
