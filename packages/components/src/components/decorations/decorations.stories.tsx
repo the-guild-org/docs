@@ -7,10 +7,9 @@ import {
   LargeHiveIconDecoration,
 } from './index';
 
-export default {
+const meta: Meta = {
   title: 'Components/Decorations',
   component: ArchDecoration,
-  subcomponents: { ArchDecorationGradientDefs, HighlightDecoration, LargeHiveIconDecoration },
   decorators: [
     Story => (
       <div className="h-screen bg-green-1000">
@@ -20,7 +19,9 @@ export default {
       </div>
     ),
   ],
-} as Meta;
+};
+
+export default meta;
 
 export const ArchDecorationStory: StoryObj<typeof ArchDecoration> = {
   name: 'ArchDecoration',
@@ -34,16 +35,4 @@ export const ArchDecorationStory: StoryObj<typeof ArchDecoration> = {
   },
 };
 
-export const HighlightDecorationStory: StoryObj<typeof HighlightDecoration> = {
-  name: 'HighlightDecoration',
-  render(args) {
-    return <HighlightDecoration {...args} />;
-  },
-};
-
-export const LargeHiveIconDecorationStory: StoryObj<typeof LargeHiveIconDecoration> = {
-  name: 'Large Hive Icon Decoration',
-  render(args) {
-    return <LargeHiveIconDecoration {...args} />;
-  },
-};
+export { HighlightDecoration, LargeHiveIconDecoration };

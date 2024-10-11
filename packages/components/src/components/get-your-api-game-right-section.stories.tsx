@@ -10,11 +10,6 @@ export default {
     padding: true,
     forcedLightMode: true,
   },
-} as Meta;
+} satisfies Meta;
 
-export const Default: StoryObj<typeof GetYourAPIGameRightSection> = {
-  name: 'GetYourAPIGameRightSection',
-  render() {
-    return <GetYourAPIGameRightSection />;
-  },
-};
+export { GetYourAPIGameRightSection };

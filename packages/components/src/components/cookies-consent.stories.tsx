@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { CallToAction } from './call-to-action';
 import { CookiesConsent, CookiesConsentProps } from './cookies-consent';
 
-export default {
+const meta: Meta<CookiesConsentProps> = {
   title: 'Components/CookiesConsent',
   component: CookiesConsent,
   decorators: [
@@ -16,7 +16,7 @@ export default {
           <CallToAction
             className="m-2"
             onClick={() => {
-              window.localStorage.removeItem('cookies');
+              localStorage.removeItem('cookies');
               remount();
             }}
             variant="secondary"
@@ -28,7 +28,9 @@ export default {
       );
     },
   ],
-} as Meta<CookiesConsentProps>;
+};
+
+export default meta;
 
 export const Default: StoryObj<CookiesConsentProps> = {
   name: 'CookiesConsent',

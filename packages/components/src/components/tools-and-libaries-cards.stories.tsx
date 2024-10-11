@@ -9,11 +9,9 @@ export default {
   parameters: {
     forcedLightMode: true,
   },
-} as Meta;
+} satisfies Meta;
 
 export const Default: StoryObj<typeof ToolsAndLibrariesCards> = {
   name: 'ToolsAndLibrariesCards',
-  render() {
-    return <ToolsAndLibrariesCards />;
-  },
+  render: ToolsAndLibrariesCards,
 };
