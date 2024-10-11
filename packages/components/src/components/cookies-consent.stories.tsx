@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
+import { hiveThemeDecorator } from '../../../../.storybook/hive-theme-decorator';
 import { CallToAction } from './call-to-action';
 import { CookiesConsent, CookiesConsentProps } from './cookies-consent';
 
@@ -7,6 +8,7 @@ const meta: Meta<CookiesConsentProps> = {
   title: 'Components/CookiesConsent',
   component: CookiesConsent,
   decorators: [
+    hiveThemeDecorator,
     Story => {
       const [key, setKey] = useState(0);
       const remount = () => setKey(Math.random());
