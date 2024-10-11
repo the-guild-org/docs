@@ -102,7 +102,7 @@ export function HiveNavigation({
       {/* desktop menu */}
       <NavigationMenu className={cn('mx-auto hidden md:flex', className)} delayDuration={0}>
         <HiveLogoLink />
-        <NavigationMenuList className="bg-white dark:bg-transparent [@media(min-width:1180px)]:ml-16">
+        <NavigationMenuList className="ml-4 bg-white dark:bg-transparent [@media(min-width:1180px)]:ml-16">
           <NavigationMenuItem>
             <NavigationMenuTrigger>Products</NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -129,9 +129,9 @@ export function HiveNavigation({
               <CompanyMenu>{companyMenuChildren}</CompanyMenu>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          <NavigationMenuItem className="flex">
             <NavigationMenuLink
-              href={isHive ? '/#pricing' : 'https://the-guild.dev/graphql/hive#pricing'}
+              href={isHive ? '#pricing' : 'https://the-guild.dev/graphql/hive#pricing'}
               className="font-medium"
             >
               Pricing
@@ -143,9 +143,8 @@ export function HiveNavigation({
         {children}
 
         {renderSlot(Search, {
-          // The && and :is(x) selector bump the specificity to 0-2-2 to override Nextra styles.
           className: cn(
-            'relative ml-4 [&&_input:is(input)]:h-[48px] [&&_input:is(input)]:bg-white [&&_input:is(input)]:dark:bg-inherit [&&_input:is(input)]:rounded-lg [&&_input:is(input)]:border-green-200 [&&_input:is(input)]:pl-4 [&&_input:is(input)]:pr-8 [&&_kbd:is(kbd)]:absolute [&&_kbd:is(kbd)]:right-4 [&&_kbd:is(kbd)]:top-1/2 [&&_kbd:is(kbd)]:-translate-y-1/2 [&&_kbd:is(kbd)]:border-none [&&_kbd:is(kbd)]:bg-green-200 [&&_input:is(input)]:border dark:[&&_input:is(input)]:border-neutral-800 dark:[&&_kbd:is(kbd)]:bg-neutral-700 [&&_:is(input,kbd):is(input,kbd)]:text-green-700 dark:[&&_:is(input,kbd):is(input,kbd)]:text-neutral-300 [&&_kbd:is(kbd)]:my-0',
+            'relative ml-4 [&_input]:h-[48px] [&_input]:bg-white [&_input]:dark:bg-inherit [&_input]:rounded-lg [&_input]:border-green-200 [&_input]:pl-4 [&_input]:pr-8 [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:top-1/2 [&_kbd]:-translate-y-1/2 [&_kbd]:border-none [&_kbd]:bg-green-200 [&_input]:border dark:[&_input]:border-neutral-800 dark:[&_kbd]:bg-neutral-700 [&_:is(input,kbd)]:text-green-700 dark:[&_:is(input,kbd)]:text-neutral-300 [&_kbd]:my-0 [&_input]:!w-full basis-64',
           ),
         })}
 
@@ -156,10 +155,8 @@ export function HiveNavigation({
           target="_blank"
           rel="noopener noreferrer"
           onClick={event => {
-            if (typeof window !== 'undefined' && '$crisp' in window) {
-              (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
-              event.preventDefault();
-            }
+            window.$crisp?.push(['do', 'chat:open']);
+            event.preventDefault();
           }}
         >
           Contact <span className="hidden xl:contents">us</span>
@@ -209,7 +206,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
           </NavigationMenuLink>
           <Anchor
             href="https://app.graphql-hive.com/"
-            className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
+            className="hive-focus -my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
           >
             <span>Get started</span> <ArrowIcon />
           </Anchor>
@@ -275,7 +272,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
           </ul>
           <Anchor
             href={EXPLORE_HREF}
-            className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
+            className="hive-focus -my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
           >
             <span>Explore all libraries</span> <ArrowIcon />
           </Anchor>
@@ -500,7 +497,7 @@ export function CompanyMenu({ children }: { children: React.ReactNode }) {
 
 function HiveLogoLink() {
   return (
-    <Anchor href="/" className="-m-2 flex items-center rounded-md p-2">
+    <Anchor href="/" className="hive-focus -m-2 flex items-center rounded-md p-2">
       <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
     </Anchor>
   );

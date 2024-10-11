@@ -1,5 +1,8 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
+@layer l-base, l-nextra, l-components;
+
+@import 'tailwindcss/base' layer(l-base);
+@import 'nextra-theme-docs/dist/style.css' layer(l-nextra);
+@import 'tailwindcss/components' layer(l-components);
 @import 'tailwindcss/utilities';
 
 .nextra-banner-container._bg-neutral-900._flex {
@@ -15,5 +18,78 @@
 
   a:nth-child(-n + 3) {
     @apply rounded-b-none border-b border-black/20 pb-3 dark:border-white/20;
+  }
+}
+
+/* #region hamburger mobile menu */
+
+.light .nextra-sidebar-container input {
+  color: rgb(0, 52, 44);
+  background-color: rgb(248, 247, 246) !important;
+  border: 1px solid rgb(241, 238, 228);
+}
+
+.light .nextra-sidebar-container input::placeholder {
+  color: rgba(36, 88, 80, 0.9) !important;
+}
+
+.light .nextra-sidebar-container .nextra-sidebar-footer:is(html[class] *) {
+  border-color: #e5e7eb;
+}
+
+.light .nextra-sidebar-container kbd {
+  @apply !border-gray-200 !bg-white;
+}
+
+.light .nextra-sidebar-container li > :is(a, button) {
+  @apply text-gray-500 hover:bg-gray-100 hover:text-gray-900;
+}
+
+.light .nextra-sidebar-container ul::before {
+  @apply !bg-gray-200;
+}
+
+/* #endregion hamburger mobile menu */
+
+/* #region search results */
+
+.light .nextra-search-results {
+  @apply !border-green-200;
+  background-color: white;
+  padding: 1rem 0;
+
+  & > div {
+    @apply border-beige-400 text-green-1000;
+  }
+
+  & > a > div {
+    @apply text-green-800;
+  }
+
+  &::before {
+    background-color: rgb(229, 231, 235);
+  }
+}
+
+/* #endregion search results */
+
+@layer l-components {
+  .hive-focus {
+    &:focus {
+      outline: none;
+    }
+    &:focus-visible {
+      @apply ring ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_86%)] ring-offset-1 ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_77%)] dark:ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%)] dark:ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_39%)];
+    }
+  }
+
+  .hive-focus-within {
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-within {
+      @apply ring ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_86%)] ring-offset-1 ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_77%)] dark:ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%)] dark:ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_39%)];
+    }
   }
 }
