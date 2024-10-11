@@ -20,7 +20,12 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
     <footer className={cn('relative flex justify-center px-4 py-6 xl:px-[120px]', className)}>
       <div className="mx-4 grid w-full max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10 dark:text-neutral-400">
         <div className="max-lg:col-span-full">
-          <Anchor href="https://the-guild.dev" sameSite={sameSite} {...logo}>
+          <Anchor
+            href="https://the-guild.dev"
+            sameSite={sameSite}
+            {...logo}
+            className="hive-focus -m-1.5 flex rounded p-1.5"
+          >
             <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:text-white" />
           </Anchor>
           <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
@@ -36,12 +41,12 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
             <List heading="Company" links={COMPANY} />
             <a
               href="https://the-guild.dev/graphql/hive#pricing"
-              className="-m-2 p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
+              className="hive-focus -m-2 rounded p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
             >
               Pricing
             </a>
             <a
-              className="-m-2 p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
+              className="hive-focus -m-2 rounded p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
               href="https://the-guild.dev/contact"
               onClick={event => {
                 window.$crisp?.push(['do', 'chat:open']);
@@ -56,7 +61,11 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
         <div className="col-span-full flex flex-row flex-wrap justify-between gap-x-[inherit] gap-y-8 lg:w-full lg:pb-2 lg:pt-8">
           <div className="flex gap-6 lg:order-1">
             {COMMUNITY.map(({ icon: Icon, ...iconProps }) => (
-              <Anchor key={iconProps.title} {...iconProps}>
+              <Anchor
+                key={iconProps.title}
+                className="hive-focus -m-1 rounded-md p-1 hover:text-blue-700 dark:hover:text-blue-100"
+                {...iconProps}
+              >
                 <Icon className="h-5 w-auto" />
               </Anchor>
             ))}
@@ -87,7 +96,7 @@ function List({
           <li key={i}>
             <Anchor
               {...link}
-              className="-m-2 block p-2 hover:text-blue-700 hover:underline dark:hover:text-blue-100"
+              className="hive-focus -m-2 block rounded p-2 hover:text-blue-700 hover:underline dark:hover:text-blue-100"
             />
           </li>
         ))}
@@ -241,7 +250,7 @@ function CSAStarLink({ className }: { className?: string }) {
       target="_blank"
       rel="noreferrer noopener"
       className={cn(
-        'w-fit rounded-full focus-visible:ring-2 focus-visible:ring-offset-4',
+        'hive-focus w-fit rounded-full focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--nextra-bg))]',
         className,
       )}
     >
