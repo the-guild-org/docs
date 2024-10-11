@@ -8,7 +8,7 @@ module.exports = {
     '@theguild/eslint-config/yml',
     // '@theguild/eslint-config/mdx',
     'plugin:tailwindcss/recommended',
-    'plugin:storybook/recommended',
+    // 'plugin:storybook/recommended', // broken in ESLint 9
   ],
   parserOptions: {
     project: ['tsconfig.eslint.json', 'website/tsconfig.json', 'packages/*/tsconfig.json'],

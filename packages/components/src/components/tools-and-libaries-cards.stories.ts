@@ -1,15 +1,16 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../.storybook/hive-theme-decorator';
-import { GetYourAPIGameRightSection } from './get-your-api-game-right-section';
+import { ToolsAndLibrariesCards } from './tools-and-libraries-cards';
 
 export default {
-  title: 'Hive/GetYourAPIGameRightSection',
-  component: GetYourAPIGameRightSection,
+  title: 'Hive/ToolsAndLibrariesCards',
+  component: ToolsAndLibrariesCards,
   decorators: [hiveThemeDecorator],
   parameters: {
-    padding: true,
     forcedLightMode: true,
   },
 } satisfies Meta;
 
-export { GetYourAPIGameRightSection };
+export const Default: StoryObj<typeof ToolsAndLibrariesCards> = {
+  name: 'ToolsAndLibrariesCards',
+};
