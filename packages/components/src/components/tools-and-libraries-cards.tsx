@@ -32,14 +32,14 @@ function MainCards() {
   const icons = [HiveIcon, YogaIcon, MeshIcon, CodegenIcon];
 
   return (
-    <ul className="-mx-12 flex grid-cols-2 flex-row gap-[22px] overflow-auto px-12 lg:grid xl:grid-cols-4">
+    <ul className="-mx-12 -my-2 flex grid-cols-2 flex-row gap-[22px] overflow-auto px-12 py-2 lg:grid xl:grid-cols-4">
       {products.map((product, i) => {
         const Icon = icons[i];
         const Decoration = cardDecorations[product.name];
         return (
           <li
             key={product.name}
-            className="group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 first-of-type:bg-green-1000 first-of-type:text-white max-md:w-[283.5px]"
+            className="hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 first-of-type:bg-green-1000 first-of-type:text-white max-md:w-[283.5px]"
           >
             <a className="relative z-10 block flex-1 p-8" href={product.href}>
               <p className="font-medium">{product.name}</p>
@@ -47,10 +47,10 @@ function MainCards() {
               <ArrowIcon className="absolute bottom-8 right-8" />
             </a>
             <Decoration
-              className="pointer-events-none absolute bottom-0 right-0 fill-blue-200 stroke-[0.5px] opacity-0 transition-opacity duration-500 group-first-of-type:fill-blue-700 group-hover:opacity-100"
+              className="pointer-events-none absolute bottom-0 right-0 fill-blue-200 stroke-[0.5px] opacity-0 transition-opacity duration-500 group-first-of-type:fill-blue-700 group-focus-within:opacity-100 group-hover:opacity-100"
               preserveAspectRatio="xMidYMid meet"
             />
-            <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-hover:opacity-100" />
+            <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-focus-within:opacity-100 group-hover:opacity-100" />
           </li>
         );
       })}
@@ -60,15 +60,18 @@ function MainCards() {
 
 function SecondaryCards() {
   return (
-    <ul className="flex h-max grid-cols-6 flex-row gap-[22px] overflow-x-auto overflow-y-hidden max-sm:-mx-8 max-sm:px-8 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="-mx-12 -my-2 flex h-max grid-cols-6 flex-row gap-[22px] overflow-x-auto overflow-y-hidden px-12 py-2 max-sm:-mx-8 max-sm:px-8 sm:grid sm:grid-cols-2 lg:grid-cols-3">
       {SIX_HIGHLIGHTED_PRODUCTS.map(product => {
         const Logo = product.logo;
         return (
           <li
             key={product.name}
-            className="shrink-0 basis-[283.5px] rounded-2xl bg-beige-200 text-green-1000 transition-colors duration-500 hover:bg-beige-400 max-sm:min-w-[283.5px]"
+            className="hive-focus-within shrink-0 basis-[283.5px] rounded-2xl bg-beige-200 text-green-1000 transition-colors duration-500 hover:bg-beige-400 max-sm:min-w-[283.5px]"
           >
-            <a href={product.href} className="relative flex h-full flex-col rounded-[inherit] p-8">
+            <a
+              href={product.href}
+              className="relative flex h-full flex-col rounded-[inherit] p-8 focus:outline-none"
+            >
               <p className="font-medium">{product.name}</p>
               <p className="mt-2 text-sm text-green-800">{product.title}</p>
               <div className="h-8 grow" />
