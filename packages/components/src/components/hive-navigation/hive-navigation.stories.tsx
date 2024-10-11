@@ -26,7 +26,7 @@ export default {
   args: {
     productName: 'Hive',
   },
-} as Meta<HiveNavigationProps>;
+} satisfies Meta<HiveNavigationProps>;
 
 export const Default: StoryObj = {
   name: 'HiveNavigation',

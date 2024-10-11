@@ -13,7 +13,7 @@ export default {
   parameters: {
     padding: true,
   },
-} as Meta<CallToActionProps>;
+} satisfies Meta<CallToActionProps>;
 
 export const Primary: StoryObj<CallToActionProps> = {
   args: {
