@@ -16,6 +16,14 @@ export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(function Anchor
       href = url.pathname + url.search + url.hash;
     }
 
+    if (href.startsWith('#')) {
+      return (
+        <a ref={forwardedRef} href={href} className={classes} {...props}>
+          {children}
+        </a>
+      );
+    }
+
     if (newWindow && /^https?:\/\//.test(href)) {
       return (
         <a

@@ -131,7 +131,7 @@ export function HiveNavigation({
           </NavigationMenuItem>
           <NavigationMenuItem className="flex">
             <NavigationMenuLink
-              href={isHive ? '/#pricing' : 'https://the-guild.dev/graphql/hive#pricing'}
+              href={isHive ? '#pricing' : 'https://the-guild.dev/graphql/hive#pricing'}
               className="font-medium"
             >
               Pricing
