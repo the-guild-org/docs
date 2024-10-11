@@ -21,3 +21,9 @@ declare module '*.svg' {
 }
 
 declare module '*.png';
+
+interface Window {
+  $crisp?: {
+    push(cmd: string[]): void;
+  };
+}

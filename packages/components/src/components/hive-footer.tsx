@@ -44,10 +44,8 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
               className="-m-2 p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
               href="https://the-guild.dev/contact"
               onClick={event => {
-                if (typeof window !== 'undefined' && '$crisp' in window) {
-                  (window.$crisp as { push(cmd: string[]): void }).push(['do', 'chat:open']);
-                  event.preventDefault();
-                }
+                window.$crisp?.push(['do', 'chat:open']);
+                event.preventDefault();
               }}
             >
               Contact Us
@@ -63,7 +61,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
               </Anchor>
             ))}
           </div>
-          <p className="text-sm">© 2024 The Guild</p>
+          <p className="text-sm">© {new Date().getFullYear()} The Guild</p>
         </div>
       </div>
 
