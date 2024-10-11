@@ -129,7 +129,7 @@ export function HiveNavigation({
               <CompanyMenu>{companyMenuChildren}</CompanyMenu>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          <NavigationMenuItem className="flex">
             <NavigationMenuLink
               href={isHive ? '/#pricing' : 'https://the-guild.dev/graphql/hive#pricing'}
               className="font-medium"
@@ -206,7 +206,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
           </NavigationMenuLink>
           <Anchor
             href="https://app.graphql-hive.com/"
-            className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
+            className="hive-focus -my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
           >
             <span>Get started</span> <ArrowIcon />
           </Anchor>
@@ -272,7 +272,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
           </ul>
           <Anchor
             href={EXPLORE_HREF}
-            className="-my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
+            className="hive-focus -my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
           >
             <span>Explore all libraries</span> <ArrowIcon />
           </Anchor>
@@ -497,7 +497,7 @@ export function CompanyMenu({ children }: { children: React.ReactNode }) {
 
 function HiveLogoLink() {
   return (
-    <Anchor href="/" className="-m-2 flex items-center rounded-md p-2">
+    <Anchor href="/" className="hive-focus -m-2 flex items-center rounded-md p-2">
       <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
     </Anchor>
   );

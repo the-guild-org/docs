@@ -72,3 +72,12 @@
 }
 
 /* #endregion search results */
+
+.hive-focus {
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    @apply ring ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_86%)] ring-offset-1 ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_77%)] dark:ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%)] dark:ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_39%)];
+  }
+}

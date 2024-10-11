@@ -45,6 +45,7 @@ module.exports = {
         'aa-ItemContentSubtitle',
         'aa-SourceHeader',
         'aa-SourceHeaderTitle',
+        'hive-focus',
       ],
     },
   },

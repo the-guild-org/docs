@@ -59,7 +59,7 @@ export const NavigationMenuTrigger = forwardRef<
   <NavigationMenuPrimitive.Trigger
     ref={ref}
     className={cn(
-      'cursor-default p-3 font-medium leading-normal text-green-800 aria-expanded:text-green-1000 dark:text-neutral-300 dark:aria-expanded:text-neutral-100',
+      'hive-focus cursor-default rounded p-3 font-medium leading-normal text-green-800 aria-expanded:text-green-1000 dark:text-neutral-300 dark:aria-expanded:text-neutral-100',
       className,
     )}
     onPointerOver={event => {
@@ -122,7 +122,7 @@ export const NavigationMenuLink = forwardRef<
       <Anchor
         href={href}
         className={cn(
-          '[data-active="true"]:text-green-1000 rounded-lg p-3 leading-normal text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-300 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-100 [&:hover>svg]:opacity-100',
+          'hive-focus [data-active="true"]:text-green-1000 rounded p-3 leading-normal text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-300 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-100 [&:hover>svg]:opacity-100',
           arrow && 'flex items-center',
           className,
         )}
