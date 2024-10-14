@@ -11,11 +11,11 @@ export const FeatureList = ({
   link,
   className,
 }: IFeatureListProps): ReactElement => (
-  <section className={clsx('bg-white dark:bg-[#111]', className)}>
+  <section className={clsx('bg-white dark:bg-dark', className)}>
     <div className="container py-14">
       {title && (
         <div className="mb-6 flex flex-col items-center">
-          <h2 className="mb-1.5 mt-0 text-center text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">
+          <h2 className="mb-1.5 mt-0 text-center text-2xl font-bold text-black md:text-3xl dark:text-gray-50">
             {title}
           </h2>
           {description && (

@@ -8,9 +8,8 @@ interface IVideo {
   placeholder: string;
 }
 
-export type ILink = Omit<LinkProps, 'href'> &
+export type ILink = LinkProps &
   Pick<ComponentProps<'a'>, 'target' | 'rel' | 'title' | 'className' | 'style'> & {
-    href: string;
     children: ReactNode;
     newWindow?: boolean;
     sameSite?: boolean;

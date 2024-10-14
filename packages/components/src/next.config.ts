@@ -19,7 +19,7 @@ export const defaultRemarkPlugins: MdxOptions['remarkPlugins'] = [
 
 const warnings = new Set<string>();
 
-const rehypeCheckFrontMatter: Plugin<[], any> = () => (_ast, file) => {
+const rehypeCheckFrontMatter: Plugin<[]> = () => (_ast, file) => {
   const { description } = file.data.frontMatter as Record<string, string>;
   const filePath = path.relative(process.cwd(), file.history[0]);
 
@@ -48,10 +48,11 @@ const rehypeCheckFrontMatter: Plugin<[], any> = () => (_ast, file) => {
   }
 };
 
-export function withGuildDocs({
-  nextraConfig,
-  ...nextConfig
-}: NextConfig & { nextraConfig?: NextraConfig } = {}) {
+// this won't be emitted if it's inline in parens
+export interface WithGuildDocsOptions extends NextConfig {
+  nextraConfig?: NextraConfig;
+}
+export function withGuildDocs({ nextraConfig, ...nextConfig }: WithGuildDocsOptions = {}) {
   if (nextConfig.webpack?.toString().includes('applyUnderscoreRedirects')) {
     throw new Error(
       '`applyUnderscoreRedirects` in `nextConfig.webpack` was already configured, remove it from your config',

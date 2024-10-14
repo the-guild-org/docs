@@ -82,8 +82,8 @@ const classes = {
 
 const renderLinks = (list: ILink[]) => (
   <ul className="m-0 mb-8 list-none p-0 last:mb-0">
-    {list.map(link => (
-      <li key={link.href} className="mb-3 last:mb-0">
+    {list.map((link, i) => (
+      <li key={i} className="mb-3 last:mb-0">
         <Anchor className={clsx(classes.anchor, 'inline-block text-sm')} {...link} />
       </li>
     ))}
@@ -99,7 +99,7 @@ export function Footer({
   return (
     <footer
       className={clsx(
-        'bg-[#fafafa] py-[60px] text-base dark:bg-[#0f1114] md:py-[140px]',
+        'bg-[#fafafa] py-[60px] text-base md:py-[140px] dark:bg-[#0f1114]',
         className,
       )}
     >

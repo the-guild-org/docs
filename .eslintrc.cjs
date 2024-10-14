@@ -8,7 +8,7 @@ module.exports = {
     '@theguild/eslint-config/yml',
     // '@theguild/eslint-config/mdx',
     'plugin:tailwindcss/recommended',
-    'plugin:storybook/recommended',
+    // 'plugin:storybook/recommended', // broken in ESLint 9
   ],
   parserOptions: {
     project: ['tsconfig.eslint.json', 'website/tsconfig.json', 'packages/*/tsconfig.json'],
@@ -33,7 +33,8 @@ module.exports = {
   },
   settings: {
     tailwindcss: {
-      config: 'tailwind.config.cjs',
+      callees: ['clsx', 'cn', 'cva', 'cx'],
+      config: 'tailwind.config.ts',
       whitelist: [
         // TODO: find a way to fix it and remove these classes since they are imported somewhere and are used
         'line',
@@ -44,6 +45,8 @@ module.exports = {
         'aa-ItemContentSubtitle',
         'aa-SourceHeader',
         'aa-SourceHeaderTitle',
+        'hive-focus',
+        'hive-focus-within',
       ],
     },
   },

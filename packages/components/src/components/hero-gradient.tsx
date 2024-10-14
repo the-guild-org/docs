@@ -25,7 +25,7 @@ export const HeroGradient = ({
   className,
 }: IHeroGradientProps): ReactElement => {
   return (
-    <section className={clsx('bg-white dark:bg-[#111] md:py-14', className)}>
+    <section className={clsx('bg-white md:py-14 dark:bg-dark', className)}>
       <div
         className={clsx(
           'container relative z-0 flex max-w-[90rem] items-center gap-6 px-6 md:px-14',
@@ -33,7 +33,7 @@ export const HeroGradient = ({
         )}
       >
         <div
-          className="absolute inset-0 z-[-1] overflow-hidden bg-black dark:bg-[#111] md:mx-6 md:rounded-3xl"
+          className="absolute inset-0 z-[-1] overflow-hidden bg-black md:mx-6 md:rounded-3xl dark:bg-dark"
           style={{ '--colorA': colors[0], '--colorB': colors[1] }}
         >
           <Shadow className="-left-10 -top-24 [background:var(--colorA)]" />
@@ -48,9 +48,9 @@ export const HeroGradient = ({
           </p>
           <div className="flex items-center gap-x-3 text-xs md:mt-9">
             {link &&
-              toArray(link).map(link => (
+              toArray(link).map((link, i) => (
                 <Button
-                  key={link.href}
+                  key={i}
                   variant="secondary"
                   {...link}
                   className={clsx('!px-8', link.className)}

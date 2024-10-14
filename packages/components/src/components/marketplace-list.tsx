@@ -44,7 +44,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
               item.link.className,
             )}
           >
-            <h3 className="m-0 line-clamp-2 text-base font-bold text-black dark:text-white md:text-lg">
+            <h3 className="m-0 line-clamp-2 text-base font-bold text-black md:text-lg dark:text-white">
               {item.title}
             </h3>
             <div className="line-clamp-3">{item.description}</div>
@@ -62,7 +62,7 @@ const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
           <Anchor
             {...item.link}
             className={clsx(
-              'inline-block rounded-lg bg-gray-200 p-1.5 text-gray-800 hover:invert dark:bg-gray-700 dark:text-white md:p-2.5',
+              'inline-block rounded-lg bg-gray-200 p-1.5 text-gray-800 hover:invert md:p-2.5 dark:bg-gray-700 dark:text-white',
               item.link.className,
             )}
           >
@@ -103,9 +103,9 @@ export const MarketplaceList = ({
   }, [items, pageSize]);
 
   return (
-    <section className={clsx('w-full bg-white dark:bg-[#111]', className)}>
+    <section className={clsx('w-full bg-white dark:bg-dark', className)}>
       {title && (
-        <h2 className="mb-4 mt-0 text-xl font-bold text-black dark:text-gray-50 md:text-2xl">
+        <h2 className="mb-4 mt-0 text-xl font-bold text-black md:text-2xl dark:text-gray-50">
           {title}
         </h2>
       )}

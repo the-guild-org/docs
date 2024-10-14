@@ -70,9 +70,9 @@ export const MarketplaceSearch = ({
   }, [query, queryList]);
 
   return (
-    <section className={clsx('bg-white dark:bg-[#111]', className)}>
+    <section className={clsx('bg-white dark:bg-dark', className)}>
       <div className="container max-w-[90rem] py-12">
-        <h2 className="mb-4 mt-0 text-2xl font-bold text-black dark:text-gray-50 md:text-3xl">
+        <h2 className="mb-4 mt-0 text-2xl font-bold text-black md:text-3xl dark:text-gray-50">
           {title}
         </h2>
         {tagsFilter && (
@@ -95,7 +95,7 @@ export const MarketplaceSearch = ({
             type="search"
             placeholder={placeholder}
             onChange={handleChange}
-            className="ml-1.5 mt-0.5 w-full border-0 bg-white text-sm font-medium text-black outline-none dark:bg-[#111] dark:text-gray-50"
+            className="ml-1.5 mt-0.5 w-full border-0 bg-white text-sm font-medium text-black outline-none dark:bg-dark dark:text-gray-50"
           />
           <button
             onClick={() => setQuery('')}

@@ -3,28 +3,41 @@ import NextLink from 'next/link';
 import clsx from 'clsx';
 import { ILink } from '../types/components';
 
-export const Anchor = forwardRef<HTMLAnchorElement, ILink>(function Anchor(
+export interface AnchorProps extends ILink {}
+export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(function Anchor(
   { href = '', children, newWindow, sameSite, className, ...props },
   forwardedRef,
 ): ReactElement {
-  if (sameSite) {
-    const url = new URL(href);
-    href = url.pathname + url.search + url.hash;
-  }
-  const classes = clsx(className, 'outline-none focus-visible:ring transition');
-  if (newWindow && /^https?:\/\//.test(href)) {
-    return (
-      <a
-        ref={forwardedRef}
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-        className={classes}
-        {...props}
-      >
-        {children}
-      </a>
-    );
+  const classes = clsx(className, 'outline-none transition focus-visible:ring');
+
+  if (typeof href === 'string') {
+    if (sameSite) {
+      const url = new URL(href);
+      href = url.pathname + url.search + url.hash;
+    }
+
+    if (href.startsWith('#')) {
+      return (
+        <a ref={forwardedRef} href={href} className={classes} {...props}>
+          {children}
+        </a>
+      );
+    }
+
+    if (newWindow && /^https?:\/\//.test(href)) {
+      return (
+        <a
+          ref={forwardedRef}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className={classes}
+          {...props}
+        >
+          {children}
+        </a>
+      );
+    }
   }
 
   return (

@@ -1,28 +1,27 @@
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import { FC, SVGProps } from 'react';
+import { FC, HTMLProps, SVGProps } from 'react';
+import { MenuItem } from 'nextra/normalize-pages';
+import { cn } from './cn';
+import { CodegenIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
 import {
   AngularLogo,
-  CodeGeneratorLogo,
   ConductorLogo,
   ConfigLogo,
-  EnvelopLogo,
-  ESLintLogo,
+  EnvelopLettermark,
   FetsLogo,
+  GraphQLESlintLettermark,
   HeltinLogo,
-  HiveLogo,
-  InspectorLogo,
+  InspectorLettermark,
   KitQLLogo,
-  MeshLogo,
   ModulesLogo,
   NextraLogo,
-  ScalarsLogo,
-  SofaLogo,
+  ScalarsLettermark,
+  SofaLettermark,
   SSELogo,
   StitchingLogo,
   ToolsLogo,
   WhatsAppLogo,
   WSLogo,
-  YogaLogo,
 } from './logos';
 
 export type ProductType =
@@ -55,7 +54,7 @@ export const PRODUCTS: Record<
     name: string;
     title: string;
     href: `https://${string}`;
-    logo: FC<SVGProps<SVGElement>>;
+    logo: FC<SVGProps<SVGElement>> | FC<HTMLProps<HTMLElement>>;
     primaryColor: `#${string}`;
   }
 > = {
@@ -63,21 +62,21 @@ export const PRODUCTS: Record<
     name: 'Hive',
     title: 'Schema registry for your GraphQL workflows',
     href: 'https://the-guild.dev/graphql/hive',
-    logo: HiveLogo,
+    logo: HiveIcon,
     primaryColor: '#ffb21d',
   },
   MESH: {
     name: 'Mesh',
     title: 'A fully-featured GraphQL gateway framework',
     href: 'https://the-guild.dev/graphql/mesh',
-    logo: MeshLogo,
+    logo: MeshIcon,
     primaryColor: '#1bcbe2',
   },
   YOGA: {
     name: 'Yoga',
     title: 'A fully-featured, simple to set up, performant and extendable server',
     href: 'https://the-guild.dev/graphql/yoga-server',
-    logo: YogaLogo,
+    logo: YogaIcon,
     primaryColor: '#c026d3',
   },
   CONDUCTOR: {
@@ -91,7 +90,7 @@ export const PRODUCTS: Record<
     name: 'Envelop',
     title: 'Develop and share plugins that are usable with any GraphQL server framework or schema',
     href: 'https://the-guild.dev/graphql/envelop',
-    logo: EnvelopLogo,
+    logo: EnvelopLettermark,
     primaryColor: '#ff00e5',
   },
   STITCHING: {
@@ -106,14 +105,14 @@ export const PRODUCTS: Record<
     name: 'Inspector',
     title: 'Schema management tool',
     href: 'https://the-guild.dev/graphql/inspector',
-    logo: InspectorLogo,
+    logo: InspectorLettermark,
     primaryColor: '#59f79d',
   },
   CODEGEN: {
     name: 'Code Generator',
     title: 'Generation of typed queries, mutations, subscriptions and typed GraphQL resolvers',
     href: 'https://the-guild.dev/graphql/codegen',
-    logo: CodeGeneratorLogo,
+    logo: CodegenIcon,
     primaryColor: '#0284c7',
   },
   TOOLS: {
@@ -134,7 +133,7 @@ export const PRODUCTS: Record<
     name: 'ESLint',
     title: 'Customisable ESLint parser, plugin and set rules for GraphQL',
     href: 'https://the-guild.dev/graphql/eslint',
-    logo: ESLintLogo,
+    logo: GraphQLESlintLettermark,
     primaryColor: '#5639ca',
   },
   CONFIG: {
@@ -155,14 +154,14 @@ export const PRODUCTS: Record<
     name: 'Scalars',
     title: 'Common custom GraphQL Scalars for precise type-safe GraphQL schemas',
     href: 'https://the-guild.dev/graphql/scalars',
-    logo: ScalarsLogo,
+    logo: ScalarsLettermark,
     primaryColor: '#f38',
   },
   SOFA: {
     name: 'SOFA',
     title: 'Generate RESTful APIs from your GraphQL server',
     href: 'https://the-guild.dev/graphql/sofa-api',
-    logo: SofaLogo,
+    logo: SofaLettermark,
     primaryColor: '#e873ff',
   },
   ANGULAR: {
@@ -216,3 +215,67 @@ export const PRODUCTS: Record<
     primaryColor: '#000',
   },
 };
+
+export const SIX_HIGHLIGHTED_PRODUCTS = [
+  PRODUCTS.INSPECTOR,
+  PRODUCTS.ENVELOP,
+  PRODUCTS.SOFA,
+  PRODUCTS.SCALARS,
+  PRODUCTS.ESLINT,
+  PRODUCTS.NEXTRA,
+];
+
+/** List of products displayed in hamburger menu. */
+export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
+  (
+    [
+      'The GraphQL Stack',
+      PRODUCTS.MESH,
+      PRODUCTS.YOGA,
+      PRODUCTS.CODEGEN,
+      'Libraries',
+      ...SIX_HIGHLIGHTED_PRODUCTS,
+    ] as const
+  ).map((item, i) => {
+    if (typeof item === 'string') {
+      return [
+        i,
+        {
+          type: 'separator',
+          title: (
+            <>
+              {/* This is a one-off class, because I want to style the parent. */}
+              {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
+              <style className="label-separator">
+                {
+                  'li:has(.label-separator) { margin: 0.75rem 0 0.25rem 0 !important; padding: 0 !important; }'
+                }
+              </style>
+              <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
+            </>
+          ) as any as string,
+        },
+      ];
+    }
+    const Logo = item.logo;
+    return [
+      i,
+      {
+        type: 'page',
+        href: item.href,
+        newWindow: true,
+        title: (
+          <div className="flex items-center gap-2">
+            <Logo
+              className={cn(
+                'size-4 translate-y-[0.25px]',
+                i > 3 && 'rounded-sm bg-gray-500 text-[8px] text-white dark:bg-white/10',
+              )}
+            />
+            {item.name}
+          </div>
+        ),
+      },
+    ];
+  }),
+);

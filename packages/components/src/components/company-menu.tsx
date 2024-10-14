@@ -10,7 +10,7 @@ export const productsItems = Object.fromEntries(
           <product.logo className="size-7 shrink-0" />
           {product.name}
         </span> // todo: fix type in nextra
-      ) as any,
+      ) as unknown as string,
       href: product.href,
     },
   ]),

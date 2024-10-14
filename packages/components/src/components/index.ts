@@ -15,6 +15,19 @@ export { MarketplaceList } from './marketplace-list';
 export { MarketplaceSearch } from './marketplace-search';
 export { mdxComponents } from './mdx-components';
 export { NPMBadge } from './npm-badge';
-export { GuildUnifiedLogo } from './guild-navbar';
+export { getNavbarLogo } from './guild-navbar-logo';
 export { ThemeSwitcherButton } from './theme-switcher';
 export { productsItems } from './company-menu';
+export { GetYourAPIGameRightSection } from './get-your-api-game-right-section';
+export {
+  HiveNavigation,
+  GraphQLConfCard,
+  type HiveNavigationProps,
+  type GraphQLConfCardProps,
+} from './hive-navigation';
+export { HiveFooter } from './hive-footer';
+export { ToolsAndLibrariesCards } from './tools-and-libraries-cards';
+export * from './decorations';
+export * from './call-to-action';
+export * from './cookies-consent';
+export * from './heading';

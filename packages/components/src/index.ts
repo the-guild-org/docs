@@ -31,6 +31,7 @@ export { defineConfig } from './define-config';
 export { fetchPackageInfo } from './npm';
 export { PRODUCTS } from './products';
 export * from './types/components';
+export * from './logos';
 
 declare module 'react' {
   interface CSSProperties {
