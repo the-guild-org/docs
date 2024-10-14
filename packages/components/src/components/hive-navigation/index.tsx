@@ -538,7 +538,7 @@ const TopOfSiteMarker = function TopOfSiteMarker({
       const marker = markerRef.current;
       const observer = new IntersectionObserver(entries => {
         onChangeRef.current(entries[0].boundingClientRect.y < -1);
-      }, {});
+      });
       observer.observe(markerRef.current);
 
       return () => {

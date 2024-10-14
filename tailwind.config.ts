@@ -1,3 +1,4 @@
+import tailwindAnimate from 'tailwindcss-animate';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import config, { Config } from '@theguild/tailwind-config';
 
@@ -27,5 +28,5 @@ export default {
     },
   },
   darkMode: ['variant', '&:not(.light *)'],
-  plugins: [require('tailwindcss-animate')],
+  plugins: [tailwindAnimate],
 } satisfies Config;
