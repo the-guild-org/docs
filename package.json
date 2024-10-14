@@ -5,11 +5,12 @@
   "packageManager": "pnpm@9.12.1",
   "scripts": {
     "build": "turbo run build",
-    "build-storybook": "pnpm --filter @theguild/remark-mermaid @theguild/remark-npm2yarn build && storybook build",
+    "build-storybook": "storybook build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.ts --postcss --output packages/components/style.css",
     "dev": "turbo run dev --parallel",
     "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --cache --ignore-path .gitignore .",
     "lint:prettier": "prettier --cache --check .",
+    "prebuild-storybook": "pnpm build --filter=@theguild/remark-\\*",
     "prepare": "husky install",
     "prerelease": "pnpm build",
     "prettier": "pnpm lint:prettier --write",
