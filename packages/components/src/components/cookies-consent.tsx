@@ -1,17 +1,17 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { cn } from '../cn';
 import { CallToAction } from './call-to-action';
 
 export interface CookiesConsentProps extends React.HTMLAttributes<HTMLElement> {}
 export function CookiesConsent(props: CookiesConsentProps) {
-  const [show, setShow] = useState(() => localStorage.getItem('cookies') !== 'true');
+  const [consented, setConsented] = useState(() => localStorage.getItem('cookies') === 'true');
 
-  const accept = useCallback(() => {
-    setShow(false);
+  const onAccept = () => {
+    setConsented(true);
     localStorage.setItem('cookies', 'true');
-  }, []);
+  };
 
-  if (!show) {
+  if (!consented) {
     return null;
   }
 
@@ -38,7 +38,7 @@ export function CookiesConsent(props: CookiesConsentProps) {
         >
           Privacy Policy
         </a>
-        <CallToAction variant="tertiary" onClick={accept} className="px-4 py-2">
+        <CallToAction variant="tertiary" onClick={onAccept} className="px-4 py-2">
           Allow
         </CallToAction>
       </div>
