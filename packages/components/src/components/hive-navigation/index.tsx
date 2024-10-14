@@ -73,7 +73,7 @@ export function HiveNavigation({
 
   const isHive = productName === 'Hive';
 
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null!);
 
   return (
     <div
