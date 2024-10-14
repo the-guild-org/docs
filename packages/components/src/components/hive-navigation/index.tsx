@@ -287,7 +287,7 @@ interface MenuContentColumnsProps extends React.HTMLAttributes<HTMLDivElement> {
 const MenuContentColumns = forwardRef(
   (props: MenuContentColumnsProps, ref: React.ForwardedRef<HTMLDivElement>) => {
     return (
-      <div className="flex gap-x-6 [&>*]:flex [&>*]:flex-col [&>*]:gap-4" ref={ref} {...props}>
+      <div className="flex gap-x-6 *:flex *:flex-col *:gap-4" ref={ref} {...props}>
         {React.Children.toArray(props.children)
           .filter(Boolean)
           .map((child, index, array) => {
