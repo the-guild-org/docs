@@ -28,7 +28,7 @@ export const hiveThemeDecorator = (Story: () => React.ReactNode, ctx: StoryConte
         className={cn(
           'text-green-1000',
           neueMontreal.variable,
-          ctx.parameters.forcedLightMode ? 'light' : '',
+          ctx.parameters.forcedLightMode && 'light',
         )}
         style={{
           fontFamily: 'var(--font-sans)',
