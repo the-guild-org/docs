@@ -87,7 +87,7 @@ export function HiveNavigation({
       <TopOfSiteMarker
         onChange={scrolled => {
           const container = containerRef.current;
-            container.style.setProperty('--border-opacity', scrolled ? '1' : '0');
+          container.style.setProperty('--border-opacity', scrolled ? '1' : '0');
         }}
       />
 
