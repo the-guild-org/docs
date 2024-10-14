@@ -8,7 +8,7 @@ export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(function Anchor
   { href = '', children, newWindow, sameSite, className, ...props },
   forwardedRef,
 ): ReactElement {
-  const classes = clsx(className, 'outline-none focus-visible:ring transition');
+  const classes = clsx(className, 'outline-none transition focus-visible:ring');
 
   if (typeof href === 'string') {
     if (sameSite) {
