@@ -142,7 +142,7 @@ export function HiveNavigation({
 
         {renderSlot(Search, {
           className: cn(
-            'relative ml-4 basis-64 [&_:is(input,kbd)]:text-green-700 dark:[&_:is(input,kbd)]:text-neutral-300 [&_input]:h-[48px] [&_input]:!w-full [&_input]:rounded-lg [&_input]:border [&_input]:border-green-200 [&_input]:bg-white [&_input]:pl-4 [&_input]:pr-8 [&_input]:!ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%/var(--tw-ring-opacity))] [&_input]:!ring-offset-[--nextra-bg,#fff] dark:[&_input]:border-neutral-800 [&_input]:dark:bg-inherit [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:top-1/2 [&_kbd]:my-0 [&_kbd]:-translate-y-1/2 [&_kbd]:border-none [&_kbd]:bg-green-200 dark:[&_kbd]:bg-neutral-700',
+            'relative ml-4 basis-64 [&_:is(input,kbd)]:text-green-700 dark:[&_:is(input,kbd)]:text-neutral-300 [&_input]:h-[48px] [&_input]:!w-full [&_input]:rounded-lg [&_input]:border [&_input]:border-green-200 [&_input]:bg-white [&_input]:pl-4 [&_input]:pr-8 [&_input]:!ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%/var(--tw-ring-opacity))] [&_input]:!ring-offset-[rgb(var(--nextra-bg))] dark:[&_input]:border-neutral-800 [&_input]:dark:bg-inherit [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:top-1/2 [&_kbd]:my-0 [&_kbd]:-translate-y-1/2 [&_kbd]:border-none [&_kbd]:bg-green-200 dark:[&_kbd]:bg-neutral-700',
           ),
         })}
 
