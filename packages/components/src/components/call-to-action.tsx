@@ -49,7 +49,7 @@ export type CallToActionProps = CallToActionProps.AnchorProps | CallToActionProp
  */
 export function CallToAction(props: CallToActionProps) {
   const className = cn(
-    'relative flex flex-row items-center justify-center gap-2 text-nowrap rounded-lg px-6 py-3 font-medium leading-6 text-green-1000 focus-visible:ring-0 focus-visible:ring-offset-0 sm:w-fit dark:text-neutral-200 [&:hover>:first-child]:-inset-px [&:hover>:first-child]:rounded-[9px]',
+    'relative flex flex-row items-center justify-center gap-2 text-nowrap rounded-lg px-6 py-3 font-medium leading-6 text-green-1000 focus-visible:outline focus-visible:ring-0 focus-visible:ring-offset-0 sm:w-fit dark:text-neutral-200 [&:hover>:first-child]:-inset-px [&:hover>:first-child]:rounded-[9px]',
     variantStyles[props.variant],
     props.className,
   );
