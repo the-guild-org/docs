@@ -1,5 +1,91 @@
 # @theguild/components
 
+## 7.0.0
+
+### Major Changes
+
+- [#1587](https://github.com/the-guild-org/docs/pull/1587)
+  [`2dfb846`](https://github.com/the-guild-org/docs/commit/2dfb8464c1a277454f7ec96814bfcaf6efd23089)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Opted out of compound unified logo for
+  Hive Platform
+
+  - Removed `GuildUnifiedLogo` from external exports
+
+### Minor Changes
+
+- [#1587](https://github.com/the-guild-org/docs/pull/1587)
+  [`2dfb846`](https://github.com/the-guild-org/docs/commit/2dfb8464c1a277454f7ec96814bfcaf6efd23089)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Add CookiesConsent and
+  DecorationIsolation, remove hover delay from HiveNavigation.
+
+- [#1587](https://github.com/the-guild-org/docs/pull/1587)
+  [`2dfb846`](https://github.com/the-guild-org/docs/commit/2dfb8464c1a277454f7ec96814bfcaf6efd23089)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Add HiveNavigation
+
+- [#1587](https://github.com/the-guild-org/docs/pull/1587)
+  [`2dfb846`](https://github.com/the-guild-org/docs/commit/2dfb8464c1a277454f7ec96814bfcaf6efd23089)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Add icons for Codegen, Hive, Mesh and
+  Yoga
+
+- [#1587](https://github.com/the-guild-org/docs/pull/1587)
+  [`2dfb846`](https://github.com/the-guild-org/docs/commit/2dfb8464c1a277454f7ec96814bfcaf6efd23089)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Move reusable landing page sections to
+  `@theguild/components`
+
+### Patch Changes
+
+- [#1587](https://github.com/the-guild-org/docs/pull/1587)
+  [`2dfb846`](https://github.com/the-guild-org/docs/commit/2dfb8464c1a277454f7ec96814bfcaf6efd23089)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+
+  - Added dependency
+    [`@radix-ui/react-navigation-menu@^1.2.0` ↗︎](https://www.npmjs.com/package/@radix-ui/react-navigation-menu/v/1.2.0)
+    (to `dependencies`)
+  - Added dependency
+    [`@theguild/tailwind-config@0.5.0` ↗︎](https://www.npmjs.com/package/@theguild/tailwind-config/v/0.5.0)
+    (to `dependencies`)
+  - Added dependency
+    [`tailwind-merge@^2.5.2` ↗︎](https://www.npmjs.com/package/tailwind-merge/v/2.5.2) (to
+    `dependencies`)
+
+- [#1630](https://github.com/the-guild-org/docs/pull/1630)
+  [`118c081`](https://github.com/the-guild-org/docs/commit/118c081414fe8684c92321c30667b5777c3cb02f)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@3.0.0-alpha.41` ↗︎](https://www.npmjs.com/package/nextra/v/3.0.0)
+    (from `3.0.0-alpha.32`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@3.0.0-alpha.41` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/3.0.0)
+    (from `3.0.0-alpha.32`, in `dependencies`)
+
+- [#1671](https://github.com/the-guild-org/docs/pull/1671)
+  [`30c0134`](https://github.com/the-guild-org/docs/commit/30c0134d7a86071a03bd665deb1bf076ca8d5715)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@14.2.13` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/14.2.13)
+    (from `14.2.8`, in `dependencies`)
+
+- [#1700](https://github.com/the-guild-org/docs/pull/1700)
+  [`e1e8257`](https://github.com/the-guild-org/docs/commit/e1e825708b82b5779bee41800053720bd3de8fd1)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@14.2.15` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/14.2.15)
+    (from `14.2.13`, in `dependencies`)
+
+- [#1587](https://github.com/the-guild-org/docs/pull/1587)
+  [`2dfb846`](https://github.com/the-guild-org/docs/commit/2dfb8464c1a277454f7ec96814bfcaf6efd23089)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - fix descriptions
+
+- [#1587](https://github.com/the-guild-org/docs/pull/1587)
+  [`2dfb846`](https://github.com/the-guild-org/docs/commit/2dfb8464c1a277454f7ec96814bfcaf6efd23089)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Prevent scrolling to headings on click
+
+- [#1587](https://github.com/the-guild-org/docs/pull/1587)
+  [`2dfb846`](https://github.com/the-guild-org/docs/commit/2dfb8464c1a277454f7ec96814bfcaf6efd23089)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Fix Hive landing components styles
+
 ## 6.6.6
 
 ### Patch Changes
