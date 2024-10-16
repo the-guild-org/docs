@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 7.0.1
+
+### Patch Changes
+
+- [#1725](https://github.com/the-guild-org/docs/pull/1725)
+  [`a61055b`](https://github.com/the-guild-org/docs/commit/a61055be3506d26f6b45409b8358012b13f001ff)
+  Thanks [@hasparus](https://github.com/hasparus)! - - Change outline-style in CallToAction to solid
+  - Tweak Search focus ring
+
 ## 7.0.0
 
 ### Major Changes
