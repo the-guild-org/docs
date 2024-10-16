@@ -160,7 +160,7 @@ export function HiveNavigation({
           Contact <span className="hidden xl:contents">us</span>
         </CallToAction>
         <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
-          Get started <span className="hidden lg:contents">for free</span>
+          Sign in
         </CallToAction>
       </NavigationMenu>
     </div>
