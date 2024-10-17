@@ -1,5 +1,18 @@
 # @theguild/components
 
+## 7.0.2
+
+### Patch Changes
+
+- [#1734](https://github.com/the-guild-org/docs/pull/1734)
+  [`592b8d3`](https://github.com/the-guild-org/docs/commit/592b8d3c401c194a43a178b63c04749168967ae8)
+  Thanks [@hasparus](https://github.com/hasparus)! - Generalize bidirectional navmenu links to all
+  products
+
+- [#1733](https://github.com/the-guild-org/docs/pull/1733)
+  [`237a0ba`](https://github.com/the-guild-org/docs/commit/237a0ba8d6619b3ed394cdf1d9d830672699f48d)
+  Thanks [@hasparus](https://github.com/hasparus)! - Export `cn` function from @theguild/components
+
 ## 7.0.1
 
 ### Patch Changes
