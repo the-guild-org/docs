@@ -1,6 +1,5 @@
 import { cn } from '../cn';
 
-
 export interface StudProps extends React.HTMLAttributes<HTMLElement> {}
 export function Stud(props: StudProps) {
   return (
