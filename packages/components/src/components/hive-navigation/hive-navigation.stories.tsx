@@ -1,6 +1,7 @@
 import { DocsThemeConfig, default as NextraLayout } from 'nextra-theme-docs';
 import { Meta, StoryContext, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
+import { PRODUCTS } from '../../products';
 import { GraphQLConfCard } from './graphql-conf-card';
 import {
   CompanyMenu,
@@ -86,7 +87,7 @@ export const Viewport: StoryObj = {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Menu Item</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ProductsMenu isHive={false} />
+              <ProductsMenu productName={PRODUCTS.CODEGEN.name} />
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -102,7 +103,7 @@ export const Products: StoryObj = {
   render() {
     return (
       <NavigationMenu>
-        <ProductsMenu isHive={false} />
+        <ProductsMenu productName={PRODUCTS.YOGA.name} />
       </NavigationMenu>
     );
   },
