@@ -104,7 +104,7 @@ export function HiveNavigation({
           <NavigationMenuItem>
             <NavigationMenuTrigger>Products</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ProductsMenu isHive={isHive} />
+              <ProductsMenu productName={productName} />
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -168,30 +168,28 @@ export function HiveNavigation({
 }
 
 interface ProductsMenuProps extends MenuContentColumnsProps {
-  isHive: boolean;
+  productName: string;
 }
 /**
  * @internal
  */
 export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
-  ({ isHive, ...rest }, ref) => {
+  ({ productName, ...rest }, ref) => {
     const { asPath } = useRouter();
+
+    const bidirectionalProductLink = (product: (typeof PRODUCTS)[keyof typeof PRODUCTS]) => {
+      if (productName === product.name) {
+        // We link bidirectionally between the landing page and the docs.
+        return asPath === '/' ? '/docs' : '/';
+      }
+      return product.href;
+    };
 
     return (
       <MenuContentColumns ref={ref} {...rest}>
         <div className="w-[220px]">
           <ColumnLabel>Platform</ColumnLabel>
-          <NavigationMenuLink
-            href={
-              isHive
-                ? // We link bidirectionally between the landing page and the docs.
-                  asPath === '/'
-                  ? '/docs'
-                  : '/'
-                : PRODUCTS.HIVE.href
-            }
-            className="p-4"
-          >
+          <NavigationMenuLink href={bidirectionalProductLink(PRODUCTS.HIVE)} className="p-4">
             <div className="w-fit rounded-lg bg-green-800 p-3 dark:bg-white/10">
               <HiveIcon className="size-10 text-white" />
             </div>
@@ -223,7 +221,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
               return (
                 <li key={product.name}>
                   <NavigationMenuLink
-                    href={product.href}
+                    href={bidirectionalProductLink(product)}
                     className="flex flex-row items-center gap-4 p-4"
                   >
                     <div className="size-12 rounded-lg bg-blue-400 p-2.5">
@@ -251,7 +249,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
               return (
                 <li key={product.name}>
                   <NavigationMenuLink
-                    href={product.href}
+                    href={bidirectionalProductLink(product)}
                     className="flex flex-row items-center gap-3 px-4 py-2"
                     arrow
                   >
