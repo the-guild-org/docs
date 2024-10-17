@@ -32,6 +32,7 @@ export { fetchPackageInfo } from './npm';
 export { PRODUCTS } from './products';
 export * from './types/components';
 export * from './logos';
+export * from './cn';
 
 declare module 'react' {
   interface CSSProperties {
