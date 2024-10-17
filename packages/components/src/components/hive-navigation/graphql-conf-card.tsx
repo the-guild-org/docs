@@ -8,7 +8,10 @@ export interface GraphQLConfCardProps {
 }
 export function GraphQLConfCard({ image }: GraphQLConfCardProps) {
   return (
-    <NavigationMenuLink href="https://graphql.org/conf/2024/" className="group w-[358px]">
+    <NavigationMenuLink
+      href="https://www.youtube.com/playlist?list=PL43V96KpNj7OMvmfL0WFKP6LpoboM8Hde"
+      className="group w-[358px]"
+    >
       <Image alt="" {...image} width={358} height={200} />
       <strong className="mt-6 block text-xl font-medium leading-7 text-green-1000 dark:text-neutral-100">
         GraphQLConf 2024
@@ -20,7 +23,7 @@ export function GraphQLConfCard({ image }: GraphQLConfCardProps) {
         The official GraphQL conference hosted by GraphQL Foundation.
       </p>
       <span className="-mx-2 mt-4 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors group-hover:text-green-1000 dark:text-neutral-200 dark:group-hover:text-neutral-100">
-        <span>Meet us at GraphQLConf 2024</span> <ArrowIcon />
+        <span>Watch The Guild at GraphQLConf 2024</span> <ArrowIcon />
       </span>
     </NavigationMenuLink>
   );
