@@ -97,4 +97,5 @@
 /* wrong with neue montreal */
 ._subpixel-antialiased {
   -webkit-font-smoothing: unset;
+  -moz-osx-font-smoothing: unset;
 }
