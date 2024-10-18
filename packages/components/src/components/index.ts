@@ -31,3 +31,5 @@ export * from './decorations';
 export * from './call-to-action';
 export * from './cookies-consent';
 export * from './heading';
+export * from './info-card';
+export * from './stud';
