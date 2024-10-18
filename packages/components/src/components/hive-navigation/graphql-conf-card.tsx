@@ -17,7 +17,7 @@ export function GraphQLConfCard({ image }: GraphQLConfCardProps) {
         GraphQLConf 2024
       </strong>
       <p className="mt-4 text-sm font-medium leading-5 text-green-800 dark:text-neutral-200">
-        September 10-12 | San Fransico CA
+        September 10-12 | San Francisco CA
       </p>
       <p className="mt-2 text-sm font-normal leading-5 text-green-800 dark:text-neutral-200">
         The official GraphQL conference hosted by GraphQL Foundation.
