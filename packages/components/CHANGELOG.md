@@ -1,5 +1,26 @@
 # @theguild/components
 
+## 7.0.2
+
+### Patch Changes
+
+- [#1736](https://github.com/the-guild-org/docs/pull/1736)
+  [`c366f3f`](https://github.com/the-guild-org/docs/commit/c366f3f2490fd77cd13da4c62047652f830a5776)
+  Thanks [@hasparus](https://github.com/hasparus)! - Update GraphQLConfCard to link to YT
+
+- [#1734](https://github.com/the-guild-org/docs/pull/1734)
+  [`592b8d3`](https://github.com/the-guild-org/docs/commit/592b8d3c401c194a43a178b63c04749168967ae8)
+  Thanks [@hasparus](https://github.com/hasparus)! - Generalize bidirectional navmenu links to all
+  products
+
+- [#1739](https://github.com/the-guild-org/docs/pull/1739)
+  [`61612ad`](https://github.com/the-guild-org/docs/commit/61612ad45dd1c7f7cf63778052ad9fe1305cc980)
+  Thanks [@hasparus](https://github.com/hasparus)! - Unset Nextra's \_subpixel-antialiased
+
+- [#1733](https://github.com/the-guild-org/docs/pull/1733)
+  [`237a0ba`](https://github.com/the-guild-org/docs/commit/237a0ba8d6619b3ed394cdf1d9d830672699f48d)
+  Thanks [@hasparus](https://github.com/hasparus)! - Export `cn` function from @theguild/components
+
 ## 7.0.1
 
 ### Patch Changes
