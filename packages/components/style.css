@@ -93,3 +93,8 @@
     }
   }
 }
+
+/* neue montreal doesn't have a 600 */
+.nextra-toc a._font-semibold {
+  font-weight: 500;
+}
