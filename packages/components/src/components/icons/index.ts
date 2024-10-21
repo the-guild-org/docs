@@ -32,3 +32,4 @@ export { ReactComponent as HonourIcon } from './honour.svg';
 export { ReactComponent as ShieldFlashIcon } from './shield-flash.svg';
 export { ReactComponent as GroupIcon } from './group.svg';
 export { ReactComponent as AppsIcon } from './apps.svg';
+export { ReactComponent as CheckIcon } from './check.svg';
