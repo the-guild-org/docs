@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import * as icons from './index';
 
 const meta: Meta = {
-  id: 'icons',
+  title: 'Components/Icons',
   component: () => null,
 };
 
