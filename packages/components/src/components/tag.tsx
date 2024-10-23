@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode } from 'react';
-import clsx from 'clsx';
+import { cn } from '../cn';
 
 export const Tag = ({
   children,
@@ -12,9 +12,9 @@ export const Tag = ({
 }) => {
   return (
     <button
-      className={clsx(
-        'mb-2 mr-2 inline cursor-pointer rounded-md border-0 px-2 py-1 text-xs outline-none',
-        selected ? 'bg-gray-400 text-gray-700' : 'bg-gray-200 text-gray-500',
+      className={cn(
+        'inline cursor-pointer rounded-full border-0 px-3 py-1 text-xs font-medium outline-none',
+        selected ? 'bg-green-600 text-white' : 'bg-green-700 text-green-200',
       )}
       onClick={onClick}
     >
@@ -23,6 +23,12 @@ export const Tag = ({
   );
 };
 
-export const TagsContainer = ({ children }: { children: ReactNode }): ReactElement => {
-  return <div className="flex flex-wrap py-2">{children}</div>;
+export const TagsContainer = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}): ReactElement => {
+  return <div className={cn('flex flex-wrap gap-2 py-2', className)}>{children}</div>;
 };

@@ -1,4 +1,4 @@
-import { ComponentProps, ReactElement, ReactNode } from 'react';
+import React, { ComponentProps, ReactElement, ReactNode } from 'react';
 import { ImageProps as IImage } from 'next/image';
 import { LinkProps } from 'next/link';
 import { ReactPlayerProps } from 'react-player';
@@ -96,6 +96,7 @@ export interface IMarketplaceItemProps {
   update: string;
   image: IImage;
   link: Omit<ILink, 'children'>;
+  weeklyNPMDownloads?: number;
 }
 
 export interface IMarketplaceItemsProps {
@@ -108,6 +109,8 @@ export interface IMarketplaceListProps {
   placeholder: string | ReactElement;
   pagination: number;
   items: IMarketplaceItemProps[];
+  as?: 'section' | typeof React.Fragment;
+  children?: (props: { page: IMarketplaceItemProps[] }) => ReactNode;
 }
 
 export interface IMarketplaceSearchProps {

@@ -1,9 +1,17 @@
-import { ReactElement, useEffect, useMemo, useState } from 'react';
-import clsx from 'clsx';
+import {
+  ComponentPropsWithoutRef,
+  Fragment,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import ReactPaginate from 'react-paginate';
-import { IMarketplaceItemsProps, IMarketplaceListProps } from '../types/components';
+import { cn } from '../cn';
+import { IMarketplaceItemProps, IMarketplaceListProps } from '../types/components';
 import { Anchor } from './anchor';
-import { CaretSlimIcon } from './icons';
+import { Heading } from './heading';
 import { Image } from './image';
 import { Tag, TagsContainer } from './tag';
 
@@ -26,60 +34,14 @@ const formatDate = (value: string): string => {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 };
 
-const TableBody = ({ items = [] }: IMarketplaceItemsProps): ReactElement => (
-  <tbody>
-    {items.map(item => (
-      <tr
-        className="border-0 border-b border-solid border-gray-300 text-xs font-medium text-gray-500 last:border-0 dark:border-gray-800 dark:text-gray-400"
-        key={item.title}
-      >
-        <td className="w-14 py-4 pr-2 align-top md:w-20">
-          {item.image && <Image {...item.image} />}
-        </td>
-        <td className="px-2 py-4">
-          <Anchor
-            {...item.link}
-            className={clsx(
-              'text-gray-500 duration-150 ease-in-out hover:opacity-75 dark:text-gray-400',
-              item.link.className,
-            )}
-          >
-            <h3 className="m-0 line-clamp-2 text-base font-bold text-black md:text-lg dark:text-white">
-              {item.title}
-            </h3>
-            <div className="line-clamp-3">{item.description}</div>
-            {item.tags && item.tags.length > 0 && (
-              <TagsContainer>
-                {item.tags.map(tagName => (
-                  <Tag key={tagName}>{tagName}</Tag>
-                ))}
-              </TagsContainer>
-            )}
-          </Anchor>
-        </td>
-        <td className="hidden px-2 py-4 md:table-cell">{formatDate(item.update)}</td>
-        <td className="py-4 pl-2">
-          <Anchor
-            {...item.link}
-            className={clsx(
-              'inline-block rounded-lg bg-gray-200 p-1.5 text-gray-800 hover:invert md:p-2.5 dark:bg-gray-700 dark:text-white',
-              item.link.className,
-            )}
-          >
-            <CaretSlimIcon className="size-5 -rotate-90" />
-          </Anchor>
-        </td>
-      </tr>
-    ))}
-  </tbody>
-);
-
 export const MarketplaceList = ({
   title,
   placeholder,
   items,
   pagination,
   className,
+  as = 'section',
+  children,
 }: IMarketplaceListProps): ReactElement => {
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -102,27 +64,30 @@ export const MarketplaceList = ({
     return pagesData;
   }, [items, pageSize]);
 
+  const Root = as;
+
   return (
-    <section className={clsx('w-full bg-white dark:bg-dark', className)}>
+    <Root className={cn('w-full', className)}>
       {title && (
-        <h2 className="mb-4 mt-0 text-xl font-bold text-black md:text-2xl dark:text-gray-50">
+        <Heading as="h2" size="sm" className="mt-4 text-2xl/8 font-medium text-white">
           {title}
-        </h2>
+        </Heading>
       )}
       {pages[currentPage]?.length ? (
         <>
-          <table className="w-full border-collapse">
-            <thead className="whitespace-nowrap px-2 text-left text-xs font-semibold uppercase text-gray-300 dark:text-gray-600">
-              <tr className="border-0">
-                <th className="px-2" />
-                <th className="px-2">Name</th>
-                <th className="hidden px-2 md:table-cell">Last Update</th>
-                <th className="px-2" />
-              </tr>
-            </thead>
-            <TableBody items={pages[currentPage]} />
-          </table>
-
+          {children ? (
+            children({ page: pages[currentPage] })
+          ) : (
+            <ul className={cn('space-y-6')}>
+              {pages[currentPage].map(item => {
+                return (
+                  <li key={item.title}>
+                    <MarketplaceListItem item={item} />
+                  </li>
+                );
+              })}
+            </ul>
+          )}
           {pageCount > 1 && (
             <ReactPaginate
               pageCount={pageCount}
@@ -134,18 +99,7 @@ export const MarketplaceList = ({
               containerClassName="flex justify-center gap-x-2"
               previousClassName="hidden"
               nextClassName="hidden"
-              pageLinkClassName="
-                text-sm
-                bg-gray-200
-                dark:text-gray-300
-                dark:bg-gray-700
-                rounded-lg
-                select-none
-                hover:opacity-70
-                transition
-                px-3.5
-                py-2
-              "
+              pageLinkClassName="text-sm bg-gray-200 dark:text-gray-300 dark:bg-gray-700 rounded-lg select-none hover:opacity-70 transition px-3.5 py-2"
               activeLinkClassName="invert"
             />
           )}
@@ -155,6 +109,38 @@ export const MarketplaceList = ({
           {placeholder}
         </div>
       )}
-    </section>
+    </Root>
   );
 };
+
+export function MarketplaceListItem({ item }: { item: IMarketplaceItemProps }) {
+  return (
+    <Anchor
+      {...item.link}
+      className={cn('flex flex-row gap-6 rounded-2xl bg-green-900 p-6', item.link.className)}
+    >
+      <div className="flex size-[92px] shrink-0 items-center justify-center rounded-lg bg-white object-contain">
+        <Image
+          {...item.image}
+          width="86"
+          height="86"
+          className="aspect-square rounded-md object-contain"
+        />
+      </div>
+      <div className="flex flex-col">
+        <h3 className="m-0 line-clamp-2 text-2xl font-medium text-white">{item.title}</h3>
+        <div className="mb-2 line-clamp-3 text-white/80">{item.description}</div>
+        {item.tags && item.tags.length > 0 && (
+          <TagsContainer className="mt-auto">
+            {item.tags.map(tagName => (
+              <Tag key={tagName}>{tagName}</Tag>
+            ))}
+          </TagsContainer>
+        )}
+        <span className="text-xs text-white/80">
+          Updated <time dateTime={item.update}>{formatDate(item.update)}</time>
+        </span>
+      </div>
+    </Anchor>
+  );
+}

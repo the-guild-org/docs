@@ -1,9 +1,18 @@
-import { FormEvent, isValidElement, ReactElement, useCallback, useMemo, useState } from 'react';
-import clsx from 'clsx';
+import {
+  FormEvent,
+  Fragment,
+  isValidElement,
+  ReactElement,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react';
 import fuzzy from 'fuzzy';
+import { cn } from '../cn';
 import { IMarketplaceSearchProps } from '../types/components';
+import { Heading } from './heading';
 import { CloseIcon, SearchIcon } from './icons';
-import { MarketplaceList } from './marketplace-list';
+import { MarketplaceList, MarketplaceListItem } from './marketplace-list';
 import { Tag, TagsContainer } from './tag';
 
 const renderQueryPlaceholder = (placeholder: string | ReactElement, query: string) => {
@@ -70,11 +79,11 @@ export const MarketplaceSearch = ({
   }, [query, queryList]);
 
   return (
-    <section className={clsx('bg-white dark:bg-dark', className)}>
+    <article className={cn('bg-green-1000', className)}>
       <div className="container max-w-[90rem] py-12">
-        <h2 className="mb-4 mt-0 text-2xl font-bold text-black md:text-3xl dark:text-gray-50">
+        <Heading as="h1" className="mb-4 text-[32px] text-white" size="sm">
           {title}
-        </h2>
+        </Heading>
         {tagsFilter && (
           <TagsContainer>
             {tagsFilter.map(tagName => (
@@ -105,22 +114,52 @@ export const MarketplaceSearch = ({
           </button>
         </div>
 
-        <div className="flex flex-wrap gap-10 py-6 lg:flex-nowrap">
-          {items && queryList ? (
-            <MarketplaceList
-              title={queryList.title}
-              items={items}
-              placeholder={renderQueryPlaceholder(queryList.placeholder, query)}
-              pagination={queryList.pagination}
-            />
-          ) : (
-            <>
-              <MarketplaceList {...primaryList} />
-              {secondaryList && <MarketplaceList {...secondaryList} />}
-            </>
-          )}
-        </div>
+        {items && queryList ? (
+          <MarketplaceList
+            title={queryList.title}
+            items={items}
+            placeholder={renderQueryPlaceholder(queryList.placeholder, query)}
+            pagination={queryList.pagination}
+          />
+        ) : (
+          <div className="grid grid-flow-row-dense grid-cols-2 gap-y-6 [grid-auto-rows:minmax(0px,auto)] xl:gap-x-24 [&>:nth-child(-n+3)]:[grid-column:1]">
+            <MarketplaceList as={Fragment} {...primaryList}>
+              {({ page }) => (
+                <ul
+                  className="grid grid-rows-subgrid"
+                  style={{
+                    gridRow: `span ${page.length}`,
+                  }}
+                >
+                  {page.map(item => (
+                    <li key={item.title} className="*:h-full">
+                      <MarketplaceListItem item={item} />
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </MarketplaceList>
+            {secondaryList && (
+              <MarketplaceList as={Fragment} {...secondaryList}>
+                {({ page }) => (
+                  <ul
+                    className="grid grid-rows-subgrid"
+                    style={{
+                      gridRow: `span ${page.length}`,
+                    }}
+                  >
+                    {page.map(item => (
+                      <li key={item.title} className="*:h-full">
+                        <MarketplaceListItem item={item} />
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </MarketplaceList>
+            )}
+          </div>
+        )}
       </div>
-    </section>
+    </article>
   );
 };
