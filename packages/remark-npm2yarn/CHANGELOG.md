@@ -1,5 +1,13 @@
 # @theguild/remark-npm2yarn
 
+## 0.3.3
+
+### Patch Changes
+
+- [#1749](https://github.com/the-guild-org/docs/pull/1749)
+  [`46f8ee6`](https://github.com/the-guild-org/docs/commit/46f8ee682a30931ae568bc8e42ea0dbda7972668)
+  Thanks [@peterkogo](https://github.com/peterkogo)! - support `npx` command
+
 ## 0.3.2
 
 ### Patch Changes

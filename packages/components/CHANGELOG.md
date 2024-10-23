@@ -1,5 +1,18 @@
 # @theguild/components
 
+## 7.1.0
+
+### Minor Changes
+
+- [#1747](https://github.com/the-guild-org/docs/pull/1747)
+  [`ec9d333`](https://github.com/the-guild-org/docs/commit/ec9d3334aee28fade12f15f5ad6f4f720aefae5a)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add CheckIcon component
+
+- [#1737](https://github.com/the-guild-org/docs/pull/1737)
+  [`3bb5b4e`](https://github.com/the-guild-org/docs/commit/3bb5b4e3cd9f648f95cff7274b6e0ea72e02e58a)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add InfoCard and Stud components for landing
+  pages'
+
 ## 7.0.2
 
 ### Patch Changes
