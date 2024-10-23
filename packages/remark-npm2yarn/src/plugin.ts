@@ -97,7 +97,7 @@ export const remarkNpm2Yarn: Plugin<
 
       if (!node.meta || node.meta === newMetadata) return;
 
-      if (!node.value.startsWith('npm') || !node.value.startsWith('npx')) {
+      if (!node.value.startsWith('npm') && !node.value.startsWith('npx')) {
         throw new Error(
           `\`npm-to-yarn\` package can convert only npm or npx commands to all package managers. Found: ${node.value}`,
         );
