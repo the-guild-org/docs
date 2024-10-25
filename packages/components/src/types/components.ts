@@ -106,6 +106,7 @@ export interface IMarketplaceItemsProps {
 export interface IMarketplaceListProps {
   className?: string;
   title?: string;
+  colorScheme?: 'green' | 'black';
   placeholder: string | ReactElement;
   pagination: number;
   items: IMarketplaceItemProps[];
@@ -117,6 +118,7 @@ export interface IMarketplaceSearchProps {
   className?: string;
   title: string | ReactNode;
   placeholder: string;
+  colorScheme?: 'green' | 'black';
   primaryList: IMarketplaceListProps;
   secondaryList?: IMarketplaceListProps;
   queryList?: IMarketplaceListProps;

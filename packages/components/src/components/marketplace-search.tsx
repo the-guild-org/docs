@@ -1,12 +1,4 @@
-import {
-  FormEvent,
-  Fragment,
-  isValidElement,
-  ReactElement,
-  useCallback,
-  useMemo,
-  useState,
-} from 'react';
+import { Fragment, isValidElement, ReactElement, useMemo, useState } from 'react';
 import fuzzy from 'fuzzy';
 import { cn } from '../cn';
 import { IMarketplaceSearchProps } from '../types/components';
@@ -14,6 +6,7 @@ import { Heading } from './heading';
 import { CloseIcon, SearchIcon } from './icons';
 import { MarketplaceList, MarketplaceListItem } from './marketplace-list';
 import { Tag, TagsContainer } from './tag';
+import styles from './marketplace-search.module.css';
 
 const renderQueryPlaceholder = (placeholder: string | ReactElement, query: string) => {
   if (!query || isValidElement(placeholder)) {
@@ -35,12 +28,9 @@ export const MarketplaceSearch = ({
   secondaryList,
   queryList,
   className,
+  colorScheme = 'green',
 }: IMarketplaceSearchProps): ReactElement => {
   const [query, setQuery] = useState('');
-
-  const handleChange = useCallback((e: FormEvent<HTMLInputElement>) => {
-    setQuery(e.currentTarget.value);
-  }, []);
 
   const handleTagClick = (tagName: string) => {
     if (query.includes(`#${tagName}`)) {
@@ -79,9 +69,9 @@ export const MarketplaceSearch = ({
   }, [query, queryList]);
 
   return (
-    <article className={cn('bg-green-1000', className)}>
+    <article className={cn(styles.marketplace, colorScheme, 'bg-[--bg]', className)}>
       <div className="container max-w-[90rem] py-12">
-        <Heading as="h1" className="mb-4 text-[32px] text-white" size="sm">
+        <Heading as="h1" className="mb-4 text-[32px] text-[--text]" size="sm">
           {title}
         </Heading>
         {tagsFilter && (
@@ -97,22 +87,7 @@ export const MarketplaceSearch = ({
             ))}
           </TagsContainer>
         )}
-        <div className="flex border-0 border-b border-solid border-gray-300 pb-3 dark:border-gray-800">
-          <SearchIcon className="text-gray-500 dark:text-white" />
-          <input
-            value={query}
-            type="search"
-            placeholder={placeholder}
-            onChange={handleChange}
-            className="ml-1.5 mt-0.5 w-full border-0 bg-white text-sm font-medium text-black outline-none dark:bg-dark dark:text-gray-50"
-          />
-          <button
-            onClick={() => setQuery('')}
-            className="text-gray-300 hover:text-gray-700 dark:hover:text-white"
-          >
-            <CloseIcon />
-          </button>
-        </div>
+        <MarketplaceSearchInput onChange={setQuery} value={query} placeholder={placeholder} />
 
         {items && queryList ? (
           <MarketplaceList
@@ -120,10 +95,12 @@ export const MarketplaceSearch = ({
             items={items}
             placeholder={renderQueryPlaceholder(queryList.placeholder, query)}
             pagination={queryList.pagination}
+            colorScheme={colorScheme}
           />
         ) : (
+          // instead of two lists, we'll have tabs and a grid
           <div className="grid grid-flow-row-dense grid-cols-2 gap-y-6 [grid-auto-rows:minmax(0px,auto)] xl:gap-x-24 [&>:nth-child(-n+3)]:[grid-column:1]">
-            <MarketplaceList as={Fragment} {...primaryList}>
+            <MarketplaceList as={Fragment} {...primaryList} colorScheme={colorScheme}>
               {({ page }) => (
                 <ul
                   className="grid grid-rows-subgrid"
@@ -140,7 +117,7 @@ export const MarketplaceSearch = ({
               )}
             </MarketplaceList>
             {secondaryList && (
-              <MarketplaceList as={Fragment} {...secondaryList}>
+              <MarketplaceList as={Fragment} {...secondaryList} colorScheme={colorScheme}>
                 {({ page }) => (
                   <ul
                     className="grid grid-rows-subgrid"
@@ -163,3 +140,32 @@ export const MarketplaceSearch = ({
     </article>
   );
 };
+
+function MarketplaceSearchInput({
+  onChange,
+  value,
+  placeholder,
+}: {
+  onChange: (value: string) => void;
+  value: string;
+  placeholder: string;
+}) {
+  return (
+    <div className="flex border-0 border-b border-solid border-b-[--border] pb-3">
+      <SearchIcon className="text-[--text-80]" />
+      <input
+        value={value}
+        type="search"
+        placeholder={placeholder}
+        onChange={event => onChange(event.currentTarget.value)}
+        className="ml-1.5 mt-0.5 w-full border-0 bg-transparent pb-2 font-medium outline-none placeholder:text-[--text-60]"
+      />
+      <button
+        onClick={() => onChange('')}
+        className="hive-focus flex size-6 items-center justify-center"
+      >
+        <CloseIcon className="size-5 text-[--text-80]" />
+      </button>
+    </div>
+  );
+}

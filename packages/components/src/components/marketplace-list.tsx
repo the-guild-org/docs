@@ -14,6 +14,7 @@ import { Anchor } from './anchor';
 import { Heading } from './heading';
 import { Image } from './image';
 import { Tag, TagsContainer } from './tag';
+import styles from './marketplace-search.module.css';
 
 const formatDate = (value: string): string => {
   const months = [
@@ -42,6 +43,7 @@ export const MarketplaceList = ({
   className,
   as = 'section',
   children,
+  colorScheme = 'black',
 }: IMarketplaceListProps): ReactElement => {
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -67,7 +69,14 @@ export const MarketplaceList = ({
   const Root = as;
 
   return (
-    <Root className={cn('w-full', className)}>
+    <Root
+      className={cn(
+        styles.marketplace,
+        colorScheme,
+        'w-full bg-neutral-900 [.green_&]:bg-green-1000',
+        className,
+      )}
+    >
       {title && (
         <Heading as="h2" size="sm" className="mt-4 text-2xl/8 font-medium text-white">
           {title}
@@ -117,19 +126,28 @@ export function MarketplaceListItem({ item }: { item: IMarketplaceItemProps }) {
   return (
     <Anchor
       {...item.link}
-      className={cn('flex flex-row gap-6 rounded-2xl bg-green-900 p-6', item.link.className)}
+      className={cn(
+        'flex flex-row gap-6 rounded-2xl bg-neutral-800 p-6 [.green_&]:bg-green-900',
+        item.link.className,
+      )}
     >
-      <div className="flex size-[92px] shrink-0 items-center justify-center rounded-lg bg-white object-contain">
+      <div
+        className={cn(
+          'size-16 shrink-0 rounded-lg bg-[--bg] md:size-16 lg:size-[92px] [.green_&]:[background:linear-gradient(135deg,_#68A8B6_0%,_#3B736A_100%)]',
+        )}
+      >
         <Image
           {...item.image}
-          width="86"
-          height="86"
-          className="aspect-square rounded-md object-contain"
+          width="92"
+          height="92"
+          className="aspect-square rounded-lg object-contain"
         />
       </div>
       <div className="flex flex-col">
-        <h3 className="m-0 line-clamp-2 text-2xl font-medium text-white">{item.title}</h3>
-        <div className="mb-2 line-clamp-3 text-white/80">{item.description}</div>
+        <h3 className="m-0 line-clamp-2 font-medium text-white lg:text-2xl">{item.title}</h3>
+        <div className="mb-2 line-clamp-3 text-sm text-white/80 lg:text-base">
+          {item.description}
+        </div>
         {item.tags && item.tags.length > 0 && (
           <TagsContainer className="mt-auto">
             {item.tags.map(tagName => (

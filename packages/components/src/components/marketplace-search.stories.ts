@@ -13,6 +13,12 @@ export default {
     placeholder: {
       name: 'Input Placeholder',
     },
+    colorScheme: {
+      control: {
+        type: 'select',
+      },
+      options: ['green', 'black'],
+    },
   },
   decorators: [hiveThemeDecorator],
 } satisfies Meta<typeof MarketplaceSearch>;
@@ -23,4 +29,3 @@ export const Default: Story = {
   name: 'MarketplaceSearch',
   args: dummyMarketplaceSearch,
 };
-

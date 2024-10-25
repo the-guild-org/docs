@@ -5,6 +5,8 @@
 @import 'tailwindcss/components' layer(l-components);
 @import 'tailwindcss/utilities';
 
+@import './dist/index.css';
+
 .nextra-banner-container._bg-neutral-900._flex {
   @apply bg-[#48224e] bg-none;
 }
