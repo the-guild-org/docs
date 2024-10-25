@@ -147,14 +147,16 @@ export function MarketplaceListItem({ item }: { item: IMarketplaceItemProps }) {
             ))}
           </TagsContainer>
         )}
-        <footer className="@lg:text-sm flex gap-4 text-xs text-[--fg-80]">
+        <div className="@lg:text-sm flex flex-wrap gap-x-4 text-xs text-[--fg-80]">
           <span>
             Updated <time dateTime={item.update}>{formatDate(item.update)}</time>
           </span>
           {item.weeklyNPMDownloads && (
-            <span>{numberFormat.format(item.weeklyNPMDownloads)} weekly downloads</span>
+            <span className="@sm:block hidden">
+              {numberFormat.format(item.weeklyNPMDownloads)} weekly downloads
+            </span>
           )}
-        </footer>
+        </div>
       </div>
     </Anchor>
   );
