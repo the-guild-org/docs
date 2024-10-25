@@ -1,5 +1,6 @@
 import { Fragment, isValidElement, ReactElement, useMemo, useState } from 'react';
 import fuzzy from 'fuzzy';
+import { Tabs } from 'nextra/components';
 import { cn } from '../cn';
 import { IMarketplaceSearchProps } from '../types/components';
 import { Heading } from './heading';
@@ -71,7 +72,7 @@ export const MarketplaceSearch = ({
   return (
     <article className={cn(styles.marketplace, colorScheme, 'bg-[--bg]', className)}>
       <div className="container max-w-[90rem] py-12">
-        <Heading as="h1" className="mb-4 text-[32px] text-[--text]" size="sm">
+        <Heading as="h1" className="mb-4 text-[32px] text-[--fg]" size="sm">
           {title}
         </Heading>
         {tagsFilter && (
@@ -87,7 +88,12 @@ export const MarketplaceSearch = ({
             ))}
           </TagsContainer>
         )}
-        <MarketplaceSearchInput onChange={setQuery} value={query} placeholder={placeholder} />
+        <MarketplaceSearchInput
+          onChange={setQuery}
+          value={query}
+          placeholder={placeholder}
+          className="mt-4"
+        />
 
         {items && queryList ? (
           <MarketplaceList
@@ -99,42 +105,16 @@ export const MarketplaceSearch = ({
           />
         ) : (
           // instead of two lists, we'll have tabs and a grid
-          <div className="grid grid-flow-row-dense grid-cols-2 gap-y-6 [grid-auto-rows:minmax(0px,auto)] xl:gap-x-24 [&>:nth-child(-n+3)]:[grid-column:1]">
-            <MarketplaceList as={Fragment} {...primaryList} colorScheme={colorScheme}>
-              {({ page }) => (
-                <ul
-                  className="grid grid-rows-subgrid"
-                  style={{
-                    gridRow: `span ${page.length}`,
-                  }}
-                >
-                  {page.map(item => (
-                    <li key={item.title} className="*:h-full">
-                      <MarketplaceListItem item={item} />
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </MarketplaceList>
+          <Tabs items={[primaryList.title, secondaryList?.title].filter(x => x != null)}>
+            <Tabs.Tab>
+              <MarketplaceList {...primaryList} title={undefined} colorScheme={colorScheme} />
+            </Tabs.Tab>
             {secondaryList && (
-              <MarketplaceList as={Fragment} {...secondaryList} colorScheme={colorScheme}>
-                {({ page }) => (
-                  <ul
-                    className="grid grid-rows-subgrid"
-                    style={{
-                      gridRow: `span ${page.length}`,
-                    }}
-                  >
-                    {page.map(item => (
-                      <li key={item.title} className="*:h-full">
-                        <MarketplaceListItem item={item} />
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </MarketplaceList>
+              <Tabs.Tab>
+                <MarketplaceList {...secondaryList} title={undefined} colorScheme={colorScheme} />
+              </Tabs.Tab>
             )}
-          </div>
+          </Tabs>
         )}
       </div>
     </article>
@@ -145,26 +125,28 @@ function MarketplaceSearchInput({
   onChange,
   value,
   placeholder,
+  className,
 }: {
   onChange: (value: string) => void;
   value: string;
   placeholder: string;
+  className?: string;
 }) {
   return (
-    <div className="flex border-0 border-b border-solid border-b-[--border] pb-3">
-      <SearchIcon className="text-[--text-80]" />
+    <div className={cn('flex items-center border-b border-[--fg-60] px-2', className)}>
+      <SearchIcon className="text-[--fg-80]" />
       <input
         value={value}
         type="search"
         placeholder={placeholder}
         onChange={event => onChange(event.currentTarget.value)}
-        className="ml-1.5 mt-0.5 w-full border-0 bg-transparent pb-2 font-medium outline-none placeholder:text-[--text-60]"
+        className="ml-2 w-full border-0 bg-transparent py-2 font-medium text-[--fg] outline-none placeholder:text-[--fg-60] [&::-webkit-search-cancel-button]:[display:none]"
       />
       <button
         onClick={() => onChange('')}
         className="hive-focus flex size-6 items-center justify-center"
       >
-        <CloseIcon className="size-5 text-[--text-80]" />
+        <CloseIcon className="size-5 text-[--fg-80]" />
       </button>
     </div>
   );

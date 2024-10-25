@@ -1,0 +1,19 @@
+.marketplace {
+  --fg: theme(colors.white);
+  --fg-80: rgb(from var(--fg) r g b / 0.8);
+  --fg-70: rgb(from var(--fg) r g b / 0.7);
+  --fg-60: rgb(from var(--fg) r g b / 0.6);
+
+  &:global(.green) {
+    --bg: theme(colors.green.1000);
+  }
+
+  &:global(.black) {
+    --bg: theme(colors.neutral.900);
+
+    :global(.light) & {
+      --bg: theme(colors.white);
+      --fg: theme(colors.neutral.900);
+    }
+  }
+}

@@ -110,8 +110,6 @@ export interface IMarketplaceListProps {
   placeholder: string | ReactElement;
   pagination: number;
   items: IMarketplaceItemProps[];
-  as?: 'section' | typeof React.Fragment;
-  children?: (props: { page: IMarketplaceItemProps[] }) => ReactNode;
 }
 
 export interface IMarketplaceSearchProps {
