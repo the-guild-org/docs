@@ -5,8 +5,6 @@ import { StoryContext } from '@storybook/react';
 import { cn } from '../packages/components/src/cn';
 
 const neueMontreal = localFont({
-  // TODO: Swap to variable version.
-  // TODO: We only use 400 and 500 weights, right?
   src: [
     { path: '../fonts/PPNeueMontreal-Regular.woff2', weight: '400' },
     { path: '../fonts/PPNeueMontreal-Medium.woff2', weight: '500' },
