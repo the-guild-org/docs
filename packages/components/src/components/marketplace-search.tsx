@@ -29,7 +29,7 @@ export const MarketplaceSearch = ({
   secondaryList,
   queryList,
   className,
-  colorScheme = 'black',
+  colorScheme = 'neutral',
 }: IMarketplaceSearchProps): ReactElement => {
   const [query, setQuery] = useState('');
 
@@ -155,7 +155,7 @@ function MarketplaceSearchTabs({
 }: {
   primaryList: IMarketplaceListProps;
   secondaryList: IMarketplaceListProps | undefined;
-  colorScheme: 'green' | 'black';
+  colorScheme: 'green' | 'neutral';
   className?: string;
 }) {
   return (

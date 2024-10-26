@@ -8,7 +8,7 @@
     --bg: theme(colors.green.1000);
   }
 
-  &:global(.black) {
+  &:global(.neutral) {
     --bg: theme(colors.neutral.900);
 
     :global(.light) & {

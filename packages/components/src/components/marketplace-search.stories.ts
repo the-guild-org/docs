@@ -17,7 +17,7 @@ export default {
       control: {
         type: 'select',
       },
-      options: ['green', 'black'],
+      options: ['green', 'neutral'],
     },
   },
   decorators: [hiveThemeDecorator],

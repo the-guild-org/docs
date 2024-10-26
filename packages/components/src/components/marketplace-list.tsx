@@ -37,7 +37,7 @@ export const MarketplaceList = ({
   items,
   pagination,
   className,
-  colorScheme = 'black',
+  colorScheme = 'neutral',
 }: IMarketplaceListProps): ReactElement => {
   const [currentPage, setCurrentPage] = useState(0);
 
