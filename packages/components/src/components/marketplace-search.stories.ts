@@ -4,7 +4,7 @@ import { dummyMarketplaceSearch } from '../helpers/dummy';
 import { MarketplaceSearch } from './marketplace-search';
 
 export default {
-  title: 'Components/Marketplace/MarketplaceSearch',
+  title: 'Components/MarketplaceSearch',
   component: MarketplaceSearch,
   argTypes: {
     title: {
@@ -28,4 +28,13 @@ type Story = StoryObj<typeof MarketplaceSearch>;
 export const Default: Story = {
   name: 'MarketplaceSearch',
   args: dummyMarketplaceSearch,
+};
+
+export const Green: Story = {
+  ...Default,
+  name: 'MarketplaceSearch Green',
+  args: {
+    ...Default.args,
+    colorScheme: 'green',
+  },
 };

@@ -4,7 +4,7 @@ import { dummyMarketplaceList } from '../helpers/dummy';
 import { MarketplaceList } from './marketplace-list';
 
 const meta: Meta<typeof MarketplaceList> = {
-  title: 'Components/Marketplace',
+  title: 'Components/MarketplaceList',
   component: MarketplaceList,
   argTypes: {
     title: {

@@ -2,10 +2,10 @@ import { Fragment, isValidElement, ReactElement, useMemo, useState } from 'react
 import fuzzy from 'fuzzy';
 import { Tabs } from 'nextra/components';
 import { cn } from '../cn';
-import { IMarketplaceSearchProps } from '../types/components';
+import { IMarketplaceListProps, IMarketplaceSearchProps } from '../types/components';
 import { Heading } from './heading';
 import { CloseIcon, SearchIcon } from './icons';
-import { MarketplaceList, MarketplaceListItem } from './marketplace-list';
+import { MarketplaceList } from './marketplace-list';
 import { Tag, TagsContainer } from './tag';
 import styles from './marketplace-search.module.css';
 
@@ -29,7 +29,7 @@ export const MarketplaceSearch = ({
   secondaryList,
   queryList,
   className,
-  colorScheme = 'green',
+  colorScheme = 'black',
 }: IMarketplaceSearchProps): ReactElement => {
   const [query, setQuery] = useState('');
 
@@ -104,17 +104,12 @@ export const MarketplaceSearch = ({
             colorScheme={colorScheme}
           />
         ) : (
-          // instead of two lists, we'll have tabs and a grid
-          <Tabs items={[primaryList.title, secondaryList?.title].filter(x => x != null)}>
-            <Tabs.Tab>
-              <MarketplaceList {...primaryList} title={undefined} colorScheme={colorScheme} />
-            </Tabs.Tab>
-            {secondaryList && (
-              <Tabs.Tab>
-                <MarketplaceList {...secondaryList} title={undefined} colorScheme={colorScheme} />
-              </Tabs.Tab>
-            )}
-          </Tabs>
+          <MarketplaceSearchTabs
+            primaryList={primaryList}
+            secondaryList={secondaryList}
+            colorScheme={colorScheme}
+            className="mt-8"
+          />
         )}
       </div>
     </article>
@@ -148,6 +143,33 @@ function MarketplaceSearchInput({
       >
         <CloseIcon className="size-5 text-[--fg-80]" />
       </button>
+    </div>
+  );
+}
+
+function MarketplaceSearchTabs({
+  primaryList,
+  secondaryList,
+  colorScheme,
+  className,
+}: {
+  primaryList: IMarketplaceListProps;
+  secondaryList: IMarketplaceListProps | undefined;
+  colorScheme: 'green' | 'black';
+  className?: string;
+}) {
+  return (
+    <div className={cn(styles.tabs, className)}>
+      <Tabs items={[primaryList.title, secondaryList?.title].filter(x => x != null)}>
+        <Tabs.Tab>
+          <MarketplaceList {...primaryList} title={undefined} colorScheme={colorScheme} />
+        </Tabs.Tab>
+        {secondaryList && (
+          <Tabs.Tab>
+            <MarketplaceList {...secondaryList} title={undefined} colorScheme={colorScheme} />
+          </Tabs.Tab>
+        )}
+      </Tabs>
     </div>
   );
 }
