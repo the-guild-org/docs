@@ -70,7 +70,7 @@ export const MarketplaceSearch = ({
   }, [query, queryList]);
 
   return (
-    <article className={cn(styles.marketplace, colorScheme, 'bg-[--bg]', className)}>
+    <section className={cn(styles.marketplace, colorScheme, 'bg-[--bg]', className)}>
       <div className="container max-w-[90rem] py-12">
         <Heading as="h1" className="mb-4 text-[32px] text-[--fg]" size="sm">
           {title}
@@ -112,7 +112,7 @@ export const MarketplaceSearch = ({
           />
         )}
       </div>
-    </article>
+    </section>
   );
 };
 
