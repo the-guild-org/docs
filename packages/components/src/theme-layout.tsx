@@ -23,7 +23,14 @@ export const GuildLayout: FC<{
   layoutProps?: ComponentProps<typeof Layout>;
 }> = async ({ children, logo, htmlProps, layoutProps, headProps }) => {
   return (
-    <html lang="en" dir="ltr" {...htmlProps}>
+    <html
+      lang="en"
+      // Required to be set for `nextra-theme-docs` styles
+      dir="ltr"
+      // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
+      suppressHydrationWarning
+      {...htmlProps}
+    >
       <Head {...headProps} />
       <body>
         <Layout
