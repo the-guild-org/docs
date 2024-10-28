@@ -1,52 +1,57 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import svgr from 'esbuild-plugin-svgr';
-import { defineConfig, Options } from 'tsup';
-import tsconfig from './tsconfig.json';
+import { defineConfig } from 'tsup';
 
-const options = defineConfig({
-  format: 'esm',
-  target: tsconfig.compilerOptions.target as Options['target'],
-  clean: true,
-  dts: true,
-});
-
-export default defineConfig([
-  {
-    name: 'components',
-    entry: {
-      index: 'src/index.ts',
-      products: 'src/products.tsx',
-      logos: 'src/logos/index.tsx',
-    },
-    loader: {
-      '.png': 'copy',
-    },
-    outExtension: () => ({ js: '.js' }),
-    external: ['semver'],
-    esbuildPlugins: [
-      svgr({
-        exportType: 'named',
-        typescript: true,
-        jsx: {
-          // svgo's removeXMLNS plugin doesn't work for some reason...
-          babelConfig: {
-            plugins: [
-              [
-                '@svgr/babel-plugin-remove-jsx-attribute',
-                { elements: ['svg'], attributes: ['xmlns'] },
-              ],
+export default defineConfig({
+  name: 'components',
+  entry: [
+    'src/**/*.{ts,tsx}',
+    '!**/*.stories.{ts,tsx}',
+    '!src/helpers/*',
+    '!src/*.d.ts',
+    '!src/types/*',
+  ],
+  loader: {
+    '.png': 'copy',
+  },
+  esbuildPlugins: [
+    svgr({
+      exportType: 'named',
+      typescript: true,
+      jsx: {
+        // svgo's removeXMLNS plugin doesn't work for some reason...
+        babelConfig: {
+          plugins: [
+            [
+              '@svgr/babel-plugin-remove-jsx-attribute',
+              { elements: ['svg'], attributes: ['xmlns'] },
             ],
-          },
+          ],
         },
-      }),
-    ],
-    ...options,
+      },
+    }),
+  ],
+  async onSuccess() {
+    const serverPackageJSON = path.join(process.cwd(), 'dist', 'server', 'package.json');
+    await fs.writeFile(serverPackageJSON, '{"type":"module","sideEffects":false}');
   },
-  {
-    name: 'components-mjs',
-    entry: {
-      'next.config': 'src/next.config.ts',
-      compile: 'src/compile.ts',
+  plugins: [
+    {
+      // Strip `node:` prefix from imports because
+      // Next.js only polyfills `path` and not `node:path` for browser
+      name: 'strip-node-colon',
+      renderChunk(code) {
+        const replaced = code.replaceAll(/ from "node:(?<moduleName>.*?)";/g, matched =>
+          matched.replace('node:', ''),
+        );
+        return { code: replaced };
+      },
     },
-    ...options,
-  },
-]);
+  ],
+  format: 'esm',
+  target: 'es2021',
+  dts: true,
+  bundle: false,
+  outExtension: () => ({ js: '.js' }),
+});

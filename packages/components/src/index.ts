@@ -20,7 +20,6 @@ export {
 export { useMounted } from 'nextra/hooks';
 export { useMDXComponents } from 'nextra/mdx';
 export * from './components';
-export { defineConfig } from './define-config';
 export { fetchPackageInfo } from './npm';
 export { PRODUCTS } from './products';
 export * from './types/components';

@@ -15,12 +15,12 @@
       "types": "./dist/index.d.mts"
     },
     "./next.config": {
-      "import": "./dist/next.config.mjs",
-      "types": "./dist/next.config.d.mts"
+      "import": "./dist/server/next.config.js",
+      "types": "./dist/server/next.config.d.mts"
     },
     "./compile": {
-      "import": "./dist/compile.mjs",
-      "types": "./dist/compile.d.mts"
+      "import": "./dist/server/compile.js",
+      "types": "./dist/server/compile.d.mts"
     },
     "./*": {
       "import": "./dist/*.js",
@@ -28,25 +28,6 @@
     }
   },
   "types": "./dist/index.d.mts",
-  "typesVersions": {
-    "*": {
-      ".": [
-        "./dist/index.d.mts"
-      ],
-      "logos": [
-        "./dist/logos.d.mts"
-      ],
-      "products": [
-        "./dist/products.d.mts"
-      ],
-      "next.config": [
-        "./dist/next.config.d.mts"
-      ],
-      "compile": [
-        "./dist/compile.d.mts"
-      ]
-    }
-  },
   "files": [
     "dist",
     "style.css"

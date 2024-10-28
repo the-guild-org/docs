@@ -5,7 +5,7 @@ import nextra, { NextraConfig } from 'nextra';
 import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
 import { Plugin } from 'unified';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
-import { applyUnderscoreRedirects } from './underscore-redirects';
+import { applyUnderscoreRedirects } from './underscore-redirects.js';
 
 type MdxOptions = Exclude<NextraConfig['mdxOptions'], undefined>;
 

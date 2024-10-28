@@ -1,6 +1,6 @@
 import { HeroGradient, HeroVideo, InfoList, NPMBadge } from '@theguild/components';
 
-export function IndexPage() {
+export default function IndexPage() {
   return (
     <>
       <HeroGradient
