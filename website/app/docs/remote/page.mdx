@@ -1,7 +1,12 @@
+---
+sidebarTitle: Remote MDX
+---
+
+{/*
 import { MDXRemote } from 'next-mdx-remote'
 import { fetchPackageInfo, Tabs, useData, useMDXComponents } from '@theguild/components'
 import { compileMdx } from '@theguild/components/compile'
-import { defaultRemarkPlugins } from '@theguild/components/next.config'
+import { defaultRemarkPlugins } from '../../../../packages/components/dist/server/next.config'
 
 export const getStaticProps = async () => {
   const PACKAGE_NAME = '@envelop/core'
@@ -32,7 +37,7 @@ export const PackageApiDocs = () => {
   const components = useMDXComponents()
   return <MDXRemote compiledSource={compiledSource} components={{ ...components, $Tabs: Tabs }} />
 }
-
+*/}
 # Remote MDX Support
 
 <PackageApiDocs />
