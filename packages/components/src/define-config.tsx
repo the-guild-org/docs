@@ -16,8 +16,6 @@ export function defineConfig({ websiteName, description, logo, ...config }: any)
   const url = new URL(config.docsRepositoryBase);
   const [, org, repoName] = url.pathname.split('/');
 
-  const siteUrl = process.env.SITE_URL;
-
   return {
     editLink: {
       content: 'Edit this page on GitHub',
@@ -32,41 +30,6 @@ export function defineConfig({ websiteName, description, logo, ...config }: any)
     },
     project: {
       link: `${url.origin}/${org}/${repoName}`, // GitHub link in the navbar
-    },
-    head: function useHead() {
-      // @ts-expect-error -- this hook no longer return frontMatter and title
-      const { frontMatter, title: pageTitle } = useConfig();
-      const pathname = usePathname();
-
-      const {
-        canonical = siteUrl &&
-          `${siteUrl}${
-            // we disallow trailing slashes
-            // TODO: dont do this if `trailingSlashes: true`
-            pathname === '/'
-              ? // homepage
-                ''
-              : pathname.startsWith('/?')
-                ? // homepage with search params (remove just slash)
-                  pathname.slice(1)
-                : // other pages
-                  pathname
-          }`,
-        image = `https://og-image.the-guild.dev/?product=${websiteName}&title=${encodeURI(
-          pageTitle,
-        )}`,
-      } = frontMatter;
-
-      return (
-        <>
-          {canonical && [
-            <link key={3} rel="canonical" href={canonical} />,
-            <meta key={4} property="og:url" content={canonical} />,
-          ]}
-          <meta property="og:image" content={image} />
-          <meta property="og:image:alt" content={pageTitle} />
-        </>
-      );
     },
     logoLink: false,
     logo: getNavbarLogo(logo, websiteName, description),

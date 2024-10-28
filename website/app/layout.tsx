@@ -1,47 +1,13 @@
 import { FC } from 'react';
-import { GuildLayout } from '@theguild/components';
+import { getDefaultMetadata, GuildLayout } from '@theguild/components';
 import '@theguild/components/style.css';
-import { Metadata } from 'next';
 import { getPageMap } from '@theguild/components/nextra';
 
-export const metadata: Metadata = getDefaultMetadata({
+export const metadata = getDefaultMetadata({
   description: 'Documentation for The Guild',
   websiteName: 'Guild Docs',
+  productName: 'NEXTRA',
 });
-
-function getDefaultMetadata({
-  websiteName,
-  description = `${websiteName} Documentation`,
-}: {
-  description?: string;
-  websiteName: string;
-}): Metadata {
-  return {
-    description,
-    title: {
-      // Use `absolute` title if `metadata.title` was not provided in the page
-      absolute: websiteName,
-      template: `%s | ${websiteName}`,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      site: 'https://the-guild.dev',
-      creator: '@TheGuildDev',
-    },
-    openGraph: {
-      siteName: websiteName,
-      type: 'website'
-    },
-    applicationName: websiteName,
-    appleWebApp: {
-      title: websiteName,
-    },
-    robots: {
-      index: true,
-      follow: true
-    }
-  };
-}
 
 const logo = (
   <svg viewBox="0 0 50 54" height="36" fill="#1cc8ee" className="mr-1.5">

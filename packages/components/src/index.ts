@@ -25,7 +25,7 @@ export * from './types/components';
 export * from './logos';
 export { cn } from './cn';
 export { useMDXComponents } from './mdx-components';
-export { GuildLayout } from './theme-layout';
+export { GuildLayout, getDefaultMetadata } from './theme-layout';
 
 declare module 'react' {
   interface CSSProperties {

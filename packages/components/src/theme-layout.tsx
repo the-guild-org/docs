@@ -1,4 +1,5 @@
 import type { ComponentProps, FC, ReactNode } from 'react';
+import { Metadata } from 'next';
 import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
 import { Footer } from './components/footer';
@@ -41,9 +42,7 @@ export const GuildLayout: FC<{
             <Navbar logo={logo}>
               <ThemeSwitcherButton>
                 {/* Provide icon as `children` so icon will be server component */}
-                <MoonIcon
-                  className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100"
-                />
+                <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
               </ThemeSwitcherButton>
             </Navbar>
           }
@@ -55,3 +54,47 @@ export const GuildLayout: FC<{
     </html>
   );
 };
+
+export function getDefaultMetadata({
+  websiteName,
+  description = `${websiteName} Documentation`,
+  productName,
+  ...additionalMetadata
+}: {
+  description?: string;
+  websiteName: string;
+  productName: string;
+} & Metadata): Metadata {
+  const siteUrl = process.env.SITE_URL
+  return {
+    description,
+    title: {
+      // Use `absolute` title if `metadata.title` was not provided in the page
+      absolute: websiteName,
+      template: `%s | ${websiteName}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: 'https://the-guild.dev',
+      creator: '@TheGuildDev',
+    },
+    openGraph: {
+      siteName: websiteName,
+      type: 'website',
+      images: `https://og-image.the-guild.dev/?product=${productName}`,
+      url: siteUrl
+    },
+    applicationName: websiteName,
+    appleWebApp: {
+      title: websiteName,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    alternates: {
+      canonical: siteUrl,
+    },
+    ...additionalMetadata
+  };
+}
