@@ -23,7 +23,8 @@ export { ReactComponent as HiveCombinationMark } from './hive-combination-mark.s
 export { ReactComponent as GraphQLFoundationLogo } from './graphql-foundation.svg';
 
 export interface LettermarkLogoProps extends HTMLAttributes<HTMLElement> {}
-const createLettermarkLogo = (text: string) => {
+
+const createLettermarkLogo = (text: string) =>
   function LettermarkLogo(props: LettermarkLogoProps) {
     return (
       <span
@@ -37,10 +38,7 @@ const createLettermarkLogo = (text: string) => {
         {text}
       </span>
     );
-  }
-  LettermarkLogo.displayName = 'LettermarkLogo';
-  return LettermarkLogo;
-};
+  };
 
 export const InspectorLettermark = createLettermarkLogo('I');
 export const SofaLettermark = createLettermarkLogo('So');

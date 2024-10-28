@@ -1,5 +1,7 @@
 import { HeroGradient, HeroVideo, InfoList, NPMBadge } from '@theguild/components';
 
+export const metadata = {};
+
 export default function IndexPage() {
   return (
     <>

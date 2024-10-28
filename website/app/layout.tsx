@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { GuildLayout } from '@theguild/components';
+import '@theguild/components/style.css';
 
 export const metadata = {
   // title: 'Next.js',
@@ -8,11 +10,7 @@ export const metadata = {
 const RootLayout: FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+  return <GuildLayout logo={<b>hello</b>}>{children}</GuildLayout>;
 };
 
 export default RootLayout;

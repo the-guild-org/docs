@@ -1,6 +1,6 @@
 import { usePathname } from 'next/navigation';
-import { Navbar, useConfig } from 'nextra-theme-docs';
-import { Footer, getNavbarLogo, ThemeSwitcherButton } from './components';
+import { useConfig } from 'nextra-theme-docs';
+import { getNavbarLogo } from './components';
 import { addGuildCompanyMenu } from './components/company-menu';
 
 export interface GuildDocsThemeConfig {
@@ -25,9 +25,6 @@ export function defineConfig({ websiteName, description, logo, ...config }: any)
     feedback: {
       content: 'Question? Give us feedback →',
       labels: 'kind/docs',
-    },
-    footer: {
-      component: <Footer />,
     },
     sidebar: {
       defaultMenuCollapseLevel: 1,
@@ -94,14 +91,5 @@ export function defineConfig({ websiteName, description, logo, ...config }: any)
     },
     logoLink: false,
     logo: getNavbarLogo(logo, websiteName, description),
-    navbar: {
-      extraContent: <ThemeSwitcherButton />,
-      // @ts-expect-error fixme
-      ...(logo && { component: props => <Navbar items={addGuildCompanyMenu(props.items)} /> }),
-    },
-    ...config,
-    components: {
-      ...config.components,
-    },
   };
 }

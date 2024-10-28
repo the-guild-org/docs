@@ -23,8 +23,9 @@ export { fetchPackageInfo } from './npm';
 export { PRODUCTS } from './products';
 export * from './types/components';
 export * from './logos';
-export * from './cn';
+export { cn } from './cn';
 export { useMDXComponents } from './mdx-components';
+export { GuildLayout } from './theme-layout';
 
 declare module 'react' {
   interface CSSProperties {

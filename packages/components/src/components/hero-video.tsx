@@ -16,8 +16,6 @@ export const HeroVideo: FC<IHeroVideoProps> = ({
   flipped,
   className,
   videoProps,
-}: IHeroVideoProps): ReactElement => {
-  const { basePath } = useRouter();
 }) => {
   // fixes Hydration failed error
   const mounted = useMounted();
