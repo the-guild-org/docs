@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
-import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
+import { Navbar, useConfig } from 'nextra-theme-docs';
 import { Footer, getNavbarLogo, mdxComponents, ThemeSwitcherButton } from './components';
 import { addGuildCompanyMenu } from './components/company-menu';
 
-export interface GuildDocsThemeConfig extends DocsThemeConfig {
+export interface GuildDocsThemeConfig {
   websiteName: string;
   description: string;
 }
@@ -13,7 +13,7 @@ export function defineConfig({
   description,
   logo,
   ...config
-}: GuildDocsThemeConfig): DocsThemeConfig {
+}: any) {
   if (!config.docsRepositoryBase) {
     throw new Error('Missing required "docsRepositoryBase" property');
   }
@@ -42,6 +42,7 @@ export function defineConfig({
       link: `${url.origin}/${org}/${repoName}`, // GitHub link in the navbar
     },
     head: function useHead() {
+      // @ts-expect-error -- this hook no longer return frontMatter and title
       const { frontMatter, title: pageTitle } = useConfig();
       const { asPath } = useRouter();
 
@@ -100,6 +101,7 @@ export function defineConfig({
     logo: getNavbarLogo(logo, websiteName, description),
     navbar: {
       extraContent: <ThemeSwitcherButton />,
+      // @ts-expect-error fixme
       ...(logo && { component: props => <Navbar items={addGuildCompanyMenu(props.items)} /> }),
     },
     ...config,

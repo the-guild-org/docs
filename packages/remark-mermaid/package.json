@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@types/mdast": "4.0.4",
-    "nextra": "4.0.0-app-router.16",
+    "nextra": "4.0.0-app-router.17",
     "react": "18.3.1",
     "unified": "11.0.5"
   },

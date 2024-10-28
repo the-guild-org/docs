@@ -1,7 +1,7 @@
 import React, { forwardRef, Fragment, ReactNode, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useRouter } from 'next/router';
-import { useMenu, useThemeConfig } from 'nextra-theme-docs';
+import { setMenu, useMenu, useThemeConfig } from 'nextra-theme-docs';
 import { useMounted } from 'nextra/hooks';
 import { MenuIcon } from 'nextra/icons';
 import { cn } from '../../cn';
@@ -49,6 +49,7 @@ export interface HiveNavigationProps {
    */
   productName: string;
 }
+
 /**
  *
  * @example
@@ -68,8 +69,7 @@ export function HiveNavigation({
   productName,
 }: HiveNavigationProps) {
   // `useThemeConfig` doesn't return anything outside of Nextra, and the provider isn't exported
-  const themeConfig = useThemeConfig() as ReturnType<typeof useThemeConfig> | undefined;
-  const Search = themeConfig?.search?.component;
+  const Search = useThemeConfig().search;
 
   const isHive = productName === 'Hive';
 
@@ -170,6 +170,7 @@ export function HiveNavigation({
 interface ProductsMenuProps extends MenuContentColumnsProps {
   productName: string;
 }
+
 /**
  * @internal
  */
@@ -280,6 +281,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
 ProductsMenu.displayName = 'ProductsMenu';
 
 interface MenuContentColumnsProps extends React.HTMLAttributes<HTMLDivElement> {}
+
 const MenuContentColumns = forwardRef(
   (props: MenuContentColumnsProps, ref: React.ForwardedRef<HTMLDivElement>) => {
     return (
@@ -305,6 +307,7 @@ MenuContentColumns.displayName = 'MenuContentColumns';
 interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   isHive: boolean;
 }
+
 /**
  * @internal
  */
@@ -500,14 +503,13 @@ function HiveLogoLink() {
 }
 
 function HamburgerButton() {
-  const { menu, setMenu } = useMenu();
-
+  const menu = useMenu();
   return (
     <button
       type="button"
       aria-label="Menu"
       className="md:_hidden hover nextra-hamburger -m-1 rounded-lg bg-transparent p-1 text-green-1000 focus-visible:outline-none focus-visible:ring active:bg-beige-200 dark:text-neutral-200 dark:active:bg-neutral-800"
-      onClick={() => setMenu(!menu)}
+      onClick={() => setMenu(prev => !prev)}
     >
       <MenuIcon
         className={cn({ open: menu }, 'size-6 stroke-current [&_path]:[stroke-linecap:square]')}
@@ -530,7 +532,7 @@ const TopOfSiteMarker = function TopOfSiteMarker({
   onChangeRef.current = onChange;
 
   useEffect(() => {
-    if (mounted && markerRef.current && 'IntersectionObserver' in window) {
+    if (mounted && markerRef.current) {
       const marker = markerRef.current;
       const observer = new IntersectionObserver(entries => {
         onChangeRef.current(entries[0].boundingClientRect.y < -1);

@@ -52,6 +52,7 @@ const rehypeCheckFrontMatter: Plugin<[]> = () => (_ast, file) => {
 export interface WithGuildDocsOptions extends NextConfig {
   nextraConfig?: NextraConfig;
 }
+
 export function withGuildDocs({ nextraConfig, ...nextConfig }: WithGuildDocsOptions = {}) {
   if (nextConfig.webpack?.toString().includes('applyUnderscoreRedirects')) {
     throw new Error(
@@ -63,7 +64,6 @@ export function withGuildDocs({ nextraConfig, ...nextConfig }: WithGuildDocsOpti
     enabled: process.env.ANALYZE === 'true',
   });
   const withNextra = nextra({
-    theme: 'nextra-theme-docs',
     defaultShowCopyCode: true,
     mdxOptions: {
       remarkPlugins: defaultRemarkPlugins,
@@ -74,7 +74,6 @@ export function withGuildDocs({ nextraConfig, ...nextConfig }: WithGuildDocsOpti
       codeblocks: true,
     },
     ...nextraConfig,
-    themeConfig: nextraConfig?.themeConfig || './theme.config.tsx',
   });
   const siteUrl = process.env.SITE_URL || '';
 

@@ -1,18 +1,13 @@
-import { ReactElement } from 'react';
+import { FC, ReactNode } from 'react';
 import clsx from 'clsx';
-import { DocsThemeConfig } from 'nextra-theme-docs';
 import { GuildLogo, TheGuild } from '../logos';
 import { Anchor } from './anchor';
 
-export function GuildUnifiedLogo({
-  children,
-  title,
-  description,
-}: {
-  children: DocsThemeConfig['logo'];
+export const GuildUnifiedLogo: FC<{
+  children: ReactNode;
   title: string;
   description: string;
-}): ReactElement {
+}> = ({ children, title, description }) => {
   return (
     <>
       <Anchor
@@ -41,7 +36,7 @@ export function GuildUnifiedLogo({
             className="flex shrink-0 items-center gap-x-1.5 hover:opacity-75"
             href="/"
           >
-            {typeof children === 'function' ? children({}) : children}
+            {children}
             <div>
               <h1 className="text-sm font-bold leading-tight">{title}</h1>
               <h2 className="text-xs max-lg:hidden">{description}</h2>
@@ -51,20 +46,16 @@ export function GuildUnifiedLogo({
       )}
     </>
   );
-}
+};
 
 /**
  * GraphQL-related products live under the Hive platform brand, so we use a single logo for them.
  * The rest gets The Guild / {Product} logo.
  */
-export function getNavbarLogo(
-  logo: DocsThemeConfig['logo'],
-  websiteName: string,
-  description: string,
-) {
+export function getNavbarLogo(logo: ReactNode, websiteName: string, description: string) {
   return websiteName === 'Hive' ? (
     <Anchor title={websiteName} href="/">
-      {typeof logo === 'function' ? logo({}) : logo}
+      {logo}
     </Anchor>
   ) : (
     <GuildUnifiedLogo description={description} title={websiteName}>
