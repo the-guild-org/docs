@@ -1,4 +1,3 @@
-import { DocsThemeConfig, default as NextraLayout } from 'nextra-theme-docs';
 import { Meta, StoryContext, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 import { PRODUCTS } from '../../products';
@@ -148,19 +147,5 @@ export const Company: StoryObj = {
 };
 
 function nextraThemeDocsCtxDecorator(Story: () => React.ReactNode, _ctx: StoryContext) {
-  return (
-    <NextraLayout
-      pageProps={{}}
-      pageOpts={{ filePath: '', frontMatter: {}, pageMap: [], title: '' }}
-      themeConfig={
-        {
-          logoLink: false,
-          navbar: { component: () => null },
-          footer: { component: () => null },
-        } satisfies DocsThemeConfig
-      }
-    >
-      <Story />
-    </NextraLayout>
-  );
+  return <Story />;
 }

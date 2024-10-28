@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { GuildLayout } from '@theguild/components';
 import '@theguild/components/style.css';
+import { getPageMap } from '@theguild/components/page-map';
 
 export const metadata = {
   // title: 'Next.js',
@@ -9,7 +10,7 @@ export const metadata = {
 
 const RootLayout: FC<{
   children: React.ReactNode;
-}> = ({ children }) => {
+}> = async ({ children }) => {
   const logo = (
     <svg viewBox="0 0 50 54" fill="#1CC8EE" className="mr-1.5 h-9">
       <path
@@ -20,7 +21,16 @@ const RootLayout: FC<{
       <path d="M18.2891 35V17.9375H23.7852C25.293 17.9375 26.6484 18.2812 27.8516 18.9688C29.0547 19.6484 29.9922 20.6133 30.6641 21.8633C31.3438 23.1055 31.6875 24.5 31.6953 26.0469V26.832C31.6953 28.3945 31.3633 29.7969 30.6992 31.0391C30.043 32.2734 29.1133 33.2422 27.9102 33.9453C26.7148 34.6406 25.3789 34.9922 23.9023 35H18.2891ZM22.4023 21.1133V31.8359H23.832C25.0117 31.8359 25.918 31.418 26.5508 30.582C27.1836 29.7383 27.5 28.4883 27.5 26.832V26.0938C27.5 24.4453 27.1836 23.2031 26.5508 22.3672C25.918 21.5312 24.9961 21.1133 23.7852 21.1133H22.4023Z" />
     </svg>
   );
-  return <GuildLayout logo={logo}>{children}</GuildLayout>;
+  return (
+    <GuildLayout
+      logo={logo}
+      layoutProps={{
+        pageMap: await getPageMap(),
+      }}
+    >
+      {children}
+    </GuildLayout>
+  );
 };
 
 export default RootLayout;

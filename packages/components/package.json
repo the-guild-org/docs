@@ -22,6 +22,10 @@
       "import": "./dist/server/compile.js",
       "types": "./dist/server/compile.d.mts"
     },
+    "./page-map": {
+      "import": "./dist/server/page-map.js",
+      "types": "./dist/server/page-map.d.mts"
+    },
     "./*": {
       "import": "./dist/*.js",
       "types": "./dist/*.d.mts"
