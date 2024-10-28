@@ -39,7 +39,6 @@ export function defineConfig({ websiteName, description, logo, ...config }: any)
       const pathname = usePathname();
 
       const {
-        type = 'website',
         canonical = siteUrl &&
           `${siteUrl}${
             // we disallow trailing slashes
@@ -64,12 +63,6 @@ export function defineConfig({ websiteName, description, logo, ...config }: any)
             <link key={3} rel="canonical" href={canonical} />,
             <meta key={4} property="og:url" content={canonical} />,
           ]}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="https://the-guild.dev" />
-          <meta name="twitter:creator" content="@TheGuildDev" />
-
-          <meta property="og:type" content={type} />
-          <meta property="og:site_name" content={websiteName} />
           <meta property="og:image" content={image} />
           <meta property="og:image:alt" content={pageTitle} />
 

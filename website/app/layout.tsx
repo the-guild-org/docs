@@ -23,6 +23,15 @@ function getDefaultMetadata({
       absolute: websiteName,
       template: `%s | ${websiteName}`,
     },
+    twitter: {
+      card: 'summary_large_image',
+      site: 'https://the-guild.dev',
+      creator: '@TheGuildDev',
+    },
+    openGraph: {
+      siteName: websiteName,
+      type: 'website'
+    },
   };
 }
 
