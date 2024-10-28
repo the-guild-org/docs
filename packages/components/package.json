@@ -22,7 +22,7 @@
       "import": "./dist/server/compile.js",
       "types": "./dist/server/compile.d.mts"
     },
-    "./page-map": {
+    "./nextra": {
       "import": "./dist/server/nextra.js",
       "types": "./dist/server/nextra.d.mts"
     },
