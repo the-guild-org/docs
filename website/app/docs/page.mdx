@@ -1,23 +1,23 @@
 import { RemoteContent, Steps } from '@theguild/components'
 import { compileMdx } from '@theguild/components/nextra'
-import pkgJsonFromComponents from '@theguild/components/package.json'
+import componentsPkgJson from '@theguild/components/package.json'
 import pkgJson from '../../package.json'
 
 # Getting Started
 
 <Steps>
-### Install
+## Install
 
 ```sh npm2yarn
 npm install @theguild/components
 npm install -D @theguild/tailwind-config
 ```
 
-### Add dependencies
+## Add dependencies
 
 export async function Dependencies() {
   const dependencies = Object.fromEntries([
-    ['@theguild/components', pkgJsonFromComponents.version],
+    ['@theguild/components', componentsPkgJson.version],
     ...Object.entries(pkgJson.dependencies).filter(([key]) =>
       ['next', 'react', 'react-dom'].includes(key)
     )
@@ -45,19 +45,19 @@ export async function Dependencies() {
 
 <Dependencies />
 
-### Add Tailwind CSS config
+## Add Tailwind CSS config
 
 ```ts filename="tailwind.config.ts"
 export { default } from '@theguild/tailwind-config'
 ```
 
-### Add PostCSS config
+## Add PostCSS config
 
 ```js filename="postcss.config.cjs"
 module.exports = require('@theguild/tailwind-config/postcss.config')
 ```
 
-### Add theme config
+## Add theme config
 
 ```ts filename="theme.config.tsx"
 import { defineConfig } from '@theguild/components'
@@ -67,7 +67,7 @@ export default defineConfig({
 })
 ```
 
-### Use `withGuildDocs` in your Next.js config
+## Use `withGuildDocs` in your Next.js config
 
 ```js filename="next.config.mjs" /withGuildDocs/
 import { withGuildDocs } from '@theguild/components/next.config'
@@ -80,7 +80,7 @@ export default withGuildDocs({
 })
 ```
 
-### Import styles in `_app.tsx`
+## Import styles in `_app.tsx`
 
 ```tsx filename="src/pages/_app.tsx" {3}
 import { ReactElement } from 'react'
