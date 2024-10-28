@@ -2,6 +2,7 @@ import type { ComponentProps, FC, ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
+import { getNavbarLogo } from './components/guild-navbar-logo';
 import { Footer } from './components/footer';
 import { MoonIcon } from './components/icons';
 import { ThemeSwitcherButton } from './components/theme-switcher';
@@ -24,7 +25,9 @@ export const GuildLayout: FC<{
    */
   layoutProps: Omit<LayoutProps, 'navbar' | 'footer' | 'children'> &
     Partial<Pick<LayoutProps, 'navbar' | 'footer'>>;
-}> = async ({ children, logo, htmlProps, layoutProps, headProps }) => {
+  websiteName: string;
+  description: string;
+}> = async ({ children, logo, htmlProps, layoutProps, headProps, websiteName, description }) => {
   return (
     <html
       lang="en"
@@ -39,7 +42,7 @@ export const GuildLayout: FC<{
         <Layout
           footer={<Footer />}
           navbar={
-            <Navbar logo={logo}>
+            <Navbar logo={getNavbarLogo(logo, websiteName, description)} logoLink={false}>
               <ThemeSwitcherButton>
                 {/* Provide icon as `children` so icon will be server component */}
                 <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
@@ -47,6 +50,10 @@ export const GuildLayout: FC<{
             </Navbar>
           }
           {...layoutProps}
+          sidebar={{
+            defaultMenuCollapseLevel: 1,
+            ...layoutProps.sidebar,
+          }}
         >
           {children}
         </Layout>
@@ -65,7 +72,7 @@ export function getDefaultMetadata({
   websiteName: string;
   productName: string;
 } & Metadata): Metadata {
-  const siteUrl = process.env.SITE_URL
+  const siteUrl = process.env.SITE_URL;
   return {
     description,
     title: {
@@ -82,7 +89,7 @@ export function getDefaultMetadata({
       siteName: websiteName,
       type: 'website',
       images: `https://og-image.the-guild.dev/?product=${productName}`,
-      url: siteUrl
+      url: siteUrl,
     },
     applicationName: websiteName,
     appleWebApp: {
@@ -95,6 +102,6 @@ export function getDefaultMetadata({
     alternates: {
       canonical: siteUrl,
     },
-    ...additionalMetadata
+    ...additionalMetadata,
   };
 }

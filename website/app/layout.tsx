@@ -1,11 +1,14 @@
 import { FC } from 'react';
 import { getDefaultMetadata, GuildLayout } from '@theguild/components';
-import '@theguild/components/style.css';
 import { getPageMap } from '@theguild/components/nextra';
+import '@theguild/components/style.css';
+
+const description = 'Documentation for The Guild';
+const websiteName = 'Guild Docs';
 
 export const metadata = getDefaultMetadata({
-  description: 'Documentation for The Guild',
-  websiteName: 'Guild Docs',
+  description,
+  websiteName,
   productName: 'NEXTRA',
 });
 
@@ -29,6 +32,8 @@ const RootLayout: FC<{
       layoutProps={{
         pageMap: await getPageMap(),
       }}
+      websiteName={websiteName}
+      description={description}
     >
       {children}
     </GuildLayout>
