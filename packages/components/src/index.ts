@@ -1,5 +1,12 @@
 export { default as Giscus } from '@giscus/react';
-export { Navbar, NotFoundPage, useConfig, useTheme, useThemeConfig } from 'nextra-theme-docs';
+export {
+  Navbar,
+  NotFoundPage,
+  useConfig,
+  useTheme,
+  useThemeConfig,
+  useMDXComponents,
+} from 'nextra-theme-docs';
 export { createCatchAllMeta } from 'nextra/catch-all';
 export {
   Callout,
@@ -18,7 +25,6 @@ export {
   Collapse,
 } from 'nextra/components';
 export { useMounted } from 'nextra/hooks';
-export { useMDXComponents } from 'nextra/mdx';
 export * from './components';
 export { fetchPackageInfo } from './npm';
 export { PRODUCTS } from './products';
