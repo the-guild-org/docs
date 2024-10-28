@@ -1,12 +1,14 @@
-import { ReactElement } from 'react';
-import { useRouter } from 'next/router';
+'use client';
+
+import { FC } from 'react';
+import { addBasePath } from 'next/dist/client/add-base-path';
 import clsx from 'clsx';
 import { useMounted } from 'nextra/hooks';
 import ReactPlayer from 'react-player/lazy';
 import { IHeroVideoProps } from '../types/components';
 import { Anchor } from './anchor';
 
-export const HeroVideo = ({
+export const HeroVideo: FC<IHeroVideoProps> = ({
   title,
   description,
   link,
@@ -16,6 +18,7 @@ export const HeroVideo = ({
   videoProps,
 }: IHeroVideoProps): ReactElement => {
   const { basePath } = useRouter();
+}) => {
   // fixes Hydration failed error
   const mounted = useMounted();
   return (
@@ -53,7 +56,9 @@ export const HeroVideo = ({
             <ReactPlayer
               url={video.src}
               light={
-                video.placeholder.startsWith('/') ? basePath + video.placeholder : video.placeholder
+                video.placeholder.startsWith('/')
+                  ? addBasePath(video.placeholder)
+                  : video.placeholder
               }
               controls
               height="100%"
