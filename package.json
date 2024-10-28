@@ -10,7 +10,7 @@
     "dev": "turbo run dev --parallel",
     "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --cache --ignore-path .gitignore .",
     "lint:prettier": "prettier --cache --check .",
-    "prebuild-storybook": "pnpm build --filter=@theguild/remark-\\*",
+    "prebuild-storybook": "pnpm build --filter=@theguild/remark-\\* --filter=@theguild/components",
     "prepare": "husky install",
     "prerelease": "pnpm build",
     "prettier": "pnpm lint:prettier --write",
