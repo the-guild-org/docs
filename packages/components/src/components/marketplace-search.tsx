@@ -1,4 +1,4 @@
-import { Fragment, isValidElement, ReactElement, useMemo, useState } from 'react';
+import { isValidElement, ReactElement, useMemo, useState } from 'react';
 import fuzzy from 'fuzzy';
 import { Tabs } from 'nextra/components';
 import { cn } from '../cn';

@@ -1,4 +1,4 @@
-import React, { ComponentProps, ReactElement, ReactNode } from 'react';
+import { ComponentProps, ReactElement, ReactNode } from 'react';
 import { ImageProps as IImage } from 'next/image';
 import { LinkProps } from 'next/link';
 import { ReactPlayerProps } from 'react-player';
