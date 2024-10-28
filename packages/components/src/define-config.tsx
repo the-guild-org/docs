@@ -65,10 +65,6 @@ export function defineConfig({ websiteName, description, logo, ...config }: any)
           ]}
           <meta property="og:image" content={image} />
           <meta property="og:image:alt" content={pageTitle} />
-
-          <meta content={websiteName} name="apple-mobile-web-app-title" />
-          <meta content={websiteName} name="application-name" />
-          <meta name="robots" content="index,follow" />
         </>
       );
     },

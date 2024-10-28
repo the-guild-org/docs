@@ -32,6 +32,14 @@ function getDefaultMetadata({
       siteName: websiteName,
       type: 'website'
     },
+    applicationName: websiteName,
+    appleWebApp: {
+      title: websiteName,
+    },
+    robots: {
+      index: true,
+      follow: true
+    }
   };
 }
 
