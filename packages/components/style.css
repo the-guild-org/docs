@@ -8,11 +8,12 @@
 .nextra-banner-container._bg-neutral-900._flex {
   @apply bg-[#48224e] bg-none;
 }
+
 :root {
   --nextra-navbar-height: 72px;
 }
 
-.nextra-nav-container [role='menu']:has(a[href='https://the-guild.dev/graphql/hive'])
+#headlessui-portal-root [role='menu']:has(a[href='https://the-guild.dev/graphql/hive'])
 {
   @apply grid max-h-[unset] w-[470px] grid-cols-3 gap-y-2 p-2;
 
@@ -78,6 +79,7 @@
     &:focus {
       outline: none;
     }
+
     &:focus-visible {
       @apply ring ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_86%)] ring-offset-1 ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_77%)] dark:ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%)] dark:ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_39%)];
     }

@@ -29,11 +29,13 @@ const RootLayout: FC<{
   return (
     <GuildLayout
       logo={logo}
-      layoutProps={{
-        pageMap: await getPageMap(),
-      }}
       websiteName={websiteName}
       description={description}
+      layoutProps={{
+        pageMap: await getPageMap(),
+        docsRepositoryBase:
+          'https://github.com/the-guild-org/the-guild-components/tree/main/website',
+      }}
     >
       {children}
     </GuildLayout>

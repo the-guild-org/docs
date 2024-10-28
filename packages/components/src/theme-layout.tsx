@@ -2,12 +2,57 @@ import type { ComponentProps, FC, ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
-import { getNavbarLogo } from './components/guild-navbar-logo';
 import { Footer } from './components/footer';
+import { getNavbarLogo } from './components/guild-navbar-logo';
 import { MoonIcon } from './components/icons';
 import { ThemeSwitcherButton } from './components/theme-switcher';
+import { PRODUCTS } from './products';
 
-type LayoutProps = ComponentProps<typeof Layout>;
+type LP = ComponentProps<typeof Layout>;
+
+type LayoutProps =
+  //
+  Omit<LP, 'navbar' | 'footer' | 'children' | 'docsRepositoryBase'> &
+    Partial<Pick<LP, 'navbar' | 'footer'>> &
+    Required<Pick<LP, 'docsRepositoryBase'>>;
+
+const companyItem = {
+  type: 'menu',
+  title: 'Company',
+  items: {
+    about: {
+      title: 'About',
+      href: 'https://the-guild.dev/about-us',
+    },
+    blog: {
+      title: 'Blog',
+      href: 'https://the-guild.dev/blog',
+    },
+    contact: {
+      title: 'Contact',
+      href: 'https://the-guild.dev/#get-in-touch',
+    },
+  },
+};
+
+const productsItems = {
+  type: 'menu',
+  title: 'Products',
+  items: Object.fromEntries(
+    Object.values(PRODUCTS).map(product => [
+      product.name,
+      {
+        title: (
+          <span className="inline-flex items-center gap-2" title={product.title}>
+            <product.logo className="size-7 shrink-0" />
+            {product.name}
+          </span>
+        ),
+        href: product.href,
+      },
+    ]),
+  ),
+};
 
 export const GuildLayout: FC<{
   children: ReactNode;
@@ -23,11 +68,28 @@ export const GuildLayout: FC<{
   /**
    * Nextra's Docs Theme <Layout> component props
    */
-  layoutProps: Omit<LayoutProps, 'navbar' | 'footer' | 'children'> &
-    Partial<Pick<LayoutProps, 'navbar' | 'footer'>>;
+  layoutProps: LayoutProps;
   websiteName: string;
   description: string;
 }> = async ({ children, logo, htmlProps, layoutProps, headProps, websiteName, description }) => {
+  const url = new URL(layoutProps.docsRepositoryBase);
+  const [, org, repoName] = url.pathname.split('/');
+
+  const [meta, ...pageMap] = layoutProps.pageMap;
+
+  const pageMapWithCompanyMenu = [
+    {
+      data: {
+        company: companyItem,
+        products: productsItems,
+        ...meta.data,
+      },
+    },
+    { name: 'company', route: '#', ...companyItem },
+    { name: 'products', route: '#', ...productsItems },
+    ...pageMap,
+  ];
+
   return (
     <html
       lang="en"
@@ -42,14 +104,25 @@ export const GuildLayout: FC<{
         <Layout
           footer={<Footer />}
           navbar={
-            <Navbar logo={getNavbarLogo(logo, websiteName, description)} logoLink={false}>
+            <Navbar
+              logo={getNavbarLogo(logo, websiteName, description)}
+              logoLink={false}
+              // GitHub link in the navbar
+              projectLink={`${url.origin}/${org}/${repoName}`}
+            >
               <ThemeSwitcherButton>
                 {/* Provide icon as `children` so icon will be server component */}
                 <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
               </ThemeSwitcherButton>
             </Navbar>
           }
+          editLink="Edit this page on GitHub"
           {...layoutProps}
+          pageMap={pageMapWithCompanyMenu}
+          feedback={{
+            labels: 'kind/docs',
+            ...layoutProps.feedback,
+          }}
           sidebar={{
             defaultMenuCollapseLevel: 1,
             ...layoutProps.sidebar,
