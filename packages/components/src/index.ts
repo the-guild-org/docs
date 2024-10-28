@@ -1,12 +1,5 @@
 export { default as Giscus } from '@giscus/react';
-export {
-  Navbar,
-  NotFoundPage,
-  useConfig,
-  useTheme,
-  useThemeConfig,
-  useMDXComponents,
-} from 'nextra-theme-docs';
+export { Navbar, NotFoundPage, useConfig, useTheme, useThemeConfig } from 'nextra-theme-docs';
 export { createCatchAllMeta } from 'nextra/catch-all';
 export {
   Callout,
@@ -31,6 +24,7 @@ export { PRODUCTS } from './products';
 export * from './types/components';
 export * from './logos';
 export * from './cn';
+export { useMDXComponents } from './mdx-components';
 
 declare module 'react' {
   interface CSSProperties {

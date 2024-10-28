@@ -22,10 +22,10 @@ export default defineConfig([
     name: 'components',
     entry: [
       'src/**/*.{ts,tsx}',
+      'src/static/illustrations/*.png',
       '!**/*.stories.{ts,tsx}',
-      '!src/helpers/*',
+      '!src/helpers/dummy.ts',
       '!src/*.d.ts',
-      '!src/types/*',
       ...PATH_WITH_SVG.map(filePath => `!${filePath}`),
     ],
     bundle: false,

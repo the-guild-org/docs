@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { Navbar, useConfig } from 'nextra-theme-docs';
-import { Footer, getNavbarLogo, mdxComponents, ThemeSwitcherButton } from './components';
+import { Footer, getNavbarLogo, ThemeSwitcherButton } from './components';
 import { addGuildCompanyMenu } from './components/company-menu';
 
 export interface GuildDocsThemeConfig {
@@ -8,12 +8,7 @@ export interface GuildDocsThemeConfig {
   description: string;
 }
 
-export function defineConfig({
-  websiteName,
-  description,
-  logo,
-  ...config
-}: any) {
+export function defineConfig({ websiteName, description, logo, ...config }: any) {
   if (!config.docsRepositoryBase) {
     throw new Error('Missing required "docsRepositoryBase" property');
   }
@@ -44,7 +39,7 @@ export function defineConfig({
     head: function useHead() {
       // @ts-expect-error -- this hook no longer return frontMatter and title
       const { frontMatter, title: pageTitle } = useConfig();
-      const { asPath } = useRouter();
+      const pathname = usePathname();
 
       const {
         description = `${websiteName} Documentation`,
@@ -53,14 +48,14 @@ export function defineConfig({
           `${siteUrl}${
             // we disallow trailing slashes
             // TODO: dont do this if `trailingSlashes: true`
-            asPath === '/'
+            pathname === '/'
               ? // homepage
                 ''
-              : asPath.startsWith('/?')
+              : pathname.startsWith('/?')
                 ? // homepage with search params (remove just slash)
-                  asPath.slice(1)
+                  pathname.slice(1)
                 : // other pages
-                  asPath
+                  pathname
           }`,
         image = `https://og-image.the-guild.dev/?product=${websiteName}&title=${encodeURI(
           pageTitle,
@@ -106,7 +101,6 @@ export function defineConfig({
     },
     ...config,
     components: {
-      ...mdxComponents,
       ...config.components,
     },
   };

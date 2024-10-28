@@ -1,6 +1,8 @@
-import React, { forwardRef, Fragment, ReactNode, useEffect, useRef } from 'react';
+'use client';
+
+import React, { FC, forwardRef, Fragment, ReactNode, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { setMenu, useMenu, useThemeConfig } from 'nextra-theme-docs';
 import { useMounted } from 'nextra/hooks';
 import { MenuIcon } from 'nextra/icons';
@@ -176,12 +178,12 @@ interface ProductsMenuProps extends MenuContentColumnsProps {
  */
 export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
   ({ productName, ...rest }, ref) => {
-    const { asPath } = useRouter();
+    const pathname = usePathname();
 
     const bidirectionalProductLink = (product: (typeof PRODUCTS)[keyof typeof PRODUCTS]) => {
       if (productName === product.name) {
         // We link bidirectionally between the landing page and the docs.
-        return asPath === '/' ? '/docs' : '/';
+        return pathname === '/' ? '/docs' : '/';
       }
       return product.href;
     };
@@ -518,13 +520,10 @@ function HamburgerButton() {
   );
 }
 
-const TopOfSiteMarker = function TopOfSiteMarker({
-  onChange,
-  className,
-}: {
+const TopOfSiteMarker: FC<{
   onChange: (scrolled: boolean) => void;
   className?: string;
-}) {
+}> = ({ onChange, className }) => {
   const mounted = useMounted();
 
   const markerRef = useRef<HTMLDivElement>(null);

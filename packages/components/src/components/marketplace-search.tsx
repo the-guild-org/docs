@@ -1,3 +1,4 @@
+'use client'
 import { FormEvent, isValidElement, ReactElement, useCallback, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import fuzzy from 'fuzzy';
