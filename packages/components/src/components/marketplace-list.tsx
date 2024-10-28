@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import { ReactElement, useEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import ReactPaginate from 'react-paginate';

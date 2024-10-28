@@ -1,8 +1,9 @@
 import type { ComponentProps, FC, ReactNode } from 'react';
 import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
-import { getPageMap } from 'nextra/page-map';
+// import { getPageMap } from 'nextra/page-map';
 import { Footer } from './components/footer';
+import { MoonIcon } from './components/icons';
 import { ThemeSwitcherButton } from './components/theme-switcher';
 
 export const GuildLayout: FC<{
@@ -26,10 +27,13 @@ export const GuildLayout: FC<{
       <Head {...headProps} />
       <body>
         <Layout
-          pageMap={await getPageMap()}
+          pageMap={[{ data: {} }]}
           navbar={
             <Navbar logo={logo}>
-              <ThemeSwitcherButton />
+              <ThemeSwitcherButton>
+                {/* Provide icon as `children` so it fill be server component */}
+                <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
+              </ThemeSwitcherButton>
             </Navbar>
           }
           footer={<Footer />}

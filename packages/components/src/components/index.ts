@@ -15,7 +15,6 @@ export { MarketplaceList } from './marketplace-list';
 export { MarketplaceSearch } from './marketplace-search';
 export { NPMBadge } from './npm-badge';
 export { getNavbarLogo } from './guild-navbar-logo';
-export { ThemeSwitcherButton } from './theme-switcher';
 export { productsItems } from './company-menu';
 export { GetYourAPIGameRightSection } from './get-your-api-game-right-section';
 export { HiveNavigation, GraphQLConfCard } from './hive-navigation';

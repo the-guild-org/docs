@@ -1,10 +1,11 @@
-'use client'
+'use client';
 
 import { useState } from 'react';
 import { cn } from '../cn';
 import { CallToAction } from './call-to-action';
 
 export interface CookiesConsentProps extends React.HTMLAttributes<HTMLElement> {}
+
 export function CookiesConsent(props: CookiesConsentProps) {
   const [consented, setConsented] = useState(() => localStorage.getItem('cookies') === 'true');
 
