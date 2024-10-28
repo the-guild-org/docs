@@ -4,14 +4,27 @@ import '@theguild/components/style.css';
 import { Metadata } from 'next';
 import { getPageMap } from '@theguild/components/nextra';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = getDefaultMetadata({
   description: 'Documentation for The Guild',
-  title: {
-    // Use `absolute` title if `metadata.title` was not provided in the page
-    absolute: 'Guild Docs',
-    template: '%s | Guild Docs',
-  },
-};
+  websiteName: 'Guild Docs',
+});
+
+function getDefaultMetadata({
+  websiteName,
+  description = `${websiteName} Documentation`,
+}: {
+  description?: string;
+  websiteName: string;
+}): Metadata {
+  return {
+    description,
+    title: {
+      // Use `absolute` title if `metadata.title` was not provided in the page
+      absolute: websiteName,
+      template: `%s | ${websiteName}`,
+    },
+  };
+}
 
 const logo = (
   <svg viewBox="0 0 50 54" height="36" fill="#1cc8ee" className="mr-1.5">

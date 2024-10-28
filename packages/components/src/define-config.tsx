@@ -39,7 +39,6 @@ export function defineConfig({ websiteName, description, logo, ...config }: any)
       const pathname = usePathname();
 
       const {
-        description = `${websiteName} Documentation`,
         type = 'website',
         canonical = siteUrl &&
           `${siteUrl}${
@@ -59,17 +58,8 @@ export function defineConfig({ websiteName, description, logo, ...config }: any)
         )}`,
       } = frontMatter;
 
-      const title = `${pageTitle} (${websiteName})`;
-
       return (
         <>
-          <title>{title}</title>
-          <meta property="og:title" content={title} />
-          {/* We can't use React.Fragment https://nextjs.org/docs/pages/api-reference/components/head#use-minimal-nesting */}
-          {description && [
-            <meta key={0} name="description" content={description} />,
-            <meta key={1} property="og:description" content={description} />,
-          ]}
           {canonical && [
             <link key={3} rel="canonical" href={canonical} />,
             <meta key={4} property="og:url" content={canonical} />,
