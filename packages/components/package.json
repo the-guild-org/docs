@@ -23,8 +23,8 @@
       "types": "./dist/server/compile.d.mts"
     },
     "./page-map": {
-      "import": "./dist/server/page-map.js",
-      "types": "./dist/server/page-map.d.mts"
+      "import": "./dist/server/nextra.js",
+      "types": "./dist/server/nextra.d.mts"
     },
     "./*": {
       "import": "./dist/*.js",

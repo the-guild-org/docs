@@ -336,9 +336,6 @@ importers:
       next:
         specifier: 15.0.1
         version: 15.0.1(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      next-mdx-remote:
-        specifier: 5.0.0
-        version: 5.0.0(@types/react@18.3.12)(acorn@8.14.0)(react@18.3.1)
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -6206,12 +6203,6 @@ packages:
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
-  next-mdx-remote@5.0.0:
-    resolution: {integrity: sha512-RNNbqRpK9/dcIFZs/esQhuLA8jANqlH694yqoDBK8hkVdJUndzzGmnPHa2nyi90N4Z9VmzuSWNRpr5ItT3M7xQ==}
-    engines: {node: '>=14', npm: '>=7'}
-    peerDependencies:
-      react: '>=16'
-
   next-themes@0.3.0:
     resolution: {integrity: sha512-/QHIrsYpd6Kfk7xakK4svpDI5mmXP0gfvCoJdGpZQ2TOrQZmsW0QxjaiLn8wbIKjtm4BTSqLoix4lxYYOnLJ/w==}
     peerDependencies:
@@ -8387,9 +8378,6 @@ packages:
   unist-util-remove-position@5.0.0:
     resolution: {integrity: sha512-Hp5Kh3wLxv0PHj9m2yZhhLt58KzPtEYKQQ4yxfYFEO7EvHwzyDYnduhHnY1mDxoqr7VUwVuHXk9RXKIiYS1N8Q==}
 
-  unist-util-remove@3.1.1:
-    resolution: {integrity: sha512-kfCqZK5YVY5yEa89tvpl7KnBBHu2c6CzMkqHUrlOqaRgGOMp0sMvwWOVrbAtj03KhovQB7i96Gda72v/EFE0vw==}
-
   unist-util-remove@4.0.0:
     resolution: {integrity: sha512-b4gokeGId57UVRX/eVKej5gXqGlc9+trkORhFJpu9raqZkZhU0zm8Doi05+HaiBsMEIJowL+2WtQ5ItjsngPXg==}
 
@@ -8508,9 +8496,6 @@ packages:
 
   vfile-location@5.0.3:
     resolution: {integrity: sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==}
-
-  vfile-matter@5.0.0:
-    resolution: {integrity: sha512-jhPSqlj8hTSkTXOqyxbUeZAFFVq/iwu/jukcApEqc/7DOidaAth6rDc0Zgg0vWpzUnWkwFP7aK28l6nBmxMqdQ==}
 
   vfile-message@3.1.4:
     resolution: {integrity: sha512-fa0Z6P8HUrQN4BZaX05SIVXic+7kE3b05PWAtPuYP9QLHsLKYR7/AlLW3NtOrpXRLeawpDLMsVkmk5DG0NXgWw==}
@@ -16154,20 +16139,6 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next-mdx-remote@5.0.0(@types/react@18.3.12)(acorn@8.14.0)(react@18.3.1):
-    dependencies:
-      '@babel/code-frame': 7.26.0
-      '@mdx-js/mdx': 3.1.0(acorn@8.14.0)
-      '@mdx-js/react': 3.1.0(@types/react@18.3.12)(react@18.3.1)
-      react: 18.3.1
-      unist-util-remove: 3.1.1
-      vfile: 6.0.3
-      vfile-matter: 5.0.0
-    transitivePeerDependencies:
-      - '@types/react'
-      - acorn
-      - supports-color
-
   next-themes@0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
@@ -18720,12 +18691,6 @@ snapshots:
       '@types/unist': 3.0.3
       unist-util-visit: 5.0.0
 
-  unist-util-remove@3.1.1:
-    dependencies:
-      '@types/unist': 2.0.11
-      unist-util-is: 5.2.1
-      unist-util-visit-parents: 5.1.3
-
   unist-util-remove@4.0.0:
     dependencies:
       '@types/unist': 3.0.3
@@ -18857,11 +18822,6 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       vfile: 6.0.3
-
-  vfile-matter@5.0.0:
-    dependencies:
-      vfile: 6.0.3
-      yaml: 2.6.0
 
   vfile-message@3.1.4:
     dependencies:

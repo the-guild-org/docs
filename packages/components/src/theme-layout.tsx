@@ -1,7 +1,6 @@
 import type { ComponentProps, FC, ReactNode } from 'react';
 import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
-// import { getPageMap } from 'nextra/page-map';
 import { Footer } from './components/footer';
 import { MoonIcon } from './components/icons';
 import { ThemeSwitcherButton } from './components/theme-switcher';
@@ -10,7 +9,7 @@ export const GuildLayout: FC<{
   children: ReactNode;
   logo: ComponentProps<typeof Navbar>['logo'];
   /**
-   * In case you want to override the html props
+   * In case you want to pass the html props
    */
   htmlProps?: ComponentProps<'html'>;
   /**

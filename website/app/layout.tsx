@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { GuildLayout } from '@theguild/components';
 import '@theguild/components/style.css';
-import { getPageMap } from '@theguild/components/page-map';
+import { getPageMap } from '@theguild/components/nextra';
 
 export const metadata = {
   // title: 'Next.js',
@@ -12,7 +12,7 @@ const RootLayout: FC<{
   children: React.ReactNode;
 }> = async ({ children }) => {
   const logo = (
-    <svg viewBox="0 0 50 54" fill="#1CC8EE" className="mr-1.5 h-9">
+    <svg viewBox="0 0 50 54" height="36" fill="#1cc8ee" className="mr-1.5">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
