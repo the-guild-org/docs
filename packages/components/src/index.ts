@@ -1,14 +1,5 @@
 export { default as Giscus } from '@giscus/react';
-export {
-  Bleed,
-  Collapse,
-  Navbar,
-  NotFoundPage,
-  useConfig,
-  useTheme,
-  useThemeConfig,
-  type DocsThemeConfig,
-} from 'nextra-theme-docs';
+export { Navbar, NotFoundPage, useConfig, useTheme, useThemeConfig } from 'nextra-theme-docs';
 export { createCatchAllMeta } from 'nextra/catch-all';
 export {
   Callout,
@@ -23,8 +14,10 @@ export {
   Td,
   Th,
   Tr,
+  Bleed,
+  Collapse,
 } from 'nextra/components';
-export { useData, useMounted } from 'nextra/hooks';
+export { useMounted } from 'nextra/hooks';
 export { useMDXComponents } from 'nextra/mdx';
 export * from './components';
 export { defineConfig } from './define-config';

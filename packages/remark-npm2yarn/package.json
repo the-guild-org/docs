@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@types/mdast": "4.0.4",
-    "nextra": "3.1.0",
+    "nextra": "4.0.0-app-router.16",
     "unified": "11.0.5"
   },
   "publishConfig": {
