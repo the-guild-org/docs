@@ -99,8 +99,8 @@ export const MarketplaceList = ({
               containerClassName="flex justify-center gap-2 mt-6"
               previousClassName="hidden"
               nextClassName="hidden"
-              breakLinkClassName="text-[--fg-80] [.green_&]:text-green-200"
-              pageLinkClassName="text-sm font-medium rounded-lg [.green_&]:text-green-200 [.green_&]:border-green-700 border border-neutral-600 dark:text-neutral-200 size-[28px] flex justify-center items-center select-none"
+              breakLinkClassName="hive-focus rounded text-[--fg-80] [.green_&]:text-green-200"
+              pageLinkClassName="hive-focus text-sm font-medium rounded-lg [.green_&]:text-green-200 [.green_&]:border-green-700 border border-neutral-600 dark:text-neutral-200 size-[28px] flex justify-center items-center select-none"
               activeLinkClassName="text-[--bg] dark:!text-[--bg] bg-[--fg] [.green_&]:bg-green-300 [.green_&]:text-green-800"
             />
           )}
@@ -119,7 +119,7 @@ export function MarketplaceListItem({ item }: { item: IMarketplaceItemProps }) {
     <Anchor
       {...item.link}
       className={cn(
-        'flex flex-row gap-4 rounded-2xl bg-neutral-50 p-6 @container @lg:gap-6 dark:bg-neutral-800 [.green_&]:bg-green-900',
+        'hive-focus flex flex-row gap-4 rounded-2xl bg-neutral-50 p-6 @container @lg:gap-6 dark:bg-neutral-800 [.green_&]:bg-green-900',
         item.link.className,
       )}
     >

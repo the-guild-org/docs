@@ -128,21 +128,23 @@ function MarketplaceSearchInput({
   className?: string;
 }) {
   return (
-    <div className={cn('flex items-center border-b border-[--fg-60] px-2', className)}>
-      <SearchIcon className="text-[--fg-80]" />
-      <input
-        value={value}
-        type="search"
-        placeholder={placeholder}
-        onChange={event => onChange(event.currentTarget.value)}
-        className="ml-2 w-full border-0 bg-transparent py-2 font-medium text-[--fg] outline-none placeholder:text-[--fg-60] [&::-webkit-search-cancel-button]:[display:none]"
-      />
-      <button
-        onClick={() => onChange('')}
-        className="hive-focus flex size-6 items-center justify-center"
-      >
-        <CloseIcon className="size-5 text-[--fg-80]" />
-      </button>
+    <div className="border-b border-[--fg-60]">
+      <div className={cn('hive-focus-within flex items-center rounded px-2', className)}>
+        <SearchIcon className="text-[--fg-80]" />
+        <input
+          value={value}
+          type="search"
+          placeholder={placeholder}
+          onChange={event => onChange(event.currentTarget.value)}
+          className="ml-2 w-full border-0 bg-transparent py-2 font-medium text-[--fg] outline-none placeholder:text-[--fg-60] [&::-webkit-search-cancel-button]:[display:none]"
+        />
+        <button
+          onClick={() => onChange('')}
+          className="hive-focus flex size-6 items-center justify-center rounded-sm"
+        >
+          <CloseIcon className="size-5 text-[--fg-80]" />
+        </button>
+      </div>
     </div>
   );
 }
@@ -161,11 +163,11 @@ function MarketplaceSearchTabs({
   return (
     <div className={cn(styles.tabs, className)}>
       <Tabs items={[primaryList.title, secondaryList?.title].filter(x => x != null)}>
-        <Tabs.Tab>
+        <Tabs.Tab tabIndex={-1}>
           <MarketplaceList {...primaryList} title={undefined} colorScheme={colorScheme} />
         </Tabs.Tab>
         {secondaryList && (
-          <Tabs.Tab>
+          <Tabs.Tab tabIndex={-1}>
             <MarketplaceList {...secondaryList} title={undefined} colorScheme={colorScheme} />
           </Tabs.Tab>
         )}

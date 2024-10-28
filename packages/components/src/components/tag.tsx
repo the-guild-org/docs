@@ -12,6 +12,7 @@ export const Tag = ({
 }) => {
   return (
     <button
+      tabIndex={onClick ? 0 : -1}
       className={cn(
         'inline cursor-pointer rounded-full border-0 px-3 py-1 text-xs font-medium outline-none',
         selected
