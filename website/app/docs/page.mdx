@@ -1,8 +1,7 @@
-import { MDXRemote } from 'next-mdx-remote'
-import { Steps, useData, useMDXComponents } from '@theguild/components'
-import { compileMdx } from '@theguild/components/compile'
+import { RemoteContent, Steps } from '@theguild/components'
+import { compileMdx } from '@theguild/components/nextra'
 import pkgJsonFromComponents from '@theguild/components/package.json'
-import pkgJson from '../../../package.json'
+import pkgJson from '../../package.json'
 
 # Getting Started
 
@@ -16,20 +15,21 @@ npm install -D @theguild/tailwind-config
 
 ### Add dependencies
 
-export async function getStaticProps() {
-  const mdx = await compileMdx(
+export async function Dependencies() {
+  const dependencies = Object.fromEntries([
+    ['@theguild/components', pkgJsonFromComponents.version],
+    ...Object.entries(pkgJson.dependencies).filter(([key]) =>
+      ['next', 'react', 'react-dom'].includes(key)
+    )
+  ])
+  const { result } = await compileMdx(
     [
       // Render code block with current version of dependencies
       '```json filename="package.json" {14,20}',
       JSON.stringify(
         {
           ...pkgJson,
-          dependencies: Object.fromEntries([
-            ['@theguild/components', pkgJsonFromComponents.version],
-            ...Object.entries(pkgJson.dependencies).filter(([key]) =>
-              ['next', 'react', 'react-dom'].includes(key)
-            )
-          ]),
+          dependencies,
           devDependencies: pkgJson.devDependencies,
           nextBundleAnalysis: undefined
         },
@@ -40,17 +40,7 @@ export async function getStaticProps() {
     ].join('\n'),
     { defaultShowCopyCode: true }
   )
-  return {
-    props: {
-      ssg: mdx.result
-    }
-  }
-}
-
-export function Dependencies() {
-  const compiledSource = useData()
-  const components = useMDXComponents()
-  return <MDXRemote compiledSource={compiledSource} components={components} />
+  return <RemoteContent compiledSource={result} />
 }
 
 <Dependencies />

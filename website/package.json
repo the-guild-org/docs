@@ -7,7 +7,7 @@
   "scripts": {
     "analyze": "ANALYZE=true next build",
     "build": "next build",
-    "dev": "next --turbopack",
+    "dev": "next",
     "start": "next start"
   },
   "dependencies": {
