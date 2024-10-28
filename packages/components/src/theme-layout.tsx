@@ -5,6 +5,8 @@ import { Footer } from './components/footer';
 import { MoonIcon } from './components/icons';
 import { ThemeSwitcherButton } from './components/theme-switcher';
 
+type LayoutProps = ComponentProps<typeof Layout>;
+
 export const GuildLayout: FC<{
   children: ReactNode;
   logo: ComponentProps<typeof Navbar>['logo'];
@@ -19,7 +21,8 @@ export const GuildLayout: FC<{
   /**
    * Nextra's Docs Theme <Layout> component props
    */
-  layoutProps?: ComponentProps<typeof Layout>;
+  layoutProps: Omit<LayoutProps, 'navbar' | 'footer' | 'children'> &
+    Partial<Pick<LayoutProps, 'navbar' | 'footer'>>;
 }> = async ({ children, logo, htmlProps, layoutProps, headProps }) => {
   return (
     <html
@@ -33,16 +36,17 @@ export const GuildLayout: FC<{
       <Head {...headProps} />
       <body>
         <Layout
-          pageMap={[{ data: {} }]}
+          footer={<Footer />}
           navbar={
             <Navbar logo={logo}>
               <ThemeSwitcherButton>
-                {/* Provide icon as `children` so it fill be server component */}
-                <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
+                {/* Provide icon as `children` so icon will be server component */}
+                <MoonIcon
+                  className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100"
+                />
               </ThemeSwitcherButton>
             </Navbar>
           }
-          footer={<Footer />}
           {...layoutProps}
         >
           {children}

@@ -57,14 +57,10 @@ export { default } from '@theguild/tailwind-config'
 module.exports = require('@theguild/tailwind-config/postcss.config')
 ```
 
-## Add theme config
+## Add `mdx-components.tsx` in root directory
 
-```ts filename="theme.config.tsx"
-import { defineConfig } from '@theguild/components'
-
-export default defineConfig({
-  // Your theme
-})
+```ts filename="mdx-components.tsx"
+export { useMDXComponents } from '@theguild/components';
 ```
 
 ## Use `withGuildDocs` in your Next.js config
@@ -80,16 +76,10 @@ export default withGuildDocs({
 })
 ```
 
-## Import styles in `_app.tsx`
+## Import styles in root `layout.tsx`
 
 ```tsx filename="src/pages/_app.tsx" {3}
-import { ReactElement } from 'react'
-import { AppProps } from 'next/app'
 import '@theguild/components/style.css'
-
-export default function App({ Component, pageProps }: AppProps): ReactElement {
-  return <Component {...pageProps} />
-}
 ```
 
 </Steps>
