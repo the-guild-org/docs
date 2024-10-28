@@ -119,13 +119,13 @@ export function MarketplaceListItem({ item }: { item: IMarketplaceItemProps }) {
     <Anchor
       {...item.link}
       className={cn(
-        '@container @lg:gap-6 flex flex-row gap-4 rounded-2xl bg-neutral-50 p-6 dark:bg-neutral-800 [.green_&]:bg-green-900',
+        'flex flex-row gap-4 rounded-2xl bg-neutral-50 p-6 @container @lg:gap-6 dark:bg-neutral-800 [.green_&]:bg-green-900',
         item.link.className,
       )}
     >
       <div
         className={cn(
-          '@2xl:size-[92px] @lg:size-16 size-16 shrink-0 rounded-lg bg-[--bg] [.green_&]:[background:linear-gradient(135deg,_#68A8B6_0%,_#3B736A_100%)]',
+          'size-16 shrink-0 rounded-lg bg-[--bg] @lg:size-16 @2xl:size-[92px] [.green_&]:[background:linear-gradient(135deg,_#68A8B6_0%,_#3B736A_100%)]',
         )}
       >
         <Image
@@ -136,8 +136,8 @@ export function MarketplaceListItem({ item }: { item: IMarketplaceItemProps }) {
         />
       </div>
       <div className="flex flex-col">
-        <h3 className="@lg:text-2xl m-0 line-clamp-2 font-medium text-[--fg]">{item.title}</h3>
-        <div className="@lg:text-base mb-2 line-clamp-3 text-sm text-[--fg-80]">
+        <h3 className="m-0 line-clamp-2 font-medium text-[--fg] @lg:text-2xl">{item.title}</h3>
+        <div className="mb-2 line-clamp-3 text-sm text-[--fg-80] @lg:text-base">
           {item.description}
         </div>
         {item.tags && item.tags.length > 0 && (
@@ -147,12 +147,12 @@ export function MarketplaceListItem({ item }: { item: IMarketplaceItemProps }) {
             ))}
           </TagsContainer>
         )}
-        <div className="@lg:text-sm flex flex-wrap gap-x-4 text-xs text-[--fg-80]">
+        <div className="flex flex-wrap gap-x-4 text-xs text-[--fg-80] @lg:text-sm">
           <span>
             Updated <time dateTime={item.update}>{formatDate(item.update)}</time>
           </span>
           {item.weeklyNPMDownloads && (
-            <span className="@sm:block hidden">
+            <span className="hidden @sm:block">
               {numberFormat.format(item.weeklyNPMDownloads)} weekly downloads
             </span>
           )}
