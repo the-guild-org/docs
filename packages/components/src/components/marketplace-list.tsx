@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useMemo, useState } from 'react';
+import { ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { cn } from '../cn';
 import { IMarketplaceItemProps, IMarketplaceListProps } from '../types/components';
@@ -40,6 +40,7 @@ export const MarketplaceList = ({
   colorScheme = 'neutral',
 }: IMarketplaceListProps): ReactElement => {
   const [currentPage, setCurrentPage] = useState(0);
+  const listRef = useRef<HTMLUListElement>(null);
 
   const pageSize = pagination || 5;
   const pageCount = items ? Math.ceil(items.length / pageSize) : 1;
@@ -80,11 +81,29 @@ export const MarketplaceList = ({
       )}
       {pages[currentPage]?.length ? (
         <>
-          <ul className="grid gap-4 lg:grid-cols-2 lg:gap-6">
-            {pages[currentPage].map(item => {
+          <ul ref={listRef} className="grid gap-4 lg:grid-cols-2 lg:gap-6">
+            {pages[currentPage].map((item, i) => {
               return (
                 <li key={item.title} className="*:h-full">
-                  <MarketplaceListItem item={item} />
+                  <MarketplaceListItem
+                    item={item}
+                    tabIndex={i === 0 ? 0 : -1}
+                    // focusgroup vertical navigation
+                    onKeyDown={event => {
+                      const ul = listRef.current;
+                      if (!ul) return;
+
+                      const gridTemplateColumns = ul
+                        .computedStyleMap()
+                        .get('grid-template-columns')
+                        ?.toString();
+
+                      const columns =
+                        parseInt(gridTemplateColumns?.match(/repeat\((\d)/)?.[1] as string) || 1;
+
+                      moveFocusOnArrowKeys(event, columns);
+                    }}
+                  />
                 </li>
               );
             })}
@@ -114,10 +133,15 @@ export const MarketplaceList = ({
   );
 };
 
-export function MarketplaceListItem({ item }: { item: IMarketplaceItemProps }) {
+export interface MarketplaceListItemProps extends React.ComponentPropsWithoutRef<'a'> {
+  item: IMarketplaceItemProps;
+}
+
+export function MarketplaceListItem({ item, ...rest }: MarketplaceListItemProps) {
   return (
     <Anchor
       {...item.link}
+      {...rest}
       className={cn(
         'hive-focus flex flex-row gap-4 rounded-2xl bg-neutral-50 p-6 @container @lg:gap-6 dark:bg-neutral-800 [.green_&]:bg-green-900',
         item.link.className,
@@ -160,4 +184,59 @@ export function MarketplaceListItem({ item }: { item: IMarketplaceItemProps }) {
       </div>
     </Anchor>
   );
+}
+
+function moveFocusOnArrowKeys(event: React.KeyboardEvent<HTMLAnchorElement>, columns: number) {
+  let listItem: Element | null | undefined;
+
+  let move: 'left' | 'right' | 'down' | 'up' | undefined;
+
+  switch (event.key) {
+    case 'ArrowDown':
+      move = 'down';
+      break;
+    case 'ArrowUp':
+      move = 'up';
+      break;
+    case 'ArrowRight':
+      move = 'right';
+      break;
+    case 'ArrowLeft':
+      move = 'left';
+      break;
+  }
+
+  if (!move) return;
+
+  if (move === 'left') {
+    const parent = event.currentTarget.parentElement;
+    if (parent) {
+      listItem = parent.previousElementSibling;
+    }
+  } else if (move === 'right') {
+    const parent = event.currentTarget.parentElement;
+    if (parent) {
+      listItem = parent.nextElementSibling;
+    }
+  } else {
+    listItem = event.currentTarget.parentElement;
+
+    while (columns > 0 && listItem) {
+      if (move === 'up') {
+        columns--;
+        listItem = listItem.previousElementSibling;
+      } else if (move === 'down') {
+        columns--;
+        listItem = listItem.nextElementSibling;
+      }
+    }
+  }
+
+  if (listItem && listItem instanceof HTMLElement && listItem.tagName === 'LI') {
+    const anchor = listItem.querySelector('a');
+    if (anchor) {
+      anchor.focus();
+      event.preventDefault();
+    }
+  }
 }

@@ -76,12 +76,13 @@ export const MarketplaceSearch = ({
           {title}
         </Heading>
         {tagsFilter && (
-          <TagsContainer>
-            {tagsFilter.map(tagName => (
+          <TagsContainer focusgroup="horizontal">
+            {tagsFilter.map((tagName, i) => (
               <Tag
                 key={tagName}
                 selected={query.includes(`#${tagName}`)}
                 onClick={() => handleTagClick(tagName)}
+                tabIndex={i === 0 ? 0 : -1}
               >
                 {tagName}
               </Tag>
