@@ -21,5 +21,5 @@ export const Default: StoryObj<typeof GuildUnifiedLogo> = {
 };
 
 export const Hive: StoryObj = {
-  render: () => getNavbarLogo(HiveCombinationMark, 'Hive', ''),
+  render: () => getNavbarLogo(<HiveCombinationMark />, 'Hive', ''),
 };
