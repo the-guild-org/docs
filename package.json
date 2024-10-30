@@ -4,9 +4,10 @@
   "private": true,
   "packageManager": "pnpm@9.12.2",
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run build --filter=!website",
     "build-storybook": "storybook build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.ts --postcss --output packages/components/style.css",
+    "clean": "pnpm -r exec sh -c 'rm -rf .next .turbo dist out'",
     "dev": "turbo run dev --parallel",
     "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --cache --ignore-path .gitignore .",
     "lint:prettier": "prettier --cache --check .",

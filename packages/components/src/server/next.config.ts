@@ -2,20 +2,9 @@ import path from 'node:path';
 import { NextConfig } from 'next';
 import withVideos from 'next-videos';
 import nextra, { NextraConfig } from 'nextra';
-import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
 import { Plugin } from 'unified';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
 import { applyUnderscoreRedirects } from './underscore-redirects.js';
-
-type MdxOptions = Exclude<NextraConfig['mdxOptions'], undefined>;
-
-export const defaultRemarkPlugins: MdxOptions['remarkPlugins'] = [
-  [
-    // replace <iframe />, <video />, <source /> tags in MDX
-    remarkMdxDisableExplicitJsx,
-    { whiteList: ['iframe', 'video', 'source'] },
-  ],
-];
 
 const warnings = new Set<string>();
 
@@ -48,6 +37,21 @@ const rehypeCheckFrontMatter: Plugin<[]> = () => (_ast, file) => {
   }
 };
 
+export const defaultNextraOptions: NextraConfig = {
+  defaultShowCopyCode: true,
+  whiteListTagsStyling: ['iframe', 'video', 'source'],
+  search: {
+    codeblocks: true,
+  },
+  mdxOptions: {
+    // remarkPlugins: defaultRemarkPlugins,
+    // Should be rehype since frontMatter is attached in remark plugins
+
+    // Check front matter only in production (when Webpack is used)
+    rehypePlugins: process.env.NODE_ENV === 'production' ? [rehypeCheckFrontMatter] : [],
+  },
+};
+
 // this won't be emitted if it's inline in parens
 export interface WithGuildDocsOptions extends NextConfig {
   nextraConfig?: NextraConfig;
@@ -63,19 +67,7 @@ export function withGuildDocs({ nextraConfig, ...nextConfig }: WithGuildDocsOpti
   const withBundleAnalyzer = nextBundleAnalyzer({
     enabled: process.env.ANALYZE === 'true',
   });
-  const withNextra = nextra({
-    defaultShowCopyCode: true,
-    mdxOptions: {
-      remarkPlugins: defaultRemarkPlugins,
-      // Should be rehype since frontMatter is attached in remark plugins
-      rehypePlugins: [rehypeCheckFrontMatter],
-    },
-    search: {
-      codeblocks: true,
-    },
-    ...nextraConfig,
-  });
-  const siteUrl = process.env.SITE_URL || '';
+  const withNextra = nextra({ ...defaultNextraOptions, ...nextraConfig });
 
   return withBundleAnalyzer(
     withVideos(
@@ -85,7 +77,7 @@ export function withGuildDocs({ nextraConfig, ...nextConfig }: WithGuildDocsOpti
         basePath: process.env.NEXT_BASE_PATH,
         ...nextConfig,
         env: {
-          SITE_URL: siteUrl,
+          SITE_URL: process.env.SITE_URL || '',
           ...nextConfig.env,
         },
         webpack(config, meta) {

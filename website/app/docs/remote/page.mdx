@@ -4,7 +4,7 @@ sidebarTitle: Remote MDX
 
 import { fetchPackageInfo, Tabs, RemoteContent } from '@theguild/components'
 import { compileMdx } from '@theguild/components/nextra'
-import { defaultRemarkPlugins } from '@theguild/components/next.config'
+import { defaultNextraOptions } from '@theguild/components/next.config'
 
 export async  function PackageApiDocs () {
   const PACKAGE_NAME = '@envelop/core'
@@ -15,12 +15,7 @@ export async  function PackageApiDocs () {
 npm i ${PACKAGE_NAME}
 \`\`\`
 ${readme}`,
-    {
-      defaultShowCopyCode: true,
-      mdxOptions: {
-        remarkPlugins: defaultRemarkPlugins
-      }
-    }
+    defaultNextraOptions
   )
   return <RemoteContent compiledSource={result} components={{ $Tabs: Tabs }} />
 }
