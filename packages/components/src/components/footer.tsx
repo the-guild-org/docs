@@ -13,6 +13,7 @@ import {
   TwitterIcon,
   YouTubeIcon,
 } from './icons';
+import { siteOrigin } from '../constants'
 
 const COMPANY: ILink[] = [
   {
@@ -92,7 +93,6 @@ const renderLinks = (list: ILink[]) => (
 
 export function Footer({
   className,
-  sameSite,
   resources = [],
   logo,
 }: IFooterExtendedProps): ReactElement {
@@ -107,8 +107,7 @@ export function Footer({
         <div className="relative flex justify-between gap-10 max-md:flex-col">
           <Anchor
             className="flex items-center gap-2 self-start"
-            href="https://the-guild.dev"
-            sameSite={sameSite}
+            href={`${siteOrigin}/`}
             {...logo}
           >
             <GuildLogo className="h-9 w-auto" />

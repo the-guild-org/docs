@@ -6,6 +6,7 @@ import { Footer } from './components/footer';
 import { getNavbarLogo } from './components/guild-navbar-logo';
 import { MoonIcon } from './components/icons';
 import { ThemeSwitcherButton } from './components/theme-switcher';
+import { siteOrigin, siteUrl } from './constants';
 import { PRODUCTS } from './products';
 
 type LP = ComponentProps<typeof Layout>;
@@ -20,18 +21,9 @@ const companyItem = {
   type: 'menu',
   title: 'Company',
   items: {
-    about: {
-      title: 'About',
-      href: 'https://the-guild.dev/about-us',
-    },
-    blog: {
-      title: 'Blog',
-      href: 'https://the-guild.dev/blog',
-    },
-    contact: {
-      title: 'Contact',
-      href: 'https://the-guild.dev/#get-in-touch',
-    },
+    about: { title: 'About', href: `${siteOrigin}/about-us` },
+    blog: { title: 'Blog', href: `${siteOrigin}/blog` },
+    contact: { title: 'Contact', href: `${siteOrigin}/#get-in-touch` },
   },
 };
 
@@ -56,7 +48,7 @@ const productsItems = {
 
 export const GuildLayout: FC<{
   children: ReactNode;
-  logo: ComponentProps<typeof Navbar>['logo'];
+  logo?: ComponentProps<typeof Navbar>['logo'];
   /**
    * In case you want to pass the html props
    */
@@ -105,7 +97,7 @@ export const GuildLayout: FC<{
           footer={<Footer />}
           navbar={
             <Navbar
-              logo={getNavbarLogo(logo, websiteName, description)}
+              logo={getNavbarLogo({ logo, websiteName, description })}
               logoLink={false}
               // GitHub link in the navbar
               projectLink={`${url.origin}/${org}/${repoName}`}
@@ -145,7 +137,6 @@ export function getDefaultMetadata({
   websiteName: string;
   productName: string;
 } & Metadata): Metadata {
-  const siteUrl = process.env.SITE_URL;
   return {
     description,
     title: {

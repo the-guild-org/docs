@@ -12,12 +12,10 @@ export type ILink = LinkProps &
   Pick<ComponentProps<'a'>, 'target' | 'rel' | 'title' | 'className' | 'style'> & {
     children: ReactNode;
     newWindow?: boolean;
-    sameSite?: boolean;
   };
 
 export interface IFooterExtendedProps {
   className?: string;
-  sameSite?: boolean;
   resources?: ILink[];
   logo?: ILink;
 }

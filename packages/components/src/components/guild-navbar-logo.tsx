@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import clsx from 'clsx';
+import { siteOrigin } from '../constants';
 import { GuildLogo, TheGuild } from '../logos';
 import { Anchor } from './anchor';
 
@@ -16,7 +17,7 @@ export const GuildUnifiedLogo: FC<{
           'flex items-center gap-x-1.5 transition-opacity hover:opacity-75',
           children && 'max-md:hidden',
         )}
-        href="https://the-guild.dev"
+        href={`${siteOrigin}/`}
       >
         <GuildLogo className="h-9 w-auto" />
         <TheGuild className="w-11" />
@@ -52,7 +53,15 @@ export const GuildUnifiedLogo: FC<{
  * GraphQL-related products live under the Hive platform brand, so we use a single logo for them.
  * The rest gets The Guild / {Product} logo.
  */
-export function getNavbarLogo(logo: ReactNode, websiteName: string, description: string) {
+export function getNavbarLogo({
+  logo,
+  websiteName,
+  description,
+}: {
+  logo: ReactNode;
+  websiteName: string;
+  description: string;
+}) {
   return websiteName === 'Hive' ? (
     <Anchor title={websiteName} href="/">
       {logo}

@@ -7,10 +7,6 @@ export default {
   component: HiveFooter,
   decorators: [hiveThemeDecorator],
   argTypes: {
-    sameSite: {
-      name: 'Same Site',
-      description: 'Use this to force links to open in the same tab, using the root domain.',
-    },
     resources: {
       name: 'Resources Links',
       description: "Use this to add current site's links to the footer.",
@@ -21,7 +17,6 @@ export default {
 export const Default: StoryObj<HiveFooterProps> = {
   name: 'HiveFooter',
   args: {
-    sameSite: false,
     resources: [
       {
         children: 'Privacy Policy',

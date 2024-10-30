@@ -5,10 +5,6 @@ export default {
   title: 'Components/Footer',
   component: Footer,
   argTypes: {
-    sameSite: {
-      name: 'Same Site',
-      description: 'Use this to force links to open in the same tab, using the root domain.',
-    },
     resources: {
       name: 'Resources Links',
       description: "Use this to add current site's links to the footer.",
@@ -20,7 +16,6 @@ type Story = StoryObj<typeof Footer>;
 
 export const Default: Story = {
   args: {
-    sameSite: false,
     resources: [
       {
         children: 'Documentation',

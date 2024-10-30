@@ -1,6 +1,4 @@
-export { default as Giscus } from '@giscus/react';
 export { Navbar, NotFoundPage, useConfig, useTheme, useThemeConfig } from 'nextra-theme-docs';
-export { createCatchAllMeta } from 'nextra/catch-all';
 export {
   Callout,
   Cards,

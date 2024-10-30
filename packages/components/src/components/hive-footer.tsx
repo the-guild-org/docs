@@ -1,5 +1,6 @@
-import { ComponentProps, ReactNode } from 'react';
+import { ComponentProps, FC, ReactNode } from 'react';
 import { cn } from '../cn';
+import { siteOrigin } from '../constants';
 import { HiveCombinationMark } from '../logos';
 import { PRODUCTS } from '../products';
 import { IFooterExtendedProps, ILink } from '../types/components';
@@ -15,14 +16,13 @@ import {
 
 export interface HiveFooterProps extends IFooterExtendedProps {}
 
-export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFooterProps) {
+export const HiveFooter: FC<HiveFooterProps> = ({ className, logo, resources = [] }) => {
   return (
     <footer className={cn('relative flex justify-center px-4 py-6 xl:px-[120px]', className)}>
       <div className="mx-4 grid w-full max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10 dark:text-neutral-400">
         <div className="max-lg:col-span-full">
           <Anchor
-            href="https://the-guild.dev"
-            sameSite={sameSite}
+            href={`${siteOrigin}/`}
             {...logo}
             className="hive-focus -m-1.5 flex rounded p-1.5"
           >
@@ -77,7 +77,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
       <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden mix-blend-multiply lg:block dark:opacity-5 dark:mix-blend-normal" />
     </footer>
   );
-}
+};
 
 function List({
   heading,

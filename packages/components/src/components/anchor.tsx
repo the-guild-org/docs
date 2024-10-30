@@ -5,17 +5,12 @@ import { ILink } from '../types/components';
 
 export interface AnchorProps extends ILink {}
 export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(function Anchor(
-  { href = '', children, newWindow, sameSite, className, ...props },
+  { href = '', children, newWindow, className, ...props },
   forwardedRef,
 ): ReactElement {
   const classes = clsx(className, 'outline-none transition focus-visible:ring');
 
   if (typeof href === 'string') {
-    if (sameSite) {
-      const url = new URL(href);
-      href = url.pathname + url.search + url.hash;
-    }
-
     if (href.startsWith('#')) {
       return (
         <a ref={forwardedRef} href={href} className={classes} {...props}>
