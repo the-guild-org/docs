@@ -7,7 +7,17 @@ import { Heading } from './heading';
 import { CloseIcon, SearchIcon } from './icons';
 import { MarketplaceList } from './marketplace-list';
 import { Tag, TagsContainer } from './tag';
-import styles from './marketplace-search.module.css';
+import './marketplace-search.css';
+
+/**
+ * @see ./marketplace-search.css
+ * can't be a CSS Module because of https://github.com/egoist/tsup/issues/536
+ * we're using it to style nextra/components Tabs to match the designs
+ */
+const classNames = {
+  marketplace: 'MarketplaceSearch',
+  tabs: 'MarketplaceSearchTabs',
+};
 
 const renderQueryPlaceholder = (placeholder: string | ReactElement, query: string) => {
   if (!query || isValidElement(placeholder)) {
@@ -70,7 +80,7 @@ export const MarketplaceSearch = ({
   }, [query, queryList]);
 
   return (
-    <section className={cn(styles.marketplace, colorScheme, 'bg-[--bg]', className)}>
+    <section className={cn(classNames.marketplace, colorScheme, 'bg-[--bg]', className)}>
       <div className="container max-w-[90rem] py-12">
         <Heading as="h1" className="mb-4 text-[32px] text-[--fg]" size="sm">
           {title}
@@ -162,7 +172,7 @@ function MarketplaceSearchTabs({
   className?: string;
 }) {
   return (
-    <div className={cn(styles.tabs, className)}>
+    <div className={cn(classNames.tabs, className)}>
       <Tabs items={[primaryList.title, secondaryList?.title].filter(x => x != null)}>
         <Tabs.Tab tabIndex={-1}>
           <MarketplaceList {...primaryList} title={undefined} colorScheme={colorScheme} />

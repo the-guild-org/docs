@@ -1,17 +1,17 @@
-.marketplace {
+.MarketplaceSearch {
   --fg: theme(colors.white);
   --fg-80: rgb(from var(--fg) r g b / 0.8);
   --fg-70: rgb(from var(--fg) r g b / 0.7);
   --fg-60: rgb(from var(--fg) r g b / 0.6);
 
-  &:global(.green) {
+  &.green {
     --bg: theme(colors.green.1000);
   }
 
-  &:global(.neutral) {
+  &.neutral {
     --bg: theme(colors.neutral.900);
 
-    :global(.light) & {
+    .light & {
       --bg: theme(colors.white);
       --fg: theme(colors.neutral.900);
     }
@@ -19,37 +19,37 @@
 }
 
 /* nextra Tabs don't accept className props */
-.tabs [role='tablist'] {
+.MarketplaceSearchTabs [role='tablist'] {
   @apply grid grid-cols-2 gap-1 rounded-2xl border-none bg-neutral-800 [&.green]:bg-green-900;
 
   /* dark mode prefix interfers with css modules */
-  :global(.light) & {
+  .light & {
     @apply bg-neutral-100;
   }
 
-  :global(.green) & {
+  .green & {
     @apply bg-green-900;
   }
 
   & button {
     @apply rounded-2xl border-none p-3 text-sm font-medium text-neutral-200 sm:p-4 sm:text-base;
 
-    :global(.light) & {
+    .light & {
       @apply bg-neutral-100 text-neutral-800;
     }
 
-    :global(.green) & {
+    .green & {
       @apply bg-green-900 text-green-200;
     }
 
     &:hover {
       @apply bg-neutral-700/50 text-white;
 
-      :global(.light) & {
+      .light & {
         @apply bg-neutral-200/80 text-neutral-900;
       }
 
-      :global(.green) & {
+      .green & {
         @apply bg-green-700/25 text-green-100;
       }
     }
@@ -58,7 +58,7 @@
     &[aria-selected='true']:hover {
       @apply cursor-default bg-[--fg] text-[--bg];
 
-      :global(.green) & {
+      .green & {
         @apply bg-green-300 text-green-800;
       }
     }
