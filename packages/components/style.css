@@ -101,3 +101,8 @@
   -webkit-font-smoothing: unset;
   -moz-osx-font-smoothing: unset;
 }
+
+/* Add margin for giscus */
+giscus-widget {
+  @apply mt-6
+}

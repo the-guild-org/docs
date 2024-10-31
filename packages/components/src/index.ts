@@ -14,6 +14,7 @@ export {
   Tr,
   Bleed,
   Collapse,
+  Search,
 } from 'nextra/components';
 export { useMounted } from 'nextra/hooks';
 export * from './components';

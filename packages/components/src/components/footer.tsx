@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { FC, ReactElement, SVGProps } from 'react';
 import { clsx } from 'clsx';
+import { siteOrigin } from '../constants';
 import { GuildLogo, TheGuild } from '../logos';
 import { PRODUCTS } from '../products';
 import { IFooterExtendedProps, ILink } from '../types/components';
@@ -13,23 +14,22 @@ import {
   TwitterIcon,
   YouTubeIcon,
 } from './icons';
-import { siteOrigin } from '../constants'
 
 const COMPANY: ILink[] = [
   {
     children: 'About',
     title: 'Learn more about us',
-    href: 'https://the-guild.dev/about-us',
+    href: `${siteOrigin}/about-us`,
   },
   {
     children: 'Blog',
     title: 'Read our blog',
-    href: 'https://the-guild.dev/blog',
+    href: `${siteOrigin}/blog`,
   },
   {
     children: 'Newsletter',
     title: 'Newsletter',
-    href: 'https://the-guild.dev/newsletter',
+    href: `${siteOrigin}/newsletter`,
   },
 ];
 
@@ -91,11 +91,7 @@ const renderLinks = (list: ILink[]) => (
   </ul>
 );
 
-export function Footer({
-  className,
-  resources = [],
-  logo,
-}: IFooterExtendedProps): ReactElement {
+export function Footer({ className, resources = [], logo }: IFooterExtendedProps): ReactElement {
   return (
     <footer
       className={clsx(
@@ -105,11 +101,7 @@ export function Footer({
     >
       <div className="container max-w-[90rem]">
         <div className="relative flex justify-between gap-10 max-md:flex-col">
-          <Anchor
-            className="flex items-center gap-2 self-start"
-            href={`${siteOrigin}/`}
-            {...logo}
-          >
+          <Anchor className="flex items-center gap-2 self-start" href={`${siteOrigin}/`} {...logo}>
             <GuildLogo className="h-9 w-auto" />
             <TheGuild className="h-7 w-auto" />
           </Anchor>
@@ -123,7 +115,7 @@ export function Footer({
               {
                 children: 'Press Kit',
                 title: 'Press Kit',
-                href: 'https://the-guild.dev/logos',
+                href: `${siteOrigin}/logos`,
               },
               ...resources,
             ])}

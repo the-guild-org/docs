@@ -72,12 +72,14 @@ export const GuildLayout: FC<{
   const pageMapWithCompanyMenu = [
     {
       data: {
-        company: companyItem,
+        // Add for every website except The Guild Blog
+        ...(siteOrigin && { company: companyItem }),
         products: productsItems,
         ...meta.data,
       },
     },
-    { name: 'company', route: '#', ...companyItem },
+    // Add for every website except The Guild Blog
+    ...(siteOrigin ? [{ name: 'company', route: '#', ...companyItem }] : []),
     { name: 'products', route: '#', ...productsItems },
     ...pageMap,
   ];
