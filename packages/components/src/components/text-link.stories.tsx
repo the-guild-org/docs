@@ -1,4 +1,3 @@
-import Layout from 'nextra-theme-docs';
 import { Meta, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../.storybook/hive-theme-decorator';
 import { ArrowIcon } from './icons';
