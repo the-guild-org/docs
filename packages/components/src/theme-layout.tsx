@@ -1,4 +1,4 @@
-import type { ComponentProps, FC, ReactNode } from 'react';
+import { ComponentProps, FC, ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
@@ -48,22 +48,38 @@ const productsItems = {
 
 export const GuildLayout: FC<{
   children: ReactNode;
-  logo?: ComponentProps<typeof Navbar>['logo'];
+  websiteName: string;
+  description: string;
   /**
-   * In case you want to pass the html props
+   * In case you want to pass the html props, like overriding default `class`
    */
   htmlProps?: ComponentProps<'html'>;
   /**
-   * Nextra's <Head> component props
+   * Nextra's `<Head>` component props
    */
   headProps?: ComponentProps<typeof Head>;
   /**
-   * Nextra's Docs Theme <Layout> component props
+   * Navbar logo, `null` is used in The Guild Blog
+   */
+  logo: ComponentProps<typeof Navbar>['logo'] | null;
+  /**
+   * Nextra's Docs Theme `<Layout>` component props
    */
   layoutProps: LayoutProps;
-  websiteName: string;
-  description: string;
-}> = async ({ children, logo, htmlProps, layoutProps, headProps, websiteName, description }) => {
+  /**
+   * Nextra's Docs Theme `<Navbar>` component props
+   */
+  navbarProps?: LayoutProps;
+}> = async ({
+  children,
+  websiteName,
+  description,
+  htmlProps,
+  headProps,
+  logo,
+  layoutProps,
+  navbarProps,
+}) => {
   const url = new URL(layoutProps.docsRepositoryBase);
   const [, org, repoName] = url.pathname.split('/');
 
@@ -103,6 +119,7 @@ export const GuildLayout: FC<{
               logoLink={false}
               // GitHub link in the navbar
               projectLink={`${url.origin}/${org}/${repoName}`}
+              {...navbarProps}
             >
               <ThemeSwitcherButton>
                 {/* Provide icon as `children` so icon will be server component */}

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
-import { useMDXComponents as useDocsMDXComponents } from 'nextra-theme-docs';
+import { useMDXComponents as getDocsMDXComponents } from 'nextra-theme-docs';
 
-const docsComponents = useDocsMDXComponents({
+const docsComponents = getDocsMDXComponents({
   source({ src, type, ...props }) {
     if (!src) {
       throw new Error('Must provide `src` prop');
@@ -29,7 +29,7 @@ const docsComponents = useDocsMDXComponents({
   ),
 });
 
-export const useMDXComponents: typeof useDocsMDXComponents = components => ({
+export const useMDXComponents: typeof getDocsMDXComponents = components => ({
   ...docsComponents,
   ...components,
 });

@@ -124,7 +124,7 @@ export function Footer({ className, resources = [], logo }: IFooterExtendedProps
             <h3 className={classes.title}>Company</h3>
             {renderLinks(COMPANY)}
           </div>
-          <div className="flex gap-5 text-[#b4b5be]">
+          <div className="flex gap-5 items-start text-[#b4b5be]">
             {COMMUNITY.map(({ icon: Icon, ...iconProps }) => (
               <Anchor key={iconProps.title} className={classes.anchor} {...iconProps}>
                 <Icon className="h-5 w-auto" />
