@@ -26,7 +26,11 @@ export {
   type GraphQLConfCardProps,
 } from './hive-navigation';
 export { HiveFooter } from './hive-footer';
-export { ToolsAndLibrariesCards } from './tools-and-libraries-cards';
+export {
+  ToolsAndLibrariesCards,
+  MainProductCard,
+  AncillaryProductCard,
+} from './tools-and-libraries-cards';
 export * from './decorations';
 export * from './call-to-action';
 export * from './cookies-consent';

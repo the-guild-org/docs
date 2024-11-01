@@ -1,9 +1,9 @@
 import { cn } from '../cn';
-import { PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../products';
+import { ProductInfo, PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../products';
 import { CallToAction } from './call-to-action';
 import { HighlightDecoration } from './decorations';
 import { Heading } from './heading';
-import { ArrowIcon, CodegenIcon, HiveIcon, MeshIcon, YogaIcon } from './icons';
+import { ArrowIcon } from './icons';
 
 export function ToolsAndLibrariesCards({ className }: { className?: string }) {
   return (
@@ -17,9 +17,17 @@ export function ToolsAndLibrariesCards({ className }: { className?: string }) {
         Discover the complete ecosystem of tools and libraries
       </Heading>
       <p className="text-green-800">Complete GraphQL Management Stack</p>
-      <MainCards />
+      <ul className="-mx-12 -my-2 flex grid-cols-2 flex-row gap-[22px] overflow-auto px-12 py-2 lg:grid xl:grid-cols-4">
+        {[PRODUCTS.HIVE, PRODUCTS.YOGA, PRODUCTS.MESH, PRODUCTS.CODEGEN].map(product => (
+          <MainProductCard key={product.name} as="li" product={product} />
+        ))}
+      </ul>
       <p className="text-green-800">Our libraries to support all your GraphQL needs</p>
-      <SecondaryCards />
+      <ul className="-mx-12 -my-2 flex h-max grid-cols-6 flex-row gap-[22px] overflow-x-auto overflow-y-hidden px-12 py-2 max-sm:-mx-8 max-sm:px-8 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+        {SIX_HIGHLIGHTED_PRODUCTS.map(product => (
+          <AncillaryProductCard key={product.name} as="li" product={product} />
+        ))}
+      </ul>
       <CallToAction href="https://github.com/the-guild-org" variant="primary">
         Explore the Ecosystem
       </CallToAction>
@@ -27,66 +35,58 @@ export function ToolsAndLibrariesCards({ className }: { className?: string }) {
   );
 }
 
-function MainCards() {
-  const products = [PRODUCTS.HIVE, PRODUCTS.YOGA, PRODUCTS.MESH, PRODUCTS.CODEGEN];
-  const icons = [HiveIcon, YogaIcon, MeshIcon, CodegenIcon];
+export function MainProductCard({ as: Root, product }: { as: 'div' | 'li'; product: ProductInfo }) {
+  const Decoration = cardDecorations[product.name];
+  const Icon = product.logo;
 
   return (
-    <ul className="-mx-12 -my-2 flex grid-cols-2 flex-row gap-[22px] overflow-auto px-12 py-2 lg:grid xl:grid-cols-4">
-      {products.map((product, i) => {
-        const Icon = icons[i];
-        const Decoration = cardDecorations[product.name];
-        return (
-          <li
-            key={product.name}
-            className="hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 first-of-type:bg-green-1000 first-of-type:text-white max-md:w-[283.5px]"
-          >
-            <a className="relative z-10 block flex-1 p-8" href={product.href}>
-              <p className="font-medium">{product.name}</p>
-              <Icon className="mt-8" />
-              <ArrowIcon className="absolute bottom-8 right-8" />
-            </a>
-            <Decoration
-              className="pointer-events-none absolute bottom-0 right-0 fill-blue-200 stroke-[0.5px] opacity-0 transition-opacity duration-500 group-first-of-type:fill-blue-700 group-focus-within:opacity-100 group-hover:opacity-100"
-              preserveAspectRatio="xMidYMid meet"
-            />
-            <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-focus-within:opacity-100 group-hover:opacity-100" />
-          </li>
-        );
-      })}
-    </ul>
+    <Root
+      key={product.name}
+      className="hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 first-of-type:bg-green-1000 first-of-type:text-white max-md:w-[283.5px]"
+    >
+      <a className="relative z-10 block flex-1 p-8" href={product.href}>
+        <p className="font-medium">{product.name}</p>
+        <Icon className="mt-8" />
+        <ArrowIcon className="absolute bottom-8 right-8" />
+      </a>
+      <Decoration
+        className="pointer-events-none absolute bottom-0 right-0 fill-blue-200 stroke-[0.5px] opacity-0 transition-opacity duration-500 group-first-of-type:fill-blue-700 group-focus-within:opacity-100 group-hover:opacity-100"
+        preserveAspectRatio="xMidYMid meet"
+      />
+      <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-focus-within:opacity-100 group-hover:opacity-100" />
+    </Root>
   );
 }
 
-function SecondaryCards() {
+export function AncillaryProductCard({
+  product,
+  as: Root,
+}: {
+  product: ProductInfo;
+  as: 'div' | 'li';
+}) {
+  const Logo = product.logo;
   return (
-    <ul className="-mx-12 -my-2 flex h-max grid-cols-6 flex-row gap-[22px] overflow-x-auto overflow-y-hidden px-12 py-2 max-sm:-mx-8 max-sm:px-8 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-      {SIX_HIGHLIGHTED_PRODUCTS.map(product => {
-        const Logo = product.logo;
-        return (
-          <li
-            key={product.name}
-            className="hive-focus-within shrink-0 basis-[283.5px] rounded-2xl bg-beige-200 text-green-1000 transition-colors duration-500 hover:bg-beige-400 max-sm:min-w-[283.5px]"
-          >
-            <a
-              href={product.href}
-              className="relative flex h-full flex-col rounded-[inherit] p-8 focus:outline-none"
-            >
-              <p className="font-medium">{product.name}</p>
-              <p className="mt-2 text-sm text-green-800">{product.title}</p>
-              <div className="h-8 grow" />
-              <div
-                role="presentation"
-                className="flex size-8 items-center justify-center rounded bg-green-1000 text-sm font-medium leading-5 text-white"
-              >
-                <Logo />
-              </div>
-              <ArrowIcon className="absolute bottom-8 right-8" />
-            </a>
-          </li>
-        );
-      })}
-    </ul>
+    <Root
+      key={product.name}
+      className="hive-focus-within shrink-0 basis-[283.5px] rounded-2xl bg-beige-200 text-green-1000 transition-colors duration-500 hover:bg-beige-400 max-sm:min-w-[283.5px]"
+    >
+      <a
+        href={product.href}
+        className="relative flex h-full flex-col rounded-[inherit] p-8 focus:outline-none"
+      >
+        <p className="font-medium">{product.name}</p>
+        <p className="mt-2 text-sm text-green-800">{product.title}</p>
+        <div className="h-8 grow" />
+        <div
+          role="presentation"
+          className="flex size-8 items-center justify-center rounded bg-green-1000 text-sm font-medium leading-5 text-white"
+        >
+          <Logo />
+        </div>
+        <ArrowIcon className="absolute bottom-8 right-8" />
+      </a>
+    </Root>
   );
 }
 

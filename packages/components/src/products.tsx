@@ -48,16 +48,15 @@ export type ProductType =
   | 'HELTIN'
   | 'NEXTRA';
 
-export const PRODUCTS: Record<
-  ProductType,
-  {
-    name: string;
-    title: string;
-    href: `https://${string}`;
-    logo: FC<SVGProps<SVGElement>> | FC<HTMLProps<HTMLElement>>;
-    primaryColor: `#${string}`;
-  }
-> = {
+export interface ProductInfo {
+  name: string;
+  title: string;
+  href: `https://${string}`;
+  logo: FC<SVGProps<SVGElement>> | FC<HTMLProps<HTMLElement>>;
+  primaryColor: `#${string}`;
+}
+
+export const PRODUCTS: Record<ProductType, ProductInfo> = {
   HIVE: {
     name: 'Hive',
     title: 'Schema registry for your GraphQL workflows',
