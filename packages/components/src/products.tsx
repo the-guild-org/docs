@@ -246,9 +246,9 @@ export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
             <>
               {/* This is a one-off class, because I want to style the parent. */}
               {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-              <style className="label-separator">
+              <style className="hive-label-separator">
                 {
-                  'li:has(.label-separator) { margin: 0.75rem 0 0.25rem 0 !important; padding: 0 !important; }'
+                  'li:has(>.hive-label-separator) { margin: 0.75rem 0 0.25rem 0 !important; padding: 0 !important; }'
                 }
               </style>
               <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
