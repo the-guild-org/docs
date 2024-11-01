@@ -39,7 +39,7 @@
     "@types/webpack": "5.28.5",
     "css-loader": "7.1.2",
     "eslint": "9.13.0",
-    "eslint-plugin-storybook": "0.10.1",
+    "eslint-plugin-storybook": "0.10.2",
     "eslint-plugin-tailwindcss": "3.17.5",
     "husky": "9.1.6",
     "jest-image-snapshot": "6.4.0",
