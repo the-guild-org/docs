@@ -9,16 +9,12 @@ export {
   Steps,
   Tabs,
   Table,
-  Td,
-  Th,
-  Tr,
   Bleed,
   Collapse,
   Search,
 } from 'nextra/components';
 export { useMounted } from 'nextra/hooks';
 export * from './components';
-export { fetchPackageInfo } from './npm';
 export { PRODUCTS } from './products';
 export * from './types/components';
 export * from './logos';

@@ -1,12 +1,14 @@
+import { createRequire } from 'node:module';
 import path from 'node:path';
 import { NextConfig } from 'next';
-import withVideos from 'next-videos';
 import nextra, { NextraConfig } from 'nextra';
 import { Plugin } from 'unified';
 import nextBundleAnalyzer from '@next/bundle-analyzer';
 import { applyUnderscoreRedirects } from './underscore-redirects.js';
 
 const warnings = new Set<string>();
+
+const require = createRequire(import.meta.url);
 
 const rehypeCheckFrontMatter: Plugin<[]> = () => (_ast, file) => {
   const { description } = file.data.frontMatter as Record<string, string>;
@@ -44,10 +46,8 @@ export const defaultNextraOptions: NextraConfig = {
     codeblocks: true,
   },
   mdxOptions: {
-    // remarkPlugins: defaultRemarkPlugins,
-    // Should be rehype since frontMatter is attached in remark plugins
-
     // Check front matter only in production (when Webpack is used)
+    // Should be rehype since frontMatter is attached in remark plugins
     rehypePlugins: process.env.NODE_ENV === 'production' ? [rehypeCheckFrontMatter] : [],
   },
 };
@@ -69,31 +69,50 @@ export function withGuildDocs({ nextraConfig, ...nextConfig }: WithGuildDocsOpti
   });
   const withNextra = nextra({ ...defaultNextraOptions, ...nextraConfig });
 
+  const nextraClientPath = path.relative(
+    process.cwd(),
+    path.join(require.resolve('nextra/package.json'), '..', 'dist', 'client'),
+  );
+
   return withBundleAnalyzer(
-    withVideos(
-      withNextra({
-        reactStrictMode: true,
-        poweredByHeader: false,
-        basePath: process.env.NEXT_BASE_PATH,
-        ...nextConfig,
-        env: {
-          SITE_URL: process.env.SITE_URL || '',
-          ...nextConfig.env,
+    withNextra({
+      reactStrictMode: true,
+      poweredByHeader: false,
+      basePath: process.env.NEXT_BASE_PATH,
+      ...nextConfig,
+      env: {
+        SITE_URL: process.env.SITE_URL || '',
+        ...nextConfig.env,
+      },
+      webpack(config, meta) {
+        applyUnderscoreRedirects(config, meta);
+        return nextConfig.webpack?.(config, meta) || config;
+      },
+      experimental: {
+        // TODO: Provoke white flash ⚪️💥 on initial loading with dark theme
+        // optimizeCss: true,
+        ...nextConfig.experimental,
+        turbo: {
+          resolveAlias: {
+            // Fixes when Turbopack is enabled: Module not found: Can't resolve '@theguild/remark-mermaid/mermaid'
+            '@theguild/remark-mermaid/mermaid': path.relative(
+              process.cwd(),
+              path.join(
+                require.resolve('@theguild/remark-mermaid/package.json'),
+                '..',
+                'dist',
+                'mermaid.js',
+              ),
+            ),
+            'nextra/components': path.join(nextraClientPath, 'components', 'index.js'),
+            'nextra/setup-page': path.join(nextraClientPath, 'setup-page.js'),
+          },
         },
-        webpack(config, meta) {
-          applyUnderscoreRedirects(config, meta);
-          return nextConfig.webpack?.(config, meta) || config;
-        },
-        experimental: {
-          // TODO: Provoke white flash ⚪️💥 on initial loading with dark theme
-          // optimizeCss: true,
-          ...nextConfig.experimental,
-        },
-        images: {
-          unoptimized: true, // doesn't work with `next export`,
-          ...nextConfig.images,
-        },
-      }),
-    ),
+      },
+      images: {
+        unoptimized: true, // doesn't work with `next export`,
+        ...nextConfig.images,
+      },
+    }),
   );
 }

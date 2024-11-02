@@ -37,14 +37,6 @@ module.exports = {
       config: 'tailwind.config.ts',
       whitelist: [
         // TODO: find a way to fix it and remove these classes since they are imported somewhere and are used
-        'line',
-        'aa-ItemLink',
-        'aa-ItemContent',
-        'aa-ItemContentBody',
-        'aa-ItemContentTitle',
-        'aa-ItemContentSubtitle',
-        'aa-SourceHeader',
-        'aa-SourceHeaderTitle',
         'hive-focus',
         'hive-focus-within',
       ],

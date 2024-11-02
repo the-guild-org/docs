@@ -26,4 +26,4 @@ export * from './cookies-consent';
 export * from './heading';
 export * from './info-card';
 export * from './stud';
-export { Giscus } from './giscus'
+export { Giscus } from './giscus';
