@@ -16,15 +16,21 @@ const warnings = new Set<string>();
 
 const require = createRequire(import.meta.url);
 
-const rehypeCheckFrontMatter: Plugin<[]> = () => (_ast, file) => {
+const rehypeCheckFrontMatter: Plugin = () => (_ast, file) => {
+  const [filePath] = file.history;
+  // Skip if no file path (e.g. dynamic mdx without filePath provided)
+  if (!filePath) return;
   const { description } = file.data.frontMatter as Record<string, string>;
-  const filePath = path.relative(process.cwd(), file.history[0]);
+  const relativePath = path.relative(process.cwd(), filePath);
+  const fileName = path.parse(relativePath).name;
 
-  // Ignore warning for partial mdx files
-  if (!filePath.includes('/pages/')) return;
+  const isPage =
+    (relativePath.startsWith('app/') && fileName === 'page') ||
+    relativePath.startsWith('/content/');
+  if (!isPage) return;
 
   function warnOnce(message: string) {
-    const msg = `[@theguild/components] SEO issue in "${filePath}": ${message}`;
+    const msg = `[@theguild/components] SEO issue in "${relativePath}": ${message}`;
     if (!warnings.has(msg)) {
       warnings.add(msg);
       // eslint-disable-next-line no-console
