@@ -12,10 +12,7 @@ A
       result.slice(result.indexOf('function _createMdxContent'), result.indexOf('return {') - 1),
     ).toMatchInlineSnapshot(`
       "function _createMdxContent(props) {
-        const {Mermaid} = {
-          ..._provideComponents(),
-          ...props.components
-        };
+        const {Mermaid} = props.components || ({});
         if (!Mermaid) _missingMdxReference("Mermaid", true);
         return _jsx(Mermaid, {
           chart: "graph TD\\\\nA"
@@ -36,10 +33,7 @@ Z["API"]
       result.slice(result.indexOf('function _createMdxContent'), result.indexOf('return {') - 1),
     ).toMatchInlineSnapshot(`
       "function _createMdxContent(props) {
-        const {Mermaid} = {
-          ..._provideComponents(),
-          ...props.components
-        };
+        const {Mermaid} = props.components || ({});
         if (!Mermaid) _missingMdxReference("Mermaid", true);
         return _jsx(Mermaid, {
           chart: "graph TD\\\\nZ[\\"API\\"]\\\\n\\\\\\\\n\`"
