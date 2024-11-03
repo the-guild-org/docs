@@ -64,9 +64,17 @@ import { default } from '@theguild/tailwind-config/postcss.config'
 export { useMDXComponents } from '@theguild/components'
 ```
 
+> [!WARNING]
+>
+> Use `mdx-components.{ts,jsx,js}` if you encounter the following error:
+>
+> ```
+> Module not found: Can't resolve 'next-mdx-import-source-file'
+> ```
+
 ## Use `withGuildDocs` in your Next.js config
 
-```js filename="next.config.mjs" /withGuildDocs/
+```js filename="next.config.ts" /withGuildDocs/
 import { withGuildDocs } from '@theguild/components/next.config'
 
 export default withGuildDocs({
@@ -81,6 +89,17 @@ export default withGuildDocs({
 
 ```tsx filename="src/pages/_app.tsx" {3}
 import '@theguild/components/style.css'
+```
+
+## Update `tsconfig.json`
+
+```diff filename="tsconfig.json"
+{
+  "compilerOptions": {
+-   "moduleResolution": "node"
++   "moduleResolution": "bundler"
+  }
+}
 ```
 
 </Steps>
