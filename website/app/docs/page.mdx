@@ -1,5 +1,5 @@
 import { RemoteContent, Steps } from '@theguild/components'
-import { compileMdx } from '@theguild/components/nextra'
+import { compileMdx } from '@theguild/components/server'
 import componentsPkgJson from '@theguild/components/package.json'
 import pkgJson from '../../package.json'
 
@@ -60,7 +60,7 @@ module.exports = require('@theguild/tailwind-config/postcss.config')
 ## Add `mdx-components.tsx` in root directory
 
 ```ts filename="mdx-components.tsx"
-export { useMDXComponents } from '@theguild/components';
+export { useMDXComponents } from '@theguild/components'
 ```
 
 ## Use `withGuildDocs` in your Next.js config

@@ -1,4 +1,3 @@
-export { withGuildDocs } from './next.config.js';
 export { fetchFilePathsFromGitHub } from 'nextra/fetch-filepaths-from-github';
 export { compileMdx } from 'nextra/compile';
 // export { generateStaticParamsFor, importPage } from 'nextra/pages';

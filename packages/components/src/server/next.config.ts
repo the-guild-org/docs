@@ -1,3 +1,9 @@
+/**
+ * https://github.com/shuding/nextra/issues/3583#issuecomment-2442923480
+ * This file can't be exported from `server/index.js` because `next.config.ts` requires `"require"`
+ * be defined in `package.json`. I added it for this file to work. But since `server/index.js`
+ * contains a lot of packages we need to be sure each of them has `"require"` defined in `package.json`.
+ **/
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import { NextConfig } from 'next';

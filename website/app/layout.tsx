@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { getDefaultMetadata, GuildLayout } from '@theguild/components';
-import { getPageMap } from '@theguild/components/nextra';
+import { getPageMap } from '@theguild/components/server';
 import '@theguild/components/style.css';
 
 const description = 'Documentation for The Guild';
