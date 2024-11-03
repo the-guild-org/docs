@@ -5,7 +5,6 @@ export {
   Code,
   FileTree,
   Mermaid,
-  RemoteContent,
   Steps,
   Tabs,
   Table,

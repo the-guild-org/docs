@@ -2,9 +2,9 @@
 sidebarTitle: Remote MDX
 ---
 
-import { RemoteContent, Tabs } from '@theguild/components'
+import { Tabs } from '@theguild/components'
 import { defaultNextraOptions } from '@theguild/components/next.config'
-import { compileMdx, fetchPackageInfo } from '@theguild/components/server'
+import { compileMdx, fetchPackageInfo, MDXRemote } from '@theguild/components/server'
 
 export async function PackageApiDocs() {
   const PACKAGE_NAME = '@envelop/core'
@@ -17,7 +17,7 @@ npm i ${PACKAGE_NAME}
 ${readme}`,
     defaultNextraOptions
   )
-  return <RemoteContent compiledSource={result} components={{ $Tabs: Tabs }} />
+  return <MDXRemote compiledSource={result} components={{ $Tabs: Tabs }} />
 }
 
 # Remote MDX Support
