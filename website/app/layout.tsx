@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { getDefaultMetadata, GuildLayout } from '@theguild/components';
+import { getDefaultMetadata, GuildLayout } from '@theguild/components/server';
 import '@theguild/components/style.css';
 
 const description = 'Documentation for The Guild';

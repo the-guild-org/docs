@@ -1,1 +1,1 @@
-export { useMDXComponents } from '@theguild/components';
+export { useMDXComponents } from '@theguild/components/server';
