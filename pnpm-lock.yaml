@@ -5,8 +5,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  nextra: file:/Users/dmytro/Desktop/nextra/packages/nextra
-  nextra-theme-docs: file:/Users/dmytro/Desktop/nextra/packages/nextra-theme-docs
+  '@theguild/remark-npm2yarn': workspace:*
+  '@theguild/remark-mermaid': workspace:*
   esbuild: 0.24.0
 
 patchedDependencies:
@@ -49,14 +49,14 @@ importers:
         specifier: 8.1.0
         version: 8.1.0(typescript@5.6.3)
       '@theguild/eslint-config':
-        specifier: 0.13.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce
-        version: 0.13.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
+        specifier: 0.13.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2
+        version: 0.13.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
       '@theguild/prettier-config':
         specifier: 2.0.7
         version: 2.0.7(prettier@3.3.3)
       '@theguild/tailwind-config':
-        specifier: 0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce
-        version: 0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce(postcss-import@16.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
+        specifier: 0.6.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2
+        version: 0.6.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2(postcss-import@15.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
       '@types/jest-image-snapshot':
         specifier: 6.4.0
         version: 6.4.0
@@ -166,11 +166,11 @@ importers:
         specifier: 0.1.3
         version: 0.1.3
       nextra:
-        specifier: file:/Users/dmytro/Desktop/nextra/packages/nextra
-        version: file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+        specifier: 4.0.0-app-router.20
+        version: 4.0.0-app-router.20(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
       nextra-theme-docs:
-        specifier: file:/Users/dmytro/Desktop/nextra/packages/nextra-theme-docs
-        version: file:../../nextra/packages/nextra-theme-docs(@types/react@18.3.12)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.0.0-app-router.20
+        version: 4.0.0-app-router.20(@types/react@18.3.12)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@4.0.0-app-router.20(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-paginate:
         specifier: 8.2.0
         version: 8.2.0(react@18.3.1)
@@ -192,7 +192,7 @@ importers:
         version: link:../editor
       '@theguild/tailwind-config':
         specifier: 0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce
-        version: 0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce(postcss-import@16.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
+        version: 0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce(postcss-import@15.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
       '@types/dedent':
         specifier: 0.7.2
         version: 0.7.2
@@ -293,8 +293,8 @@ importers:
         specifier: 4.0.4
         version: 4.0.4
       nextra:
-        specifier: file:/Users/dmytro/Desktop/nextra/packages/nextra
-        version: file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+        specifier: 4.0.0-app-router.20
+        version: 4.0.0-app-router.20(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -315,8 +315,8 @@ importers:
         specifier: 4.0.4
         version: 4.0.4
       nextra:
-        specifier: file:/Users/dmytro/Desktop/nextra/packages/nextra
-        version: file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+        specifier: 4.0.0-app-router.20
+        version: 4.0.0-app-router.20(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
       unified:
         specifier: 11.0.5
         version: 11.0.5
@@ -337,23 +337,11 @@ importers:
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@theguild/tailwind-config':
-        specifier: 0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce
-        version: 0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce(postcss-import@16.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
+        specifier: 0.6.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2
+        version: 0.6.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2(postcss-import@15.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
       '@types/react':
         specifier: 18.3.12
         version: 18.3.12
-      postcss:
-        specifier: ^8.4.47
-        version: 8.4.47
-      postcss-import:
-        specifier: 16.1.0
-        version: 16.1.0(postcss@8.4.47)
-      postcss-lightningcss:
-        specifier: 1.0.1
-        version: 1.0.1(postcss@8.4.47)
-      tailwindcss:
-        specifier: 3.4.14
-        version: 3.4.14
       typescript:
         specifier: 5.6.3
         version: 5.6.3
@@ -1528,6 +1516,13 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
+  '@headlessui/react@1.7.19':
+    resolution: {integrity: sha512-Ll+8q3OlMJfJbAKM/+/Y2q6PPYbryqNTXDbryx7SXLIDamkF6iQFbriYHga0dY44PvDhvvBWCx1Xj4U5+G4hOw==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+
   '@headlessui/react@2.2.0':
     resolution: {integrity: sha512-RzCEg+LXsuI7mHiSomsu/gBJSjpupm6A1qIZ5sWjd7JhARNlMiSA4kKfJpCKwU9tE+zMRterhhrP74PvfJrpXQ==}
     engines: {node: '>=10'}
@@ -2033,6 +2028,9 @@ packages:
 
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
+
+  '@popperjs/core@2.11.8':
+    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
   '@radix-ui/primitive@1.1.0':
     resolution: {integrity: sha512-4Z8dn6Upk0qk4P74xBhZ6Hd/w0mPEzOOLxy4xiPXOXqjF7jZS0VAKk7/x/H6FyY2zCkYJqePf1G5KmkmNJ4RBA==}
@@ -2723,8 +2721,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@theguild/eslint-config@0.13.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce':
-    resolution: {integrity: sha512-t1xa/h17Upixe9dJpvsKV35MS6FbWQ0ut/zgv7mT0dp06J78iKh+qXgMjU3Y+nkPAt64xZ845dJiJkPEmsnNLQ==}
+  '@theguild/eslint-config@0.13.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2':
+    resolution: {integrity: sha512-j0zkwvyXaLHwLQlwpvln8BN3uPP1uhvlx41QiU2oGDGRrzO4tGy49q5zpBMAZvBv311MTF52tcqOwmjdjOAs2Q==}
     peerDependencies:
       eslint: ^8 || ^9
       typescript: ^5
@@ -2734,16 +2732,15 @@ packages:
     peerDependencies:
       prettier: ^3
 
-  '@theguild/remark-mermaid@0.1.3':
-    resolution: {integrity: sha512-2FjVlaaKXK7Zj7UJAgOVTyaahn/3/EAfqYhyXg0BfDBVUl+lXcoIWRaxzqfnDr2rv8ax6GsC5mNh6hAaT86PDw==}
-    peerDependencies:
-      react: ^18.2.0
-
-  '@theguild/remark-npm2yarn@0.3.3':
-    resolution: {integrity: sha512-ma6DvR03gdbvwqfKx1omqhg9May/VYGdMHvTzB4VuxkyS7KzfZ/lzrj43hmcsggpMje0x7SADA/pcMph0ejRnA==}
-
   '@theguild/tailwind-config@0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce':
     resolution: {integrity: sha512-5rV4G/vEYuf+zr30/KRgkLa2v5XgQLXls6dS7TM2gvoOtrjUMVxv90YrTwmd1/hrtS7CkMVPvvAnoFoiPYowLQ==}
+    peerDependencies:
+      postcss-import: ^16.1.0
+      postcss-lightningcss: ^1.0.1
+      tailwindcss: ^3.4.14
+
+  '@theguild/tailwind-config@0.6.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2':
+    resolution: {integrity: sha512-TMNUby40bSNzeoPJd54sESzC9Co0Dzbb8dKJjZ8Dy3aiKgMcALkREuQHmK0rcfUPoM0kCbwAvI76W9ryaetUXQ==}
     peerDependencies:
       postcss-import: ^16.1.0
       postcss-lightningcss: ^1.0.1
@@ -4864,6 +4861,10 @@ packages:
     resolution: {integrity: sha512-YSFlK1Ee0/GC8QaO91tHcDxJiE/X4FbpAyQWkxAvG6AXCuR65YzK8ua6D9hvi/TzUfZMpc+BwuM1IPw8fmQBiQ==}
     engines: {node: '>= 0.10.0'}
 
+  extend-shallow@2.0.1:
+    resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
+    engines: {node: '>=0.10.0'}
+
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
 
@@ -4987,9 +4988,15 @@ packages:
   flatted@3.3.1:
     resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==}
 
+  flexsearch@0.7.43:
+    resolution: {integrity: sha512-c5o/+Um8aqCSOXGcZoqZOm+NqtVwNsvVpWv6lfmSclU954O3wvQKxxK8zj74fPaSJbXpSLTs4PRhh+wnoCXnKg==}
+
   flow-parser@0.250.0:
     resolution: {integrity: sha512-8mkLh/CotlvqA9vCyQMbhJoPx2upEg9oKxARAayz8zQ58wCdABnTZy6U4xhMHvHvbTUFgZQk4uH2cglOCOel5A==}
     engines: {node: '>=0.4.0'}
+
+  focus-visible@5.2.1:
+    resolution: {integrity: sha512-8Bx950VD1bWTQJEH/AM6SpEk+SU55aVnp4Ujhuuxy3eMEBCRwBnTBnVXr9YAPvZL3/CNjCa8u4IWfNmEO53whA==}
 
   for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
@@ -5220,6 +5227,10 @@ packages:
   graphql@16.9.0:
     resolution: {integrity: sha512-GGTKBX4SD7Wdb8mqeDLni2oaRGYQWjWHGKPQ24ZMnUtKfcsVoiv4uX8+LJr1K6U5VW2Lu1BwJnj7uiori0YtRw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
+
+  gray-matter@4.0.3:
+    resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==}
+    engines: {node: '>=6.0'}
 
   gzip-size@6.0.0:
     resolution: {integrity: sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==}
@@ -5460,6 +5471,9 @@ packages:
     resolution: {integrity: sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==}
     engines: {node: '>=12'}
 
+  intersection-observer@0.12.2:
+    resolution: {integrity: sha512-7m1vEcPCxXYI8HqnL8CKI6siDyD+eIWSwgB3DZA+ZTogxk9I4CDnj4wilt9x/+/QbHI4YG5YZNmC6458/e9Ktg==}
+
   ipaddr.js@1.9.1:
     resolution: {integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==}
     engines: {node: '>= 0.10'}
@@ -5544,6 +5558,10 @@ packages:
 
   is-empty@1.2.0:
     resolution: {integrity: sha512-F2FnH/otLNJv0J6wc73A5Xo7oHLNnqplYqZhUu01tD54DIPvxIRSTSLkrUB/M0nHO4vo1O9PDfN4KoTxCzLh/w==}
+
+  is-extendable@0.1.1:
+    resolution: {integrity: sha512-5BMULNob1vgFX6EjQw5izWDxrecWK9AM72rugNr0TFldMOi0fj6Jk+zeKIt0xGj4cEfQIJth4w3OKWOJ4f+AFw==}
+    engines: {node: '>=0.10.0'}
 
   is-extglob@2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
@@ -6536,16 +6554,32 @@ packages:
       sass:
         optional: true
 
-  nextra-theme-docs@file:../../nextra/packages/nextra-theme-docs:
-    resolution: {directory: ../../nextra/packages/nextra-theme-docs, type: directory}
+  nextra-theme-docs@3.0.0-alpha.32:
+    resolution: {integrity: sha512-VENmsX/ZtL3hn++k1PsNa26Aw+9LiRFYUPZ6XXkPQW5N8Nl6RG6avp8+wpCBURLV3qBWc6Ot7aRSyN7SUgDBWw==}
+    peerDependencies:
+      next: '>=13'
+      nextra: 3.0.0-alpha.32
+      react: '>=16.13.1'
+      react-dom: '>=16.13.1'
+
+  nextra-theme-docs@4.0.0-app-router.20:
+    resolution: {integrity: sha512-dFGnKNQ7ShQ7EeXe0AyYzMHNdFReyqfNunhndxW4TbUlVGbDuhuzSdCfTQrwITDpi8j42gx5qrrqYazrvFrIJQ==}
     peerDependencies:
       next: '>=14'
-      nextra: file:/Users/dmytro/Desktop/nextra/packages/nextra
+      nextra: 4.0.0-app-router.20
       react: '>=18'
       react-dom: '>=18'
 
-  nextra@file:../../nextra/packages/nextra:
-    resolution: {directory: ../../nextra/packages/nextra, type: directory}
+  nextra@3.0.0-alpha.32:
+    resolution: {integrity: sha512-Kk7hpi1aLUMYBtRjB9o1uRKQNVOJBJJwSzMnNfWugS0MiTm0F3cn/xXIpbdpzPkAUdT1MZupfDEJxeUhyPn0CA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      next: '>=13'
+      react: '>=16.13.1'
+      react-dom: '>=16.13.1'
+
+  nextra@4.0.0-app-router.20:
+    resolution: {integrity: sha512-v0ZDKsfjcFDjDC5HAO+8c7/3Nl/5D9NLeZ1NdNIHcYHBLX+Its4/nAPzvoeNKcaA/lHyUVjlsWfi7sAzcJZX6w==}
     engines: {node: '>=18'}
     peerDependencies:
       next: '>=14'
@@ -6762,6 +6796,10 @@ packages:
   p-limit@4.0.0:
     resolution: {integrity: sha512-5b0R4txpzjPWVw/cXXUResoD4hb6U/x9BH08L7nw+GN1sezDzPdxeRvpc9c433fZhBan/wusjbCsqwqm4EIBIQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+
+  p-limit@6.1.0:
+    resolution: {integrity: sha512-H0jc0q1vOzlEk0TqAKXKZxdl7kX3OFUzCnNVUnq5Pc3DGo0kpeaMuPqxQn235HibwBEb0/pm9dgKTjXy66fBkg==}
+    engines: {node: '>=18'}
 
   p-locate@3.0.0:
     resolution: {integrity: sha512-x+12w/To+4GFfgJhBEpiDcLozRJGegY+Ei7/z0tSLkMmxGZNybVMSfWj9aJn8Z5Fc7dBUNJOOVgPv2H7IwulSQ==}
@@ -6996,12 +7034,6 @@ packages:
   postcss-import@15.1.0:
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
     engines: {node: '>=14.0.0'}
-    peerDependencies:
-      postcss: ^8.0.0
-
-  postcss-import@16.1.0:
-    resolution: {integrity: sha512-7hsAZ4xGXl4MW+OKEWCnF6T5jqBw80/EE9aXg1r2yyn1RsVEU8EtKXbijEODa+rg7iih4bKf7vlvTGYR4CnPNg==}
-    engines: {node: '>=18.0.0'}
     peerDependencies:
       postcss: ^8.0.0
 
@@ -7475,6 +7507,12 @@ packages:
   rehype-parse@9.0.1:
     resolution: {integrity: sha512-ksCzCD0Fgfh7trPDxr2rSylbwq9iYDkSn8TCDmEJ49ljEUBxDVCzCHv7QNzZOfODanX4+bWQ4WZqLCRWYLfhag==}
 
+  rehype-pretty-code@0.13.2:
+    resolution: {integrity: sha512-F+PaFMscfJOcSHcR2b//+hk/0jT56hmGDqXcVD6VC9j0CUSGiqv8YxaWUyhR7qEIRRSbzAVxx+0uxzk+akXs+w==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      shiki: ^1.3.0
+
   rehype-pretty-code@0.14.0:
     resolution: {integrity: sha512-hBeKF/Wkkf3zyUS8lal9RCUuhypDWLQc+h9UrP9Pav25FUm/AQAVh4m5gdvJxh4Oz+U+xKvdsV01p1LdvsZTiQ==}
     engines: {node: '>=18'}
@@ -7703,6 +7741,10 @@ packages:
   scslre@0.3.0:
     resolution: {integrity: sha512-3A6sD0WYP7+QrjbfNA2FN3FsOaGGFoekCVgTyypy53gPxhbkCIjtO6YWgdrfM+n/8sI8JeXZOIxsHjMTNxQ4nQ==}
     engines: {node: ^14.0.0 || >=16.0.0}
+
+  section-matter@1.0.0:
+    resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
+    engines: {node: '>=4'}
 
   selfsigned@2.4.1:
     resolution: {integrity: sha512-th5B4L2U+eGLq1TVh7zNRGBapioSORUeymIydxgFpwww9d2qyKvtuPU2jJuHvYAwwqi2Y596QBL3eEqcPEYL8Q==}
@@ -7987,6 +8029,10 @@ packages:
   strip-ansi@7.1.0:
     resolution: {integrity: sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ==}
     engines: {node: '>=12'}
+
+  strip-bom-string@1.0.0:
+    resolution: {integrity: sha512-uCC2VHvQRYu+lMh4My/sFNmF2klFymLX1wHJeXnbEJERpV/ZsVuonzerjfrGpIGF7LBVa1O7i9kjiWvJiFck8g==}
+    engines: {node: '>=0.10.0'}
 
   strip-bom@3.0.0:
     resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==}
@@ -11032,6 +11078,13 @@ snapshots:
     dependencies:
       graphql: 16.9.0
 
+  '@headlessui/react@1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/react-virtual': 3.10.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      client-only: 0.0.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   '@headlessui/react@2.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/react': 0.26.27(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -11515,6 +11568,8 @@ snapshots:
       webpack-hot-middleware: 2.26.1
 
   '@polka/url@1.0.0-next.28': {}
+
+  '@popperjs/core@2.11.8': {}
 
   '@radix-ui/primitive@1.1.0': {}
 
@@ -12376,8 +12431,8 @@ snapshots:
       fuzzy: 0.1.3
       next: 15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-videos: 1.5.0(webpack@5.95.0(esbuild@0.24.0))
-      nextra: file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
-      nextra-theme-docs: file:../../nextra/packages/nextra-theme-docs(@types/react@18.3.12)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      nextra: 3.0.0-alpha.32(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+      nextra-theme-docs: 3.0.0-alpha.32(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@3.0.0-alpha.32(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-paginate: 8.2.0(react@18.3.1)
@@ -12388,13 +12443,12 @@ snapshots:
       - '@types/react'
       - acorn
       - bufferutil
-      - immer
       - supports-color
       - typescript
       - utf-8-validate
       - webpack
 
-  '@theguild/eslint-config@0.13.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)':
+  '@theguild/eslint-config@0.13.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)':
     dependencies:
       '@rushstack/eslint-patch': 1.10.4
       '@typescript-eslint/eslint-plugin': 7.18.0(@typescript-eslint/parser@7.18.0(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
@@ -12431,22 +12485,15 @@ snapshots:
       - '@vue/compiler-sfc'
       - supports-color
 
-  '@theguild/remark-mermaid@0.1.3(react@18.3.1)':
+  '@theguild/tailwind-config@0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce(postcss-import@15.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)':
     dependencies:
-      mermaid: 11.3.0
-      react: 18.3.1
-      unist-util-visit: 5.0.0
-    transitivePeerDependencies:
-      - supports-color
+      postcss-import: 15.1.0(postcss@8.4.47)
+      postcss-lightningcss: 1.0.1(postcss@8.4.47)
+      tailwindcss: 3.4.14
 
-  '@theguild/remark-npm2yarn@0.3.3':
+  '@theguild/tailwind-config@0.6.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2(postcss-import@15.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)':
     dependencies:
-      npm-to-yarn: 3.0.0
-      unist-util-visit: 5.0.0
-
-  '@theguild/tailwind-config@0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce(postcss-import@16.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)':
-    dependencies:
-      postcss-import: 16.1.0(postcss@8.4.47)
+      postcss-import: 15.1.0(postcss@8.4.47)
       postcss-lightningcss: 1.0.1(postcss@8.4.47)
       tailwindcss: 3.4.14
 
@@ -15154,6 +15201,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  extend-shallow@2.0.1:
+    dependencies:
+      is-extendable: 0.1.1
+
   extend@3.0.2: {}
 
   extendable-error@0.1.7: {}
@@ -15289,7 +15340,11 @@ snapshots:
 
   flatted@3.3.1: {}
 
+  flexsearch@0.7.43: {}
+
   flow-parser@0.250.0: {}
+
+  focus-visible@5.2.1: {}
 
   for-each@0.3.3:
     dependencies:
@@ -15584,6 +15639,13 @@ snapshots:
       graphql: 16.9.0
 
   graphql@16.9.0: {}
+
+  gray-matter@4.0.3:
+    dependencies:
+      js-yaml: 3.14.1
+      kind-of: 6.0.3
+      section-matter: 1.0.0
+      strip-bom-string: 1.0.0
 
   gzip-size@6.0.0:
     dependencies:
@@ -15897,6 +15959,8 @@ snapshots:
 
   internmap@2.0.3: {}
 
+  intersection-observer@0.12.2: {}
+
   ipaddr.js@1.9.1: {}
 
   is-absolute-url@4.0.1: {}
@@ -15976,6 +16040,8 @@ snapshots:
   is-decimal@2.0.1: {}
 
   is-empty@1.2.0: {}
+
+  is-extendable@0.1.1: {}
 
   is-extglob@2.1.1: {}
 
@@ -17268,13 +17334,30 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  nextra-theme-docs@file:../../nextra/packages/nextra-theme-docs(@types/react@18.3.12)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  nextra-theme-docs@3.0.0-alpha.32(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@3.0.0-alpha.32(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@headlessui/react': 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@popperjs/core': 2.11.8
+      clsx: 2.1.1
+      escape-string-regexp: 5.0.0
+      flexsearch: 0.7.43
+      focus-visible: 5.2.1
+      intersection-observer: 0.12.2
+      next: 15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next-themes: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      nextra: 3.0.0-alpha.32(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      scroll-into-view-if-needed: 3.1.0
+      zod: 3.23.8
+
+  nextra-theme-docs@4.0.0-app-router.20(@types/react@18.3.12)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@4.0.0-app-router.20(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@headlessui/react': 2.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       next: 15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-themes: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      nextra: file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+      nextra: 4.0.0-app-router.20(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       scroll-into-view-if-needed: 3.1.0
@@ -17285,24 +17368,51 @@ snapshots:
       - '@types/react'
       - immer
 
-  nextra-theme-docs@file:../../nextra/packages/nextra-theme-docs(@types/react@18.3.12)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  nextra@3.0.0-alpha.32(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3):
     dependencies:
-      '@headlessui/react': 2.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@headlessui/react': 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@mdx-js/mdx': 3.1.0(acorn@8.14.0)
+      '@mdx-js/react': 3.1.0(@types/react@18.3.12)(react@18.3.1)
+      '@napi-rs/simple-git': 0.1.19
+      '@shikijs/twoslash': 1.22.2(typescript@5.6.3)
+      '@theguild/remark-mermaid': link:packages/remark-mermaid
+      '@theguild/remark-npm2yarn': link:packages/remark-npm2yarn
+      better-react-mathjax: 2.0.3(react@18.3.1)
       clsx: 2.1.1
+      estree-util-to-js: 2.0.0
+      estree-util-value-to-estree: 3.1.2
+      github-slugger: 2.0.0
+      graceful-fs: 4.2.11
+      gray-matter: 4.0.3
+      hast-util-to-estree: 3.1.0
+      katex: 0.16.11
       next: 15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      next-themes: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      nextra: file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+      p-limit: 6.1.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      scroll-into-view-if-needed: 3.1.0
+      rehype-katex: 7.0.1
+      rehype-pretty-code: 0.13.2(shiki@1.22.2)
+      rehype-raw: 7.0.0
+      remark-frontmatter: 5.0.0
+      remark-gfm: 4.0.0
+      remark-math: 6.0.0
+      remark-reading-time: 2.0.1
+      remark-smartypants: 3.0.2
+      shiki: 1.22.2
+      slash: 5.1.0
+      title: 3.5.3
+      unist-util-remove: 4.0.0
+      unist-util-visit: 5.0.0
+      yaml: 2.6.0
       zod: 3.23.8
       zod-validation-error: 3.4.0(zod@3.23.8)
-      zustand: 4.5.5(@types/react@18.3.12)(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
-      - immer
+      - acorn
+      - supports-color
+      - typescript
 
-  nextra@file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3):
+  nextra@4.0.0-app-router.20(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.2(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3):
     dependencies:
       '@formatjs/intl-localematcher': 0.5.6
       '@headlessui/react': 2.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -17310,8 +17420,8 @@ snapshots:
       '@mdx-js/react': 3.1.0(@types/react@18.3.12)(react@18.3.1)
       '@napi-rs/simple-git': 0.1.19
       '@shikijs/twoslash': 1.22.2(typescript@5.6.3)
-      '@theguild/remark-mermaid': 0.1.3(react@18.3.1)
-      '@theguild/remark-npm2yarn': 0.3.3
+      '@theguild/remark-mermaid': link:packages/remark-mermaid
+      '@theguild/remark-npm2yarn': link:packages/remark-npm2yarn
       better-react-mathjax: 2.0.3(react@18.3.1)
       clsx: 2.1.1
       estree-util-to-js: 2.0.0
@@ -17349,7 +17459,7 @@ snapshots:
       - supports-color
       - typescript
 
-  nextra@file:../../nextra/packages/nextra(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3):
+  nextra@4.0.0-app-router.20(@types/react@18.3.12)(acorn@8.14.0)(next@15.0.3-canary.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3):
     dependencies:
       '@formatjs/intl-localematcher': 0.5.6
       '@headlessui/react': 2.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -17357,8 +17467,8 @@ snapshots:
       '@mdx-js/react': 3.1.0(@types/react@18.3.12)(react@18.3.1)
       '@napi-rs/simple-git': 0.1.19
       '@shikijs/twoslash': 1.22.2(typescript@5.6.3)
-      '@theguild/remark-mermaid': 0.1.3(react@18.3.1)
-      '@theguild/remark-npm2yarn': 0.3.3
+      '@theguild/remark-mermaid': link:packages/remark-mermaid
+      '@theguild/remark-npm2yarn': link:packages/remark-npm2yarn
       better-react-mathjax: 2.0.3(react@18.3.1)
       clsx: 2.1.1
       estree-util-to-js: 2.0.0
@@ -17642,6 +17752,10 @@ snapshots:
     dependencies:
       yocto-queue: 1.1.1
 
+  p-limit@6.1.0:
+    dependencies:
+      yocto-queue: 1.1.1
+
   p-locate@3.0.0:
     dependencies:
       p-limit: 2.3.0
@@ -17861,13 +17975,6 @@ snapshots:
   possible-typed-array-names@1.0.0: {}
 
   postcss-import@15.1.0(postcss@8.4.47):
-    dependencies:
-      postcss: 8.4.47
-      postcss-value-parser: 4.2.0
-      read-cache: 1.0.0
-      resolve: 1.22.8
-
-  postcss-import@16.1.0(postcss@8.4.47):
     dependencies:
       postcss: 8.4.47
       postcss-value-parser: 4.2.0
@@ -18351,6 +18458,16 @@ snapshots:
       hast-util-from-html: 2.0.3
       unified: 11.0.5
 
+  rehype-pretty-code@0.13.2(shiki@1.22.2):
+    dependencies:
+      '@types/hast': 3.0.4
+      hast-util-to-string: 3.0.1
+      parse-numeric-range: 1.3.0
+      rehype-parse: 9.0.1
+      shiki: 1.22.2
+      unified: 11.0.5
+      unist-util-visit: 5.0.0
+
   rehype-pretty-code@0.14.0(shiki@1.22.2):
     dependencies:
       '@types/hast': 3.0.4
@@ -18690,6 +18807,11 @@ snapshots:
       '@eslint-community/regexpp': 4.12.1
       refa: 0.12.1
       regexp-ast-analysis: 0.7.1
+
+  section-matter@1.0.0:
+    dependencies:
+      extend-shallow: 2.0.1
+      kind-of: 6.0.3
 
   selfsigned@2.4.1:
     dependencies:
@@ -19092,6 +19214,8 @@ snapshots:
   strip-ansi@7.1.0:
     dependencies:
       ansi-regex: 6.1.0
+
+  strip-bom-string@1.0.0: {}
 
   strip-bom@3.0.0: {}
 

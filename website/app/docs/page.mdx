@@ -1,6 +1,7 @@
 import { RemoteContent, Steps } from '@theguild/components'
-import { compileMdx } from '@theguild/components/server'
+import { defaultNextraOptions } from '@theguild/components/next.config'
 import componentsPkgJson from '@theguild/components/package.json'
+import { compileMdx } from '@theguild/components/server'
 import pkgJson from '../../package.json'
 
 # Getting Started
@@ -38,7 +39,7 @@ export async function Dependencies() {
       ),
       '```'
     ].join('\n'),
-    { defaultShowCopyCode: true }
+    defaultNextraOptions
   )
   return <RemoteContent compiledSource={result} />
 }
@@ -53,8 +54,8 @@ export { default } from '@theguild/tailwind-config'
 
 ## Add PostCSS config
 
-```js filename="postcss.config.cjs"
-module.exports = require('@theguild/tailwind-config/postcss.config')
+```js filename="postcss.config.js"
+import { default } from '@theguild/tailwind-config/postcss.config'
 ```
 
 ## Add `mdx-components.tsx` in root directory

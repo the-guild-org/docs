@@ -19,9 +19,13 @@
       "import": "./dist/server/next.config.js",
       "require": "./dist/server/next.config.js"
     },
-    "./nextra": {
-      "import": "./dist/server/nextra.js",
-      "types": "./dist/server/nextra.d.mts"
+    "./server": {
+      "types": "./dist/server/index.d.mts",
+      "import": "./dist/server/index.js"
+    },
+    "./pages": {
+      "types": "./dist/server/pages.d.mts",
+      "import": "./dist/server/pages.js"
     },
     "./*": {
       "types": "./dist/*.d.mts",

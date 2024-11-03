@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { FC, ReactElement, SVGProps } from 'react';
 import { clsx } from 'clsx';
 import { siteOrigin } from '../constants';

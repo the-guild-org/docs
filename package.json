@@ -31,9 +31,9 @@
     "@storybook/react": "8.2.9",
     "@storybook/theming": "8.2.9",
     "@svgr/webpack": "8.1.0",
-    "@theguild/eslint-config": "0.13.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce",
+    "@theguild/eslint-config": "0.13.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2",
     "@theguild/prettier-config": "2.0.7",
-    "@theguild/tailwind-config": "0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce",
+    "@theguild/tailwind-config": "0.6.0-alpha-20241103074712-8bca8e31163dcfd6b289ac56f6b2d8e57c7b61e2",
     "@types/jest-image-snapshot": "6.4.0",
     "@types/react": "18.3.12",
     "@types/react-paginate": "7.1.4",
@@ -83,8 +83,7 @@
     "overrides": {
       "@theguild/remark-npm2yarn": "workspace:*",
       "@theguild/remark-mermaid": "workspace:*",
-      "esbuild": "0.24.0",
-      "eslint-plugin-react-hooks": "5.0.0"
+      "esbuild": "0.24.0"
     },
     "patchedDependencies": {
       "tsup@8.3.5": "patches/tsup@8.2.1.patch"

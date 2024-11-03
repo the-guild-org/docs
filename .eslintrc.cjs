@@ -39,6 +39,7 @@ module.exports = {
         // TODO: find a way to fix it and remove these classes since they are imported somewhere and are used
         'hive-focus',
         'hive-focus-within',
+        'nextra-hamburger',
       ],
     },
   },

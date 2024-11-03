@@ -8,7 +8,7 @@
     "target": "es2019",
     "module": "esnext",
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
