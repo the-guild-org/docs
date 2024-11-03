@@ -18,8 +18,6 @@ export { PRODUCTS } from './products';
 export * from './types/components';
 export * from './logos';
 export { cn } from './cn';
-export { useMDXComponents } from './mdx-components';
-export { GuildLayout, getDefaultMetadata } from './theme-layout';
 
 declare module 'react' {
   interface CSSProperties {

@@ -3,12 +3,12 @@ import { Metadata } from 'next';
 import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
-import { Footer } from './components/footer';
-import { getNavbarLogo } from './components/guild-navbar-logo';
-import { MoonIcon } from './components/icons';
-import { ThemeSwitcherButton } from './components/theme-switcher';
-import { siteOrigin, siteUrl } from './constants';
-import { PRODUCTS } from './products';
+import { Footer } from '../components/footer';
+import { getNavbarLogo } from '../components/guild-navbar-logo';
+import { MoonIcon } from '../components/icons';
+import { ThemeSwitcherButton } from '../components/theme-switcher';
+import { siteOrigin, siteUrl } from '../constants';
+import { PRODUCTS } from '../products';
 
 type LP = ComponentProps<typeof Layout>;
 
