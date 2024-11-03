@@ -64,7 +64,7 @@
   "devDependencies": {
     "@svgr/babel-plugin-remove-jsx-attribute": "^8.0.0",
     "@theguild/editor": "workspace:*",
-    "@theguild/tailwind-config": "0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce",
+    "@theguild/tailwind-config": "0.6.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42",
     "@types/dedent": "0.7.2",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",

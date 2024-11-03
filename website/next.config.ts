@@ -10,7 +10,4 @@ export default withGuildDocs({
     // website:build: Error: Parsing error: Cannot read file '/users/dmytro/desktop/guild/docs/website/tsconfig.eslint.json'.
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    optimizePackageImports: [],
-  },
 });

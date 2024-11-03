@@ -2,6 +2,7 @@ import { ComponentProps, FC, ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
+import { getPageMap } from 'nextra/page-map';
 import { Footer } from './components/footer';
 import { getNavbarLogo } from './components/guild-navbar-logo';
 import { MoonIcon } from './components/icons';
@@ -11,11 +12,9 @@ import { PRODUCTS } from './products';
 
 type LP = ComponentProps<typeof Layout>;
 
-type LayoutProps =
-  //
-  Omit<LP, 'navbar' | 'footer' | 'children' | 'docsRepositoryBase'> &
-    Partial<Pick<LP, 'navbar' | 'footer'>> &
-    Required<Pick<LP, 'docsRepositoryBase'>>;
+type LayoutProps = Omit<LP, 'navbar' | 'footer' | 'children' | 'docsRepositoryBase' | 'pageMap'> &
+  Partial<Pick<LP, 'navbar' | 'footer' | 'pageMap'>> &
+  Required<Pick<LP, 'docsRepositoryBase'>>;
 
 const companyItem = {
   type: 'menu',
@@ -83,7 +82,7 @@ export const GuildLayout: FC<{
   const url = new URL(layoutProps.docsRepositoryBase);
   const [, org, repoName] = url.pathname.split('/');
 
-  const [meta, ...pageMap] = layoutProps.pageMap;
+  const [meta, ...pageMap] = await getPageMap();
 
   const pageMapWithCompanyMenu = [
     {

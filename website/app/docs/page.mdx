@@ -74,11 +74,13 @@ export { useMDXComponents } from '@theguild/components'
 
 ## Use `withGuildDocs` in your Next.js config
 
+Use `next.config.ts` starting from Next.js 15.
+
 ```js filename="next.config.ts" /withGuildDocs/
 import { withGuildDocs } from '@theguild/components/next.config'
 
 export default withGuildDocs({
-  // Your next config options, for example:
+  // ...Your next config options, for example:
   eslint: {
     ignoreDuringBuilds: true
   }
@@ -104,9 +106,20 @@ import '@theguild/components/style.css'
 
 ## Add `postbuild` script
 
+To index static `.html` files after build.
+
 ```json filename="package.json"
 "scripts": {
   "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind"
+}
+```
+
+## Update `dev` script to use Turbopack
+
+```diff filename="package.json"
+"scripts": {
+- "dev": "next"
++ "dev": "next --turbopack"
 }
 ```
 

@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { getDefaultMetadata, GuildLayout } from '@theguild/components';
-import { getPageMap } from '@theguild/components/server';
 import '@theguild/components/style.css';
 
 const description = 'Documentation for The Guild';
@@ -32,7 +31,6 @@ const RootLayout: FC<{
       websiteName={websiteName}
       description={description}
       layoutProps={{
-        pageMap: await getPageMap(),
         docsRepositoryBase:
           'https://github.com/the-guild-org/the-guild-components/tree/main/website',
       }}

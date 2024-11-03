@@ -49,14 +49,14 @@ importers:
         specifier: 8.1.0
         version: 8.1.0(typescript@5.6.3)
       '@theguild/eslint-config':
-        specifier: 0.13.0-alpha-20241103082947-926671b2eff10561c591a75488906ceb5c5d74cd
-        version: 0.13.0-alpha-20241103082947-926671b2eff10561c591a75488906ceb5c5d74cd(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
+        specifier: 0.13.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42
+        version: 0.13.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
       '@theguild/prettier-config':
-        specifier: 2.0.7
-        version: 2.0.7(prettier@3.3.3)
+        specifier: 3.0.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42
+        version: 3.0.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42(prettier@3.3.3)
       '@theguild/tailwind-config':
-        specifier: 0.6.0-alpha-20241103082947-926671b2eff10561c591a75488906ceb5c5d74cd
-        version: 0.6.0-alpha-20241103082947-926671b2eff10561c591a75488906ceb5c5d74cd(postcss-import@16.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
+        specifier: 0.6.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42
+        version: 0.6.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42(postcss-import@15.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
       '@types/jest-image-snapshot':
         specifier: 6.4.0
         version: 6.4.0
@@ -191,8 +191,8 @@ importers:
         specifier: workspace:*
         version: link:../editor
       '@theguild/tailwind-config':
-        specifier: 0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce
-        version: 0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce(postcss-import@16.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
+        specifier: 0.6.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42
+        version: 0.6.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42(postcss-import@15.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
       '@types/dedent':
         specifier: 0.7.2
         version: 0.7.2
@@ -337,8 +337,8 @@ importers:
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@theguild/tailwind-config':
-        specifier: 0.6.0-alpha-20241103082947-926671b2eff10561c591a75488906ceb5c5d74cd
-        version: 0.6.0-alpha-20241103082947-926671b2eff10561c591a75488906ceb5c5d74cd(postcss-import@16.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
+        specifier: 0.6.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42
+        version: 0.6.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42(postcss-import@15.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)
       '@types/react':
         specifier: 18.3.12
         version: 18.3.12
@@ -2698,26 +2698,19 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@theguild/eslint-config@0.13.0-alpha-20241103082947-926671b2eff10561c591a75488906ceb5c5d74cd':
-    resolution: {integrity: sha512-PGL5Cd9HiOrecXEGmtNK/gQW6h2GNk4nHjz2QxWfMDmRFCKSf6p4V5O6pTJkzcI9nBPUbeNrSSvL8PT+474gcQ==}
+  '@theguild/eslint-config@0.13.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42':
+    resolution: {integrity: sha512-t8T1qG5y5vPrXORv8496b1yq/ZqtURBkU1vizUyDnAEnVs+92MmfprBhUlVNsUO8jxAJlzwsNexD7C5cT0LG8A==}
     peerDependencies:
       eslint: ^8 || ^9
       typescript: ^5
 
-  '@theguild/prettier-config@2.0.7':
-    resolution: {integrity: sha512-FqpgGAaAFbYHFQmkWEZjIhqmk+Oow82/t+0k408qoBd9RsB4QTwSQSDDbNSgFa/K7c8Dcwau5z3XbHUR/ksKqw==}
+  '@theguild/prettier-config@3.0.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42':
+    resolution: {integrity: sha512-ASmaClMmbXrbs2XXQ1a6eakFTuxro5fASXUEo2rcXtgpgy67fOmSTbrRkZ8+duRU1pNLcZSixvqZrnsEyfCcJA==}
     peerDependencies:
       prettier: ^3
 
-  '@theguild/tailwind-config@0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce':
-    resolution: {integrity: sha512-5rV4G/vEYuf+zr30/KRgkLa2v5XgQLXls6dS7TM2gvoOtrjUMVxv90YrTwmd1/hrtS7CkMVPvvAnoFoiPYowLQ==}
-    peerDependencies:
-      postcss-import: ^16.1.0
-      postcss-lightningcss: ^1.0.1
-      tailwindcss: ^3.4.14
-
-  '@theguild/tailwind-config@0.6.0-alpha-20241103082947-926671b2eff10561c591a75488906ceb5c5d74cd':
-    resolution: {integrity: sha512-fAGaXlOEEFvPuoyMsSdS7GLZSZVTX1Q7cwmsxWLTDgDHIrHSc2+8LPWbJcFKCmTMJ2t1crxVxcAKLxZhAgOPBQ==}
+  '@theguild/tailwind-config@0.6.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42':
+    resolution: {integrity: sha512-WtcUkRW62tPTte5QtQKgXMHnY8dupoh6Oex2NHvgVxgRf2z+PoA+C31HbPvK/LhoelBRcZFxiMVHkdxoqP1Hdw==}
     peerDependencies:
       postcss-import: ^16.1.0
       postcss-lightningcss: ^1.0.1
@@ -7002,12 +6995,6 @@ packages:
   postcss-import@15.1.0:
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
     engines: {node: '>=14.0.0'}
-    peerDependencies:
-      postcss: ^8.0.0
-
-  postcss-import@16.1.0:
-    resolution: {integrity: sha512-7hsAZ4xGXl4MW+OKEWCnF6T5jqBw80/EE9aXg1r2yyn1RsVEU8EtKXbijEODa+rg7iih4bKf7vlvTGYR4CnPNg==}
-    engines: {node: '>=18.0.0'}
     peerDependencies:
       postcss: ^8.0.0
 
@@ -12411,7 +12398,7 @@ snapshots:
       - utf-8-validate
       - webpack
 
-  '@theguild/eslint-config@0.13.0-alpha-20241103082947-926671b2eff10561c591a75488906ceb5c5d74cd(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)':
+  '@theguild/eslint-config@0.13.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)':
     dependencies:
       '@rushstack/eslint-patch': 1.10.4
       '@typescript-eslint/eslint-plugin': 7.18.0(@typescript-eslint/parser@7.18.0(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
@@ -12438,7 +12425,7 @@ snapshots:
       - eslint-plugin-import-x
       - supports-color
 
-  '@theguild/prettier-config@2.0.7(prettier@3.3.3)':
+  '@theguild/prettier-config@3.0.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42(prettier@3.3.3)':
     dependencies:
       '@ianvs/prettier-plugin-sort-imports': 4.3.1(prettier@3.3.3)
       prettier: 3.3.3
@@ -12448,15 +12435,9 @@ snapshots:
       - '@vue/compiler-sfc'
       - supports-color
 
-  '@theguild/tailwind-config@0.6.0-alpha-20241102200946-31ab833bd95d2219fe5b6db5a21a2df6c60c5dce(postcss-import@16.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)':
+  '@theguild/tailwind-config@0.6.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42(postcss-import@15.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)':
     dependencies:
-      postcss-import: 16.1.0(postcss@8.4.47)
-      postcss-lightningcss: 1.0.1(postcss@8.4.47)
-      tailwindcss: 3.4.14
-
-  '@theguild/tailwind-config@0.6.0-alpha-20241103082947-926671b2eff10561c591a75488906ceb5c5d74cd(postcss-import@16.1.0(postcss@8.4.47))(postcss-lightningcss@1.0.1(postcss@8.4.47))(tailwindcss@3.4.14)':
-    dependencies:
-      postcss-import: 16.1.0(postcss@8.4.47)
+      postcss-import: 15.1.0(postcss@8.4.47)
       postcss-lightningcss: 1.0.1(postcss@8.4.47)
       tailwindcss: 3.4.14
 
@@ -17881,13 +17862,6 @@ snapshots:
   possible-typed-array-names@1.0.0: {}
 
   postcss-import@15.1.0(postcss@8.4.47):
-    dependencies:
-      postcss: 8.4.47
-      postcss-value-parser: 4.2.0
-      read-cache: 1.0.0
-      resolve: 1.22.8
-
-  postcss-import@16.1.0(postcss@8.4.47):
     dependencies:
       postcss: 8.4.47
       postcss-value-parser: 4.2.0
