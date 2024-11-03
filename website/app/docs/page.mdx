@@ -11,7 +11,7 @@ import pkgJson from '../../package.json'
 
 ```sh npm2yarn
 npm install @theguild/components
-npm install -D @theguild/tailwind-config
+npm install -D @theguild/tailwind-config pagefind
 ```
 
 ## Add dependencies
@@ -26,7 +26,7 @@ export async function Dependencies() {
   const { result } = await compileMdx(
     [
       // Render code block with current version of dependencies
-      '```json filename="package.json" {14,20}',
+      '```json filename="package.json" {15,21}',
       JSON.stringify(
         {
           ...pkgJson,
@@ -99,6 +99,14 @@ import '@theguild/components/style.css'
 -   "moduleResolution": "node"
 +   "moduleResolution": "bundler"
   }
+}
+```
+
+## Add `postbuild` script
+
+```json filename="package.json"
+"scripts": {
+  "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind"
 }
 ```
 

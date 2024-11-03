@@ -8,6 +8,7 @@
     "analyze": "ANALYZE=true next build",
     "build": "next build",
     "dev": "next --turbo",
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "start": "next start"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@theguild/tailwind-config": "0.6.0-alpha-20241103082947-926671b2eff10561c591a75488906ceb5c5d74cd",
     "@types/react": "18.3.12",
+    "pagefind": "1.1.1",
     "typescript": "5.6.3"
   },
   "nextBundleAnalysis": {
