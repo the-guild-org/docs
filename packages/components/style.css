@@ -1,6 +1,6 @@
 @layer l-base, l-nextra, l-components;
 
-@import 'tailwindcss/base' layer(l-base);
+/*@import 'tailwindcss/base' layer(l-base);*/
 @import 'nextra-theme-docs/dist/style.css' layer(l-nextra);
 @import 'tailwindcss/components' layer(l-components);
 @import 'tailwindcss/utilities';
@@ -13,12 +13,14 @@
   --nextra-navbar-height: 72px;
 }
 
-#headlessui-portal-root [role='menu']:has(a[href='https://the-guild.dev/graphql/hive'])
-{
-  @apply grid max-h-[unset] w-[470px] grid-cols-3 gap-y-2 p-2;
+@layer l-nextra {
+  #headlessui-portal-root [role='menu']:has(a[href='https://the-guild.dev/graphql/hive'])
+  {
+    @apply grid !max-h-[unset] w-[700px] grid-cols-5 gap-y-2 p-2;
 
-  a:nth-child(-n + 3) {
-    @apply rounded-b-none border-b border-black/20 pb-3 dark:border-white/20;
+    a:nth-child(-n + 5) {
+      @apply rounded-b-none border-b border-black/20 pb-3 dark:border-white/20;
+    }
   }
 }
 

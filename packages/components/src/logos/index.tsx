@@ -24,14 +24,14 @@ export { ReactComponent as GraphQLFoundationLogo } from './graphql-foundation.sv
 
 export interface LettermarkLogoProps extends HTMLAttributes<HTMLElement> {}
 
-const createLettermarkLogo = (text: string) =>
+const HOCLettermarkLogo = (text: string) =>
   function LettermarkLogo(props: LettermarkLogoProps) {
     return (
       <span
         role="img"
         {...props}
         className={cn(
-          'inline-flex items-center justify-center text-sm font-medium uppercase leading-5',
+          'inline-flex items-center justify-center text-sm font-medium leading-5',
           props.className,
         )}
       >
@@ -40,8 +40,20 @@ const createLettermarkLogo = (text: string) =>
     );
   };
 
-export const InspectorLettermark = createLettermarkLogo('I');
-export const SofaLettermark = createLettermarkLogo('So');
-export const GraphQLESlintLettermark = createLettermarkLogo('Esl');
-export const EnvelopLettermark = createLettermarkLogo('E');
-export const ScalarsLettermark = createLettermarkLogo('S');
+export const InspectorLettermark = HOCLettermarkLogo('INS');
+export const SofaLettermark = HOCLettermarkLogo('SOF');
+export const GraphQLESlintLettermark = HOCLettermarkLogo('ESL');
+export const EnvelopLettermark = HOCLettermarkLogo('ENV');
+export const ScalarsLettermark = HOCLettermarkLogo('SCL');
+export const ConductorLettermark = HOCLettermarkLogo('CON');
+export const StitchingLettermark = HOCLettermarkLogo('STI');
+export const ToolsLettermark = HOCLettermarkLogo('TLS');
+export const ModulesLettermark = HOCLettermarkLogo('MOD');
+export const ConfigLettermark = HOCLettermarkLogo('CFG');
+export const FetsLettermark = HOCLettermarkLogo('FTS');
+export const AngularLettermark = HOCLettermarkLogo('ANG');
+export const KitQLLettermark = HOCLettermarkLogo('KQL');
+export const WSLettermark = HOCLettermarkLogo('WS');
+export const SSELettermark = HOCLettermarkLogo('SSE');
+export const HeltinLettermark = HOCLettermarkLogo('HLT');
+export const WhatsAppLettermark = HOCLettermarkLogo('HLT');
