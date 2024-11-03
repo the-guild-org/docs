@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@giscus/react": "3.0.0",
-    "@next/bundle-analyzer": "15.0.1",
+    "@next/bundle-analyzer": "15.0.2",
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "clsx": "2.1.1",
     "fuzzy": "0.1.3",
