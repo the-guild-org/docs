@@ -56,4 +56,4 @@ export const KitQLLettermark = HOCLettermarkLogo('KQL');
 export const WSLettermark = HOCLettermarkLogo('WS');
 export const SSELettermark = HOCLettermarkLogo('SSE');
 export const HeltinLettermark = HOCLettermarkLogo('HLT');
-export const WhatsAppLettermark = HOCLettermarkLogo('HLT');
+export const WhatsAppLettermark = HOCLettermarkLogo('WAP');
