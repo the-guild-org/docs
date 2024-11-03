@@ -11,12 +11,11 @@
     "tailwind.config.ts",
     "setup-file.ts",
     "scripts/copy-wasm.ts",
-    "postcss.config.cjs",
+    "postcss.config.js",
     "packages/*/src/**/*.stories.tsx",
     ".storybook/preview.tsx",
-    ".storybook/next.config.cjs",
     ".storybook/main.ts",
-    ".prettierrc.cjs",
+    "prettier.config.js",
     ".eslintrc.cjs"
   ],
   "exclude": []

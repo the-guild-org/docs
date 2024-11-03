@@ -20,6 +20,13 @@
       }
     ]
   },
-  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", "postcss.config.js", ".next/types/**/*.ts"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "postcss.config.js",
+    "mdx-components.js"
+  ],
   "exclude": ["node_modules"]
 }
