@@ -116,8 +116,7 @@ export const MarketplaceSearch = ({
           />
         ) : (
           <MarketplaceSearchTabs
-            primaryList={primaryList}
-            secondaryList={secondaryList}
+            tabs={[primaryList, secondaryList]}
             colorScheme={colorScheme}
             className="mt-8"
           />
@@ -163,32 +162,31 @@ function MarketplaceSearchInput({
 }
 
 function MarketplaceSearchTabs({
-  primaryList,
-  secondaryList,
+  tabs: lists,
   colorScheme,
   className,
 }: {
-  primaryList: IMarketplaceListProps;
-  secondaryList: IMarketplaceListProps | undefined;
+  tabs: (IMarketplaceListProps | undefined)[];
   colorScheme: 'green' | 'neutral';
   className?: string;
 }) {
+  const items = lists.filter(
+    (list): list is IMarketplaceListProps & { title: string } => list?.title != null,
+  );
+
   return (
     <div className={cn(classNames.tabs, className)}>
-      <Tabs items={[primaryList.title, secondaryList?.title].filter(x => x != null)}>
-        <Tabs.Tab tabIndex={-1}>
-          <MarketplaceList
-            {...primaryList}
-            // title is part of `primaryList` and we clear it here, as it's already rendered in a tab
-            title={undefined}
-            colorScheme={colorScheme}
-          />
-        </Tabs.Tab>
-        {secondaryList && (
-          <Tabs.Tab tabIndex={-1}>
-            <MarketplaceList {...secondaryList} title={undefined} colorScheme={colorScheme} />
+      <Tabs items={items.map(list => list.title)}>
+        {items.map((list, i) => (
+          <Tabs.Tab tabIndex={-1} key={i}>
+            <MarketplaceList
+              {...list}
+              // title is part of the `list` and we clear it here, as it's already rendered in a tab
+              title={undefined}
+              colorScheme={colorScheme}
+            />
           </Tabs.Tab>
-        )}
+        ))}
       </Tabs>
     </div>
   );

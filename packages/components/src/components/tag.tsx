@@ -37,29 +37,27 @@ export const TagsContainer = ({
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       className={cn('flex flex-wrap gap-2 py-2', className)}
-      onKeyDown={
-        focusgroup
-          ? event => {
-              if (event.target instanceof HTMLElement && event.target.tagName === 'BUTTON') {
-                let next: Element | null | undefined;
-                switch (event.key) {
-                  case 'ArrowRight':
-                    next = event.target.nextElementSibling;
-                    break;
-                  case 'ArrowLeft':
-                    next = event.target.previousElementSibling;
-                    break;
-                }
-                if (next && next instanceof HTMLElement && next.tagName === 'BUTTON') {
-                  event.preventDefault();
-                  next.focus();
-                }
-              }
-            }
-          : undefined
-      }
+      onKeyDown={focusgroup ? moveFocusWithLeftAndRight : undefined}
     >
       {children}
     </div>
   );
+};
+
+const moveFocusWithLeftAndRight = (event: React.KeyboardEvent<HTMLDivElement>) => {
+  if (event.target instanceof HTMLElement && event.target.tagName === 'BUTTON') {
+    let next: Element | null | undefined;
+    switch (event.key) {
+      case 'ArrowRight':
+        next = event.target.nextElementSibling;
+        break;
+      case 'ArrowLeft':
+        next = event.target.previousElementSibling;
+        break;
+    }
+    if (next && next instanceof HTMLElement && next.tagName === 'BUTTON') {
+      event.preventDefault();
+      next.focus();
+    }
+  }
 };
