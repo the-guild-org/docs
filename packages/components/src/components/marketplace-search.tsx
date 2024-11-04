@@ -147,11 +147,13 @@ function MarketplaceSearchInput({
           type="search"
           placeholder={placeholder}
           onChange={event => onChange(event.currentTarget.value)}
-          className="ml-2 w-full border-0 bg-transparent py-2 font-medium text-[--fg] outline-none placeholder:text-[--fg-60] [&::-webkit-search-cancel-button]:[display:none]"
+          className="ml-2 w-full border-0 bg-transparent py-2 font-medium text-[--fg] outline-none placeholder:text-[--fg-60] [&::-webkit-search-cancel-button]:hidden"
         />
         <button
           onClick={() => onChange('')}
-          className="hive-focus flex size-6 items-center justify-center rounded-sm"
+          // A builtin clear-button can't be tabbed to. A keyboard user can cmd+A and delete.
+          tabIndex={-1}
+          className="flex size-6 items-center justify-center rounded-sm"
         >
           <CloseIcon className="size-5 text-[--fg-80]" />
         </button>
@@ -175,7 +177,12 @@ function MarketplaceSearchTabs({
     <div className={cn(classNames.tabs, className)}>
       <Tabs items={[primaryList.title, secondaryList?.title].filter(x => x != null)}>
         <Tabs.Tab tabIndex={-1}>
-          <MarketplaceList {...primaryList} title={undefined} colorScheme={colorScheme} />
+          <MarketplaceList
+            {...primaryList}
+            // title is part of `primaryList` and we clear it here, as it's already rendered in a tab
+            title={undefined}
+            colorScheme={colorScheme}
+          />
         </Tabs.Tab>
         {secondaryList && (
           <Tabs.Tab tabIndex={-1}>
