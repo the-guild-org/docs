@@ -119,7 +119,7 @@ export const MarketplaceList = ({
               previousClassName="hidden"
               nextClassName="hidden"
               breakLinkClassName="hive-focus rounded text-[--fg-80] [.green_&]:text-green-200"
-              pageLinkClassName="hive-focus text-sm font-medium rounded-lg [.green_&]:text-green-200 [.green_&]:border-green-700 border border-neutral-600 dark:text-neutral-200 size-[28px] flex justify-center items-center select-none"
+              pageLinkClassName="hive-focus text-sm font-medium rounded-lg [.green_&]:text-green-200 [.green_&]:border-green-700 border border-neutral-600 dark:text-neutral-200 size-7 flex justify-center items-center select-none"
               activeLinkClassName="text-[--bg] dark:!text-[--bg] bg-[--fg] [.green_&]:bg-green-300 [.green_&]:text-green-800"
             />
           )}
