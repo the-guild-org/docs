@@ -143,7 +143,7 @@ export function MarketplaceListItem({ item, ...rest }: MarketplaceListItemProps)
       {...item.link}
       {...rest}
       className={cn(
-        'hive-focus flex flex-row gap-4 rounded-2xl border border-transparent bg-neutral-50 p-6 @container hover:border-neutral-200/50 hover:bg-neutral-100 @lg:gap-6 dark:bg-neutral-800 dark:hover:border-neutral-700 dark:hover:bg-neutral-700/50 [.green_&]:bg-green-900 [.green_&]:hover:border-green-700/50 [.green_&]:hover:bg-green-800/75',
+        'hive-focus flex gap-4 rounded-2xl border border-transparent bg-neutral-50 p-6 @container hover:border-neutral-200/50 hover:bg-neutral-100 @lg:gap-6 dark:bg-neutral-800 dark:hover:border-neutral-700 dark:hover:bg-neutral-700/50 [.green_&]:bg-green-900 [.green_&]:hover:border-green-700/50 [.green_&]:hover:bg-green-800/75',
         item.link.className,
       )}
     >

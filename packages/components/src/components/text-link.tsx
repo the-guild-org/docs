@@ -15,7 +15,7 @@ export function TextLink({ className, children, ...rest }: TextLinkProps) {
   return (
     <Anchor
       className={cn(
-        'hive-focus -mx-1 -my-0.5 rounded px-1 py-0.5 hover:text-blue-700',
+        'hive-focus -mx-1 -my-0.5 rounded px-1 py-0.5 hover:text-blue-700 dark:hover:text-blue-500',
         hasArrow ? 'inline-flex items-center gap-2' : 'underline',
         className,
       )}
