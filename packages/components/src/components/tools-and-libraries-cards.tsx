@@ -44,13 +44,17 @@ export function MainProductCard({ as: Root, product }: { as: 'div' | 'li'; produ
       key={product.name}
       className="hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 first-of-type:bg-green-1000 first-of-type:text-white max-md:w-[283.5px]"
     >
-      <a className="relative z-10 block flex-1 p-8" href={product.href}>
+      <a
+        className="relative z-10 block flex-1 p-8 outline-none focus-visible:outline-none"
+        href={product.href}
+      >
         <p className="font-medium">{product.name}</p>
         <Icon className="mt-8" />
         <ArrowIcon className="absolute bottom-8 right-8" />
       </a>
       <Decoration
-        className="pointer-events-none absolute bottom-0 right-0 fill-blue-200 stroke-[0.5px] opacity-0 transition-opacity duration-500 group-first-of-type:fill-blue-700 group-focus-within:opacity-100 group-hover:opacity-100"
+        strokeWidth="0.5px"
+        className="pointer-events-none absolute bottom-0 right-0 fill-blue-200 opacity-0 transition-opacity duration-500 group-first-of-type:fill-blue-700 group-focus-within:opacity-100 group-hover:opacity-100"
         preserveAspectRatio="xMidYMid meet"
       />
       <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-focus-within:opacity-100 group-hover:opacity-100" />
@@ -73,7 +77,7 @@ export function AncillaryProductCard({
     >
       <a
         href={product.href}
-        className="relative flex h-full flex-col rounded-[inherit] p-8 focus:outline-none"
+        className="relative flex h-full flex-col rounded-[inherit] p-8 focus:outline-none focus-visible:outline-none"
       >
         <p className="font-medium">{product.name}</p>
         <p className="mt-2 text-sm text-green-800">{product.title}</p>
