@@ -30,7 +30,7 @@ const createLettermarkLogo = (text: string) => {
         role="img"
         {...props}
         className={cn(
-          'inline-flex items-center justify-center text-sm font-medium uppercase leading-5',
+          'inline-flex items-center justify-center text-xs font-medium',
           props.className,
         )}
       >
