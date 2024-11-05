@@ -14,7 +14,7 @@ import './marketplace-search.css';
  * can't be a CSS Module because of https://github.com/egoist/tsup/issues/536
  * we're using it to style nextra/components Tabs to match the designs
  */
-const classNames = {
+const classes = {
   marketplace: 'MarketplaceSearch',
   tabs: 'MarketplaceSearchTabs',
 };
@@ -80,7 +80,7 @@ export const MarketplaceSearch = ({
   }, [query, queryList]);
 
   return (
-    <section className={cn(classNames.marketplace, colorScheme, 'bg-[--bg]', className)}>
+    <section className={cn(classes.marketplace, colorScheme, 'bg-[--bg]', className)}>
       <div className="container max-w-[90rem] py-12">
         <Heading as="h1" className="mb-4 text-[32px] text-[--fg]" size="sm">
           {title}
@@ -175,7 +175,7 @@ function MarketplaceSearchTabs({
   );
 
   return (
-    <div className={cn(classNames.tabs, className)}>
+    <div className={cn(classes.tabs, className)}>
       <Tabs items={items.map(list => list.title)}>
         {items.map((list, i) => (
           <Tabs.Tab tabIndex={-1} key={i}>
