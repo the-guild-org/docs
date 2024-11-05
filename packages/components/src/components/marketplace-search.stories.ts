@@ -86,7 +86,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.380Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -106,7 +106,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-06-30T06:20:59.195Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -126,7 +126,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.240Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -146,7 +146,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-06-13T10:03:13.074Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -166,7 +166,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.901Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -185,7 +185,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.708Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/codegen.4ba51dab.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/codegen.svg',
             height: 54,
             width: 50,
             placeholder: 'empty',
@@ -205,7 +205,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-09T16:02:01.569Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/apollo.svg',
             height: 2430,
             width: 2500,
             placeholder: 'empty',
@@ -225,7 +225,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-02-20T17:55:16.397Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -245,7 +245,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.428Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -265,7 +265,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-02-06T14:57:00.701Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -285,7 +285,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:27.955Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/codegen.4ba51dab.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/codegen.svg',
             height: 54,
             width: 50,
             placeholder: 'empty',
@@ -305,7 +305,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:17.068Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -324,7 +324,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:26.972Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/codegen.4ba51dab.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/codegen.svg',
             height: 54,
             width: 50,
             placeholder: 'empty',
@@ -344,7 +344,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.961Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/react-query.274a891e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/react-query.svg',
             height: 190,
             width: 190,
             placeholder: 'empty',
@@ -364,7 +364,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:12.499Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -384,7 +384,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.199Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -404,7 +404,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:17.923Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -424,7 +424,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:15.539Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -443,7 +443,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-20T15:27:47.529Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -463,7 +463,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:16.755Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -483,7 +483,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:16.927Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/msw-logo.b1bc2b7c.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/msw-logo.svg',
             height: 256,
             width: 256,
             placeholder: 'empty',
@@ -538,7 +538,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.640Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/subheader-logo.3c27c4a5.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/subheader-logo.svg',
             height: 71,
             width: 67,
             placeholder: 'empty',
@@ -558,7 +558,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-07-13T13:53:18.286Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -578,7 +578,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:10.696Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -598,7 +598,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.878Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/vue.f7fc640e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/vue.svg',
             height: 2158,
             width: 2500,
             placeholder: 'empty',
@@ -638,7 +638,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.086Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/flow.d722e3cd.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/flow.svg',
             height: 2500,
             width: 2019,
             placeholder: 'empty',
@@ -658,7 +658,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-07-11T20:58:42.183Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/apollo.svg',
             height: 2430,
             width: 2500,
             placeholder: 'empty',
@@ -678,7 +678,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.415Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/flow.d722e3cd.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/flow.svg',
             height: 2500,
             width: 2019,
             placeholder: 'empty',
@@ -698,7 +698,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.472Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -718,7 +718,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.127Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/mongodb.7ca25edd.png',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/mongodb.svg',
             height: 2892,
             width: 1296,
             blurDataURL:
@@ -740,7 +740,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-03-27T11:16:18.633Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -760,7 +760,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.726Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -780,7 +780,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.491Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/type-graphql.ad6cfa61.png',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/type-graphql.svg',
             height: 365,
             width: 365,
             blurDataURL:
@@ -802,7 +802,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:07.875Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/hasura.6ec6c97f.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/hasura.svg',
             height: 160,
             width: 155,
             placeholder: 'empty',
@@ -821,7 +821,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-19T15:08:48.961Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -841,7 +841,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-04-05T15:48:04.705Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -860,7 +860,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-05-04T02:48:38.489Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/apollo.svg',
             height: 2430,
             width: 2500,
             placeholder: 'empty',
@@ -880,7 +880,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.452Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/vue.f7fc640e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/vue.svg',
             height: 2158,
             width: 2500,
             placeholder: 'empty',
@@ -900,7 +900,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.336Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/vue.f7fc640e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/vue.svg',
             height: 2158,
             width: 2500,
             placeholder: 'empty',
@@ -920,7 +920,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:05.074Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/csharp.a6c79320.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/csharp.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -940,7 +940,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:07.627Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -960,7 +960,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:06.777Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -980,7 +980,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:22.682Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/apollo.svg',
             height: 2430,
             width: 2500,
             placeholder: 'empty',
@@ -1000,7 +1000,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:09.783Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -1020,7 +1020,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:05.522Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/dart.d11e7f7b.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/dart.svg',
             height: 256,
             width: 256,
             placeholder: 'empty',
@@ -1039,7 +1039,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.824Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1058,7 +1058,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:17.648Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/nhost.59877a59.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/nhost.svg',
             height: 40,
             width: 40,
             placeholder: 'empty',
@@ -1077,7 +1077,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-05-04T02:48:20.194Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/ImZxrDWf_400x400.0adde43d.jpg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/reason.svg',
             height: 400,
             width: 400,
             blurDataURL:
@@ -1106,7 +1106,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.428Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1125,7 +1125,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.380Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1145,7 +1145,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.240Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1165,7 +1165,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.199Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1185,7 +1185,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.901Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1204,7 +1204,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.708Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/codegen.4ba51dab.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/codegen.svg',
             height: 54,
             width: 50,
             placeholder: 'empty',
@@ -1223,7 +1223,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.640Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/subheader-logo.3c27c4a5.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/subheader-logo.svg',
             height: 71,
             width: 67,
             placeholder: 'empty',
@@ -1242,7 +1242,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-20T15:27:47.529Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1261,7 +1261,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-19T15:08:48.961Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1281,7 +1281,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-09T16:02:01.569Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/apollo.svg',
             height: 2430,
             width: 2500,
             placeholder: 'empty',
@@ -1301,7 +1301,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:27.955Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/codegen.4ba51dab.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/codegen.svg',
             height: 54,
             width: 50,
             placeholder: 'empty',
@@ -1320,7 +1320,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:26.972Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/codegen.4ba51dab.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/codegen.svg',
             height: 54,
             width: 50,
             placeholder: 'empty',
@@ -1340,7 +1340,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:24.887Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1360,7 +1360,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.878Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/vue.f7fc640e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/vue.svg',
             height: 2158,
             width: 2500,
             placeholder: 'empty',
@@ -1380,7 +1380,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.491Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/type-graphql.ad6cfa61.png',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/type-graphql.svg',
             height: 365,
             width: 365,
             blurDataURL:
@@ -1402,7 +1402,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.452Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/vue.f7fc640e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/vue.svg',
             height: 2158,
             width: 2500,
             placeholder: 'empty',
@@ -1422,7 +1422,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.336Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/vue.f7fc640e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/vue.svg',
             height: 2158,
             width: 2500,
             placeholder: 'empty',
@@ -1442,7 +1442,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:22.682Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/apollo.svg',
             height: 2430,
             width: 2500,
             placeholder: 'empty',
@@ -1450,26 +1450,6 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
             alt: 'TypeScript Stencil Apollo',
           },
           weeklyNPMDownloads: 189,
-        },
-        {
-          title: 'TypeScript RTK-Query',
-          description:
-            'GraphQL Code Generator plugin for injecting graphql endpoints into a preconfigured RTK Query api',
-          tags: ['plugin', 'typescript', 'react'],
-          link: {
-            href: '/plugins/typescript/typescript-rtk-query',
-            title: 'TypeScript RTK-Query plugin details',
-          },
-          update: '2024-09-05T15:10:20.011Z',
-          image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
-            height: 2500,
-            width: 2500,
-            placeholder: 'empty',
-            loading: 'eager',
-            alt: 'TypeScript RTK-Query',
-          },
-          weeklyNPMDownloads: 21_249,
         },
         {
           title: 'TypeScript React-Query',
@@ -1482,7 +1462,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.961Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/react-query.274a891e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/react-query.svg',
             height: 190,
             width: 190,
             placeholder: 'empty',
@@ -1501,7 +1481,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.824Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1521,7 +1501,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.127Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/mongodb.7ca25edd.png',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/mongodb.svg',
             height: 2892,
             width: 1296,
             blurDataURL:
@@ -1543,7 +1523,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:17.923Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1562,7 +1542,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:17.648Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/nhost.59877a59.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/nhost.svg',
             height: 40,
             width: 40,
             placeholder: 'empty',
@@ -1582,7 +1562,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:17.068Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1602,7 +1582,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:16.927Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/msw-logo.b1bc2b7c.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/msw-logo.svg',
             height: 256,
             width: 256,
             placeholder: 'empty',
@@ -1622,7 +1602,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:16.755Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1642,7 +1622,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:15.539Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1662,11 +1642,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:14.736Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/angular.d99dabcc.svg',
-            height: 2500,
-            width: 2353,
-            placeholder: 'empty',
-            loading: 'eager',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/angular.svg',
             alt: 'TypeScript Apollo Angular',
           },
           weeklyNPMDownloads: 56_033,
@@ -1682,7 +1658,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:12.499Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -1702,7 +1678,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:10.696Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -1722,7 +1698,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:09.783Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -1742,7 +1718,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.726Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -1762,7 +1738,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.472Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -1782,7 +1758,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.415Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/flow.d722e3cd.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/flow.svg',
             height: 2500,
             width: 2019,
             placeholder: 'empty',
@@ -1802,7 +1778,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.086Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/flow.d722e3cd.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/flow.svg',
             height: 2500,
             width: 2019,
             placeholder: 'empty',
@@ -1822,7 +1798,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:07.875Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/hasura.6ec6c97f.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/hasura.svg',
             height: 160,
             width: 155,
             placeholder: 'empty',
@@ -1842,7 +1818,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:07.627Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -1862,7 +1838,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:06.777Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -1882,7 +1858,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:05.522Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/dart.d11e7f7b.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/dart.svg',
             height: 256,
             width: 256,
             placeholder: 'empty',
@@ -1892,183 +1868,42 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           weeklyNPMDownloads: 150,
         },
         {
-          title: 'C# Operations',
-          description:
-            'GraphQL Code Generator plugin for generating CSharp code based on GraphQL operations',
-          tags: ['plugin', 'csharp'],
+          title: 'TypeScript Oclif',
+          description: 'GraphQL Code Generator plugin for generating a CLI tool with oclif',
+          tags: ['plugin', 'typescript'],
           link: {
-            href: '/plugins/c-sharp/c-sharp-operations',
-            title: 'C# Operations plugin details',
+            href: '/plugins/typescript/typescript-oclif',
+            title: 'TypeScript Oclif plugin details',
           },
-          update: '2024-09-05T15:10:05.074Z',
+          update: '2024-09-05T15:10:19.824Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/csharp.a6c79320.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
             loading: 'eager',
-            alt: 'C# Operations',
+            alt: 'TypeScript Oclif',
           },
-          weeklyNPMDownloads: 1148,
+          weeklyNPMDownloads: 71,
         },
         {
-          title: 'TypeScript Validation Schema',
-          description:
-            'GraphQL Code Generator plugin to generate form validation schema from your GraphQL schema',
-          tags: ['plugin', 'validation', 'yup', 'zod', 'typescript'],
+          title: 'TypeScript Nhost',
+          description: 'GraphQL Code Generator plugin for the Typescript Nhost SDK',
+          tags: ['plugin', 'typescript', 'nhost'],
           link: {
-            href: '/plugins/typescript/typescript-validation-schema',
-            title: 'TypeScript Validation Schema plugin details',
+            href: '/plugins/undefined/typescript-nhost',
+            title: 'TypeScript Nhost plugin details',
           },
-          update: '2024-07-13T13:53:18.286Z',
+          update: '2024-09-05T15:10:17.648Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
-            height: 2500,
-            width: 2222,
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/nhost.svg',
+            height: 40,
+            width: 40,
             placeholder: 'empty',
             loading: 'eager',
-            alt: 'TypeScript Validation Schema',
+            alt: 'TypeScript Nhost',
           },
-          weeklyNPMDownloads: 26_819,
-        },
-        {
-          title: 'Schema AST',
-          description:
-            'GraphQL Code Generator plugin for generating a .graphql file from a given schema',
-          tags: ['plugin', 'utilities'],
-          link: {
-            href: '/plugins/other/schema-ast',
-            title: 'Schema AST plugin details',
-          },
-          update: '2024-06-30T06:20:59.195Z',
-          image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
-            height: 2500,
-            width: 2222,
-            placeholder: 'empty',
-            loading: 'eager',
-            alt: 'Schema AST',
-          },
-          weeklyNPMDownloads: 2_388_871,
-        },
-        {
-          title: 'Add',
-          description:
-            'GraphQL Code Generator plugin for adding custom content to your output file',
-          tags: ['plugin'],
-          link: {
-            href: '/plugins/other/add',
-            title: 'Add plugin details',
-          },
-          update: '2024-06-13T10:03:13.074Z',
-          image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
-            height: 2500,
-            width: 2222,
-            placeholder: 'empty',
-            loading: 'eager',
-            alt: 'Add',
-          },
-          weeklyNPMDownloads: 2_184_576,
-        },
-        {
-          title: 'Time',
-          description:
-            'GraphQL Code Generator plugin for adding the current time for an output file',
-          tags: ['plugin', 'utilities'],
-          link: {
-            href: '/plugins/other/time',
-            title: 'Time plugin details',
-          },
-          update: '2024-03-27T11:16:18.633Z',
-          image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
-            height: 2500,
-            width: 2222,
-            placeholder: 'empty',
-            loading: 'eager',
-            alt: 'Time',
-          },
-          weeklyNPMDownloads: 4383,
-        },
-        {
-          title: 'Introspection',
-          description:
-            'GraphQL Code Generator plugin for generating an introspection JSON file for a GraphQLSchema',
-          tags: ['plugin', 'utilities'],
-          link: {
-            href: '/plugins/other/introspection',
-            title: 'Introspection plugin details',
-          },
-          update: '2024-02-20T17:55:16.397Z',
-          image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
-            height: 2500,
-            width: 2222,
-            placeholder: 'empty',
-            loading: 'eager',
-            alt: 'Introspection',
-          },
-          weeklyNPMDownloads: 584_826,
-        },
-        {
-          title: 'Fragment Matcher',
-          description:
-            'graphql-code-generate plugin for generating fragments matcher introspection file',
-          tags: ['plugin', 'apollo'],
-          link: {
-            href: '/plugins/other/fragment-matcher',
-            title: 'Fragment Matcher plugin details',
-          },
-          update: '2024-02-06T14:57:00.701Z',
-          image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
-            height: 2500,
-            width: 2222,
-            placeholder: 'empty',
-            loading: 'eager',
-            alt: 'Fragment Matcher',
-          },
-          weeklyNPMDownloads: 413_296,
-        },
-        {
-          title: 'Typescript Apollo Next.js',
-          description:
-            'GraphQL Code Generator plugin for generating a functions to read and write from the apollo cache',
-          tags: ['plugin', 'typescript', 'apollo', 'next'],
-          link: {
-            href: '/plugins/typescript/typescript-apollo-next',
-            title: 'Typescript Apollo Next.js plugin details',
-          },
-          update: '2022-07-11T20:58:42.183Z',
-          image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
-            height: 2430,
-            width: 2500,
-            placeholder: 'empty',
-            loading: 'eager',
-            alt: 'Typescript Apollo Next.js',
-          },
-          weeklyNPMDownloads: 5839,
-        },
-        {
-          title: 'TypeScript Svelte Apollo',
-          description: 'GraphQL Code Generator plugin to generate client queries from graphql',
-          tags: ['plugin', 'typescript', 'svelte', 'apollo'],
-          link: {
-            href: '/plugins/typescript/typescript-svelte-apollo',
-            title: 'TypeScript Svelte Apollo plugin details',
-          },
-          update: '2022-05-04T02:48:38.489Z',
-          image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
-            height: 2430,
-            width: 2500,
-            placeholder: 'empty',
-            loading: 'eager',
-            alt: 'TypeScript Svelte Apollo',
-          },
-          weeklyNPMDownloads: 1669,
+          weeklyNPMDownloads: 56,
         },
         {
           title: 'Reason Client',
@@ -2080,7 +1915,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-05-04T02:48:20.194Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/ImZxrDWf_400x400.0adde43d.jpg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/reason.svg',
             height: 400,
             width: 400,
             blurDataURL:
@@ -2090,26 +1925,6 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
             alt: 'Reason Client',
           },
           weeklyNPMDownloads: 12,
-        },
-        {
-          title: 'Relay Operation Optimizer',
-          description:
-            'GraphQL Code Generator plugin for optimizing your GraphQL operations relay style.',
-          tags: ['plugin', 'relay'],
-          link: {
-            href: '/plugins/typescript/relay-operation-optimizer',
-            title: 'Relay Operation Optimizer plugin details',
-          },
-          update: '2022-04-05T15:48:04.705Z',
-          image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
-            height: 2500,
-            width: 2222,
-            placeholder: 'empty',
-            loading: 'eager',
-            alt: 'Relay Operation Optimizer',
-          },
-          weeklyNPMDownloads: 1755,
         },
       ],
       placeholder: '0 items',
@@ -2129,7 +1944,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-06-13T10:03:13.074Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -2149,7 +1964,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:05.074Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/csharp.a6c79320.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/csharp.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2169,7 +1984,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.086Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/flow.d722e3cd.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/flow.svg',
             height: 2500,
             width: 2019,
             placeholder: 'empty',
@@ -2189,7 +2004,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.415Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/flow.d722e3cd.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/flow.svg',
             height: 2500,
             width: 2019,
             placeholder: 'empty',
@@ -2209,7 +2024,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-02-06T14:57:00.701Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -2228,7 +2043,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.640Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/subheader-logo.3c27c4a5.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/subheader-logo.svg',
             height: 71,
             width: 67,
             placeholder: 'empty',
@@ -2248,7 +2063,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:07.875Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/hasura.6ec6c97f.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/hasura.svg',
             height: 160,
             width: 155,
             placeholder: 'empty',
@@ -2267,7 +2082,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:26.972Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/codegen.4ba51dab.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/codegen.svg',
             height: 54,
             width: 50,
             placeholder: 'empty',
@@ -2286,7 +2101,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.708Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/codegen.4ba51dab.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/codegen.svg',
             height: 54,
             width: 50,
             placeholder: 'empty',
@@ -2306,7 +2121,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-02-20T17:55:16.397Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -2326,7 +2141,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:07.627Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -2346,7 +2161,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:06.777Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -2366,7 +2181,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:09.783Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -2386,7 +2201,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.472Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -2406,7 +2221,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:08.726Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/java.2ce2c526.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/java.svg',
             height: 2500,
             width: 1344,
             placeholder: 'empty',
@@ -2426,7 +2241,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:16.755Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2446,7 +2261,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:27.955Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/codegen.4ba51dab.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/codegen.svg',
             height: 54,
             width: 50,
             placeholder: 'empty',
@@ -2465,7 +2280,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-05-04T02:48:20.194Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/ImZxrDWf_400x400.0adde43d.jpg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/reason.svg',
             height: 400,
             width: 400,
             blurDataURL:
@@ -2487,7 +2302,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-04-05T15:48:04.705Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -2507,7 +2322,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-06-30T06:20:59.195Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -2527,7 +2342,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-03-27T11:16:18.633Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -2547,7 +2362,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.901Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2566,7 +2381,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.380Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2586,11 +2401,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:14.736Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/angular.d99dabcc.svg',
-            height: 2500,
-            width: 2353,
-            placeholder: 'empty',
-            loading: 'eager',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/angular.svg',
             alt: 'TypeScript Apollo Angular',
           },
           weeklyNPMDownloads: 56_033,
@@ -2606,7 +2417,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:12.499Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2626,7 +2437,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-07-11T20:58:42.183Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/apollo.svg',
             height: 2430,
             width: 2500,
             placeholder: 'empty',
@@ -2646,7 +2457,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.199Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2665,7 +2476,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-19T15:08:48.961Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2685,7 +2496,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:15.539Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2705,7 +2516,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:17.923Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2725,7 +2536,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:17.068Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2744,7 +2555,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-20T15:27:47.529Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2764,7 +2575,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.127Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/mongodb.7ca25edd.png',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/mongodb.svg',
             height: 2892,
             width: 1296,
             blurDataURL:
@@ -2785,7 +2596,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:17.648Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/nhost.59877a59.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/nhost.svg',
             height: 40,
             width: 40,
             placeholder: 'empty',
@@ -2805,7 +2616,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:16.927Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/msw-logo.b1bc2b7c.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/msw-logo.svg',
             height: 256,
             width: 256,
             placeholder: 'empty',
@@ -2824,7 +2635,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.824Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2844,7 +2655,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.240Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2864,7 +2675,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-09T16:02:01.569Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/apollo.svg',
             height: 2430,
             width: 2500,
             placeholder: 'empty',
@@ -2884,7 +2695,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.961Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/react-query.274a891e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/react-query.svg',
             height: 190,
             width: 190,
             placeholder: 'empty',
@@ -2904,7 +2715,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:31:00.428Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2924,7 +2735,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:20.011Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -2944,7 +2755,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:22.682Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/apollo.svg',
             height: 2430,
             width: 2500,
             placeholder: 'empty',
@@ -2963,7 +2774,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-05-04T02:48:38.489Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/apollo.8b9adde1.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/apollo.svg',
             height: 2430,
             width: 2500,
             placeholder: 'empty',
@@ -2983,7 +2794,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.491Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/type-graphql.ad6cfa61.png',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/type-graphql.svg',
             height: 365,
             width: 365,
             blurDataURL:
@@ -3005,7 +2816,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:24.887Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/typescript.27df170d.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/typescript.svg',
             height: 2500,
             width: 2500,
             placeholder: 'empty',
@@ -3025,7 +2836,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-07-13T13:53:18.286Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -3045,7 +2856,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.878Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/vue.f7fc640e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/vue.svg',
             height: 2158,
             width: 2500,
             placeholder: 'empty',
@@ -3065,7 +2876,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.336Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/vue.f7fc640e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/vue.svg',
             height: 2158,
             width: 2500,
             placeholder: 'empty',
@@ -3085,7 +2896,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.452Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/vue.f7fc640e.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/vue.svg',
             height: 2158,
             width: 2500,
             placeholder: 'empty',
@@ -3105,7 +2916,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:10.696Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/graphql.7c222583.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/graphql.svg',
             height: 2500,
             width: 2222,
             placeholder: 'empty',
@@ -3125,7 +2936,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:05.522Z',
           image: {
-            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/dart.d11e7f7b.svg',
+            src: 'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons/dart.svg',
             height: 256,
             width: 256,
             placeholder: 'empty',
