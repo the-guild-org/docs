@@ -143,25 +143,26 @@ export function MarketplaceListItem({ item, ...rest }: MarketplaceListItemProps)
       {...item.link}
       {...rest}
       className={cn(
-        'hive-focus flex gap-4 rounded-2xl border border-transparent bg-neutral-50 p-6 @container hover:border-neutral-200/50 hover:bg-neutral-100 @lg:gap-6 dark:bg-neutral-800 dark:hover:border-neutral-700 dark:hover:bg-neutral-700/50 [.green_&]:bg-green-900 [.green_&]:hover:border-green-700/50 [.green_&]:hover:bg-green-800/75',
+        'hive-focus @container @lg:gap-6 flex gap-4 rounded-2xl border border-transparent bg-neutral-50 p-6 hover:border-neutral-200/50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:border-neutral-700 dark:hover:bg-neutral-700/50 [.green_&]:bg-green-900 [.green_&]:hover:border-green-700/50 [.green_&]:hover:bg-green-800/75',
         item.link.className,
       )}
     >
       <div
         className={cn(
-          'size-16 shrink-0 rounded-lg bg-[--bg] @lg:size-16 @2xl:size-[92px] [.green_&]:[background:linear-gradient(135deg,_#68A8B6_0%,_#3B736A_100%)]',
+          '@lg:size-16 @2xl:size-[92px] size-16 shrink-0 rounded-lg bg-[--bg] [.green_&]:[background:linear-gradient(135deg,_#68A8B6_0%,_#3B736A_100%)]',
         )}
       >
         <Image
           {...item.image}
+          placeholder={item.image.placeholder || 'empty'}
           width="92"
           height="92"
           className="aspect-square rounded-lg object-contain"
         />
       </div>
       <div className="flex flex-col">
-        <h3 className="m-0 line-clamp-2 font-medium text-[--fg] @lg:text-2xl">{item.title}</h3>
-        <div className="mb-2 line-clamp-3 text-sm text-[--fg-80] @lg:text-base">
+        <h3 className="@lg:text-2xl m-0 line-clamp-2 font-medium text-[--fg]">{item.title}</h3>
+        <div className="@lg:text-base mb-2 line-clamp-3 text-sm text-[--fg-80]">
           {item.description}
         </div>
         {item.tags && item.tags.length > 0 && (
@@ -171,12 +172,12 @@ export function MarketplaceListItem({ item, ...rest }: MarketplaceListItemProps)
             ))}
           </TagsContainer>
         )}
-        <div className="flex flex-wrap gap-x-4 text-xs text-[--fg-80] @lg:text-sm">
+        <div className="@lg:text-sm flex flex-wrap gap-x-4 text-xs text-[--fg-80]">
           <span>
             Updated <time dateTime={item.update}>{formatDate(item.update)}</time>
           </span>
           {item.weeklyNPMDownloads && (
-            <span className="hidden @sm:block">
+            <span className="@sm:block hidden">
               {numberFormat.format(item.weeklyNPMDownloads)} weekly downloads
             </span>
           )}

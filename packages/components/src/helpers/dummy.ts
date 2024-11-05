@@ -6,8 +6,6 @@ import {
   IHeroMarketplaceProps,
   IHeroVideoProps,
   IInfoListProps,
-  IMarketplaceListProps,
-  IMarketplaceSearchProps,
 } from '../types/components';
 import heroIllustrationImage from '../static/dummy/envelop/communication.png';
 import featureListImage3 from '../static/dummy/envelop/features-modern.png';

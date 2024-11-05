@@ -485,7 +485,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:16.927Z',
           image: {
-            src: `${ICON_PREFIX}/msw-logo.svg`,
+            src: 'https://raw.githubusercontent.com/mswjs/msw/HEAD/media/msw-logo.svg',
             height: 256,
             width: 256,
             placeholder: 'empty',
@@ -540,7 +540,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.640Z',
           image: {
-            src: `${ICON_PREFIX}/subheader-logo.svg`,
+            src: `${ICON_PREFIX}/graphql-modules.svg`,
             height: 71,
             width: 67,
             placeholder: 'empty',
@@ -1079,7 +1079,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-05-04T02:48:20.194Z',
           image: {
-            src: `${ICON_PREFIX}/reason.svg`,
+            src: 'https://pbs.twimg.com/profile_images/1004185780313395200/ImZxrDWf_400x400.jpg',
             height: 400,
             width: 400,
             blurDataURL:
@@ -1225,7 +1225,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.640Z',
           image: {
-            src: `${ICON_PREFIX}/subheader-logo.svg`,
+            src: `${ICON_PREFIX}/graphql-modules.svg`,
             height: 71,
             width: 67,
             placeholder: 'empty',
@@ -1584,7 +1584,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:16.927Z',
           image: {
-            src: `${ICON_PREFIX}/msw-logo.svg`,
+            src: 'https://raw.githubusercontent.com/mswjs/msw/HEAD/media/msw-logo.svg',
             height: 256,
             width: 256,
             placeholder: 'empty',
@@ -1917,7 +1917,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-05-04T02:48:20.194Z',
           image: {
-            src: `${ICON_PREFIX}/reason.svg`,
+            src: 'https://pbs.twimg.com/profile_images/1004185780313395200/ImZxrDWf_400x400.jpg',
             height: 400,
             width: 400,
             blurDataURL:
@@ -2045,7 +2045,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-10-22T16:30:59.640Z',
           image: {
-            src: `${ICON_PREFIX}/subheader-logo.svg`,
+            src: `${ICON_PREFIX}/graphql-modules.svg`,
             height: 71,
             width: 67,
             placeholder: 'empty',
@@ -2282,7 +2282,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-05-04T02:48:20.194Z',
           image: {
-            src: `${ICON_PREFIX}/reason.svg`,
+            src: 'https://pbs.twimg.com/profile_images/1004185780313395200/ImZxrDWf_400x400.jpg',
             height: 400,
             width: 400,
             blurDataURL:
@@ -2618,7 +2618,7 @@ export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:16.927Z',
           image: {
-            src: `${ICON_PREFIX}/msw-logo.svg`,
+            src: 'https://raw.githubusercontent.com/mswjs/msw/HEAD/media/msw-logo.svg',
             height: 256,
             width: 256,
             placeholder: 'empty',
