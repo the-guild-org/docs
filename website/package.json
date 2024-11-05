@@ -18,7 +18,7 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@theguild/tailwind-config": "0.6.0-alpha-20241103180104-02d300b711e62e3067174b50b58060a490dc9e42",
+    "@theguild/tailwind-config": "0.6.0-alpha-20241105170050-e039df978a8faf34b7e23495ff3eda73697ea235",
     "@types/react": "18.3.12",
     "pagefind": "1.1.1",
     "typescript": "5.6.3"
