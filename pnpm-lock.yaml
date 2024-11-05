@@ -10,6 +10,9 @@ overrides:
   esbuild: 0.24.0
 
 patchedDependencies:
+  esbuild-plugin-svgr:
+    hash: kqo6kcqiqdlv2hedtyfgubgvle
+    path: patches/esbuild-plugin-svgr.patch
   tsup@8.3.5:
     hash: sh5kwwsnc5iccgx7xoo5prtbwy
     path: patches/tsup@8.2.1.patch
@@ -210,7 +213,7 @@ importers:
         version: 1.5.3
       esbuild-plugin-svgr:
         specifier: ^3.0.0
-        version: 3.0.0(esbuild@0.24.0)(typescript@5.6.3)
+        version: 3.0.0(patch_hash=kqo6kcqiqdlv2hedtyfgubgvle)(esbuild@0.24.0)(typescript@5.6.3)
       graphql:
         specifier: 16.9.0
         version: 16.9.0
@@ -14743,7 +14746,7 @@ snapshots:
       esast-util-from-estree: 2.0.0
       vfile-message: 4.0.2
 
-  esbuild-plugin-svgr@3.0.0(esbuild@0.24.0)(typescript@5.6.3):
+  esbuild-plugin-svgr@3.0.0(patch_hash=kqo6kcqiqdlv2hedtyfgubgvle)(esbuild@0.24.0)(typescript@5.6.3):
     dependencies:
       '@svgr/core': 8.1.0(typescript@5.6.3)
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.6.3))

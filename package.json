@@ -86,7 +86,8 @@
       "esbuild": "0.24.0"
     },
     "patchedDependencies": {
-      "tsup@8.3.5": "patches/tsup@8.2.1.patch"
+      "tsup@8.3.5": "patches/tsup@8.2.1.patch",
+      "esbuild-plugin-svgr": "patches/esbuild-plugin-svgr.patch"
     }
   }
 }
