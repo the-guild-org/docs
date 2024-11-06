@@ -1,8 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../.storybook/hive-theme-decorator';
-import { IMarketplaceListProps } from '../types/components';
 import { MarketplaceList } from './marketplace-list';
-import { dummyMarketplaceSearch } from './marketplace-search.stories';
+import { Default as MarketplaceSearchDefaultStory } from './marketplace-search.stories';
 
 const meta: Meta<typeof MarketplaceList> = {
   title: 'Components/MarketplaceList',
@@ -43,19 +42,15 @@ type Story = StoryObj<typeof MarketplaceList>;
 
 export const Default: Story = {
   name: 'MarketplaceList',
-  args: dummyMarketplaceList(),
+  args: {
+    title: 'Trending & Last Update',
+    placeholder: 'There are no items available...',
+    pagination: 4,
+    items: MarketplaceSearchDefaultStory.args?.primaryList?.items ?? [],
+  },
 };
 
 export const Green: Story = {
   name: 'MarketplaceList Green',
   args: { ...Default.args, colorScheme: 'green' },
 };
-
-function dummyMarketplaceList(): IMarketplaceListProps {
-  return {
-    title: 'Trending & Last Update',
-    placeholder: 'There are no items available...',
-    pagination: 4,
-    items: dummyMarketplaceSearch().primaryList.items,
-  };
-}

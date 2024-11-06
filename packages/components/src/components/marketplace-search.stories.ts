@@ -39,7 +39,7 @@ export const Green: Story = {
   },
 };
 
-export function dummyMarketplaceSearch(): IMarketplaceSearchProps {
+function dummyMarketplaceSearch(): IMarketplaceSearchProps {
   const ICON_PREFIX =
     'https://raw.githubusercontent.com/dotansimha/graphql-code-generator/42b2224199041a5f768041cce1e8eff2816f1797/website/src/lib/plugins/icons';
   return {
