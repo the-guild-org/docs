@@ -23,7 +23,7 @@ export function ToolsAndLibrariesCards({ className }: { className?: string }) {
         ))}
       </ul>
       <p className="text-green-800">Our libraries to support all your GraphQL needs</p>
-      <ul className="-mx-12 -my-2 flex h-max grid-cols-6 flex-row gap-[22px] overflow-x-auto overflow-y-hidden px-12 py-2 max-sm:-mx-8 max-sm:px-8 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="-mx-12 -my-2 flex h-max grid-cols-6 gap-[22px] overflow-x-auto overflow-y-hidden px-12 py-2 max-sm:-mx-8 max-sm:px-8 sm:grid sm:grid-cols-2 lg:grid-cols-3">
         {SIX_HIGHLIGHTED_PRODUCTS.map(product => (
           <AncillaryProductCard key={product.name} as="li" product={product} />
         ))}
