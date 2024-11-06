@@ -1,6 +1,5 @@
 import tailwindAnimate from 'tailwindcss-animate';
 import { fontFamily } from 'tailwindcss/defaultTheme';
-import tailwindContainerQueries from '@tailwindcss/container-queries';
 import config, { Config } from '@theguild/tailwind-config';
 
 export default {
@@ -29,5 +28,5 @@ export default {
     },
   },
   darkMode: ['variant', '&:not(.light *)'],
-  plugins: [tailwindAnimate, tailwindContainerQueries],
+  plugins: [...config.plugins, tailwindAnimate],
 } satisfies Config;
