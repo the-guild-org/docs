@@ -720,7 +720,7 @@ function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.127Z',
           image: {
-            src: `${ICON_PREFIX}/mongodb.svg`,
+            src: `${ICON_PREFIX}/mongodb.png`,
             height: 2892,
             width: 1296,
             blurDataURL:
@@ -782,7 +782,7 @@ function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.491Z',
           image: {
-            src: `${ICON_PREFIX}/type-graphql.svg`,
+            src: `${ICON_PREFIX}/type-graphql.png`,
             height: 365,
             width: 365,
             blurDataURL:
@@ -1079,7 +1079,7 @@ function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-05-04T02:48:20.194Z',
           image: {
-            src: 'https://pbs.twimg.com/profile_images/1004185780313395200/ImZxrDWf_400x400.jpg',
+            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/ImZxrDWf_400x400.0adde43d.jpg',
             height: 400,
             width: 400,
             blurDataURL:
@@ -1382,7 +1382,7 @@ function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.491Z',
           image: {
-            src: `${ICON_PREFIX}/type-graphql.svg`,
+            src: `${ICON_PREFIX}/type-graphql.png`,
             height: 365,
             width: 365,
             blurDataURL:
@@ -1503,7 +1503,7 @@ function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.127Z',
           image: {
-            src: `${ICON_PREFIX}/mongodb.svg`,
+            src: `${ICON_PREFIX}/mongodb.png`,
             height: 2892,
             width: 1296,
             blurDataURL:
@@ -1917,7 +1917,7 @@ function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-05-04T02:48:20.194Z',
           image: {
-            src: 'https://pbs.twimg.com/profile_images/1004185780313395200/ImZxrDWf_400x400.jpg',
+            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/ImZxrDWf_400x400.0adde43d.jpg',
             height: 400,
             width: 400,
             blurDataURL:
@@ -2282,7 +2282,7 @@ function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2022-05-04T02:48:20.194Z',
           image: {
-            src: 'https://pbs.twimg.com/profile_images/1004185780313395200/ImZxrDWf_400x400.jpg',
+            src: 'https://the-guild.dev/graphql/codegen/_next/static/media/ImZxrDWf_400x400.0adde43d.jpg',
             height: 400,
             width: 400,
             blurDataURL:
@@ -2577,7 +2577,7 @@ function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:19.127Z',
           image: {
-            src: `${ICON_PREFIX}/mongodb.svg`,
+            src: `${ICON_PREFIX}/mongodb.png`,
             height: 2892,
             width: 1296,
             blurDataURL:
@@ -2796,7 +2796,7 @@ function dummyMarketplaceSearch(): IMarketplaceSearchProps {
           },
           update: '2024-09-05T15:10:23.491Z',
           image: {
-            src: `${ICON_PREFIX}/type-graphql.svg`,
+            src: `${ICON_PREFIX}/type-graphql.png`,
             height: 365,
             width: 365,
             blurDataURL:
