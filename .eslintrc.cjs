@@ -47,6 +47,7 @@ module.exports = {
         'aa-SourceHeaderTitle',
         'hive-focus',
         'hive-focus-within',
+        '@container', // Tailwind ESLint Plugin doesn't see the Container Queries classes but it does see prefixes like @sm:
       ],
     },
   },
