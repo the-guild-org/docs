@@ -188,31 +188,18 @@ export function MarketplaceListItem({ item, ...rest }: MarketplaceListItemProps)
 function moveFocusOnArrowKeys(event: React.KeyboardEvent<HTMLAnchorElement>, columns: number) {
   let listItem: Element | null | undefined;
 
-  let move: 'left' | 'right' | 'down' | 'up' | undefined;
-
-  switch (event.key) {
-    case 'ArrowDown':
-      move = 'down';
-      break;
-    case 'ArrowUp':
-      move = 'up';
-      break;
-    case 'ArrowRight':
-      move = 'right';
-      break;
-    case 'ArrowLeft':
-      move = 'left';
-      break;
-  }
+  const move = ({ ArrowDown: '⬇', ArrowUp: '⬆', ArrowRight: '➡️', ArrowLeft: '⬅️' } as const)[
+    event.key
+  ];
 
   if (!move) return;
 
-  if (move === 'left') {
+  if (move === '⬅️') {
     const parent = event.currentTarget.parentElement;
     if (parent) {
       listItem = parent.previousElementSibling;
     }
-  } else if (move === 'right') {
+  } else if (move === '➡️') {
     const parent = event.currentTarget.parentElement;
     if (parent) {
       listItem = parent.nextElementSibling;
@@ -221,10 +208,10 @@ function moveFocusOnArrowKeys(event: React.KeyboardEvent<HTMLAnchorElement>, col
     listItem = event.currentTarget.parentElement;
 
     while (columns > 0 && listItem) {
-      if (move === 'up') {
+      if (move === '⬆') {
         columns--;
         listItem = listItem.previousElementSibling;
-      } else if (move === 'down') {
+      } else if (move === '⬇') {
         columns--;
         listItem = listItem.nextElementSibling;
       }

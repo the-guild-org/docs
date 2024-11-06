@@ -16,7 +16,6 @@ import './marketplace-search.css';
  */
 const classes = {
   marketplace: 'MarketplaceSearch',
-  tabs: 'MarketplaceSearchTabs',
 };
 
 const renderQueryPlaceholder = (placeholder: string | ReactElement, query: string) => {
@@ -175,8 +174,12 @@ function MarketplaceSearchTabs({
   );
 
   return (
-    <div className={cn(classes.tabs, className)}>
-      <Tabs items={items.map(list => list.title)}>
+    <div className={className}>
+      <Tabs
+        items={items.map(list => list.title)}
+        className="grid grid-cols-2 gap-1 rounded-2xl border-none bg-neutral-800 [.green_&]:bg-green-900 [.light_&]:text-green-200"
+        tabClassName="rounded-2xl border-none p-3 text-sm font-medium text-neutral-200 hover:bg-neutral-700/50 hover:text-white aria-selected:cursor-default aria-selected:bg-[--fg] aria-selected:text-[--bg] sm:p-4 sm:text-base [.green_&]:bg-green-900 [.green_&]:text-green-200 [.green_&]:hover:bg-green-700/25 [.green_&]:hover:text-green-100 [.green_&]:aria-selected:bg-green-300 [.green_&]:aria-selected:text-green-800 [.light_&]:bg-neutral-100 [.light_&]:text-neutral-800 [.light_&]:hover:bg-neutral-200/80 [.light_&]:hover:text-neutral-900"
+      >
         {items.map((list, i) => (
           <Tabs.Tab tabIndex={-1} key={i}>
             <MarketplaceList
