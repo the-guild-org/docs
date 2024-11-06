@@ -92,8 +92,8 @@ importers:
         specifier: 15.2.10
         version: 15.2.10
       next-themes:
-        specifier: 0.3.0
-        version: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.4.3
+        version: 0.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       postcss:
         specifier: 8.4.47
         version: 8.4.47
