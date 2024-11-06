@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useMemo, useRef, useState } from 'react';
+import { ReactElement, useEffect, useMemo, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { cn } from '../cn';
 import { IMarketplaceItemProps, IMarketplaceListProps } from '../types/components';
@@ -40,7 +40,6 @@ export const MarketplaceList = ({
   colorScheme = 'neutral',
 }: IMarketplaceListProps): ReactElement => {
   const [currentPage, setCurrentPage] = useState(0);
-  const listRef = useRef<HTMLUListElement>(null);
 
   const pageSize = pagination || 5;
   const pageCount = items ? Math.ceil(items.length / pageSize) : 1;
@@ -81,7 +80,7 @@ export const MarketplaceList = ({
       )}
       {pages[currentPage]?.length ? (
         <>
-          <ul ref={listRef} className="grid gap-4 lg:grid-cols-2 lg:gap-6">
+          <ul className="grid gap-4 lg:grid-cols-2 lg:gap-6">
             {pages[currentPage].map((item, i) => {
               return (
                 <li key={item.title} className="*:h-full">
@@ -90,8 +89,7 @@ export const MarketplaceList = ({
                     tabIndex={i === 0 ? 0 : -1}
                     // focusgroup vertical navigation
                     onKeyDown={event => {
-                      const ul = listRef.current;
-                      if (!ul) return;
+                      const ul = event.currentTarget.parentElement!.parentElement!;
 
                       const gridTemplateColumns = ul
                         .computedStyleMap()
