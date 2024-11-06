@@ -2,8 +2,6 @@ import tailwindAnimate from 'tailwindcss-animate';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import config, { Config } from '@theguild/tailwind-config';
 
-console.log(config);
-
 export default {
   ...config,
   content: ['./packages/components/src/**/*.{ts,tsx}', './.storybook/**/*.{ts,tsx}'],
