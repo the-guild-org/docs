@@ -123,7 +123,7 @@ export const MarketplaceList = ({
           )}
         </>
       ) : (
-        <div className="flex h-24 w-full items-center justify-center rounded-lg bg-gray-100 text-black dark:bg-gray-700 dark:text-gray-300">
+        <div className="flex h-24 w-full items-center justify-center">
           {placeholder}
         </div>
       )}
