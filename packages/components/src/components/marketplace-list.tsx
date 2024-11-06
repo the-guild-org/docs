@@ -6,7 +6,6 @@ import { Anchor } from './anchor';
 import { Heading } from './heading';
 import { Image } from './image';
 import { Tag, TagsContainer } from './tag';
-import './marketplace-search.css';
 
 const formatDate = (value: string): string => {
   const months = [
@@ -63,6 +62,7 @@ export const MarketplaceList = ({
   return (
     <section
       className={cn(
+        // --bg and --fg are defined in style.css under .MarketplaceSearch
         'MarketplaceSearch',
         colorScheme,
         'w-full dark:bg-neutral-900 [&.green]:bg-green-1000',

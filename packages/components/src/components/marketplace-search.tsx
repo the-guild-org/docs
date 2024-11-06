@@ -7,16 +7,6 @@ import { Heading } from './heading';
 import { CloseIcon, SearchIcon } from './icons';
 import { MarketplaceList } from './marketplace-list';
 import { Tag, TagsContainer } from './tag';
-import './marketplace-search.css';
-
-/**
- * @see ./marketplace-search.css
- * can't be a CSS Module because of https://github.com/egoist/tsup/issues/536
- * we're using it to style nextra/components Tabs to match the designs
- */
-const classes = {
-  marketplace: 'MarketplaceSearch',
-};
 
 const renderQueryPlaceholder = (placeholder: string | ReactElement, query: string) => {
   if (!query || isValidElement(placeholder)) {
@@ -79,7 +69,15 @@ export const MarketplaceSearch = ({
   }, [query, queryList]);
 
   return (
-    <section className={cn(classes.marketplace, colorScheme, 'bg-[--bg]', className)}>
+    <section
+      className={cn(
+        // --bg and --fg are defined in style.css under .MarketplaceSearch
+        'MarketplaceSearch',
+        colorScheme,
+        'bg-[--bg]',
+        className,
+      )}
+    >
       <div className="container max-w-[90rem] py-12">
         <Heading as="h1" className="mb-4 text-[32px] text-[--fg]" size="sm">
           {title}
