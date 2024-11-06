@@ -74,7 +74,7 @@ function dummyMarketplaceSearch(): IMarketplaceSearchProps {
       'yup',
       'zod',
     ],
-    placeholder: 'Search...',
+    placeholder: 'Search plugins...',
     primaryList: {
       title: 'Trending',
       items: [
