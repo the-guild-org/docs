@@ -165,7 +165,7 @@ export function MarketplaceListItem({ item, ...rest }: MarketplaceListItemProps)
         <div className="mb-2 line-clamp-3 text-sm text-[--fg-80] @lg:text-base">
           {item.description}
         </div>
-        {item.tags.length > 0 && (
+        {item.tags && item.tags.length > 0 && (
           <TagsContainer className="mt-auto">
             {item.tags.map(tagName => (
               <Tag key={tagName}>{tagName}</Tag>
