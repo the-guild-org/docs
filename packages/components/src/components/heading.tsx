@@ -3,7 +3,7 @@ import { cn } from '../cn';
 
 export interface HeadingProps extends ComponentPropsWithoutRef<'h1'> {
   as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'p' | 'span';
-  size: 'xl' | 'lg' | 'md' | 'sm';
+  size: 'xl' | 'lg' | 'md' | 'sm' | 'xs';
 }
 export function Heading({ as: _as, size, className, children, ...rest }: HeadingProps) {
   const Level = _as || 'h2';
@@ -23,6 +23,9 @@ export function Heading({ as: _as, size, className, children, ...rest }: Heading
       break;
     case 'sm':
       sizeStyle = 'text-[40px] leading-[1.2] tracking-[-0.2px]';
+      break;
+    case 'xs':
+      sizeStyle = 'text-[32px]/[1.25] tracking-[-0.16px]';
       break;
   }
 

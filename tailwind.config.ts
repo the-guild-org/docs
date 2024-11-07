@@ -27,6 +27,5 @@ export default {
       },
     },
   },
-  darkMode: ['variant', '&:not(.light *)'],
-  plugins: [tailwindAnimate],
+  plugins: [...config.plugins, tailwindAnimate],
 } satisfies Config;

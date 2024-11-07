@@ -48,16 +48,15 @@ export type ProductType =
   | 'HELTIN'
   | 'NEXTRA';
 
-export const PRODUCTS: Record<
-  ProductType,
-  {
-    name: string;
-    title: string;
-    href: `https://${string}`;
-    logo: FC<SVGProps<SVGElement>> | FC<HTMLProps<HTMLElement>>;
-    primaryColor: `#${string}`;
-  }
-> = {
+export interface ProductInfo {
+  name: string;
+  title: string;
+  href: `https://${string}`;
+  logo: FC<SVGProps<SVGElement>> | FC<HTMLProps<HTMLElement>>;
+  primaryColor: `#${string}`;
+}
+
+export const PRODUCTS: Record<ProductType, ProductInfo> = {
   HIVE: {
     name: 'Hive',
     title: 'Schema registry for your GraphQL workflows',
@@ -244,12 +243,10 @@ export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
           type: 'separator',
           title: (
             <>
-              {/* This is a one-off class, because I want to style the parent. */}
+              {/* This is a one-off class. The margins and paddings of the parent list item are were large. */}
               {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-              <style className="label-separator">
-                {
-                  'li:has(.label-separator) { margin: 0.75rem 0 0.25rem 0 !important; padding: 0 !important; }'
-                }
+              <style className="hive-label-separator">
+                {'li:has(>.hive-label-separator) { margin: 0.75rem 0 0.25rem 0; padding: 0 }'}
               </style>
               <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
             </>

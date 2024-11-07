@@ -1,7 +1,9 @@
-import { FormEvent, isValidElement, ReactElement, useCallback, useMemo, useState } from 'react';
-import clsx from 'clsx';
+import { isValidElement, ReactElement, useMemo, useState } from 'react';
 import fuzzy from 'fuzzy';
-import { IMarketplaceSearchProps } from '../types/components';
+import { Tabs } from 'nextra/components';
+import { cn } from '../cn';
+import { IMarketplaceListProps, IMarketplaceSearchProps } from '../types/components';
+import { Heading } from './heading';
 import { CloseIcon, SearchIcon } from './icons';
 import { MarketplaceList } from './marketplace-list';
 import { Tag, TagsContainer } from './tag';
@@ -26,12 +28,9 @@ export const MarketplaceSearch = ({
   secondaryList,
   queryList,
   className,
+  colorScheme = 'neutral',
 }: IMarketplaceSearchProps): ReactElement => {
   const [query, setQuery] = useState('');
-
-  const handleChange = useCallback((e: FormEvent<HTMLInputElement>) => {
-    setQuery(e.currentTarget.value);
-  }, []);
 
   const handleTagClick = (tagName: string) => {
     if (query.includes(`#${tagName}`)) {
@@ -70,57 +69,128 @@ export const MarketplaceSearch = ({
   }, [query, queryList]);
 
   return (
-    <section className={clsx('bg-white dark:bg-dark', className)}>
+    <section
+      className={cn(
+        // --bg and --fg are defined in style.css under .MarketplaceSearch
+        'MarketplaceSearch',
+        colorScheme,
+        'bg-[--bg]',
+        className,
+      )}
+    >
       <div className="container max-w-[90rem] py-12">
-        <h2 className="mb-4 mt-0 text-2xl font-bold text-black md:text-3xl dark:text-gray-50">
+        <Heading as="h1" className="mb-4 text-[32px] text-[--fg]" size="sm">
           {title}
-        </h2>
+        </Heading>
         {tagsFilter && (
-          <TagsContainer>
-            {tagsFilter.map(tagName => (
+          <TagsContainer focusgroup="horizontal">
+            {tagsFilter.map((tagName, i) => (
               <Tag
                 key={tagName}
                 selected={query.includes(`#${tagName}`)}
                 onClick={() => handleTagClick(tagName)}
+                tabIndex={i === 0 ? 0 : -1}
               >
                 {tagName}
               </Tag>
             ))}
           </TagsContainer>
         )}
-        <div className="flex border-0 border-b border-solid border-gray-300 pb-3 dark:border-gray-800">
-          <SearchIcon className="text-gray-500 dark:text-white" />
-          <input
-            value={query}
-            type="search"
-            placeholder={placeholder}
-            onChange={handleChange}
-            className="ml-1.5 mt-0.5 w-full border-0 bg-white text-sm font-medium text-black outline-none dark:bg-dark dark:text-gray-50"
-          />
-          <button
-            onClick={() => setQuery('')}
-            className="text-gray-300 hover:text-gray-700 dark:hover:text-white"
-          >
-            <CloseIcon />
-          </button>
-        </div>
+        <MarketplaceSearchInput
+          onChange={setQuery}
+          value={query}
+          placeholder={placeholder}
+          className="mt-4"
+        />
 
-        <div className="flex flex-wrap gap-10 py-6 lg:flex-nowrap">
-          {items && queryList ? (
-            <MarketplaceList
-              title={queryList.title}
-              items={items}
-              placeholder={renderQueryPlaceholder(queryList.placeholder, query)}
-              pagination={queryList.pagination}
-            />
-          ) : (
-            <>
-              <MarketplaceList {...primaryList} />
-              {secondaryList && <MarketplaceList {...secondaryList} />}
-            </>
-          )}
-        </div>
+        {items && queryList ? (
+          <MarketplaceList
+            title={queryList.title}
+            items={items}
+            placeholder={renderQueryPlaceholder(queryList.placeholder, query)}
+            pagination={queryList.pagination}
+            colorScheme={colorScheme}
+          />
+        ) : (
+          <MarketplaceSearchTabs
+            tabs={[primaryList, secondaryList]}
+            colorScheme={colorScheme}
+            className="mt-8"
+          />
+        )}
       </div>
     </section>
   );
 };
+
+function MarketplaceSearchInput({
+  onChange,
+  value,
+  placeholder,
+  className,
+}: {
+  onChange: (value: string) => void;
+  value: string;
+  placeholder: string;
+  className?: string;
+}) {
+  return (
+    <div className="border-b border-[--fg-60]">
+      <div className={cn('hive-focus-within flex items-center rounded px-2', className)}>
+        <SearchIcon className="text-[--fg-80]" />
+        <input
+          value={value}
+          type="search"
+          placeholder={placeholder}
+          onChange={event => onChange(event.currentTarget.value)}
+          className="ml-2 w-full border-0 bg-transparent py-2 font-medium text-[--fg] outline-none placeholder:text-[--fg-60] [&::-webkit-search-cancel-button]:hidden"
+        />
+        <button
+          onClick={() => onChange('')}
+          // A builtin clear-button can't be tabbed to. A keyboard user can cmd+A and delete.
+          tabIndex={-1}
+          className="flex size-6 items-center justify-center rounded-sm"
+        >
+          <CloseIcon className="size-5 text-[--fg-80]" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function MarketplaceSearchTabs({
+  tabs: lists,
+  colorScheme,
+  className,
+}: {
+  tabs: (IMarketplaceListProps | undefined)[];
+  colorScheme: 'green' | 'neutral';
+  className?: string;
+}) {
+  const items = lists.filter(
+    (list): list is IMarketplaceListProps & { title: string } => list?.title != null,
+  );
+
+  return (
+    <div className={className}>
+      <Tabs
+        items={items.map(list => list.title)}
+        className="grid grid-cols-2 gap-1 rounded-2xl border-none bg-neutral-800 [.green_&]:!bg-green-900 [.light_&]:bg-neutral-100 [.light_&]:text-green-200"
+        tabClassName={cn(
+          'rounded-2xl border-none p-3 text-sm font-medium text-neutral-200 hover:bg-neutral-700/50 hover:text-white aria-selected:!cursor-default aria-selected:!bg-[--fg] aria-selected:!text-[--bg] sm:p-4 sm:text-base [.green_&]:!bg-green-900 [.green_&]:!text-green-200 [.green_&]:hover:!bg-green-700/25 [.green_&]:hover:!text-green-100 [.green_&]:aria-selected:!bg-green-300 [.green_&]:aria-selected:!text-green-800 [.light_&]:bg-neutral-100 [.light_&]:text-neutral-800 [.light_&]:hover:bg-neutral-200/80 [.light_&]:hover:text-neutral-900',
+        )}
+      >
+        {items.map((list, i) => (
+          <Tabs.Tab tabIndex={-1} key={i}>
+            <MarketplaceList
+              {...list}
+              // title is part of the `list` and we clear it here, as it's already rendered in a tab
+              title={undefined}
+              colorScheme={colorScheme}
+            />
+          </Tabs.Tab>
+        ))}
+      </Tabs>
+    </div>
+  );
+}
