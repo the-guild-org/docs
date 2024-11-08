@@ -28,7 +28,7 @@ export function ExploreMainProductCards({ className, ...rest }: ExploreMainProdu
         </TextLink>
       </div>
       <ul className="-mx-12 -my-2 flex shrink-0 grow gap-[22px] overflow-auto px-12 py-2 [@media(max-width:1490px)]:w-full [@media(min-width:1490px)]:overflow-visible [&>:nth-child(n+4)]:[@media(min-width:1490px)]:hidden">
-        {[PRODUCTS.HIVE, PRODUCTS.YOGA, PRODUCTS.MESH, PRODUCTS.HIVE_GATEWAY].map(product => (
+        {[PRODUCTS.HIVE, PRODUCTS.HIVE_GATEWAY, PRODUCTS.YOGA, PRODUCTS.MESH].map(product => (
           <MainProductCard key={product.name} as="li" product={product} />
         ))}
       </ul>
