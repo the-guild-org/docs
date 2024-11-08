@@ -6,7 +6,7 @@ import { ArrowIcon } from './icons';
 import { TextLink } from './text-link';
 import { MainProductCard } from './tools-and-libraries-cards';
 
-export interface ExploreMainProductCardsProps extends HTMLAttributes<HTMLDivElement> {}
+export type ExploreMainProductCardsProps = HTMLAttributes<HTMLDivElement>
 
 export function ExploreMainProductCards({ className, ...rest }: ExploreMainProductCardsProps) {
   return (
