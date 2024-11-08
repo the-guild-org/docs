@@ -13,9 +13,13 @@ import {
   YouTubeIcon,
 } from './icons';
 
-export type HiveFooterProps = IFooterExtendedProps;
+export interface HiveFooterProps extends IFooterExtendedProps {
+  description?: string;
+}
 
-export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFooterProps) {
+export function HiveFooter({ className, logo, resources = [], sameSite, description }: HiveFooterProps) {
+  description ||= 'Open-source GraphQL management platform'
+
   return (
     <footer className={cn('relative flex justify-center px-4 py-6 xl:px-[120px]', className)}>
       <div className="mx-4 grid w-full max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10 dark:text-neutral-400">
@@ -30,7 +34,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
               <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:text-white" />
             )}
           </Anchor>
-          <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
+          <p className="mt-6 lg:mt-8">{description}</p>
         </div>
         <div className="col-span-full grid grid-flow-row grid-cols-2 justify-stretch gap-6 text-sm sm:col-span-4 sm:grid-cols-3 lg:col-span-3 lg:pb-12 lg:text-base">
           <List heading="Products" links={products} />
