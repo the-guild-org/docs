@@ -1,8 +1,6 @@
-import { useRef } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { SchemaDiffEditor } from './schema-diff-editor';
 import { SchemaEditor, SchemaEditorProps } from './schema-editor';
-import { SchemaEditorApi } from './use-schema-services';
 import { debugHoverSource, showWidgetInPosition } from './utils';
 
 const TEST_SCHEMA = `type Query {
@@ -31,52 +29,7 @@ export default {
   component: SchemaEditor,
 } satisfies Meta<typeof SchemaEditor>;
 
-type Story = StoryObj<typeof SchemaTemplate>;
-
-function SchemaTemplate(props: SchemaEditorProps) {
-  const ref = useRef<SchemaEditorApi>(null);
-
-  return (
-    <div>
-      <button
-        style={{
-          margin: 10,
-          padding: 5,
-          background: 'lightgray',
-          borderRadius: 10,
-        }}
-        onClick={() => {
-          if (ref.current) {
-            const identifier = prompt('What type are you looking for?', 'Query');
-            if (identifier) {
-              ref.current.jumpToType(identifier);
-            }
-          }
-        }}
-      >
-        Jump To Type
-      </button>
-      <button
-        style={{
-          margin: 10,
-          padding: 5,
-          background: 'lightgray',
-          borderRadius: 10,
-        }}
-        onClick={() => {
-          if (ref.current) {
-            const identifier = prompt('What type+field are you looking for?', 'Query.me');
-            const [typeName, fieldName] = identifier?.split('.') || [];
-            ref.current.jumpToField(typeName, fieldName);
-          }
-        }}
-      >
-        Jump To Field
-      </button>
-      <SchemaEditor ref={ref} {...props} />
-    </div>
-  );
-}
+type Story = StoryObj<SchemaEditorProps>;
 
 export const BasicSchemaEditor: Story = {
   args: {

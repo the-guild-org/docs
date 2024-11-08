@@ -279,7 +279,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
 );
 ProductsMenu.displayName = 'ProductsMenu';
 
-interface MenuContentColumnsProps extends React.HTMLAttributes<HTMLDivElement> {}
+type MenuContentColumnsProps = React.HTMLAttributes<HTMLDivElement>;
 const MenuContentColumns = forwardRef(
   (props: MenuContentColumnsProps, ref: React.ForwardedRef<HTMLDivElement>) => {
     return (

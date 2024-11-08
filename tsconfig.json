@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "./packages",
     "baseUrl": ".",
     "declaration": true,
     "jsx": "react-jsx",
     "target": "es2019",
     "module": "esnext",
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -28,6 +26,6 @@
     "noUnusedLocals": true,
     "types": ["vitest/globals"]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["packages/**/*.stories.tsx", "website", "scripts"]
+  "include": ["**/*.ts", "**/*.tsx", ".storybook/main.ts", ".storybook/preview.tsx"],
+  "exclude": []
 }

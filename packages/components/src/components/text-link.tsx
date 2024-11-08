@@ -3,7 +3,7 @@ import { cn } from '../cn';
 import { Anchor, AnchorProps } from './anchor';
 import { ArrowIcon } from './icons';
 
-export interface TextLinkProps extends AnchorProps {}
+export type TextLinkProps = AnchorProps;
 
 export function TextLink({ className, children, ...rest }: TextLinkProps) {
   const hasArrow =
