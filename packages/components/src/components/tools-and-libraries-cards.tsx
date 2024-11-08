@@ -287,7 +287,7 @@ const cardDecorations = {
       </svg>
     );
   },
-  [PRODUCTS.CODEGEN.name](props: React.SVGAttributes<SVGSVGElement>) {
+  [PRODUCTS.HIVE_GATEWAY.name](props: React.SVGAttributes<SVGSVGElement>) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
