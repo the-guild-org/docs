@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { hiveThemeDecorator } from '../../../../.storybook/hive-theme-decorator';
-import { ToolsAndLibrariesCards } from './tools-and-libraries-cards';
+import { ToolsAndLibrariesCards } from '.';
+import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 
 export default {
   title: 'Hive/ToolsAndLibrariesCards',
