@@ -137,7 +137,7 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
   },
   ESLINT: {
     name: 'GraphQL ESLint',
-    title: 'Customisable ESLint parser, plugin and set rules of for GraphQL',
+    title: 'Customizable ESLint parser, plugin, and rule set for GraphQL',
     href: 'https://the-guild.dev/graphql/eslint',
     logo: GraphQLESlintLettermark,
     primaryColor: '#5639ca',
