@@ -1,6 +1,6 @@
 import { cn } from '../cn';
 
-export type StudProps = React.HTMLAttributes<HTMLElement>
+export type StudProps = React.HTMLAttributes<HTMLElement>;
 export function Stud(props: StudProps) {
   return (
     <div

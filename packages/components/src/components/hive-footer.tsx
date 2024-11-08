@@ -13,7 +13,7 @@ import {
   YouTubeIcon,
 } from './icons';
 
-export type HiveFooterProps = IFooterExtendedProps
+export type HiveFooterProps = IFooterExtendedProps;
 
 export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFooterProps) {
   return (
