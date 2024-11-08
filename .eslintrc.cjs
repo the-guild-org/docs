@@ -65,5 +65,11 @@ module.exports = {
         'import/extensions': ['error', { js: 'never', json: 'always' }],
       },
     },
+    {
+      files: ['*.config.js'],
+      rules: {
+        'import/no-default-export': 'off',
+      },
+    },
   ],
 };
