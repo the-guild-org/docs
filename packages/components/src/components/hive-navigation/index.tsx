@@ -80,6 +80,12 @@ export function HiveNavigation({
   const containerRef = useRef<HTMLDivElement>(null!);
 
   logo ||= <HiveLogoLink isHive={isHive} />;
+  navLinks ||= [
+    {
+      href: isHive ? '#pricing' : 'https://the-guild.dev/graphql/hive#pricing',
+      children: 'Pricing',
+    },
+  ];
 
   return (
     <div
@@ -133,24 +139,13 @@ export function HiveNavigation({
               <CompanyMenu>{companyMenuChildren}</CompanyMenu>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          {navLinks ? (
-            navLinks.map(({ href, children }, i) => (
-              <NavigationMenuItem key={i} className="flex">
-                <NavigationMenuLink href={href} className="font-medium">
-                  {children}
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            ))
-          ) : (
-            <NavigationMenuItem className="flex">
-              <NavigationMenuLink
-                href={isHive ? '#pricing' : 'https://the-guild.dev/graphql/hive#pricing'}
-                className="font-medium"
-              >
-                Pricing
+          {navLinks.map(({ href, children }, i) => (
+            <NavigationMenuItem key={i} className="flex">
+              <NavigationMenuLink href={href} className="font-medium">
+                {children}
               </NavigationMenuLink>
             </NavigationMenuItem>
-          )}
+          ))}
         </NavigationMenuList>
 
         <div className="flex-1" />
