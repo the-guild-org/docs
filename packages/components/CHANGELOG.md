@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 7.2.2
+
+### Patch Changes
+
+- [#1788](https://github.com/the-guild-org/docs/pull/1788)
+  [`a1eaee7`](https://github.com/the-guild-org/docs/commit/a1eaee79a3cd8a9eca0d856864dfdee08e4af073)
+  Thanks [@hasparus](https://github.com/hasparus)! - Make `HiveNavigation` logo configurable through
+  `logo` prop. Expose `navLinks` prop to add links to /plugins.
+
 ## 7.2.1
 
 ### Patch Changes
