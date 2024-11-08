@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 import { cn } from '../cn';
-import { PRODUCTS } from '../products';
+import { FOUR_MAIN_PRODUCTS } from '../products';
 import { Heading } from './heading';
 import { ArrowIcon } from './icons';
 import { TextLink } from './text-link';
@@ -28,7 +28,7 @@ export function ExploreMainProductCards({ className, ...rest }: ExploreMainProdu
         </TextLink>
       </div>
       <ul className="-mx-12 -my-2 flex shrink-0 grow gap-[22px] overflow-auto px-12 py-2 [@media(max-width:1490px)]:w-full [@media(min-width:1490px)]:overflow-visible [&>:nth-child(n+4)]:[@media(min-width:1490px)]:hidden">
-        {[PRODUCTS.HIVE, PRODUCTS.HIVE_GATEWAY, PRODUCTS.YOGA, PRODUCTS.MESH].map(product => (
+        {FOUR_MAIN_PRODUCTS.map(product => (
           <MainProductCard key={product.name} as="li" product={product} />
         ))}
       </ul>

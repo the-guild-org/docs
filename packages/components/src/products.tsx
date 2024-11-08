@@ -222,6 +222,13 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
   },
 };
 
+export const FOUR_MAIN_PRODUCTS = [
+  PRODUCTS.HIVE,
+  PRODUCTS.HIVE_GATEWAY,
+  PRODUCTS.YOGA,
+  PRODUCTS.MESH,
+];
+
 export const SIX_HIGHLIGHTED_PRODUCTS = [
   PRODUCTS.CODEGEN,
   PRODUCTS.INSPECTOR,
@@ -234,15 +241,7 @@ export const SIX_HIGHLIGHTED_PRODUCTS = [
 /** List of products displayed in hamburger menu. */
 export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
   (
-    [
-      'The GraphQL Stack',
-      PRODUCTS.HIVE,
-      PRODUCTS.HIVE_GATEWAY,
-      PRODUCTS.MESH,
-      PRODUCTS.YOGA,
-      'Libraries',
-      ...SIX_HIGHLIGHTED_PRODUCTS,
-    ] as const
+    ['The GraphQL Stack', ...FOUR_MAIN_PRODUCTS, 'Libraries', ...SIX_HIGHLIGHTED_PRODUCTS] as const
   ).map((item, i) => {
     if (typeof item === 'string') {
       return [

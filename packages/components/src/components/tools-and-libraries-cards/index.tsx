@@ -1,5 +1,10 @@
 import { cn } from '../../cn';
-import { ProductInfo, PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../../products';
+import {
+  FOUR_MAIN_PRODUCTS,
+  ProductInfo,
+  PRODUCTS,
+  SIX_HIGHLIGHTED_PRODUCTS,
+} from '../../products';
 import { CallToAction } from '../call-to-action';
 import { HighlightDecoration } from '../decorations';
 import { Heading } from '../heading';
@@ -29,7 +34,7 @@ export function ToolsAndLibrariesCards({ className }: { className?: string }) {
       </Heading>
       <p className="text-green-800">Complete GraphQL Federation Stack</p>
       <ul className="-mx-12 -my-2 flex grid-cols-2 flex-row gap-[22px] overflow-auto px-12 py-2 lg:grid xl:grid-cols-4">
-        {[PRODUCTS.HIVE, PRODUCTS.HIVE_GATEWAY, PRODUCTS.YOGA, PRODUCTS.MESH].map(product => (
+        {FOUR_MAIN_PRODUCTS.map(product => (
           <MainProductCard key={product.name} as="li" product={product} />
         ))}
       </ul>
