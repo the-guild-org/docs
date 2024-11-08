@@ -84,7 +84,7 @@ export function AncillaryProductCard({
         <div className="h-8 grow" />
         <div
           role="presentation"
-          className="flex size-8 items-center justify-center rounded bg-green-1000 text-sm font-medium leading-5 text-white"
+          className="flex size-8 items-center justify-center rounded bg-green-1000 text-sm font-medium leading-5 text-white p-[5px]"
         >
           <Logo />
         </div>
