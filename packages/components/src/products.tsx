@@ -257,7 +257,7 @@ export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
               </style>
               <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
             </>
-          ) as any as string,
+          ) as unknown as string,
         },
       ];
     }
@@ -270,12 +270,14 @@ export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
         newWindow: true,
         title: (
           <div className="flex items-center gap-2">
-            <Logo
+            <div
               className={cn(
                 'size-4 translate-y-[0.25px]',
-                i > 3 && 'rounded-sm bg-gray-500 text-[8px] text-white dark:bg-white/10',
+                i > 3 && 'rounded-sm bg-gray-500 text-[8px] text-white dark:bg-white/10 p-0.5',
               )}
-            />
+            >
+              <Logo className="size-4" />
+            </div>
             {item.name}
           </div>
         ),
