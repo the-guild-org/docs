@@ -121,7 +121,7 @@
 }
 
 /* fix for nextra navbar for HiveNavigation */
-#__next {
+:root {
   --nextra-navbar-height: 90px;
 }
 
