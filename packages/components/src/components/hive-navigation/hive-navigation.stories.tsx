@@ -2,6 +2,8 @@ import { DocsThemeConfig, default as NextraLayout } from 'nextra-theme-docs';
 import { Meta, StoryContext, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 import { PRODUCTS } from '../../products';
+import { Anchor } from '../anchor';
+import { CodegenIcon } from '../icons';
 import { GraphQLConfCard } from './graphql-conf-card';
 import {
   CompanyMenu,
@@ -144,6 +146,25 @@ export const Company: StoryObj = {
         </CompanyMenu>
       </NavigationMenu>
     );
+  },
+};
+
+export const CodegenNavmenu: StoryObj<HiveNavigationProps> = {
+  ...Default,
+  args: {
+    navLinks: [
+      {
+        href: '/plugins',
+        children: 'Plugins',
+      },
+    ],
+    productName: PRODUCTS.CODEGEN.name,
+    logo: (
+      <Anchor href="/" className="hive-focus -m-2 flex items-center gap-3 rounded-md p-2">
+        <CodegenIcon className="size-8" />
+        <span className="text-2xl font-medium tracking-[-0.16px]">Codegen</span>
+      </Anchor>
+    ),
   },
 };
 

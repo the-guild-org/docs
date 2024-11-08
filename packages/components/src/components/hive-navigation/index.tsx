@@ -48,6 +48,8 @@ export interface HiveNavigationProps {
    * We change links to relative based on what product we're in.
    */
   productName: string;
+  logo?: ReactNode;
+  navLinks?: { href: string; children: ReactNode }[];
 }
 /**
  *
@@ -66,6 +68,8 @@ export function HiveNavigation({
   children,
   className,
   productName,
+  logo,
+  navLinks,
 }: HiveNavigationProps) {
   // `useThemeConfig` doesn't return anything outside of Nextra, and the provider isn't exported
   const themeConfig = useThemeConfig() as ReturnType<typeof useThemeConfig> | undefined;
@@ -74,6 +78,14 @@ export function HiveNavigation({
   const isHive = productName === 'Hive';
 
   const containerRef = useRef<HTMLDivElement>(null!);
+
+  logo ||= <HiveLogoLink isHive={isHive} />;
+  navLinks ||= [
+    {
+      href: isHive ? '#pricing' : 'https://the-guild.dev/graphql/hive#pricing',
+      children: 'Pricing',
+    },
+  ];
 
   return (
     <div
@@ -93,13 +105,13 @@ export function HiveNavigation({
 
       {/* mobile menu */}
       <div className="flex items-center justify-between md:hidden">
-        <HiveLogoLink />
+        {logo}
         <HamburgerButton />
       </div>
 
       {/* desktop menu */}
       <NavigationMenu className={cn('mx-auto hidden md:flex', className)} delayDuration={0}>
-        <HiveLogoLink />
+        {logo}
         <NavigationMenuList className="ml-4 bg-white dark:bg-transparent [@media(min-width:1180px)]:ml-16">
           <NavigationMenuItem>
             <NavigationMenuTrigger>Products</NavigationMenuTrigger>
@@ -127,15 +139,15 @@ export function HiveNavigation({
               <CompanyMenu>{companyMenuChildren}</CompanyMenu>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem className="flex">
-            <NavigationMenuLink
-              href={isHive ? '#pricing' : 'https://the-guild.dev/graphql/hive#pricing'}
-              className="font-medium"
-            >
-              Pricing
-            </NavigationMenuLink>
-          </NavigationMenuItem>
+          {navLinks.map(({ href, children }, i) => (
+            <NavigationMenuItem key={i} className="flex">
+              <NavigationMenuLink href={href} className="font-medium">
+                {children}
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
+
         <div className="flex-1" />
 
         {children}
@@ -197,7 +209,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
               Hive
             </p>
             <p className="mt-1 text-sm leading-5 text-green-800 dark:text-neutral-400">
-              GraphQL Management Platform, a Gateway & Decision-making Engine
+              GraphQL Management Platform & Decision-making Engine
             </p>
           </NavigationMenuLink>
           <Anchor
@@ -207,14 +219,14 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
             <span>Get started</span> <ArrowIcon />
           </Anchor>
         </div>
-        <div className="w-[267px]">
+        <div className="w-[269px]">
           <ColumnLabel>The GraphQL Stack</ColumnLabel>
           <ul>
             {(
               [
+                [PRODUCTS.HIVE_GATEWAY, 'Federation Gateway'],
                 [PRODUCTS.MESH, 'Anything to GraphQL'],
                 [PRODUCTS.YOGA, 'GraphQL Server & Subgraph'],
-                [PRODUCTS.CODEGEN, 'GraphQL Code Generation'],
               ] as const
             ).map(([product, description]) => {
               const Logo = product.logo;
@@ -491,9 +503,12 @@ export function CompanyMenu({ children }: { children: React.ReactNode }) {
   );
 }
 
-function HiveLogoLink() {
+function HiveLogoLink({ isHive }: { isHive: boolean }) {
   return (
-    <Anchor href="/" className="hive-focus -m-2 flex items-center rounded-md p-2">
+    <Anchor
+      href={isHive ? '/' : 'https://the-guild.dev/graphql/hive'}
+      className="hive-focus -m-2 flex items-center rounded-md p-2"
+    >
       <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
     </Anchor>
   );
