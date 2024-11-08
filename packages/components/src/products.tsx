@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { FC, HTMLProps, SVGProps } from 'react';
 import { MenuItem } from 'nextra/normalize-pages';
 import { cn } from './cn';

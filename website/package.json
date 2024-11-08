@@ -12,13 +12,13 @@
   },
   "dependencies": {
     "@theguild/components": "workspace:*",
-    "next": "15.0.2",
+    "next": "15.0.3",
     "next-mdx-remote": "5.0.0",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@theguild/tailwind-config": "0.6.0-alpha-20241106003557-2c94714753ba2342f442f836b4683119985ee2c5",
+    "@theguild/tailwind-config": "0.6.0",
     "@types/react": "18.3.12",
     "typescript": "5.6.3"
   },
