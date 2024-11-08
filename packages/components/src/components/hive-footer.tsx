@@ -28,10 +28,10 @@ export function HiveFooter({ className, logo, resources = [], sameSite, descript
             href="/"
             sameSite={sameSite}
             {...logo}
-            className="hive-focus -m-1.5 flex rounded p-1.5"
+            className="hive-focus -m-1.5 flex rounded p-1.5 text-green-1000 dark:text-white"
           >
             {logo?.children || (
-              <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:text-white" />
+              <HiveCombinationMark className="h-8 w-auto" />
             )}
           </Anchor>
           <p className="mt-6 lg:mt-8">{description}</p>

@@ -42,11 +42,12 @@ export const CodegenFooter: StoryObj<HiveFooterProps> = {
     logo: {
       href: '/',
       children: (
-        <div className="flex items-center gap-3 text-green-1000">
+        <div className="flex items-center gap-3">
           <CodegenIcon className="size-8" />
           <span className="text-2xl/[1.2] font-medium tracking-[-0.16px]">Codegen</span>
         </div>
       ),
     },
+    description: 'End-to-end type safety'
   },
 };
