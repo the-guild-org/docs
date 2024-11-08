@@ -26,7 +26,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite }: HiveFo
             {...logo}
             className="hive-focus -m-1.5 flex rounded p-1.5"
           >
-            <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:text-white" />
+            {logo?.children || <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:text-white" />}
           </Anchor>
           <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
         </div>
