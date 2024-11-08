@@ -22,7 +22,7 @@ export { ReactComponent as YogaLogo } from './yoga.svg';
 export { ReactComponent as HiveCombinationMark } from './hive-combination-mark.svg';
 export { ReactComponent as GraphQLFoundationLogo } from './graphql-foundation.svg';
 
-export interface LettermarkLogoProps extends HTMLAttributes<HTMLElement> {}
+export type LettermarkLogoProps = HTMLAttributes<HTMLElement>
 const createLettermarkLogo = (text: string) => {
   function LettermarkLogo(props: LettermarkLogoProps) {
     return (

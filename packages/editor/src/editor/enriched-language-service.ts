@@ -114,7 +114,7 @@ export class EnrichedLanguageService extends LanguageService {
           sources.map(async source => {
             try {
               return await source.forNode(info);
-            } catch (e) {
+            } catch {
               return null;
             }
           }),

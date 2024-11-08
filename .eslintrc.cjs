@@ -8,11 +8,8 @@ module.exports = {
     '@theguild/eslint-config/yml',
     // '@theguild/eslint-config/mdx',
     'plugin:tailwindcss/recommended',
-    // 'plugin:storybook/recommended', // broken in ESLint 9
+    'plugin:storybook/recommended',
   ],
-  parserOptions: {
-    project: ['tsconfig.eslint.json', 'website/tsconfig.json', 'packages/*/tsconfig.json'],
-  },
   rules: {
     'tailwindcss/classnames-order': 'off', // conflicts with official prettier-plugin-tailwindcss and tailwind v3
     // set more strict to highlight in editor
@@ -38,13 +35,6 @@ module.exports = {
       whitelist: [
         // TODO: find a way to fix it and remove these classes since they are imported somewhere and are used
         'line',
-        'aa-ItemLink',
-        'aa-ItemContent',
-        'aa-ItemContentBody',
-        'aa-ItemContentTitle',
-        'aa-ItemContentSubtitle',
-        'aa-SourceHeader',
-        'aa-SourceHeaderTitle',
         'hive-focus',
         'hive-focus-within',
         '@container', // Tailwind ESLint Plugin doesn't see the Container Queries classes but it does see prefixes like @sm:
@@ -56,19 +46,12 @@ module.exports = {
       files: ['**/*.stories.{ts,tsx}'],
       rules: {
         'no-console': 'off',
-        'import/no-default-export': 'off',
       },
     },
     {
       files: ['packages/**'],
       rules: {
         'import/extensions': ['error', { js: 'never', json: 'always' }],
-      },
-    },
-    {
-      files: ['*.config.js'],
-      rules: {
-        'import/no-default-export': 'off',
       },
     },
   ],
