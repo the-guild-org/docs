@@ -1,5 +1,26 @@
 # @theguild/components
 
+## 7.2.0
+
+### Minor Changes
+
+- [#1756](https://github.com/the-guild-org/docs/pull/1756)
+  [`59fdf4e`](https://github.com/the-guild-org/docs/commit/59fdf4e695c394ae8cef0987f9a845c4ec860bc3)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add green colorScheme to MarketplaceSearch and
+  MarketplaceList, change display to grid
+
+### Patch Changes
+
+- [#1756](https://github.com/the-guild-org/docs/pull/1756)
+  [`59fdf4e`](https://github.com/the-guild-org/docs/commit/59fdf4e695c394ae8cef0987f9a845c4ec860bc3)
+  Thanks [@hasparus](https://github.com/hasparus)! - dependencies updates:
+  - Removed dependency
+    [`@theguild/tailwind-config@0.5.0` ↗︎](https://www.npmjs.com/package/@theguild/tailwind-config/v/0.5.0)
+    (from `dependencies`)
+  - Added dependency
+    [`@theguild/tailwind-config@0.6.0-alpha-20241106003557-2c94714753ba2342f442f836b4683119985ee2c5` ↗︎](https://www.npmjs.com/package/@theguild/tailwind-config/v/0.6.0)
+    (to `peerDependencies`)
+
 ## 7.1.0
 
 ### Minor Changes
