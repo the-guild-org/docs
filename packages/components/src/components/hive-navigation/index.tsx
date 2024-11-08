@@ -214,7 +214,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
               Hive
             </p>
             <p className="mt-1 text-sm leading-5 text-green-800 dark:text-neutral-400">
-              GraphQL Management Platform, a Gateway & Decision-making Engine
+              GraphQL Management Platform & Decision-making Engine
             </p>
           </NavigationMenuLink>
           <Anchor
@@ -224,14 +224,14 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
             <span>Get started</span> <ArrowIcon />
           </Anchor>
         </div>
-        <div className="w-[267px]">
+        <div className="w-[269px]">
           <ColumnLabel>The GraphQL Stack</ColumnLabel>
           <ul>
             {(
               [
+                [PRODUCTS.HIVE_GATEWAY, 'Federation Gateway'],
                 [PRODUCTS.MESH, 'Anything to GraphQL'],
                 [PRODUCTS.YOGA, 'GraphQL Server & Subgraph'],
-                [PRODUCTS.CODEGEN, 'GraphQL Code Generation'],
               ] as const
             ).map(([product, description]) => {
               const Logo = product.logo;

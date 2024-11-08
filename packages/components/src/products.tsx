@@ -1,7 +1,7 @@
 import { FC, HTMLProps, SVGProps } from 'react';
 import { MenuItem } from 'nextra/normalize-pages';
 import { cn } from './cn';
-import { CodegenIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
+import { CodegenIcon, HiveIcon, MeshIcon, YogaIcon, HiveGatewayIcon } from './components/icons';
 import {
   AngularLogo,
   ConductorLogo,
@@ -25,6 +25,7 @@ import {
 
 export type ProductType =
   | 'HIVE'
+  | 'HIVE_GATEWAY'
   | 'CONDUCTOR'
   | 'YOGA'
   | 'ENVELOP'
@@ -61,6 +62,13 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     title: 'Schema registry for your GraphQL workflows',
     href: 'https://the-guild.dev/graphql/hive',
     logo: HiveIcon,
+    primaryColor: '#ffb21d',
+  },
+  HIVE_GATEWAY: {
+    name: 'Hive Gateway',
+    title: 'A fully-featured GraphQL gateway framework',
+    href: 'https://the-guild.dev/graphql/hive/docs/gateway',
+    logo: HiveGatewayIcon,
     primaryColor: '#ffb21d',
   },
   MESH: {
@@ -107,7 +115,7 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     primaryColor: '#59f79d',
   },
   CODEGEN: {
-    name: 'Code Generator',
+    name: 'Codegen',
     title: 'Generation of typed queries, mutations, subscriptions and typed GraphQL resolvers',
     href: 'https://the-guild.dev/graphql/codegen',
     logo: CodegenIcon,
