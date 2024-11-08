@@ -1,7 +1,7 @@
 import { FC, HTMLProps, SVGProps } from 'react';
 import { MenuItem } from 'nextra/normalize-pages';
 import { cn } from './cn';
-import { CodegenIcon, HiveIcon, MeshIcon, YogaIcon, HiveGatewayIcon } from './components/icons';
+import { CodegenIcon, HiveGatewayIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
 import {
   AngularLogo,
   ConductorLogo,
@@ -136,8 +136,8 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     primaryColor: '#e535ab',
   },
   ESLINT: {
-    name: 'ESLint',
-    title: 'Customisable ESLint parser, plugin and set rules for GraphQL',
+    name: 'GraphQL ESLint',
+    title: 'Customisable ESLint parser, plugin and set rules of for GraphQL',
     href: 'https://the-guild.dev/graphql/eslint',
     logo: GraphQLESlintLettermark,
     primaryColor: '#5639ca',
@@ -223,12 +223,12 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
 };
 
 export const SIX_HIGHLIGHTED_PRODUCTS = [
+  PRODUCTS.CODEGEN,
   PRODUCTS.INSPECTOR,
   PRODUCTS.ENVELOP,
   PRODUCTS.SOFA,
   PRODUCTS.SCALARS,
   PRODUCTS.ESLINT,
-  PRODUCTS.NEXTRA,
 ];
 
 /** List of products displayed in hamburger menu. */
