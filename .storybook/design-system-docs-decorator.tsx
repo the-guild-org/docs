@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryContext } from '@storybook/react/*';
+import { StoryContext } from '@storybook/react';
 import { ArrowIcon } from '../packages/components/src/components/icons';
 import { hiveThemeDecorator } from './hive-theme-decorator';
 
