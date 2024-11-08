@@ -162,7 +162,7 @@ export const CodegenNavmenu: StoryObj<HiveNavigationProps> = {
     logo: (
       <Anchor href="/" className="hive-focus -m-2 flex items-center gap-3 rounded-md p-2">
         <CodegenIcon className="size-8" />
-        <span className="text-2xl font-medium tracking-[-0.16px]">{PRODUCTS.CODEGEN.name}</span>
+        <span className="text-2xl font-medium tracking-[-0.16px]">Codegen</span>
       </Anchor>
     ),
   },
