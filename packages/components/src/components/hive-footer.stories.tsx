@@ -41,10 +41,12 @@ export const CodegenFooter: StoryObj<HiveFooterProps> = {
   args: {
     logo: {
       href: '/',
-      children: <div className="flex gap-3 text-green-1000">
-      <CodegenIcon className="size-8" />
-      <span className="text-2xl font-medium tracking-[-0.16px]">Codegen</span>
-    </div>
-    }
+      children: (
+        <div className="flex gap-3 text-green-1000">
+          <CodegenIcon className="size-8" />
+          <span className="text-2xl font-medium tracking-[-0.16px]">Codegen</span>
+        </div>
+      ),
+    },
   },
 };
