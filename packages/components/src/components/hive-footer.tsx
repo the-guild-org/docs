@@ -17,8 +17,14 @@ export interface HiveFooterProps extends IFooterExtendedProps {
   description?: string;
 }
 
-export function HiveFooter({ className, logo, resources = [], sameSite, description }: HiveFooterProps) {
-  description ||= 'Open-source GraphQL management platform'
+export function HiveFooter({
+  className,
+  logo,
+  resources = [],
+  sameSite,
+  description,
+}: HiveFooterProps) {
+  description ||= 'Open-source GraphQL management platform';
 
   return (
     <footer className={cn('relative flex justify-center px-4 py-6 xl:px-[120px]', className)}>
@@ -30,9 +36,7 @@ export function HiveFooter({ className, logo, resources = [], sameSite, descript
             {...logo}
             className="hive-focus -m-1.5 flex rounded p-1.5 text-green-1000 dark:text-white"
           >
-            {logo?.children || (
-              <HiveCombinationMark className="h-8 w-auto" />
-            )}
+            {logo?.children || <HiveCombinationMark className="h-8 w-auto" />}
           </Anchor>
           <p className="mt-6 lg:mt-8">{description}</p>
         </div>

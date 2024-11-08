@@ -48,6 +48,6 @@ export const CodegenFooter: StoryObj<HiveFooterProps> = {
         </div>
       ),
     },
-    description: 'End-to-end type safety'
+    description: 'End-to-end type safety',
   },
 };
