@@ -236,9 +236,10 @@ export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
   (
     [
       'The GraphQL Stack',
+      PRODUCTS.HIVE,
+      PRODUCTS.HIVE_GATEWAY,
       PRODUCTS.MESH,
       PRODUCTS.YOGA,
-      PRODUCTS.CODEGEN,
       'Libraries',
       ...SIX_HIGHLIGHTED_PRODUCTS,
     ] as const
@@ -272,11 +273,11 @@ export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
           <div className="flex items-center gap-2">
             <div
               className={cn(
-                'size-4 translate-y-[0.25px]',
-                i > 3 && 'rounded-sm bg-gray-500 text-[8px] text-white dark:bg-white/10 p-0.5',
+                'flex size-4 translate-y-[0.25px] items-center justify-center',
+                i > 6 && 'rounded-sm bg-gray-500 text-white dark:bg-white/10',
               )}
             >
-              <Logo className="size-4" />
+              <Logo className="size-4 text-[8px]" />
             </div>
             {item.name}
           </div>
