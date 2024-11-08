@@ -133,7 +133,7 @@
 }
 
 @media (max-width: 767px) {
-  #__next {
+  :root {
     --nextra-navbar-height: 64px;
   }
 }
