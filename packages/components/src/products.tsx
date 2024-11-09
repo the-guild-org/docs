@@ -272,7 +272,7 @@ export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
           <div className="flex items-center gap-2">
             <div
               className={cn(
-                'flex size-4 translate-y-[0.25px] items-center justify-center',
+                'flex translate-y-[0.25px]',
                 i > 6 && 'rounded-sm bg-gray-500 text-white dark:bg-white/10',
               )}
             >
