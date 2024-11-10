@@ -222,6 +222,13 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
   },
 };
 
+export const FOUR_MAIN_PRODUCTS = [
+  PRODUCTS.HIVE,
+  PRODUCTS.HIVE_GATEWAY,
+  PRODUCTS.YOGA,
+  PRODUCTS.MESH,
+];
+
 export const SIX_HIGHLIGHTED_PRODUCTS = [
   PRODUCTS.CODEGEN,
   PRODUCTS.INSPECTOR,
@@ -234,14 +241,7 @@ export const SIX_HIGHLIGHTED_PRODUCTS = [
 /** List of products displayed in hamburger menu. */
 export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
   (
-    [
-      'The GraphQL Stack',
-      PRODUCTS.MESH,
-      PRODUCTS.YOGA,
-      PRODUCTS.CODEGEN,
-      'Libraries',
-      ...SIX_HIGHLIGHTED_PRODUCTS,
-    ] as const
+    ['The GraphQL Stack', ...FOUR_MAIN_PRODUCTS, 'Libraries', ...SIX_HIGHLIGHTED_PRODUCTS] as const
   ).map((item, i) => {
     if (typeof item === 'string') {
       return [
@@ -257,7 +257,7 @@ export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
               </style>
               <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
             </>
-          ) as any as string,
+          ) as unknown as string,
         },
       ];
     }
@@ -270,12 +270,14 @@ export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
         newWindow: true,
         title: (
           <div className="flex items-center gap-2">
-            <Logo
+            <div
               className={cn(
-                'size-4 translate-y-[0.25px]',
-                i > 3 && 'rounded-sm bg-gray-500 text-[8px] text-white dark:bg-white/10',
+                'flex translate-y-[0.25px]',
+                i > 6 && 'rounded-sm bg-gray-500 text-white dark:bg-white/10',
               )}
-            />
+            >
+              <Logo className="size-4 text-[8px]" />
+            </div>
             {item.name}
           </div>
         ),
