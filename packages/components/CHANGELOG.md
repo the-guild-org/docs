@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 7.2.3
+
+### Patch Changes
+
+- [#1791](https://github.com/the-guild-org/docs/pull/1791)
+  [`48e5269`](https://github.com/the-guild-org/docs/commit/48e52693804fad841fd75cd279ad114543e133ce)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add padding to product logos
+
 ## 7.2.2
 
 ### Patch Changes
