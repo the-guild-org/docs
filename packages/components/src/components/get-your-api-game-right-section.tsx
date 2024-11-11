@@ -28,8 +28,10 @@ export function GetYourAPIGameRightSection({ className }: { className?: string }
             variant="tertiary"
             href="https://the-guild.dev/contact"
             onClick={event => {
-              window.$crisp?.push(['do', 'chat:open']);
-              event.preventDefault();
+              if (window.$crisp) {
+                window.$crisp.push(['do', 'chat:open']);
+                event.preventDefault();
+              }
             }}
           >
             Talk to us
