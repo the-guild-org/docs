@@ -165,8 +165,10 @@ export function HiveNavigation({
           target="_blank"
           rel="noopener noreferrer"
           onClick={event => {
-            window.$crisp?.push(['do', 'chat:open']);
-            event.preventDefault();
+            if (window.$crisp) {
+              window.$crisp.push(['do', 'chat:open']);
+              event.preventDefault();
+            }
           }}
         >
           Contact <span className="hidden xl:contents">us</span>
