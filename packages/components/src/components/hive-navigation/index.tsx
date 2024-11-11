@@ -267,7 +267,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
                     className="flex flex-row items-center gap-3 px-4 py-2"
                     arrow
                   >
-                    <div className="flex size-8 items-center justify-center rounded bg-beige-200 dark:bg-white/5">
+                    <div className="flex size-8 items-center justify-center rounded bg-beige-200 p-[5px] dark:bg-white/5">
                       <Logo className="size-8 text-green-1000 dark:text-neutral-300" />
                     </div>
                     <div>
