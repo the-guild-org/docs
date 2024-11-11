@@ -272,7 +272,8 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
                     </div>
                     <div>
                       <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
-                        {product.name}
+                        {/* shortened to one word */}
+                        {product.name === PRODUCTS.ESLINT.name ? 'ESLint' : product.name}
                       </p>
                     </div>
                   </NavigationMenuLink>
