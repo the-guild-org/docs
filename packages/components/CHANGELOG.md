@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 7.2.4
+
+### Patch Changes
+
+- [#1795](https://github.com/the-guild-org/docs/pull/1795)
+  [`223a8ad`](https://github.com/the-guild-org/docs/commit/223a8add07be6d4fe60456063f0b836e54897720)
+  Thanks [@hasparus](https://github.com/hasparus)! - Call event.preventDefault on Contact onClick
+  only if $crisp is there
+
 ## 7.2.3
 
 ### Patch Changes
