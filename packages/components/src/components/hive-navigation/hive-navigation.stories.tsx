@@ -115,7 +115,7 @@ export const Developer: StoryObj = {
   render() {
     return (
       <NavigationMenu>
-        <DeveloperMenu isHive={false} />
+        <DeveloperMenu isHive={false} developerMenu={undefined} />
       </NavigationMenu>
     );
   },
