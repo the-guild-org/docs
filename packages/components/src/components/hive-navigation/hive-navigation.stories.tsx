@@ -3,7 +3,7 @@ import { Meta, StoryContext, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 import { PRODUCTS } from '../../products';
 import { Anchor } from '../anchor';
-import { CodegenIcon } from '../icons';
+import { CodegenIcon, GitHubIcon, PaperIcon, PencilIcon } from '../icons';
 import { GraphQLConfCard } from './graphql-conf-card';
 import {
   CompanyMenu,
@@ -156,6 +156,23 @@ export const CodegenNavmenu: StoryObj<HiveNavigationProps> = {
       {
         href: '/plugins',
         children: 'Plugins',
+      },
+    ],
+    developerMenu: [
+      {
+        href: '/docs',
+        icon: PaperIcon,
+        children: 'Documentation',
+      },
+      {
+        href: 'https://the-guild.dev/blog',
+        icon: PencilIcon,
+        children: 'Blog',
+      },
+      {
+        href: 'https://github.com/dotansimha/graphql-code-generator',
+        icon: GitHubIcon,
+        children: 'GitHub',
       },
     ],
     productName: PRODUCTS.CODEGEN.name,

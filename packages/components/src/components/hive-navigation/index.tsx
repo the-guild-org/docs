@@ -50,6 +50,7 @@ export interface HiveNavigationProps {
   productName: string;
   logo?: ReactNode;
   navLinks?: { href: string; children: ReactNode }[];
+  developerMenu?: { href: string; icon: React.FC<{ className?: string }>; children: ReactNode }[];
 }
 /**
  *
@@ -70,6 +71,7 @@ export function HiveNavigation({
   productName,
   logo,
   navLinks,
+  developerMenu,
 }: HiveNavigationProps) {
   // `useThemeConfig` doesn't return anything outside of Nextra, and the provider isn't exported
   const themeConfig = useThemeConfig() as ReturnType<typeof useThemeConfig> | undefined;
@@ -122,7 +124,7 @@ export function HiveNavigation({
           <NavigationMenuItem>
             <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <DeveloperMenu isHive={isHive} />
+              <DeveloperMenu isHive={isHive} developerMenu={developerMenu} />
             </NavigationMenuContent>
           </NavigationMenuItem>
           {!ENTERPRISE_MENU_HIDDEN && (
@@ -316,38 +318,43 @@ MenuContentColumns.displayName = 'MenuContentColumns';
 
 interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   isHive: boolean;
+  developerMenu:
+    | undefined
+    | { href: string; icon: React.FC<{ className?: string }>; children: ReactNode }[];
 }
 /**
  * @internal
  */
 export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps>(
-  ({ isHive, ...rest }, ref) => {
+  ({ isHive, developerMenu, ...rest }, ref) => {
+    developerMenu ||= [
+      {
+        href: isHive ? '/docs' : 'https://the-guild.dev/graphql/hive/docs',
+        icon: PaperIcon,
+        children: 'Documentation',
+      },
+      { href: 'https://status.graphql-hive.com/', icon: TargetIcon, children: 'Status' },
+      {
+        href: isHive ? '/product-updates' : 'https://the-guild.dev/graphql/hive/product-updates',
+        icon: RightCornerIcon,
+        children: 'Product Updates',
+      },
+      { href: 'https://the-guild.dev/blog', icon: PencilIcon, children: 'Blog' },
+      {
+        href: 'https://github.com/dotansimha/graphql-code-generator',
+        icon: GitHubIcon,
+        children: 'GitHub',
+      },
+    ];
+
     return (
       <MenuContentColumns {...rest} ref={ref}>
         <div>
           <ColumnLabel>Developer</ColumnLabel>
           <ul>
-            {(
-              [
-                [
-                  'Documentation',
-                  PaperIcon,
-                  isHive ? '/docs' : 'https://the-guild.dev/graphql/hive/docs',
-                ],
-                ['Status', TargetIcon, 'https://status.graphql-hive.com/'],
-                [
-                  'Product Updates',
-                  RightCornerIcon,
-                  isHive
-                    ? '/product-updates'
-                    : 'https://the-guild.dev/graphql/hive/product-updates',
-                ],
-                ['Blog', PencilIcon, 'https://the-guild.dev/blog'],
-                ['GitHub', GitHubIcon, 'https://github.com/kamilkisiela/graphql-hive'],
-              ] as const
-            ).map(([text, Icon, href], i) => (
-              <MenuColumnListItem key={i} href={href} icon={Icon}>
-                {text}
+            {developerMenu.map(({ href, icon, children }, i) => (
+              <MenuColumnListItem key={i} href={href} icon={icon}>
+                {children}
               </MenuColumnListItem>
             ))}
           </ul>
@@ -386,7 +393,7 @@ function MenuColumnListItem({
 }: {
   children: ReactNode;
   href: string;
-  icon: (props: React.SVGProps<SVGSVGElement>) => React.ReactNode;
+  icon: React.FC<{ className?: string }>;
 }) {
   return (
     <li>
