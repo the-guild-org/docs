@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 7.2.5
+
+### Patch Changes
+
+- [#1797](https://github.com/the-guild-org/docs/pull/1797)
+  [`13df2c1`](https://github.com/the-guild-org/docs/commit/13df2c13c76c841b7433f678b9c4e7b292bc038f)
+  Thanks [@hasparus](https://github.com/hasparus)! - Expose `developerMenu` prop from
+  `HiveNavigation`.
+
 ## 7.2.4
 
 ### Patch Changes
