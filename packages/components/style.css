@@ -1,7 +1,8 @@
-@layer l-base, l-nextra, l-components;
+@layer l-nextra, l-base, l-components;
 
-@import 'tailwindcss/base' layer(l-base);
 @import 'nextra-theme-docs/dist/style.css' layer(l-nextra);
+/* the theme must override Nextra styles */
+@import 'tailwindcss/base' layer(l-base);
 @import 'tailwindcss/components' layer(l-components);
 @import 'tailwindcss/utilities';
 
