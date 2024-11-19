@@ -84,7 +84,7 @@ export function HiveNavigation({
   logo ||= <HiveLogoLink isHive={isHive} />;
   navLinks ||= [
     {
-      href: isHive ? '#pricing' : 'https://the-guild.dev/graphql/hive#pricing',
+      href: isHive ? '/pricing' : 'https://the-guild.dev/graphql/hive/pricing',
       children: 'Pricing',
     },
   ];
