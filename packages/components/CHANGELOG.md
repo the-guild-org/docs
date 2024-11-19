@@ -1,5 +1,17 @@
 # @theguild/components
 
+## 7.2.6
+
+### Patch Changes
+
+- [#1812](https://github.com/the-guild-org/docs/pull/1812)
+  [`b035ece`](https://github.com/the-guild-org/docs/commit/b035ece0216f9d01c85651b8f741355fa6baf4d2)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add the Neue Montreal back to `html`
+
+- [#1802](https://github.com/the-guild-org/docs/pull/1802)
+  [`05e326f`](https://github.com/the-guild-org/docs/commit/05e326f7d6c287f35c946cd51c2e9a712e187bf1)
+  Thanks [@hasparus](https://github.com/hasparus)! - Make navmenu wider on large screens
+
 ## 7.2.5
 
 ### Patch Changes
