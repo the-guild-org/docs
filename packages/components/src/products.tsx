@@ -84,21 +84,6 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     logo: YogaIcon,
     primaryColor: '#c026d3',
   },
-  CODEGEN: {
-    name: 'Codegen',
-    title: 'Generation of typed queries, mutations, subscriptions and typed GraphQL resolvers',
-    href: 'https://the-guild.dev/graphql/codegen',
-    logo: CodegenIcon,
-    primaryColor: '#0284c7',
-  },
-  NEXTRA: {
-    name: 'Nextra',
-    title:
-      'Simple, powerful and flexible site generation framework with everything you love from Next.js',
-    href: 'https://nextra.site',
-    logo: NextraLogo,
-    primaryColor: '#000',
-  },
   CONDUCTOR: {
     name: 'Conductor',
     title: 'All-in-one GraphQL Gateway',
@@ -127,6 +112,13 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     href: 'https://the-guild.dev/graphql/inspector',
     logo: InspectorLettermark,
     primaryColor: '#59f79d',
+  },
+  CODEGEN: {
+    name: 'Codegen',
+    title: 'Generation of typed queries, mutations, subscriptions and typed GraphQL resolvers',
+    href: 'https://the-guild.dev/graphql/codegen',
+    logo: CodegenIcon,
+    primaryColor: '#0284c7',
   },
   TOOLS: {
     name: 'Tools',
@@ -218,6 +210,14 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     href: 'https://the-guild.dev/heltin',
     logo: HeltinLettermark,
     primaryColor: '#1d90ff',
+  },
+  NEXTRA: {
+    name: 'Nextra',
+    title:
+      'Simple, powerful and flexible site generation framework with everything you love from Next.js',
+    href: 'https://nextra.site',
+    logo: NextraLogo,
+    primaryColor: '#000',
   },
 };
 

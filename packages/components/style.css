@@ -5,12 +5,6 @@
 @import 'tailwindcss/components' layer(l-components);
 @import 'tailwindcss/utilities';
 
-/*html {*/
-/*  !* font from tailwindcss/base is overwritten by Nextra styles *!*/
-/*  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',*/
-/*  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';*/
-/*}*/
-
 /* #region hamburger mobile menu */
 
 .light .nextra-sidebar-container input {

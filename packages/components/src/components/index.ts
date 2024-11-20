@@ -28,5 +28,5 @@ export * from './cookies-consent';
 export * from './heading';
 export * from './info-card';
 export * from './stud';
-export { Giscus } from './giscus';
 export * from './explore-main-product-cards';
+export { Giscus } from './giscus';
