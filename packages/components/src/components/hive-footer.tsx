@@ -14,9 +14,18 @@ import {
   YouTubeIcon,
 } from './icons';
 
-export interface HiveFooterProps extends IFooterExtendedProps {}
+export interface HiveFooterProps extends IFooterExtendedProps {
+  description?: string;
+}
 
-export const HiveFooter: FC<HiveFooterProps> = ({ className, logo, resources = [] }) => {
+export const HiveFooter: FC<HiveFooterProps> = ({
+  className,
+  logo,
+  resources = [],
+  description,
+}) => {
+  description ||= 'Open-source GraphQL management platform';
+
   return (
     <footer className={cn('relative flex justify-center px-4 py-6 xl:px-[120px]', className)}>
       <div className="mx-4 grid w-full max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10 dark:text-neutral-400">
@@ -24,11 +33,11 @@ export const HiveFooter: FC<HiveFooterProps> = ({ className, logo, resources = [
           <Anchor
             href={`${siteOrigin}/`}
             {...logo}
-            className="hive-focus -m-1.5 flex rounded p-1.5"
+            className="hive-focus -m-1.5 flex rounded p-1.5 text-green-1000 dark:text-white"
           >
-            <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:text-white" />
+            {logo?.children || <HiveCombinationMark className="h-8 w-auto" />}
           </Anchor>
-          <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
+          <p className="mt-6 lg:mt-8">{description}</p>
         </div>
         <div className="col-span-full grid grid-flow-row grid-cols-2 justify-stretch gap-6 text-sm sm:col-span-4 sm:grid-cols-3 lg:col-span-3 lg:pb-12 lg:text-base">
           <List heading="Products" links={products} />
@@ -49,8 +58,10 @@ export const HiveFooter: FC<HiveFooterProps> = ({ className, logo, resources = [
               className="hive-focus -m-2 rounded p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
               href="https://the-guild.dev/contact"
               onClick={event => {
-                window.$crisp?.push(['do', 'chat:open']);
-                event.preventDefault();
+                if (window.$crisp) {
+                  window.$crisp.push(['do', 'chat:open']);
+                  event.preventDefault();
+                }
               }}
             >
               Contact Us

@@ -9,7 +9,7 @@ import { compileMdx, fetchPackageInfo, MDXRemote } from '@theguild/components/se
 export async function PackageApiDocs() {
   const PACKAGE_NAME = '@envelop/core'
   const { readme } = await fetchPackageInfo(PACKAGE_NAME)
-  const { result } = await compileMdx(
+  const rawJs = await compileMdx(
     `
 \`\`\`sh npm2yarn
 npm i ${PACKAGE_NAME}
@@ -17,7 +17,7 @@ npm i ${PACKAGE_NAME}
 ${readme}`,
     defaultNextraOptions
   )
-  return <MDXRemote compiledSource={result} components={{ $Tabs: Tabs }} />
+  return <MDXRemote compiledSource={rawJs} components={{ $Tabs: Tabs }} />
 }
 
 # Remote MDX Support

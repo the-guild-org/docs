@@ -90,6 +90,7 @@ export const GuildLayout: FC<{
         // Add for every website except The Guild Blog
         ...(siteOrigin && { company: companyItem }),
         products: productsItems,
+        // @ts-expect-error -- fixme
         ...meta.data,
       },
     },

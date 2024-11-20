@@ -1,7 +1,6 @@
-import { FC, HTMLProps, SVGProps } from 'react';
-import { MenuItem } from 'nextra/normalize-pages';
+import { FC, HTMLProps, ReactNode, SVGProps } from 'react';
 import { cn } from './cn';
-import { CodegenIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
+import { CodegenIcon, HiveGatewayIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
 import {
   AngularLettermark,
   ConductorLettermark,
@@ -25,6 +24,7 @@ import {
 
 export type ProductType =
   | 'HIVE'
+  | 'HIVE_GATEWAY'
   | 'CONDUCTOR'
   | 'YOGA'
   | 'ENVELOP'
@@ -47,21 +47,27 @@ export type ProductType =
   | 'HELTIN'
   | 'NEXTRA';
 
-export const PRODUCTS: Record<
-  ProductType,
-  {
-    name: string;
-    title: string;
-    href: `https://${string}`;
-    logo: FC<SVGProps<SVGElement>> | FC<HTMLProps<HTMLElement>>;
-    primaryColor: `#${string}`;
-  }
-> = {
+export interface ProductInfo {
+  name: string;
+  title: string;
+  href: `https://${string}`;
+  logo: FC<SVGProps<SVGElement>> | FC<HTMLProps<HTMLElement>>;
+  primaryColor: `#${string}`;
+}
+
+export const PRODUCTS: Record<ProductType, ProductInfo> = {
   HIVE: {
     name: 'Hive',
     title: 'Schema registry for your GraphQL workflows',
     href: 'https://the-guild.dev/graphql/hive',
     logo: HiveIcon,
+    primaryColor: '#ffb21d',
+  },
+  HIVE_GATEWAY: {
+    name: 'Hive Gateway',
+    title: 'A fully-featured GraphQL gateway framework',
+    href: 'https://the-guild.dev/graphql/hive/docs/gateway',
+    logo: HiveGatewayIcon,
     primaryColor: '#ffb21d',
   },
   MESH: {
@@ -77,21 +83,6 @@ export const PRODUCTS: Record<
     href: 'https://the-guild.dev/graphql/yoga-server',
     logo: YogaIcon,
     primaryColor: '#c026d3',
-  },
-  CODEGEN: {
-    name: 'Codegen',
-    title: 'Generation of typed queries, mutations, subscriptions and typed GraphQL resolvers',
-    href: 'https://the-guild.dev/graphql/codegen',
-    logo: CodegenIcon,
-    primaryColor: '#0284c7',
-  },
-  NEXTRA: {
-    name: 'Nextra',
-    title:
-      'Simple, powerful and flexible site generation framework with everything you love from Next.js',
-    href: 'https://nextra.site',
-    logo: NextraLogo,
-    primaryColor: '#000',
   },
   CONDUCTOR: {
     name: 'Conductor',
@@ -122,6 +113,13 @@ export const PRODUCTS: Record<
     logo: InspectorLettermark,
     primaryColor: '#59f79d',
   },
+  CODEGEN: {
+    name: 'Codegen',
+    title: 'Generation of typed queries, mutations, subscriptions and typed GraphQL resolvers',
+    href: 'https://the-guild.dev/graphql/codegen',
+    logo: CodegenIcon,
+    primaryColor: '#0284c7',
+  },
   TOOLS: {
     name: 'Tools',
     title: 'A set of utilities for faster GraphQL development',
@@ -137,8 +135,8 @@ export const PRODUCTS: Record<
     primaryColor: '#e535ab',
   },
   ESLINT: {
-    name: 'ESLint',
-    title: 'Customisable ESLint parser, plugin and set rules for GraphQL',
+    name: 'GraphQL ESLint',
+    title: 'Customizable ESLint parser, plugin, and rule set for GraphQL',
     href: 'https://the-guild.dev/graphql/eslint',
     logo: GraphQLESlintLettermark,
     primaryColor: '#5639ca',
@@ -213,68 +211,82 @@ export const PRODUCTS: Record<
     logo: HeltinLettermark,
     primaryColor: '#1d90ff',
   },
+  NEXTRA: {
+    name: 'Nextra',
+    title:
+      'Simple, powerful and flexible site generation framework with everything you love from Next.js',
+    href: 'https://nextra.site',
+    logo: NextraLogo,
+    primaryColor: '#000',
+  },
 };
 
+export const FOUR_MAIN_PRODUCTS = [
+  PRODUCTS.HIVE,
+  PRODUCTS.HIVE_GATEWAY,
+  PRODUCTS.YOGA,
+  PRODUCTS.MESH,
+];
+
 export const SIX_HIGHLIGHTED_PRODUCTS = [
+  PRODUCTS.CODEGEN,
   PRODUCTS.INSPECTOR,
   PRODUCTS.ENVELOP,
   PRODUCTS.SOFA,
   PRODUCTS.SCALARS,
   PRODUCTS.ESLINT,
-  PRODUCTS.NEXTRA,
 ];
 
 /** List of products displayed in hamburger menu. */
-export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
-  (
-    [
-      'The GraphQL Stack',
-      PRODUCTS.MESH,
-      PRODUCTS.YOGA,
-      PRODUCTS.CODEGEN,
-      'Libraries',
-      ...SIX_HIGHLIGHTED_PRODUCTS,
-    ] as const
-  ).map((item, i) => {
-    if (typeof item === 'string') {
+export const PRODUCTS_MENU_LIST: Record<string, { type: 'separator'; title: ReactNode }> =
+  Object.fromEntries(
+    (
+      [
+        'The GraphQL Stack',
+        ...FOUR_MAIN_PRODUCTS,
+        'Libraries',
+        ...SIX_HIGHLIGHTED_PRODUCTS,
+      ] as const
+    ).map((item, i) => {
+      if (typeof item === 'string') {
+        return [
+          i,
+          {
+            type: 'separator',
+            title: (
+              <>
+                {/* This is a one-off class. The margins and paddings of the parent list item are were large. */}
+                {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
+                <style className="hive-label-separator">
+                  {'li:has(>.hive-label-separator) { margin: 0.75rem 0 0.25rem 0; padding: 0 }'}
+                </style>
+                <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
+              </>
+            ),
+          },
+        ];
+      }
+      const Logo = item.logo;
       return [
         i,
         {
-          type: 'separator',
+          type: 'page',
+          href: item.href,
+          newWindow: true,
           title: (
-            <>
-              {/* This is a one-off class, because I want to style the parent. */}
-              {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-              <style className="label-separator">
-                {
-                  'li:has(.label-separator) { margin: 0.75rem 0 0.25rem 0 !important; padding: 0 !important; }'
-                }
-              </style>
-              <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
-            </>
-          ) as any as string,
+            <div className="flex items-center gap-2">
+              <div
+                className={cn(
+                  'flex translate-y-[0.25px]',
+                  i > 6 && 'rounded-sm bg-gray-500 text-white dark:bg-white/10',
+                )}
+              >
+                <Logo className="size-4 text-[8px]" />
+              </div>
+              {item.name}
+            </div>
+          ),
         },
       ];
-    }
-    const Logo = item.logo;
-    return [
-      i,
-      {
-        type: 'page',
-        href: item.href,
-        newWindow: true,
-        title: (
-          <div className="flex items-center gap-2">
-            <Logo
-              className={cn(
-                'size-4 translate-y-[0.25px]',
-                i > 3 && 'rounded-sm bg-gray-500 text-[8px] text-white dark:bg-white/10',
-              )}
-            />
-            {item.name}
-          </div>
-        ),
-      },
-    ];
-  }),
-);
+    }),
+  );

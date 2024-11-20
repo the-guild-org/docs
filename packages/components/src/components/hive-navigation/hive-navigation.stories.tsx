@@ -1,6 +1,8 @@
 import { Meta, StoryContext, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 import { PRODUCTS } from '../../products';
+import { Anchor } from '../anchor';
+import { CodegenIcon, GitHubIcon, PaperIcon, PencilIcon } from '../icons';
 import { GraphQLConfCard } from './graphql-conf-card';
 import {
   CompanyMenu,
@@ -112,7 +114,7 @@ export const Developer: StoryObj = {
   render() {
     return (
       <NavigationMenu>
-        <DeveloperMenu isHive={false} />
+        <DeveloperMenu isHive={false} developerMenu={undefined} />
       </NavigationMenu>
     );
   },
@@ -143,6 +145,42 @@ export const Company: StoryObj = {
         </CompanyMenu>
       </NavigationMenu>
     );
+  },
+};
+
+export const CodegenNavmenu: StoryObj<HiveNavigationProps> = {
+  ...Default,
+  args: {
+    navLinks: [
+      {
+        href: '/plugins',
+        children: 'Plugins',
+      },
+    ],
+    developerMenu: [
+      {
+        href: '/docs',
+        icon: PaperIcon,
+        children: 'Documentation',
+      },
+      {
+        href: 'https://the-guild.dev/blog',
+        icon: PencilIcon,
+        children: 'Blog',
+      },
+      {
+        href: 'https://github.com/dotansimha/graphql-code-generator',
+        icon: GitHubIcon,
+        children: 'GitHub',
+      },
+    ],
+    productName: PRODUCTS.CODEGEN.name,
+    logo: (
+      <Anchor href="/" className="hive-focus -m-2 flex items-center gap-3 rounded-md p-2">
+        <CodegenIcon className="size-8" />
+        <span className="text-2xl font-medium tracking-[-0.16px]">Codegen</span>
+      </Anchor>
+    ),
   },
 };
 

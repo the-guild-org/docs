@@ -8,7 +8,6 @@ import {
   dummyHeroMarketplace,
   dummyHeroVideo,
   dummyInfoList,
-  dummyMarketplaceSearch,
 } from '../../helpers/dummy';
 import { CardsColorful } from '../cards-colorful';
 import { FeatureList } from '../feature-list';
@@ -18,7 +17,6 @@ import { HeroIllustration } from '../hero-illustration';
 import { HeroMarketplace } from '../hero-marketplace';
 import { HeroVideo } from '../hero-video';
 import { InfoList } from '../info-list';
-import { MarketplaceSearch } from '../marketplace-search';
 
 export default {
   title: 'Products/Envelop',
@@ -53,11 +51,6 @@ export const Home: Story = {
 
 export const Marketplace: Story = {
   args: {
-    children: (
-      <>
-        <CardsColorful {...dummyCardsColorful} />
-        <MarketplaceSearch {...dummyMarketplaceSearch} />
-      </>
-    ),
+    children: <CardsColorful {...dummyCardsColorful} />,
   },
 };

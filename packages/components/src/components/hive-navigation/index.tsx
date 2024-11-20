@@ -50,6 +50,9 @@ export interface HiveNavigationProps {
    * We change links to relative based on what product we're in.
    */
   productName: string;
+  logo?: ReactNode;
+  navLinks?: { href: string; children: ReactNode }[];
+  developerMenu?: { href: string; icon: React.FC<{ className?: string }>; children: ReactNode }[];
 }
 
 /**
@@ -69,6 +72,9 @@ export function HiveNavigation({
   children,
   className,
   productName,
+  logo,
+  navLinks,
+  developerMenu,
 }: HiveNavigationProps) {
   // `useThemeConfig` doesn't return anything outside of Nextra, and the provider isn't exported
   const Search = useThemeConfig().search;
@@ -76,6 +82,14 @@ export function HiveNavigation({
   const isHive = productName === 'Hive';
 
   const containerRef = useRef<HTMLDivElement>(null!);
+
+  logo ||= <HiveLogoLink isHive={isHive} />;
+  navLinks ||= [
+    {
+      href: isHive ? '/pricing' : 'https://the-guild.dev/graphql/hive/pricing',
+      children: 'Pricing',
+    },
+  ];
 
   return (
     <div
@@ -95,13 +109,13 @@ export function HiveNavigation({
 
       {/* mobile menu */}
       <div className="flex items-center justify-between md:hidden">
-        <HiveLogoLink />
+        {logo}
         <HamburgerButton />
       </div>
 
       {/* desktop menu */}
       <NavigationMenu className={cn('mx-auto hidden md:flex', className)} delayDuration={0}>
-        <HiveLogoLink />
+        {logo}
         <NavigationMenuList className="ml-4 bg-white dark:bg-transparent [@media(min-width:1180px)]:ml-16">
           <NavigationMenuItem>
             <NavigationMenuTrigger>Products</NavigationMenuTrigger>
@@ -112,7 +126,7 @@ export function HiveNavigation({
           <NavigationMenuItem>
             <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <DeveloperMenu isHive={isHive} />
+              <DeveloperMenu isHive={isHive} developerMenu={developerMenu} />
             </NavigationMenuContent>
           </NavigationMenuItem>
           {!ENTERPRISE_MENU_HIDDEN && (
@@ -129,15 +143,15 @@ export function HiveNavigation({
               <CompanyMenu>{companyMenuChildren}</CompanyMenu>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem className="flex">
-            <NavigationMenuLink
-              href={isHive ? '#pricing' : 'https://the-guild.dev/graphql/hive#pricing'}
-              className="font-medium"
-            >
-              Pricing
-            </NavigationMenuLink>
-          </NavigationMenuItem>
+          {navLinks.map(({ href, children }, i) => (
+            <NavigationMenuItem key={i} className="flex">
+              <NavigationMenuLink href={href} className="font-medium">
+                {children}
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
+
         <div className="flex-1" />
 
         {children}
@@ -155,8 +169,10 @@ export function HiveNavigation({
           target="_blank"
           rel="noopener noreferrer"
           onClick={event => {
-            window.$crisp?.push(['do', 'chat:open']);
-            event.preventDefault();
+            if (window.$crisp) {
+              window.$crisp.push(['do', 'chat:open']);
+              event.preventDefault();
+            }
           }}
         >
           Contact <span className="hidden xl:contents">us</span>
@@ -200,7 +216,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
               Hive
             </p>
             <p className="mt-1 text-sm leading-5 text-green-800 dark:text-neutral-400">
-              GraphQL Management Platform, a Gateway & Decision-making Engine
+              GraphQL Management Platform & Decision-making Engine
             </p>
           </NavigationMenuLink>
           <Anchor
@@ -210,14 +226,14 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
             <span>Get started</span> <ArrowIcon />
           </Anchor>
         </div>
-        <div className="w-[267px]">
+        <div className="w-[269px] xl:w-[281px]">
           <ColumnLabel>The GraphQL Stack</ColumnLabel>
           <ul>
             {(
               [
+                [PRODUCTS.HIVE_GATEWAY, 'Federation Gateway'],
                 [PRODUCTS.MESH, 'Anything to GraphQL'],
                 [PRODUCTS.YOGA, 'GraphQL Server & Subgraph'],
-                [PRODUCTS.CODEGEN, 'GraphQL Code Generation'],
               ] as const
             ).map(([product, description]) => {
               const Logo = product.logo;
@@ -256,12 +272,13 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
                     className="flex flex-row items-center gap-3 px-4 py-2"
                     arrow
                   >
-                    <div className="flex size-8 items-center justify-center rounded bg-beige-200 dark:bg-white/5">
+                    <div className="flex size-8 items-center justify-center rounded bg-beige-200 p-[5px] dark:bg-white/5">
                       <Logo className="size-8 text-green-1000 dark:text-neutral-300" />
                     </div>
                     <div>
                       <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
-                        {product.name}
+                        {/* shortened to one word */}
+                        {product.name === PRODUCTS.ESLINT.name ? 'ESLint' : product.name}
                       </p>
                     </div>
                   </NavigationMenuLink>
@@ -282,8 +299,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
 );
 ProductsMenu.displayName = 'ProductsMenu';
 
-interface MenuContentColumnsProps extends React.HTMLAttributes<HTMLDivElement> {}
-
+type MenuContentColumnsProps = React.HTMLAttributes<HTMLDivElement>;
 const MenuContentColumns = forwardRef(
   (props: MenuContentColumnsProps, ref: React.ForwardedRef<HTMLDivElement>) => {
     return (
@@ -308,39 +324,44 @@ MenuContentColumns.displayName = 'MenuContentColumns';
 
 interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   isHive: boolean;
+  developerMenu:
+    | undefined
+    | { href: string; icon: React.FC<{ className?: string }>; children: ReactNode }[];
 }
 
 /**
  * @internal
  */
 export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps>(
-  ({ isHive, ...rest }, ref) => {
+  ({ isHive, developerMenu, ...rest }, ref) => {
+    developerMenu ||= [
+      {
+        href: isHive ? '/docs' : 'https://the-guild.dev/graphql/hive/docs',
+        icon: PaperIcon,
+        children: 'Documentation',
+      },
+      { href: 'https://status.graphql-hive.com/', icon: TargetIcon, children: 'Status' },
+      {
+        href: isHive ? '/product-updates' : 'https://the-guild.dev/graphql/hive/product-updates',
+        icon: RightCornerIcon,
+        children: 'Product Updates',
+      },
+      { href: 'https://the-guild.dev/blog', icon: PencilIcon, children: 'Blog' },
+      {
+        href: 'https://github.com/dotansimha/graphql-code-generator',
+        icon: GitHubIcon,
+        children: 'GitHub',
+      },
+    ];
+
     return (
       <MenuContentColumns {...rest} ref={ref}>
         <div>
           <ColumnLabel>Developer</ColumnLabel>
           <ul>
-            {(
-              [
-                [
-                  'Documentation',
-                  PaperIcon,
-                  isHive ? '/docs' : 'https://the-guild.dev/graphql/hive/docs',
-                ],
-                ['Status', TargetIcon, 'https://status.graphql-hive.com/'],
-                [
-                  'Product Updates',
-                  RightCornerIcon,
-                  isHive
-                    ? '/product-updates'
-                    : 'https://the-guild.dev/graphql/hive/product-updates',
-                ],
-                ['Blog', PencilIcon, 'https://the-guild.dev/blog'],
-                ['GitHub', GitHubIcon, 'https://github.com/kamilkisiela/graphql-hive'],
-              ] as const
-            ).map(([text, Icon, href], i) => (
-              <MenuColumnListItem key={i} href={href} icon={Icon}>
-                {text}
+            {developerMenu.map(({ href, icon, children }, i) => (
+              <MenuColumnListItem key={i} href={href} icon={icon}>
+                {children}
               </MenuColumnListItem>
             ))}
           </ul>
@@ -379,7 +400,7 @@ function MenuColumnListItem({
 }: {
   children: ReactNode;
   href: string;
-  icon: (props: React.SVGProps<SVGSVGElement>) => React.ReactNode;
+  icon: React.FC<{ className?: string }>;
 }) {
   return (
     <li>
@@ -496,9 +517,12 @@ export function CompanyMenu({ children }: { children: React.ReactNode }) {
   );
 }
 
-function HiveLogoLink() {
+function HiveLogoLink({ isHive }: { isHive: boolean }) {
   return (
-    <Anchor href="/" className="hive-focus -m-2 flex items-center rounded-md p-2">
+    <Anchor
+      href={isHive ? '/' : 'https://the-guild.dev/graphql/hive'}
+      className="hive-focus -m-2 flex items-center rounded-md p-2"
+    >
       <HiveCombinationMark className="text-green-1000 dark:text-neutral-200" />
     </Anchor>
   );

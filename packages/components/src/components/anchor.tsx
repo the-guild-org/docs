@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import clsx from 'clsx';
 import { ILink } from '../types/components';
 
-export interface AnchorProps extends ILink {}
+export type AnchorProps = ILink;
 export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(function Anchor(
   { href = '', children, newWindow, className, ...props },
   forwardedRef,

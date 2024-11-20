@@ -44,7 +44,7 @@ const docsComponents = getDocsMDXComponents({
   ),
 });
 
-export const useMDXComponents: typeof getDocsMDXComponents = components => ({
+export const useMDXComponents = (components: object) => ({
   ...docsComponents,
   ...components,
 });

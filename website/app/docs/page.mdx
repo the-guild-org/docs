@@ -23,7 +23,7 @@ export async function Dependencies() {
       ['next', 'react', 'react-dom'].includes(key)
     )
   ])
-  const { result } = await compileMdx(
+  const rawJs = await compileMdx(
     [
       // Render code block with current version of dependencies
       '```json filename="package.json" {15,21}',
@@ -41,7 +41,7 @@ export async function Dependencies() {
     ].join('\n'),
     defaultNextraOptions
   )
-  return <MDXRemote compiledSource={result} />
+  return <MDXRemote compiledSource={rawJs} />
 }
 
 <Dependencies />

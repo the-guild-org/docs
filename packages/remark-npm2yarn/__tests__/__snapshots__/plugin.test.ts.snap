@@ -3,16 +3,18 @@
 exports[`remark-npm2yarn > should convert to tabs 1`] = `
 ""use strict";
 const {jsx: _jsx, jsxs: _jsxs} = arguments[0];
-const title = "";
+const {useMDXComponents: _provideComponents} = arguments[0];
 const metadata = {};
 function useTOC(props) {
   return [];
 }
+const toc = useTOC();
 function _createMdxContent(props) {
   const _components = {
     code: "code",
     pre: "pre",
     span: "span",
+    ..._provideComponents(),
     ...props.components
   }, {$Tabs} = _components;
   if (!$Tabs) _missingMdxReference("$Tabs", true);
@@ -172,9 +174,8 @@ function _createMdxContent(props) {
   });
 }
 return {
-  title,
   metadata,
-  useTOC,
+  toc,
   default: _createMdxContent
 };
 function _missingMdxReference(id, component) {

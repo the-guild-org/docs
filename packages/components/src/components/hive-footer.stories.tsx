@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../.storybook/hive-theme-decorator';
 import { HiveFooter, HiveFooterProps } from './hive-footer';
+import { CodegenIcon } from './icons';
 
 export default {
   title: 'Hive/HiveFooter',
@@ -27,5 +28,21 @@ export const Default: StoryObj<HiveFooterProps> = {
         href: 'https://the-guild.dev/graphql/hive/terms-of-use.pdf',
       },
     ],
+  },
+};
+
+export const CodegenFooter: StoryObj<HiveFooterProps> = {
+  ...Default,
+  args: {
+    logo: {
+      href: '/',
+      children: (
+        <div className="flex items-center gap-3">
+          <CodegenIcon className="size-8" />
+          <span className="text-2xl/[1.2] font-medium tracking-[-0.16px]">Codegen</span>
+        </div>
+      ),
+    },
+    description: 'End-to-end type safety',
   },
 };
