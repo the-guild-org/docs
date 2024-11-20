@@ -1,8 +1,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { addBasePath } from 'next/dist/client/add-base-path';
 import clsx from 'clsx';
 import { useMDXComponents as getDocsMDXComponents } from 'nextra-theme-docs';
-import { addBasePath } from 'next/dist/client/add-base-path';
 
 const docsComponents = getDocsMDXComponents({
   async source({ src, type, ...props }) {
