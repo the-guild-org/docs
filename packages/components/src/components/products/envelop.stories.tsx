@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import {
   dummyCardsColorful,
@@ -8,17 +8,14 @@ import {
   dummyHeroMarketplace,
   dummyHeroVideo,
   dummyInfoList,
-  dummyMarketplaceSearch,
 } from '../../helpers/dummy';
 import { CardsColorful } from '../cards-colorful';
 import { FeatureList } from '../feature-list';
-import { Footer } from '../footer';
 import { HeroGradient } from '../hero-gradient';
 import { HeroIllustration } from '../hero-illustration';
 import { HeroMarketplace } from '../hero-marketplace';
 import { HeroVideo } from '../hero-video';
 import { InfoList } from '../info-list';
-import { MarketplaceSearch } from '../marketplace-search';
 
 export default {
   title: 'Products/Envelop',
@@ -27,13 +24,8 @@ export default {
 
 type Story = StoryObj<typeof Template>;
 
-function Template({ children }: { children: ReactNode }): ReactElement {
-  return (
-    <>
-      {children}
-      <Footer />
-    </>
-  );
+function Template({ children }: { children: ReactNode }): ReactNode {
+  return children;
 }
 
 export const Home: Story = {
@@ -53,11 +45,6 @@ export const Home: Story = {
 
 export const Marketplace: Story = {
   args: {
-    children: (
-      <>
-        <CardsColorful {...dummyCardsColorful} />
-        <MarketplaceSearch {...dummyMarketplaceSearch} />
-      </>
-    ),
+    children: <CardsColorful {...dummyCardsColorful} />,
   },
 };

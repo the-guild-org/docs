@@ -1,10 +1,10 @@
 import { ComponentProps, FC, ReactNode } from 'react';
-import { cn } from '../cn';
-import { siteOrigin } from '../constants';
-import { HiveCombinationMark } from '../logos';
-import { PRODUCTS } from '../products';
-import { IFooterExtendedProps, ILink } from '../types/components';
-import { Anchor } from './anchor';
+import { cn } from '../../cn';
+import { siteOrigin } from '../../constants';
+import { HiveCombinationMark } from '../../logos/index';
+import { PRODUCTS } from '../../products';
+import { ILink } from '../../types/components';
+import { Anchor } from '../anchor';
 import {
   CSAStarLevelOneIcon,
   DiscordIcon,
@@ -12,23 +12,35 @@ import {
   LinkedInIcon,
   TwitterIcon,
   YouTubeIcon,
-} from './icons';
+} from '../icons/index';
+import { ContactUs } from './contact-us';
 
-export interface HiveFooterProps extends IFooterExtendedProps {}
+export type HiveFooterProps = {
+  className?: string;
+  resources?: ILink[];
+  logo?: ReactNode;
+  href?: string;
+  description?: string;
+};
 
-export const HiveFooter: FC<HiveFooterProps> = ({ className, logo, resources = [] }) => {
+export const HiveFooter: FC<HiveFooterProps> = ({
+  className,
+  logo = <HiveCombinationMark className="h-8 w-auto" />,
+  href = `${siteOrigin}/`,
+  resources = [],
+  description = 'Open-source GraphQL management platform',
+}) => {
   return (
     <footer className={cn('relative flex justify-center px-4 py-6 xl:px-[120px]', className)}>
       <div className="mx-4 grid w-full max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10 dark:text-neutral-400">
         <div className="max-lg:col-span-full">
           <Anchor
-            href={`${siteOrigin}/`}
-            {...logo}
-            className="hive-focus -m-1.5 flex rounded p-1.5"
+            href={href}
+            className="hive-focus -m-1.5 flex rounded p-1.5 text-green-1000 dark:text-white"
           >
-            <HiveCombinationMark className="h-8 w-auto text-green-1000 dark:text-white" />
+            {logo}
           </Anchor>
-          <p className="mt-6 lg:mt-8">Open-source GraphQL management platform</p>
+          <p className="mt-6 lg:mt-8">{description}</p>
         </div>
         <div className="col-span-full grid grid-flow-row grid-cols-2 justify-stretch gap-6 text-sm sm:col-span-4 sm:grid-cols-3 lg:col-span-3 lg:pb-12 lg:text-base">
           <List heading="Products" links={products} />
@@ -45,20 +57,11 @@ export const HiveFooter: FC<HiveFooterProps> = ({ className, logo, resources = [
             >
               Pricing
             </a>
-            <a
-              className="hive-focus -m-2 rounded p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
-              href="https://the-guild.dev/contact"
-              onClick={event => {
-                window.$crisp?.push(['do', 'chat:open']);
-                event.preventDefault();
-              }}
-            >
-              Contact Us
-            </a>
+            <ContactUs />
           </div>
           <CSAStarLink className="sm:col-start-[-1] lg:col-start-[-2]" />
         </div>
-        <div className="col-span-full flex flex-row flex-wrap justify-between gap-x-[inherit] gap-y-8 lg:w-full lg:pb-2 lg:pt-8">
+        <div className="col-span-full flex flex-wrap justify-between gap-x-[inherit] gap-y-8 lg:w-full lg:pb-2 lg:pt-8">
           <div className="flex gap-6 lg:order-1">
             {COMMUNITY.map(({ icon: Icon, ...iconProps }) => (
               <Anchor

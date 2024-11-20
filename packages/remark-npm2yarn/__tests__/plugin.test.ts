@@ -31,7 +31,7 @@ npm i -D @graphql-eslint/eslint-plugin
         },
       },
     );
-    expect(mdx.result).toMatchSnapshot();
+    expect(mdx).toMatchSnapshot();
   });
 });
 

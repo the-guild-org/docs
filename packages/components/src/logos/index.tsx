@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { ComponentProps, FC } from 'react';
 import { cn } from '../cn';
 
 export { ReactComponent as AngularLogo } from './angular.svg';
@@ -22,16 +22,14 @@ export { ReactComponent as YogaLogo } from './yoga.svg';
 export { ReactComponent as HiveCombinationMark } from './hive-combination-mark.svg';
 export { ReactComponent as GraphQLFoundationLogo } from './graphql-foundation.svg';
 
-export interface LettermarkLogoProps extends HTMLAttributes<HTMLElement> {}
-
-const createLettermarkLogo = (text: string) =>
-  function LettermarkLogo(props: LettermarkLogoProps) {
+const createLettermarkLogo = (text: string) => {
+  const LettermarkLogo: FC<ComponentProps<'span'>> = props => {
     return (
       <span
         role="img"
         {...props}
         className={cn(
-          'inline-flex items-center justify-center text-sm font-medium leading-5',
+          'inline-flex items-center justify-center text-xs font-medium leading-5',
           props.className,
         )}
       >
@@ -39,6 +37,8 @@ const createLettermarkLogo = (text: string) =>
       </span>
     );
   };
+  return LettermarkLogo;
+};
 
 export const InspectorLettermark = createLettermarkLogo('INS');
 export const SofaLettermark = createLettermarkLogo('SOF');

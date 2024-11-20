@@ -3,18 +3,21 @@ import { Metadata } from 'next';
 import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
-import { Footer } from '../components/footer';
-import { getNavbarLogo } from '../components/guild-navbar-logo';
-import { MoonIcon } from '../components/icons';
-import { ThemeSwitcherButton } from '../components/theme-switcher';
-import { siteOrigin, siteUrl } from '../constants';
-import { PRODUCTS } from '../products';
+import { Anchor } from '../components';
+import { HiveFooter } from '../components/hive-footer/index.js';
+import { HiveNavigation } from '../components/hive-navigation/index.js';
+import { siteOrigin, siteUrl } from '../constants.js';
+import { PRODUCTS } from '../products.js';
 
 type LP = ComponentProps<typeof Layout>;
 
 type LayoutProps = Omit<LP, 'navbar' | 'footer' | 'children' | 'docsRepositoryBase' | 'pageMap'> &
   Partial<Pick<LP, 'navbar' | 'footer' | 'pageMap'>> &
   Required<Pick<LP, 'docsRepositoryBase'>>;
+
+type NP = ComponentProps<typeof HiveNavigation>;
+
+type NavbarProps = Omit<NP, 'productName'> & Partial<Pick<NP, 'productName'>>;
 
 const companyItem = {
   type: 'menu',
@@ -68,7 +71,7 @@ export const GuildLayout: FC<{
   /**
    * Nextra's Docs Theme `<Navbar>` component props
    */
-  navbarProps?: LayoutProps;
+  navbarProps?: NavbarProps;
 }> = async ({
   children,
   websiteName,
@@ -79,9 +82,6 @@ export const GuildLayout: FC<{
   layoutProps,
   navbarProps,
 }) => {
-  const url = new URL(layoutProps.docsRepositoryBase);
-  const [, org, repoName] = url.pathname.split('/');
-
   const [meta, ...pageMap] = await getPageMap();
 
   const pageMapWithCompanyMenu = [
@@ -90,6 +90,7 @@ export const GuildLayout: FC<{
         // Add for every website except The Guild Blog
         ...(siteOrigin && { company: companyItem }),
         products: productsItems,
+        // @ts-expect-error -- fixme
         ...meta.data,
       },
     },
@@ -111,20 +112,35 @@ export const GuildLayout: FC<{
       <Head {...headProps} />
       <body>
         <Layout
-          footer={<Footer />}
+          footer={
+            <HiveFooter
+              logo={
+                <div className="flex items-center gap-3">
+                  {logo}
+                  <span className="text-2xl/[1.2] font-medium tracking-[-0.16px]">
+                    {websiteName}
+                  </span>
+                </div>
+              }
+              description={description}
+            />
+          }
           navbar={
-            <Navbar
-              logo={getNavbarLogo({ logo, websiteName, description })}
-              logoLink={false}
-              // GitHub link in the navbar
-              projectLink={`${url.origin}/${org}/${repoName}`}
+            <HiveNavigation
+              className="max-w-[90rem]"
+              productName={websiteName}
+              navLinks={[]}
               {...navbarProps}
-            >
-              <ThemeSwitcherButton>
-                {/* Provide icon as `children` so icon will be server component */}
-                <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
-              </ThemeSwitcherButton>
-            </Navbar>
+              logo={
+                <Anchor
+                  href="/"
+                  className="hive-focus -m-2 flex shrink-0 items-center gap-3 rounded-md p-2"
+                >
+                  {logo}
+                  <span className="text-2xl font-medium tracking-[-0.16px]">{websiteName}</span>
+                </Anchor>
+              }
+            />
           }
           editLink="Edit this page on GitHub"
           {...layoutProps}

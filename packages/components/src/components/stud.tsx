@@ -1,6 +1,7 @@
+import { ComponentProps } from 'react';
 import { cn } from '../cn';
 
-export interface StudProps extends React.HTMLAttributes<HTMLElement> {}
+export type StudProps = ComponentProps<'div'>;
 export function Stud(props: StudProps) {
   return (
     <div

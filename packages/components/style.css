@@ -5,24 +5,11 @@
 @import 'tailwindcss/components' layer(l-components);
 @import 'tailwindcss/utilities';
 
-.nextra-banner-container._bg-neutral-900._flex {
-  @apply bg-[#48224e] bg-none;
-}
-
-:root {
-  --nextra-navbar-height: 72px;
-}
-
-@layer l-nextra {
-  #headlessui-portal-root [role='menu']:has(a[href='https://the-guild.dev/graphql/hive'])
-  {
-    @apply grid !max-h-[unset] w-[700px] grid-cols-5 gap-y-2 p-2;
-
-    a:nth-child(-n + 5) {
-      @apply rounded-b-none border-b border-black/20 pb-3 dark:border-white/20;
-    }
-  }
-}
+/*html {*/
+/*  !* font from tailwindcss/base is overwritten by Nextra styles *!*/
+/*  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',*/
+/*  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';*/
+/*}*/
 
 /* #region hamburger mobile menu */
 
@@ -96,10 +83,41 @@
       @apply ring ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_86%)] ring-offset-1 ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_77%)] dark:ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%)] dark:ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_39%)];
     }
   }
+
+  .MarketplaceSearch {
+    --fg: theme(colors.white);
+    --fg-80: rgb(from var(--fg) r g b / 0.8);
+    --fg-70: rgb(from var(--fg) r g b / 0.7);
+    --fg-60: rgb(from var(--fg) r g b / 0.6);
+
+    &.green {
+      --bg: theme(colors.green.1000);
+    }
+
+    &.neutral {
+      --bg: theme(colors.neutral.900);
+
+      .light & {
+        --bg: theme(colors.white);
+        --fg: theme(colors.neutral.900);
+      }
+    }
+  }
 }
 
 /* wrong with neue montreal */
 ._subpixel-antialiased {
   -webkit-font-smoothing: unset;
   -moz-osx-font-smoothing: unset;
+}
+
+/* fix for nextra navbar for HiveNavigation */
+:root {
+  --nextra-navbar-height: 82px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --nextra-navbar-height: 64px;
+  }
 }

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { getDefaultMetadata, GuildLayout } from '@theguild/components/server';
 import '@theguild/components/style.css';
 
@@ -23,7 +23,7 @@ const logo = (
 );
 
 const RootLayout: FC<{
-  children: React.ReactNode;
+  children: ReactNode;
 }> = async ({ children }) => {
   return (
     <GuildLayout
@@ -33,6 +33,17 @@ const RootLayout: FC<{
       layoutProps={{
         docsRepositoryBase:
           'https://github.com/the-guild-org/the-guild-components/tree/main/website',
+      }}
+      navbarProps={{
+        navLinks: [
+          {
+            href: '/docs',
+            children: 'Documentation',
+          },
+        ],
+        searchProps: {
+          placeholder: 'Search...',
+        },
       }}
     >
       {children}

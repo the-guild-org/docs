@@ -8,11 +8,8 @@ module.exports = {
     '@theguild/eslint-config/yml',
     // '@theguild/eslint-config/mdx',
     'plugin:tailwindcss/recommended',
-    // 'plugin:storybook/recommended', // broken in ESLint 9
+    'plugin:storybook/recommended',
   ],
-  parserOptions: {
-    project: ['tsconfig.eslint.json', 'website/tsconfig.json', 'packages/*/tsconfig.json'],
-  },
   rules: {
     'tailwindcss/classnames-order': 'off', // conflicts with official prettier-plugin-tailwindcss and tailwind v3
     // set more strict to highlight in editor
@@ -40,17 +37,11 @@ module.exports = {
         'hive-focus',
         'hive-focus-within',
         'nextra-hamburger',
+        '@container', // Tailwind ESLint Plugin doesn't see the Container Queries classes, but it does see prefixes like @sm:
       ],
     },
   },
   overrides: [
-    {
-      files: ['**/*.stories.{ts,tsx}'],
-      rules: {
-        'no-console': 'off',
-        'import/no-default-export': 'off',
-      },
-    },
     {
       files: ['packages/**'],
       rules: {

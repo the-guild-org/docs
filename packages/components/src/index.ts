@@ -11,6 +11,7 @@ export {
   Bleed,
   Collapse,
   Search,
+  Banner,
 } from 'nextra/components';
 export { useMounted } from 'nextra/hooks';
 export * from './components';
