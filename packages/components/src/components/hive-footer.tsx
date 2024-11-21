@@ -149,7 +149,7 @@ const DEVELOPER: ILink[] = [
   },
   {
     children: 'Hive Updates',
-    title: 'Read most recent developments from GraphQL Hive',
+    title: 'Read most recent developments from Hive',
     href: 'https://the-guild.dev/graphql/hive/product-updates',
   },
   {

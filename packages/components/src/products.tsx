@@ -59,21 +59,22 @@ export interface ProductInfo {
 export const PRODUCTS: Record<ProductType, ProductInfo> = {
   HIVE: {
     name: 'Hive',
-    title: 'Schema registry for your GraphQL workflows',
+    title: 'Open Source GraphQL Federation Platform (Schema Registry, Gateway, Analytics) ',
     href: 'https://the-guild.dev/graphql/hive',
     logo: HiveIcon,
     primaryColor: '#ffb21d',
   },
   HIVE_GATEWAY: {
     name: 'Hive Gateway',
-    title: 'A fully-featured GraphQL gateway framework',
+    title:
+      'GraphQL Gateway (Router) for federated GraphQL with Subscriptions support and built-in security features',
     href: 'https://the-guild.dev/graphql/hive/docs/gateway',
     logo: HiveGatewayIcon,
     primaryColor: '#ffb21d',
   },
   MESH: {
     name: 'Mesh',
-    title: 'A fully-featured GraphQL gateway framework',
+    title: 'A fully-featured GraphQL federation framework',
     href: 'https://the-guild.dev/graphql/mesh',
     logo: MeshIcon,
     primaryColor: '#1bcbe2',
