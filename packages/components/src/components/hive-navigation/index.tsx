@@ -50,7 +50,12 @@ export interface HiveNavigationProps {
   productName: string;
   logo?: ReactNode;
   navLinks?: { href: string; children: ReactNode }[];
-  developerMenu?: { href: string; title?: string; icon: React.FC<{ className?: string }>; children: ReactNode }[];
+  developerMenu?: {
+    href: string;
+    title?: string;
+    icon: React.FC<{ className?: string }>;
+    children: ReactNode;
+  }[];
 }
 /**
  *
@@ -93,7 +98,7 @@ export function HiveNavigation({
     <div
       ref={containerRef}
       className={cn(
-        'border-beige-400/[var(--border-opacity)] text-green-1000 [&.light]:border-beige-400/[var(--border-opacity)] [&.light]:text-green-1000 sticky top-0 z-20 border-b bg-[rgb(var(--nextra-bg))] px-6 py-4 transition-[border-color] duration-500 md:mb-[7px] md:mt-2 dark:border-neutral-700/[var(--border-opacity)] dark:text-neutral-200 [&.light]:bg-white',
+        'sticky top-0 z-20 border-b border-beige-400/[var(--border-opacity)] bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 md:mb-[7px] md:mt-2 dark:border-neutral-700/[var(--border-opacity)] dark:text-neutral-200 [&.light]:border-beige-400/[var(--border-opacity)] [&.light]:bg-white [&.light]:text-green-1000',
         className?.includes('light') && 'light',
       )}
       style={{ '--border-opacity': 0 }}
@@ -209,7 +214,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
             <div className="w-fit rounded-lg bg-green-800 p-3 dark:bg-white/10">
               <HiveIcon className="size-10 text-white" />
             </div>
-            <p className="text-green-1000 mt-4 text-base font-medium leading-normal dark:text-neutral-200">
+            <p className="mt-4 text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
               Hive
             </p>
             <p className="mt-1 text-sm leading-5 text-green-800 dark:text-neutral-400">
@@ -219,7 +224,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
           <Anchor
             href="https://app.graphql-hive.com/"
             title="Discover the Hive platform"
-            className="hive-focus hover:bg-beige-100 hover:text-green-1000 -my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
+            className="hive-focus -my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
           >
             <span>Get started</span> <ArrowIcon />
           </Anchor>
@@ -243,10 +248,10 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
                     className="flex flex-row items-center gap-4 p-4"
                   >
                     <div className="size-12 rounded-lg bg-blue-400 p-2.5">
-                      <Logo className="text-green-1000 size-7" />
+                      <Logo className="size-7 text-green-1000" />
                     </div>
                     <div>
-                      <p className="text-green-1000 text-base font-medium leading-normal dark:text-neutral-200">
+                      <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
                         {product.name}
                       </p>
                       <p className="col-start-2 mt-1 text-sm leading-5 text-green-800 dark:text-neutral-300">
@@ -271,11 +276,11 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
                     className="flex flex-row items-center gap-3 px-4 py-2"
                     arrow
                   >
-                    <div className="bg-beige-200 flex size-8 items-center justify-center rounded p-[5px] dark:bg-white/5">
-                      <Logo className="text-green-1000 size-8 dark:text-neutral-300" />
+                    <div className="flex size-8 items-center justify-center rounded bg-beige-200 p-[5px] dark:bg-white/5">
+                      <Logo className="size-8 text-green-1000 dark:text-neutral-300" />
                     </div>
                     <div>
-                      <p className="text-green-1000 text-base font-medium leading-normal dark:text-neutral-200">
+                      <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
                         {/* shortened to one word */}
                         {product.name === PRODUCTS.ESLINT.name ? 'ESLint' : product.name}
                       </p>
@@ -287,7 +292,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
           </ul>
           <Anchor
             href={EXPLORE_HREF}
-            className="hive-focus hover:bg-beige-100 hover:text-green-1000 -my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
+            className="hive-focus -my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
           >
             <span>Explore all libraries</span> <ArrowIcon />
           </Anchor>
@@ -310,7 +315,7 @@ const MenuContentColumns = forwardRef(
               <Fragment key={index}>
                 {child}
                 {index < array.length - 1 && (
-                  <div className="bg-beige-200 w-px dark:bg-neutral-800" />
+                  <div className="w-px bg-beige-200 dark:bg-neutral-800" />
                 )}
               </Fragment>
             );
@@ -431,7 +436,7 @@ function MenuColumnListItem({
         arrow
       >
         <Icon className="size-6 shrink-0" />
-        <p className="text-green-1000 text-base font-medium leading-normal dark:text-neutral-200">
+        <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
           {children}
         </p>
       </NavigationMenuLink>
@@ -527,7 +532,7 @@ export function CompanyMenu({ children }: { children: React.ReactNode }) {
         <ColumnLabel>Part of</ColumnLabel>
         <NavigationMenuLink
           href="https://graphql.org/community/foundation/"
-          className="hover:text-blue-1000 px-4 py-2 text-blue-800"
+          className="px-4 py-2 text-blue-800 hover:text-blue-1000"
           arrow
         >
           <GraphQLFoundationLogo className="" />
@@ -556,7 +561,7 @@ function HamburgerButton() {
     <button
       type="button"
       aria-label="Menu"
-      className="md:_hidden hover nextra-hamburger text-green-1000 active:bg-beige-200 -m-1 rounded-lg bg-transparent p-1 focus-visible:outline-none focus-visible:ring dark:text-neutral-200 dark:active:bg-neutral-800"
+      className="md:_hidden hover nextra-hamburger -m-1 rounded-lg bg-transparent p-1 text-green-1000 focus-visible:outline-none focus-visible:ring active:bg-beige-200 dark:text-neutral-200 dark:active:bg-neutral-800"
       onClick={() => setMenu(!menu)}
     >
       <MenuIcon
