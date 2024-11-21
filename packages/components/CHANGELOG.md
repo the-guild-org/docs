@@ -1,5 +1,20 @@
 # @theguild/components
 
+## 7.3.0
+
+### Minor Changes
+
+- [#1826](https://github.com/the-guild-org/docs/pull/1826)
+  [`3ecc727`](https://github.com/the-guild-org/docs/commit/3ecc7270908d30430ba9bce2df8b67848363262a)
+  Thanks [@kamilkisiela](https://github.com/kamilkisiela)! - Adds OSS Friends link to the footer,
+  but only on /graphql/hive pages
+
+### Patch Changes
+
+- [#1827](https://github.com/the-guild-org/docs/pull/1827)
+  [`aa672a9`](https://github.com/the-guild-org/docs/commit/aa672a90b694250d1955341f8c9c1ab76510738d)
+  Thanks [@kamilkisiela](https://github.com/kamilkisiela)! - Update titles of the products
+
 ## 7.2.7
 
 ### Patch Changes
