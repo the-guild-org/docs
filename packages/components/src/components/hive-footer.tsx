@@ -15,7 +15,7 @@ import {
 
 export interface HiveFooterProps extends IFooterExtendedProps {
   description?: string;
-  renderedInHive?: boolean;
+  isHive?: boolean;
 }
 
 export function HiveFooter({
@@ -24,7 +24,7 @@ export function HiveFooter({
   resources = [],
   sameSite,
   description,
-  renderedInHive = false,
+  isHive = false,
 }: HiveFooterProps) {
   description ||= 'Open-source GraphQL management platform';
 
@@ -51,7 +51,7 @@ export function HiveFooter({
           </div>
           <div className="flex flex-col gap-[inherit]">
             <List heading="Company" links={COMPANY} />
-            {renderedInHive ? (
+            {isHive ? (
               <a
                 href="https://the-guild.dev/graphql/hive/oss-friends"
                 className="hive-focus -m-2 rounded p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
