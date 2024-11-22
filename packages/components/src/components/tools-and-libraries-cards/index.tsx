@@ -55,10 +55,17 @@ export function MainProductCard({ as: Root, product }: { as: 'div' | 'li'; produ
   const Decoration = cardDecorations[product.name];
   const Icon = product.logo;
 
+  const isHive = product.name === PRODUCTS.HIVE.name;
+
   return (
     <Root
       key={product.name}
-      className="hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 first-of-type:bg-green-1000 first-of-type:text-white max-md:w-[283.5px]"
+      className={
+        cn(
+          'hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 max-md:w-[283.5px]',
+          isHive && 'bg-green-1000 text-white'
+        )
+      }
     >
       <a
         className="relative z-10 block flex-1 p-8 outline-none focus-visible:outline-none"
@@ -70,7 +77,10 @@ export function MainProductCard({ as: Root, product }: { as: 'div' | 'li'; produ
       </a>
       <Decoration
         strokeWidth="0.5px"
-        className="pointer-events-none absolute bottom-0 right-0 fill-blue-200 opacity-0 transition-opacity duration-500 group-first-of-type:fill-blue-700 group-focus-within:opacity-100 group-hover:opacity-100"
+        className={cn(
+          'pointer-events-none absolute bottom-0 right-0 fill-blue-200 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100',
+          isHive && 'fill-blue-700',
+        )}
         preserveAspectRatio="xMidYMid meet"
       />
       <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-focus-within:opacity-100 group-hover:opacity-100" />
@@ -109,3 +119,5 @@ export function AncillaryProductCard({
     </Root>
   );
 }
+
+
