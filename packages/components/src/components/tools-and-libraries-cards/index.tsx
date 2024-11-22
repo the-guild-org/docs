@@ -60,12 +60,10 @@ export function MainProductCard({ as: Root, product }: { as: 'div' | 'li'; produ
   return (
     <Root
       key={product.name}
-      className={
-        cn(
-          'hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 max-md:w-[283.5px]',
-          isHive && 'bg-green-1000 text-white'
-        )
-      }
+      className={cn(
+        'hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 max-md:w-[283.5px]',
+        isHive && 'bg-green-1000 text-white',
+      )}
     >
       <a
         className="relative z-10 block flex-1 p-8 outline-none focus-visible:outline-none"
@@ -119,5 +117,3 @@ export function AncillaryProductCard({
     </Root>
   );
 }
-
-
