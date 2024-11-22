@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 7.3.1
+
+### Patch Changes
+
+- [`d9bad6c`](https://github.com/the-guild-org/docs/commit/d9bad6ca63e8299b3981801b8b78003d21b963cb)
+  Thanks [@hasparus](https://github.com/hasparus)! - Fix the font-family declaration so Renovate PRs
+  wont show sans-serif
+
 ## 7.3.0
 
 ### Minor Changes
