@@ -51,14 +51,20 @@ export function ToolsAndLibrariesCards({ className }: { className?: string }) {
   );
 }
 
-export function MainProductCard({ as: Root, product }: { as: 'div' | 'li'; product: ProductInfo }) {
+export function MainProductCard({ as: Root, product, ...rest }: ProductCardProps) {
   const Decoration = cardDecorations[product.name];
   const Icon = product.logo;
+
+  const isHive = product.name === PRODUCTS.HIVE.name;
 
   return (
     <Root
       key={product.name}
-      className="hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 first-of-type:bg-green-1000 first-of-type:text-white max-md:w-[283.5px]"
+      className={cn(
+        'hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 max-md:w-[283.5px]',
+        isHive && 'bg-green-1000 text-white',
+      )}
+      {...rest}
     >
       <a
         className="relative z-10 block flex-1 p-8 outline-none focus-visible:outline-none"
@@ -70,7 +76,10 @@ export function MainProductCard({ as: Root, product }: { as: 'div' | 'li'; produ
       </a>
       <Decoration
         strokeWidth="0.5px"
-        className="pointer-events-none absolute bottom-0 right-0 fill-blue-200 opacity-0 transition-opacity duration-500 group-first-of-type:fill-blue-700 group-focus-within:opacity-100 group-hover:opacity-100"
+        className={cn(
+          'pointer-events-none absolute bottom-0 right-0 fill-blue-200 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100',
+          isHive && 'fill-blue-700',
+        )}
         preserveAspectRatio="xMidYMid meet"
       />
       <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-focus-within:opacity-100 group-hover:opacity-100" />
@@ -78,18 +87,13 @@ export function MainProductCard({ as: Root, product }: { as: 'div' | 'li'; produ
   );
 }
 
-export function AncillaryProductCard({
-  product,
-  as: Root,
-}: {
-  product: ProductInfo;
-  as: 'div' | 'li';
-}) {
+export function AncillaryProductCard({ product, as: Root, ...rest }: ProductCardProps) {
   const Logo = product.logo;
   return (
     <Root
       key={product.name}
       className="hive-focus-within shrink-0 basis-[283.5px] rounded-2xl bg-beige-200 text-green-1000 transition-colors duration-500 hover:bg-beige-400 max-sm:min-w-[283.5px]"
+      {...rest}
     >
       <a
         href={product.href}
@@ -108,4 +112,15 @@ export function AncillaryProductCard({
       </a>
     </Root>
   );
+}
+
+export interface ProductCardProps extends React.HTMLAttributes<HTMLElement> {
+  as: 'div' | 'li';
+  product: ProductInfo;
+}
+
+export function ProductCard(props: ProductCardProps) {
+  const isMainProduct = FOUR_MAIN_PRODUCTS.map(p => p.name).includes(props.product.name);
+
+  return isMainProduct ? <MainProductCard {...props} /> : <AncillaryProductCard {...props} />;
 }

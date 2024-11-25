@@ -21,6 +21,7 @@ export {
   ToolsAndLibrariesCards,
   MainProductCard,
   AncillaryProductCard,
+  ProductCard,
 } from './tools-and-libraries-cards';
 export * from './decorations';
 export * from './call-to-action';
