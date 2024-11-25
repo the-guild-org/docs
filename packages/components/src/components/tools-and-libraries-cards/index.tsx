@@ -44,7 +44,11 @@ export function ToolsAndLibrariesCards({ className }: { className?: string }) {
           <AncillaryProductCard key={product.name} as="li" product={product} />
         ))}
       </ul>
-      <CallToAction href="https://github.com/the-guild-org" variant="primary">
+      <CallToAction
+        variant="primary"
+        href="https://the-guild.dev/graphql/hive/ecosystem"
+        target="_blank"
+      >
         Explore the Ecosystem
       </CallToAction>
     </section>

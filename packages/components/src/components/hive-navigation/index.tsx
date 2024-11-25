@@ -36,7 +36,6 @@ import {
 
 export * from './graphql-conf-card';
 
-
 const ENTERPRISE_MENU_HIDDEN = true;
 
 export interface HiveNavigationProps {
@@ -290,7 +289,9 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
             })}
           </ul>
           <Anchor
-            href={productName === 'Hive' ? '/ecosystem' : 'https://the-guild.dev/graphql/hive/ecosystem'}
+            href={
+              productName === 'Hive' ? '/ecosystem' : 'https://the-guild.dev/graphql/hive/ecosystem'
+            }
             className="hive-focus -my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
           >
             <span>Explore all libraries</span> <ArrowIcon />
