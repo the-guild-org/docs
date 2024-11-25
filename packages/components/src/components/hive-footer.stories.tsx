@@ -23,16 +23,19 @@ export const Default: StoryObj<HiveFooterProps> = {
   name: 'HiveFooter',
   args: {
     sameSite: false,
-    resources: [
-      {
-        children: 'Privacy Policy',
-        href: 'https://the-guild.dev/graphql/hive/privacy-policy.pdf',
-      },
-      {
-        children: 'Terms of Use',
-        href: 'https://the-guild.dev/graphql/hive/terms-of-use.pdf',
-      },
-    ],
+    items: {
+      ...HiveFooter.DEFAULT_ITEMS,
+      resources: [
+        {
+          children: 'Privacy Policy',
+          href: 'https://the-guild.dev/graphql/hive/privacy-policy.pdf',
+        },
+        {
+          children: 'Terms of Use',
+          href: 'https://the-guild.dev/graphql/hive/terms-of-use.pdf',
+        },
+      ],
+    },
   },
 };
 
