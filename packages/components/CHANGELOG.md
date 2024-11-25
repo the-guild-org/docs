@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 7.3.2
+
+### Patch Changes
+
+- [#1838](https://github.com/the-guild-org/docs/pull/1838)
+  [`0b9240c`](https://github.com/the-guild-org/docs/commit/0b9240c87e769aa9cadec4ac3a0178703ad4d0ec)
+  Thanks [@hasparus](https://github.com/hasparus)! - Change a link in Navigation CTA to docs
+
 ## 7.3.1
 
 ### Patch Changes
