@@ -77,7 +77,7 @@ export function MainProductCard({ as: Root, product, ...rest }: ProductCardProps
       <Decoration
         strokeWidth="0.5px"
         className={cn(
-          'pointer-events-none absolute bottom-0 right-0 fill-blue-200 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100',
+          'pointer-events-none absolute bottom-0 right-0 h-full fill-blue-200 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100',
           isHive && 'fill-blue-700',
         )}
         preserveAspectRatio="xMidYMid meet"
