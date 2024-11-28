@@ -34,7 +34,7 @@
     "@svgr/webpack": "8.1.0",
     "@theguild/eslint-config": "0.13.1",
     "@theguild/prettier-config": "3.0.0",
-    "@theguild/tailwind-config": "0.6.0",
+    "@theguild/tailwind-config": "0.6.1-alpha-20241128110540-fbd9106a41f712fba1c03f4048b6e8015251d55b",
     "@types/jest-image-snapshot": "6.4.0",
     "@types/react": "18.3.12",
     "@types/react-paginate": "7.1.4",

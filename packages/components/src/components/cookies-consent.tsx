@@ -11,7 +11,9 @@ export function CookiesConsent(props: CookiesConsentProps) {
 
   const onAccept = () => {
     setConsented(true);
-    localStorage.setItem('cookies', 'true');
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('cookies', 'true');
+    }
   };
 
   if (consented) {

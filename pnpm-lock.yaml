@@ -58,8 +58,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(prettier@3.3.3)
       '@theguild/tailwind-config':
-        specifier: 0.6.0
-        version: 0.6.0(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.15)
+        specifier: 0.6.1-alpha-20241128110540-fbd9106a41f712fba1c03f4048b6e8015251d55b
+        version: 0.6.1-alpha-20241128110540-fbd9106a41f712fba1c03f4048b6e8015251d55b(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.15)
       '@types/jest-image-snapshot':
         specifier: 6.4.0
         version: 6.4.0
@@ -194,8 +194,8 @@ importers:
         specifier: workspace:*
         version: link:../editor
       '@theguild/tailwind-config':
-        specifier: 0.6.0
-        version: 0.6.0(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.15)
+        specifier: 0.6.1-alpha-20241128110540-fbd9106a41f712fba1c03f4048b6e8015251d55b
+        version: 0.6.1-alpha-20241128110540-fbd9106a41f712fba1c03f4048b6e8015251d55b(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.15)
       '@types/dedent':
         specifier: 0.7.2
         version: 0.7.2
@@ -340,8 +340,8 @@ importers:
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@theguild/tailwind-config':
-        specifier: 0.6.0
-        version: 0.6.0(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.15)
+        specifier: 0.6.1-alpha-20241128110540-fbd9106a41f712fba1c03f4048b6e8015251d55b
+        version: 0.6.1-alpha-20241128110540-fbd9106a41f712fba1c03f4048b6e8015251d55b(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.15)
       '@types/react':
         specifier: 18.3.12
         version: 18.3.12
@@ -2703,8 +2703,8 @@ packages:
     peerDependencies:
       prettier: ^3
 
-  '@theguild/tailwind-config@0.6.0':
-    resolution: {integrity: sha512-tweCBr9MfMbakKQSd0dC7AsgZ3WhE/2U4f9TyOs1yTZXuTLUWGiDK4g++hjokyEIIEGtFC9SB0ux+V2gy8psTw==}
+  '@theguild/tailwind-config@0.6.1-alpha-20241128110540-fbd9106a41f712fba1c03f4048b6e8015251d55b':
+    resolution: {integrity: sha512-j2nMUN7FAruPO8PYLLeGPX0Bx071v50tega0Sk5ItfJ38uyBhwHXRqnuKkLRW/4mBgXYZwyPgX0fdW6KdGmY6w==}
     peerDependencies:
       postcss-import: ^16.1.0
       postcss-lightningcss: ^1.0.1
@@ -11992,7 +11992,7 @@ snapshots:
       - '@vue/compiler-sfc'
       - supports-color
 
-  '@theguild/tailwind-config@0.6.0(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.15)':
+  '@theguild/tailwind-config@0.6.1-alpha-20241128110540-fbd9106a41f712fba1c03f4048b6e8015251d55b(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.15)':
     dependencies:
       '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.15)
       postcss-import: 15.1.0(postcss@8.4.49)
