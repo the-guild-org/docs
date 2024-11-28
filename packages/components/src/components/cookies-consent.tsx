@@ -7,7 +7,9 @@ import { CallToAction } from './call-to-action';
 export type CookiesConsentProps = ComponentProps<'div'>;
 
 export function CookiesConsent(props: CookiesConsentProps) {
-  const [consented, setConsented] = useState(() => localStorage.getItem('cookies') === 'true');
+  const [consented, setConsented] = useState(() => {
+    return typeof localStorage === 'undefined' ? false : localStorage.getItem('cookies') === 'true';
+  });
 
   const onAccept = () => {
     setConsented(true);
