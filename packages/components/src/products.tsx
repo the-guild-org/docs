@@ -1,6 +1,13 @@
 import { FC, HTMLProps, ReactNode, SVGProps } from 'react';
 import { cn } from './cn';
-import { CodegenIcon, HiveGatewayIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
+import {
+  CodegenIcon,
+  HiveGatewayIcon,
+  HiveIcon,
+  MeshIcon,
+  StellateIcon,
+  YogaIcon,
+} from './components/icons';
 import {
   AngularLettermark,
   ConductorLettermark,
@@ -45,7 +52,8 @@ export type ProductType =
   | 'WS'
   | 'FETS'
   | 'HELTIN'
-  | 'NEXTRA';
+  | 'NEXTRA'
+  | 'STELLATE';
 
 export interface ProductInfo {
   name: string;
@@ -218,6 +226,13 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     href: 'https://nextra.site',
     logo: NextraLogo,
     primaryColor: '#000',
+  },
+  STELLATE: {
+    name: 'Stellate',
+    title: 'GraphQL Edge Caching, Metrics and Security.',
+    href: 'https://stellate.co',
+    logo: StellateIcon,
+    primaryColor: '#FF7752',
   },
 };
 
