@@ -51,7 +51,7 @@ export function ToolsAndLibrariesCards({ className }: { className?: string }) {
   );
 }
 
-export function MainProductCard({ as: Root, product, ...rest }: ProductCardProps) {
+export function MainProductCard({ as: Root, product, className, ...rest }: ProductCardProps) {
   const Decoration = cardDecorations[product.name];
   const Icon = product.logo;
 
@@ -63,6 +63,7 @@ export function MainProductCard({ as: Root, product, ...rest }: ProductCardProps
       className={cn(
         'hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 max-md:w-[283.5px]',
         isHive && 'bg-green-1000 text-white',
+        className,
       )}
       {...rest}
     >
@@ -87,12 +88,15 @@ export function MainProductCard({ as: Root, product, ...rest }: ProductCardProps
   );
 }
 
-export function AncillaryProductCard({ product, as: Root, ...rest }: ProductCardProps) {
+export function AncillaryProductCard({ product, as: Root, className, ...rest }: ProductCardProps) {
   const Logo = product.logo;
   return (
     <Root
       key={product.name}
-      className="hive-focus-within shrink-0 basis-[283.5px] rounded-2xl bg-beige-200 text-green-1000 transition-colors duration-500 hover:bg-beige-400 max-sm:min-w-[283.5px]"
+      className={cn(
+        'hive-focus-within shrink-0 basis-[283.5px] rounded-2xl bg-beige-200 text-green-1000 transition-colors duration-500 hover:bg-beige-400 max-sm:min-w-[283.5px]',
+        className,
+      )}
       {...rest}
     >
       <a
