@@ -5,6 +5,7 @@ import { HiveCombinationMark } from '../../logos/index';
 import { PRODUCTS } from '../../products';
 import { ILink } from '../../types/components';
 import { Anchor } from '../anchor';
+import { ContactTextLink } from '../contact-us';
 import {
   CSAStarLevelOneIcon,
   DiscordIcon,
@@ -13,7 +14,6 @@ import {
   TwitterIcon,
   YouTubeIcon,
 } from '../icons/index';
-import { ContactTextLink } from '../contact-us';
 
 export type HiveFooterProps = {
   className?: string;
