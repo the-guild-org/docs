@@ -1,5 +1,6 @@
 import { cn } from '../cn';
 import { CallToAction } from './call-to-action';
+import { ContactButton } from './contact-us';
 import { DecorationIsolation } from './decorations';
 import { Heading } from './heading';
 
@@ -24,18 +25,7 @@ export function GetYourAPIGameRightSection({ className }: { className?: string }
           <CallToAction variant="secondary-inverted" href="https://app.graphql-hive.com/">
             Get started for free
           </CallToAction>
-          <CallToAction
-            variant="tertiary"
-            href="https://the-guild.dev/contact"
-            onClick={event => {
-              if (window.$crisp) {
-                window.$crisp.push(['do', 'chat:open']);
-                event.preventDefault();
-              }
-            }}
-          >
-            Talk to us
-          </CallToAction>
+          <ContactButton variant="tertiary">Talk to us</ContactButton>
         </div>
       </div>
     </section>

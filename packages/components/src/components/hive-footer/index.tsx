@@ -13,7 +13,7 @@ import {
   TwitterIcon,
   YouTubeIcon,
 } from '../icons/index';
-import { ContactUs } from './contact-us';
+import { ContactTextLink } from '../contact-us';
 
 export type HiveFooterProps = {
   className?: string;
@@ -57,7 +57,7 @@ export const HiveFooter: FC<HiveFooterProps> = ({
             >
               Pricing
             </a>
-            <ContactUs />
+            <ContactTextLink>Contact Us</ContactTextLink>
           </div>
           <CSAStarLink className="sm:col-start-[-1] lg:col-start-[-2]" />
         </div>
