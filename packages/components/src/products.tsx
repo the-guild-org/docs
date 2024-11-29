@@ -1,4 +1,4 @@
-import { FC, HTMLProps, ReactNode, SVGProps } from 'react';
+import { FC, HTMLProps, SVGProps } from 'react';
 import { cn } from './cn';
 import {
   CodegenIcon,
