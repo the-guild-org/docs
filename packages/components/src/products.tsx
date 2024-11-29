@@ -261,13 +261,16 @@ export const PRODUCTS_MENU_LIST = Object.fromEntries(
       return [
         i,
         {
+          // BUG: Nextra 4 doesn't support separators inside menu items.
           href: '#',
           title: (
             <>
               {/* This is a one-off class. The margins and paddings of the parent list item are were large. */}
               {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
               <style className="hive-label-separator">
-                {'li:has(>.hive-label-separator) { margin: 0.75rem 0 0.25rem 0; padding: 0 }'}
+                {
+                  ':is(a,li):has(>.hive-label-separator) { margin: 0.75rem 0 0.25rem 0; padding: 0 }'
+                }
               </style>
               <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
             </>
