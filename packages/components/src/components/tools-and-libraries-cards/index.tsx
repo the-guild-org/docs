@@ -1,3 +1,4 @@
+import { useConfig } from 'nextra-theme-docs';
 import { cn } from '../../cn';
 import {
   FOUR_MAIN_PRODUCTS,
@@ -21,7 +22,13 @@ const cardDecorations = {
   [PRODUCTS.HIVE_GATEWAY.name]: HiveGatewayDecoration,
 };
 
-export function ToolsAndLibrariesCards({ className }: { className?: string }) {
+export function ToolsAndLibrariesCards({
+  className,
+  isHive,
+}: {
+  className?: string;
+  isHive?: boolean;
+}) {
   return (
     <section
       className={cn(
@@ -44,7 +51,10 @@ export function ToolsAndLibrariesCards({ className }: { className?: string }) {
           <AncillaryProductCard key={product.name} as="li" product={product} />
         ))}
       </ul>
-      <CallToAction href="https://github.com/the-guild-org" variant="primary">
+      <CallToAction
+        href={isHive ? '/ecosystem' : 'https://the-guild.dev/graphql/hive/ecosystem'}
+        variant="primary"
+      >
         Explore the Ecosystem
       </CallToAction>
     </section>
