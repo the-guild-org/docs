@@ -4,10 +4,10 @@ import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
 import { Anchor } from '../components';
-import { HiveFooter } from '../components/hive-footer/index.js';
-import { HiveNavigation } from '../components/hive-navigation/index.js';
-import { siteOrigin, siteUrl } from '../constants.js';
-import { PRODUCTS } from '../products.js';
+import { HiveFooter } from '../components/hive-footer';
+import { HiveNavigation } from '../components/hive-navigation';
+import { siteOrigin, siteUrl } from '../constants';
+import { PRODUCTS } from '../products';
 
 type LP = ComponentProps<typeof Layout>;
 
