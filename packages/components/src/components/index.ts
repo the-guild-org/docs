@@ -16,13 +16,9 @@ export { NPMBadge } from './npm-badge';
 export { GetYourAPIGameRightSection } from './get-your-api-game-right-section';
 export { HiveNavigation, GraphQLConfCard } from './hive-navigation';
 export type { HiveNavigationProps, GraphQLConfCardProps } from './hive-navigation';
-export { HiveFooter } from './hive-footer/index.js';
-export {
-  ToolsAndLibrariesCards,
-  MainProductCard,
-  AncillaryProductCard,
-  ProductCard,
-} from './tools-and-libraries-cards';
+export { HiveFooter } from './hive-footer';
+export { ToolsAndLibrariesCards } from './tools-and-libraries-cards';
+export * from './product-card';
 export * from './decorations';
 export * from './call-to-action';
 export * from './cookies-consent';
