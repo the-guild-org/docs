@@ -62,14 +62,15 @@ export function AncillaryProductCard({ product, as: Root, className, ...rest }: 
     >
       <a
         href={product.href}
-        className="relative flex h-full flex-col rounded-[inherit] p-8 focus:outline-none focus-visible:outline-none"
+        className="relative flex h-full flex-col justify-between rounded-[inherit] p-8 focus:outline-none focus-visible:outline-none"
       >
-        <p className="font-medium">{product.name}</p>
-        <p className="mt-2 text-sm text-green-800">{product.title}</p>
-        <div className="h-8 grow" />
+        <div>
+          <p className="font-medium">{product.name}</p>
+          <p className="mt-2 text-sm text-green-800">{product.title}</p>
+        </div>
         <div
           role="presentation"
-          className="flex size-8 items-center justify-center rounded bg-green-1000 p-[5px] text-sm/5 font-medium text-white"
+          className="mt-8 flex size-8 items-center justify-center rounded bg-green-1000 p-[5px] text-sm/5 font-medium text-white"
         >
           <Logo />
         </div>
