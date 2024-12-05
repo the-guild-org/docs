@@ -16,6 +16,9 @@ export type ILink = LinkProps &
 
 export interface IFooterExtendedProps {
   className?: string;
+  /**
+   * @deprecated use `items` instead
+   */
   resources?: ILink[];
   logo?: ILink;
 }
