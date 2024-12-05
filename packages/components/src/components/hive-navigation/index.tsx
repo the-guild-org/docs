@@ -86,8 +86,6 @@ export function HiveNavigation({
   developerMenu,
   searchProps,
 }: HiveNavigationProps) {
-  const isHive = productName === 'Hive';
-
   const containerRef = useRef<HTMLDivElement>(null!);
 
   return (
