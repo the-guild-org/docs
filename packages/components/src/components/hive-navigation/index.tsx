@@ -173,7 +173,7 @@ export function HiveNavigation({
         >
           Contact <span className="hidden xl:contents">us</span>
         </CallToAction>
-        {isHive ? (
+        {productName === 'Hive' ? (
           <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
             Sign in
           </CallToAction>
