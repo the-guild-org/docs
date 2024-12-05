@@ -51,7 +51,7 @@ const EXPLORE_HREF = 'https://github.com/the-guild-org';
 
 const ENTERPRISE_MENU_HIDDEN = true;
 
-export interface HiveNavigationProps {
+export interface HiveNavigationProps extends Pick<DeveloperMenuProps, 'developerMenu'> {
   companyMenuChildren?: ReactNode;
   children?: ReactNode;
   className?: string;
@@ -61,7 +61,6 @@ export interface HiveNavigationProps {
   productName: string;
   logo?: ReactNode;
   navLinks?: { href: string; children: ReactNode }[];
-  developerMenu?: { href: string; icon: React.FC<{ className?: string }>; children: ReactNode }[];
   searchProps?: ComponentProps<typeof Search>;
 }
 
@@ -331,7 +330,11 @@ interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   isHive: boolean;
   developerMenu:
     | undefined
-    | { href: string; icon: React.FC<{ className?: string }>; children: ReactNode }[];
+    | {
+        href: string;
+        icon: ReactNode;
+        children: ReactNode;
+      }[];
 }
 
 /**
@@ -342,21 +345,16 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
     developerMenu ||= [
       {
         href: isHive ? '/docs' : 'https://the-guild.dev/graphql/hive/docs',
-        icon: PaperIcon,
+        icon: <PaperIcon />,
         children: 'Documentation',
       },
-      { href: 'https://status.graphql-hive.com/', icon: TargetIcon, children: 'Status' },
+      { href: 'https://status.graphql-hive.com/', icon: <TargetIcon />, children: 'Status' },
       {
         href: isHive ? '/product-updates' : 'https://the-guild.dev/graphql/hive/product-updates',
-        icon: RightCornerIcon,
+        icon: <RightCornerIcon />,
         children: 'Product Updates',
       },
-      { href: `${siteOrigin}/blog`, icon: PencilIcon, children: 'Blog' },
-      {
-        href: 'https://github.com/dotansimha/graphql-code-generator',
-        icon: GitHubIcon,
-        children: 'GitHub',
-      },
+      { href: `${siteOrigin}/blog`, icon: <PencilIcon />, children: 'Blog' },
     ];
 
     return (
@@ -386,7 +384,7 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
                 ['Discord', DiscordIcon, 'https://discord.com/invite/xud7bH9'],
               ] as const
             ).map(([text, Icon, href], i) => (
-              <MenuColumnListItem key={i} href={href} icon={Icon}>
+              <MenuColumnListItem key={i} href={href} icon={<Icon />}>
                 {text}
               </MenuColumnListItem>
             ))}
@@ -401,20 +399,20 @@ DeveloperMenu.displayName = 'DeveloperMenu';
 function MenuColumnListItem({
   children,
   href,
-  icon: Icon,
+  icon,
 }: {
   children: ReactNode;
   href: string;
-  icon: React.FC<{ className?: string }>;
+  icon: ReactNode;
 }) {
   return (
     <li>
       <NavigationMenuLink
         href={href}
-        className="flex items-center gap-3 text-nowrap px-4 py-2"
+        className="flex items-center gap-3 text-nowrap px-4 py-2 [&>svg]:size-6 [&>svg]:shrink-0"
         arrow
       >
-        <Icon className="size-6 shrink-0" />
+        {icon}
         <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
           {children}
         </p>
@@ -478,7 +476,7 @@ export function EnterpriseMenu() {
         ] as const
       ).map(([Icon, text, href], i) => {
         return (
-          <MenuColumnListItem key={i} href={href} icon={Icon}>
+          <MenuColumnListItem key={i} href={href} icon={<Icon />}>
             {text}
           </MenuColumnListItem>
         );
@@ -496,10 +494,10 @@ export function CompanyMenu({ children }: { children: React.ReactNode }) {
       <div>
         <ColumnLabel>Company</ColumnLabel>
         <ul>
-          <MenuColumnListItem icon={GroupIcon} href={`${siteOrigin}/about-us`}>
+          <MenuColumnListItem icon={<GroupIcon />} href={`${siteOrigin}/about-us`}>
             About Us
           </MenuColumnListItem>
-          <MenuColumnListItem icon={AppsIcon} href={`${siteOrigin}/logos`}>
+          <MenuColumnListItem icon={<AppsIcon />} href={`${siteOrigin}/logos`}>
             Brand Assets
           </MenuColumnListItem>
         </ul>

@@ -160,17 +160,17 @@ export const CodegenNavmenu: StoryObj<HiveNavigationProps> = {
     developerMenu: [
       {
         href: '/docs',
-        icon: PaperIcon,
+        icon: <PaperIcon />,
         children: 'Documentation',
       },
       {
         href: 'https://the-guild.dev/blog',
-        icon: PencilIcon,
+        icon: <PencilIcon />,
         children: 'Blog',
       },
       {
         href: 'https://github.com/dotansimha/graphql-code-generator',
-        icon: GitHubIcon,
+        icon: <GitHubIcon />,
         children: 'GitHub',
       },
     ],
