@@ -50,9 +50,7 @@ export function CookiesConsent(props: CookiesConsentProps) {
           variant="tertiary"
           onClick={() => {
             setConsented('closing');
-            if (typeof localStorage !== 'undefined') {
-              localStorage.setItem('cookies', 'true');
-            }
+            localStorage.setItem('cookies', 'true');
           }}
           className="px-4 py-2"
         >
