@@ -56,8 +56,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(prettier@3.4.2)
       '@theguild/tailwind-config':
-        specifier: 0.6.0
-        version: 0.6.0(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.16)
+        specifier: 0.6.1
+        version: 0.6.1(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.16)
       '@types/jest-image-snapshot':
         specifier: 6.4.0
         version: 6.4.0
@@ -198,8 +198,8 @@ importers:
         specifier: workspace:*
         version: link:../editor
       '@theguild/tailwind-config':
-        specifier: 0.6.0
-        version: 0.6.0(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.16)
+        specifier: 0.6.1
+        version: 0.6.1(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.16)
       '@types/dedent':
         specifier: 0.7.2
         version: 0.7.2
@@ -347,8 +347,8 @@ importers:
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@theguild/tailwind-config':
-        specifier: 0.6.0
-        version: 0.6.0(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.16)
+        specifier: 0.6.1
+        version: 0.6.1(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.16)
       '@types/react':
         specifier: 18.3.12
         version: 18.3.12
@@ -2682,8 +2682,8 @@ packages:
     peerDependencies:
       prettier: ^3
 
-  '@theguild/tailwind-config@0.6.0':
-    resolution: {integrity: sha512-tweCBr9MfMbakKQSd0dC7AsgZ3WhE/2U4f9TyOs1yTZXuTLUWGiDK4g++hjokyEIIEGtFC9SB0ux+V2gy8psTw==}
+  '@theguild/tailwind-config@0.6.1':
+    resolution: {integrity: sha512-oyB6eHgJLEththaJ9s8/x77zFYybNKyTqO3m7dvfVa1szH0R3YYgr+0PmIIvcitK1HlykPBLFMEZN+zrNF7Pzw==}
     peerDependencies:
       postcss-import: ^16.1.0
       postcss-lightningcss: ^1.0.1
@@ -11940,7 +11940,7 @@ snapshots:
       - '@vue/compiler-sfc'
       - supports-color
 
-  '@theguild/tailwind-config@0.6.0(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.16)':
+  '@theguild/tailwind-config@0.6.1(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.16)':
     dependencies:
       '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.16)
       postcss-import: 15.1.0(postcss@8.4.49)
