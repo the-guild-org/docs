@@ -46,7 +46,7 @@ const EXPLORE_HREF = 'https://github.com/the-guild-org';
 
 const ENTERPRISE_MENU_HIDDEN = true;
 
-export interface HiveNavigationProps extends Pick<DeveloperMenuProps, 'developerMenu'> {
+export type HiveNavigationProps = {
   companyMenuChildren?: ReactNode;
   children?: ReactNode;
   className?: string;
@@ -57,7 +57,13 @@ export interface HiveNavigationProps extends Pick<DeveloperMenuProps, 'developer
   logo?: ReactNode;
   navLinks?: { href: string; children: ReactNode }[];
   searchProps?: ComponentProps<typeof Search>;
-}
+  developerMenu?: {
+    href: string;
+    title?: string;
+    icon: ReactNode;
+    children: ReactNode;
+  }[];
+};
 
 /**
  *
@@ -123,7 +129,7 @@ export function HiveNavigation({
           <NavigationMenuItem>
             <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <DeveloperMenu developerMenu={developerMenu} />
+              <DeveloperMenu developerMenu={developerMenu} isHive={productName === 'Hive'} />
             </NavigationMenuContent>
           </NavigationMenuItem>
           {!ENTERPRISE_MENU_HIDDEN && (
@@ -218,11 +224,12 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
               Hive
             </p>
             <p className="mt-1 text-sm leading-5 text-green-800 dark:text-neutral-400">
-              GraphQL Management Platform & Decision-making Engine
+              GraphQL Federation Platform with Schema Registry and Analytics
             </p>
           </NavigationMenuLink>
           <Anchor
             href="https://app.graphql-hive.com/"
+            title="Discover the Hive platform"
             className="hive-focus -my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
           >
             <span>Get started</span> <ArrowIcon />
@@ -233,7 +240,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
           <ul>
             {(
               [
-                [PRODUCTS.HIVE_GATEWAY, 'Federation Gateway'],
+                [PRODUCTS.HIVE_GATEWAY, 'GraphQL Federation Gateway'],
                 [PRODUCTS.MESH, 'Anything to GraphQL'],
                 [PRODUCTS.YOGA, 'GraphQL Server & Subgraph'],
               ] as const
@@ -243,6 +250,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
                 <li key={product.name}>
                   <NavigationMenuLink
                     href={bidirectionalProductLink(product)}
+                    title={product.title}
                     className="flex items-center gap-4 p-4"
                   >
                     <div className="size-12 rounded-lg bg-blue-400 p-2.5">
@@ -326,8 +334,10 @@ const MenuContentColumns = forwardRef(
 MenuContentColumns.displayName = 'MenuContentColumns';
 
 interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
-  developerMenu: {
+  isHive: boolean;
+  developerMenu?: {
     href: string;
+    title?: string;
     icon: ReactNode;
     children: ReactNode;
   }[];
@@ -343,8 +353,8 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
         <div>
           <ColumnLabel>Developer</ColumnLabel>
           <ul>
-            {developerMenu.map(({ href, icon, children }, i) => (
-              <MenuColumnListItem key={i} href={href} icon={icon}>
+            {developerMenu?.map(({ href, title, icon, children }, i) => (
+              <MenuColumnListItem key={i} title={title} href={href} icon={icon}>
                 {children}
               </MenuColumnListItem>
             ))}
@@ -380,17 +390,20 @@ DeveloperMenu.displayName = 'DeveloperMenu';
 function MenuColumnListItem({
   children,
   href,
+  title,
   icon,
 }: {
   children: ReactNode;
   href: string;
+  title?: string;
   icon: ReactNode;
 }) {
   return (
     <li>
       <NavigationMenuLink
         href={href}
-        className="flex items-center gap-3 text-nowrap px-4 py-2 [&>svg]:size-6 [&>svg]:shrink-0"
+        title={title}
+        className="flex items-center gap-3 text-nowrap px-4 py-2"
         arrow
       >
         {icon}
