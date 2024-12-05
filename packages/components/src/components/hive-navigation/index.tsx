@@ -124,7 +124,7 @@ export function HiveNavigation({
           <NavigationMenuItem>
             <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <DeveloperMenu developerMenu={developerMenu} isHive={productName === 'Hive'} />
+              <DeveloperMenu developerMenu={developerMenu} />
             </NavigationMenuContent>
           </NavigationMenuItem>
           {!ENTERPRISE_MENU_HIDDEN && (
