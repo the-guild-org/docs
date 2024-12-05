@@ -262,8 +262,7 @@ export const PRODUCTS_MENU_LIST = Object.fromEntries(
       return [
         i,
         {
-          // BUG: Nextra 4 doesn't support separators inside menu items.
-          href: '#',
+          type: 'separator',
           title: (
             <>
               {/* This is a one-off class. The margins and paddings of the parent list item are were large. */}
