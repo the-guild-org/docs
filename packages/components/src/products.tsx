@@ -1,4 +1,4 @@
-import { FC, HTMLProps, SVGProps } from 'react';
+import { FC, HTMLProps, ReactElement, SVGProps } from 'react';
 import { cn } from './cn';
 import {
   CodegenIcon,
@@ -254,7 +254,16 @@ export const SIX_HIGHLIGHTED_PRODUCTS = [
 ];
 
 /** List of products displayed in hamburger menu. */
-export const PRODUCTS_MENU_LIST = Object.fromEntries(
+export const PRODUCTS_MENU_LIST = Object.fromEntries<
+  | {
+      type: 'separator';
+      title: ReactElement;
+    }
+  | {
+      href: string;
+      title: ReactElement;
+    }
+>(
   (
     ['The GraphQL Stack', ...FOUR_MAIN_PRODUCTS, 'Libraries', ...SIX_HIGHLIGHTED_PRODUCTS] as const
   ).map((item, i) => {
