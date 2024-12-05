@@ -71,7 +71,7 @@ export const GuildLayout: FC<{
   /**
    * Nextra's Docs Theme `<Navbar>` component props
    */
-  navbarProps?: NavbarProps;
+  navbarProps: NavbarProps;
 }> = async ({
   children,
   websiteName,
