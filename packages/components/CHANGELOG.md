@@ -1,5 +1,16 @@
 # @theguild/components
 
+## 7.3.3
+
+### Patch Changes
+
+- [#1852](https://github.com/the-guild-org/docs/pull/1852)
+  [`52df026`](https://github.com/the-guild-org/docs/commit/52df02645df332a02a0fc77a54f7bb8da03c24cf)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`@theguild/tailwind-config@0.6.1` ↗︎](https://www.npmjs.com/package/@theguild/tailwind-config/v/0.6.1)
+    (from `0.6.0`, in `peerDependencies`)
+
 ## 7.3.2
 
 ### Patch Changes
