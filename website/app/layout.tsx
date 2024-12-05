@@ -23,9 +23,7 @@ const logo = (
   </svg>
 );
 
-const RootLayout: FC<{
-  children: ReactNode;
-}> = async ({ children }) => {
+const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
     <GuildLayout
       logo={logo}
