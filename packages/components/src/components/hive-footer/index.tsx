@@ -5,6 +5,7 @@ import { HiveCombinationMark } from '../../logos';
 import { FOUR_MAIN_PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../../products';
 import { ILink } from '../../types/components';
 import { Anchor } from '../anchor';
+import { ContactTextLink } from '../contact-us';
 import {
   CSAStarLevelOneIcon,
   DiscordIcon,
@@ -13,7 +14,6 @@ import {
   TwitterIcon,
   YouTubeIcon,
 } from '../icons/index';
-import { ContactUs } from './contact-us';
 
 export type HiveFooterProps = {
   className?: string;
@@ -61,7 +61,7 @@ export function HiveFooter({
                 {...link}
               />
             ))}
-            <ContactUs />
+            <ContactTextLink />
           </div>
           <CSAStarLink className="sm:col-start-[-1] lg:col-start-[-2]" />
         </div>

@@ -4,7 +4,13 @@ import { CallToAction } from '../call-to-action';
 import { Heading } from '../heading';
 import { AncillaryProductCard, MainProductCard } from '../product-card';
 
-export function ToolsAndLibrariesCards({ className }: { className?: string }) {
+export function ToolsAndLibrariesCards({
+  className,
+  isHive,
+}: {
+  className?: string;
+  isHive?: boolean;
+}) {
   return (
     <section
       className={cn(
@@ -27,7 +33,10 @@ export function ToolsAndLibrariesCards({ className }: { className?: string }) {
           <AncillaryProductCard key={product.name} as="li" product={product} />
         ))}
       </ul>
-      <CallToAction href="https://github.com/the-guild-org" variant="primary">
+      <CallToAction
+        href={isHive ? '/ecosystem' : 'https://the-guild.dev/graphql/hive/ecosystem'}
+        variant="primary"
+      >
         Explore the Ecosystem
       </CallToAction>
     </section>

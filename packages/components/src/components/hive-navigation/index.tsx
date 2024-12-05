@@ -56,13 +56,8 @@ export type HiveNavigationProps = {
   productName: string;
   logo?: ReactNode;
   navLinks?: { href: string; children: ReactNode }[];
+  developerMenu: DeveloperMenuProps['developerMenu'];
   searchProps?: ComponentProps<typeof Search>;
-  developerMenu?: {
-    href: string;
-    title?: string;
-    icon: ReactNode;
-    children: ReactNode;
-  }[];
 };
 
 /**
@@ -129,7 +124,7 @@ export function HiveNavigation({
           <NavigationMenuItem>
             <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <DeveloperMenu developerMenu={developerMenu} isHive={productName === 'Hive'} />
+              <DeveloperMenu developerMenu={developerMenu} />
             </NavigationMenuContent>
           </NavigationMenuItem>
           {!ENTERPRISE_MENU_HIDDEN && (
@@ -160,7 +155,7 @@ export function HiveNavigation({
         {children}
 
         <Search
-          className="relative ml-4 basis-64 [&_:is(input,kbd)]:text-green-700 dark:[&_:is(input,kbd)]:text-neutral-300 [&_input]:h-12 [&_input]:w-full [&_input]:rounded-lg [&_input]:border [&_input]:border-green-200 [&_input]:bg-white [&_input]:pl-4 [&_input]:pr-8 [&_input]:ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%/var(--tw-ring-opacity))] [&_input]:ring-offset-[rgb(var(--nextra-bg))] dark:[&_input]:border-neutral-800 [&_input]:dark:bg-inherit [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:top-1/2 [&_kbd]:my-0 [&_kbd]:-translate-y-1/2 [&_kbd]:border-none [&_kbd]:bg-green-200 dark:[&_kbd]:bg-neutral-700"
+          className="relative ml-4 basis-64 [&_:is(input,kbd)]:text-green-700 dark:[&_:is(input,kbd)]:text-neutral-300 [&_input]:h-12 [&_input]:w-full [&_input]:rounded-lg [&_input]:border [&_input]:border-green-200 [&_input]:bg-white [&_input]:pl-4 [&_input]:pr-8 [&_input]:ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%/var(--tw-ring-opacity))] [&_input]:ring-offset-[rgb(var(--nextra-bg))] dark:[&_input]:border-neutral-800 [&_input]:dark:bg-inherit [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:-translate-y-1/2 [&_kbd]:border-none [&_kbd]:bg-green-200 dark:[&_kbd]:bg-neutral-700"
           {...searchProps}
         />
 
@@ -334,8 +329,7 @@ const MenuContentColumns = forwardRef(
 MenuContentColumns.displayName = 'MenuContentColumns';
 
 interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
-  isHive: boolean;
-  developerMenu?: {
+  developerMenu: {
     href: string;
     title?: string;
     icon: ReactNode;
@@ -353,7 +347,7 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
         <div>
           <ColumnLabel>Developer</ColumnLabel>
           <ul>
-            {developerMenu?.map(({ href, title, icon, children }, i) => (
+            {developerMenu.map(({ href, title, icon, children }, i) => (
               <MenuColumnListItem key={i} title={title} href={href} icon={icon}>
                 {children}
               </MenuColumnListItem>

@@ -69,6 +69,9 @@ export const Default: StoryObj = {
       </div>
     ),
   ],
+  args: {
+    developerMenu: HIVE_DEVELOPER_MENU,
+  },
 };
 
 export const NarrowMaxWidth: StoryObj = {

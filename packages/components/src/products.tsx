@@ -1,6 +1,13 @@
-import { FC, HTMLProps, ReactNode, SVGProps } from 'react';
+import { FC, HTMLProps, ReactElement, SVGProps } from 'react';
 import { cn } from './cn';
-import { CodegenIcon, HiveGatewayIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
+import {
+  CodegenIcon,
+  HiveGatewayIcon,
+  HiveIcon,
+  MeshIcon,
+  StellateIcon,
+  YogaIcon,
+} from './components/icons';
 import {
   AngularLettermark,
   ConductorLettermark,
@@ -45,7 +52,8 @@ export type ProductType =
   | 'WS'
   | 'FETS'
   | 'HELTIN'
-  | 'NEXTRA';
+  | 'NEXTRA'
+  | 'STELLATE';
 
 export interface ProductInfo {
   name: string;
@@ -220,6 +228,13 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     logo: NextraLogo,
     primaryColor: '#000',
   },
+  STELLATE: {
+    name: 'Stellate',
+    title: 'GraphQL Edge Caching, Metrics and Security.',
+    href: 'https://stellate.co',
+    logo: StellateIcon,
+    primaryColor: '#FF7752',
+  },
 };
 
 export const FOUR_MAIN_PRODUCTS = [
@@ -239,53 +254,57 @@ export const SIX_HIGHLIGHTED_PRODUCTS = [
 ];
 
 /** List of products displayed in hamburger menu. */
-export const PRODUCTS_MENU_LIST: Record<string, { type: 'separator'; title: ReactNode }> =
-  Object.fromEntries(
-    (
-      [
-        'The GraphQL Stack',
-        ...FOUR_MAIN_PRODUCTS,
-        'Libraries',
-        ...SIX_HIGHLIGHTED_PRODUCTS,
-      ] as const
-    ).map((item, i) => {
-      if (typeof item === 'string') {
-        return [
-          i,
-          {
-            type: 'separator',
-            title: (
-              <>
-                {/* This is a one-off class. The margins and paddings of the parent list item are were large. */}
-                {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-                <style className="hive-label-separator">
-                  {'li:has(>.hive-label-separator) { margin: 0.75rem 0 0.25rem 0; padding: 0 }'}
-                </style>
-                <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
-              </>
-            ),
-          },
-        ];
-      }
+export const PRODUCTS_MENU_LIST = Object.fromEntries<
+  | {
+      type: 'separator';
+      title: ReactElement;
+    }
+  | {
+      href: string;
+      title: ReactElement;
+    }
+>(
+  (
+    ['The GraphQL Stack', ...FOUR_MAIN_PRODUCTS, 'Libraries', ...SIX_HIGHLIGHTED_PRODUCTS] as const
+  ).map((item, i) => {
+    if (typeof item === 'string') {
       return [
         i,
         {
-          type: 'page',
-          href: item.href,
+          type: 'separator',
           title: (
-            <div className="flex items-center gap-2">
-              <div
-                className={cn(
-                  'flex translate-y-[0.25px]',
-                  i > 6 && 'rounded-sm bg-gray-500 text-white dark:bg-white/10',
-                )}
-              >
-                <item.logo className="size-4 text-[8px]" />
-              </div>
-              {item.name}
-            </div>
+            <>
+              {/* This is a one-off class. The margins and paddings of the parent list item are were large. */}
+              {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
+              <style className="hive-label-separator">
+                {
+                  ':is(a,li):has(>.hive-label-separator) { margin: 0.75rem 0 0.25rem 0; padding: 0 }'
+                }
+              </style>
+              <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
+            </>
           ),
         },
       ];
-    }),
-  );
+    }
+    return [
+      i,
+      {
+        href: item.href,
+        title: (
+          <div className="flex items-center gap-2">
+            <div
+              className={cn(
+                'flex translate-y-[0.25px]',
+                i > 6 && 'rounded-sm bg-gray-500 text-white dark:bg-white/10',
+              )}
+            >
+              <item.logo className="size-4 text-[8px]" />
+            </div>
+            {item.name}
+          </div>
+        ),
+      },
+    ];
+  }),
+);
