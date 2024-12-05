@@ -10,7 +10,7 @@ export function CookiesConsent(props: CookiesConsentProps) {
   const [consented, setConsented] = useState<'unknown' | 'yes' | 'no' | 'closing'>('unknown');
 
   useLayoutEffect(() => {
-      setConsented(localStorage.getItem('cookies') === 'true' ? 'yes' : 'no');
+    setConsented(localStorage.getItem('cookies') === 'true' ? 'yes' : 'no');
   }, []);
 
   if (consented === 'unknown' || consented === 'yes') {

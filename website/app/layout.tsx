@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 import { getDefaultMetadata, GuildLayout } from '@theguild/components/server';
 import '@theguild/components/style.css';
+import { GitHubIcon, PaperIcon, PencilIcon } from '@theguild/components/components/icons/index';
 
 const description = 'Documentation for The Guild';
 const websiteName = 'Guild Docs';
@@ -44,6 +45,23 @@ const RootLayout: FC<{
         searchProps: {
           placeholder: 'Search...',
         },
+        developerMenu: [
+          {
+            href: '/docs',
+            icon: <PaperIcon />,
+            children: 'Documentation',
+          },
+          {
+            href: 'https://the-guild.dev/blog',
+            icon: <PencilIcon />,
+            children: 'Blog',
+          },
+          {
+            href: 'https://github.com/the-guild-org/docs',
+            icon: <GitHubIcon />,
+            children: 'GitHub',
+          },
+        ],
       }}
     >
       {children}
