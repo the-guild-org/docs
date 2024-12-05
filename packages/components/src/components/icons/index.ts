@@ -1,6 +1,5 @@
 export { ReactComponent as CaretSlimIcon } from './caret-slim.svg';
 export { ReactComponent as CloseIcon } from './close.svg';
-export { ReactComponent as MoonIcon } from './moon.svg';
 export { ReactComponent as MoreIcon } from './more.svg';
 export { ReactComponent as SearchIcon } from './search.svg';
 export { ReactComponent as ShareIcon } from './share.svg';
@@ -16,6 +15,7 @@ export { ReactComponent as MeshIcon } from './mesh.svg';
 export { ReactComponent as YogaIcon } from './yoga.svg';
 export { ReactComponent as HiveIcon } from './hive.svg';
 export { ReactComponent as HiveGatewayIcon } from './hive-gateway.svg';
+export { ReactComponent as StellateIcon } from './stellate.svg';
 
 export { InformationCircleIcon, GitHubIcon, DiscordIcon } from 'nextra/icons';
 

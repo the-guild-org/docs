@@ -21,6 +21,9 @@ export const parameters: Preview['parameters'] = {
   },
   // Remove padding from storybook in mobile
   layout: 'fullscreen',
+  nextjs: {
+    appDirectory: true,
+  },
 };
 
 export const decorators: Preview['decorators'] = [

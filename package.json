@@ -5,6 +5,7 @@
   "packageManager": "pnpm@9.14.4",
   "scripts": {
     "build": "turbo run build --filter=!website",
+    "build-example": "turbo run build --filter=website",
     "build-storybook": "storybook build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.ts --postcss --output packages/components/style.css",
     "clean": "pnpm -r exec sh -c 'rm -rf .next .turbo dist out'",

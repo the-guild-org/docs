@@ -14,15 +14,6 @@ export type ILink = LinkProps &
     newWindow?: boolean;
   };
 
-export interface IFooterExtendedProps {
-  className?: string;
-  /**
-   * @deprecated use `items` instead
-   */
-  resources?: ILink[];
-  logo?: ILink;
-}
-
 export interface IFeatureListProps {
   className?: string;
   title?: string;

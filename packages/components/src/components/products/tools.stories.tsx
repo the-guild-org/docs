@@ -1,6 +1,5 @@
 import { ReactElement } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Footer } from '../footer';
 import { HeroGradient } from '../hero-gradient';
 import { InfoList } from '../info-list';
 
@@ -42,30 +41,6 @@ function Template(): ReactElement {
             title: 'Stitch multiple GraphQL Schemas',
             description:
               'Automatically stitch multiple schemas together into one larger API in a simple, fast and powerful way.',
-          },
-        ]}
-      />
-      <Footer
-        resources={[
-          {
-            children: 'Documentation',
-            title: 'Read the Docs',
-            href: '/docs',
-          },
-          {
-            children: 'Generate Schemas',
-            title: 'Learn about generating schemas',
-            href: '/docs/generate-schema',
-          },
-          {
-            children: 'Mock APIs',
-            title: 'Learn about mocking APIs',
-            href: '/docs/mocking',
-          },
-          {
-            children: 'Stitch Schemas',
-            title: 'Learn about stitching schemas',
-            href: '/docs/stitch-combining-schemas',
           },
         ]}
       />

@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { addBasePath } from 'next/dist/client/add-base-path';
 import clsx from 'clsx';
 import { useMDXComponents as getDocsMDXComponents } from 'nextra-theme-docs';
 
@@ -25,7 +26,7 @@ const docsComponents = getDocsMDXComponents({
     if (ext === 'mov') {
       ext = 'quicktime';
     }
-    return <source {...props} src={src} type={type || `video/${ext}`} />;
+    return <source {...props} src={addBasePath(src)} type={type || `video/${ext}`} />;
   },
   video: ({ className, children, ...props }) => (
     <video className={clsx('mt-6 w-full', className)} autoPlay loop muted {...props}>
@@ -44,7 +45,7 @@ const docsComponents = getDocsMDXComponents({
   ),
 });
 
-export const useMDXComponents = (components: object) => ({
+export const useMDXComponents = (components?: object) => ({
   ...docsComponents,
   ...components,
 });

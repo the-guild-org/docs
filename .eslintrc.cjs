@@ -37,18 +37,11 @@ module.exports = {
         'hive-focus',
         'hive-focus-within',
         'nextra-hamburger',
-        '@container', // Tailwind ESLint Plugin doesn't see the Container Queries classes but it does see prefixes like @sm:
+        '@container', // Tailwind ESLint Plugin doesn't see the Container Queries classes, but it does see prefixes like @sm:
       ],
     },
   },
   overrides: [
-    {
-      files: ['**/*.stories.{ts,tsx}'],
-      rules: {
-        'no-console': 'off',
-        'import/no-default-export': 'off',
-      },
-    },
     {
       files: ['packages/**'],
       rules: {

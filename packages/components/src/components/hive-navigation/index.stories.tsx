@@ -1,8 +1,16 @@
 import { Meta, StoryContext, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
+import { siteOrigin } from '../../constants';
 import { PRODUCTS } from '../../products';
 import { Anchor } from '../anchor';
-import { CodegenIcon, GitHubIcon, PaperIcon, PencilIcon } from '../icons';
+import {
+  CodegenIcon,
+  GitHubIcon,
+  PaperIcon,
+  PencilIcon,
+  RightCornerIcon,
+  TargetIcon,
+} from '../icons';
 import { GraphQLConfCard } from './graphql-conf-card';
 import {
   CompanyMenu,
@@ -21,12 +29,33 @@ import {
 } from './navigation-menu';
 import graphQLConfLocalImage from './local-image-for-stories.png';
 
+const HIVE_DEVELOPER_MENU: HiveNavigationProps['developerMenu'] = [
+  {
+    href: '/docs',
+    icon: <PaperIcon />,
+    children: 'Documentation',
+  },
+  { href: 'https://status.graphql-hive.com/', icon: <TargetIcon />, children: 'Status' },
+  {
+    href: '/product-updates',
+    icon: <RightCornerIcon />,
+    children: 'Product Updates',
+  },
+  { href: `${siteOrigin}/blog`, icon: <PencilIcon />, children: 'Blog' },
+  {
+    href: 'https://github.com/dotansimha/graphql-code-generator',
+    icon: <GitHubIcon />,
+    children: 'GitHub',
+  },
+];
+
 export default {
   title: 'Hive/HiveNavigation',
   component: HiveNavigation,
   decorators: [hiveThemeDecorator, nextraThemeDocsCtxDecorator],
   args: {
     productName: 'Hive',
+    developerMenu: HIVE_DEVELOPER_MENU,
   },
 } satisfies Meta<HiveNavigationProps>;
 
@@ -40,6 +69,9 @@ export const Default: StoryObj = {
       </div>
     ),
   ],
+  args: {
+    developerMenu: HIVE_DEVELOPER_MENU,
+  },
 };
 
 export const NarrowMaxWidth: StoryObj = {
@@ -114,7 +146,7 @@ export const Developer: StoryObj = {
   render() {
     return (
       <NavigationMenu>
-        <DeveloperMenu isHive={false} developerMenu={undefined} />
+        <DeveloperMenu developerMenu={HIVE_DEVELOPER_MENU} />
       </NavigationMenu>
     );
   },
@@ -160,17 +192,17 @@ export const CodegenNavmenu: StoryObj<HiveNavigationProps> = {
     developerMenu: [
       {
         href: '/docs',
-        icon: PaperIcon,
+        icon: <PaperIcon />,
         children: 'Documentation',
       },
       {
         href: 'https://the-guild.dev/blog',
-        icon: PencilIcon,
+        icon: <PencilIcon />,
         children: 'Blog',
       },
       {
         href: 'https://github.com/dotansimha/graphql-code-generator',
-        icon: GitHubIcon,
+        icon: <GitHubIcon />,
         children: 'GitHub',
       },
     ],

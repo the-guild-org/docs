@@ -1,6 +1,7 @@
-import { FC } from 'react';
+import { ReactNode } from 'react';
 import { getDefaultMetadata, GuildLayout } from '@theguild/components/server';
 import '@theguild/components/style.css';
+import { GitHubIcon, PaperIcon, PencilIcon } from '@theguild/components';
 
 const description = 'Documentation for The Guild';
 const websiteName = 'Guild Docs';
@@ -22,9 +23,7 @@ const logo = (
   </svg>
 );
 
-const RootLayout: FC<{
-  children: React.ReactNode;
-}> = async ({ children }) => {
+const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
     <GuildLayout
       logo={logo}
@@ -33,6 +32,29 @@ const RootLayout: FC<{
       layoutProps={{
         docsRepositoryBase:
           'https://github.com/the-guild-org/the-guild-components/tree/main/website',
+      }}
+      navbarProps={{
+        navLinks: [{ href: '/docs', children: 'Documentation' }],
+        searchProps: {
+          placeholder: 'Search...',
+        },
+        developerMenu: [
+          {
+            href: '/docs',
+            icon: <PaperIcon />,
+            children: 'Documentation',
+          },
+          {
+            href: 'https://the-guild.dev/blog',
+            icon: <PencilIcon />,
+            children: 'Blog',
+          },
+          {
+            href: 'https://github.com/the-guild-org/docs',
+            icon: <GitHubIcon />,
+            children: 'GitHub',
+          },
+        ],
       }}
     >
       {children}

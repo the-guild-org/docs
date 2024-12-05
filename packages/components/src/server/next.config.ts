@@ -16,11 +16,27 @@ const warnings = new Set<string>();
 
 const require = createRequire(import.meta.url);
 
-const rehypeCheckFrontMatter: Plugin = () => (_ast, file) => {
+function getFrontMatterASTObject(node: any) {
+  const [n] = node.data!.estree!.body;
+  return (n as any).declaration.declarations[0].init.properties;
+}
+
+function isExportNode(node: any, varName: string) {
+  if (node.type !== 'mdxjsEsm') return false;
+  const [n] = node.data!.estree!.body;
+
+  if (n.type !== 'ExportNamedDeclaration') return false;
+
+  const name = (n as any).declaration?.declarations?.[0].id.name;
+  if (!name) return false;
+
+  return name === varName;
+}
+
+const rehypeCheckFrontMatter: Plugin<[], any> = () => (ast, file) => {
   const [filePath] = file.history;
   // Skip if no file path (e.g. dynamic mdx without filePath provided)
   if (!filePath) return;
-  const { description } = file.data.frontMatter as Record<string, string>;
   const relativePath = path.relative(process.cwd(), filePath);
   const fileName = path.parse(relativePath).name;
 
@@ -37,6 +53,11 @@ const rehypeCheckFrontMatter: Plugin = () => (_ast, file) => {
       console.warn(msg);
     }
   }
+
+  const frontMatterNode = ast.children.find((node: any) => isExportNode(node, 'metadata'))!;
+  const frontMatter = getFrontMatterASTObject(frontMatterNode);
+  const description = frontMatter.find((o: any) => o.key.value === 'description')?.value
+    .value as string;
 
   if (!description) {
     warnOnce('The description is missing');

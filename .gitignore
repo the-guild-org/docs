@@ -12,4 +12,3 @@ packages/og-image/vender/*.wasm
 .wrangler/
 .DS_Store
 tsup.config.*.mjs
-_pagefind/
