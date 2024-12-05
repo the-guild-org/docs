@@ -2,7 +2,14 @@ import { Meta, StoryContext, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 import { PRODUCTS } from '../../products';
 import { Anchor } from '../anchor';
-import { CodegenIcon, GitHubIcon, PaperIcon, PencilIcon } from '../icons';
+import {
+  CodegenIcon,
+  GitHubIcon,
+  PaperIcon,
+  PencilIcon,
+  RightCornerIcon,
+  TargetIcon,
+} from '../icons';
 import { GraphQLConfCard } from './graphql-conf-card';
 import {
   CompanyMenu,
@@ -30,6 +37,26 @@ export default {
   },
 } satisfies Meta<HiveNavigationProps>;
 
+const HIVE_DEVELOPER_MENU = [
+  {
+    href: '/docs',
+    icon: PaperIcon,
+    children: 'Documentation',
+  },
+  { href: 'https://status.graphql-hive.com/', icon: TargetIcon, children: 'Status' },
+  {
+    href: '/product-updates',
+    icon: RightCornerIcon,
+    children: 'Product Updates',
+  },
+  { href: '/blog', icon: PencilIcon, children: 'Blog' },
+  {
+    href: 'https://github.com/dotansimha/graphql-code-generator',
+    icon: GitHubIcon,
+    children: 'GitHub',
+  },
+];
+
 export const Default: StoryObj = {
   name: 'HiveNavigation',
   decorators: [
@@ -40,6 +67,9 @@ export const Default: StoryObj = {
       </div>
     ),
   ],
+  args: {
+    developerMenu: HIVE_DEVELOPER_MENU,
+  },
 };
 
 export const NarrowMaxWidth: StoryObj = {
@@ -114,7 +144,7 @@ export const Developer: StoryObj = {
   render() {
     return (
       <NavigationMenu>
-        <DeveloperMenu isHive={false} developerMenu={undefined} />
+        <DeveloperMenu isHive={false} developerMenu={HIVE_DEVELOPER_MENU} />
       </NavigationMenu>
     );
   },

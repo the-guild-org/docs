@@ -61,7 +61,11 @@ export interface HiveNavigationProps {
   productName: string;
   logo?: ReactNode;
   navLinks?: { href: string; children: ReactNode }[];
-  developerMenu?: { href: string; icon: React.FC<{ className?: string }>; children: ReactNode }[];
+  developerMenu: {
+    href: string;
+    icon: React.FC<{ className?: string }>;
+    children: ReactNode;
+  }[];
   searchProps?: ComponentProps<typeof Search>;
 }
 
@@ -329,36 +333,14 @@ MenuContentColumns.displayName = 'MenuContentColumns';
 
 interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   isHive: boolean;
-  developerMenu:
-    | undefined
-    | { href: string; icon: React.FC<{ className?: string }>; children: ReactNode }[];
+  developerMenu: { href: string; icon: React.FC<{ className?: string }>; children: ReactNode }[];
 }
 
 /**
  * @internal
  */
 export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps>(
-  ({ isHive, developerMenu, ...rest }, ref) => {
-    developerMenu ||= [
-      {
-        href: isHive ? '/docs' : 'https://the-guild.dev/graphql/hive/docs',
-        icon: PaperIcon,
-        children: 'Documentation',
-      },
-      { href: 'https://status.graphql-hive.com/', icon: TargetIcon, children: 'Status' },
-      {
-        href: isHive ? '/product-updates' : 'https://the-guild.dev/graphql/hive/product-updates',
-        icon: RightCornerIcon,
-        children: 'Product Updates',
-      },
-      { href: `${siteOrigin}/blog`, icon: PencilIcon, children: 'Blog' },
-      {
-        href: 'https://github.com/dotansimha/graphql-code-generator',
-        icon: GitHubIcon,
-        children: 'GitHub',
-      },
-    ];
-
+  ({ developerMenu, ...rest }, ref) => {
     return (
       <MenuContentColumns {...rest} ref={ref}>
         <div>
