@@ -45,7 +45,7 @@ const docsComponents = getDocsMDXComponents({
   ),
 });
 
-export const useMDXComponents = (components: object) => ({
+export const useMDXComponents = (components?: object) => ({
   ...docsComponents,
   ...components,
 });
