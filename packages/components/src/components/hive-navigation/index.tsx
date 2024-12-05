@@ -26,15 +26,10 @@ import {
   AppsIcon,
   ArrowIcon,
   BardIcon,
-  GitHubIcon,
   GroupIcon,
   HiveIcon,
   HonourIcon,
-  PaperIcon,
-  PencilIcon,
-  RightCornerIcon,
   ShieldFlashIcon,
-  TargetIcon,
 } from '../icons';
 import {
   NavigationMenu,
