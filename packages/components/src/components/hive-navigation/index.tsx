@@ -329,7 +329,7 @@ const MenuContentColumns = forwardRef(
 MenuContentColumns.displayName = 'MenuContentColumns';
 
 interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
-  developerMenu?: {
+  developerMenu: {
     href: string;
     title?: string;
     icon: ReactNode;
@@ -347,7 +347,7 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
         <div>
           <ColumnLabel>Developer</ColumnLabel>
           <ul>
-            {developerMenu?.map(({ href, title, icon, children }, i) => (
+            {developerMenu.map(({ href, title, icon, children }, i) => (
               <MenuColumnListItem key={i} title={title} href={href} icon={icon}>
                 {children}
               </MenuColumnListItem>
