@@ -1,6 +1,6 @@
 {
   "name": "@theguild/components",
-  "version": "7.2.7",
+  "version": "7.3.2",
   "repository": {
     "url": "https://github.com/the-guild-org/docs",
     "directory": "packages/components"
@@ -44,7 +44,7 @@
     "types:check": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@theguild/tailwind-config": "^0.6.0",
+    "@theguild/tailwind-config": "^0.6.1",
     "next": "^13 || ^14 || ^15.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -65,9 +65,9 @@
   "devDependencies": {
     "@svgr/babel-plugin-remove-jsx-attribute": "^8.0.0",
     "@theguild/editor": "workspace:*",
-    "@theguild/tailwind-config": "0.6.1-alpha-20241128110540-fbd9106a41f712fba1c03f4048b6e8015251d55b",
+    "@theguild/tailwind-config": "0.6.1",
     "@types/dedent": "0.7.2",
-    "@types/react": "18.3.12",
+    "@types/react": "18.3.13",
     "@types/react-dom": "18.3.1",
     "@types/semver": "7.5.8",
     "dedent": "1.5.3",

@@ -1,8 +1,8 @@
-import { ComponentProps, FC, ReactNode } from 'react';
+import { ComponentProps, ReactNode } from 'react';
 import { cn } from '../../cn';
 import { siteOrigin } from '../../constants';
-import { HiveCombinationMark } from '../../logos/index';
-import { PRODUCTS } from '../../products';
+import { HiveCombinationMark } from '../../logos';
+import { FOUR_MAIN_PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../../products';
 import { ILink } from '../../types/components';
 import { Anchor } from '../anchor';
 import { ContactTextLink } from '../contact-us';
@@ -17,19 +17,21 @@ import {
 
 export type HiveFooterProps = {
   className?: string;
-  resources?: ILink[];
   logo?: ReactNode;
   href?: string;
   description?: string;
+  items?: HiveFooterItems;
 };
 
-export const HiveFooter: FC<HiveFooterProps> = ({
+export function HiveFooter({
   className,
   logo = <HiveCombinationMark className="h-8 w-auto" />,
   href = `${siteOrigin}/`,
-  resources = [],
   description = 'Open-source GraphQL management platform',
-}) => {
+  items,
+}: HiveFooterProps) {
+  items = { ...HiveFooter.DEFAULT_ITEMS, ...items };
+
   return (
     <footer className={cn('relative flex justify-center px-4 py-6 xl:px-[120px]', className)}>
       <div className="mx-4 grid w-full max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10 dark:text-neutral-400">
@@ -43,27 +45,30 @@ export const HiveFooter: FC<HiveFooterProps> = ({
           <p className="mt-6 lg:mt-8">{description}</p>
         </div>
         <div className="col-span-full grid grid-flow-row grid-cols-2 justify-stretch gap-6 text-sm sm:col-span-4 sm:grid-cols-3 lg:col-span-3 lg:pb-12 lg:text-base">
-          <List heading="Products" links={products} />
+          <List heading="Products" links={productLinks} />
+
           <div className="flex flex-col gap-[inherit]">
-            <List heading="Developer" links={DEVELOPER} />
-            {ENTERPRISE.length > 0 && <List heading="Enterprise" links={ENTERPRISE} />}
-            {resources.length > 0 && <List heading="Resources" links={resources} />}
+            <List heading="Developer" links={items.developer} />
+            <List heading="Resources" links={items.resources} />
           </div>
+
           <div className="flex flex-col gap-[inherit]">
-            <List heading="Company" links={COMPANY} />
-            <a
-              href="https://the-guild.dev/graphql/hive#pricing"
-              className="hive-focus -m-2 rounded p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
-            >
-              Pricing
-            </a>
-            <ContactTextLink>Contact Us</ContactTextLink>
+            <List heading="Company" links={items.company} />
+            {items.links?.map((link, i) => (
+              <Anchor
+                key={i}
+                className="hive-focus -m-2 rounded p-2 font-medium hover:text-blue-700 hover:underline dark:hover:text-blue-100"
+                {...link}
+              />
+            ))}
+            <ContactTextLink />
           </div>
           <CSAStarLink className="sm:col-start-[-1] lg:col-start-[-2]" />
         </div>
+
         <div className="col-span-full flex flex-wrap justify-between gap-x-[inherit] gap-y-8 lg:w-full lg:pb-2 lg:pt-8">
           <div className="flex gap-6 lg:order-1">
-            {COMMUNITY.map(({ icon: Icon, ...iconProps }) => (
+            {SOCIAL_ICONS.map(({ icon: Icon, ...iconProps }) => (
               <Anchor
                 key={iconProps.title}
                 className="hive-focus -m-1 rounded-md p-1 hover:text-blue-700 dark:hover:text-blue-100"
@@ -80,7 +85,7 @@ export const HiveFooter: FC<HiveFooterProps> = ({
       <DecorationArch className="pointer-events-none absolute bottom-0 left-0 hidden mix-blend-multiply lg:block dark:opacity-5 dark:mix-blend-normal" />
     </footer>
   );
-};
+}
 
 function List({
   heading,
@@ -88,9 +93,11 @@ function List({
   className,
 }: {
   heading: string;
-  links: ILink[];
+  links: ILink[] | undefined;
   className?: string;
 }) {
+  if (!links?.length) return null;
+
   return (
     <div className={cn('flex flex-col gap-y-3 text-nowrap lg:gap-y-4', className)}>
       <h3 className="font-medium dark:text-white">{heading}</h3>
@@ -108,69 +115,73 @@ function List({
   );
 }
 
-const ENTERPRISE: ILink[] = [
-  //   {
-  //     children: 'Consumer Stories',
-  //     href: '#TODO!',
-  //   },
-  //   {
-  //     children: 'Why GraphQL',
-  //     href: '#TODO!',
-  //   },
-  //   {
-  //     children: 'Professional Services',
-  //     href: '#TODO!',
-  //   },
-  //   {
-  //     children: 'Commitment to Security',
-  //     href: '#TODO!',
-  //   },
-];
+export interface HiveFooterItems {
+  developer?: ILink[];
+  company?: ILink[];
+  resources?: ILink[];
+  links?: ILink[];
+}
 
-const DEVELOPER: ILink[] = [
-  {
-    children: 'Documentation',
-    title: 'Read the docs',
-    href: '/docs',
-  },
-  {
-    children: 'Hive Status',
-    title: 'Check Hive status',
-    href: 'https://status.graphql-hive.com/',
-  },
-  {
-    children: 'Hive Updates',
-    title: 'Read most recent developments from GraphQL Hive',
-    href: 'https://the-guild.dev/graphql/hive/product-updates',
-  },
-  {
-    children: 'Blog',
-    title: 'Read our blog',
-    href: 'https://the-guild.dev/blog',
-  },
-];
+const DEFAULT_ITEMS: HiveFooterItems = {
+  developer: [
+    {
+      children: 'Documentation',
+      title: 'Read the docs',
+      href: '/docs',
+    },
+    {
+      children: 'Hive Status',
+      title: 'Check Hive status',
+      href: 'https://status.graphql-hive.com/',
+    },
+    {
+      children: 'Hive Updates',
+      title: 'Read most recent developments from Hive',
+      href: 'https://the-guild.dev/graphql/hive/product-updates',
+    },
+    {
+      children: 'Blog',
+      title: 'Read our blog',
+      href: 'https://the-guild.dev/blog',
+    },
+  ],
+  company: [
+    {
+      children: 'About',
+      title: 'Learn more about us',
+      href: 'https://the-guild.dev/about-us',
+    },
+    {
+      children: 'Brand Assets',
+      title: 'Brand Assets',
+      href: 'https://the-guild.dev/logos',
+    },
+    {
+      children: 'Newsletter',
+      title: 'Newsletter',
+      href: 'https://the-guild.dev/newsletter',
+    },
+  ],
+  resources: [],
+  links: [
+    {
+      children: 'OSS Friends',
+      href: 'https://the-guild.dev/graphql/hive/oss-friends',
+    },
+    {
+      children: 'Pricing',
+      href: 'https://the-guild.dev/graphql/hive#pricing',
+    },
+  ],
+};
 
-const COMPANY: ILink[] = [
-  {
-    children: 'About',
-    title: 'Learn more about us',
-    href: 'https://the-guild.dev/about-us',
-  },
-  {
-    children: 'Brand Assets',
-    title: 'Brand Assets',
-    href: 'https://the-guild.dev/logos',
-  },
-  {
-    children: 'Newsletter',
-    title: 'Newsletter',
-    href: 'https://the-guild.dev/newsletter',
-  },
-];
+HiveFooter.DEFAULT_ITEMS = DEFAULT_ITEMS;
 
-const COMMUNITY: (Omit<ILink, 'children'> & {
+interface SocialLink extends Omit<ILink, 'children'> {
   icon: (props: ComponentProps<'svg'>) => ReactNode;
-})[] = [
+}
+
+const SOCIAL_ICONS: SocialLink[] = [
   {
     icon: GitHubIcon,
     title: 'Check our GitHub account',
@@ -198,22 +209,13 @@ const COMMUNITY: (Omit<ILink, 'children'> & {
   },
 ];
 
-const products = [
-  PRODUCTS.HIVE,
-  PRODUCTS.MESH,
-  PRODUCTS.YOGA,
-  PRODUCTS.CODEGEN,
-  PRODUCTS.INSPECTOR,
-  PRODUCTS.SCALARS,
-  PRODUCTS.ENVELOP,
-  PRODUCTS.ESLINT,
-  PRODUCTS.SOFA,
-  // TODO: All libraries, go to /explore page
-].map(({ name, href, title }) => ({
-  children: name,
-  href,
-  title,
-}));
+const productLinks = [...FOUR_MAIN_PRODUCTS, ...SIX_HIGHLIGHTED_PRODUCTS].map(
+  ({ name, href, title }) => ({
+    children: name,
+    href,
+    title,
+  }),
+);
 
 function DecorationArch(props: React.SVGProps<SVGSVGElement>) {
   return (
