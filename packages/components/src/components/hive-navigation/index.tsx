@@ -185,9 +185,15 @@ export function HiveNavigation({
         >
           Contact <span className="hidden xl:contents">us</span>
         </CallToAction>
-        <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
-          Sign in
-        </CallToAction>
+        {isHive ? (
+          <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
+            Sign in
+          </CallToAction>
+        ) : (
+          <CallToAction variant="primary" href="/docs" className="ml-4">
+            Docs
+          </CallToAction>
+        )}
       </NavigationMenu>
     </div>
   );
