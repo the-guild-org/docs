@@ -36,7 +36,6 @@ const RootLayout: FC<{
           'https://github.com/the-guild-org/the-guild-components/tree/main/website',
       }}
       navbarProps={{
-        developerMenu: [],
         navLinks: [{ href: '/docs', children: 'Documentation' }],
         searchProps: {
           placeholder: 'Search...',
