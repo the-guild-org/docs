@@ -329,7 +329,6 @@ const MenuContentColumns = forwardRef(
 MenuContentColumns.displayName = 'MenuContentColumns';
 
 interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
-  isHive: boolean;
   developerMenu?: {
     href: string;
     title?: string;
