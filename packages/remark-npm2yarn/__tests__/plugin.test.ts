@@ -10,7 +10,7 @@ import {
 
 describe('remark-npm2yarn', () => {
   it('should convert to tabs', async () => {
-    const mdx = await compileMdx(
+    const rawJs = await compileMdx(
       `
 \`\`\`sh filename="Terminal" npm2yarn
 npm i -D @graphql-eslint/eslint-plugin
@@ -31,7 +31,7 @@ npm i -D @graphql-eslint/eslint-plugin
         },
       },
     );
-    expect(mdx.result).toMatchSnapshot();
+    expect(rawJs).toMatchSnapshot();
   });
 });
 

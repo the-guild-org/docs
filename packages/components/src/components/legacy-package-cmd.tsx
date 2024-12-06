@@ -75,6 +75,7 @@ export const LegacyPackageCmd = ({
         <Tabs.Tab key={pkgManager}>
           <Pre data-filename="Terminal" data-copy="" data-language="sh" data-theme="default">
             <code>
+              {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
               <span className="line">{commands[index]}</span>
             </code>
           </Pre>

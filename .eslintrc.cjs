@@ -34,21 +34,14 @@ module.exports = {
       config: 'tailwind.config.ts',
       whitelist: [
         // TODO: find a way to fix it and remove these classes since they are imported somewhere and are used
-        'line',
         'hive-focus',
         'hive-focus-within',
-        '@container', // Tailwind ESLint Plugin doesn't see the Container Queries classes but it does see prefixes like @sm:
+        'nextra-hamburger',
+        '@container', // Tailwind ESLint Plugin doesn't see the Container Queries classes, but it does see prefixes like @sm:
       ],
     },
   },
   overrides: [
-    {
-      files: ['**/*.stories.{ts,tsx}'],
-      rules: {
-        'no-console': 'off',
-        'import/no-default-export': 'off',
-      },
-    },
     {
       files: ['packages/**'],
       rules: {

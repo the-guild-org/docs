@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { ComponentProps, FC } from 'react';
 import { cn } from '../cn';
 
 export { ReactComponent as AngularLogo } from './angular.svg';
@@ -22,9 +22,8 @@ export { ReactComponent as YogaLogo } from './yoga.svg';
 export { ReactComponent as HiveCombinationMark } from './hive-combination-mark.svg';
 export { ReactComponent as GraphQLFoundationLogo } from './graphql-foundation.svg';
 
-export type LettermarkLogoProps = HTMLAttributes<HTMLElement>;
 const createLettermarkLogo = (text: string) => {
-  function LettermarkLogo(props: LettermarkLogoProps) {
+  const LettermarkLogo: FC<ComponentProps<'span'>> = props => {
     return (
       <span
         role="img"
@@ -37,13 +36,24 @@ const createLettermarkLogo = (text: string) => {
         {text}
       </span>
     );
-  }
-  LettermarkLogo.displayName = 'LettermarkLogo';
+  };
   return LettermarkLogo;
 };
 
-export const InspectorLettermark = createLettermarkLogo('I');
-export const SofaLettermark = createLettermarkLogo('So');
-export const GraphQLESlintLettermark = createLettermarkLogo('Esl');
-export const EnvelopLettermark = createLettermarkLogo('E');
-export const ScalarsLettermark = createLettermarkLogo('S');
+export const InspectorLettermark = createLettermarkLogo('INS');
+export const SofaLettermark = createLettermarkLogo('SOF');
+export const GraphQLESlintLettermark = createLettermarkLogo('ESL');
+export const EnvelopLettermark = createLettermarkLogo('ENV');
+export const ScalarsLettermark = createLettermarkLogo('SCL');
+export const ConductorLettermark = createLettermarkLogo('CON');
+export const StitchingLettermark = createLettermarkLogo('STI');
+export const ToolsLettermark = createLettermarkLogo('TLS');
+export const ModulesLettermark = createLettermarkLogo('MOD');
+export const ConfigLettermark = createLettermarkLogo('CFG');
+export const FetsLettermark = createLettermarkLogo('FTS');
+export const AngularLettermark = createLettermarkLogo('ANG');
+export const KitQLLettermark = createLettermarkLogo('KQL');
+export const WSLettermark = createLettermarkLogo('WS');
+export const SSELettermark = createLettermarkLogo('SSE');
+export const HeltinLettermark = createLettermarkLogo('HLT');
+export const WhatsAppLettermark = createLettermarkLogo('WHA');

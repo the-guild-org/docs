@@ -12,7 +12,7 @@ export default {
   typescript: {
     reactDocgen: false,
   },
-  env(config: Record<string, unknown>) {
+  env(config) {
     return config;
   },
   webpackFinal(config: Configuration) {

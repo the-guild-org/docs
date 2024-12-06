@@ -12,7 +12,7 @@ export function GraphQLConfCard({ image }: GraphQLConfCardProps) {
       href="https://www.youtube.com/playlist?list=PL43V96KpNj7OMvmfL0WFKP6LpoboM8Hde"
       className="group w-[358px]"
     >
-      <Image alt="" {...image} width={358} height={200} />
+      <Image alt="" src={image} width={358} height={200} />
       <strong className="mt-6 block text-xl font-medium leading-7 text-green-1000 dark:text-neutral-100">
         GraphQLConf 2024
       </strong>

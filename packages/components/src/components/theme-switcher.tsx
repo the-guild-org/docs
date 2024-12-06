@@ -1,7 +1,9 @@
-import { useTheme } from 'nextra-theme-docs';
-import { MoonIcon } from './icons';
+'use client';
 
-export function ThemeSwitcherButton() {
+import { FC, ReactNode } from 'react';
+import { useTheme } from 'nextra-theme-docs';
+
+export const ThemeSwitcherButton: FC<{ children: ReactNode }> = ({ children }) => {
   const { resolvedTheme, setTheme } = useTheme();
 
   return (
@@ -9,7 +11,7 @@ export function ThemeSwitcherButton() {
       onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
       className="self-center rounded-sm p-2 outline-none focus-visible:ring"
     >
-      <MoonIcon className="fill-transparent stroke-gray-500 dark:fill-gray-100 dark:stroke-gray-100" />
+      {children}
     </button>
   );
-}
+};

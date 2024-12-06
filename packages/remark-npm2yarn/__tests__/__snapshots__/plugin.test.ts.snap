@@ -4,11 +4,11 @@ exports[`remark-npm2yarn > should convert to tabs 1`] = `
 ""use strict";
 const {jsx: _jsx, jsxs: _jsxs} = arguments[0];
 const {useMDXComponents: _provideComponents} = arguments[0];
-const title = "";
-const frontMatter = {};
+const metadata = {};
 function useTOC(props) {
   return [];
 }
+const toc = useTOC();
 function _createMdxContent(props) {
   const _components = {
     code: "code",
@@ -28,6 +28,7 @@ function _createMdxContent(props) {
         "data-language": "sh",
         "data-word-wrap": "",
         "data-filename": "Terminal",
+        "data-pagefind-ignore": "all",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
             children: [_jsx(_components.span, {
@@ -64,6 +65,7 @@ function _createMdxContent(props) {
         "data-language": "sh",
         "data-word-wrap": "",
         "data-filename": "Terminal",
+        "data-pagefind-ignore": "all",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
             children: [_jsx(_components.span, {
@@ -100,6 +102,7 @@ function _createMdxContent(props) {
         "data-language": "sh",
         "data-word-wrap": "",
         "data-filename": "Terminal",
+        "data-pagefind-ignore": "all",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
             children: [_jsx(_components.span, {
@@ -136,6 +139,7 @@ function _createMdxContent(props) {
         "data-language": "sh",
         "data-word-wrap": "",
         "data-filename": "Terminal",
+        "data-pagefind-ignore": "all",
         children: _jsx(_components.code, {
           children: _jsxs(_components.span, {
             children: [_jsx(_components.span, {
@@ -170,9 +174,8 @@ function _createMdxContent(props) {
   });
 }
 return {
-  title,
-  frontMatter,
-  useTOC,
+  metadata,
+  toc,
   default: _createMdxContent
 };
 function _missingMdxReference(id, component) {

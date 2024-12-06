@@ -1,26 +1,32 @@
-import { FC, HTMLProps, SVGProps } from 'react';
-import { MenuItem } from 'nextra/normalize-pages';
+import { FC, HTMLProps, ReactElement, SVGProps } from 'react';
 import { cn } from './cn';
-import { CodegenIcon, HiveGatewayIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
 import {
-  AngularLogo,
-  ConductorLogo,
-  ConfigLogo,
+  CodegenIcon,
+  HiveGatewayIcon,
+  HiveIcon,
+  MeshIcon,
+  StellateIcon,
+  YogaIcon,
+} from './components/icons';
+import {
+  AngularLettermark,
+  ConductorLettermark,
+  ConfigLettermark,
   EnvelopLettermark,
-  FetsLogo,
+  FetsLettermark,
   GraphQLESlintLettermark,
-  HeltinLogo,
+  HeltinLettermark,
   InspectorLettermark,
-  KitQLLogo,
-  ModulesLogo,
+  KitQLLettermark,
+  ModulesLettermark,
   NextraLogo,
   ScalarsLettermark,
   SofaLettermark,
-  SSELogo,
-  StitchingLogo,
-  ToolsLogo,
-  WhatsAppLogo,
-  WSLogo,
+  SSELettermark,
+  StitchingLettermark,
+  ToolsLettermark,
+  WhatsAppLettermark,
+  WSLettermark,
 } from './logos';
 
 export type ProductType =
@@ -46,7 +52,8 @@ export type ProductType =
   | 'WS'
   | 'FETS'
   | 'HELTIN'
-  | 'NEXTRA';
+  | 'NEXTRA'
+  | 'STELLATE';
 
 export interface ProductInfo {
   name: string;
@@ -90,7 +97,7 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     name: 'Conductor',
     title: 'All-in-one GraphQL Gateway',
     href: 'https://the-guild.dev/graphql/gateway',
-    logo: ConductorLogo,
+    logo: ConductorLettermark,
     primaryColor: '#0f766e',
   },
   ENVELOP: {
@@ -105,7 +112,7 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     title:
       'Automatically stitch multiple schemas together into one larger API in a simple, fast and powerful way',
     href: 'https://the-guild.dev/graphql/stitching',
-    logo: StitchingLogo,
+    logo: StitchingLettermark,
     primaryColor: '#f95428',
   },
   INSPECTOR: {
@@ -126,14 +133,14 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     name: 'Tools',
     title: 'A set of utilities for faster GraphQL development',
     href: 'https://the-guild.dev/graphql/tools',
-    logo: ToolsLogo,
+    logo: ToolsLettermark,
     primaryColor: '#184ae8',
   },
   MODULES: {
     name: 'Modules',
     title: 'Enterprise grade tooling for your GraphQL server',
     href: 'https://the-guild.dev/graphql/modules',
-    logo: ModulesLogo,
+    logo: ModulesLettermark,
     primaryColor: '#e535ab',
   },
   ESLINT: {
@@ -147,14 +154,14 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     name: 'Config',
     title: 'One configuration for all your GraphQL projects',
     href: 'https://the-guild.dev/graphql/config',
-    logo: ConfigLogo,
+    logo: ConfigLettermark,
     primaryColor: '#6d7a99',
   },
   FETS: {
     name: 'feTS',
     title: 'Build and consume REST APIs with the e2e type safety using TypeScript and OpenAPI',
     href: 'https://the-guild.dev/fets',
-    logo: FetsLogo,
+    logo: FetsLettermark,
     primaryColor: '#3178c6',
   },
   SCALARS: {
@@ -175,42 +182,42 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     name: 'Angular',
     title: 'A fully-featured GraphQL client for Angular',
     href: 'https://the-guild.dev/graphql/apollo-angular',
-    logo: AngularLogo,
+    logo: AngularLettermark,
     primaryColor: '#ff1035',
   },
   WHATSAPP: {
     name: 'WhatsApp',
     title: 'Full stack, open source tutorial',
     href: 'https://github.com/Urigo/WhatsApp-Clone-Tutorial',
-    logo: WhatsAppLogo,
+    logo: WhatsAppLettermark,
     primaryColor: '#31eb14',
   },
   KITQL: {
     name: 'KitQL',
     title: 'A set of tools, helping you building efficient apps in a fast way',
     href: 'https://kitql.dev',
-    logo: KitQLLogo,
+    logo: KitQLLettermark,
     primaryColor: '#ff3e00',
   },
   WS: {
     name: 'WS',
     title: 'Reference implementation of the GraphQL over WS spec',
     href: 'https://the-guild.dev/graphql/ws',
-    logo: WSLogo,
+    logo: WSLettermark,
     primaryColor: '#0bf2e7',
   },
   SSE: {
     name: 'SSE',
     title: 'Reference implementation of the GraphQL over SSE spec',
     href: 'https://the-guild.dev/graphql/sse',
-    logo: SSELogo,
+    logo: SSELettermark,
     primaryColor: '#08e045',
   },
   HELTIN: {
     name: 'heltin',
     title: 'Mental healthcare registry',
     href: 'https://the-guild.dev/heltin',
-    logo: HeltinLogo,
+    logo: HeltinLettermark,
     primaryColor: '#1d90ff',
   },
   NEXTRA: {
@@ -220,6 +227,13 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     href: 'https://nextra.site',
     logo: NextraLogo,
     primaryColor: '#000',
+  },
+  STELLATE: {
+    name: 'Stellate',
+    title: 'GraphQL Edge Caching, Metrics and Security.',
+    href: 'https://stellate.co',
+    logo: StellateIcon,
+    primaryColor: '#FF7752',
   },
 };
 
@@ -240,7 +254,16 @@ export const SIX_HIGHLIGHTED_PRODUCTS = [
 ];
 
 /** List of products displayed in hamburger menu. */
-export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
+export const PRODUCTS_MENU_LIST = Object.fromEntries<
+  | {
+      type: 'separator';
+      title: ReactElement;
+    }
+  | {
+      href: string;
+      title: ReactElement;
+    }
+>(
   (
     ['The GraphQL Stack', ...FOUR_MAIN_PRODUCTS, 'Libraries', ...SIX_HIGHLIGHTED_PRODUCTS] as const
   ).map((item, i) => {
@@ -254,21 +277,20 @@ export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
               {/* This is a one-off class. The margins and paddings of the parent list item are were large. */}
               {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
               <style className="hive-label-separator">
-                {'li:has(>.hive-label-separator) { margin: 0.75rem 0 0.25rem 0; padding: 0 }'}
+                {
+                  ':is(a,li):has(>.hive-label-separator) { margin: 0.75rem 0 0.25rem 0; padding: 0 }'
+                }
               </style>
               <span className="ml-2 font-medium text-gray-500 dark:text-neutral-400">{item}</span>
             </>
-          ) as unknown as string,
+          ),
         },
       ];
     }
-    const Logo = item.logo;
     return [
       i,
       {
-        type: 'page',
         href: item.href,
-        newWindow: true,
         title: (
           <div className="flex items-center gap-2">
             <div
@@ -277,7 +299,7 @@ export const PRODUCTS_MENU_LIST: MenuItem['items'] = Object.fromEntries(
                 i > 6 && 'rounded-sm bg-gray-500 text-white dark:bg-white/10',
               )}
             >
-              <Logo className="size-4 text-[8px]" />
+              <item.logo className="size-4 text-[8px]" />
             </div>
             {item.name}
           </div>

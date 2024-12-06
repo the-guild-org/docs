@@ -168,6 +168,6 @@ export const useSchemaServices = (options: SchemaServicesOptions = {}) => {
         });
       },
       deselect: () => editorRef?.setSelection(emptyLocation),
-    } as SchemaEditorApi,
+    } satisfies SchemaEditorApi,
   };
 };

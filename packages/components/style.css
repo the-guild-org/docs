@@ -1,57 +1,49 @@
-@layer l-base, l-nextra, l-components;
+@layer l-base, l-nextra;
 
 @import 'tailwindcss/base' layer(l-base);
-@import 'nextra-theme-docs/dist/style.css' layer(l-nextra);
-@import 'tailwindcss/components' layer(l-components);
+@import 'nextra-theme-docs/dist/style-prefixed.css' layer(l-nextra);
 @import 'tailwindcss/utilities';
-
-.nextra-banner-container._bg-neutral-900._flex {
-  @apply bg-[#48224e] bg-none;
-}
-:root {
-  --nextra-navbar-height: 72px;
-}
-
-html {
-  /* font from tailwindcss/base is overwritten by Nextra styles */
-  font-family: var(--font-sans, ui-sans-serif), system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
-.nextra-nav-container [role='menu']:has(a[href='https://the-guild.dev/graphql/hive'])
-{
-  @apply grid max-h-[unset] w-[470px] grid-cols-3 gap-y-2 p-2;
-
-  a:nth-child(-n + 3) {
-    @apply rounded-b-none border-b border-black/20 pb-3 dark:border-white/20;
-  }
-}
+@import 'tailwindcss/components';
 
 /* #region hamburger mobile menu */
 
-.light .nextra-sidebar-container input {
+.light .nextra-mobile-nav {
+  @apply !bg-white;
+
+  /* We recompute colors so they're up to date even if the --nextra-primary-hue was overwritten on the body. */
+  --x-color-primary-700: hsl(
+    var(--nextra-primary-hue) var(--nextra-primary-saturation)
+      calc(var(--nextra-primary-lightness) - 6%)
+  );
+  --x-color-primary-800: hsl(
+    var(--nextra-primary-hue) var(--nextra-primary-saturation)
+      calc(var(--nextra-primary-lightness) - 13%)
+  );
+}
+
+.light .nextra-mobile-nav input {
   color: rgb(0, 52, 44);
   background-color: rgb(248, 247, 246) !important;
   border: 1px solid rgb(241, 238, 228);
 }
 
-.light .nextra-sidebar-container input::placeholder {
+.light .nextra-mobile-nav input::placeholder {
   color: rgba(36, 88, 80, 0.9) !important;
 }
 
-.light .nextra-sidebar-container .nextra-sidebar-footer:is(html[class] *) {
+.light .nextra-mobile-nav .nextra-sidebar-footer:is(html[class] *) {
   border-color: #e5e7eb;
 }
 
-.light .nextra-sidebar-container kbd {
+.light .nextra-mobile-nav kbd {
   @apply !border-gray-200 !bg-white;
 }
 
-.light .nextra-sidebar-container li > :is(a, button) {
+.light .nextra-mobile-nav li > :is(a, button) {
   @apply text-gray-500 hover:bg-gray-100 hover:text-gray-900;
 }
 
-.light .nextra-sidebar-container ul::before {
+.light .nextra-mobile-nav ul::before {
   @apply !bg-gray-200;
 }
 
@@ -79,11 +71,12 @@ html {
 
 /* #endregion search results */
 
-@layer l-components {
+@layer components {
   .hive-focus {
     &:focus {
       outline: none;
     }
+
     &:focus-visible {
       @apply ring ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_86%)] ring-offset-1 ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_77%)] dark:ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%)] dark:ring-offset-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_39%)];
     }
@@ -121,21 +114,14 @@ html {
 }
 
 /* wrong with neue montreal */
-._subpixel-antialiased {
+.x\:subpixel-antialiased {
   -webkit-font-smoothing: unset;
   -moz-osx-font-smoothing: unset;
 }
 
 /* fix for nextra navbar for HiveNavigation */
 :root {
-  --nextra-navbar-height: 90px;
-}
-
-@media (min-width: 768px) {
-  .nextra-sidebar-container,
-  .nextra-toc > .nextra-scrollbar {
-    top: var(--nextra-navbar-height);
-  }
+  --nextra-navbar-height: 82px;
 }
 
 @media (max-width: 767px) {
