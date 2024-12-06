@@ -7,6 +7,20 @@
 
 /* #region hamburger mobile menu */
 
+.light .nextra-mobile-nav {
+  @apply !bg-white;
+
+  /* We recompute colors so they're up to date even if the --nextra-primary-hue was overwritten on the body. */
+  --x-color-primary-700: hsl(
+    var(--nextra-primary-hue) var(--nextra-primary-saturation)
+      calc(var(--nextra-primary-lightness) - 6%)
+  );
+  --x-color-primary-800: hsl(
+    var(--nextra-primary-hue) var(--nextra-primary-saturation)
+      calc(var(--nextra-primary-lightness) - 13%)
+  );
+}
+
 .light .nextra-mobile-nav input {
   color: rgb(0, 52, 44);
   background-color: rgb(248, 247, 246) !important;
@@ -100,7 +114,7 @@
 }
 
 /* wrong with neue montreal */
-.n\:subpixel-antialiased {
+.x\:subpixel-antialiased {
   -webkit-font-smoothing: unset;
   -moz-osx-font-smoothing: unset;
 }
