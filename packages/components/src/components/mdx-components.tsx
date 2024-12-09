@@ -1,5 +1,6 @@
 import { ComponentProps, ReactElement } from 'react';
-import { useRouter } from 'next/router';
+import { addBasePath } from 'next/dist/client/add-base-path';
+import NextImage from 'next/image';
 import clsx from 'clsx';
 
 export const mdxComponents: {
@@ -13,7 +14,7 @@ export const mdxComponents: {
     if (ext === 'mov') {
       ext = 'quicktime';
     }
-    return <source {...props} src={src} type={type || `video/${ext}`} />;
+    return <source {...props} src={addBasePath(src)} type={type || `video/${ext}`} />;
   },
   video: ({ className, children, ...props }: ComponentProps<'video'>) => (
     <video className={clsx('mt-6 w-full', className)} autoPlay loop muted {...props}>
@@ -30,13 +31,13 @@ export const mdxComponents: {
       {...props}
     />
   ),
-  img({ src = '', alt, ...props }: ComponentProps<'img'>) {
-    // eslint-disable-next-line react-hooks/rules-of-hooks -- false positive
-    const { basePath } = useRouter();
-    if (!src.startsWith('http')) {
+  img(props: ComponentProps<'img'>) {
+    const ComponentToUse = typeof props.src === 'object' ? NextImage : 'img';
+    if (typeof props.src === 'string' && !props.src.startsWith('http')) {
       // eslint-disable-next-line no-console -- just for debug to notice that NextImage was not used
-      console.warn('Image', src, "doesn't use NextImage");
+      console.warn('Image', props.src, "doesn't use NextImage");
     }
-    return <img {...props} src={src.startsWith('/') ? basePath + src : src} alt={alt} />;
+    // @ts-expect-error -- fixme
+    return <ComponentToUse {...props} />;
   },
 };
