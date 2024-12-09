@@ -139,7 +139,7 @@ export const ExecutableDocumentEditor = ({
   const { resolvedTheme } = useTheme();
   const monaco = useMonaco();
   const [completionProvider, setCompletionProvider] = useState<monaco.IDisposable | null>(null);
-  const editorUriRef = useRef<monaco.Uri>();
+  const editorUriRef = useRef<monaco.Uri>(null);
 
   useEffect(() => {
     if (!monaco || !schema) {
