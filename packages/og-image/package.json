@@ -19,6 +19,6 @@
     "@cloudflare/workers-types": "4.20241205.0",
     "@types/react": "18.3.14",
     "typescript": "5.7.2",
-    "wrangler": "3.93.0"
+    "wrangler": "3.95.0"
   }
 }
