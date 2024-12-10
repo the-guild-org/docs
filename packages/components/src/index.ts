@@ -19,6 +19,7 @@ export { PRODUCTS } from './products';
 export * from './types/components';
 export * from './logos';
 export { cn } from './cn';
+export * from './next-types';
 
 declare module 'react' {
   interface CSSProperties {
