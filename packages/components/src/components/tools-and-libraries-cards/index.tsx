@@ -1,3 +1,4 @@
+import { HTMLAttributes } from 'react';
 import { cn } from '../../cn';
 import {
   FOUR_MAIN_PRODUCTS,
@@ -21,13 +22,21 @@ const cardDecorations = {
   [PRODUCTS.HIVE_GATEWAY.name]: HiveGatewayDecoration,
 };
 
-export function ToolsAndLibrariesCards({ className }: { className?: string }) {
+export interface ToolsAndLibrariesCardsProps extends HTMLAttributes<HTMLDivElement> {
+  isHive?: boolean;
+}
+export function ToolsAndLibrariesCards({
+  className,
+  isHive,
+  ...rest
+}: ToolsAndLibrariesCardsProps) {
   return (
     <section
       className={cn(
         'isolate flex flex-col gap-6 px-4 py-6 lg:gap-12 lg:py-24 xl:px-[120px]',
         className,
       )}
+      {...rest}
     >
       <Heading as="h2" size="md" className="text-green-1000">
         Discover the complete ecosystem of tools and libraries
@@ -44,7 +53,10 @@ export function ToolsAndLibrariesCards({ className }: { className?: string }) {
           <AncillaryProductCard key={product.name} as="li" product={product} />
         ))}
       </ul>
-      <CallToAction href="https://the-guild.dev/graphql/hive/ecosystem" variant="primary">
+      <CallToAction
+        href={isHive ? '/ecosystem' : 'https://the-guild.dev/graphql/hive/ecosystem'}
+        variant="primary"
+      >
         Explore the Ecosystem
       </CallToAction>
     </section>

@@ -6,9 +6,15 @@ import { ArrowIcon } from './icons';
 import { TextLink } from './text-link';
 import { MainProductCard } from './tools-and-libraries-cards';
 
-export type ExploreMainProductCardsProps = HTMLAttributes<HTMLDivElement>;
+export interface ExploreMainProductCardsProps extends HTMLAttributes<HTMLDivElement> {
+  isHive?: boolean;
+}
 
-export function ExploreMainProductCards({ className, ...rest }: ExploreMainProductCardsProps) {
+export function ExploreMainProductCards({
+  className,
+  isHive,
+  ...rest
+}: ExploreMainProductCardsProps) {
   return (
     <section
       className={cn(
@@ -21,7 +27,10 @@ export function ExploreMainProductCards({ className, ...rest }: ExploreMainProdu
         <Heading as="h2" size="xs" className="text-pretty">
           Explore Hive 360° GraphQL Ecosystem to reach full potential
         </Heading>
-        <TextLink href="https://the-guild.dev/graphql/hive/ecosystem" className="mt-4 lg:mt-6">
+        <TextLink
+          href={isHive ? '/ecosystem' : 'https://the-guild.dev/graphql/hive/ecosystem'}
+          className="mt-4 lg:mt-6"
+        >
           Learn more
           <ArrowIcon />
         </TextLink>
