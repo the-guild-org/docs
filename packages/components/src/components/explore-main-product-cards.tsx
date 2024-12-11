@@ -21,8 +21,7 @@ export function ExploreMainProductCards({ className, ...rest }: ExploreMainProdu
         <Heading as="h2" size="xs" className="text-pretty">
           Explore Hive 360° GraphQL Ecosystem to reach full potential
         </Heading>
-        {/* TODO: Replace with a link to the Libraries page */}
-        <TextLink href="https://github.com/the-guild-org" className="mt-4 lg:mt-6">
+        <TextLink href="https://the-guild.dev/graphql/hive/ecosystem" className="mt-4 lg:mt-6">
           Learn more
           <ArrowIcon />
         </TextLink>
