@@ -1,7 +1,14 @@
 import { FC, HTMLProps, SVGProps } from 'react';
 import { MenuItem } from 'nextra/normalize-pages';
 import { cn } from './cn';
-import { CodegenIcon, HiveGatewayIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
+import {
+  CodegenIcon,
+  HiveGatewayIcon,
+  HiveIcon,
+  MeshIcon,
+  StellateIcon,
+  YogaIcon,
+} from './components/icons';
 import {
   AngularLogo,
   ConductorLogo,
@@ -46,7 +53,8 @@ export type ProductType =
   | 'WS'
   | 'FETS'
   | 'HELTIN'
-  | 'NEXTRA';
+  | 'NEXTRA'
+  | 'STELLATE';
 
 export interface ProductInfo {
   name: string;
