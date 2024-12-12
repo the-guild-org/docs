@@ -1,7 +1,14 @@
 import { FC, HTMLProps, SVGProps } from 'react';
 import { MenuItem } from 'nextra/normalize-pages';
 import { cn } from './cn';
-import { CodegenIcon, HiveGatewayIcon, HiveIcon, MeshIcon, YogaIcon } from './components/icons';
+import {
+  CodegenIcon,
+  HiveGatewayIcon,
+  HiveIcon,
+  MeshIcon,
+  StellateIcon,
+  YogaIcon,
+} from './components/icons';
 import {
   AngularLogo,
   ConductorLogo,
@@ -46,7 +53,8 @@ export type ProductType =
   | 'WS'
   | 'FETS'
   | 'HELTIN'
-  | 'NEXTRA';
+  | 'NEXTRA'
+  | 'STELLATE';
 
 export interface ProductInfo {
   name: string;
@@ -59,7 +67,7 @@ export interface ProductInfo {
 export const PRODUCTS: Record<ProductType, ProductInfo> = {
   HIVE: {
     name: 'Hive',
-    title: 'Open Source GraphQL Federation Platform (Schema Registry, Gateway, Analytics) ',
+    title: 'Open Source GraphQL Federation Platform (Schema Registry, Gateway, Analytics)',
     href: 'https://the-guild.dev/graphql/hive',
     logo: HiveIcon,
     primaryColor: '#ffb21d',
@@ -220,6 +228,13 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     href: 'https://nextra.site',
     logo: NextraLogo,
     primaryColor: '#000',
+  },
+  STELLATE: {
+    name: 'Stellate',
+    title: 'The GraphQL Edge Platform for security, caching, and observability',
+    href: 'https://stellate.co',
+    logo: StellateIcon,
+    primaryColor: '#FF7752',
   },
 };
 
