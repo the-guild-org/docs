@@ -231,7 +231,7 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
   },
   STELLATE: {
     name: 'Stellate',
-    title: 'GraphQL Edge Caching, Metrics and Security.',
+    title: 'The GraphQL Edge Platform for security, caching, and observability',
     href: 'https://stellate.co',
     logo: StellateIcon,
     primaryColor: '#FF7752',
