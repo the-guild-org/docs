@@ -221,6 +221,13 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
     logo: NextraLogo,
     primaryColor: '#000',
   },
+  STELLATE: {
+    name: 'Stellate',
+    title: 'GraphQL Edge Caching, Metrics and Security.',
+    href: 'https://stellate.co',
+    logo: StellateIcon,
+    primaryColor: '#FF7752',
+  },
 };
 
 export const FOUR_MAIN_PRODUCTS = [
