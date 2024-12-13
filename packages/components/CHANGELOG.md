@@ -1,5 +1,17 @@
 # @theguild/components
 
+## 7.4.0
+
+### Minor Changes
+
+- [#1872](https://github.com/the-guild-org/docs/pull/1872)
+  [`070769e`](https://github.com/the-guild-org/docs/commit/070769e4e7dfb8b11479cfe6f5639e87e128a906)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add Stellate to PRODUCTS
+
+- [#1870](https://github.com/the-guild-org/docs/pull/1870)
+  [`8a38ca4`](https://github.com/the-guild-org/docs/commit/8a38ca46d8be339f2e8d5d93f7de0c0e7f4b4d34)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add ProductCard
+
 ## 7.3.3
 
 ### Patch Changes
