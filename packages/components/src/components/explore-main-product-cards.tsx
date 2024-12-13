@@ -3,8 +3,8 @@ import { cn } from '../cn';
 import { FOUR_MAIN_PRODUCTS } from '../products';
 import { Heading } from './heading';
 import { ArrowIcon } from './icons';
+import { MainProductCard } from './product-card';
 import { TextLink } from './text-link';
-import { MainProductCard } from './tools-and-libraries-cards';
 
 export interface ExploreMainProductCardsProps extends HTMLAttributes<HTMLDivElement> {
   isHive?: boolean;
