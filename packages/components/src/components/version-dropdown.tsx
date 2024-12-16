@@ -1,6 +1,5 @@
 'use client';
 
-import { Anchor } from './anchor';
 import { Dropdown, DropdownContent, DropdownItem, DropdownTrigger } from './dropdown';
 
 export interface VersionDropdownProps {

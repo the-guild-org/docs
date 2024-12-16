@@ -1,4 +1,4 @@
-import { Meta, StoryContext, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 import { siteOrigin } from '../../constants';
 import { PRODUCTS } from '../../products';
@@ -73,15 +73,13 @@ export const Default: StoryObj = {
   args: {
     developerMenu: HIVE_DEVELOPER_MENU,
     children: (
-      <>
-        <VersionDropdown
-          currentVersion="v1"
-          versions={[
-            { label: 'v1', href: '#v1' },
-            { label: 'v2', href: '#v2' },
-          ]}
-        />
-      </>
+      <VersionDropdown
+        currentVersion="v1"
+        versions={[
+          { label: 'v1', href: '#v1' },
+          { label: 'v2', href: '#v2' },
+        ]}
+      />
     ),
   },
 };
