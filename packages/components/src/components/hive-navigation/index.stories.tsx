@@ -11,6 +11,7 @@ import {
   RightCornerIcon,
   TargetIcon,
 } from '../icons';
+import { VersionDropdown } from '../version-dropdown';
 import { GraphQLConfCard } from './graphql-conf-card';
 import {
   CompanyMenu,
@@ -19,7 +20,6 @@ import {
   HiveNavigation,
   HiveNavigationProps,
   ProductsMenu,
-  VersionDropdown,
 } from './index';
 import {
   NavigationMenu,
