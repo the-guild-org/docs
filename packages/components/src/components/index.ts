@@ -26,7 +26,6 @@ export * from './heading';
 export * from './info-card';
 export * from './stud';
 export * from './explore-main-product-cards';
-export * from './product-card';
 export * from './text-link';
 export * from './contact-us';
 export { Giscus } from './giscus';
