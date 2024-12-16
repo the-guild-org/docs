@@ -1,5 +1,22 @@
 # @theguild/components
 
+## 8.1.0
+
+### Minor Changes
+
+- [#1884](https://github.com/the-guild-org/docs/pull/1884)
+  [`e522b57`](https://github.com/the-guild-org/docs/commit/e522b57e14fd8ff63433661d2567397df7b6daf4)
+  Thanks [@hasparus](https://github.com/hasparus)! - Export TextLink
+
+### Patch Changes
+
+- [#1885](https://github.com/the-guild-org/docs/pull/1885)
+  [`574ad17`](https://github.com/the-guild-org/docs/commit/574ad17fb640dd3439e8cbd9d2f8d1245f47df4c)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency
+    [`nextra-theme-docs@4.0.0-app-router.36` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.0)
+    (from `4.0.0-app-router.35`, in `dependencies`)
+
 ## 8.0.0
 
 ### Major Changes
