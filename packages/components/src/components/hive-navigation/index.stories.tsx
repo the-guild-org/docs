@@ -19,6 +19,7 @@ import {
   HiveNavigation,
   HiveNavigationProps,
   ProductsMenu,
+  VersionDropdown,
 } from './index';
 import {
   NavigationMenu,
@@ -52,7 +53,7 @@ const HIVE_DEVELOPER_MENU: HiveNavigationProps['developerMenu'] = [
 export default {
   title: 'Hive/HiveNavigation',
   component: HiveNavigation,
-  decorators: [hiveThemeDecorator, nextraThemeDocsCtxDecorator],
+  decorators: [hiveThemeDecorator],
   args: {
     productName: 'Hive',
     developerMenu: HIVE_DEVELOPER_MENU,
@@ -71,6 +72,17 @@ export const Default: StoryObj = {
   ],
   args: {
     developerMenu: HIVE_DEVELOPER_MENU,
+    children: (
+      <>
+        <VersionDropdown
+          currentVersion="v1"
+          versions={[
+            { label: 'v1', href: '#v1' },
+            { label: 'v2', href: '#v2' },
+          ]}
+        />
+      </>
+    ),
   },
 };
 
@@ -215,7 +227,3 @@ export const CodegenNavmenu: StoryObj<HiveNavigationProps> = {
     ),
   },
 };
-
-function nextraThemeDocsCtxDecorator(Story: () => React.ReactNode, _ctx: StoryContext) {
-  return <Story />;
-}

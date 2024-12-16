@@ -28,3 +28,4 @@ export * from './stud';
 export * from './explore-main-product-cards';
 export * from './contact-us';
 export { Giscus } from './giscus';
+export * from './version-dropdown';
