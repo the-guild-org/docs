@@ -2,7 +2,6 @@ export { Anchor } from './anchor';
 export { Button } from './button';
 export { CardsColorful } from './cards-colorful';
 export { FeatureList } from './feature-list';
-export { Footer } from './footer';
 export { HeroGradient } from './hero-gradient';
 export { HeroIllustration } from './hero-illustration';
 export { HeroMarketplace } from './hero-marketplace';
@@ -13,20 +12,13 @@ export { InfoList } from './info-list';
 export { LegacyPackageCmd } from './legacy-package-cmd';
 export { MarketplaceList } from './marketplace-list';
 export { MarketplaceSearch } from './marketplace-search';
-export { mdxComponents } from './mdx-components';
 export { NPMBadge } from './npm-badge';
-export { getNavbarLogo } from './guild-navbar-logo';
-export { ThemeSwitcherButton } from './theme-switcher';
-export { productsItems } from './company-menu';
 export { GetYourAPIGameRightSection } from './get-your-api-game-right-section';
-export {
-  HiveNavigation,
-  GraphQLConfCard,
-  type HiveNavigationProps,
-  type GraphQLConfCardProps,
-} from './hive-navigation';
+export { HiveNavigation, GraphQLConfCard } from './hive-navigation';
+export type { HiveNavigationProps, GraphQLConfCardProps } from './hive-navigation';
 export { HiveFooter } from './hive-footer';
 export { ToolsAndLibrariesCards } from './tools-and-libraries-cards';
+export * from './product-card';
 export * from './decorations';
 export * from './call-to-action';
 export * from './cookies-consent';
@@ -34,4 +26,5 @@ export * from './heading';
 export * from './info-card';
 export * from './stud';
 export * from './explore-main-product-cards';
-export * from './product-card';
+export * from './contact-us';
+export { Giscus } from './giscus';

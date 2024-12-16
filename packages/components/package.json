@@ -11,42 +11,28 @@
     "./style.css": "./style.css",
     "./package.json": "./package.json",
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.mts"
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.js"
     },
     "./next.config": {
-      "import": "./dist/next.config.mjs",
-      "types": "./dist/next.config.d.mts"
+      "types": "./dist/server/next.config.d.mts",
+      "import": "./dist/server/next.config.js",
+      "require": "./dist/server/next.config.js"
     },
-    "./compile": {
-      "import": "./dist/compile.mjs",
-      "types": "./dist/compile.d.mts"
+    "./server": {
+      "types": "./dist/server/index.d.mts",
+      "import": "./dist/server/index.js"
+    },
+    "./pages": {
+      "types": "./dist/server/pages.d.mts",
+      "import": "./dist/server/pages.js"
     },
     "./*": {
-      "import": "./dist/*.js",
-      "types": "./dist/*.d.mts"
+      "types": "./dist/*.d.mts",
+      "import": "./dist/*.js"
     }
   },
   "types": "./dist/index.d.mts",
-  "typesVersions": {
-    "*": {
-      ".": [
-        "./dist/index.d.mts"
-      ],
-      "logos": [
-        "./dist/logos.d.mts"
-      ],
-      "products": [
-        "./dist/products.d.mts"
-      ],
-      "next.config": [
-        "./dist/next.config.d.mts"
-      ],
-      "compile": [
-        "./dist/compile.d.mts"
-      ]
-    }
-  },
   "files": [
     "dist",
     "style.css"
@@ -58,7 +44,7 @@
     "types:check": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@theguild/tailwind-config": "0.6.2",
+    "@theguild/tailwind-config": "^0.6.2",
     "next": "^13 || ^14 || ^15.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -69,12 +55,10 @@
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "clsx": "2.1.1",
     "fuzzy": "0.1.3",
-    "next-videos": "1.5.0",
-    "nextra": "3.2.5",
-    "nextra-theme-docs": "3.2.5",
+    "nextra": "4.0.0-app-router.34",
+    "nextra-theme-docs": "4.0.0-app-router.34",
     "react-paginate": "8.2.0",
     "react-player": "2.16.0",
-    "remark-mdx-disable-explicit-jsx": "0.1.0",
     "semver": "^7.3.8",
     "tailwind-merge": "^2.5.2"
   },

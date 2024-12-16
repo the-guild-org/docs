@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es2022",
     "module": "ESNext",
     "declaration": true,
     "noEmit": true,
@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "allowJs": true,
     "jsx": "react-jsx",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true
   },
   "exclude": ["dist"]

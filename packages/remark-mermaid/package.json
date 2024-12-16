@@ -13,21 +13,14 @@
     "./package.json": "./package.json",
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.js"
     },
     "./*": {
       "types": "./dist/*.d.ts",
-      "default": "./dist/*.js"
+      "import": "./dist/*.js"
     }
   },
   "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "mermaid": [
-        "./dist/mermaid.d.ts"
-      ]
-    }
-  },
   "files": [
     "dist"
   ],
@@ -46,7 +39,7 @@
   },
   "devDependencies": {
     "@types/mdast": "4.0.4",
-    "nextra": "3.2.5",
+    "nextra": "4.0.0-app-router.34",
     "react": "18.3.1",
     "unified": "11.0.5"
   },

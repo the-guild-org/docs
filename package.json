@@ -4,9 +4,11 @@
   "private": true,
   "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run build --filter=!website",
+    "build-example": "turbo run build --filter=website",
     "build-storybook": "storybook build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.ts --postcss --output packages/components/style.css",
+    "clean": "pnpm -r exec sh -c 'rm -rf .next .turbo dist out'",
     "dev": "turbo run dev --parallel",
     "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --cache --ignore-path .gitignore .",
     "lint:prettier": "prettier --cache --check .",
@@ -58,7 +60,7 @@
     "tailwindcss": "3.4.16",
     "tailwindcss-animate": "^1.0.7",
     "tsconfig-paths-webpack-plugin": "4.2.0",
-    "tsup": "8.3.0",
+    "tsup": "8.3.5",
     "tsx": "4.19.2",
     "turbo": "2.3.3",
     "typescript": "5.7.2",
@@ -82,11 +84,11 @@
     "overrides": {
       "@theguild/remark-npm2yarn": "workspace:*",
       "@theguild/remark-mermaid": "workspace:*",
-      "esbuild": "0.24.0",
-      "eslint-plugin-react-hooks": "5.0.0"
+      "esbuild": "0.24.0"
     },
     "patchedDependencies": {
-      "tsup@8.3.0": "patches/tsup@8.2.1.patch"
+      "tsup@8.3.5": "patches/tsup@8.2.1.patch",
+      "esbuild-plugin-svgr": "patches/esbuild-plugin-svgr.patch"
     }
   }
 }

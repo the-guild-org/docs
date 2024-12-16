@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactElement, useEffect, useMemo, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { cn } from '../cn';
