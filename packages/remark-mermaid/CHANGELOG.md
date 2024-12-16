@@ -1,5 +1,14 @@
 # @theguild/remark-mermaid
 
+## 0.2.0
+
+### Minor Changes
+
+- [#1762](https://github.com/the-guild-org/docs/pull/1762)
+  [`b16cee8`](https://github.com/the-guild-org/docs/commit/b16cee85a4e82165ee91c19abba8989cfa210c3f)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - `"typesVersions"` field is removed from
+  `package.json`, use `"moduleResolution": "bundler"` in your `tsconfig.json`
+
 ## 0.1.3
 
 ### Patch Changes
