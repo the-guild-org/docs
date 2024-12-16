@@ -172,8 +172,8 @@ importers:
         specifier: 4.0.0-app-router.35
         version: 4.0.0-app-router.35(acorn@8.14.0)(next@15.1.0(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)
       nextra-theme-docs:
-        specifier: 4.0.0-app-router.35
-        version: 4.0.0-app-router.35(@types/react@18.3.17)(next@15.1.0(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@4.0.0-app-router.35(acorn@8.14.0)(next@15.1.0(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.0.0-app-router.36
+        version: 4.0.0-app-router.36(@types/react@18.3.17)(next@15.1.0(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@4.0.0-app-router.35(acorn@8.14.0)(next@15.1.0(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-paginate:
         specifier: 8.2.0
         version: 8.2.0(react@18.3.1)
@@ -6149,11 +6149,11 @@ packages:
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
 
-  nextra-theme-docs@4.0.0-app-router.35:
-    resolution: {integrity: sha512-U97uYxE+lUYqLLQAKM7P81gjg77YaYlpMm4nUalffWLBmKfYm5S+5ANDJwqWZsejWoFIBEKbfBs8WVvZ0eZjyw==}
+  nextra-theme-docs@4.0.0-app-router.36:
+    resolution: {integrity: sha512-R1Cn8W7rqvj4BsZCpWXeHXzOpSdH22TSNKKZyYTEsatvhy2EX2fb4ZD3iskYsEdBWLHFeKkv4tzViV320rmo9Q==}
     peerDependencies:
       next: '>=14'
-      nextra: 4.0.0-app-router.35
+      nextra: 4.0.0-app-router.36
       react: '>=18'
       react-dom: '>=18'
 
@@ -15530,7 +15530,7 @@ snapshots:
       scroll-into-view-if-needed: 3.1.0
       zod: 3.24.1
 
-  nextra-theme-docs@4.0.0-app-router.35(@types/react@18.3.17)(next@15.1.0(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@4.0.0-app-router.35(acorn@8.14.0)(next@15.1.0(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  nextra-theme-docs@4.0.0-app-router.36(@types/react@18.3.17)(next@15.1.0(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@4.0.0-app-router.35(acorn@8.14.0)(next@15.1.0(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@headlessui/react': 2.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
