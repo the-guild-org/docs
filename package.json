@@ -4,9 +4,11 @@
   "private": true,
   "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run build --filter=!website",
+    "build-example": "turbo run build --filter=website",
     "build-storybook": "storybook build",
     "build:css": "NODE_ENV=production tailwindcss --config tailwind.config.ts --postcss --output packages/components/style.css",
+    "clean": "pnpm -r exec sh -c 'rm -rf .next .turbo dist out'",
     "dev": "turbo run dev --parallel",
     "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --cache --ignore-path .gitignore .",
     "lint:prettier": "prettier --cache --check .",
@@ -32,18 +34,18 @@
     "@svgr/webpack": "8.1.0",
     "@theguild/eslint-config": "0.13.2",
     "@theguild/prettier-config": "3.0.0",
-    "@theguild/tailwind-config": "0.6.1",
+    "@theguild/tailwind-config": "0.6.2",
     "@types/jest-image-snapshot": "6.4.0",
-    "@types/react": "18.3.14",
+    "@types/react": "18.3.17",
     "@types/react-paginate": "7.1.4",
     "@types/webpack": "5.28.5",
     "css-loader": "7.1.2",
-    "eslint": "9.16.0",
+    "eslint": "9.17.0",
     "eslint-plugin-storybook": "0.11.1",
     "eslint-plugin-tailwindcss": "3.17.5",
     "husky": "9.1.7",
     "jest-image-snapshot": "6.4.0",
-    "lint-staged": "15.2.10",
+    "lint-staged": "15.2.11",
     "next-themes": "0.4.4",
     "postcss": "8.4.49",
     "postcss-loader": "8.1.1",
@@ -58,7 +60,7 @@
     "tailwindcss": "3.4.16",
     "tailwindcss-animate": "^1.0.7",
     "tsconfig-paths-webpack-plugin": "4.2.0",
-    "tsup": "8.3.0",
+    "tsup": "8.3.5",
     "tsx": "4.19.2",
     "turbo": "2.3.3",
     "typescript": "5.7.2",
@@ -82,11 +84,11 @@
     "overrides": {
       "@theguild/remark-npm2yarn": "workspace:*",
       "@theguild/remark-mermaid": "workspace:*",
-      "esbuild": "0.24.0",
-      "eslint-plugin-react-hooks": "5.0.0"
+      "esbuild": "0.24.0"
     },
     "patchedDependencies": {
-      "tsup@8.3.0": "patches/tsup@8.2.1.patch"
+      "tsup@8.3.5": "patches/tsup@8.2.1.patch",
+      "esbuild-plugin-svgr": "patches/esbuild-plugin-svgr.patch"
     }
   }
 }

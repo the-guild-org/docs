@@ -1,5 +1,6 @@
 import { cn } from '../cn';
 import { CallToAction } from './call-to-action';
+import { ContactButton } from './contact-us';
 import { DecorationIsolation } from './decorations';
 import { Heading } from './heading';
 
@@ -12,7 +13,7 @@ export function GetYourAPIGameRightSection({ className }: { className?: string }
         <GreenArchDecoration className="absolute inset-y-0 right-0 hidden opacity-10 md:block [@media(min-width:1300px)]:opacity-100" />
         <StrokeDecoration className="absolute right-[607px] max-md:right-[-36px] max-md:top-[-71px] max-md:size-[200px] max-md:rotate-180 md:bottom-0" />
       </DecorationIsolation>
-      <div className="flex flex-col items-stretch justify-between gap-x-6 gap-y-4 p-4 sm:items-center md:h-[308px] md:flex-row md:px-24">
+      <div className="flex items-stretch justify-between gap-x-6 gap-y-4 p-4 max-md:flex-col sm:items-center md:h-[308px] md:px-24">
         <Heading
           as="h2"
           size="md"
@@ -20,22 +21,11 @@ export function GetYourAPIGameRightSection({ className }: { className?: string }
         >
           Get your API game right.
         </Heading>
-        <div className="flex flex-col gap-x-4 gap-y-2 whitespace-pre sm:flex-row">
+        <div className="flex gap-x-4 gap-y-2 whitespace-pre max-sm:flex-col">
           <CallToAction variant="secondary-inverted" href="https://app.graphql-hive.com/">
             Get started for free
           </CallToAction>
-          <CallToAction
-            variant="tertiary"
-            href="https://the-guild.dev/contact"
-            onClick={event => {
-              if (window.$crisp) {
-                window.$crisp.push(['do', 'chat:open']);
-                event.preventDefault();
-              }
-            }}
-          >
-            Talk to us
-          </CallToAction>
+          <ContactButton variant="tertiary">Talk to us</ContactButton>
         </div>
       </div>
     </section>

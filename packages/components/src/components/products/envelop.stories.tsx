@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import {
   dummyCardsColorful,
@@ -11,7 +11,6 @@ import {
 } from '../../helpers/dummy';
 import { CardsColorful } from '../cards-colorful';
 import { FeatureList } from '../feature-list';
-import { Footer } from '../footer';
 import { HeroGradient } from '../hero-gradient';
 import { HeroIllustration } from '../hero-illustration';
 import { HeroMarketplace } from '../hero-marketplace';
@@ -25,13 +24,8 @@ export default {
 
 type Story = StoryObj<typeof Template>;
 
-function Template({ children }: { children: ReactNode }): ReactElement {
-  return (
-    <>
-      {children}
-      <Footer />
-    </>
-  );
+function Template({ children }: { children: ReactNode }): ReactNode {
+  return children;
 }
 
 export const Home: Story = {

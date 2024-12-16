@@ -7,19 +7,20 @@
   "scripts": {
     "analyze": "ANALYZE=true next build",
     "build": "next build",
-    "dev": "next",
+    "dev": "next --turbopack",
+    "postbuild": "pagefind --site .next/server/app --output-path out/_pagefind",
     "start": "next start"
   },
   "dependencies": {
     "@theguild/components": "workspace:*",
-    "next": "15.0.4",
-    "next-mdx-remote": "5.0.0",
+    "next": "15.1.0",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@theguild/tailwind-config": "0.6.1",
-    "@types/react": "18.3.14",
+    "@theguild/tailwind-config": "0.6.2",
+    "@types/react": "18.3.17",
+    "pagefind": "1.1.1",
     "typescript": "5.7.2"
   },
   "nextBundleAnalysis": {

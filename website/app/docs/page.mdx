@@ -1,0 +1,126 @@
+import { Steps } from '@theguild/components'
+import { defaultNextraOptions } from '@theguild/components/next.config'
+import componentsPkgJson from '@theguild/components/package.json'
+import { compileMdx, MDXRemote } from '@theguild/components/server'
+import pkgJson from '../../package.json'
+
+# Getting Started
+
+<Steps>
+## Install
+
+```sh npm2yarn
+npm install @theguild/components
+npm install -D @theguild/tailwind-config pagefind
+```
+
+## Add dependencies
+
+export async function Dependencies() {
+  const dependencies = Object.fromEntries([
+    ['@theguild/components', componentsPkgJson.version],
+    ...Object.entries(pkgJson.dependencies).filter(([key]) =>
+      ['next', 'react', 'react-dom'].includes(key)
+    )
+  ])
+  const rawJs = await compileMdx(
+    [
+      // Render code block with current version of dependencies
+      '```json filename="package.json" {15,21}',
+      JSON.stringify(
+        {
+          ...pkgJson,
+          dependencies,
+          devDependencies: pkgJson.devDependencies,
+          nextBundleAnalysis: undefined
+        },
+        null,
+        2
+      ),
+      '```'
+    ].join('\n'),
+    defaultNextraOptions
+  )
+  return <MDXRemote compiledSource={rawJs} />
+}
+
+<Dependencies />
+
+## Add Tailwind CSS config
+
+```ts filename="tailwind.config.ts"
+export { default } from '@theguild/tailwind-config'
+```
+
+## Add PostCSS config
+
+```js filename="postcss.config.js"
+import { default } from '@theguild/tailwind-config/postcss.config'
+```
+
+## Add `mdx-components.tsx` in root directory
+
+```ts filename="mdx-components.tsx"
+export { useMDXComponents } from '@theguild/components'
+```
+
+> [!WARNING]
+>
+> Use `mdx-components.{ts,jsx,js}` if you encounter the following error:
+>
+> ```
+> Module not found: Can't resolve 'next-mdx-import-source-file'
+> ```
+
+## Use `withGuildDocs` in your Next.js config
+
+Use `next.config.ts` starting from Next.js 15.
+
+```js filename="next.config.ts" /withGuildDocs/
+import { withGuildDocs } from '@theguild/components/next.config'
+
+export default withGuildDocs({
+  // ...Your next config options, for example:
+  eslint: {
+    ignoreDuringBuilds: true
+  }
+})
+```
+
+## Import styles in root `layout.tsx`
+
+```tsx filename="src/pages/_app.tsx" {3}
+import '@theguild/components/style.css'
+```
+
+## Update `tsconfig.json`
+
+```diff filename="tsconfig.json"
+{
+  "compilerOptions": {
+-   "moduleResolution": "node"
++   "moduleResolution": "bundler"
+  }
+}
+```
+
+## Add `postbuild` script
+
+To index static `.html` files after build.
+
+```json filename="package.json"
+"scripts": {
+  "postbuild": "pagefind --site .next/server/app --output-path out/_pagefind"
+}
+```
+
+## Update `dev` script to use Turbopack
+
+```diff filename="package.json"
+"scripts": {
+- "dev": "next"
++ "dev": "next --turbopack"
+}
+```
+
+</Steps>

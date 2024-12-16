@@ -1,3 +1,5 @@
+'use client';
+
 import { isValidElement, ReactElement, useMemo, useState } from 'react';
 import fuzzy from 'fuzzy';
 import { Tabs } from 'nextra/components';

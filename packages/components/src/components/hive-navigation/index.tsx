@@ -1,11 +1,22 @@
-import React, { forwardRef, Fragment, ReactNode, useEffect, useRef } from 'react';
+'use client';
+
+import React, {
+  ComponentProps,
+  FC,
+  forwardRef,
+  Fragment,
+  ReactNode,
+  useEffect,
+  useRef,
+} from 'react';
 import { createPortal } from 'react-dom';
-import { useRouter } from 'next/router';
-import { useMenu, useThemeConfig } from 'nextra-theme-docs';
+import { usePathname } from 'next/navigation';
+import { setMenu, useMenu } from 'nextra-theme-docs';
+import { Search } from 'nextra/components';
 import { useMounted } from 'nextra/hooks';
 import { MenuIcon } from 'nextra/icons';
 import { cn } from '../../cn';
-import { renderSlot } from '../../helpers/render-slot';
+import { siteOrigin } from '../../constants';
 import { GraphQLFoundationLogo, GuildLogo, HiveCombinationMark, TheGuild } from '../../logos';
 import { PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../../products';
 import { Anchor } from '../anchor';
@@ -15,15 +26,10 @@ import {
   AppsIcon,
   ArrowIcon,
   BardIcon,
-  GitHubIcon,
   GroupIcon,
   HiveIcon,
   HonourIcon,
-  PaperIcon,
-  PencilIcon,
-  RightCornerIcon,
   ShieldFlashIcon,
-  TargetIcon,
 } from '../icons';
 import {
   NavigationMenu,
@@ -36,11 +42,9 @@ import {
 
 export * from './graphql-conf-card';
 
-const EXPLORE_HREF = 'https://github.com/the-guild-org';
-
 const ENTERPRISE_MENU_HIDDEN = true;
 
-export interface HiveNavigationProps {
+export type HiveNavigationProps = {
   companyMenuChildren?: ReactNode;
   children?: ReactNode;
   className?: string;
@@ -50,13 +54,10 @@ export interface HiveNavigationProps {
   productName: string;
   logo?: ReactNode;
   navLinks?: { href: string; children: ReactNode }[];
-  developerMenu?: {
-    href: string;
-    title?: string;
-    icon: React.FC<{ className?: string }>;
-    children: ReactNode;
-  }[];
-}
+  developerMenu: DeveloperMenuProps['developerMenu'];
+  searchProps?: ComponentProps<typeof Search>;
+};
+
 /**
  *
  * @example
@@ -74,25 +75,17 @@ export function HiveNavigation({
   children,
   className,
   productName,
-  logo,
-  navLinks,
-  developerMenu,
-}: HiveNavigationProps) {
-  // `useThemeConfig` doesn't return anything outside of Nextra, and the provider isn't exported
-  const themeConfig = useThemeConfig() as ReturnType<typeof useThemeConfig> | undefined;
-  const Search = themeConfig?.search?.component;
-
-  const isHive = productName === 'Hive';
-
-  const containerRef = useRef<HTMLDivElement>(null!);
-
-  logo ||= <HiveLogoLink isHive={isHive} />;
-  navLinks ||= [
+  logo = <HiveLogoLink isHive={productName === 'Hive'} />,
+  navLinks = [
     {
-      href: isHive ? '/pricing' : 'https://the-guild.dev/graphql/hive/pricing',
+      href: productName === 'Hive' ? '/pricing' : 'https://the-guild.dev/graphql/hive/pricing',
       children: 'Pricing',
     },
-  ];
+  ],
+  developerMenu,
+  searchProps,
+}: HiveNavigationProps) {
+  const containerRef = useRef<HTMLDivElement>(null!);
 
   return (
     <div
@@ -129,7 +122,7 @@ export function HiveNavigation({
           <NavigationMenuItem>
             <NavigationMenuTrigger>Developer</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <DeveloperMenu isHive={isHive} developerMenu={developerMenu} />
+              <DeveloperMenu developerMenu={developerMenu} />
             </NavigationMenuContent>
           </NavigationMenuItem>
           {!ENTERPRISE_MENU_HIDDEN && (
@@ -159,16 +152,15 @@ export function HiveNavigation({
 
         {children}
 
-        {renderSlot(Search, {
-          className: cn(
-            'relative ml-4 basis-64 [&_:is(input,kbd)]:text-green-700 dark:[&_:is(input,kbd)]:text-neutral-300 [&_input]:h-12 [&_input]:w-full [&_input]:rounded-lg [&_input]:border [&_input]:border-green-200 [&_input]:bg-white [&_input]:pl-4 [&_input]:pr-8 [&_input]:ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%/var(--tw-ring-opacity))] [&_input]:ring-offset-[rgb(var(--nextra-bg))] dark:[&_input]:border-neutral-800 [&_input]:dark:bg-inherit [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:top-1/2 [&_kbd]:my-0 [&_kbd]:-translate-y-1/2 [&_kbd]:border-none [&_kbd]:bg-green-200 dark:[&_kbd]:bg-neutral-700',
-          ),
-        })}
+        <Search
+          className="relative ml-4 basis-64 [&_:is(input,kbd)]:text-green-700 dark:[&_:is(input,kbd)]:text-neutral-300 [&_input]:h-12 [&_input]:w-full [&_input]:rounded-lg [&_input]:border [&_input]:border-green-200 [&_input]:bg-white [&_input]:pl-4 [&_input]:pr-8 [&_input]:ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%/var(--tw-ring-opacity))] [&_input]:ring-offset-[rgb(var(--nextra-bg))] dark:[&_input]:border-neutral-800 [&_input]:dark:bg-inherit [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:top-1/2 [&_kbd]:my-0 [&_kbd]:-translate-y-1/2 [&_kbd]:border-none [&_kbd]:bg-green-200 dark:[&_kbd]:bg-neutral-700"
+          {...searchProps}
+        />
 
         <CallToAction
           className="ml-4 max-lg:hidden"
           variant="tertiary"
-          href="https://the-guild.dev/contact"
+          href={`${siteOrigin}/contact`}
           target="_blank"
           rel="noopener noreferrer"
           onClick={event => {
@@ -180,7 +172,7 @@ export function HiveNavigation({
         >
           Contact <span className="hidden xl:contents">us</span>
         </CallToAction>
-        {isHive ? (
+        {productName === 'Hive' ? (
           <CallToAction variant="primary" href="https://app.graphql-hive.com/" className="ml-4">
             Sign in
           </CallToAction>
@@ -197,17 +189,18 @@ export function HiveNavigation({
 interface ProductsMenuProps extends MenuContentColumnsProps {
   productName: string;
 }
+
 /**
  * @internal
  */
 export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
   ({ productName, ...rest }, ref) => {
-    const { asPath } = useRouter();
+    const pathname = usePathname();
 
     const bidirectionalProductLink = (product: (typeof PRODUCTS)[keyof typeof PRODUCTS]) => {
       if (productName === product.name) {
         // We link bidirectionally between the landing page and the docs.
-        return asPath === '/' ? '/docs' : '/';
+        return pathname === '/' ? '/docs' : '/';
       }
       return product.href;
     };
@@ -251,7 +244,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
                   <NavigationMenuLink
                     href={bidirectionalProductLink(product)}
                     title={product.title}
-                    className="flex flex-row items-center gap-4 p-4"
+                    className="flex items-center gap-4 p-4"
                   >
                     <div className="size-12 rounded-lg bg-blue-400 p-2.5">
                       <Logo className="size-7 text-green-1000" />
@@ -279,7 +272,7 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
                 <li key={product.name}>
                   <NavigationMenuLink
                     href={bidirectionalProductLink(product)}
-                    className="flex flex-row items-center gap-3 px-4 py-2"
+                    className="flex items-center gap-3 px-4 py-2"
                     arrow
                   >
                     <div className="flex size-8 items-center justify-center rounded bg-beige-200 p-[5px] dark:bg-white/5">
@@ -297,7 +290,9 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
             })}
           </ul>
           <Anchor
-            href={EXPLORE_HREF}
+            href={
+              productName === 'Hive' ? '/ecosystem' : 'https://the-guild.dev/graphql/hive/ecosystem'
+            }
             className="hive-focus -my-2 ml-2 flex items-center gap-2 rounded-lg p-2 font-medium text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200"
           >
             <span>Explore all libraries</span> <ArrowIcon />
@@ -309,7 +304,8 @@ export const ProductsMenu = React.forwardRef<HTMLDivElement, ProductsMenuProps>(
 );
 ProductsMenu.displayName = 'ProductsMenu';
 
-type MenuContentColumnsProps = React.HTMLAttributes<HTMLDivElement>;
+type MenuContentColumnsProps = ComponentProps<'div'>;
+
 const MenuContentColumns = forwardRef(
   (props: MenuContentColumnsProps, ref: React.ForwardedRef<HTMLDivElement>) => {
     return (
@@ -333,56 +329,19 @@ const MenuContentColumns = forwardRef(
 MenuContentColumns.displayName = 'MenuContentColumns';
 
 interface DeveloperMenuProps extends React.HTMLAttributes<HTMLDivElement> {
-  isHive: boolean;
-  developerMenu:
-    | undefined
-    | {
-        href: string;
-        title?: string;
-        icon: React.FC<{ className?: string }>;
-        children: ReactNode;
-      }[];
+  developerMenu: {
+    href: string;
+    title?: string;
+    icon: ReactNode;
+    children: ReactNode;
+  }[];
 }
+
 /**
  * @internal
  */
 export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps>(
-  ({ isHive, developerMenu, ...rest }, ref) => {
-    developerMenu ||= [
-      {
-        href: isHive ? '/docs' : 'https://the-guild.dev/graphql/hive/docs',
-        icon: PaperIcon,
-        title: 'Visit the documentation',
-        children: 'Documentation',
-      },
-      {
-        href: 'https://status.graphql-hive.com/',
-        title: 'Check Hive status',
-        icon: TargetIcon,
-        children: 'Status',
-      },
-      {
-        href: isHive ? '/product-updates' : 'https://the-guild.dev/graphql/hive/product-updates',
-        title: 'Read most recent developments from Hive',
-        icon: RightCornerIcon,
-        children: 'Product Updates',
-      },
-      {
-        href: 'https://the-guild.dev/blog',
-        title: 'Read our blog post',
-        icon: PencilIcon,
-        children: 'Blog',
-      },
-      {
-        href: isHive
-          ? 'https://github.com/graphql-hive/console'
-          : 'https://github.com/dotansimha/graphql-code-generator',
-        title: 'Give us a star',
-        icon: GitHubIcon,
-        children: 'GitHub',
-      },
-    ];
-
+  ({ developerMenu, ...rest }, ref) => {
     return (
       <MenuContentColumns {...rest} ref={ref}>
         <div>
@@ -410,7 +369,7 @@ export const DeveloperMenu = React.forwardRef<HTMLDivElement, DeveloperMenuProps
                 ['Discord', DiscordIcon, 'https://discord.com/invite/xud7bH9'],
               ] as const
             ).map(([text, Icon, href], i) => (
-              <MenuColumnListItem key={i} href={href} icon={Icon}>
+              <MenuColumnListItem key={i} href={href} icon={<Icon />}>
                 {text}
               </MenuColumnListItem>
             ))}
@@ -426,22 +385,22 @@ function MenuColumnListItem({
   children,
   href,
   title,
-  icon: Icon,
+  icon,
 }: {
   children: ReactNode;
   href: string;
   title?: string;
-  icon: React.FC<{ className?: string }>;
+  icon: ReactNode;
 }) {
   return (
     <li>
       <NavigationMenuLink
         href={href}
         title={title}
-        className="flex flex-row items-center gap-3 text-nowrap px-4 py-2"
+        className="flex items-center gap-3 text-nowrap px-4 py-2 [&:hover>svg]:opacity-100 [&>svg]:size-6 [&>svg]:shrink-0"
         arrow
       >
-        <Icon className="size-6 shrink-0" />
+        {icon}
         <p className="text-base font-medium leading-normal text-green-1000 dark:text-neutral-200">
           {children}
         </p>
@@ -505,7 +464,7 @@ export function EnterpriseMenu() {
         ] as const
       ).map(([Icon, text, href], i) => {
         return (
-          <MenuColumnListItem key={i} href={href} icon={Icon}>
+          <MenuColumnListItem key={i} href={href} icon={<Icon />}>
             {text}
           </MenuColumnListItem>
         );
@@ -523,15 +482,15 @@ export function CompanyMenu({ children }: { children: React.ReactNode }) {
       <div>
         <ColumnLabel>Company</ColumnLabel>
         <ul>
-          <MenuColumnListItem icon={GroupIcon} href="https://the-guild.dev/about-us">
+          <MenuColumnListItem icon={<GroupIcon />} href={`${siteOrigin}/about-us`}>
             About Us
           </MenuColumnListItem>
-          <MenuColumnListItem icon={AppsIcon} href="https://the-guild.dev/logos">
+          <MenuColumnListItem icon={<AppsIcon />} href={`${siteOrigin}/logos`}>
             Brand Assets
           </MenuColumnListItem>
         </ul>
         <ColumnLabel>Proudly made by</ColumnLabel>
-        <NavigationMenuLink href="https://the-guild.dev" className="px-4 py-2" arrow>
+        <NavigationMenuLink href={`${siteOrigin}/`} className="px-4 py-2" arrow>
           <GuildLogo className="-my-2 size-10" />
           <TheGuild className="h-8" />
         </NavigationMenuLink>
@@ -561,14 +520,13 @@ function HiveLogoLink({ isHive }: { isHive: boolean }) {
 }
 
 function HamburgerButton() {
-  const { menu, setMenu } = useMenu();
-
+  const menu = useMenu();
   return (
     <button
       type="button"
       aria-label="Menu"
-      className="md:_hidden hover nextra-hamburger -m-1 rounded-lg bg-transparent p-1 text-green-1000 focus-visible:outline-none focus-visible:ring active:bg-beige-200 dark:text-neutral-200 dark:active:bg-neutral-800"
-      onClick={() => setMenu(!menu)}
+      className="nextra-hamburger -m-1 rounded-lg bg-transparent p-1 text-green-1000 focus-visible:outline-none focus-visible:ring active:bg-beige-200 md:hidden dark:text-neutral-200 dark:active:bg-neutral-800"
+      onClick={() => setMenu(prev => !prev)}
     >
       <MenuIcon
         className={cn({ open: menu }, 'size-6 stroke-current [&_path]:[stroke-linecap:square]')}
@@ -577,13 +535,10 @@ function HamburgerButton() {
   );
 }
 
-const TopOfSiteMarker = function TopOfSiteMarker({
-  onChange,
-  className,
-}: {
+const TopOfSiteMarker: FC<{
   onChange: (scrolled: boolean) => void;
   className?: string;
-}) {
+}> = ({ onChange, className }) => {
   const mounted = useMounted();
 
   const markerRef = useRef<HTMLDivElement>(null);
@@ -591,7 +546,7 @@ const TopOfSiteMarker = function TopOfSiteMarker({
   onChangeRef.current = onChange;
 
   useEffect(() => {
-    if (mounted && markerRef.current && 'IntersectionObserver' in window) {
+    if (mounted && markerRef.current) {
       const marker = markerRef.current;
       const observer = new IntersectionObserver(entries => {
         onChangeRef.current(entries[0].boundingClientRect.y < -1);

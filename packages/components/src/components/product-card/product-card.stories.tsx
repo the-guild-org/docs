@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { ProductCard } from '..';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 import { PRODUCTS } from '../../products';
-import { ProductCard } from './index';
 
 export default {
   title: 'Hive/ProductCard',

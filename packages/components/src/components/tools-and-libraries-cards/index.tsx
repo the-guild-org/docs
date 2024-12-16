@@ -1,22 +1,25 @@
+import { HTMLAttributes } from 'react';
 import { cn } from '../../cn';
 import { FOUR_MAIN_PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../../products';
 import { CallToAction } from '../call-to-action';
 import { Heading } from '../heading';
 import { AncillaryProductCard, MainProductCard } from '../product-card';
 
+export interface ToolsAndLibrariesCardsProps extends HTMLAttributes<HTMLDivElement> {
+  isHive?: boolean;
+}
 export function ToolsAndLibrariesCards({
   className,
   isHive,
-}: {
-  className?: string;
-  isHive?: boolean;
-}) {
+  ...rest
+}: ToolsAndLibrariesCardsProps) {
   return (
     <section
       className={cn(
         'isolate flex flex-col gap-6 px-4 py-6 lg:gap-12 lg:py-24 xl:px-[120px]',
         className,
       )}
+      {...rest}
     >
       <Heading as="h2" size="md" className="text-green-1000">
         Discover the complete ecosystem of tools and libraries
