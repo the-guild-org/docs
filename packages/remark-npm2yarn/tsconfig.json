@@ -12,5 +12,6 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "types": ["vitest/globals"]
-  }
+  },
+  "exclude": ["dist"]
 }

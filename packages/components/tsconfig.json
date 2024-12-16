@@ -11,5 +11,6 @@
     "jsx": "react-jsx",
     "moduleResolution": "bundler",
     "resolveJsonModule": true
-  }
+  },
+  "exclude": ["dist"]
 }

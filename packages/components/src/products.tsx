@@ -66,7 +66,7 @@ export interface ProductInfo {
 export const PRODUCTS: Record<ProductType, ProductInfo> = {
   HIVE: {
     name: 'Hive',
-    title: 'Open Source GraphQL Federation Platform (Schema Registry, Gateway, Analytics) ',
+    title: 'Open Source GraphQL Federation Platform (Schema Registry, Gateway, Analytics)',
     href: 'https://the-guild.dev/graphql/hive',
     logo: HiveIcon,
     primaryColor: '#ffb21d',
@@ -230,7 +230,7 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
   },
   STELLATE: {
     name: 'Stellate',
-    title: 'GraphQL Edge Caching, Metrics and Security.',
+    title: 'The GraphQL Edge Platform for security, caching, and observability',
     href: 'https://stellate.co',
     logo: StellateIcon,
     primaryColor: '#FF7752',
