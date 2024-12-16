@@ -1,5 +1,104 @@
 # @theguild/components
 
+## 8.0.0
+
+### Major Changes
+
+- [#1762](https://github.com/the-guild-org/docs/pull/1762)
+  [`b16cee8`](https://github.com/the-guild-org/docs/commit/b16cee85a4e82165ee91c19abba8989cfa210c3f)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Update components to be compatible with
+  Nextra 4 and server components
+
+### Patch Changes
+
+- [#1762](https://github.com/the-guild-org/docs/pull/1762)
+  [`b16cee8`](https://github.com/the-guild-org/docs/commit/b16cee85a4e82165ee91c19abba8989cfa210c3f)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+
+  - Updated dependency
+    [`nextra@4.0.0-app-router.34` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.0) (from `3.2.5`,
+    in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@4.0.0-app-router.34` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.0)
+    (from `3.2.5`, in `dependencies`)
+  - Removed dependency [`next-videos@1.5.0` ↗︎](https://www.npmjs.com/package/next-videos/v/1.5.0)
+    (from `dependencies`)
+  - Removed dependency
+    [`remark-mdx-disable-explicit-jsx@0.1.0` ↗︎](https://www.npmjs.com/package/remark-mdx-disable-explicit-jsx/v/0.1.0)
+    (from `dependencies`)
+  - Updated dependency
+    [`@theguild/tailwind-config@^0.6.2` ↗︎](https://www.npmjs.com/package/@theguild/tailwind-config/v/0.6.2)
+    (from `0.6.2`, in `peerDependencies`)
+
+- [#1762](https://github.com/the-guild-org/docs/pull/1762)
+  [`b16cee8`](https://github.com/the-guild-org/docs/commit/b16cee85a4e82165ee91c19abba8989cfa210c3f)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+
+  - Updated dependency
+    [`nextra@4.0.0-app-router.34` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.0) (from
+    `4.0.0-app-router.28`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@4.0.0-app-router.34` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.0)
+    (from `4.0.0-app-router.21`, in `dependencies`)
+
+- [#1762](https://github.com/the-guild-org/docs/pull/1762)
+  [`b16cee8`](https://github.com/the-guild-org/docs/commit/b16cee85a4e82165ee91c19abba8989cfa210c3f)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+
+  - Updated dependency
+    [`nextra@4.0.0-app-router.34` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.0) (from
+    `4.0.0-app-router.28`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@4.0.0-app-router.34` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.0)
+    (from `4.0.0-app-router.28`, in `dependencies`)
+
+- [#1869](https://github.com/the-guild-org/docs/pull/1869)
+  [`1c3c16b`](https://github.com/the-guild-org/docs/commit/1c3c16bbf73b29b7987f0223691ad5d1841ef084)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@15.1.0` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/15.1.0)
+    (from `15.0.4`, in `dependencies`)
+
+- [#1880](https://github.com/the-guild-org/docs/pull/1880)
+  [`bbf19c8`](https://github.com/the-guild-org/docs/commit/bbf19c8747b631c8b8b192f402d0a57eb596ee68)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@theguild/tailwind-config@0.6.2` ↗︎](https://www.npmjs.com/package/@theguild/tailwind-config/v/0.6.2)
+    (from `0.6.1`, in `peerDependencies`)
+
+- [#1883](https://github.com/the-guild-org/docs/pull/1883)
+  [`bfaa360`](https://github.com/the-guild-org/docs/commit/bfaa3609d5333230fd85afdadacf20f42568b4f4)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`nextra@4.0.0-app-router.35` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.0) (from
+    `4.0.0-app-router.34`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@4.0.0-app-router.35` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.0)
+    (from `4.0.0-app-router.34`, in `dependencies`)
+
+- [#1762](https://github.com/the-guild-org/docs/pull/1762)
+  [`b16cee8`](https://github.com/the-guild-org/docs/commit/b16cee85a4e82165ee91c19abba8989cfa210c3f)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Add `NextPageProps` utility type
+
+- [#1762](https://github.com/the-guild-org/docs/pull/1762)
+  [`b16cee8`](https://github.com/the-guild-org/docs/commit/b16cee85a4e82165ee91c19abba8989cfa210c3f)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Use green card variant only for Hive
+
+- [#1871](https://github.com/the-guild-org/docs/pull/1871)
+  [`d6b498d`](https://github.com/the-guild-org/docs/commit/d6b498d0dfb9e2c3b86386c9ece34680c2ae5db9)
+  Thanks [@hasparus](https://github.com/hasparus)! - Change links to point to /ecosystem page
+
+- [#1762](https://github.com/the-guild-org/docs/pull/1762)
+  [`b16cee8`](https://github.com/the-guild-org/docs/commit/b16cee85a4e82165ee91c19abba8989cfa210c3f)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Add ContactTextLink and ContactButton
+
+- [#1762](https://github.com/the-guild-org/docs/pull/1762)
+  [`b16cee8`](https://github.com/the-guild-org/docs/commit/b16cee85a4e82165ee91c19abba8989cfa210c3f)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - Add "use client" to Heading
+
 ## 7.4.0
 
 ### Minor Changes
