@@ -46,8 +46,8 @@
   "peerDependencies": {
     "@theguild/tailwind-config": "^0.6.2",
     "next": "^13 || ^14 || ^15.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
   },
   "dependencies": {
     "@giscus/react": "3.0.0",
@@ -67,15 +67,15 @@
     "@theguild/editor": "workspace:*",
     "@theguild/tailwind-config": "0.6.2",
     "@types/dedent": "0.7.2",
-    "@types/react": "18.3.17",
-    "@types/react-dom": "18.3.5",
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2",
     "@types/semver": "7.5.8",
     "dedent": "1.5.3",
     "esbuild-plugin-svgr": "^3.0.0",
     "graphql": "16.10.0",
     "next": "15.1.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "unified": "^11.0.3"
   },
   "publishConfig": {
