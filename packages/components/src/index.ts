@@ -20,7 +20,7 @@ export * from './types/components';
 export * from './logos';
 export { cn } from './cn';
 export * from './next-types';
-export { normalizePages } from 'nextra/normalize-pages'
+export { normalizePages } from 'nextra/normalize-pages';
 
 declare module 'react' {
   interface CSSProperties {

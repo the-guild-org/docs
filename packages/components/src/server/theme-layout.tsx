@@ -204,7 +204,7 @@ export function getDefaultMetadata({
       // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632
       url: './',
       locale: 'en_US',
-      ...additionalMetadata.openGraph
+      ...additionalMetadata.openGraph,
     },
   };
 }
