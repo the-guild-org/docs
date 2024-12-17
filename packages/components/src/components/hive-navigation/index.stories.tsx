@@ -76,8 +76,8 @@ export const Default: StoryObj = {
       <VersionDropdown
         currentVersion="v1"
         versions={[
-          { label: 'v1', href: '#v1' },
-          { label: 'v2', href: '#v2' },
+          { label: 'Hive v1 Docs', href: '#v1' },
+          { label: 'Hive v2 Docs', href: '#v2' },
         ]}
       />
     ),
