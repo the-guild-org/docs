@@ -1,5 +1,6 @@
 import { ComponentProps, FC, ReactNode } from 'react';
 import { Metadata } from 'next';
+import { PageMapItem } from 'nextra';
 import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
@@ -72,6 +73,7 @@ export const GuildLayout: FC<{
    * Nextra's Docs Theme `<Navbar>` component props
    */
   navbarProps: NavbarProps;
+  pageMap?: PageMapItem[];
 }> = async ({
   children,
   websiteName,
@@ -81,8 +83,9 @@ export const GuildLayout: FC<{
   logo,
   layoutProps,
   navbarProps,
+  ...props
 }) => {
-  const [meta, ...pageMap] = await getPageMap();
+  const [meta, ...pageMap] = props.pageMap || (await getPageMap());
 
   const pageMapWithCompanyMenu = [
     {
