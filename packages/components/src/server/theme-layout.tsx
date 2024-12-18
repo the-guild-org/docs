@@ -183,12 +183,6 @@ export function getDefaultMetadata({
       site: 'https://the-guild.dev',
       creator: '@TheGuildDev',
     },
-    openGraph: {
-      siteName: websiteName,
-      type: 'website',
-      images: `https://og-image.the-guild.dev/?product=${productName}`,
-      url: siteUrl,
-    },
     applicationName: websiteName,
     appleWebApp: {
       title: websiteName,
@@ -198,8 +192,19 @@ export function getDefaultMetadata({
       follow: true,
     },
     alternates: {
-      canonical: siteUrl,
+      // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632
+      canonical: './',
     },
+    metadataBase: new URL(siteUrl!),
     ...additionalMetadata,
+    openGraph: {
+      siteName: websiteName,
+      type: 'website',
+      images: `https://og-image.the-guild.dev/?product=${productName}`,
+      // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632
+      url: './',
+      locale: 'en_US',
+      ...additionalMetadata.openGraph,
+    },
   };
 }

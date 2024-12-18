@@ -67,6 +67,10 @@
   &::before {
     background-color: rgb(229, 231, 235);
   }
+
+  & mark {
+    background-color: oklch(0.611752 0.07807 214.47 / 0.8);
+  }
 }
 
 /* #endregion search results */

@@ -1,5 +1,37 @@
 # @theguild/components
 
+## 8.1.1
+
+### Patch Changes
+
+- [#1889](https://github.com/the-guild-org/docs/pull/1889)
+  [`b2daf75`](https://github.com/the-guild-org/docs/commit/b2daf75fe8c68f84e962a18b05f564ae79373cd1)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`nextra@4.0.0-app-router.36` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.0) (from
+    `4.0.0-app-router.35`, in `dependencies`)
+
+- [#1895](https://github.com/the-guild-org/docs/pull/1895)
+  [`fa5c560`](https://github.com/the-guild-org/docs/commit/fa5c560f75fe8dd001e07f5a9907ba55102b5827)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`nextra@4.0.0-app-router.37` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.0) (from
+    `4.0.0-app-router.36`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@4.0.0-app-router.37` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.0)
+    (from `4.0.0-app-router.36`, in `dependencies`)
+
+- [#1897](https://github.com/the-guild-org/docs/pull/1897)
+  [`5725a0b`](https://github.com/the-guild-org/docs/commit/5725a0bb52f5f7489a6db3af6463300536663261)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - adjust Next.js Metadata tags
+
+- [#1897](https://github.com/the-guild-org/docs/pull/1897)
+  [`5725a0b`](https://github.com/the-guild-org/docs/commit/5725a0bb52f5f7489a6db3af6463300536663261)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - add
+  `export { normalizePages } from 'nextra/normalize-pages'`
+
 ## 8.1.0
 
 ### Minor Changes
