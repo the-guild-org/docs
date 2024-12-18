@@ -1,5 +1,42 @@
 # @theguild/components
 
+## 8.1.2
+
+### Patch Changes
+
+- [#1901](https://github.com/the-guild-org/docs/pull/1901)
+  [`f466946`](https://github.com/the-guild-org/docs/commit/f466946b62c4bb34f430eaaf11c55fd22eb0a023)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@15.1.1` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/15.1.1)
+    (from `15.1.0`, in `dependencies`)
+
+- [#1904](https://github.com/the-guild-org/docs/pull/1904)
+  [`25f4d4c`](https://github.com/the-guild-org/docs/commit/25f4d4cbf5cd507a7c25d992eefeec12f99aac7a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`nextra-theme-docs@4.0.0-app-router.38` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.0)
+    (from `4.0.0-app-router.37`, in `dependencies`)
+
+- [#1905](https://github.com/the-guild-org/docs/pull/1905)
+  [`d17dae0`](https://github.com/the-guild-org/docs/commit/d17dae0f8aa014a84efb208b4eae02ecffe071cb)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`nextra@4.0.0-app-router.38` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.0) (from
+    `4.0.0-app-router.37`, in `dependencies`)
+
+- [#1899](https://github.com/the-guild-org/docs/pull/1899)
+  [`91232cf`](https://github.com/the-guild-org/docs/commit/91232cf540acffb43e3f9203dc9a35f27bd5964e)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add background-color for Nextra search result
+  mark
+
+- [#1891](https://github.com/the-guild-org/docs/pull/1891)
+  [`1510524`](https://github.com/the-guild-org/docs/commit/15105246ea4e5722a42b29720a412d7ef3652031)
+  Thanks [@hasparus](https://github.com/hasparus)! - Export sharedMetaItems for meta.ts files
+
 ## 8.1.1
 
 ### Patch Changes
