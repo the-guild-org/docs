@@ -76,7 +76,7 @@ export const defaultNextraOptions: NextraConfig = {
   defaultShowCopyCode: true,
   whiteListTagsStyling: ['iframe', 'video', 'source'],
   search: {
-    codeblocks: true,
+    codeblocks: false,
   },
   mdxOptions: {
     // Check front matter only in production (when Webpack is used)
