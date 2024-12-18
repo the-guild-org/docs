@@ -75,9 +75,6 @@ const rehypeCheckFrontMatter: Plugin<[], any> = () => (ast, file) => {
 export const defaultNextraOptions: NextraConfig = {
   defaultShowCopyCode: true,
   whiteListTagsStyling: ['iframe', 'video', 'source'],
-  search: {
-    codeblocks: true,
-  },
   mdxOptions: {
     // Check front matter only in production (when Webpack is used)
     // Should be rehype since frontMatter is attached in remark plugins
