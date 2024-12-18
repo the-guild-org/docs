@@ -7,6 +7,7 @@ export { fetchFilePathsFromGitHub } from 'nextra/fetch-filepaths-from-github';
 export { compileMdx } from 'nextra/compile';
 export { getPageMap, createIndexPage } from 'nextra/page-map';
 export { fetchPackageInfo } from './npm.js';
+export { sharedMetaItems } from './shared-meta-items';
 
 /**
  * Contain `getPageMap` import which imports `metadata` from pages, in case importing from

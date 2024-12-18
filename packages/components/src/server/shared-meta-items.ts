@@ -1,4 +1,4 @@
-import { PRODUCTS_MENU_LIST, ProductType } from './products';
+import { PRODUCTS_MENU_LIST, ProductType } from '../products';
 
 export function sharedMetaItems(options: { githubUrl: string; product: ProductType }) {
   return {

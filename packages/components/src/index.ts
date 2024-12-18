@@ -21,7 +21,6 @@ export * from './logos';
 export { cn } from './cn';
 export * from './next-types';
 export { normalizePages } from 'nextra/normalize-pages';
-export { sharedMetaItems } from './shared-meta-items';
 
 declare module 'react' {
   interface CSSProperties {
