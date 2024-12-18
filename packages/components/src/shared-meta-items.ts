@@ -10,9 +10,7 @@ export function sharedMetaItems(options: { githubUrl: string; product: ProductTy
     ecosystem: {
       title: 'Ecosystem',
       type: 'page',
-      ...(options.product === 'HIVE'
-        ? {}
-        : { href: 'https://the-guild.dev/graphql/hive/ecosystem' }),
+      ...(options.product !== 'HIVE' && { href: 'https://the-guild.dev/graphql/hive/ecosystem' }),
     },
     blog: {
       title: 'Blog',
