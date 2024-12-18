@@ -39,7 +39,7 @@ export function sharedMetaItems(options: { githubUrl: string; product: ProductTy
     'graphql-foundation': {
       title: 'GraphQL Foundation',
       type: 'page',
-      href: 'https://graphql.org/community/foundation/',
+      href: 'https://graphql.org/community/foundation',
     },
   };
 }
