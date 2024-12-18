@@ -5,7 +5,14 @@ export { MDXRemote } from 'nextra/mdx-remote';
 
 export { fetchFilePathsFromGitHub } from 'nextra/fetch-filepaths-from-github';
 export { compileMdx } from 'nextra/compile';
-export { getPageMap, createIndexPage } from 'nextra/page-map';
+export {
+  getPageMap,
+  createIndexPage,
+  convertToPageMap,
+  mergeMetaWithPageMap,
+  normalizePageMap,
+} from 'nextra/page-map';
+export { evaluate } from 'nextra/evaluate';
 export { fetchPackageInfo } from './npm.js';
 export { sharedMetaItems } from './shared-meta-items';
 
