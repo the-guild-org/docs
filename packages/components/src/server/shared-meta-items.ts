@@ -1,7 +1,9 @@
+import { MetaRecord } from 'nextra';
 import { PRODUCTS_MENU_LIST, ProductType } from '../products';
 
+type MetaRecordItem = MetaRecord[string];
 export function sharedMetaItems(options: { githubUrl: string; product: ProductType }) {
-  return {
+  const res = {
     products: {
       title: 'Products',
       type: 'menu',
@@ -41,5 +43,9 @@ export function sharedMetaItems(options: { githubUrl: string; product: ProductTy
       type: 'page',
       href: 'https://graphql.org/community/foundation',
     },
-  };
+  } satisfies MetaRecord;
+
+  // We do this to preserve the keys, so the object is indexable,
+  // but we don't need to emit the types of items.
+  return res as Record<keyof typeof res, MetaRecordItem>;
 }
