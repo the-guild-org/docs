@@ -1,8 +1,11 @@
+'use client';
+
 import { FC, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 export const AttachPageFAQSchema: FC<{ faqPages: string[] }> = ({ faqPages }) => {
   const pathname = usePathname();
+
   useEffect(() => {
     const html = document.querySelector('html')!;
     const path = pathname.replace('/graphql/hive', '/');
@@ -16,7 +19,7 @@ export const AttachPageFAQSchema: FC<{ faqPages: string[] }> = ({ faqPages }) =>
         html.removeAttribute('itemtype');
       };
     }
-  }, []);
+  }, [pathname]);
 
   return null;
 };

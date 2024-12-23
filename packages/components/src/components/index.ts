@@ -29,4 +29,4 @@ export * from './explore-main-product-cards';
 export * from './text-link';
 export * from './contact-us';
 export { Giscus } from './giscus';
-export { FrequentlyAskedQuestions } from './faq';
+export { FrequentlyAskedQuestions } from './faq/index.js';

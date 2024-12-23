@@ -37,25 +37,23 @@ export const FrequentlyAskedQuestions: FC<
   }
 > = ({ className, faqPages, children }) => {
   return (
-    <>
+    <section
+      className={cn(
+        className,
+        'flex flex-col gap-x-6 gap-y-2 px-4 py-6 text-green-1000 md:flex-row md:px-10 lg:gap-x-24 lg:px-[120px] lg:py-24',
+      )}
+    >
       <AttachPageFAQSchema faqPages={faqPages} />
-      <section
-        className={cn(
-          className,
-          'flex flex-col gap-x-6 gap-y-2 px-4 py-6 text-green-1000 md:flex-row md:px-10 lg:gap-x-24 lg:px-[120px] lg:py-24',
-        )}
-      >
-        {cloneElement(children, {
-          components: {
-            a,
-            h2,
-            p: UnwrapChild,
-            ul: Accordion,
-            li: AccordionItem,
-          },
-        })}
-      </section>
-    </>
+      {cloneElement(children, {
+        components: {
+          a,
+          h2,
+          p: UnwrapChild,
+          ul: Accordion,
+          li: AccordionItem,
+        },
+      })}
+    </section>
   );
 };
 
