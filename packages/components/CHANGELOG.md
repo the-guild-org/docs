@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 8.1.3
+
+### Patch Changes
+
+- [#1908](https://github.com/the-guild-org/docs/pull/1908)
+  [`6fc6c30`](https://github.com/the-guild-org/docs/commit/6fc6c30f2d446b7d3f07f3daf5a5ea3f8b944bd8)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - exports `convertToPageMap`,
+  `mergeMetaWithPageMap`, `normalizePageMap`, `evaluate` from nextra
+
 ## 8.1.2
 
 ### Patch Changes
