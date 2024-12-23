@@ -127,7 +127,23 @@
 :root {
   --nextra-navbar-height: 82px;
 }
-
+@media (min-width: 768px) {
+  .nextra-search {
+    @apply ml-3 basis-64;
+    input,
+    kbd {
+      @apply text-green-700 dark:text-neutral-300;
+    }
+    input {
+      @apply h-12 w-full rounded-lg border border-green-200 bg-white pl-4 pr-8;
+      @apply ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%/var(--tw-ring-opacity))];
+      @apply ring-offset-[rgb(var(--nextra-bg))] dark:border-neutral-800 dark:bg-inherit;
+    }
+    kbd {
+      @apply absolute right-4 top-1/2 my-0 -translate-y-1/2 border-none bg-green-200 dark:bg-neutral-700;
+    }
+  }
+}
 @media (max-width: 767px) {
   :root {
     --nextra-navbar-height: 64px;

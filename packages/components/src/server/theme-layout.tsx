@@ -1,4 +1,4 @@
-import { ComponentProps, FC, ReactNode } from 'react';
+import { ComponentProps, FC, ReactElement, ReactNode } from 'react';
 import { Metadata } from 'next';
 import { PageMapItem } from 'nextra';
 import { Layout, Navbar } from 'nextra-theme-docs';
@@ -74,6 +74,7 @@ export const GuildLayout: FC<{
    */
   navbarProps: NavbarProps;
   pageMap?: PageMapItem[];
+  search?: ReactElement;
 }> = async ({
   children,
   websiteName,
@@ -83,6 +84,7 @@ export const GuildLayout: FC<{
   logo,
   layoutProps,
   navbarProps,
+  search,
   ...props
 }) => {
   const [meta, ...pageMap] = props.pageMap || (await getPageMap());
@@ -128,11 +130,13 @@ export const GuildLayout: FC<{
               description={description}
             />
           }
+          search={search}
           navbar={
             <HiveNavigation
               className="max-w-[90rem]"
               productName={websiteName}
               navLinks={[]}
+              search={search}
               {...navbarProps}
               logo={
                 <Anchor

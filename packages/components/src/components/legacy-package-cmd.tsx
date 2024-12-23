@@ -76,7 +76,7 @@ export const LegacyPackageCmd = ({
           <Pre data-filename="Terminal" data-copy="" data-language="sh" data-theme="default">
             <code>
               {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-              <span className="line">{commands[index]}</span>
+              <span className="line mx-4">{commands[index]}</span>
             </code>
           </Pre>
         </Tabs.Tab>
