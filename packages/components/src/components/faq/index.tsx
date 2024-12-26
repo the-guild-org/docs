@@ -90,7 +90,7 @@ const AccordionItem: FC<ComponentPropsWithoutRef<'li'>> = props => {
     <RadixAccordion.Item
       asChild
       value={question}
-      className="rdx-state-open:pb-4 relative pb-0 focus-within:z-10"
+      className="data-[state=open]:pb-4 relative pb-0 focus-within:z-10"
       itemScope
       itemProp="mainEntity"
       itemType="https://schema.org/Question"
