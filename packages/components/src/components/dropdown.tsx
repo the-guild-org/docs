@@ -24,9 +24,10 @@ function useDropdownContext() {
 
 interface DropdownProps extends React.ComponentPropsWithoutRef<'div'> {
   children: React.ReactNode;
+  type: 'hover' | 'click';
 }
 
-export function Dropdown({ children, className, ...props }: DropdownProps) {
+export function Dropdown({ children, className, type, ...props }: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
 
@@ -84,20 +85,22 @@ export function Dropdown({ children, className, ...props }: DropdownProps) {
     >
       <div
         className={cn('relative', className)}
-        onPointerEnter={() => {
-          setIsOpen(true);
-          setIsHovering(true);
-        }}
-        onPointerLeave={() => {
-          if (isHovering) {
-            setIsHovering(false);
-            setTimeout(() => {
-              if (!isHoveringRef.current) {
-                setIsOpen(false);
-              }
-            }, dismissDelayMs);
-          }
-        }}
+        {...(type === 'hover' && {
+          onPointerEnter: () => {
+            setIsOpen(true);
+            setIsHovering(true);
+          },
+          onPointerLeave: () => {
+            if (isHovering) {
+              setIsHovering(false);
+              setTimeout(() => {
+                if (!isHoveringRef.current) {
+                  setIsOpen(false);
+                }
+              }, dismissDelayMs);
+            }
+          },
+        })}
         {...props}
       >
         {children}
@@ -124,7 +127,7 @@ export function DropdownTrigger({ children, className, ...props }: DropdownTrigg
         setIsOpen(true);
         setIsHovering(false);
       }}
-      className={cn(className)}
+      className={cn('cursor-pointer', className)}
       {...props}
     >
       {children}
