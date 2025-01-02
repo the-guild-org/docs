@@ -1,55 +1,45 @@
+import { ComponentProps, FC } from 'react';
 import { cn } from '@theguild/components';
 
-export interface TableProps extends React.HTMLAttributes<HTMLTableElement> {}
-
-export function Table({ children, className, ...rest }: TableProps) {
+const Table: FC<ComponentProps<'table'>> = ({ className, ...props }) => {
   return (
-    <div className={cn('w-fit overflow-hidden rounded-3xl border border-green-200', className)}>
-      <table className="w-fit sm:w-full" {...rest}>
-        {children}
-      </table>
-    </div>
-  );
-}
-
-export interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
-  highlight?: boolean;
-}
-
-export function TableRow({ highlight, className, ...rest }: TableRowProps) {
-  return (
-    <tr
+    <table
       className={cn(
-        'bg-white [&:first-child>*]:border-t-0 [&:last-child>*]:border-b-0',
-        highlight && 'bg-green-100',
+        'x:block x:overflow-x-auto overflow-x-auto rounded-2xl border border-green-200',
         className,
       )}
-      {...rest}
-    >
-      {rest.children}
-    </tr>
+      {...props}
+    />
   );
-}
+};
 
-const cellStyle =
-  'p-4 border-green-200 border [&:first-child]:border-l-0 [&:last-child]:border-r-0';
+const TableRow: FC<ComponentProps<'tr'> & { highlight?: boolean }> = ({
+  highlight,
+  className,
+  ...props
+}) => {
+  return <tr className={cn(highlight && 'bg-green-100', className)} {...props} />;
+};
 
-export interface TableHeaderProps extends React.HTMLAttributes<HTMLTableCellElement> {}
+const cellStyle = cn(
+  'border border-green-200 p-4 first:border-l-0 last:border-r-0',
+  '[tbody_&]:border-b-0 [thead_&]:border-t-0',
+  'first:sticky',
+  'first:left-0',
+  'first:drop-shadow-2xl',
+  'first:bg-[rgb(var(--nextra-bg))]',
+);
 
-export function TableHeader({ children, className, ...rest }: TableHeaderProps) {
-  return (
-    <th className={cn(cellStyle, 'font-medium', className)} {...rest}>
-      {children}
-    </th>
-  );
-}
+const TableHeader: FC<ComponentProps<'th'>> = ({ className, ...props }) => {
+  return <th className={cn(cellStyle, 'font-medium', className)} {...props} />;
+};
 
-export interface TableCellProps extends React.HTMLAttributes<HTMLTableCellElement> {}
+const TableCell: FC<ComponentProps<'td'>> = ({ className, ...props }) => {
+  return <td className={cn(cellStyle, className)} {...props} />;
+};
 
-export function TableCell({ children, className, ...rest }: TableCellProps) {
-  return (
-    <td className={cn(cellStyle, className)} {...rest}>
-      {children}
-    </td>
-  );
-}
+export const ComparisonTable = Object.assign(Table, {
+  Row: TableRow,
+  Header: TableHeader,
+  Cell: TableCell,
+});
