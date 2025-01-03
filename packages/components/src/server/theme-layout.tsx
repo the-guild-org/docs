@@ -1,4 +1,4 @@
-import { ComponentProps, FC, ReactNode } from 'react';
+import { ComponentProps, FC, ReactElement, ReactNode } from 'react';
 import { Metadata } from 'next';
 import { PageMapItem } from 'nextra';
 import { Layout, Navbar } from 'nextra-theme-docs';
@@ -9,6 +9,7 @@ import { HiveFooter } from '../components/hive-footer';
 import { HiveNavigation } from '../components/hive-navigation';
 import { siteOrigin, siteUrl } from '../constants';
 import { PRODUCTS } from '../products';
+import { Body } from './body';
 
 type LP = ComponentProps<typeof Layout>;
 
@@ -74,6 +75,8 @@ export const GuildLayout: FC<{
    */
   navbarProps: NavbarProps;
   pageMap?: PageMapItem[];
+  search?: ReactElement;
+  lightOnlyPages: ComponentProps<typeof Body>['lightOnlyPages'];
 }> = async ({
   children,
   websiteName,
@@ -83,6 +86,8 @@ export const GuildLayout: FC<{
   logo,
   layoutProps,
   navbarProps,
+  search,
+  lightOnlyPages,
   ...props
 }) => {
   const [meta, ...pageMap] = props.pageMap || (await getPageMap());
@@ -112,8 +117,32 @@ export const GuildLayout: FC<{
       suppressHydrationWarning
       {...htmlProps}
     >
-      <Head {...headProps} />
-      <body>
+      <Head
+        backgroundColor={{ dark: '#111111', light: '#ffffff' }}
+        color={{
+          hue: { dark: 67.1, light: 191 },
+          saturation: { dark: 100, light: 40 },
+          lightness: { dark: 55, light: 35 },
+        }}
+        {...headProps}
+      >
+        <style>{`
+          ::selection {
+            background: hsl(var(--nextra-primary-hue)var(--nextra-primary-saturation)var(--nextra-primary-lightness)/.25) !important;
+          }
+          .dark:has(body.light) {
+            --nextra-primary-hue: 191deg;
+            --nextra-primary-saturation: 40%;
+            --nextra-primary-lightness: 35%;
+            --nextra-bg: 255, 255, 255;
+          }
+          .x\\:tracking-tight,
+          .nextra-steps :is(h2, h3, h4) {
+            letter-spacing: normal;
+          }
+        `}</style>
+      </Head>
+      <Body lightOnlyPages={lightOnlyPages}>
         <Layout
           footer={
             <HiveFooter
@@ -128,11 +157,13 @@ export const GuildLayout: FC<{
               description={description}
             />
           }
+          search={search}
           navbar={
             <HiveNavigation
               className="max-w-[90rem]"
               productName={websiteName}
               navLinks={[]}
+              search={search}
               {...navbarProps}
               logo={
                 <Anchor
@@ -159,7 +190,7 @@ export const GuildLayout: FC<{
         >
           {children}
         </Layout>
-      </body>
+      </Body>
     </html>
   );
 };

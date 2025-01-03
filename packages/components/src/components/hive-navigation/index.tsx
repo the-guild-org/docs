@@ -5,6 +5,7 @@ import React, {
   FC,
   forwardRef,
   Fragment,
+  ReactElement,
   ReactNode,
   useEffect,
   useRef,
@@ -55,6 +56,7 @@ export type HiveNavigationProps = {
   logo?: ReactNode;
   navLinks?: { href: string; children: ReactNode }[];
   developerMenu: DeveloperMenuProps['developerMenu'];
+  search?: ReactElement;
   searchProps?: ComponentProps<typeof Search>;
 };
 
@@ -83,7 +85,7 @@ export function HiveNavigation({
     },
   ],
   developerMenu,
-  searchProps,
+  search = <Search />,
 }: HiveNavigationProps) {
   const containerRef = useRef<HTMLDivElement>(null!);
 
@@ -152,10 +154,7 @@ export function HiveNavigation({
 
         {children}
 
-        <Search
-          className="relative ml-4 basis-64 [&_:is(input,kbd)]:text-green-700 dark:[&_:is(input,kbd)]:text-neutral-300 [&_input]:h-12 [&_input]:w-full [&_input]:rounded-lg [&_input]:border [&_input]:border-green-200 [&_input]:bg-white [&_input]:pl-4 [&_input]:pr-8 [&_input]:ring-[hsl(var(--nextra-primary-hue)_var(--nextra-primary-saturation)_32%/var(--tw-ring-opacity))] [&_input]:ring-offset-[rgb(var(--nextra-bg))] dark:[&_input]:border-neutral-800 [&_input]:dark:bg-inherit [&_kbd]:absolute [&_kbd]:right-4 [&_kbd]:top-1/2 [&_kbd]:my-0 [&_kbd]:-translate-y-1/2 [&_kbd]:border-none [&_kbd]:bg-green-200 dark:[&_kbd]:bg-neutral-700"
-          {...searchProps}
-        />
+        {search}
 
         <CallToAction
           className="ml-4 max-lg:hidden"

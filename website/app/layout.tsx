@@ -56,6 +56,7 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
           },
         ],
       }}
+      lightOnlyPages={['/']}
     >
       {children}
     </GuildLayout>

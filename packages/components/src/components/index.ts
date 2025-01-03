@@ -31,3 +31,5 @@ export * from './contact-us';
 export { Giscus } from './giscus';
 export * from './version-dropdown';
 export * from './dropdown';
+export { FrequentlyAskedQuestions } from './faq/index.js';
+export { ComparisonTable } from './comparison-table/index.js';
