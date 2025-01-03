@@ -1,5 +1,35 @@
 # @theguild/components
 
+## 7.5.0
+
+### Minor Changes
+
+- [#1939](https://github.com/the-guild-org/docs/pull/1939)
+  [`c4e2896`](https://github.com/the-guild-org/docs/commit/c4e2896771d8f450991eec65cd8170a48fddd34e)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add VersionDropdown component
+
+### Patch Changes
+
+- [#1869](https://github.com/the-guild-org/docs/pull/1869)
+  [`1c3c16b`](https://github.com/the-guild-org/docs/commit/1c3c16bbf73b29b7987f0223691ad5d1841ef084)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@15.1.0` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/15.1.0)
+    (from `15.0.4`, in `dependencies`)
+
+- [#1880](https://github.com/the-guild-org/docs/pull/1880)
+  [`bbf19c8`](https://github.com/the-guild-org/docs/commit/bbf19c8747b631c8b8b192f402d0a57eb596ee68)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@theguild/tailwind-config@0.6.2` ↗︎](https://www.npmjs.com/package/@theguild/tailwind-config/v/0.6.2)
+    (from `0.6.1`, in `peerDependencies`)
+
+- [#1871](https://github.com/the-guild-org/docs/pull/1871)
+  [`d6b498d`](https://github.com/the-guild-org/docs/commit/d6b498d0dfb9e2c3b86386c9ece34680c2ae5db9)
+  Thanks [@hasparus](https://github.com/hasparus)! - Change links to point to /ecosystem page
+
 ## 7.4.0
 
 ### Minor Changes
