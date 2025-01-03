@@ -74,10 +74,10 @@ export const Default: StoryObj = {
     developerMenu: HIVE_DEVELOPER_MENU,
     children: (
       <VersionDropdown
-        currentVersion="v1"
+        currentVersion="1.x"
         versions={[
-          { label: 'Hive v1 Docs', href: '#v1', value: 'v1' },
-          { label: 'Hive v2 Docs', href: '#v2', value: 'v2' },
+          { label: 'Hive v1 Docs', href: '#v1', value: '1.x' },
+          { label: 'Hive v2 Docs', href: '#v2', value: '2.x' },
         ]}
       />
     ),
