@@ -117,21 +117,23 @@ export const GuildLayout: FC<{
       suppressHydrationWarning
       {...htmlProps}
     >
-      <Head {...headProps}>
+      <Head
+        backgroundColor={{ dark: '#111111', light: '#ffffff' }}
+        color={{
+          hue: { dark: 67.1, light: 191 },
+          saturation: { dark: 100, light: 40 },
+          lightness: { dark: 55, light: 35 },
+        }}
+        {...headProps}
+      >
         <style>{`
-          :root.dark {
-            --nextra-primary-hue: 67.1deg;
-            --nextra-primary-saturation: 100%;
-            --nextra-primary-lightness: 55%;
-            --nextra-bg: 17, 17, 17;
+          ::selection {
+            background: hsl(var(--nextra-primary-hue)var(--nextra-primary-saturation)var(--nextra-primary-lightness)/.25) !important;
           }
-          :root.dark *::selection {
-            background-color: hsl(191deg 95% 72% / 0.25);
-          }
-          :root.light,
-          body.light {
+          .dark:has(body.light) {
             --nextra-primary-hue: 191deg;
             --nextra-primary-saturation: 40%;
+            --nextra-primary-lightness: 35%;
             --nextra-bg: 255, 255, 255;
           }
           .x\\:tracking-tight,
