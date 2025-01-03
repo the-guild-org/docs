@@ -1,4 +1,4 @@
-import { Meta, StoryContext, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 import { siteOrigin } from '../../constants';
 import { PRODUCTS } from '../../products';
@@ -11,6 +11,7 @@ import {
   RightCornerIcon,
   TargetIcon,
 } from '../icons';
+import { VersionDropdown } from '../version-dropdown';
 import { GraphQLConfCard } from './graphql-conf-card';
 import {
   CompanyMenu,
@@ -52,7 +53,7 @@ const HIVE_DEVELOPER_MENU: HiveNavigationProps['developerMenu'] = [
 export default {
   title: 'Hive/HiveNavigation',
   component: HiveNavigation,
-  decorators: [hiveThemeDecorator, nextraThemeDocsCtxDecorator],
+  decorators: [hiveThemeDecorator],
   args: {
     productName: 'Hive',
     developerMenu: HIVE_DEVELOPER_MENU,
@@ -71,6 +72,15 @@ export const Default: StoryObj = {
   ],
   args: {
     developerMenu: HIVE_DEVELOPER_MENU,
+    children: (
+      <VersionDropdown
+        currentVersion="1.x"
+        versions={[
+          { label: 'Hive v1 Docs', href: '#v1', value: '1.x' },
+          { label: 'Hive v2 Docs', href: '#v2', value: '2.x' },
+        ]}
+      />
+    ),
   },
 };
 
@@ -215,7 +225,3 @@ export const CodegenNavmenu: StoryObj<HiveNavigationProps> = {
     ),
   },
 };
-
-function nextraThemeDocsCtxDecorator(Story: () => React.ReactNode, _ctx: StoryContext) {
-  return <Story />;
-}
