@@ -1,5 +1,47 @@
 # @theguild/components
 
+## 8.2.0
+
+### Minor Changes
+
+- [#1888](https://github.com/the-guild-org/docs/pull/1888)
+  [`61f0089`](https://github.com/the-guild-org/docs/commit/61f00892b5a1d1941dd93516ae07a90025058e20)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add VersionDropdown component
+
+### Patch Changes
+
+- [#1912](https://github.com/the-guild-org/docs/pull/1912)
+  [`093624f`](https://github.com/the-guild-org/docs/commit/093624f574f03a846947721681223713e83580aa)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@15.1.3` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/15.1.3)
+    (from `15.1.1`, in `dependencies`)
+
+- [#1930](https://github.com/the-guild-org/docs/pull/1930)
+  [`0577a0b`](https://github.com/the-guild-org/docs/commit/0577a0b4470e8a6fb44866a658fad9a899050ee1)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`nextra@4.0.0-app-router.42` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.0) (from
+    `4.0.0-app-router.39`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@4.0.0-app-router.42` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.0)
+    (from `4.0.0-app-router.39`, in `dependencies`)
+
+- [#1936](https://github.com/the-guild-org/docs/pull/1936)
+  [`d8f2d9b`](https://github.com/the-guild-org/docs/commit/d8f2d9b2fb12c2f647ef008ecc938c8ed323a21d)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@giscus/react@3.1.0` ↗︎](https://www.npmjs.com/package/@giscus/react/v/3.1.0) (from `3.0.0`,
+    in `dependencies`)
+
+- [#1908](https://github.com/the-guild-org/docs/pull/1908)
+  [`6fc6c30`](https://github.com/the-guild-org/docs/commit/6fc6c30f2d446b7d3f07f3daf5a5ea3f8b944bd8)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - exports `convertToPageMap`,
+  `mergeMetaWithPageMap`, `normalizePageMap`, `evaluate` from nextra
+
 ## 8.1.2
 
 ### Patch Changes
