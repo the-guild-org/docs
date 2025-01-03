@@ -21,7 +21,7 @@ export const Default: StoryObj<typeof ProductCard> = {
   name: 'ProductCard',
   render() {
     return (
-      <ul className="mt-5 grid grid-cols-4 gap-5 overflow-x-auto p-4 last-of-type:mb-24">
+      <ul className="mt-5 grid grid-cols-1 gap-5 overflow-x-auto p-4 last-of-type:mb-24 sm:grid-cols-4">
         {productsLexicographically.map(product => (
           <ProductCard as="li" key={product.name} product={product} />
         ))}
