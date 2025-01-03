@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useContext, useEffect, useId, useRef, useState } from 'react';
 import { cn } from '../cn';
 
