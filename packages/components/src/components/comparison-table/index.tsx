@@ -5,7 +5,7 @@ const Table: FC<ComponentProps<'table'>> = ({ className, ...props }) => {
   return (
     <table
       className={cn(
-        'x:block x:overflow-x-auto overflow-x-auto rounded-2xl border border-green-200 nextra-scrollbar',
+        'x:block x:overflow-x-auto nextra-scrollbar overflow-x-auto rounded-2xl border border-green-200',
         className,
       )}
       {...props}

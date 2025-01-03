@@ -71,6 +71,7 @@ const AccordionItem: FC<ComponentPropsWithoutRef<'li'>> = props => {
   }
 
   if (texts.length < 2) {
+    // eslint-disable-next-line no-console
     console.error(texts);
     throw new Error(`Expected a question and an answer, got ${texts.length} items`);
   }
@@ -90,7 +91,7 @@ const AccordionItem: FC<ComponentPropsWithoutRef<'li'>> = props => {
     <RadixAccordion.Item
       asChild
       value={question}
-      className="data-[state=open]:pb-4 relative pb-0 focus-within:z-10"
+      className="relative pb-0 focus-within:z-10 data-[state=open]:pb-4"
       itemScope
       itemProp="mainEntity"
       itemType="https://schema.org/Question"
