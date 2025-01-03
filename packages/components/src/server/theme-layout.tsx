@@ -1,5 +1,6 @@
 import { ComponentProps, FC, ReactNode } from 'react';
 import { Metadata } from 'next';
+import { PageMapItem } from 'nextra';
 import { Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
@@ -72,6 +73,7 @@ export const GuildLayout: FC<{
    * Nextra's Docs Theme `<Navbar>` component props
    */
   navbarProps: NavbarProps;
+  pageMap?: PageMapItem[];
 }> = async ({
   children,
   websiteName,
@@ -81,8 +83,9 @@ export const GuildLayout: FC<{
   logo,
   layoutProps,
   navbarProps,
+  ...props
 }) => {
-  const [meta, ...pageMap] = await getPageMap();
+  const [meta, ...pageMap] = props.pageMap || (await getPageMap());
 
   const pageMapWithCompanyMenu = [
     {
@@ -183,12 +186,6 @@ export function getDefaultMetadata({
       site: 'https://the-guild.dev',
       creator: '@TheGuildDev',
     },
-    openGraph: {
-      siteName: websiteName,
-      type: 'website',
-      images: `https://og-image.the-guild.dev/?product=${productName}`,
-      url: siteUrl,
-    },
     applicationName: websiteName,
     appleWebApp: {
       title: websiteName,
@@ -198,8 +195,19 @@ export function getDefaultMetadata({
       follow: true,
     },
     alternates: {
-      canonical: siteUrl,
+      // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632
+      canonical: './',
     },
+    metadataBase: new URL(siteUrl!),
     ...additionalMetadata,
+    openGraph: {
+      siteName: websiteName,
+      type: 'website',
+      images: `https://og-image.the-guild.dev/?product=${productName}`,
+      // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632
+      url: './',
+      locale: 'en_US',
+      ...additionalMetadata.openGraph,
+    },
   };
 }
