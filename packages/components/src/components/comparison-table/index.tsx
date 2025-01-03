@@ -5,7 +5,7 @@ const Table: FC<ComponentProps<'table'>> = ({ className, ...props }) => {
   return (
     <table
       className={cn(
-        'x:block x:overflow-x-auto overflow-x-auto rounded-2xl border border-green-200',
+        'x:block x:overflow-x-auto overflow-x-auto rounded-2xl border border-green-200 nextra-scrollbar',
         className,
       )}
       {...props}
@@ -26,7 +26,7 @@ const cellStyle = cn(
   '[tbody_&]:border-b-0 [thead_&]:border-t-0',
   'first:sticky',
   'first:left-0',
-  'first:drop-shadow-2xl',
+  'max-sm:first:drop-shadow-2xl',
   'first:bg-[rgb(var(--nextra-bg))]',
 );
 

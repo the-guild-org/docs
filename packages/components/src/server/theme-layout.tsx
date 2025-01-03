@@ -9,6 +9,7 @@ import { HiveFooter } from '../components/hive-footer';
 import { HiveNavigation } from '../components/hive-navigation';
 import { siteOrigin, siteUrl } from '../constants';
 import { PRODUCTS } from '../products';
+import { Body } from './body';
 
 type LP = ComponentProps<typeof Layout>;
 
@@ -75,6 +76,7 @@ export const GuildLayout: FC<{
   navbarProps: NavbarProps;
   pageMap?: PageMapItem[];
   search?: ReactElement;
+  lightOnlyPages: ComponentProps<typeof Body>['lightOnlyPages'];
 }> = async ({
   children,
   websiteName,
@@ -85,6 +87,7 @@ export const GuildLayout: FC<{
   layoutProps,
   navbarProps,
   search,
+  lightOnlyPages,
   ...props
 }) => {
   const [meta, ...pageMap] = props.pageMap || (await getPageMap());
@@ -114,8 +117,30 @@ export const GuildLayout: FC<{
       suppressHydrationWarning
       {...htmlProps}
     >
-      <Head {...headProps} />
-      <body>
+      <Head {...headProps}>
+        <style>{`
+          :root.dark {
+            --nextra-primary-hue: 67.1deg;
+            --nextra-primary-saturation: 100%;
+            --nextra-primary-lightness: 55%;
+            --nextra-bg: 17, 17, 17;
+          }
+          :root.dark *::selection {
+            background-color: hsl(191deg 95% 72% / 0.25);
+          }
+          :root.light,
+          body.light {
+            --nextra-primary-hue: 191deg;
+            --nextra-primary-saturation: 40%;
+            --nextra-bg: 255, 255, 255;
+          }
+          .x\\:tracking-tight,
+          .nextra-steps :is(h2, h3, h4) {
+            letter-spacing: normal;
+          }
+        `}</style>
+      </Head>
+      <Body lightOnlyPages={lightOnlyPages}>
         <Layout
           footer={
             <HiveFooter
@@ -163,7 +188,7 @@ export const GuildLayout: FC<{
         >
           {children}
         </Layout>
-      </body>
+      </Body>
     </html>
   );
 };
