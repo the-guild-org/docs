@@ -35,7 +35,7 @@ export function VersionDropdown({
             onClick={version.onClick}
             className={cn(
               'flex items-center justify-between gap-1 whitespace-nowrap rounded p-2 text-green-800 transition-colors hover:bg-beige-100 hover:text-green-1000 dark:text-neutral-300 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-100',
-              version.value === currentVersion && 'pointer-events-none font-medium',
+              version.value === currentVersion && 'font-medium',
             )}
           >
             {version.label ?? version.value}{' '}
