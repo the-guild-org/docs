@@ -127,8 +127,8 @@ export const GuildLayout: FC<{
         {...headProps}
       >
         <style>{`
-          ::selection {
-            background: hsla(var(--nextra-primary-hue)var(--nextra-primary-saturation)var(--nextra-primary-lightness)/.7) !important;
+          .dark:has(body.light) ::selection {
+            background: hsl(var(--nextra-primary-hue)var(--nextra-primary-saturation)calc(var(--nextra-primary-lightness) + 41%));
           }
           .dark:has(body.light) {
             --nextra-primary-hue: 171deg;
