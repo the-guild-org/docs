@@ -264,8 +264,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1
       satori:
-        specifier: 0.12.0
-        version: 0.12.0
+        specifier: 0.12.1
+        version: 0.12.1
       yoga-wasm-web:
         specifier: 0.3.3
         version: 0.3.3
@@ -7261,8 +7261,8 @@ packages:
       sass-embedded:
         optional: true
 
-  satori@0.12.0:
-    resolution: {integrity: sha512-e0e+qQyeFwEszujN7SpWpRtZgww7Nh8lSO3bUn2spHZ5JpqEl3zJ3P14/JlWruxEwdgREs35ZnavrPrWaRVFDg==}
+  satori@0.12.1:
+    resolution: {integrity: sha512-0SbjchvDrDbeXeQgxWVtSWxww7qcFgk3DtSE2/blHOSlLsSHwIqO2fCrtVa/EudJ7Eqno8A33QNx56rUyGbLuw==}
     engines: {node: '>=16'}
 
   scheduler@0.23.2:
@@ -16905,7 +16905,7 @@ snapshots:
       neo-async: 2.6.2
       webpack: 5.97.1(esbuild@0.24.2)
 
-  satori@0.12.0:
+  satori@0.12.1:
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
       css-background-parser: 0.1.0
