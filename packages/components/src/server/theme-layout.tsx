@@ -131,9 +131,9 @@ export const GuildLayout: FC<{
             background: hsl(var(--nextra-primary-hue)var(--nextra-primary-saturation)var(--nextra-primary-lightness)/.7) !important;
           }
           .dark:has(body.light) {
-            --nextra-primary-hue: 191deg;
-            --nextra-primary-saturation: 40%;
-            --nextra-primary-lightness: 35%;
+            --nextra-primary-hue: 171deg;
+            --nextra-primary-saturation: 42%;
+            --nextra-primary-lightness: 24%;
             --nextra-bg: 255, 255, 255;
           }
           .x\\:tracking-tight,
