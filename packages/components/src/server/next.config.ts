@@ -72,7 +72,7 @@ const rehypeCheckFrontMatter: Plugin<[], any> = () => (ast, file) => {
   }
 };
 
-export const defaultNextraOptions: NextraConfig = {
+export const defaultNextraOptions = {
   defaultShowCopyCode: true,
   whiteListTagsStyling: ['iframe', 'video', 'source'],
   search: {
@@ -83,7 +83,7 @@ export const defaultNextraOptions: NextraConfig = {
     // Should be rehype since frontMatter is attached in remark plugins
     rehypePlugins: process.env.NODE_ENV === 'production' ? [rehypeCheckFrontMatter] : [],
   },
-};
+} satisfies NextraConfig;
 
 // this won't be emitted if it's inline in parens
 export interface WithGuildDocsOptions extends NextConfig {
