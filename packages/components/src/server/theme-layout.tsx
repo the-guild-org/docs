@@ -9,7 +9,7 @@ import { HiveFooter } from '../components/hive-footer';
 import { HiveNavigation } from '../components/hive-navigation';
 import { siteOrigin, siteUrl } from '../constants';
 import { PRODUCTS } from '../products';
-import { Body } from './body';
+import { Body } from './body.client';
 
 type LP = ComponentProps<typeof Layout>;
 
