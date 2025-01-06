@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import { cn } from '../../cn';
 import { FOUR_MAIN_PRODUCTS, ProductInfo, PRODUCTS } from '../../products';
 import { HighlightDecoration } from '../decorations';
@@ -19,12 +20,13 @@ export function MainProductCard({ as: Root, product, className, ...rest }: Produ
   const Icon = product.logo;
 
   const isHive = product.name === PRODUCTS.HIVE.name;
+  const id = useId();
 
   return (
     <Root
       className={cn(
-        'hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 max-md:w-[283.5px]',
-        isHive && 'bg-green-1000 text-white',
+        'hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl max-md:w-[283.5px]',
+        isHive ? 'bg-green-1000 text-white' : 'bg-blue-400 text-green-1000',
         className,
       )}
       {...rest}
@@ -40,11 +42,31 @@ export function MainProductCard({ as: Root, product, className, ...rest }: Produ
       <Decoration
         strokeWidth="0.5px"
         className={cn(
-          'pointer-events-none absolute bottom-0 right-0 h-full fill-blue-200 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100',
-          isHive && 'fill-blue-700',
+          'stroke-white/70',
+          'pointer-events-none absolute bottom-0 right-0 h-full opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100',
         )}
-        preserveAspectRatio="xMidYMid meet"
+        fill={`url(#${id})`}
       />
+      <svg
+        // To remove from layout, but we can't use `display: none` because it breaks the gradient
+        className="size-0"
+      >
+        <defs>
+          <linearGradient id={id} x1="1" y1="2" x2="161" y2="171" gradientUnits="userSpaceOnUse">
+            {isHive ? (
+              <>
+                <stop stop-color="#3b736a" />
+                <stop offset="1" stop-color="#245850" />
+              </>
+            ) : (
+              <>
+                <stop stopColor="white" stopOpacity="0.1" />
+                <stop offset="1" stopColor="white" stopOpacity="0.4" />
+              </>
+            )}
+          </linearGradient>
+        </defs>
+      </svg>
       <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-focus-within:opacity-100 group-hover:opacity-100" />
     </Root>
   );
