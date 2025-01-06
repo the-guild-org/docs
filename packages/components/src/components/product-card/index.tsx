@@ -55,8 +55,8 @@ export function MainProductCard({ as: Root, product, className, ...rest }: Produ
           <linearGradient id={id} x1="1" y1="2" x2="161" y2="171" gradientUnits="userSpaceOnUse">
             {isHive ? (
               <>
-                <stop stop-color="#3b736a" />
-                <stop offset="1" stop-color="#245850" />
+                <stop stopColor="#3b736a" />
+                <stop offset="1" stopColor="#245850" />
               </>
             ) : (
               <>
