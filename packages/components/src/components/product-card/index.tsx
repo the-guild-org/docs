@@ -2,9 +2,9 @@ import { cn } from '../../cn';
 import { FOUR_MAIN_PRODUCTS, ProductInfo, PRODUCTS } from '../../products';
 import { HighlightDecoration } from '../decorations';
 import { ArrowIcon } from '../icons';
+import { MeshDecoration } from './mesh-decoration';
 import { ReactComponent as HiveDecoration } from './hive-decoration.svg';
 import { ReactComponent as HiveGatewayDecoration } from './hive-gateway-decoration.svg';
-import { ReactComponent as MeshDecoration } from './mesh-decoration.svg';
 import { ReactComponent as YogaDecoration } from './yoga-decoration.svg';
 
 const cardDecorations = {
