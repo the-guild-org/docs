@@ -11,5 +11,5 @@ export const Body: FC<{
 
   const isLightOnlyPage = lightOnlyPages.includes(pathname);
 
-  return <body className={isLightOnlyPage ? 'light' : undefined}>{children}</body>;
+  return <body className={isLightOnlyPage ? 'light text-green-1000' : undefined}>{children}</body>;
 };
