@@ -118,17 +118,17 @@ export const GuildLayout: FC<{
       {...htmlProps}
     >
       <Head
-        backgroundColor={{ dark: '#111111', light: '#ffffff' }}
+        backgroundColor={{ dark: '#111', light: '#fff' }}
         color={{
-          hue: { dark: 67.1, light: 191 },
-          saturation: { dark: 100, light: 40 },
-          lightness: { dark: 55, light: 35 },
+          hue: { dark: 67, light: 171 },
+          saturation: { dark: 100, light: 42 },
+          lightness: { dark: 50, light: 24 },
         }}
         {...headProps}
       >
         <style>{`
           ::selection {
-            background: hsl(var(--nextra-primary-hue)var(--nextra-primary-saturation)var(--nextra-primary-lightness)/.25) !important;
+            background: hsl(var(--nextra-primary-hue)var(--nextra-primary-saturation)var(--nextra-primary-lightness)/.7) !important;
           }
           .dark:has(body.light) {
             --nextra-primary-hue: 191deg;

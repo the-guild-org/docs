@@ -2,14 +2,13 @@
 
 import { FC } from 'react';
 import { useTheme } from 'nextra-theme-docs';
-import { default as _Giscus, GiscusProps } from '@giscus/react';
+import { default as Giscus_, GiscusProps } from '@giscus/react';
 
-export const Giscus: FC<GiscusProps> = props => {
+export const Giscus: FC<
+  Omit<GiscusProps, 'mapping'> & {
+    mapping?: GiscusProps['mapping'];
+  }
+> = props => {
   const { resolvedTheme } = useTheme();
-  return (
-    <>
-      <br />
-      <_Giscus theme={resolvedTheme} {...props} />
-    </>
-  );
+  return <Giscus_ theme={resolvedTheme} mapping="pathname" {...props} />;
 };
