@@ -1,0 +1,13 @@
+{
+  "mode": "pre",
+  "tag": "rc",
+  "initialVersions": {
+    "@theguild/components": "8.2.0",
+    "@theguild/editor": "1.3.10",
+    "@theguild/og-image": "0.0.0",
+    "@theguild/remark-mermaid": "0.2.0",
+    "@theguild/remark-npm2yarn": "0.3.3",
+    "website": "0.0.0"
+  },
+  "changesets": []
+}
