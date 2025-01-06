@@ -1,6 +1,6 @@
 import { cn } from '../../cn';
 import { FOUR_MAIN_PRODUCTS, ProductInfo, PRODUCTS } from '../../products';
-import { HighlightDecoration } from '../decorations';
+import { DecorationIsolation, HighlightDecoration } from '../decorations';
 import { ArrowIcon } from '../icons';
 import { ReactComponent as HiveDecoration } from './hive-decoration.svg';
 import { ReactComponent as HiveGatewayDecoration } from './hive-gateway-decoration.svg';
@@ -23,7 +23,7 @@ export function MainProductCard({ as: Root, product, className, ...rest }: Produ
   return (
     <Root
       className={cn(
-        'hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 max-md:w-[283.5px]',
+        'hive-focus-within group flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl bg-blue-400 text-green-1000 max-md:min-w-[283.5px]',
         isHive && 'bg-green-1000 text-white',
         className,
       )}
@@ -36,16 +36,18 @@ export function MainProductCard({ as: Root, product, className, ...rest }: Produ
         <p className="font-medium">{product.name}</p>
         <Icon className="mt-8" />
         <ArrowIcon className="absolute bottom-8 right-8" />
+        <DecorationIsolation>
+          <Decoration
+            strokeWidth="0.5px"
+            className={cn(
+              'pointer-events-none absolute bottom-0 right-0 h-full fill-blue-200 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100',
+              isHive && 'fill-blue-700',
+            )}
+            preserveAspectRatio="xMidYMid meet"
+          />
+          <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-focus-within:opacity-100 group-hover:opacity-100" />
+        </DecorationIsolation>
       </a>
-      <Decoration
-        strokeWidth="0.5px"
-        className={cn(
-          'pointer-events-none absolute bottom-0 right-0 h-full fill-blue-200 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100',
-          isHive && 'fill-blue-700',
-        )}
-        preserveAspectRatio="xMidYMid meet"
-      />
-      <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-focus-within:opacity-100 group-hover:opacity-100" />
     </Root>
   );
 }
