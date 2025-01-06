@@ -62,13 +62,15 @@
     "react-paginate": "8.2.0",
     "react-player": "2.16.0",
     "semver": "^7.3.8",
-    "tailwind-merge": "^2.5.2"
+    "tailwind-merge": "^2.5.2",
+    "unist-util-visit": "5.0.0"
   },
   "devDependencies": {
     "@svgr/plugin-svgo": "^8.1.0",
     "@theguild/editor": "workspace:*",
     "@theguild/tailwind-config": "0.6.2",
     "@types/dedent": "0.7.2",
+    "@types/mdast": "4.0.4",
     "@types/react": "18.3.18",
     "@types/react-dom": "18.3.5",
     "@types/semver": "7.5.8",
