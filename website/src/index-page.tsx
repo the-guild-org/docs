@@ -1,8 +1,17 @@
-import { HeroGradient, HeroVideo, InfoList, NPMBadge } from '@theguild/components';
+import {
+  ExploreMainProductCards,
+  HeroGradient,
+  HeroVideo,
+  InfoList,
+  NPMBadge,
+  ToolsAndLibrariesCards,
+} from '@theguild/components';
 
 export function IndexPage() {
   return (
     <>
+      <ExploreMainProductCards />
+      <ToolsAndLibrariesCards />
       <HeroGradient
         title="The Guild Docs"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at gravida lacus"
