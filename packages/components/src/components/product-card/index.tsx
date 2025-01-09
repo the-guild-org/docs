@@ -1,7 +1,7 @@
 import { useId } from 'react';
 import { cn } from '../../cn';
 import { FOUR_MAIN_PRODUCTS, ProductInfo, PRODUCTS } from '../../products';
-import { HighlightDecoration } from '../decorations';
+import { DecorationIsolation, HighlightDecoration } from '../decorations';
 import { ArrowIcon } from '../icons';
 import { ReactComponent as HiveDecoration } from './hive-decoration.svg';
 import { ReactComponent as HiveGatewayDecoration } from './hive-gateway-decoration.svg';
@@ -25,7 +25,7 @@ export function MainProductCard({ as: Root, product, className, ...rest }: Produ
   return (
     <Root
       className={cn(
-        'hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl max-md:w-[283.5px]',
+        'hive-focus-within group relative flex-1 shrink-0 basis-[283.5px] overflow-hidden rounded-2xl max-md:min-w-[283.5px]',
         isHive ? 'bg-green-1000 text-white' : 'bg-blue-400 text-green-1000',
         className,
       )}
@@ -38,36 +38,45 @@ export function MainProductCard({ as: Root, product, className, ...rest }: Produ
         <p className="font-medium">{product.name}</p>
         <Icon className="mt-8" />
         <ArrowIcon className="absolute bottom-8 right-8" />
-      </a>
-      <Decoration
-        strokeWidth="0.5px"
-        className={cn(
-          'stroke-white/70',
-          'pointer-events-none absolute bottom-0 right-0 h-full opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100',
-        )}
-        fill={`url(#${id})`}
-      />
-      <svg
-        // To remove from layout, but we can't use `display: none` because it breaks the gradient
-        className="size-0"
-      >
-        <defs>
-          <linearGradient id={id} x1="1" y1="2" x2="161" y2="171" gradientUnits="userSpaceOnUse">
-            {isHive ? (
-              <>
-                <stop stopColor="#3b736a" />
-                <stop offset="1" stopColor="#245850" />
-              </>
-            ) : (
-              <>
-                <stop stopColor="white" stopOpacity="0.1" />
-                <stop offset="1" stopColor="white" stopOpacity="0.4" />
-              </>
+        <DecorationIsolation>
+          <Decoration
+            strokeWidth="0.5px"
+            className={cn(
+              'stroke-white/70',
+              'pointer-events-none absolute bottom-0 right-0 h-full opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100',
             )}
-          </linearGradient>
-        </defs>
-      </svg>
-      <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-focus-within:opacity-100 group-hover:opacity-100" />
+            fill={`url(#${id})`}
+          />
+          <svg
+            // To remove from layout, but we can't use `display: none` because it breaks the gradient
+            className="size-0"
+          >
+            <defs>
+              <linearGradient
+                id={id}
+                x1="1"
+                y1="2"
+                x2="161"
+                y2="171"
+                gradientUnits="userSpaceOnUse"
+              >
+                {isHive ? (
+                  <>
+                    <stop stopColor="#3b736a" />
+                    <stop offset="1" stopColor="#245850" />
+                  </>
+                ) : (
+                  <>
+                    <stop stopColor="white" stopOpacity="0.1" />
+                    <stop offset="1" stopColor="white" stopOpacity="0.4" />
+                  </>
+                )}
+              </linearGradient>
+            </defs>
+          </svg>
+          <HighlightDecoration className="pointer-events-none absolute left-0 top-[-15%] h-[150%] w-full opacity-0 transition-opacity duration-1000 group-focus-within:opacity-100 group-hover:opacity-100" />
+        </DecorationIsolation>
+      </a>
     </Root>
   );
 }
