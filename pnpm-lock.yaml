@@ -59,7 +59,7 @@ importers:
         version: 3.0.0(prettier@3.4.2)
       '@theguild/tailwind-config':
         specifier: 0.6.2
-        version: 0.6.2(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.17)
+        version: 0.6.2(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)
       '@types/jest-image-snapshot':
         specifier: 6.4.0
         version: 6.4.0
@@ -97,11 +97,11 @@ importers:
         specifier: 0.4.4
         version: 0.4.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       postcss:
-        specifier: 8.4.49
-        version: 8.4.49
+        specifier: 8.5.0
+        version: 8.5.0
       postcss-loader:
         specifier: 8.1.1
-        version: 8.1.1(postcss@8.4.49)(typescript@5.7.3)(webpack@5.97.1(esbuild@0.24.2))
+        version: 8.1.1(postcss@8.5.0)(typescript@5.7.3)(webpack@5.97.1(esbuild@0.24.2))
       prettier:
         specifier: 3.4.2
         version: 3.4.2
@@ -137,7 +137,7 @@ importers:
         version: 4.2.0
       tsup:
         specifier: 8.3.5
-        version: 8.3.5(patch_hash=sh5kwwsnc5iccgx7xoo5prtbwy)(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
+        version: 8.3.5(patch_hash=sh5kwwsnc5iccgx7xoo5prtbwy)(jiti@1.21.7)(postcss@8.5.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
       tsx:
         specifier: 4.19.2
         version: 4.19.2
@@ -195,7 +195,7 @@ importers:
         version: link:../editor
       '@theguild/tailwind-config':
         specifier: 0.6.2
-        version: 0.6.2(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.17)
+        version: 0.6.2(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)
       '@types/dedent':
         specifier: 0.7.2
         version: 0.7.2
@@ -341,7 +341,7 @@ importers:
     devDependencies:
       '@theguild/tailwind-config':
         specifier: 0.6.2
-        version: 0.6.2(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.17)
+        version: 0.6.2(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)
       '@types/react':
         specifier: 18.3.18
         version: 18.3.18
@@ -6705,8 +6705,8 @@ packages:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postcss@8.4.49:
-    resolution: {integrity: sha512-OCVPnIObs4N29kxTjzLfUryOkvZEq+pf8jTF0lg8E7uETuWHA+v7j3c/xJmiqpX450191LlmZfUKkXxkTry7nA==}
+  postcss@8.5.0:
+    resolution: {integrity: sha512-27VKOqrYfPncKA2NrFOVhP5MGAfHKLYn/Q0mz9cNQyRAKYi3VNHwYU2qKKqPCqgBmeeJ0uAFB56NumXZ5ZReXg==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -10844,8 +10844,8 @@ snapshots:
       next: 15.1.3(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       node-polyfill-webpack-plugin: 2.0.1(webpack@5.97.1(esbuild@0.24.2))
       pnp-webpack-plugin: 1.7.0(typescript@5.7.3)
-      postcss: 8.4.49
-      postcss-loader: 8.1.1(postcss@8.4.49)(typescript@5.7.3)(webpack@5.97.1(esbuild@0.24.2))
+      postcss: 8.5.0
+      postcss-loader: 8.1.1(postcss@8.5.0)(typescript@5.7.3)(webpack@5.97.1(esbuild@0.24.2))
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-refresh: 0.14.2
@@ -11161,11 +11161,11 @@ snapshots:
       - '@vue/compiler-sfc'
       - supports-color
 
-  '@theguild/tailwind-config@0.6.2(postcss-import@15.1.0(postcss@8.4.49))(postcss-lightningcss@1.0.1(postcss@8.4.49))(tailwindcss@3.4.17)':
+  '@theguild/tailwind-config@0.6.2(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)':
     dependencies:
       '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.17)
-      postcss-import: 15.1.0(postcss@8.4.49)
-      postcss-lightningcss: 1.0.1(postcss@8.4.49)
+      postcss-import: 15.1.0(postcss@8.5.0)
+      postcss-lightningcss: 1.0.1(postcss@8.5.0)
       tailwindcss: 3.4.17
 
   '@trysound/sax@0.2.0': {}
@@ -12468,12 +12468,12 @@ snapshots:
 
   css-loader@6.11.0(webpack@5.97.1(esbuild@0.24.2)):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.49)
-      postcss: 8.4.49
-      postcss-modules-extract-imports: 3.1.0(postcss@8.4.49)
-      postcss-modules-local-by-default: 4.2.0(postcss@8.4.49)
-      postcss-modules-scope: 3.2.1(postcss@8.4.49)
-      postcss-modules-values: 4.0.0(postcss@8.4.49)
+      icss-utils: 5.1.0(postcss@8.5.0)
+      postcss: 8.5.0
+      postcss-modules-extract-imports: 3.1.0(postcss@8.5.0)
+      postcss-modules-local-by-default: 4.2.0(postcss@8.5.0)
+      postcss-modules-scope: 3.2.1(postcss@8.5.0)
+      postcss-modules-values: 4.0.0(postcss@8.5.0)
       postcss-value-parser: 4.2.0
       semver: 7.6.3
     optionalDependencies:
@@ -12481,12 +12481,12 @@ snapshots:
 
   css-loader@7.1.2(webpack@5.97.1(esbuild@0.24.2)):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.49)
-      postcss: 8.4.49
-      postcss-modules-extract-imports: 3.1.0(postcss@8.4.49)
-      postcss-modules-local-by-default: 4.2.0(postcss@8.4.49)
-      postcss-modules-scope: 3.2.1(postcss@8.4.49)
-      postcss-modules-values: 4.0.0(postcss@8.4.49)
+      icss-utils: 5.1.0(postcss@8.5.0)
+      postcss: 8.5.0
+      postcss-modules-extract-imports: 3.1.0(postcss@8.5.0)
+      postcss-modules-local-by-default: 4.2.0(postcss@8.5.0)
+      postcss-modules-scope: 3.2.1(postcss@8.5.0)
+      postcss-modules-values: 4.0.0(postcss@8.5.0)
       postcss-value-parser: 4.2.0
       semver: 7.6.3
     optionalDependencies:
@@ -13375,7 +13375,7 @@ snapshots:
   eslint-plugin-tailwindcss@3.17.5(tailwindcss@3.4.17):
     dependencies:
       fast-glob: 3.3.3
-      postcss: 8.4.49
+      postcss: 8.5.0
       tailwindcss: 3.4.17
 
   eslint-plugin-unicorn@56.0.1(eslint@9.18.0(jiti@1.21.7)):
@@ -14242,9 +14242,9 @@ snapshots:
     dependencies:
       safer-buffer: 2.1.2
 
-  icss-utils@5.1.0(postcss@8.4.49):
+  icss-utils@5.1.0(postcss@8.5.0):
     dependencies:
-      postcss: 8.4.49
+      postcss: 8.5.0
 
   ieee754@1.2.1: {}
 
@@ -16158,75 +16158,75 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-import@15.1.0(postcss@8.4.49):
+  postcss-import@15.1.0(postcss@8.5.0):
     dependencies:
-      postcss: 8.4.49
+      postcss: 8.5.0
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.10
 
-  postcss-js@4.0.1(postcss@8.4.49):
+  postcss-js@4.0.1(postcss@8.5.0):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.49
+      postcss: 8.5.0
 
-  postcss-lightningcss@1.0.1(postcss@8.4.49):
+  postcss-lightningcss@1.0.1(postcss@8.5.0):
     dependencies:
       browserslist: 4.24.4
       lightningcss: 1.29.1
-      postcss: 8.4.49
+      postcss: 8.5.0
 
-  postcss-load-config@4.0.2(postcss@8.4.49):
+  postcss-load-config@4.0.2(postcss@8.5.0):
     dependencies:
       lilconfig: 3.1.3
       yaml: 2.7.0
     optionalDependencies:
-      postcss: 8.4.49
+      postcss: 8.5.0
 
-  postcss-load-config@6.0.1(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(yaml@2.7.0):
+  postcss-load-config@6.0.1(jiti@1.21.7)(postcss@8.5.0)(tsx@4.19.2)(yaml@2.7.0):
     dependencies:
       lilconfig: 3.1.3
     optionalDependencies:
       jiti: 1.21.7
-      postcss: 8.4.49
+      postcss: 8.5.0
       tsx: 4.19.2
       yaml: 2.7.0
 
-  postcss-loader@8.1.1(postcss@8.4.49)(typescript@5.7.3)(webpack@5.97.1(esbuild@0.24.2)):
+  postcss-loader@8.1.1(postcss@8.5.0)(typescript@5.7.3)(webpack@5.97.1(esbuild@0.24.2)):
     dependencies:
       cosmiconfig: 9.0.0(typescript@5.7.3)
       jiti: 1.21.7
-      postcss: 8.4.49
+      postcss: 8.5.0
       semver: 7.6.3
     optionalDependencies:
       webpack: 5.97.1(esbuild@0.24.2)
     transitivePeerDependencies:
       - typescript
 
-  postcss-modules-extract-imports@3.1.0(postcss@8.4.49):
+  postcss-modules-extract-imports@3.1.0(postcss@8.5.0):
     dependencies:
-      postcss: 8.4.49
+      postcss: 8.5.0
 
-  postcss-modules-local-by-default@4.2.0(postcss@8.4.49):
+  postcss-modules-local-by-default@4.2.0(postcss@8.5.0):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.49)
-      postcss: 8.4.49
+      icss-utils: 5.1.0(postcss@8.5.0)
+      postcss: 8.5.0
       postcss-selector-parser: 7.0.0
       postcss-value-parser: 4.2.0
 
-  postcss-modules-scope@3.2.1(postcss@8.4.49):
+  postcss-modules-scope@3.2.1(postcss@8.5.0):
     dependencies:
-      postcss: 8.4.49
+      postcss: 8.5.0
       postcss-selector-parser: 7.0.0
 
-  postcss-modules-values@4.0.0(postcss@8.4.49):
+  postcss-modules-values@4.0.0(postcss@8.5.0):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.49)
-      postcss: 8.4.49
+      icss-utils: 5.1.0(postcss@8.5.0)
+      postcss: 8.5.0
 
-  postcss-nested@6.2.0(postcss@8.4.49):
+  postcss-nested@6.2.0(postcss@8.5.0):
     dependencies:
-      postcss: 8.4.49
+      postcss: 8.5.0
       postcss-selector-parser: 6.1.2
 
   postcss-selector-parser@6.1.2:
@@ -16247,7 +16247,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postcss@8.4.49:
+  postcss@8.5.0:
     dependencies:
       nanoid: 3.3.8
       picocolors: 1.1.1
@@ -16765,7 +16765,7 @@ snapshots:
       adjust-sourcemap-loader: 4.0.0
       convert-source-map: 1.9.0
       loader-utils: 2.0.4
-      postcss: 8.4.49
+      postcss: 8.5.0
       source-map: 0.6.1
 
   resolve@1.22.10:
@@ -17454,11 +17454,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.1.1
-      postcss: 8.4.49
-      postcss-import: 15.1.0(postcss@8.4.49)
-      postcss-js: 4.0.1(postcss@8.4.49)
-      postcss-load-config: 4.0.2(postcss@8.4.49)
-      postcss-nested: 6.2.0(postcss@8.4.49)
+      postcss: 8.5.0
+      postcss-import: 15.1.0(postcss@8.5.0)
+      postcss-js: 4.0.1(postcss@8.5.0)
+      postcss-load-config: 4.0.2(postcss@8.5.0)
+      postcss-nested: 6.2.0(postcss@8.5.0)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.10
       sucrase: 3.35.0
@@ -17593,7 +17593,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@8.3.5(patch_hash=sh5kwwsnc5iccgx7xoo5prtbwy)(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0):
+  tsup@8.3.5(patch_hash=sh5kwwsnc5iccgx7xoo5prtbwy)(jiti@1.21.7)(postcss@8.5.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.24.2)
       cac: 6.7.14
@@ -17603,7 +17603,7 @@ snapshots:
       esbuild: 0.24.2
       joycon: 3.1.1
       picocolors: 1.1.1
-      postcss-load-config: 6.0.1(jiti@1.21.7)(postcss@8.4.49)(tsx@4.19.2)(yaml@2.7.0)
+      postcss-load-config: 6.0.1(jiti@1.21.7)(postcss@8.5.0)(tsx@4.19.2)(yaml@2.7.0)
       resolve-from: 5.0.0
       rollup: 4.30.1
       source-map: 0.8.0-beta.0
@@ -17612,7 +17612,7 @@ snapshots:
       tinyglobby: 0.2.10
       tree-kill: 1.2.2
     optionalDependencies:
-      postcss: 8.4.49
+      postcss: 8.5.0
       typescript: 5.7.3
     transitivePeerDependencies:
       - jiti
@@ -18019,7 +18019,7 @@ snapshots:
   vite@5.4.11(@types/node@22.10.5)(lightningcss@1.29.1)(terser@5.37.0):
     dependencies:
       esbuild: 0.24.2
-      postcss: 8.4.49
+      postcss: 8.5.0
       rollup: 4.30.1
     optionalDependencies:
       '@types/node': 22.10.5
