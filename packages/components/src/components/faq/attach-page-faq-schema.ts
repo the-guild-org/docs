@@ -8,9 +8,7 @@ export const AttachPageFAQSchema: FC<{ faqPages: string[] }> = ({ faqPages }) =>
 
   useEffect(() => {
     const html = document.querySelector('html')!;
-    const path = pathname.replace('/graphql/hive', '/');
-
-    if (faqPages.includes(path) && !html.hasAttribute('itemscope')) {
+    if (faqPages.includes(pathname) && !html.hasAttribute('itemscope')) {
       html.setAttribute('itemscope', '');
       html.setAttribute('itemtype', 'https://schema.org/FAQPage');
 
@@ -19,7 +17,7 @@ export const AttachPageFAQSchema: FC<{ faqPages: string[] }> = ({ faqPages }) =>
         html.removeAttribute('itemtype');
       };
     }
-  }, [pathname]);
+  }, []);
 
   return null;
 };
