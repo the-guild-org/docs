@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 7.5.2
+
+### Patch Changes
+
+- [#1964](https://github.com/the-guild-org/docs/pull/1964)
+  [`fd98601`](https://github.com/the-guild-org/docs/commit/fd9860131ef56bfc59dca50ef088f358d78d5fe1)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add nextra-scrollbar to cards lists
+
 ## 7.5.1
 
 ### Patch Changes
