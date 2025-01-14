@@ -35,7 +35,7 @@ export function ExploreMainProductCards({
           <ArrowIcon />
         </TextLink>
       </div>
-      <ul className="-mx-12 -my-2 flex shrink-0 grow gap-[22px] overflow-auto px-12 py-2 [@media(max-width:1490px)]:w-full [@media(min-width:1490px)]:overflow-visible [&>:nth-child(n+4)]:[@media(min-width:1490px)]:hidden">
+      <ul className="nextra-scrollbar -mx-12 -my-2 flex shrink-0 grow gap-[22px] overflow-auto px-12 py-2 [@media(max-width:1490px)]:w-full [@media(min-width:1490px)]:overflow-visible [&>:nth-child(n+4)]:[@media(min-width:1490px)]:hidden">
         {FOUR_MAIN_PRODUCTS.map(product => (
           <MainProductCard key={product.name} as="li" product={product} />
         ))}
