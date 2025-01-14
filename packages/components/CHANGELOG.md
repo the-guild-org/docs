@@ -1,5 +1,78 @@
 # @theguild/components
 
+## 9.0.0
+
+### Major Changes
+
+- [#1953](https://github.com/the-guild-org/docs/pull/1953)
+  [`3f9d6e6`](https://github.com/the-guild-org/docs/commit/3f9d6e6ef3fd6d4cb2f28c0820c5a7072366cc4e)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`nextra@4.0.0` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.0) (from
+    `4.0.0-app-router.43`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@4.0.0` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.0) (from
+    `4.0.0-app-router.43`, in `dependencies`)
+
+### Minor Changes
+
+- [#1927](https://github.com/the-guild-org/docs/pull/1927)
+  [`da72f38`](https://github.com/the-guild-org/docs/commit/da72f380b1203765af1e26c45d8611e74cf15f40)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - - add `<ComparisonTable>` component
+  - add `<AttachPageFAQSchema>` component
+  - add `<FrequentlyAskedQuestions>` component
+  - move `<Search>` styles from Tailwind CSS classes to `style.css` because in Yoga we use
+    `<VersionedSearch>`
+  - add `remarkLinkRewrite` plugin
+
+### Patch Changes
+
+- [#1927](https://github.com/the-guild-org/docs/pull/1927)
+  [`da72f38`](https://github.com/the-guild-org/docs/commit/da72f380b1203765af1e26c45d8611e74cf15f40)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - dependencies updates:
+
+  - Added dependency
+    [`@radix-ui/react-accordion@^1.2.2` ↗︎](https://www.npmjs.com/package/@radix-ui/react-accordion/v/1.2.2)
+    (to `dependencies`)
+  - Added dependency
+    [`@radix-ui/react-icons@^1.3.2` ↗︎](https://www.npmjs.com/package/@radix-ui/react-icons/v/1.3.2)
+    (to `dependencies`)
+  - Added dependency
+    [`unist-util-visit@5.0.0` ↗︎](https://www.npmjs.com/package/unist-util-visit/v/5.0.0) (to
+    `dependencies`)
+
+- [#1946](https://github.com/the-guild-org/docs/pull/1946)
+  [`fbca4af`](https://github.com/the-guild-org/docs/commit/fbca4afec0671ebb8d5fa6d76c5e33d01aabba37)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`nextra@4.0.0-app-router.43` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.0) (from
+    `4.0.0-app-router.42`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@4.0.0-app-router.43` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.0)
+    (from `4.0.0-app-router.42`, in `dependencies`)
+
+- [#1958](https://github.com/the-guild-org/docs/pull/1958)
+  [`02128da`](https://github.com/the-guild-org/docs/commit/02128da210a486f58acb0bb53a27db1093c863c9)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@15.1.4` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/15.1.4)
+    (from `15.1.3`, in `dependencies`)
+
+- [#1951](https://github.com/the-guild-org/docs/pull/1951)
+  [`15972ea`](https://github.com/the-guild-org/docs/commit/15972ea6eff3ee7c2b0528384d62e598f83757a0)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - fix hidden decoration for Mesh product
+  card on hover, when there is both `<ExploreMainProductCards />` and `<ToolsAndLibrariesCards />`
+  on page
+
+- [#1956](https://github.com/the-guild-org/docs/pull/1956)
+  [`d05b5a6`](https://github.com/the-guild-org/docs/commit/d05b5a69cb108266b175916514b24ba4b35e914f)
+  Thanks [@hasparus](https://github.com/hasparus)! - Tweak ProductCard styles on mobile
+
+- [#1963](https://github.com/the-guild-org/docs/pull/1963)
+  [`b5e4c55`](https://github.com/the-guild-org/docs/commit/b5e4c559e621ba37aabb0cffff8c93e53bb91b89)
+  Thanks [@hasparus](https://github.com/hasparus)! - Fix ArrowIcon viewBox case to camelCase
+
 ## 8.2.0
 
 ### Minor Changes
