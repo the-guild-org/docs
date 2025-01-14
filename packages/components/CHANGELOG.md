@@ -1,5 +1,22 @@
 # @theguild/components
 
+## 7.5.1
+
+### Patch Changes
+
+- [#1959](https://github.com/the-guild-org/docs/pull/1959)
+  [`5fdcfd6`](https://github.com/the-guild-org/docs/commit/5fdcfd6ba7a850965e5023989f6867fc672494bb)
+  Thanks [@hasparus](https://github.com/hasparus)! - fix hidden decoration for Mesh product card on
+  hover, when there is both `<ExploreMainProductCards />` and `<ToolsAndLibrariesCards />` on page
+
+- [#1941](https://github.com/the-guild-org/docs/pull/1941)
+  [`0897591`](https://github.com/the-guild-org/docs/commit/0897591195ac8c6394a46b0c2dae99ff58632828)
+  Thanks [@hasparus](https://github.com/hasparus)! - Tweak ProductCard styles on mobile
+
+- [#1962](https://github.com/the-guild-org/docs/pull/1962)
+  [`89bf154`](https://github.com/the-guild-org/docs/commit/89bf1544fef1e1398bc2f2ecc4ee1d8154c7b5cd)
+  Thanks [@hasparus](https://github.com/hasparus)! - Fix ArrowIcon viewBox case to camelCase
+
 ## 7.5.0
 
 ### Minor Changes
