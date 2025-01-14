@@ -14,7 +14,9 @@ export {
 } from 'nextra/page-map';
 export { evaluate } from 'nextra/evaluate';
 export { fetchPackageInfo } from './npm.js';
-export { sharedMetaItems } from './shared-meta-items';
+export { sharedMetaItems } from './shared-meta-items.js';
+export { Body } from './body.client.js';
+export { remarkLinkRewrite } from './remark-link-rewrite.js';
 
 /**
  * Contain `getPageMap` import which imports `metadata` from pages, in case importing from

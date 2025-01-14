@@ -29,7 +29,7 @@ export function ExploreMainProductCards({
         </Heading>
         <TextLink
           href={isHive ? '/ecosystem' : 'https://the-guild.dev/graphql/hive/ecosystem'}
-          className="mt-4 lg:mt-6"
+          className="mt-4 text-green-800 lg:mt-6"
         >
           Learn more
           <ArrowIcon />
