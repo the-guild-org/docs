@@ -1,5 +1,5 @@
 // Must be in `server` folder because can contain server-only components or imports Node.js builtin
-export { useMDXComponents } from './mdx-components.js';
+export * from './mdx-components/index.js';
 // Must be in `server` folder because contains import of `useMDXComponents`
 export { MDXRemote } from 'nextra/mdx-remote';
 

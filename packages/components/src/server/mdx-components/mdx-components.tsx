@@ -15,7 +15,7 @@ const docsComponents = getDocsMDXComponents({
         await fs.access(filePath);
       } catch (error) {
         const relativePath = path.relative(process.cwd(), filePath);
-        if ((error as any).code === 'ENOENT') {
+        if (typeof error === 'object' && error && 'code' in error && error.code === 'ENOENT') {
           throw new Error(`File doesn't exist: ${relativePath}`);
         }
         throw new Error(`Error checking file: ${relativePath}`);
