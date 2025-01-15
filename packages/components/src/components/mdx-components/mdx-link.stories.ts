@@ -6,6 +6,9 @@ export default {
   title: 'Components/MDXLink',
   component: MDXLink,
   decorators: [hiveThemeDecorator],
+  parameters: {
+    padding: true,
+  },
 } satisfies Meta<MDXLinkProps>;
 
 export const Default: StoryObj<MDXLinkProps> = {
