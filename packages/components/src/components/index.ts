@@ -13,7 +13,7 @@ export { InfoList } from './info-list';
 export { LegacyPackageCmd } from './legacy-package-cmd';
 export { MarketplaceList } from './marketplace-list';
 export { MarketplaceSearch } from './marketplace-search';
-export { mdxComponents } from './mdx-components';
+export * from './mdx-components';
 export { NPMBadge } from './npm-badge';
 export { getNavbarLogo } from './guild-navbar-logo';
 export { ThemeSwitcherButton } from './theme-switcher';

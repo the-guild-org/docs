@@ -2,16 +2,19 @@ import { useRouter } from 'next/router';
 import { DocsThemeConfig, Navbar, useConfig } from 'nextra-theme-docs';
 import { Footer, getNavbarLogo, mdxComponents, ThemeSwitcherButton } from './components';
 import { addGuildCompanyMenu } from './components/company-menu';
+import { hiveMdxComponents } from './components/mdx-components';
 
 export interface GuildDocsThemeConfig extends DocsThemeConfig {
   websiteName: string;
   description: string;
+  themeVersion?: 'hive-rebranding' | 'original';
 }
 
 export function defineConfig({
   websiteName,
   description,
   logo,
+  themeVersion = 'original',
   ...config
 }: GuildDocsThemeConfig): DocsThemeConfig {
   if (!config.docsRepositoryBase) {
@@ -106,6 +109,7 @@ export function defineConfig({
     components: {
       ...mdxComponents,
       ...config.components,
+      ...(themeVersion === 'hive-rebranding' && hiveMdxComponents),
     },
   };
 }
