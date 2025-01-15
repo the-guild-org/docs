@@ -3,6 +3,10 @@ import { addBasePath } from 'next/dist/client/add-base-path';
 import NextImage from 'next/image';
 import clsx from 'clsx';
 
+/**
+ * MDX components used both in Hive-rebranded websites,
+ * and older The Guild-themed websites.
+ */
 export const mdxComponents: {
   [tag: string]: (props: object) => ReactElement;
 } = {
