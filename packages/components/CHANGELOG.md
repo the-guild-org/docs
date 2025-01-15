@@ -1,5 +1,29 @@
 # @theguild/components
 
+## 9.1.0
+
+### Minor Changes
+
+- [#1977](https://github.com/the-guild-org/docs/pull/1977)
+  [`e7d506f`](https://github.com/the-guild-org/docs/commit/e7d506f5f4d037b0df8cc09a0b35088304d2129f)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add hiveMdxComponents for use in
+  Hive-rebranding themed websites
+
+  ## Usage
+
+  ```js file=mdx-components.js
+  import { WebsiteSpecificComponent } from './components/WebsiteSpecificComponent'
+
+  export { useHiveMDXComponents } from '@theguild/components/server'
+
+  export const useMDXComponents = components => {
+    return useHiveMDXComponents({
+      ...components,
+      WebsiteSpecificComponent
+    })
+  }
+  ```
+
 ## 9.0.0
 
 ### Major Changes
