@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 7.6.0
+
+### Minor Changes
+
+- [#1976](https://github.com/the-guild-org/docs/pull/1976)
+  [`a115136`](https://github.com/the-guild-org/docs/commit/a115136f4b3e0e9615a0382095b8c844a5490c13)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add MDXLink and themeVersion option to
+  definedConfig
+
 ## 7.5.2
 
 ### Patch Changes
