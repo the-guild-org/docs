@@ -21,6 +21,7 @@ export const Default: StoryObj<ContactButtonProps> = {
   args: {
     // `children` is optional
     children: 'Contact us',
+    variant: 'secondary-inverted',
   },
 };
 
