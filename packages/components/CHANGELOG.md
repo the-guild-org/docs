@@ -1,5 +1,18 @@
 # @theguild/components
 
+## 9.1.1
+
+### Patch Changes
+
+- [#1981](https://github.com/the-guild-org/docs/pull/1981)
+  [`5488f2e`](https://github.com/the-guild-org/docs/commit/5488f2eaf6b04976cd53546639305db054788622)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`nextra@4.0.2` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.2) (from
+    `4.0.0`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@4.0.2` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.2) (from
+    `4.0.0`, in `dependencies`)
+
 ## 9.1.0
 
 ### Minor Changes
