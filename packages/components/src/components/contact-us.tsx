@@ -10,10 +10,10 @@ const openCrisp = (event: React.MouseEvent<HTMLAnchorElement>) => {
   }
 };
 
-// the errors are more readable if you add an interface for this
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface ContactTextLinkProps
-  extends Omit<React.HTMLAttributes<HTMLAnchorElement>, 'href' | 'onClick'> {}
+  extends Omit<React.HTMLAttributes<HTMLAnchorElement>, 'href' | 'onClick'> {
+  children?: React.ReactNode;
+}
 
 export function ContactTextLink(props: ContactTextLinkProps) {
   return (
@@ -31,9 +31,10 @@ export function ContactTextLink(props: ContactTextLinkProps) {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface ContactButtonProps
-  extends Omit<CallToActionProps.AnchorProps, 'onClick' | 'href'> {}
+  extends Omit<CallToActionProps.AnchorProps, 'onClick' | 'href' | 'children'> {
+  children?: React.ReactNode;
+}
 
 export function ContactButton(props: ContactButtonProps) {
   return (
