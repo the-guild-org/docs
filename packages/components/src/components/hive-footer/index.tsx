@@ -6,6 +6,7 @@ import { FOUR_MAIN_PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../../products';
 import { ILink } from '../../types/components';
 import { Anchor } from '../anchor';
 import { ContactTextLink } from '../contact-us';
+import { __LANDING_WIDTHS_ID } from '../hive-layout-config';
 import {
   CSAStarLevelOneIcon,
   DiscordIcon,
@@ -14,6 +15,21 @@ import {
   TwitterIcon,
   YouTubeIcon,
 } from '../icons/index';
+
+/**
+ * true: max-w-[90rem] (in docs)
+ * false: max-w-[75rem] (in landing pages)
+ */
+const INNER_BOX_WIDTH_STYLE =
+  'max-w-[90rem] [body:has(#hive-l-widths)_&]:max-w-[75rem] [body:has(#hive-l-widths)_&]:mx-4';
+
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line no-console
+  console.assert(
+    __LANDING_WIDTHS_ID === 'hive-l-widths',
+    '__LANDING_WIDTHS_ID diverged from the className used in HiveFooter.',
+  );
+}
 
 export type HiveFooterProps = {
   className?: string;
@@ -33,8 +49,15 @@ export function HiveFooter({
   items = { ...HiveFooter.DEFAULT_ITEMS, ...items };
 
   return (
-    <footer className={cn('relative flex justify-center px-4 py-6 xl:px-[120px]', className)}>
-      <div className="mx-4 grid w-full max-w-[75rem] grid-cols-1 gap-x-6 text-green-800 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10 dark:text-neutral-400">
+    <footer
+      className={cn('relative flex justify-center px-4 pb-6 pt-[72px] xl:px-[120px]', className)}
+    >
+      <div
+        className={cn(
+          'grid w-full grid-cols-1 gap-x-6 text-green-800 max-lg:gap-y-16 sm:grid-cols-4 lg:gap-x-8 xl:gap-x-10 dark:text-neutral-400',
+          INNER_BOX_WIDTH_STYLE,
+        )}
+      >
         <div className="max-lg:col-span-full">
           <Anchor
             href={href}
