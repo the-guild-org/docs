@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { getDefaultMetadata, GuildLayout } from '@theguild/components/server';
 import '@theguild/components/style.css';
-import { GitHubIcon, PaperIcon, PencilIcon } from '@theguild/components';
+import { GitHubIcon, PaperIcon, PencilIcon, Search } from '@theguild/components';
 
 const description = 'Documentation for The Guild';
 const websiteName = 'Guild Docs';
@@ -35,9 +35,6 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
       }}
       navbarProps={{
         navLinks: [{ href: '/docs', children: 'Documentation' }],
-        searchProps: {
-          placeholder: 'Search...',
-        },
         developerMenu: [
           {
             href: '/docs',
@@ -55,6 +52,7 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
             children: 'GitHub',
           },
         ],
+        search: <Search placeholder="Search..." className="[&_input]:transition-none" />,
       }}
       lightOnlyPages={['/']}
     >
