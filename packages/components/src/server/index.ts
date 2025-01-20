@@ -15,7 +15,7 @@ export {
 export { evaluate } from 'nextra/evaluate';
 export { fetchPackageInfo } from './npm.js';
 export { sharedMetaItems } from './shared-meta-items.js';
-export { Body, BodyProps } from './body.client.js';
+export * from './body.client.js';
 export { remarkLinkRewrite } from './remark-link-rewrite.js';
 
 /**
