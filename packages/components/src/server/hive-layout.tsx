@@ -3,7 +3,7 @@ import { Layout } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
 import { cn } from '../cn';
-import { Body, BodyProps } from './body.client';
+import { Body } from './body.client';
 
 export interface HiveLayoutProps
   extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLHtmlElement>, HTMLHtmlElement> {
