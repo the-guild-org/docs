@@ -1,8 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports, @typescript-eslint/no-unused-vars
-import type { HiveLayout } from '../server/hive-layout';
-
 /**
- * @internal
+ * @internal Don't expose this to websites.
  */
 export const __LANDING_WIDTHS_ID = 'hive-l-widths';
 
@@ -11,7 +8,7 @@ export interface HiveLayoutConfigProps {
 }
 
 /**
- * @see {@link HiveLayout} for documentation.
+ * @see {@link HiveLayout} from `@theguild/components/server` for documentation.
  */
 export function HiveLayoutConfig({ widths }: HiveLayoutConfigProps) {
   return widths === 'landing-narrow' ? <div id={__LANDING_WIDTHS_ID} /> : null;

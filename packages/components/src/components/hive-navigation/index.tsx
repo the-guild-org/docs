@@ -22,6 +22,7 @@ import { GraphQLFoundationLogo, GuildLogo, HiveCombinationMark, TheGuild } from 
 import { PRODUCTS, SIX_HIGHLIGHTED_PRODUCTS } from '../../products';
 import { Anchor } from '../anchor';
 import { CallToAction } from '../call-to-action';
+import { __LANDING_WIDTHS_ID } from '../hive-layout-config';
 import {
   AccountBox,
   AppsIcon,
@@ -44,6 +45,16 @@ import {
 export * from './graphql-conf-card';
 
 const ENTERPRISE_MENU_HIDDEN = true;
+
+const WIDTH_STYLE = 'max-w-[90rem] [body:has(#hive-l-widths)_&]:max-w-[1392px]';
+
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line no-console
+  console.assert(
+    __LANDING_WIDTHS_ID === 'hive-l-widths',
+    '__LANDING_WIDTHS_ID diverged from the className used in HiveNavigation.',
+  );
+}
 
 export type HiveNavigationProps = {
   companyMenuChildren?: ReactNode;
@@ -93,8 +104,8 @@ export function HiveNavigation({
     <div
       ref={containerRef}
       className={cn(
-        'sticky top-0 z-20 border-b border-beige-400/[var(--border-opacity)] bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 md:mb-[7px] md:mt-2 dark:border-neutral-700/[var(--border-opacity)] dark:text-neutral-200 [&.light]:border-beige-400/[var(--border-opacity)] [&.light]:bg-white [&.light]:text-green-1000',
-        className?.includes('light') && 'light',
+        'sticky top-0 z-20 border-b border-beige-400/[var(--border-opacity)] bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 md:mb-[7px] md:mt-2 dark:border-neutral-700/[var(--border-opacity)] dark:text-neutral-200',
+        WIDTH_STYLE,
       )}
       style={{ '--border-opacity': 0 }}
     >

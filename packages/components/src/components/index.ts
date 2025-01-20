@@ -34,3 +34,4 @@ export * from './version-dropdown';
 export * from './dropdown';
 export { FrequentlyAskedQuestions } from './faq';
 export { ComparisonTable } from './comparison-table';
+export { HiveLayoutConfig } from './hive-layout-config';

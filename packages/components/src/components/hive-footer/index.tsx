@@ -16,10 +16,6 @@ import {
   YouTubeIcon,
 } from '../icons/index';
 
-/**
- * true: max-w-[90rem] (in docs)
- * false: max-w-[75rem] (in landing pages)
- */
 const INNER_BOX_WIDTH_STYLE =
   'max-w-[90rem] [body:has(#hive-l-widths)_&]:max-w-[75rem] [body:has(#hive-l-widths)_&]:mx-4';
 
