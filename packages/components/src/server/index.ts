@@ -26,3 +26,4 @@ export { remarkLinkRewrite } from './remark-link-rewrite.js';
  * which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org
  */
 export { GuildLayout, getDefaultMetadata } from './theme-layout.js';
+export { HiveLayout } from './hive-layout.js';
