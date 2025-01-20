@@ -1,6 +1,6 @@
 import { forwardRef, ReactElement } from 'react';
 import NextLink from 'next/link';
-import clsx from 'clsx';
+import { cn } from '../cn';
 import { ILink } from '../types/components';
 
 export type AnchorProps = ILink;
@@ -8,7 +8,7 @@ export const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(function Anchor
   { href = '', children, newWindow, className, ...props },
   forwardedRef,
 ): ReactElement {
-  const classes = clsx(className, 'outline-none transition focus-visible:ring');
+  const classes = cn('outline-none focus-visible:ring', className);
 
   if (typeof href === 'string') {
     if (href.startsWith('#')) {

@@ -68,7 +68,6 @@ export type HiveNavigationProps = {
   navLinks?: { href: string; children: ReactNode }[];
   developerMenu: DeveloperMenuProps['developerMenu'];
   search?: ReactElement;
-  searchProps?: ComponentProps<typeof Search>;
 };
 
 /**
@@ -96,7 +95,9 @@ export function HiveNavigation({
     },
   ],
   developerMenu,
-  search = <Search />,
+  // we need the background transition disabled to avoid an unpleasant flicker
+  // when navigating from a forced light mode page to a dark mode page
+  search = <Search className="[&_input]:transition-none" />,
 }: HiveNavigationProps) {
   const containerRef = useRef<HTMLDivElement>(null!);
 

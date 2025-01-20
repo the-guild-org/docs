@@ -12,7 +12,8 @@ export interface HiveLayoutProps
   navbar: ReactElement;
   footer: ReactElement;
   fontFamily: string;
-  bodyProps: BodyProps;
+  lightOnlyPages: string[];
+  bodyProps?: DetailedHTMLProps<HtmlHTMLAttributes<HTMLBodyElement>, HTMLBodyElement>;
 }
 
 /**
@@ -59,6 +60,7 @@ export const HiveLayout = async ({
   footer,
   className,
   fontFamily,
+  lightOnlyPages,
   bodyProps,
   ...rest
 }: HiveLayoutProps) => {
@@ -118,7 +120,7 @@ export const HiveLayout = async ({
         }</style>
         {head}
       </Head>
-      <Body {...bodyProps}>
+      <Body lightOnlyPages={lightOnlyPages} {...bodyProps}>
         <Layout
           editLink="Edit this page on GitHub"
           docsRepositoryBase="https://github.com/graphql-hive/platform/tree/main/packages/web/docs"
