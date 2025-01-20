@@ -14,6 +14,7 @@ export interface HiveLayoutProps
   fontFamily: string;
   lightOnlyPages: string[];
   bodyProps?: DetailedHTMLProps<HtmlHTMLAttributes<HTMLBodyElement>, HTMLBodyElement>;
+  docsRepositoryBase: string;
 }
 
 /**
@@ -62,6 +63,7 @@ export const HiveLayout = async ({
   fontFamily,
   lightOnlyPages,
   bodyProps,
+  docsRepositoryBase,
   ...rest
 }: HiveLayoutProps) => {
   const pageMap = await getPageMap();
@@ -123,7 +125,7 @@ export const HiveLayout = async ({
       <Body lightOnlyPages={lightOnlyPages} {...bodyProps}>
         <Layout
           editLink="Edit this page on GitHub"
-          docsRepositoryBase="https://github.com/graphql-hive/platform/tree/main/packages/web/docs"
+          docsRepositoryBase={docsRepositoryBase}
           pageMap={pageMap}
           feedback={{
             labels: 'kind/docs',
