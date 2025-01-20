@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 7.6.1
+
+### Patch Changes
+
+- [#1989](https://github.com/the-guild-org/docs/pull/1989)
+  [`9861915`](https://github.com/the-guild-org/docs/commit/9861915d8ecf6af01f30401ca9a704fcfedee3fc)
+  Thanks [@hasparus](https://github.com/hasparus)! - Backport `ContactButton` to v7
+
 ## 7.6.0
 
 ### Minor Changes
