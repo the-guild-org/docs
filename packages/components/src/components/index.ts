@@ -18,6 +18,7 @@ export { HiveNavigation, GraphQLConfCard } from './hive-navigation';
 export type { HiveNavigationProps, GraphQLConfCardProps } from './hive-navigation';
 export { HiveFooter } from './hive-footer';
 export { ToolsAndLibrariesCards } from './tools-and-libraries-cards';
+export { Hero } from './hero';
 export * from './product-card';
 export * from './decorations';
 export * from './call-to-action';

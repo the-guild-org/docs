@@ -1,8 +1,8 @@
-import { cloneElement, ComponentProps, FC, ReactElement, ReactNode, useId } from 'react'
-import { cn } from '../../cn'
-import { DecorationIsolation } from '../decorations'
-import { Heading } from '../heading'
-import { CheckIcon } from '../icons'
+import { cloneElement, ComponentProps, FC, ReactElement, ReactNode, useId } from 'react';
+import { cn } from '../../cn';
+import { DecorationIsolation } from '../decorations';
+import { Heading } from '../heading';
+import { CheckIcon } from '../icons';
 
 export const Hero: FC<{
   className?: string;
@@ -11,7 +11,7 @@ export const Hero: FC<{
   checkmarks: string[];
   logo: ReactElement<ComponentProps<'svg'>>;
   children?: ReactNode;
-}> = (props) => {
+}> = props => {
   const gradientWhiteId = useId();
   const gradientWhiteId2 = useId();
   const greenBgId = useId();
@@ -19,15 +19,15 @@ export const Hero: FC<{
   return (
     <div
       className={cn(
-        'mx-4 max-sm:mt-2 md:mx-6 relative isolate flex max-w-[90rem] flex-col items-center justify-center gap-6 overflow-hidden rounded-3xl bg-blue-400 px-4 py-6 sm:py-12 md:gap-8 lg:py-24',
-        props.className
+        'relative isolate mx-4 flex max-w-[90rem] flex-col items-center justify-center gap-6 overflow-hidden rounded-3xl bg-blue-400 px-4 py-6 max-sm:mt-2 sm:py-12 md:mx-6 md:gap-8 lg:py-24',
+        props.className,
       )}
     >
       <DecorationIsolation className="-z-10">
         {cloneElement(props.logo, {
           className: cn(
             'absolute stroke-white/10 max-lg:hidden',
-            '-left-1/2 top-1/2 -translate-y-1/2'
+            '-left-1/2 top-1/2 -translate-y-1/2',
           ),
           fill: `url(#${gradientWhiteId2})`,
           strokeWidth: '0.1',
@@ -38,7 +38,7 @@ export const Hero: FC<{
           className: cn(
             'absolute top-1/2 -translate-y-1/2 stroke-white/10',
             '-right-1/2 lg:-right-1/3',
-            'h-2/3 lg:h-[calc(100%-5%)]'
+            'h-2/3 lg:h-[calc(100%-5%)]',
           ),
           fill: `url(#${gradientWhiteId2})`,
           strokeWidth: '0.1',
@@ -48,8 +48,7 @@ export const Hero: FC<{
       <div className="relative">
         {cloneElement(props.logo, {
           fill: `url(#${gradientWhiteId})`,
-          className:
-            'absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 size-1/2',
+          className: 'absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 size-1/2',
         })}
         <svg
           width="96"
@@ -105,25 +104,21 @@ export const Hero: FC<{
           </defs>
         </svg>
       </div>
-      <Heading
-        as="h1"
-        size="xl"
-        className="mx-auto max-w-3xl text-balance text-center"
-      >
+      <Heading as="h1" size="xl" className="mx-auto max-w-3xl text-balance text-center">
         {props.heading}
       </Heading>
       <p className="mx-auto w-[512px] max-w-[80%] text-center leading-6 text-green-800">
         {props.text}
       </p>
-      <ul className="mx-auto flex list-none gap-x-6 gap-y-2 text-sm font-medium max-md:flex-col [&>li]:flex [&>li]:items-center [&>li]:gap-2">
-        {props.checkmarks.map((text) => (
-          <li key={text}>
+      <ul className="mx-auto flex list-none gap-x-6 gap-y-2 text-sm font-medium max-md:flex-col">
+        {props.checkmarks.map(text => (
+          <li key={text} className="flex items-center gap-2">
             <CheckIcon className="text-green-800" />
             {text}
           </li>
         ))}
       </ul>
-      <div className="relative z-10 flex justify-center gap-2 px-0.5 max-sm:flex-col sm:gap-4">
+      <div className="flex w-full justify-center gap-2 px-0.5 max-sm:flex-col sm:gap-4">
         {props.children}
       </div>
     </div>
