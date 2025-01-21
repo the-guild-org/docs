@@ -1,5 +1,23 @@
 # @theguild/components
 
+## 9.1.3
+
+### Patch Changes
+
+- [#1993](https://github.com/the-guild-org/docs/pull/1993)
+  [`a4c2f7a`](https://github.com/the-guild-org/docs/commit/a4c2f7ac5ed8f7c8c03ae530324508b846980552)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@4.0.4` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.4) (from
+    `4.0.3`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@4.0.4` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.4) (from
+    `4.0.3`, in `dependencies`)
+
+- [#1998](https://github.com/the-guild-org/docs/pull/1998)
+  [`4dff2a9`](https://github.com/the-guild-org/docs/commit/4dff2a9a354e4b0af5627b9b1987c9286026ac3c)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - add `<Hero>` component
+
 ## 9.1.2
 
 ### Patch Changes
