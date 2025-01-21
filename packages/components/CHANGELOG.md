@@ -1,5 +1,12 @@
 # @theguild/components
 
+## 7.6.2
+
+### Patch Changes
+
+- [`2bc1d7e`](https://github.com/the-guild-org/docs/commit/2bc1d7e1994617e3d15fb5e9171ce4cd39e7f38c)
+  Thanks [@hasparus](https://github.com/hasparus)! - Fix the reexport of contact-us.tsx
+
 ## 7.6.1
 
 ### Patch Changes
