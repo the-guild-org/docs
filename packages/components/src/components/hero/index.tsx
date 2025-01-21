@@ -1,17 +1,18 @@
-import { cloneElement, ComponentProps, FC, ReactElement, ReactNode, useId } from 'react';
+import { cloneElement, FC, ReactElement, ReactNode, useId } from 'react';
 import { cn } from '../../cn';
-import { DecorationIsolation } from '../decorations';
 import { Heading } from '../heading';
 import { CheckIcon } from '../icons';
 
-export const Hero: FC<{
+export interface HeroProps {
   className?: string;
   heading: string;
   text: string;
   checkmarks: string[];
-  logo: ReactElement<ComponentProps<'svg'>>;
+  logo?: ReactElement<{ className?: string; fill?: string }>;
   children?: ReactNode;
-}> = props => {
+}
+
+export const Hero: FC<HeroProps> = props => {
   const gradientWhiteId = useId();
   const gradientWhiteId2 = useId();
   const greenBgId = useId();
@@ -23,33 +24,15 @@ export const Hero: FC<{
         props.className,
       )}
     >
-      <DecorationIsolation className="-z-10">
-        {cloneElement(props.logo, {
-          className: cn(
-            'absolute stroke-white/10 max-lg:hidden',
-            '-left-1/2 top-1/2 -translate-y-1/2',
-          ),
-          fill: `url(#${gradientWhiteId2})`,
-          strokeWidth: '0.1',
-          width: 'auto',
-          height: '50%',
-        })}
-        {cloneElement(props.logo, {
-          className: cn(
-            'absolute top-1/2 -translate-y-1/2 stroke-white/10',
-            '-right-1/2 lg:-right-1/3',
-            'h-2/3 lg:h-[calc(100%-5%)]',
-          ),
-          fill: `url(#${gradientWhiteId2})`,
-          strokeWidth: '0.1',
-          width: 'auto',
-        })}
-      </DecorationIsolation>
       <div className="relative">
-        {cloneElement(props.logo, {
-          fill: `url(#${gradientWhiteId})`,
-          className: 'absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 size-1/2',
-        })}
+        {props.logo &&
+          cloneElement(props.logo, {
+            fill: `url(#${gradientWhiteId})`,
+            className: cn(
+              'absolute inset-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2',
+              props.logo.props.className,
+            ),
+          })}
         <svg
           width="96"
           height="96"
