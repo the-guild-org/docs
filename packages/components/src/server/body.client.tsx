@@ -14,7 +14,13 @@ export const Body: FC<BodyProps> = ({ lightOnlyPages, children, className, ...re
   const isLightOnlyPage = lightOnlyPages.includes(pathname);
 
   return (
-    <body className={cn(className, isLightOnlyPage && 'light text-green-1000 [&_#h-navmenu-container]:max-w-[1392px]')} {...rest}>
+    <body
+      className={cn(
+        className,
+        isLightOnlyPage && 'light text-green-1000 [&_#h-navmenu-container]:max-w-[1392px]',
+      )}
+      {...rest}
+    >
       {children}
     </body>
   );
