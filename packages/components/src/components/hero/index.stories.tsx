@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 import { GitHubIcon } from 'nextra/icons';
 import { Meta, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
-import { MeshLogo, ModulesLogo } from '../../logos';
+import { ModulesLogo } from '../../logos';
 import { CallToAction } from '../call-to-action';
 import { Hero } from './index';
 
