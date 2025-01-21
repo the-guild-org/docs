@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useId, useRef, useState } from 'react';
+import NextLink from 'next/link';
 import { cn } from '../cn';
 
 interface DropdownContextValue {
@@ -169,9 +170,9 @@ interface DropdownItemProps extends React.HTMLAttributes<HTMLElement> {
 export function DropdownItem({ children, onClick, className, href, ...props }: DropdownItemProps) {
   if (href) {
     return (
-      <a role="menuitem" href={href} className={className} onClick={onClick} {...props}>
+      <NextLink role="menuitem" href={href} className={className} onClick={onClick} {...props}>
         {children}
-      </a>
+      </NextLink>
     );
   }
 
