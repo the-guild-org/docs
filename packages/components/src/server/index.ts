@@ -15,7 +15,7 @@ export {
 export { evaluate } from 'nextra/evaluate';
 export { fetchPackageInfo } from './npm.js';
 export { sharedMetaItems } from './shared-meta-items.js';
-export { Body } from './body.client.js';
+export * from './body.client.js';
 export { remarkLinkRewrite } from './remark-link-rewrite.js';
 
 /**
@@ -26,3 +26,4 @@ export { remarkLinkRewrite } from './remark-link-rewrite.js';
  * which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org
  */
 export { GuildLayout, getDefaultMetadata } from './theme-layout.js';
+export { HiveLayout } from './hive-layout.js';

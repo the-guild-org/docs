@@ -1,15 +1,21 @@
 'use client';
 
-import { FC, ReactNode } from 'react';
+import { DetailedHTMLProps, FC, HtmlHTMLAttributes } from 'react';
 import { usePathname } from 'next/navigation';
+import { cn } from '../cn';
 
-export const Body: FC<{
-  lightOnlyPages: string[];
-  children: ReactNode;
-}> = ({ lightOnlyPages, children }) => {
+export interface BodyProps
+  extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLBodyElement>, HTMLBodyElement> {
+  lightOnlyPages?: string[];
+}
+
+export const Body: FC<BodyProps> = ({ lightOnlyPages, children, className, ...rest }) => {
   const pathname = usePathname();
+  const isLightOnlyPage = lightOnlyPages?.includes(pathname);
 
-  const isLightOnlyPage = lightOnlyPages.includes(pathname);
-
-  return <body className={isLightOnlyPage ? 'light text-green-1000' : undefined}>{children}</body>;
+  return (
+    <body className={cn(className, isLightOnlyPage && 'light text-green-1000')} {...rest}>
+      {children}
+    </body>
+  );
 };
