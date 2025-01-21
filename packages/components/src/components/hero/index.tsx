@@ -8,7 +8,13 @@ export interface HeroProps {
   heading: string;
   text: string;
   checkmarks: string[];
-  logo?: ReactElement<{ className?: string; fill?: string }>;
+  top?:
+    | {
+        logo: ReactElement<{ className?: string; fill?: string }>;
+      }
+    | {
+        children: ReactNode;
+      };
   children?: ReactNode;
 }
 
@@ -25,14 +31,16 @@ export const Hero: FC<HeroProps> = props => {
       )}
     >
       <div className="relative">
-        {props.logo &&
-          cloneElement(props.logo, {
-            fill: `url(#${gradientWhiteId})`,
-            className: cn(
-              'absolute inset-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2',
-              props.logo.props.className,
-            ),
-          })}
+        {props.top &&
+          ('logo' in props.top
+            ? cloneElement(props.top.logo, {
+                fill: `url(#${gradientWhiteId})`,
+                className: cn(
+                  'absolute inset-1/2 size-1/2 -translate-x-1/2 -translate-y-1/2',
+                  props.top.logo.props.className,
+                ),
+              })
+            : props.top.children)}
         <svg
           width="96"
           height="96"
