@@ -104,10 +104,7 @@ export function HiveNavigation({
   return (
     <div
       ref={containerRef}
-      className={cn(
-        'sticky top-0 z-20 border-b border-beige-400/[var(--border-opacity)] bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 md:mb-[7px] md:mt-2 dark:border-neutral-700/[var(--border-opacity)] dark:text-neutral-200',
-        WIDTH_STYLE,
-      )}
+      className="sticky top-0 z-20 border-b border-beige-400/[var(--border-opacity)] bg-[rgb(var(--nextra-bg))] px-6 py-4 text-green-1000 transition-[border-color] duration-500 md:mb-[7px] md:mt-2 dark:border-neutral-700/[var(--border-opacity)] dark:text-neutral-200"
       style={{ '--border-opacity': 0 }}
     >
       <TopOfSiteMarker
@@ -124,7 +121,10 @@ export function HiveNavigation({
       </div>
 
       {/* desktop menu */}
-      <NavigationMenu className={cn('mx-auto hidden md:flex', className)} delayDuration={0}>
+      <NavigationMenu
+        className={cn('mx-auto hidden md:flex', WIDTH_STYLE, className)}
+        delayDuration={0}
+      >
         {logo}
         <NavigationMenuList className="ml-4 bg-white dark:bg-transparent [@media(min-width:1180px)]:ml-16">
           <NavigationMenuItem>
