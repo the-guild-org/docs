@@ -6,15 +6,15 @@ import { cn } from '../cn';
 
 export interface BodyProps
   extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLBodyElement>, HTMLBodyElement> {
-  lightOnlyPages?: string[];
+  lightOnlyPages: string[];
 }
 
 export const Body: FC<BodyProps> = ({ lightOnlyPages, children, className, ...rest }) => {
   const pathname = usePathname();
-  const isLightOnlyPage = lightOnlyPages?.includes(pathname);
+  const isLightOnlyPage = lightOnlyPages.includes(pathname);
 
   return (
-    <body className={cn(className, isLightOnlyPage && 'light text-green-1000')} {...rest}>
+    <body className={cn(className, isLightOnlyPage && 'light text-green-1000 [&_#h-navmenu-container]:max-w-[1392px]')} {...rest}>
       {children}
     </body>
   );
