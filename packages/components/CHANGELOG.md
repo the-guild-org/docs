@@ -1,5 +1,33 @@
 # @theguild/components
 
+## 9.2.0
+
+### Minor Changes
+
+- [#1995](https://github.com/the-guild-org/docs/pull/1995)
+  [`6cd1c51`](https://github.com/the-guild-org/docs/commit/6cd1c5121f8afa0fa3f40a27cb93b9e7c9697b0e)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add HiveLayout and HiveLayoutConfig. Tweak
+  HiveNavigation and HiveFooter.
+
+### Patch Changes
+
+- [#1991](https://github.com/the-guild-org/docs/pull/1991)
+  [`78742d8`](https://github.com/the-guild-org/docs/commit/78742d8ec42c824da6e8fb7ccc1970661219e626)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency
+    [`@next/bundle-analyzer@15.1.5` ↗︎](https://www.npmjs.com/package/@next/bundle-analyzer/v/15.1.5)
+    (from `15.1.4`, in `dependencies`)
+
+- [#2000](https://github.com/the-guild-org/docs/pull/2000)
+  [`004b32c`](https://github.com/the-guild-org/docs/commit/004b32c50cb0b536a42c8a0e5f61bad800a1c86b)
+  Thanks [@dimaMachina](https://github.com/dimaMachina)! - using `<NextLink>` instead `<a>` to avoid
+  using `import { addBasePath } from 'next/dist/client/add-base-path'`
+
+- [#2003](https://github.com/the-guild-org/docs/pull/2003)
+  [`7d9279a`](https://github.com/the-guild-org/docs/commit/7d9279a74846fbb96b3def2f738a438c1da5047b)
+  Thanks [@hasparus](https://github.com/hasparus)! - Move width style to a proper div
+
 ## 9.1.3
 
 ### Patch Changes
