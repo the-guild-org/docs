@@ -11,14 +11,12 @@ export function HeroDecorationFromLogo({ logo, ...rest }: HeroDecorationFromLogo
   return (
     <DecorationIsolation {...rest} className={cn('-z-10', rest.className)}>
       {cloneElement(logo, {
-        className: cn(
-          'absolute stroke-white/10 max-lg:hidden',
-          '-left-1/2 top-1/2 -translate-y-1/2',
-        ),
-        fill: `url(#${GRADIENT_WHITE_ID})`,
+        className: cn('absolute -left-1/2 top-1/2 -translate-y-1/2 stroke-white/10 max-lg:hidden'),
+        fill: `url(#${GRADIENT_WHITE_2_ID})`,
         strokeWidth: '0.1',
-        width: 'auto',
         height: '50%',
+        width: 'auto',
+        opacity: 0.8,
       })}
       {cloneElement(logo, {
         className: cn(
@@ -29,6 +27,7 @@ export function HeroDecorationFromLogo({ logo, ...rest }: HeroDecorationFromLogo
         fill: `url(#${GRADIENT_WHITE_2_ID})`,
         strokeWidth: '0.1',
         width: 'auto',
+        opacity: 0.6,
       })}
     </DecorationIsolation>
   );
