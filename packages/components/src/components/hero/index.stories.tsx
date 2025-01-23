@@ -4,7 +4,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 import { ModulesLogo } from '../../logos';
 import { CallToAction } from '../call-to-action';
-import { Hero } from './index';
+import { Hero, HeroDecorationFromLogo, HeroLogo } from './index';
 
 export default {
   title: 'Hive/Hero',
@@ -20,12 +20,12 @@ export default {
     checkmarks: {
       name: 'Checkmarks text',
     },
-    top: {
-      logo: <ModulesLogo />,
-    },
     text: {
       name: 'Hero text',
     },
+  },
+  parameters: {
+    padding: true,
   },
 } satisfies Meta<ComponentProps<typeof Hero>>;
 
@@ -33,9 +33,11 @@ export const Default: StoryObj<ComponentProps<typeof Hero>> = {
   args: {
     heading: 'Enterprise Grade Tooling for Your GraphQL Server',
     text: 'GraphQL Modules is a toolset of libraries and guidelines dedicated to create reusable, maintainable, testable and extendable modules out of your GraphQL server.',
-    top: {
-      logo: <ModulesLogo />,
-    },
+    top: (
+      <HeroLogo>
+        <ModulesLogo />
+      </HeroLogo>
+    ),
     checkmarks: ['Fully open source', 'No vendor lock'],
     children: (
       <>
@@ -49,6 +51,7 @@ export const Default: StoryObj<ComponentProps<typeof Hero>> = {
           <GitHubIcon className="size-6" />
           GitHub
         </CallToAction>
+        <HeroDecorationFromLogo logo={<ModulesLogo />} />
       </>
     ),
   },
