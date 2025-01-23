@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 7.6.3
+
+### Patch Changes
+
+- [#2012](https://github.com/the-guild-org/docs/pull/2012)
+  [`477d495`](https://github.com/the-guild-org/docs/commit/477d495f565f3a3e63853450761af0fb8b24d228)
+  Thanks [@hasparus](https://github.com/hasparus)! - Keep `.firefox-highlight-fix` className on the
+  HighlightDecoration
+
 ## 7.6.2
 
 ### Patch Changes
