@@ -1,6 +1,6 @@
 import { cloneElement, ReactElement } from 'react';
 import { cn } from '../../cn';
-import { GRADIENT_GREEN_ID, GRADIENT_WHITE_2_ID, GRADIENT_WHITE_ID } from './hero-gradient-ids';
+import { GRADIENT_GREEN_ID, GRADIENT_WHITE_ID } from './hero-gradient-ids';
 
 export interface HeroLogoProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactElement<{
