@@ -16,8 +16,8 @@ export function HeroGradientDefs() {
           <stop offset="1" stopColor="#15433C" />
         </linearGradient>
         <linearGradient id={GRADIENT_WHITE_ID} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop stopColor="#fff" stopOpacity="1" />
-          <stop offset="1" stopColor="#fff" stopOpacity="0.5" />
+          <stop stopColor="#fff" stopOpacity="0.8" />
+          <stop offset="1" stopColor="#fff" stopOpacity="0.4" />
         </linearGradient>
         <linearGradient id={GRADIENT_WHITE_2_ID} x1="0%" y1="0%" x2="100%" y2="100%">
           <stop stopColor="#fff" stopOpacity="0.1" />
