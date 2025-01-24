@@ -1,8 +1,8 @@
 import { cn } from '../../cn';
+import { ReactComponent as HighlightDecorationSvg } from './highlight-decoration.svg';
 
 export { ReactComponent as ArchDecoration } from './arch-decoration.svg';
 export { ReactComponent as ArchDecorationGradientDefs } from './arch-decoration-gradient-defs.svg';
-export { ReactComponent as HighlightDecoration } from './highlight-decoration.svg';
 export { ReactComponent as LargeHiveIconDecoration } from './large-hive-icon-decoration.svg';
 
 export type DecorationIsolationProps = React.HTMLAttributes<HTMLDivElement>;
@@ -18,3 +18,9 @@ export function DecorationIsolation(props: DecorationIsolationProps) {
     />
   );
 }
+
+// Components created from .svg import don't preserve className
+export const HighlightDecoration = (props: React.SVGProps<SVGSVGElement>) => (
+  // eslint-disable-next-line tailwindcss/no-custom-classname
+  <HighlightDecorationSvg {...props} className={cn(props.className, 'firefox-highlight-fix')} />
+);
