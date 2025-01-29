@@ -17,15 +17,11 @@ export default {
 } satisfies Meta<MarqueeProps>;
 
 export const SingleRow: StoryObj<MarqueeProps> = {
-  render: props => (
-    <Marquee
-      className="w-[600px] max-w-full border border-neutral-300 dark:border-beige-700"
-      {...props}
-    />
-  ),
+  render: props => <Marquee className="w-[600px] max-w-full" {...props} />,
   args: {
+    direction: 'right',
     children: [
-      'This text will scroll from right to left',
+      'This text will scroll from left to right',
       'This text too',
       'And this one',
       'Have a great day!',
