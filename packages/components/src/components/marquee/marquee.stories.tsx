@@ -239,6 +239,7 @@ export const EnvelopPlugins: StoryObj<MarqueeRowsProps> = {
   args: {
     rows: 10,
     pauseOnHover: true,
+    speed: 'slow',
     children: ENVELOP_PLUGINS.map(plugin => (
       <a
         key={plugin.title}

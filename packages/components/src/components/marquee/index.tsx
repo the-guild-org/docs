@@ -1,10 +1,13 @@
-import React, { ReactElement, ReactNode, useRef } from 'react';
+'use client';
+
+import React, { ReactElement, ReactNode } from 'react';
 import { cn } from '@theguild/components';
+import { useTweenPlaybackRate } from './use-tween-playback-rate';
 
 const PresetSpeedToMs = {
   fast: 20_000,
   normal: 40_000,
-  slow: 80_000,
+  slow: 60_000,
 };
 
 export interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -21,7 +24,7 @@ export interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Marquee({
   direction = 'left',
   speed = 'normal',
-  pauseOnHover = true,
+  pauseOnHover = false,
   className,
   children,
   pauseDurationSeconds = 1,
@@ -30,34 +33,7 @@ export function Marquee({
   const animationDuration =
     typeof speed === 'number' ? speed : PresetSpeedToMs[speed as keyof typeof PresetSpeedToMs];
 
-  const slowingHandle = useRef<number | null>(null);
-  const resumingHandle = useRef<number | null>(null);
-  const time = useRef<number | null>(null);
-
-  function tweenPlaybackRate(animation: Animation, step: number) {
-    const currentHandle = step > 0 ? resumingHandle : slowingHandle;
-    const oppositeHandle = step > 0 ? slowingHandle : resumingHandle;
-
-    if (oppositeHandle.current) {
-      cancelAnimationFrame(oppositeHandle.current);
-      oppositeHandle.current = time.current = null;
-    }
-
-    const now = performance.now();
-
-    if (time.current) {
-      const deltaTime = now - time.current;
-      const { playbackRate } = animation;
-
-      const newValue = Math.min(Math.max(playbackRate + step * deltaTime, 0), 1);
-      if (newValue === playbackRate) return;
-
-      animation.updatePlaybackRate(newValue);
-    }
-
-    time.current = now;
-    currentHandle.current = requestAnimationFrame(() => tweenPlaybackRate(animation, step));
-  }
+  const tweenPlaybackRate = useTweenPlaybackRate();
 
   const STEP = 1 / (pauseDurationSeconds * 1000);
 
