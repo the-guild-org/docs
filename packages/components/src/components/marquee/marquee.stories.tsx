@@ -234,10 +234,7 @@ const ENVELOP_PLUGINS: { title: string; href: `https://${string}` }[] = [
 
 export const EnvelopPlugins: StoryObj<MarqueeRowsProps> = {
   render: props => (
-    <MarqueeRows
-      className="w-[800px] max-w-full rounded-2xl border bg-green-1000 p-4 dark:border-beige-700"
-      {...props}
-    />
+    <MarqueeRows className="w-[800px] max-w-full rounded-2xl bg-green-1000 p-4" {...props} />
   ),
   args: {
     rows: 10,
