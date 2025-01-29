@@ -49,10 +49,13 @@ export function Marquee({
         className={cn(
           'flex w-max animate-[marquee_var(--animation-duration)_var(--animation-direction)_linear_infinite] gap-2 py-1',
         )}
-        style={{
-          '--animation-duration': `${animationDuration}ms`,
-          '--animation-direction': direction === 'left' ? 'forwards' : 'reverse',
-        }}
+        style={
+          {
+            '--animation-duration': `${animationDuration}ms`,
+            '--animation-direction': direction === 'left' ? 'forwards' : 'reverse',
+            // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+          } as {}
+        }
         onMouseEnter={
           pauseOnHover
             ? event => {
