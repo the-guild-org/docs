@@ -1,8 +1,4 @@
-import {
-  GRADIENT_GREEN_ID,
-  GRADIENT_WHITE_2_ID,
-  GRADIENT_WHITE_ID,
-} from './hero-gradient-ids';
+import { GRADIENT_GREEN_ID, GRADIENT_WHITE_2_ID, GRADIENT_WHITE_ID } from './hero-gradient-ids';
 
 export function HeroGradientDefs() {
   return (
