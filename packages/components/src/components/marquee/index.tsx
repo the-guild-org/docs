@@ -47,7 +47,7 @@ export function Marquee({
     >
       <div
         className={cn(
-          'flex w-max animate-[marquee_var(--animation-duration)_var(--animation-direction)_linear_infinite] gap-2 py-1',
+          'flex w-max animate-[marquee_var(--animation-duration)_var(--animation-direction)_linear_infinite] gap-1 py-0.5 sm:gap-2 sm:py-1',
         )}
         style={
           {

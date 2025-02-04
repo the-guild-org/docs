@@ -243,7 +243,7 @@ export const EnvelopPlugins: StoryObj<MarqueeRowsProps> = {
         target="_blank"
         rel="noreferrer"
         // bg-green-900 px-4 py-3 rounded-lg text-green-600
-        className="hive-focus rounded-lg bg-green-900 px-4 py-3 text-green-600 transition hover:bg-green-800 hover:text-white"
+        className="hive-focus rounded bg-green-900 px-2 py-1.5 text-[10px] text-green-600 transition hover:bg-green-800 hover:text-white sm:rounded-lg sm:px-4 sm:py-3 sm:text-sm"
       >
         {plugin.title}
       </a>
