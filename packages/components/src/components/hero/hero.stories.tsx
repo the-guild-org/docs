@@ -4,6 +4,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 import { ModulesLogo } from '../../logos';
 import { CallToAction } from '../call-to-action';
+import { HiveGatewayIcon } from '../icons';
 import { Hero, HeroDecorationFromLogo, HeroLogo } from './index';
 
 export default {
@@ -26,6 +27,7 @@ export default {
   },
   parameters: {
     padding: true,
+    forcedLightMode: true,
   },
 } satisfies Meta<ComponentProps<typeof Hero>>;
 
@@ -35,7 +37,7 @@ export const Default: StoryObj<ComponentProps<typeof Hero>> = {
     text: 'GraphQL Modules is a toolset of libraries and guidelines dedicated to create reusable, maintainable, testable and extendable modules out of your GraphQL server.',
     top: (
       <HeroLogo>
-        <ModulesLogo />
+        <HiveGatewayIcon />
       </HeroLogo>
     ),
     checkmarks: ['Fully open source', 'No vendor lock'],

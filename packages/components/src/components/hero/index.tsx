@@ -20,7 +20,7 @@ export const Hero: FC<HeroProps> = props => {
   return (
     <div
       className={cn(
-        'relative isolate flex max-w-[90rem] flex-col items-center justify-center gap-6 overflow-hidden rounded-3xl bg-blue-400 px-4 py-6 max-sm:mt-2 sm:py-12 md:gap-8 lg:py-24',
+        'relative isolate flex max-w-[90rem] flex-col items-center justify-center gap-6 overflow-hidden rounded-3xl bg-blue-400 px-4 py-6 text-green-1000 max-sm:mt-2 sm:py-12 md:gap-8 lg:py-24',
         props.className,
       )}
     >

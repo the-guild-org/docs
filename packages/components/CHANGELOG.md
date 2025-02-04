@@ -1,5 +1,50 @@
 # @theguild/components
 
+## 9.3.1
+
+### Patch Changes
+
+- [#2030](https://github.com/the-guild-org/docs/pull/2030)
+  [`1eef7bc`](https://github.com/the-guild-org/docs/commit/1eef7bc6e8e33c7b1c5c5562ed9b74a4d486277d)
+  Thanks [@hasparus](https://github.com/hasparus)! - Reexport `HeroLogo`
+
+## 9.3.0
+
+### Minor Changes
+
+- [#2004](https://github.com/the-guild-org/docs/pull/2004)
+  [`e2218e6`](https://github.com/the-guild-org/docs/commit/e2218e66745d0359cdbd4650523826036d8f9517)
+  Thanks [@hasparus](https://github.com/hasparus)! - Hero section v2:
+
+  - Change `logo` prop to `top={{ logo: }}`
+  - Remove decorations
+
+- [#2024](https://github.com/the-guild-org/docs/pull/2024)
+  [`bbdd9d4`](https://github.com/the-guild-org/docs/commit/bbdd9d4f5ae26ce5887794d74a1a2a46ec83f34b)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add Marquee
+
+### Patch Changes
+
+- [#2006](https://github.com/the-guild-org/docs/pull/2006)
+  [`911c3b1`](https://github.com/the-guild-org/docs/commit/911c3b1fb2edb93d86f83c73fb1c6af0a3399eb9)
+  Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`nextra@4.0.5` ↗︎](https://www.npmjs.com/package/nextra/v/4.0.5) (from
+    `4.0.4`, in `dependencies`)
+  - Updated dependency
+    [`nextra-theme-docs@4.0.5` ↗︎](https://www.npmjs.com/package/nextra-theme-docs/v/4.0.5) (from
+    `4.0.4`, in `dependencies`)
+
+- [#2009](https://github.com/the-guild-org/docs/pull/2009)
+  [`8fc2c3b`](https://github.com/the-guild-org/docs/commit/8fc2c3b51bf86675bbcfb3fb73fe78a78b0fe744)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add a readymade way to make a simple decoration
+  for library websites back.
+
+- [#2014](https://github.com/the-guild-org/docs/pull/2014)
+  [`8f334d9`](https://github.com/the-guild-org/docs/commit/8f334d9482777ce40ed58093acb18900f9431c1f)
+  Thanks [@hasparus](https://github.com/hasparus)! - Keep firefox highlight fix className on the
+  HighlightDecoration (v9)
+
 ## 9.2.0
 
 ### Minor Changes
