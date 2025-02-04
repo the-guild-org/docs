@@ -106,15 +106,15 @@ export function MarqueeRows({
   className,
   ...rest
 }: MarqueeRowsProps) {
-  const chunkSize = Math.ceil(children.length / rows);
+  const chunkSize = Math.floor(children.length / rows);
+  const remainder = children.length % rows;
   const chunks: ReactElement[][] = [];
 
+  let start = 0;
   for (let i = 0; i < rows; i++) {
-    const chunk = children.slice(i * chunkSize, (i + 1) * chunkSize);
-
-    if (chunk.length !== 0) {
-      chunks.push(chunk);
-    }
+    const end = start + chunkSize + (i < remainder ? 1 : 0); // distribute extras
+    chunks.push(children.slice(start, end));
+    start = end;
   }
 
   return (
