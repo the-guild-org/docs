@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 9.3.1
+
+### Patch Changes
+
+- [#2030](https://github.com/the-guild-org/docs/pull/2030)
+  [`1eef7bc`](https://github.com/the-guild-org/docs/commit/1eef7bc6e8e33c7b1c5c5562ed9b74a4d486277d)
+  Thanks [@hasparus](https://github.com/hasparus)! - Reexport `HeroLogo`
+
 ## 9.3.0
 
 ### Minor Changes
