@@ -3,7 +3,7 @@ import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorat
 import { Marquee, MarqueeProps, MarqueeRows, MarqueeRowsProps } from './index';
 
 export default {
-  title: 'Marquee',
+  title: 'Components/Marquee',
   component: Marquee,
   decorators: [hiveThemeDecorator],
   parameters: {

@@ -45,7 +45,7 @@ export function Marquee({
       )}
       {...rest}
     >
-      <ul
+      <div
         className={cn(
           'flex w-max animate-[marquee_var(--animation-duration)_var(--animation-direction)_linear_infinite] gap-2 py-1',
         )}
@@ -75,7 +75,7 @@ export function Marquee({
       >
         {children}
         {children}
-      </ul>
+      </div>
       <style href="Marquee-keyframes">
         {
           /* css */ `
@@ -110,7 +110,11 @@ export function MarqueeRows({
   const chunks: ReactElement[][] = [];
 
   for (let i = 0; i < rows; i++) {
-    chunks.push(children.slice(i * chunkSize, (i + 1) * chunkSize));
+    const chunk = children.slice(i * chunkSize, (i + 1) * chunkSize);
+
+    if (chunk.length !== 0) {
+      chunks.push(chunk);
+    }
   }
 
   return (
