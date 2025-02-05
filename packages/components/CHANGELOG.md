@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 9.3.2
+
+### Patch Changes
+
+- [#2035](https://github.com/the-guild-org/docs/pull/2035)
+  [`737277b`](https://github.com/the-guild-org/docs/commit/737277b0373b5d93def4e95c80abc19d24f081cd)
+  Thanks [@hasparus](https://github.com/hasparus)! - Remove unordered list from Marquee & ensure we
+  have no empty rows
+
 ## 9.3.1
 
 ### Patch Changes
