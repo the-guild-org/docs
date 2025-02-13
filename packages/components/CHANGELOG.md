@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 9.3.3
+
+### Patch Changes
+
+- [#2037](https://github.com/the-guild-org/docs/pull/2037)
+  [`1e2011a`](https://github.com/the-guild-org/docs/commit/1e2011a12d699120b09ce2343fdf0d27c9c8ec0f)
+  Thanks [@hasparus](https://github.com/hasparus)! - Update Pricing link to go to Pricing page
+
 ## 9.3.2
 
 ### Patch Changes
