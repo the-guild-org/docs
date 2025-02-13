@@ -189,7 +189,7 @@ const DEFAULT_ITEMS: HiveFooterItems = {
     },
     {
       children: 'Pricing',
-      href: 'https://the-guild.dev/graphql/hive#pricing',
+      href: 'https://the-guild.dev/graphql/hive/pricing',
     },
   ],
 };
