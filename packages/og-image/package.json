@@ -6,6 +6,7 @@
     "deploy": "wrangler publish",
     "postinstall": "tsx ../../scripts/copy-wasm.ts",
     "start": "NODE_ENV=development wrangler dev",
+    "test": "pnpm -w test packages/og-image",
     "types:check": "tsc --noEmit"
   },
   "dependencies": {
