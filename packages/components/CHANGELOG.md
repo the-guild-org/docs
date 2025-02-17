@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 9.3.4
+
+### Patch Changes
+
+- [#2040](https://github.com/the-guild-org/docs/pull/2040)
+  [`87d5bbe`](https://github.com/the-guild-org/docs/commit/87d5bbecbb8e53bca2d21c422a3e080e8eede383)
+  Thanks [@hasparus](https://github.com/hasparus)! - Change inner paragraph in InfoCard to div
+
 ## 9.3.3
 
 ### Patch Changes
