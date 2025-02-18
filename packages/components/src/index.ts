@@ -7,11 +7,11 @@ export {
   Mermaid,
   Steps,
   Tabs,
-  Table,
   Bleed,
   Collapse,
   Search,
   Banner,
+  Table,
 } from 'nextra/components';
 export { useMounted } from 'nextra/hooks';
 export * from './components';
@@ -21,6 +21,12 @@ export * from './logos';
 export { cn } from './cn';
 export * from './next-types';
 export { normalizePages } from 'nextra/normalize-pages';
+
+/**
+ * @deprecated Consider using `ComparisonTable` instead.
+ * This name was kept for back-compat, because the public
+ * API differs,
+ */
 
 declare module 'react' {
   interface CSSProperties {
