@@ -1,5 +1,20 @@
 # @theguild/components
 
+## 9.4.0
+
+### Minor Changes
+
+- [#2045](https://github.com/the-guild-org/docs/pull/2045)
+  [`7f88b45`](https://github.com/the-guild-org/docs/commit/7f88b4583d2272e6535634d6978637a80db85c56)
+  Thanks [@hasparus](https://github.com/hasparus)! - Expose `href` and `scheme` props from InfoCard
+
+### Patch Changes
+
+- [#2043](https://github.com/the-guild-org/docs/pull/2043)
+  [`2c777e7`](https://github.com/the-guild-org/docs/commit/2c777e7bca6ff85b2518e05cf6a84935d97c6213)
+  Thanks [@hasparus](https://github.com/hasparus)! - Update the link in PRODUCTS.HIVE_GATEWAY to go
+  to Gateway's landing page
+
 ## 9.3.4
 
 ### Patch Changes
