@@ -1,5 +1,13 @@
 # @theguild/remark-mermaid
 
+## 0.3.0
+
+### Minor Changes
+
+- [#2039](https://github.com/the-guild-org/docs/pull/2039)
+  [`a4cf7fe`](https://github.com/the-guild-org/docs/commit/a4cf7fe3c8d4fcf6411d487d13af471f2b83deec)
+  Thanks [@amorey](https://github.com/amorey)! - Update React peer dependency to include React 19
+
 ## 0.2.0
 
 ### Minor Changes
