@@ -17,7 +17,7 @@
     "yoga-wasm-web": "0.3.3"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20250109.0",
+    "@cloudflare/workers-types": "4.20250321.0",
     "@types/react": "18.3.18",
     "typescript": "5.7.3",
     "wrangler": "3.101.0"
