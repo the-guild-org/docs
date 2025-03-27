@@ -42,7 +42,7 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
             children: 'Documentation',
           },
           {
-            href: 'https://the-guild.dev/blog',
+            href: 'https://the-guild.dev/graphql/hive/blog',
             icon: <PencilIcon />,
             children: 'Blog',
           },

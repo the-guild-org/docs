@@ -42,7 +42,7 @@ const HIVE_DEVELOPER_MENU: HiveNavigationProps['developerMenu'] = [
     icon: <RightCornerIcon />,
     children: 'Product Updates',
   },
-  { href: `${siteOrigin}/blog`, icon: <PencilIcon />, children: 'Blog' },
+  { href: `${siteOrigin}/graphql/hive/blog`, icon: <PencilIcon />, children: 'Blog' },
   {
     href: 'https://github.com/dotansimha/graphql-code-generator',
     icon: <GitHubIcon />,
@@ -206,7 +206,7 @@ export const CodegenNavmenu: StoryObj<HiveNavigationProps> = {
         children: 'Documentation',
       },
       {
-        href: 'https://the-guild.dev/blog',
+        href: 'https://the-guild.dev/graphql/hive/blog',
         icon: <PencilIcon />,
         children: 'Blog',
       },

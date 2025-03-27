@@ -161,7 +161,7 @@ const DEFAULT_ITEMS: HiveFooterItems = {
     {
       children: 'Blog',
       title: 'Read our blog',
-      href: 'https://the-guild.dev/blog',
+      href: 'https://the-guild.dev/graphql/hive/blog',
     },
   ],
   company: [

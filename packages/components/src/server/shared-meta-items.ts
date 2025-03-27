@@ -15,7 +15,7 @@ export function sharedMetaItems(options: { githubUrl: string; product: ProductTy
     blog: {
       title: 'Blog',
       type: 'page',
-      href: 'https://the-guild.dev/blog',
+      href: 'https://the-guild.dev/graphql/hive/blog',
     },
     github: {
       title: 'GitHub',
@@ -33,6 +33,10 @@ export function sharedMetaItems(options: { githubUrl: string; product: ProductTy
         'brand-assets': {
           title: 'Brand Assets',
           href: 'https://the-guild.dev/logos',
+        },
+        blog: {
+          title: 'The Guild Blog',
+          href: 'https://the-guild.dev/blog',
         },
       },
     },
