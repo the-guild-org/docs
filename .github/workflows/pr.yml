@@ -4,10 +4,10 @@ on:
   pull_request: {}
 
 jobs:
-  dependencies:
-    uses: the-guild-org/shared-config/.github/workflows/changesets-dependencies.yaml@main
-    secrets:
-      githubToken: ${{ secrets.GUILD_BOT_TOKEN }}
+  # dependencies:
+  #   uses: the-guild-org/shared-config/.github/workflows/changesets-dependencies.yaml@main
+  #   secrets:
+  #     githubToken: ${{ secrets.GUILD_BOT_TOKEN }}
 
   canary:
     uses: the-guild-org/shared-config/.github/workflows/release-snapshot.yml@main

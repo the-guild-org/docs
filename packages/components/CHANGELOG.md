@@ -1,5 +1,19 @@
 # @theguild/components
 
+## 9.4.1
+
+### Patch Changes
+
+- [#2046](https://github.com/the-guild-org/docs/pull/2046)
+  [`b1fceae`](https://github.com/the-guild-org/docs/commit/b1fceae0be94e7c722afdff232cccc77b058c7b3)
+  Thanks [@hasparus](https://github.com/hasparus)! - Hide clear button when marketplace input is
+  empty'
+
+- [#2048](https://github.com/the-guild-org/docs/pull/2048)
+  [`6cc9731`](https://github.com/the-guild-org/docs/commit/6cc97315d6074163d5e1a4e8776edea9dee7ff5e)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add stories for ComparisonTable, allow
+  highlighting with a CSS, and expose `scheme`
+
 ## 9.4.0
 
 ### Minor Changes

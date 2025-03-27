@@ -151,7 +151,8 @@ function MarketplaceSearchInput({
           onClick={() => onChange('')}
           // A builtin clear-button can't be tabbed to. A keyboard user can cmd+A and delete.
           tabIndex={-1}
-          className="flex size-6 items-center justify-center rounded-sm"
+          className="flex size-6 items-center justify-center rounded-sm [input:placeholder-shown+&]:hidden"
+          aria-label="Clear input"
         >
           <CloseIcon className="size-5 text-[--fg-80]" />
         </button>
