@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 9.5.0
+
+### Minor Changes
+
+- [#2055](https://github.com/the-guild-org/docs/pull/2055)
+  [`c7f96fe`](https://github.com/the-guild-org/docs/commit/c7f96fe98b255a1b4c860f15c0dfe27f14e887c4)
+  Thanks [@hasparus](https://github.com/hasparus)! - Change Blog links to link to the new Hive blog
+
 ## 9.4.1
 
 ### Patch Changes
