@@ -10,6 +10,16 @@ export default {
     children: 'Click me',
     onClick: () => alert('Clicked!'),
   },
+  argTypes: {
+    as: {
+      control: 'select',
+      options: [undefined, 'span', 'div'],
+    },
+    variant: {
+      control: 'select',
+      options: ['primary', 'primary-inverted', 'secondary', 'secondary-inverted', 'tertiary'],
+    },
+  },
   parameters: {
     padding: true,
   },
@@ -63,4 +73,12 @@ export const AsSpan: StoryObj<CallToActionProps> = {
       </details>
     ),
   ],
+};
+
+export const Link: StoryObj<CallToActionProps> = {
+  args: {
+    href: 'https://the-guild.dev/graphql/hive/ecosystem',
+    children: 'Explore the Ecosystem',
+    variant: 'secondary-inverted',
+  },
 };
