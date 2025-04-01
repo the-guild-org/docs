@@ -35,7 +35,6 @@ export declare namespace CallToActionProps {
     extends BaseProps,
       React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     href?: never;
-    onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   }
 }
 
