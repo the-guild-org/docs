@@ -1,3 +1,4 @@
+import { HTMLAttributes } from 'react';
 import { cn } from '../cn';
 import { Anchor } from './anchor';
 
@@ -29,21 +30,38 @@ export declare namespace CallToActionProps {
 
   export interface AnchorProps extends BaseProps, React.ComponentPropsWithoutRef<typeof Anchor> {
     href: string;
+    as?: never;
   }
 
   export interface ButtonProps
     extends BaseProps,
       React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     href?: never;
-    onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    as?: never;
+  }
+
+  /**
+   * Use inside `<summary>` or as visual part of bigger interactive element.
+   * Prefer using `href` prop using CallToAction as `<button>` in other cases.
+   */
+  export interface NonInteractiveProps
+    extends BaseProps,
+      React.DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
+    href?: never;
+    as: 'span' | 'div';
   }
 }
 
-export type CallToActionProps = CallToActionProps.AnchorProps | CallToActionProps.ButtonProps;
+export type CallToActionProps =
+  | CallToActionProps.AnchorProps
+  | CallToActionProps.ButtonProps
+  | CallToActionProps.NonInteractiveProps;
 
 /**
  * This is called `Button` in Figma in the new Hive brand design system.
- * It's a styled variant of {@link Anchor}.
+ * It's a styled variant of {@link Anchor}. Based on the presence of the
+ * `href` prop or `as` prop, it renders a `button`, `a` or `props.as`
+ * (for non-interactive elements) element.
  *
  * // TODO: Consider renaming it to `Button`.
  */
@@ -54,14 +72,30 @@ export function CallToAction(props: CallToActionProps) {
     props.className,
   );
 
+  const growingBorderBox = (
+    <span className="absolute inset-0 rounded-lg border border-green-800 dark:border-neutral-200" />
+  );
+
   if ('href' in props && typeof props.href === 'string') {
     const { className: _1, variant: _2, children, ...rest } = props;
 
     return (
       <Anchor className={className} {...rest}>
-        <div className="absolute inset-0 rounded-lg border border-green-800 dark:border-neutral-200" />
+        {growingBorderBox}
         {children}
       </Anchor>
+    );
+  }
+
+  if (props.as) {
+    const { className: _1, variant: _2, children, as, ...rest } = props;
+    // for this use case HTMLElement is enough, we don't need to use the more specific HTMLDivElement
+    const Root = as as 'span';
+    return (
+      <Root className={className} {...rest}>
+        {growingBorderBox}
+        {children}
+      </Root>
     );
   }
 
@@ -69,7 +103,7 @@ export function CallToAction(props: CallToActionProps) {
 
   return (
     <button className={className} {...rest}>
-      <div className="absolute inset-0 rounded-lg border border-green-800 dark:border-neutral-200" />
+      {growingBorderBox}
       {children}
     </button>
   );

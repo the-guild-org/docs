@@ -10,6 +10,16 @@ export default {
     children: 'Click me',
     onClick: () => alert('Clicked!'),
   },
+  argTypes: {
+    as: {
+      control: 'select',
+      options: [undefined, 'span', 'div'],
+    },
+    variant: {
+      control: 'select',
+      options: ['primary', 'primary-inverted', 'secondary', 'secondary-inverted', 'tertiary'],
+    },
+  },
   parameters: {
     padding: true,
   },
@@ -42,5 +52,40 @@ export const SecondaryInverted: StoryObj<CallToActionProps> = {
 export const Tertiary: StoryObj<CallToActionProps> = {
   args: {
     variant: 'tertiary',
+  },
+};
+
+export const AsSpan: StoryObj<CallToActionProps> = {
+  args: {
+    as: 'span',
+    children: 'Show More',
+    onClick: () => {
+      // no alert
+    },
+  },
+  decorators: [
+    (Story: React.FC) => (
+      <details>
+        <summary className="list-none pb-4">
+          <Story />
+        </summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+      </details>
+    ),
+  ],
+};
+
+export const Link: StoryObj<CallToActionProps> = {
+  args: {
+    href: 'https://the-guild.dev/graphql/hive/ecosystem',
+    children: 'Explore the Ecosystem',
+    variant: 'secondary-inverted',
+  },
+};
+
+export const Submit: StoryObj<CallToActionProps> = {
+  args: {
+    type: 'submit',
+    children: 'Submit',
   },
 };
