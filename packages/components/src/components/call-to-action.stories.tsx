@@ -44,3 +44,23 @@ export const Tertiary: StoryObj<CallToActionProps> = {
     variant: 'tertiary',
   },
 };
+
+export const AsSpan: StoryObj<CallToActionProps> = {
+  args: {
+    as: 'span',
+    children: 'Show More',
+    onClick: () => {
+      // no alert
+    },
+  },
+  decorators: [
+    (Story: React.FC) => (
+      <details>
+        <summary className="list-none pb-4">
+          <Story />
+        </summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+      </details>
+    ),
+  ],
+};
