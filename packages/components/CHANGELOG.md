@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 9.6.0
+
+### Minor Changes
+
+- [#2057](https://github.com/the-guild-org/docs/pull/2057)
+  [`642a7cd`](https://github.com/the-guild-org/docs/commit/642a7cd121a886c5b2de7c2feeba61f7b1f6904b)
+  Thanks [@hasparus](https://github.com/hasparus)! - <CallToAction as="span"> and type="submit"
+
 ## 9.5.0
 
 ### Minor Changes
