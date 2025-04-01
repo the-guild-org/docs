@@ -82,3 +82,10 @@ export const Link: StoryObj<CallToActionProps> = {
     variant: 'secondary-inverted',
   },
 };
+
+export const Submit: StoryObj<CallToActionProps> = {
+  args: {
+    type: 'submit',
+    children: 'Submit',
+  },
+};
