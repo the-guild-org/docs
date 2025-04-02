@@ -198,13 +198,13 @@
     transform: translateX(0);
   }
   25% {
-    transform: rotate(-1deg);
+    transform: rotate(-0.4deg);
   }
   75% {
-    transform: rotate(1deg);
+    transform: rotate(0.3deg);
   }
 }
 
-.animate-shake {
+.animate-shake:not(:focus-within) {
   animation: hive-shake 0.3s ease;
 }

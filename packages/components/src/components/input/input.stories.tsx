@@ -28,7 +28,14 @@ export default {
   parameters: {
     padding: true,
   },
-  decorators: [hiveThemeDecorator],
+  decorators: [
+    hiveThemeDecorator,
+    (Story: React.FC) => (
+      <div className="max-w-xl">
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<InputProps>;
 
 export const Default: StoryObj<InputProps> = {
