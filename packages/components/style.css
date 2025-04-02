@@ -191,3 +191,20 @@
     1 100%
   );
 }
+
+@keyframes hive-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: rotate(-1deg);
+  }
+  75% {
+    transform: rotate(1deg);
+  }
+}
+
+.animate-shake {
+  animation: hive-shake 0.3s ease;
+}

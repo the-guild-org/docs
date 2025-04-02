@@ -1,7 +1,7 @@
 import { useArgs } from '@storybook/preview-api';
 import { Meta, StoryObj } from '@storybook/react';
-import { hiveThemeDecorator } from '../../../../.storybook/hive-theme-decorator';
-import { Input, InputProps } from './input';
+import { Input, InputProps } from '.';
+import { hiveThemeDecorator } from '../../../../../.storybook/hive-theme-decorator';
 
 export default {
   title: 'Components/Input',

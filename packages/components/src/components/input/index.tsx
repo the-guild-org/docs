@@ -1,5 +1,6 @@
-import { cn } from '../cn';
-import { Severity } from '../types/severity';
+import { cn } from '../../cn';
+import { Severity } from '../../types/severity';
+import { InputShake } from './input-shake';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   severity?: Severity;
@@ -22,6 +23,7 @@ export function Input({ severity, message, ...props }: InputProps) {
           'border-positive-dark/50 outline-positive-dark dark:border-positive-dark/50',
       )}
     >
+      <InputShake severity={severity} />
       <input
         aria-invalid={severity === 'critical' ? true : undefined}
         className={cn(
