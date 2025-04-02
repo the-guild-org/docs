@@ -42,6 +42,9 @@ importers:
       '@storybook/nextjs':
         specifier: 8.4.2
         version: 8.4.2(@types/webpack@5.28.5(esbuild@0.24.2))(esbuild@0.24.2)(next@15.1.5(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.2(prettier@3.4.2))(type-fest@3.13.1)(typescript@5.7.3)(webpack-hot-middleware@2.26.1)(webpack@5.98.0(esbuild@0.24.2))
+      '@storybook/preview-api':
+        specifier: 8.4.2
+        version: 8.4.2(storybook@8.4.2(prettier@3.4.2))
       '@storybook/react':
         specifier: 8.4.2
         version: 8.4.2(@storybook/test@8.4.2(storybook@8.4.2(prettier@3.4.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.2(prettier@3.4.2))(typescript@5.7.3)

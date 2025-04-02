@@ -29,6 +29,7 @@
     "@storybook/addon-links": "8.4.2",
     "@storybook/core-common": "8.4.2",
     "@storybook/nextjs": "8.4.2",
+    "@storybook/preview-api": "8.4.2",
     "@storybook/react": "8.4.2",
     "@storybook/theming": "8.4.2",
     "@svgr/webpack": "8.1.0",

@@ -25,28 +25,30 @@ export function Input({ severity, message, ...props }: InputProps) {
       <input
         aria-invalid={severity === 'critical' ? true : undefined}
         className={cn(
-          'w-full rounded-lg bg-white py-3 indent-4 font-medium transition-[background-color] placeholder:text-green-800 placeholder-shown:bg-blue-100 autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] autofill:[-webkit-text-fill-color:theme(colors.green.1000)] autofill:first-line:font-sans hover:bg-white focus:bg-white focus-visible:outline-none focus-visible:ring-0 dark:bg-neutral-800 dark:text-white dark:placeholder:text-neutral-300 dark:placeholder-shown:bg-neutral-900 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800',
-          message && 'rounded-b-none',
-          'pr-6 [&:is(:invalid,[aria-invalid])]:border-critical-dark/20 [&:is(:invalid,[aria-invalid])]:placeholder-shown:bg-critical-dark/5',
-
+          'w-full rounded-lg bg-white py-3 indent-4 font-medium transition-[background-color,padding] placeholder:text-green-800 placeholder-shown:bg-blue-100 autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] autofill:[-webkit-text-fill-color:theme(colors.green.1000)] autofill:first-line:font-sans hover:bg-white focus:bg-white focus-visible:outline-none focus-visible:ring-0 dark:bg-neutral-800 dark:text-white dark:placeholder:text-neutral-300 dark:placeholder-shown:bg-neutral-900 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800',
+          message && 'rounded-b-none py-2',
           props.className,
         )}
         {...props}
       />
-      {message &&
-        (severity === 'critical' ? (
-          <p className="rounded-b-lg bg-critical-dark/10 py-0.5 pl-4 text-sm text-critical-dark dark:bg-critical-bright/20 dark:text-white">
-            {message}
-          </p>
-        ) : severity === 'warning' ? (
-          <p className="rounded-b-lg bg-warning-bright/10 py-0.5 pl-4 text-sm text-warning-bright">
-            {message}
-          </p>
-        ) : (
-          <p className="rounded-b-lg bg-positive-dark/10 py-0.5 pl-4 text-sm text-positive-dark">
-            {message}
-          </p>
-        ))}
+      <div
+        style={{ height: message ? '25px' : '0px' }}
+        className={cn(
+          'overflow-hidden rounded-b-lg pl-4 pr-1 text-sm transition-all *:animate-in *:fade-in',
+          severity === 'critical' && 'bg-critical-dark/10 dark:bg-critical-bright/20',
+          severity === 'warning' && 'bg-warning-bright/10',
+          severity === 'positive' && 'bg-positive-dark/10',
+        )}
+      >
+        {message &&
+          (severity === 'critical' ? (
+            <p className="py-0.5 text-sm text-critical-dark dark:text-white">{message}</p>
+          ) : severity === 'warning' ? (
+            <p className="py-0.5 text-sm text-warning-bright">{message}</p>
+          ) : (
+            <p className="py-0.5 text-sm text-positive-dark">{message}</p>
+          ))}
+      </div>
     </div>
   );
 }

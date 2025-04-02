@@ -1,3 +1,4 @@
+import { useArgs } from '@storybook/preview-api';
 import { Meta, StoryObj } from '@storybook/react';
 import { hiveThemeDecorator } from '../../../../.storybook/hive-theme-decorator';
 import { Input, InputProps } from './input';
@@ -43,6 +44,26 @@ export const Critical: StoryObj<InputProps> = {
     message: 'Please enter a valid email address',
     type: 'email',
     value: '+48 222 500 151',
+  },
+  render: () => {
+    const [args, update] = useArgs<InputProps>();
+
+    return (
+      <Input
+        {...args}
+        onChange={event => {
+          if (
+            event.target.value.toString().match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
+          ) {
+            update({ severity: undefined, message: undefined });
+          } else {
+            update({ severity: 'critical', message: 'Please enter a valid email address' });
+          }
+
+          update({ value: event.target.value });
+        }}
+      />
+    );
   },
 };
 
