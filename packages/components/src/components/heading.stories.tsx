@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { hiveThemeDecorator } from '../../../../.storybook/hive-theme-decorator';
 import { Heading as _Heading, HeadingProps } from './heading';
 
 export default {
@@ -23,6 +24,7 @@ export default {
   parameters: {
     padding: true,
   },
+  decorators: [hiveThemeDecorator],
 } satisfies Meta<HeadingProps>;
 
 export const Heading: StoryObj<HeadingProps> = {

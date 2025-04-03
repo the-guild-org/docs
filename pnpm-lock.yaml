@@ -42,6 +42,9 @@ importers:
       '@storybook/nextjs':
         specifier: 8.4.2
         version: 8.4.2(@types/webpack@5.28.5(esbuild@0.24.2))(esbuild@0.24.2)(next@15.1.5(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.2(prettier@3.4.2))(type-fest@3.13.1)(typescript@5.7.3)(webpack-hot-middleware@2.26.1)(webpack@5.98.0(esbuild@0.24.2))
+      '@storybook/preview-api':
+        specifier: 8.4.2
+        version: 8.4.2(storybook@8.4.2(prettier@3.4.2))
       '@storybook/react':
         specifier: 8.4.2
         version: 8.4.2(@storybook/test@8.4.2(storybook@8.4.2(prettier@3.4.2)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.2(prettier@3.4.2))(typescript@5.7.3)
@@ -58,8 +61,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(prettier@3.4.2)
       '@theguild/tailwind-config':
-        specifier: 0.6.2
-        version: 0.6.2(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)
+        specifier: 0.6.3
+        version: 0.6.3(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)
       '@types/jest-image-snapshot':
         specifier: 6.4.0
         version: 6.4.0
@@ -206,8 +209,8 @@ importers:
         specifier: workspace:*
         version: link:../editor
       '@theguild/tailwind-config':
-        specifier: 0.6.2
-        version: 0.6.2(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)
+        specifier: 0.6.3
+        version: 0.6.3(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)
       '@types/dedent':
         specifier: 0.7.2
         version: 0.7.2
@@ -355,8 +358,8 @@ importers:
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@theguild/tailwind-config':
-        specifier: 0.6.2
-        version: 0.6.2(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)
+        specifier: 0.6.3
+        version: 0.6.3(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)
       '@types/react':
         specifier: 18.3.18
         version: 18.3.18
@@ -3079,8 +3082,8 @@ packages:
     peerDependencies:
       prettier: ^3
 
-  '@theguild/tailwind-config@0.6.2':
-    resolution: {integrity: sha512-dl0P3qDjj8Us0PSuPQKE+N1ZJXjuhr4uWi66pdTy24PdSNODFSBe7YgK87/UOfDUCDNnImRgt3Do6uAYsP46oA==}
+  '@theguild/tailwind-config@0.6.3':
+    resolution: {integrity: sha512-kmHHBnGRPiFtyBNuWCuKdC+kymh16OuFTD+R/Yb3yo+mNFJlOzGYdcu2ay6g1M+9+OlwSffifD2Zo97AZUwaSg==}
     peerDependencies:
       postcss-import: ^16.1.0
       postcss-lightningcss: ^1.0.1
@@ -13175,7 +13178,7 @@ snapshots:
       - '@vue/compiler-sfc'
       - supports-color
 
-  '@theguild/tailwind-config@0.6.2(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)':
+  '@theguild/tailwind-config@0.6.3(postcss-import@15.1.0(postcss@8.5.0))(postcss-lightningcss@1.0.1(postcss@8.5.0))(tailwindcss@3.4.17)':
     dependencies:
       '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.17)
       postcss-import: 15.1.0(postcss@8.5.0)

@@ -9,6 +9,7 @@ export { HeroVideo } from './hero-video';
 export * from './icons';
 export { Image } from './image';
 export { InfoList } from './info-list';
+export { Input } from './input';
 export { LegacyPackageCmd } from './legacy-package-cmd';
 export { MarketplaceList } from './marketplace-list';
 export { MarketplaceSearch } from './marketplace-search';
