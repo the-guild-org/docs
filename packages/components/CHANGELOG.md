@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 9.7.0
+
+### Minor Changes
+
+- [#2059](https://github.com/the-guild-org/docs/pull/2059)
+  [`1dfb18f`](https://github.com/the-guild-org/docs/commit/1dfb18f79fbb1443c1c68aff7d57b5f52015e38e)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add Input component
+
 ## 9.6.0
 
 ### Minor Changes
