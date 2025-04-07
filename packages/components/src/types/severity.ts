@@ -1,1 +1,1 @@
-export type Severity = 'critical' | 'positive' | 'warning';
+export type Severity = 'critical' | 'positive' | 'warning' | 'neutral';

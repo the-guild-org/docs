@@ -7,7 +7,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   message?: string;
 }
 
-export function Input({ severity, message, ...props }: InputProps) {
+export function Input({ severity = 'neutral', message, ...props }: InputProps) {
   return (
     <div
       // todo: discuss colors with designers.
@@ -40,6 +40,7 @@ export function Input({ severity, message, ...props }: InputProps) {
           severity === 'critical' && 'bg-critical-dark/10 dark:bg-critical-bright/20',
           severity === 'warning' && 'bg-warning-bright/10',
           severity === 'positive' && 'bg-positive-dark/10',
+          severity === 'neutral' && 'bg-blue-100 dark:bg-neutral-800',
         )}
       >
         {message &&
@@ -47,8 +48,10 @@ export function Input({ severity, message, ...props }: InputProps) {
             <p className="py-0.5 text-sm text-critical-dark dark:text-white">{message}</p>
           ) : severity === 'warning' ? (
             <p className="py-0.5 text-sm text-warning-bright">{message}</p>
-          ) : (
+          ) : severity === 'positive' ? (
             <p className="py-0.5 text-sm text-positive-dark">{message}</p>
+          ) : (
+            <p className="py-0.5 text-sm text-green-800">{message}</p>
           ))}
       </div>
     </div>

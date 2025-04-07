@@ -92,6 +92,15 @@ export const Positive: StoryObj<InputProps> = {
   },
 };
 
+export const Neutral: StoryObj<InputProps> = {
+  args: {
+    severity: 'neutral',
+    message: 'Retrying...',
+    type: 'email',
+    value: 'contact@the-guild.dev',
+  },
+};
+
 export const Disabled: StoryObj<InputProps> = {
   args: {
     disabled: true,
