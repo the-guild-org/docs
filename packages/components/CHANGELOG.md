@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 9.7.1
+
+### Patch Changes
+
+- [#2061](https://github.com/the-guild-org/docs/pull/2061)
+  [`a2f2e06`](https://github.com/the-guild-org/docs/commit/a2f2e062b04f3581f386a5d1a5ca6752c5cedeab)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add (missing, so this is a patch) neutral
+  severity to Input
+
 ## 9.7.0
 
 ### Minor Changes
