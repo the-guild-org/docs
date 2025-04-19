@@ -155,7 +155,7 @@ importers:
         version: 2.1.9(@types/node@22.13.10)(lightningcss@1.29.3)(terser@5.39.0)
       wrangler:
         specifier: 4.1.0
-        version: 4.1.0
+        version: 4.1.0(@cloudflare/workers-types@4.20250419.0)
 
   packages/components:
     dependencies:
@@ -289,8 +289,8 @@ importers:
         version: 0.3.3
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: 4.20250109.0
-        version: 4.20250109.0
+        specifier: 4.20250419.0
+        version: 4.20250419.0
       '@types/react':
         specifier: 18.3.18
         version: 18.3.18
@@ -299,7 +299,7 @@ importers:
         version: 5.7.3
       wrangler:
         specifier: 3.101.0
-        version: 3.101.0(@cloudflare/workers-types@4.20250109.0)
+        version: 3.101.0(@cloudflare/workers-types@4.20250419.0)
 
   packages/remark-mermaid:
     dependencies:
@@ -1308,8 +1308,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20250109.0':
-    resolution: {integrity: sha512-Y1zgSaEOOevl9ORpzgMcm4j535p3nK2lrblHHvYM2yxR50SBKGh+wvkRFAIxWRfjUGZEU+Fp6923EGioDBbobA==}
+  '@cloudflare/workers-types@4.20250419.0':
+    resolution: {integrity: sha512-uu8gZ8P6teFsyfJOIXBrNC4ZsjLWPUEMeDqbQCdJ8OA6Rs/8QoUYD7ZSLW2kxsO/6upcbZir1WGrWp8088aVWg==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -6608,6 +6608,7 @@ packages:
 
   mvdan-sh@0.10.1:
     resolution: {integrity: sha512-kMbrH0EObaKmK3nVRKUIIya1dpASHIEusM13S4V1ViHFuxuNxCo+arxoa6j/dbV22YBGjl7UKJm9QQKJ2Crzhg==}
+    deprecated: See https://github.com/mvdan/sh/issues/1145
 
   mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
@@ -11120,7 +11121,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20250317.0':
     optional: true
 
-  '@cloudflare/workers-types@4.20250109.0': {}
+  '@cloudflare/workers-types@4.20250419.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -20450,7 +20451,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250317.0
       '@cloudflare/workerd-windows-64': 1.20250317.0
 
-  wrangler@3.101.0(@cloudflare/workers-types@4.20250109.0):
+  wrangler@3.101.0(@cloudflare/workers-types@4.20250419.0):
     dependencies:
       '@aws-sdk/client-s3': 3.758.0
       '@cloudflare/kv-asset-handler': 0.3.4
@@ -20471,7 +20472,7 @@ snapshots:
       workerd: 1.20241230.0
       xxhash-wasm: 1.1.0
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20250109.0
+      '@cloudflare/workers-types': 4.20250419.0
       fsevents: 2.3.3
     transitivePeerDependencies:
       - aws-crt
@@ -20479,7 +20480,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  wrangler@4.1.0:
+  wrangler@4.1.0(@cloudflare/workers-types@4.20250419.0):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@cloudflare/unenv-preset': 2.0.2(unenv@2.0.0-rc.14)(workerd@1.20250317.0)
@@ -20490,6 +20491,7 @@ snapshots:
       unenv: 2.0.0-rc.14
       workerd: 1.20250317.0
     optionalDependencies:
+      '@cloudflare/workers-types': 4.20250419.0
       fsevents: 2.3.3
       sharp: 0.33.5
     transitivePeerDependencies:
