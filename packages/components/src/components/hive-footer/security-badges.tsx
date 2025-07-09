@@ -30,12 +30,12 @@ export function SecurityBadges() {
   return (
     <div className="flex flex-wrap gap-4 max-lg:flex-col">
       <SecurityBadge href="https://cloudsecurityalliance.org/star/registry/software-products-guild-ltd-the-guild/services/graphql-hive">
-        <CSAStarLevelOneIcon className="size-20 dark:opacity-95" />
+        <CSAStarLevelOneIcon className="size-[88px] dark:opacity-95" />
       </SecurityBadge>
       <SecurityBadge href="https://security.graphql-hive.com/">
         <img
           src="https://static.vanta.com/static/soc2_badge.ac7ad1ad.webp"
-          className="size-20 dark:opacity-95"
+          className="size-[88px] dark:opacity-95"
         />
       </SecurityBadge>
     </div>
