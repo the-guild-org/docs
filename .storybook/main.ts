@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/consistent-type-imports */
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
-import { Configuration } from 'webpack';
-import { StorybookConfig } from '@storybook/nextjs';
+import type { Configuration } from 'webpack';
+import type { StorybookConfig } from '@storybook/nextjs';
 
 export default {
   stories: ['../packages/*/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],

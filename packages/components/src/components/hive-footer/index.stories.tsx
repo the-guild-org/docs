@@ -14,12 +14,17 @@ export default {
         description: "Use this to add current site's links to the footer.",
       },
     },
+    showSecurityBadges: {
+      name: 'Show Security Badges',
+      description: 'Show the security badges in the footer.',
+    },
   },
 } satisfies Meta<HiveFooterProps>;
 
 export const Default: StoryObj<HiveFooterProps> = {
   name: 'HiveFooter',
   args: {
+    showSecurityBadges: true,
     items: {
       ...HiveFooter.DEFAULT_ITEMS,
       resources: [
@@ -46,5 +51,12 @@ export const CodegenFooter: StoryObj<HiveFooterProps> = {
       </div>
     ),
     description: 'End-to-end type safety',
+  },
+};
+
+export const WithoutSecurityBadges: StoryObj<HiveFooterProps> = {
+  ...Default,
+  args: {
+    showSecurityBadges: false,
   },
 };
