@@ -17,7 +17,7 @@ function SecurityBadge({
       target="_blank"
       rel="noreferrer noopener"
       className={cn(
-        'hive-focus h-fit w-fit rounded-full p-1 hover:bg-blue-200 focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--nextra-bg))] dark:hover:bg-white/20 dark:hover:*:opacity-100',
+        'hive-focus size-fit rounded-full p-1 hover:bg-blue-200 focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--nextra-bg))] dark:hover:bg-white/20 dark:hover:*:opacity-100',
         className,
       )}
     >
@@ -35,6 +35,7 @@ export function SecurityBadges() {
       <SecurityBadge href="https://security.graphql-hive.com/">
         <img
           src="https://static.vanta.com/static/soc2_badge.ac7ad1ad.webp"
+          alt="AICPA SOC 2"
           className="size-[88px] dark:opacity-95"
         />
       </SecurityBadge>
