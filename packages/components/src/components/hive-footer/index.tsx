@@ -27,6 +27,10 @@ export type HiveFooterProps = {
   href?: string;
   description?: string;
   items?: HiveFooterItems;
+  /**
+   * In case this component is used outside of Hive Platform in a design-consistent but less related context,
+   */
+  hideSecurityBadges?: boolean;
 };
 
 export function HiveFooter({
@@ -35,6 +39,7 @@ export function HiveFooter({
   href = `${siteOrigin}/`,
   description = 'Open-source GraphQL management platform',
   items,
+  hideSecurityBadges,
 }: HiveFooterProps) {
   items = { ...HiveFooter.DEFAULT_ITEMS, ...items };
 
@@ -77,7 +82,7 @@ export function HiveFooter({
             <ContactTextLink />
           </div>
           <div className="sm:col-start-[-1] lg:col-start-[-2]">
-            <SecurityBadges />
+            {!hideSecurityBadges && <SecurityBadges />}
           </div>
         </div>
 

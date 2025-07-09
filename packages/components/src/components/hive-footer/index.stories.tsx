@@ -48,3 +48,10 @@ export const CodegenFooter: StoryObj<HiveFooterProps> = {
     description: 'End-to-end type safety',
   },
 };
+
+export const WithoutSecurityBadges: StoryObj<HiveFooterProps> = {
+  ...Default,
+  args: {
+    hideSecurityBadges: true,
+  },
+};
