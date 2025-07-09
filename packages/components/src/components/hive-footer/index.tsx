@@ -7,14 +7,8 @@ import { ILink } from '../../types/components';
 import { Anchor } from '../anchor';
 import { ContactTextLink } from '../contact-us';
 import { __LANDING_WIDTHS_ID } from '../hive-layout-config';
-import {
-  CSAStarLevelOneIcon,
-  DiscordIcon,
-  GitHubIcon,
-  LinkedInIcon,
-  TwitterIcon,
-  YouTubeIcon,
-} from '../icons/index';
+import { DiscordIcon, GitHubIcon, LinkedInIcon, TwitterIcon, YouTubeIcon } from '../icons/index';
+import { SecurityBadges } from './security-badges';
 
 const INNER_BOX_WIDTH_STYLE =
   'max-w-[90rem] [body:has(#hive-l-widths)_&]:max-w-[75rem] [body:has(#hive-l-widths)_&]:mx-4';
@@ -82,7 +76,9 @@ export function HiveFooter({
             ))}
             <ContactTextLink />
           </div>
-          <CSAStarLink className="sm:col-start-[-1] lg:col-start-[-2]" />
+          <div className="sm:col-start-[-1] lg:col-start-[-2]">
+            <SecurityBadges />
+          </div>
         </div>
 
         <div className="col-span-full flex flex-wrap justify-between gap-x-[inherit] gap-y-8 lg:w-full lg:pb-2 lg:pt-8">
@@ -264,21 +260,5 @@ function DecorationArch(props: React.SVGProps<SVGSVGElement>) {
         </linearGradient>
       </defs>
     </svg>
-  );
-}
-
-function CSAStarLink({ className }: { className?: string }) {
-  return (
-    <a
-      href="https://cloudsecurityalliance.org/star/registry/software-products-guild-ltd-the-guild/services/graphql-hive"
-      target="_blank"
-      rel="noreferrer noopener"
-      className={cn(
-        'hive-focus w-fit rounded-full focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--nextra-bg))]',
-        className,
-      )}
-    >
-      <CSAStarLevelOneIcon className="size-20 lg:size-[120px] dark:opacity-95" />
-    </a>
   );
 }
