@@ -17,7 +17,7 @@ function SecurityBadge({
       target="_blank"
       rel="noreferrer noopener"
       className={cn(
-        'hive-focus h-fit w-fit rounded-full p-1 hover:bg-blue-200 focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--nextra-bg))] dark:hover:bg-white/30',
+        'hive-focus h-fit w-fit rounded-full p-1 hover:bg-blue-200 focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--nextra-bg))] dark:hover:bg-white/20 dark:hover:*:opacity-100',
         className,
       )}
     >
@@ -30,12 +30,12 @@ export function SecurityBadges() {
   return (
     <div className="flex flex-wrap gap-4 max-lg:flex-col">
       <SecurityBadge href="https://cloudsecurityalliance.org/star/registry/software-products-guild-ltd-the-guild/services/graphql-hive">
-        <CSAStarLevelOneIcon className="size-20 xl:size-24 dark:opacity-95" />
+        <CSAStarLevelOneIcon className="size-20 dark:opacity-95" />
       </SecurityBadge>
       <SecurityBadge href="https://security.graphql-hive.com/">
         <img
           src="https://static.vanta.com/static/soc2_badge.ac7ad1ad.webp"
-          className="size-20 xl:size-24 dark:opacity-95"
+          className="size-20 dark:opacity-95"
         />
       </SecurityBadge>
     </div>
