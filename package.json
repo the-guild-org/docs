@@ -22,7 +22,7 @@
     "types:check": "turbo run types:check"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "0.5.0",
+    "@changesets/changelog-github": "0.5.1",
     "@changesets/cli": "2.27.11",
     "@rollup/plugin-alias": "5.1.1",
     "@storybook/addon-essentials": "8.4.2",
