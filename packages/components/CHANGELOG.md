@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 9.9.0
+
+### Minor Changes
+
+- [#2070](https://github.com/the-guild-org/docs/pull/2070)
+  [`d167558`](https://github.com/the-guild-org/docs/commit/d167558b47455614086ea4d56d10a4282bd65d77)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add Hive Router to PRODUCTS dict
+
 ## 9.8.0
 
 ### Minor Changes
