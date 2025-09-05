@@ -4,6 +4,7 @@ import {
   CodegenIcon,
   HiveGatewayIcon,
   HiveIcon,
+  HiveRouterIcon,
   MeshIcon,
   StellateIcon,
   YogaIcon,
@@ -32,6 +33,7 @@ import {
 export type ProductType =
   | 'HIVE'
   | 'HIVE_GATEWAY'
+  | 'HIVE_ROUTER'
   | 'CONDUCTOR'
   | 'YOGA'
   | 'ENVELOP'
@@ -77,6 +79,14 @@ export const PRODUCTS: Record<ProductType, ProductInfo> = {
       'GraphQL Gateway (Router) for federated GraphQL with Subscriptions support and built-in security features',
     href: 'https://the-guild.dev/graphql/hive/gateway',
     logo: HiveGatewayIcon,
+    primaryColor: '#ffb21d',
+  },
+  HIVE_ROUTER: {
+    name: 'Hive Router',
+    title:
+      'Open-source (MIT) GraphQL Federation Router. Built with Rust for maximum performance and robustness.',
+    href: 'https://github.com/graphql-hive/router',
+    logo: HiveRouterIcon,
     primaryColor: '#ffb21d',
   },
   MESH: {
