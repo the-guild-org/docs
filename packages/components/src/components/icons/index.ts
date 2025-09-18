@@ -16,6 +16,7 @@ export { ReactComponent as YogaIcon } from './yoga.svg';
 export { ReactComponent as HiveIcon } from './hive.svg';
 export { ReactComponent as HiveGatewayIcon } from './hive-gateway.svg';
 export { ReactComponent as StellateIcon } from './stellate.svg';
+export { ReactComponent as HiveRouterIcon } from './hive-router.svg';
 
 export { InformationCircleIcon, GitHubIcon, DiscordIcon } from 'nextra/icons';
 
