@@ -1,5 +1,20 @@
 # @theguild/components
 
+## 9.9.0
+
+### Minor Changes
+
+- [#2070](https://github.com/the-guild-org/docs/pull/2070)
+  [`d167558`](https://github.com/the-guild-org/docs/commit/d167558b47455614086ea4d56d10a4282bd65d77)
+  Thanks [@hasparus](https://github.com/hasparus)! - Add Hive Router to PRODUCTS dict
+
+### Patch Changes
+
+- [#2072](https://github.com/the-guild-org/docs/pull/2072)
+  [`2cfeb28`](https://github.com/the-guild-org/docs/commit/2cfeb284cfefbb4fe8095474bdc85477f4600308)
+  Thanks [@hasparus](https://github.com/hasparus)! - Set .crisp-client z-index to the same one we
+  already have #crisp-chatbox
+
 ## 9.8.0
 
 ### Minor Changes
