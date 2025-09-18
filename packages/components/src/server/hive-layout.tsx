@@ -97,7 +97,7 @@ export const HiveLayout = async ({
             --nextra-primary-saturation: 40%;
             --nextra-bg: 255, 255, 255;
           }
-          
+
           .x\\:tracking-tight,
           .nextra-steps :is(h2, h3, h4) {
             letter-spacing: normal;
@@ -108,16 +108,16 @@ export const HiveLayout = async ({
             background: #fff;
             color-scheme: light !important;
           }
-          
+
           html:has(body.light) .nextra-search-results mark {
             background: oklch(0.611752 0.07807 214.47 / 0.8);
           }
-          
+
           html:has(body.light) .nextra-sidebar-footer {
             display: none;
           }
-          
-          #crisp-chatbox { z-index: 40 !important; }
+
+          .crisp-client, #crisp-chatbox { z-index: 40 !important; }
         `
         }</style>
         {head}
