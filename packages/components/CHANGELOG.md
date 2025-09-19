@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 9.10.0
+
+### Minor Changes
+
+- [#2073](https://github.com/the-guild-org/docs/pull/2073)
+  [`13cdbaf`](https://github.com/the-guild-org/docs/commit/13cdbaf84e3f9250da501dee74be172896e405f1)
+  Thanks [@saihaj](https://github.com/saihaj)! - update GraphQLConf 2025
+
 ## 9.9.0
 
 ### Minor Changes
