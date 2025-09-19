@@ -227,8 +227,8 @@ importers:
         specifier: 7.7.1
         version: 7.7.1
       dedent:
-        specifier: 1.5.3
-        version: 1.5.3
+        specifier: 1.7.0
+        version: 1.7.0
       esbuild-plugin-svgr:
         specifier: ^3.0.0
         version: 3.1.1(patch_hash=kqo6kcqiqdlv2hedtyfgubgvle)(esbuild@0.24.2)(typescript@5.7.3)
@@ -4232,8 +4232,8 @@ packages:
   dedent@0.7.0:
     resolution: {integrity: sha512-Q6fKUPqnAHAyhiUgFU7BUzLiv0kd8saH9al7tnu5Q/okj6dnupxyTgFIBjVzJATdfIAm9NAsvXNzjaKa+bxVyA==}
 
-  dedent@1.5.3:
-    resolution: {integrity: sha512-NHQtfOOW68WD8lgypbLA5oT+Bt0xXJhiYvoR6SmmNXZfpzOGXwdKWmcwG8N7PwVVWV3eF/68nmD9BaJSsTBhyQ==}
+  dedent@1.7.0:
+    resolution: {integrity: sha512-HGFtf8yhuhGhqO07SV79tRp+br4MnbdjeVxotpn1QBl30pcLLCQjX5b2295ll0fv8RKDKsmWYrl05usHM9CewQ==}
     peerDependencies:
       babel-plugin-macros: ^3.1.0
     peerDependenciesMeta:
@@ -13850,7 +13850,7 @@ snapshots:
 
   dedent@0.7.0: {}
 
-  dedent@1.5.3: {}
+  dedent@1.7.0: {}
 
   deep-eql@5.0.2: {}
 
