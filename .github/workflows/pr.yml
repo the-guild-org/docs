@@ -4,10 +4,13 @@ on:
   pull_request: {}
 
 jobs:
-  dependencies:
-    uses: the-guild-org/shared-config/.github/workflows/changesets-dependencies.yaml@main
-    secrets:
-      githubToken: ${{ secrets.GUILD_BOT_TOKEN }}
+  # Dotan commented this out on `main` 7 months ago in
+  # https://github.com/the-guild-org/docs/commit/d4d3f454587dcc09d6931cf3cd3df1c9c48ece76
+  # and we also don't need it on `v7`.
+  # dependencies:
+  #   uses: the-guild-org/shared-config/.github/workflows/changesets-dependencies.yaml@main
+  #   secrets:
+  #     githubToken: ${{ secrets.GUILD_BOT_TOKEN }}
 
   canary:
     uses: the-guild-org/shared-config/.github/workflows/release-snapshot.yml@main
