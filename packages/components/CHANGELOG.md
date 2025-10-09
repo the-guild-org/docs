@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 9.11.0
+
+### Minor Changes
+
+- [#2089](https://github.com/the-guild-org/docs/pull/2089)
+  [`7660a18`](https://github.com/the-guild-org/docs/commit/7660a184d288a9b2a3e97080de54a85f6e48d7a0)
+  Thanks [@hasparus](https://github.com/hasparus)! - Accept props in GraphQLConfCard and use 2025 YT
+  link'
+
 ## 9.10.0
 
 ### Minor Changes
