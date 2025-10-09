@@ -177,13 +177,7 @@ export const Company: StoryObj = {
     return (
       <NavigationMenu>
         <CompanyMenu>
-          <GraphQLConfCard
-            image={{
-              height: 750,
-              width: 1200,
-              src: graphQLConfLocalImage,
-            }}
-          />
+          <GraphQLConfCard image={graphQLConfLocalImage} />
         </CompanyMenu>
       </NavigationMenu>
     );
