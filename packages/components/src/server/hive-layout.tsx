@@ -117,7 +117,7 @@ export const HiveLayout = async ({
             display: none;
           }
 
-          .crisp-client, #crisp-chatbox { z-index: 40 !important; }
+          .crisp-client.crisp-client, #crisp-chatbox { z-index: 40 !important; }
         `
         }</style>
         {head}
