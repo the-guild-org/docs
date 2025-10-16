@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 9.11.1
+
+### Patch Changes
+
+- [#2091](https://github.com/the-guild-org/docs/pull/2091)
+  [`4b0fbb0`](https://github.com/the-guild-org/docs/commit/4b0fbb0215be347da2fcfd8782ddcc7e5a1383f1)
+  Thanks [@hasparus](https://github.com/hasparus)! - Put the Crisp bubble below the cookie banner
+  again
+
 ## 9.11.0
 
 ### Minor Changes
