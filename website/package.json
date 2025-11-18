@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@theguild/tailwind-config": "0.6.3",
-    "@types/react": "18.3.18",
+    "@types/react": "18.3.27",
     "pagefind": "1.4.0",
     "typescript": "5.9.2"
   },
