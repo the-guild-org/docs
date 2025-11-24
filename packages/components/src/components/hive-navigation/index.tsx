@@ -567,7 +567,7 @@ function HamburgerButton() {
     <button
       type="button"
       aria-label="Menu"
-      className="md:_hidden hover nextra-hamburger -m-1 rounded-lg bg-transparent p-1 text-green-1000 focus-visible:outline-none focus-visible:ring active:bg-beige-200 dark:text-neutral-200 dark:active:bg-neutral-800"
+      className="hover nextra-hamburger -m-1 rounded-lg bg-transparent p-1 text-green-1000 focus-visible:outline-none focus-visible:ring active:bg-beige-200 md:hidden dark:text-neutral-200 dark:active:bg-neutral-800"
       onClick={() => setMenu(!menu)}
     >
       <MenuIcon

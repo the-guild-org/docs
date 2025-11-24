@@ -43,6 +43,15 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['*.cjs'],
+      rules: {
+        '@typescript-eslint/consistent-type-imports': [
+          'warn',
+          // back to the default settings. we need type imports in .storybook/main.ts because it's stripped, not compiled
+        ],
+      },
+    },
+    {
       files: ['**/*.stories.{ts,tsx}'],
       rules: {
         'no-console': 'off',
