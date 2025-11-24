@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 7.6.4
+
+### Patch Changes
+
+- [#2086](https://github.com/the-guild-org/docs/pull/2086)
+  [`c5935bf`](https://github.com/the-guild-org/docs/commit/c5935bfea7a7e6cbabc3b87f6878545739eb8ebc)
+  Thanks [@hasparus](https://github.com/hasparus)! - Link to /hive/gateway even from websites
+  without current @theguild/components
+
 ## 7.6.3
 
 ### Patch Changes
