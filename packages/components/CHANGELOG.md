@@ -1,5 +1,14 @@
 # @theguild/components
 
+## 7.6.5
+
+### Patch Changes
+
+- [#2087](https://github.com/the-guild-org/docs/pull/2087)
+  [`a007423`](https://github.com/the-guild-org/docs/commit/a007423d0ec1d47be1004328dec610259ce9e0e7)
+  Thanks [@hasparus](https://github.com/hasparus)! - Improve HiveNavigation submenu navigation
+  (slower in, faster out).
+
 ## 7.6.4
 
 ### Patch Changes
