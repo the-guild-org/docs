@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 9.11.2
+
+### Patch Changes
+
+- [#2088](https://github.com/the-guild-org/docs/pull/2088)
+  [`d8a03c0`](https://github.com/the-guild-org/docs/commit/d8a03c068a4a816db5d067533b10e12defe6a090)
+  Thanks [@hasparus](https://github.com/hasparus)! - Make the submenu tranistion-out faster
+
 ## 9.11.1
 
 ### Patch Changes
