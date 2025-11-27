@@ -2,7 +2,7 @@
   "name": "the-guild-docs-monorepo",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.24.0",
   "scripts": {
     "build": "turbo run build --filter=!website",
     "build-example": "turbo run build --filter=website",
