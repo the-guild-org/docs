@@ -67,6 +67,12 @@ export const Tabs = ({
     for (const [index, el] of Object.entries(tabPanelsRef.current.children)) {
       if (el === tabPanel) {
         setSelectedIndex(Number(index));
+        // Note for posterity:
+        //   This is not an infinite loop. Clearing and restoring the hash is necessary
+        //   for the browser to scroll to the element. The intermediate empty hash triggers
+        //   a hashchange event, but React bails out when restoring the same hash value,
+        //   preventing an infinite loop.
+
         // Clear hash first, otherwise page isn't scrolled
         location.hash = '';
         // Execute on next tick after `selectedIndex` update
