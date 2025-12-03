@@ -8,7 +8,6 @@ import {
   useEffect,
   useId,
   useLayoutEffect,
-  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -205,20 +204,14 @@ function useActiveTabFromURL(
     tabsInSearchParams.includes(getTabKey(items, index)),
   );
 
-  console.log(
-    'tabIndexFromSearchParams',
-    tabIndexFromSearchParams,
-    tabsInSearchParams,
-    searchParamKey,
-  );
-
   useIsomorphicLayoutEffect(() => {
     const tabPanel = hash
       ? tabPanelsRef.current?.querySelector(`[role=tabpanel]:has([id="${hash}"])`)
       : null;
 
     if (tabPanel) {
-      for (const [index, el] of Object.entries(tabPanel)) {
+      let index = 0;
+      for (const el of tabPanelsRef.current!.children) {
         if (el === tabPanel) {
           setSelectedIndex(Number(index));
           // Note for posterity:
@@ -231,9 +224,9 @@ function useActiveTabFromURL(
           // Execute on next tick after `selectedIndex` update
           requestAnimationFrame(() => (location.hash = `#${hash}`));
         }
+        index++;
       }
     } else if (tabIndexFromSearchParams !== -1) {
-      console.log('setSelectedTab from search params', tabIndexFromSearchParams);
       // if we don't have content to scroll to, we look at the search params
       setSelectedIndex(tabIndexFromSearchParams);
     }

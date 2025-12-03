@@ -416,11 +416,11 @@ export const ManyTabs: Story = {
 export const CustomStyling: Story = {
   args: {
     items: ['Design', 'Develop', 'Deploy'],
-    className: 'border-b-4 border-purple-500',
+    className: 'border-b-4 gap-0.5 border-green-800',
     tabClassName: args =>
       args.selected
-        ? 'bg-purple-500 text-white'
-        : 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300',
+        ? 'bg-green-800 text-white rounded-t-none'
+        : 'bg-gray-100 text-gray-700 rounded-t-none',
     children: (
       <>
         <Tabs.Tab>Design your application</Tabs.Tab>
@@ -452,5 +452,19 @@ export const TabsSyncedWithStorageEvents: Story = {
         </Tabs>
       </div>
     );
+  },
+};
+
+export const ContentInHiddenPanelOpensByHash: Story = {
+  args: {
+    items: ['Docker', 'Binary'],
+    children: (
+      <>
+        <Tabs.Tab />
+        <Tabs.Tab>
+          <div id="binary">Binary</div>
+        </Tabs.Tab>
+      </>
+    ),
   },
 };
