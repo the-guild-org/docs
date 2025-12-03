@@ -7,6 +7,7 @@ import {
   ReactNode,
   useEffect,
   useId,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -200,10 +201,18 @@ function useActiveTabFromURL(
   const searchParams = useSearchParams();
   const tabsInSearchParams = searchParams.getAll(searchParamKey).sort();
 
-  const tabIndexFromSearchParams =
-    items.findIndex((_, index) => tabsInSearchParams.includes(getTabKey(items, index))) ?? -1;
+  const tabIndexFromSearchParams = items.findIndex((_, index) =>
+    tabsInSearchParams.includes(getTabKey(items, index)),
+  );
 
-  useEffect(() => {
+  console.log(
+    'tabIndexFromSearchParams',
+    tabIndexFromSearchParams,
+    tabsInSearchParams,
+    searchParamKey,
+  );
+
+  useIsomorphicLayoutEffect(() => {
     const tabPanel = hash
       ? tabPanelsRef.current?.querySelector(`[role=tabpanel]:has([id="${hash}"])`)
       : null;
@@ -223,7 +232,8 @@ function useActiveTabFromURL(
           requestAnimationFrame(() => (location.hash = `#${hash}`));
         }
       }
-    } else if (tabIndexFromSearchParams) {
+    } else if (tabIndexFromSearchParams !== -1) {
+      console.log('setSelectedTab from search params', tabIndexFromSearchParams);
       // if we don't have content to scroll to, we look at the search params
       setSelectedIndex(tabIndexFromSearchParams);
     }
@@ -238,7 +248,6 @@ function useActiveTabFromURL(
       );
     };
     // tabPanelsRef is a ref, so it's not a dependency
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hash, tabsInSearchParams.join(',')]);
 
   return tabIndexFromSearchParams;
@@ -250,7 +259,7 @@ function useActiveTabFromStorage(
   setSelectedIndex: (index: number) => void,
   ignoreLocalStorage: boolean,
 ) {
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (!storageKey || ignoreLocalStorage) {
       // Do not listen storage events if there is no storage key
       return;
@@ -281,7 +290,6 @@ function useActiveTabFromStorage(
     return () => {
       window.removeEventListener('storage', onStorageChange);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storageKey]);
 }
 
@@ -309,3 +317,5 @@ function slugify(label: string) {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
 }
+
+const useIsomorphicLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;

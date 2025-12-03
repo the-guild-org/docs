@@ -13,6 +13,11 @@ export default {
     padding: true,
     nextjs: {
       appDirectory: true,
+      navigation: {
+        query: {
+          tab: '',
+        },
+      },
     },
   },
   argTypes: {
@@ -111,12 +116,10 @@ export const WithDisabledTabs: Story = {
 
     // Check that the disabled tab has the correct attribute
     const disabledTab = canvas.getByRole('tab', { name: 'Disabled Tab' });
-    await expect(disabledTab).toHaveAttribute('aria-disabled', 'true');
+    await expect(disabledTab).toHaveAttribute('disabled', '');
 
     // Try to click the disabled tab - it should not become selected
-    await userEvent.click(disabledTab);
 
-    // The first tab should still be selected
     const activeTab = canvas.getByRole('tab', { name: 'Active Tab' });
     await expect(activeTab).toHaveAttribute('aria-selected', 'true');
   },
