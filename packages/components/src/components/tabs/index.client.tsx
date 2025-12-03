@@ -113,8 +113,9 @@ export const Tabs = ({
       // another browser's tab/window (of the same app), but not within the context of the current tab.
       window.dispatchEvent(new StorageEvent('storage', { key: storageKey, newValue }));
       return;
+    } else {
+      setSelectedIndex(index);
     }
-    setSelectedIndex(index);
     onChange?.(index);
   };
 
