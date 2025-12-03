@@ -61,16 +61,11 @@ export const Tabs = ({
     selectedIndex = _selectedIndex;
   }
 
-  const setSelectedTab = (key: TabKey) => {
-    const index = items.findIndex((_, i) => getTabKey(items, i) === key);
-    setSelectedIndex(index);
-  };
-
   const tabPanelsRef = useRef<HTMLDivElement>(null!);
 
-  useActiveTabFromURL(tabPanelsRef, searchParamKey, setSelectedIndex);
+  useActiveTabFromURL(tabPanelsRef, items, searchParamKey, setSelectedIndex);
   const id = useId();
-  useActiveTabFromStorage(storageKey ?? id, setSelectedTab);
+  useActiveTabFromStorage(storageKey ?? id, items, setSelectedIndex);
 
   const handleChange = (index: number) => {
     if (storageKey) {
@@ -165,30 +160,39 @@ export const Tab: FC<TabPanelProps> = ({
 
 function useActiveTabFromURL(
   tabPanelsRef: React.RefObject<HTMLDivElement>,
+  items: (TabItem | TabObjectItem)[],
+  searchParamKey: string,
   setSelectedIndex: (index: number) => void,
 ) {
   const hash = useHash();
 
   useEffect(() => {
     if (!hash) return;
+
     const tabPanel = tabPanelsRef.current?.querySelector(`[role=tabpanel]:has([id="${hash}"])`);
-    if (!tabPanel) return;
+    if (tabPanel) {
+      for (const [index, el] of Object.entries(tabPanel)) {
+        if (el === tabPanel) {
+          setSelectedIndex(Number(index));
+          // Note for posterity:
+          //   This is not an infinite loop. Clearing and restoring the hash is necessary
+          //   for the browser to scroll to the element. The intermediate empty hash triggers
+          //   a hashchange event, but we bail out with the `if (!hash) return` in this useEffect.
 
-    for (const [index, el] of Object.entries(tabPanel)) {
-      if (el === tabPanel) {
-        setSelectedIndex(Number(index));
-        // Note for posterity:
-        //   This is not an infinite loop. Clearing and restoring the hash is necessary
-        //   for the browser to scroll to the element. The intermediate empty hash triggers
-        //   a hashchange event, but React bails out when restoring the same hash value,
-        //   preventing an infinite loop.
-
-        // Clear hash first, otherwise page isn't scrolled
-        location.hash = '';
-        // Execute on next tick after `selectedIndex` update
-        requestAnimationFrame(() => {
-          location.hash = `#${hash}`;
-        });
+          // Clear hash first, otherwise page isn't scrolled
+          location.hash = '';
+          // Execute on next tick after `selectedIndex` update
+          requestAnimationFrame(() => (location.hash = `#${hash}`));
+        }
+      }
+    } else {
+      // if we don't have content to scroll to, we look at the search params
+      const searchParams = new URLSearchParams(window.location.search);
+      const tabKey = searchParams.get(searchParamKey);
+      if (tabKey) {
+        const index = items.findIndex((_, i) => getTabKey(items, i) === tabKey);
+        setSelectedIndex(index);
+        return;
       }
     }
     // tabPanelsRef is a ref, so it's not a dependency
@@ -196,14 +200,23 @@ function useActiveTabFromURL(
   }, [hash]);
 }
 
-function useActiveTabFromStorage(storageKey: string, setSelectedTab: (key: TabKey) => void) {
+function useActiveTabFromStorage(
+  storageKey: string,
+  items: (TabItem | TabObjectItem)[],
+  setSelectedIndex: (index: number) => void,
+) {
   useEffect(() => {
     if (!storageKey) {
       // Do not listen storage events if there is no storage key
       return;
     }
 
-    function fn(event: StorageEvent) {
+    const setSelectedTab = (key: TabKey) => {
+      const index = items.findIndex((_, i) => getTabKey(items, i) === key);
+      setSelectedIndex(index);
+    };
+
+    function onStorageChange(event: StorageEvent) {
       if (event.key === storageKey) {
         const value = event.newValue as TabKey;
         if (value) {
@@ -217,9 +230,9 @@ function useActiveTabFromStorage(storageKey: string, setSelectedTab: (key: TabKe
       setSelectedTab(value as TabKey);
     }
 
-    window.addEventListener('storage', fn);
+    window.addEventListener('storage', onStorageChange);
     return () => {
-      window.removeEventListener('storage', fn);
+      window.removeEventListener('storage', onStorageChange);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storageKey]);
