@@ -74,14 +74,19 @@ export const Tabs = ({
 
   const tabPanelsRef = useRef<HTMLDivElement>(null!);
 
-  const ignoreLocalStorage = useActiveTabFromURL(
+  const tabIndexFromSearchParams = useActiveTabFromURL(
     tabPanelsRef,
     items,
     searchParamKey,
     setSelectedIndex,
   );
   const id = useId();
-  useActiveTabFromStorage(storageKey ?? id, items, setSelectedIndex, ignoreLocalStorage);
+  useActiveTabFromStorage(
+    storageKey ?? id,
+    items,
+    setSelectedIndex,
+    tabIndexFromSearchParams !== -1,
+  );
 
   const handleChange = (index: number) => {
     onChange?.(index);
@@ -252,11 +257,6 @@ function useActiveTabFromStorage(
     }
 
     const setSelectedTab = (key: string) => {
-      const numericIndex = Number(key);
-      if (!isNaN(numericIndex) && numericIndex >= 0 && numericIndex < items.length) {
-        setSelectedIndex(numericIndex);
-        return;
-      }
       const index = items.findIndex((_, i) => getTabKey(items, i) === key);
       if (index !== -1) {
         setSelectedIndex(index);

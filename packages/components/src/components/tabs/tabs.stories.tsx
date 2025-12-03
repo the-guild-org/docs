@@ -216,15 +216,15 @@ export const LocalStoragePersistence: Story = {
     const tab2 = canvas.getByRole('tab', { name: 'Tab 2' });
     await userEvent.click(tab2);
 
-    // Check that the value was stored in localStorage
+    // Check that the value was stored in localStorage (slugified key)
     const storedValue = localStorage.getItem('test-tabs-storage');
-    await expect(storedValue).toBe('1');
+    await expect(storedValue).toBe('tab-2');
 
     // Simulate storage event from another tab/window
     window.dispatchEvent(
       new StorageEvent('storage', {
         key: 'test-tabs-storage',
-        newValue: '2',
+        newValue: 'tab-3',
       }),
     );
 
