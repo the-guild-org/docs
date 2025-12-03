@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, Fragment, ReactElement, ReactNode, useEffect, useId, useRef, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import cn from 'clsx';
 import {
   Tab as HeadlessTab,
@@ -79,6 +80,16 @@ export const Tabs = ({
     }
     setSelectedIndex(index);
     onChange?.(index);
+
+    if (searchParamKey) {
+      const searchParams = new URLSearchParams(window.location.search);
+      searchParams.set(searchParamKey, getTabKey(items, index));
+      window.history.replaceState(
+        null,
+        '',
+        `${window.location.pathname}?${searchParams.toString()}`,
+      );
+    }
   };
 
   return (
@@ -165,6 +176,8 @@ function useActiveTabFromURL(
   setSelectedIndex: (index: number) => void,
 ) {
   const hash = useHash();
+  const searchParams = useSearchParams();
+  const tabsInSearchParams = searchParams.getAll(searchParamKey).sort();
 
   useEffect(() => {
     if (!hash) return;
@@ -185,19 +198,14 @@ function useActiveTabFromURL(
           requestAnimationFrame(() => (location.hash = `#${hash}`));
         }
       }
-    } else {
+    } else if (tabsInSearchParams) {
       // if we don't have content to scroll to, we look at the search params
-      const searchParams = new URLSearchParams(window.location.search);
-      const tabKey = searchParams.get(searchParamKey);
-      if (tabKey) {
-        const index = items.findIndex((_, i) => getTabKey(items, i) === tabKey);
-        setSelectedIndex(index);
-        return;
-      }
+      const index = items.findIndex((_, i) => tabsInSearchParams.includes(getTabKey(items, i)));
+      if (index !== -1) setSelectedIndex(index);
     }
     // tabPanelsRef is a ref, so it's not a dependency
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hash]);
+  }, [hash, tabsInSearchParams.join(',')]);
 }
 
 function useActiveTabFromStorage(
