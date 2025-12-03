@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, Fragment, ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
+import { FC, Fragment, ReactElement, ReactNode, useEffect, useId, useRef, useState } from 'react';
 import cn from 'clsx';
 import {
   Tab as HeadlessTab,
@@ -19,6 +19,7 @@ import { useHash } from '../use-hash';
 type TabItem = string | ReactElement;
 
 type TabObjectItem = {
+  key?: string;
   label: TabItem;
   disabled: boolean;
 };
@@ -31,6 +32,11 @@ export interface TabsProps
   extends Pick<TabGroupProps, 'defaultIndex' | 'selectedIndex' | 'onChange'> {
   items: (TabItem | TabObjectItem)[];
   children: ReactNode;
+  /**
+   * URLSearchParams key for persisting the selected tab.
+   * @default "tab"
+   */
+  searchParamKey?: string;
   /** LocalStorage key for persisting the selected tab. */
   storageKey?: string;
   /** Tabs CSS class name. */
@@ -42,6 +48,7 @@ export interface TabsProps
 export const Tabs = ({
   items,
   children,
+  searchParamKey = 'tab',
   storageKey,
   defaultIndex = 0,
   selectedIndex: _selectedIndex,
@@ -49,60 +56,21 @@ export const Tabs = ({
   className,
   tabClassName,
 }: TabsProps) => {
-  const [selectedIndex, setSelectedIndex] = useState(defaultIndex);
-  const hash = useHash();
+  let [selectedIndex, setSelectedIndex] = useState<number>(defaultIndex);
+  if (_selectedIndex !== undefined) {
+    selectedIndex = _selectedIndex;
+  }
+
+  const setSelectedTab = (key: TabKey) => {
+    const index = items.findIndex((_, i) => getTabKey(items, i) === key);
+    setSelectedIndex(index);
+  };
+
   const tabPanelsRef = useRef<HTMLDivElement>(null!);
 
-  useEffect(() => {
-    if (_selectedIndex !== undefined) {
-      setSelectedIndex(_selectedIndex);
-    }
-  }, [_selectedIndex]);
-
-  useEffect(() => {
-    if (!hash) return;
-    const tabPanel = tabPanelsRef.current.querySelector(`[role=tabpanel]:has([id="${hash}"])`);
-    if (!tabPanel) return;
-
-    for (const [index, el] of Object.entries(tabPanelsRef.current.children)) {
-      if (el === tabPanel) {
-        setSelectedIndex(Number(index));
-        // Note for posterity:
-        //   This is not an infinite loop. Clearing and restoring the hash is necessary
-        //   for the browser to scroll to the element. The intermediate empty hash triggers
-        //   a hashchange event, but React bails out when restoring the same hash value,
-        //   preventing an infinite loop.
-
-        // Clear hash first, otherwise page isn't scrolled
-        location.hash = '';
-        // Execute on next tick after `selectedIndex` update
-        requestAnimationFrame(() => {
-          location.hash = `#${hash}`;
-        });
-      }
-    }
-  }, [hash]);
-
-  useEffect(() => {
-    if (!storageKey) {
-      // Do not listen storage events if there is no storage key
-      return;
-    }
-
-    function fn(event: StorageEvent) {
-      if (event.key === storageKey) {
-        setSelectedIndex(Number(event.newValue));
-      }
-    }
-
-    const index = Number(localStorage.getItem(storageKey));
-    setSelectedIndex(Number.isNaN(index) ? 0 : index);
-
-    window.addEventListener('storage', fn);
-    return () => {
-      window.removeEventListener('storage', fn);
-    };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- only on mount
+  useActiveTabFromURL(tabPanelsRef, searchParamKey, setSelectedIndex);
+  const id = useId();
+  useActiveTabFromStorage(storageKey ?? id, setSelectedTab);
 
   const handleChange = (index: number) => {
     if (storageKey) {
@@ -113,9 +81,8 @@ export const Tabs = ({
       // another browser's tab/window (of the same app), but not within the context of the current tab.
       window.dispatchEvent(new StorageEvent('storage', { key: storageKey, newValue }));
       return;
-    } else {
-      setSelectedIndex(index);
     }
+    setSelectedIndex(index);
     onChange?.(index);
   };
 
@@ -129,9 +96,9 @@ export const Tabs = ({
       <TabList
         className={args =>
           cn(
-            'nextra-scrollbar x:overflow-x-auto x:overscroll-x-contain x:overflow-y-hidden',
-            'x:mt-4 x:flex x:w-full x:gap-2 x:border-b x:border-gray-200 x:pb-px x:dark:border-neutral-800',
-            'x:focus-visible:nextra-focus',
+            'nextra-scrollbar overflow-x-auto overflow-y-hidden overscroll-x-contain',
+            'mt-4 flex w-full gap-2 border-b border-beige-200 pb-px dark:border-neutral-800',
+            'focus-visible:hive-focus',
             typeof className === 'function' ? className(args) : className,
           )
         }
@@ -143,22 +110,22 @@ export const Tabs = ({
             className={args => {
               const { selected, disabled, hover, focus } = args;
               return cn(
-                focus && 'x:nextra-focus x:ring-inset',
-                'x:whitespace-nowrap x:cursor-pointer',
-                'x:rounded-t x:p-2 x:font-medium x:leading-5 x:transition-colors',
-                'x:-mb-0.5 x:select-none x:border-b-2',
+                focus && 'hive-focus ring-inset',
+                'cursor-pointer whitespace-nowrap',
+                'rounded-t p-2 font-medium leading-5 transition-colors',
+                '-mb-0.5 select-none border-b-2',
                 selected
-                  ? 'x:border-current x:outline-none'
+                  ? 'border-current outline-none'
                   : hover
-                    ? 'x:border-gray-200 x:dark:border-neutral-800'
-                    : 'x:border-transparent',
+                    ? 'border-beige-200 dark:border-neutral-800'
+                    : 'border-transparent',
                 selected
-                  ? 'x:text-primary-600'
+                  ? 'text-green-900 dark:text-primary'
                   : disabled
-                    ? 'x:text-gray-400 x:dark:text-neutral-600 x:pointer-events-none'
+                    ? 'pointer-events-none text-beige-400 dark:text-neutral-600'
                     : hover
-                      ? 'x:text-black x:dark:text-white'
-                      : 'x:text-gray-600 x:dark:text-gray-200',
+                      ? 'text-black dark:text-white'
+                      : 'text-beige-600 dark:text-beige-200',
                 typeof tabClassName === 'function' ? tabClassName(args) : tabClassName,
               );
             }}
@@ -185,8 +152,8 @@ export const Tab: FC<TabPanelProps> = ({
       unmount={unmount}
       className={args =>
         cn(
-          'x:rounded x:mt-[1.25em]',
-          args.focus && 'x:nextra-focus',
+          'mt-[1.25em] rounded',
+          args.focus && 'hive-focus',
           typeof className === 'function' ? className(args) : className,
         )
       }
@@ -195,3 +162,90 @@ export const Tab: FC<TabPanelProps> = ({
     </TabPanel>
   );
 };
+
+function useActiveTabFromURL(
+  tabPanelsRef: React.RefObject<HTMLDivElement>,
+  setSelectedIndex: (index: number) => void,
+) {
+  const hash = useHash();
+
+  useEffect(() => {
+    if (!hash) return;
+    const tabPanel = tabPanelsRef.current?.querySelector(`[role=tabpanel]:has([id="${hash}"])`);
+    if (!tabPanel) return;
+
+    for (const [index, el] of Object.entries(tabPanel)) {
+      if (el === tabPanel) {
+        setSelectedIndex(Number(index));
+        // Note for posterity:
+        //   This is not an infinite loop. Clearing and restoring the hash is necessary
+        //   for the browser to scroll to the element. The intermediate empty hash triggers
+        //   a hashchange event, but React bails out when restoring the same hash value,
+        //   preventing an infinite loop.
+
+        // Clear hash first, otherwise page isn't scrolled
+        location.hash = '';
+        // Execute on next tick after `selectedIndex` update
+        requestAnimationFrame(() => {
+          location.hash = `#${hash}`;
+        });
+      }
+    }
+    // tabPanelsRef is a ref, so it's not a dependency
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hash]);
+}
+
+function useActiveTabFromStorage(storageKey: string, setSelectedTab: (key: TabKey) => void) {
+  useEffect(() => {
+    if (!storageKey) {
+      // Do not listen storage events if there is no storage key
+      return;
+    }
+
+    function fn(event: StorageEvent) {
+      if (event.key === storageKey) {
+        const value = event.newValue as TabKey;
+        if (value) {
+          setSelectedTab(value);
+        }
+      }
+    }
+
+    const value = localStorage.getItem(storageKey);
+    if (value) {
+      setSelectedTab(value as TabKey);
+    }
+
+    window.addEventListener('storage', fn);
+    return () => {
+      window.removeEventListener('storage', fn);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [storageKey]);
+}
+
+type TabKey = string & { __brand: 'TabKey' };
+
+function getTabKey(items: (TabItem | TabObjectItem)[], index: number): TabKey {
+  const item = items[index];
+  const isObject = isTabObjectItem(item);
+  // if the key is defined by user, we use it
+  if (isObject && item.key) {
+    return item.key as TabKey;
+  }
+  const label = isObject ? item.label : item;
+  // otherwise we use the slugified label prefixed by the tab group id, if the label is a string
+  // or the index of the item in the items array prefixed by the tab group id if the label is a ReactElement
+  const key = typeof label === 'string' ? slugify(label) : index.toString();
+  return key as TabKey;
+}
+
+function slugify(label: string) {
+  return label
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // strip accents
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}

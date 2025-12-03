@@ -1,5 +1,6 @@
 import { ReactElement, useMemo } from 'react';
-import { Pre, Tabs } from 'nextra/components';
+import { Pre } from 'nextra/components';
+import { Tabs } from './tabs';
 
 const PACKAGE_MANAGERS = ['yarn', 'npm', 'pnpm'];
 
