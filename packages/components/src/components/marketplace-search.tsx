@@ -2,7 +2,7 @@
 
 import { isValidElement, ReactElement, useMemo, useState } from 'react';
 import fuzzy from 'fuzzy';
-import { Tabs } from 'nextra/components';
+import { Tabs } from './tabs';
 import { cn } from '../cn';
 import { IMarketplaceListProps, IMarketplaceSearchProps } from '../types/components';
 import { Heading } from './heading';
