@@ -442,11 +442,11 @@ export const TabsSyncedWithStorageEvents: Story = {
             <Tabs.Tab key={item}>{item}</Tabs.Tab>
           ))}
         </Tabs>
-        {/* <Tabs items={['pnpm', 'npm', 'yarn']} storageKey="packageManager">
+        <Tabs items={['pnpm', 'npm', 'yarn']} storageKey="packageManager">
           {['pnpm', 'npm', 'yarn'].map(item => (
             <Tabs.Tab key={item}>{item}</Tabs.Tab>
           ))}
-        </Tabs> */}
+        </Tabs>
       </div>
     );
   },
