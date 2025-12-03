@@ -1,6 +1,16 @@
 'use client';
 
-import { FC, Fragment, ReactElement, ReactNode, useEffect, useId, useRef, useState } from 'react';
+import {
+  FC,
+  Fragment,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { useSearchParams } from 'next/navigation';
 import cn from 'clsx';
 import {
@@ -64,22 +74,28 @@ export const Tabs = ({
 
   const tabPanelsRef = useRef<HTMLDivElement>(null!);
 
-  useActiveTabFromURL(tabPanelsRef, items, searchParamKey, setSelectedIndex);
+  const ignoreLocalStorage = useActiveTabFromURL(
+    tabPanelsRef,
+    items,
+    searchParamKey,
+    setSelectedIndex,
+  );
   const id = useId();
-  useActiveTabFromStorage(storageKey ?? id, items, setSelectedIndex);
+  useActiveTabFromStorage(storageKey ?? id, items, setSelectedIndex, ignoreLocalStorage);
 
   const handleChange = (index: number) => {
+    onChange?.(index);
+
     if (storageKey) {
-      const newValue = String(index);
+      const newValue = getTabKey(items, index);
       localStorage.setItem(storageKey, newValue);
 
       // the storage event only get picked up (by the listener) if the localStorage was changed in
       // another browser's tab/window (of the same app), but not within the context of the current tab.
       window.dispatchEvent(new StorageEvent('storage', { key: storageKey, newValue }));
-      return;
+    } else {
+      setSelectedIndex(index);
     }
-    setSelectedIndex(index);
-    onChange?.(index);
 
     if (searchParamKey) {
       const searchParams = new URLSearchParams(window.location.search);
@@ -179,10 +195,14 @@ function useActiveTabFromURL(
   const searchParams = useSearchParams();
   const tabsInSearchParams = searchParams.getAll(searchParamKey).sort();
 
-  useEffect(() => {
-    if (!hash) return;
+  const tabIndexFromSearchParams =
+    items.findIndex((_, index) => tabsInSearchParams.includes(getTabKey(items, index))) ?? -1;
 
-    const tabPanel = tabPanelsRef.current?.querySelector(`[role=tabpanel]:has([id="${hash}"])`);
+  useEffect(() => {
+    const tabPanel = hash
+      ? tabPanelsRef.current?.querySelector(`[role=tabpanel]:has([id="${hash}"])`)
+      : null;
+
     if (tabPanel) {
       for (const [index, el] of Object.entries(tabPanel)) {
         if (el === tabPanel) {
@@ -190,7 +210,7 @@ function useActiveTabFromURL(
           // Note for posterity:
           //   This is not an infinite loop. Clearing and restoring the hash is necessary
           //   for the browser to scroll to the element. The intermediate empty hash triggers
-          //   a hashchange event, but we bail out with the `if (!hash) return` in this useEffect.
+          //   a hashchange event, but we don't look for a tab panel if there is no hash.
 
           // Clear hash first, otherwise page isn't scrolled
           location.hash = '';
@@ -198,35 +218,54 @@ function useActiveTabFromURL(
           requestAnimationFrame(() => (location.hash = `#${hash}`));
         }
       }
-    } else if (tabsInSearchParams) {
+    } else if (tabIndexFromSearchParams) {
       // if we don't have content to scroll to, we look at the search params
-      const index = items.findIndex((_, i) => tabsInSearchParams.includes(getTabKey(items, i)));
-      if (index !== -1) setSelectedIndex(index);
+      setSelectedIndex(tabIndexFromSearchParams);
     }
+
+    return function cleanUpTabFromSearchParams() {
+      const newSearchParams = new URLSearchParams(window.location.search);
+      newSearchParams.delete(searchParamKey);
+      window.history.replaceState(
+        null,
+        '',
+        `${window.location.pathname}?${newSearchParams.toString()}`,
+      );
+    };
     // tabPanelsRef is a ref, so it's not a dependency
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hash, tabsInSearchParams.join(',')]);
+
+  return tabIndexFromSearchParams;
 }
 
 function useActiveTabFromStorage(
   storageKey: string,
   items: (TabItem | TabObjectItem)[],
   setSelectedIndex: (index: number) => void,
+  ignoreLocalStorage: boolean,
 ) {
   useEffect(() => {
-    if (!storageKey) {
+    if (!storageKey || ignoreLocalStorage) {
       // Do not listen storage events if there is no storage key
       return;
     }
 
-    const setSelectedTab = (key: TabKey) => {
+    const setSelectedTab = (key: string) => {
+      const numericIndex = Number(key);
+      if (!isNaN(numericIndex) && numericIndex >= 0 && numericIndex < items.length) {
+        setSelectedIndex(numericIndex);
+        return;
+      }
       const index = items.findIndex((_, i) => getTabKey(items, i) === key);
-      setSelectedIndex(index);
+      if (index !== -1) {
+        setSelectedIndex(index);
+      }
     };
 
     function onStorageChange(event: StorageEvent) {
       if (event.key === storageKey) {
-        const value = event.newValue as TabKey;
+        const value = event.newValue;
         if (value) {
           setSelectedTab(value);
         }
@@ -235,7 +274,7 @@ function useActiveTabFromStorage(
 
     const value = localStorage.getItem(storageKey);
     if (value) {
-      setSelectedTab(value as TabKey);
+      setSelectedTab(value);
     }
 
     window.addEventListener('storage', onStorageChange);

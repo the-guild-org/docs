@@ -31,6 +31,7 @@
     "@storybook/nextjs": "8.4.2",
     "@storybook/preview-api": "8.4.2",
     "@storybook/react": "8.4.2",
+    "@storybook/test": "^8.4.2",
     "@storybook/theming": "8.4.2",
     "@svgr/webpack": "8.1.0",
     "@theguild/eslint-config": "0.13.2",
