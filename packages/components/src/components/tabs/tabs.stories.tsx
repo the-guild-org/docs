@@ -454,6 +454,13 @@ export const TabsSyncedWithStorageEvents: Story = {
             <Tabs.Tab key={item}>{item}</Tabs.Tab>
           ))}
         </Tabs>
+        <hr className="my-8" />
+        This one doesn't have a `storageKey`, so it's not connected:
+        <Tabs items={['pnpm', 'npm', 'yarn']}>
+          {['pnpm', 'npm', 'yarn'].map(item => (
+            <Tabs.Tab key={item}>{item}</Tabs.Tab>
+          ))}
+        </Tabs>
       </div>
     );
   },

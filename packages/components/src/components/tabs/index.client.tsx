@@ -69,6 +69,8 @@ export const Tabs = ({
 }: TabsProps) => {
   const id = useId();
 
+  storageKey ??= `tabs-${id}`;
+
   let [selectedIndex, setSelectedIndex] = useState<number>(defaultIndex);
   if (_selectedIndex !== undefined) {
     selectedIndex = _selectedIndex;
@@ -84,13 +86,7 @@ export const Tabs = ({
     id,
   );
 
-  useActiveTabFromStorage(
-    storageKey ?? id,
-    items,
-    setSelectedIndex,
-    tabIndexFromSearchParams !== -1,
-    id,
-  );
+  useActiveTabFromStorage(storageKey, items, setSelectedIndex, tabIndexFromSearchParams !== -1, id);
 
   const handleChange = (index: number) => {
     onChange?.(index);
@@ -208,8 +204,6 @@ function useActiveTabFromURL(
   const tabIndexFromSearchParams = items.findIndex((_, index) =>
     tabsInSearchParams.includes(getTabKey(items, index, id)),
   );
-
-  console.log({ tabIndexFromSearchParams, tabsInSearchParams });
 
   useIsomorphicLayoutEffect(() => {
     const tabPanel = hash
