@@ -48,8 +48,12 @@ export interface TabsProps
    * @default "tab"
    */
   searchParamKey?: string;
-  /** LocalStorage key for persisting the selected tab. */
-  storageKey?: string;
+  /**
+   * LocalStorage key for persisting the selected tab.
+   * Defaults to `tabs-${id}` if not provided.
+   * Set to `null` to disable localStorage persistence.
+   */
+  storageKey?: string | null;
   /** Tabs CSS class name. */
   className?: TabListProps['className'];
   /** Tab CSS class name. */
@@ -69,7 +73,9 @@ export const Tabs = ({
 }: TabsProps) => {
   const id = useId();
 
-  storageKey ??= `tabs-${id}`;
+  if (storageKey === undefined) {
+    storageKey = `tabs-${id}`;
+  }
 
   let [selectedIndex, setSelectedIndex] = useState<number>(defaultIndex);
   if (_selectedIndex !== undefined) {
@@ -104,7 +110,23 @@ export const Tabs = ({
 
     if (searchParamKey) {
       const searchParams = new URLSearchParams(window.location.search);
-      searchParams.set(searchParamKey, getTabKey(items, index, id));
+      const tabKeys = new Set(searchParams.getAll(searchParamKey));
+
+      // we remove only tabs from this list from search params
+      for (let i = 0; i < items.length; i++) {
+        const key = getTabKey(items, i, id);
+        tabKeys.delete(key);
+      }
+
+      // we add tabs from outside of this list back
+      searchParams.delete(searchParamKey);
+      for (const key of tabKeys) {
+        searchParams.append(searchParamKey, key);
+      }
+
+      // and finally, we add the clicked tab
+      searchParams.append(searchParamKey, getTabKey(items, index, id));
+
       window.history.replaceState(
         null,
         '',
@@ -205,6 +227,14 @@ function useActiveTabFromURL(
     tabsInSearchParams.includes(getTabKey(items, index, id)),
   );
 
+  console.log({
+    searchParams,
+    tabIndexFromSearchParams,
+    tabsInSearchParams,
+    items,
+    id,
+  });
+
   useIsomorphicLayoutEffect(() => {
     const tabPanel = hash
       ? tabPanelsRef.current?.querySelector(`[role=tabpanel]:has([id="${hash}"])`)
@@ -248,7 +278,7 @@ function useActiveTabFromURL(
 }
 
 function useActiveTabFromStorage(
-  storageKey: string,
+  storageKey: string | null,
   items: (TabItem | TabObjectItem)[],
   setSelectedIndex: (index: number) => void,
   ignoreLocalStorage: boolean,

@@ -483,3 +483,62 @@ export const ContentInHiddenPanelOpensByHash: Story = {
     ),
   },
 };
+
+export const MultipleTabsInParams: Story = {
+  parameters: {
+    nextjs: {
+      appDirectory: true,
+      navigation: {
+        query: 'tab=shrimp&tab=brown-rice&tab=mango&tab=ponzu',
+      },
+    },
+  },
+  render() {
+    return (
+      <div className="grid gap-4 lg:grid-cols-2">
+        <div>
+          <span className="text-sm font-medium">Protein</span>
+          <Tabs storageKey={null} items={['Salmon', 'Tuna', 'Tofu', 'Shrimp']}>
+            <Tabs.Tab>🐟</Tabs.Tab>
+            <Tabs.Tab>🐠</Tabs.Tab>
+            <Tabs.Tab>🧈</Tabs.Tab>
+            <Tabs.Tab>🦐</Tabs.Tab>
+          </Tabs>
+        </div>
+
+        <div>
+          <span className="text-sm font-medium">Base</span>
+          <Tabs
+            storageKey={null}
+            items={['White Rice', 'Brown Rice', 'Mixed Greens', 'Zucchini Noodles']}
+          >
+            <Tabs.Tab>🍚</Tabs.Tab>
+            <Tabs.Tab>🍘</Tabs.Tab>
+            <Tabs.Tab>🥬</Tabs.Tab>
+            <Tabs.Tab>🥒</Tabs.Tab>
+          </Tabs>
+        </div>
+
+        <div>
+          <span className="text-sm font-medium">Toppings</span>
+          <Tabs storageKey={null} items={['Edamame', 'Avocado', 'Cucumber', 'Mango']}>
+            <Tabs.Tab>🫘</Tabs.Tab>
+            <Tabs.Tab>🥑</Tabs.Tab>
+            <Tabs.Tab>🥒</Tabs.Tab>
+            <Tabs.Tab>🥭</Tabs.Tab>
+          </Tabs>
+        </div>
+
+        <div>
+          <span className="text-sm font-medium">Sauce</span>
+          <Tabs storageKey={null} items={['Soy Sauce', 'Ponzu', 'Spicy Mayo', 'Sesame Ginger']}>
+            <Tabs.Tab>🍶</Tabs.Tab>
+            <Tabs.Tab>🍋</Tabs.Tab>
+            <Tabs.Tab>🌶️</Tabs.Tab>
+            <Tabs.Tab>🫚</Tabs.Tab>
+          </Tabs>
+        </div>
+      </div>
+    );
+  },
+};
