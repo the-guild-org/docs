@@ -67,6 +67,8 @@ export const Tabs = ({
   className,
   tabClassName,
 }: TabsProps) => {
+  const id = useId();
+
   let [selectedIndex, setSelectedIndex] = useState<number>(defaultIndex);
   if (_selectedIndex !== undefined) {
     selectedIndex = _selectedIndex;
@@ -79,20 +81,22 @@ export const Tabs = ({
     items,
     searchParamKey,
     setSelectedIndex,
+    id,
   );
-  const id = useId();
+
   useActiveTabFromStorage(
     storageKey ?? id,
     items,
     setSelectedIndex,
     tabIndexFromSearchParams !== -1,
+    id,
   );
 
   const handleChange = (index: number) => {
     onChange?.(index);
 
     if (storageKey) {
-      const newValue = getTabKey(items, index);
+      const newValue = getTabKey(items, index, id);
       localStorage.setItem(storageKey, newValue);
 
       // the storage event only get picked up (by the listener) if the localStorage was changed in
@@ -104,7 +108,7 @@ export const Tabs = ({
 
     if (searchParamKey) {
       const searchParams = new URLSearchParams(window.location.search);
-      searchParams.set(searchParamKey, getTabKey(items, index));
+      searchParams.set(searchParamKey, getTabKey(items, index, id));
       window.history.replaceState(
         null,
         '',
@@ -195,14 +199,17 @@ function useActiveTabFromURL(
   items: (TabItem | TabObjectItem)[],
   searchParamKey: string,
   setSelectedIndex: (index: number) => void,
+  id: string,
 ) {
   const hash = useHash();
   const searchParams = useSearchParams();
   const tabsInSearchParams = searchParams.getAll(searchParamKey).sort();
 
   const tabIndexFromSearchParams = items.findIndex((_, index) =>
-    tabsInSearchParams.includes(getTabKey(items, index)),
+    tabsInSearchParams.includes(getTabKey(items, index, id)),
   );
+
+  console.log({ tabIndexFromSearchParams, tabsInSearchParams });
 
   useIsomorphicLayoutEffect(() => {
     const tabPanel = hash
@@ -251,6 +258,7 @@ function useActiveTabFromStorage(
   items: (TabItem | TabObjectItem)[],
   setSelectedIndex: (index: number) => void,
   ignoreLocalStorage: boolean,
+  id: string,
 ) {
   useIsomorphicLayoutEffect(() => {
     if (!storageKey || ignoreLocalStorage) {
@@ -259,7 +267,7 @@ function useActiveTabFromStorage(
     }
 
     const setSelectedTab = (key: string) => {
-      const index = items.findIndex((_, i) => getTabKey(items, i) === key);
+      const index = items.findIndex((_, i) => getTabKey(items, i, id) === key);
       if (index !== -1) {
         setSelectedIndex(index);
       }
@@ -288,7 +296,7 @@ function useActiveTabFromStorage(
 
 type TabKey = string & { __brand: 'TabKey' };
 
-function getTabKey(items: (TabItem | TabObjectItem)[], index: number): TabKey {
+function getTabKey(items: (TabItem | TabObjectItem)[], index: number, prefix: string): TabKey {
   const item = items[index];
   const isObject = isTabObjectItem(item);
   // if the key is defined by user, we use it
@@ -298,7 +306,7 @@ function getTabKey(items: (TabItem | TabObjectItem)[], index: number): TabKey {
   const label = isObject ? item.label : item;
   // otherwise we use the slugified label prefixed by the tab group id, if the label is a string
   // or the index of the item in the items array prefixed by the tab group id if the label is a ReactElement
-  const key = typeof label === 'string' ? slugify(label) : index.toString();
+  const key = typeof label === 'string' ? slugify(label) : `${prefix}-${index.toString()}`;
   return key as TabKey;
 }
 

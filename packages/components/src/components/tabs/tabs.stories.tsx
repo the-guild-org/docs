@@ -184,13 +184,6 @@ export const URLSearchParamsSync: Story = {
       },
     },
   },
-  play: async ({ canvasElement }) => {
-    // const canvas = within(canvasElement);
-    // await expect(window.location.search).toContain('framework=vue');
-    // const angularTab = canvas.getByRole('tab', { name: 'angular' });
-    // await userEvent.click(angularTab);
-    // await expect(window.location.search).toContain('framework=angular');
-  },
 };
 
 /**
@@ -354,6 +347,7 @@ export const ControlledMode: Story = {
  */
 export const WithReactElementLabels: Story = {
   args: {
+    searchParamKey: 'benefit',
     items: [
       <span key="1" className="flex items-center gap-2">
         🚀 Fast
@@ -372,6 +366,16 @@ export const WithReactElementLabels: Story = {
         <Tabs.Tab>99.9% uptime SLA</Tabs.Tab>
       </>
     ),
+  },
+  parameters: {
+    nextjs: {
+      appDirectory: true,
+      navigation: {
+        query: {
+          benefit: ':r0:-2',
+        },
+      },
+    },
   },
 };
 
@@ -460,7 +464,11 @@ export const ContentInHiddenPanelOpensByHash: Story = {
     items: ['Docker', 'Binary'],
     children: (
       <>
-        <Tabs.Tab />
+        <Tabs.Tab>
+          <CallToAction href={`${window.location.href}#binary`} variant="tertiary">
+            Navigate to #binary
+          </CallToAction>
+        </Tabs.Tab>
         <Tabs.Tab>
           <div id="binary">Binary</div>
         </Tabs.Tab>
