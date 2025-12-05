@@ -227,14 +227,6 @@ function useActiveTabFromURL(
     tabsInSearchParams.includes(getTabKey(items, index, id)),
   );
 
-  console.log({
-    searchParams,
-    tabIndexFromSearchParams,
-    tabsInSearchParams,
-    items,
-    id,
-  });
-
   useIsomorphicLayoutEffect(() => {
     const tabPanel = hash
       ? tabPanelsRef.current?.querySelector(`[role=tabpanel]:has([id="${hash}"])`)
