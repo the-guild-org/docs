@@ -1,5 +1,13 @@
 # @theguild/components
 
+## 9.11.3
+
+### Patch Changes
+
+- [#2097](https://github.com/the-guild-org/docs/pull/2097)
+  [`66620b3`](https://github.com/the-guild-org/docs/commit/66620b32168dbb1993a3fc53ec5ff5423f2d8ee4)
+  Thanks [@hasparus](https://github.com/hasparus)! - Update SOC2 badge href
+
 ## 9.11.2
 
 ### Patch Changes
