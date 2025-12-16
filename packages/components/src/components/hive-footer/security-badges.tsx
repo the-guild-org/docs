@@ -34,7 +34,7 @@ export function SecurityBadges() {
       </SecurityBadge>
       <SecurityBadge href="https://security.graphql-hive.com/">
         <img
-          src="https://storage.piotrbox.monwid-olechnowicz.com/soc2-badge.png"
+          src="https://storage.piotrbox.monwid-olechnowicz.com/soc2-badge.webp"
           alt="AICPA SOC 2"
           className="size-[88px] dark:opacity-95"
         />
