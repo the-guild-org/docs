@@ -23,7 +23,7 @@ import {
   TabPanel,
   TabPanelProps,
   TabPanels,
-  // this component is almost verbatim copied from Nextra, so keep @headlessui/react to guarantee it works the same
+  // this component is almost verbatim copied from Nextra, so we keep @headlessui/react to guarantee it works the same
 } from '@headlessui/react';
 import { useHash } from '../use-hash';
 
@@ -50,10 +50,11 @@ export interface TabsProps
   searchParamKey?: string;
   /**
    * LocalStorage key for persisting the selected tab.
-   * Defaults to `tabs-${id}` if not provided.
+   * Set to `true` to use the default key `tabs-${id}`.
    * Set to `null` to disable localStorage persistence.
+   * Set to a string to use a custom key.
    */
-  storageKey?: string | null;
+  storageKey?: string | true | null;
   /** Tabs CSS class name. */
   className?: TabListProps['className'];
   /** Tab CSS class name. */
@@ -73,7 +74,7 @@ export const Tabs = ({
 }: TabsProps) => {
   const id = useId();
 
-  if (storageKey === undefined) {
+  if (storageKey === true) {
     storageKey = `tabs-${id}`;
   }
 
