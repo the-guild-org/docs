@@ -51,7 +51,7 @@ export interface TabsProps
   /**
    * LocalStorage key for persisting the selected tab.
    * Set to `true` to use the default key `tabs-${id}`.
-   * Set to `null` to disable localStorage persistence.
+   * Leave empty or set to `null` to disable localStorage persistence.
    * Set to a string to use a custom key.
    */
   storageKey?: string | true | null;
@@ -65,7 +65,7 @@ export const Tabs = ({
   items,
   children,
   searchParamKey = 'tab',
-  storageKey,
+  storageKey = null,
   defaultIndex = 0,
   selectedIndex: _selectedIndex,
   onChange,
