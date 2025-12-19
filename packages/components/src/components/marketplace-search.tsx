@@ -2,12 +2,12 @@
 
 import { isValidElement, ReactElement, useMemo, useState } from 'react';
 import fuzzy from 'fuzzy';
-import { Tabs } from 'nextra/components';
 import { cn } from '../cn';
 import { IMarketplaceListProps, IMarketplaceSearchProps } from '../types/components';
 import { Heading } from './heading';
 import { CloseIcon, SearchIcon } from './icons';
 import { MarketplaceList } from './marketplace-list';
+import { Tabs } from './tabs';
 import { Tag, TagsContainer } from './tag';
 
 const renderQueryPlaceholder = (placeholder: string | ReactElement, query: string) => {
