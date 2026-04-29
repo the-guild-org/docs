@@ -38,7 +38,7 @@ export function Mermaid({ chart }: { chart: string }): ReactElement {
     }
     const htmlElement = document.documentElement;
     const observer = new MutationObserver(renderChart);
-    observer.observe(htmlElement, { attributes: true });
+    observer.observe(htmlElement, { attributes: true, attributeFilter: ['class', 'data-theme'] });
     renderChart();
 
     return () => {
