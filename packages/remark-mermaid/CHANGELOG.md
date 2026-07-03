@@ -1,5 +1,14 @@
 # @theguild/remark-mermaid
 
+## 0.3.1
+
+### Patch Changes
+
+- [#2105](https://github.com/the-guild-org/docs/pull/2105)
+  [`c3e7e0d`](https://github.com/the-guild-org/docs/commit/c3e7e0d6d15f6e7fc1e9c3a8c0ea4f3594564cdf)
+  Thanks [@jungwoo3490](https://github.com/jungwoo3490)! - Restrict Mermaid's MutationObserver to
+  theme attributes to prevent diagrams disappearing
+
 ## 0.3.0
 
 ### Minor Changes
@@ -117,7 +126,6 @@
 - [#1097](https://github.com/the-guild-org/docs/pull/1097)
   [`ef33af3`](https://github.com/the-guild-org/docs/commit/ef33af3e62ccf2431f165527d6acb5b92be095a0)
   Thanks [@B2o5T](https://github.com/B2o5T)! - dependencies updates:
-
   - Updated dependency [`mermaid@^10.2.2` ↗︎](https://www.npmjs.com/package/mermaid/v/10.2.2) (from
     `10.2.1`, in `dependencies`)
   - Updated dependency

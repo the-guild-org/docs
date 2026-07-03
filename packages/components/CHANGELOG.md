@@ -1,5 +1,12 @@
 # @theguild/components
 
+## 9.12.0
+
+### Minor Changes
+
+- [`3f9d0dd`](https://github.com/the-guild-org/docs/commit/3f9d0dd466cf1f7d8e619a43c876928fd63890c2)
+  Thanks [@hasparus](https://github.com/hasparus)! - Extract Tabs component from Nextra
+
 ## 9.11.3
 
 ### Patch Changes
